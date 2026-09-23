@@ -1,0 +1,233 @@
+/* Apple Human Interface Transitional Animations & Micro-Interactions */
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shufflePop {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.96) rotate(-0.5deg);
+  }
+  50% {
+    transform: scale(1.01) rotate(0.3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Apple HIG Frosted Glass Modal Backdrop Fade */
+@keyframes appleModalBackdrop {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) saturate(100%);
+    -webkit-backdrop-filter: blur(0px) saturate(100%);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+/* Apple HIG Cupertino Sheet Spring Entrance */
+@keyframes appleSheetSpring {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.008) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Mascot Gentle Float Loop */
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(35, 131, 226, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(35, 131, 226, 0);
+  }
+}
+
+/* Reusable Transition Classes */
+.animate-fade-in {
+  animation: fadeInScale 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shuffle {
+  animation: shufflePop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-mascot-float {
+  animation: mascotFloat 3.6s ease-in-out infinite;
+}
+
+/* Universal Button & Interactive Element Micro-Interactions */
+.btn, 
+button:not(:disabled),
+.segmented-btn,
+.nav-icon-btn {
+  transition: transform 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.16s ease,
+              border-color 0.16s ease,
+              color 0.16s ease,
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn:hover:not(:disabled),
+.nav-icon-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled),
+button:active:not(:disabled),
+.segmented-btn:active:not(:disabled),
+.nav-icon-btn:active:not(:disabled) {
+  transform: scale(0.96) translateY(0) !important;
+}
+
+/* Apple Focus Ring for Accessibility */
+.btn:focus-visible,
+button:focus-visible,
+.nav-icon-btn:focus-visible,
+input:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(82, 156, 202, 0.38) !important;
+}
+
+/* Animated Modals */
+.modal-overlay-animated,
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: appleModalBackdrop 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-content-animated,
+.modal-content {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: appleSheetSpring 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-width: 520px;
+  width: 100%;
+}
+
+.btn-shuffle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-shuffle:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  transform: translateY(-1px);
+}
+
+.btn-shuffle:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Sticky Bottom Action Navigation Bar (Visible without scrolling) */
+.sticky-bottom-action-bar {
+  position: sticky;
+  bottom: 12px;
+  z-index: 50;
+  background: rgba(18, 18, 20, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 10px 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  animation: slideUpFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-height: 52px;
+}
+
+@media (max-width: 768px) {
+  .sticky-bottom-action-bar {
+    bottom: 8px;
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: var(--radius-md);
+  }
+  .sticky-bottom-action-bar .btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .sticky-bottom-action-bar .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+/* Apple Page View Transition */
+.page-view-enter {
+  animation: fadeInScale 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

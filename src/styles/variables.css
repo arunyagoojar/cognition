@@ -1,0 +1,97 @@
+:root {
+  /* Default Font Scale */
+  --app-font-scale: 1;
+  --app-font-size: 14px;
+
+  /* Notion Dark Theme Colors (Default) */
+  --bg-canvas: #191919;
+  --bg-sidebar: #202020;
+  --bg-surface: #252525;
+  --bg-card: #2a2a2a;
+  --bg-elevated: #303030;
+  --bg-hover: rgba(255, 255, 255, 0.055);
+  --bg-active: rgba(255, 255, 255, 0.095);
+  --bg-input: #202020;
+  --bg-glass: rgba(32, 32, 32, 0.82);
+
+  /* Notion Neutral Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-default: #373737;
+  --border-strong: #4a4a4a;
+  --border-focus: #529cca;
+
+  /* Notion Text Contrast Hierarchy */
+  --text-primary: #ededed;
+  --text-secondary: #9c9c9c;
+  --text-muted: #6e6e6e;
+  --text-invert: #121212;
+
+  /* Notion Muted Accent Palette */
+  --accent-blue: #529cca;
+  --accent-blue-bg: rgba(82, 156, 202, 0.15);
+  --accent-green: #4dab9a;
+  --accent-green-bg: rgba(77, 171, 154, 0.15);
+  --accent-amber: #ffab4a;
+  --accent-amber-bg: rgba(255, 171, 74, 0.15);
+  --accent-red: #d44c47;
+  --accent-red-bg: rgba(212, 76, 71, 0.15);
+  --accent-purple: #9065b0;
+  --accent-purple-bg: rgba(144, 101, 176, 0.15);
+
+  /* Apple Design System Spacing & Geometry */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+
+  /* Apple Typography */
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
+  --font-mono: "SF Mono", Monaco, Menlo, Courier, monospace;
+
+  /* Apple Shadows & Transitions */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
+  /* Apple/Notion Crisp Light Theme */
+  --bg-canvas: #f8f9fa;
+  --bg-sidebar: #f1f2f4;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-elevated: #f0f2f5;
+  --bg-hover: rgba(0, 0, 0, 0.045);
+  --bg-active: rgba(0, 0, 0, 0.08);
+  --bg-input: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-default: #dcdcde;
+  --border-strong: #bcbcbf;
+  --border-focus: #0969da;
+
+  --text-primary: #1f2328;
+  --text-secondary: #57606a;
+  --text-muted: #8c959f;
+  --text-invert: #ffffff;
+
+  --accent-blue: #0969da;
+  --accent-blue-bg: rgba(9, 105, 218, 0.1);
+  --accent-green: #1a7f37;
+  --accent-green-bg: rgba(26, 127, 55, 0.1);
+  --accent-amber: #b05a00;
+  --accent-amber-bg: rgba(176, 90, 0, 0.1);
+  --accent-red: #cf222e;
+  --accent-red-bg: rgba(207, 34, 46, 0.1);
+  --accent-purple: #8250df;
+  --accent-purple-bg: rgba(130, 80, 223, 0.1);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
