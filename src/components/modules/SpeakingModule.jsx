@@ -201,6 +201,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
   const hasNextQuestion = () => questionIdx < totalQuestionsInPart - 1;
   const hasNextPart = () => partIdx < test.parts.length - 1;
+  const isLastInteraction = !hasNextQuestion() && !hasNextPart();
 
   const handleNext = () => {
     stopRecording();
@@ -722,10 +723,10 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         </>
       )}
 
-      {/* bottom nav */}
+      {/* bottom nav: Next advances question → part, Submit Test on the final question */}
       <ExamBottomNav
-        onPrevious={partIdx > 0 ? () => { stopRecording(); setPartIdx(p => p - 1); setQuestionIdx(0); setRecState(REC_STATE.IDLE); } : undefined}
-        isPreviousDisabled={partIdx === 0}
+        onPrevious={partIdx > 0 || questionIdx > 0 ? () => { stopRecording(); if (questionIdx > 0) { setQuestionIdx(q => q - 1); } else { setPartIdx(p => p - 1); setQuestionIdx(0); } setRecState(REC_STATE.IDLE); } : undefined}
+        isPreviousDisabled={partIdx === 0 && questionIdx === 0}
         sections={test.parts.map((p, i) => ({
           label: `Part ${p.partNumber}`,
           isCompleted: p.partNumber === 2
@@ -734,10 +735,10 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         }))}
         activeSectionIndex={partIdx}
         onSelectSection={(i) => { stopRecording(); setPartIdx(i); setQuestionIdx(0); setRecState(REC_STATE.IDLE); }}
-        onNext={partDone ? handleNext : undefined}
-        isNextDisabled={!partDone}
-        nextLabel={hasNextPart() ? 'Next →' : 'Finish & Grade Interview'}
-        isSubmit={!hasNextPart()}
+        onNext={handleNext}
+        isNextDisabled={false}
+        nextLabel={isLastInteraction ? 'Submit Test' : 'Next →'}
+        isSubmit={isLastInteraction}
       />
     </div>
   );
