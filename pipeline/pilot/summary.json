@@ -1,0 +1,147 @@
+[
+ {
+  "slug": "ielts-listening-test-1",
+  "status": "flagged",
+  "groups": 8,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 30,
+  "fnameInputs": 35,
+  "audio": "resolved",
+  "audioFlags": [],
+  "audioDialect": "A_plain_audio_src",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-170",
+  "status": "quarantined",
+  "groups": 10,
+  "questions": 39,
+  "keyItems": 40,
+  "blankTokens": 27,
+  "fnameInputs": 28,
+  "audio": "resolved",
+  "audioFlags": [],
+  "audioDialect": "A_plain_audio_src",
+  "fails": [
+   "V3_relational:NUMBERING_GAP",
+   "V3_relational:GROUP_COUNT_MISMATCH"
+  ],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-105",
+  "status": "flagged",
+  "groups": 6,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 25,
+  "fnameInputs": 32,
+  "audio": "resolved",
+  "audioFlags": [],
+  "audioDialect": "A_plain_audio_src",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-35",
+  "status": "flagged",
+  "groups": 12,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 10,
+  "fnameInputs": 34,
+  "audio": "resolved",
+  "audioFlags": [
+   "CACHE_VARIANT_CANONICALIZED"
+  ],
+  "audioDialect": "B_wp_audio_shortcode",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH",
+   "V7_asset:CACHE_VARIANT_CANONICALIZED"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-172",
+  "status": "flagged",
+  "groups": 7,
+  "questions": 39,
+  "keyItems": 39,
+  "blankTokens": 30,
+  "fnameInputs": 30,
+  "audio": "resolved",
+  "audioFlags": [],
+  "audioDialect": "A_plain_audio_src",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-61",
+  "status": "flagged",
+  "groups": 11,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 19,
+  "fnameInputs": 29,
+  "audio": "resolved",
+  "audioFlags": [
+   "ASSET_PAGE_MISMATCH",
+   "CACHE_VARIANT_CANONICALIZED"
+  ],
+  "audioDialect": "B_wp_audio_shortcode",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH",
+   "V7_asset:ASSET_PAGE_MISMATCH",
+   "V7_asset:CACHE_VARIANT_CANONICALIZED"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-100",
+  "status": "flagged",
+  "groups": 11,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 19,
+  "fnameInputs": 29,
+  "audio": "resolved",
+  "audioFlags": [
+   "CACHE_VARIANT_CANONICALIZED"
+  ],
+  "audioDialect": "B_wp_audio_shortcode",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH",
+   "V7_asset:CACHE_VARIANT_CANONICALIZED"
+  ]
+ },
+ {
+  "slug": "ielts-listening-test-122",
+  "status": "flagged",
+  "groups": 8,
+  "questions": 40,
+  "keyItems": 40,
+  "blankTokens": 25,
+  "fnameInputs": 32,
+  "audio": "resolved",
+  "audioFlags": [
+   "AUDIO_EXTENSION_ANOMALY"
+  ],
+  "audioDialect": "A_plain_audio_src",
+  "fails": [],
+  "warns": [
+   "V5_completeness:BLANK_TOKEN_MISMATCH",
+   "V7_asset:AUDIO_EXTENSION_ANOMALY"
+  ]
+ }
+]
