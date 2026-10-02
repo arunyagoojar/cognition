@@ -3461,3 +3461,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .cognition-exam-input, input[data-qid] { width: 95px !important; }
   .exam-focus-title { font-size: 14.5px !important; }
 }
+
+/* ─── Clerk integration (Phase 1 auth) ──────────────────────────── */
+.clerk-user-avatar {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid var(--border-subtle);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

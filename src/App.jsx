@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useUser, useClerk } from '@clerk/react';
 import { motion, AnimatePresence } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
 import SettingsModal from './components/dashboard/SettingsModal';
@@ -26,7 +27,12 @@ import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING } from './data/production/productionContent.js';
 
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
 export default function App() {
+  const { isLoaded: authLoaded, isSignedIn } = useUser();
+  const { openSignIn } = useClerk();
+
   const [view, setView] = useState(() => {
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.status === 'in_progress') {
@@ -133,6 +139,43 @@ export default function App() {
   }, [view]);
 
   const isExamFlow = ['listening', 'reading', 'writing', 'speaking', 'mock'].includes(view);
+
+  // ── Authentication gate ──
+  if (PUBLISHABLE_KEY && !authLoaded) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-canvas)' }}>
+        <div style={{ width: 32, height: 32, borderRadius: '50%', border: '3px solid var(--border-subtle)', borderTopColor: 'var(--c-coral)', animation: 'spin 0.8s linear infinite' }} />
+      </div>
+    );
+  }
+  if (PUBLISHABLE_KEY && !isSignedIn) {
+    return (
+      <div style={{
+        minHeight: '100vh', display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center',
+        background: 'var(--bg-canvas)', padding: '24px', textAlign: 'center'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+          <img src="/favicon.svg" alt="" style={{ width: 36, height: 36 }} />
+          <span style={{ fontSize: 26, fontWeight: 800, fontFamily: 'var(--font-family)', color: 'var(--text-primary)' }}>Cognition</span>
+        </div>
+        <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--text-secondary)', marginBottom: 28, fontFamily: 'var(--font-family)' }}>
+          IELTS ACADEMIC
+        </div>
+        <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 30, maxWidth: 300, lineHeight: 1.55, fontFamily: 'var(--font-family)' }}>
+          Sign in to save your IELTS progress and results.
+        </p>
+        <button onClick={() => openSignIn()} style={{
+          padding: '14px 36px', borderRadius: 'var(--r-btn)', background: 'var(--c-coral)',
+          color: '#151313', fontWeight: 800, fontSize: 15.5, border: '1.5px solid #151313',
+          cursor: 'pointer', boxShadow: '0 4px 0 #151313', fontFamily: 'var(--font-family)',
+          display: 'inline-flex', alignItems: 'center', gap: 8
+        }}>
+          Sign in to continue
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className={`app-shell ${isExamFlow ? 'in-exam-flow' : ''}`}>

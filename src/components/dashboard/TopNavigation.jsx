@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserButton } from '@clerk/react';
 import Icon from '../common/Icon';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
@@ -18,6 +19,14 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
       </div>
 
       <div className="nav-actions">
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              avatarBox: 'clerk-user-avatar',
+            },
+          }}
+        />
         <button
           className="nav-settings-btn"
           onClick={onOpenSettings}
