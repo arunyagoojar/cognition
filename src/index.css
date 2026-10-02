@@ -3783,6 +3783,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .cognition-auth-card,
 .cl-card {
+  position: relative !important;
   width: 100% !important;
   max-width: 390px !important;
   background: var(--bg-card) !important;
@@ -3792,6 +3793,33 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   padding: 24px 26px !important;
   box-sizing: border-box !important;
   font-family: var(--font-family) !important;
+}
+
+/* Modal Close Button */
+.cl-modalCloseButton {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: var(--surface-interactive) !important;
+  border: 1px solid var(--border-subtle) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--text-primary) !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: background var(--dur-micro) var(--ease-smooth) !important;
+  z-index: 10 !important;
+}
+.cl-modalCloseButton:hover {
+  background: var(--surface-hover) !important;
+}
+.cl-modalCloseButton svg {
+  width: 14px !important;
+  height: 14px !important;
 }
 
 /* Header */
@@ -3817,9 +3845,34 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   margin-top: 4px !important;
 }
 
-/* Social Buttons (Google) */
+/* Social Buttons Container */
+.cl-socialButtonsRoot,
+.cl-socialButtons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+/* Hide unconfigured/empty Apple and GitHub provider buttons */
+.cl-socialButtonsIconButton__apple,
+.cl-socialButtonsIconButton__github,
+.cl-socialButtonsBlockButton__apple,
+.cl-socialButtonsBlockButton__github {
+  display: none !important;
+}
+
+/* Hide the floating 'Last used' black badge on the social button */
+.cl-lastAuthenticationStrategyBadge,
+[class*="lastAuthenticationStrategy"],
+[data-localization-key*="lastAuthenticationStrategy"] {
+  display: none !important;
+}
+
+/* Social Buttons (Google block & fallback icon-button) */
 .cognition-auth-social-btn,
-.cl-socialButtonsBlockButton {
+.cl-socialButtonsBlockButton,
+.cl-socialButtonsIconButton__google {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -3834,20 +3887,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   color: var(--text-primary) !important;
   cursor: pointer !important;
   transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button) !important;
+  text-decoration: none !important;
 }
 .cognition-auth-social-btn:hover,
-.cl-socialButtonsBlockButton:hover {
+.cl-socialButtonsBlockButton:hover,
+.cl-socialButtonsIconButton__google:hover {
   background: var(--surface-hover) !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 3px 0 var(--border-color) !important;
 }
 .cognition-auth-social-btn:active,
-.cl-socialButtonsBlockButton:active {
+.cl-socialButtonsBlockButton:active,
+.cl-socialButtonsIconButton__google:active {
   transform: translateY(1px) !important;
   box-shadow: 0 1px 0 var(--border-color) !important;
 }
 .cognition-auth-social-text,
 .cl-socialButtonsBlockButtonText {
+  font-family: var(--font-family) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+.cl-socialButtonsIconButton__google::after {
+  content: 'Continue with Google';
   font-family: var(--font-family) !important;
   font-size: 13.5px !important;
   font-weight: 700 !important;
@@ -3917,6 +3980,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   border-color: var(--c-coral) !important;
   box-shadow: 0 0 0 2px rgba(255, 87, 52, 0.22) !important;
   outline: none !important;
+}
+.cognition-auth-input::placeholder,
+.cl-formFieldInput::placeholder,
+input.cl-input::placeholder {
+  color: var(--text-tertiary) !important;
+  opacity: 1 !important;
+  font-family: var(--font-family) !important;
+  font-size: 13.5px !important;
 }
 
 /* Submit Button */
