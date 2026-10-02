@@ -555,7 +555,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       {/* ── PART 2: cue card + notes side-by-side + speaking ── */}
       {isPart2 && (
         <>
-          <div style={{ display: 'flex', gap: 20, alignItems: 'stretch', flexWrap: 'wrap' }}>
+          <div className="speaking-cue-card-row" style={{ display: 'flex', gap: 20, alignItems: 'stretch', flexWrap: 'wrap' }}>
             <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '26px 30px', boxShadow: '0 3px 0 #151313', flex: '1 1 380px', maxWidth: 560, fontSize: 15.5 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '2px solid #151313', paddingBottom: 10, marginBottom: 16, fontFamily: 'var(--font-family)' }}>
                 <div>

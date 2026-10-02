@@ -386,14 +386,11 @@ def build_reading_runtime(rec):
 
 # ---------- production Writing ----------
 def writing_task_html(task):
-    """Renderer contract: plain escaped prompt; Task 1 adds the exact source
-    visual (image) or a real HTML table — never both, never a flattening."""
+    """Renderer contract: plain escaped prompt. Images are handled via the
+    separate image.file slot (rendered by WritingModule); HTML tables are
+    embedded here. Never both image + table, never a flattening."""
     html = esc(task["prompt"])
-    if task.get("visual"):
-        rel = task["visual"]["sourcePath"]
-        rel = rel[len("wp-content/"):] if rel.startswith("wp-content/") else rel
-        html += f'<img src="/wp-content/{esc(rel)}" alt="Task 1 visual ({esc(task["visual"]["visualType"])})" style="width:100%;max-width:640px;height:auto;display:block;margin:16px auto;border:1px solid var(--border);border-radius:8px;" />'
-    elif task.get("table") and task["table"].get("rows"):
+    if not task.get("visual") and task.get("table") and task["table"].get("rows"):
         rows = task["table"]["rows"]
         html += '<table class="writing-table">'
         for i, row in enumerate(rows):
