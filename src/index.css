@@ -3472,3 +3472,35 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ─── Clerk auth UI (Phase 1) ────────────────────────────────────── */
+.nav-signin-btn {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  background: var(--c-coral);
+  border: 1.5px solid var(--text-primary);
+  border-radius: var(--r-btn);
+  padding: 8px 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--text-primary);
+  transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button);
+}
+.nav-signin-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 var(--text-primary);
+}
+.nav-signin-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--text-primary);
+}
+.clerk-user-avatar {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid var(--border-subtle);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

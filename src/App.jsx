@@ -140,42 +140,23 @@ export default function App() {
 
   const isExamFlow = ['listening', 'reading', 'writing', 'speaking', 'mock'].includes(view);
 
-  // ── Authentication gate ──
-  if (PUBLISHABLE_KEY && !authLoaded) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-canvas)' }}>
-        <div style={{ width: 32, height: 32, borderRadius: '50%', border: '3px solid var(--border-subtle)', borderTopColor: 'var(--c-coral)', animation: 'spin 0.8s linear infinite' }} />
-      </div>
-    );
-  }
-  if (PUBLISHABLE_KEY && !isSignedIn) {
-    return (
-      <div style={{
-        minHeight: '100vh', display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center',
-        background: 'var(--bg-canvas)', padding: '24px', textAlign: 'center'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
-          <img src="/favicon.svg" alt="" style={{ width: 36, height: 36 }} />
-          <span style={{ fontSize: 26, fontWeight: 800, fontFamily: 'var(--font-family)', color: 'var(--text-primary)' }}>Cognition</span>
-        </div>
-        <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--text-secondary)', marginBottom: 28, fontFamily: 'var(--font-family)' }}>
-          IELTS ACADEMIC
-        </div>
-        <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 30, maxWidth: 300, lineHeight: 1.55, fontFamily: 'var(--font-family)' }}>
-          Sign in to save your IELTS progress and results.
-        </p>
-        <button onClick={() => openSignIn()} style={{
-          padding: '14px 36px', borderRadius: 'var(--r-btn)', background: 'var(--c-coral)',
-          color: '#151313', fontWeight: 800, fontSize: 15.5, border: '1.5px solid #151313',
-          cursor: 'pointer', boxShadow: '0 4px 0 #151313', fontFamily: 'var(--font-family)',
-          display: 'inline-flex', alignItems: 'center', gap: 8
-        }}>
-          Sign in to continue
-        </button>
-      </div>
-    );
-  }
+  // ── Auth-gated practice start: app is freely browsable, sign-in required at practice entry ──
+  const startSkillProtected = (skillId) => {
+    if (PUBLISHABLE_KEY && !isSignedIn) {
+      openSignIn();
+      return;
+    }
+    startSkill(skillId);
+  };
+
+  const startMockProtected = (examId) => {
+    if (PUBLISHABLE_KEY && !isSignedIn) {
+      openSignIn();
+      return;
+    }
+    if (examId) setSelectedExamId(examId);
+    setView('mock');
+  };
 
   return (
     <div className={`app-shell ${isExamFlow ? 'in-exam-flow' : ''}`}>
@@ -221,7 +202,7 @@ export default function App() {
             <PracticeSection
               scores={scores}
               targetBand={targetBand}
-              onStartSkill={startSkill}
+              onStartSkill={startSkillProtected}
             />
 
             {/* 4. Final Mock Test Hero with Rotating Randomized Test Queue */}
@@ -229,10 +210,7 @@ export default function App() {
               scores={scores}
               selectedExam={selectedExamId}
               onSelectExam={setSelectedExamId}
-              onStartMock={(examId) => {
-                setSelectedExamId(examId || getRandomTestId());
-                setView('mock');
-              }}
+              onStartMock={startMockProtected}
             />
           </motion.main>
         )}
@@ -250,7 +228,7 @@ export default function App() {
               scores={scores}
               targetBand={targetBand}
               onBack={() => setView('home')}
-              onStartSkill={startSkill}
+              onStartSkill={startSkillProtected}
             />
           </motion.div>
         )}
@@ -267,7 +245,7 @@ export default function App() {
             <LearningHubPage
               onBack={() => setView('home')}
               onContextChange={(ctx) => setLearningContext(ctx)}
-              onOpenPractice={startSkill}
+              onOpenPractice={startSkillProtected}
             />
           </motion.div>
         )}

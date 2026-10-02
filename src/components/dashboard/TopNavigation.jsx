@@ -1,8 +1,11 @@
 import React from 'react';
-import { UserButton } from '@clerk/react';
+import { UserButton, useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
+  const { isSignedIn } = useUser();
+  const { openSignIn } = useClerk();
+
   return (
     <header className="top-nav">
       <div
@@ -19,23 +22,35 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
       </div>
 
       <div className="nav-actions">
-        <UserButton
-          afterSignOutUrl="/"
-          appearance={{
-            elements: {
-              avatarBox: 'clerk-user-avatar',
-            },
-          }}
-        />
-        <button
-          className="nav-settings-btn"
-          onClick={onOpenSettings}
-          title="Settings & Appearance"
-          id="open-settings-btn"
-          aria-label="Open Settings"
-        >
-          <Icon name="gear" size={18} />
-        </button>
+        {isSignedIn ? (
+          <>
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: 'clerk-user-avatar',
+                },
+              }}
+            />
+            <button
+              className="nav-settings-btn"
+              onClick={onOpenSettings}
+              title="Settings & Appearance"
+              id="open-settings-btn"
+              aria-label="Open Settings"
+            >
+              <Icon name="gear" size={18} />
+            </button>
+          </>
+        ) : (
+          <button
+            className="nav-signin-btn"
+            onClick={() => openSignIn()}
+            title="Sign in to save progress"
+          >
+            Sign in
+          </button>
+        )}
       </div>
     </header>
   );
