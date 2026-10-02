@@ -3775,6 +3775,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 .cl-rootBox,
@@ -3784,11 +3786,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .cl-cardBox {
   width: 100% !important;
   max-width: 100% !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
   box-sizing: border-box !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 .cognition-auth-card,
@@ -3807,6 +3811,32 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* Ensure children in card do not greedily stretch vertically */
+.cl-card > *,
+.cognition-auth-card > * {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Main content container */
+.cognition-auth-main,
+.cl-main {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 /* Modal Close Button */
@@ -3985,6 +4015,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   display: none !important;
 }
 
+/* Form Container */
+.cognition-auth-form,
+.cl-form {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
 /* Form Fields */
 .cognition-auth-field,
 .cl-formField {
@@ -4030,7 +4072,7 @@ input.cl-input::placeholder {
   font-size: 13.5px !important;
 }
 
-/* Submit Button */
+/* Submit Button ("Continue") */
 .cognition-auth-submit,
 .cl-formButtonPrimary {
   background: var(--c-coral) !important;
@@ -4046,6 +4088,7 @@ input.cl-input::placeholder {
   width: 100% !important;
   cursor: pointer !important;
   margin-top: 8px !important;
+  margin-bottom: 0 !important;
   transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button) !important;
 }
 .cognition-auth-submit:hover,
@@ -4060,24 +4103,47 @@ input.cl-input::placeholder {
   box-shadow: 0 1px 0 var(--border-color) !important;
 }
 
-/* Footer */
+/* Footer: "Don't have an account? Sign up" and bottom */
 .cognition-auth-footer,
-.cl-footer {
-  margin-top: 12px !important;
+.cl-footer,
+.cl-card .cl-footer,
+.cognition-auth-card .cognition-auth-footer {
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
   padding: 0 !important;
   border-top: none !important;
   text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 4px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+}
+.cognition-auth-footer > *,
+.cl-footer > * {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
 }
 .cognition-auth-footer-action,
 .cl-footerAction {
   padding: 0 !important;
   margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.4 !important;
 }
 .cognition-auth-footer-text,
 .cl-footerActionText {
   font-family: var(--font-family) !important;
   font-size: 12.5px !important;
   color: var(--text-secondary) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .cognition-auth-footer-link,
 .cl-footerActionLink {
@@ -4092,9 +4158,15 @@ input.cl-input::placeholder {
 .cl-footerActionLink:hover {
   text-decoration: underline !important;
 }
+.cognition-auth-footer-item,
 .cl-footerItem {
-  padding: 6px 0 0 0 !important;
+  padding: 0 !important;
   margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 /* Development Badge / Watermark */
@@ -4105,9 +4177,10 @@ input.cl-input::placeholder {
 p.cl-internal-1v2te0e {
   font-size: 11px !important;
   opacity: 0.65 !important;
-  margin: 2px 0 0 0 !important;
+  margin: 3px 0 0 0 !important;
   padding: 0 !important;
   text-align: center !important;
+  line-height: 1.2 !important;
 }
 
 /* Fallback: If Clerk UserProfile is ever invoked directly */
