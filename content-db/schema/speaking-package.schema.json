@@ -1,0 +1,105 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cognition Production Speaking Package",
+ "type": "object",
+ "required": [
+  "id",
+  "module",
+  "kind",
+  "part",
+  "cueCard",
+  "coverage",
+  "sampleAnswer",
+  "provenance",
+  "status"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^speaking\\.makkar\\."
+  },
+  "module": {
+   "const": "speaking"
+  },
+  "kind": {
+   "const": "part2_cue_card"
+  },
+  "part": {
+   "const": 2
+  },
+  "hubNumber": {
+   "type": [
+    "integer",
+    "null"
+   ]
+  },
+  "slug": {
+   "type": "string"
+  },
+  "cueCard": {
+   "type": "object",
+   "required": [
+    "topic",
+    "bulletPrompts"
+   ],
+   "properties": {
+    "topic": {
+     "type": "string"
+    },
+    "bulletPrompts": {
+     "type": "array"
+    },
+    "bulletsNote": {
+     "type": "string"
+    }
+   }
+  },
+  "coverage": {
+   "type": "object",
+   "required": [
+    "part1",
+    "part2",
+    "part3"
+   ],
+   "properties": {
+    "part1": {
+     "const": "unavailable"
+    },
+    "part2": {
+     "const": "available"
+    },
+    "part3": {
+     "const": "unavailable"
+    }
+   }
+  },
+  "sampleAnswer": {
+   "type": "object",
+   "required": [
+    "sentences",
+    "usage"
+   ],
+   "properties": {
+    "sentences": {
+     "type": "array"
+    },
+    "usage": {
+     "const": "reference_material_not_question"
+    }
+   }
+  },
+  "provenance": {
+   "type": "object",
+   "required": [
+    "page"
+   ]
+  },
+  "status": {
+   "enum": [
+    "verified",
+    "flagged",
+    "quarantined"
+   ]
+  }
+ }
+}

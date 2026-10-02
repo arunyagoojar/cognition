@@ -1,0 +1,32 @@
+{
+ "database": "Cognition production content (Phase 3)",
+ "listening": {
+  "tests": {
+   "flagged": 125,
+   "verified": 82,
+   "duplicate": 1
+  },
+  "questionsByTestStatus": {
+   "flagged": 4727,
+   "verified": 3256,
+   "duplicate": 40
+  },
+  "questions_total": 8023,
+  "questions_verified": 7983,
+  "emitted_to_runtime": 207
+ },
+ "speaking": {
+  "packages": {
+   "verified": 178,
+   "flagged": 1
+  },
+  "emitted_to_runtime": 179
+ },
+ "excluded_from_runtime": [
+  {
+   "slug": "ielts-listening-test-61",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-100"
+  }
+ ]
+}

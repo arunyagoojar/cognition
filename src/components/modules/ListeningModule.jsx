@@ -561,88 +561,61 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         </div>
       )}
 
-      {/* ── 4. QUESTIONS CONTAINER (COGNITION HTML RENDERER & UI) ── */}
+      {/* ── 4. UNIFIED EXAM FORM (single full-width column) ── */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 340px',
-        gap: 24,
-        alignItems: 'start'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 20,
+        width: '100%',
       }}>
-        {/* Left: Context/Tables (Read-only reference if possible) */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: 'var(--border-dark)',
-          borderRadius: 'var(--r-card)',
-          padding: '32px 28px',
-          boxShadow: '0 3px 0 #151313',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 16
-        }}>
-          <HtmlContentRenderer 
-            htmlContent={currentPart?.htmlContent} 
-            answers={answers}
-            setAnswers={setAnswers}
-          />
-        </div>
-
-        {/* Right: Question Panel */}
-        <div style={{
-          background: 'var(--surface-sunken)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: 'var(--r-card)',
-          padding: '24px 20px',
-          maxHeight: '600px',
-          overflowY: 'auto'
-        }}>
-          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Questions</h3>
-          {currentPart?.questionGroups ? (
-            currentPart.questionGroups.map((g, idx) => (
-              <div key={idx} style={{ marginBottom: 24 }}>
-                {g.instructions && (
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: 'var(--text-primary)', background: 'var(--surface)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-                    {g.instructions}
-                  </div>
-                )}
-                {g.options && g.options.length > 0 && (
-                  <div style={{ marginBottom: 16, padding: 12, background: 'var(--bg-canvas)', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 8, textTransform: 'uppercase' }}>Options</div>
-                    <div style={{ display: 'grid', gap: 6 }}>
-                      {g.options.map((opt, i) => (
-                        <div key={opt.id || i} style={{ display: 'flex', gap: 8, fontSize: 14 }}>
-                          <strong style={{ minWidth: 20 }}>{opt.id}</strong>
-                          <span>{opt.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {g.questions.map(q => (
-                  <QuestionRenderer 
-                    key={q.id} 
-                    question={q} 
-                    value={answers[q.id]} 
-                    onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
-                  />
-                ))}
-              </div>
-            ))
-          ) : (
-            currentPart?.questions?.map(q => (
-              <QuestionRenderer 
-                key={q.id} 
-                question={q} 
-                value={answers[q.id]} 
-                onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
-              />
-            ))
-          )}
-          {(!currentPart?.questions || currentPart.questions.length === 0) && (
-            <div style={{ fontSize: 13, color: 'var(--text-muted)', textAlign: 'center', padding: '24px 0' }}>
-              No structured questions detected.
+        {currentPart?.questionGroups?.map((g, gIdx) => {
+          // Questions whose blank already renders as an inline input in the stimulus
+          // are part of the form itself; only standalone questions get a block below.
+          const inlineIds = new Set(
+            [...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1])
+          );
+          const standalone = (g.questions || []).filter(q => !inlineIds.has(q.id));
+          return (
+            <div key={g.groupId || gIdx} style={{
+              background: 'var(--bg-card)',
+              border: 'var(--border-dark)',
+              borderRadius: 'var(--r-card)',
+              padding: '26px 30px',
+              boxShadow: '0 3px 0 #151313',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14
+            }}>
+              {g.instructions && (
+                <div style={{
+                  fontWeight: 800, fontSize: 13.5, color: 'var(--text-primary)',
+                  background: 'var(--surface-sunken)', padding: '10px 16px',
+                  borderRadius: 10, border: '1px solid var(--border-subtle)',
+                  letterSpacing: '0.01em'
+                }}>
+                  Questions {g.questions?.[0]?.questionNumber}
+                  {g.questions?.length > 1 && `–${g.questions[g.questions.length - 1]?.questionNumber}`} · {g.instructions}
+                  {g.wordLimit && <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}> ({g.wordLimit})</span>}
+                </div>
+              )}
+              {g.groupType !== 'mcq' && (
+                <HtmlContentRenderer
+                  htmlContent={g.htmlContent}
+                  answers={answers}
+                  setAnswers={setAnswers}
+                />
+              )}
+              {standalone.map(q => (
+                <QuestionRenderer
+                  key={q.id}
+                  question={q}
+                  value={answers[q.id]}
+                  onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))}
+                />
+              ))}
             </div>
-          )}
-        </div>
+          );
+        })}
       </div>
 
       {/* ── 5. UNIVERSAL 3-ZONE EXAM BOTTOM NAVIGATION ── */}

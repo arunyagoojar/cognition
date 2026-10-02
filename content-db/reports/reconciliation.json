@@ -1,0 +1,99 @@
+{
+ "generatedBy": "pipeline/build_reports.py (Phase 3)",
+ "source": {
+  "pages_total": 1096,
+  "templates": {
+   "listening_test": 207,
+   "academic_reading_test": 318,
+   "general_reading_test": 126,
+   "speaking_cue_card": 179,
+   "listening_mcq_test": 52,
+   "academic_writing_test": 131,
+   "hub_or_info": 13,
+   "sample_essay": 32,
+   "legal_misc": 5,
+   "tutorial_hub": 5,
+   "official_book_hub": 21,
+   "vocabulary_hub": 2,
+   "home": 1,
+   "test_page_loose_html": 4
+  }
+ },
+ "listening": {
+  "tests_extracted": 208,
+  "test_status": {
+   "flagged": 125,
+   "verified": 82,
+   "duplicate": 1
+  },
+  "duplicates": [
+   [
+    "ielts-listening-test-61",
+    "ielts-listening-test-100"
+   ]
+  ],
+  "question_groups": {
+   "verified": 1761,
+   "flagged": 6,
+   "quarantined": 13
+  },
+  "questions_total": 8023,
+  "answers_checked_vs_independent_reparse": 7983,
+  "answer_mismatch_count": 0,
+  "answer_mismatches": [],
+  "answers_absent_in_independent_key": 0,
+  "audio_status": {
+   "resolved": 208
+  },
+  "audio_flags": {
+   "CACHE_VARIANT_CANONICALIZED": 85,
+   "AUDIO_EXTENSION_ANOMALY": 1,
+   "AUDIO_GENERIC_NAME": 3,
+   "ASSET_PAGE_MISMATCH": 1
+  },
+  "images_referenced": 136,
+  "images_missing": 0,
+  "quarantine_reasons": {
+   "group:PHANTOM_SPLIT_MERGED": 80,
+   "group:INSTRUCTION_MISSING": 13,
+   "question:OPTIONS_MISSING": 7,
+   "question:ANSWER_NOT_IN_OPTIONS": 1
+  },
+  "emitted_to_runtime": 207
+ },
+ "speaking": {
+  "pages_discovered": 179,
+  "genuine_packages": 179,
+  "part1_count": 0,
+  "part2_count": 179,
+  "part3_count": 0,
+  "part1_available": false,
+  "part3_available": false,
+  "packages_with_sample_answers": 179,
+  "status": {
+   "verified": 178,
+   "flagged": 1
+  },
+  "emitted_to_runtime": 179
+ },
+ "reconciliation": {
+  "listening": {
+   "discovered": 211,
+   "verified_emitted": 207,
+   "quarantined": 0,
+   "duplicates": 1,
+   "irrelevant": 3,
+   "sum": 211,
+   "reconciles": true
+  },
+  "speaking": {
+   "discovered": 179,
+   "verified": 179,
+   "quarantined": 0,
+   "duplicates": 0,
+   "irrelevant": 0,
+   "sum": 179,
+   "reconciles": true
+  }
+ }
+}

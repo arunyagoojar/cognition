@@ -276,7 +276,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         testTitle={test?.title || 'IELTS Speaking Practice'}
         subtitle="Simulate an authentic face-to-face IELTS interview with simulated examiner prompts, cue card preparation, and speech evaluation."
         metaItems={[
-          { label: '3 Parts', sub: 'Interview, Cue Card, Discussion' },
+          { label: test?.coverage?.part2 === 'available' && test?.coverage?.part1 === 'unavailable'
+              ? 'Part 2 Cue Cards'
+              : '3 Parts', sub: test?.coverage?.part1 === 'unavailable'
+              ? 'Source coverage: cue cards (Part 1/3 unavailable in content source)'
+              : 'Interview, Cue Card, Discussion' },
           { label: '14 Minutes', sub: 'Strict timed sequence' },
           { label: 'Band 0–9', sub: 'Official-style scoring' },
         ]}

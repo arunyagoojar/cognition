@@ -26,9 +26,10 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
       if (tagName === 'input') {
         const type = node.getAttribute('type');
         if (type === 'hidden') return null; // skip hidden
-        
-        // Infer question number from context or just use a counter
-        const qId = `q${inputIndex++}`;
+
+        // Production content wires stimulus inputs to question ids via data-qid;
+        // fall back to positional ids for legacy content.
+        const qId = node.getAttribute('data-qid') || `q${inputIndex++}`;
         const val = answers[qId] || '';
         
         if (type === 'radio' || type === 'checkbox') {

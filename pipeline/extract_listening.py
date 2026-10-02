@@ -47,7 +47,7 @@ def content_hash(*parts):
     return hashlib.sha256("\u241f".join(parts).encode()).hexdigest()[:8]
 
 def looks_like_instruction(text):
-    return bool(re.search(r"Complete (?:the|your)|Choose (?:the correct|FIVE|TWO|THREE)|Label the|Write |Look at|next to questions|from the box|Circle the|Answer the following|Decide which|Tick", text, re.I))
+    return bool(re.search(r"Complete (?:the|your)|Choose (?:the correct|FIVE|FOUR|SIX|SEVEN|TWO|THREE)|Label the|Write |Look at|next to questions|from the box|Circle the|Answer the following|Decide which|Tick", text, re.I))
 
 # ---------------------------------------------------------------- S0: loader
 def load_page(slug):
@@ -91,16 +91,22 @@ def parse_answer_key(soup):
         return None
     matches = list(KEY_SPLIT.finditer(text))
     if not matches:
-        return {"raw": text[:400], "error": "no numbered items found"}
+        # dialect C: unnumbered key — one value per line, positional order
+        lines = [re.sub(r"\s+", " ", l).strip() for l in text.split("\n") if l.strip()]
+        if len(lines) >= 8:
+            return {"items": [(i + 1, l) for i, l in enumerate(lines)],
+                    "trailing_empty": False, "keyStart": 1, "keyEnd": len(lines),
+                    "keyFormat": "positional_lines", "raw": text}
+        return {"raw": text, "error": "no numbered items found"}
     items = []
     for i, m in enumerate(matches):
         n = int(m.group(1))
         end = matches[i+1].start() if i + 1 < len(matches) else len(text)
         if i > 0 and n != int(matches[i-1].group(1)) + 1:
-            return {"raw": text[:400], "items_so_far": items, "error": f"key sequence breaks at {n}"}
+            return {"raw": text, "items_so_far": items, "error": f"key sequence breaks at {n}"}
         items.append((n, norm(text[m.end():end])))
     return {"items": items, "trailing_empty": bool(items) and items[-1][1] == "",
-            "keyStart": int(matches[0].group(1)), "keyEnd": int(matches[-1].group(1)), "raw": text[:400]}
+            "keyStart": int(matches[0].group(1)), "keyEnd": int(matches[-1].group(1)), "raw": text}
 
 # ---------------------------------------------------------------- S5: assets
 def resolve_audio(ec, test_number):
@@ -183,6 +189,7 @@ class Group:
     end_q: int
     instruction_raw: str = ""
     word_limit: str = ""
+    part_explicit: bool = False
     stimulus_kind: str = "none"   # none|table|notes|summary|form|map|diagram|box_match|mcq|figure
     stimulus_table: object = None
     stimulus_segments: list = field(default_factory=list)
@@ -276,8 +283,9 @@ def parse_inline_mcq(text):
         options.append({"letter": lm.group(1), "text": norm(rest[lm.end():end])})
     return number, stem, options
 
-def parse_letter_pairs(text):
-    letters = list(re.finditer(r"(?:^|\s)([A-J])\s+(?=\S)", text))
+def parse_letter_pairs(text, allowed=None):
+    letter_cls = "A-J" if not allowed else "".join(sorted(allowed)).replace("-", "")
+    letters = list(re.finditer(r"(?:^|\s)([" + letter_cls + r"])\s+(?=\S)", text))
     if len(letters) < 2: return None
     pairs = []
     for i, lm in enumerate(letters):
@@ -313,9 +321,10 @@ def extract(slug, page, key):
             groups.append(g)
         g = None
 
-    def new_group(part, start, end, instruction, path, raw):
+    def new_group(part, start, end, instruction, path, raw, part_explicit=False):
         gnew = Group(group_id=f"g{len(groups)+1:02d}", part=part, start_q=start, end_q=end,
-                     instruction_raw=instruction, raw_excerpt=raw, element_path=path)
+                     instruction_raw=instruction, raw_excerpt=raw, element_path=path,
+                     part_explicit=part_explicit)
         if pending_figures:
             gnew.figure_srcs.extend(pending_figures)
             pending_figures.clear()
@@ -366,6 +375,17 @@ def extract(slug, page, key):
         if g is not None and INPUT_ROW.match(text):
             g.stimulus_segments.append(text)
             continue
+        # a part marker can share a block with input rows (site formatting); if the
+        # block starts with input rows and contains a marker line, treat the marker
+        m_inline = re.search(r"Part\s*([1-4])\s*:?\s*(Questions?\s+\d{1,2}(?:\s*(?:[-–‑]|and)\s*\d{1,2})?)", text)
+        if m_inline and text[:6].startswith("("):
+            g.stimulus_segments.append(text[:m_inline.start()].strip())
+            close_group()
+            cur_part = int(m_inline.group(1))
+            gm = GROUP_INLINE.search(m_inline.group(2))
+            start, end = int(gm.group(1)), int(gm.group(2) or gm.group(1))
+            g = new_group(cur_part, start, end, "", path, text, part_explicit=True)
+            continue
         # part marker opening the block (optionally with group range + instruction)
         m = PART_RE.match(text)
         if m and GROUP_INLINE.search(m.group(2) or ""):
@@ -374,7 +394,7 @@ def extract(slug, page, key):
             rest = (m.group(2) or "").strip()
             gm = GROUP_INLINE.search(rest)
             start, end = int(gm.group(1)), int(gm.group(2) or gm.group(1))
-            g = new_group(cur_part, start, end, norm(rest[gm.end():]), path, text)
+            g = new_group(cur_part, start, end, norm(rest[gm.end():]), path, text, part_explicit=True)
             continue
         if m and norm(m.group(2) or "") == "":
             close_group()
@@ -392,7 +412,17 @@ def extract(slug, page, key):
             continue
         # ---- inside a group ----
         letters_ctx = re.search(r"choose the correct letter|circle the correct letter", g.instruction_raw, re.I)
-        if letters_ctx:
+        # non-standard letter sets (e.g. "letter G, N or E") are matching-style groups
+        instr_letters = sorted(set(re.findall(r"(?:letter[s]?|\b) ([A-Z])(?=[,\s.)]|$)", g.instruction_raw)))
+        nonstandard_letters = bool(instr_letters) and instr_letters[0] != "A"
+        if letters_ctx and nonstandard_letters:
+            if not QITEM.match(text):
+                pairs = parse_letter_pairs(text, set(instr_letters))
+                if pairs:
+                    g.shared_options.extend(pairs)
+                    g.stimulus_kind = "box_match"
+                    continue
+        if letters_ctx and not nonstandard_letters:
             # line-wise state machine: stems (inline options or pending) and option
             # lines attaching to the most recently opened stem
             consumed = False
@@ -425,9 +455,12 @@ def extract(slug, page, key):
                         g.stimulus_segments.append("[orphan option block: " + text[:80] + "]")
                     consumed = True
             if consumed: continue
-        if re.search(r"from the box|Choose (?:FIVE|TWO|THREE)", g.instruction_raw, re.I):
+        if re.search(r"from the box|Choose (?:FIVE|FOUR|SIX|SEVEN|TWO|THREE)|the correct letter [A-Z](,|\s|or)", g.instruction_raw, re.I):
             if not QITEM.match(text):
-                pairs = parse_letter_pairs(text)
+                allowed = set(re.findall(r"(?:^|[,\s(]) ([A-Z])(?=[,\s.)]|$)", g.instruction_raw)) or \
+                          set(re.findall(r"\b([A-Z])\b", g.instruction_raw)) & set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                allowed = {c for c in allowed if c in "ABCDEFGHIJKLMNOPQRST"}
+                pairs = parse_letter_pairs(text, allowed or None)
                 if pairs:
                     g.shared_options.extend(pairs)
                     g.stimulus_kind = "box_match"
@@ -492,7 +525,9 @@ def extract(slug, page, key):
                 g.questions.append(q)
                 if g.stimulus_kind == "none": g.stimulus_kind = "sentences"
                 added = True
-            if added: continue
+            if added:
+                g.stimulus_segments.append(text)
+                continue
         blanks_here = [int(mm.group(1)) for mm in BLANK_TOK.finditer(text)]
         if blanks_here:
             if g.stimulus_kind == "none":
@@ -511,12 +546,14 @@ def extract(slug, page, key):
                     q.stem_segments = segment_with_blanks(line)
                     q.stem_plain = segments_to_plain(q.stem_segments)
                     g.questions.append(q)
+                # keep the complete form line in the stimulus (inline-blank rendering)
+                g.stimulus_segments.append(line)
             continue
         # instruction accumulation (before content starts): instruction-like text,
         # or short prose lines; ALL-CAPS lines and unpunctuated lines are stimulus titles
         is_title = (text.upper() == text and len(text) > 8) or not re.search(r"[.?:]|\d", text)
         if looks_like_instruction(text) or \
-          (g.instruction_raw and not g.questions and g.stimulus_kind == "none" and
+          (not g.questions and g.stimulus_kind == "none" and
            len(text) < 140 and not re.search(r"\d", text) and not is_title):
             g.instruction_raw = (g.instruction_raw + " " + text).strip()
             wl = WORD_LIMIT.search(text)
