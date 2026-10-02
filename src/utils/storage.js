@@ -54,7 +54,7 @@ export function saveSkillScore(skill, scoreData) {
       testLabel: scoreData?.testLabel || `${skill.toUpperCase()} Practice`,
       startedAt: scoreData?.startedAt || new Date().toISOString(),
       completedAt: new Date().toISOString(),
-      status: 'completed',
+      status: scoreData?.status || (typeof band === 'number' ? 'completed' : 'partial'),
       overallBand: band,
       [skill]: {
         ...scoreData,

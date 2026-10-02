@@ -440,17 +440,74 @@ ${t2Clean || '(No response submitted)'}`;
         const validated = validateWritingEvaluationJson(parsed);
 
         if (validated) {
-          const finalResult = {
-            ...validated,
-            band: validated.overallBand,
-            evaluationStatus: 'completed',
+          // Coverage honesty: a meaningful attempt is defined by word floors.
+          // Task 1 <20 or Task 2 <40 words = not attempted (no evidence to score).
+          // An overall band is issued ONLY when BOTH tasks have real attempts;
+          // a single task yields response-level qualitative feedback with all
+          // band numbers withheld (same rule as Speaking).
+          const t1Attempted = t1Words >= 20;
+          const t2Attempted = t2Words >= 40;
+          const bothAttempted = t1Attempted && t2Attempted;
+
+          if (bothAttempted) {
+            const finalResult = {
+              ...validated,
+              band: validated.overallBand,
+              evaluationStatus: 'completed',
+              coverage: {
+                task1: t1Attempted ? 'attempted' : 'not_attempted',
+                task2: t2Attempted ? 'attempted' : 'not_attempted',
+                complete: true,
+                statement: `Task 1: ${t1Words} words · Task 2: ${t2Words} words.`,
+              },
+              modelUsed: model,
+              task1Words: t1Words,
+              task2Words: t2Words,
+              evaluatedAt: new Date().toISOString()
+            };
+            setAiCacheItem(contentHash, finalResult);
+            return finalResult;
+          }
+
+          const stripTaskBands = (criteria) => {
+            if (!criteria) return null;
+            const out = {};
+            for (const [k, v] of Object.entries(criteria)) {
+              out[k] = {
+                assessed: true,
+                band: null,
+                feedback: [v.evidence, v.rationale, v.improvementFocus].filter(Boolean).join(' ') || '',
+              };
+            }
+            return out;
+          };
+          const missing = [!t1Attempted && 'Task 1', !t2Attempted && 'Task 2'].filter(Boolean);
+          const finalPartial = {
+            evaluationStatus: 'partial',
+            band: null,
+            overallBand: null,
+            task1Band: null,
+            task2Band: null,
+            criteria: stripTaskBands(validated.criteria),
+            overallSummary: validated.overallSummary || '',
+            task1Feedback: t1Attempted ? validated.task1Feedback : '',
+            task2Feedback: t2Attempted ? validated.task2Feedback : '',
+            strengths: validated.strengths || '',
+            areasForImprovement: validated.areasForImprovement || '',
+            coverage: {
+              task1: t1Attempted ? 'attempted' : 'not_attempted',
+              task2: t2Attempted ? 'attempted' : 'not_attempted',
+              complete: false,
+              statement: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted (${!t1Attempted ? `Task 1: ${t1Words}` : `Task 1: ${t1Words}`} words${!t1Attempted && !t2Attempted ? '; ' : ''}${!t2Attempted ? `Task 2: ${t2Words}` : ''} words). Overall band withheld — response-level feedback only.`,
+            },
+            message: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted, so no overall IELTS Writing band can be issued. Feedback covers only what you wrote.`,
             modelUsed: model,
             task1Words: t1Words,
             task2Words: t2Words,
             evaluatedAt: new Date().toISOString()
           };
-          setAiCacheItem(contentHash, finalResult);
-          return finalResult;
+          setAiCacheItem(contentHash, finalPartial);
+          return finalPartial;
         }
       }
     } catch (e) {

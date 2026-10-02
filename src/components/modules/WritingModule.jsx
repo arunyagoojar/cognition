@@ -213,7 +213,8 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
     const isCompleted = result?.evaluationStatus === 'completed' && typeof result?.band === 'number';
-    const isFailed = result?.evaluationStatus === 'failed' || result?.band === null;
+    const isPartial = result?.evaluationStatus === 'partial';
+    const isFailed = result?.evaluationStatus === 'failed' || (!isCompleted && !isPartial);
 
     const handleSaveAndReturn = () => {
       const attemptId = createAttemptId('writing');
@@ -224,7 +225,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         testLabel: test?.title || 'IELTS Writing Practice',
         startedAt: new Date(Date.now() - 3600000).toISOString(),
         completedAt: new Date().toISOString(),
-        status: 'completed',
+        status: isCompleted ? 'completed' : (isPartial ? 'partial' : 'failed'),
         overallBand: isCompleted ? result.band : null,
         writing: {
           band: isCompleted ? result.band : null,
@@ -355,8 +356,18 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
               marginTop: 6,
               fontFamily: 'Kodchasan, sans-serif'
             }}>
-              {isCompleted ? result.band.toFixed(1) : (isFailed ? 'Unavailable' : 'Pending')}
+              {isCompleted ? result.band.toFixed(1) : (isPartial ? 'Partial' : (isFailed ? 'Unavailable' : 'Pending'))}
             </div>
+            {isPartial && result?.coverage?.statement && (
+              <div style={{ fontSize: 12.5, color: 'var(--text-primary)', marginTop: 8, fontWeight: 700, maxWidth: 360 }}>
+                {result.coverage.statement}
+              </div>
+            )}
+            {isPartial && (
+              <div style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 4, fontWeight: 600, maxWidth: 360 }}>
+                Feedback below covers only what you wrote — no overall band.
+              </div>
+            )}
             <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
               Target: {getTargetBand() || '8.0'}
             </div>
@@ -364,7 +375,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         </div>
 
         {/* ── 2. AI NOTICE IF KEY MISSING OR FAILED ── */}
-        {isFailed && (
+        {!isPartial && isFailed && (
           <div style={{
             background: 'rgba(255, 87, 52, 0.08)',
             border: '1.5px solid #151313',
@@ -416,7 +427,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
                   <span style={{ fontSize: 36, fontWeight: 800, color: hasBand ? 'var(--c-coral)' : 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
-                    {hasBand ? c.data.band.toFixed(1) : '--'}
+                    {hasBand ? c.data.band.toFixed(1) : (isPartial ? 'Not scored' : '--')}
                   </span>
                   {hasBand && <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>}
                 </div>

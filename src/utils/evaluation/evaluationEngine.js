@@ -257,7 +257,7 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
  *   explicit availableCriteria list).
  * - notes are planning material and are never sent to the evaluator.
  */
-export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, attemptId = 'anon' }) {
+export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, attemptId = 'anon', expectedQuestions = null }) {
   const spokenWords = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
 
   const partsAttempted = new Set();
@@ -265,17 +265,39 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
   Object.keys(transcripts).forEach(k => {
     if (transcripts[k] && transcripts[k].split(/\s+/).length >= 5) {
       questionsAnswered++;
-      const match = k.match(/part(\d+)/i);
-      if (match) partsAttempted.add(match[1]);
+      // keys are `${partIdx}_${questionIdx}` (e.g. "0_2"); also tolerate "part0_q0"
+      const m = k.match(/^(\d+)_/) || k.match(/part(\d+)/i);
+      if (m) partsAttempted.add(String(parseInt(m[1], 10) + (k.startsWith('part') ? 0 : 1)));
     }
   });
-  const isCoverageComplete = partsAttempted.size >= 3 && questionsAnswered >= 8;
-  const coverage = { partsAttempted: Array.from(partsAttempted), questionsAnswered, questionsExpected: 14, isComplete: isCoverageComplete };
+  const expected = typeof expectedQuestions === 'number' && expectedQuestions > 0
+    ? expectedQuestions
+    : Math.max(questionsAnswered, 14);
+  // Full interview = every part attempted AND at least 3/4 of the questions answered
+  const isCoverageComplete = partsAttempted.size >= 3 && questionsAnswered >= Math.ceil(expected * 0.75);
+  const coverage = { partsAttempted: Array.from(partsAttempted), questionsAnswered,
+                      questionsExpected: expected, partsExpected: 3, isComplete: isCoverageComplete,
+                      statement: `You answered ${questionsAnswered} of ${expected} questions across ${partsAttempted.size} of 3 parts.` };
 
   const pronunciationNotAssessed = {
     assessed: false,
     band: null,
     reason: 'Audio pronunciation analysis is not currently available. Pronunciation is never inferred from transcription accuracy.',
+  };
+
+  // Partial coverage never produces band scores — qualitative feedback only.
+  const stripBands = (raw) => {
+    if (!raw || typeof raw !== 'object') return null;
+    const out = {};
+    for (const [k, v] of Object.entries(raw)) {
+      out[k] = {
+        assessed: true,
+        band: null,
+        feedback: (v && typeof v === 'object' ? (v.notes || v.feedback || v.description || '') : String(v ?? '')),
+      };
+    }
+    out.pronunciation = pronunciationNotAssessed;
+    return out;
   };
 
   if (!spokenWords || spokenWords.split(/\s+/).length < 5) {
@@ -286,7 +308,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       overallSpeakingBand: null,
       criteria: { pronunciation: pronunciationNotAssessed },
       coverage,
-      message: 'No audio or spoken transcript recorded.'
+      message: `No audio or spoken transcript recorded. ${coverage.statement}`
     };
   }
 
@@ -300,7 +322,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       overallSpeakingBand: null,
       criteria: { pronunciation: pronunciationNotAssessed },
       coverage,
-      message: 'AI evaluation is unavailable. Add an API key in Settings to receive criterion-level feedback.',
+      message: `AI evaluation is unavailable. Add an API key in Settings to receive criterion-level feedback. ${coverage.statement}`,
     };
   }
 
@@ -319,27 +341,27 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       overallSpeakingBand: null,
       criteria: { pronunciation: pronunciationNotAssessed },
       coverage,
-      message: res?.message || 'The evaluation service could not score this attempt. You can retry.',
+      message: `${res?.message || 'The evaluation service could not score this attempt. You can retry.'} ${coverage.statement}`,
       retryable: true,
     };
   }
 
   // Hard honesty rule: strip any model-returned pronunciation score.
-  const criteria = { ...res.criteria, pronunciation: pronunciationNotAssessed };
-
   if (!isCoverageComplete) {
+    // Partial coverage: response-level QUALITATIVE feedback only — no band numbers,
+    // no overall band. A score from a fraction of the interview is not an assessment.
     return {
       evaluationState: 'PARTIAL',
       status: 'partial',
-      band: res.band ?? null,
+      band: null,
       overallSpeakingBand: null,
-      responseFeedbackBand: res.band ?? null,
-      criteria,
+      criteria: stripBands(res.criteria),
       overallSummary: res.overallSummary || '',
       strengths: res.strengths || '',
       areasForImprovement: res.areasForImprovement || '',
       provider: res.provider,
       coverage,
+      message: `${coverage.statement} Criterion band scores require the full interview; this is response-level feedback only.`,
     };
   }
 
@@ -348,7 +370,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     status: 'completed',
     band: res.band ?? null,
     overallSpeakingBand: res.overallBand ?? null,
-    criteria,
+    criteria: { ...res.criteria, pronunciation: pronunciationNotAssessed },
     overallSummary: res.overallSummary || '',
     strengths: res.strengths || '',
     areasForImprovement: res.areasForImprovement || '',

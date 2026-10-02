@@ -238,11 +238,13 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       audioRecordings[k] = rec.blob || null;
     });
 
+    const expectedQuestions = (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0);
     const evalResult = await evaluateSpeakingResponses({
       transcripts,
       testMeta: { title: test?.title || 'IELTS Speaking Practice' },
       audioRecordings,
       attemptId: createAttemptId('speaking'),
+      expectedQuestions,
     });
 
     setTimeout(() => {
@@ -426,13 +428,16 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {state === 'NOT_CONFIGURED' && 'AI evaluation is unavailable'}
                 {state === 'NOT_ASSESSED' && 'Not enough speech was recorded'}
                 {state === 'FAILED' && 'Evaluation could not be completed'}
-                {isPartial && 'Response-level feedback only'}
+                {isPartial && 'Response-level feedback — not a band score'}
+              </div>
+              <div style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--text-primary)', marginTop: 10, fontFamily: 'var(--font-family)' }}>
+                {result?.coverage?.statement || ''}
               </div>
               <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 8, maxWidth: 640 }}>
                 {state === 'NOT_CONFIGURED' && (result?.message || 'Add an API key in Settings to receive criterion-level feedback.')}
                 {state === 'NOT_ASSESSED' && (result?.message || 'Record at least one full answer to receive feedback.')}
                 {state === 'FAILED' && (result?.message || 'You can retry the evaluation.')}
-                {isPartial && 'You recorded speech, but a full IELTS Speaking band requires all three parts of the interview. Overall band withheld.'}
+                {isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
               </div>
               {state === 'NOT_CONFIGURED' && (
                 <button onClick={onBack} style={{ marginTop: 16, padding: '10px 18px', borderRadius: 12, fontWeight: 800, border: '1.5px solid #151313', background: 'var(--c-yellow)', cursor: 'pointer' }}>
@@ -463,14 +468,18 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                     <span style={{ fontSize: 18, fontWeight: 800 }}>{c.data.band.toFixed(1)}</span>
                   ) : (
                     <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)' }}>
-                      {isPron ? 'Not assessed' : hasEval ? '—' : 'Unavailable'}
+                      {isPron ? 'Not assessed' : hasEval ? 'Not scored' : 'Unavailable'}
                     </span>
                   )}
                 </div>
                 <div style={{ fontSize: 12.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                   {isPron
                     ? (c.data?.reason || 'Audio pronunciation analysis is not currently available.')
-                    : (hasBand && c.data?.notes ? c.data.notes : c.defaultNote)}
+                    : hasBand
+                      ? (c.data?.notes || c.defaultNote)
+                      : hasEval
+                        ? (c.data?.feedback || c.data?.notes || `${c.title} band scores are issued only for a full interview. Your answers were reviewed qualitatively.`)
+                        : c.defaultNote}
                 </div>
               </div>
             );
@@ -648,10 +657,12 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               </div>
               {activePlaybackUrl && <audio src={activePlaybackUrl} controls style={{ width: '100%' }} />}
               {currentRecording.transcript && (
-                <details style={{ fontSize: 13 }}>
-                  <summary style={{ cursor: 'pointer', fontWeight: 700, color: 'var(--text-secondary)' }}>Transcript</summary>
-                  <p style={{ fontFamily: 'var(--font-exam)', lineHeight: 1.55 }}>{currentRecording.transcript}</p>
-                </details>
+                <div>
+                  <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
+                  <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)' }}>
+                    {currentRecording.transcript}
+                  </div>
+                </div>
               )}
             </div>
           )}
@@ -710,9 +721,22 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 <button type="button" onClick={stopRecording} style={{ padding: '11px 22px', borderRadius: 999, background: '#151313', color: '#fff', fontWeight: 800, fontSize: 14, cursor: 'pointer' }}>Stop</button>
               </>
             )}
+            {isRecording && liveTranscript && (
+              <div style={{ width: '100%', maxHeight: 110, overflowY: 'auto', background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 13.5, lineHeight: 1.5, color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                {liveTranscript}…
+              </div>
+            )}
             {currentRecording && !isRecording && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: 8 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%' }}>
+                {currentRecording.transcript && (
+                  <div>
+                    <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
+                    <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)' }}>
+                      {currentRecording.transcript || '(no speech detected)'}
+                    </div>
+                  </div>
+                )}
+                <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
                   <button type="button" onClick={replayRecording} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>▶ Replay</button>
                   <button type="button" onClick={() => startRecording()} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
                 </div>
