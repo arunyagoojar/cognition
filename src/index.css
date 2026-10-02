@@ -3493,64 +3493,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   to { transform: rotate(360deg); }
 }
 
-/* ─── Unified account menu (Phase 7 auth) ───────────────────────── */
-.account-menu-wrap { position: relative; }
-.account-menu-btn {
-  width: 34px; height: 34px; border-radius: 50%;
-  border: 1.5px solid var(--border-subtle);
-  background: var(--surface-interactive);
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 0;
-  transition: border-color var(--dur-hover) var(--ease-smooth);
-}
-.account-menu-btn:hover { border-color: var(--c-coral); }
-.account-avatar-img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.account-avatar-initials {
-  font-family: var(--font-family); font-weight: 800; font-size: 13px;
-  color: var(--text-primary);
-}
-.account-menu-dropdown {
-  position: absolute; top: calc(100% + 8px); right: 0;
-  min-width: 240px; z-index: 1000;
-  background: var(--bg-card);
-  border: 1.5px solid var(--text-primary);
-  border-radius: var(--r-btn);
-  box-shadow: 0 6px 0 var(--text-primary);
-  overflow: hidden;
-}
-.account-menu-header {
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 16px;
-}
-.account-menu-avatar {
-  width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
-  border: 1px solid var(--border-subtle);
-}
-.account-menu-name {
-  font-family: var(--font-family); font-weight: 800; font-size: 14px;
-  color: var(--text-primary);
-}
-.account-menu-email {
-  font-family: var(--font-family); font-size: 12px;
-  color: var(--text-secondary);
-}
-.account-menu-sep {
-  height: 1px; background: var(--border-subtle);
-}
-.account-menu-item {
-  display: flex; align-items: center; gap: 10px;
-  width: 100%; padding: 11px 16px;
-  background: none; border: none; cursor: pointer;
-  font-family: var(--font-family); font-size: 13.5px; font-weight: 600;
-  color: var(--text-primary);
-  transition: background var(--dur-micro) var(--ease-smooth);
-}
-.account-menu-item:hover { background: var(--surface-hover); }
-.account-menu-item svg { color: var(--text-secondary); }
-.account-menu-signout { color: var(--c-coral); }
-
 /* ─── Clerk modal styling to match Cognition ────────────────────── */
 .clerk-card, .cl-modalContent {
   border-radius: 28px !important;
@@ -3577,3 +3519,41 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   background: #FF6B4A !important;
   color: #151313 !important;
 }
+
+/* ─── Compact account dropdown (Phase 8) ────────────────────────── */
+.account-menu-wrap { position: relative; }
+.account-menu-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--surface-interactive);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 0;
+  transition: border-color var(--dur-hover) var(--ease-smooth);
+}
+.account-menu-btn:hover { border-color: var(--c-coral); }
+.account-avatar-img { width: 100%; height: 100%; object-fit: cover; }
+.account-menu-dropdown {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  min-width: 210px; z-index: 1000;
+  background: var(--bg-card);
+  border: 1.5px solid var(--text-primary);
+  border-radius: 14px;
+  box-shadow: 0 4px 0 var(--text-primary);
+  overflow: hidden;
+}
+.account-menu-header { padding: 10px 14px; }
+.account-menu-email-full {
+  font-family: var(--font-family); font-size: 13px; font-weight: 600;
+  color: var(--text-primary); word-break: break-all;
+}
+.account-menu-sep { height: 1px; background: var(--border-subtle); }
+.account-menu-item {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 9px 14px;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-family); font-size: 13px; font-weight: 600;
+  color: var(--text-primary);
+  transition: background var(--dur-micro) var(--ease-smooth);
+}
+.account-menu-item:hover { background: var(--surface-hover); }
+.account-menu-item svg { color: var(--text-secondary); }

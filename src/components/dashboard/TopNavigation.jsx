@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { UserButton, useUser, useClerk } from '@clerk/react';
+import React from 'react';
+import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
   const { isSignedIn, user } = useUser();
-  const { openSignIn, openUserProfile, signOut } = useClerk();
+  const { openSignIn, signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -16,7 +16,7 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
     return () => document.removeEventListener('mousedown', close);
   }, []);
 
-  const initials = user?.firstName?.charAt(0)?.toUpperCase() || user?.username?.charAt(0)?.toUpperCase() || '?';
+  const email = user?.primaryEmailAddress?.emailAddress || '';
 
   return (
     <header className="top-nav">
@@ -44,31 +44,18 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
               {user?.imageUrl ? (
                 <img src={user.imageUrl} alt="" className="account-avatar-img" />
               ) : (
-                <span className="account-avatar-initials">{initials}</span>
+                <span className="account-avatar-initials">{email.charAt(0).toUpperCase()}</span>
               )}
             </button>
 
             {menuOpen && (
               <div className="account-menu-dropdown">
                 <div className="account-menu-header">
-                  {user?.imageUrl && <img src={user.imageUrl} alt="" className="account-menu-avatar" />}
-                  <div>
-                    <div className="account-menu-name">{user?.fullName || user?.username || 'User'}</div>
-                    <div className="account-menu-email">{user?.primaryEmailAddress?.emailAddress || ''}</div>
-                  </div>
+                  <div className="account-menu-email-full">{email}</div>
                 </div>
                 <div className="account-menu-sep" />
-                <button className="account-menu-item" onClick={() => { setMenuOpen(false); onOpenSettings(); }}>
-                  <Icon name="gear" size={15} />
-                  <span>Settings</span>
-                </button>
-                <button className="account-menu-item" onClick={() => { setMenuOpen(false); openUserProfile(); }}>
-                  <Icon name="user" size={15} />
-                  <span>Manage account</span>
-                </button>
-                <div className="account-menu-sep" />
-                <button className="account-menu-item account-menu-signout" onClick={() => { setMenuOpen(false); signOut(); }}>
-                  <Icon name="back" size={15} />
+                <button className="account-menu-item" onClick={() => { setMenuOpen(false); signOut(); }}>
+                  <Icon name="back" size={14} />
                   <span>Sign out</span>
                 </button>
               </div>
