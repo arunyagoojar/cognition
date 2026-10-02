@@ -3800,7 +3800,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: none !important;
   border: none !important;
   border-radius: 28px !important;
-  padding: 24px 26px !important;
+  padding: 24px 26px 14px 26px !important;
   box-sizing: border-box !important;
   font-family: var(--font-family) !important;
   margin: 0 !important;
@@ -4063,10 +4063,15 @@ input.cl-input::placeholder {
 /* Footer */
 .cognition-auth-footer,
 .cl-footer {
-  margin-top: 14px !important;
-  padding-top: 12px !important;
-  border-top: 1px solid var(--border-subtle) !important;
+  margin-top: 12px !important;
+  padding: 0 !important;
+  border-top: none !important;
   text-align: center !important;
+}
+.cognition-auth-footer-action,
+.cl-footerAction {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .cognition-auth-footer-text,
 .cl-footerActionText {
@@ -4087,14 +4092,21 @@ input.cl-input::placeholder {
 .cl-footerActionLink:hover {
   text-decoration: underline !important;
 }
+.cl-footerItem {
+  padding: 6px 0 0 0 !important;
+  margin: 0 !important;
+}
 
 /* Development Badge / Watermark */
 .cl-internal-b3fm6y,
 .cl-developmentBadge,
-.cl-footerPages {
+.cl-footerPages,
+[data-clerk-dev-mode-notice],
+p.cl-internal-1v2te0e {
   font-size: 11px !important;
   opacity: 0.65 !important;
-  margin-top: 6px !important;
+  margin: 2px 0 0 0 !important;
+  padding: 0 !important;
   text-align: center !important;
 }
 
