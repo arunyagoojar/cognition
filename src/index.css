@@ -3864,6 +3864,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .cl-socialButtonsRoot {
   width: 100% !important;
   box-sizing: border-box !important;
+  margin-bottom: 16px !important;
 }
 .cl-socialButtons {
   display: flex !important;
@@ -3978,27 +3979,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   background-position: center !important;
 }
 
-/* Divider */
+/* Divider (removed) */
 .cognition-auth-divider,
 .cl-dividerRow {
-  margin: 14px 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-}
-.cognition-auth-divider-line,
-.cl-dividerLine {
-  background: var(--border-subtle) !important;
-  height: 1px !important;
-  flex: 1 !important;
-}
-.cognition-auth-divider-text,
-.cl-dividerText {
-  font-family: var(--font-family) !important;
-  font-size: 11.5px !important;
-  font-weight: 600 !important;
-  color: var(--text-tertiary) !important;
-  text-transform: lowercase !important;
+  display: none !important;
 }
 
 /* Form Fields */
