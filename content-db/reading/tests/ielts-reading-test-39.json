@@ -1,0 +1,839 @@
+{
+ "id": "reading.test-0039.89b71d7e",
+ "module": "reading",
+ "sourceNumbers": [
+  39
+ ],
+ "slug": "ielts-reading-test-39",
+ "title": "IELTS Academic Reading Test 39",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-39/index.html",
+   "sha256": "4232c968fe496fae4b3c3d991686b8df2cac6c6469a0d769b1771ab6fcb28b43",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-39/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "The Megafires of California",
+   "paragraphs": [
+    "Wildfires are becoming an increasing menace in the western United States, with Southern California being the hardest hit area. There’s a reason fire squads battling more frequent blazes in Southern California are having such difficulty containing the flames, despite better preparedness than ever and decades of experience fighting fires fanned by the ‘Santa Ana Winds’. The wildfires themselves, experts say, are generally hotter, faster, and spread more erratically than in the past.",
+    "Megafires, also called ‘siege fires’, are the increasingly frequent blazes that burn 500,000 acres or more – 10 times the size of the average forest fire of 20 years ago. Some recent wildfires are among the biggest ever in California in terms of acreage burned, according to state figures and news reports.",
+    "One explanation for the trend to more superhot fires is that the region, which usually has dry summers, has had significantly below normal precipitation in many recent years. Another reason, experts say, is related to the century- long policy of the US Forest Service to stop wildfires as quickly as possible. The unintentional consequence has been to halt the natural eradication of underbrush, now the primary fuel for megafires.",
+    "Three other factors contribute to the trend, they add. First is climate change, marked by a 1-degree Fahrenheit rise in average yearly temperature across the western states. Second is fire seasons that on average are 78 days longer than they were 20 years ago. Third is increased construction of homes in wooded areas.",
+    "‘We are increasingly building our homes in fire-prone ecosystems,’ says Dominik Kulakowski, adjunct professor of biology at Clark University Graduate School of Geography in Worcester, Massachusetts. ‘Doing that in many of the forests of the western US is like building homes on the side of an active volcano.’",
+    "In California, where population growth has averaged more than 600,000 a year for at least a decade, more residential housing is being built. ‘What once was open space is now residential homes providing fuel to make fires burn with greater intensity,’ says Terry McHale of the California Department of Forestry firefighters’ union. ‘With so much dryness, so many communities to catch fire, so many fronts to fight, it becomes an almost incredible job.’",
+    "That said, many experts give California high marks for making progress on preparedness in recent years, after some of the largest fires in state history scorched thousands of acres, burned thousands of homes, and killed numerous people. Stung in the past by criticism of bungling that allowed fires to spread when they might have been contained, personnel are meeting the peculiar challenges of neighborhood – and canyon- hopping fires better than previously, observers say.",
+    "State promises to provide more up-to-date engines, planes, and helicopters to fight fires have been fulfilled. Firefighters’ unions that in the past complained of dilapidated equipment, old fire engines, and insufficient blueprints for fire safety are now praising the state’s commitment, noting that funding for firefighting has increased, despite huge cuts in many other programs. ‘We are pleased that the current state administration has been very proactive in its support of us, and [has] come through with budgetary support of the infrastructure needs we have long sought,’ says Mr. McHale of the firefighters’ union.",
+    "Besides providing money to upgrade the fire engines that must traverse the mammoth state and wind along serpentine canyon roads, the state has invested in better command-and-control facilities as well as in the strategies to run them. ‘In the fire sieges of earlier years, we found that other jurisdictions and states were willing to offer mutual-aid help, but we were not able to communicate adequately with them,’ says Kim Zagaris, chief of the state’s Office of Emergency Services Fire and Rescue Branch.",
+    "After a commission examined and revamped communications procedures, the statewide response ‘has become far more professional and responsive,’ he says. There is a sense among both government officials and residents that the speed, dedication, and coordination of firefighters from several states and jurisdictions are resulting in greater efficiency than in past ‘siege fire’ situations.",
+    "In recent years, the Southern California region has improved building codes, evacuation procedures, and procurement of new technology. ‘I am extraordinarily impressed by the improvements we have witnessed,’ says Randy Jacobs, a Southern California- based lawyer who has had to evacuate both his home and business to escape wildfires. ‘Notwithstanding all the damage that will continue to be caused by wildfires, we will no longer suffer the loss of life endured in the past because of the fire prevention and firefighting measures that have been put in place,’ he says."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Complete the notes below. Choose ONE WORD OR A NUMBER from the passage.",
+     "wordLimit": "",
+     "qtype": "note_completion",
+     "startQ": 1,
+     "endQ": 6,
+     "stimulusSegments": [
+      "Wildfires",
+      "Characteristics of wildfires and wildfire conditions today compared to the past:",
+      "• Occurrence: more frequent",
+      "• Temperature: hotter",
+      "• Speed: faster",
+      "Reasons wildfires cause more damage today compared to the past:",
+      "• Increase in yearly temperature"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "completion",
+       "stem": {
+        "plain": "• Movement: (1) ______ more unpredictably",
+        "segments": [
+         "• Movement:",
+         {
+          "blank": 1
+         },
+         "more unpredictably"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "spread",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Movement: (1)……………………more unpredictably",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "completion",
+       "stem": {
+        "plain": "• Size of fires: (2) ______ greater on average than two decades ago",
+        "segments": [
+         "• Size of fires:",
+         {
+          "blank": 2
+         },
+         "greater on average than two decades ago"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "10 times",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Size of fires: (2)……………………….greater on average than two decades ago",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "completion",
+       "stem": {
+        "plain": "• Rainfall: (3) ______ average",
+        "segments": [
+         "• Rainfall:",
+         {
+          "blank": 3
+         },
+         "average"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "below",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Rainfall: (3)…………………..average",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "completion",
+       "stem": {
+        "plain": "• More brush to act as (4) ______",
+        "segments": [
+         "• More brush to act as",
+         {
+          "blank": 4
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "fuel",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• More brush to act as (4)…………………..",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "completion",
+       "stem": {
+        "plain": "• Extended fire (5) ______",
+        "segments": [
+         "• Extended fire",
+         {
+          "blank": 5
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "seasons",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Extended fire (5)…………………..",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "completion",
+       "stem": {
+        "plain": "• More building of (6) ______ in vulnerable places",
+        "segments": [
+         "• More building of",
+         {
+          "blank": 6
+         },
+         "in vulnerable places"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "homes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• More building of (6)……………………….in vulnerable places",
+        "elementPath": "children[13]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[12]",
+      "rawExcerpt": "Questions 1-6\nComplete the notes below. Choose ONE WORD OR A NUMBER from the passage."
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 7-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this Cambridge IELTS Test 1 to 17",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 7,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 7,
+       "type": "tfng",
+       "stem": {
+        "plain": "The amount of open space in California has diminished over the last ten years.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7 The amount of open space in California has diminished over the last ten years.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 8,
+       "type": "tfng",
+       "stem": {
+        "plain": "Many experts believe California has made little progress in readying itself to fight fires.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "8 Many experts believe California has made little progress in readying itself to fight fires.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "tfng",
+       "stem": {
+        "plain": "Personnel in the past have been criticised for mishandling fire containment.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9 Personnel in the past have been criticised for mishandling fire containment.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "tfng",
+       "stem": {
+        "plain": "California has replaced a range of firefighting tools.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "10 California has replaced a range of firefighting tools.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "tfng",
+       "stem": {
+        "plain": "More firefighters have been hired to improve fire-fighting capacity.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11 More firefighters have been hired to improve fire-fighting capacity.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "tfng",
+       "stem": {
+        "plain": "Citizens and government groups disapprove of the efforts of different states and agencies working together.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12 Citizens and government groups disapprove of the efforts of different states and agencies working together.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "tfng",
+       "stem": {
+        "plain": "Randy Jacobs believes that loss of life from fires will continue at the same levels, despite changes made.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13 Randy Jacobs believes that loss of life from fires will continue at the same levels, despite changes made.",
+        "elementPath": "children[16]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[14]",
+      "rawExcerpt": "Questions 7-13\nDo the following statements agree with the information given in Reading Passage 1?\nIn boxes 7-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Second Nature",
+   "paragraphs": [
+    "A Psychologists have long held that a person’s character cannot undergo a transformation in any meaningful way and that the key traits of personality are determined at a very young age. However, researchers have begun looking more closely at ways we can change. Positive psychologists have identified 24 qualities we admire, such as loyalty and kindness, and are studying them to find out why they come so naturally to some people. What they’re discovering is that many of these qualities amount to habitual behaviour that determines the way we respond to the world. The good news is that all this can be learned.",
+    "Some qualities are less challenging to develop than others, optimism being one of them. However, developing qualities requires mastering a range of skills which are diverse and sometimes surprising. For example, to bring more joy and passion into your life, you must be open to experiencing negative emotions. Cultivating such qualities will help you realise your full potential.",
+    "B ‘The evidence is good that most personality traits can be altered,’ says Christopher Peterson, professor of psychology at the University of Michigan, who cites himself as an example. Inherently introverted, he realised early on that as an academic, his reticence would prove disastrous in the lecture hall. So he learned to be more outgoing and to entertain his classes. ‘Now my extroverted behaviour is spontaneous,’ he says.",
+    "C David Fajgenbaum had to make a similar transition. He was preparing for university, when he had an accident that put an end to his sports career. On campus, he quickly found that beyond ordinary counselling, the university had no services for students who were undergoing physical rehabilitation and suffering from depression like him. He therefore launched a support group to help others in similar situations. He took action despite his own pain – a typical response of an optimist.",
+    "D Suzanne Segerstrom, professor of psychology at the University of Kentucky, believes that the key to increasing optimism is through cultivating optimistic behaviour, rather than positive thinking. She recommends you train yourself to pay attention to good fortune by writing down three positive things that come about each day. This will help you convince yourself that favourable outcomes actually happen all the time, making it easier to begin taking action.",
+    "E You can recognise a person who is passionate about a pursuit by the way they are so strongly involved in it. Tanya Streeter’s passion is freediving – the sport of plunging deep into the water without tanks or other breathing equipment. Beginning in 1998, she set nine world records and can hold her breath for six minutes. The physical stamina required for this sport is intense but the psychological demands are even more overwhelming. Streeter learned to untangle her fears from her judgment of what her body and mind could do. ‘In my career as a competitive freediver, there was a limit to what I could do – but it wasn’t anywhere near what I thought it was,’ she says.",
+    "F Finding a pursuit that excites you can improve anyone’s life. The secret about consuming passions, though, according to psychologist Paul Silvia of the University of North Carolina, is that ‘they require discipline, hard work and ability, which is why they are so rewarding.’ Psychologist Todd Kashdan has this advice for those people taking up a new passion: ‘As a newcomer, you also have to tolerate and laugh at your own ignorance. You must be willing to accept the negative feelings that come your way,’ he says.",
+    "G In 2004, physician-scientist Mauro Zappaterra began his PhD research at Harvard Medical School. Unfortunately, he was miserable as his research wasn’t compatible with his curiosity about healing. He finally took a break and during eight months in Santa Fe, Zappaterra learned about alternative healing techniques not taught at Harvard. When he got back, he switched labs to study how cerebrospinal fluid nourishes the developing nervous system. He also vowed to look for the joy in everything, including failure, as this could help him learn about his research and himself.",
+    "One thing that can hold joy back is a person’s concentration on avoiding failure rather than their looking forward to doing something well. ‘Focusing on being safe might get in the way of your reaching your goals,’ explains Kashdan. For example, are you hoping to get through a business lunch without embarrassing yourself, or are you thinking about how fascinating the conversation might be?",
+    "H Usually, we think of courage in physical terms but ordinary life demands something else. For marketing executive Kenneth Pedeleose, it meant speaking out against something he thought was ethically wrong. The new manager was intimidating staff so Pedeleose carefully recorded each instance of bullying and eventually took the evidence to a senior director, knowing his own job security would be threatened. Eventually the manager was the one to go. According to Cynthia Pury, a psychologist at Clemson University, Pedeleose’s story proves the point that courage is not motivated by fearlessness, but by moral obligation. Pury also believes that people can acquire courage. Many of her students said that faced with a risky situation, they first tried to calm themselves down, then looked for a way to mitigate the danger, just as Pedeleose did by documenting his allegations. Over the long term, picking up a new character trait may help you move toward being the person you want to be. And in the short term, the effort itself could be surprisingly rewarding, a kind of internal adventure."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g03",
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 14,
+     "endQ": 18,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "completion",
+       "stem": {
+        "plain": "Psychologists have traditionally believed that a personality (14) ______ was impossible and that by a (15) ______ , a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is (16) ______ However, regardless of the quality, it is necessary to learn a wide variety of different (17) ______ in order for a new quality to develop; for example, a person must understand and feel some (18) ______ in order to increase their happiness.",
+        "segments": [
+         "Psychologists have traditionally believed that a personality",
+         {
+          "blank": 14
+         },
+         "was impossible and that by a",
+         {
+          "blank": 15
+         },
+         ", a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is",
+         {
+          "blank": 16
+         },
+         "However, regardless of the quality, it is necessary to learn a wide variety of different",
+         {
+          "blank": 17
+         },
+         "in order for a new quality to develop; for example, a person must understand and feel some",
+         {
+          "blank": 18
+         },
+         "in order to increase their happiness."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "change",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Psychologists have traditionally believed that a personality (14)………………………. was impossible and that by a (15)………………………., a person’s character tends to be fixed. This is not true according to positive ",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "completion",
+       "stem": {
+        "plain": "Psychologists have traditionally believed that a personality (14) ______ was impossible and that by a (15) ______ , a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is (16) ______ However, regardless of the quality, it is necessary to learn a wide variety of different (17) ______ in order for a new quality to develop; for example, a person must understand and feel some (18) ______ in order to increase their happiness.",
+        "segments": [
+         "Psychologists have traditionally believed that a personality",
+         {
+          "blank": 14
+         },
+         "was impossible and that by a",
+         {
+          "blank": 15
+         },
+         ", a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is",
+         {
+          "blank": 16
+         },
+         "However, regardless of the quality, it is necessary to learn a wide variety of different",
+         {
+          "blank": 17
+         },
+         "in order for a new quality to develop; for example, a person must understand and feel some",
+         {
+          "blank": 18
+         },
+         "in order to increase their happiness."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "young age",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Psychologists have traditionally believed that a personality (14)………………………. was impossible and that by a (15)………………………., a person’s character tends to be fixed. This is not true according to positive ",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "completion",
+       "stem": {
+        "plain": "Psychologists have traditionally believed that a personality (14) ______ was impossible and that by a (15) ______ , a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is (16) ______ However, regardless of the quality, it is necessary to learn a wide variety of different (17) ______ in order for a new quality to develop; for example, a person must understand and feel some (18) ______ in order to increase their happiness.",
+        "segments": [
+         "Psychologists have traditionally believed that a personality",
+         {
+          "blank": 14
+         },
+         "was impossible and that by a",
+         {
+          "blank": 15
+         },
+         ", a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is",
+         {
+          "blank": 16
+         },
+         "However, regardless of the quality, it is necessary to learn a wide variety of different",
+         {
+          "blank": 17
+         },
+         "in order for a new quality to develop; for example, a person must understand and feel some",
+         {
+          "blank": 18
+         },
+         "in order to increase their happiness."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "optimism",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Psychologists have traditionally believed that a personality (14)………………………. was impossible and that by a (15)………………………., a person’s character tends to be fixed. This is not true according to positive ",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "completion",
+       "stem": {
+        "plain": "Psychologists have traditionally believed that a personality (14) ______ was impossible and that by a (15) ______ , a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is (16) ______ However, regardless of the quality, it is necessary to learn a wide variety of different (17) ______ in order for a new quality to develop; for example, a person must understand and feel some (18) ______ in order to increase their happiness.",
+        "segments": [
+         "Psychologists have traditionally believed that a personality",
+         {
+          "blank": 14
+         },
+         "was impossible and that by a",
+         {
+          "blank": 15
+         },
+         ", a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is",
+         {
+          "blank": 16
+         },
+         "However, regardless of the quality, it is necessary to learn a wide variety of different",
+         {
+          "blank": 17
+         },
+         "in order for a new quality to develop; for example, a person must understand and feel some",
+         {
+          "blank": 18
+         },
+         "in order to increase their happiness."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "skills",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Psychologists have traditionally believed that a personality (14)………………………. was impossible and that by a (15)………………………., a person’s character tends to be fixed. This is not true according to positive ",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 18,
+       "type": "completion",
+       "stem": {
+        "plain": "Psychologists have traditionally believed that a personality (14) ______ was impossible and that by a (15) ______ , a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is (16) ______ However, regardless of the quality, it is necessary to learn a wide variety of different (17) ______ in order for a new quality to develop; for example, a person must understand and feel some (18) ______ in order to increase their happiness.",
+        "segments": [
+         "Psychologists have traditionally believed that a personality",
+         {
+          "blank": 14
+         },
+         "was impossible and that by a",
+         {
+          "blank": 15
+         },
+         ", a person’s character tends to be fixed. This is not true according to positive psychologists, who say that our personal qualities can be seen as habitual behaviour. One of the easiest qualities to acquire is",
+         {
+          "blank": 16
+         },
+         "However, regardless of the quality, it is necessary to learn a wide variety of different",
+         {
+          "blank": 17
+         },
+         "in order for a new quality to develop; for example, a person must understand and feel some",
+         {
+          "blank": 18
+         },
+         "in order to increase their happiness."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "negative emotions",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Psychologists have traditionally believed that a personality (14)………………………. was impossible and that by a (15)………………………., a person’s character tends to be fixed. This is not true according to positive ",
+        "elementPath": "children[30]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[29]",
+      "rawExcerpt": "Questions 14-18\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "When Evolution Runs Backwards",
+   "paragraphs": [
+    "The description of any animal as an ‘evolutionary throwback’ is controversial. For the better part of a century, most biologists have been reluctant to use those words, mindful of a principle of evolution that says ‘evolution cannot run backwards’. But as more and more examples come to light and modern genetics enters the scene, that principle is having to be rewritten. Not only are evolutionary throwbacks possible, they sometimes play an important role in the forward march of evolution.",
+    "The technical term for an evolutionary throwback is an ‘atavism’, from the Latin atavus, meaning forefather. The word has ugly connotations thanks largely to Cesare Lombroso, a 19th-century Italian medic who argued that criminals were born not made and could be identified by certain physical features that were throwbacks to a primitive, sub-human state.",
+    "While Lombroso was measuring criminals, a Belgian palaeontologist called Louis Dollo was studying fossil records and coming to the opposite conclusion. In 1890 he proposed that evolution was irreversible: that ‘an organism is unable to return, even partially, to a previous stage already realised in the ranks of its ancestors’. Early 20th-century biologists came to similar conclusion, though they qualified it in terms of probability, stating that there is no reason why evolution cannot run backwards – it is just very unlikely. And so the idea of irreversibility in evolution stuck and came to be known as ‘Dollo’s law’.",
+    "If Dollo’s law is right, atavisms should occur only very rarely, if at all. Yet almost since the idea took root, exceptions have been cropping up. In 1919, for example, a humpback whale with a pair of leg-like appendages over a metre long, complete with a full set of limb bones, was caught off Vancouver Island in Canada. Explorer Roy Chapman Andrews argued at the time that the whale must be a throwback to a land-living ancestor. ‘I can see no other explanation,’ he wrote in 1921.",
+    "Since then, so many other examples have been discovered that it no longer makes sense to say that evolution is as good as irreversible. And this poses a puzzle: how can characteristics that disappeared millions of years ago suddenly reappear? In 1994, Rudolf Raff and colleagues at Indiana University in the USA decided to use genetics to put a number on the probability of evolution going into reverse. They reasoned that while some evolutionary changes involve the loss of genes and are therefore irreversible, others may be the result of genes being switched off. If these silent genes are somehow switched back on, they argued, long-lost traits could reappear.",
+    "Raff’s team went on to calculate the likelihood of it happening. Silent genes accumulate random mutations, they reasoned, eventually rendering them useless. So how long can a gene survive in a species if it is no longer used? The team calculated that there is a good chance of silent genes surviving for up to 6 million years in at least a few individuals in a population, and that some might survive as long as 10 million years. In other words, throwbacks are possible, but only to the relatively recent evolutionary past.",
+    "As a possible example, the team pointed to the mole salamanders of Mexico and California. Like most amphibians these begin life in a juvenile ‘tadpole’ state, then metamorphose into the adult form – except for one species, the axolotl, which famously lives its entire life as a juvenile. The simplest explanation for this is that the axolotl lineage alone lost the ability to metamorphose, while others retained it. From a detailed analysis of the salamanders’ family tree, however, it is clear that the other lineages evolved from an ancestor that itself had lost the ability to metamorphose. In other words, metamorphosis in mole salamanders is an atavism. The salamander example fits with Raff’s 10-million-year time frame.",
+    "More recently, however, examples have been reported that break the time limit, suggesting that silent genes may not be the whole story. In a paper published last year, biologist Gunter Wagner of Yale University reported some work on the evolutionary history of a group of South American lizards called Bachia. Many of these have minuscule limbs; some look more like snakes than lizards and a few have completely lost the toes on their hind limbs. Other species, however, sport up to four toes on their hind legs. The simplest explanation is that the toed lineages never lost their toes, but Wagner begs to differ. According to his analysis of the Bachia family tree, the toed species re-evolved toes from toeless ancestors and, what is more, digit loss and gain has occurred on more than one occasion over tens of millions of years.",
+    "So what’s going on? One possibility is that these traits are lost and then simply reappear, in much the same way that similar structures can independently arise in unrelated species, such as the dorsal fins of sharks and killer whales. Another more intriguing possibility is that the genetic information needed to make toes somehow survived for tens or perhaps hundreds of millions of years in the lizards and was reactivated. These atavistic traits provided an advantage and spread through the population, effectively reversing evolution.",
+    "But if silent genes degrade within 6 to 10 million years, how can long-lost traits be reactivated over longer timescales? The answer may lie in the womb. Early embryos of many species develop ancestral features. Snake embryos, for example, sprout hind limb buds. Later in development these features disappear thanks to developmental programs that say ‘lose the leg’. If for any reason this does not happen, the ancestral feature may not disappear, leading to an atavism."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the claims of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 37,
+     "endQ": 40,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "Wagner was the first person to do research on South American lizards.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37 Wagner was the first person to do research on South American lizards.",
+        "elementPath": "children[59]"
+       }
+      },
+      {
+       "number": 38,
+       "type": "tfng",
+       "stem": {
+        "plain": "Wagner believes that Bachia lizards with toes had toeless ancestors.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38 Wagner believes that Bachia lizards with toes had toeless ancestors.",
+        "elementPath": "children[59]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "tfng",
+       "stem": {
+        "plain": "The temporary occurrence of long-lost traits in embryos is rare.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39 The temporary occurrence of long-lost traits in embryos is rare.",
+        "elementPath": "children[59]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "tfng",
+       "stem": {
+        "plain": "Evolutionary throwbacks might be caused by developmental problems in the womb.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40 Evolutionary throwbacks might be caused by developmental problems in the womb.",
+        "elementPath": "children[59]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[57]",
+      "rawExcerpt": "Questions 37-40\nDo the following statements agree with the claims of the writer in Reading Passage 3? YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the claims of the writer\nNOT GIVEN if it is impo"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "spread"
+   },
+   {
+    "number": 2,
+    "value": "10 times"
+   },
+   {
+    "number": 3,
+    "value": "below"
+   },
+   {
+    "number": 4,
+    "value": "fuel"
+   },
+   {
+    "number": 5,
+    "value": "seasons"
+   },
+   {
+    "number": 6,
+    "value": "homes"
+   },
+   {
+    "number": 7,
+    "value": "true"
+   },
+   {
+    "number": 8,
+    "value": "false"
+   },
+   {
+    "number": 9,
+    "value": "true"
+   },
+   {
+    "number": 10,
+    "value": "true"
+   },
+   {
+    "number": 11,
+    "value": "not given"
+   },
+   {
+    "number": 12,
+    "value": "false"
+   },
+   {
+    "number": 13,
+    "value": "false"
+   },
+   {
+    "number": 14,
+    "value": "change"
+   },
+   {
+    "number": 15,
+    "value": "young age"
+   },
+   {
+    "number": 16,
+    "value": "optimism"
+   },
+   {
+    "number": 17,
+    "value": "skills"
+   },
+   {
+    "number": 18,
+    "value": "negative emotions"
+   },
+   {
+    "number": 19,
+    "value": "E"
+   },
+   {
+    "number": 20,
+    "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "G"
+   },
+   {
+    "number": 22,
+    "value": "A"
+   },
+   {
+    "number": 23,
+    "value": "E"
+   },
+   {
+    "number": 24,
+    "value": "C"
+   },
+   {
+    "number": 25,
+    "value": "G"
+   },
+   {
+    "number": 26,
+    "value": "H"
+   },
+   {
+    "number": 27,
+    "value": "C"
+   },
+   {
+    "number": 28,
+    "value": "D"
+   },
+   {
+    "number": 29,
+    "value": "C"
+   },
+   {
+    "number": 30,
+    "value": "B"
+   },
+   {
+    "number": 31,
+    "value": "A"
+   },
+   {
+    "number": 32,
+    "value": "F"
+   },
+   {
+    "number": 33,
+    "value": "G"
+   },
+   {
+    "number": 34,
+    "value": "A"
+   },
+   {
+    "number": 35,
+    "value": "B"
+   },
+   {
+    "number": 36,
+    "value": "D"
+   },
+   {
+    "number": 37,
+    "value": "not given"
+   },
+   {
+    "number": 38,
+    "value": "yes"
+   },
+   {
+    "number": 39,
+    "value": "no"
+   },
+   {
+    "number": 40,
+    "value": "yes"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     19,
+     22
+    ],
+    "instruction": "Look at the following statements (Questions 19-22) and the list of people below. Match each statement with the correct p"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     27,
+     31
+    ],
+    "instruction": "Choose the correct letter, A, B, C or D. Questions 32-36\nComplete each sentence with the correct ending, A-G, below."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 22,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "d8ae986819ebdd9cf45d298962da04144a7a25f4103306f4e1a271478b81658a"
+}

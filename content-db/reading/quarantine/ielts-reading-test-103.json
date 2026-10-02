@@ -1,0 +1,31 @@
+{
+ "slug": "ielts-reading-test-103",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     31,
+     35
+    ],
+    "extracted": 7,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 37,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g07 range 31-35 got 7"
+  }
+ ]
+}

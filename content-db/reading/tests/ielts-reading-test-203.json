@@ -1,0 +1,970 @@
+{
+ "id": "reading.test-0203.84bca5b6",
+ "module": "reading",
+ "sourceNumbers": [
+  203
+ ],
+ "slug": "ielts-reading-test-203",
+ "title": "IELTS Academic Reading Test 203",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-203/index.html",
+   "sha256": "688da433df96a8d34a85e020804fd70980d59ec90505d22eb311b76968e96e27",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-203/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Snow-makers",
+   "paragraphs": [
+    "A In the early to mid twentieth century, with the growing popularity of skiing, ski slopes became extremely profitable businesses. But ski resort owners were completely dependent on the weather: if it didn’t snow, or didn’t snow enough, they had to close everything down. Fortunately, a device called the snow gun can now provide snow whenever it is needed. These days such machines are standard equipment in the vast majority of ski resorts around the world, making it possible for many resorts to stay open for months or more a year.",
+    "B Snow formed by natural weather systems comes from water vapour in the atmosphere. The water vapour condenses into droplets, forming clouds. If the temperature is sufficiently low, the water droplets freeze into tiny ice crystals. More water particles then condense onto the crystal and join with it to form a snowflake. As the snow flake grows heavier, it falls towards the Earth.",
+    "C The snow gun works very differently from a natural weather system, but it accomplishes exactly the same thing. The device basically works by combining water and air. Two different hoses are attached to the gun. one leading from a water pumping station which pumps water up from a lake or reservoir, and the other leading from an air compressor. When the compressed air passes through the hose into the gun. it atomises the water – that is, it disrupts the stream so that the water splits up into tiny droplets. The droplets are then blown out of the gun and if the outside temperature is below 0°C, ice crystals will form, and will then make snowflakes in the same way as natural snow.",
+    "D Snow-makers often talk about dry snow and wet snow. Dry snow has a relatively low amount of water, so it is very light and powdery. This type of snow is excellent for skiing because skis glide over it easily without getting stuck in wet slush. One of the advantages of using a snow-maker is that this powdery snow can be produced to give the ski slopes a level surface. However, on slopes which receive heavy use, resort owners also use denser, wet snow underneath the dry snow. Many resorts build up the snow depth this way once or twice a year, and then regularly coat the trails with a layer of dry snow throughout the winter.",
+    "E The wetness of snow is dependent on the temperature and humidity outside, as well as the size of the water droplets launched by the gun. Snow-makers have to adjust the proportions of water and air in their snow guns to get the perfect snow consistency for the outdoor weather conditions. Many ski slopes now do this with a central computer system that is connected to weather-reading stations all over the slope.",
+    "F But man-made snow makes heavy demands on the environment. It takes about 275,000 litres of water to create a blanket of snow covering a 60×60 metre area. Most resorts pump water from one or more reservoirs located in low-lying areas. The run-off water from the slopes feeds back into these reservoirs, so the resort can actually use the same water over and over again. However, considerable amounts of energy are needed to run the large air-compressing pumps, and the diesel engines which run them also cause air pollution.",
+    "G Because of the expense of making snow, ski resorts have to balance the cost of running the machines with the benefits of extending the ski season, making sure they only make snow when it is really needed and when it will bring the maximum amount of profit in return for the investment. But man-made snow has a number of other uses as well. A layer of snow keeps a lot of the Earth’s heat from escaping into the atmosphere, so farmers often use man-made snow to provide insulation for winter crops. Snow-making machines have played a big part in many movie productions. Movie producers often take several months to shoot scenes that cover just a few days. If the movie takes place in a snowy setting, the set decorators have to get the right amount of snow for each day of shooting either by adding man-made snow or melting natural snow. And another important application of man-made snow is its use in the tests that aircraft must undergo in order to ensure that they can function safely in extreme conditions."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Reading Passage 1 has seven paragraphs A-G. Choose the correct heading for each paragraph from the list of headings below.",
+     "wordLimit": "",
+     "qtype": "matching_headings",
+     "startQ": 1,
+     "endQ": 5,
+     "stimulusSegments": [
+      "List of Headings\n\ni Considering ecological costs\n\nii Modifications to the design of the snow gun\n\niii The need for different varieties of snow\n\niv Local concern over environmental issues\n\nv A problem and a solution\n\nvi Applications beyond the ski slopes\n\nvii Converting wet snow to dry snow\n\nviii New method for calculating modifications\n\nix Artificial process, natural product\n\nx Snow formation in nature"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph C",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "ix",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. Paragraph C",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph D",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "iii",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. Paragraph D",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph E",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "viii",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. Paragraph E",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph F",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "i",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. Paragraph F",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph G",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "vi",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. Paragraph G",
+        "elementPath": "children[10]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[8]",
+      "rawExcerpt": "Questions 1-5\n\nReading Passage 1 has seven paragraphs A-G. Choose the correct heading for each paragraph from the list of headings below."
+     }
+    },
+    {
+     "groupId": "g03",
+     "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "qtype": "sentence_completion",
+     "startQ": 9,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "completion",
+       "stem": {
+        "plain": "Dry snow is used to give slopes a level surface, while wet snow is used to increase the (9) ______ on busy slopes.",
+        "segments": [
+         "Dry snow is used to give slopes a level surface, while wet snow is used to increase the",
+         {
+          "blank": 9
+         },
+         "on busy slopes."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "depth",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Dry snow is used to give slopes a level surface, while wet snow is used to increase the (9)……………………on busy slopes.",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "completion",
+       "stem": {
+        "plain": "To calculate the required snow consistency, the (10) ______ of the atmosphere must first be measured.",
+        "segments": [
+         "To calculate the required snow consistency, the",
+         {
+          "blank": 10
+         },
+         "of the atmosphere must first be measured."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "temperature and humidity",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "To calculate the required snow consistency, the (10)…………………of the atmosphere must first be measured.",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "completion",
+       "stem": {
+        "plain": "The machinery used in the process of making the snow consumes a lot of (11) ______ which is damaging to the environment.",
+        "segments": [
+         "The machinery used in the process of making the snow consumes a lot of",
+         {
+          "blank": 11
+         },
+         "which is damaging to the environment."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "energy",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The machinery used in the process of making the snow consumes a lot of (11)…………………..which is damaging to the environment.",
+        "elementPath": "children[17]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "completion",
+       "stem": {
+        "plain": "Artificial snow is used in agriculture as a type of (12) ______ for plants in cold conditions.",
+        "segments": [
+         "Artificial snow is used in agriculture as a type of",
+         {
+          "blank": 12
+         },
+         "for plants in cold conditions."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "insulation",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Artificial snow is used in agriculture as a type of (12)…………………..for plants in cold conditions.",
+        "elementPath": "children[18]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "completion",
+       "stem": {
+        "plain": "Artificial snow may also be used in carrying out safety checks on (13) ______",
+        "segments": [
+         "Artificial snow may also be used in carrying out safety checks on",
+         {
+          "blank": 13
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "aircraft",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Artificial snow may also be used in carrying out safety checks on (13)……………….",
+        "elementPath": "children[19]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[14]",
+      "rawExcerpt": "Questions 9-13\n\nComplete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Why are so few tigers man-eaters?",
+   "paragraphs": [
+    "A As you leave the Bandhavgarh National Park in central India, there is a notice which shows a huge, placid tiger. The notice says, ‘You may not have seen me, but I have seen you.’ There are more than a billion people In India and Indian tigers probably see humans every single day of their lives. Tigers can and do kill almost everything they meet in the jungle, they will kill even attack elephants and rhino. Surely, then, it is a little strange that attacks on humans are not more frequent.",
+    "B Some people might argue that these attacks were in fact common in the past. British writers of adventure stories, such as Jim Corbett, gave the impression that village life in India in the early years of the twentieth century involved a stage of constant siege by man-eating tigers. But they may have overstated the terror spread by tigers. There were also far more tigers around in those days (probably 60.000 in the subcontinent compared to just 3000 today). So in proportion, attacks appear to have been as rare then as they are today.",
+    "C It is widely assumed that the constraint is fear; but what exactly are tigers afraid of? Can they really know that we may be even better armed than they are? Surely not. Has the species programmed the experiences of all tigers with humans its genes to be inherited as instinct? Perhaps. But I think the explanation may be more simple and, in a way, more intriguing.",
+    "D Since the growth of ethology in the 1950s. we have tried to understand animal behaviour from the animal’s point of view. Until the first elegant experiments by pioneers in the field such as Konrad Lorenz, naturalists wrote about animals as if they were slightly less intelligent humans. Jim Corbett’s breathless accounts of his duels with a an-eaters in truth tell us more about Jim Corbett than they do about the animals. The principle of ethology, on the other hand, requires us to attempt to think in the same way as the animal we are studying thinks, and to observe every tiny detail of its behaviour without imposing our own human significances on its actions.",
+    "E I suspect that a tiger’s afraid of humans lies not in some preprogramed ancestral logic but in the way he actually perceives us visually. If you think like a tiger, a human in a car might appear just to be a part of the car, and because tigers don’t eat cars the human is safe-unless the car is menacing the tiger or its cubs, in which case a brave or enraged tiger may charge. A human on foot is a different sort of puzzle. Imagine a tiger sees a man who is 1.8m tall. A tiger is less than 1m tall but they may be up to 3m long from head to tail. So when a tiger sees the man face on, it might not be unreasonable for him to assume that the man is 6m long. If he meet a deer of this size, he might attack the animal by leaping on its back, but when he looks behind the mind he can’t see a back. From the front the man is huge, but looked at from the side he all but disappears. This must be very disconcerting. A hunter has to be confident that it can tackle its prey, and no one is confident when they are disconcerted. This is especially true of a solitary hunter such as the tiger and may explain why lions-particularly young lionesses who tend to encourage one another to take risks are more dangerous than tigers.",
+    "F If the theory that a tiger is disconcerted to find that a standing human is both very big and yet somehow invisible is correct, the opposite should be true of a squatting human. A squatting human is half he size and presents twice the spread of back, and more closely resembles a medium-sized deer. If tigers were simply frightened of all humans, then a squatting person would be no more attractive as a target than a standing one. This, however appears not to be the case. Many incidents of attacks on people involving villagers squatting or bending over to cut grass for fodder or building material.",
+    "G The fact that humans stand upright may therefore not just be something that distinguishes them from nearly all other species, but also a factor that helped them to survive in a dangerous and unpredictable environment."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Reading Passage 2 has seven paragraphs labelled A-G. Which paragraph contains the following information?",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 14,
+     "endQ": 18,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a rejected explanation of why tiger attacks on humans are rare",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "14. a rejected explanation of why tiger attacks on humans are rare",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a reason why tiger attacks on humans might be expected to happen more often than they do",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15. a reason why tiger attacks on humans might be expected to happen more often than they do",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "stem": {
+        "plain": "examples of situations in which humans are more likely to be attacked by tigers",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16. examples of situations in which humans are more likely to be attacked by tigers",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a claim about the relative frequency of tiger attacks on humans",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17. a claim about the relative frequency of tiger attacks on humans",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_information",
+       "stem": {
+        "plain": "an explanation of tiger behaviour based on the principles of ethology",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "18. an explanation of tiger behaviour based on the principles of ethology",
+        "elementPath": "children[29]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[28]",
+      "rawExcerpt": "Questions 14-18\n\nReading Passage 2 has seven paragraphs labelled A-G. Which paragraph contains the following information?"
+     }
+    },
+    {
+     "groupId": "g05",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 19,
+     "endQ": 23,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 19,
+       "type": "tfng",
+       "stem": {
+        "plain": "Tigers in the Bandhavgarh National Park are a protected species.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "19. Tigers in the Bandhavgarh National Park are a protected species.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 20,
+       "type": "tfng",
+       "stem": {
+        "plain": "Some writers of fiction have exaggerated the danger of tigers to man.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "20. Some writers of fiction have exaggerated the danger of tigers to man.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 21,
+       "type": "tfng",
+       "stem": {
+        "plain": "The fear of humans may be passed down in a tiger’s genes.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "21. The fear of humans may be passed down in a tiger’s genes.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 22,
+       "type": "tfng",
+       "stem": {
+        "plain": "Konrad Lorenz claimed that some animals are more intelligent than humans.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "22. Konrad Lorenz claimed that some animals are more intelligent than humans.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 23,
+       "type": "tfng",
+       "stem": {
+        "plain": "Ethology involves applying principles of human behaviour to animals.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "23. Ethology involves applying principles of human behaviour to animals.",
+        "elementPath": "children[32]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[30]",
+      "rawExcerpt": "Questions 19-23\n\nDo the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the informat"
+     }
+    },
+    {
+     "groupId": "g06",
+     "instruction": "Choose the correct answer, A. B C or D",
+     "wordLimit": "",
+     "qtype": "short_answer",
+     "startQ": 24,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "short_answer",
+       "stem": {
+        "plain": "Why do tigers rarely attack people in cars?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24. Why do tigers rarely attack people in cars?",
+        "elementPath": "children[34]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "short_answer",
+       "stem": {
+        "plain": "The writer says that tigers rarely attack a man who is standing up because",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25. The writer says that tigers rarely attack a man who is standing up because",
+        "elementPath": "children[35]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "short_answer",
+       "stem": {
+        "plain": "A human is more vulnerable to tiger attack when squatting because",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26. A human is more vulnerable to tiger attack when squatting because",
+        "elementPath": "children[36]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[33]",
+      "rawExcerpt": "Questions 24-26\n\nChoose the correct answer, A. B C or D"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Keep taking the tablets",
+   "paragraphs": [
+    "The history of aspirin is a product of a rollercoaster ride through time, of accidental discoveries, intuitive reasoning and intense corporate rivalry.",
+    "In the opening pages of Aspirin: The Remarkable Story of a Wonder Drug, Diarmuid Jeffreys describes this little white pill as ‘one of the most amazing creations in medical history, a drug so astonishingly versatile that it can relieve headache, ease your aching limbs, lower your temperature and treat some of the deadliest human diseases’.",
+    "Its properties have been known for thousands of years. Ancient Egyptian physicians used extracts from the willow tree as an analgesic, or pain killer. Centuries later the Greek physician Hippocrates recommended the bark of the willow tree as a remedy for the pains of childbirth and as a fever reducer. But it wasn’t until the eighteenth and nineteenth centuries that salicylates the chemical found in the willow tree became the subject of serious scientific investigation. The race was on to identify the active ingredient and to replicate it synthetically. At the end of the nineteenth century a German company, Friedrich Bayer & Co. succeeded in creating a relatively safe and very effective chemical compound, acetylsalicylic acid, which was renamed aspirin.",
+    "The late nineteenth century was a fertile period for experimentation, partly because of the hunger among scientists to answer some of the great scientific questions, but also because those questions were within their means to answer. One scientist in a laboratory with some chemicals and a test tube could make significant breakthroughs whereas today, in order to map the human genome for instance, one needs ‘an army of researchers, a bank of computers and millions and millions of dollars’.",
+    "But an understanding of the nature of science and scientific inquiry is not enough on its own to explain how society innovates. In the nineteenth century, scientific advance was closely linked to the industrial revolution. This was a period when people frequently had the means, motive and determination to take an idea and turn it into reality. In the case of aspirin that happened piecemeal – a series of minor, often unrelated advances, fertilised by the century’s broader economic, medical and scientific developments, that led to one big final breakthrough.",
+    "The link between big money and pharmaceutical innovation is also a significant one. Aspirin is continued shelf life was ensured because for the first 70 years of its life, huge amounts of money were put into promoting it as an ordinary everyday analgesic. In the 1070s other analgesics, such as ibuprofen and paracetamol, were entering the market, and the pharmaceutical companies then focused on publicising these new drugs. But just at the same time, discoveries were made regarding the beneficial role of aspirin in preventing heart attacks, strokes and other afflictions. Had it not been for these findings, this pharmaceutical marvel may well have disappeared.",
+    "So the relationship between big money and drugs is an odd one. Commercial markets are necessary for developing new products and ensuring that they remain around long enough for scientists to carry out research on them. But the commercial markets are just as likely to kill off’ certain products when something more attractive comes along. In the case of aspirin, a potential ‘wonder drug* was around for over 70 years without anybody investigating the way in which it achieved its effects, because they were making more than enough money out of it as it was. If ibuprofen or paracetamol had entered the market just a decade earlier, aspirin might then not be here today. It would be just another forgotten drug that people hadn’t bothered to explore.",
+    "None of the recent discoveries of aspirin’s benefits were made by the big pharmaceutical companies; they were made by scientists working in the public sector. ‘The reason for that is very simple and straightforward,’ Jeffreys says in his book. ‘Drug companies will only pursue research that is going to deliver financial benefits. There’s no profit in aspirin any more. It is incredibly inexpensive with tiny profit margins and it has no patent any more, so anyone can produce it.’ In fact, there’s almost a disincentive for drug companies to further boost the drug, he argues, as it could possibly put them out of business by stopping them from selling their more expensive brands.",
+    "So what is the solution to a lack of commercial interest in further exploring the therapeutic benefits of aspirin? More public money going into clinical trials, says Jeffreys. ‘If I were the Department of Health. I would say “this is a very inexpensive drug. There may be a lot of other things we could do with it.” We should put a lot more money into trying to find out.’ Jeffreys’ book which not only tells the tale of a ‘wonder drug’ but also explores the nature of innovation and the role of big business, public money and regulation reminds us why such research is so important.",
+    "Questions 27-32\n\nComplete each sentence with the correct ending A-H from the list below.",
+    "A the discovery of new medical applications.\n\nB the negative effects of publicity.\n\nC the large pharmaceutical companies.\n\nD the industrial revolution.\n\nE the medical uses of a particular tree\n\nF the limited availability of new drugs.\n\nG the chemical found in the willow tree.\n\nH commercial advertising campaigns.",
+    "27. Ancient Egyptian and Greek doctors were aware of\n\n28. Frederick Bayer & Co were able to reproduce\n\n29. The development of aspirin was partly due to the effects of\n\n30. The creation of a market for aspirin as a painkiller was achieved through\n\n31. Aspirin might have become unavailable without\n\n32. The way in which aspirin actually worked was not investigated by"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g07",
+     "instruction": "Do the following statements agree with the views of the writer in Reading Passage 3? In boxes 33-37 on your answer sheet write YES if the statement agrees with the views of the writer\n\nNO if the statement contradicts the views of the writer\n\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 33,
+     "endQ": 37,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "tfng",
+       "stem": {
+        "plain": "For nineteenth-century scientists, small-scale research was enough to make important discoveries.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33. For nineteenth-century scientists, small-scale research was enough to make important discoveries.",
+        "elementPath": "children[52]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "tfng",
+       "stem": {
+        "plain": "The nineteenth-century industrial revolution caused a change in the focus of scientific research.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "34. The nineteenth-century industrial revolution caused a change in the focus of scientific research.",
+        "elementPath": "children[52]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "tfng",
+       "stem": {
+        "plain": "The development of aspirin in the nineteenth century followed a structured pattern of development.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "35. The development of aspirin in the nineteenth century followed a structured pattern of development.",
+        "elementPath": "children[52]"
+       }
+      },
+      {
+       "number": 36,
+       "type": "tfng",
+       "stem": {
+        "plain": "In the 1970s sales of new analgesic drugs overtook sales of aspirin.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "36. In the 1970s sales of new analgesic drugs overtook sales of aspirin.",
+        "elementPath": "children[52]"
+       }
+      },
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "Commercial companies may have both good and bad effects on the availability of pharmaceutical products.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37. Commercial companies may have both good and bad effects on the availability of pharmaceutical products.",
+        "elementPath": "children[52]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[50]",
+      "rawExcerpt": "Questions 33-37\n\nDo the following statements agree with the views of the writer in Reading Passage 3? In boxes 33-37 on your answer sheet write YES if the statement agrees with the views of the writer\n\nNO if the statement contradicts the vi"
+     }
+    },
+    {
+     "groupId": "g08",
+     "instruction": "Complete the summary below using the list of words A-l below.",
+     "wordLimit": "",
+     "qtype": "table_completion",
+     "startQ": 38,
+     "endQ": 40,
+     "stimulusSegments": [
+      "Research into aspirin",
+      "",
+      "1. ix\n\n2. iii\n\n3. viii\n\n4. i\n\n5. vi\n\n6. compressed\n\n7. (tiny) droplets\n\n8. ice crystals\n\n9. depth\n\n10. temperature and humidity\n\n11. energy\n\n12. insulation\n\n13. aircraft\n\n14. C\n\n15. A\n\n16. F\n\n17. B\n\n18. E\n\n19. NG\n\n20. True\n\n21. True\n\n22. NG\n\n23. False\n\n24. C\n\n25. B\n\n26. D\n\n27. E\n\n28. G\n\n29. D\n\n30. H\n\n31. A\n\n32. C\n\n33. Yes\n\n34. NG\n\n35. No\n\n36. NG\n\n37. Yes\n\n38. E\n\n39. F\n\n40. C"
+     ],
+     "sharedOptions": [
+      {
+       "letter": "A",
+       "text": "useful"
+      },
+      {
+       "letter": "B",
+       "text": "cheap"
+      },
+      {
+       "letter": "C",
+       "text": "state"
+      },
+      {
+       "letter": "D",
+       "text": "international"
+      },
+      {
+       "letter": "E",
+       "text": "major drug companies"
+      },
+      {
+       "letter": "F",
+       "text": "profitable"
+      },
+      {
+       "letter": "G",
+       "text": "commercial"
+      },
+      {
+       "letter": "H",
+       "text": "public sector scientists"
+      },
+      {
+       "letter": "I",
+       "text": "health officials"
+      }
+     ],
+     "figures": null,
+     "questions": [
+      {
+       "number": 38,
+       "type": "completion",
+       "stem": {
+        "plain": "Jeffreys argues that the reason why (38) ______ did not find out about new uses of aspirin is that aspirin is no longer a (39) ______ drug. He therefore suggests that there should be (40) ______ support for further research into the possible applications of the drug.",
+        "segments": [
+         "Jeffreys argues that the reason why",
+         {
+          "blank": 38
+         },
+         "did not find out about new uses of aspirin is that aspirin is no longer a",
+         {
+          "blank": 39
+         },
+         "drug. He therefore suggests that there should be",
+         {
+          "blank": 40
+         },
+         "support for further research into the possible applications of the drug."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Jeffreys argues that the reason why (38)……………….did not find out about new uses of aspirin is that aspirin is no longer a (39)…………………drug. He therefore suggests that there should be (40)……………….support ",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "completion",
+       "stem": {
+        "plain": "Jeffreys argues that the reason why (38) ______ did not find out about new uses of aspirin is that aspirin is no longer a (39) ______ drug. He therefore suggests that there should be (40) ______ support for further research into the possible applications of the drug.",
+        "segments": [
+         "Jeffreys argues that the reason why",
+         {
+          "blank": 38
+         },
+         "did not find out about new uses of aspirin is that aspirin is no longer a",
+         {
+          "blank": 39
+         },
+         "drug. He therefore suggests that there should be",
+         {
+          "blank": 40
+         },
+         "support for further research into the possible applications of the drug."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Jeffreys argues that the reason why (38)……………….did not find out about new uses of aspirin is that aspirin is no longer a (39)…………………drug. He therefore suggests that there should be (40)……………….support ",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "completion",
+       "stem": {
+        "plain": "Jeffreys argues that the reason why (38) ______ did not find out about new uses of aspirin is that aspirin is no longer a (39) ______ drug. He therefore suggests that there should be (40) ______ support for further research into the possible applications of the drug.",
+        "segments": [
+         "Jeffreys argues that the reason why",
+         {
+          "blank": 38
+         },
+         "did not find out about new uses of aspirin is that aspirin is no longer a",
+         {
+          "blank": 39
+         },
+         "drug. He therefore suggests that there should be",
+         {
+          "blank": 40
+         },
+         "support for further research into the possible applications of the drug."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Jeffreys argues that the reason why (38)……………….did not find out about new uses of aspirin is that aspirin is no longer a (39)…………………drug. He therefore suggests that there should be (40)……………….support ",
+        "elementPath": "children[54]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[53]",
+      "rawExcerpt": "Questions 38-40\n\nComplete the summary below using the list of words A-l below."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "ix"
+   },
+   {
+    "number": 2,
+    "value": "iii"
+   },
+   {
+    "number": 3,
+    "value": "viii"
+   },
+   {
+    "number": 4,
+    "value": "i"
+   },
+   {
+    "number": 5,
+    "value": "vi"
+   },
+   {
+    "number": 6,
+    "value": "compressed"
+   },
+   {
+    "number": 7,
+    "value": "(tiny) droplets"
+   },
+   {
+    "number": 8,
+    "value": "ice crystals"
+   },
+   {
+    "number": 9,
+    "value": "depth"
+   },
+   {
+    "number": 10,
+    "value": "temperature and humidity"
+   },
+   {
+    "number": 11,
+    "value": "energy"
+   },
+   {
+    "number": 12,
+    "value": "insulation"
+   },
+   {
+    "number": 13,
+    "value": "aircraft"
+   },
+   {
+    "number": 14,
+    "value": "C"
+   },
+   {
+    "number": 15,
+    "value": "A"
+   },
+   {
+    "number": 16,
+    "value": "F"
+   },
+   {
+    "number": 17,
+    "value": "B"
+   },
+   {
+    "number": 18,
+    "value": "E"
+   },
+   {
+    "number": 19,
+    "value": "NG"
+   },
+   {
+    "number": 20,
+    "value": "True"
+   },
+   {
+    "number": 21,
+    "value": "True"
+   },
+   {
+    "number": 22,
+    "value": "NG"
+   },
+   {
+    "number": 23,
+    "value": "False"
+   },
+   {
+    "number": 24,
+    "value": "C"
+   },
+   {
+    "number": 25,
+    "value": "B"
+   },
+   {
+    "number": 26,
+    "value": "D"
+   },
+   {
+    "number": 27,
+    "value": "E"
+   },
+   {
+    "number": 28,
+    "value": "G"
+   },
+   {
+    "number": 29,
+    "value": "D"
+   },
+   {
+    "number": 30,
+    "value": "H"
+   },
+   {
+    "number": 31,
+    "value": "A"
+   },
+   {
+    "number": 32,
+    "value": "C"
+   },
+   {
+    "number": 33,
+    "value": "Yes"
+   },
+   {
+    "number": 34,
+    "value": "NG"
+   },
+   {
+    "number": 35,
+    "value": "No"
+   },
+   {
+    "number": 36,
+    "value": "NG"
+   },
+   {
+    "number": 37,
+    "value": "Yes"
+   },
+   {
+    "number": 38,
+    "value": "E"
+   },
+   {
+    "number": 39,
+    "value": "F"
+   },
+   {
+    "number": 40,
+    "value": "C"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     6,
+     8
+    ],
+    "instruction": "Label the diagram below using NO MORE THAN TWO WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 31,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "32560ae6cb9dded15d45a1fb3b56afbe64bddd66c9c96af07c8f676cd4391396"
+}

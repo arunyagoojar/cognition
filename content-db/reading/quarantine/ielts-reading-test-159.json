@@ -1,0 +1,50 @@
+{
+ "slug": "ielts-reading-test-159",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     14,
+     18
+    ],
+    "instruction": "Complete the flow-chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 14-18 on your a"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     27,
+     30
+    ],
+    "extracted": 3,
+    "expected": 4
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     27,
+     30
+    ],
+    "instruction": "Look at the following organisms (Questions 27-30) and the list of features below. Match each organism with the correct feature, A-D. A too f"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 31,
+    "answers": 40
+   }
+  }
+ ]
+}

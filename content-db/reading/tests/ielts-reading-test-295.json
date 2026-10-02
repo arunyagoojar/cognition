@@ -1,0 +1,930 @@
+{
+ "id": "reading.test-0295.9ae93628",
+ "module": "reading",
+ "sourceNumbers": [
+  295
+ ],
+ "slug": "ielts-reading-test-295",
+ "title": "IELTS Academic Reading Test 295",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-295/index.html",
+   "sha256": "bc43d080664482a075fed813c17c898ca17331de4cd36681bc7b5c9dd73c2cbb",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-295/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "The impact of climate change on butterflies in Britain",
+   "paragraphs": [
+    "According to conservationists, populations of around two thirds of butterfly species have declined in Britain over the past 40 years. If this trend continues, it might have unpredictable knock-on effects for other species in the ecosystem. Butterfly eggs develop into caterpillars and these insects, which are the second stage in a new butterfly’s lifecycle, consume vast quantities of plant material, and in turn act as prey for birds as well as bats and other small mammals. Only by arming themselves with an understanding of why butterfly numbers are down can conservationists hope to halt or reverse the decline.",
+    "Butterflies prefer outdoor conditions to be ‘just right’, which means neither too hot nor too cold. Under the conditions of climate change, the temperature at any given time in summer is generally getting warmer, leaving butterflies with the challenge of how to deal with this. One of the main ways in which species are ensuring conditions suit them is by changing the time of year at which they are active and reproduce. Scientists refer to the timing of such lifecycle events as ‘phenology’, so when an animal or plant starts to do something earlier in the year than it usually does, it is said to be ‘advancing its phenology’.",
+    "These advances have been observed already in a wide range of butterflies – indeed, most species are advancing their phenology to some extent. In Britain, as the average spring temperature has increased by roughly 0.5 °C over the past 20 years, species have advanced by between three days and a week on average, to keep in line with cooler temperatures. Is this a sign that butterflies are well equipped to cope with climate change, and readily adjust to new temperatures? Or are these populations under stress, being dragged along unwillingly by unnaturally fast changes? The answer is still unknown, but a new study is seeking to answer these questions.",
+    "First, the researchers pulled together data from millions of records that had been submitted by butterfly enthusiasts – people who spend their free time observing the activities of different species. This provided information on 130 species of butterflies in Great Britain every year for a 20-year period. They then estimated the abundance and distribution of each species across this time, along with how far north in the country they had moved. The data also, crucially, allowed researchers to estimate subtle changes in what time of the year each species was changing into an adult butterfly.",
+    "Analysing the trends in each variable, the researchers discovered that species with more flexible lifecycles were more likely to be able to benefit from an earlier emergence driven by climate change. Some species are able to go from caterpillar to butterfly twice or more per year, so that the individual butterflies you see flying in the spring are the grandchildren or great-grandchildren of the individuals seen a year previously.",
+    "Among these species, researchers observed that those which have been advancing their phenology the most over the 20-year study period also had the most positive trends in abundance, distribution and northwards extent. For these species, such as Britain’s tiniest butterfly, the dainty Small Blue, whose colonies are up to a hundred strong, some develop into butterflies early in spring, allowing their summer generations to complete another reproductive cycle by autumn so that more population growth occurs.",
+    "Other species, however, are less flexible and restricted to a single reproductive cycle per year. For these species, there was no evidence of any benefit to emerging earlier. Indeed, worryingly, it was found that the species in this group that specialise in very specific habitat types, often related to the caterpillar’s preferred diet, actually tended to be most at harm from advancing phenology. The beautiful High Brown Fritillary, often described as Britain’s most endangered butterfly, is in this group. It is found only in coppiced woodland and limestone pavement habitats, it is also a single-generation butterfly that has advanced its phenology. This suggests that climate change, while undoubtedly not the sole cause, might have played a part in the downfall of this species.",
+    "All is not lost, however. Many of Britain’s single-generation species show the capacity, in continental Europe, to add a second generation in years that are sufficiently warm. Therefore, as the climate continues to warm, species like the Silver-studded Blue might be able to switch to multiple generations in the UK as well, and so begin to extract benefits from the additional warmth, potentially leading to population increases.",
+    "More immediately, conservationists can arm themselves with all this knowledge to spot the warning signs of species that may be at risk. The White Admiral of southern England, a much sought-after butterfly, experienced a significant increase in numbers from the 1920s but has shown a considerable decline in the past 20 years. This may be because the caterpillar exists solely on a diet of a plant called honeysuckle. But it is also likely to be due to climate change."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 1-6 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 6,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "Forty years ago, there were fewer butterflies in Britain than at present.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. Forty years ago, there were fewer butterflies in Britain than at present.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "Caterpillars are eaten by a number of different predators.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. Caterpillars are eaten by a number of different predators.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "‘Phenology’ is a term used to describe a creature’s ability to alter the location of a lifecycle event.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. ‘Phenology’ is a term used to describe a creature’s ability to alter the location of a lifecycle event.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Some species of butterfly have a reduced lifespan due to spring temperature increases.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. Some species of butterfly have a reduced lifespan due to spring temperature increases.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "There is a dear reason for the adaptations that butterflies are making to climate change.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. There is a dear reason for the adaptations that butterflies are making to climate change.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "tfng",
+       "stem": {
+        "plain": "The data used in the study was taken from the work of amateur butterfly watchers.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. The data used in the study was taken from the work of amateur butterfly watchers.",
+        "elementPath": "children[12]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[10]",
+      "rawExcerpt": "Questions 1-6\n\nDo the following statements agree with the information given in reading passage? In boxes 1-6 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\n"
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "",
+     "qtype": "note_completion",
+     "startQ": 7,
+     "endQ": 13,
+     "stimulusSegments": [
+      "Butterflies in the UK",
+      "The Small Blue",
+      "",
+      "",
+      "",
+      "• completes more than one reproductive cycle per year",
+      "The High Brown Fritillary",
+      "",
+      "• has one reproductive cycle",
+      "",
+      "",
+      "The Silver-studded Blue",
+      "",
+      "The White Admiral",
+      "",
+      ""
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 7,
+       "type": "completion",
+       "stem": {
+        "plain": "• lives in large (7) ______",
+        "segments": [
+         "• lives in large",
+         {
+          "blank": 7
+         },
+         "………………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Colonies",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• lives in large (7) ……………….",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 8,
+       "type": "completion",
+       "stem": {
+        "plain": "• first appears at the start of (8) ______",
+        "segments": [
+         "• first appears at the start of",
+         {
+          "blank": 8
+         },
+         "…………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Spring",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• first appears at the start of (8) ………….",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "completion",
+       "stem": {
+        "plain": "• is considered to be more (9) ______ than other species",
+        "segments": [
+         "• is considered to be more",
+         {
+          "blank": 9
+         },
+         "……………… than other species"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Endangered",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• is considered to be more (9) ……………… than other species",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "completion",
+       "stem": {
+        "plain": "• its caterpillars occupy a limited range of (10) ______",
+        "segments": [
+         "• its caterpillars occupy a limited range of",
+         {
+          "blank": 10
+         },
+         "…………………"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Habitat(s)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• its caterpillars occupy a limited range of (10) …………………",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "completion",
+       "stem": {
+        "plain": "• is already able to reproduce twice a year in warm areas of (11) ______",
+        "segments": [
+         "• is already able to reproduce twice a year in warm areas of",
+         {
+          "blank": 11
+         },
+         "……………"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Europe",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• is already able to reproduce twice a year in warm areas of (11) ……………",
+        "elementPath": "children[17]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "completion",
+       "stem": {
+        "plain": "• is found in (12) ______ areas of England",
+        "segments": [
+         "• is found in",
+         {
+          "blank": 12
+         },
+         "………… areas of England"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Southern",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• is found in (12) ………… areas of England",
+        "elementPath": "children[18]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "completion",
+       "stem": {
+        "plain": "• both climate change and the (13) ______ of the caterpillar are possible reasons for decline",
+        "segments": [
+         "• both climate change and the",
+         {
+          "blank": 13
+         },
+         "……………… of the caterpillar are possible reasons for decline"
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Diet",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• both climate change and the (13) ……………… of the caterpillar are possible reasons for decline",
+        "elementPath": "children[18]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[13]",
+      "rawExcerpt": "Questions 7-13\n\nComplete the notes below. Choose ONE WORD ONLY from the passage for each answer."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Deep-sea mining",
+   "paragraphs": [
+    "Bacteria from the ocean floor can beat superbugs and cancer. But habitats are at risk\n\nfrom the hunger for marine minerals",
+    "A When Professor Mat Upton found that a microbe from a deep-sea sponge was killing pathogenic bugs in his laboratory, he realised it could be a breakthrough in the fight against antibiotic-resistant superbugs, which are responsible for thousands of deaths a year in the UK alone. Further tests confirmed that an antibiotic from the sponge bacteria, found living more than 700 metres under the sea at the Rockall trough in the north-east Atlantic, was previously unknown to science, boosting its potential as a life-saving medicine. But Upton, and other scientists who view the deep ocean and its wealth of unique and undocumented species as a prospecting ground for new medicines, fear such potential will be lost in the rush to exploit the deep sea’s equally rich metal and mineral resources.",
+    "B ‘We’re looking at the bioactive potential of marine resources, to see if there are any more medicines or drugs down there before we destroy it for ever,’ says Upton, a medical microbiologist at the University of Plymouth. He is among many scientists urging a halt to deep-sea mining, asking for time to weigh up the pros and cons. ‘In sustainability terms, this could be a better way of exploiting the economic potential of the deep sea,’ he argues. Oceanographers using remotely operated vehicles have spotted many new species. Among them have been sea cucumbers with tails allowing them to sail along the ocean floor, and a rare ‘Dumbo’ octopus, found 3,000 metres under the Pacific Ocean, off the coast of California. Any one of these could offer lifesaving potential. Upton estimates it could take up to a decade for a newly discovered antibiotic to become a medicine – but the race towards commercial mining in the ocean abyss has already begun.",
+    "C The deep sea contains more nickel, cobalt and rare earth metals than all land reserves combined, according to the US Geological Survey, Mining corporations argue that deep- sea exploration could help diversify the supply of metals and point to the fact that demand for resources such as copper, aluminium, cobalt for electric car batteries and other metals to power technology and smartphones, is soaring. They say that deep-sea mining could yield far superior ore to land mining with little, if any, waste, Different methods of extraction exist, but most involve employing some form of converted machinery previously used in terrestrial mining to excavate materials from the sea floor, at depths of up to 6,000 metres, (hen drawing a seawater slurry, containing rock and other solid particles, from the sea floor to ships on the surface. The slurry is then ‘de-watered’ and transferred to another vessel for shipping. Extracted seawater is pumped back down and discharged close to the sea floor.",
+    "D But environmental and legal groups have urged caution, arguing there are potentially massive and unknown ramifications for the environment and for nearby communities, and that the global regulatory framework is not yet drafted. ‘Despite arising in the last half century, the “new global gold rush” of deep-sea mining shares many features with past resource scrambles – including a general disregard for environmental and social impacts, and the marginalisation of indigenous peoples and their rights,’ a paper, written by Julie Hunter and Julian Aguon, from Blue Ocean Law, and Pradeep Singh, from the Center for Marine Environmental Sciences, Bremen, argues. The authors say that knowledge of the deep seabed remains extremely limited. ‘The surface of the Moon, Mars and even Venus have all been mapped and studied in much greater detail, leading marine scientists to commonly remark that, with respect to the deep sea, “We don’t yet know what we need to know”.’",
+    "E Scientific research – including a recent paper in Marine Policy journal – has suggested the deep seabed, and hydrothermal vents, which are created when seawater meets volcanic magma, have crucial impacts upon biodiversity and the global climate. The mineral-rich vents and their surrounds are also home to many well-known animals including crustaceans, tubeworms, clams, slugs, anemones and fish. ‘It is becoming increasingly clear that deep- sea mining poses a grave threat to these vital seabed functions,’ the paper says. ‘Extraction methods would produce large sediment plumes and involve the discharge of waste back into the ocean, significantly disturbing seafloor environments,’ the paper continues. ‘On deep sea vents, scientists are clear,’ says Dr Jon Copley of the National Oceanography Centre, Southampton: ‘we don’t want mining on them.’",
+    "F The oceans occupy around 70% of the planet and are relatively unexplored, says Mike Johnston, chief executive of Nautilus, a Canadian underwater exploration company:\n\n‘It makes sense to explore this untapped potential in an environmentally sustainable way, instead of continually looking at the fast depleting land resources of the planet to meet society’s rising needs.’ Those leading the global rush to place giant mining machines thousands of metres below the sea surface say the environmental impacts will be far lower than on land. But critics say exotic and little-known ecosystems in the deep oceans could be destroyed and must be protected. ‘Mining will be the greatest assault on deep-sea ecosystems ever inflicted by humans,’ according to hydrothermal vent expert Verena Tunnicliffe, at the University of Victoria in Canada. She argues that active vents must be off-limits for mining to protect the new knowledge and biotechnology spin-offs they can deliver, and that strict controls must be in place elsewhere."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g03",
+     "instruction": "Reading passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17 on your answer sheet.",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 14,
+     "endQ": 17,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "stem": {
+        "plain": "reference to the rapidly increasing need for one raw material in the transport industry",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "14. reference to the rapidly increasing need for one raw material in the transport industry",
+        "elementPath": "children[28]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a rough estimate of the area of the Earth covered by the oceans",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15. a rough estimate of the area of the Earth covered by the oceans",
+        "elementPath": "children[28]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "stem": {
+        "plain": "how a particular underwater habitat, where minerals and organisms co-exist, is formed",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16. how a particular underwater habitat, where minerals and organisms co-exist, is formed",
+        "elementPath": "children[28]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "stem": {
+        "plain": "reference to the fact that the countries of the world have yet to agree on rules for the exploration of the seabed",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17. reference to the fact that the countries of the world have yet to agree on rules for the exploration of the seabed",
+        "elementPath": "children[28]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[27]",
+      "rawExcerpt": "Questions 14-17\n\nReading passage has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17 on your answer sheet."
+     }
+    },
+    {
+     "groupId": "g05",
+     "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 24-26 on your answer sheet.",
+     "wordLimit": "",
+     "qtype": "summary_completion",
+     "startQ": 24,
+     "endQ": 26,
+     "stimulusSegments": [
+      "Mining the sea floor"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "completion",
+       "stem": {
+        "plain": "Mining corporations believe that the mineral resources lying under the sea may be superior to those found in the earth. They also say that these can be removed without producing much (24) ______",
+        "segments": [
+         "Mining corporations believe that the mineral resources lying under the sea may be superior to those found in the earth. They also say that these can be removed without producing much",
+         {
+          "blank": 24
+         },
+         "……………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Waste",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Mining corporations believe that the mineral resources lying under the sea may be superior to those found in the earth. They also say that these can be removed without producing much (24) …………….",
+        "elementPath": "children[34]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "completion",
+       "stem": {
+        "plain": "The extraction is often done by adapting the (25) ______ that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that (26) ______ is necessary due to the possible number of unidentified consequences.",
+        "segments": [
+         "The extraction is often done by adapting the",
+         {
+          "blank": 25
+         },
+         "…………………. that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that",
+         {
+          "blank": 26
+         },
+         "…………… is necessary due to the possible number of unidentified consequences."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Machinery",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The extraction is often done by adapting the (25) …………………. that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to shi",
+        "elementPath": "children[35]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "completion",
+       "stem": {
+        "plain": "The extraction is often done by adapting the (25) ______ that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that (26) ______ is necessary due to the possible number of unidentified consequences.",
+        "segments": [
+         "The extraction is often done by adapting the",
+         {
+          "blank": 25
+         },
+         "…………………. that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to ships and returning it to the seabed. However, concerned groups strongly believe that",
+         {
+          "blank": 26
+         },
+         "…………… is necessary due to the possible number of unidentified consequences."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Caution",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The extraction is often done by adapting the (25) …………………. that has already been used to work on land. The method of excavation involves removing the seawater from the slurry that is brought up to shi",
+        "elementPath": "children[35]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[32]",
+      "rawExcerpt": "Questions 24-26\n\nComplete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 24-26 on your answer sheet."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Contemporary hunter-gatherer societies",
+   "paragraphs": [
+    "A psychologist gives his view on how humans became self-centred",
+    "There has long been a general assumption that human beings are essentially selfish. We’re apparently ruthless, with strong impulses to compete against each other for resources and to accumulate power and possessions. If we are kind to one another, it’s usually because we have ulterior motives. If we are good, it’s only because we have managed to control and transcend our innate selfishness and brutality.",
+    "This bleak view of human nature is closely associated with the science writer Richard Dawkins, whose 1976 book The Selfish Gene became popular because it fitted so well with ~ and helped to justify – the competitive and individualistic ethos that was so prevalent in late 20th-century societies. Like many others, Dawkins justifies his views with reference to the field of evolutionary psychology. Evolutionary psychology theorises that present-day human traits developed in prehistoric times, during what is termed the ‘environment of evolutionary adaptedness’.",
+    "Prehistory is usually seen as a period of intense competition, when life was such a brutal battle that only those with traits such as selfishness, aggression and ruthlessness survived. And because survival depended on access to resources – such as rivers, forests and animals – there was bound to be conflict between rival groups, which led to the development of traits such as racism and warfare. This seems logical. But, in fact, the assumption on which this all rests – that prehistoric life was a desperate struggle for survival – is false.",
+    "It’s important to remember that in the prehistoric era, the world was very sparsely populated. According to some estimates, around 15,000 years ago, the population of Europe was only 29,000, and the population of the whole world was less than half a million. Humans at that time were hunter-gatherers: people who lived by hunting wild animals and collecting wild plants. With such small population densities, it seems unlikely that prehistoric hunter-gatherer groups had to compete against each other for resources or had any need to develop ruthlessness and competitiveness, or to go to war.",
+    "There is significant evidence to back this notion from contemporary hunter-gatherer groups, who live in the same way as prehistoric humans did. As the anthropologist Bruce Knauft has remarked, hunter-gatherers are characterised by ‘extreme political and sexual egalitarianism’. Knauft has observed that individuals in such groups don’t accumulate property or possessions and have an ethical obligation to share everything. They also have methods of preserving egalitarianism by ensuring that disparities of status don’t arise.",
+    "The !Kung people of southern Africa, for example, swap arrows before going hunting and when an animal is killed, the acclaim does not go to the person who fired the arrow, but to the person the arrow belongs to. And if a person becomes too domineering, the other members of the group ostracise them, exiling the offender from society. Typically in such groups, men do not dictate what women do. Women in hunter-gatherer groups worldwide often benefit from a high level of autonomy, being able to select their own marriage partners, decide what work they do and work whenever they choose to. And if a marriage breaks down, they have custody rights over their children.",
+    "Many anthropologists believe that societies such as the !Kung were normal until a few thousand years ago, when population growth led to the development of agriculture and a settled lifestyle. In view of the above, there seems little reason to assume that traits such as racism, warfare and male domination should have been selected by evolution – as they would have been of little benefit in the prehistoric era. Individuals who behaved selfishly and ruthlessly would be less likely to survive, since they would have been ostracised from their groups.",
+    "It makes more sense, then, to see traits such as cooperation, egalitarianism, altruism and peacefulness as innate characteristics of human beings. These were the traits that were prevalent in human life for tens of thousands of years. So presumably these traits are still strong in us now.",
+    "But if prehistoric life wasn’t really as brutal as has often been assumed, why do modern humans behave so selfishly and ruthlessly? Perhaps these negative traits should be seen as a later development, the result of environmental and psychological factors. Research has shown repeatedly that when the natural habitats of primates such as apes and gorillas are disrupted, they tend to become more violent and hierarchical.",
+    "So, it could well be that the same thing has happened to us. I believe that the end of the hunter-gatherer lifestyle and the advent of farming was connected to a psychological change that occurred in some groups of people. There was a new sense of individuality and separateness, which led to a new selfishness, and ultimately to hierarchical societies, patriarchy and warfare. At any rate, these negative traits appear to have developed so recently that it doesn’t seem feasible to explain them in adaptive or evolutionary terms.",
+    "Bruce Knauft’s research shows that contemporary hunter-gatherer societies tend to exhibit a high level of (31) …………………. in all areas of life. In these cultures, distributing resources fairly among all members is a moral obligation. These societies also employ strategies to prevent differences in (32) ………………. occurring: for example, the !Kung follow a custom whereby the credit for one person’s success at (33) ……………….. is given to another member of the group. Individuals who behave in a (34) ……………………. manner are punished by being excluded from the group, and women have a considerable amount of (35) …………………. in choices regarding work and marriage."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 27,
+     "endQ": 30,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What is the writer doing in the first paragraph?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "setting out two opposing views about human nature"
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27. What is the writer doing in the first paragraph?",
+        "elementPath": "children[49]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What point is made about Richard Dawkins’ book The Selfish Gene?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Its appeal lay in the radical nature of its ideas."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28. What point is made about Richard Dawkins’ book The Selfish Gene?",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What does the writer suggest about the prehistoric era in the fourth paragraph?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Societies were more complex than many people believe."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29. What does the writer suggest about the prehistoric era in the fourth paragraph?",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The writer refers to Bruce Knauft’s work as support for the idea that",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "selfishness is a relatively recent development in human societies."
+        }
+       ],
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "30. The writer refers to Bruce Knauft’s work as support for the idea that",
+        "elementPath": "children[52]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[48]",
+      "rawExcerpt": "Questions 27-30\n\nChoose the correct letter, A, B, C or D."
+     }
+    },
+    {
+     "groupId": "g08",
+     "instruction": "Do the following statements agree with the views of the writer in reading passage? In boxes 36-40 on your answer sheet, write",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 36,
+     "endQ": 40,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 36,
+       "type": "tfng",
+       "stem": {
+        "plain": "Some anthropologists are mistaken about the point when the number of societies such as the !Kung began to decline.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "36. Some anthropologists are mistaken about the point when the number of societies such as the !Kung began to decline.",
+        "elementPath": "children[57]"
+       }
+      },
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "Humans who developed warlike traits in prehistory would have had an advantage over those who did not.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37. Humans who developed warlike traits in prehistory would have had an advantage over those who did not.",
+        "elementPath": "children[57]"
+       }
+      },
+      {
+       "number": 38,
+       "type": "tfng",
+       "stem": {
+        "plain": "Being peaceful and cooperative is a natural way for people to behave.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38. Being peaceful and cooperative is a natural way for people to behave.",
+        "elementPath": "children[57]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "tfng",
+       "stem": {
+        "plain": "Negative traits are more apparent in some modern cultures than in others.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39. Negative traits are more apparent in some modern cultures than in others.",
+        "elementPath": "children[57]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "tfng",
+       "stem": {
+        "plain": "Animal research has failed to reveal a link between changes in the environment and the emergence of aggressive tendencies.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40. Animal research has failed to reveal a link between changes in the environment and the emergence of aggressive tendencies.",
+        "elementPath": "children[57]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[56]",
+      "rawExcerpt": "Questions 36-40\n\nDo the following statements agree with the views of the writer in reading passage? In boxes 36-40 on your answer sheet, write"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "False"
+   },
+   {
+    "number": 2,
+    "value": "True"
+   },
+   {
+    "number": 3,
+    "value": "False"
+   },
+   {
+    "number": 4,
+    "value": "Not given"
+   },
+   {
+    "number": 5,
+    "value": "False"
+   },
+   {
+    "number": 6,
+    "value": "True"
+   },
+   {
+    "number": 7,
+    "value": "Colonies"
+   },
+   {
+    "number": 8,
+    "value": "Spring"
+   },
+   {
+    "number": 9,
+    "value": "Endangered"
+   },
+   {
+    "number": 10,
+    "value": "Habitat(s)"
+   },
+   {
+    "number": 11,
+    "value": "Europe"
+   },
+   {
+    "number": 12,
+    "value": "Southern"
+   },
+   {
+    "number": 13,
+    "value": "Diet"
+   },
+   {
+    "number": 14,
+    "value": "C"
+   },
+   {
+    "number": 15,
+    "value": "F"
+   },
+   {
+    "number": 16,
+    "value": "E"
+   },
+   {
+    "number": 17,
+    "value": "D"
+   },
+   {
+    "number": 18,
+    "value": "D"
+   },
+   {
+    "number": 19,
+    "value": "B"
+   },
+   {
+    "number": 20,
+    "value": "A"
+   },
+   {
+    "number": 21,
+    "value": "E"
+   },
+   {
+    "number": 22,
+    "value": "B"
+   },
+   {
+    "number": 23,
+    "value": "C"
+   },
+   {
+    "number": 24,
+    "value": "Waste"
+   },
+   {
+    "number": 25,
+    "value": "Machinery"
+   },
+   {
+    "number": 26,
+    "value": "Caution"
+   },
+   {
+    "number": 27,
+    "value": "C"
+   },
+   {
+    "number": 28,
+    "value": "C"
+   },
+   {
+    "number": 29,
+    "value": "B"
+   },
+   {
+    "number": 30,
+    "value": "A"
+   },
+   {
+    "number": 31,
+    "value": "Egalitarianism"
+   },
+   {
+    "number": 32,
+    "value": "Status"
+   },
+   {
+    "number": 33,
+    "value": "Hunting"
+   },
+   {
+    "number": 34,
+    "value": "Domineering"
+   },
+   {
+    "number": 35,
+    "value": "Autonomy"
+   },
+   {
+    "number": 36,
+    "value": "Not given"
+   },
+   {
+    "number": 37,
+    "value": "No"
+   },
+   {
+    "number": 38,
+    "value": "Yes"
+   },
+   {
+    "number": 39,
+    "value": "Not given"
+   },
+   {
+    "number": 40,
+    "value": "No"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     18,
+     23
+    ],
+    "instruction": "Look at the following statements (Questions 18-23) and the list of people below. Match each statement with the correct person or people, A-E"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     31,
+     35
+    ],
+    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 29,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 4,
+ "contentFingerprint": "3ea92960958edd742c28051274ff80d153b021ddcf8320d160af534bc612f139"
+}

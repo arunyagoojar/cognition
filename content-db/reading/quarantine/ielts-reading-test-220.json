@@ -1,0 +1,39 @@
+{
+ "slug": "ielts-reading-test-220",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     32,
+     36
+    ],
+    "instruction": "Look at the following statements, 32-36, and the list of people, A-C. Match each statement to the correct person. A Dr. Mayalla\nB Anita Brow"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
+   "evidence": {
+    "passage": 3,
+    "title": "Passage 3",
+    "groups": [
+     [
+      37,
+      40
+     ]
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 29,
+    "answers": 40
+   }
+  }
+ ]
+}

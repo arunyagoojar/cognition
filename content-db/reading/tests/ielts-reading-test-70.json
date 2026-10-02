@@ -1,0 +1,751 @@
+{
+ "id": "reading.test-0070.31705cdb",
+ "module": "reading",
+ "sourceNumbers": [
+  70
+ ],
+ "slug": "ielts-reading-test-70",
+ "title": "IELTS Academic Reading Test 70",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-70/index.html",
+   "sha256": "ff35ff910d06ada5db6b5762c6404526bf1743418f5033d26dbadde65812792e",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-70/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Spider silk cuts weight of bridges",
+   "paragraphs": [
+    "A Scientists have succeeded in copying the silk-producing genes of the Golden Orb Weaver spider and are using them to create a synthetic material which they believe is the model for a new generation of advanced bio-materials. The new material, biosilk, which has been spun for the first time by researchers at DuPont, has an enormous range of potential uses in construction and manufacturing.",
+    "B The attraction of the silk spun by the spider is a combination of great strength and enormous elasticity, which man-made fibres have been unable to replicate. On an equal-weight basis, spider silk is far stronger than steel and it is estimated that if a single strand could be made about 10m in diameter, it would be strong enough to stop a jumbo jet in flight. A third important factor is that it is extremely light. Army scientists are already looking at the possibilities of using it for lightweight, bullet-proof vests and parachutes.",
+    "C For some time, biochemists have been trying to synthesise the drag-line silk of the Golden Orb Weaver. The drag-line silk, which forms the radial arms of the web, is stronger than the other parts of the web and some biochemists believe a synthetic version could prove to be as important a material as nylon, which has been around for 50 years, since the discoveries of Wallace Carothers and his team ushered in the age of polymers.",
+    "D To recreate the material, scientists, including Randolph Lewis at the University of Wyoming, first examined the silk-producing gland of the spider. ‘We took out the glands that produce the silk and looked at the coding for the protein material they make, which is spun into a web. We then went looking for clones with the right DNA,’ he says.",
+    "E At DuPont, researchers have used both yeast and bacteria as hosts to grow the raw material, which they have spun into fibres. Robert Dorsch, DuPont’s director of biochemical development, says the globules of protein, comparable with marbles in an egg, are harvested and processed. ‘We break open the bacteria, separate out the globules of protein and use them as the raw starting material. With yeast, the gene system can be designed so that the material excretes the protein outside the yeast for better access,’ he says.",
+    "F ‘The bacteria and the yeast produce the same protein, equivalent to that which the spider uses in the drag lines of the web. The spider mixes the protein into a water- based solution and then spins it into a solid fibre in one go. Since we are not as clever as the spider and we are not using such sophisticated organisms, we substituted manmade approaches and dissolved the protein in chemical solvents, which are then spun to push the material through small holes to form the solid fibre.’",
+    "G Researchers at DuPont say they envisage many possible uses for a new biosilk material. They say that earthquake-resistant suspension bridges hung from cables of synthetic spider silk fibres may become a reality. Stronger ropes, safer seat belts, shoe soles that do not wear out so quickly and tough new clothing are among the other applications. Biochemists such as Lewis see the potential range of uses of biosilk as almost limitless. ‘It is very strong and retains elasticity; there are no man-made materials that can mimic both these properties. It is also a biological material with all the advantages that has over petrochemicals,’ he says.",
+    "H At DuPont’s laboratories, Dorsch is excited by the prospect of new super-strong materials but he warns they are many years away. ‘We are at an early stage but theoretical predictions are that we will wind up with a very strong, tough material, with an ability to absorb shock, which is stronger and tougher than the man-made materials that are conventionally available to us,’ he says.",
+    "I The spider is not the only creature that has aroused the interest of material scientists. They have also become envious of the natural adhesive secreted by the sea mussel. It produces a protein adhesive to attach itself to rocks. It is tedious and expensive to extract the protein from the mussel, so researchers have already produced a synthetic gene for use in surrogate bacteria."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Reading Passage 1 has nine paragraphs, A-l. Which paragraph contains the following information?",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "matching_information",
+     "startQ": 1,
+     "endQ": 5,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a comparison of the ways two materials are used to replace silk-producing glands",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1 a comparison of the ways two materials are used to replace silk-producing glands",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "matching_information",
+       "stem": {
+        "plain": "predictions regarding the availability of the synthetic silk",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "H",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2 predictions regarding the availability of the synthetic silk",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "matching_information",
+       "stem": {
+        "plain": "ongoing research into other synthetic materials",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "I",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3 ongoing research into other synthetic materials",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the research into the part of the spider that manufactures silk",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4 the research into the part of the spider that manufactures silk",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the possible application of the silk in civil engineering",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "G",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5 the possible application of the silk in civil engineering",
+        "elementPath": "children[11]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[10]",
+      "rawExcerpt": "Questions 1-5\nReading Passage 1 has nine paragraphs, A-l. Which paragraph contains the following information?"
+     }
+    },
+    {
+     "groupId": "g03",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 11-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 11,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 11,
+       "type": "tfng",
+       "stem": {
+        "plain": "Biosilk has already replaced nylon in parachute manufacture.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11 Biosilk has already replaced nylon in parachute manufacture.",
+        "elementPath": "children[20]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "tfng",
+       "stem": {
+        "plain": "The spider produces silk of varying strengths.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12 The spider produces silk of varying strengths.",
+        "elementPath": "children[20]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "tfng",
+       "stem": {
+        "plain": "Lewis and Dorsch co-operated in the synthetic production of silk.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13 Lewis and Dorsch co-operated in the synthetic production of silk.",
+        "elementPath": "children[20]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[18]",
+      "rawExcerpt": "Questions 11-13\nDo the following statements agree with the information given in Reading Passage 1? In boxes 11-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Cambridge IELTS Tests 1 to 17",
+   "paragraphs": [
+    "Revolutions in Mapping",
+    "Today, the mapmaker’s vision is no longer confined to what the human eye can see. The perspective of mapmaking has shifted from the crow’s nest of the sailing vessel, mountain top and airplane to new orbital heights. Radar, which bounces microwave radio signals off a given surface to create images of its contours and textures, can penetrate jungle foliage and has produced the first maps of the mountains of the planet Venus. And a combination of sonar and radar produces charts of the seafloor, putting much of Earth on the map for the first time. ‘Suddenly it’s a whole different world for us,’ says Joel Morrison, chief of geography at the U.S. Bureau of the Census. ‘Our future as mapmakers – even ten years from now – is uncertain.’",
+    "The world’s largest collection of maps resides in the basement of the Library of Congress in Washington, D.C. The collection, consisting of up to 4.6 million map sheets and 63,000 atlases, includes magnificent bound collections of elaborate maps – the pride of the golden age of Dutch cartography. In the reading room scholars, wearing thin cotton gloves to protect the fragile sheets, examine ancient maps with magnifying glasses. Across the room people sit at their computer screens, studying the latest maps. With their prodigious memories, computers are able to store data about people, places and environments – the stuff of maps – and almost instantly information is displayed on the screen in the desired geographic context, and at the click of a button, a print-out of the map appears.",
+    "Measuring the spherical Earth ranks as the first major milestone in scientific cartography. This was first achieved by the Greek astronomer Eratosthenes, a scholar at the famous Alexandrian Library in Egypt in the third century BC. He calculated the Earth’s circumference as 25,200 miles, which was remarkably accurate. The longitudinal circumference is known today to be 24,860 miles.",
+    "Building on the ideas of his predecessors, the astronomer and geographer Ptolemy, working in the second century AD, spelled out a system for organising maps according to grids of latitude and longitude. Today, parallels of latitude are often spaced at intervals of 10 to 20 degrees and meridians at 15 degrees, and this is the basis for the width of modern time zones. Another legacy of Ptolemy’s is his advice to cartographers to create maps to scale. Distance on today’s maps is expressed as a fraction or ratio of the real distance. But mapmakers in Ptolemy’s time lacked the geographic knowledge to live up to Ptolemy’s scientific principles. Even now, when surveyors achieve accuracies down to inches and satellites can plot potential missile targets within feet, maps are not true pictures of reality.",
+    "However, just as the compass improved navigation and created demand for useful charts, so the invention of the printing press in the 15th century put maps in the hands of more people, and took their production away from monks, who had tended to illustrate theology rather than geography. Ocean-going ships launched an age of discovery, enlarging both what could and needed to be mapped, and awakened an intellectual spirit and desire for knowledge of the world.",
+    "Inspired by the rediscovered Ptolemy, whose writing had been preserved by Arabs after the sacking of the Alexandrian Library in AD 931, mapmakers in the 15th century gradually replaced theology with knowledge of faraway places, as reported by travelling merchants like Marco Polo.",
+    "Gerhardus Mercator, the foremost shipmaker of the 16th century, developed a technique of arranging meridians and parallels in such a way that navigators could draw straight lines between two points and steer a constant compass course between them. This distortion formula, introduced on his world map of 1569, created the ‘Greenland problem’. Even on some standard maps to this day, Greenland looks as large as South America – one of the many problems when one tries to portray a round world on a flat sheet of paper. But the Mercator projection was so practical that it is still popular with sailors.",
+    "Scientific mapping of the land came into its own with the achievements of the Cassini family – father, son, grandson and great-grandson. In the late 17th century, the Italian-born founder, Jean-Dominique, invented a complex method of determining longitude based on observations of Jupiter’s moons. Using this technique, surveyors were able to produce an accurate map of France. The family continued to map the French countryside and his great- grandson finally published their famous Cassini map in 1793 during the French Revolution. While it may have lacked the artistic appeal of earlier maps, it was the model of a social and geographic map showing roads, rivers, canals, towns, abbeys, vineyards, lakes and even windmills. With this achievement, France became the first country to be completely mapped by scientific methods.",
+    "Mapmaking has come a long way since those days. Today’s surveyors rarely go into the field without being linked to navigation satellites. Their hand-held receivers are the most familiar of the new mapping technologies, and the satellite system, developed and still operated by the US Defense Department, is increasingly used by surveyors. Even ordinary hikers, sailors and explorers can tap into it for data telling them where they are. Simplified civilian versions of the receivers are available for a few hundred dollars and they are also the heart of electronic map displays available in some cars. Cartography is pressing on to cosmic frontiers, but its objective is, and always has been, to communicate a sense of ‘here’ in relation to ‘there’, however far away ‘there’ may be."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 22,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 22,
+       "type": "completion",
+       "stem": {
+        "plain": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22) ______ in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of (23) ______ rather than scientists. Fortunately, however, the writings of (24) ______ had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days, (25) ______ are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in (26) ______",
+        "segments": [
+         "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in",
+         {
+          "blank": 22
+         },
+         "in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of",
+         {
+          "blank": 23
+         },
+         "rather than scientists. Fortunately, however, the writings of",
+         {
+          "blank": 24
+         },
+         "had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days,",
+         {
+          "blank": 25
+         },
+         "are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in",
+         {
+          "blank": 26
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Egypt",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22)…………………………………….i",
+        "elementPath": "children[42]"
+       }
+      },
+      {
+       "number": 23,
+       "type": "completion",
+       "stem": {
+        "plain": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22) ______ in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of (23) ______ rather than scientists. Fortunately, however, the writings of (24) ______ had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days, (25) ______ are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in (26) ______",
+        "segments": [
+         "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in",
+         {
+          "blank": 22
+         },
+         "in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of",
+         {
+          "blank": 23
+         },
+         "rather than scientists. Fortunately, however, the writings of",
+         {
+          "blank": 24
+         },
+         "had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days,",
+         {
+          "blank": 25
+         },
+         "are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in",
+         {
+          "blank": 26
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "monks",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22)…………………………………….i",
+        "elementPath": "children[42]"
+       }
+      },
+      {
+       "number": 24,
+       "type": "completion",
+       "stem": {
+        "plain": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22) ______ in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of (23) ______ rather than scientists. Fortunately, however, the writings of (24) ______ had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days, (25) ______ are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in (26) ______",
+        "segments": [
+         "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in",
+         {
+          "blank": 22
+         },
+         "in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of",
+         {
+          "blank": 23
+         },
+         "rather than scientists. Fortunately, however, the writings of",
+         {
+          "blank": 24
+         },
+         "had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days,",
+         {
+          "blank": 25
+         },
+         "are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in",
+         {
+          "blank": 26
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Ptolemy",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22)…………………………………….i",
+        "elementPath": "children[42]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "completion",
+       "stem": {
+        "plain": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22) ______ in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of (23) ______ rather than scientists. Fortunately, however, the writings of (24) ______ had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days, (25) ______ are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in (26) ______",
+        "segments": [
+         "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in",
+         {
+          "blank": 22
+         },
+         "in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of",
+         {
+          "blank": 23
+         },
+         "rather than scientists. Fortunately, however, the writings of",
+         {
+          "blank": 24
+         },
+         "had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days,",
+         {
+          "blank": 25
+         },
+         "are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in",
+         {
+          "blank": 26
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "(navigation) satellites",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22)…………………………………….i",
+        "elementPath": "children[42]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "completion",
+       "stem": {
+        "plain": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22) ______ in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of (23) ______ rather than scientists. Fortunately, however, the writings of (24) ______ had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days, (25) ______ are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in (26) ______",
+        "segments": [
+         "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in",
+         {
+          "blank": 22
+         },
+         "in the 3rd century BC. Work continued in this tradition until the 2nd century AD but was then abandoned for over a thousand years, during which time maps were the responsibility of",
+         {
+          "blank": 23
+         },
+         "rather than scientists. Fortunately, however, the writings of",
+         {
+          "blank": 24
+         },
+         "had been kept, and interest in scientific mapmaking was revived as scholars sought to produce maps, inspired by the accounts of travellers. These days,",
+         {
+          "blank": 25
+         },
+         "are vital to the creation of maps and radar has allowed cartographers to map areas beyond our immediate world. In addition, this high-tech equipment is not only used to map faraway places, but cheaper versions have also been developed for use in",
+         {
+          "blank": 26
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "(some) cars",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Ancient maps allow us to see how we have come to make sense of the world. They also reflect the attitudes and knowledge of the day. The first great step in mapmaking took place in (22)…………………………………….i",
+        "elementPath": "children[42]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[41]",
+      "rawExcerpt": "Questions 22-26\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Hypnotism — is it real or just a circus trick?",
+   "paragraphs": [
+    "A Hypnosis has been shown through a number of rigorously controlled studies to reduce pain, control blood pressure, and even make warts go away. But because very few studies have attempted to define the actual processes involved, most scientists are sceptical of its power and uses. That scepticism has driven David Spiegel, a professor of psychiatry at Stanford University School of Medicine, USA, and other researchers to take a hard look at what happens in the brain during hypnosis.",
+    "Among researchers there are two schools of thought. One claims that hypnosis fundamentally alters subjects’ state of mind: they enter a trance, which produces changes in brain activity. The other believes that hypnosis is simply a matter of suggestibility and relaxation. Spiegel belongs to the first school and over the years has had a debate with two scientists on the other side, Irving Kirsch, a University of Connecticut psychologist, and Stephen Kosslyn, a Harvard professor.",
+    "B Kirsch often uses hypnosis in his practice and doesn’t deny that it can be effective. ‘With hypnosis you do put people in altered states,’ he says. ‘But you don’t need a trance to do it.’ To illustrate the point, Kirsch demonstrates how a subject holding a small object on a chain can make it swing in any direction by mere suggestion, the chain responding to minute movements in the tiny muscles of the fingers. ‘You don’t have to enter a trance for your subconscious and your body to act upon a suggestion,’ Kirsch says. ‘The reaction is the result of your focusing on moving the chain in a particular direction.’",
+    "Spiegel disagrees. One of his best known studies found that when subjects were hypnotised and given suggestions their brain wave patterns changed, indicating that they had entered a trance. In one of his studies, people under hypnosis were told their forearms were numb, then given light electrical shocks to the wrists. They didn’t flinch or respond in any way, and their brain waves resembled those of people who experienced a much weaker shock. To Kirsch this still wasn’t enough to prove the power of trance, but Stephen Kosslyn was willing to be convinced. Many external factors could have been responsible for the shift in the subjects’ state of mind, but Kosslyn wondered, ‘Is there really something going on in the brain?’",
+    "C To find out, Spiegel and Kosslyn decided to collaborate on a study focusing on a part of the brain that is well understood: the circuit which has been found to process the perception of colour. Spiegel and Kosslyn wanted to see if subjects could set off the circuit by visualising colour while under hypnosis. They selected eight people for the experiment conducted at Massachusetts General Hospital. The subjects were put in a scanner and shown a slide with coloured rectangles while their brain activity was mapped. Then they were shown a black and white slide and told to imagine its having colour. Both tasks were then repeated under hypnosis.",
+    "The results were striking. When the subjects truly saw the coloured rectangles, the circuit lit up on both sides of the brain; when they only had to imagine the colour, the circuit lit up only in the right hemisphere. Under hypnosis, however, both sides of the brain became active, just as in regular sight; imagination seemed to take on the quality of a hallucination.",
+    "After the experiment, Kosslyn was forced to admit, ‘I’m absolutely convinced now that hypnosis can boost what mental imagery does.’ But Kirsch remained sceptical, saying, ‘The experiments demonstrate that people are experiencing the effects of hypnotic suggestion but don’t prove that they are entering a trance.’ He also argued that subjects were told to see the card in colour when they were hypnotised but only to imagine it in colour when they weren’t. ‘Being told to pretend you’re having an experience is different from the suggestion to have the experience.’",
+    "D Spiegel, however, is a clinician first and a scientist second. He believes the most important thing is that doctors recognise the power of hypnosis and start to use it. Working with Elvira Lang, a radiologist at a Harvard Medical Centre, he is testing the use of hypnosis in the operating room just as he and Kosslyn did in the scanner. Spiegel and Lang took 241 patients scheduled for surgery and divided them into three groups. One group received standard care, another standard care with a sympathetic care provider and the third received standard care, a sympathetic care provider and hypnosis. Every 15 minutes the patients were asked to rate their pain and anxiety levels. They were also hooked up to painkilling medication which they could administer to themselves.",
+    "On average, Spiegel and Lang found the hypnotised subjects used less medication, experienced less pain and felt far less anxiety than the other two groups. Original results published in The Lancet have been further supported by ongoing studies conducted by Lang.",
+    "E Spiegel’s investigations into the nature of hypnosis and its effects on the brain continue. However, if hypnosis is ever to work its way into mainstream medicine and everyday use, physicians will need to know there is solid science behind what sounds like mysticism. Only then will their reluctance to using such things as mind over matter be overcome. ‘I agree that the medical use of hypnotism should be based on data rather than belief,’ says Spiegel, ‘but in the end it doesn’t really matter why it works, as long as it helps our patients.’"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g09",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 37-40 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 37,
+     "endQ": 40,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "Spiegel is more interested in scientific research than medical practice.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37 Spiegel is more interested in scientific research than medical practice.",
+        "elementPath": "children[65]"
+       }
+      },
+      {
+       "number": 38,
+       "type": "tfng",
+       "stem": {
+        "plain": "Patients in the third group in Spiegel and Lang’s experiment were easily hypnotised.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38 Patients in the third group in Spiegel and Lang’s experiment were easily hypnotised.",
+        "elementPath": "children[65]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "tfng",
+       "stem": {
+        "plain": "In Spiegel and Lang’s experiment, a smaller amount of painkiller was needed by the hypnotised patients than by the other two groups.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39 In Spiegel and Lang’s experiment, a smaller amount of painkiller was needed by the hypnotised patients than by the other two groups.",
+        "elementPath": "children[65]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "tfng",
+       "stem": {
+        "plain": "Spiegel feels that doctors should use hypnotism only when it is fully understood.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40 Spiegel feels that doctors should use hypnotism only when it is fully understood.",
+        "elementPath": "children[65]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[63]",
+      "rawExcerpt": "Questions 37-40\nDo the following statements agree with the information given in Reading Passage 3? In boxes 37-40 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "E"
+   },
+   {
+    "number": 2,
+    "value": "H"
+   },
+   {
+    "number": 3,
+    "value": "I"
+   },
+   {
+    "number": 4,
+    "value": "D"
+   },
+   {
+    "number": 5,
+    "value": "G"
+   },
+   {
+    "number": 6,
+    "value": "yeast"
+   },
+   {
+    "number": 7,
+    "value": "bacteria"
+   },
+   {
+    "number": 8,
+    "value": "protien"
+   },
+   {
+    "number": 9,
+    "value": "chemical solvents"
+   },
+   {
+    "number": 10,
+    "value": "(small) holes"
+   },
+   {
+    "number": 11,
+    "value": "false"
+   },
+   {
+    "number": 12,
+    "value": "not given"
+   },
+   {
+    "number": 13,
+    "value": "not given"
+   },
+   {
+    "number": 14,
+    "value": "A"
+   },
+   {
+    "number": 15,
+    "value": "D"
+   },
+   {
+    "number": 16,
+    "value": "B"
+   },
+   {
+    "number": 17,
+    "value": "C"
+   },
+   {
+    "number": 18,
+    "value": "C"
+   },
+   {
+    "number": 19,
+    "value": "D"
+   },
+   {
+    "number": 20,
+    "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "B"
+   },
+   {
+    "number": 22,
+    "value": "Egypt"
+   },
+   {
+    "number": 23,
+    "value": "monks"
+   },
+   {
+    "number": 24,
+    "value": "Ptolemy"
+   },
+   {
+    "number": 25,
+    "value": "(navigation) satellites"
+   },
+   {
+    "number": 26,
+    "value": "(some) cars"
+   },
+   {
+    "number": 27,
+    "value": "iv"
+   },
+   {
+    "number": 28,
+    "value": "vii"
+   },
+   {
+    "number": 29,
+    "value": "v"
+   },
+   {
+    "number": 30,
+    "value": "i"
+   },
+   {
+    "number": 31,
+    "value": "iii"
+   },
+   {
+    "number": 32,
+    "value": "B"
+   },
+   {
+    "number": 33,
+    "value": "B"
+   },
+   {
+    "number": 34,
+    "value": "D"
+   },
+   {
+    "number": 35,
+    "value": "A"
+   },
+   {
+    "number": 36,
+    "value": "D"
+   },
+   {
+    "number": 37,
+    "value": "false"
+   },
+   {
+    "number": 38,
+    "value": "not given"
+   },
+   {
+    "number": 39,
+    "value": "true"
+   },
+   {
+    "number": 40,
+    "value": "false"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     6,
+     10
+    ],
+    "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer. To produce a solid fibre"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     14,
+     18
+    ],
+    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 14-18 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     19,
+     21
+    ],
+    "instruction": "Look at the following list of achievements (Questions 19-21) and the list of mapmakers below. Match each achievement wit"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     27,
+     31
+    ],
+    "instruction": "Reading Passage 3 has five sections, A-E. Choose the correct heading for each section from the list of headings below. W"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     32,
+     36
+    ],
+    "instruction": "Choose the correct letter A, B, C or D."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 17,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "4ec742c8c299f35bc0bee57659f845ffa42f669343b81d9406237cb913ce3d98"
+}

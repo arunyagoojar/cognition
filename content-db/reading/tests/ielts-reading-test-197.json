@@ -1,0 +1,686 @@
+{
+ "id": "reading.test-0197.96e1f211",
+ "module": "reading",
+ "sourceNumbers": [
+  197
+ ],
+ "slug": "ielts-reading-test-197",
+ "title": "IELTS Academic Reading Test 197",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-197/index.html",
+   "sha256": "4db533a9f949d276e942f2dc2d5327781822a308240f1cc59a939a5171ebfc01",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-197/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "make that wine!",
+   "paragraphs": [
+    "Australia is a nation of beer drinkers. Actually, make that wine. Yes, wine has now just about supplanted beer as the alcoholic drink of choice, probably because of the extensive range of choices available and the rich culture behind them. This all adds a certain depth and intimacy to the drinking process which beer just cannot match. In addition, although wine drinkers seldom think about it, moderate consumption seems to be beneficial for the health, lowering the incidence of heart disease and various other ailments.",
+    "Wine is the product of the fermentation of grape juice, in which yeast (a fungus) consumes the natural sugars within, producing alcohol and carbon dioxide as waste. Yeast grows naturally on many varieties of grapes, often visible as a white powder, and causing fermentation directly on the plant. Thus, the discovery of wine-making was inevitable at some stage in human history. The evidence shows that this was at least 8,000 years ago in the Near East. From there, wine-making spread around the ancient Mediterranean civilisations, where the liquid was extensively produced, drunk, and traded. To this day, the biggest drinkers of wine remain the Mediterranean countries, with France leading the way.",
+    "This leads to the classification of wines, which is quite complex. It often begins with the colour: red or white. Most people do not know that the colour of wine is not due to the grapes used (whose skins are either green or purple), but to the wine-making process itself. All grape juice is clear. Red wines are produced by leaving the grape skin in contact with the juice during fermentation; white wines by not doing so. Thus, white wine can be made from dark-coloured grapes, provided that the skin is separated early, although the resultant wine may have a pinkish tinge.",
+    "A similar wine classification is based more specifically on the grape species used, giving such well-known names as Pinot Noir and Merlot. Chardonnay grapes remain one of the most widely planted, producing an array of white wines, rivaling the cabernet sauvignon grape, a key ingredient in the world’s most widely recognised, and similarly named, red wines. When one grape species is used, or is predominant, the wine produced is called varietal, as opposed to mixing the juices of various identified grapes, which results in blended wines. The latter process is often done when wine-makers, and the people who drink their product, want a consistent taste, year after year. Far from being looked down upon, it often results in some of the world’s most expensive bottles, such as the Cote Rotie wines in France.",
+    "Increasingly, however, market recognition is based on the location of the wine production, resulting in labels such as Bordeaux in France, Napa Valley in California, and the Barossa Valley in Australia. Traditional wines made in these places carry trademarks, respected by serious wine drinkers. However, an example of the blurred lines is the term ‘champagne’. This was once expected to be made from grapes grown in the Champagne region of France, with all the expertise and traditions of that area, but, despite legal attempts to trademark the term, it has become ‘semi-generic’, allowing it to be used for any wine of this type made anywhere in the world.",
+    "Finally, we come to the vinification method as a means of classification. One example is, in fact, champagne, known as a ‘sparkling’ wine. By allowing a secondary fermentation in a sealed container, it retains some of the waste carbon dioxide. Another variation is to stop the fermentation before all the natural sugars are consumed, creating dessert wines, ranging from slight to extreme sweetness. Yet again, grapes can be harvested well beyond their maximum ripeness, creating ‘late harvest wines’, or allowed to become partially dried (or ‘raisoned’), creating ‘dried grape wines’. Clearly, there are many possibilities, all producing uniquely flavoured products.",
+    "One of the best-known terms relating to wine is ‘vintage’. This signifies that the product was made from grapes that were grown in a single labeled year. If that year is eventually acknowledged to have produced exceptionally fine grapes and resultant wines (‘a good vintage’), bottles from that period are often saved for future consumption. Of course, the appreciation and assessment of wine is an inexact science, meaning that the significance of a particular vintage often promotes much speculation and disagreement. A non-vintage wine is usually a blend from the produce of two or more years, which is done, as mentioned before, for consistency and quality control.",
+    "This leads to the rich and varied world of wine assessment, and its descriptive terminology. Wine has such a variety of aromas, flavours, textures, and aftertastes that serious wine drinkers demand an agreed vocabulary so that the drinking sensations can be reliably described in writing. From bouquet to biscuity, mellow to musky, vivid to vegetal, the conceited connoisseur can perplex the listener with some really purple prose. Perhaps the opportunity to posture pretentiously with all this jargon is the main reason why wine enthusiasts are so taken with this product. Cheers!"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the information given in Reading Passage One? Write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 4,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "Wine is popular in Australia because it is healthy.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. Wine is popular in Australia because it is healthy.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "Yeast is white-coloured.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. Yeast is white-coloured.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "Wine is popular in the Near East.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. Wine is popular in the Near East.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Blended wines are usually cheaper.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. Blended wines are usually cheaper.",
+        "elementPath": "children[11]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[9]",
+      "rawExcerpt": "Questions 1-4\nDo the following statements agree with the information given in Reading Passage One? Write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no informati"
+     }
+    },
+    {
+     "groupId": "g03",
+     "instruction": "Choose the correct letter, A, B, C, or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 11,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 11,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Vintage wines are",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "mostly better."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11. Vintage wines are",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The author thinks that wine terminology is",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "unnecessary."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12. The author thinks that wine terminology is",
+        "elementPath": "children[16]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Wine",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "is more popular than beer, in Australia."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13. Wine",
+        "elementPath": "children[17]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[14]",
+      "rawExcerpt": "Questions 11-13\nChoose the correct letter, A, B, C, or D."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "that vision thing",
+   "paragraphs": [
+    "In the past, management took a minor role in influencing motivation. It was generally considered that if the correct tools, training, and environment were provided, individuals would do their jobs, and that this was sufficient in itself. People in organisations were considered ‘personnel’. But look how it has now changed. ‘Personnel’ have become ‘human resources’. and staff are now seen in terms of strategic potential, and with appropriate development, are one of the most important assets organisations may have.",
+    "A key aspect of this is motivation, and to achieve it, the latest buzzword is envisioning. We often hear management gurus propounding the thesis that any leader of worth must have a vision. This can unite, inspire, and direct the energies of the staff in the right direction. In the absence of such a ‘visionary leader’, the organisation necessarily flounders in complete aimlessness – or at least, that is what we are led to believe. And yet I strongly disagree that this ‘vision thing’ (as famously referred to by former American President, George Bush Senior) is worth much at all. I’d even go further, stating that it can be distinctly bad for the organisation.",
+    "The first fact to realise is that ‘envisioning’ fails to acknowledge the true human nature of organisations. These places are not composed of lemmings., all with a simplistic and single-minded dedication towards one goal. They are most obviously composed of groups of human beings, and with their rich variety of personalities and experiences, no such community can be homogenous and share exactly the same sat of personal values. These people are, in fact, merely loosely-bound cohorts pursuing different objectives (status, money, power, or individually defined agendas), in different manners. Thus a truly shared and meaningful vision is very difficult, and often impossible, to generate.",
+    "Yet the ‘visionary’ manager attempts to do just this. The trouble is, the high-minded dictates of his fresh MBA do not mention becoming bogged down in a long, laboured excess of word-smithing, or how, in order to reach a consensus, the vision necessarily loses all individuality. The books do not mention the passionless and sterile written exhortation which is ultimately produced, of working towards ‘unshakeable integrity’. As admirable in content as these may be, they are merely corporate mantras rather than words to be lived by. Few will believe in something imposed from above, instead merely complying at a superficial level.",
+    "The unfortunate fact is, when turning from rhetoric to reality, the contradictions can be overwhelming. Deep down, all staff members know that envisioning is attempted not to create a more egalitarian company, but only as a means of enriching the company directors. But what about those staff member? Few of them work merely for the love of their job. In a materialistic and consumer-driven world, they work for hard and tangible rewards. This can take many forms, but certainly involves the company giving back profit in the form of salary, overtime, TOIL, bonuses, perks and extra days off. Personal visions never, ever, mention these.",
+    "Here’s another reason why envisioning is dubious at best. Workers do not like to be treated as products in the service of profits, or cogs in the organisational machine, yet envisioning ranks them as even worse – as animals in a sociological experiment. The assumption is that they lack their own personal vision and are helplessly adrift, deficits which can only be remedied by a great leader who can herd the lost sheep in the right direction. This is not a feeling likely to enhance commitment to the cause, and often make staff feel the very opposite, a fact about which I can personally testify from my own experiences of working in big companies where the envisioning farce was played out.\nPersonal visions are, in fact, necessarily complex. Almost everyone would surely have difficulties in articulating their deepest motivations, as well as in being honest about this to themselves. They would similarly have some reluctance to openly talk on the subject, often with people who might be competitors for that next promotion. Furthermore, envisioning begs the question of whether a vision is even necessary. Some people are not driven by a determination to stridently blaze a trail through life. This may merely show a spiritual calm, and a desire to appreciate the present. It may also be a smarter and more strategic approach to life’s unpredictable turns, applying equally well to the business world. In short, a lack of vision may be better – much better.",
+    "George Bush, as with many presidents, occasionally did not articulate his thoughts clearly, but his famously dismissive comment about envisioning speaks volumes. ‘That vision thing’ is remarkable in its concision. In just three words, it encapsulates the trendy, contrived, pigeon-holing, simplistic, top-down, and often insulting and hypocritical nature of the process. Mr Bush, you have my vote.",
+    "Questions 14-17\nAnswer the questions. Choose NO MORE THAN TWO WORDS from the passage for each answer",
+    "14. Broadly, what do staff need in order to most benefit a company?\n15. Which people advise envisioning?\n16. What do they believe a lack of vision might cause?\n17. What aspect can groups of people never have in common?"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g05",
+     "instruction": "Choose the correct letter, A, B, C, or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 24,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Most people",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "can define what makes them want to succeed."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24. Most people",
+        "elementPath": "children[31]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Personal visions",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "take people forward in life."
+        }
+       ],
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25. Personal visions",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "With regard to envisioning, the author feels",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "critical."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26. With regard to envisioning, the author feels",
+        "elementPath": "children[33]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[30]",
+      "rawExcerpt": "Questions 24-26\nChoose the correct letter, A, B, C, or D."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "destination mars",
+   "paragraphs": [
+    "Mars is the closest potentially habitable planet. It has solid ground, protective surface features, a thin atmosphere, more closely mimics the gravitational and lighting conditions on Earth, and is reachable – just. Most importantly, studies have found that this planet has vast reserves of frozen water, and there are other basic minerals as well. In contrast, the closest heavenly body – the moon – is dusty, barren, hostile, and dark. Settlement of the moon would be much easier, but since there are no resources there, it would ultimately be more costly and of little use. If there is any extra-terrestrial site where humankind will ultimately settle, it must be Mars.",
+    "Yet this planet is much more distant than the moon, making the logistics daunting. Food, water, oxygen, and life-support systems for such a journey would be too heavy for current rocket science. Technological innovations would be necessary, and the timing of the trip absolutely critical. The different orbits of Mars and Earth mean that they most closely approach each other every 26 months, but this event itself fluctuates on a 15-year cycle. This means that only once in that time does a launch window open. That is quite few and far between, yet missions must necessarily leave at these times.",
+    "The trouble is, even then, the journey to Mars and back would take over a year, and the human body suffers profoundly when left in micro-gravity for that length of time. Without the need to stand, there is almost no flexing or pressure on the back or the leg muscles. These gradually shrink and weaken, while bones lose their density, and lungs their aerobic capacity. When left long enough in space, astronauts are unable to function properly. Yet these people will need their full physical strength and alertness for the many operational duties required. These include docking in space, approaches and landing on Mars, remote manipulation of machines, and dealing with any emergencies that arise.",
+    "Another hazard of such duration in a hermetically sealed spacecraft is disease. Human bodies constantly shed waste material (sweat, skin-flakes, hair, moisture, mucus, and the products of digestion), all of which allow microbes to breed prolifically. Coughs and sneezes spray fluids into the air, which, without gravity to pull them down to surfaces, simply float as airborne particles in those cramped confines, causing easy microbial exchange between crew members. Bacterial infections and fungal attacks can be prevalent, and human immune systems are weakened in micro-gravity. Thus, a long mission to Mars would require the best air-cleansing system available, rigorous disinfecting and hygiene procedures, plus an excellent supply of antibiotics.",
+    "On reaching Mars, the problems only increase. Staying on the planet for any significant length of time will be difficult. In the absence of a thick protective atmosphere or magnetosphere to burn up or deflect objects, respectively, astronauts will be exposed, to potentially lethal UV radiation, micro-meteoroids, solar flares, and high-energy particles, all of which regularly bombard the surface. Spacecraft and land-based capsules will need special shielding, which adds to the weight and expense. Construction of living quarters will be time-consuming, difficult, and dangerous. For a longer stay on Mars, the only solution, it seems, is to go underground.",
+    "One of the most interesting discoveries in this respect is of possible cave entrances on the side of Arsia Mons, a large Martian volcano. Seven such entrances have been identified in satellite imagery, showing circular holes resembling the collapse of cave ceilings. The hope is that these may lead to more extensive cave formations, or perhaps lava tubes, offering the protection necessary in such a hostile terrain. An additional benefit is the potential access to vital minerals, and most importantly of all, the possibility of frozen water. These sites therefore open up the possibility of independent and permanent settlement on this planet.",
+    "The most exciting option is to attempt that on the very first trip – in other words, making it a oneway journey. The advantage is that the duration of space travel is immediately halved, reducing the technological, biological, and financial challenges. This very strong argument is somewhat offset by the difficulties in establishing a permanent presence, as well as the necessary ongoing commitment to it – for example, in the delivery of food and supplies via unmanned spacecraft. Similarly, the psychological effects on these pioneers of permanent isolation from Barth and its community, as well as being crowded into confined Martian living quarters with the same companions, raise issues of whether such a settlement is humanly feasible.",
+    "This begs the question of why undertake such missions at all. The answer, according to proponents, is that it is our destiny. Throughout history, explorers have regularly embarked on journeys in the full knowledge that death may await them, or that even if they succeeded, their health and wellbeing would be severely compromised. And today, people regularly practise extreme sports, or work in dangerous occupations, all of which significantly lower their life expectancy. The risks involved in being a Martian pioneer are no different, and so, it is argued, there is no reason why they should deter us now."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Do the following statements agree with the information given in Reading Passage One? Write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 27,
+     "endQ": 30,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "tfng",
+       "stem": {
+        "plain": "The greatest advantage of Mars is that it has many basic minerals.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27. The greatest advantage of Mars is that it has many basic minerals.",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "tfng",
+       "stem": {
+        "plain": "Settlement of the moon would be more expensive.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28. Settlement of the moon would be more expensive.",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "tfng",
+       "stem": {
+        "plain": "The magnetosphere burns up objects.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29. The magnetosphere burns up objects.",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "tfng",
+       "stem": {
+        "plain": "A one-way expedition to Mars is better.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "30. A one-way expedition to Mars is better.",
+        "elementPath": "children[45]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[43]",
+      "rawExcerpt": "Questions 27-30\nDo the following statements agree with the information given in Reading Passage One? Write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no informa"
+     }
+    },
+    {
+     "groupId": "g07",
+     "instruction": "Complete the table. Choose NO MORE THAN TWO WORDS from the passage for each answer. Questions 36-40\nGive TWO examples of the following categories. Choose NO MORE THAN TWO WORDS from the passage for each example.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "table_completion",
+     "startQ": 31,
+     "endQ": 35,
+     "stimulusSegments": [
+      "__TABLE__[[\"Problems involved in travelling to Mars\", \"Associated fact\"], [\"inadequate rocketry\", \"scientists would need (31)…………………….\"], [\"infrequent (32)………………….\", \"once every 15 years\"], [\"effect of space on (33)……………….\", \"bones (34)…………………\"], [\"disease\", \"lack of gravity facilitates (35)……………………\"]]",
+      "__TABLE__[[\"Categories\", \"Example\", \"Another example\"], [\"Human attributes needed for important space activities\", \"physical strength\", \"(36)…………………\"], [\"Specific medical conditions which could occur in space\", \"(37)………………….\", \"fungal attack\"], [\"Solid objects which could strike astronauts on Mars\", \"(38)……………….\", \"high-energy particles\"], [\"Useful substances inside Martian caves\", \"vital minerals\", \"(39)………………….\"], [\"High-risk activities happening now on Earth\", \"extreme sports\", \"(40)………………\"]]"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 31,
+       "type": "short_answer",
+       "stem": {
+        "plain": "technological innovations",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "technological innovations",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "31. technological innovations",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "short_answer",
+       "stem": {
+        "plain": "closest approach/launch window(s)",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "closest approach/launch window(s)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32. closest approach/launch window(s)",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 33,
+       "type": "short_answer",
+       "stem": {
+        "plain": "human body(ies)",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "human body(ies)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33. human body(ies)",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "short_answer",
+       "stem": {
+        "plain": "lose (their) density",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "lose (their) density",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "34. lose (their) density",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "short_answer",
+       "stem": {
+        "plain": "microbial exchange",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "microbial exchange",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "35. microbial exchange",
+        "elementPath": "children[50]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[46]",
+      "rawExcerpt": "Questions 31-35\nComplete the table. Choose NO MORE THAN TWO WORDS from the passage for each answer. Questions 36-40\nGive TWO examples of the following categories. Choose NO MORE THAN TWO WORDS from the passage for each example."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "False"
+   },
+   {
+    "number": 2,
+    "value": "True"
+   },
+   {
+    "number": 3,
+    "value": "NG"
+   },
+   {
+    "number": 4,
+    "value": "False"
+   },
+   {
+    "number": 5,
+    "value": "grape skin(s)"
+   },
+   {
+    "number": 6,
+    "value": "cabernet sauvignon"
+   },
+   {
+    "number": 7,
+    "value": "varietal"
+   },
+   {
+    "number": 8,
+    "value": "respect"
+   },
+   {
+    "number": 9,
+    "value": "vinification method"
+   },
+   {
+    "number": 10,
+    "value": "natural sugars"
+   },
+   {
+    "number": 11,
+    "value": "C"
+   },
+   {
+    "number": 12,
+    "value": "D"
+   },
+   {
+    "number": 13,
+    "value": "B"
+   },
+   {
+    "number": 14,
+    "value": "appropriate development"
+   },
+   {
+    "number": 15,
+    "value": "management gurus"
+   },
+   {
+    "number": 16,
+    "value": "complete aimlessness"
+   },
+   {
+    "number": 17,
+    "value": "personal values"
+   },
+   {
+    "number": 18,
+    "value": "(an) MBA"
+   },
+   {
+    "number": 19,
+    "value": "personalities and experiences"
+   },
+   {
+    "number": 20,
+    "value": "passionless and sterile"
+   },
+   {
+    "number": 21,
+    "value": "(a) superficial level"
+   },
+   {
+    "number": 22,
+    "value": "Commitment"
+   },
+   {
+    "number": 23,
+    "value": "hard and tangible"
+   },
+   {
+    "number": 24,
+    "value": "C"
+   },
+   {
+    "number": 25,
+    "value": "A"
+   },
+   {
+    "number": 26,
+    "value": "B"
+   },
+   {
+    "number": 27,
+    "value": "False"
+   },
+   {
+    "number": 28,
+    "value": "True"
+   },
+   {
+    "number": 29,
+    "value": "False"
+   },
+   {
+    "number": 30,
+    "value": "NG"
+   },
+   {
+    "number": 31,
+    "value": "technological innovations"
+   },
+   {
+    "number": 32,
+    "value": "closest approach/launch window(s)"
+   },
+   {
+    "number": 33,
+    "value": "human body(ies)"
+   },
+   {
+    "number": 34,
+    "value": "lose (their) density"
+   },
+   {
+    "number": 35,
+    "value": "microbial exchange"
+   },
+   {
+    "number": 36,
+    "value": "alertness"
+   },
+   {
+    "number": 37,
+    "value": "bacterial infection(s)"
+   },
+   {
+    "number": 38,
+    "value": "micro-meteoroids, micro meteoroids, micrometeoroids"
+   },
+   {
+    "number": 39,
+    "value": "(frozen) water"
+   },
+   {
+    "number": 40,
+    "value": "dangerous occupations"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     5,
+     10
+    ],
+    "instruction": "Complete the table. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     18,
+     23
+    ],
+    "instruction": "Complete the flow chart. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 19,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "c1442a272a3c72326132215db4d030abe677bef3e2764aa652b35770aac4a8f4"
+}

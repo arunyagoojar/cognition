@@ -1,0 +1,553 @@
+{
+ "id": "reading.test-0094.8d7d3df5",
+ "module": "reading",
+ "sourceNumbers": [
+  94
+ ],
+ "slug": "ielts-reading-test-94",
+ "title": "IELTS Academic Reading Test 94",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-94/index.html",
+   "sha256": "01a19b47bd7f0e1e2436a55c979286e3888466f151280721f6476ec6b91848f4",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-94/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "How to Spot a Liar",
+   "paragraphs": [
+    "However much we may abhor it, deception comes naturally to all living things. Birds do it by feigning injury to lead hungry predators away from nesting young. Spider crabs do it by disguise: adorning themselves with strips of kelp and other debris, they pretend to be something they are not – and so escape their enemies. Nature amply rewards successful deceivers by allowing them to survive long enough to mate and reproduce. So it may come as no surprise to learn that human beings- who, according to psychologist Gerald Johnson of the University of South California, or lied to about 200 times a day, roughly one untruth every 5 minutes- often deceive for exactly the same reasons: to save their own skins or to get something they can’t get by other means.",
+    "But knowing how to catch deceit can be just as important a survival skill as knowing how to tell a lie and get away with it. A person able to spot falsehood quickly is unlikely to be swindled by an unscrupulous business associate or hoodwinked by a devious spouse. Luckily, nature provides more than enough clues to trap dissemblers in their own tangled webs- if you know where to look. By closely observing facial expressions, body language and tone of voice, practically anyone can recognise the tell-tale signs of lying. Researchers are even programming computers – like those used on Lie Detector -to get at the truth by analysing the same physical cues available to the naked eye and ear. “With the proper training, many people can learn to reliably detect lies,” says Paul Ekman, professor of psychology at the University of California, San Francisco, who has spent the past 15 years studying the secret art of deception.",
+    "In order to know what kind of Lies work best, successful liars need to accurately assess other people’s emotional states. Ackman’s research shows that this same emotional intelligence is essential for good lie detectors, too. The emotional state to watch out for is stress, the conflict most liars feel between the truth and what they actually say and do.",
+    "Even high-tech lie detectors don’t detect lies as such; they merely detect the physical cues of emotions, which may or may not correspond to what the person being tested is saying. Polygraphs, for instance, measure respiration, heart rate and skin conductivity, which tend to increase when people are nervous – as they usually are when lying. Nervous people typically perspire, and the salts contained in perspiration conducts electricity. That’s why sudden leap in skin conductivity indicates nervousness -about getting caught, perhaps -which makes, in turn, suggest that someone is being economical with the truth. On the other hand, it might also mean that the lights in the television Studio are too hot- which is one reason polygraph tests are inadmissible in court. “Good lie detectors don’t rely on a single thing” says Ekma, but interpret clusters of verbal and non-verbal clues that suggest someone might be lying.”",
+    "The clues are written all over the face. Because the musculature of the face is directly connected to the areas of the brain that processes emotion, the countenance can be a window to the soul. Neurological studies even suggest that genuine emotions travel different pathways through the brain than insincere ones. If a patient paralyzed by stroke on one side of the face, for example, is asked to smile deliberately, only the mobile side of the mouth is raised. But tell that same person a funny joke, and the patient breaks into a full and spontaneous smile. Very few people -most notably, actors and politicians- are able to consciously control all of their facial expressions. Lies can often be caught when the liars true feelings briefly leak through the mask of deception. We don’t think before we feel, Ekman says. “Expressions tend to show up on the face before we’re even conscious of experiencing an emotion.”",
+    "One of the most difficult facial expressions to fake- or conceal, if it’s genuinely felt – is sadness. When someone is truly sad, the forehead wrinkles with grief and the inner corners of the eyebrows are pulled up. Fewer than 15% of the people Ekman tested were able to produce this eyebrow movement voluntarily. By contrast, the lowering of the eyebrows associated with an angry scowl can be replicated at will but almost everybody. “If someone claims they are sad and the inner corners of their eyebrows don’t go up, Ekmam says, the sadness is probably false.”",
+    "The smile, on the other hand, is one of the easiest facial expressions to counterfeit. It takes just two muscles -the zygomaticus major muscles that extend from the cheekbones to the corners of the lips- to produce a grin. But there’s a catch. A genuine smile affects not only the corners of the lips but also the orbicularis oculi, the muscle around the eye that produces the distinctive “crow’s feet” associated with people who laugh a lot. A counterfeit grin can be unmasked if the corners of the lips go up, the eyes crinkle, but the inner corners of the eyebrows are not lowered, a movement controlled by the orbicularis oculi that is difficult to fake. The absence of lowered eyebrows is one reason why the smile looks so strained and stiff."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "YES if the statement agrees with the information\nNO if the statement contradicts the information\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 5,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "All living animals can lie.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1 All living animals can lie.",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "Some people tell lies for self-preservation.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2 Some people tell lies for self-preservation.",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "Scientists have used computers to analyze which part of the brain is responsible for telling lies.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3 Scientists have used computers to analyze which part of the brain is responsible for telling lies.",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Lying as a survival skill is more important than detecting a lie.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4 Lying as a survival skill is more important than detecting a lie.",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "To be a good liar, one has to understand other people’s emotions.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5 To be a good liar, one has to understand other people’s emotions.",
+        "elementPath": "children[10]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[8]",
+      "rawExcerpt": "Questions 1-5 YES if the statement agrees with the information\nNO if the statement contradicts the information\nNOT GIVEN if there is no information on this"
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Choose the correct letter A, B, C or D. Questions 10-13\nClassify the following facial traits as referring to 10 Inner corners of eyebrows raised\n11 The whole eyebrows lowered\n12 Lines formed around\n13 Lines form above eyebrows",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 6,
+     "endQ": 9,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 6,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "How does the lie detector work?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "It detects whether one’s emotional state is stable."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. How does the lie detector work?",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Lie detectors can’t be used as evidence in a court of law because",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Lights often cause lie detectors to malfunction."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7. Lie detectors can’t be used as evidence in a court of law because",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 8,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Why does the author mention the paralyzed patients?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "To demonstrate how a paralyzed patient smiles"
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "8. Why does the author mention the paralyzed patients?",
+        "elementPath": "children[14]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The author uses politicians to exemplify that they can",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Have emotions."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9. The author uses politicians to exemplify that they can",
+        "elementPath": "children[15]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[11]",
+      "rawExcerpt": "Questions 6-9\nChoose the correct letter A, B, C or D. Questions 10-13\nClassify the following facial traits as referring to 10 Inner corners of eyebrows raised\n11 The whole eyebrows lowered\n12 Lines formed around\n13 Lines form above eyebrows"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Cambridge IELTS Tests 1 to 17",
+   "paragraphs": [
+    "Being Left-handed in a Right-handed World",
+    "The world is designed for right-handed people. Why does a tenth of the population prefer the left?",
+    "A The probability that two right-handed people would have a left-handed child is only about 9.5 percent. The chance rises to 19.5 percent if one parent is a lefty and 26 percent if both parents are left-handed. The preference, however, could also stem from an infant’s imitation of his parents. To test genetic influence, starting in the 1970s British biologist Marian Annett of the University of Leicester hypothesized that no single gene determines handedness. Rather, during fetal development, a certain molecular factor helps to strengthen the brain’s left hemisphere, which increases the probability that the right hand will be dominant, because the left side of the brain controls the right side of the body, and vice versa. Among the minority of people who lack this factor, handedness develops entirely by chance. Research conducted on twins complicates the theory, however. One in five sets of identical twins involves one right-handed and one left-handed person, despite the fact that their genetic material is the same. Genes, therefore, are not solely responsible for handedness.",
+    "B Genetic theory is also undermined by results from Peter Hepper and his team at Queen’s University in Belfast, Ireland. In 2004 the psychologists used ultrasound to show that by the 15th week of pregnancy, fetuses already have a preference as to which thumb they suck. In most cases, the preference continued after birth. At 15 weeks, though, the brain does not yet have control over the body’s limbs. Hepper speculates that fetuses tend to prefer whichever side of the body is developing quicker and that their movements, in turn, influence the brain’s development. Whether this early preference is temporary or holds up throughout development and infancy is unknown. Genetic predetermination is also contradicted by the widespread observation that children do not settle on either their right or left hand until they are two or three years old.",
+    "C But even if these correlations were true, they did not explain what actually causes left-handedness. Furthermore, specialization on either side of the body is common among animals. Cats will favor one paw over another when fishing toys out from under the couch. Horses stomp more frequently with one hoof than the other. Certain crabs motion predominantly with the left or right claw. In evolutionary terms, focusing power and dexterity in one limb is more efficient than having to train two, four or even eight limbs equally. Yet for most animals, the preference for one side or the other is seemingly random. The overwhelming dominance of the right hand is associated only with humans. That fact directs attention toward the brain’s two hemispheres and perhaps toward language.",
+    "D Interest in hemispheres dates back to at least 1836. That year, at a medical conference, French physician Marc Dax reported on an unusual commonality among his patients. During his many years as a country doctor, Dax had encountered more than 40 men and women for whom speech was difficult, the result of some kind of brain damage. What was unique was that every individual suffered damage to the left side of the brain. At the conference, Dax elaborated on his theory, stating that each half of the brain was responsible for certain functions and that the left hemisphere controlled speech. Other experts showed little interest in the Frenchman’s ideas. Over time, however, scientists found more and more evidence of people experiencing speech difficulties following injury to the left brain. Patients with damage to the right hemisphere most often displayed disruptions in perception or concentration. Major advancements in understanding the brain’s asymmetry were made in the 1960s as a result of so-called split-brain surgery, developed to help patients with epilepsy. During this operation, doctors severed the corpus callosum—the nerve bundle that connects the two hemispheres. The surgical cut also stopped almost all normal communication between the two hemispheres, which offered researchers the opportunity to investigate each side’s activity.",
+    "E In 1949 neurosurgeon Juhn Wada devised the first test to provide access to the brain’s functional organization of language. By injecting an anesthetic into the right or left carotid artery, Wada temporarily paralyzed one side of a healthy brain, enabling him to more closely study the other side’s capabilities. Based on this approach, Brenda Milner and the late Theodore Rasmussen of the Montreal Neurological Institute published a major study in 1975 that confirmed the theory that country doctor Dax had formulated nearly 140 years earlier: in 96 percent of right-handed people, language is processed much more intensely in the left hemisphere. The correlation is not as clear in lefties, however. For two thirds of them, the left hemisphere is still the most active language processor. But for the remaining third, either the right side is dominant or both sides work equally, controlling different language functions. That last statistic has slowed acceptance of the notion that the predominance of right-handedness is driven by left-hemisphere dominance in language processing. It is not at all clear why language control should somehow have dragged the control of body movement with it. Some experts think one reason the left hemisphere reigns over language is because the organs of speech processing—the larynx and tongue—are positioned on the body’s symmetry axis. Because these structures were centered, it may have been unclear, in evolutionary terms, which side of the brain should control them, and it seems unlikely that shared operation would result in smooth motor activity. Language and handedness could have developed preferentially for very different reasons as well. For example, some researchers, including evolutionary psychologist Michael C. Corballis of the University of Auckland in New Zealand, think that the origin of human speech lies in gestures. Gestures predated words and helped language emerge. If the left hemisphere began to dominate speech, it would have dominated gestures, too, and because the left brain controls the right side of the body, the right hand developed more strongly.",
+    "F Perhaps we will know more soon. In the meantime, we can revel in what, if any, differences handedness brings to our human talents. Popular wisdom says right-handed, left-brained people excel at logical, analytical thinking. Left-handed, right-brained individuals are thought to possess more creative skills and may be better at combining the functional features emergent in both sides of the brain. Yet some neuroscientists see such claims as pure speculation. Fewer scientists are ready to claim that left-handedness means greater creative potential. Yet lefties are prevalent among artists, composers and the generally acknowledged great political thinkers. Possibly if these individuals are among the lefties whose language abilities are evenly distributed between hemispheres, the intense interplay required could lead to unusual mental capabilities.",
+    "G Or perhaps some lefties become highly creative simply because they must be more clever to get by in our right-handed world. This battle, which begins during the very early stages of childhood, may lay the groundwork for exceptional achievements.",
+    "Questions 14-18\nReading Passage 2 has seven sections A-G.\nWhich section contains the following information?",
+    "14 Preference of using one side of the body in animal species.\n15 How likely one-handedness is born.\n16 The age when the preference of using one hand is settled.\n17 Occupations usually found in left-handed population.\n18 A reference to an early discovery of each hemisphere’s function."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? YES if the statement agrees with the information\nNO if the statement contradicts the information\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 23,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 23,
+       "type": "tfng",
+       "stem": {
+        "plain": "The study of twins shows that genetic determinations not the only factor for left-handedness.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "23 The study of twins shows that genetic determinations not the only factor for left-handedness.",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 24,
+       "type": "tfng",
+       "stem": {
+        "plain": "Marc Dax’s report was widely accepted in his time.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24 Marc Dax’s report was widely accepted in his time.",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "tfng",
+       "stem": {
+        "plain": "Juhn Wada based his findings on his research of people with language problems.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25 Juhn Wada based his findings on his research of people with language problems.",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "tfng",
+       "stem": {
+        "plain": "There tend to be more men with left-handedness than women.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26 There tend to be more men with left-handedness than women.",
+        "elementPath": "children[36]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[34]",
+      "rawExcerpt": "Questions 23-26\nDo the following statements agree with the information given in Reading Passage 2? YES if the statement agrees with the information\nNO if the statement contradicts the information\nNOT GIVEN if there is no information on this"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "What is a dinosaur?",
+   "paragraphs": [
+    "A . Although the name dinosaur is derived from the Greek for “terrible lizard”, dinosaurs were not, in fact, lizards at all. Like lizards, dinosaurs are included in the class Reptilia, or reptiles, one of the five main classes of Vertebrata, animals with backbones. However, at the next level of classification, within reptiles, significant differences in the skeletal anatomy of lizards and dinosaurs have led scientists to place these groups of animals into two different superorders: Lepidosauria, or lepidosaurs, and Archosauria, or archosaurs.",
+    "B . Classified as lepidosaurs are lizards and snakes and their prehistoric ancestors. Included among the archosaurs, or “ruling reptiles”, are prehistoric and modern crocodiles, and the now extinct thecodonts, pterosaurs and dinosaurs. Palaeontologists believe that both dinosaurs and crocodiles evolved, in the later years of the Triassic Period (c. 248-208 million years ago), from creatures called pseudosuchian thecodonts. Lizards, snakes and different types of thecodont are believed to have evolved earlier in the Triassic Period from reptiles known as eosuchians.",
+    "C . The most important skeletal differences between dinosaurs and other archosaurs are in the bones of the skull, pelvis and limbs. Dinosaur skulls are found in a great range of shapes and sizes, reflecting the different eating habits and lifestyles of a large and varied group of animals that dominated life on Earth for an extraordinary 165 million years. However, unlike the skulls of any other known animals, the skulls of dinosaurs had two long bones known as vomers. These bones extended on either side of the head, from the front of the snout to the level of the holes on the skull known as the antorbital fenestra, situated in front of the dinosaur’s orbits or eyesockets.",
+    "D . All dinosaurs, whether large or small, quadrupedal or bidepal, fleet-footed or slow-moving, shared a common body plan. Identification of this plan makes it possible to differentiate dinosaurs from any other types of animal, even other archosaurs. Most significantly, in dinosaurs, the pelvis and femur had evolved so that the hind limbs were held vertically beneath the body, rather than sprawling out to the sides like the limbs of a lizard. The femur of a dinosaur had a sharply in-turned neck and a ball-shaped head, which slotted into a fully open acetabulum or hip socket. A supra-acetabular crest helped prevent dislocation of the femur. The position of the knee joint, aligned below the acetabulum, made it possible for the whole hind limb to swing backwards and forwards. This unique combination of features gave dinosaurs what is known as a “fully improved gait”. Evolution of this highly efficient method of walking also developed in mammals, but among reptiles it occurred only in dinosaurs.",
+    "E . For the purpose of further classification, dinosaurs are divided into two orders: Saurischia, or saurischian dinosaurs, and Ornithischia, or ornithischian dinosaurs. This division is made on the basis of their pelvic anatomy. All dinosaurs had a pelvic girdle with each side comprised of three bones: the pubis, ilium and ischium. However, the orientation of these bones follows one of two patterns. In saurischian dinosaurs, also known as lizard-hipped dinosaurs, the pubis points forwards, as is usual in most types of reptile. By contrast, in ornithischian, or bird-hipped, dinosaurs, the pubis points backwards towards the rear of the animal, which is also true of birds.",
+    "F . Of the two orders of dinosaurs, the Saurischia was the larger and the first to evolve. It is divided into two suborders: Therapoda, or therapods, and Sauropodomorpha, or sauropodomorphs. The therapods, or “beast feet”, were bipedal, predatory carnivores. They ranged in size from the mighty Tyrannosaurus rex, 12m long, 5.6m tall and weighing an estimated 6.4 tonnes, to the smallest known dinosaur, Compsognathus, a mere 1.4m long and estimated 3kg in weight when fully grown. The sauropodomorphs, or “lizard feet forms”, included both bipedal and quadrupedal dinosaurs. Some sauropodomorphs were carnivorous or omnivorous but later species were typically herbivorous. They included some of the largest and best-known of all dinosaurs, such as Diplodocus, a huge quadruped with an elephant-like body, a long, thin tail and neck that gave it a total length of 27m, and a tiny head.",
+    "G . Ornithischian dinosaurs were bipedal or quadrupedal herbivores. They are now usually divided into three suborders: Ornithipoda, Thyreophora and Marginocephalia. The ornithopods, or “bird feet”, both large and small, could walk or run on their long hind legs, balancing their body by holding their tails stiffly off the ground behind them. An example is Iguanodon, up to 9m long, 5m tall and weighing 4.5 tonnes. The thyreophorans, or “shield bearers”, also known as armoured dinosaurs, were quadrupeds with rows of protective bony spikes, studs, or plates along their backs and tails. They included Stegosaurus, 9m long and weighing 2 tonnes.",
+    "H . The marginocephalians, or “margined heads”, were bipedal or quadrupedal ornithschians with a deep bony frill or narrow shelf at the back of the skull. An example is Triceratops, a rhinoceros-like dinosaur, 9m long, weighing 5.4 tonnes and bearing a prominent neck frill and three large horns.",
+    "Questions 27-33\nReading Passage 3 has 8 paragraphs (A-H).\nChoose the most suitable heading for each paragraph from the List of headings below.",
+    "List of headings\ni. 165 million years\nii. The body plan of archosaurs\niii. Dinosaurs – terrible lizards\niv. Classification according to pelvic anatomy\nv. The suborders of Saurischia\nvi. Lizards and dinosaurs – two distinct superorders\nvii. Unique body plan helps identify dinosaurs from other animals\nviii. Herbivore dinosaurs\nix. Lepidosaurs\nx. Frills and shelves\nxi. The origins of dinosaurs and lizards\nxii. Bird-hipped dinosaurs\nxiii. Skull bones distinguish dinosaurs from other archosaurs",
+    "Example: Paragraph H x",
+    "27 Paragraph A\n28 Paragraph B\n29 Paragraph C\n30 Paragraph D\n31 Paragraph E\n32 Paragraph F\n33 Paragraph G"
+   ],
+   "assets": [],
+   "questionGroups": []
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "yes"
+   },
+   {
+    "number": 2,
+    "value": "yes"
+   },
+   {
+    "number": 3,
+    "value": "not given"
+   },
+   {
+    "number": 4,
+    "value": "no"
+   },
+   {
+    "number": 5,
+    "value": "yes"
+   },
+   {
+    "number": 6,
+    "value": "C"
+   },
+   {
+    "number": 7,
+    "value": "D"
+   },
+   {
+    "number": 8,
+    "value": "B"
+   },
+   {
+    "number": 9,
+    "value": "D"
+   },
+   {
+    "number": 10,
+    "value": "A"
+   },
+   {
+    "number": 11,
+    "value": "B"
+   },
+   {
+    "number": 12,
+    "value": "C"
+   },
+   {
+    "number": 13,
+    "value": "A"
+   },
+   {
+    "number": 14,
+    "value": "C"
+   },
+   {
+    "number": 15,
+    "value": "A"
+   },
+   {
+    "number": 16,
+    "value": "B"
+   },
+   {
+    "number": 17,
+    "value": "F"
+   },
+   {
+    "number": 18,
+    "value": "D"
+   },
+   {
+    "number": 19,
+    "value": "B"
+   },
+   {
+    "number": 20,
+    "value": "F"
+   },
+   {
+    "number": 21,
+    "value": "D"
+   },
+   {
+    "number": 22,
+    "value": "A"
+   },
+   {
+    "number": 23,
+    "value": "yes"
+   },
+   {
+    "number": 24,
+    "value": "no"
+   },
+   {
+    "number": 25,
+    "value": "not given"
+   },
+   {
+    "number": 26,
+    "value": "not given"
+   },
+   {
+    "number": 27,
+    "value": "vi"
+   },
+   {
+    "number": 28,
+    "value": "ix"
+   },
+   {
+    "number": 29,
+    "value": "xiii"
+   },
+   {
+    "number": 30,
+    "value": "vii"
+   },
+   {
+    "number": 31,
+    "value": "iv"
+   },
+   {
+    "number": 32,
+    "value": "v"
+   },
+   {
+    "number": 33,
+    "value": "viii"
+   },
+   {
+    "number": 34,
+    "value": "skeletal anatomy"
+   },
+   {
+    "number": 35,
+    "value": "eosuchians"
+   },
+   {
+    "number": 36,
+    "value": "two long bones"
+   },
+   {
+    "number": 37,
+    "value": "B"
+   },
+   {
+    "number": 38,
+    "value": "G"
+   },
+   {
+    "number": 39,
+    "value": "H"
+   },
+   {
+    "number": 40,
+    "value": "F"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     19,
+     22
+    ],
+    "instruction": "Look at the following researchers (Questions 19-22) and the list of findings below. Match each researcher with the corre"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     34,
+     36
+    ],
+    "instruction": "Complete then sentences below. Use NO MORE THAN THREE WORDS from the passage for each blank space. Questions 37-40\nChoose one phrase (A-H) f"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 13,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "8c336ebe7962bf6e2f0fa774b24501dc4be52e649991fde3e24b9f8becfc4139"
+}

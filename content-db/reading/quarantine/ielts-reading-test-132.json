@@ -1,0 +1,59 @@
+{
+ "slug": "ielts-reading-test-132",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     4
+    ],
+    "instruction": "Match each statement with the correct person. Write the correct answer A-D in boxes 1-4 on your answer sheet 1. Opportun"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     31,
+     35
+    ],
+    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 31-"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     36,
+     40
+    ],
+    "extracted": 2,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
+   "evidence": {
+    "passage": 3,
+    "title": "Passage 3",
+    "groups": []
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 23,
+    "answers": 40
+   }
+  }
+ ]
+}

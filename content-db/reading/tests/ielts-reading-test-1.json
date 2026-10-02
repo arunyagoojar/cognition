@@ -1,0 +1,886 @@
+{
+ "id": "reading.test-0001.560d18ae",
+ "module": "reading",
+ "sourceNumbers": [
+  1
+ ],
+ "slug": "ielts-reading-test-1",
+ "title": "IELTS Academic Reading Test 1",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-1/index.html",
+   "sha256": "ab5409b7b860bffc354a432d21851062194060566d2ea01266f9026661b950ed",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-1/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Attitudes to Language",
+   "paragraphs": [
+    "It is not easy to be systematic and objective about language study. Popular linguistic debate regularly deteriorates into invective and polemic. Language belongs to everyone, so most people feel they have a right to hold an opinion about it. And when opinions differ, emotions can run high. Arguments can start as easily over minor points of usage as over major policies of linguistic education.",
+    "Language, moreover, is a very public behaviour, so it is easy for different usages to be noted and criticised. No part of society or social behaviour is exempt: linguistic factors influence how we judge personality, intelligence, social status, educational standards, job aptitude, and many other areas of identity and social survival. As a result, it is easy to hurt, and to be hurt, when language use is unfeelingly attacked.",
+    "In its most general sense, prescriptivism is the view that one variety of language has an inherently higher value than others, and that this ought to be imposed on the whole of the speech community. The view is propounded especially in relation to grammar and vocabulary, and frequently with reference to pronunciation. The variety which is favoured, in this account, is usually a version of the ‘standard’ written language, especially as encountered in literature, or in the formal spoken language which most closely reflects this style. Adherents to this variety are said to speak or write ‘correctly’; deviations from it are said to be ‘incorrect!",
+    "All the main languages have been studied prescriptively, especially in the 18th century approach to the writing of grammars and dictionaries. The aims of these early grammarians were threefold: (a) they wanted to codify the principles of their languages, to show that there was a system beneath the apparent chaos of usage, (b) they wanted a means of settling disputes over usage, and (c) they wanted to point out what they felt to be common errors, in order to ‘improve’ the language. The authoritarian nature of the approach is best characterised by its reliance on ‘rules’ of grammar. Some usages are ‘prescribed,’ to be learnt and followed accurately; others are ‘proscribed,’ to be avoided. In this early period, there were no half-measures: usage was either right or wrong, and it was the task of the grammarian not simply to record alternatives, but to pronounce judgement upon them.",
+    "These attitudes are still with us, and they motivate a widespread concern that linguistic standards should be maintained. Nevertheless, there is an alternative point of view that is concerned less with standards than with the facts of linguistic usage. This approach is summarised in the statement that it is the task of the grammarian to describe, not prescribe to record the facts of linguistic diversity, and not to attempt the impossible tasks of evaluating language variation or halting language change. In the second half of the 18th century, we already find advocates of this view, such as Joseph Priestley, whose Rudiments of English Grammar (1761) insists that ‘the custom of speaking is the original and only just standard of any language! Linguistic issues, it is argued, cannot be solved by logic and legislation. And this view has become the tenet of the modern linguistic approach to grammatical analysis.",
+    "In our own time, the opposition between ‘descriptivists’ and ‘prescriptivists’ has often become extreme, with both sides painting unreal pictures of the other. Descriptive grammarians have been presented as people who do not care about standards, because of the way they see all forms of usage as equally valid. Prescriptive grammarians have been presented as blind adherents to a historical tradition. The opposition has even been presented in quasi-political terms – of radical liberalism vs elitist conservatism."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 1? In boxes 1-8 in your answer sheet, write: YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the claims of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 8,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "There are understandable reasons why arguments occur about language.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1 There are understandable reasons why arguments occur about language.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "People feel more strongly about language education than about small differences in language usage.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2 People feel more strongly about language education than about small differences in language usage.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "Our assessment of a person’s intelligence is affected by the way he or she uses language.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3 Our assessment of a person’s intelligence is affected by the way he or she uses language.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Prescriptive grammar books cost a lot of money to buy in the 18th century.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4 Prescriptive grammar books cost a lot of money to buy in the 18th century.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "Prescriptivism still exists today.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5 Prescriptivism still exists today.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "tfng",
+       "stem": {
+        "plain": "According to descriptivists it is pointless to try to stop language change.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6 According to descriptivists it is pointless to try to stop language change.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "tfng",
+       "stem": {
+        "plain": "Descriptivism only appeared after the 18th century.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7 Descriptivism only appeared after the 18th century.",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 8,
+       "type": "tfng",
+       "stem": {
+        "plain": "Both descriptivists and prescriptivists have been misrepresented.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "8 Both descriptivists and prescriptivists have been misrepresented.",
+        "elementPath": "children[9]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[7]",
+      "rawExcerpt": "Questions 1-8\nDo the following statements agree with the claims of the writer in Reading Passage 1?\nIn boxes 1-8 in your answer sheet, write: YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the clai"
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Complete the summary using the list of words, A-l, below.",
+     "wordLimit": "",
+     "qtype": "summary_completion",
+     "startQ": 9,
+     "endQ": 12,
+     "stimulusSegments": [
+      "The language debate"
+     ],
+     "sharedOptions": [
+      {
+       "letter": "A",
+       "text": "descriptivists"
+      },
+      {
+       "letter": "B",
+       "text": "language expert"
+      },
+      {
+       "letter": "C",
+       "text": "popular speech"
+      },
+      {
+       "letter": "D",
+       "text": "formal language"
+      },
+      {
+       "letter": "E",
+       "text": "evaluation"
+      },
+      {
+       "letter": "F",
+       "text": "rules"
+      },
+      {
+       "letter": "G",
+       "text": "modern linguists"
+      },
+      {
+       "letter": "H",
+       "text": "prescriptivists"
+      },
+      {
+       "letter": "I",
+       "text": "change"
+      }
+     ],
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "completion",
+       "stem": {
+        "plain": "According to (9) ______ there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ______ Conversely, the view of (11) ______ , such as Joseph Priestley, is that grammar should be based on (12) ______",
+        "segments": [
+         "According to",
+         {
+          "blank": 9
+         },
+         "…………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical",
+         {
+          "blank": 10
+         },
+         "……………………. Conversely, the view of",
+         {
+          "blank": 11
+         },
+         "………….., such as Joseph Priestley, is that grammar should be based on",
+         {
+          "blank": 12
+         },
+         "…………………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "H",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to (9) …………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ……………………. Conversely, the view of (11) …………..",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "completion",
+       "stem": {
+        "plain": "According to (9) ______ there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ______ Conversely, the view of (11) ______ , such as Joseph Priestley, is that grammar should be based on (12) ______",
+        "segments": [
+         "According to",
+         {
+          "blank": 9
+         },
+         "…………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical",
+         {
+          "blank": 10
+         },
+         "……………………. Conversely, the view of",
+         {
+          "blank": 11
+         },
+         "………….., such as Joseph Priestley, is that grammar should be based on",
+         {
+          "blank": 12
+         },
+         "…………………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to (9) …………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ……………………. Conversely, the view of (11) …………..",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "completion",
+       "stem": {
+        "plain": "According to (9) ______ there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ______ Conversely, the view of (11) ______ , such as Joseph Priestley, is that grammar should be based on (12) ______",
+        "segments": [
+         "According to",
+         {
+          "blank": 9
+         },
+         "…………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical",
+         {
+          "blank": 10
+         },
+         "……………………. Conversely, the view of",
+         {
+          "blank": 11
+         },
+         "………….., such as Joseph Priestley, is that grammar should be based on",
+         {
+          "blank": 12
+         },
+         "…………………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to (9) …………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ……………………. Conversely, the view of (11) …………..",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "completion",
+       "stem": {
+        "plain": "According to (9) ______ there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ______ Conversely, the view of (11) ______ , such as Joseph Priestley, is that grammar should be based on (12) ______",
+        "segments": [
+         "According to",
+         {
+          "blank": 9
+         },
+         "…………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical",
+         {
+          "blank": 10
+         },
+         "……………………. Conversely, the view of",
+         {
+          "blank": 11
+         },
+         "………….., such as Joseph Priestley, is that grammar should be based on",
+         {
+          "blank": 12
+         },
+         "…………………."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to (9) …………. there is only one correct form of language. Linguists who take this approach to language place great importance on grammatical (10) ……………………. Conversely, the view of (11) …………..",
+        "elementPath": "children[12]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[10]",
+      "rawExcerpt": "Questions 9-12\nComplete the summary using the list of words, A-l, below."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Tidal Power",
+   "paragraphs": [
+    "A Operating on the same principle as wind turbines, the power in sea turbines comes from tidal currents which turn blades similar to ships’ propellers, but, unlike wind, the tides are predictable and the power input is constant. The technology raises the prospect of Britain becoming self-sufficient in renewable energy and drastically reducing its carbon dioxide emissions. If tide, wind and wave power are all developed, Britain would be able to close gas, coal and nuclear power plants and export renewable power to other parts of Europe. Unlike wind power, which Britain originally developed and then abandoned for 20 years allowing the Dutch to make it a major industry, undersea turbines could become a big export earner to island nations such as Japan and New Zealand.",
+    "B Tidal sites have already been identified that will produce one sixth or more of the UK’s power – and at prices competitive with modern gas turbines and undercutting those of the already ailing nuclear industry. One site alone, the Pentland Firth, between Orkney and mainland Scotland, could produce 10% of the country’s electricity with banks of turbines under the sea, and another at Alderney in the Channel Islands three times the 1,200 megawatts of Britain’s largest and newest nuclear plant, Sizewell B, in Suffolk. Other sites identified include the Bristol Channel and the west coast of Scotland, particularly the channel between Campbeltown and Northern Ireland.",
+    "C Work on designs for the new turbine blades and sites are well advanced at the University of Southampton’s sustainable energy research group. The first station is expected to be installed off Lynmouth in Devon shortly to test the technology in a venture jointly funded by the department of Trade and Industry and the European Union. AbuBakr Bahaj, in charge of the Southampton research, said: The prospects for energy from tidal currents are far better than from wind because the flows of water are predictable and constant. The technology for dealing with the hostile saline environment under the sea has been developed in the North Sea oil industry and much is already known about turbine blade design, because of wind power and ship propellers. There are a few technical difficulties, but I believe in the next five to ten years we will be installing commercial marine turbine farms.’ Southampton has been awarded £215,000 over three years to develop the turbines and is working with Marine Current Turbines, a subsidiary of IT power, on the Lynmouth project. EU research has now identified 106 potential sites for tidal power, 80% round the coasts of Britain. The best sites are between islands or around heavily indented coasts where there are strong tidal currents.",
+    "D A marine turbine blade needs to be only one third of the size of a wind generator to produce three times as much power. The blades will be about 20 metres in diameter, so around 30 metres of water is required. Unlike wind power, there are unlikely to be environmental objections. Fish and other creatures are thought unlikely to be at risk from the relatively slow-turning blades. Each turbine will be mounted on a tower which will connect to the national power supply grid via underwater cables. The towers will stick out of the water and be lit, to warn shipping, and also be designed to be lifted out of the water for maintenance and to clean seaweed from the blades.",
+    "E Dr Bahaj has done most work on the Alderney site, where there are powerful currents. The single undersea turbine farm would produce far more power than needed for the Channel Islands and most would be fed into the French Grid and be re-imported into Britain via the cable under the Channel.",
+    "F One technical difficulty is cavitation, where low pressure behind a turning blade causes air bubbles. These can cause vibration and damage the blades of the turbines. Dr Bahaj said: ‘We have to test a number of blade types to avoid this happening or at least make sure it does not damage the turbines or reduce performance. Another slight concern is submerged debris floating into the blades. So far we do not know how much of a problem it might be. We will have to make the turbines robust because the sea is a hostile environment, but all the signs that we can do it are good.’"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 14,
+     "endQ": 17,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the location of the first test site",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "14 the location of the first test site",
+        "elementPath": "children[25]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a way of bringing the power produced on one site back into Britain",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15 a way of bringing the power produced on one site back into Britain",
+        "elementPath": "children[25]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a reference to a previous attempt by Britain to find an alternative source of energy",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16 a reference to a previous attempt by Britain to find an alternative source of energy",
+        "elementPath": "children[25]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "stem": {
+        "plain": "mention of the possibility of applying technology from another industry",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17 mention of the possibility of applying technology from another industry",
+        "elementPath": "children[25]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[24]",
+      "rawExcerpt": "Questions 14-17\nReading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information?\nNB You may use any letter more than once."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "The Voyager l Space Probe",
+   "paragraphs": [
+    "[asset:asset.d7aa410bac0f]",
+    "Information Theory – The Bid Idea",
+    "A In April 2002 an event took place which demonstrated one of the many applications of information theory. The space probe, Voyager I, launched in 1977, had sent back spectacular images of Jupiter and Saturn and then soared out of the Solar System on a one-way mission to the stars. After 25 years of exposure to the freezing temperatures of deep space, the probe was beginning to show its age. Sensors and circuits were on the brink of failing and NASA experts realised that they had to do something or lose contact with their probe forever. The solution was to get a message to Voyager I to instruct it to use spares to change the failing parts. With the probe 12 billion kilometres from Earth, this was not an easy task. By means of a radio dish belonging to NASA’s Deep Space Network, the message was sent out into the depths of space. Even travelling at the speed of light, it took over 11 hours to reach its target, far beyond the orbit of Pluto. Yet, incredibly, the little probe managed to hear the faint call from its home planet, and successfully made the switchover.",
+    "B It was the longest-distance repair job in history, and a triumph for the NASA engineers. But it also highlighted the astonishing power of the techniques developed by American communications engineer Claude Shannon, who had died just a year earlier. Born in 1916 in Petoskey, Michigan, Shannon showed an early talent for maths and for building gadgets, and made breakthroughs in the foundations of computer technology when still a student. While at Bell Laboratories, Shannon developed information theory, but shunned the resulting acclaim. In the 1940s, he single-handedly created an entire science of communication which has since inveigled its way into a host of applications, from DVDs to satellite communications to bar codes – any area, in short, where data has to be conveyed rapidly yet accurately.",
+    "C This all seems light years away from the down-to-earth uses Shannon originally had for his work, which began when he was a 22-year-old graduate engineering student at the prestigious Massachusetts Institute of Technology in 1939. He set out with an apparently simple aim: to pin down the precise meaning of the concept of ‘information’. The most basic form of information, Shannon argued, is whether something is true or false – which can be captured in the binary unit, or ‘bit’, of the form 1 or 0. Having identified this fundamental unit, Shannon set about defining otherwise vague ideas about information and how to transmit it from place to place. In the process he discovered something surprising: it is always possible to guarantee information will get through random interference – ‘noise’ – intact.",
+    "D Noise usually means unwanted sounds which interfere with genuine information. Information theory generalises this idea via theorems that capture the effects of noise with mathematical precision. In particular, Shannon showed that noise sets a limit on the rate at which information can pass along communication channels while remaining error-free. This rate depends on the relative strengths of the signal and noise travelling down the communication channel, and on its capacity (its ‘bandwidth’). The resulting limit, given in units of bits per second, is the absolute maximum rate of error-free communication given signal strength and noise level. The trick, Shannon showed, is to find ways of packaging up – ‘coding’ – information to cope with the ravages of noise, while staying within the information-carrying capacity – ‘bandwidth’ – of the communication system being used.",
+    "E Over the years scientists have devised many such coding methods, and they have proved crucial in many technological feats. The Voyager spacecraft transmitted data using codes which added one extra bit for every single bit of information; the result was an error rate of just one bit in 10,000 – and stunningly clear pictures of the planets. Other codes have become part of everyday life – such as the Universal Product Code, or bar code, which uses a simple error-detecting system that ensures supermarket check-out lasers can read the price even on, say, a crumpled bag of crisps. As recently as 1993, engineers made a major breakthrough by discovering so-called turbo codes – which come very close to Shannon’s ultimate limit for the maximum rate that data can be transmitted reliably, and now play a key role in the mobile videophone revolution.",
+    "F Shannon also laid the foundations of more efficient ways of storing information, by stripping out superfluous (‘redundant’) bits from data which contributed little real information. As mobile phone text messages like ‘I CN C U’ show, it is often possible to leave out a lot of data without losing much meaning. As with error correction, however, there’s a limit beyond which messages become too ambiguous. Shannon showed how to calculate this limit, opening the way to the design of compression methods that cram maximum information into the minimum space.",
+    "The probe transmitted pictures of both (33) ……………….,and ……………. , then left the (34) ……………. The freezing temperatures were found to have a negative effect on parts of the space probe. Scientists feared that both the (35)……………….. and ………………… were about to stop working. The only hope was to tell the probe to replace them with (36)…………………….. – but distance made communication with the probe difficult. A (37)………………….. was used to transmit the message at the speed of light. The message was picked up by the probe and the switchover took place."
+   ],
+   "assets": [
+    {
+     "assetId": "asset.d7aa410bac0f",
+     "sourcePath": "wp-content/uploads/2024/09/test-1-min-2.png",
+     "projectPath": "/reading-assets/d7aa410bac0f494e6fa954bce378146fe33146edc3659e4101d89f7f42c9e9a3.png",
+     "sha256": "d7aa410bac0f494e6fa954bce378146fe33146edc3659e4101d89f7f42c9e9a3",
+     "mimeType": "image/png",
+     "bytes": 28142,
+     "width": 721,
+     "height": 564,
+     "association": "image element within passage 3 of ielts-reading-test-1/index.html"
+    }
+   ],
+   "questionGroups": [
+    {
+     "groupId": "g07",
+     "instruction": "Reading Passage 3 has six paragraphs, A-F. Which paragraph contains the following information?",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 27,
+     "endQ": 32,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "matching_information",
+       "stem": {
+        "plain": "an explanation of the factors affecting the transmission of information",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27 an explanation of the factors affecting the transmission of information",
+        "elementPath": "children[40]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "matching_information",
+       "stem": {
+        "plain": "an example of how unnecessary information can be omitted",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28 an example of how unnecessary information can be omitted",
+        "elementPath": "children[40]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a reference to Shannon`s attitude to fame",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29 a reference to Shannon`s attitude to fame",
+        "elementPath": "children[40]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_information",
+       "stem": {
+        "plain": "details of a machine capable of interpreting incomplete information",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "30 details of a machine capable of interpreting incomplete information",
+        "elementPath": "children[40]"
+       }
+      },
+      {
+       "number": 31,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a detailed account of an incident involving information theory",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "31 a detailed account of an incident involving information theory",
+        "elementPath": "children[40]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a reference to what Shannon initially intended to achieve in his research",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32 a reference to what Shannon initially intended to achieve in his research",
+        "elementPath": "children[40]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[39]",
+      "rawExcerpt": "Questions 27-32\nReading Passage 3 has six paragraphs, A-F. Which paragraph contains the following information?"
+     }
+    },
+    {
+     "groupId": "g09",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 38-40 on your answer sheet write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 38,
+     "endQ": 40,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 38,
+       "type": "tfng",
+       "stem": {
+        "plain": "The concept of describing something as true or false was the starting point for Shannon in his attempts to send messages over distances.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38. The concept of describing something as true or false was the starting point for Shannon in his attempts to send messages over distances.",
+        "elementPath": "children[46]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "tfng",
+       "stem": {
+        "plain": "The amount of information that can be sent in a given time period is determined with reference to the signal strength and noise level.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39. The amount of information that can be sent in a given time period is determined with reference to the signal strength and noise level.",
+        "elementPath": "children[46]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "tfng",
+       "stem": {
+        "plain": "Products have now been developed which can convey more information than Shannon had anticipated as possible.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40. Products have now been developed which can convey more information than Shannon had anticipated as possible.",
+        "elementPath": "children[46]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[44]",
+      "rawExcerpt": "Questions 38-40\nDo the following statements agree with the information given in Reading Passage 3? In boxes 38-40 on your answer sheet write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informatio"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "yes"
+   },
+   {
+    "number": 2,
+    "value": "no"
+   },
+   {
+    "number": 3,
+    "value": "yes"
+   },
+   {
+    "number": 4,
+    "value": "not given"
+   },
+   {
+    "number": 5,
+    "value": "yes"
+   },
+   {
+    "number": 6,
+    "value": "yes"
+   },
+   {
+    "number": 7,
+    "value": "no"
+   },
+   {
+    "number": 8,
+    "value": "yes"
+   },
+   {
+    "number": 9,
+    "value": "H"
+   },
+   {
+    "number": 10,
+    "value": "F"
+   },
+   {
+    "number": 11,
+    "value": "A"
+   },
+   {
+    "number": 12,
+    "value": "C"
+   },
+   {
+    "number": 13,
+    "value": "B"
+   },
+   {
+    "number": 14,
+    "value": "C"
+   },
+   {
+    "number": 15,
+    "value": "E"
+   },
+   {
+    "number": 16,
+    "value": "A"
+   },
+   {
+    "number": 17,
+    "value": "C"
+   },
+   {
+    "number": 18,
+    "value": "A"
+   },
+   {
+    "number": 19,
+    "value": "D"
+   },
+   {
+    "number": 20,
+    "value": "E"
+   },
+   {
+    "number": 21,
+    "value": "F"
+   },
+   {
+    "number": 22,
+    "value": "J"
+   },
+   {
+    "number": 23,
+    "value": "maintenance"
+   },
+   {
+    "number": 24,
+    "value": "slow (turning)"
+   },
+   {
+    "number": 25,
+    "value": "low pressure"
+   },
+   {
+    "number": 26,
+    "value": "cavitation"
+   },
+   {
+    "number": 27,
+    "value": "D"
+   },
+   {
+    "number": 28,
+    "value": "F"
+   },
+   {
+    "number": 29,
+    "value": "B"
+   },
+   {
+    "number": 30,
+    "value": "E"
+   },
+   {
+    "number": 31,
+    "value": "A"
+   },
+   {
+    "number": 32,
+    "value": "C"
+   },
+   {
+    "number": 33,
+    "value": "jupiter and saturn"
+   },
+   {
+    "number": 34,
+    "value": "solar system"
+   },
+   {
+    "number": 35,
+    "value": "sensors and circuits"
+   },
+   {
+    "number": 36,
+    "value": "spares"
+   },
+   {
+    "number": 37,
+    "value": "radio dish"
+   },
+   {
+    "number": 38,
+    "value": "true"
+   },
+   {
+    "number": 39,
+    "value": "true"
+   },
+   {
+    "number": 40,
+    "value": "false"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     13,
+     13
+    ],
+    "instruction": "Choose the correct letter A. B, C or D."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     18,
+     22
+    ],
+    "instruction": "Choose FIVE Letters A-J Which FIVE of the following claims about tidal power are made by the writer?"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     23,
+     26
+    ],
+    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     33,
+     37
+    ],
+    "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the passage for each answer"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 25,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 4,
+ "contentFingerprint": "0fa240c4d822bb7dfae541907257b17da8f068ea10f921497e2ceddbbe28a324"
+}

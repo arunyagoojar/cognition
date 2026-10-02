@@ -1,0 +1,37 @@
+{
+ "slug": "ielts-reading-test-280",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     6
+    ],
+    "instruction": "Use the information in the passage to match the deed (listed A-H) with people below. Write the appropriate letters A-H in boxes 1-6 on your "
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     28,
+     32
+    ],
+    "instruction": "Complete the table now. Choose NO MORE THAN THREE WORDS from the reading passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 29,
+    "answers": 40
+   }
+  }
+ ]
+}

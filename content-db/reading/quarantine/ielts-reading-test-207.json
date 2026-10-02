@@ -1,0 +1,43 @@
+{
+ "slug": "ielts-reading-test-207",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     20,
+     22
+    ],
+    "instruction": "Look at the following people (Questions 20-22) and the list of opinions below. Match each person with the opinion credited to him."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     27,
+     32
+    ],
+    "extracted": 5,
+    "expected": 6
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 28,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g06 range 27-32 got 5"
+  }
+ ]
+}

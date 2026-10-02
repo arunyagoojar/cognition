@@ -1,0 +1,916 @@
+{
+ "id": "reading.test-0157.04711d7e",
+ "module": "reading",
+ "sourceNumbers": [
+  157
+ ],
+ "slug": "ielts-reading-test-157",
+ "title": "IELTS Academic Reading Test 157",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-157/index.html",
+   "sha256": "6688eb4171612e68ef29b491202f58a04edf18c8f97f579961cdc2497530d4b1",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-157/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "CLASSIFYING SOCIETIES",
+   "paragraphs": [
+    "Although humans have established many types of societies throughout history, sociologists and anthropologists tend to classify different societies according to the degree to which different groups within a society have unequal access to advantages such as resources, prestige or power, and usually refer to four basic types of societies. From least to most socially Complex they are clans, tribes, chiefdoms and states.",
+    "Clan\nThese are small-scale societies of hunters and gatherers, generally of fewer than 100 people, who move seasonally to exploit wild (undomesticated) food resources. Most surviving hunter-gatherer groups are of this kind, such as the Hadza of Tanzania or the San of southern Africa. Clan members are generally kinsfolk, related by descent or marriage. Clans lack formal leaders, so there are no marked economic differences or disparities in status among their members.",
+    "Because clans are composed of mobile groups of hunter-gatherers, their sites consist mainly of seasonally occupied camps, and other smaller and more specialised sites. Among the latter are kill or butchery sites—locations where large mammals are killed and sometimes butchered— and work sites, where tools are made or other specific activities carried out. The base camp of such a group may give evidence of rather insubstantial dwellings or temporary shelters, along with the debris of residential occupation.",
+    "Tribe\nThese are generally larger than mobile hunter-gatherer groups, but rarely number more than a few thousand, and their diet or subsistence is based largely on cultivated plants and domesticated animals. Typically, they are settled farmers, but they may be nomadic with a very different, mobile economy based on the intensive exploitation of livestock. These are generally multi-community societies, with the individual communities integrated into the larger society through kinship ties. Although some tribes have officials and even a “capital” or seat of government, such officials lack the economic base necessary for effective use of",
+    "The typical settlement pattern for tribes is one of settled agricultural homesteads or villages. Characteristically, no one settlement dominates any of the others in the region. Instead, the archaeologist finds evidence for isolated, permanently occupied houses or for permanent villages. Such villages may be made up of a collection of free-standing houses, like those of the first farms of the Danube valley in Europe. Or they may be clusters of buildings grouped together, for example, the pueblos of the American Southwest, and the early farming village or small town of catalhoyuk in modern Turkey.",
+    "Chiefdom\nThese operate on the principle of ranking—differences in social status between people. Different lineages (a lineage is a group claiming descent from a common ancestor) are graded on a scale of prestige, and the senior lineage, and hence the society as a whole, is governed by a chief. Prestige and rank are determined by how closely related one is to the chief, and there is no true stratification into classes. The role of the chief is crucial.",
+    "Often, there is local specialisation in craft products, and surpluses of these and of foodstuffs are periodically paid as obligation to the chief. He uses these to maintain his retainers, and may use them for redistribution to his subjects. The chiefdom generally has a center of power, often with temples, residences of the chief and his retainers, and craft specialists. Chiefdoms vary greatly in size, but the range is generally between about 5000 and 20,000 persons.",
+    "Early State\nThese preserve many of the features of chiefdoms, but the ruler (perhaps a king or sometimes a queen) has explicit authority to establish laws and also to enforce them by the use of a standing army. Society no longer depends totally upon kin relationships: it is now stratified into different classes. Agricultural workers and the poorer urban dwellers form the lowest classes, with the craft specialists above, and the priests and kinsfolk of the ruler higher still. The functions of the ruler are often separated from those of the priest: palace is distinguished from temple. The society is viewed as a territory owned by the ruling lineage and populated by tenants who have an obligation to pay taxes. The central capital houses a bureaucratic administration of officials; one of their principal purposes is to collect revenue (often in the form of taxes and tolls) and distribute it to government, army and craft specialists. Many early states developed complex redistribution systems to support these essential services.",
+    "This rather simple social typology, set out by Elman Service and elaborated by William Sanders and Joseph Marino, can be criticised, and it should not be used unthinkingly. Nevertheless, if we are seeking to talk about early societies, we must use words and hence concepts to do so. Service’s categories provide a good framework to help organise our thoughts."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this Questions 8-13\nAnswer the questions below. Choose NO MORE THAN TWO WORDS OR/AND A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS OR",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 7,
+     "stimulusSegments": [
+      "8. What are made at the clan work sites?\n9. What is the other way of life for tribes besides settled farming?\n10. How are Catalhoyuk’s housing units arranged?\n11. What does a chief give to his subjects as rewards besides crafted goods?\n12. What is the largest possible population of a chiefdom?\n13. Which group of people is at the bottom of an early state but higher than the farmers?"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "There’s little economic difference between members of a clan.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. There’s little economic difference between members of a clan.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "The farmers of a tribe grow a wide range of plants.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. The farmers of a tribe grow a wide range of plants.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "One settlement is more important than any other settlements in a tribe.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. One settlement is more important than any other settlements in a tribe.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "A member’s status in a chiefdom is determined by how much land he owns.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. A member’s status in a chiefdom is determined by how much land he owns.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "There are people who craft goods in chiefdoms.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. There are people who craft goods in chiefdoms.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "tfng",
+       "stem": {
+        "plain": "The king keeps the order of a state by using an army.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. The king keeps the order of a state by using an army.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "tfng",
+       "stem": {
+        "plain": "Bureaucratic officers receive higher salaries than other members.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7. Bureaucratic officers receive higher salaries than other members.",
+        "elementPath": "children[12]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[10]",
+      "rawExcerpt": "Questions 1-7\nDo the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nN"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Tasmanian Tiger",
+   "paragraphs": [
+    "Although it was called tiger, it looked like a dog with black stripes on its back and it was the largest known carnivorous marsupial of modern times. Yet, despite its fame for being one of the most fabled animals in the world, it is one of the least understood of Tasmania’s native animals. The scientific name for the Tasmanian tiger is Thylacine and it is believed that they have become extinct in the 20th century.",
+    "Fossils of thylacines dating from about almost 12 million years ago have been dug up at various places in Victoria, South Australia and Western Australia. They were widespread in Australia 7,000 years ago, but have probably been extinct on the continent for 2,000 years. This is believed to be because of the introduction of dingoes around 8,000 years ago. Because of disease, thylacine numbers may have been declining in Tasmania at the time of European settlement 200 years ago, but the decline was certainly accelerated by the new arrivals. The last known Tasmanian Tiger died in Hobart Zoo in 1936 and the animal is officially classified as extinct. Technically, this means that it has not been officially sighted in the wild or captivity for 50 years. However, there are still unsubstanti-ated sightings.",
+    "Hans Naarding, whose study of animals had taken him around the world, was conducting a survey of a species of endangered migratory bird. What he saw that night is now regarded as the most credible sighting recorded of thylacine that many believe has been extinct for more than 70 years.",
+    "“I had to work at night,” Naarding takes up the story. “I was in the habit of intermittently shining a spotlight around. The beam fell on an animal in front of the vehicle, less than 10m away. Instead of risking movement by grabbing for a camera, I decided to register very carefully what I was seeing. The animal was about the size of a small shepherd dog, a very healthy male in prime condition. What set it apart from a dog, though, was a slightly sloping hindquarter, with a fairly thick tail being a straight continuation of the backline of the animal. It had 12 distinct stripes on its back, continuing onto its butt. I knew perfectly well what I was seeing. As soon as I reached for the camera, it disap-peared into the tea-tree undergrowth and scrub.”",
+    "The director of Tasmania’s National Parks at the time, Peter Morrow, decided in his wisdom to keep Naarding’s sighting of the thylacine secret for two years. When the news finally broke, it was accompanied by pandemonium. “I was besieged by television crews, including four to live from Japan, and others from the United Kingdom, Germany, New Zealand and South America,” said Naarding.",
+    "Government and private search parties combed the region, but no further sightings were made. The tiger, as always, had escaped to its lair, a place many insist exists only in our imagination. But since then, the thylacine has staged something of a comeback, becoming part of Australian mythology.",
+    "There have been more than 4,000 claimed sightings of the beast since it supposedly died out, and the average claims each year reported to authorities now number 150. Associate professor of zoology at the University of Tasmania, Randolph Rose, has said he dreams of seeing a thylacine. But Rose, who in his 35 years in Tasmanian academia has fielded countless reports of thylacine sightings, is now convinced that his dream will go unfulfilled.",
+    "“The consensus among conservationists is that, usually, any animal with a population base of less than 1,000 is headed for extinction within 60 years,” says Rose. “Sixty years ago, there was only one thylacine that we know of, and that was in Hobart Zoo,” he says.",
+    "Dr. David Pemberton, curator of zoology at the Tasmanian Museum and Art Gallery, whose PhD thesis was on the thylacine, says that despite scientific thinking that 500 animals are required to sustain a population, the Florida panther is down to a dozen or so animals and, while it does have some inbreeding problems, is still ticking along. “I’ll take a punt and say that, if we manage to find a thylacine in the scrub, it means that there are 50-plus animals out there.” After all, animals can be notoriously elusive. The strange fish known as the coelacanth, with its “proto-legs”, was thought to have died out along with the dinosaurs 700 million years ago until a specimen was dragged to the surface in a shark net off the south-east coast of South Africa in 1938.",
+    "Wildlife biologist Nick Mooney has the unenviable task of investigating all “sightings” of the tiger totalling 4,000 since the mid-1980s, and averaging about 150 a year. It was Mooney who was first consulted late last month about the authenticity of digital photographic images purportedly taken by a German tourist while on a recent bushwalk in the state. On face value, Mooney says, the account of the sighting, and the two photographs submitted as proof, amount to one of the most convincing cases for the species’ survival he has seen.",
+    "And Mooney has seen it all—the mistakes, the hoaxes, the illusions and the plausible accounts of sightings. Hoaxers aside, most people who report sightings end up believing they have seen a thylacine, and are themselves believable to the point they could pass a lie-detector test, according to Mooney. Others, having tabled a creditable report, then become utterly obsessed like the Tasmanian who has registered 99 thylacine sightings to date. Mooney has seen individuals bankrupted by the obsession, and families destroyed. “It is a blind optimism that something is, rather than a cynicism that something isn’t,” Mooney says. “If something crosses the road, it’s not a case of ‘I wonder what that was?’ Rather, it is a case of ‘that’s a thylacine!’ It is a bit like a gold prospector’s blind faith, ‘it has got to be there’.”",
+    "However, Mooney treats all reports on face value. “I never try to embarrass people, or make fools of them. But the fact that 1 don’t pack the car immediately they ring can often be taken as ridicule. Obsessive characters get irate that someone in my position is not out there when they think the thy-lacine is there.”",
+    "But Hans Naarding, whose sighting of a striped animal two decades ago was the highlight of “a life of animal spotting”, remains bemused by the time and money people waste on tiger searches. He says resources would be better applied to saving the Tasmanian devil, and helping migratory bird populations that are declining as a result of shrinking wetlands across Australia.",
+    "Gould the thylacine still be out there? “Sure,” Naarding says. But be also says any discovery of surviving thylacines would be “rather pointless”. “How do you save a species from extinction? What could you do with it? If there are thylacines out there, they are better off right where they are,”"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g02",
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 14,
+     "endQ": 17,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "completion",
+       "stem": {
+        "plain": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14) ______ on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15) ______ years ago. They lived throughout (16) ______ before disappearing from the mainland. And soon after the (17) ______ settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed.",
+        "segments": [
+         "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has",
+         {
+          "blank": 14
+         },
+         "on its fur coat. Many fossils have been found, showing that thylacines had existed as early as",
+         {
+          "blank": 15
+         },
+         "years ago. They lived throughout",
+         {
+          "blank": 16
+         },
+         "before disappearing from the mainland. And soon after the",
+         {
+          "blank": 17
+         },
+         "settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Black stripes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14)…………………..on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15)………………ye",
+        "elementPath": "children[31]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "completion",
+       "stem": {
+        "plain": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14) ______ on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15) ______ years ago. They lived throughout (16) ______ before disappearing from the mainland. And soon after the (17) ______ settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed.",
+        "segments": [
+         "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has",
+         {
+          "blank": 14
+         },
+         "on its fur coat. Many fossils have been found, showing that thylacines had existed as early as",
+         {
+          "blank": 15
+         },
+         "years ago. They lived throughout",
+         {
+          "blank": 16
+         },
+         "before disappearing from the mainland. And soon after the",
+         {
+          "blank": 17
+         },
+         "settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "12 million",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14)…………………..on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15)………………ye",
+        "elementPath": "children[31]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "completion",
+       "stem": {
+        "plain": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14) ______ on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15) ______ years ago. They lived throughout (16) ______ before disappearing from the mainland. And soon after the (17) ______ settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed.",
+        "segments": [
+         "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has",
+         {
+          "blank": 14
+         },
+         "on its fur coat. Many fossils have been found, showing that thylacines had existed as early as",
+         {
+          "blank": 15
+         },
+         "years ago. They lived throughout",
+         {
+          "blank": 16
+         },
+         "before disappearing from the mainland. And soon after the",
+         {
+          "blank": 17
+         },
+         "settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Australia",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14)…………………..on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15)………………ye",
+        "elementPath": "children[31]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "completion",
+       "stem": {
+        "plain": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14) ______ on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15) ______ years ago. They lived throughout (16) ______ before disappearing from the mainland. And soon after the (17) ______ settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed.",
+        "segments": [
+         "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has",
+         {
+          "blank": 14
+         },
+         "on its fur coat. Many fossils have been found, showing that thylacines had existed as early as",
+         {
+          "blank": 15
+         },
+         "years ago. They lived throughout",
+         {
+          "blank": 16
+         },
+         "before disappearing from the mainland. And soon after the",
+         {
+          "blank": 17
+         },
+         "settlers arrived the size of thylacine population in Tasmania shrunk at a higher speed."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "European",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The Tasmanian tiger, also called thylacine, resembles the look of a dog and has (14)…………………..on its fur coat. Many fossils have been found, showing that thylacines had existed as early as (15)………………ye",
+        "elementPath": "children[31]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[30]",
+      "rawExcerpt": "Questions 14-17\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+     }
+    },
+    {
+     "groupId": "g04",
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 24,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Hans Naarding’s sighting has resulted in",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "government and organisations’ cooperative efforts to protect thylacine."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24. Hans Naarding’s sighting has resulted in",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The example of coelacanth is to illustrate",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "it lived in the same period with dinosaurs."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25. The example of coelacanth is to illustrate",
+        "elementPath": "children[37]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Mooney believes that all sighting reports should be",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "given some credit as they claim even if they are untrue."
+        }
+       ],
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26. Mooney believes that all sighting reports should be",
+        "elementPath": "children[38]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[35]",
+      "rawExcerpt": "Questions 24-26\nChoose the correct letter, A, B, C or D."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Accidental Scientists",
+   "paragraphs": [
+    "A A paradox lies close to the heart of scientific discovery. If you know just what you are looking for, finding it can hardly count as a discovery, since it was fully anticipated. But if, on the other hand, you have no notion of what you are looking for, you cannot know when you have found it, and discovery, as such, is out of the question. In the philosophy of science, these extremes map onto the purist forms of deductivism and inductivism: In the former, the outcome is supposed to be logically contained in the premises you start with; in the latter, you are recommended to start with no expectations whatsoever and see what turns up.",
+    "B As in so many things, the ideal position is widely supposed to reside somewhere in between these two impossible-to-realise extremes. You want to have a good enough idea of what you are looking for to be surprised when you find something else of value, and you want to be ignorant enough of your end point that you can entertain alternative outcomes. Scientific discovery should, therefore, have an accidental aspect, but not too much of one. Serendipity is a word that expresses a position something like that. It’s a fascinating word, and the late Robert King Merton—“the father of the sociology of science”—liked it well enough to compose its biography, assisted by the French cultural historian Elinor Barber.",
+    "C The word did not appear in the published literature until the early 19th century and did not become well enough known to use without explanation until sometime in the first third of the 20th century. Serendipity means a “happy accident” or “pleasant surprise”, specifically, the accident of finding something good or useful without looking for it. The first noted use of “serendipity” in the English language was by Horace Walpole. He explained that it came from the fairy tale, called The Three Princes of Serendip (the ancient name for Ceylon, or present day Sri Lanka), whose heroes “were always making discoveries, by accidents and sagacity, of things which they were not in quest of’.",
+    "D Antiquarians, following Walpole, found use for it, as they were always rummaging about for curiosities, and unexpected but pleasant surprises were not unknown to them. Some people just seemed to have a knack for that sort of thing, and serendipity was used to express that special capacity. The other community that came to dwell on serendipity to say something important about their practice was that of scientists, and here usages cut to the heart of the matter and were often vigorously contested. Many scientists, including the Flarvard physiologist Walter Cannon and, later, the British immunologist Peter Medawar, liked to emphasise how much of scientific discovery was unplanned and even accidental. One of the examples is Hans Christian Orsted’s discovery of electromagnetism when he unintentionally brought a current-carrying wire parallel to a magnetic needle. Rhetoric about the sufficiency of rational method was so much hot air. Indeed, as Medawar insisted, “There is no such thing as The Scientific Method,” no way at all of systematising the process of discovery. Really important discoveries had a way of showing up when they had a mind to do so and not when you were looking for them. Maybe some scientists, like some book collectors, had a happy knack; maybe serendipity described the situation rather than a personal skill or capacity.",
+    "E Some scientists using the word meant to stress those accidents belonging to the situation; some treated serendipity as a personal capacity; many others exploited the ambiguity of the notion. Yet what Cannon and Medawar took as a benign nose-thumbing at Dreams of Method, other scientists found incendiary. To say that science had a significant serendipitous aspect was taken by some as dangerous denigration. If scientific discovery were really accidental, then what was the special basis of expert authority? In this connection, the aphorism of choice came from no less an authority on scientific discovery than Louis Pasteur: “Chance favors the prepared mind.” Accidents may happen, and things may turn up unplanned and unforeseen, as one is looking for something else, but the ability to notice such events, to see their potential bearing and meaning, to exploit their occurrence and make constructive use of them—these are the results of systematic mental preparation. What seems like an accident is just another form of expertise. On closer inspection, it is insisted, accident dissolves into sagacity.",
+    "F The context in which scientific serendipity was most contested and had its greatest resonance was that connected with the idea of planned science. The serendipitists were not all inhabitants of academic ivory towers. As Merton and Barber note, two of the great early-20th-century American pioneers of industrial research—Willis Whitney and Irving Langmuir, both of General Electric—made much play of serendipity, in the course of arguing against overly rigid research planning. Langmuir thought that misconceptions about the certainty and ratio-nality of the research process did much harm and that a mature acceptance of uncertainty was far more likely to result in productive research policies. For his own part, Langmuir said that satisfactory outcomes “occurred as though we were just drifting with the wind. These things came about by accident.” If there is no very determinate relationship between cause and effect in research, he said, “then planning does not get us very far.” So, from within the bowels of corporate capitalism came powerful arguments, by way of serendipity, for scientific spontaneity and autonomy. The notion that industry was invariably committed to the regimentation of scientific research just doesn’t wash.",
+    "G For Merton himself—who one supposes must have been the senior author-serendipity rep-resented the keystone in the arch of his social scientific work. In 1936, as a very young man, Merton wrote a seminal essay on “The Unanticipated Consequences of Purposive Social Action.” It is, he argued, the nature of social action that what one intends is rarely what one gets: Intending to provide resources for buttressing Christian religion, the natural philosophers of the Scientific Revolution laid the groundwork for secularism; people wanting to be alone with nature in Yosemite Valley wind up crowding one another. We just don’t know enough—and we can never know enough—to ensure that the past is an adequate guide to the future: Uncertainty about outcomes, even of our best-laid plans, is endemic. All social action, including that undertaken with the best evidence and formulated according to the most rational criteria, is uncertain in its consequences."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g05",
+     "instruction": "Choose the correct letter, A, B, C or D. Choose the most suitable heading for paragraphs A-G from the list of headings below. Write the appropriate number, i-x, in boxes 27-32 on your answer sheet. Example Answer Paragraph B iii",
+     "wordLimit": "",
+     "qtype": "matching_headings",
+     "startQ": 27,
+     "endQ": 32,
+     "stimulusSegments": [
+      "List of Headings\ni Examples of some scientific discoveries\nii Horace Walpole’s fairy tale\niii Resolving the contradiction\niv What is the Scientific Method\nv The contradiction of views on scientific discovery\nvi Some misunderstandings of serendipity\nvii Opponents of authority\nviii Reality doesn’t always match expectation\nix How the word came into being\nx Illustration of serendipity in the business sector"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph A",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "v",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27. Paragraph A",
+        "elementPath": "children[49]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph C",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "ix",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28. Paragraph C",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph D",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "i",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29. Paragraph D",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph E",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "vi",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "30. Paragraph E",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 31,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph F",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "x",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "31. Paragraph F",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph G",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "viii",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32. Paragraph G",
+        "elementPath": "children[51]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[47]",
+      "rawExcerpt": "Questions 27-32\nChoose the correct letter, A, B, C or D. Choose the most suitable heading for paragraphs A-G from the list of headings below. Write the appropriate number, i-x, in boxes 27-32 on your answer sheet. Example Answer Paragraph B"
+     }
+    },
+    {
+     "groupId": "g06",
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 33,
+     "endQ": 37,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "In paragraph A, the word “inductivism” means",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "anticipate results in the beginning."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33. In paragraph A, the word “inductivism” means",
+        "elementPath": "children[53]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Medawar says “there is no such thing as The Scientific Method” because",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "discoveries are made by people with determined mind."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "34. Medawar says “there is no such thing as The Scientific Method” because",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Many scientists dislike the idea of serendipity because",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "it is easily misunderstood and abused."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "35. Many scientists dislike the idea of serendipity because",
+        "elementPath": "children[55]"
+       }
+      },
+      {
+       "number": 36,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The writer mentions Irving Langmuir to illustrate",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "planned science should be avoided."
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "36. The writer mentions Irving Langmuir to illustrate",
+        "elementPath": "children[56]"
+       }
+      },
+      {
+       "number": 37,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "The example of Yosemite is to show",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "the conflict between reality and expectation."
+        }
+       ],
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37. The example of Yosemite is to show",
+        "elementPath": "children[57]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[52]",
+      "rawExcerpt": "Questions 33-37\nChoose the correct letter, A, B, C or D."
+     }
+    },
+    {
+     "groupId": "g07",
+     "instruction": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 38-40 on your answer sheet.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "short_answer",
+     "startQ": 38,
+     "endQ": 40,
+     "stimulusSegments": [
+      "1. True\n2. NG\n3. False\n4. False\n5. True\n6. True\n7. NG\n8. Tools\n9. Nomadic\n10. Grouped (together)\n11. Foodstuffs\n12. 20000 persons\n13. Craft specialists\n14. Black stripes\n15. 12 million\n16. Australia\n17. European\n18. A\n19. D\n20. C\n21. B\n22. A\n23. D\n24. B\n25. D\n26. A\n27. v\n28. ix\n29. i\n30. vi\n31. x\n32. viii\n33. C\n34. B\n35. D\n36. D\n37. A\n38. Horace Walpole\n39. Fairy tale\n40. Sri Lanka"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 38,
+       "type": "short_answer",
+       "stem": {
+        "plain": "Who is the person that first used the word “serendipity”?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Horace Walpole",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38. Who is the person that first used the word “serendipity”?",
+        "elementPath": "children[59]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "short_answer",
+       "stem": {
+        "plain": "What kind of story does the word come from?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Fairy tale",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39. What kind of story does the word come from?",
+        "elementPath": "children[59]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "short_answer",
+       "stem": {
+        "plain": "What is the present name of serendipity?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Sri Lanka",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40. What is the present name of serendipity?",
+        "elementPath": "children[59]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[58]",
+      "rawExcerpt": "Questions 38-40\nAnswer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 38-40 on your answer sheet."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "True"
+   },
+   {
+    "number": 2,
+    "value": "NG"
+   },
+   {
+    "number": 3,
+    "value": "False"
+   },
+   {
+    "number": 4,
+    "value": "False"
+   },
+   {
+    "number": 5,
+    "value": "True"
+   },
+   {
+    "number": 6,
+    "value": "True"
+   },
+   {
+    "number": 7,
+    "value": "NG"
+   },
+   {
+    "number": 8,
+    "value": "Tools"
+   },
+   {
+    "number": 9,
+    "value": "Nomadic"
+   },
+   {
+    "number": 10,
+    "value": "Grouped (together)"
+   },
+   {
+    "number": 11,
+    "value": "Foodstuffs"
+   },
+   {
+    "number": 12,
+    "value": "20000 persons"
+   },
+   {
+    "number": 13,
+    "value": "Craft specialists"
+   },
+   {
+    "number": 14,
+    "value": "Black stripes"
+   },
+   {
+    "number": 15,
+    "value": "12 million"
+   },
+   {
+    "number": 16,
+    "value": "Australia"
+   },
+   {
+    "number": 17,
+    "value": "European"
+   },
+   {
+    "number": 18,
+    "value": "A"
+   },
+   {
+    "number": 19,
+    "value": "D"
+   },
+   {
+    "number": 20,
+    "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "B"
+   },
+   {
+    "number": 22,
+    "value": "A"
+   },
+   {
+    "number": 23,
+    "value": "D"
+   },
+   {
+    "number": 24,
+    "value": "B"
+   },
+   {
+    "number": 25,
+    "value": "D"
+   },
+   {
+    "number": 26,
+    "value": "A"
+   },
+   {
+    "number": 27,
+    "value": "v"
+   },
+   {
+    "number": 28,
+    "value": "ix"
+   },
+   {
+    "number": 29,
+    "value": "i"
+   },
+   {
+    "number": 30,
+    "value": "vi"
+   },
+   {
+    "number": 31,
+    "value": "x"
+   },
+   {
+    "number": 32,
+    "value": "viii"
+   },
+   {
+    "number": 33,
+    "value": "C"
+   },
+   {
+    "number": 34,
+    "value": "B"
+   },
+   {
+    "number": 35,
+    "value": "D"
+   },
+   {
+    "number": 36,
+    "value": "D"
+   },
+   {
+    "number": 37,
+    "value": "A"
+   },
+   {
+    "number": 38,
+    "value": "Horace Walpole"
+   },
+   {
+    "number": 39,
+    "value": "Fairy tale"
+   },
+   {
+    "number": 40,
+    "value": "Sri Lanka"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     18,
+     23
+    ],
+    "instruction": "Look at the following statements (Questions 18-23) and the list of people below. Match each statement with the correct person, A, B, C or D."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 28,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "3c69dc50af6918296a1cae93983d40f0b33fdab78077360da8cda05029dc719f"
+}

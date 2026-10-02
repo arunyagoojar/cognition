@@ -1,0 +1,37 @@
+{
+ "slug": "ielts-reading-test-295",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     18,
+     23
+    ],
+    "instruction": "Look at the following statements (Questions 18-23) and the list of people below. Match each statement with the correct person or people, A-E"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     31,
+     35
+    ],
+    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 29,
+    "answers": 40
+   }
+  }
+ ]
+}

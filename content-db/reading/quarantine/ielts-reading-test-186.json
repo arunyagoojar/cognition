@@ -1,0 +1,31 @@
+{
+ "slug": "ielts-reading-test-186",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     4
+    ],
+    "extracted": 6,
+    "expected": 4
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 34,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 1-4 got 6"
+  }
+ ]
+}

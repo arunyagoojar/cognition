@@ -1,0 +1,67 @@
+{
+ "slug": "ielts-reading-test-281",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     5
+    ],
+    "extracted": 7,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     11,
+     14
+    ],
+    "instruction": "Look at the following researchers (listed A-D) and findings. Match each researcher with the correct finding. Write your answers in boxes 11-"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     32,
+     35
+    ],
+    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     36,
+     40
+    ],
+    "instruction": "Look at the following features (Questions 36-40) and the list of locations below. Match each feature with the correct location, A, B or C. W"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 24,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 1-5 got 7"
+  }
+ ]
+}

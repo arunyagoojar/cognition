@@ -1,0 +1,38 @@
+{
+ "slug": "ielts-reading-test-288",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     7,
+     13
+    ],
+    "extracted": 2,
+    "expected": 7
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     34,
+     38
+    ],
+    "instruction": "Complete the summary below. Choose no more than THREE WORDS AND/OR A NUMBER from the passage for each answer."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 26,
+    "answers": 40
+   }
+  }
+ ]
+}

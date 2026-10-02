@@ -1,0 +1,43 @@
+{
+ "slug": "ielts-reading-test-214",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     20,
+     23
+    ],
+    "instruction": "Look at the following places and the list of statements below. Match each place with the correct statement, A-F."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     33,
+     37
+    ],
+    "extracted": 7,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 35,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g07 range 33-37 got 7"
+  }
+ ]
+}

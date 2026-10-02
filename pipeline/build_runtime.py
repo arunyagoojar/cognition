@@ -282,6 +282,108 @@ def build_speaking_runtime(rec):
 
 ASSEMBLED = json.load(open(os.path.join(OUT, "speaking/generated/assembled_packages.json")))
 
+# ---------- production Reading ----------
+def reading_passage_html(p):
+    """Renderer contract: real passage paragraphs; asset markers → project images."""
+    html = []
+    if p.get("title"):
+        html.append(f'<h3 class="reading-passage-title">{esc(p["title"])}</h3>')
+    for para in p.get("paragraphs", []):
+        m = re.match(r"\[asset:(asset\.[0-9a-f]+)\]", para)
+        if m:
+            aid = m.group(1)
+            asset = next((a for a in p.get("assets", []) if a["assetId"] == aid), None)
+            if asset:
+                html.append(f'<img src="{esc(asset["projectPath"])}" alt="reading passage visual" style="max-width:100%;height:auto;margin:10px 0;border:1px solid var(--border);border-radius:8px;" />')
+            continue
+        m2 = re.match(r"\[asset-missing:(.+?)\]", para)
+        if m2: continue
+        html.append(f'<p>{esc(para)}</p>')
+    return "\n".join(html)
+
+def reading_group_html(g):
+    html = []
+    for seg in (g.get("stimulusSegments") or []):
+        m = re.match(r"^__TABLE__(.*)$", seg, re.S)
+        if m:
+            rows = json.loads(m.group(1))
+            if rows:
+                html.append('<table class="writing-table">')
+                for i, row in enumerate(rows):
+                    html += ["<tr>" + "".join(
+                        f'<{"th" if i == 0 else "td"}>{esc(c)}</{"th" if i == 0 else "td"}>'
+                        for c in row) + "</tr>"]
+                html.append("</table>")
+            continue
+        if seg.strip():
+            html.append(f'<p class="stim-line">{esc(seg)}</p>')
+    if g.get("sharedOptions"):
+        opts = " ".join(f'<strong>{esc(o["letter"])}</strong> {esc(o["text"] or "—")}' for o in g["sharedOptions"])
+        html.append(f'<p class="stimulus-options">{opts}</p>')
+    return "\n".join(html)
+
+def reading_question_html(g, q):
+    st = q["stem"] or {}
+    segs = st.get("segments") or []
+    if segs:
+        parts = []
+        for s in segs:
+            parts.append("______" if isinstance(s, dict) else esc(s))
+        return " ".join(parts)
+    return esc(st.get("plain") or "")
+
+def build_reading_runtime(rec):
+    passages = []
+    for p in rec.get("passages", []):
+        groups, flat, html_parts = [], [], []
+        for g in p.get("questionGroups", []):
+            gh = reading_group_html(g)
+            html_parts.append(gh)
+            q_objs = []
+            for q in g["questions"]:
+                qtype = q["type"]
+                input_type = "text"
+                options = None
+                if qtype == "mcq_single":
+                    input_type = "single_select"
+                    options = q.get("options") or None
+                elif qtype in ("matching_headings", "matching_information", "matching_features", "matching_box"):
+                    input_type = "single_select"
+                    options = g.get("sharedOptions") or None
+                    if qtype == "tfng": input_type = "text"
+                elif qtype == "tfng":
+                    input_type = "text"
+                elif qtype == "ynng":
+                    input_type = "text"
+                q_objs.append({
+                    "id": f"q{q['number']}", "questionNumber": q["number"],
+                    "questionType": qtype, "inputType": input_type,
+                    "questionText": reading_question_html(g, q),
+                    "prompt": q["stem"].get("plain") or "",
+                    "options": [{"id": o["letter"], "label": o["text"] or ""} for o in options] if options else None,
+                    "answer": q.get("correctAnswer"),
+                })
+            flat.extend(q_objs)
+            groups.append({
+                "groupId": g["groupId"], "groupType": g["qtype"],
+                "instructions": g["instruction"] or None, "wordLimit": g.get("wordLimit") or None,
+                "options": ([{"id": o["letter"], "label": o["text"] or ""} for o in g["sharedOptions"]]
+                             if g.get("sharedOptions") else None),
+                "htmlContent": gh, "questions": q_objs,
+            })
+        passages.append({
+            "passageNumber": p["passageNumber"], "title": p.get("title") or f"Passage {p['passageNumber']}",
+            "htmlContent": reading_passage_html(p),
+            "assets": [{"projectPath": a["projectPath"]} for a in p.get("assets", [])],
+            "questions": flat, "questionGroups": groups,
+        })
+    return {
+        "id": rec["id"], "testId": rec["sourceNumbers"][0], "slug": rec["slug"],
+        "title": rec["title"], "kind": rec["kind"], "status": rec["status"],
+        "passages": passages,
+        "source": {"slug": rec["slug"], "sha256": rec["provenance"]["page"]["sha256"][:16]},
+    }
+
 # ---------- production Writing ----------
 def writing_task_html(task):
     """Renderer contract: plain escaped prompt; Task 1 adds the exact source
@@ -359,7 +461,7 @@ def main():
     print("assets:", len(assets), "missing:", len(missing))
 
     # ---- runtime bundles ----
-    listen_runtime, speak_runtime, write_runtime = [], [], []
+    listen_runtime, speak_runtime, write_runtime, read_runtime = [], [], [], []
     excluded = []
     for f in sorted(glob.glob(os.path.join(OUT, "listening", "tests", "*.json"))):
         rec = json.load(open(f))
@@ -379,6 +481,12 @@ def main():
             excluded.append({"slug": rec["slug"], "reason": "quarantined"})
             continue
         speak_runtime.append(build_speaking_runtime(rec))
+    for f in sorted(glob.glob(os.path.join(OUT, "reading", "tests", "*.json"))):
+        rec = json.load(open(f))
+        if rec["status"] in ("quarantined", "duplicate") or rec.get("kind") not in ("full_test", "practice_test"):
+            excluded.append({"slug": rec["slug"], "reason": rec["status"] or "incomplete"})
+            continue
+        read_runtime.append(build_reading_runtime(rec))
     for f in sorted(glob.glob(os.path.join(OUT, "writing", "tests", "*.json"))):
         rec = json.load(open(f))
         if rec["status"] in ("quarantined", "duplicate") or rec.get("kind") not in ("complete_test", "task1_only", "task2_only"):
@@ -392,11 +500,13 @@ def main():
         "export const PRODUCTION_LISTENING = " + json.dumps(listen_runtime, ensure_ascii=False, separators=(",", ":")) + ";\n\n"
         "export const PRODUCTION_SPEAKING = " + json.dumps(speak_runtime, ensure_ascii=False, separators=(",", ":")) + ";\n\n"
         "export const PRODUCTION_WRITING = " + json.dumps(write_runtime, ensure_ascii=False, separators=(",", ":")) + ";\n\n"
+        "export const PRODUCTION_READING = " + json.dumps(read_runtime, ensure_ascii=False, separators=(",", ":")) + ";\n\n"
         "export const PRODUCTION_META = " + json.dumps({
             "generatedBy": "pipeline/build_runtime.py (Phase 3)",
             "listeningTests": len(listen_runtime),
             "speakingPackages": len(speak_runtime),
             "writingTests": len(write_runtime),
+            "readingTests": len(read_runtime),
             "excluded": excluded,
         }, ensure_ascii=False, indent=1) + ";\n"
     )

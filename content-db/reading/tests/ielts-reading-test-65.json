@@ -1,0 +1,817 @@
+{
+ "id": "reading.test-0065.26fe6ff2",
+ "module": "reading",
+ "sourceNumbers": [
+  65
+ ],
+ "slug": "ielts-reading-test-65",
+ "title": "IELTS Academic Reading Test 65",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-65/index.html",
+   "sha256": "8089f4c0986e2afd8243099ef0c67aa1aa12a7945d426c98a2e52e70b65498b2",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-65/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Space",
+   "paragraphs": [
+    "Section A\n\nThe world has changed dramatically since Thomas Malthus’s work An Essay on the Principle of Population, first published in 1798, argued that by the mid 1800s the unrestricted expansion of the human population would outgrow the agricultural land available to supply humanity with food. Over 150 years have passed since this theoretical milestone, but mankind, admittedly somewhat more cramped, is still expanding and will continue to do so.",
+    "Section B\n\nThe impact of unfettered population growth is clear for all to see. Urbanization is now a more evident worldwide phenomenon than previously as even greater numbers of people drift from rural areas to vast cities all over the world like Tokyo, Mexico City and Mumbai (26.4 million, 18.4 million and 18.1 million inhabitants in 2000 respectively) in their quest for a better life. These mega-cities, i.e. conurbations with an estimated population of more than 10 million people, are springing up in every continent. Now teeming with humanity, they are hungry for one increasingly valuable resource: land.",
+    "While developments in agricultural technology ensure humanity may be able, by and large, to feed the people flocking to these great metropolises, the expansion of the human race is fuelling an unprecedented appetite for real estate. Space, whether it be for personal or public use, corporate or national, human or flora/fauna, is now at a premium as we move into a new century. Not only is more land required for accommodation, but also for a wide range of infrastructure facilities. Transport systems including roads within and between cities need to be constructed or upgraded to create motorways; green fields are turned into airports; virgin forest is stripped to provide food and firewood. In poorer regions, this newly exposed land becomes desert, completing the cycle of destruction.",
+    "Section C\n\nHitherto, the most common practice for the utilization of expensive space for living and working has been to build upwards; hence, the demand for ever higher buildings, both apartment and commercial, in major cities like New York, Shanghai and Singapore all vying with each other for the tallest buildings. There has also been a tradition for building underground, not just for transport systems, but for the storage of waste, depositories for books etc. as in London, where The British Library housing millions of books has been built largely underground. Recent years have seen more novel construction developments around the world. In the past, in many countries, Holland and the UK included, marshes and flood plains have been reclaimed from the sea. Like the city of Venice in Italy, housing complexes and even airports have now been constructed off-shore to amazing effect. In Japan, Kansai International Airport has been built off-shore on a man-made island at vast expense and in Dubai a very imaginative and expensive housing complex in the shape of a palm tree is being built just off the coast on land created by a construction company. However, these and other developments are at risk from rising sea levels as a consequence of global warming.",
+    "Section D\n\nBut where will the human race go when planet earth is full? There have been many theories put forward about the human population moving to outer space. Marshall Savage (1992, 1994), for example, has projected that the human population will reach five quintillion throughout the solar system by the year 3000, with the majority living in the asteroid belt. Arthur C Clarke, a fervent supporter of Savage, now argues that by the year 2057 there will be humans on the Moon, Mars, Europa, Ganymede, Titan and in orbit around Venus, Neptune and Pluto. Feeman Dyson (1999) favours the Kuiper belt as the future home of humanity, suggesting this could happen within a few centuries.",
+    "Section E\n\nHabitation in outer space in huge stations is no longer just a dream, but a reality. A permanent international space station now orbits the earth. The first commercial tourist recently went into outer space with more trips planned for the near future. This is only a beginning, but the development of space hotels is not far-off. There is no knowing where mankind may end up. But the ideas about off-world habitation are not fanciful and I am sure I am not alone in fantasizing about summer holidays spent watching the moons rising in some far-flung planet or on a floating hotel somewhere on the Andromeda nebula."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g03",
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 1? In boxes 9-13 on your answer sheet write YES if the statement reflects the claims of the writer\n\nNO if the statement contradicts the claims of the writer\n\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 9,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "tfng",
+       "stem": {
+        "plain": "The destruction of land for food and firewood is linked to desertification.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9 The destruction of land for food and firewood is linked to desertification.",
+        "elementPath": "children[14]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "tfng",
+       "stem": {
+        "plain": "Shortage of space has also led to underground building construction.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "10 Shortage of space has also led to underground building construction.",
+        "elementPath": "children[14]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "tfng",
+       "stem": {
+        "plain": "The building of the airport in Japan cost much more than that of the housing complex in Dubai.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11 The building of the airport in Japan cost much more than that of the housing complex in Dubai.",
+        "elementPath": "children[14]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "tfng",
+       "stem": {
+        "plain": "Arthur C Clarke was the only person to predict that mankind will inhabit other parts of the solar system.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12 Arthur C Clarke was the only person to predict that mankind will inhabit other parts of the solar system.",
+        "elementPath": "children[14]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "tfng",
+       "stem": {
+        "plain": "The concept of the habitation of outer space by mankind is unimaginable.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13 The concept of the habitation of outer space by mankind is unimaginable.",
+        "elementPath": "children[14]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[12]",
+      "rawExcerpt": "Questions 9-13\n\nDo the following statements agree with the claims of the writer in Reading Passage 1? In boxes 9-13 on your answer sheet write YES if the statement reflects the claims of the writer\n\nNO if the statement contradicts the claim"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Cambridge IELTS Tests 1 to 17",
+   "paragraphs": [
+    "The History of Salt",
+    "1 Salt is so simple and plentiful that we almost take it for granted. In chemical terms, salt is the combination of a sodium ion with a chloride ion, making it one of the most basic molecules on earth. It is also one of the most plentiful: it has been estimated that salt deposits under the state of Kansas alone could supply the entire world’s needs for the next 250,000 years.",
+    "2 But salt is also an essential element. Without it, life itself would be impossible since the human body requires the mineral in order to function properly. The concentration of sodium ions in the blood is directly related to the regulation of safe body fluid levels. And while we are all familiar with its many uses in cooking, we may not be aware that this element is used in some 14,000 commercial applications. From manufacturing pulp and paper to setting dyes in textiles and fabric, from producing soaps and detergents to making our roads safe in winter, salt plays an essential part in our daily lives.",
+    "3 Salt has a long and influential role in world history. From the dawn of civilization, it has been a key factor in economic, religious, social and political development. In every corner of the world, it has been the subject of superstition, folklore, and warfare, and has even been used as currency.",
+    "4 As a precious and portable commodity, salt has long been a cornerstone of economies throughout history. In fact, researcher M.R. Bloch conjectured that civilization began along the edges of the desert because of the natural surface deposits of salt found there. Bloch also believed that the first war – likely fought near the ancient city of Essalt on the Jordan River – could have been fought over the city’s precious supplies of the mineral.",
+    "5 In 2200 BC, the Chinese emperor Hsia Yu levied one of the first known taxes. He taxed salt. In Tibet, Marco Polo noted that tiny cakes of salt were pressed with images of the Grand Khan to be used as coins and to this day among the nomads of Ethiopia’s Danakil Plains it is still used as money. Greek slave traders often bartered it for slaves, giving rise to the expression that someone was “not worth his salt.” Roman legionnaires were paid in salt – a salarium, the Latin origin of the word “salary.”",
+    "6 Merchants in 12th-century Timbuktu – the gateway to the Sahara Desert and the seat of scholars – valued this mineral as highly as books and gold. In France, Charles of Anjou levied the “gabelle,” a salt tax, in 1259 to finance his conquest of the Kingdom of Naples. Outrage over the gabelle fueled the French Revolution. Though the revolutionaries eliminated the tax shortly after Louis XVI, the Republic of France re-established the gabelle in the early 19th Century; only in 1946 was it removed from the books.",
+    "7 The Erie Canal, an engineering marvel that connected the Great Lakes to New York’s Hudson River in 1825, was called “the ditch that salt built.” Salt tax revenues paid for half the cost of construction of the canal. The British monarchy supported itself with high salt taxes, leading to a bustling black market for the white crystal. In 1785, the earl of Dundonald wrote that every year in England, 10,000 people were arrested for salt smuggling. And protesting against British rule in 1930, Mahatma Gandhi led a 200-mile march to the Arabian Ocean to collect untaxed salt for India’s poor.",
+    "8 In religion and culture, salt long held an important place with Greek worshippers consecrating it in their rituals. Further, in Buddhist tradition, salt repels evil spirits, which is why it is customary to throw it over your shoulder before entering your house after a funeral: it scares off any evil spirits that may be clinging to your back. Shinto religion also uses it to purify an area. Before sumo wrestlers enter the ring for a match – which is in reality an elaborate Shinto rite – a handful is thrown into the center to drive off malevolent spirits.",
+    "9 In the Southwest of the United States, the Pueblo worship the Salt Mother. Other native tribes had significant restrictions on who was permitted to eat salt. Hopi legend holds that the angry Warrior Twins punished mankind by placing valuable salt deposits far from civilization, requiring hard work and bravery to harvest the precious mineral. In 1933, the Dalai Lama was buried sitting up in a bed of salt. Today, a gift of salt endures in India as a potent symbol of good luck and a reference to Mahatma Gandhi’s liberation of India.",
+    "10 The effects of salt deficiency are highlighted in times of war, when human bodies and national economies are strained to their limits. Thousands of Napoleon’s troops died during the French retreat from Moscow due to inadequate wound healing and lowered resistance to disease – the results of salt deficiency."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g05",
+     "instruction": "Complete the summary. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 17,
+     "endQ": 21,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 17,
+       "type": "completion",
+       "stem": {
+        "plain": "Salt is such an (17) ______ that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18) ______ ranging from making paper to the manufacture of soap. Being a prized and (19) ______ , it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise (20) ______ by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil (21) ______",
+        "segments": [
+         "Salt is such an",
+         {
+          "blank": 17
+         },
+         "that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business",
+         {
+          "blank": 18
+         },
+         "ranging from making paper to the manufacture of soap. Being a prized and",
+         {
+          "blank": 19
+         },
+         ", it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise",
+         {
+          "blank": 20
+         },
+         "by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil",
+         {
+          "blank": 21
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "essential element",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Salt is such an (17)……………………….that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18)………………………..ranging from making paper to",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 18,
+       "type": "completion",
+       "stem": {
+        "plain": "Salt is such an (17) ______ that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18) ______ ranging from making paper to the manufacture of soap. Being a prized and (19) ______ , it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise (20) ______ by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil (21) ______",
+        "segments": [
+         "Salt is such an",
+         {
+          "blank": 17
+         },
+         "that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business",
+         {
+          "blank": 18
+         },
+         "ranging from making paper to the manufacture of soap. Being a prized and",
+         {
+          "blank": 19
+         },
+         ", it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise",
+         {
+          "blank": 20
+         },
+         "by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil",
+         {
+          "blank": 21
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "applications",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Salt is such an (17)……………………….that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18)………………………..ranging from making paper to",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 19,
+       "type": "completion",
+       "stem": {
+        "plain": "Salt is such an (17) ______ that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18) ______ ranging from making paper to the manufacture of soap. Being a prized and (19) ______ , it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise (20) ______ by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil (21) ______",
+        "segments": [
+         "Salt is such an",
+         {
+          "blank": 17
+         },
+         "that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business",
+         {
+          "blank": 18
+         },
+         "ranging from making paper to the manufacture of soap. Being a prized and",
+         {
+          "blank": 19
+         },
+         ", it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise",
+         {
+          "blank": 20
+         },
+         "by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil",
+         {
+          "blank": 21
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "portable commodity",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Salt is such an (17)……………………….that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18)………………………..ranging from making paper to",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 20,
+       "type": "completion",
+       "stem": {
+        "plain": "Salt is such an (17) ______ that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18) ______ ranging from making paper to the manufacture of soap. Being a prized and (19) ______ , it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise (20) ______ by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil (21) ______",
+        "segments": [
+         "Salt is such an",
+         {
+          "blank": 17
+         },
+         "that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business",
+         {
+          "blank": 18
+         },
+         "ranging from making paper to the manufacture of soap. Being a prized and",
+         {
+          "blank": 19
+         },
+         ", it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise",
+         {
+          "blank": 20
+         },
+         "by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil",
+         {
+          "blank": 21
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "taxes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Salt is such an (17)……………………….that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18)………………………..ranging from making paper to",
+        "elementPath": "children[30]"
+       }
+      },
+      {
+       "number": 21,
+       "type": "completion",
+       "stem": {
+        "plain": "Salt is such an (17) ______ that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18) ______ ranging from making paper to the manufacture of soap. Being a prized and (19) ______ , it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise (20) ______ by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil (21) ______",
+        "segments": [
+         "Salt is such an",
+         {
+          "blank": 17
+         },
+         "that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business",
+         {
+          "blank": 18
+         },
+         "ranging from making paper to the manufacture of soap. Being a prized and",
+         {
+          "blank": 19
+         },
+         ", it has played a major part in the economies of many countries. As such, salt has not only led to war, but has also been used to raise",
+         {
+          "blank": 20
+         },
+         "by governments in many parts of the world. There are also many instances of its place in religion and culture, being used as a means to get rid of evil",
+         {
+          "blank": 21
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "spirits",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Salt is such an (17)……………………….that people would not be able to live without it. As well as its uses in cooking, this basic mineral has thousands of business (18)………………………..ranging from making paper to",
+        "elementPath": "children[30]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[29]",
+      "rawExcerpt": "Questions 17-21\n\nComplete the summary. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+     }
+    },
+    {
+     "groupId": "g06",
+     "instruction": "Do the following statements agree with the information in Reading Passage 2? In boxes 22-27 on your answer sheet write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information about the statement",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 22,
+     "endQ": 27,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 22,
+       "type": "tfng",
+       "stem": {
+        "plain": "It has been suggested that salt was responsible for the first war.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "22 It has been suggested that salt was responsible for the first war.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 23,
+       "type": "tfng",
+       "stem": {
+        "plain": "The first tax on salt was imposed by a Chinese emperor.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "23 The first tax on salt was imposed by a Chinese emperor.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 24,
+       "type": "tfng",
+       "stem": {
+        "plain": "Salt is no longer used as a form of currency.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24 Salt is no longer used as a form of currency.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "tfng",
+       "stem": {
+        "plain": "Most of the money for the construction of the Erie Canal came from salt taxes.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25 Most of the money for the construction of the Erie Canal came from salt taxes.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "tfng",
+       "stem": {
+        "plain": "Hopi legend believes that salt deposits were placed far away from civilization to penalize mankind.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26 Hopi legend believes that salt deposits were placed far away from civilization to penalize mankind.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 27,
+       "type": "tfng",
+       "stem": {
+        "plain": "A lack of salt is connected with the deaths of many of Napoleon’s soldiers during the French retreat from Moscow.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27 A lack of salt is connected with the deaths of many of Napoleon’s soldiers during the French retreat from Moscow.",
+        "elementPath": "children[33]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[31]",
+      "rawExcerpt": "Questions 22-27\n\nDo the following statements agree with the information in Reading Passage 2?\n\nIn boxes 22-27 on your answer sheet write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\n"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Volunteering: enriching others and helping oneself",
+   "paragraphs": [
+    "A Volunteering, some might mistakenly think, embraces a plethora of people from all walks of life as well as activities, but data from the other side of the world suggest otherwise. A 2001 survey on who participated in volunteering by the Office for National Statistics (ONS) in the United Kingdom (UK) revealed that people in higher income households are more likely than others to volunteer. In England and Wales, 57 per cent of adults with gross annual household incomes of £75,000 or more, have volunteered formally (such as raising or handling money for a charity or being a member of a committee) in the 12 months prior to the survey date. They were almost twice as likely to have done so than those living in households with an annual income under £10,000.",
+    "B As well as having high household incomes, volunteers also tend to have higher academic qualifications, be in higher socio-economic groups and be in employment. Among people with a degree or postgraduate qualification, 79 per cent had volunteered informally and 57 per cent had volunteered formally in the previous 12 months. For people with no qualifications the corresponding proportions were 52 per cent and 23 per cent. But voluntary work is certainly not the exclusive preserve of the rich, nor should it be. Does the answer not lie perhaps in the fact that the rich tend to have money to allow them the time to become involved in voluntary work compared to less well-off people?",
+    "C A breakdown in the year 2000 of the range of volunteering activities taken from The Australian Bureau of Statistics gives an idea of the scale of activities in which people are typically involved. Eleven sectors are given ranging from Community and Welfare, which accounted for just over a quarter of the total hours volunteered in Australia, to Law/justice/politics with 1.2 percent at the other end of the scale. Other fields included sport/recreation, religious activities and education, following at 21.2 per cent, 16.9 and 14.3 per cent respectively. Foreign/international volunteer work accounted for 2.4 per cent of the total hours. The data here also seem to point to a cohort of volunteers with expertise and experience.",
+    "D The knock-on effect of volunteering on the lives of individuals can be profound. Voluntary work helps foster independence and imparts the ability to deal with different situations, often simultaneously, thus teaching people how to work their way through different systems. It therefore brings people into touch with the real world; and, hence, equips them for the future.",
+    "E Initially, young adults in their late teens might not seem to have the expertise or knowledge to impart to others that say a teacher or agriculturalist or nurse would have, but they do have many skills that can help others. And in the absence of any particular talent, their energy and enthusiasm can be harnessed for the benefit of their fellow human beings, and ultimately themselves. From all this, the gain to any community no matter how many volunteers are involved is immeasurable.",
+    "F Employers will generally look favourably on people who have shown an ability to work as part of a team. It demonstrates a willingness to learn and an independent spirit, which would be desirable qualities in any employee. So to satisfy employers’ demands for experience when applying for work, volunteering can act as a means of gaining experience that might otherwise elude would-be workers and can ultimately lead to paid employment in the desired field.",
+    "G But what are the prerequisites for becoming a volunteer? One might immediately think of attributes like kindness, selflessness, strength of character, ability to deal with others, determination, adaptability and flexibility and a capacity to comprehend the ways of other people. While offering oneself selflessly, working as a volunteer makes further demands on the individual. It requires a strength of will, a sense of moral responsibility for one’s fellow human beings, and an ability to fit into the ethos of an organization or community. But it also requires something which in no way detracts from the valuable work done by volunteers and which may seem at first glance both contradictory and surprising: self-interest.",
+    "H Organizations involved in any voluntary work have to be realistic about this. If someone, whatever the age, is going to volunteer and devote their time without money, they do need to receive something from it for themselves. People who are unemployed can use volunteer work as a stepping-stone to employment or as a means of finding out whether they really like the field they plan to enter or as a way to help them find themselves.",
+    "I It is tempting to use some form of community work as an alternative to national service or as punishment for petty criminals by making the latter for example clean up parks, wash away graffiti, work with victims of their own or of other people. This may be acceptable, but it does not constitute volunteer work, two cardinal rules of which are the willingness to volunteer without coercion and working unpaid."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g07",
+     "instruction": "Reading Passage 3 has nine paragraphs A-I. Which paragraph contains the following information? Write the correct letter, A-l, in boxes 28-33 on your answer sheet.",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 28,
+     "endQ": 33,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 28,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a description of what does not satisfy the criteria for volunteer work",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "I",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28 a description of what does not satisfy the criteria for volunteer work",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the impact of voluntary work on the development of individuals",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29 the impact of voluntary work on the development of individuals",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the requirement for both selflessness and self-interest in volunteers",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "G",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "30 the requirement for both selflessness and self-interest in volunteers",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 31,
+       "type": "matching_information",
+       "stem": {
+        "plain": "various areas in which people volunteer",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "31 various areas in which people volunteer",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the benefit of voluntary work for the young",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32 the benefit of voluntary work for the young",
+        "elementPath": "children[45]"
+       }
+      },
+      {
+       "number": 33,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a mistaken view of volunteering",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33 a mistaken view of volunteering",
+        "elementPath": "children[45]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[44]",
+      "rawExcerpt": "Questions 28-33\n\nReading Passage 3 has nine paragraphs A-I. Which paragraph contains the following information?\n\nWrite the correct letter, A-l, in boxes 28-33 on your answer sheet."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "iii"
+   },
+   {
+    "number": 2,
+    "value": "i"
+   },
+   {
+    "number": 3,
+    "value": "ii"
+   },
+   {
+    "number": 4,
+    "value": "vii"
+   },
+   {
+    "number": 5,
+    "value": "worldwide phenomenon"
+   },
+   {
+    "number": 6,
+    "value": "valuable resource"
+   },
+   {
+    "number": 7,
+    "value": "agricultural technology"
+   },
+   {
+    "number": 8,
+    "value": "infrastructure facilities"
+   },
+   {
+    "number": 9,
+    "value": "yes"
+   },
+   {
+    "number": 10,
+    "value": "yes"
+   },
+   {
+    "number": 11,
+    "value": "not given"
+   },
+   {
+    "number": 12,
+    "value": "no"
+   },
+   {
+    "number": 13,
+    "value": "no"
+   },
+   {
+    "number": 14,
+    "value": "B"
+   },
+   {
+    "number": 15,
+    "value": "E"
+   },
+   {
+    "number": 16,
+    "value": "F"
+   },
+   {
+    "number": 17,
+    "value": "essential element"
+   },
+   {
+    "number": 18,
+    "value": "applications"
+   },
+   {
+    "number": 19,
+    "value": "portable commodity"
+   },
+   {
+    "number": 20,
+    "value": "taxes"
+   },
+   {
+    "number": 21,
+    "value": "spirits"
+   },
+   {
+    "number": 22,
+    "value": "true"
+   },
+   {
+    "number": 23,
+    "value": "not given"
+   },
+   {
+    "number": 24,
+    "value": "not given"
+   },
+   {
+    "number": 25,
+    "value": "false"
+   },
+   {
+    "number": 26,
+    "value": "true"
+   },
+   {
+    "number": 27,
+    "value": "true"
+   },
+   {
+    "number": 28,
+    "value": "I"
+   },
+   {
+    "number": 29,
+    "value": "D"
+   },
+   {
+    "number": 30,
+    "value": "G"
+   },
+   {
+    "number": 31,
+    "value": "C"
+   },
+   {
+    "number": 32,
+    "value": "E"
+   },
+   {
+    "number": 33,
+    "value": "A"
+   },
+   {
+    "number": 34,
+    "value": "D"
+   },
+   {
+    "number": 35,
+    "value": "B"
+   },
+   {
+    "number": 36,
+    "value": "C"
+   },
+   {
+    "number": 37,
+    "value": "A"
+   },
+   {
+    "number": 38,
+    "value": "E"
+   },
+   {
+    "number": 39,
+    "value": "C"
+   },
+   {
+    "number": 40,
+    "value": "A"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     4
+    ],
+    "instruction": "Reading passage 1 has five sections A-E. Choose the correct heading for sections B-E from the list of headings below. Wr"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     5,
+     8
+    ],
+    "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     14,
+     16
+    ],
+    "instruction": "Choose THREE letters A-H. NB Your answers may be given in any order."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     34,
+     37
+    ],
+    "instruction": "Choose the correct letters A, B, C or D. Questions 38-40\n\nComplete each sentence with the correct ending, A-F below. 38 "
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 22,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [
+  {
+   "unit": "group",
+   "code": "DEGENERATE_STEMS_DROPPED",
+   "detail": "6 bare-letter questions dropped in g08"
+  }
+ ],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "ea8d290d1862c3f7d9ec0330272bd2ed5052c83f8ef5a273ed505f4ca9bb8f7b"
+}

@@ -1,0 +1,67 @@
+{
+ "slug": "ielts-reading-test-63",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     5
+    ],
+    "instruction": "Reading Passage 1 has six paragraphs A – F. Choose the most suitable headings for paragraphs A – F from the list of head"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     13,
+     13
+    ],
+    "extracted": 2,
+    "expected": 1
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     15,
+     21
+    ],
+    "instruction": "For questions 15-21 match the statistical changes stated in the text with a numerical expression. Write your answers in "
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     35,
+     40
+    ],
+    "instruction": "For questions 35 – 40, choose the best answers. A, B, C or D, according to the information in the text. Write your answe"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 7,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g02 range 13-13 got 2"
+  }
+ ]
+}

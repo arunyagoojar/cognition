@@ -10,6 +10,7 @@ import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
   PRODUCTION_WRITING,
+  PRODUCTION_READING,
 } from './productionContent.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
@@ -196,4 +197,55 @@ export function getRandomProductionWritingTask(kind) {
     practiceTask: kind,
     sourcePackageId: rec.id,
   };
+}
+
+
+/**
+ * Reading production adapter (Phase 6).
+ * Academic Reading tests: 3 passages, question groups, answers from the verified
+ * production database. includeAnswers gates the answer key like Listening.
+ */
+export function adaptProductionReading(rec, includeAnswers = false) {
+  return {
+    testId: rec.testId,
+    id: rec.id,
+    slug: rec.slug,
+    title: rec.title,
+    kind: rec.kind,
+    isRandomized: false,
+    durationMinutes: 60,
+    passages: rec.passages.map(p => ({
+      passageNumber: p.passageNumber,
+      title: p.title,
+      htmlContent: p.htmlContent,
+      questions: p.questions.map(q => ({
+        ...q,
+        answer: includeAnswers ? q.answer : null,
+      })),
+      questionGroups: p.questionGroups.map(g => ({
+        groupId: g.groupId,
+        groupType: g.groupType,
+        instructions: g.instructions,
+        options: g.options,
+        htmlContent: g.htmlContent,
+        questions: g.questions.map(q => ({
+          ...q,
+          answer: includeAnswers ? q.answer : null,
+        })),
+      })),
+    })),
+    source: rec.source || null,
+  };
+}
+
+export function getProductionReadingTest(testId, includeAnswers = false) {
+  const rec = PRODUCTION_READING.find(r =>
+    String(r.testId) === String(testId) || r.id === testId || r.slug === testId);
+  return rec ? adaptProductionReading(rec, includeAnswers) : null;
+}
+
+export function getRandomProductionReadingTest(includeAnswers = false) {
+  if (!PRODUCTION_READING.length) return null;
+  const rec = PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
+  return adaptProductionReading(rec, includeAnswers);
 }

@@ -1,0 +1,822 @@
+{
+ "id": "reading.test-0202.c722a284",
+ "module": "reading",
+ "sourceNumbers": [
+  202
+ ],
+ "slug": "ielts-reading-test-202",
+ "title": "IELTS Academic Reading Test 202",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-202/index.html",
+   "sha256": "e8c3701d3f971ebe9ae432beb8d5eb67a39ff6cb3b02bb0fdf0b28b2b1f4f79d",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-202/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Twist in the Tale",
+   "paragraphs": [
+    "A Less than three years ago, doom merchants were predicting that the growth in video games and the rise of the Internet would sound the death knell for children’s literature. But contrary to popular myth, children are reading more books than ever. A recent survey by Books Marketing found that children up to the age of 11 read on average for four hours a week, particularly girls.",
+    "B Moreover, the children’s book market, which traditionally was seen as a poor cousin to the more lucrative and successful adult market, has come into its own. Publishing houses are now making considerable profits on the back of new children’s books and children’s authors can now command significant advances. ‘Children’s books are going through an incredibly fertile period,’ says Wendy Cooling, a children’s literature consultant. ‘There’s a real buzz around them. Book clubs are happening, sales are good, and people are much more willing to listen to children’s authors.’",
+    "C The main growth area has been the market for eight to fourteen-year-olds, and there is little doubt that the boom has been fuelled by the bespectacled apprentice, Harry Potter. So influential has J. K. Rowling’s series of books been that they have helped to make reading fashionable for pre-teens. ‘Harry made it OK to be seen on a bus reading a book,’ says Cooling. ‘To a child, that is important.’ The current buzz around the publication of the fourth Harry Potter beats anything in the world of adult literature.",
+    "D ‘People still tell me, “Children don’t read nowadays”,’ says David Almond, the award-winning author of children’s books such as Skellig. The truth is that they are skilled, creative readers. When 1 do classroom visits, they ask me very sophisticated questions about use of language, story structure, chapters and dialogue.’ No one is denying that books are competing with other forms of entertainment for children’s attention but it seems as though children find a special kind of mental nourishment within the printed page.",
+    "E ‘A few years ago, publishers lost confidence and wanted to make books more like television, the medium that frightened them most,’ says children’s book critic Julia Eccleshare. ‘But books aren’t TV, and you will find that children always say that the good thing about books is that you can see them in your head. Children are demanding readers,’ she says. ‘If they don’t get it in two pages, they’ll drop it.’",
+    "F No more are children’s authors considered mere sentimentalists or failed adult writers. ‘Some feted adult writers would kill for the sales,’ says Almond, who sold 42,392 copies of Skellig in 1999 alone. And advances seem to be growing too: UK publishing outfit Orion recently negotiated a six-figure sum from US company Scholastic for The Seeing Stone, a children’s novel by Kevin Crossley-Holland, the majority of which will go to the author.",
+    "G It helps that once smitten, children are loyal and even fanatical consumers. Author Jacqueline Wilson says that children spread news of her books like a bushfire. ‘My average reader is a girl of ten,’ she explains. ‘They’re sociable and acquisitive. They collect. They have parties – where books are a good present. If they like something, they have to pass it on.’ After Rowling, Wilson is currently the best-selling children’s writer, and her sales have boomed over the past three years. She has sold more than three million books, but remains virtually invisible to adults, although most ten- year-old girls know about her.",
+    "H Children’s books are surprisingly relevant to contemporary life. Provided they are handled with care, few topics are considered off-limits for children. One senses that children’s writers relish the chance to discuss the whole area of topics and language. But Anne Fine, author of many award ­winning children’s books is concerned that the British literati still ignore children’s culture. ‘It’s considered worthy but boring,’ she says.",
+    "I T think there’s still a way to go,’ says Almond, who wishes that children’s books were taken more seriously as literature. Nonetheless, he derives great satisfaction from his child readers. ‘They have a powerful literary culture,’ he says. ‘It feels as if you’re able to step into the store of mythology and ancient stories that run through all societies and encounter the great themes: love and loss and death and redemption.’",
+    "J At the moment, the race is on to find the next Harry Potter. The bidding for new books at Bologna this year – the children’s equivalent of the Frankfurt Book Fair – was as fierce as anything anyone has ever seen. All of which bodes well for the long-term future of the market – and for children’s authors, who have traditionally suffered the lowest profile in literature, despite the responsibility of their role."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g02",
+     "instruction": "Using NO MORE THAN THREE WORDS taken from the reading passage, answer the following questions.",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "qtype": "completion",
+     "startQ": 8,
+     "endQ": 10,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "short_answer",
+       "stem": {
+        "plain": "For which age group have sales of books risen the most?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "8-14 (year-olds)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "8. For which age group have sales of books risen the most?",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "short_answer",
+       "stem": {
+        "plain": "Which company has just invested heavily in an unpublished children’s book?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Orion",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9. Which company has just invested heavily in an unpublished children’s book?",
+        "elementPath": "children[15]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "short_answer",
+       "stem": {
+        "plain": "Who is currently the best-selling children’s writer?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "J.K. Rowling",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "10. Who is currently the best-selling children’s writer?",
+        "elementPath": "children[15]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[14]",
+      "rawExcerpt": "Questions 8-10\nUsing NO MORE THAN THREE WORDS taken from the reading passage, answer the following questions."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Fun for the Masses",
+   "paragraphs": [
+    "A Are you better off than you used to be? Even after six years of sustained economic growth, Americans worry about that question. Economists who plumb government income statistics agree that Americans’ incomes, as measured in inflation-adjusted dollars, have risen more slowly in the past two decades than in earlier times, and that some workers’ real incomes have actually fallen. They also agree that by almost any measure, income is distributed less equally than it used to be. Neither of those claims, however, sheds much light on whether living standards are rising or falling. This is because ‘living standard’ is a highly amorphous concept. Measuring how much people earn is relatively easy, at least compared with measuring how well they live.",
+    "B A recent paper by Dora Costa, an economist at the Massachusetts Institute of Technology, looks at the living-standards debate from an unusual direction. Rather than worrying about cash incomes, Ms Costa investigates Americans’ recreational habits over the past century. She finds that people of all income levels have steadily increased the amount of time and money they devote to having fun. The distribution of dollar incomes may have become more skewed in recent years, but leisure is more evenly spread than ever.",
+    "C Ms Costa bases her research on consumption surveys dating back as far as 1888. The industrial workers surveyed in that year spent, on average, three-quarters of their incomes on food, shelter and clothing. Less than 2% of the average family’s income was spent on leisure but that average hid large disparities. The share of a family’s budget that was spent on having fun rose sharply with its income: the lowest-income families in this working-class sample spent barely 1% of their budgets on recreation, while higher earners spent more than 3%. Only the latter group could afford such extravagances as theatre and concert performances, which were relatively much more expensive than they are today.",
+    "D Since those days, leisure has steadily become less of a luxury. By 1991, the average household needed to devote only 38% of its income to the basic necessities, and was able to spend 6% on recreation. Moreover, Ms Costa finds that the share of the family budget spent on leisure now rises much less sharply with income than it used to. At the beginning of this century a family’s recreational spending tended to rise by 20% for every 10% rise in income. By 1972-73, a 10% income gain led to roughly a 15% rise in recreational spending, and the increase fell to only 13% in 1991. What this implies is that Americans of all income levels are now able to spend much more of their money on having fun.",
+    "E One obvious cause is that real income overall has risen. If Americans in general are richer, their consumption of entertainment goods is less likely to be affected by changes in their income. But Ms Costa reckons that rising incomes are responsible for, at most, half of the changing structure of leisure spending. Much of the rest may be due to the fact that poorer Americans have more time off than they used to. In earlier years, low-wage workers faced extremely long hours and enjoyed few days off. But since the 1940s, the less skilled (and lower paid) have worked ever-fewer hours, giving them more time to enjoy leisure pursuits.",
+    "F Conveniently, Americans have had an increasing number of recreational possibilities to choose from. Public investment in sports complexes, parks and golf courses has made leisure cheaper and more accessible. So too has technological innovation. Where listening to music used to imply paying for concert tickets or owning a piano, the invention of the radio made music accessible to everyone and virtually free. Compact discs, videos and other paraphernalia have widened the choice even further.",
+    "G At a time when many economists are pointing accusing fingers at technology for causing a widening inequality in the wages of skilled and unskilled workers, Ms Costa’s research gives it a much more egalitarian face. High earners have always been able to afford amusement. By lowering the price of entertainment, technology has improved the standard of living of those in the lower end of the income distribution. The implication of her results is that once recreation is taken into account, the differences in Americans’ living standards may not have widened so much after all.",
+    "H These findings are not water-tight. Ms Costa’s results depend heavily upon what exactly is classed as a recreational expenditure. Reading is an example. This was the most popular leisure activity for working men in 1888, accounting for one-quarter of all recreational spending. In 1991, reading took only 16% of the entertainment dollar. But the American Department of Labour’s expenditure surveys do not distinguish between the purchase of a mathematics tome and that of a best-selling novel. Both are classified as recreational expenses. If more money is being spent on textbooks and professional books now than in earlier years, this could make ‘recreational’ spending appear stronger than it really is.",
+    "I Although Ms Costa tries to address this problem by showing that her results still hold even when tricky categories, such as books, are removed from the sample, the difficulty is not entirely eliminated. Nonetheless, her broad conclusion seems fair. Recreation is more available to all and less dependent on income. On this measure at least, inequality of living standards has fallen."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Reading Passage 2 has nine paragraphs A-I. From the list of headings below choose the most suitable heading for each paragraph. Write the appropriate numbers (i-xi) in boxes 15-21 on your answer sheet.",
+     "wordLimit": "",
+     "qtype": "matching_headings",
+     "startQ": 15,
+     "endQ": 21,
+     "stimulusSegments": [
+      "List of Headings\ni Wide differences in leisure activities according to income\nii Possible inconsistencies in Ms Costa’s data\niii More personal income and time influence leisure activities\niv Investigating the lifestyle problem from a new angle\nv Increased incomes fail to benefit everyone\nvi A controversial development offers cheaper leisure activities\nvii Technology heightens differences in living standards\nviii The gap between income and leisure spending closes\nix Two factors have led to a broader range of options for all\nx Have people’s lifestyles improved?\nxi High earners spend less on leisure"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 15,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph A",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "x",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15. Paragraph A",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph B",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "iv",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16. Paragraph B",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph C",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "i",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17. Paragraph C",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph D",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "viii",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "18. Paragraph D",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph F",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "ix",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "19. Paragraph F",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 20,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph G",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "vi",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "20. Paragraph G",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 21,
+       "type": "matching_headings",
+       "stem": {
+        "plain": "Paragraph H",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "ii",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "21. Paragraph H",
+        "elementPath": "children[29]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[28]",
+      "rawExcerpt": "Questions 15-21\nReading Passage 2 has nine paragraphs A-I. From the list of headings below choose the most suitable heading for each paragraph. Write the appropriate numbers (i-xi) in boxes 15-21 on your answer sheet."
+     }
+    },
+    {
+     "groupId": "g05",
+     "instruction": "Complete each of the following statements (Questions 22-26) using words from the box. List of words\nholiday time\nrecreational activities\nincome levels\nnon-luxury spending\ncomputer technology\ncash incomes",
+     "wordLimit": "",
+     "qtype": "matching_box",
+     "startQ": 22,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": [
+      {
+       "letter": "A decr",
+       "text": "ease in (23)………………………during the 20th century led to a bigger investment in leisure."
+      }
+     ],
+     "figures": null,
+     "questions": [
+      {
+       "number": 22,
+       "type": "completion",
+       "stem": {
+        "plain": "It is easier to determine (22) ______ than living standards.",
+        "segments": [
+         "It is easier to determine",
+         {
+          "blank": 22
+         },
+         "than living standards."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "income levels",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "It is easier to determine (22)……………………….than living standards.",
+        "elementPath": "children[33]"
+       }
+      },
+      {
+       "number": 24,
+       "type": "completion",
+       "stem": {
+        "plain": "According to Ms Costa, how much Americans spend on leisure has been directly affected by salaries and (24) ______",
+        "segments": [
+         "According to Ms Costa, how much Americans spend on leisure has been directly affected by salaries and",
+         {
+          "blank": 24
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "holiday time",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to Ms Costa, how much Americans spend on leisure has been directly affected by salaries and (24)………………..",
+        "elementPath": "children[35]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "completion",
+       "stem": {
+        "plain": "The writer notes both positive and negative influences of (25) ______",
+        "segments": [
+         "The writer notes both positive and negative influences of",
+         {
+          "blank": 25
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "computer technology",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The writer notes both positive and negative influences of (25)…………………….",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "completion",
+       "stem": {
+        "plain": "According to the writer, the way Ms Costa defined (26) ______ may have been misleading.",
+        "segments": [
+         "According to the writer, the way Ms Costa defined",
+         {
+          "blank": 26
+         },
+         "may have been misleading."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "recreational activities",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "According to the writer, the way Ms Costa defined (26)……………………..may have been misleading.",
+        "elementPath": "children[37]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[31]",
+      "rawExcerpt": "Questions 22-26\nComplete each of the following statements (Questions 22-26) using words from the box. List of words\nholiday time\nrecreational activities\nincome levels\nnon-luxury spending\ncomputer technology\ncash incomes"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "THE ART OF HEALING",
+   "paragraphs": [
+    "As with so much, the medicine of the Tang dynasty left its European counterpart in the shade. It boasted its own ‘national health service’, and left behind the teachings of the incomparable Sun Simiao.",
+    "If no further evidence was available of the sophistication of China in the Tang era, then a look at Chinese medicine would be sufficient. At the Western end of the Eurasian continent the Roman empire had vanished, and there was nowhere new to claim the status of the cultural and political centre of the world. In fact, for a few centuries, this centre happened to be the capital of the Tang empire, and Chinese medicine under the Tang was far ahead of its European counterpart. The organisational context of health and healing was structured to a degree that had no precedence in Chinese history and found no parallel elsewhere.",
+    "An Imperial Medical Office had been inherited from previous dynasties: it was immediately restructured and staffed with directors and deputy directors, chief and assistant medical directors, pharmacists and curators of medicinal herb gardens and further personnel. Within the first two decades after consolidating its rule, the Tang administration set up one central and several provincial medical colleges with professors, lecturers, clinical practitioners and pharmacists to train students in one or all of the four departments of medicine, acupuncture, physical therapy and exorcism.",
+    "Physicians were given positions in governmental medical service only after passing qualifying examinations. They were remunerated in accordance with the number of cures they had effected during the past year.",
+    "In 723 Emperor Xuanzong personally composed a general formulary of prescriptions recommended to him by one of his imperial pharmacists and sent it to all the provincial medical schools. An Arabic traveller, who visited China in 851, noted with surprise that prescriptions from the emperor’s formulary were publicised on notice boards at crossroads to enhance the welfare of the population.",
+    "The government took care to protect the general populace from potentially harmful medical practice. The Tang legal code was the first in China to include laws concerned with harmful and heterodox medical practices. For example, to treat patients for money without adhering to standard procedures was defined as fraud combined with theft and had to be tried in accordance with the legal statutes on theft. If such therapies resulted in the death of a patient, the healer was to be banished for two and a half years. In case a physician purposely failed to practice according to the standards, he was to be tried in accordance with the statutes on premeditated homicide. Even if no harm resulted, he was to be sentenced to sixty strokes with a heavy cane.",
+    "In fact, physicians practising during the Tang era had access to a wealth of pharmaceutical and medical texts, their contents ranging from purely pragmatic advice to highly sophisticated theoretical considerations. Concise descriptions of the position, morphology, and functions of the organs of the human body stood side by side in libraries with books enabling readers to calculate the daily, seasonal and annual climatic conditions of cycles of sixty years and to understand and predict their effects on health.",
+    "Several Tang authors wrote large collections of prescriptions, continuing a literary tradition documented since the 2nd century BC. The two most outstanding works to be named here were those by Sun Simiao (581-682?) and Wang Tao (c.670-755). The latter was a librarian who copied more than six thousand formulas, categorised in 1,104 sections, from sixty-five older works and published them under the title Wciitai miyao. Twenty-four sections, for example, were devoted to ophthalmology. They reflect the Indian origin of much Chinese knowledge on ailments of the eye and, in particular, of cataract surgery.",
+    "Sun Simiao was the most eminent physician and author not only of the Tang dynasty, but of the entire first millennium AD. He was a broadly educated intellectual and physician; his world view integrated notions of all three of the major currents competing at his time – Confucianism, Daoism and Buddhism. Sun Simiao gained fame during his lifetime as a clinician (he was summoned to the imperial court at least once) and as author of the Prescriptions Worth Thousands in Gold (Qianjinfang) and its sequel. In contrast to developments in the 12th century, physicians relied on prescriptions and single substances to treat their patients’ illnesses. The theories of systematic correspondences, characteristic of the acupuncture tradition, had not been extended to cover pharmacology yet.",
+    "Sun Simiao rose to the pantheon of Chinese popular Buddhism in about the 13th century. He was revered as paramount Medicine God. He gained this extraordinary position in Chinese collective memory not only because he was an outstanding clinician and writer, but also for his ethical concerns. Sun Simiao was the first Chinese author known to compose an elaborate medical ethical code. Even though based on Buddhist and Confucian values, his deontology is comparable to the Hippocratic Oath. It initiated a debate on the task of medicine, its professional obligations, social position and moral justification that continued until the arrival of Western medicine in the 19th century.",
+    "Despite or – more likely – because of its long- lasting affluence and political stability, the Tang dynasty did not add any significantly new ideas to the interpretation of illness, health and healing. Medical thought reflects human anxieties; changes in medical thought always occur in the context of new existential fears or of fundamentally changed social circumstances. Nevertheless, medicine was a most fascinating ingredient of Tang civilisation and it left a rich legacy to subsequent centuries."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g08",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 31-37 on your answer sheet write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 31,
+     "endQ": 37,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 31,
+       "type": "tfng",
+       "stem": {
+        "plain": "Academic staff sometimes taught a range of medical subjects during the Tang era.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "31. Academic staff sometimes taught a range of medical subjects during the Tang era.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "tfng",
+       "stem": {
+        "plain": "The medical knowledge available during the Tang era only benefited the wealthy.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32. The medical knowledge available during the Tang era only benefited the wealthy.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 33,
+       "type": "tfng",
+       "stem": {
+        "plain": "Tang citizens were encouraged to lead a healthy lifestyle.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33. Tang citizens were encouraged to lead a healthy lifestyle.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "tfng",
+       "stem": {
+        "plain": "Doctors who behaved in a fraudulent manner were treated in the same way as ordinary criminals during the Tang era.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "34. Doctors who behaved in a fraudulent manner were treated in the same way as ordinary criminals during the Tang era.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "tfng",
+       "stem": {
+        "plain": "Medical reference books published during the Tang era covered practical and academic issues.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "35. Medical reference books published during the Tang era covered practical and academic issues.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 36,
+       "type": "tfng",
+       "stem": {
+        "plain": "Waitai miyao contained medical data from the Tang era.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "36. Waitai miyao contained medical data from the Tang era.",
+        "elementPath": "children[58]"
+       }
+      },
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "Chinese medical authors are known to have influenced Indian writing.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37. Chinese medical authors are known to have influenced Indian writing.",
+        "elementPath": "children[58]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[56]",
+      "rawExcerpt": "Questions 31-37\nDo the following statements agree with the information given in Reading Passage 3? In boxes 31-37 on your answer sheet write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views "
+     }
+    },
+    {
+     "groupId": "g09",
+     "instruction": "Complete the sentences below with words taken from Reading Passage 3. Use NO MORE THAN THREE WORDS for each answer.",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "qtype": "sentence_completion",
+     "startQ": 38,
+     "endQ": 40,
+     "stimulusSegments": [
+      "1. D\n2. A\n3. B\n4. C\n5. D\n6. B\n7. A\n8. 8-14 (year-olds)\n9. Orion\n10. J.K. Rowling\n11. D\n12. H\n13. C\n14. A\n15. x\n16. iv\n17. i\n18. viii\n19. ix\n20. vi\n21. ii\n22. income levels\n23. non-luxury spending\n24. holiday time\n25. computer technology\n26. recreational activities\n27. D\n28. C\n29. A\n30. B\n31. Yes\n32. No\n33. NG\n34. Yes\n35. Yes\n36. NG\n37. No\n38. 2nd century (BC)\n39. Prescriptions\n40. Sun Simiao"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 38,
+       "type": "completion",
+       "stem": {
+        "plain": "The first known medical writing in China dates back to the (38) ______",
+        "segments": [
+         "The first known medical writing in China dates back to the",
+         {
+          "blank": 38
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "2nd century (BC)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first known medical writing in China dates back to the (38)………………………",
+        "elementPath": "children[60]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "completion",
+       "stem": {
+        "plain": "During the Tang era, doctors depended most on (39) ______ and single substances to treat their patients.",
+        "segments": [
+         "During the Tang era, doctors depended most on",
+         {
+          "blank": 39
+         },
+         "and single substances to treat their patients."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Prescriptions",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "During the Tang era, doctors depended most on (39)……………………and single substances to treat their patients.",
+        "elementPath": "children[61]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "completion",
+       "stem": {
+        "plain": "(40) ______ is famous for producing a set of medical rules for Chinese physicians.",
+        "segments": [
+         {
+          "blank": 40
+         },
+         "is famous for producing a set of medical rules for Chinese physicians."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Sun Simiao",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "(40)………………………..is famous for producing a set of medical rules for Chinese physicians.",
+        "elementPath": "children[62]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[59]",
+      "rawExcerpt": "Questions 38-40\nComplete the sentences below with words taken from Reading Passage 3. Use NO MORE THAN THREE WORDS for each answer."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "D"
+   },
+   {
+    "number": 2,
+    "value": "A"
+   },
+   {
+    "number": 3,
+    "value": "B"
+   },
+   {
+    "number": 4,
+    "value": "C"
+   },
+   {
+    "number": 5,
+    "value": "D"
+   },
+   {
+    "number": 6,
+    "value": "B"
+   },
+   {
+    "number": 7,
+    "value": "A"
+   },
+   {
+    "number": 8,
+    "value": "8-14 (year-olds)"
+   },
+   {
+    "number": 9,
+    "value": "Orion"
+   },
+   {
+    "number": 10,
+    "value": "J.K. Rowling"
+   },
+   {
+    "number": 11,
+    "value": "D"
+   },
+   {
+    "number": 12,
+    "value": "H"
+   },
+   {
+    "number": 13,
+    "value": "C"
+   },
+   {
+    "number": 14,
+    "value": "A"
+   },
+   {
+    "number": 15,
+    "value": "x"
+   },
+   {
+    "number": 16,
+    "value": "iv"
+   },
+   {
+    "number": 17,
+    "value": "i"
+   },
+   {
+    "number": 18,
+    "value": "viii"
+   },
+   {
+    "number": 19,
+    "value": "ix"
+   },
+   {
+    "number": 20,
+    "value": "vi"
+   },
+   {
+    "number": 21,
+    "value": "ii"
+   },
+   {
+    "number": 22,
+    "value": "income levels"
+   },
+   {
+    "number": 23,
+    "value": "non-luxury spending"
+   },
+   {
+    "number": 24,
+    "value": "holiday time"
+   },
+   {
+    "number": 25,
+    "value": "computer technology"
+   },
+   {
+    "number": 26,
+    "value": "recreational activities"
+   },
+   {
+    "number": 27,
+    "value": "D"
+   },
+   {
+    "number": 28,
+    "value": "C"
+   },
+   {
+    "number": 29,
+    "value": "A"
+   },
+   {
+    "number": 30,
+    "value": "B"
+   },
+   {
+    "number": 31,
+    "value": "Yes"
+   },
+   {
+    "number": 32,
+    "value": "No"
+   },
+   {
+    "number": 33,
+    "value": "NG"
+   },
+   {
+    "number": 34,
+    "value": "Yes"
+   },
+   {
+    "number": 35,
+    "value": "Yes"
+   },
+   {
+    "number": 36,
+    "value": "NG"
+   },
+   {
+    "number": 37,
+    "value": "No"
+   },
+   {
+    "number": 38,
+    "value": "2nd century (BC)"
+   },
+   {
+    "number": 39,
+    "value": "Prescriptions"
+   },
+   {
+    "number": 40,
+    "value": "Sun Simiao"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     7
+    ],
+    "instruction": "Look at the following list of people A-E and the list of statements (Questions 1-7). Match each statement with one of the people listed. A W"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     11,
+     14
+    ],
+    "instruction": "Reading Passage 1 has ten paragraphs A-J. Which paragraph mentions the following (Questions 11-14)?"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     22,
+     26
+    ],
+    "extracted": 4,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     27,
+     27
+    ],
+    "instruction": "Choose the appropriate letter A-D and write it in box 27 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     28,
+     30
+    ],
+    "instruction": "Choose the appropriate letters A-D and write them in boxes 28-30 on your answer sheet."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 24,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g05 range 22-26 got 4"
+  }
+ ],
+ "validationWarnings": [],
+ "status": "quarantined",
+ "segmentCount": 3,
+ "contentFingerprint": "3d6dcaba89080aa3f104ac041e3477181858e806c008058d3f0179a1f353409c"
+}

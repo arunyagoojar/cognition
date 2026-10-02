@@ -1,0 +1,67 @@
+{
+ "slug": "ielts-reading-test-314",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     7,
+     13
+    ],
+    "extracted": 5,
+    "expected": 7
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     14,
+     19
+    ],
+    "instruction": "Reading passage has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below. "
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     20,
+     21
+    ],
+    "instruction": "Choose TWO letters, A-E. Choose the correct letters in boxes 20-21 below."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     22,
+     26
+    ],
+    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 22-26 bel"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 19,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 7-13 got 5"
+  }
+ ]
+}

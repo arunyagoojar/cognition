@@ -1,0 +1,642 @@
+{
+ "id": "reading.test-0010.04d66cb2",
+ "module": "reading",
+ "sourceNumbers": [
+  10
+ ],
+ "slug": "ielts-reading-test-10",
+ "title": "IELTS Academic Reading Test 10",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-10/index.html",
+   "sha256": "9be6627efa6807bdec6d09f678fd789b33a464869206c1c950bad2781eb5c745",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-10/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Making Time for Science",
+   "paragraphs": [
+    "Chronobiology might sound a little futuristic – like something from a science fiction novel, perhaps – but it’s actually a field of study that concerns one of the oldest processes life on this planet has ever known: short-term rhythms of time and their effect on flora and fauna.",
+    "This can take many forms. Marine life, for example, is influenced by tidal patterns. Animals tend to be active or inactive depending on the position of the sun or moon. Numerous creatures, humans included, are largely diurnal – that is, they like to come out during the hours of sunlight. Nocturnal animals, such as bats and possums, prefer to forage by night. A third group are known as crepuscular: they thrive in the low- light of dawn and dusk and remain inactive at other hours.",
+    "When it comes to humans, chronobiologists are interested in what is known as the circadian rhythm. This is the complete cycle our bodies are naturally geared to undergo within the passage of a twenty-four hour day. Aside from sleeping at night and waking during the day, each cycle involves many other factors such as changes in blood pressure and body temperature. Not everyone has an identical circadian rhythm. ‘Night people’, for example, often describe how they find it very hard to operate during the morning, but become alert and focused by evening. This is a benign variation within circadian rhythms known as a chronotype.",
+    "Scientists have limited abilities to create durable modifications of chronobiological demands. Recent therapeutic developments for humans such as artificial light machines and melatonin administration can reset our circadian rhythms, for example, but our bodies can tell the difference and health suffers when we breach these natural rhythms for extended periods of time. Plants appear no more malleable in this respect; studies demonstrate that vegetables grown in season and ripened on the tree are far higher in essential nutrients than those grown in greenhouses and ripened by laser.",
+    "Knowledge of chronobiological patterns can have many pragmatic implications for our day-to-day lives. While contemporary living can sometimes appear to subjugate biology – after all, who needs circadian rhythms when we have caffeine pills, energy drinks, shift work and cities that never sleep? – keeping in synch with our body clock is important.",
+    "The average urban resident, for example, rouses at the eye-blearing time of 6.04 a.m., which researchers believe to be far too early. One study found that even rising at 7.00 a.m. has deleterious effects on health unless exercise is performed for 30 minutes afterward. The optimum moment has been whittled down to 7.22 a.m.; muscle aches, headaches and moodiness were reported to be lowest by participants in the study who awoke then.",
+    "Once you’re up and ready to go, what then? If you’re trying to shed some extra pounds, dieticians are adamant: never skip breakfast. This disorients your circadian rhythm and puts your body in starvation mode. The recommended course of action is to follow an intense workout with a carbohydrate-rich breakfast; the other way round and weight loss results are not as pronounced.",
+    "Morning is also great for breaking out the vitamins. Supplement absorption by the body is not temporal-dependent, but naturopath Pam Stone notes that the extra boost at breakfast helps us get energised for the day ahead. For improved absorption, Stone suggests pairing supplements with a food in which they are soluble and steering clear of caffeinated beverages. Finally, Stone warns to take care with storage; high potency is best for absorption, and warmth and humidity are known to deplete the potency of a supplement.",
+    "After-dinner espressos are becoming more of a tradition – we have the Italians to thank for that – but to prepare for a good night’s sleep we are better off putting the brakes on caffeine consumption as early as 3 p.m. With a seven hour half-life, a cup of coffee containing 90 mg of caffeine taken at this hour could still leave 45 mg of caffeine in your nervous system at ten o’clock that evening. It is essential that, by the time you are ready to sleep, your body is rid of all traces.",
+    "Evenings are important for winding down before sleep; however, dietician Geraldine Georgeou warns that an after-five carbohydrate-fast is more cultural myth than chronobiological demand. This will deprive your body of vital energy needs. Overloading your gut could lead to indigestion, though. Our digestive tracts do not shut down for the night entirely, but their work slows to a crawl as our bodies prepare for sleep. Consuming a modest snack should be entirely sufficient."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 7,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "Chronobiology is the study of how living things have evolved over time.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1 Chronobiology is the study of how living things have evolved over time.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "The rise and fall of sea levels affects how sea creatures behave.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2 The rise and fall of sea levels affects how sea creatures behave.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "Most animals are active during the daytime.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3 Most animals are active during the daytime.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Circadian rhythms identify how we do different things on different days.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4 Circadian rhythms identify how we do different things on different days.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "A ‘night person’ can still have a healthy circadian rhythm.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5 A ‘night person’ can still have a healthy circadian rhythm.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "tfng",
+       "stem": {
+        "plain": "New therapies can permanently change circadian rhythms without causing harm.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "false",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6 New therapies can permanently change circadian rhythms without causing harm.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "tfng",
+       "stem": {
+        "plain": "Naturally-produced vegetables have more nutritional value.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "true",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7 Naturally-produced vegetables have more nutritional value.",
+        "elementPath": "children[13]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[11]",
+      "rawExcerpt": "Questions 1-7\n\nDo the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Cambridge IELTS Test 1 to 17",
+   "paragraphs": [
+    "The Triune Brain",
+    "The first of our three brains to evolve is what scientists call the reptilian cortex. This brain sustains the elementary activities of animal survival such as respiration, adequate rest and a beating heart. We are not required to consciously “think” about these activities. The reptilian cortex also houses the “startle centre”, a mechanism that facilitates swift reactions to unexpected occurrences in our surroundings. That panicked lurch you experience when a door slams shut somewhere in the house, or the heightened awareness you feel when a twig cracks in a nearby bush while out on an evening stroll are both examples of the reptilian cortex at work. When it comes to our interaction with others, the reptilian brain offers up only the most basic impulses: aggression, mating, and territorial defence. There is no great difference, in this sense, between a crocodile defending its spot along the river and a turf war between two urban gangs.",
+    "Although the lizard may stake a claim to its habitat, it exerts total indifference toward the well-being of its young. Listen to the anguished squeal of a dolphin separated from its pod or witness the sight of elephants mourning their dead, however, and it is clear that a new development is at play. Scientists have identified this as the limbic cortex. Unique to mammals, the limbic cortex impels creatures to nurture their offspring by delivering feelings of tenderness and warmth to the parent when children are nearby. These same sensations also cause mammals to develop various types of social relations and kinship networks. When we are with others of “our kind” – be it at soccer practice, church, school or a nightclub – we experience positive sensations of togetherness, solidarity and comfort. If we spend too long away from these networks, then loneliness sets in and encourages us to seek companionship.",
+    "Only human capabilities extend far beyond the scope of these two cortexes. Humans eat, sleep and play, but we also speak, plot, rationalise and debate finer points of morality. Our unique abilities are the result of an expansive third brain – the neocortex – which engages with logic, reason and ideas. The power of the neocortex comes from its ability to think beyond the present, concrete moment. While other mammals are mainly restricted to impulsive actions (although some, such as apes, can learn and remember simple lessons), humans can think about the “big picture”. We can string together simple lessons (for example, an apple drops downwards from a tree; hurting others causes unhappiness) to develop complex theories of physical or social phenomena (such as the laws of gravity and a concern for human rights).",
+    "The neocortex is also responsible for the process by which we decide on and commit to particular courses of action. Strung together over time, these choices can accumulate into feats of progress unknown to other animals. Anticipating a better grade on the following morning’s exam, a student can ignore the limbic urge to socialise and go to sleep early instead. Over three years, this ongoing sacrifice translates into a first class degree and a scholarship to graduate school; over a lifetime, it can mean ground¬breaking contributions to human knowledge and development. The ability to sacrifice our drive for immediate satisfaction in order to benefit later is a product of the neocortex.",
+    "Understanding the triune brain can help us appreciate the different natures of brain damage and psychological disorders. The most devastating form of brain damage, for example, is a condition in which someone is understood to be brain dead. In this state a person appears merely unconscious – sleeping, perhaps – but this is illusory. Here, the reptilian brain is functioning on autopilot despite the permanent loss of other cortexes.",
+    "Disturbances to the limbic cortex are registered in a different manner. Pups with limbic damage can move around and feed themselves well enough but do not register the presence of their littermates. Scientists have observed how, after a limbic lobotomy ,“one impaired monkey stepped on his outraged peers as if treading on a log or a rock”. In our own species, limbic damage is closely related to sociopathic behaviour. Sociopaths in possession of fully-functioning neocortexes are often shrewd and emotionally intelligent people but lack any ability to relate to, empathise with or express concern for others.",
+    "One of the neurological wonders of history occurred when a railway worker named Phineas Gage survived an incident during which a metal rod skewered his skull, taking a considerable amount of his neocortex with it. Though Gage continued to live and work as before, his fellow employees observed a shift in the equilibrium of his personality. Gage’s animal propensities were now sharply pronounced while his intellectual abilities suffered; garrulous or obscene jokes replaced his once quick wit. New findings suggest, however, that Gage managed to soften these abrupt changes over time and rediscover an appropriate social manner. This would indicate that reparative therapy has the potential to help patients with advanced brain trauma to gain an improved quality of life.",
+    "Questions 14-22\n\nClassify the following as typical of\n\nA the reptilian cortex\n\nB the limbic cortex\n\nC the neocortex",
+    "Write the correct letter, A, B or C, in boxes 14-22 on your answer sheet.",
+    "14 giving up short-term happiness for future gains\n\n15 maintaining the bodily functions necessary for life\n\n16 experiencing the pain of losing another\n\n17 forming communities and social groups\n\n18 making a decision and carrying it out\n\n19 guarding areas of land\n\n20 developing explanations for things\n\n21 looking after one’s young\n\n22 responding quickly to sudden movement and noise"
+   ],
+   "assets": [],
+   "questionGroups": []
+  },
+  {
+   "passageNumber": 3,
+   "title": "HELIUM’S FUTURE UP IN THE AIR",
+   "paragraphs": [
+    "A In recent years we have all been exposed to dire media reports concerning the impending demise of global coal and oil reserves, but the depletion of another key non-renewable resource continues without receiving much press at all. Helium – an inert, odourless, monatomic element known to lay people as the substance that makes balloons float and voices squeak when inhaled – could be gone from this planet within a generation.",
+    "B Helium itself is not rare; there is actually a plentiful supply of it in the cosmos. In fact, 24 per cent of our galaxy’s elemental mass consists of helium, which makes it the second most abundant element in our universe. Because of its lightness, however, most helium vanished from our own planet many years ago. Consequently, only a miniscule proportion – 0.00052%, to be exact – remains in earth’s atmosphere. Helium is the by¬product of millennia of radioactive decay from the elements thorium and uranium. The helium is mostly trapped in subterranean natural gas bunkers and commercially extracted through a method known as fractional distillation.",
+    "C The loss of helium on Earth would affect society greatly. Defying the perception of it as a novelty substance for parties and gimmicks, the element actually has many vital applications in society. Probably the most well known commercial usage is in airships and blimps (non-flammable helium replaced hydrogen as the lifting gas du jour after the Hindenburg catastrophe in 1932, during which an airship burst into flames and crashed to the ground killing some passengers and crew). But helium is also instrumental in deep-sea diving, where it is blended with nitrogen to mitigate the dangers of inhaling ordinary air under high pressure; as a cleaning agent for rocket engines; and, in its most prevalent use, as a coolant for superconducting magnets in hospital MRI (magnetic resonance imaging) scanners.",
+    "D The possibility of losing helium forever poses the threat of a real crisis because its unique qualities are extraordinarily difficult, if not impossible to duplicate (certainly, no biosynthetic ersatz product is close to approaching the point of feasibility for helium, even as similar developments continue apace for oil and coal). Helium is even cheerfully derided as a “loner” element since it does not adhere to other molecules like its cousin, hydrogen. According to Dr. Lee Sobotka, helium is the “most noble of gases, meaning it’s very stable and non-reactive for the most part … it has a closed electronic configuration, a very tightly bound atom. It is this coveting of its own electrons that prevents combination with other elements’. Another important attribute is helium’s unique boiling point, which is lower than that for any other element. The worsening global shortage could render millions of dollars of high-value, life-saving equipment totally useless. The dwindling supplies have already resulted in the postponement of research and development projects in physics laboratories and manufacturing plants around the world. There is an enormous supply and demand imbalance partly brought about by the expansion of high-tech manufacturing in Asia.",
+    "E The source of the problem is the Helium Privatisation Act (HPA), an American law passed in 1996 that requires the U.S. National Helium Reserve to liquidate its helium assets by 2015 regardless of the market price. Although intended to settle the original cost of the reserve by a U.S. Congress ignorant of its ramifications, the result of this fire sale is that global helium prices are so artificially deflated that few can be bothered recycling the substance or using it judiciously. Deflated values also mean that natural gas extractors see no reason to capture helium. Much is lost in the process of extraction. As Sobotka notes: “[t]he government had the good vision to store helium, and the question now is: Will the corporations have the vision to capture it when extracting natural gas, and consumers the wisdom to recycle? This takes long-term vision because present market forces are not sufficient to compel prudent practice”. For Nobel-prize laureate Robert Richardson, the U.S. government must be prevailed upon to repeal its privatisation policy as the country supplies over 80 per cent of global helium, mostly from the National Helium Reserve. For Richardson, a twenty- to fifty-fold increase in prices would provide incentives to recycle.",
+    "F A number of steps need to be taken in order to avert a costly predicament in the coming decades. Firstly, all existing supplies of helium ought to be conserved and released only by permit, with medical uses receiving precedence over other commercial or recreational demands. Secondly, conservation should be obligatory and enforced by a regulatory agency. At the moment some users, such as hospitals, tend to recycle diligently while others, such as NASA, squander massive amounts of helium. Lastly, research into alternatives to helium must begin in earnest.",
+    "Questions 27-31\n\nReading Passage 3 has six paragraphs, A-F.",
+    "Which paragraph contains the following information?",
+    "27 a use for helium which makes an activity safer\n\n28 the possibility of creating an alternative to helium\n\n29 a term which describes the process of how helium is taken out of the ground\n\n30 a reason why users of helium do not make efforts to conserve it\n\n31 a contrast between helium’s chemical properties and how non-scientists think about it"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer\n\nNO if the statement contradicts the claims of the writer\n\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 32,
+     "endQ": 35,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 32,
+       "type": "tfng",
+       "stem": {
+        "plain": "Helium chooses to be on its own.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "32 Helium chooses to be on its own.",
+        "elementPath": "children[47]"
+       }
+      },
+      {
+       "number": 33,
+       "type": "tfng",
+       "stem": {
+        "plain": "Helium is a very cold substance.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "33 Helium is a very cold substance.",
+        "elementPath": "children[47]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "tfng",
+       "stem": {
+        "plain": "High-tech industries in Asia use more helium than laboratories and manufacturers in other parts of the world.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "not given",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "34 High-tech industries in Asia use more helium than laboratories and manufacturers in other parts of the world.",
+        "elementPath": "children[47]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "tfng",
+       "stem": {
+        "plain": "The US Congress understood the possible consequences of the HPA.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "no",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "35 The US Congress understood the possible consequences of the HPA.",
+        "elementPath": "children[47]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[45]",
+      "rawExcerpt": "Questions 32-35\n\nDo the following statements agree with the claims of the writer in Reading Passage 3? In boxes 32-35 on your answer sheet, write YES if the statement agrees with the claims of the writer\n\nNO if the statement contradicts the"
+     }
+    },
+    {
+     "groupId": "g05",
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 36,
+     "endQ": 40,
+     "stimulusSegments": [
+      "1. false\n\n2. true\n\n3. not given\n\n4. false\n\n5. true\n\n6. false\n\n7. true\n\n8. C\n\n9. C\n\n10. B\n\n11. A\n\n12. D\n\n13. C\n\n14. C\n\n15. A\n\n16. B\n\n17. B\n\n18. C\n\n19. A\n\n20. C\n\n21. B\n\n22. A\n\n23. brain dead\n\n24. sociopath behaviour\n\n25. neocortex\n\n26. animal propensities\n\n27. C\n\n28. D\n\n29. B\n\n30. E\n\n31. A\n\n32. yes\n\n33. not given\n\n34. not given\n\n35. no\n\n36. prudent practice\n\n37. privatization policy\n\n38. incentives\n\n39. permit\n\n40. regulatory agency"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 36,
+       "type": "completion",
+       "stem": {
+        "plain": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36) ______ will not be encouraged through buying and selling alone. Richardson believes that the (37) ______ needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have (38) ______ to use the resource many times over.",
+        "segments": [
+         "Sobotka argues that big business and users of helium need to help look after helium stocks because",
+         {
+          "blank": 36
+         },
+         "will not be encouraged through buying and selling alone. Richardson believes that the",
+         {
+          "blank": 37
+         },
+         "needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have",
+         {
+          "blank": 38
+         },
+         "to use the resource many times over."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "prudent practice",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36)………………… will not be encouraged through buying and selling alone. Richardson believes that the (37",
+        "elementPath": "children[49]"
+       }
+      },
+      {
+       "number": 37,
+       "type": "completion",
+       "stem": {
+        "plain": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36) ______ will not be encouraged through buying and selling alone. Richardson believes that the (37) ______ needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have (38) ______ to use the resource many times over.",
+        "segments": [
+         "Sobotka argues that big business and users of helium need to help look after helium stocks because",
+         {
+          "blank": 36
+         },
+         "will not be encouraged through buying and selling alone. Richardson believes that the",
+         {
+          "blank": 37
+         },
+         "needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have",
+         {
+          "blank": 38
+         },
+         "to use the resource many times over."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "privatization policy",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36)………………… will not be encouraged through buying and selling alone. Richardson believes that the (37",
+        "elementPath": "children[49]"
+       }
+      },
+      {
+       "number": 38,
+       "type": "completion",
+       "stem": {
+        "plain": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36) ______ will not be encouraged through buying and selling alone. Richardson believes that the (37) ______ needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have (38) ______ to use the resource many times over.",
+        "segments": [
+         "Sobotka argues that big business and users of helium need to help look after helium stocks because",
+         {
+          "blank": 36
+         },
+         "will not be encouraged through buying and selling alone. Richardson believes that the",
+         {
+          "blank": 37
+         },
+         "needs to be withdrawn, as the U.S. provides most of the world’s helium. He argues that higher costs would mean people have",
+         {
+          "blank": 38
+         },
+         "to use the resource many times over."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "incentives",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "Sobotka argues that big business and users of helium need to help look after helium stocks because (36)………………… will not be encouraged through buying and selling alone. Richardson believes that the (37",
+        "elementPath": "children[49]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "completion",
+       "stem": {
+        "plain": "People should need a (39) ______ to access helium that we still have. Furthermore, a (40) ______ should ensure that helium is used carefully.",
+        "segments": [
+         "People should need a",
+         {
+          "blank": 39
+         },
+         "to access helium that we still have. Furthermore, a",
+         {
+          "blank": 40
+         },
+         "should ensure that helium is used carefully."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "permit",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "People should need a (39)……………………………… to access helium that we still have. Furthermore, a (40)………………………….. should ensure that helium is used carefully.",
+        "elementPath": "children[50]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "completion",
+       "stem": {
+        "plain": "People should need a (39) ______ to access helium that we still have. Furthermore, a (40) ______ should ensure that helium is used carefully.",
+        "segments": [
+         "People should need a",
+         {
+          "blank": 39
+         },
+         "to access helium that we still have. Furthermore, a",
+         {
+          "blank": 40
+         },
+         "should ensure that helium is used carefully."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "regulatory agency",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "People should need a (39)……………………………… to access helium that we still have. Furthermore, a (40)………………………….. should ensure that helium is used carefully.",
+        "elementPath": "children[50]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[48]",
+      "rawExcerpt": "Questions 36-40\n\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "false"
+   },
+   {
+    "number": 2,
+    "value": "true"
+   },
+   {
+    "number": 3,
+    "value": "not given"
+   },
+   {
+    "number": 4,
+    "value": "false"
+   },
+   {
+    "number": 5,
+    "value": "true"
+   },
+   {
+    "number": 6,
+    "value": "false"
+   },
+   {
+    "number": 7,
+    "value": "true"
+   },
+   {
+    "number": 8,
+    "value": "C"
+   },
+   {
+    "number": 9,
+    "value": "C"
+   },
+   {
+    "number": 10,
+    "value": "B"
+   },
+   {
+    "number": 11,
+    "value": "A"
+   },
+   {
+    "number": 12,
+    "value": "D"
+   },
+   {
+    "number": 13,
+    "value": "C"
+   },
+   {
+    "number": 14,
+    "value": "C"
+   },
+   {
+    "number": 15,
+    "value": "A"
+   },
+   {
+    "number": 16,
+    "value": "B"
+   },
+   {
+    "number": 17,
+    "value": "B"
+   },
+   {
+    "number": 18,
+    "value": "C"
+   },
+   {
+    "number": 19,
+    "value": "A"
+   },
+   {
+    "number": 20,
+    "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "B"
+   },
+   {
+    "number": 22,
+    "value": "A"
+   },
+   {
+    "number": 23,
+    "value": "brain dead"
+   },
+   {
+    "number": 24,
+    "value": "sociopath behaviour"
+   },
+   {
+    "number": 25,
+    "value": "neocortex"
+   },
+   {
+    "number": 26,
+    "value": "animal propensities"
+   },
+   {
+    "number": 27,
+    "value": "C"
+   },
+   {
+    "number": 28,
+    "value": "D"
+   },
+   {
+    "number": 29,
+    "value": "B"
+   },
+   {
+    "number": 30,
+    "value": "E"
+   },
+   {
+    "number": 31,
+    "value": "A"
+   },
+   {
+    "number": 32,
+    "value": "yes"
+   },
+   {
+    "number": 33,
+    "value": "not given"
+   },
+   {
+    "number": 34,
+    "value": "not given"
+   },
+   {
+    "number": 35,
+    "value": "no"
+   },
+   {
+    "number": 36,
+    "value": "prudent practice"
+   },
+   {
+    "number": 37,
+    "value": "privatization policy"
+   },
+   {
+    "number": 38,
+    "value": "incentives"
+   },
+   {
+    "number": 39,
+    "value": "permit"
+   },
+   {
+    "number": 40,
+    "value": "regulatory agency"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     8,
+     13
+    ],
+    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 8-13 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     23,
+     26
+    ],
+    "instruction": "Complete the sentences below. Write NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 16,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "4123e7e642a3385ae2ae702f6de5deadfeb4186ad4ba0282e58b1ac81571ef44"
+}

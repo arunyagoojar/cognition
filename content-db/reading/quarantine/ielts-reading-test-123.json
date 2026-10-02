@@ -1,0 +1,79 @@
+{
+ "slug": "ielts-reading-test-123",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     6,
+     12
+    ],
+    "instruction": "Classify the following characteristics as belonging to A academic intelligence (AO) tests\nB emotional intelligence (EO) tests\nC practical in"
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     13,
+     16
+    ],
+    "instruction": "Choose the appropriate letter A–D and write your answers in boxes 1–4 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     17,
+     17
+    ],
+    "instruction": "and 18 Complete the table below describing the causes and effects. Write your answers in boxes 5–6 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     26,
+     28
+    ],
+    "instruction": "Look at the diagram (Family Diagram of Augustus) and Fill in the missing names in this family tree."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
+   "evidence": {
+    "passage": 3,
+    "title": "Passage 3",
+    "groups": [
+     [
+      29,
+      36
+     ],
+     [
+      37,
+      41
+     ]
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 25,
+    "answers": 41
+   }
+  }
+ ]
+}

@@ -7,19 +7,19 @@
  * (Phase 3 scope: Listening + Speaking only).
  */
 import { buildAuthenticMockManifest, buildDynamicPracticeManifest } from '../content/contentTestBuilder.js';
-import {
-  getReadingTestAdapter,
-} from '../content/contentAdapter.js';
+
 import { getPackagesByTestType } from '../content/contentRepository.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
   PRODUCTION_WRITING,
+  PRODUCTION_READING,
 } from '../production/productionContent.js';
 import {
   adaptProductionListening,
   adaptProductionSpeaking,
   adaptProductionWriting,
+  adaptProductionReading,
 } from '../production/adapters.js';
 
 // The test rotation queue is driven by the production Listening corpus.
@@ -57,8 +57,9 @@ export function getAuthenticExam(testId) {
   const writingRec = PRODUCTION_WRITING.find(w => String(w.testId) === String(testId))
     || PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
   const writing = writingRec ? adaptProductionWriting(writingRec) : null;
+  const readingRec = PRODUCTION_READING.find(r => String(r.testId) === String(testId))
+    || PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
 
-  // Reading remains V2-backed (not yet migrated).
   const manifest = buildAuthenticMockManifest({ seed: testId, testType: 'UNKNOWN' });
 
   if (!listening) {
@@ -78,7 +79,7 @@ export function getAuthenticExam(testId) {
     isRandomized: false,
     manifest, // reading source of truth (V2) — to be replaced in a later phase
     listening,
-    reading: getReadingTestAdapter(manifest),
+    reading: readingRec ? adaptProductionReading(readingRec) : null,
     writing,
     speaking
   };
@@ -98,7 +99,7 @@ export function getRandomizedFullExam(seed = null) {
     isRandomized: true,
     manifest,
     listening: pickProductionListening(null),
-    reading: getReadingTestAdapter(manifest),
+    reading: readingRec ? adaptProductionReading(readingRec) : null,
     writing: writingRec ? adaptProductionWriting(writingRec) : null,
     speaking: pickProductionSpeaking()
   };

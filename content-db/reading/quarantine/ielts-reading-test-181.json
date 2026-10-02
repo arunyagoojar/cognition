@@ -1,0 +1,38 @@
+{
+ "slug": "ielts-reading-test-181",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     23,
+     26
+    ],
+    "extracted": 3,
+    "expected": 4
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     23,
+     26
+    ],
+    "instruction": "According to the information given in Reading Passage 2, choose the correct answer or answers from the choices given."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 14,
+    "answers": 40
+   }
+  }
+ ]
+}

@@ -24,6 +24,7 @@ import {
 } from './utils/storage';
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
+import { PRODUCTION_READING } from './data/production/productionContent.js';
 
 export default function App() {
   const [view, setView] = useState(() => {
@@ -79,6 +80,9 @@ export default function App() {
   const startSkill = (skillId) => {
     if (skillId === 'listening') {
       setSelectedExamId(getRandomTestId());
+    } else if (skillId === 'reading') {
+      const pool = PRODUCTION_READING;
+      if (pool.length) setSelectedExamId(pool[Math.floor(Math.random() * pool.length)].testId);
     }
     setView(skillId);
   };

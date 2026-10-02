@@ -1,0 +1,731 @@
+{
+ "id": "reading.test-0191.7f22ec6f",
+ "module": "reading",
+ "sourceNumbers": [
+  191
+ ],
+ "slug": "ielts-reading-test-191",
+ "title": "IELTS Academic Reading Test 191",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-191/index.html",
+   "sha256": "73dacd719292ff7f65c803001dae70a9416dc89723bc9e731f1acd88493f14c4",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-191/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "weathering in the desert",
+   "paragraphs": [
+    "A In the deserts, as elsewhere, rocks at the earth’s surface are changed by weathering, which may be defined as the disintegration of rocks where they lie. Weathering processes are either chemical, when alteration of some of the constituent particles is involved; or mechanical, when there is merely the physical breaking apart and fragmentation of rocks. Which process will dominate depends primarily on the mineralogy and texture of the rock and the local climate, but several individual processes usually work together to the common end of rock disintegration.",
+    "B The great daily changes in temperature of deserts have long been supposed to be responsible for the disintegration of rocks, either by the differential heating of the various rock-forming minerals or by differential heating between the outer and inner parts of rock masses. However, both field observations and laboratory experiments have led to a reassessment of the importance of ’ exposure to the sun’s rays in desert weathering. Almost half a century ago Barton remarked that the buried parts of some of the ancient monuments in Egypt were more weathered than were those parts fully exposed to the sun’s rays, and attributed this to the effects of water absorption below the ground surface. Laboratory experiments have shown that rocks subjected to many cycles of large temperature oscillations (larger than those experienced in nature) display no evidence of fissuring or fragmentation, as a result. However, when marked fluctuations of temperature occur in moist conditions small rock fragments quickly form.",
+    "C The expansive action of crystallising salts is often alleged to exert sufficient force to disintegrate rocks. Few would dispute that this mechanism is capable of disrupting fissile or well-cleaved rocks or rocks already weakened by other weathering agencies; wood is splintered, terracotta tiles disintegrated and clays disturbed by the mechanism, but its importance when acting upon fresh and cohesive crystalline rocks remains uncertain.",
+    "D Weathering achieves more than the disintegration of rocks, though this is its most important geomorphic effect. It causes specific landforms to develop. Many boulders possess a superficial hard layer of iron oxide and/or silica, substances which have migrated in solution from the inside of the block towards the surface. Not only is the exterior thus case-hardened but the depleted interior disintegrates easily. When weathering penetrates the shell the inside is rapidly attacked and only the hard outer layer remains to give hollowed or ‘tortoiseshell’ rocks.",
+    "E Another superficial layer, the precise nature of which is little understood, is the well-known desert varnish or patina, a shiny coat on the surface of rocks and pebbles and characteristic of arid environments. Some varnishes are colourless, others light brown, yet others so dark a brown as to be virtually black. It’s origin is unknown but is significant, for it has been suggested that the varnish grows darker with the passage of time; obviously before such a criterion could be used with confidence as a chronological tool its origin must be known with precision. Its formation is so slow that in Egypt, for example, it has been estimated that a light brown coating requires between 2,000 and 5,000 years to develop, a fully formed blackish veneer between 20,000 and 50,000 years.",
+    "F The development of relatively impermeable soil horizons that are subsequently exposed at the surface because of erosion of once overlying, easily eroded materials, and which thus become surface crusts, is widespread in arid regions, although it is also known outside the deserts, and indeed many of the examples in arid lands probably originated in former periods of humid climate. The crusts prevent the waters of occasional torrential downpours from penetrating deeply into the soil, and thus they contribute to the rapid run-off associated with desert storms. Also, after erosion has cut through the crust and exposed underlying soil layers, the hard layer forms a resistant capping (duricrust) on plateaux and mesas, such as are common in many parts of arid and semi-arid Australia.",
+    "G Some duricrust layers have been used as time markers for landforms and geological formations. The necessary conditions for this are that the crust forms fairly rapidly, and that it is sufficiently distinct in appearance to preclude the possibility of confusion with other crusts formed at other times. The Barrilaco calcrete of Mexico for instance is believed to date from about 7,000 B.C. The main silcrete of the northern districts of South Australia is believed to date from the Lower Miocene, the laterite of northern Australia to be of the Lower or Middle Miocene age."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Reading Passage 1 has seven sections, A-G. Which paragraph contains the following information?",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 1,
+     "endQ": 7,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the idea that crystalline salts may not disintegrate solid rock as easily as other substances",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. the idea that crystalline salts may not disintegrate solid rock as easily as other substances",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the fact that daily temperature changes cause rocks to weather may not be as important as supposed",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. the fact that daily temperature changes cause rocks to weather may not be as important as supposed",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the regions where weathering creates a thick layer of earth that water cannot penetrate easily",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. the regions where weathering creates a thick layer of earth that water cannot penetrate easily",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the fact that weathering not only breaks down rocks, but also shapes the landscape",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. the fact that weathering not only breaks down rocks, but also shapes the landscape",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the idea of using impenetrable layers of earth to measure chronology",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "G",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. the idea of using impenetrable layers of earth to measure chronology",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the two different kinds of weathering in rocks",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. the two different kinds of weathering in rocks",
+        "elementPath": "children[9]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the possibility of using the colour of the shiny surface on rocks to measure chronology",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7. the possibility of using the colour of the shiny surface on rocks to measure chronology",
+        "elementPath": "children[9]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[8]",
+      "rawExcerpt": "Questions 1-7\nReading Passage 1 has seven sections, A-G. Which paragraph contains the following information?"
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 8-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 8,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "tfng",
+       "stem": {
+        "plain": "Desert rocks can become weathered when there is a chemical reaction within the rock.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "8. Desert rocks can become weathered when there is a chemical reaction within the rock.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "tfng",
+       "stem": {
+        "plain": "The parts of Egyptian monuments exposed to sunlight were found to be affected by the weather more than those below the ground.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9. The parts of Egyptian monuments exposed to sunlight were found to be affected by the weather more than those below the ground.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "tfng",
+       "stem": {
+        "plain": "Granite which has been subjected to huge temperature swings tends not to exhibit any signs of disintegration as a result.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "10. Granite which has been subjected to huge temperature swings tends not to exhibit any signs of disintegration as a result.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "tfng",
+       "stem": {
+        "plain": "It is estimated that dark patina originated between 2,000 and 5,000 years ago.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11. It is estimated that dark patina originated between 2,000 and 5,000 years ago.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "tfng",
+       "stem": {
+        "plain": "Because of surface crusts, water from torrential rains cannot be fully absorbed into the ground and as a result causes run offs in arid regions.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12. Because of surface crusts, water from torrential rains cannot be fully absorbed into the ground and as a result causes run offs in arid regions.",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "tfng",
+       "stem": {
+        "plain": "Duricrust layering is no longer used as an indicator of time because of the confusion with similar crusts.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13. Duricrust layering is no longer used as an indicator of time because of the confusion with similar crusts.",
+        "elementPath": "children[12]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[10]",
+      "rawExcerpt": "Questions 8-13\nDo the following statements agree with the information given in Reading Passage 1? In boxes 8-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "fashion and society: a historical perspective",
+   "paragraphs": [
+    "In all societies the body is ‘dressed’, and everywhere dress and adornment play symbolic and aesthetic roles. The colour of clothing often has special meaning: a white wedding dress symbolising purity; or black clothing indicating remembrance for a dead relative. Uniforms symbolise association with a particular profession. For many centuries purple, the colour representing royalty, was to be worn by no one else. And of course, dress has always been used to emphasise the wearer’s beauty, although beauty has taken many different forms in different societies. In the 16th century in Europe, for example, Flemish painters celebrated women with bony shoulders, protruding stomachs and long faces, while women shaved or plucked their hairlines to obtain the fashionable egg-domed forehead. These traits are considered ugly by today’s fashion.",
+    "The earliest forms of ‘clothing’ seem to have been adornments such as body painting, ornaments, scarifications (scarring), tattooing, masks and often constricting neck and waist bands. Many of these deformed, reformed or otherwise modified the body. The bodies of men and of children, not just those of women, were altered: there seems to be a widespread human desire to transcend the body’s limitations, to make it what it is, by nature, not.",
+    "Dress in general seems then to fulfil a number of social functions. This is true of modern as of ancient dress. What is added to dress as we ourselves know it in the west is fashion, of which the key feature is rapid and continual changing of styles. The growth of the European city in the 14th century saw the birth of fashion. Previously, loose robes had been worn by both sexes, and styles were simple and unchanging. Dress distinguished rich from poor, rulers from ruled, only in that working people wore more wool and no silk, rougher materials and less ornamentation than their masters.",
+    "However, by the 14th century, with the expansion in trade, the growth of city life, and the increasing sophistication of the royal and aristocratic courts, rapidly changing styles appeared in western Europe. These were associated with developments in tailored and fitted clothing; once clothing became fitted, it was possible to change the styling of garments almost endlessly. By the 15th and 16th centuries it began to seem shameful to wear outdated clothing. So those who could afford to do so began discarding unfashionable clothing simply because it was not in style. Cloth, which was enormously expensive, was literally, and symbolised, wealth in medieval society.",
+    "In modern western societies there is no form of clothing which has not felt the impact of fashion: fashion sets the terms of all dress behaviour. Even uniforms have been designed by some of the top fashion houses; even the dress code in the workplace has shifted from formal, business attire to the more relaxed, smart casual look; even the less affluent enjoy haute couture – they wear cheaper versions of the top designs and top labels.",
+    "Even the unfashionable wear clothes that represent a reaction against what is in fashion. To be unfashionable is not to ignore fashion; it is rather to protest against the social values of the fashionable. Last century the hippies of the 1960s created a unique appearance out of an assortment of second hand clothes, craft work and army surplus, as a protest against the wastefulness of the consumer society. They rejected the way mass production ignored individuality, and also the wastefulness of luxury.",
+    "Looked at in historical perspective, the styles of fashion display a mad relativism. At one time the rich wear cloth of gold embroidered with pearls, at another beige cashmere and grey suiting. In one epoch men parade in elaborately curled hair, high heels and rouge, at another to do so is to court outcast status and physical abuse. It is in some sense inherently ironic that a new fashion starts from rejection of the old and often an eager embracing of what was previously considered ugly. A case in point is the outlandish, fashion statement made by the non-conforming, rebellious youth of today who have tattoos, metal studs and body piercings. They defied mainstream fashion only to see their defiance become the fashion of the day in the broader community. Moreover, having once defined style in centuries past, these adornments have now come full circle.",
+    "Despite its apparent irrationality, fashion cements social solidarity and imposes group norms. It forces us to recognise that the human body is not only a biological entity, but an organism in culture. To dress the way that others do is to signal that we share many of their morals and values. Conversely, deviations in dress are usually considered shocking and disturbing. In western countries a man wearing a pink suit to a job interview would not be considered for a position at a bank. He would not be taken seriously. Likewise, even in these ‘liberated’ times, a man in a skirt in many western cultures causes considerable anxiety, hostility or laughter.",
+    "However, while fashion in every age is normative, there is still room for clothing to express individual taste. In any period, within the range of stylish clothing, there is some choice of colour, fabric and style. This was even more true last century, because in the 20th century, fashion, without losing its obsession with the new and the different, was mass produced. Originally, fashion was largely for the rich, but since the industrial period the mass production of fashionably styled clothes has made possible the use of fashion as a means of self-enhancement and self-expression for the majority."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g04",
+     "instruction": "Answer the questions below. Choose NO MORE THAN ONE WORDS from the passage for each answer. Write your answers in boxes 24-26 on your answer sheet.",
+     "wordLimit": "NO MORE THAN ONE WORDS",
+     "qtype": "short_answer",
+     "startQ": 24,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "short_answer",
+       "stem": {
+        "plain": "A kind of adornment worn by defiant young people these days besides body piercings and metal studs",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Tattoos",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24. A kind of adornment worn by defiant young people these days besides body piercings and metal studs",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "short_answer",
+       "stem": {
+        "plain": "What was a symbol of wealth in medieval times?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Cloth",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25. What was a symbol of wealth in medieval times?",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "short_answer",
+       "stem": {
+        "plain": "Name ONE group of people who protested against the social values of the fashionable.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Hippies",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26. Name ONE group of people who protested against the social values of the fashionable.",
+        "elementPath": "children[29]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[28]",
+      "rawExcerpt": "Questions 24-26\nAnswer the questions below. Choose NO MORE THAN ONE WORDS from the passage for each answer. Write your answers in boxes 24-26 on your answer sheet."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "mass production",
+   "paragraphs": [
+    "Car manufacturer Henry Ford s 1908 Model T automobile was his twentieth design over a five-year period that began with the production of the original Model A in 1903. With his Model T, Ford finally achieved two objectives. He had a car that was designed for manufacture, and one that was easily operated and maintained by the owner. These two achievements laid the groundwork for the revolutionary change in direction for the entire motor vehicle industry.",
+    "The key to mass production wasn’t the moving, or continuous, assembly line. Rather, it was the complete and consistent interchangeability of parts and the simplicity of attaching them to each other. These were the manufacturing innovations that made the assembly line possible. To achieve interchangeability, Ford insisted that the same gauging system be used for every part all the way through the entire manufacturing process. Previously, each part had been made to a slightly different gauge, so skilled fitters had to file each part individually to fit onto the other parts of the car. Ford’s insistence on working to gauge throughout was driven by his realisation of the payoff he would get in the form of savings on assembly costs. Ford also benefited from recent advances in machine tools able to work on pre-hardened metals. The warping or distortion that occurred as machined parts were being hardened had been the bane of previous attempts to standardise parts. Once the warping problem was solved, Ford was able to develop innovative designs that reduced the number of parts needed and made these parts easy to attach. For example, Ford’s four-cylinder engine block consisted of a single, complex casting. Competitors cast each cylinder separately and bolted the four together. Taken together, interchangeability, simplicity, and ease of attachment gave Ford tremendous advantages over his competition.",
+    "Ford’s first efforts to assemble his cars, beginning in 1903, involved setting up assembly stands on which a whole car was built, often by one fitter. In 1908, on the eve of the introduction of the Model T, a Ford assembler’s average task cycle, that is the amount of time he worked before repeating the same operations, totalled 514 minutes, or 8.56 hours. Each worker would assemble a large part of a car before moving on to the next. For example, a worker might put all the mechanical parts, such as wheels, springs, motor, transmission and generator, on the chassis (body), a set of activities that took a whole day to complete. The assembler/fitters performed the same set of activities over and over at their stationary assembly stands. They had to get the necessary parts, file them down so they would fit (Ford hadn’t yet achieved perfect interchangeability of parts), then bolt them in place.",
+    "The first step Ford took to make this process more efficient was to deliver the parts to each workstation. Now the assemblers could",
+    "remain at the same spot all day. Later in 1908, when Ford finally achieved perfect part interchangeability, he decided that the assembler would perform only a single task and move from vehicle to vehicle around the assembly hall. By August of 1913, just before the moving assembly line was introduced, the task cycle for the average Ford assembler had been reduced from 514 to 2.3 minutes. Naturally, this reduction spurred a remarkable increase in productivity, partly because complete familiarity with a single task meant the worker could perform it faster, but also because all filing and adjusting of parts had by now been eliminated. Workers simply popped on parts that fitted every time.",
+    "Ford soon recognised the problem with moving the worker from assembly stand to assembly stand: walking, even if only for a yard or two, took time, and jam-ups frequently resulted as faster workers overtook the slower workers in front of them. Ford’s stroke of genius in the spring of 1913, at his new Highland Park plant in Detroit, was the introduction of the moving assembly line, which brought the car past the stationary worker. This innovation cut cycle time from 2.3 minutes to 1.19 minutes; the difference lay in the time saved in the worker’s standing still rather than walking and in the faster work pace which the moving line could enforce. The moving assembly sped up production so dramatically that the savings Ford could realise from reducing the inventory of parts waiting to be assembled far exceeded this trivial outlay.",
+    "Even more striking, Ford’s discovery simultaneously reduced the amount of human effort needed to assemble an automobile. What’s more, the more vehicles Ford produced, the more the cost per vehicle fell. Even when it was introduced in 1908, Ford’s Model T, with its fully interchangeable parts, cost less than its rivals. By the time Ford reached peak production volume of 2 million identical vehicles a year in the early 1920s, he had cut the real cost to the consumer by an additional two-thirds.",
+    "To appeal to his target market of average consumers, Ford had also designed unprecedented ease of operation and maintainability into his car. He assumed that his buyer would be a farmer with a modest tool kit and the kinds of mechanical skills needed for fixing farm machinery. So the Model T’s owner’s manual explained in 64 pages how the owner could use simple tools to solve any of the 140 problems likely to occur with the car.",
+    "Ford’s competitors were as amazed by this designed-in repairability as by the moving assembly line. This combination of competitive advantages catapulted Ford to the head of the world’s motor industry and virtually eliminated craft-production companies unable to match its manufacturing economies."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g05",
+     "instruction": "Complete the flow chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 27-32 on your answer sheet. Questions 33-37\nAccording to the passage, classify the following characteristics of mass production as relating to Questions 38-40\nChoose the appropriate letter, A, B, C or D. 38. Which graph best describes the change in task time resulting from workers performing a single task only? 39. Which graph best describes the cost of building a moving assembly line in comparison to the money saved? 40. Which graph best describes the relationship between the number of vehicles produced and the cost of the vehicles?",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "qtype": "flow_chart_completion",
+     "startQ": 27,
+     "endQ": 32,
+     "stimulusSegments": [
+      "IMPROVING PRODUCTIVITY",
+      "ASSEMBLING THE CAR",
+      "• Assembly stands set up",
+      "MAKING THE PROCESS MORE EFFICIENT",
+      "• Fitter remained stationary all day.",
+      "• Fitter carried out a single task only.",
+      "• Assembler moved around the hall from car to car.",
+      "INTRODUCING THE MOVING ASSEMBLY LINE",
+      "• Vehicle moved from one workstation to the next",
+      "33. shaping each part to fit individually with all other parts\n34. having a single, complex casting for the four-cylinder engine block\n35. designing 20 Ford automobiles within a five-year period\n36. hardening of machined parts for standardisation\n37. using identical gauges for each part throughout the production",
+      "1. C\n2. B\n3. F\n4. D\n5. G\n6. A\n7. E\n8. True\n9. False\n10. NG\n11. False\n12. True\n13. NG\n14. Adornments\n15. 14th century\n16. loose robes\n17. rapidly changing styles\n18. tailored and fitted/tailored, fitted clothing\n19. discarding unfashionable clothing\n20. C\n21. G\n22. J\n23. D\n24. Tattoos\n25. Cloth\n26. Hippies\n27. Competition\n28. (Set of) activities\n29. (each) workstation\n30. PART INTERCHANGEABILITY\n31. task cycle\n32. work pace\n33. B\n34. A\n35. C\n36. B\n37. A\n38. C\n39. A\n40. C"
+     ],
+     "sharedOptions": [
+      {
+       "letter": "A",
+       "text": "an advantage"
+      },
+      {
+       "letter": "B",
+       "text": "a disadvantage"
+      },
+      {
+       "letter": "C",
+       "text": "neither an advantage nor a disadvantage"
+      }
+     ],
+     "figures": [
+      "wp-content/uploads/2024/09/191-test-aca.png",
+      "wp-content/uploads/2024/09/191-test-aca-1.png",
+      "wp-content/uploads/2024/09/191-test-aca-2.png"
+     ],
+     "questions": [
+      {
+       "number": 27,
+       "type": "completion",
+       "stem": {
+        "plain": "• Manufacturing innovations gave Ford a huge advantage over the (27) ______",
+        "segments": [
+         "• Manufacturing innovations gave Ford a huge advantage over the",
+         {
+          "blank": 27
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Competition",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Manufacturing innovations gave Ford a huge advantage over the (27)…………………",
+        "elementPath": "children[41]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "completion",
+       "stem": {
+        "plain": "• (28) ______ performed repeatedly.",
+        "segments": [
+         "•",
+         {
+          "blank": 28
+         },
+         "performed repeatedly."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "(Set of) activities",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• (28)………………………..performed repeatedly.",
+        "elementPath": "children[42]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "completion",
+       "stem": {
+        "plain": "• Parts delivered to (29) ______",
+        "segments": [
+         "• Parts delivered to",
+         {
+          "blank": 29
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "(each) workstation",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Parts delivered to (29)…………………….",
+        "elementPath": "children[43]"
+       }
+      },
+      {
+       "number": 30,
+       "type": "completion",
+       "stem": {
+        "plain": "ACHIEVING PERFECT (30) ______",
+        "segments": [
+         "ACHIEVING PERFECT",
+         {
+          "blank": 30
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "PART INTERCHANGEABILITY",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "ACHIEVING PERFECT (30)………………",
+        "elementPath": "children[44]"
+       }
+      },
+      {
+       "number": 31,
+       "type": "completion",
+       "stem": {
+        "plain": "• Reduction in the (31) ______ increased productivity.",
+        "segments": [
+         "• Reduction in the",
+         {
+          "blank": 31
+         },
+         "increased productivity."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "task cycle",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Reduction in the (31)…………………….increased productivity.",
+        "elementPath": "children[44]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "completion",
+       "stem": {
+        "plain": "• Increase in (32) ______ implemented because of the stationary assembler.",
+        "segments": [
+         "• Increase in",
+         {
+          "blank": 32
+         },
+         "implemented because of the stationary assembler."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "work pace",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Increase in (32)……………………….implemented because of the stationary assembler.",
+        "elementPath": "children[45]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[40]",
+      "rawExcerpt": "Questions 27-32\nComplete the flow chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 27-32 on your answer sheet. Questions 33-37\nAccording to the passage, classify the following charac"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "C"
+   },
+   {
+    "number": 2,
+    "value": "B"
+   },
+   {
+    "number": 3,
+    "value": "F"
+   },
+   {
+    "number": 4,
+    "value": "D"
+   },
+   {
+    "number": 5,
+    "value": "G"
+   },
+   {
+    "number": 6,
+    "value": "A"
+   },
+   {
+    "number": 7,
+    "value": "E"
+   },
+   {
+    "number": 8,
+    "value": "True"
+   },
+   {
+    "number": 9,
+    "value": "False"
+   },
+   {
+    "number": 10,
+    "value": "NG"
+   },
+   {
+    "number": 11,
+    "value": "False"
+   },
+   {
+    "number": 12,
+    "value": "True"
+   },
+   {
+    "number": 13,
+    "value": "NG"
+   },
+   {
+    "number": 14,
+    "value": "Adornments"
+   },
+   {
+    "number": 15,
+    "value": "14th century"
+   },
+   {
+    "number": 16,
+    "value": "loose robes"
+   },
+   {
+    "number": 17,
+    "value": "rapidly changing styles"
+   },
+   {
+    "number": 18,
+    "value": "tailored and fitted/tailored, fitted clothing"
+   },
+   {
+    "number": 19,
+    "value": "discarding unfashionable clothing"
+   },
+   {
+    "number": 20,
+    "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "G"
+   },
+   {
+    "number": 22,
+    "value": "J"
+   },
+   {
+    "number": 23,
+    "value": "D"
+   },
+   {
+    "number": 24,
+    "value": "Tattoos"
+   },
+   {
+    "number": 25,
+    "value": "Cloth"
+   },
+   {
+    "number": 26,
+    "value": "Hippies"
+   },
+   {
+    "number": 27,
+    "value": "Competition"
+   },
+   {
+    "number": 28,
+    "value": "(Set of) activities"
+   },
+   {
+    "number": 29,
+    "value": "(each) workstation"
+   },
+   {
+    "number": 30,
+    "value": "PART INTERCHANGEABILITY"
+   },
+   {
+    "number": 31,
+    "value": "task cycle"
+   },
+   {
+    "number": 32,
+    "value": "work pace"
+   },
+   {
+    "number": 33,
+    "value": "B"
+   },
+   {
+    "number": 34,
+    "value": "A"
+   },
+   {
+    "number": 35,
+    "value": "C"
+   },
+   {
+    "number": 36,
+    "value": "B"
+   },
+   {
+    "number": 37,
+    "value": "A"
+   },
+   {
+    "number": 38,
+    "value": "C"
+   },
+   {
+    "number": 39,
+    "value": "A"
+   },
+   {
+    "number": 40,
+    "value": "C"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g03",
+    "range": [
+     14,
+     19
+    ],
+    "instruction": "Complete the table below. Use NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. Questions 20-23"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 22,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 3,
+ "contentFingerprint": "8e114d0a9755da06aea14d8b748e0dbd4d09728ac8f1e7b5a52ef674704c3391"
+}

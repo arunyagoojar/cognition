@@ -1,0 +1,43 @@
+{
+ "slug": "ielts-reading-test-297",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     2
+    ],
+    "extracted": 4,
+    "expected": 2
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     19,
+     22
+    ],
+    "instruction": "Complete the table using NO MORE THAN THREE WORD S from the passage."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 30,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 1-2 got 4"
+  }
+ ]
+}

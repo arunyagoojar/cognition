@@ -1,0 +1,31 @@
+{
+ "slug": "ielts-reading-test-160",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     14,
+     18
+    ],
+    "extracted": 7,
+    "expected": 5
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 25,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g02 range 14-18 got 7"
+  }
+ ]
+}

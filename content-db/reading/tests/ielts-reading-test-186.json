@@ -1,0 +1,1122 @@
+{
+ "id": "reading.test-0186.256c621e",
+ "module": "reading",
+ "sourceNumbers": [
+  186
+ ],
+ "slug": "ielts-reading-test-186",
+ "title": "IELTS Academic Reading Test 186",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-186/index.html",
+   "sha256": "ffeed6c55d846b71961b0b64f428740b050274b2df267f3bc5967884b547cf79",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-186/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Keep a Watchful Eye on the Bridges",
+   "paragraphs": [
+    "A Most road and rail bridges are only inspected visually, if at all. Every few months, engineers have to clamber over the structure in an attempt to find problems before the bridge shows obvious signs of damage. Technologies developed at Los Alamos National Laboratory, New Mexico, and Texas A&M University may replace these surveys with microwave sensors that constantly monitor the condition of bridges.",
+    "B “The device uses microwaves to measure the distance between the sensor and the bridge, much like radar does,” says Albert Migliori, a Los Alamos physicist “Any load on the bridge – such as traffic induces displacements, which change that distance as the bridge moves up and down.” By monitoring these movements over several minutes, the researchers can find out how the bridge resonates. Changes in its behaviour can give an early warning of damage.",
+    "C The Interstate 40 bridge over the Rio Grande river in Albuquerque provided the researchers with a rare opportunity to text their ideas. Chuck Farrar, an engineer at Los Alamos, explains: “The New Mexico authorities decided to raze this bridge and replace it. We were able to mount instruments on it, test it under various load conditions and even inflict damage just before it was demolished.” In the 1960s and 1970s, 2500 similar bridges were built in the US. They have two steel girders supporting the load in each section. Highway experts know that this design is “fracture critical” because a failure in either girder would cause the bridge to fail.",
+    "D After setting up the microwave dish on the ground below the bridge, the Los Alamos team installed conventional accelerometers at several points along the span to measure its motion. They then tested the bridge while traffic roared across it and while subjecting it to pounding from a “shaker”, which delivered precise punches to a specific point on the road.",
+    "E “We then created damage that we hoped would simulate fatigue cracks that can occur in steel girders,” says Farrar. They first cut a slot about 60 centimetres long in the middle of one girder. They then extended the cut until it reached the bottom of the girder and finally they cut across the flange – the bottom of the girder’s “I” shape.",
+    "F The initial, crude analysis of the bridge’s behaviour, based on the frequency at which the bridge resonates, did not indicate that anything was wrong until the flange was damaged. But later the data were reanalysed with algorithms that took into account changes in the mode shapes of the structure – shapes that the structure takes on when excited at a particular frequency. These more sophisticated algorithms, which were developed by Norris Stubbs at Texas A&M University, successfully identified and located the damage caused by the initial cut.",
+    "G “When any structure vibrates, the energy is distributed throughout with some points not moving, while others vibrate strongly at various frequencies,” says Stubbs. “My algorithms use pattern recognition to detect changes in the distribution of this energy.” NASA already uses Stubbs’ method to check the behaviour of the body flap that slows space shuttles down after they land.",
+    "H A commercial system based on the Los Alamos hardware is now available, complete with the Stubbs algorithms, from the Quatro Corporation in Albuquerque for about $100,000. Tim Darling, another Los Alamos physicist working on the microwave interferometer with Migliori, says that as the electronics become cheaper, a microwave inspection system will eventually be applied to most large bridges in the US. “In a decade I would like to see a battery or solar-powered package mounted under each bridge, scanning it every day to detect changes,” he says."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Choose the correct letter, A, B, C or D. Questions 5-8\n\nFilling the blanks in the diagram labels.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 1,
+     "endQ": 4,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": [
+      "wp-content/uploads/2024/09/186-test-aca.png",
+      "wp-content/uploads/2024/09/186-test-aca.png"
+     ],
+     "questions": [
+      {
+       "number": 1,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "How did the traditional way to prevent damage of the bridges before the invention of new monitoring system?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Bridges has to be tested in every movement on two points"
+        }
+       ],
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. How did the traditional way to prevent damage of the bridges before the invention of new monitoring system?",
+        "elementPath": "children[10]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "How does the new microwave monitors find out the problems of bridges?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "by changeling the distance between the positions of devices"
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. How does the new microwave monitors find out the problems of bridges?",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Why did the expert believe there is a problem for the design called “fracture critical”?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Engineers failed to apply the newly developed construction materials."
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. Why did the expert believe there is a problem for the design called “fracture critical”?",
+        "elementPath": "children[12]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Defect was not recognized by a basic method in the beginning",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "until the mid of faces of bridges has fractures."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. Defect was not recognized by a basic method in the beginning",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Something circular, appear below the bridge",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "microwave dish",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. Something circular, appear below the bridge",
+        "elementPath": "children[17]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "Something small, appear along the bridge",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "accelerometers",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. Something small, appear along the bridge",
+        "elementPath": "children[17]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[9]",
+      "rawExcerpt": "Questions 1-4\n\nChoose the correct letter, A, B, C or D. Questions 5-8\n\nFilling the blanks in the diagram labels."
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "The reading Passage has eight paragraphs, A–H. Which paragraph contains the following information?",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 9,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "matching_information",
+       "stem": {
+        "plain": "how is the pressure that they have many a great chance to test bridges",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "9. how is the pressure that they have many a great chance to test bridges",
+        "elementPath": "children[19]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "matching_information",
+       "stem": {
+        "plain": "a ten-year positive change for microwave device",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "H",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "10. a ten-year positive change for microwave device",
+        "elementPath": "children[19]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the chance they get a honorable contract",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "G",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "11. the chance they get a honorable contract",
+        "elementPath": "children[19]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "matching_information",
+       "stem": {
+        "plain": "explanation of the mechanism for the new microwave monitoring to work",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "12. explanation of the mechanism for the new microwave monitoring to work",
+        "elementPath": "children[19]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "matching_information",
+       "stem": {
+        "plain": "how is the damage deliberately created by the researchers",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "13. how is the damage deliberately created by the researchers",
+        "elementPath": "children[19]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[18]",
+      "rawExcerpt": "Questions 9-13\n\nThe reading Passage has eight paragraphs, A–H. Which paragraph contains the following information?"
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Activities for Children",
+   "paragraphs": [
+    "A Twenty-five years ago, children in London walked to school and played in parks and playing fields after school and at the weekend. Today they are usually driven to school by parents anxious about safety and spend hours glued to television screens or computer games. Meanwhile, community playing fields are being sold off to property developers at an alarming rate. ‘This change in lifestyle has, sadly, meant greater restrictions on children,’ says Neil Armstrong, Professor of Health and Exercise Science at the University of Exeter. ‘If children continue to be this inactive, they’ll be storing up big problems for the future.’",
+    "B In 1985, Professor Armstrong headed a five-year research project into children’s fitness. The results, published in 1990, were alarming. The survey, which monitored 700 11-16-year-olds, found that 48 per cent of girls and 41 per cent of boys already exceeded safe cholesterol levels set for children by the American Heart Foundation. Armstrong adds, “heart is a muscle and need exercise, or it loses its strength.” It also found that 13 per cent of boys and 10 per cent of girls were overweight. More disturbingly, the survey found that over a four-day period, half the girls and one-third of the boys did less exercise than the equivalent of a brisk 10-minute walk. High levels of cholesterol, excess body fat and inactivity are believed to increase the risk of coronary heart disease.",
+    "C Physical education is under pressure in the UK – most schools devote little more than 100 minutes a week to it in curriculum time, which is less than many other European countries. Three European countries are giving children a head start in PE, France, Austria and Switzerland – offer at least two hours in primary and secondary schools. These findings, from the European Union of Physical Education Associations, prompted specialists in children’s physiology to call on European governments to give youngsters a daily PE programme. The survey shows that the UK ranks 13th out of the 25 countries, with Ireland bottom, averaging under an hour a week for PE. From age six to 18, British children received, on average, 106 minutes of PE a week. Professor Armstrong, who presented the findings at the meeting, noted that since the introduction of the national curriculum there had been a marked fall in the time devoted to PE in UK schools, with only a minority of pupils getting two hours a week.",
+    "D As a former junior football international, Professor Armstrong is a passionate advocate for sport. Although the Government has poured millions into beefing up sport in the community, there is less commitment to it as part of the crammed school curriculum. This means that many children never acquire the necessary skills to thrive in team games. If they are no good at them, they lose interest and establish an inactive pattern of behaviour. When this is coupled with a poor diet, it will lead inevitably to weight gain. Seventy per cent of British children give up all sport when they leave school, compared with only 20 per cent of French teenagers. Professor Armstrong believes that there is far too great an emphasis on team games at school. “We need to look at the time devoted to PE and balance it between individual and pair activities, such as aerobics and badminton, as well as team sports.” He added that children need to have the opportunity to take part in a wide variety of individual, partner and team sports.",
+    "E The good news, however, is that a few small companies and children’s activity groups have reacted positively and creatively to the problem. ‘Take That,’ shouts Gloria Thomas, striking a disco pose astride her mini-space hopper. ‘Take That,’ echo a flock of toddlers, adopting outrageous postures astride their space hoppers. ‘Michael Jackson,’ she shouts, and they all do a spoof fan-crazed shriek. During the wild and chaotic hopper race across the studio floor, commands like this are issued and responded to with untrammelled glee. The sight of 15 bouncing seven-year-olds who seem about to launch into orbit at every bounce brings tears to the eyes. Uncoordinated, loud, excited and emotional, children provide raw comedy.",
+    "F Any cardiovascular exercise is a good option, and it doesn’t necessarily have to be high intensity. It can be anything that gets your heart rate up: such as walking the dog, swimming, running skipping, hiking. “Even walking through the grocery store can be exercise,” Samis-Smith said. What they don’t know is that they’re at a Fit Kids class, and that the fun is a disguise for the serious exercise plan they’re covertly being taken through. Fit Kids trains parents to run fitness classes for children. ‘Ninety per cent of children don’t like team sports,’ says company director, Gillian Gale.",
+    "G A Prevention survey found that children whose parents keep in shape are much more likely to have healthy body weights themselves. “There’s nothing worse than telling a child what he needs to do and not doing it yourself,” says Elizabeth Ward, R.D., a Boston nutritional consultant and author of Healthy Foods, Healthy Kids. “Set a good example and get your nutritional house in order first.” In the 1930s and ’40s, kids expended 800 calories a day just walking, carrying water, and doing other chores,’ notes Fima Lifshitz, M.D., a pediatric endocrinologist in Santa Barbara. “Now, kids in obese families are expending only 200 calories a day in physical activity,” says Lifshitz, “incorporate more movement in your family’s life – park farther away from the stores at the mall, take stairs instead of the elevator, and walk to nearby friends’ houses instead of driving.”"
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g03",
+     "instruction": "The reading Passage has seven paragraphs, A–G. Which paragraph contains the following information?",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 14,
+     "endQ": 17,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "stem": {
+        "plain": "health and living condition of children",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "14. health and living condition of children",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "stem": {
+        "plain": "health organization monitored physical activity",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15. health organization monitored physical activity",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "stem": {
+        "plain": "comparison of exercise time between UK and other countries",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16. comparison of exercise time between UK and other countries",
+        "elementPath": "children[29]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "stem": {
+        "plain": "wrong approach for school activity",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17. wrong approach for school activity",
+        "elementPath": "children[29]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[28]",
+      "rawExcerpt": "Questions 14-17\n\nThe reading Passage has seven paragraphs, A–G. Which paragraph contains the following information?"
+     }
+    },
+    {
+     "groupId": "g04",
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 18-21 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 18,
+     "endQ": 21,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 18,
+       "type": "tfng",
+       "stem": {
+        "plain": "According to American Heart Foundation, cholesterol levels of boys are higher than girls’.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "18. According to American Heart Foundation, cholesterol levels of boys are higher than girls’.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 19,
+       "type": "tfng",
+       "stem": {
+        "plain": "British children generally do less exercise than some other European countries.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "19. British children generally do less exercise than some other European countries.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 20,
+       "type": "tfng",
+       "stem": {
+        "plain": "Skipping becomes more and more popular in schools of UK.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "20. Skipping becomes more and more popular in schools of UK.",
+        "elementPath": "children[32]"
+       }
+      },
+      {
+       "number": 21,
+       "type": "tfng",
+       "stem": {
+        "plain": "According to Healthy Kids, the first task is for parents to encourage their children to keep the same healthy body weight.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "21. According to Healthy Kids, the first task is for parents to encourage their children to keep the same healthy body weight.",
+        "elementPath": "children[32]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[30]",
+      "rawExcerpt": "Questions 18-21\n\nDo the following statements agree with the information given in Reading Passage? In boxes 18-21 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the informati"
+     }
+    },
+    {
+     "groupId": "g05",
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "wordLimit": "",
+     "qtype": "mcq_single",
+     "startQ": 22,
+     "endQ": 26,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 22,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "According to paragraph A, what does Professor Neil Armstrong concern about",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Spending more time on TV affect academic level"
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "22. According to paragraph A, what does Professor Neil Armstrong concern about",
+        "elementPath": "children[34]"
+       }
+      },
+      {
+       "number": 23,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What does Armstrong indicate in Paragraph B",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "We need to take a 10 minute walk every day."
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "23. What does Armstrong indicate in Paragraph B",
+        "elementPath": "children[35]"
+       }
+      },
+      {
+       "number": 24,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What is aim of First Kids’ training",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Make profit by running several sessions"
+        }
+       ],
+       "correctAnswer": "C",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "24. What is aim of First Kids’ training",
+        "elementPath": "children[36]"
+       }
+      },
+      {
+       "number": 25,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What did Lifshitz suggest in the end of this passage",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "Create opportunities to exercise your body."
+        }
+       ],
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "25. What did Lifshitz suggest in the end of this passage",
+        "elementPath": "children[37]"
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_single",
+       "stem": {
+        "plain": "What is the main idea of this passage?",
+        "segments": null
+       },
+       "options": [
+        {
+         "letter": "A",
+         "text": "health of the children who are overweight is at risk in the future"
+        }
+       ],
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "26. What is the main idea of this passage?",
+        "elementPath": "children[38]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[33]",
+      "rawExcerpt": "Questions 22-26\n\nChoose the correct letter, A, B, C or D."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Have teenagers always existed?",
+   "paragraphs": [
+    "A 600 years ago, roller coaster pioneers never would have imagined the advancements that have been made to create the roller coasters of today. The tallest and fastest roller coaster in the world is the Kingda Ka, a coaster in New Jersey that launches its passengers from zero to 128 miles per hour in 3.5 seconds (most sports cars take over four seconds to get to just 60 miles per hour). It then heaves its riders skyward at a 90-degree angle (straight up) until it reaches a height of 456 feet, over one and a half football fields, above the ground, before dropping another 418 feet (Coaster Grotto “Kingda Ka”). With that said, roller coasters are about more than just speed and height, they are about the creativity of the designers that build them, each coaster having its own unique way of producing intense thrills at a lesser risk than the average car ride. Roller coasters have evolved drastically over the years, from their primitive beginnings as Russian ice slides, to the metal monsters of today. Their combination of creativity and structural elements make them one of the purest forms of architecture.",
+    "B At first glance, a roller coaster is something like a passenger train. It consists of a series of connected cars that move on tracks. But unlike a passenger train, a roller coaster has no engine or power source of its own. For most of the ride, the train is moved by gravity and momentum. To build up this momentum, you need to get the train to the top of the first hill or give it a powerful launch. The traditional lifting mechanism is a long length of chain running up the hill under the track. The chain is fastened in a loop, which is wound around a gear at the top of the hill and another one at the bottom of the hill. The gear at the bottom of the hill is turned by a simple motor. This turns the chain loop so that it continually moves up the hill like a long conveyer belt. The coaster cars grip onto the chain with several chain dogs, sturdy hinged hooks. When the train rolls to the bottom of the hill, the dogs catches onto the chain links. Once the chain dog is hooked, the chain simply pulls the train to the top of the hill. At the summit, the chain dog is released and the train starts its descent down the hill.",
+    "C Roller coasters have a long, fascinating history. The direct ancestors of roller coasters were monumental ice slides – long, steep wooden-slides covered in ice, some as high as 70 feet – that were popular in Russia in the 16th and 17th centuries. Riders shot down the slope in sleds made out of wood or blocks of ice, crash-landing in a sand pile. Coaster historians diverge on the exact evolution of these ice slides into actual rolling carts. The most widespread account is that a few entrepreneurial Frenchmen imported the ice slide idea to France. The warmer climate of France tended to melt the ice, so the French started building waxed slides instead, eventually adding wheels to the sleds. In 1817, the Russes a Belleville (Russian Mountains of Belleville) became the first roller coaster where the train was attached to the track (in this case, the train axle fit into a carved groove). The French continued to expand on this idea, coming up with more complex track layouts, with multiple cars and all sorts of twists and turns.",
+    "D In comparison to the world’s first roller coaster, there is perhaps an even greater debate over what was America’s first true coaster. Many will say that it is Pennsylvania’s own Maunch Chunk-Summit Hill and Switch Back Railroad. The Maunch Chunk-Summit Hill and Switch Back Railroad was originally America’s second railroad, and considered my many to be the greatest coaster of all time. Located in the Lehigh valley, it was originally used to transport coal from the top of Mount Pisgah to the bottom of Mount Jefferson, until Josiah White, a mining entrepreneur, had the idea of turning it into a part-time thrill ride. Because of its immediate popularity, it soon became strictly a passenger train. A steam engine would haul passengers to the top of the mountain, before letting them coast back down, with speeds rumored to reach 100 miles per hour! The reason that it was called a switch back railroad, a switch back track was located at the top – where the steam engine would let the riders coast back down. This type of track featured a dead end where the steam engine would detach its cars, allowing riders to coast down backwards. The railway went through a couple of minor track changes and name changes over the years, but managed to last from 1829 to 1937, over 100 years.",
+    "E The coaster craze in America was just starting to build. The creation of the Switch Back Railway, by La Marcus Thompson, gave roller coasters national attention. Originally built at New York’s Coney Island in 1884, Switch Back Railways began popping up all over the country. The popularity of these rides may puzzle the modern-day thrill seeker, due to the mild ride they gave in comparison to the modern-day roller coaster. Guests would pay a nickel to wait in line up to five hours just to go down a pair of side-by-side tracks with gradual hills that vehicles coasted down at a top speed around six miles per hour. Regardless, Switchback Railways were very popular, and sparked many people, including Thompson, to design coasters that were bigger and better.",
+    "F The 1910s and 1920s were probably the best decade that the roller coaster has ever seen. The new wave of technology, such as the “unstop wheels”, an arrangement that kept a coaster’s wheels to its tracks by resisted high gravitational forces, showed coasters a realm of possibilities that has never been seen before. In 1919, North America alone had about 1,500 roller coasters, a number that was rising rampantly. Then, the Great Depression gave a crushing blow to amusement parks all over America. As bad as it was, amusement parks had an optimistic look on the future in the late 1930s. But, in 1942 roller coasters could already feel the effects of World War Two, as they were forced into a shadow of neglect. Most, nearly all of America’s roller coasters were shut down. To this very day, the number of roller coaster in America is just a very tiny fraction of the amount of roller coasters in the 1920s.",
+    "Questions 27-30\n\nAnswer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+    "A diagram that explains the mechanism and working principles of roller coaster.",
+    "[asset:asset.2ba6085a9035]",
+    "[asset:asset.2ba6085a9035]"
+   ],
+   "assets": [
+    {
+     "assetId": "asset.2ba6085a9035",
+     "sourcePath": "wp-content/uploads/2024/09/186-test-aca-1.png",
+     "projectPath": "/reading-assets/2ba6085a9035c7c0490e0ab5e07c8164b1471fd6fb656f1c44c0333421ddd3ab.png",
+     "sha256": "2ba6085a9035c7c0490e0ab5e07c8164b1471fd6fb656f1c44c0333421ddd3ab",
+     "mimeType": "image/png",
+     "bytes": 17322,
+     "width": 606,
+     "height": 378,
+     "association": "image element within passage 3 of ielts-reading-test-186/index.html"
+    }
+   ],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN TWO WORDS from the Reading Passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "qtype": "summary_completion",
+     "startQ": 31,
+     "endQ": 36,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 31,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Ice",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 32,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Waxed slices",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 33,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Melt",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 34,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Wheels",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 35,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Coal",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      },
+      {
+       "number": 36,
+       "type": "completion",
+       "stem": {
+        "plain": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31) ______ which was introduced into France, and it was modified to (32) ______ because temperature there would (33) ______ the ice. This time (34) ______ were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send (35) ______ between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a (36) ______ there allowed riders to slide downward back again.",
+        "segments": [
+         "The first roller coaster was perhaps originated from Russia which is wrapped up by",
+         {
+          "blank": 31
+         },
+         "which was introduced into France, and it was modified to",
+         {
+          "blank": 32
+         },
+         "because temperature there would",
+         {
+          "blank": 33
+         },
+         "the ice. This time",
+         {
+          "blank": 34
+         },
+         "were installed on the board. In America, the first roller coaster was said to appear in Pennsylvania, it was actually a railroad which was designed to send",
+         {
+          "blank": 35
+         },
+         "between two mountains. Josiah White turned it into a thrill ride, it was also called switch back track and a",
+         {
+          "blank": 36
+         },
+         "there allowed riders to slide downward back again."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Steam engine",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "The first roller coaster was perhaps originated from Russia which is wrapped up by (31)……………….which was introduced into France, and it was modified to (32)………………….because temperature there would (33)…",
+        "elementPath": "children[51]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[50]",
+      "rawExcerpt": "Questions 31-36\n\nComplete the following summary of the paragraphs of Reading Passage, using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
+     }
+    },
+    {
+     "groupId": "g07",
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 37–40 on your answer sheet, write YES if the statement agrees with the views of the writer\n\nNO if the statement contradicts the views of the writer\n\nNOT GIVEN if it is impossible to say what the writer thinks about this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 37,
+     "endQ": 40,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 37,
+       "type": "tfng",
+       "stem": {
+        "plain": "The most exiting roller coaster in the world is in New Jersey.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "37. The most exiting roller coaster in the world is in New Jersey.",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 38,
+       "type": "tfng",
+       "stem": {
+        "plain": "French added more innovation on Russian ice slide including both cars and tracks.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "38. French added more innovation on Russian ice slide including both cars and tracks.",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 39,
+       "type": "tfng",
+       "stem": {
+        "plain": "Switch Back Railways began to gain popularity since its first construction in New York.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "Yes",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "39. Switch Back Railways began to gain popularity since its first construction in New York.",
+        "elementPath": "children[54]"
+       }
+      },
+      {
+       "number": 40,
+       "type": "tfng",
+       "stem": {
+        "plain": "The Great Depression affected amusement parks yet did not shake the significant role of US roller coasters in the world.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "No",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "40. The Great Depression affected amusement parks yet did not shake the significant role of US roller coasters in the world.",
+        "elementPath": "children[54]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[52]",
+      "rawExcerpt": "Questions 37-40\n\nDo the following statements agree with the information given in Reading Passage? In boxes 37–40 on your answer sheet, write YES if the statement agrees with the views of the writer\n\nNO if the statement contradicts the views"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "D"
+   },
+   {
+    "number": 2,
+    "value": "C"
+   },
+   {
+    "number": 3,
+    "value": "C"
+   },
+   {
+    "number": 4,
+    "value": "B"
+   },
+   {
+    "number": 5,
+    "value": "microwave dish"
+   },
+   {
+    "number": 6,
+    "value": "accelerometers"
+   },
+   {
+    "number": 7,
+    "value": "steel girders"
+   },
+   {
+    "number": 8,
+    "value": "flange"
+   },
+   {
+    "number": 9,
+    "value": "C"
+   },
+   {
+    "number": 10,
+    "value": "H"
+   },
+   {
+    "number": 11,
+    "value": "G"
+   },
+   {
+    "number": 12,
+    "value": "B"
+   },
+   {
+    "number": 13,
+    "value": "E"
+   },
+   {
+    "number": 14,
+    "value": "A"
+   },
+   {
+    "number": 15,
+    "value": "B"
+   },
+   {
+    "number": 16,
+    "value": "C"
+   },
+   {
+    "number": 17,
+    "value": "D"
+   },
+   {
+    "number": 18,
+    "value": "NG"
+   },
+   {
+    "number": 19,
+    "value": "True"
+   },
+   {
+    "number": 20,
+    "value": "NG"
+   },
+   {
+    "number": 21,
+    "value": "False"
+   },
+   {
+    "number": 22,
+    "value": "C"
+   },
+   {
+    "number": 23,
+    "value": "B"
+   },
+   {
+    "number": 24,
+    "value": "C"
+   },
+   {
+    "number": 25,
+    "value": "A"
+   },
+   {
+    "number": 26,
+    "value": "B"
+   },
+   {
+    "number": 27,
+    "value": "Chain"
+   },
+   {
+    "number": 28,
+    "value": "Loop"
+   },
+   {
+    "number": 29,
+    "value": "Gears"
+   },
+   {
+    "number": 30,
+    "value": "(simple) motor"
+   },
+   {
+    "number": 31,
+    "value": "Ice"
+   },
+   {
+    "number": 32,
+    "value": "Waxed slices"
+   },
+   {
+    "number": 33,
+    "value": "Melt"
+   },
+   {
+    "number": 34,
+    "value": "Wheels"
+   },
+   {
+    "number": 35,
+    "value": "Coal"
+   },
+   {
+    "number": 36,
+    "value": "Steam engine"
+   },
+   {
+    "number": 37,
+    "value": "NG"
+   },
+   {
+    "number": 38,
+    "value": "Yes"
+   },
+   {
+    "number": 39,
+    "value": "Yes"
+   },
+   {
+    "number": 40,
+    "value": "No"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     4
+    ],
+    "extracted": 6,
+    "expected": 4
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 34,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 1-4 got 6"
+  }
+ ],
+ "validationWarnings": [],
+ "status": "quarantined",
+ "segmentCount": 3,
+ "contentFingerprint": "dfcc6675b4ace534ea2ab4e5d3492f4bc552088cadf3da1d964f18000991721c"
+}

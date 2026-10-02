@@ -1,0 +1,54 @@
+{
+ "slug": "ielts-reading-test-204",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g02",
+    "range": [
+     7,
+     10
+    ],
+    "instruction": "Choose the correct answer A, B, C or D Questions 11-13\nAnswer the questions below, using NO MORE THAN THREE WORDS for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     33,
+     35
+    ],
+    "instruction": "Label the diagram below. Choose NO MORE THAN ONE WORD AND/OR A NUMBER from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g08",
+    "range": [
+     36,
+     40
+    ],
+    "instruction": "Complete the table below using the list of words (A-K) from the box below."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 25,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "GROUP_INSTRUCTION_MISSING",
+   "evidence": "g05"
+  }
+ ]
+}

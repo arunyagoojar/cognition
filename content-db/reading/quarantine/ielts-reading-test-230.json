@@ -1,0 +1,67 @@
+{
+ "slug": "ielts-reading-test-230",
+ "units": [
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_COUNT_MISMATCH",
+   "evidence": {
+    "group": "g01",
+    "range": [
+     1,
+     6
+    ],
+    "extracted": 5,
+    "expected": 6
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     23,
+     23
+    ],
+    "instruction": "and 24 Choose TWO letters, A-E. Write the correct letters in boxes 23 and 24 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g06",
+    "range": [
+     25,
+     25
+    ],
+    "instruction": "and 26 Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g07",
+    "range": [
+     27,
+     31
+    ],
+    "instruction": "Complete the summary using the list of phrases, A-J, below. Write the correct letter, A-J, in boxes 27-31 on your answer"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 30,
+    "answers": 40
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "QUESTION_RANGE_MISMATCH",
+   "evidence": "g01 range 1-6 got 5"
+  }
+ ]
+}

@@ -1,0 +1,707 @@
+{
+ "id": "reading.test-0189.3a2b419a",
+ "module": "reading",
+ "sourceNumbers": [
+  189
+ ],
+ "slug": "ielts-reading-test-189",
+ "title": "IELTS Academic Reading Test 189",
+ "kind": "practice_test",
+ "pipelineVersion": "production-reading-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-189/index.html",
+   "sha256": "79aa9df2b2031db917240f83530e26317acd42b405379dfea00cc0bd6ea4ed72",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-reading-test-189/"
+  },
+  "extractionMethod": "deterministic_dom_v1.reading"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "passages": [
+  {
+   "passageNumber": 1,
+   "title": "Nature on display in American zoos",
+   "paragraphs": [
+    "The first zoo in the United States opened in Philadelphia in 1874, followed by the Cincinnati Zoo the next year. By 1940 there were zoos in more than one hundred American cities. The Philadelphia Zoo was more thoroughly planned and better financed than most of the hundreds of zoos that would open later but in its landscape and its mission – to both educate and entertain it embodied ideas about how to build a zoo that stayed consistent for decades. The zoos came into existence in the late nineteenth century during the transition of the United States from a rural and agricultural nation to an industrial one.",
+    "The population more than doubled between 1860 and 1900. As more middle class people lived in cities, they began seeking new relationships with the natural world as a place for recreation, self-improvement, and Spiritual renewal. Cities established systems of public parks, and nature tourism – already popular – became even more fashionable with the establishment of national parks. Nature was thought to be good for people of all ages and classes. Nature study was incorporated into school curricula, and natural history collecting became an increasingly popular pastime.",
+    "At the same time, the fields of study which were previously thought of as’ natural history’ grew into separate areas such as taxonomy, experimental embryology and genetics, each with its own experts and structures. As laboratory research gained prestige in the zoology departments of American universities, the gap between professional and amateur scientific activities widened. Previously, natural history had been open to amateurs and was easily popularized, but research required access to microscopes and other equipment in laboratories, as well as advanced education.",
+    "The new zoos set themselves apart from traveling animal shows by stating their mission as education and the advancement of science, In addition to recreation. Zoos presented zoology for the non specialist, at a time when the intellectual distance between amateur naturalists and laboratory oriented zoologists was increasing. They attracted wide audiences and quickly became a feature of every growing and forward thinking city. They were emblems of civic pride on a level of importance with art museums, natural history museums and botanical gardens.",
+    "Most American zoos were founded and operated as part of the public parks administration. They were dependent on municipal funds, and they charged no admission fee. They tended to assemble as many different mammal and bird species as possible, along with a few reptiles, exhibiting one or two specimens of each, and they competed with each other to become the first to display a rarity, like a rhinoceros. In the constant effort to attract the public to make return visits, certain types of display came in and out of fashion; for example, dozens of zoos built special Islands for their large populations of monkeys. In the 1930s, the Works Progress Administration funded millions of dollars of construction at dozens of zoos, for the most part, the collections of animals were organized by species in a combination of enclosures according to a fairly loose classification scheme.",
+    "Although many histories of individual zoos describe the 1940s through the 1960s as a period of stagnation, and in some cases there was neglect, new zoos continued to be set up all over the country. In the 1940s and 1950s, the first zoos designed specifically for children were built, some with the appeal of farm animals. An increasing number of zoos tried new ways of organizing their displays. In addition to the traditional approach of exhibiting like kinds together, zoo planners had a new approach of putting animals in groups according to their continent of origin and designing exhibits showing animals of particular habitats, for example, polar, desert, or forest. During the 1960s, a few zoos arranged some displays according to animal behavior; the Bronx Zoo. for instance, opened its World of Darkness exhibit of nocturnal animals. Paradoxically, at the same time as zoo displays began incorporating ideas about the ecological relationships between animals, big cats and primates continued to be displayed in bathroom like cages lined with tiles.",
+    "By the 1970s, a new wave of reform was stirring. Popular movements for environmentalism and animal welfare called attention to endangered species and to zoos that did not provide adequate care for their animals. More projects were undertaken by research scientists and zoos began hiring full-time vets as they stepped up captive breeding programs. Many zoos that had been supported entirely by municipal budgets began recruiting private financial support and charging admission fees. In the prosperous 1980s and 1990s. zoos built realistic ‘landscape immersion’ exhibits, many of them around the theme of the tropical rainforest and. increasingly, conservation moved to the forefront of zoo agendas.",
+    "Although zoos were popular and proliferating institutions in the United States at the turn of the twentieth century, historians have paid little attention to them. Perhaps zoos have been ignored because they were, and remain still, multi-purpose institutions, and as such they fall between the categories of analysis that historians often use. In addition, their stated goals of recreation, education, the advancement of science, and protection of endangered species have often conflicted. Zoos occupy a difficult middle ground between science and showmanship, high culture and low, remote forests and the cement cityscape, and wild animals and urban people."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g01",
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
+     "wordLimit": "",
+     "qtype": "tfng",
+     "startQ": 1,
+     "endQ": 7,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "tfng",
+       "stem": {
+        "plain": "The concepts on which the Philadelphia zoo was based soon became unfashionable.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "1. The concepts on which the Philadelphia zoo was based soon became unfashionable.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 2,
+       "type": "tfng",
+       "stem": {
+        "plain": "The opening of zoos coincided with a trend for people to live in urban areas.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "2. The opening of zoos coincided with a trend for people to live in urban areas.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 3,
+       "type": "tfng",
+       "stem": {
+        "plain": "During the period when many zoos were opened, the study of natural history became more popular in universities than other scientific subjects.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "3. During the period when many zoos were opened, the study of natural history became more popular in universities than other scientific subjects.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 4,
+       "type": "tfng",
+       "stem": {
+        "plain": "Cities recognized that the new zoos were as significant an amenity as museums.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "4. Cities recognized that the new zoos were as significant an amenity as museums.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 5,
+       "type": "tfng",
+       "stem": {
+        "plain": "Between 1940 and 1960 some older zoos had to move to new sites in order to expand.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "NG",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "5. Between 1940 and 1960 some older zoos had to move to new sites in order to expand.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 6,
+       "type": "tfng",
+       "stem": {
+        "plain": "In the 1970s, new ways of funding zoos were developed.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "True",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "6. In the 1970s, new ways of funding zoos were developed.",
+        "elementPath": "children[11]"
+       }
+      },
+      {
+       "number": 7,
+       "type": "tfng",
+       "stem": {
+        "plain": "There has been serious disagreement amongst historians about the role of the first zoos.",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "False",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "7. There has been serious disagreement amongst historians about the role of the first zoos.",
+        "elementPath": "children[11]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[9]",
+      "rawExcerpt": "Questions 1-7\nDo the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nN"
+     }
+    },
+    {
+     "groupId": "g02",
+     "instruction": "Complete the notes below. Choose NO MORE THAN ONE WORD from the passage for each answer.",
+     "wordLimit": "",
+     "qtype": "note_completion",
+     "startQ": 8,
+     "endQ": 13,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "completion",
+       "stem": {
+        "plain": "• Up to 1940 – More mammals and birds exhibited than (8) ______ (9) ______ were very popular animals in many zoos at one time.",
+        "segments": [
+         "• Up to 1940 – More mammals and birds exhibited than",
+         {
+          "blank": 8
+         },
+         {
+          "blank": 9
+         },
+         "were very popular animals in many zoos at one time."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Reptiles",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Up to 1940 – More mammals and birds exhibited than (8)………………………. (9)…………….were very popular animals in many zoos at one time.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 9,
+       "type": "completion",
+       "stem": {
+        "plain": "• Up to 1940 – More mammals and birds exhibited than (8) ______ (9) ______ were very popular animals in many zoos at one time.",
+        "segments": [
+         "• Up to 1940 – More mammals and birds exhibited than",
+         {
+          "blank": 8
+         },
+         {
+          "blank": 9
+         },
+         "were very popular animals in many zoos at one time."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Monkeys",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• Up to 1940 – More mammals and birds exhibited than (8)………………………. (9)…………….were very popular animals in many zoos at one time.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 10,
+       "type": "completion",
+       "stem": {
+        "plain": "• 1940s and 1950s – Zoos started exhibiting animals according to their (10) ______ and where they came from.",
+        "segments": [
+         "• 1940s and 1950s – Zoos started exhibiting animals according to their",
+         {
+          "blank": 10
+         },
+         "and where they came from."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Habitat(s)",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• 1940s and 1950s – Zoos started exhibiting animals according to their (10)………………and where they came from.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 11,
+       "type": "completion",
+       "stem": {
+        "plain": "• 1960s – Some zoos categorized animals by (11) ______",
+        "segments": [
+         "• 1960s – Some zoos categorized animals by",
+         {
+          "blank": 11
+         }
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Behavior",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• 1960s – Some zoos categorized animals by (11)……………………",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 12,
+       "type": "completion",
+       "stem": {
+        "plain": "• 1970s – (12) ______ were employed following protests about animal care.",
+        "segments": [
+         "• 1970s –",
+         {
+          "blank": 12
+         },
+         "were employed following protests about animal care."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Vets",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• 1970s – (12)………………….. were employed following protests about animal care.",
+        "elementPath": "children[13]"
+       }
+      },
+      {
+       "number": 13,
+       "type": "completion",
+       "stem": {
+        "plain": "• 1980s onward – The importance of (13) ______ became greater.",
+        "segments": [
+         "• 1980s onward – The importance of",
+         {
+          "blank": 13
+         },
+         "became greater."
+        ]
+       },
+       "options": null,
+       "correctAnswer": "Conservation",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "• 1980s onward – The importance of (13)………………..became greater.",
+        "elementPath": "children[13]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[12]",
+      "rawExcerpt": "Questions 8-13\nComplete the notes below. Choose NO MORE THAN ONE WORD from the passage for each answer."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Geoengineering projects",
+   "paragraphs": [
+    "A Such is our dependence on fossil fuels, and such is the volume of carbon dioxide we have already released into the atmosphere, that most climate scientists agree that significant global warming is now inevitable – the best we can hope to do is keep it at a reasonable level, and even that is going to be an uphill task. At present, the only serious option on the table for doing this is cutting back on our carbon emissions, but while a few countries are making major strides in this regard, the majority are having great difficulty even stemming the rate of increase, let alone reversing it. Consequently, an increasing number of scientists are beginning to explore the alternatives. They oil fall under the banner of geoengineering – generally defined as the intentional large-scale manipulation of the environment.",
+    "B Geoengineering has been shown to work, at least on a small, localized scale, for decades. May Day parades in Moscow have taken place under clear blue skies, aircraft having deposited dry ice, silver iodide and cement powder to disperse clouds. Many of the schemes now suggested look to do the opposite, and reduce the amount of sunlight reaching the planet. One scheme focuses on achieving a general cooling of the Earth and involves the concept of releasing aerosol sprays into the stratosphere above the Arctic to create clouds of sulphur dioxide, which would, in turn, lead to a global dimming. The idea is modelled on historical volcanic explosions, such as that of Mount Pinatubo in the Philippines in 1991, which led to a short term cooling of global temperatures by 0.5“C. The aerosols could be delivered by artillery, highflying aircraft or balloons.",
+    "C Instead of concentrating on global cooling, other schemes look specifically at reversing the melting at the poles. One idea is to bolster an ice cap by spraying it with water. Using pumps to carry water from below the sea ice, the spray would come out as snow or ice particles, producing thicker sea ice with a higher albedo (the ratio of sunlight reflected from a surface) to reflect summer radiation. Scientists have also scrutinized whether it is possible to block icefjords in Greenland with cables which have been reinforced, preventing icebergs from moving into the sea. Veli Albert Kallio, a Finnish scientist, says that such an idea is impractical, because the force of the ice would ultimately snap the cables and rapidly release a large quantity of frozen ice into the sea. However, Kallio believes that the sort of cables used in suspension bridges could potentially be used to divert, rather than halt, the southward movement of ice from Spitsbergen. ‘It would stop the ice moving south, and local currents would see them float northwards,’ he says.",
+    "D A number of geoengineering ideas are currently being examined in the Russian Arctic. These include planting millions of birch trees: the thinking, according to Kallio, is that their white bark would increase the amount of reflected sunlight. The loss of their leaves in winter would also enable the snow to reflect radiation. In contrast, the native evergreen pines tend to shade the snow and absorb radiation. Using ice-breaking vessels to deliberately break up and scatter coastal sea ice in both Arctic and Antarctic waters in their respective autumns, and diverting Russian rivers to increase cold-water (low to ice-forming areas, could also be used to slow down warming, Kallio says. ‘You would need the wind to blow the right way, but in the right conditions, by letting ice float free and head north, you would enhance ice growth.’",
+    "E But will such ideas ever be implemented? The major counterarguments to geoengineering schemes are, first, that they are a ‘cop-out’ that allow us to continue living the way we do, rather than reducing carbon emissions; and, second, even if they do work, would the side- effects outweigh the advantages? Then there’s the daunting prospect of upkeep and repair of any scheme as well as the consequences of a technical failure. ’I think all of us agree that if we were to end geoengineering on a given day, then the planet would return to its pre-engineered condition very rapidly, and probably within 10 to 20 years,’ says Dr Phil Rasch, chief scientist for climate change at the US-based Pacific Northwest National Laboratory. ‘That’s certainly something to worry about. I would consider geoengineering as a strategy to employ only while we manage the conversion to a non-fossil- fuel economy.’ ‘The risk with geoengineering projects is that you can “overshoot”,’ says Dr Dan Lunt, from the University of Bristol. ‘You may bring global temperatures back to pre-industrial levels, but the risk is that the poles will still be warmer than they should be and the tropics will be cooler than before industrialization.’",
+    "F The main reason why geoengineering is countenanced by the mainstream scientific community is that most researchers have little faith in the ability of politicians to agree – and then bring in – the necessary carbon cuts. Even leading conservation organisations believe the subject is worth exploring. As Dr Mortin Sommerkorn, a climate change advisor says. ‘But human-induced climate change has brought humanity to a position where it is important not to exclude thinking thoroughly about this topic and its possibilities despite the potential drawbacks. If, over the coming years, the science tells us about an ever-increased climate sensitivity of the planet – and this isn’t unrealistic – then v/e may be best served by not having to start our thinking from scratch.’",
+    "A range of geoengineering ideas has been put forward, which aim either to prevent the melting of the ice caps or to stop the general rise in global temperatures. One scheme to discourage the melting of ice and snow involves introducing (19)……………………to the Arctic because of their colour. The build-up of ice could be encouraged by dispersing ice along the coasts using special ships and changing the direction of some (20)………………………but this scheme is dependent on certain weather conditions. Another way of increasing the amount of ice involves using (21)………………………to bring water to the surface. A scheme to stop ice moving would use (22)………………….but this method is more likely to be successful in preventing the ice from travelling in one direction rather than stopping it altogether. A suggestion for cooling global temperatures is based on what has happened in the past after (23)……………………..and it involves creating clouds of gas."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g03",
+     "instruction": "Reading Passage 2 has six paragraphs A-F. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "wordLimit": "",
+     "qtype": "matching_information",
+     "startQ": 14,
+     "endQ": 18,
+     "stimulusSegments": null,
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "stem": {
+        "plain": "the existence of geoengineering projects distracting from the real task of changing the way we live",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "14. the existence of geoengineering projects distracting from the real task of changing the way we live",
+        "elementPath": "children[22]"
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "stem": {
+        "plain": "circumstances in which geoengineering has demonstrated success",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "15. circumstances in which geoengineering has demonstrated success",
+        "elementPath": "children[22]"
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "stem": {
+        "plain": "maintenance problems associated with geoengineering projects",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "E",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "16. maintenance problems associated with geoengineering projects",
+        "elementPath": "children[22]"
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "stem": {
+        "plain": "support for geoengineering being due to a lack of confidence in governments",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "F",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "17. support for geoengineering being due to a lack of confidence in governments",
+        "elementPath": "children[22]"
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_information",
+       "stem": {
+        "plain": "more success in fighting climate change in some parts of the world than others",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "18. more success in fighting climate change in some parts of the world than others",
+        "elementPath": "children[22]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[21]",
+      "rawExcerpt": "Questions 14-18\nReading Passage 2 has six paragraphs A-F. Which paragraph contains the following information? NB You may use any letter more than once."
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "America’s oldest art?",
+   "paragraphs": [
+    "Set within treacherously steep cliffs, and hidden away valleys of northeast Brazil, is some of Southeast America’s most significant and spectacular rock-art. Most of the art so far discovered from the ongoing excavations comes from the archaeologically – important National Park o’ the Serra da Capivara in the state of Piaui, and it is causing quite a controversy. The reason for the uproar? The art is being dated to around 25,000 or perhaps. According to some archaeologists, even 36,000 years ago. If correct, this is set to challenge the widely field view that the America were first colonized from the north, via the Bering Straits from eastern Siberia at around 10.000 BC. only moving down into Central and South America in the millennia thereafter.",
+    "Prior to the designation of 130,000 hectares as a National Park, the rock-art sites were difficult to get to and often dangerous to enter. In ancient times, this inaccessibility must have heightened the importance of the sites, and indeed of the people who painted on the rocks. Wild animals and human figures dominate the art and are incorporated into often-complex scenes involving hunting, supernatural beings, fighting and dancing. The artists depicted the animals that roamed the local ancient brushwood forest. The large mammals are usually painted in groups and tend to be shown a running stance, as though trying to escape from hunting parties. Processions – lines of human and animal figures – also appear of great impotence to these ancient artists. Might such lines represent family units or groups of warriors? On a number of panels, rows of stylized figures, some numbering up to 30 individual figures, were painted using the natural undulating contours of the rock surface, so evoking the contours of the seconding landscape Other interesting, but very rare, occurrences are scenes that show small human figures holding on to and dancing around a tree, possibly involved in some tom of a ritual dance.",
+    "Due to the favourable climatic conditions. the imagery on many panels is in a remarkable state of preservation. Despite this, however, there are serious conservation issues that affect their long term survival. The chemical and mineral quantities of the rock on which the imagery is panted is fragile and on several panels it is unstable. As well as the secretion of sodium carbonate on the rock surface, complete panel sections have, over the ancient and recent past, broken away from the main rock surface. These have then become buried and sealed into sometimes-ancient floor deposits. Perversely, this form of natural erosion and subsequent deposition has assisted archaeologists in dating several major rock-art sites. Of course, dating the art is extremely difficult oven the non-existence of plant and animal remains that might be scientifically dated. However, there am a small number of sites in the Serra da Capivara that are giving up their secrets through good systematic excavation. Thus, at Toca do Roqiomo da Pedra Furada. rock-art researcher Niéde Guidon managed to obtain a number of dates. At different levels of excavation, she located fallen painted rock fragments, which she was able to dale to at least 36,000 years ago. Along with toe painted fragments, crude stone tools were found. Also discovered wore a series of scientifically datable sites of fireplaces, or hearths, the earliest dated to 46,000 BC. arguably the oldest dates for human habitation in the America.",
+    "However, these conclusions are net without controversy. Critics, mainly from North America, have suggested that the hearths may in fact be a natural phenomenon, the result of seasonal brushwood fires. Several North American researchers have gone further and suggested that the rock art from this site dates from no earlier than about 3,730 years age, based on the results of limited radiocarbon dating. Adding further fool to the general debate is the fact that the artists in the area of the National Hark tended not to draw over old motifs (as often occurs with rock-art), which makes it hard to work out the relative chronology of the images or styles. However, the diversity of imagery and the narrative the paintings create from each of the many sites within the National Park suggests different artists were probably making their art at efferent times, and potentially using each site over many thousands of years.",
+    "With fierce debates thus raging over the dating, where these artists originate from is also still very much open to speculation. The traditional view ignores the early dating evidence from the South American rock-art sites. In a revised scenario, some palaeo – anthropologists are now suggesting that modern humans may’ have migrated from Africa using the strong currents of the Atlantic Ocean some 63.000 years or more ago, while others suggest a more improbable colonization coming from the Pacific Ocean. Yet, while ether hypothesis is plausible, there is still no supporting archaeological evidence between the South American coastline and the interior. Rather, it seems possible that there were a number of waves of human colonization of the Americas occurring possibly over a 60,000-100,000 year period, probably using the Bering Straits as a land bridge to cross into the Americas.",
+    "Despite the compelling evidence from South America, it stands alone: the earliest secure human evidence yet found in the state of Oregon in North America only dates to 12,300 years BC. So this is a fierce debate that is likely to go on for many more years. However, the splendid rock art and its allied anthropology of northeast of Brazil, described here, is playing a huge and significant role in the discussion."
+   ],
+   "assets": [],
+   "questionGroups": [
+    {
+     "groupId": "g06",
+     "instruction": "Choose the correct fetter, A, B, C or D. Questions 30-36\nIn boxes 30-36 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this Questions 37-40\nComplete each sentence with the correct ending. A-F below. 37. Materials derived from plants or animals\n38. The discussions about the ancient hearths\n39. Theories about where the first South Americans originated from\n40. The finds of archaeologists in Oregon",
+     "wordLimit": "",
+     "qtype": "short_answer",
+     "startQ": 27,
+     "endQ": 29,
+     "stimulusSegments": [
+      "30. Archaeologists have completed their survey of the rock-art in Piaui.\n31. The location of the rock-art suggests that the artists had a significant role in their society.\n32. The paintings of animals show they were regarded as sacred by the ancient humans.\n33. Some damage to paintings is most likely due to changes in the weather of the region.\n34. The fact that some paintings wore buried is useful to archaeologists.\n35. The tools found near some paintings were probably used for hunting animals.\n36. The North American researchers have confirmed Niéde Guidons dating of the paintings.",
+      "A are giving rise to a great deal of debate among palaeo-anthropologists.\nB do not support the earliest dates suggested for the arrival of people in America.\nC are absent from rock-art sites In the Serra da Capivara.\nD have not been accepted by academics outside America.\nE centre on whether or not they are actually man-made.\nF reflect the advances in scientific dating methods.",
+      "1. False\n2. True\n3. NG\n4. True\n5. NG\n6. True\n7. False\n8. Reptiles\n9. Monkeys\n10. Habitat(s)\n11. Behavior\n12. Vets\n13. Conservation\n14. E\n15. B\n16. E\n17. F\n18. A\n19. Birch trees\n20. (Russian) rivers\n21. Pumps\n22. Cables\n23. Volcanic explosions\n24. C\n25. D\n26. A\n27. B\n28. A\n29. D\n30. No\n31. Yes\n32. NG\n33. No\n34. Yes\n35. NG\n36. No\n37. C\n38. E\n39. A\n40. B"
+     ],
+     "sharedOptions": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "short_answer",
+       "stem": {
+        "plain": "According to the first paragraph, the rock-art in Serra da Capivara may revolutionize accepted ideas about",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "B",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "27. According to the first paragraph, the rock-art in Serra da Capivara may revolutionize accepted ideas about",
+        "elementPath": "children[37]"
+       }
+      },
+      {
+       "number": 28,
+       "type": "short_answer",
+       "stem": {
+        "plain": "How did the ancient artists use the form of the rock where they painted?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "A",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "28. How did the ancient artists use the form of the rock where they painted?",
+        "elementPath": "children[38]"
+       }
+      },
+      {
+       "number": 29,
+       "type": "short_answer",
+       "stem": {
+        "plain": "In the fourth paragraph, what does the writer say is unusual about the rock-artists of Serra da Capivara?",
+        "segments": null
+       },
+       "options": null,
+       "correctAnswer": "D",
+       "answerFound": true,
+       "provenance": {
+        "rawExcerpt": "29. In the fourth paragraph, what does the writer say is unusual about the rock-artists of Serra da Capivara?",
+        "elementPath": "children[39]"
+       }
+      }
+     ],
+     "provenance": {
+      "elementPath": "children[36]",
+      "rawExcerpt": "Questions 27-29\nChoose the correct fetter, A, B, C or D. Questions 30-36\nIn boxes 30-36 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views of the writer\nNOT GIVEN i"
+     }
+    }
+   ]
+  }
+ ],
+ "answerKey": {
+  "keyStart": 1,
+  "keyEnd": 40,
+  "trailingEmpty": false,
+  "error": null,
+  "keyFormat": "numbered",
+  "items": [
+   {
+    "number": 1,
+    "value": "False"
+   },
+   {
+    "number": 2,
+    "value": "True"
+   },
+   {
+    "number": 3,
+    "value": "NG"
+   },
+   {
+    "number": 4,
+    "value": "True"
+   },
+   {
+    "number": 5,
+    "value": "NG"
+   },
+   {
+    "number": 6,
+    "value": "True"
+   },
+   {
+    "number": 7,
+    "value": "False"
+   },
+   {
+    "number": 8,
+    "value": "Reptiles"
+   },
+   {
+    "number": 9,
+    "value": "Monkeys"
+   },
+   {
+    "number": 10,
+    "value": "Habitat(s)"
+   },
+   {
+    "number": 11,
+    "value": "Behavior"
+   },
+   {
+    "number": 12,
+    "value": "Vets"
+   },
+   {
+    "number": 13,
+    "value": "Conservation"
+   },
+   {
+    "number": 14,
+    "value": "E"
+   },
+   {
+    "number": 15,
+    "value": "B"
+   },
+   {
+    "number": 16,
+    "value": "E"
+   },
+   {
+    "number": 17,
+    "value": "F"
+   },
+   {
+    "number": 18,
+    "value": "A"
+   },
+   {
+    "number": 19,
+    "value": "Birch trees"
+   },
+   {
+    "number": 20,
+    "value": "(Russian) rivers"
+   },
+   {
+    "number": 21,
+    "value": "Pumps"
+   },
+   {
+    "number": 22,
+    "value": "Cables"
+   },
+   {
+    "number": 23,
+    "value": "Volcanic explosions"
+   },
+   {
+    "number": 24,
+    "value": "C"
+   },
+   {
+    "number": 25,
+    "value": "D"
+   },
+   {
+    "number": 26,
+    "value": "A"
+   },
+   {
+    "number": 27,
+    "value": "B"
+   },
+   {
+    "number": 28,
+    "value": "A"
+   },
+   {
+    "number": 29,
+    "value": "D"
+   },
+   {
+    "number": 30,
+    "value": "No"
+   },
+   {
+    "number": 31,
+    "value": "Yes"
+   },
+   {
+    "number": 32,
+    "value": "NG"
+   },
+   {
+    "number": 33,
+    "value": "No"
+   },
+   {
+    "number": 34,
+    "value": "Yes"
+   },
+   {
+    "number": 35,
+    "value": "NG"
+   },
+   {
+    "number": 36,
+    "value": "No"
+   },
+   {
+    "number": 37,
+    "value": "C"
+   },
+   {
+    "number": 38,
+    "value": "E"
+   },
+   {
+    "number": 39,
+    "value": "A"
+   },
+   {
+    "number": 40,
+    "value": "B"
+   }
+  ]
+ },
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "reasonCode": "EMPTY_QUESTION",
+   "evidence": {
+    "group": "g04",
+    "range": [
+     19,
+     23
+    ],
+    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+   }
+  },
+  {
+   "unit": "group",
+   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
+   "evidence": {
+    "group": "g05",
+    "range": [
+     24,
+     26
+    ],
+    "instruction": "Look at the following people and the list of opinions below. Match each person with the correct opinion A-E."
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "ANSWER_COUNT_MISMATCH",
+   "evidence": {
+    "questions": 21,
+    "answers": 40
+   }
+  }
+ ],
+ "validationWarnings": [],
+ "status": "flagged",
+ "segmentCount": 4,
+ "contentFingerprint": "abc7911ced52b717190a2465b00fc19bce6c4d4e72a03a82c16f210c746ba109"
+}
