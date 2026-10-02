@@ -87,18 +87,25 @@ export function getAuthenticExam(testId) {
 
 export function getRandomizedFullExam(seed = null) {
   const activeSeed = seed !== null && seed !== undefined ? seed : `dyn-${Math.floor(Math.random() * 1000000)}`;
+  const savedTestId = PRODUCTION_LISTENING.some(t => String(t.testId) === String(seed))
+    ? String(seed) : null;
 
   const manifest = buildDynamicPracticeManifest({ seed: activeSeed, testType: 'UNKNOWN' });
 
-  const writingRec = PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
+  const listening = pickProductionListening(savedTestId);
+  const listeningTestId = listening?.testId;
+  const writingRec = PRODUCTION_WRITING.find(w => String(w.testId) === String(listeningTestId))
+    || PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
+  const readingRec = PRODUCTION_READING.find(r => String(r.testId) === String(listeningTestId))
+    || PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
 
   return {
-    testId: `mock-random-${activeSeed}`,
-    title: `Dynamic Cambridge IELTS Mock Exam (${activeSeed})`,
+    testId: listeningTestId ? String(listeningTestId) : `mock-random-${activeSeed}`,
+    title: `Dynamic IELTS Mock Exam (${listening?.title || activeSeed})`,
     book: 'Cognition Production Content',
-    isRandomized: true,
+    isRandomized: !savedTestId,
     manifest,
-    listening: pickProductionListening(null),
+    listening,
     reading: readingRec ? adaptProductionReading(readingRec) : null,
     writing: writingRec ? adaptProductionWriting(writingRec) : null,
     speaking: pickProductionSpeaking()

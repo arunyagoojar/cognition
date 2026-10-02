@@ -422,22 +422,15 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         </div>
       </div>
 
-      {/* ── 2. READING WORKSPACE ── */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 320px',
-        gap: 24,
-        alignItems: 'start'
-      }}>
-        {/* Left: Passage Content */}
-        <div style={{
+      {/* ── 2. READING WORKSPACE (full-width exam form) ── */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
+        {/* Passage */}
+        <div className="exam-doc" style={{
           background: 'var(--bg-card)',
           border: 'var(--border-dark)',
           borderRadius: 'var(--r-card)',
-          padding: '36px 32px',
-          boxShadow: '0 3px 0 #151313',
-          height: 'calc(100vh - 210px)',
-          overflowY: 'auto'
+          padding: '24px 30px',
+          boxShadow: '0 3px 0 #151313'
         }}>
           {test?.passages?.[activeSectionIndex] && (
             <HtmlContentRenderer
@@ -448,63 +441,54 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           )}
         </div>
 
-        {/* Right: Question Panel */}
-        <div style={{
-          background: 'var(--surface-sunken)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: 'var(--r-card)',
-          padding: '24px 20px',
-          height: 'calc(100vh - 210px)',
-          overflowY: 'auto'
-        }}>
-          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Questions</h3>
-          {test?.passages?.[activeSectionIndex]?.questionGroups ? (
-            test.passages[activeSectionIndex].questionGroups.map((g, idx) => (
-              <div key={idx} style={{ marginBottom: 24 }}>
-                {g.instructions && (
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: 'var(--text-primary)', background: 'var(--surface)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-                    {g.instructions}
-                  </div>
-                )}
-                {g.options && g.options.length > 0 && (
-                  <div style={{ marginBottom: 16, padding: 12, background: 'var(--bg-canvas)', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 8, textTransform: 'uppercase' }}>Options</div>
-                    <div style={{ display: 'grid', gap: 6 }}>
-                      {g.options.map((opt, i) => (
-                        <div key={opt.id || i} style={{ display: 'flex', gap: 8, fontSize: 14 }}>
-                          <strong style={{ minWidth: 20 }}>{opt.id}</strong>
-                          <span>{opt.label}</span>
-                        </div>
-                      ))}
+        {/* Question groups — full-width, same pattern as Listening */}
+        {(test?.passages?.[activeSectionIndex]?.questionGroups || []).map((g, idx) => {
+          const inlineIds = new Set(
+            [...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1])
+          );
+          const standalone = (g.questions || []).filter(q => !inlineIds.has(q.id));
+          const qRange = g.questions?.length
+            ? `${g.questions[0].questionNumber}${g.questions.length > 1 ? `–${g.questions[g.questions.length - 1].questionNumber}` : ''}`
+            : '';
+          return (
+            <div key={g.groupId || idx} className="exam-doc" style={{
+              background: 'var(--bg-card)',
+              border: 'var(--border-dark)',
+              borderRadius: 'var(--r-card)',
+              padding: '20px 26px',
+              boxShadow: '0 3px 0 #151313',
+              display: 'flex', flexDirection: 'column', gap: 8
+            }}>
+              {g.instructions && (
+                <div style={{
+                  fontWeight: 600, fontSize: 13, color: 'var(--text-primary)',
+                  borderBottom: '1px solid var(--border-subtle)', paddingBottom: 8, marginBottom: 4
+                }}>
+                  <span style={{ fontWeight: 800 }}>Questions {qRange}</span>
+                  {g.instructions && <span>. {g.instructions}</span>}
+                  {g.wordLimit && <span style={{ color: 'var(--text-secondary)' }}> — {g.wordLimit}</span>}
+                </div>
+              )}
+              {g.options && g.options.length > 0 && (
+                <div className="stimulus-options" style={{ margin: '0 0 8px' }}>
+                  {g.options.map((opt, i) => (
+                    <div key={opt.id || i} style={{ display: 'flex', gap: 8, fontSize: 14, marginBottom: 3 }}>
+                      <strong style={{ minWidth: 20 }}>{opt.id}</strong>
+                      <span>{opt.label}</span>
                     </div>
-                  </div>
-                )}
-                {g.questions.map(q => (
-                  <QuestionRenderer 
-                    key={q.id} 
-                    question={q} 
-                    value={answers[q.id]} 
-                    onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
-                  />
-                ))}
-              </div>
-            ))
-          ) : (
-            test?.passages?.[activeSectionIndex]?.questions?.map(q => (
-              <QuestionRenderer 
-                key={q.id} 
-                question={q} 
-                value={answers[q.id]} 
-                onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
-              />
-            ))
-          )}
-          {(!test?.passages?.[activeSectionIndex]?.questions || test.passages[activeSectionIndex].questions.length === 0) && (
-            <div style={{ fontSize: 13, color: 'var(--text-muted)', textAlign: 'center', padding: '24px 0' }}>
-              No structured questions detected for this passage. Read the text and answer in the passage.
+                  ))}
+                </div>
+              )}
+              {g.htmlContent && (
+                <HtmlContentRenderer htmlContent={g.htmlContent} answers={answers} setAnswers={setAnswers} />
+              )}
+              {standalone.map(q => (
+                <QuestionRenderer key={q.id} question={q} value={answers[q.id]}
+                  onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} />
+              ))}
             </div>
-          )}
-        </div>
+          );
+        })}
       </div>
 
       {/* ── 3. UNIVERSAL EXAM BOTTOM NAVIGATION ── */}

@@ -14,35 +14,21 @@ import WritingModule from './WritingModule';
 import SpeakingModule from './SpeakingModule';
 
 const STEPS = ['listening', 'reading', 'writing', 'speaking'];
-import {
-  getListeningTestAdapter,
-  getReadingTestAdapter,
-  getWritingTestAdapter,
-  getSpeakingTestAdapter
-} from '../../data/content/contentAdapter';
-
-function expandManifestToExamData(manifest, meta) {
-  return {
-    testId: meta.testId,
-    title: meta.title,
-    book: meta.book,
-    isRandomized: meta.isRandomized,
-    manifest,
-    listening: getListeningTestAdapter(manifest),
-    reading: getReadingTestAdapter(manifest),
-    writing: getWritingTestAdapter(manifest),
-    speaking: getSpeakingTestAdapter(manifest)
-  };
-}
 
 export default function MockExamFlow({ onComplete, onBack }) {
-  // Restore existing in-progress session if user refreshed or navigated back
+  // Restore existing in-progress session if user refreshed or navigated back.
+  // Sessions carrying legacy V2 manifests (generationId) are discarded — the
+  // production database replaced that content layer in Phases 3–6.
   const existingSession = getActiveMockSession();
-  const hasActiveSession = existingSession && existingSession.status === 'in_progress' && existingSession.examMeta && existingSession.manifest;
+  const hasActiveSession = existingSession && existingSession.status === 'in_progress'
+    && existingSession.examMeta && !existingSession.manifest?.generationId
+    && getProductionWritingTest(existingSession.examMeta.testId);
 
   const [examData, setExamData] = useState(() => {
     if (hasActiveSession) {
-      return expandManifestToExamData(existingSession.manifest, existingSession.examMeta);
+      // Reassemble all four sections from production by the saved exam id
+      const testId = existingSession.examMeta.testId;
+      return getRandomizedFullExam(testId);
     }
     return getRandomizedFullExam();
   });
@@ -76,7 +62,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
         book: examData.book,
         isRandomized: examData.isRandomized
       },
-      manifest: examData.manifest,
+      manifest: null,
       currentSection: 'listening',
       sectionAnswers: {},
       startedAt: new Date().toISOString(),

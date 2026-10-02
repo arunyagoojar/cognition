@@ -39,21 +39,63 @@
   /* Easing */
   --ease-spring: cubic-bezier(0.34, 1.25, 0.64, 1);
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Semantic surface hierarchy (light) ── */
+  --bg-card:          #FFFFFF;
+  --surface:          #F7F7F5;
+  --surface-elevated: #FFFFFF;
+  --surface-sunken:   #EFEDEA;
+  --surface-interactive: #F0EEE9;
+  --surface-hover:    #E8E5E0;
+  --border-light:     rgba(21, 19, 19, 0.08);
+
+  /* Status */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error:   #E84624;
+
+  /* ── Motion tokens (semantic) ── */
+  --dur-micro: 120ms;
+  --dur-button: 150ms;
+  --dur-hover: 200ms;
+  --dur-dropdown: 180ms;
+  --dur-modal: 240ms;
+  --dur-page: 280ms;
+  --dur-layout: 320ms;
+  --dur-emphasis: 450ms;
 }
 
 /* ─── Dark Mode Alternate Theme (Carefully Balanced) ─────────────────── */
 [data-theme="dark"] {
-  --bg-canvas:     #151313;
+  /* canvas → card → elevated → interactive → hover: each step visibly lighter */
+  --bg-canvas:     #141212;
+  --bg-card:          #201D1D;
+  --surface:          #1A1717;
+  --surface-elevated: #2A2626;
+  --surface-sunken:   #181515;
+  --surface-interactive: #262222;
+  --surface-hover:    #322E2E;
+  --border-light:     rgba(247, 247, 245, 0.06);
+
   --text-primary:  #F7F7F5;
-  --text-secondary: #B8B4B1;
-  --text-tertiary:  #7D7876;
-  --text-muted:    #6A6664;
+  --text-secondary: #C4BFB9;
+  --text-tertiary:  #9B958F;
+  --text-muted:    #7A756F;
 
   --border-dark:   1.5px solid #F7F7F5;
-  --border-subtle: 1px solid rgba(247, 247, 245, 0.16);
+  --border-subtle: 1px solid rgba(247, 247, 245, 0.14);
   --border-color:  #F7F7F5;
-  --c-pure-white:  #1F1C1C;
+  --c-pure-white:  #201D1D;
   --c-peach:       #332420;
+
+  /* dark accents: same personality, luminance-tuned */
+  --c-coral:       #FF6B4A;
+  --c-coral-hover: #FF8266;
+  --c-lavender:    #C9A8F7;
+  --c-yellow:      #FDD35E;
+  --success: #34D399;
+  --warning: #FBBF24;
+  --error:   #FF6B4A;
 }
 
 /* ─── Global Reset ──────────────────────────────────────────────── */
@@ -3220,4 +3262,61 @@ input, textarea, select {
 }
 @media (max-width: 720px) {
   .writing-table { display: block; overflow-x: auto; }
+}
+
+/* ─── Reduced motion (Phase 7 accessibility) ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .exam-nav-btn-next:hover, .exam-nav-btn-prev:hover { transform: none !important; }
+}
+
+/* ─── Focus visibility (Phase 7 accessibility) ──────────────────── */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2.5px solid var(--c-yellow);
+  outline-offset: 2px;
+}
+
+/* ─── Dark mode: inputs, selects, audio, dropdowns stay visible ─── */
+[data-theme="dark"] .cognition-exam-input,
+[data-theme="dark"] input[data-qid] {
+  background: var(--surface-interactive);
+  color: var(--text-primary);
+  border-bottom-color: var(--text-secondary);
+}
+[data-theme="dark"] .cognition-exam-select,
+[data-theme="dark"] .cognition-html-content select {
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+  border-color: rgba(247, 247, 245, 0.2);
+}
+[data-theme="dark"] .exam-nav-btn-prev,
+[data-theme="dark"] .exam-nav-btn-next {
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+}
+[data-theme="dark"] .exam-nav-btn-next {
+  background: var(--c-coral);
+  color: #151313;
+}
+[data-theme="dark"] .exam-nav-section-pill {
+  background: var(--surface-interactive);
+  color: var(--text-primary);
+}
+[data-theme="dark"] .exam-nav-section-pill.active {
+  background: #F7F7F5;
+  color: #151313;
+}
+[data-theme="dark"] .audio-player-cognition {
+  background: var(--surface-elevated);
+}
+[data-theme="dark"] textarea,
+[data-theme="dark"] .speaking-notes-area {
+  background: var(--surface-interactive);
+  color: var(--text-primary);
 }
