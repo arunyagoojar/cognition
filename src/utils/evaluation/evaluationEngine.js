@@ -6,7 +6,7 @@ import { AIProvider } from '../ai/aiProvider.js';
 import { calculateReadingBand, calculateListeningBand, calculateOverallBand } from '../bandCalculator.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
-import { getApiKey, getGroqApiKey } from '../storage.js';
+import { isAiConfigured } from '../storage.js';
 
 /**
  * Checks whether candidate answer matches official answer using deterministic normalizer.
@@ -313,7 +313,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
   }
 
   // Evaluation configuration must gate the display of criterion scores.
-  const hasEvaluator = Boolean(getApiKey() || getGroqApiKey());
+  const hasEvaluator = await isAiConfigured();
   if (!hasEvaluator) {
     return {
       evaluationState: 'NOT_CONFIGURED',

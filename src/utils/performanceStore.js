@@ -235,9 +235,9 @@ export function resetPerformanceData() {
     legacyKeys.forEach(k => storage.removeItem(k));
 
     // 3. Clear any dynamic test state keys while preserving config
+    // (API keys are intentionally NOT preserved — plaintext credentials are
+    // wiped; server-side encrypted credentials are unaffected by this reset)
     const preserveKeys = new Set([
-      'omniprep_gemini_key',
-      'omniprep_groq_key',
       'omniprep_completed_lessons',
       'omniprep_app_settings',
       'omniprep_target_band',

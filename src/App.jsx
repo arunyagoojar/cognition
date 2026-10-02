@@ -101,7 +101,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = t === 'dark' ? 'light' : 'dark';
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     syncPreferences({ theme: newTheme });

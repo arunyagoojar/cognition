@@ -2,6 +2,14 @@ name = "cognition-api"
 main = "worker/src/index.js"
 compatibility_date = "2024-12-01"
 
+# Cognition deploys as a single Worker: static frontend (dist/) + /api routes.
+# Build first with the slim public dir: PUBLIC_DIR_OVERRIDE=public-static VITE_API_BASE_URL= npm run build
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
 [[d1_databases]]
 binding = "DB"
 database_name = "cognition-db"
@@ -9,5 +17,8 @@ database_id = "edd1e971-91b6-4f37-bd9d-b49b763e7b7c"
 migrations_dir = "migrations"
 
 [vars]
-CLERK_PUBLISHABLE_KEY = ""
-# CLERK_SECRET_KEY is set as a secret: npx wrangler secret put CLERK_SECRET_KEY
+ALLOWED_ORIGINS = "http://localhost:5173,http://localhost:4173"
+CLERK_PUBLISHABLE_KEY = "pk_test_bXVzaWNhbC1kdWNrLTM5MTcuY2xlcmsuYWNjb3VudHMuZGV2JA"
+# Secrets (set via `npx wrangler secret put`):
+#   CLERK_SECRET_KEY            — Clerk Backend API key (JWKS auth)
+#   CREDENTIAL_ENCRYPTION_KEY   — base64 32-byte AES-256-GCM master key

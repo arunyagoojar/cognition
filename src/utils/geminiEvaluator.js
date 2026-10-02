@@ -1,6 +1,9 @@
 // Central Gemini AI Evaluation Architecture for IELTS Writing & Speaking
 // Adheres strictly to Official IELTS Band Descriptors, explicit lifecycle states, and JSON validation.
+// Phase 4: Gemini requests run SERVER-SIDE (Cloudflare Worker) with the user's
+// encrypted credential — the browser never holds a raw API key.
 import { getAiCacheItem, setAiCacheItem } from './storage.js';
+import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
   primaryModel: 'gemini-2.0-flash',
@@ -295,62 +298,12 @@ export function validateWritingEvaluationJson(data) {
 }
 
 /**
- * Minimal lightweight validation of a user-provided Gemini API key (2-token ping).
- */
-export async function validateGeminiKey(apiKey) {
-  if (!apiKey || !apiKey.trim()) {
-    return { success: false, message: 'Gemini API key is required.' };
-  }
-
-  const trimmedKey = apiKey.trim();
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONFIG.primaryModel}:generateContent?key=${trimmedKey}`;
-
-  try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: 'ping' }] }],
-        generationConfig: { maxOutputTokens: 3 }
-      })
-    });
-
-    if (res.ok) {
-      return { success: true, message: '✓ Gemini connected' };
-    }
-
-    if (res.status === 429) {
-      return { success: true, message: '✓ Gemini connected (Rate limited - ready for use)' };
-    }
-
-    if (res.status === 400 || res.status === 403 || res.status === 404) {
-      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONFIG.fallbackModel}:generateContent?key=${trimmedKey}`;
-      const fallbackRes = await fetch(fallbackUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: 'ping' }] }],
-          generationConfig: { maxOutputTokens: 3 }
-        })
-      });
-
-      if (fallbackRes.ok || fallbackRes.status === 429) {
-        return { success: true, message: '✓ Gemini connected' };
-      }
-    }
-
-    return { success: false, message: 'Gemini connection failed' };
-  } catch (err) {
-    return { success: false, message: 'Gemini connection failed' };
-  }
-}
-
-/**
  * Authoritative AI Evaluation for IELTS Academic Writing.
  * Explicit states: 'not_started' | 'evaluating' | 'completed' | 'failed'.
  * When not completed, band remains strictly null.
+ * Runs server-side via the Cloudflare Worker (encrypted credential).
  */
-export async function evaluateWritingWithAI(apiKey, { task1Text = '', task2Text = '', prompts = {} }) {
+export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', prompts = {} }) {
   const t1Clean = (task1Text || '').trim();
   const t2Clean = (task2Text || '').trim();
 
@@ -373,18 +326,6 @@ export async function evaluateWritingWithAI(apiKey, { task1Text = '', task2Text 
     return { ...cached, isCached: true };
   }
 
-  if (!apiKey || !apiKey.trim()) {
-    return {
-      evaluationStatus: 'failed',
-      band: null,
-      overallBand: null,
-      task1Band: null,
-      task2Band: null,
-      criteria: null,
-      message: 'AI evaluation unavailable. Please configure your Google Gemini API key in Settings.',
-    };
-  }
-
   const now = Date.now();
   if (now - lastRateLimitTime < AI_CONFIG.rateLimitCooldownMs) {
     return {
@@ -401,118 +342,84 @@ export async function evaluateWritingWithAI(apiKey, { task1Text = '', task2Text 
   const t1Words = t1Clean ? t1Clean.split(/\s+/).length : 0;
   const t2Words = t2Clean ? t2Clean.split(/\s+/).length : 0;
 
-  const userPrompt = `Evaluate the candidate's IELTS Academic Writing submission:
-Task 1 Prompt: ${prompts.task1 || 'Academic visual/data report (150 words minimum)'}
-Task 1 Candidate Response (${t1Words} words):
-${t1Clean || '(No response submitted)'}
+  const res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
 
-Task 2 Prompt: ${prompts.task2 || 'Academic discursive essay (250 words minimum)'}
-Task 2 Candidate Response (${t2Words} words):
-${t2Clean || '(No response submitted)'}`;
+  if (res?.message && res.message.includes('rate limit')) {
+    lastRateLimitTime = Date.now();
+  }
 
-  const modelsToTry = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel];
+  const validated = res?.status === 'completed' ? validateWritingEvaluationJson(res.evaluation) : null;
+  const model = res?.model || 'gemini';
 
-  for (const model of modelsToTry) {
-    try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: IELTS_WRITING_SYSTEM_PROMPT_V1 }] },
-          contents: [{ parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            temperature: AI_CONFIG.temperature,
-            maxOutputTokens: AI_CONFIG.maxOutputTokens
-          }
-        })
-      });
+  if (validated) {
+    // Coverage honesty: a meaningful attempt is defined by word floors.
+    // Task 1 <20 or Task 2 <40 words = not attempted (no evidence to score).
+    // An overall band is issued ONLY when BOTH tasks have real attempts;
+    // a single task yields response-level qualitative feedback with all
+    // band numbers withheld (same rule as Speaking).
+    const t1Attempted = t1Words >= 20;
+    const t2Attempted = t2Words >= 40;
+    const bothAttempted = t1Attempted && t2Attempted;
 
-      if (res.status === 429) {
-        lastRateLimitTime = Date.now();
-        console.warn('Gemini 429 rate limit hit.');
-        break;
-      }
-
-      if (res.ok) {
-        const data = await res.json();
-        const candidateText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        const parsed = extractJsonFromText(candidateText);
-        const validated = validateWritingEvaluationJson(parsed);
-
-        if (validated) {
-          // Coverage honesty: a meaningful attempt is defined by word floors.
-          // Task 1 <20 or Task 2 <40 words = not attempted (no evidence to score).
-          // An overall band is issued ONLY when BOTH tasks have real attempts;
-          // a single task yields response-level qualitative feedback with all
-          // band numbers withheld (same rule as Speaking).
-          const t1Attempted = t1Words >= 20;
-          const t2Attempted = t2Words >= 40;
-          const bothAttempted = t1Attempted && t2Attempted;
-
-          if (bothAttempted) {
-            const finalResult = {
-              ...validated,
-              band: validated.overallBand,
-              evaluationStatus: 'completed',
-              coverage: {
-                task1: t1Attempted ? 'attempted' : 'not_attempted',
-                task2: t2Attempted ? 'attempted' : 'not_attempted',
-                complete: true,
-                statement: `Task 1: ${t1Words} words · Task 2: ${t2Words} words.`,
-              },
-              modelUsed: model,
-              task1Words: t1Words,
-              task2Words: t2Words,
-              evaluatedAt: new Date().toISOString()
-            };
-            setAiCacheItem(contentHash, finalResult);
-            return finalResult;
-          }
-
-          const stripTaskBands = (criteria) => {
-            if (!criteria) return null;
-            const out = {};
-            for (const [k, v] of Object.entries(criteria)) {
-              out[k] = {
-                assessed: true,
-                band: null,
-                feedback: [v.evidence, v.rationale, v.improvementFocus].filter(Boolean).join(' ') || '',
-              };
-            }
-            return out;
-          };
-          const missing = [!t1Attempted && 'Task 1', !t2Attempted && 'Task 2'].filter(Boolean);
-          const finalPartial = {
-            evaluationStatus: 'partial',
-            band: null,
-            overallBand: null,
-            task1Band: null,
-            task2Band: null,
-            criteria: stripTaskBands(validated.criteria),
-            overallSummary: validated.overallSummary || '',
-            task1Feedback: t1Attempted ? validated.task1Feedback : '',
-            task2Feedback: t2Attempted ? validated.task2Feedback : '',
-            strengths: validated.strengths || '',
-            areasForImprovement: validated.areasForImprovement || '',
-            coverage: {
-              task1: t1Attempted ? 'attempted' : 'not_attempted',
-              task2: t2Attempted ? 'attempted' : 'not_attempted',
-              complete: false,
-              statement: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted (${!t1Attempted ? `Task 1: ${t1Words}` : `Task 1: ${t1Words}`} words${!t1Attempted && !t2Attempted ? '; ' : ''}${!t2Attempted ? `Task 2: ${t2Words}` : ''} words). Overall band withheld — response-level feedback only.`,
-            },
-            message: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted, so no overall IELTS Writing band can be issued. Feedback covers only what you wrote.`,
-            modelUsed: model,
-            task1Words: t1Words,
-            task2Words: t2Words,
-            evaluatedAt: new Date().toISOString()
-          };
-          setAiCacheItem(contentHash, finalPartial);
-          return finalPartial;
-        }
-      }
-    } catch (e) {
-      console.warn(`Evaluation with ${model} failed`, e);
+    if (bothAttempted) {
+      const finalResult = {
+        ...validated,
+        band: validated.overallBand,
+        evaluationStatus: 'completed',
+        coverage: {
+          task1: t1Attempted ? 'attempted' : 'not_attempted',
+          task2: t2Attempted ? 'attempted' : 'not_attempted',
+          complete: true,
+          statement: `Task 1: ${t1Words} words · Task 2: ${t2Words} words.`,
+        },
+        modelUsed: model,
+        task1Words: t1Words,
+        task2Words: t2Words,
+        evaluatedAt: new Date().toISOString()
+      };
+      setAiCacheItem(contentHash, finalResult);
+      return finalResult;
     }
+
+    const stripTaskBands = (criteria) => {
+      if (!criteria) return null;
+      const out = {};
+      for (const [k, v] of Object.entries(criteria)) {
+        out[k] = {
+          assessed: true,
+          band: null,
+          feedback: [v.evidence, v.rationale, v.improvementFocus].filter(Boolean).join(' ') || '',
+        };
+      }
+      return out;
+    };
+    const missing = [!t1Attempted && 'Task 1', !t2Attempted && 'Task 2'].filter(Boolean);
+    const finalPartial = {
+      evaluationStatus: 'partial',
+      band: null,
+      overallBand: null,
+      task1Band: null,
+      task2Band: null,
+      criteria: stripTaskBands(validated.criteria),
+      overallSummary: validated.overallSummary || '',
+      task1Feedback: t1Attempted ? validated.task1Feedback : '',
+      task2Feedback: t2Attempted ? validated.task2Feedback : '',
+      strengths: validated.strengths || '',
+      areasForImprovement: validated.areasForImprovement || '',
+      coverage: {
+        task1: t1Attempted ? 'attempted' : 'not_attempted',
+        task2: t2Attempted ? 'attempted' : 'not_attempted',
+        complete: false,
+        statement: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted. Overall band withheld — response-level feedback only.`,
+      },
+      message: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted, so no overall IELTS Writing band can be issued. Feedback covers only what you wrote.`,
+      modelUsed: model,
+      task1Words: t1Words,
+      task2Words: t2Words,
+      evaluatedAt: new Date().toISOString()
+    };
+    setAiCacheItem(contentHash, finalPartial);
+    return finalPartial;
   }
 
   // Failure: do NOT invent scores. Band remains strictly null.
@@ -523,7 +430,7 @@ ${t2Clean || '(No response submitted)'}`;
     task1Band: null,
     task2Band: null,
     criteria: null,
-    message: 'AI evaluation failed to produce a valid IELTS rubric response. Check API key and network connection.',
+    message: res?.message || 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.',
   };
 }
 
@@ -531,8 +438,9 @@ ${t2Clean || '(No response submitted)'}`;
  * Authoritative AI Evaluation for IELTS Academic Speaking.
  * Explicit states: 'not_started' | 'evaluating' | 'completed' | 'failed'.
  * When not completed, band remains strictly null.
+ * Runs server-side via the Cloudflare Worker (encrypted credential).
  */
-export async function evaluateSpeakingWithAI(apiKey, { transcripts = {}, testMeta = {}, durations = {} }) {
+export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, durations = {} }) {
   const combinedSpeech = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
   const wordCount = combinedSpeech ? combinedSpeech.split(/\s+/).length : 0;
 
@@ -553,16 +461,6 @@ export async function evaluateSpeakingWithAI(apiKey, { transcripts = {}, testMet
     return { ...cached, isCached: true };
   }
 
-  if (!apiKey || !apiKey.trim()) {
-    return {
-      evaluationStatus: 'failed',
-      band: null,
-      overallBand: null,
-      criteria: null,
-      message: 'AI evaluation unavailable. Please configure your Google Gemini API key in Settings.',
-    };
-  }
-
   const now = Date.now();
   if (now - lastRateLimitTime < AI_CONFIG.rateLimitCooldownMs) {
     return {
@@ -574,55 +472,25 @@ export async function evaluateSpeakingWithAI(apiKey, { transcripts = {}, testMet
     };
   }
 
-  const userPrompt = `Candidate Responses by Part:
-${JSON.stringify(transcripts, null, 2)}
+  const res = await evaluateSpeakingServer({ transcripts, testMeta });
 
-Test Topic Context: ${testMeta?.title || 'IELTS Speaking Academic Interview'}`;
+  if (res?.message && res.message.includes('rate limit')) {
+    lastRateLimitTime = Date.now();
+  }
 
-  const modelsToTry = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel];
+  const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation) : null;
+  const model = res?.model || 'gemini';
 
-  for (const model of modelsToTry) {
-    try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: IELTS_SPEAKING_SYSTEM_PROMPT_V1 }] },
-          contents: [{ parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            temperature: AI_CONFIG.temperature,
-            maxOutputTokens: AI_CONFIG.maxOutputTokens
-          }
-        })
-      });
-
-      if (res.status === 429) {
-        lastRateLimitTime = Date.now();
-        console.warn('Gemini 429 rate limit hit.');
-        break;
-      }
-
-      if (res.ok) {
-        const data = await res.json();
-        const candidateText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        const parsed = extractJsonFromText(candidateText);
-        const validated = validateSpeakingEvaluationJson(parsed);
-
-        if (validated) {
-          const finalResult = {
-            ...validated,
-            band: validated.overallBand,
-            evaluationStatus: 'completed',
-            modelUsed: model,
-            evaluatedAt: new Date().toISOString()
-          };
-          setAiCacheItem(contentHash, finalResult);
-          return finalResult;
-        }
-      }
-    } catch (e) {
-      console.warn(`Evaluation with ${model} failed`, e);
-    }
+  if (validated) {
+    const finalResult = {
+      ...validated,
+      band: validated.overallBand,
+      evaluationStatus: 'completed',
+      modelUsed: model,
+      evaluatedAt: new Date().toISOString()
+    };
+    setAiCacheItem(contentHash, finalResult);
+    return finalResult;
   }
 
   // Failure: do NOT invent scores. Band remains strictly null.
@@ -631,6 +499,6 @@ Test Topic Context: ${testMeta?.title || 'IELTS Speaking Academic Interview'}`;
     band: null,
     overallBand: null,
     criteria: null,
-    message: 'AI evaluation failed to produce a valid IELTS rubric response. Check API key and network connection.',
+    message: res?.message || 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.',
   };
 }

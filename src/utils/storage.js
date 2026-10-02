@@ -260,53 +260,49 @@ export function saveCompletedLesson(lessonId) {
   }
 }
 
-export function saveApiKey(key) {
+// ── AI credentials (Phase 4) ────────────────────────────────────────────────
+// Raw API keys are NEVER stored in localStorage/sessionStorage/env. They are
+// sent once to the Worker (PUT /api/credentials/gemini) and stored encrypted.
+// These helpers only handle legacy plaintext keys for one-time migration.
+
+const LEGACY_GEMINI_KEY = `${STORAGE_KEY_PREFIX}gemini_key`;
+const LEGACY_GROQ_KEY = `${STORAGE_KEY_PREFIX}groq_key`;
+
+export function getLegacyLocalKeys() {
   try {
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}gemini_key`, (key || '').trim());
-  } catch (e) {
-    console.warn('Failed to save API key', e);
+    return {
+      gemini: localStorage.getItem(LEGACY_GEMINI_KEY) || '',
+      groq: localStorage.getItem(LEGACY_GROQ_KEY) || '',
+    };
+  } catch {
+    return { gemini: '', groq: '' };
   }
 }
 
-export function getApiKey() {
+export function removeLegacyLocalKeys() {
   try {
-    if (typeof window !== 'undefined') {
-      const urlKey = new URLSearchParams(window.location.search).get('aiKey');
-      if (urlKey) return urlKey.trim();
-    }
-    const saved = localStorage.getItem(`${STORAGE_KEY_PREFIX}gemini_key`);
-    if (saved && saved.trim()) return saved.trim();
-    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) {
-      return import.meta.env.VITE_GEMINI_API_KEY.trim();
-    }
-    return '';
-  } catch (e) {
-    return '';
-  }
+    localStorage.removeItem(LEGACY_GEMINI_KEY);
+    localStorage.removeItem(LEGACY_GROQ_KEY);
+  } catch { /* best-effort */ }
 }
 
-export function saveGroqApiKey(key) {
-  try {
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}groq_key`, (key || '').trim());
-  } catch (e) {
-    console.warn('Failed to save Groq API key', e);
-  }
+// Cached "is AI configured" probe backed by the Worker credential status.
+let credentialStatusCache = null;
+
+export function invalidateCredentialStatusCache() {
+  credentialStatusCache = null;
 }
 
-export function getGroqApiKey() {
+export async function isAiConfigured() {
+  if (credentialStatusCache !== null) {
+    return Boolean(credentialStatusCache.configured);
+  }
   try {
-    if (typeof window !== 'undefined') {
-      const urlKey = new URLSearchParams(window.location.search).get('groqKey');
-      if (urlKey) return urlKey.trim();
-    }
-    const saved = localStorage.getItem(`${STORAGE_KEY_PREFIX}groq_key`);
-    if (saved && saved.trim()) return saved.trim();
-    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GROQ_API_KEY) {
-      return import.meta.env.VITE_GROQ_API_KEY.trim();
-    }
-    return '';
-  } catch (e) {
-    return '';
+    const { fetchCredentialStatus } = await import('./api.js');
+    credentialStatusCache = await fetchCredentialStatus('gemini');
+    return Boolean(credentialStatusCache?.configured);
+  } catch {
+    return false;
   }
 }
 
@@ -359,18 +355,17 @@ export function saveLastWatchedLesson(lessonId) {
   }
 }
 
-// ── Standalone Global App Preferences (Font Scale, Theme & API Key) ────────
+// ── Standalone Global App Preferences (Font Scale & Theme) ─────────────────
 export function getAppSettings() {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}app_settings`);
     const parsed = raw ? JSON.parse(raw) : {};
     return {
       theme: parsed.theme || 'light',
-      fontSize: parsed.fontSize || '100%',
-      apiKey: getApiKey()
+      fontSize: parsed.fontSize || '100%'
     };
   } catch (e) {
-    return { theme: 'light', fontSize: '100%', apiKey: getApiKey() };
+    return { theme: 'light', fontSize: '100%' };
   }
 }
 
@@ -382,9 +377,6 @@ export function saveAppSettings(settings) {
       theme: updated.theme,
       fontSize: updated.fontSize
     }));
-    if (settings.apiKey !== undefined) {
-      saveApiKey(settings.apiKey);
-    }
     applyAppSettings(updated);
     return updated;
   } catch (e) {

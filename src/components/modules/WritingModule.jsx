@@ -6,7 +6,7 @@ import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import { evaluateWritingWithAI } from '../../utils/geminiEvaluator';
-import { getApiKey, createAttemptId, getTargetBand } from '../../utils/storage';
+import { createAttemptId, getTargetBand } from '../../utils/storage';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 const wordCount = (text) => text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
@@ -60,7 +60,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
     if (isMockMode) {
       // In Full Mock Mode: evaluate responses and transition directly to Speaking
-      const evalResult = await evaluateWritingWithAI(getApiKey(), {
+      const evalResult = await evaluateWritingWithAI({
         task1Text: t1,
         task2Text: t2,
         prompts: {
@@ -87,7 +87,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     setTimeout(() => setProcessingStep(2), 1200);
     setTimeout(() => setProcessingStep(3), 1800);
 
-    const evalResult = await evaluateWritingWithAI(getApiKey(), {
+    const evalResult = await evaluateWritingWithAI({
       task1Text: t1,
       task2Text: t2,
       prompts: {

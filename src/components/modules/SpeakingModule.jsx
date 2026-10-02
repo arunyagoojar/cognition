@@ -6,7 +6,7 @@ import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
 import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob } from '../../utils/audio/audioStore';
-import { getApiKey, createAttemptId, getTargetBand } from '../../utils/storage';
+import { createAttemptId, getTargetBand } from '../../utils/storage';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 

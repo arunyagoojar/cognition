@@ -201,8 +201,10 @@ async function runTests() {
   const afterSummary = derivePerformanceSummary();
   assert(afterSummary.hasScores === false, 'Performance store has no scores after reset');
   assert(afterSummary.overallBand === null, 'Overall band is null after reset');
-  assert(localStorage.getItem('omniprep_gemini_key') === 'test-gemini-key', 'Gemini API key preserved after reset');
-  assert(localStorage.getItem('omniprep_groq_key') === 'test-groq-key', 'Groq API key preserved after reset');
+  // Phase 4 security contract: plaintext API keys must NOT survive a reset —
+  // credentials live encrypted server-side, never in localStorage.
+  assert(localStorage.getItem('omniprep_gemini_key') === null, 'Plaintext Gemini key removed by reset');
+  assert(localStorage.getItem('omniprep_groq_key') === null, 'Plaintext Groq key removed by reset');
   assert(localStorage.getItem('omniprep_target_band') === '8.5', 'Target band preserved after reset');
   assert(localStorage.getItem('omniprep_theme') === 'dark', 'Theme preserved after reset');
 

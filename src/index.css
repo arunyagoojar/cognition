@@ -24,6 +24,9 @@
   --border-dark:   1.5px solid #151313;
   --border-subtle: 1px solid rgba(21, 19, 19, 0.12);
   --border-color:  #151313;
+  --border:        1px solid rgba(21, 19, 19, 0.14);
+  --coral:         #FF5734;
+  --surface-alt:   #F0EEE9;
 
   /* Geometry & Radii */
   --r-container: 32px;
@@ -87,6 +90,9 @@
   --border-dark:   1.5px solid #F7F7F5;
   --border-subtle: 1px solid rgba(247, 247, 245, 0.14);
   --border-color:  #F7F7F5;
+  --border:        1px solid rgba(247, 247, 245, 0.14);
+  --coral:         #FF6B4A;
+  --surface-alt:   #262222;
   --c-pure-white:  #201D1D;
   --c-peach:       #332420;
   --c-speaker:     #5EC8B8;
@@ -1386,7 +1392,7 @@ input, textarea, select {
 }
 
 .modal-content {
-  background: var(--c-pure-white);
+  background: var(--bg-card);
   border: var(--border-dark);
   border-radius: var(--r-card);
   padding: 32px;
@@ -3779,6 +3785,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   height: auto !important;
 }
 
+/* Every structural layer of the Clerk modal (card box, footer wrapper,
+   internal sections) sits on the app's card surface — Clerk's own defaults
+   paint some of these white regardless of theme, which left a light strip
+   at the bottom of the modal in dark mode. */
 .cl-rootBox,
 .cl-signIn-root,
 .cl-signUp-root,
@@ -3793,6 +3803,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   box-sizing: border-box !important;
   min-height: 0 !important;
   height: auto !important;
+  background: var(--bg-card) !important;
+}
+
+/* Clerk's development-mode overlay paints a fixed white strip over the modal
+   footer (dev instances only — it does not exist in production). Hide it. */
+[data-clerk-dev-mode-overlay] {
+  display: none !important;
+}
+
+.cl-rootBox,
+.cl-signIn-root,
+.cl-signUp-root,
+.cognition-auth-cardbox,
+.cl-cardBox {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+  min-height: 0 !important;
+  height: auto !important;
+  background: var(--bg-card) !important;
 }
 
 .cognition-auth-card,
@@ -3804,7 +3838,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: none !important;
   border: none !important;
   border-radius: 28px !important;
-  padding: 24px 26px 14px 26px !important;
+  padding: 26px 26px 20px 26px !important;
   box-sizing: border-box !important;
   font-family: var(--font-family) !important;
   margin: 0 !important;
@@ -4108,7 +4142,7 @@ input.cl-input::placeholder {
 .cl-footer,
 .cl-card .cl-footer,
 .cognition-auth-card .cognition-auth-footer {
-  margin-top: 14px !important;
+  margin-top: 18px !important;
   margin-bottom: 0 !important;
   padding: 0 !important;
   border-top: none !important;
@@ -4117,11 +4151,15 @@ input.cl-input::placeholder {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: 4px !important;
+  gap: 10px !important;
   min-height: 0 !important;
   height: auto !important;
   flex: 0 0 auto !important;
   flex-grow: 0 !important;
+  /* Clerk stacks near-white gradient background-images here, which rendered
+     as a solid light strip in dark mode — keep it on the card surface. */
+  background: transparent !important;
+  background-image: none !important;
 }
 .cognition-auth-footer > *,
 .cl-footer > * {
@@ -4177,7 +4215,7 @@ input.cl-input::placeholder {
 p.cl-internal-1v2te0e {
   font-size: 11px !important;
   opacity: 0.65 !important;
-  margin: 3px 0 0 0 !important;
+  margin: 8px 0 0 0 !important;
   padding: 0 !important;
   text-align: center !important;
   line-height: 1.2 !important;

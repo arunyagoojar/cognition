@@ -2,15 +2,14 @@ import React from 'react';
 import { resolveMediaUrl } from '../../utils/media.js';
 
 export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }) {
-  if (!htmlContent) return null;
-
-  // We only parse once or when htmlContent changes
+  // Hooks must run unconditionally on every render (rules-of-hooks).
   const doc = React.useMemo(() => {
-    if (typeof window === 'undefined') return null;
+    if (!htmlContent || typeof window === 'undefined') return null;
     const parser = new DOMParser();
     return parser.parseFromString(htmlContent, 'text/html');
   }, [htmlContent]);
 
+  if (!htmlContent) return null;
   if (!doc) return null;
 
   let inputIndex = 1;

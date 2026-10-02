@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Icon from '../common/Icon';
-import { getApiKey, saveApiKey, getGroqApiKey, saveGroqApiKey } from '../../utils/storage';
-import { AIProvider } from '../../utils/ai/aiProvider';
+import { getLegacyLocalKeys, removeLegacyLocalKeys, invalidateCredentialStatusCache } from '../../utils/storage';
+import { saveCredential, fetchCredentialStatus, deleteCredential, hasApiAuth } from '../../utils/api';
 
 export default function SettingsModal({
   isOpen,
@@ -13,82 +13,103 @@ export default function SettingsModal({
   onChangeTargetBand,
   onResetScores
 }) {
-  const [apiKeyInput, setApiKeyInput] = useState('');
-  const [groqKeyInput, setGroqKeyInput] = useState('');
-  const [showKey, setShowKey] = useState(false);
-  const [showGroqKey, setShowGroqKey] = useState(false);
+  const [credentialStatus, setCredentialStatus] = useState(null); // { configured, maskedSuffix }
+  const [keyInput, setKeyInput] = useState('');
+  const [isReplacing, setIsReplacing] = useState(false); // reveal input to replace a stored key
   const [isValidating, setIsValidating] = useState(false);
-  const [isGroqValidating, setIsGroqValidating] = useState(false);
-  const [validationStatus, setValidationStatus] = useState(null); // { success: boolean, message: string }
-  const [groqValidationStatus, setGroqValidationStatus] = useState(null);
+  const [validationStatus, setValidationStatus] = useState(null); // { success, message }
+  const [legacyKeys, setLegacyKeys] = useState(null); // { gemini, groq } | null
   const [resetMessage, setResetMessage] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      const stored = getApiKey();
-      setApiKeyInput(stored || '');
-      const storedGroq = getGroqApiKey();
-      setGroqKeyInput(storedGroq || '');
-      setValidationStatus(null);
-      setGroqValidationStatus(null);
-      setResetMessage(false);
-    }
+    if (!isOpen) return;
+    setValidationStatus(null);
+    setKeyInput('');
+    setIsReplacing(false);
+    setResetMessage(false);
+    setLegacyKeys(() => {
+      const legacy = getLegacyLocalKeys();
+      return (legacy.gemini || legacy.groq) ? legacy : null;
+    });
+    let alive = true;
+    fetchCredentialStatus('gemini').then((status) => {
+      if (alive) setCredentialStatus(status);
+    }).catch(() => {
+      if (alive) setCredentialStatus({ configured: false });
+    });
+    return () => { alive = false; };
   }, [isOpen]);
 
   const handleSaveKey = async () => {
-    const key = apiKeyInput.trim();
+    const key = keyInput.trim();
     if (!key) {
-      saveApiKey('');
-      setValidationStatus({ success: false, message: 'Gemini API key cleared' });
+      setValidationStatus({ success: false, message: 'Paste your Gemini API key first.' });
       return;
     }
 
     setIsValidating(true);
     setValidationStatus(null);
 
-    const check = await AIProvider.healthCheck('gemini', key);
+    const res = await saveCredential('gemini', key);
     setIsValidating(false);
+    // The raw key is never kept in React state beyond this submit.
+    setKeyInput('');
+    setIsReplacing(false);
+    invalidateCredentialStatusCache();
 
-    if (check.success) {
-      saveApiKey(key);
-      setValidationStatus({ success: true, message: '✓ Gemini connected' });
+    if (res.ok) {
+      setCredentialStatus({ configured: true, maskedSuffix: res.maskedSuffix });
+      setValidationStatus({ success: true, message: '✓ Gemini key saved — encrypted on the server' });
+      // A locally stored duplicate would now be redundant.
+      setLegacyKeys((prev) => {
+        if (prev?.gemini || prev?.groq) {
+          removeLegacyLocalKeys();
+        }
+        return null;
+      });
     } else {
-      setValidationStatus({ success: false, message: check.message || 'Gemini connection failed' });
+      setValidationStatus({ success: false, message: res.message || 'Could not save the key. Please try again.' });
     }
   };
 
-  const handleSaveGroqKey = async () => {
-    const key = groqKeyInput.trim();
-    if (!key) {
-      saveGroqApiKey('');
-      setGroqValidationStatus({ success: false, message: 'Groq API key cleared' });
-      return;
-    }
-
-    setIsGroqValidating(true);
-    setGroqValidationStatus(null);
-
-    const check = await AIProvider.healthCheck('groq', key);
-    setIsGroqValidating(false);
-
-    if (check.success) {
-      saveGroqApiKey(key);
-      setGroqValidationStatus({ success: true, message: '✓ Groq connected' });
+  const handleDeleteKey = async () => {
+    setIsValidating(true);
+    const res = await deleteCredential('gemini');
+    setIsValidating(false);
+    invalidateCredentialStatusCache();
+    if (res.ok) {
+      setCredentialStatus({ configured: false });
+      setValidationStatus({ success: true, message: 'Gemini key removed from the server.' });
     } else {
-      setGroqValidationStatus({ success: false, message: check.message || 'Groq connection failed' });
+      setValidationStatus({ success: false, message: 'Could not remove the key. Please try again.' });
     }
   };
 
-  const handleClearKey = () => {
-    saveApiKey('');
-    setApiKeyInput('');
-    setValidationStatus({ success: false, message: 'Gemini key cleared' });
+  const handleMigrateLegacy = async () => {
+    setIsValidating(true);
+    const legacy = legacyKeys;
+    if (legacy?.gemini) {
+      const res = await saveCredential('gemini', legacy.gemini);
+      if (res.ok) {
+        setCredentialStatus({ configured: true, maskedSuffix: res.maskedSuffix });
+        setValidationStatus({ success: true, message: '✓ Key moved to encrypted server storage' });
+      } else {
+        setValidationStatus({
+          success: false,
+          message: `${res.message || 'Migration failed.'} The local plaintext copy was removed anyway.`,
+        });
+      }
+    }
+    removeLegacyLocalKeys();
+    invalidateCredentialStatusCache();
+    setLegacyKeys(null);
+    setIsValidating(false);
   };
 
-  const handleClearGroqKey = () => {
-    saveGroqApiKey('');
-    setGroqKeyInput('');
-    setGroqValidationStatus({ success: false, message: 'Groq key cleared' });
+  const handleDiscardLegacy = () => {
+    removeLegacyLocalKeys();
+    setLegacyKeys(null);
+    setValidationStatus({ success: true, message: 'Local plaintext key removed.' });
   };
 
   const handleResetScoresClick = () => {
@@ -100,6 +121,8 @@ export default function SettingsModal({
       setResetMessage(false);
     }, 3000);
   };
+
+  const signedIn = hasApiAuth();
 
   return (
     <AnimatePresence>
@@ -195,12 +218,14 @@ export default function SettingsModal({
               </select>
             </div>
 
-            {/* 3. AI Configuration (Gemini API Key) */}
+            {/* 3. AI Configuration (Gemini — encrypted server-side credential) */}
             <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 8 }}>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>AI Configuration</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Gemini API key for Writing & Speaking evaluation</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
+                    Gemini key for Writing &amp; Speaking evaluation — encrypted (AES-256-GCM) on the server
+                  </div>
                   <a
                     href="https://aistudio.google.com/app/apikey"
                     target="_blank"
@@ -221,84 +246,107 @@ export default function SettingsModal({
                     Get free Gemini API key ↗
                   </a>
                 </div>
-                {getApiKey() && !validationStatus && (
+                {credentialStatus?.configured && (
                   <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
                     <Icon name="check" size={12} /> Configured
                   </span>
                 )}
               </div>
 
-              <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-                <div style={{ position: 'relative', flex: 1 }}>
+              {!signedIn ? (
+                <div style={{
+                  marginTop: 8, padding: '10px 12px', fontSize: 12, fontWeight: 600,
+                  color: 'var(--text-secondary)', background: 'var(--surface-alt)',
+                  border: '1px solid var(--border-subtle)', borderRadius: 'var(--r-btn)'
+                }}>
+                  Sign in to configure your personal AI evaluation key.
+                </div>
+              ) : credentialStatus?.configured && !isReplacing ? (
+                /* Stored state — never reveals the key itself */
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+                  <span style={{
+                    flex: 1, minWidth: 180, padding: '9px 12px', fontSize: 13, fontWeight: 600,
+                    color: 'var(--text-primary)', background: 'var(--surface-sunken)',
+                    border: '1px solid var(--border)', borderRadius: 'var(--r-btn)'
+                  }}>
+                    Gemini API · {credentialStatus.maskedSuffix || '••••'}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => { setIsReplacing(true); setValidationStatus(null); }}
+                    style={{
+                      padding: '8px 14px', fontSize: 12, fontWeight: 600,
+                      color: 'var(--text-primary)', background: 'var(--surface-alt)',
+                      borderRadius: 'var(--r-btn)', border: '1px solid var(--border)', cursor: 'pointer'
+                    }}
+                  >
+                    Replace
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleDeleteKey}
+                    disabled={isValidating}
+                    style={{
+                      padding: '8px 14px', fontSize: 12, fontWeight: 600,
+                      color: '#EF4444', background: 'rgba(239, 68, 68, 0.08)',
+                      borderRadius: 'var(--r-btn)', border: '1px solid rgba(239, 68, 68, 0.25)', cursor: 'pointer'
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              ) : (
+                /* Entry state (new key or replacement) */
+                <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
                   <input
-                    type={showKey ? 'text' : 'password'}
-                    value={apiKeyInput}
-                    onChange={(e) => setApiKeyInput(e.target.value)}
-                    placeholder="Enter Google Gemini API key..."
+                    type="password"
+                    value={keyInput}
+                    onChange={(e) => setKeyInput(e.target.value)}
+                    placeholder="Paste Google Gemini API key…"
                     autoComplete="off"
                     spellCheck="false"
+                    onKeyDown={(e) => { if (e.key === 'Enter') handleSaveKey(); }}
                     style={{
-                      width: '100%',
-                      padding: '9px 40px 9px 12px',
+                      flex: 1,
+                      minWidth: 0,
+                      padding: '9px 12px',
                       fontSize: 13,
                       background: 'var(--surface-sunken)',
                       border: '1px solid var(--border)',
                       borderRadius: 'var(--r-btn)',
-                      color: 'var(--text-primary)',
-                      fontFamily: showKey ? 'monospace' : 'inherit'
+                      color: 'var(--text-primary)'
                     }}
                   />
                   <button
                     type="button"
-                    onClick={() => setShowKey(!showKey)}
-                    title={showKey ? 'Hide key' : 'Show key'}
-                    style={{
-                      position: 'absolute',
-                      right: 8,
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'none',
-                      border: 'none',
-                      color: 'var(--text-muted)',
-                      cursor: 'pointer',
-                      padding: 4,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}
+                    onClick={handleSaveKey}
+                    disabled={isValidating}
+                    className="btn-coral-pill-physical"
+                    style={{ padding: '8px 16px', fontSize: 12, minWidth: 90 }}
                   >
-                    <Icon name={showKey ? 'eyeOff' : 'eye'} size={14} />
+                    {isValidating ? 'Saving…' : 'Save Key'}
                   </button>
+                  {isReplacing && (
+                    <button
+                      type="button"
+                      onClick={() => { setIsReplacing(false); setKeyInput(''); }}
+                      style={{
+                        padding: '8px 12px', fontSize: 12, fontWeight: 600,
+                        color: 'var(--text-secondary)', background: 'var(--surface-alt)',
+                        borderRadius: 'var(--r-btn)', border: '1px solid var(--border)', cursor: 'pointer'
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  )}
                 </div>
+              )}
 
-                <button
-                  type="button"
-                  onClick={handleSaveKey}
-                  disabled={isValidating}
-                  className="btn-coral-pill-physical"
-                  style={{ padding: '8px 16px', fontSize: 12, minWidth: 90 }}
-                >
-                  {isValidating ? 'Checking...' : 'Save Key'}
-                </button>
-
-                {apiKeyInput && (
-                  <button
-                    type="button"
-                    onClick={handleClearKey}
-                    style={{
-                      padding: '8px 12px',
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: 'var(--text-secondary)',
-                      background: 'var(--surface-alt)',
-                      borderRadius: 'var(--r-btn)',
-                      border: '1px solid var(--border)',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Clear
-                  </button>
-                )}
-              </div>
+              {isReplacing && credentialStatus?.configured && (
+                <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-secondary)' }}>
+                  The stored key stays active until a replacement is saved.
+                </div>
+              )}
 
               {validationStatus && (
                 <div style={{
@@ -314,125 +362,42 @@ export default function SettingsModal({
                   {validationStatus.message}
                 </div>
               )}
-            </div>
 
-            {/* 3b. AI Fallback Configuration (Groq API Key) */}
-            <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 8 }}>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>Groq Fallback & Whisper STT</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Independent fallback provider (Llama 3.3 / Qwen / Whisper)</div>
-                  <a
-                    href="https://console.groq.com/keys"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: 'var(--c-coral, #D97757)',
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 4,
-                      marginTop: 4
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.textDecoration = 'underline'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.textDecoration = 'none'; }}
-                  >
-                    Get free Groq API key ↗
-                  </a>
-                </div>
-                {getGroqApiKey() && !groqValidationStatus && (
-                  <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
-                    <Icon name="check" size={12} /> Configured
-                  </span>
-                )}
-              </div>
-
-              <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-                <div style={{ position: 'relative', flex: 1 }}>
-                  <input
-                    type={showGroqKey ? 'text' : 'password'}
-                    value={groqKeyInput}
-                    onChange={(e) => setGroqKeyInput(e.target.value)}
-                    placeholder="Enter Groq API key (gsk_...)"
-                    autoComplete="off"
-                    spellCheck="false"
-                    style={{
-                      width: '100%',
-                      padding: '9px 40px 9px 12px',
-                      fontSize: 13,
-                      background: 'var(--surface-sunken)',
-                      border: '1px solid var(--border)',
-                      borderRadius: 'var(--r-btn)',
-                      color: 'var(--text-primary)',
-                      fontFamily: showGroqKey ? 'monospace' : 'inherit'
-                    }}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowGroqKey(!showGroqKey)}
-                    title={showGroqKey ? 'Hide key' : 'Show key'}
-                    style={{
-                      position: 'absolute',
-                      right: 8,
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'none',
-                      border: 'none',
-                      color: 'var(--text-muted)',
-                      cursor: 'pointer',
-                      padding: 4,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}
-                  >
-                    <Icon name={showGroqKey ? 'eyeOff' : 'eye'} size={14} />
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={handleSaveGroqKey}
-                  disabled={isGroqValidating}
-                  className="btn-coral-pill-physical"
-                  style={{ padding: '8px 16px', fontSize: 12, minWidth: 90 }}
-                >
-                  {isGroqValidating ? 'Checking...' : 'Save Key'}
-                </button>
-
-                {groqKeyInput && (
-                  <button
-                    type="button"
-                    onClick={handleClearGroqKey}
-                    style={{
-                      padding: '8px 12px',
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: 'var(--text-secondary)',
-                      background: 'var(--surface-alt)',
-                      borderRadius: 'var(--r-btn)',
-                      border: '1px solid var(--border)',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Clear
-                  </button>
-                )}
-              </div>
-
-              {groqValidationStatus && (
+              {/* Legacy plaintext key migration (one-time) */}
+              {legacyKeys && (
                 <div style={{
-                  marginTop: 8,
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: groqValidationStatus.success ? 'var(--success-icon)' : 'var(--coral)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6
+                  marginTop: 10, padding: '10px 12px', fontSize: 12,
+                  color: 'var(--text-primary)', background: 'var(--surface-alt)',
+                  border: '1px solid var(--border)', borderRadius: 'var(--r-btn)'
                 }}>
-                  <Icon name={groqValidationStatus.success ? 'check' : 'alertCircle'} size={14} />
-                  {groqValidationStatus.message}
+                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                    A plaintext API key was found in this browser's local storage.
+                  </div>
+                  <div style={{ color: 'var(--text-secondary)', marginBottom: 8 }}>
+                    Move it to encrypted server storage and remove the local copy.
+                  </div>
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    <button
+                      type="button"
+                      onClick={handleMigrateLegacy}
+                      disabled={isValidating}
+                      className="btn-coral-pill-physical"
+                      style={{ padding: '6px 14px', fontSize: 12 }}
+                    >
+                      Secure &amp; remove
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleDiscardLegacy}
+                      style={{
+                        padding: '6px 14px', fontSize: 12, fontWeight: 600,
+                        color: 'var(--text-secondary)', background: 'var(--surface-alt)',
+                        borderRadius: 'var(--r-btn)', border: '1px solid var(--border)', cursor: 'pointer'
+                      }}
+                    >
+                      Remove without saving
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
