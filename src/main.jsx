@@ -19,11 +19,14 @@ function Root() {
         variables: {
           fontFamily: "'Kodchasan', -apple-system, sans-serif",
           borderRadius: '18px',
-          colorPrimary: '#FF5734',
-          colorBackground: '#FFFFFF',
-          colorText: '#151313',
-          colorInputBackground: '#F7F7F5',
-          colorInputText: '#151313',
+          colorPrimary: 'var(--c-coral)',
+          colorBackground: 'var(--bg-card)',
+          colorText: 'var(--text-primary)',
+          colorInputBackground: 'var(--surface-interactive)',
+          colorInputText: 'var(--text-primary)',
+          colorBorder: 'var(--border-subtle)',
+          colorDivider: 'var(--border-subtle)',
+          colorAlphaShade: 'var(--text-secondary)',
         },
       }}
     >
