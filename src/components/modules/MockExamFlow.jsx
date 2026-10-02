@@ -436,7 +436,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
               </div>
               <div>
                 {item.status === 'completed' && item.band !== null && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: '#10B981' }}>✓ Evaluated</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--success-icon)' }}>✓ Evaluated</span>
                 )}
                 {item.status === 'not_attempted' && (
                   <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-muted)' }}>Unattempted</span>
@@ -454,7 +454,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginBottom: 44 }}>
             {/* Strengths */}
             <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: '#10B981', marginBottom: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--success-icon)', marginBottom: 16 }}>
                 <Icon name="check" size={16} /> Strengths
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>

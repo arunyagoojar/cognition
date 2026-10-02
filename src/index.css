@@ -51,6 +51,7 @@
 
   /* Status */
   --success: #10B981;
+  --success-icon: #059669;
   --warning: #F59E0B;
   --error:   #E84624;
 
@@ -94,6 +95,7 @@
   --c-lavender:    #C9A8F7;
   --c-yellow:      #FDD35E;
   --success: #34D399;
+  --success-icon: #34D399;
   --warning: #FBBF24;
   --error:   #FF6B4A;
 }
@@ -1750,7 +1752,7 @@ input, textarea, select {
 
 .hub-check-indicator {
   font-size: 12px;
-  color: #10B981;
+  color: var(--success-icon);
   font-weight: 800;
 }
 
@@ -2983,7 +2985,7 @@ input, textarea, select {
 
 .exam-section-check-dot {
   font-size: 11px;
-  color: #10B981;
+  color: var(--success-icon);
   font-weight: 800;
 }
 
@@ -3319,4 +3321,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .speaking-notes-area {
   background: var(--surface-interactive);
   color: var(--text-primary);
+}
+
+/* ─── Dark mode: check icons + success states visible on dark surfaces ── */
+[data-theme="dark"] .exam-section-check-dot {
+  color: #34D399;
+}
+[data-theme="dark"] .exam-nav-section-pill {
+  color: var(--text-primary);
+}
+[data-theme="dark"] .exam-nav-section-pill.completed {
+  color: #34D399;
+}
+[data-theme="dark"] svg[stroke="currentColor"] {
+  color: inherit;
+}
+/* success green on dark surfaces: lighter for contrast */
+[data-theme="dark"] .exam-doc,
+[data-theme="dark"] [style*="background: var(--bg-card)"] {
+  --success-icon: #34D399;
 }

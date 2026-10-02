@@ -156,7 +156,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
                   height: 20,
                   borderRadius: '50%',
                   background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
-                  color: step.active ? '#10B981' : 'transparent',
+                  color: step.active ? 'var(--success-icon)' : 'transparent',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -266,7 +266,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         {/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
           <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: '#10B981', marginBottom: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--success-icon)', marginBottom: 16 }}>
               <Icon name="check" size={16} /> What Went Well
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -335,7 +335,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
                       width: 28,
                       height: 28,
                       borderRadius: 8,
-                      background: isCorrect ? '#10B981' : '#FF5734',
+                      background: isCorrect ? 'var(--success-icon)' : '#FF5734',
                       color: isCorrect ? '#fff' : '#151313',
                       display: 'flex',
                       alignItems: 'center',

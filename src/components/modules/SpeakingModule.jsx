@@ -341,7 +341,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, textAlign: 'left', maxWidth: 380, margin: '0 auto' }}>
           {Object.entries(STAGE_LABELS).map(([k, label]) => {
             const st = evalStages[k] || 'queued';
-            const color = st === 'done' ? '#10B981' : st === 'working' || st === 'analysing' ? 'var(--text-primary)' : 'var(--text-secondary)';
+            const color = st === 'done' ? 'var(--success-icon)' : st === 'working' || st === 'analysing' ? 'var(--text-primary)' : 'var(--text-secondary)';
             return (
               <div key={k} style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -544,7 +544,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 padding: '8px 16px', borderRadius: 10, fontSize: 13, fontWeight: 800, cursor: 'pointer',
                 border: active ? '2px solid #151313' : '1.5px solid #151313',
                 background: active ? '#151313' : done ? 'rgba(16,185,129,0.14)' : 'var(--bg-card)',
-                color: active ? '#fff' : done ? '#10B981' : 'var(--text-primary)',
+                color: active ? '#fff' : done ? 'var(--success-icon)' : 'var(--text-primary)',
               }}>
               {done && !active ? '✓ ' : ''}Part {p.partNumber}
             </button>
@@ -648,7 +648,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
           {(recState === REC_STATE.SAVED || recState === REC_STATE.TRANSCRIBING || recState === REC_STATE.COMPLETED) && currentRecording && (
             <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '20px 26px', boxShadow: '0 3px 0 #151313', display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13.5, fontWeight: 700, color: '#10B981' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13.5, fontWeight: 700, color: 'var(--success-icon)' }}>
                 <Icon name="check" size={16} /> Response saved · {FMT(currentRecording.duration)} recorded
               </div>
               <div style={{ display: 'flex', gap: 10 }}>
@@ -685,7 +685,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                         width: 38, height: 38, borderRadius: 10, fontSize: 13.5, fontWeight: 800, cursor: 'pointer',
                         border: isSelected ? '2px solid #151313' : '1.5px solid #151313',
                         background: isSelected ? '#151313' : hasRec ? 'rgba(16,185,129,0.14)' : 'var(--bg-card)',
-                        color: isSelected ? '#fff' : hasRec ? '#10B981' : 'var(--text-primary)',
+                        color: isSelected ? '#fff' : hasRec ? 'var(--success-icon)' : 'var(--text-primary)',
                       }}>
                       {hasRec && !isSelected ? '✓' : idx + 1}
                     </button>

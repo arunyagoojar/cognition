@@ -204,7 +204,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
 
           <div className="perf-trend-text">
             {hasHistory ? (
-              <span style={{ color: Number(bandDelta) >= 0 ? '#10B981' : 'var(--c-coral)', fontWeight: 700 }}>
+              <span style={{ color: Number(bandDelta) >= 0 ? 'var(--success-icon)' : 'var(--c-coral)', fontWeight: 700 }}>
                 {Number(bandDelta) >= 0 ? `▲ +${bandDelta}` : `▼ ${bandDelta}`} Band from previous simulation
               </span>
             ) : hasAnyScore ? (

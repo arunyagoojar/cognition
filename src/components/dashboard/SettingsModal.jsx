@@ -222,7 +222,7 @@ export default function SettingsModal({
                   </a>
                 </div>
                 {getApiKey() && !validationStatus && (
-                  <span style={{ fontSize: 11, fontWeight: 700, color: '#10B981', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
                     <Icon name="check" size={12} /> Configured
                   </span>
                 )}
@@ -305,7 +305,7 @@ export default function SettingsModal({
                   marginTop: 8,
                   fontSize: 12,
                   fontWeight: 600,
-                  color: validationStatus.success ? '#10B981' : 'var(--coral)',
+                  color: validationStatus.success ? 'var(--success-icon)' : 'var(--coral)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
@@ -343,7 +343,7 @@ export default function SettingsModal({
                   </a>
                 </div>
                 {getGroqApiKey() && !groqValidationStatus && (
-                  <span style={{ fontSize: 11, fontWeight: 700, color: '#10B981', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
                     <Icon name="check" size={12} /> Configured
                   </span>
                 )}
@@ -426,7 +426,7 @@ export default function SettingsModal({
                   marginTop: 8,
                   fontSize: 12,
                   fontWeight: 600,
-                  color: groqValidationStatus.success ? '#10B981' : 'var(--coral)',
+                  color: groqValidationStatus.success ? 'var(--success-icon)' : 'var(--coral)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
@@ -450,7 +450,7 @@ export default function SettingsModal({
                     initial={{ opacity: 0, x: 6 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    style={{ fontSize: 12, fontWeight: 700, color: '#10B981' }}
+                    style={{ fontSize: 12, fontWeight: 700, color: 'var(--success-icon)' }}
                   >
                     ✓ Performance data reset
                   </motion.span>
