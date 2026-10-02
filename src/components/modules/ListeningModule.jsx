@@ -1,473 +1,665 @@
-import React, { useState } from 'react';
-import AudioPlayer from '../common/AudioPlayer';
-import QuestionPalette from '../common/QuestionPalette';
-import ResultsPage from '../common/ResultsPage';
-import ExitConfirmationModal from '../common/ExitConfirmationModal';
-import ExitScreen from '../common/ExitScreen';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Icon } from '../common/Icon';
+import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
 import { calculateListeningBand, isAnswerCorrect } from '../../utils/bandCalculator';
-import { saveSkillScore } from '../../utils/storage';
-import { FileText, CheckCircle2, RotateCcw, ArrowLeft, ArrowRight, Send } from 'lucide-react';
+import { recordAttemptedQuestionSet } from '../../utils/storage';
+import ExamStartScreen from './ExamStartScreen';
+import ExamBottomNav from './ExamBottomNav';
+import HtmlContentRenderer from '../common/HtmlContentRenderer';
+import QuestionRenderer from '../common/QuestionRenderer';
 
-export default function ListeningModule({ testData, onComplete, isExamMode = false, onBackToDashboard }) {
-  const listening = testData.listening;
+const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+
+export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+  const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
+  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
+  const [partIdx, setPartIdx] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [flagged, setFlagged] = useState({});
-  const [activePart, setActivePart] = useState(1);
-  const [currentQuestion, setCurrentQuestion] = useState(1);
-  const [showAudioscript, setShowAudioscript] = useState(false);
-  const [scoreResult, setScoreResult] = useState(null);
-  const [isReviewed, setIsReviewed] = useState(false);
-  const [isExitModalOpen, setIsExitModalOpen] = useState(false);
-  const [isExited, setIsExited] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(32 * 60);
+  const [result, setResult] = useState(null);
+  const [processingStep, setProcessingStep] = useState(0);
 
-  const hasProgress = Object.keys(answers).length > 0 && !isReviewed;
+  // Audio player state
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [audioCurrentTime, setAudioCurrentTime] = useState(0);
+  const [volume, setVolume] = useState(1);
 
-  const handleBackClick = () => {
-    if (hasProgress && !isExamMode) {
-      setIsExitModalOpen(true);
-    } else if (onBackToDashboard) {
-      onBackToDashboard();
+  const timerRef = useRef(null);
+  const audioRef = useRef(null);
+
+  const startTimer = useCallback(() => {
+    timerRef.current = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(timerRef.current);
+          handleSubmit();
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (initialPhase === 'exam') {
+      startTimer();
     }
-  };
+  }, [initialPhase, startTimer]);
 
-  const handleConfirmExit = () => {
-    setIsExitModalOpen(false);
-    setAnswers({});
-    setFlagged({});
-    setIsExited(true);
-  };
-
-  const handleAnswerChange = (qNum, val) => {
-    setAnswers(prev => ({ ...prev, [qNum]: val }));
-  };
-
-  const handleMultiSelectChange = (qNumbers, optionLetter) => {
-    // For questions like 15-16, where 2 letters are selected
-    const primaryNum = qNumbers[0];
-    const secondaryNum = qNumbers[1];
-    const currentList = Array.isArray(answers[primaryNum]) ? [...answers[primaryNum]] : [];
-
-    let updated;
-    if (currentList.includes(optionLetter)) {
-      updated = currentList.filter(l => l !== optionLetter);
-    } else {
-      if (currentList.length < qNumbers.length) {
-        updated = [...currentList, optionLetter];
-      } else {
-        updated = [currentList[1], optionLetter];
+  useEffect(() => {
+    return () => {
+      clearInterval(timerRef.current);
+      if (audioRef.current) {
+        audioRef.current.pause();
       }
-    }
+    };
+  }, []);
 
-    setAnswers(prev => ({
-      ...prev,
-      [primaryNum]: updated,
-      [secondaryNum]: updated
-    }));
+  const handleStartExam = () => {
+    setPhase('exam');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    startTimer();
   };
 
-  const toggleFlag = (qNum) => {
-    setFlagged(prev => ({ ...prev, [qNum]: !prev[qNum] }));
+  const togglePlayAudio = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+    }
+  };
+
+  const handleAudioTimeUpdate = () => {
+    if (!audioRef.current) return;
+    setAudioCurrentTime(audioRef.current.currentTime);
+    if (audioRef.current.duration) {
+      setAudioProgress((audioRef.current.currentTime / audioRef.current.duration) * 100);
+      setAudioDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleSeek = (e) => {
+    if (!audioRef.current || !audioDuration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    audioRef.current.currentTime = pos * audioDuration;
   };
 
   const handleSubmit = () => {
-    let rawScore = 0;
-    const breakdown = [
-      { name: 'Part 1: Buckworth Conservation', score: 0, total: 10 },
-      { name: 'Part 2: Tasmania Boat Trip', score: 0, total: 10 },
-      { name: 'Part 3: Veterinary Work Experience', score: 0, total: 10 },
-      { name: 'Part 4: Labyrinths History', score: 0, total: 10 },
-    ];
+    clearInterval(timerRef.current);
+    if (audioRef.current) audioRef.current.pause();
 
-    listening.parts.forEach((part, pIdx) => {
-      part.questions.forEach((q) => {
-        if (q.type === 'multi-select') {
-          // Check multi-select: user selection vs answer array
-          const userArr = answers[q.questionNumbers[0]] || [];
-          const expArr = q.answer;
-          const matches = userArr.filter(item => expArr.includes(item));
-          rawScore += matches.length;
-          breakdown[pIdx].score += matches.length;
-        } else {
-          const userAns = answers[q.id];
-          if (isAnswerCorrect(userAns, q.answer)) {
-            rawScore += 1;
-            breakdown[pIdx].score += 1;
-          }
-        }
-      });
+    // Fetch the test again WITH answers for grading to prevent client-side cheat vectors
+    const gradedTest = getListeningTest(test.testId, true);
+    const allQ = gradedTest.parts.flatMap(p => p.questions);
+    let correct = 0;
+    allQ.forEach(q => {
+      if (isAnswerCorrect(answers[q.id], q.answer)) correct++;
     });
-
-    const band = calculateListeningBand(rawScore);
-    const result = {
-      rawScore,
-      total: 40,
-      bandScore: band,
-      breakdown,
+    const band = calculateListeningBand(correct);
+    recordAttemptedQuestionSet('listening', test.testId);
+    const computedResult = {
+      band,
+      raw: correct,
+      total: allQ.length,
+      percentage: Math.round((correct / allQ.length) * 100),
       answers
     };
 
-    setScoreResult(result);
-    setIsReviewed(true);
-    saveSkillScore('listening', result);
-    if (onComplete) {
-      onComplete(result);
+    setTest(gradedTest);
+
+    if (isMockMode) {
+      // In Full Mock Mode, transition directly to the next section without intermediate results screen
+      if (onComplete) onComplete(computedResult);
+      return;
     }
+
+    setPhase('processing');
+    setTimeout(() => setProcessingStep(1), 600);
+    setTimeout(() => setProcessingStep(2), 1200);
+    setTimeout(() => setProcessingStep(3), 1800);
+    setTimeout(() => {
+      setResult(computedResult);
+      setPhase('results');
+    }, 2400);
   };
 
-  const currentPartData = listening.parts.find(p => p.part === activePart);
-
-  if (isExited) {
+  /* ──────────────────────────────────────────────────────────
+     1. INTRO SCREEN
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'intro') {
     return (
-      <ExitScreen
-        sectionTitle="Listening Practice Session"
-        onReturnHome={onBackToDashboard}
-        onRestartSection={() => {
-          setIsExited(false);
-          setAnswers({});
-          setFlagged({});
-          setActivePart(1);
-        }}
+      <ExamStartScreen
+        section="Listening"
+        sectionKey="listening"
+        testTitle={test?.title || 'IELTS Listening Practice'}
+        subtitle="Official 4-part IELTS Academic listening exam with authentic audio tracks, note completion, and multiple choice items."
+        metaItems={[
+          { label: '4 Parts', sub: 'Academic & everyday contexts' },
+          { label: '32 Minutes', sub: 'Strict timed sequence' },
+          { label: 'Band 0–9', sub: 'Official-style scoring' },
+        ]}
+        rules={[
+          'Audio recordings are played ONCE only during the exam.',
+          'Read the instructions and word count limits for each question carefully.',
+          'Type your answers directly into the blanks before audio advances.',
+        ]}
+        scoringInfo="Each correct answer receives 1 mark. The total raw score out of 40 is converted to the official IELTS 9-band scale."
+        ctaText="START LISTENING TEST"
+        onStart={handleStartExam}
+        onBack={onBack}
       />
     );
   }
 
-  // Full-page results view (replaces old modal overlay)
-  if (scoreResult) {
-    const questionResults = listening.parts.flatMap(part =>
-      part.questions.flatMap(q => {
-        if (q.type === 'multi-select') {
-          const userArr = answers[q.questionNumbers?.[0]] || [];
-          return [{ id: q.questionNumbers?.[0], answer: userArr.join(','), expected: (q.answer || []).join(','), correct: userArr.sort().join(',') === (q.answer || []).sort().join(',') }];
-        }
-        return [{ id: q.id, answer: answers[q.id] || '', expected: q.answer, correct: isAnswerCorrect(answers[q.id], q.answer) }];
-      })
-    );
+  /* ──────────────────────────────────────────────────────────
+     2. PROCESSING SCREEN (Section 22)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'processing') {
     return (
-      <ResultsPage
-        title="Listening Test Results"
-        moduleName="Listening"
-        accentColor="var(--accent-blue)"
-        rawScore={scoreResult.rawScore}
-        totalQuestions={scoreResult.total}
-        bandScore={scoreResult.bandScore}
-        breakdown={scoreResult.breakdown}
-        questionResults={questionResults}
-        onRetake={() => {
-          setAnswers({});
-          setFlagged({});
-          setIsReviewed(false);
-          setScoreResult(null);
-          setActivePart(1);
-        }}
-        onBackToDashboard={onBackToDashboard}
-      />
+      <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <div style={{
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: 'var(--r-container)',
+          padding: '56px 40px'
+        }}>
+          <div style={{
+            width: 48,
+            height: 48,
+            borderRadius: '50%',
+            border: '3px solid var(--border-subtle)',
+            borderTopColor: 'var(--coral)',
+            margin: '0 auto 24px',
+            animation: 'spin 0.8s linear infinite'
+          }} />
+
+          <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
+            Analysing your performance...
+          </h2>
+          <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
+            Reviewing your responses against verified IELTS answer keys.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
+            {[
+              { label: 'Note Completion & Spelling Accuracy', active: processingStep >= 0 },
+              { label: 'Distractor Rejection & Section Timing', active: processingStep >= 1 },
+              { label: 'Official Raw-to-Band Rounding Computation', active: processingStep >= 2 },
+              { label: 'Sub-skill Breakdown & Review Generation', active: processingStep >= 3 },
+            ].map((step, idx) => (
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)'
+              }}>
+                <div style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: '50%',
+                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
+                  color: step.active ? '#10B981' : 'transparent',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 11
+                }}>
+                  <Icon name="check" size={12} />
+                </div>
+                {step.label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     );
   }
 
-  return (
-    <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      {/* Top Audio Player */}
-      <AudioPlayer
-        src={listening.audioUrl}
-        title={`${testData.title} — Listening Test`}
-        autoPlay={isExamMode}
-      />
+  /* ──────────────────────────────────────────────────────────
+     3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'results') {
+    const isBandHigh = result?.band >= 7.0;
 
-      {/* Part Navigation & Script Toggle */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {onBackToDashboard && !isExamMode && (
-            <button
-              className="btn btn-ghost"
-              onClick={handleBackClick}
-              style={{ padding: '6px 12px', fontSize: 13 }}
-            >
-              <ArrowLeft size={15} />
-              <span>Back to Dashboard</span>
-            </button>
-          )}
+    return (
+      <div style={{ maxWidth: 960, margin: '40px auto', padding: '0 24px 80px' }}>
+        <button
+          onClick={onBack}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            fontSize: 14,
+            fontWeight: 600,
+            color: 'var(--text-secondary)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            marginBottom: 24
+          }}
+        >
+          <Icon name="arrowLeft" size={16} /> Back to Dashboard
+        </button>
 
-          <div className="segmented-control">
-          {listening.parts.map((p) => (
-            <button
-              key={p.part}
-              className={`segmented-btn ${activePart === p.part ? 'active' : ''}`}
-              onClick={() => setActivePart(p.part)}
-            >
-              <span>Part {p.part}</span>
-              <span className="badge badge-neutral" style={{ fontSize: 10 }}>
-                Q{p.questions[0].type === 'multi-select' ? p.questions[0].questionNumbers[0] : p.questions[0].id}–
-                {p.questions[p.questions.length - 1].type === 'multi-select'
-                  ? p.questions[p.questions.length - 1].questionNumbers[1]
-                  : p.questions[p.questions.length - 1].id}
-              </span>
-            </button>
-          ))}
+        {/* OVERALL HERO CARD */}
+        <div style={{
+          background: 'var(--bg-card)',
+          border: '1.5px solid #151313',
+          borderRadius: 24,
+          padding: '40px',
+          marginBottom: 32,
+          boxShadow: '0 4px 0 #151313',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 24
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              fontSize: 12,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              fontWeight: 800,
+              padding: '4px 12px',
+              borderRadius: 8,
+              background: '#151313',
+              color: '#FCCC42',
+              marginBottom: 12
+            }}>
+              LISTENING PRACTICE COMPLETE
+            </div>
+            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
+              Listening Assessment
+            </h1>
+            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
+              Score: <strong style={{ color: 'var(--text-primary)' }}>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
+            </p>
+          </div>
+
+          <div style={{
+            background: 'var(--bg-canvas)',
+            padding: '24px 36px',
+            borderRadius: 20,
+            textAlign: 'center',
+            border: '1.5px solid #151313',
+            boxShadow: '0 2px 0 #151313',
+            minWidth: 180
+          }}>
+            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              ESTIMATED BAND
+            </div>
+            <div style={{
+              fontSize: 54,
+              fontWeight: 800,
+              color: 'var(--c-coral)',
+              lineHeight: 1.1,
+              marginTop: 6,
+              fontFamily: 'Kodchasan, sans-serif'
+            }}>
+              {result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--'}
+            </div>
+            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
+              Target: 8.0
+            </div>
           </div>
         </div>
 
-        {!isExamMode && (
+        {/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
+          {/* What went well (3 cards max) */}
+          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: '#10B981', marginBottom: 16 }}>
+              <Icon name="check" size={16} /> What Went Well
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong>Part 1 & 2 Accuracy:</strong> Successfully retrieved basic concrete details and contact information.
+              </div>
+              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong>Pacing:</strong> Kept pace with the recording through transitional discourse markers.
+              </div>
+              {isBandHigh && (
+                <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                  <strong>Academic Lectures:</strong> Identified core theoretical points during sustained monologues.
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Needs attention (3 cards max) */}
+          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--c-coral)', marginBottom: 16 }}>
+              <Icon name="zap" size={16} /> Needs Attention
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong>Signpost Paraphrases:</strong> Watch for speakers altering vocabulary just prior to delivering the target noun.
+              </div>
+              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong>Distractor Negations:</strong> Speakers often mention an initial proposal, then correct themselves with "actually" or "however".
+              </div>
+              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong>Word Count Restrictions:</strong> Strictly respect "NO MORE THAN ONE WORD AND/OR A NUMBER".
+              </div>
+            </div>
+          </div>
+
+          {/* Recommended next practice (2-3 actions) */}
+          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 16 }}>
+              <Icon name="arrowRight" size={16} /> Recommended Practice
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ padding: 14, background: 'rgba(252, 204, 66, 0.15)', border: '1px solid #151313', borderRadius: 12, fontSize: 13 }}>
+                <strong style={{ color: 'var(--text-primary)' }}>Part 4 Monologues</strong>
+                <div style={{ color: 'var(--text-secondary)', marginTop: 4 }}>Practice 10 consecutive note-completion items without pauses.</div>
+              </div>
+              <div style={{ padding: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313', borderRadius: 12, fontSize: 13 }}>
+                <strong style={{ color: 'var(--text-primary)' }}>Learning Hub Masterclass</strong>
+                <div style={{ color: 'var(--text-secondary)', marginTop: 4 }}>Watch "Identifying Paraphrases & Trap Distractors" video lesson.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Answer Breakdown / Review Table */}
+        <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 28, marginBottom: 36, boxShadow: '0 3px 0 #151313' }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
+            Answer Review
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 400, overflowY: 'auto' }}>
+            {test.parts.flatMap(p => p.questions).map(q => {
+              const userAns = (answers[q.id] || '').trim();
+              const isCorrect = isAnswerCorrect(userAns, q.answer);
+              const correctStr = Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer;
+
+              return (
+                <div key={q.id} style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '12px 16px',
+                  borderRadius: 12,
+                  background: isCorrect ? 'rgba(16,185,129,0.08)' : 'rgba(255,87,52,0.08)',
+                  border: isCorrect ? '1px solid rgba(16,185,129,0.3)' : '1px solid rgba(255,87,52,0.3)',
+                  fontSize: 13,
+                  gap: 12
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1 }}>
+                    <span style={{
+                      fontWeight: 800,
+                      width: 28,
+                      height: 28,
+                      borderRadius: 8,
+                      background: isCorrect ? '#10B981' : '#FF5734',
+                      color: isCorrect ? '#fff' : '#151313',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 12
+                    }}>
+                      {q.id}
+                    </span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
+                      {q.prompt} <span style={{ textDecoration: 'underline', fontWeight: 700 }}>{userAns || '(no answer)'}</span> {q.suffix}
+                    </span>
+                  </div>
+
+                  {!isCorrect && (
+                    <div style={{ fontSize: 12, color: 'var(--c-coral)', fontWeight: 700 }}>
+                      Correct: {correctStr}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* PROMINENT CORAL CTA SAVE BUTTON */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 16, borderTop: '1.5px solid #151313' }}>
           <button
-            className="btn btn-secondary"
-            onClick={() => setShowAudioscript(!showAudioscript)}
+            id="save-listening-result-btn"
+            type="button"
+            onClick={() => onComplete && onComplete(result)}
+            style={{
+              padding: '16px 36px',
+              borderRadius: 16,
+              background: '#FF5734',
+              color: '#151313',
+              fontSize: 16,
+              fontWeight: 800,
+              border: '1.5px solid #151313',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              boxShadow: '0 4px 0 #151313',
+              fontFamily: 'Kodchasan, sans-serif'
+            }}
           >
-            <FileText size={15} />
-            <span>{showAudioscript ? 'Hide Audioscript' : 'View Audioscript'}</span>
+            <Icon name="check" size={18} />
+            <span>Save Score & Return to Dashboard</span>
           </button>
-        )}
+        </div>
+      </div>
+    );
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     4. EXAM INTERFACE (Sections 16, 17, 18, 19, 20)
+     ────────────────────────────────────────────────────────── */
+  const currentPart = test.parts[partIdx];
+
+  return (
+    <div className="exam-focus-layout">
+      {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
+      <div className="exam-focus-header">
+        <div className="exam-focus-header-left">
+          <span className="exam-focus-tag" style={{ background: 'var(--c-yellow)', color: '#151313' }}>
+            IELTS LISTENING PRACTICE
+          </span>
+          <h2 className="exam-focus-title">
+            Part {partIdx + 1} of {test.parts.length} · {currentPart?.title}
+          </h2>
+        </div>
+
+        <div className="exam-focus-header-right">
+          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} title="Time remaining">
+            <Icon name="clock" size={16} />
+            <span>{FMT(timeLeft)}</span>
+          </div>
+
+          <button
+            type="button"
+            className="exam-focus-exit-btn"
+            onClick={() => {
+              if (window.confirm('Exit listening practice? Your progress will be lost.')) onBack();
+            }}
+            title="Exit test and return to Dashboard"
+          >
+            <span>Exit Exam</span>
+          </button>
+        </div>
       </div>
 
-      {/* Optional Audioscript Drawer */}
-      {showAudioscript && (
-        <div style={{
-          background: 'var(--bg-surface)',
-          border: '1px solid var(--border-default)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '24px',
-          maxHeight: 280,
-          overflowY: 'auto',
-          fontSize: 13.5,
-          lineHeight: 1.7,
-          color: 'var(--text-secondary)'
-        }}>
-          <h4 style={{ color: 'var(--text-primary)', marginBottom: 10, fontSize: 14 }}>
-            Official Audioscript (Reference)
-          </h4>
-          <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit' }}>
-            {listening.audioscript}
-          </pre>
+      {/* ── 2. INSTRUCTIONS / CONTEXT CARD ── */}
+      <div style={{
+        background: 'var(--bg-card)',
+        border: 'var(--border-dark)',
+        borderRadius: 'var(--r-card)',
+        padding: '22px 28px',
+        boxShadow: '0 3px 0 #151313'
+      }}>
+        <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>
+          IELTS LISTENING SECTION {partIdx + 1}
+        </div>
+        <div style={{ fontSize: 15, fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.55 }}>
+          {currentPart?.instructions}
+        </div>
+      </div>
+
+      {/* ── 3. COGNITION NATIVE AUDIO PLAYER ── */}
+      {currentPart?.audioFile && (
+        <div className="audio-player-cognition">
+          <audio
+            ref={audioRef}
+            src={currentPart.audioFile.replace(/^(\.\.\/)+wp-content/, '/wp-content')}
+            onTimeUpdate={handleAudioTimeUpdate}
+            onEnded={() => setIsPlaying(false)}
+          />
+
+          <button
+            type="button"
+            onClick={togglePlayAudio}
+            className="audio-play-round-btn"
+            title={isPlaying ? 'Pause Audio' : 'Play Audio'}
+          >
+            <Icon name={isPlaying ? 'pause' : 'play'} size={18} />
+          </button>
+
+          <span style={{ fontFamily: 'Kodchasan, monospace', fontSize: 13, fontWeight: 700, color: 'var(--text-secondary)', minWidth: 44 }}>
+            {FMT(Math.floor(audioCurrentTime))}
+          </span>
+
+          {/* Scrubber Timeline */}
+          <div className="audio-timeline-track" onClick={handleSeek} title="Audio timeline track">
+            <div className="audio-timeline-fill" style={{ width: `${audioProgress}%` }} />
+          </div>
+
+          <span style={{ fontFamily: 'Kodchasan, monospace', fontSize: 13, fontWeight: 700, color: 'var(--text-secondary)', minWidth: 44 }}>
+            {audioDuration ? FMT(Math.floor(audioDuration)) : '08:15'}
+          </span>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-secondary)' }}>
+            <Icon name="volume" size={16} />
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={volume}
+              onChange={(e) => {
+                const val = parseFloat(e.target.value);
+                setVolume(val);
+                if (audioRef.current) audioRef.current.volume = val;
+              }}
+              style={{ width: 80, accentColor: 'var(--c-yellow)', cursor: 'pointer' }}
+              aria-label="Volume slider"
+            />
+          </div>
         </div>
       )}
 
-      {/* Questions Form */}
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-        <div>
-          <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>
-            {currentPartData.title}
-          </h2>
-          <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-            {currentPartData.instructions}
-          </p>
+      {/* ── 4. QUESTIONS CONTAINER (COGNITION HTML RENDERER & UI) ── */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 340px',
+        gap: 24,
+        alignItems: 'start'
+      }}>
+        {/* Left: Context/Tables (Read-only reference if possible) */}
+        <div style={{
+          background: 'var(--bg-card)',
+          border: 'var(--border-dark)',
+          borderRadius: 'var(--r-card)',
+          padding: '32px 28px',
+          boxShadow: '0 3px 0 #151313',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16
+        }}>
+          <HtmlContentRenderer 
+            htmlContent={currentPart?.htmlContent} 
+            answers={answers}
+            setAnswers={setAnswers}
+          />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          {currentPartData.questions.map((q) => {
-            if (q.type === 'fill') {
-              const isCorrect = isReviewed ? isAnswerCorrect(answers[q.id], q.answer) : null;
-              return (
-                <div
-                  key={q.id}
-                  id={`q-${q.id}`}
-                  className={`question-item ${currentQuestion === q.id ? 'active-question' : ''}`}
-                  onClick={() => setCurrentQuestion(q.id)}
-                >
-                  <div className="question-header">
-                    <span className="question-number-badge">Question {q.id}</span>
-                    {isReviewed && (
-                      <span className={`badge ${isCorrect ? 'badge-green' : 'badge-red'}`}>
-                        {isCorrect ? 'Correct (+1)' : `Expected: ${Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer}`}
-                      </span>
-                    )}
+        {/* Right: Question Panel */}
+        <div style={{
+          background: 'var(--surface-sunken)',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: 'var(--r-card)',
+          padding: '24px 20px',
+          maxHeight: '600px',
+          overflowY: 'auto'
+        }}>
+          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Questions</h3>
+          {currentPart?.questionGroups ? (
+            currentPart.questionGroups.map((g, idx) => (
+              <div key={idx} style={{ marginBottom: 24 }}>
+                {g.instructions && (
+                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: 'var(--text-primary)', background: 'var(--surface)', padding: '10px 14px', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
+                    {g.instructions}
                   </div>
-                  <div style={{ fontSize: 14.5 }}>
-                    <span>{q.prompt} </span>
-                    <input
-                      type="text"
-                      className="fill-inline-input"
-                      placeholder={`[ ${q.id} ]`}
-                      value={answers[q.id] || ''}
-                      onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                    />
-                    <span> {q.suffix}</span>
-                  </div>
-                </div>
-              );
-            }
-
-            if (q.type === 'mcq') {
-              const isCorrect = isReviewed ? isAnswerCorrect(answers[q.id], q.answer) : null;
-              return (
-                <div
-                  key={q.id}
-                  id={`q-${q.id}`}
-                  className={`question-item ${currentQuestion === q.id ? 'active-question' : ''}`}
-                  onClick={() => setCurrentQuestion(q.id)}
-                >
-                  <div className="question-header">
-                    <span className="question-number-badge">Question {q.id}</span>
-                    {isReviewed && (
-                      <span className={`badge ${isCorrect ? 'badge-green' : 'badge-red'}`}>
-                        {isCorrect ? 'Correct (+1)' : `Expected: ${q.answer}`}
-                      </span>
-                    )}
-                  </div>
-                  <div style={{ fontSize: 14.5, fontWeight: 500, marginBottom: 8 }}>
-                    {q.prompt}
-                  </div>
-                  <div className="mcq-options-list">
-                    {q.options.map((opt, oIdx) => {
-                      const letter = opt.charAt(0);
-                      const isSelected = answers[q.id] === letter;
-                      return (
-                        <div
-                          key={oIdx}
-                          className={`mcq-option-label ${isSelected ? 'selected' : ''}`}
-                          onClick={() => handleAnswerChange(q.id, letter)}
-                        >
-                          <input
-                            type="radio"
-                            name={`q_${q.id}`}
-                            checked={isSelected}
-                            onChange={() => {}}
-                            style={{ marginTop: 3 }}
-                          />
-                          <span>{opt}</span>
+                )}
+                {g.options && g.options.length > 0 && (
+                  <div style={{ marginBottom: 16, padding: 12, background: 'var(--bg-canvas)', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 8, textTransform: 'uppercase' }}>Options</div>
+                    <div style={{ display: 'grid', gap: 6 }}>
+                      {g.options.map((opt, i) => (
+                        <div key={opt.id || i} style={{ display: 'flex', gap: 8, fontSize: 14 }}>
+                          <strong style={{ minWidth: 20 }}>{opt.id}</strong>
+                          <span>{opt.label}</span>
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            }
-
-            if (q.type === 'multi-select') {
-              const [q1, q2] = q.questionNumbers;
-              const userSelection = answers[q1] || [];
-              return (
-                <div
-                  key={q.id}
-                  id={`q-${q1}`}
-                  className={`question-item ${currentQuestion === q1 || currentQuestion === q2 ? 'active-question' : ''}`}
-                  onClick={() => setCurrentQuestion(q1)}
-                >
-                  <div className="question-header">
-                    <span className="question-number-badge">Questions {q1} & {q2}</span>
-                    {isReviewed && (
-                      <span className="badge badge-neutral">
-                        Answer: {q.answer.join(', ')}
-                      </span>
-                    )}
-                  </div>
-                  <div style={{ fontSize: 14.5, fontWeight: 500, marginBottom: 8 }}>
-                    {q.prompt}
-                  </div>
-                  <div className="mcq-options-list">
-                    {q.options.map((opt, oIdx) => {
-                      const letter = opt.charAt(0);
-                      const isSelected = userSelection.includes(letter);
-                      return (
-                        <div
-                          key={oIdx}
-                          className={`mcq-option-label ${isSelected ? 'selected' : ''}`}
-                          onClick={() => handleMultiSelectChange(q.questionNumbers, letter)}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => {}}
-                            style={{ marginTop: 3 }}
-                          />
-                          <span>{opt}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            }
-
-            if (q.type === 'matching') {
-              const isCorrect = isReviewed ? isAnswerCorrect(answers[q.id], q.answer) : null;
-              return (
-                <div
-                  key={q.id}
-                  id={`q-${q.id}`}
-                  className={`question-item ${currentQuestion === q.id ? 'active-question' : ''}`}
-                  onClick={() => setCurrentQuestion(q.id)}
-                >
-                  <div className="question-header">
-                    <span className="question-number-badge">Question {q.id} — {q.moduleName}</span>
-                    {isReviewed && (
-                      <span className={`badge ${isCorrect ? 'badge-green' : 'badge-red'}`}>
-                        {isCorrect ? 'Correct (+1)' : `Expected: ${q.answer}`}
-                      </span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 6 }}>
-                    <select
-                      value={answers[q.id] || ''}
-                      onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                      style={{
-                        background: 'var(--bg-input)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 'var(--radius-sm)',
-                        color: 'var(--text-primary)',
-                        padding: '8px 12px',
-                        fontSize: 13.5,
-                        width: '100%',
-                        maxWidth: 450
-                      }}
-                    >
-                      <option value="">Select an opinion (A–F)...</option>
-                      {q.options.map((opt, optIdx) => (
-                        <option key={optIdx} value={opt.charAt(0)}>
-                          {opt}
-                        </option>
                       ))}
-                    </select>
+                    </div>
                   </div>
-                </div>
-              );
-            }
-
-            return null;
-          })}
+                )}
+                {g.questions.map(q => (
+                  <QuestionRenderer 
+                    key={q.id} 
+                    question={q} 
+                    value={answers[q.id]} 
+                    onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
+                  />
+                ))}
+              </div>
+            ))
+          ) : (
+            currentPart?.questions?.map(q => (
+              <QuestionRenderer 
+                key={q.id} 
+                question={q} 
+                value={answers[q.id]} 
+                onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} 
+              />
+            ))
+          )}
+          {(!currentPart?.questions || currentPart.questions.length === 0) && (
+            <div style={{ fontSize: 13, color: 'var(--text-muted)', textAlign: 'center', padding: '24px 0' }}>
+              No structured questions detected.
+            </div>
+          )}
         </div>
       </div>
 
-      {/* CD-IELTS Question Palette with Sticky Next Section Navigation */}
-      <QuestionPalette
-        totalQuestions={40}
-        answers={answers}
-        flagged={flagged}
-        currentQuestion={currentQuestion}
-        onSelectQuestion={(qNum) => {
-          setCurrentQuestion(qNum);
-          // Auto switch part if needed
-          if (qNum <= 10) setActivePart(1);
-          else if (qNum <= 20) setActivePart(2);
-          else if (qNum <= 30) setActivePart(3);
-          else setActivePart(4);
-
-          setTimeout(() => {
-            const el = document.getElementById(`q-${qNum}`);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 50);
-        }}
-        onToggleFlag={toggleFlag}
-        onSubmit={handleSubmit}
-        nextSectionText={activePart < 4 ? `Next Section: Part ${activePart + 1} →` : null}
-        onNextSection={activePart < 4 ? () => {
-          const nextP = activePart + 1;
-          setActivePart(nextP);
-          setCurrentQuestion((nextP - 1) * 10 + 1);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } : null}
-        prevSectionText={activePart > 1 ? `← Part ${activePart - 1}` : null}
-        onPrevSection={activePart > 1 ? () => {
-          const prevP = activePart - 1;
-          setActivePart(prevP);
-          setCurrentQuestion((prevP - 1) * 10 + 1);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } : null}
-      />
-
-      {/* Exit Confirmation Guard Modal */}
-      <ExitConfirmationModal
-        isOpen={isExitModalOpen}
-        onCancel={() => setIsExitModalOpen(false)}
-        onConfirm={handleConfirmExit}
-        sectionTitle="Listening Practice Session"
+      {/* ── 5. UNIVERSAL 3-ZONE EXAM BOTTOM NAVIGATION ── */}
+      <ExamBottomNav
+        onPrevious={() => setPartIdx(p => Math.max(0, p - 1))}
+        isPreviousDisabled={partIdx === 0}
+        previousLabel="Previous Part"
+        sections={test.parts.map((p, i) => ({
+          label: `Part ${i + 1}`,
+          isCompleted: test.parts[i].questions?.every(q => Boolean(answers[q.id]?.trim()))
+        }))}
+        activeSectionIndex={partIdx}
+        onSelectSection={(idx) => setPartIdx(idx)}
+        onNext={partIdx < test.parts.length - 1 ? () => setPartIdx(p => p + 1) : handleSubmit}
+        nextLabel={partIdx < test.parts.length - 1 ? 'Next Part' : isMockMode ? 'Next Section: Reading' : 'Finish & Grade Exam'}
+        isSubmit={partIdx === test.parts.length - 1 && !isMockMode}
+        nextActionId={isMockMode ? 'next-mock-reading' : 'submit-listening-exam'}
       />
     </div>
   );

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CognitionContentV3TestPackage",
+  "type": "OBJECT",
+  "required": [
+    "id",
+    "module",
+    "title",
+    "testType",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "module": {
+      "type": "string",
+      "enum": ["LISTENING", "READING", "WRITING", "SPEAKING"]
+    },
+    "title": { "type": "string" },
+    "testType": { "type": "string" },
+    "sections": { "type": "array" },
+    "passages": { "type": "array" },
+    "tasks": { "type": "array" },
+    "prompts": { "type": "array" },
+    "sourceEvidence": { "type": "object" },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "NEEDS_REVIEW", "QUARANTINED"]
+    }
+  }
+}

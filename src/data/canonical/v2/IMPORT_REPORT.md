@@ -1,0 +1,26 @@
+# Canonical V2 Import Report
+
+SOURCE PACKAGES: 1122
+VERIFIED IMPORTED: 564
+NEEDS_REVIEW EXCLUDED: 558
+FAILED EXCLUDED: 0
+IMPORT ERRORS: 0
+
+MODULE COUNTS:
+Listening: 97
+Reading: 275
+Writing: 13
+Speaking: 179
+
+CLASSIFICATION:
+ACADEMIC: 0
+GENERAL_TRAINING: 5
+UNKNOWN: 559
+
+ASSETS:
+Imported: 154
+Deduplicated: 350
+
+Validation and reconstruction tests passing? YES
+
+IMPORT_READY

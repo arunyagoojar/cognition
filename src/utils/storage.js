@@ -1,4 +1,22 @@
 // LocalStorage persistence for OmniPrep sessions, skill scores, and Mock tests
+// Routed through canonical performanceStore.js as single source of truth.
+import {
+  recordAttempt,
+  derivePerformanceSummary,
+  resetPerformanceData,
+  createAttemptId,
+  getPerformanceStore,
+  getAttemptById as getCanonicalAttemptById,
+  subscribePerformanceStore
+} from './performanceStore.js';
+
+export {
+  recordAttempt,
+  derivePerformanceSummary,
+  resetPerformanceData,
+  createAttemptId,
+  subscribePerformanceStore
+};
 
 const STORAGE_KEY_PREFIX = 'omniprep_';
 
@@ -25,9 +43,30 @@ export function loadTestState(testId) {
 
 export function saveSkillScore(skill, scoreData) {
   try {
+    const attemptId = scoreData?.attemptId || createAttemptId(skill);
+    const band = typeof scoreData?.band === 'number' ? scoreData.band : (parseFloat(scoreData?.band) || null);
+    
+    // Save to canonical performance store
+    recordAttempt({
+      id: attemptId,
+      type: skill,
+      testId: scoreData?.testId || 'practice',
+      testLabel: scoreData?.testLabel || `${skill.toUpperCase()} Practice`,
+      startedAt: scoreData?.startedAt || new Date().toISOString(),
+      completedAt: new Date().toISOString(),
+      status: 'completed',
+      overallBand: band,
+      [skill]: {
+        ...scoreData,
+        band
+      }
+    });
+
+    // Also mirror to legacy key for any direct callers
     const all = getSkillScores();
     all[skill] = {
       ...scoreData,
+      band,
       updatedAt: new Date().toISOString()
     };
     localStorage.setItem(`${STORAGE_KEY_PREFIX}skill_scores`, JSON.stringify(all));
@@ -38,6 +77,10 @@ export function saveSkillScore(skill, scoreData) {
 
 export function getSkillScores() {
   try {
+    const summary = derivePerformanceSummary();
+    if (summary && summary.latestScores) {
+      return summary.latestScores;
+    }
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}skill_scores`);
     return raw ? JSON.parse(raw) : {
       listening: null,
@@ -50,12 +93,115 @@ export function getSkillScores() {
   }
 }
 
+export function resetAllPerformanceData() {
+  return resetPerformanceData();
+}
+
+export function resetSkillScores() {
+  return resetPerformanceData();
+}
+
+// ── Persistent Full Mock Exam Session State ────────────────────────────────
+export function saveActiveMockSession(sessionData) {
+  try {
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}active_mock_session`, JSON.stringify({
+      ...sessionData,
+      updatedAt: new Date().toISOString()
+    }));
+  } catch (e) {
+    console.warn('Failed to save active mock session', e);
+  }
+}
+
+export function getActiveMockSession() {
+  try {
+    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}active_mock_session`);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+export function clearActiveMockSession() {
+  try {
+    localStorage.removeItem(`${STORAGE_KEY_PREFIX}active_mock_session`);
+  } catch (e) {
+    console.warn('Failed to clear active mock session', e);
+  }
+}
+
+// ── AI Evaluation Hash-Based Cache ─────────────────────────────────────────
+export function getAiCache() {
+  try {
+    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}ai_cache`);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+export function getAiCacheItem(hash) {
+  if (!hash) return null;
+  const cache = getAiCache();
+  return cache[hash] || null;
+}
+
+export function setAiCacheItem(hash, data) {
+  if (!hash || !data) return;
+  try {
+    const cache = getAiCache();
+    cache[hash] = {
+      ...data,
+      cachedAt: new Date().toISOString()
+    };
+    // Keep up to 100 evaluation cache entries
+    const keys = Object.keys(cache);
+    if (keys.length > 100) {
+      delete cache[keys[0]];
+    }
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}ai_cache`, JSON.stringify(cache));
+  } catch (e) {
+    console.warn('Failed to set AI cache item', e);
+  }
+}
+
+export function clearAiCache() {
+  try {
+    localStorage.removeItem(`${STORAGE_KEY_PREFIX}ai_cache`);
+  } catch (e) {
+    console.warn('Failed to clear AI cache', e);
+  }
+}
+
+export function markLessonCompleted(lessonId) {
+  saveCompletedLesson(lessonId);
+}
+
 export function saveCompletedResult(result) {
   try {
+    const attemptId = result.id || createAttemptId('mock');
+    const canonicalAttempt = {
+      id: attemptId,
+      type: result.type || 'full_mock',
+      testId: result.testId,
+      testLabel: result.testLabel || result.testId,
+      startedAt: result.startedAt || new Date().toISOString(),
+      completedAt: result.completedAt || new Date().toISOString(),
+      status: 'completed',
+      overallBand: result.overallBand ?? null,
+      listening: result.listening || null,
+      reading: result.reading || null,
+      writing: result.writing || null,
+      speaking: result.speaking || null,
+      ...result
+    };
+    recordAttempt(canonicalAttempt);
+
+    // Keep legacy history key in sync for backwards compatibility
     const history = getCompletedResults();
     history.unshift({
-      id: 'res_' + Date.now(),
-      completedAt: new Date().toISOString(),
+      id: attemptId,
+      completedAt: canonicalAttempt.completedAt,
       ...result
     });
     localStorage.setItem(`${STORAGE_KEY_PREFIX}history`, JSON.stringify(history.slice(0, 50)));
@@ -66,10 +212,51 @@ export function saveCompletedResult(result) {
 
 export function getCompletedResults() {
   try {
+    const store = getPerformanceStore();
+    if (store && Array.isArray(store.attempts) && store.attempts.length > 0) {
+      return store.attempts.filter(a => a.status === 'completed');
+    }
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}history`);
     return raw ? JSON.parse(raw) : [];
   } catch (e) {
     return [];
+  }
+}
+
+export function getResultById(id) {
+  const store = getPerformanceStore();
+  if (store && Array.isArray(store.attempts)) {
+    const found = store.attempts.find(r => r.id === id || r.testId === id);
+    if (found) return found;
+  }
+  const history = getCompletedResults();
+  if (!id || id === 'latest') return history[0] || null;
+  return history.find(r => r.id === id || r.testId === id) || history[0] || null;
+}
+
+export function getLatestResult() {
+  const history = getCompletedResults();
+  return history[0] || null;
+}
+
+export function getCompletedLessons() {
+  try {
+    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}completed_lessons`);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+export function saveCompletedLesson(lessonId) {
+  try {
+    const list = getCompletedLessons();
+    if (!list.includes(lessonId)) {
+      list.push(lessonId);
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}completed_lessons`, JSON.stringify(list));
+    }
+  } catch (e) {
+    console.warn('Failed to save completed lesson', e);
   }
 }
 
@@ -98,18 +285,92 @@ export function getApiKey() {
   }
 }
 
+export function saveGroqApiKey(key) {
+  try {
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}groq_key`, (key || '').trim());
+  } catch (e) {
+    console.warn('Failed to save Groq API key', e);
+  }
+}
+
+export function getGroqApiKey() {
+  try {
+    if (typeof window !== 'undefined') {
+      const urlKey = new URLSearchParams(window.location.search).get('groqKey');
+      if (urlKey) return urlKey.trim();
+    }
+    const saved = localStorage.getItem(`${STORAGE_KEY_PREFIX}groq_key`);
+    if (saved && saved.trim()) return saved.trim();
+    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GROQ_API_KEY) {
+      return import.meta.env.VITE_GROQ_API_KEY.trim();
+    }
+    return '';
+  } catch (e) {
+    return '';
+  }
+}
+
+export function getTargetBand() {
+  try {
+    return localStorage.getItem(`${STORAGE_KEY_PREFIX}target_band`) || '7.5';
+  } catch {
+    return '7.5';
+  }
+}
+
+export function saveTargetBand(band) {
+  try {
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}target_band`, String(band));
+    return String(band);
+  } catch {
+    return band;
+  }
+}
+
+export function getLastPlayedVideo(skill) {
+  try {
+    return localStorage.getItem(`${STORAGE_KEY_PREFIX}last_video_${skill}`) || null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveLastPlayedVideo(skill, lessonId) {
+  try {
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}last_video_${skill}`, lessonId);
+  } catch (e) {
+    console.warn('Failed to save last played video', e);
+  }
+}
+
+export function getLastWatchedLesson() {
+  try {
+    return localStorage.getItem(`${STORAGE_KEY_PREFIX}last_watched_lesson`) || null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveLastWatchedLesson(lessonId) {
+  try {
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}last_watched_lesson`, lessonId);
+  } catch (e) {
+    console.warn('Failed to save last watched lesson', e);
+  }
+}
+
 // ── Standalone Global App Preferences (Font Scale, Theme & API Key) ────────
 export function getAppSettings() {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}app_settings`);
     const parsed = raw ? JSON.parse(raw) : {};
     return {
-      theme: parsed.theme || 'dark',
+      theme: parsed.theme || 'light',
       fontSize: parsed.fontSize || '100%',
       apiKey: getApiKey()
     };
   } catch (e) {
-    return { theme: 'dark', fontSize: '100%', apiKey: getApiKey() };
+    return { theme: 'light', fontSize: '100%', apiKey: getApiKey() };
   }
 }
 
@@ -136,18 +397,14 @@ export function applyAppSettings(settings) {
   if (typeof document === 'undefined') return;
   try {
     const root = document.documentElement;
-    const theme = settings?.theme || 'dark';
-    if (theme === 'light') {
-      root.setAttribute('data-theme', 'light');
-    } else {
-      root.removeAttribute('data-theme');
-    }
+    const theme = settings?.theme || 'light';
+    root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
 
     const fontScaleMap = {
-      '100%': { px: '14px', scale: '1' },
-      '115%': { px: '16px', scale: '1.15' },
-      '130%': { px: '18.2px', scale: '1.30' },
-      '145%': { px: '20.3px', scale: '1.45' }
+      '100%': { px: '16px', scale: '1' },
+      '115%': { px: '18.4px', scale: '1.15' },
+      '130%': { px: '20.8px', scale: '1.30' },
+      '145%': { px: '23.2px', scale: '1.45' }
     };
     const f = fontScaleMap[settings?.fontSize] || fontScaleMap['100%'];
     root.style.setProperty('--app-font-size', f.px);
@@ -200,161 +457,6 @@ export function getQuestionPoolStats(skill, totalCount) {
   };
 }
 
-// ── DMAT Specific Storage ──────────────────────────────────────────────────
-export function saveDmatScore(section, scoreData) {
-  try {
-    // Only save if it represents a complete practice exam / mock session
-    if (!scoreData || !scoreData.total || scoreData.total < 5 || !scoreData.completed) {
-      console.warn('Ignoring uncompleted practice session score:', scoreData);
-      return;
-    }
-    const all = getDmatScores();
-    all[section] = {
-      ...scoreData,
-      completed: true,
-      updatedAt: new Date().toISOString()
-    };
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}dmat_scores`, JSON.stringify(all));
-
-    // Also record to DMAT history
-    saveDmatHistory({
-      section,
-      percentage: scoreData.percentage,
-      correct: scoreData.correct,
-      total: scoreData.total,
-      completedAt: new Date().toISOString()
-    });
-  } catch (e) {
-    console.warn('Failed to save dmat score', e);
-  }
-}
-
-export function getDmatScores() {
-  try {
-    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}dmat_scores`);
-    if (!raw) {
-      return { latin: null, math: null, figures: null, academic: null, mock: null };
-    }
-    const parsed = JSON.parse(raw);
-    const cleaned = { ...parsed };
-    let modified = false;
-
-    // Purge any accidental partial/incompleted records from earlier tests (like 1/1 = 100%)
-    for (const key of ['latin', 'math', 'figures', 'academic', 'mock']) {
-      if (cleaned[key] && (cleaned[key].total < 5 || !cleaned[key].completed)) {
-        cleaned[key] = null;
-        modified = true;
-      }
-    }
-    if (modified) {
-      localStorage.setItem(`${STORAGE_KEY_PREFIX}dmat_scores`, JSON.stringify(cleaned));
-    }
-    return cleaned;
-  } catch (e) {
-    return { latin: null, math: null, figures: null, academic: null, mock: null };
-  }
-}
-
-export function saveDmatHistory(entry) {
-  try {
-    const hist = getDmatHistory();
-    hist.push({
-      id: 'dmat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
-      ...entry
-    });
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}dmat_history`, JSON.stringify(hist.slice(-100)));
-  } catch (e) {
-    console.warn('Failed to save dmat history', e);
-  }
-}
-
-export function getDmatHistory() {
-  try {
-    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}dmat_history`);
-    const list = raw ? JSON.parse(raw) : [];
-    // Only return completed exam attempts (total >= 5)
-    return list.filter(item => item && item.total >= 5);
-  } catch (e) {
-    return [];
-  }
-}
-
-// ── GRE Specific Storage ───────────────────────────────────────────────────
-export function saveGreScore(section, scoreData) {
-  try {
-    // Only save if it represents a fully completed section or mock
-    if (!scoreData || !scoreData.completed) {
-      console.warn('Ignoring uncompleted GRE session score:', scoreData);
-      return;
-    }
-    const all = getGreScores();
-    all[section] = {
-      ...scoreData,
-      completed: true,
-      updatedAt: new Date().toISOString()
-    };
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}gre_scores`, JSON.stringify(all));
-
-    // Also append to history log for analytics chart
-    saveGreHistory({
-      section,
-      scaledScore: scoreData.scaledScore,
-      percentage: scoreData.percentage,
-      correct: scoreData.correct,
-      total: scoreData.total,
-      completedAt: new Date().toISOString()
-    });
-  } catch (e) {
-    console.warn('Failed to save GRE score', e);
-  }
-}
-
-export function getGreScores() {
-  try {
-    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}gre_scores`);
-    const parsed = raw ? JSON.parse(raw) : { verbal: null, quant: null, writing: null, mock: null };
-    const cleaned = { ...parsed };
-    let modified = false;
-
-    // Purge any partial/incomplete attempts
-    for (const key of ['verbal', 'quant', 'writing', 'mock']) {
-      if (cleaned[key] && !cleaned[key].completed) {
-        cleaned[key] = null;
-        modified = true;
-      }
-    }
-    if (modified) {
-      localStorage.setItem(`${STORAGE_KEY_PREFIX}gre_scores`, JSON.stringify(cleaned));
-    }
-    return cleaned;
-  } catch (e) {
-    return { verbal: null, quant: null, writing: null, mock: null };
-  }
-}
-
-export function saveGreHistory(entry) {
-  try {
-    const hist = getGreHistory();
-    hist.push({
-      id: 'gre_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
-      ...entry
-    });
-    localStorage.setItem(`${STORAGE_KEY_PREFIX}gre_history`, JSON.stringify(hist.slice(-100)));
-  } catch (e) {
-    console.warn('Failed to save GRE history', e);
-  }
-}
-
-export function getGreHistory() {
-  try {
-    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}gre_history`);
-    const list = raw ? JSON.parse(raw) : [];
-    return list.filter(item => item && (item.total >= 5 || item.section === 'writing' || item.scaledScore !== undefined));
-  } catch (e) {
-    return [];
-  }
-}
-
 // ── User Profile & Onboarding Storage ─────────────────────────────────────
 export function getUserProfile() {
   try {
@@ -362,20 +464,18 @@ export function getUserProfile() {
     if (!raw) {
       return {
         name: '',
-        targetExams: ['IELTS', 'GRE', 'DMAT'],
+        targetExams: ['IELTS'],
         onboarded: false
       };
     }
     const parsed = JSON.parse(raw);
     return {
       name: parsed.name || '',
-      targetExams: Array.isArray(parsed.targetExams) && parsed.targetExams.length > 0 
-        ? parsed.targetExams 
-        : ['IELTS', 'GRE', 'DMAT'],
+      targetExams: ['IELTS'],
       onboarded: Boolean(parsed.onboarded)
     };
   } catch (e) {
-    return { name: '', targetExams: ['IELTS', 'GRE', 'DMAT'], onboarded: false };
+    return { name: '', targetExams: ['IELTS'], onboarded: false };
   }
 }
 
@@ -385,6 +485,7 @@ export function saveUserProfile(profile) {
     const updated = {
       ...current,
       ...profile,
+      targetExams: ['IELTS'],
       updatedAt: new Date().toISOString()
     };
     localStorage.setItem(`${STORAGE_KEY_PREFIX}user_profile`, JSON.stringify(updated));
@@ -394,86 +495,3 @@ export function saveUserProfile(profile) {
     return profile;
   }
 }
-
-// ── Consolidated Cross-Track Analytics & History Aggregator ─────────────────
-export function getAllTrackScores() {
-  return {
-    ielts: getSkillScores(),
-    dmat: getDmatScores(),
-    gre: getGreScores()
-  };
-}
-
-export function getAllAttemptHistory() {
-  const allAttempts = [];
-
-  // 1. IELTS Completed Results
-  const ieltsHistory = getCompletedResults();
-  ieltsHistory.forEach(item => {
-    allAttempts.push({
-      id: item.id || `ielts_${item.completedAt}`,
-      track: 'IELTS',
-      trackLabel: 'IELTS Academic',
-      module: item.skill || (item.overallBand ? 'mock' : 'general'),
-      title: item.skill 
-        ? `${item.skill.charAt(0).toUpperCase() + item.skill.slice(1)} Practice`
-        : 'IELTS Full Mock Exam',
-      scoreText: item.bandScore ? `Band ${item.bandScore}` : (item.overallBand ? `Band ${item.overallBand}` : 'Completed'),
-      scoreNum: item.bandScore || item.overallBand || null,
-      maxScore: 9.0,
-      completedAt: item.completedAt || item.updatedAt || new Date().toISOString(),
-      raw: item
-    });
-  });
-
-  // 2. GRE History
-  const greHistory = getGreHistory();
-  greHistory.forEach(item => {
-    const moduleTitles = {
-      verbal: 'GRE Verbal Reasoning',
-      quant: 'GRE Quantitative Reasoning',
-      writing: 'GRE Analytical Writing',
-      mock: 'GRE Full Mock Exam'
-    };
-    allAttempts.push({
-      id: item.id || `gre_${item.completedAt}`,
-      track: 'GRE',
-      trackLabel: 'GRE General',
-      module: item.section || 'quant',
-      title: moduleTitles[item.section] || 'GRE Practice Test',
-      scoreText: item.scaledScore ? `${item.scaledScore} / 170` : (item.percentage !== undefined ? `${item.percentage}%` : 'Completed'),
-      scoreNum: item.scaledScore || item.percentage || null,
-      maxScore: 170,
-      completedAt: item.completedAt || new Date().toISOString(),
-      raw: item
-    });
-  });
-
-  // 3. DMAT History
-  const dmatHistory = getDmatHistory();
-  dmatHistory.forEach(item => {
-    const dmatTitles = {
-      latin: 'dMAT Latin Squares Logic',
-      math: 'dMAT Math Equations',
-      figures: 'dMAT Figure Sequences',
-      academic: 'dMAT Academic Text',
-      mock: 'dMAT Full Mock Exam'
-    };
-    allAttempts.push({
-      id: item.id || `dmat_${item.completedAt}`,
-      track: 'DMAT',
-      trackLabel: 'dMAT Aptitude',
-      module: item.section || 'latin',
-      title: dmatTitles[item.section] || 'dMAT Practice Test',
-      scoreText: item.percentage !== undefined ? `${item.percentage}% Accuracy` : (item.correct !== undefined ? `${item.correct}/${item.total}` : 'Completed'),
-      scoreNum: item.percentage !== undefined ? item.percentage : null,
-      maxScore: 100,
-      completedAt: item.completedAt || new Date().toISOString(),
-      raw: item
-    });
-  });
-
-  // Sort newest first
-  return allAttempts.sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt));
-}
-

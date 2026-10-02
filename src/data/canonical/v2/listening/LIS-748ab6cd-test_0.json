@@ -1,0 +1,474 @@
+{
+  "validation_state": "VERIFIED",
+  "validation_errors": [],
+  "provenance": {
+    "source_file": "/Users/arunyagoojar/Downloads/ielts-website/ielts-listening-test-61/index.html",
+    "source_url": null,
+    "source_hash": "748ab6cdf668e301a6a5f6c7e21da2ef17d805485ab8934d7ed1e3e23f95eae5",
+    "module": "listening",
+    "extraction_method": "deterministic_html_parse",
+    "html_fragment": null,
+    "section_or_task": null
+  },
+  "test_id": "test_0",
+  "title": "IELTS Listening Test",
+  "sections": [
+    {
+      "section_number": 1,
+      "audio": {
+        "original_src": "../wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "resolved_path": "/Users/arunyagoojar/Downloads/ielts-website/wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "asset_type": "audio",
+        "exists": true,
+        "canonical_path": "assets/eb687a895c36.mp3"
+      },
+      "question_groups": [
+        {
+          "group_type": "unknown",
+          "start_q": 1,
+          "end_q": 5,
+          "instructions": "Part 1:Questions 1-5Complete the notes below. WriteNO MORE THAN TWO WORDS.",
+          "shared_content_html": "<p>Customer details:<br/>\u2022 They will be coming to London on <strong>(1)</strong> <input name=\"fname\" type=\"text\"/><br/>\u2022 He\u2019s going with his sister and his <strong>(2)</strong> <input name=\"fname\" type=\"text\"/></p><p>Tour details:<br/>\u2022 Bus tour<br/>o The cost is <strong>(3)</strong> \u00a3 <input name=\"fname\" type=\"text\"/> for adults and <strong>(4)</strong> \u00a3 <input name=\"fname\" type=\"text\"/> for children<br/>o Tours start at 7 am and finish at <strong>(5)</strong> <input name=\"fname\" type=\"text\"/></p>",
+          "questions": [
+            {
+              "question_number": 1,
+              "question_text": "\u2022 They will be coming to London on (1) [BLANK]",
+              "options": null,
+              "correct_answer": "10 July",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 2,
+              "question_text": "\u2022 He\u2019s going with his sister and his (2) [BLANK]",
+              "options": null,
+              "correct_answer": "parents",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 3,
+              "question_text": "o The cost is (3) \u00a3 [BLANK] for adults and (4) \u00a3  for children",
+              "options": null,
+              "correct_answer": "29",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 3,
+              "question_text": "o The cost is (3) \u00a3  for adults and (4) \u00a3 [BLANK] for children",
+              "options": null,
+              "correct_answer": "29",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 5,
+              "question_text": "o Tours start at 7 am and finish at (5) [BLANK]",
+              "options": null,
+              "correct_answer": "6 pm",
+              "type": "fill_in_blank"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 6,
+          "end_q": 8,
+          "instructions": "Questions 6-8ChooseTWOletters A-G.",
+          "shared_content_html": "<p>Which three places does the tourist decide he\u2019s likely to see?<br/><strong><input type=\"checkbox\"/> A</strong> Buckingham Palace<br/><strong><input type=\"checkbox\"/> B</strong> Big Ben<br/><strong><input type=\"checkbox\"/> C</strong> Harrods<br/><strong><input type=\"checkbox\"/> D</strong> Houses of Parliament<br/><strong><input type=\"checkbox\"/> E</strong> Hyde Park<br/><strong><input type=\"checkbox\"/> F</strong> St Paul\u2019s Cathedral<br/><strong><input type=\"checkbox\"/> G</strong> London Eye</p>",
+          "questions": [
+            {
+              "question_number": 6,
+              "question_text": "Which three places does the tourist decide he\u2019s likely to see?ABuckingham PalaceBBig BenCHarrodsDHouses of ParliamentEHyde ParkFSt Paul\u2019s CathedralGLondon Eye",
+              "options": [
+                "A Buckingham Palace B Big Ben C Harrods D Houses of Parliament E Hyde Park F St Paul\u2019s Cathedral G London Eye"
+              ],
+              "correct_answer": "B",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 7,
+              "question_text": "Which three places does the tourist decide he\u2019s likely to see?ABuckingham PalaceBBig BenCHarrodsDHouses of ParliamentEHyde ParkFSt Paul\u2019s CathedralGLondon Eye",
+              "options": [
+                "A Buckingham Palace B Big Ben C Harrods D Houses of Parliament E Hyde Park F St Paul\u2019s Cathedral G London Eye"
+              ],
+              "correct_answer": "D",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 8,
+              "question_text": "Which three places does the tourist decide he\u2019s likely to see?ABuckingham PalaceBBig BenCHarrodsDHouses of ParliamentEHyde ParkFSt Paul\u2019s CathedralGLondon Eye",
+              "options": [
+                "A Buckingham Palace B Big Ben C Harrods D Houses of Parliament E Hyde Park F St Paul\u2019s Cathedral G London Eye"
+              ],
+              "correct_answer": "G",
+              "type": "multiple_choice"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 9,
+          "end_q": 10,
+          "instructions": "Questions 9-10Choose the correct letter A, B or C.",
+          "shared_content_html": "<p>9. How will the tourist buy the tickets?<br/><strong><input type=\"checkbox\"/> A</strong> By phone<br/><strong><input type=\"checkbox\"/> B</strong> Online<br/><strong><input type=\"checkbox\"/> C</strong> On the bus</p><p>10. How long before he leaves should he buy his tickets?<br/><strong><input type=\"checkbox\"/> A</strong> 1 week<br/><strong><input type=\"checkbox\"/> B</strong> 6 weeks<br/><strong><input type=\"checkbox\"/> C</strong> 3 months</p><p><br/><ins data-ad-client=\"ca-pub-5700321813195736\" data-ad-format=\"auto\" data-ad-slot=\"5680584161\" data-full-width-responsive=\"true\" style=\"display: block;\"></ins></p>",
+          "questions": [
+            {
+              "question_number": 9,
+              "question_text": "9. How will the tourist buy the tickets?ABy phoneBOnlineCOn the bus 10. How long before he leaves should he buy his tickets?A1 weekB6 weeksC3 months ",
+              "options": [
+                "A By phone B Online C On the bus",
+                "A 1 week B 6 weeks C 3 months"
+              ],
+              "correct_answer": "B",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 10,
+              "question_text": "9. How will the tourist buy the tickets?ABy phoneBOnlineCOn the bus 10. How long before he leaves should he buy his tickets?A1 weekB6 weeksC3 months ",
+              "options": [
+                "A By phone B Online C On the bus",
+                "A 1 week B 6 weeks C 3 months"
+              ],
+              "correct_answer": "A",
+              "type": "multiple_choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "audio": {
+        "original_src": "../wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "resolved_path": "/Users/arunyagoojar/Downloads/ielts-website/wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "asset_type": "audio",
+        "exists": true,
+        "canonical_path": "assets/eb687a895c36.mp3"
+      },
+      "question_groups": [
+        {
+          "group_type": "unknown",
+          "start_q": 11,
+          "end_q": 12,
+          "instructions": "Part 2: Questions 11-12Choose the correct letter A, B or C.",
+          "shared_content_html": "<p>11. Each day, pandas need to eat:<br/><strong><input type=\"checkbox\"/> A</strong> Very little nutrition<br/><strong><input type=\"checkbox\"/> B</strong> 12-38 kg of bamboo<br/><strong><input type=\"checkbox\"/> C</strong> 330 pounds of bamboo</p><p>12. If pandas are cared for away from the wild, they can live for approximately:<br/><strong><input type=\"checkbox\"/> A</strong> 6 months<br/><strong><input type=\"checkbox\"/> B</strong> 14-20 years<br/><strong><input type=\"checkbox\"/> C</strong> 30 years</p>",
+          "questions": [
+            {
+              "question_number": 11,
+              "question_text": "11. Each day, pandas need to eat:AVery little nutritionB12-38 kg of bambooC330 pounds of bamboo 12. If pandas are cared for away from the wild, they can live for approximately:A6 monthsB14-20 yearsC30 years",
+              "options": [
+                "A Very little nutrition B 12-38 kg of bamboo C 330 pounds of bamboo",
+                "A 6 months B 14-20 years C 30 years"
+              ],
+              "correct_answer": "B",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 12,
+              "question_text": "11. Each day, pandas need to eat:AVery little nutritionB12-38 kg of bambooC330 pounds of bamboo 12. If pandas are cared for away from the wild, they can live for approximately:A6 monthsB14-20 yearsC30 years",
+              "options": [
+                "A Very little nutrition B 12-38 kg of bamboo C 330 pounds of bamboo",
+                "A 6 months B 14-20 years C 30 years"
+              ],
+              "correct_answer": "C",
+              "type": "multiple_choice"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 13,
+          "end_q": 14,
+          "instructions": "Questions 13-14ChooseTWOletters A-E.",
+          "shared_content_html": "<p>Select two things that are endangering pandas:<br/><strong><input type=\"checkbox\"/> A</strong> Public awareness<br/><strong><input type=\"checkbox\"/> B</strong> Ecotourism<br/><strong><input type=\"checkbox\"/> C</strong> Poaching<br/><strong><input type=\"checkbox\"/> D</strong> Other wildlife<br/><strong><input type=\"checkbox\"/> E</strong> Building of roads and railroads</p>",
+          "questions": [
+            {
+              "question_number": 13,
+              "question_text": "Select two things that are endangering pandas:APublic awarenessBEcotourismCPoachingDOther wildlifeEBuilding of roads and railroads",
+              "options": [
+                "A Public awareness B Ecotourism C Poaching D Other wildlife E Building of roads and railroads"
+              ],
+              "correct_answer": "C",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 14,
+              "question_text": "Select two things that are endangering pandas:APublic awarenessBEcotourismCPoachingDOther wildlifeEBuilding of roads and railroads",
+              "options": [
+                "A Public awareness B Ecotourism C Poaching D Other wildlife E Building of roads and railroads"
+              ],
+              "correct_answer": "E",
+              "type": "multiple_choice"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 15,
+          "end_q": 16,
+          "instructions": "Questions 15-16WriteNO MORE THAN THREE WORDS AND / OR A NUMBER.",
+          "shared_content_html": "<p>15. What proportion of the panda population in China is protected by reserves? <input name=\"fname\" type=\"text\"/><br/>16. What did the WWF create which encouraged people to support pandas? <input name=\"fname\" type=\"text\"/></p>",
+          "questions": [
+            {
+              "question_number": 15,
+              "question_text": "15. What proportion of the panda population in China is protected by reserves? [BLANK]",
+              "options": null,
+              "correct_answer": "61%",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 16,
+              "question_text": "16. What did the WWF create which encouraged people to support pandas? [BLANK]",
+              "options": null,
+              "correct_answer": "logo",
+              "type": "fill_in_blank"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 17,
+          "end_q": 20,
+          "instructions": "Questions 17 \u2013 20WriteNO MORE THAN ONE WORD AND / OR A NUMBER.",
+          "shared_content_html": "<p>Reasons that pandas may not be worth saving:<br/>\u2022 They are extremely <strong>(17)</strong> <input name=\"fname\" type=\"text\"/> to look after<br/>\u2022 They have a diet that is not <strong>(18)</strong> <input name=\"fname\" type=\"text\"/><br/>\u2022 They get sick easily and are hard to breed</p><p>Reasons that pandas should not be allowed to die out:<br/>\u2022 They are in danger because <strong>(19)</strong> <input name=\"fname\" type=\"text\"/> are damaging the forests<br/>\u2022 We should protect their homes because other animals live there<br/>\u2022 The number of pandas in the wild is <strong>(20)</strong> <input name=\"fname\" type=\"text\"/> so they will not become extinct</p><p><br/><ins data-ad-client=\"ca-pub-5700321813195736\" data-ad-format=\"auto\" data-ad-slot=\"5477565220\" data-full-width-responsive=\"true\" style=\"display: block;\"></ins></p>",
+          "questions": [
+            {
+              "question_number": 17,
+              "question_text": "\u2022 They are extremely (17) [BLANK] to look after",
+              "options": null,
+              "correct_answer": "expensive",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 18,
+              "question_text": "\u2022 They have a diet that is not (18) [BLANK]",
+              "options": null,
+              "correct_answer": "nutritious",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 19,
+              "question_text": "\u2022 They are in danger because (19) [BLANK] are damaging the forests",
+              "options": null,
+              "correct_answer": "humans",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 20,
+              "question_text": "\u2022 The number of pandas in the wild is (20) [BLANK] so they will not become extinct",
+              "options": null,
+              "correct_answer": "increasing",
+              "type": "fill_in_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "audio": {
+        "original_src": "../wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "resolved_path": "/Users/arunyagoojar/Downloads/ielts-website/wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "asset_type": "audio",
+        "exists": true,
+        "canonical_path": "assets/eb687a895c36.mp3"
+      },
+      "question_groups": [
+        {
+          "group_type": "unknown",
+          "start_q": 21,
+          "end_q": 22,
+          "instructions": "Part 3: Questions 21 and 22Choose the correct letter A, B or C.",
+          "shared_content_html": "<p>21. What is the problem that the students are having with the project?<br/><strong><input type=\"checkbox\"/> A</strong> The readings are too difficult<br/><strong><input type=\"checkbox\"/> B</strong> The readings are not interesting<br/><strong><input type=\"checkbox\"/> C</strong> The project is taking too long</p><p>22. When can extensions be granted?<br/><strong><input type=\"checkbox\"/> A</strong> Problems with planning<br/><strong><input type=\"checkbox\"/> B</strong> Illness or accidents<br/><strong><input type=\"checkbox\"/> C</strong> Scheduling issues</p>",
+          "questions": [
+            {
+              "question_number": 21,
+              "question_text": "21. What is the problem that the students are having with the project?AThe readings are too difficultBThe readings are not interestingCThe project is taking too long 22. When can extensions be granted?AProblems with planningBIllness or accidentsCScheduling issues",
+              "options": [
+                "A The readings are too difficult B The readings are not interesting C The project is taking too long",
+                "A Problems with planning B Illness or accidents C Scheduling issues"
+              ],
+              "correct_answer": "C",
+              "type": "multiple_choice"
+            },
+            {
+              "question_number": 22,
+              "question_text": "21. What is the problem that the students are having with the project?AThe readings are too difficultBThe readings are not interestingCThe project is taking too long 22. When can extensions be granted?AProblems with planningBIllness or accidentsCScheduling issues",
+              "options": [
+                "A The readings are too difficult B The readings are not interesting C The project is taking too long",
+                "A Problems with planning B Illness or accidents C Scheduling issues"
+              ],
+              "correct_answer": "B",
+              "type": "multiple_choice"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 23,
+          "end_q": 27,
+          "instructions": "Questions 23-27Choose your answers from the box and write the letters A\u2013G next to questions 23\u201327.",
+          "shared_content_html": "<p><strong>A</strong> knowledge about their customers<br/><strong>B</strong> long-term gain<br/><strong>C</strong> competition<br/><strong>D</strong> customer satisfaction<br/><strong>E</strong> employees<br/><strong>F</strong> external factors</p><p>23. Princeton Windows <input name=\"fname\" type=\"text\"/><br/>24. MK Cars <input name=\"fname\" type=\"text\"/><br/>25. Lakeside Golf <input name=\"fname\" type=\"text\"/><br/>26. Bryson\u2019s Meats <input name=\"fname\" type=\"text\"/><br/>27. Mojo\u2019s Music Shop <input name=\"fname\" type=\"text\"/></p>",
+          "questions": [
+            {
+              "question_number": 23,
+              "question_text": "23. Princeton Windows [BLANK]",
+              "options": null,
+              "correct_answer": "B",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 24,
+              "question_text": "24. MK Cars [BLANK]",
+              "options": null,
+              "correct_answer": "A",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 25,
+              "question_text": "25. Lakeside Golf [BLANK]",
+              "options": null,
+              "correct_answer": "D",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 26,
+              "question_text": "26. Bryson\u2019s Meats [BLANK]",
+              "options": null,
+              "correct_answer": "F",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 27,
+              "question_text": "27. Mojo\u2019s Music Shop [BLANK]",
+              "options": null,
+              "correct_answer": "C",
+              "type": "fill_in_blank"
+            }
+          ]
+        },
+        {
+          "group_type": "unknown",
+          "start_q": 28,
+          "end_q": 30,
+          "instructions": "Questions 28-30Choose your answers from the box and write the letters A-F next to questions 28-30.",
+          "shared_content_html": "<p><strong>A</strong> It has good managers<br/><strong>B</strong> It has been operating for too long<br/><strong>C</strong> There aren\u2019t enough music shops<br/><strong>D</strong> It needs more innovative marketing<br/><strong>E</strong> It will close down in the end<br/><strong>F</strong> It has a good long-term future</p><p>28. Sarah <input name=\"fname\" type=\"text\"/><br/>29. John <input name=\"fname\" type=\"text\"/><br/>30. Neil <input name=\"fname\" type=\"text\"/></p><p><br/><ins data-ad-client=\"ca-pub-5700321813195736\" data-ad-format=\"auto\" data-ad-slot=\"5477565220\" data-full-width-responsive=\"true\" style=\"display: block;\"></ins></p>",
+          "questions": [
+            {
+              "question_number": 28,
+              "question_text": "28. Sarah [BLANK]",
+              "options": null,
+              "correct_answer": "F",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 29,
+              "question_text": "29. John [BLANK]",
+              "options": null,
+              "correct_answer": "E",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 30,
+              "question_text": "30. Neil [BLANK]",
+              "options": null,
+              "correct_answer": "D",
+              "type": "fill_in_blank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "audio": {
+        "original_src": "../wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "resolved_path": "/Users/arunyagoojar/Downloads/ielts-website/wp-content/uploads/audio/100_deep-q7b50db1914.mp3",
+        "asset_type": "audio",
+        "exists": true,
+        "canonical_path": "assets/eb687a895c36.mp3"
+      },
+      "question_groups": [
+        {
+          "group_type": "unknown",
+          "start_q": 31,
+          "end_q": 40,
+          "instructions": "Part 4: Questions 31-40Complete the notes below. WriteNO MORE THAN THREE WORDS AND/OR A NUMBERfor each answer.",
+          "shared_content_html": "<p>Behavior or dolphins<br/>\u2022 almost 40 species of dolphin<br/>\u2022 found <strong>(31)</strong> <input name=\"fname\" type=\"text\"/><br/>\u2022 usually in shallower seas<br/>\u2022 carnivores</p><p><strong>SOCIALISING</strong><br/>\u2022 very sociable and live in pods<br/>\u2022 super-pods may have more than <strong>(32)</strong> <input name=\"fname\" type=\"text\"/> dolphins<br/>\u2022 have strong social bonds<br/>\u2022 help other animals \u2013 Moko helped a whale and calf escape from <strong>(33)</strong> <input name=\"fname\" type=\"text\"/><br/>\u2022 have been known to assist swimmers</p><p><strong>CULTURE</strong><br/>\u2022 discovered in May 2005 that young bottlenose dolphins learn to <strong>(34)</strong> <input name=\"fname\" type=\"text\"/><br/>\u2022 dolphins pass knowledge from mothers to daughters, whereas primates pass to <strong>(35)</strong> <input name=\"fname\" type=\"text\"/></p><p><strong>AGGRESSION</strong><br/>\u2022 dolphins may be aggressive towards each other<br/>\u2022 Like humans, this is due to disagreements over <strong>(36)</strong> <input name=\"fname\" type=\"text\"/> and competition for females<br/>\u2022 Infanticide sometimes occurs and the killing of porpoises</p><p><strong>FOOD</strong><br/>\u2022 dolphins have a variety of feeding methods, some of which are <strong>(37)</strong> <input name=\"fname\" type=\"text\"/> to one population<br/>\u2022 methods include:<br/>o herding<br/>o corralling<br/>o <strong>(38)</strong> <input name=\"fname\" type=\"text\"/> or strand feeding<br/>o whacking fish with their flukes</p><p><strong>PLAYING</strong><br/>\u2022 have a variety of playful activities<br/>\u2022 common behaviour with an object or small animal include:<br/>o carrying it along<br/>o passing it along<br/>o <strong>(39)</strong> <input name=\"fname\" type=\"text\"/> away from another dolphin throwing it out the water<br/>\u2022 may harass other animals<br/>\u2022 playful behaviour may include other <strong>(40)</strong> <input name=\"fname\" type=\"text\"/> such as humans</p><p><br/><ins data-ad-client=\"ca-pub-5700321813195736\" data-ad-format=\"auto\" data-ad-slot=\"5680584161\" data-full-width-responsive=\"true\" style=\"display: block;\"></ins></p><input bg_collapse_expand=\"6abd59886964c9035063048\" type=\"hidden\" value=\"6abd59886964c9035063048\"/><input id=\"bg-show-more-text-6abd59886964c9035063048\" type=\"hidden\" value=\"Show Answers\"/><input id=\"bg-show-less-text-6abd59886964c9035063048\" type=\"hidden\" value=\"Hide Answers\"/>",
+          "questions": [
+            {
+              "question_number": 31,
+              "question_text": "\u2022 found (31) [BLANK]",
+              "options": null,
+              "correct_answer": "worldwide",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 32,
+              "question_text": "\u2022 super-pods may have more than (32) [BLANK] dolphins",
+              "options": null,
+              "correct_answer": "1000",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 33,
+              "question_text": "\u2022 help other animals \u2013 Moko helped a whale and calf escape from (33) [BLANK]",
+              "options": null,
+              "correct_answer": "shallow water",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 34,
+              "question_text": "\u2022 discovered in May 2005 that young bottlenose dolphins learn to (34) [BLANK]",
+              "options": null,
+              "correct_answer": "use tools",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 35,
+              "question_text": "\u2022 dolphins pass knowledge from mothers to daughters, whereas primates pass to (35) [BLANK]",
+              "options": null,
+              "correct_answer": "both sexes",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 36,
+              "question_text": "\u2022 Like humans, this is due to disagreements over (36) [BLANK] and competition for females",
+              "options": null,
+              "correct_answer": "companions",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 37,
+              "question_text": "\u2022 dolphins have a variety of feeding methods, some of which are (37) [BLANK] to one population",
+              "options": null,
+              "correct_answer": "exclusive",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 38,
+              "question_text": "o (38) [BLANK] or strand feeding",
+              "options": null,
+              "correct_answer": "beach",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 39,
+              "question_text": "o (39) [BLANK] away from another dolphin throwing it out the water",
+              "options": null,
+              "correct_answer": "taking it",
+              "type": "fill_in_blank"
+            },
+            {
+              "question_number": 40,
+              "question_text": "\u2022 playful behaviour may include other (40) [BLANK] such as humans",
+              "options": null,
+              "correct_answer": "species",
+              "type": "fill_in_blank"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test_type": "UNKNOWN",
+  "canonical_id": "LIS-748ab6cd-test_0"
+}

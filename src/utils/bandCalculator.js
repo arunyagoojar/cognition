@@ -43,8 +43,12 @@ export function calculateReadingBand(rawScore) {
  * applying official rounding rule (.25 -> .5, .75 -> next whole band)
  */
 export function calculateOverallBand(listening, reading, writing, speaking) {
-  const scores = [listening, reading, writing, speaking].filter(s => typeof s === 'number' && !isNaN(s));
-  if (scores.length === 0) return 0.0;
+  const scores = [listening, reading, writing, speaking];
+  // An IELTS overall score is meaningful only after all four competencies are
+  // assessed. Never quietly turn a partial profile into an "overall" band.
+  if (!scores.every(s => typeof s === 'number' && Number.isFinite(s) && s >= 0 && s <= 9)) {
+    return null;
+  }
   
   const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
   const decimal = avg - Math.floor(avg);

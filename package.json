@@ -7,18 +7,34 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:content": "node scripts/validate_content.js",
+    "validate:canonical:v2": "python3 scripts/content_pipeline/validate_v2.py",
+    "test:randomization": "node test/randomization.test.js",
+    "test:evaluation": "node test/evaluation.test.js",
+    "test": "node test/evaluation.test.js && node test/randomization.test.js"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
     "lucide-react": "^1.47.0",
+    "motion": "^13.4.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
+    "clsx": "^2.1.1",
     "oxlint": "^1.81.0",
+    "puppeteer": "^25.12.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
     "vite": "^8.3.0"
+  },
+  "allowScripts": {
+    "puppeteer@25.12.0": true
   }
 }

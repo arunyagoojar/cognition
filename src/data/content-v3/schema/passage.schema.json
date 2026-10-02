@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CognitionContentV3ReadingPassage",
+  "type": "OBJECT",
+  "required": [
+    "id",
+    "testId",
+    "passageNumber",
+    "title",
+    "content",
+    "questionGroups",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "testId": { "type": "string" },
+    "passageNumber": { "type": "number", "minimum": 1, "maximum": 3 },
+    "title": { "type": "string" },
+    "content": { "type": "string" },
+    "questionGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "questionType", "questions"],
+        "properties": {
+          "id": { "type": "string" },
+          "questionType": { "type": "string" },
+          "instruction": { "type": "string" },
+          "sharedOptions": { "type": "array", "items": { "type": "string" } },
+          "questions": {
+            "type": "array",
+            "items": { "$ref": "question.schema.json" }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "NEEDS_REVIEW", "QUARANTINED"]
+    }
+  }
+}

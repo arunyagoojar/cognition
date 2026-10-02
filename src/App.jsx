@@ -1,350 +1,339 @@
 import React, { useState, useEffect } from 'react';
-import { Settings } from 'lucide-react';
-import Navbar from './components/common/Navbar';
-import SettingsModal from './components/common/SettingsModal';
-import Dashboard from './components/dashboard/Dashboard';
+import { motion, AnimatePresence } from 'motion/react';
+import TopNavigation from './components/dashboard/TopNavigation';
+import SettingsModal from './components/dashboard/SettingsModal';
+import ScoreSummary from './components/dashboard/ScoreSummary';
+import PerformanceOverview from './components/dashboard/PerformanceOverview';
+import PracticeSection from './components/dashboard/PracticeSection';
+import MockHeroCard from './components/dashboard/MockHeroCard';
+import PerformancePage from './components/views/PerformancePage';
+import LearningHubPage from './components/views/LearningHubPage';
 import ListeningModule from './components/modules/ListeningModule';
 import ReadingModule from './components/modules/ReadingModule';
 import WritingModule from './components/modules/WritingModule';
 import SpeakingModule from './components/modules/SpeakingModule';
 import MockExamFlow from './components/modules/MockExamFlow';
-import ExitScreen from './components/common/ExitScreen';
-import GreTrack from './components/tracks/GreTrack';
-import DmatTrack from './components/tracks/DmatTrack';
-import HomePage from './components/home/HomePage';
-
-import testData from './data/tests/cambridge17_test1.json';
-import { getCompletedResults, getApiKey, getAppSettings, applyAppSettings } from './utils/storage';
+import {
+  getSkillScores,
+  saveSkillScore,
+  resetSkillScores,
+  getTargetBand,
+  saveTargetBand,
+  getCompletedLessons,
+  getActiveMockSession,
+} from './utils/storage';
+import { subscribePerformanceStore } from './utils/performanceStore';
+import { getNextTestInRotation } from './utils/testQueue';
 
 export default function App() {
-  const getInitialTab = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('tab') || window.location.hash.replace('#', '') || 'dashboard';
-  };
+  const [view, setView] = useState(() => {
+    const activeMock = getActiveMockSession();
+    if (activeMock && activeMock.status === 'in_progress') {
+      return 'mock';
+    }
+    return 'home';
+  }); // home | performance | learning | listening | reading | writing | speaking | mock
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem('omniprep_theme') || 'light');
+  const [targetBand, setTargetBand] = useState(() => getTargetBand() || '8.0');
+  const [scores, setScores] = useState(getSkillScores());
+  const [completedLessons, setCompletedLessons] = useState(getCompletedLessons());
 
-  const getInitialTrack = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('track') || 'HOME';
-  };
-
-  const [activeTrack, setActiveTrack] = useState(getInitialTrack);
-  const [activeModule, setActiveModuleState] = useState(getInitialTab);
-  const [lastBrowsedTrack, setLastBrowsedTrack] = useState(() => {
-    return getInitialTrack() || 'HOME';
+  // Learning Hub dynamic breadcrumb context
+  const [learningContext, setLearningContext] = useState({
+    skill: 'reading',
+    lessonTitle: 'Lesson 01',
   });
-  const [completedHistory, setCompletedHistory] = useState(getCompletedResults());
-  const [isDmatInExam, setIsDmatInExam] = useState(false);
-  const [isGreInExam, setIsGreInExam] = useState(false);
-  const [greInitialModule, setGreInitialModule] = useState(null);
-  const [dmatInitialModule, setDmatInitialModule] = useState(null);
-  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(() => {
-    return new URLSearchParams(window.location.search).get('apiKeyModal') === '1';
-  });
-  const [apiKey, setApiKey] = useState(getApiKey());
 
-  // Apply saved theme and font scale on startup
+  // Rotating randomized test queue initial next recommendation
+  const initialRotation = getNextTestInRotation();
+  const [selectedExamId, setSelectedExamId] = useState(() => {
+    const activeMock = getActiveMockSession();
+    if (activeMock && activeMock.examId) {
+      return activeMock.examId;
+    }
+    return initialRotation.testId;
+  });
+
   useEffect(() => {
-    applyAppSettings(getAppSettings());
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('omniprep_theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(t => t === 'dark' ? 'light' : 'dark');
+  };
+
+  const refreshScores = () => {
+    setScores(getSkillScores());
+    setCompletedLessons(getCompletedLessons());
+  };
+
+  useEffect(() => {
+    const unsubscribe = subscribePerformanceStore(() => {
+      refreshScores();
+    });
+    return unsubscribe;
   }, []);
 
-  // Listen to browser Back / Forward events
+  const handleCompleteSkill = (skill, scoreData) => {
+    saveSkillScore(skill, scoreData);
+    refreshScores();
+    setView('home');
+  };
+
+  const handleResetScores = () => {
+    resetSkillScores();
+    refreshScores();
+  };
+
+  const rotation = getNextTestInRotation();
+
+  // Helper for diagnostic weakness/strength pill on Performance
+  const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
+  const R = scores?.reading?.band ? parseFloat(scores.reading.band) : null;
+  const W = scores?.writing?.band ? parseFloat(scores.writing.band) : null;
+  const S = scores?.speaking?.band ? parseFloat(scores.speaking.band) : null;
+
+  const validSkills = [
+    { name: 'Listening', band: L },
+    { name: 'Reading', band: R },
+    { name: 'Writing', band: W },
+    { name: 'Speaking', band: S },
+  ].filter(s => s.band !== null).sort((a, b) => b.band - a.band);
+
+  const strongestSkill = validSkills[0] || null;
+  const weakestSkill = validSkills.length > 1 ? validSkills[validSkills.length - 1] : null;
+
+
+  // Shared fluid spatial continuity for all page transitions (280ms)
+  const pageVariants = {
+    initial: { opacity: 0, y: 10, scale: 0.995 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    exit: { opacity: 0, y: -8, scale: 0.995 },
+  };
+
+  const pageTransition = {
+    duration: 0.28,
+    ease: [0.16, 1, 0.3, 1],
+  };
+
+  // Instant scroll to top on every view switch (Fix UX scroll position bug)
   useEffect(() => {
-    const handlePopState = () => {
-      const params = new URLSearchParams(window.location.search);
-      const tab = params.get('tab') || 'dashboard';
-      const track = params.get('track') || 'HOME';
-      setActiveModuleState(tab);
-      setActiveTrack(track);
-      if (tab === 'dashboard') {
-        setLastBrowsedTrack(track);
-      }
-      setIsDmatInExam(false);
-      setIsGreInExam(false);
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [view]);
 
-  const setActiveModule = (mod) => {
-    if (mod && mod !== 'dashboard' && activeTrack === 'IELTS') {
-      setLastBrowsedTrack('IELTS');
-    }
-    setActiveModuleState(mod);
-    const url = new URL(window.location);
-    if (!mod || mod === 'dashboard') {
-      url.searchParams.delete('tab');
-      url.searchParams.delete('setId');
-      url.searchParams.delete('showModal');
-      if (activeTrack === 'IELTS') {
-        url.searchParams.set('track', 'IELTS');
-      }
-      const queryStr = url.searchParams.toString();
-      const cleanPath = queryStr ? `${url.pathname}?${queryStr}` : url.pathname;
-      window.history.pushState({}, '', cleanPath);
-    } else {
-      url.searchParams.set('tab', mod);
-      window.history.pushState({}, '', url);
-    }
-  };
-
-  const handleGoHome = () => {
-    setLastBrowsedTrack('HOME');
-    setActiveTrack('HOME');
-    setIsDmatInExam(false);
-    setIsGreInExam(false);
-    setGreInitialModule(null);
-    setDmatInitialModule(null);
-    setActiveModuleState('dashboard');
-    const url = new URL(window.location);
-    url.searchParams.delete('tab');
-    url.searchParams.delete('track');
-    url.searchParams.delete('setId');
-    url.searchParams.delete('showModal');
-    window.history.pushState({}, '', url.pathname);
-    window.scrollTo(0, 0);
-  };
-
-  const handleExitToLastTab = () => {
-    const targetTrack = lastBrowsedTrack || 'IELTS';
-    setActiveTrack(targetTrack);
-    setIsDmatInExam(false);
-    setIsGreInExam(false);
-    setGreInitialModule(null);
-    setDmatInitialModule(null);
-    setActiveModuleState('dashboard');
-
-    const url = new URL(window.location);
-    url.searchParams.delete('tab');
-    url.searchParams.delete('setId');
-    url.searchParams.delete('showModal');
-    if (targetTrack === 'HOME') {
-      url.searchParams.delete('track');
-    } else {
-      url.searchParams.set('track', targetTrack);
-    }
-    const queryStr = url.searchParams.toString();
-    const cleanPath = queryStr ? `${url.pathname}?${queryStr}` : url.pathname;
-    window.history.pushState({}, '', cleanPath);
-    window.scrollTo(0, 0);
-  };
-
-  const handleLaunchMock = () => {
-    if (activeTrack === 'IELTS') {
-      setLastBrowsedTrack('IELTS');
-    }
-    setActiveTrack('IELTS');
-    setIsDmatInExam(false);
-    setIsGreInExam(false);
-    setActiveModule('mock_test');
-    window.scrollTo(0, 0);
-  };
-
-  const handleTrackChange = (track, initialMod = null) => {
-    if (!initialMod) {
-      setLastBrowsedTrack(track);
-    }
-    setActiveTrack(track);
-    setIsDmatInExam(false);
-    setIsGreInExam(false);
-    setGreInitialModule(track === 'GRE' ? initialMod : null);
-    setDmatInitialModule(track === 'DMAT' ? initialMod : null);
-    const url = new URL(window.location);
-    if (track === 'HOME') {
-      url.searchParams.delete('track');
-      url.searchParams.delete('tab');
-    } else if (track === 'IELTS') {
-      url.searchParams.set('track', 'IELTS');
-      if (initialMod) {
-        setActiveModule(initialMod);
-      } else {
-        setActiveModule('dashboard');
-      }
-    } else {
-      url.searchParams.set('track', track);
-      url.searchParams.delete('tab');
-    }
-    const queryStr = url.searchParams.toString();
-    const cleanPath = queryStr ? `${url.pathname}?${queryStr}` : url.pathname;
-    window.history.pushState({}, '', cleanPath);
-    window.scrollTo(0, 0);
-  };
-
-  const isInMockExam = activeModule === 'mock_test' && activeTrack === 'IELTS';
-
-  // True whenever user is inside any exam/module screen (hides navbar + footer)
-  const examModules = ['listening', 'reading', 'writing', 'speaking', 'mock_test'];
-  const isInExam = (activeTrack === 'IELTS' && examModules.includes(activeModule)) || 
-                   (activeTrack === 'DMAT' && isDmatInExam) ||
-                   (activeTrack === 'GRE' && isGreInExam);
-
-  const [isDmatGuidelinesOpen, setIsDmatGuidelinesOpen] = useState(false);
+  const isExamFlow = ['listening', 'reading', 'writing', 'speaking', 'mock'].includes(view);
 
   return (
-    <div className={`app-container${isInExam ? ' exam-mode' : ''}`}>
-      {!isInExam && (
-        <Navbar
-          activeTrack={activeTrack}
-          setActiveTrack={handleTrackChange}
-          onGoHome={handleGoHome}
-          onOpenMockTest={handleLaunchMock}
-          onOpenApiKeyModal={() => setIsApiKeyModalOpen(true)}
-          onOpenDmatGuidelines={() => setIsDmatGuidelinesOpen(true)}
-          hasApiKey={Boolean(apiKey)}
-          isInMockExam={isInMockExam}
-        />
+    <div className={`app-shell ${isExamFlow ? 'in-exam-flow' : ''}`}>
+      {/* ── UNIFIED NAVIGATION ARCHITECTURE (HIDDEN DURING ACTIVE EXAM FLOWS) ─────── */}
+      {!isExamFlow && (
+        <header className="unified-nav-header">
+          <TopNavigation
+            onOpenSettings={() => setSettingsOpen(true)}
+            onGoHome={() => setView('home')}
+            view={view}
+          />
+        </header>
       )}
 
-      <main className={`main-content${isInExam ? ' exam-mode' : ''}`}>
-        {/* Track Switching: Home Overview & Performance Radar */}
-        {activeTrack === 'HOME' && (
-          <div key="home-track" className="page-view-enter">
-            <HomePage
-              onNavigateTrack={(track) => handleTrackChange(track)}
-              onNavigateModule={(track, mod) => handleTrackChange(track, mod)}
+      {/* ── UNIFIED SPATIAL CONTINUITY PAGE CONTAINER ─────────────── */}
+      <AnimatePresence mode="wait">
+        {view === 'home' && (
+          <motion.main
+            key="home"
+            className="content-container"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            {/* 1. Score Summary & Continuous Animated Spring Progress */}
+            <ScoreSummary
+              scores={scores}
+              targetBand={targetBand}
             />
-          </div>
-        )}
 
-        {/* Track Switching: GRE Track */}
-        {activeTrack === 'GRE' && (
-          <div key="gre-track" className="page-view-enter">
-            <GreTrack
-              onBackToIelts={() => handleTrackChange('HOME')}
-              onExamStateChange={setIsGreInExam}
-              initialModule={greInitialModule}
-              onExitToLastTab={handleExitToLastTab}
+            {/* 2. Performance Overview (Learning Hub Card & Skill Graph) */}
+            <PerformanceOverview
+              scores={scores}
+              targetBand={targetBand}
+              completedLessons={completedLessons}
+              onOpenLearningHub={() => setView('learning')}
+              onOpenPerformance={() => setView('performance')}
             />
-          </div>
-        )}
 
-        {/* Track Switching: DMAT Track */}
-        {activeTrack === 'DMAT' && (
-          <div key="dmat-track" className="page-view-enter">
-            <DmatTrack
-              onBackToIelts={() => handleTrackChange('HOME')}
-              onExamStateChange={setIsDmatInExam}
-              isGuidelinesOpen={isDmatGuidelinesOpen}
-              setIsGuidelinesOpen={setIsDmatGuidelinesOpen}
-              initialModule={dmatInitialModule}
-              onExitToLastTab={handleExitToLastTab}
+            {/* 3. Practice Section (Writing, Listening, Speaking, Reading) */}
+            <PracticeSection
+              scores={scores}
+              targetBand={targetBand}
+              onStartSkill={(skillId) => setView(skillId)}
             />
-          </div>
+
+            {/* 4. Final Mock Test Hero with Rotating Randomized Test Queue */}
+            <MockHeroCard
+              scores={scores}
+              selectedExam={selectedExamId}
+              onSelectExam={setSelectedExamId}
+              onStartMock={(examId) => {
+                if (examId) setSelectedExamId(examId);
+                setView('mock');
+              }}
+            />
+          </motion.main>
         )}
 
-        {/* Track Switching: IELTS Academic Track */}
-        {activeTrack === 'IELTS' && (
-          <div key={activeModule} className="page-view-enter">
-            {activeModule === 'dashboard' && (
-              <Dashboard
-                onSelectModule={(mod) => {
-                  setActiveModule(mod);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                onStartMockTest={handleLaunchMock}
-                completedHistory={completedHistory}
-              />
-            )}
-
-            {activeModule === 'listening' && (
-              <ListeningModule
-                testData={testData}
-                onBackToDashboard={handleExitToLastTab}
-                onComplete={(result) => {
-                  setCompletedHistory(getCompletedResults());
-                }}
-              />
-            )}
-
-            {activeModule === 'reading' && (
-              <ReadingModule
-                testData={testData}
-                onBackToDashboard={handleExitToLastTab}
-                onComplete={(result) => {
-                  setCompletedHistory(getCompletedResults());
-                }}
-              />
-            )}
-
-            {activeModule === 'writing' && (
-              <WritingModule
-                testData={testData}
-                onBackToDashboard={handleExitToLastTab}
-                onComplete={(result) => {
-                  setCompletedHistory(getCompletedResults());
-                }}
-              />
-            )}
-
-            {activeModule === 'speaking' && (
-              <SpeakingModule
-                testData={testData}
-                onBackToDashboard={handleExitToLastTab}
-                onComplete={(result) => {
-                  setCompletedHistory(getCompletedResults());
-                }}
-              />
-            )}
-
-            {activeModule === 'mock_test' && (
-              <MockExamFlow
-                testData={testData}
-                onExitToDashboard={handleExitToLastTab}
-              />
-            )}
-          </div>
+        {view === 'performance' && (
+          <motion.div
+            key="performance"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <PerformancePage
+              scores={scores}
+              targetBand={targetBand}
+              onBack={() => setView('home')}
+              onStartSkill={(skillId) => setView(skillId)}
+            />
+          </motion.div>
         )}
-      </main>
 
-      {!isInExam && (
-        <footer style={{
-          borderTop: '1px solid var(--border-subtle)',
-          padding: '24px 32px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          fontSize: 12,
-          color: 'var(--text-muted)',
-          flexWrap: 'wrap',
-          gap: 12
-        }}>
-          <div>
-            <span>Cognition • Designed with Apple Human Interface &amp; Notion Dark Palette</span>
-          </div>
-          <div>
-            <span>Preparation Tracks: <strong>Home Hub</strong> • <strong>IELTS Academic</strong> • <strong>GRE General</strong> • <strong>dMAT Assessment</strong></span>
-          </div>
-        </footer>
-      )}
+        {view === 'learning' && (
+          <motion.div
+            key="learning"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <LearningHubPage
+              onBack={() => setView('home')}
+              onContextChange={(ctx) => setLearningContext(ctx)}
+              onOpenPractice={(skillId) => setView(skillId)}
+            />
+          </motion.div>
+        )}
 
-      {/* Standalone Display Settings Trigger during active exam mode */}
-      {isInExam && (
-        <button
-          className="nav-icon-btn"
-          onClick={() => setIsApiKeyModalOpen(true)}
-          title="Exam Preferences: Resize Font & Switch Theme"
-          style={{
-            position: 'fixed',
-            top: 14,
-            right: 18,
-            zIndex: 800,
-            boxShadow: 'var(--shadow-md)'
-          }}
-          aria-label="Settings"
-        >
-          <Settings size={16} />
-        </button>
-      )}
+        {view === 'listening' && (
+          <motion.div
+            key="listening"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <ListeningModule
+              testId={selectedExamId}
+              onComplete={(d) => {
+                handleCompleteSkill('listening', d);
+              }}
+              onBack={() => setView('home')}
+            />
+          </motion.div>
+        )}
 
-      {/* Standalone Preferences & Gemini AI Engine Settings Modal */}
+        {view === 'reading' && (
+          <motion.div
+            key="reading"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <ReadingModule
+              testId={selectedExamId}
+              onComplete={(d) => {
+                handleCompleteSkill('reading', d);
+              }}
+              onBack={() => setView('home')}
+            />
+          </motion.div>
+        )}
+
+        {view === 'writing' && (
+          <motion.div
+            key="writing"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <WritingModule
+              testId={selectedExamId}
+              onComplete={(d) => {
+                handleCompleteSkill('writing', d);
+              }}
+              onBack={() => setView('home')}
+            />
+          </motion.div>
+        )}
+
+        {view === 'speaking' && (
+          <motion.div
+            key="speaking"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <SpeakingModule
+              testId={selectedExamId}
+              onComplete={(d) => {
+                handleCompleteSkill('speaking', d);
+              }}
+              onBack={() => setView('home')}
+            />
+          </motion.div>
+        )}
+
+        {view === 'mock' && (
+          <motion.div
+            key="mock"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <MockExamFlow
+              initialExamId={selectedExamId}
+              onComplete={(record) => {
+                if (record?.skills) {
+                  Object.entries(record.skills).forEach(([k, v]) => {
+                    if (v && v.status === 'completed') saveSkillScore(k, v);
+                  });
+                }
+                refreshScores();
+                setView('home');
+              }}
+              onBack={() => setView('home')}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── SETTINGS MODAL (UNIVERSAL SYSTEM PANEL) ─────────────────── */}
       <SettingsModal
-        isOpen={isApiKeyModalOpen}
-        onClose={() => {
-          setIsApiKeyModalOpen(false);
-          setApiKey(getApiKey());
+        isOpen={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        targetBand={targetBand}
+        onChangeTargetBand={(b) => {
+          setTargetBand(b);
+          saveTargetBand(b);
         }}
-        onSettingsChanged={(newSettings) => {
-          setApiKey(newSettings.apiKey);
-        }}
+        onResetScores={handleResetScores}
       />
     </div>
   );

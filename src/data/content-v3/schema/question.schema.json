@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CognitionContentV3Question",
+  "type": "OBJECT",
+  "required": [
+    "id",
+    "module",
+    "testId",
+    "questionNumber",
+    "questionType",
+    "inputType",
+    "prompt",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "module": {
+      "type": "string",
+      "enum": ["LISTENING", "READING", "WRITING", "SPEAKING"]
+    },
+    "testId": { "type": "string" },
+    "testType": { "type": "string" },
+    "sectionId": { "type": ["string", "null"] },
+    "sectionNumber": { "type": ["number", "null"] },
+    "passageId": { "type": ["string", "null"] },
+    "passageNumber": { "type": ["number", "null"] },
+    "groupId": { "type": ["string", "null"] },
+    "questionNumber": { "type": "number", "minimum": 1 },
+    "questionType": {
+      "type": "string",
+      "enum": [
+        "MULTIPLE_CHOICE_SINGLE",
+        "MULTIPLE_CHOICE_MULTI",
+        "MATCHING",
+        "FORM_COMPLETION",
+        "NOTE_COMPLETION",
+        "TABLE_COMPLETION",
+        "SUMMARY_COMPLETION",
+        "SENTENCE_COMPLETION",
+        "SHORT_ANSWER",
+        "MAP_LABELING",
+        "DIAGRAM_LABELING",
+        "TRUE_FALSE_NOT_GIVEN",
+        "YES_NO_NOT_GIVEN",
+        "MATCHING_HEADINGS",
+        "MATCHING_INFORMATION",
+        "MATCHING_FEATURES",
+        "TASK_1_GRAPH",
+        "TASK_1_TABLE",
+        "TASK_1_CHART",
+        "TASK_1_MAP",
+        "TASK_1_PROCESS",
+        "TASK_1_LETTER",
+        "TASK_2_ESSAY",
+        "PART_1",
+        "PART_2_CUE_CARD",
+        "PART_3"
+      ]
+    },
+    "inputType": {
+      "type": "string",
+      "enum": [
+        "SINGLE_SELECT",
+        "MULTI_SELECT",
+        "TEXT",
+        "TEXT_OR_SELECT",
+        "INLINE_BLANK",
+        "AUDIO_RECORDING",
+        "ESSAY_TEXT"
+      ]
+    },
+    "prompt": { "type": "string", "minLength": 1 },
+    "options": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sharedInstruction": { "type": ["string", "null"] },
+    "sharedContent": { "type": ["string", "null"] },
+    "correctAnswer": { "type": ["string", "array", "null"] },
+    "audioId": { "type": ["string", "null"] },
+    "audioPath": { "type": ["string", "null"] },
+    "tableData": {
+      "type": ["object", "null"],
+      "properties": {
+        "headers": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "properties": {
+        "sourceFile": { "type": "string" },
+        "sourceHash": { "type": ["string", "null"] }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "NEEDS_REVIEW", "QUARANTINED"]
+    }
+  }
+}

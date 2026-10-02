@@ -1,566 +1,738 @@
-import React, { useState } from 'react';
-import CountdownTimer from '../common/CountdownTimer';
-import WritingScoreModal from './WritingScoreModal';
-import ExitConfirmationModal from '../common/ExitConfirmationModal';
-import ExitScreen from '../common/ExitScreen';
-import { Award, ZoomIn, ArrowLeft, ArrowRight, Send, CheckCircle2 } from 'lucide-react';
-import { evaluateWritingLocally, evaluateWritingWithGemini } from '../../utils/writingScorer';
-import { saveSkillScore, getApiKey, recordAttemptedQuestionSet } from '../../utils/storage';
-import { getNextWritingTask, WRITING_TASK_POOLS } from '../../data/questionPools/writingPool';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
+import { Icon } from '../common/Icon';
+import { getRandomizedWritingTest, getWritingTest } from '../../data/writing/index';
+import ExamStartScreen from './ExamStartScreen';
+import ExamBottomNav from './ExamBottomNav';
+import HtmlContentRenderer from '../common/HtmlContentRenderer';
+import { evaluateWritingWithAI } from '../../utils/geminiEvaluator';
+import { getApiKey, createAttemptId, getTargetBand } from '../../utils/storage';
 
-export default function WritingModule({ testData, onComplete, isExamMode = false, onBackToDashboard }) {
-  // Initialize writing task set from unattempted primary pool (randomized initial start, or specific setId for regression verification)
-  const [taskSelection, setTaskSelection] = useState(() => {
-    const requestedSetId = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('setId') : null;
-    if (requestedSetId) {
-      const match = WRITING_TASK_POOLS.find(p => p.id === requestedSetId);
-      if (match) {
-        return {
-          task: match,
-          poolInfo: {
-            attemptedCount: 0,
-            totalCount: WRITING_TASK_POOLS.length,
-            remainingInPool: WRITING_TASK_POOLS.length,
-            isCycleReset: false
-          }
-        };
-      }
-    }
-    return getNextWritingTask();
-  });
-  const currentWritingTaskSet = taskSelection.task;
+const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+const wordCount = (text) => text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
 
-  const [activeTask, setActiveTask] = useState(1);
-  const [task1Text, setTask1Text] = useState('');
-  const [task2Text, setTask2Text] = useState('');
-  const [showModels, setShowModels] = useState(false);
-  const [isImageZoomed, setIsImageZoomed] = useState(false);
+export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+  const [test] = useState(() => initialTest || (testId ? getWritingTest(testId) : getRandomizedWritingTest()));
+  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
+  const [task, setTask] = useState(1);
+  const [t1, setT1] = useState('');
+  const [t2, setT2] = useState('');
+  const [timeLeft, setTimeLeft] = useState(60 * 60);
+  const [result, setResult] = useState(null);
+  const [processingStep, setProcessingStep] = useState(0);
+  const [showModelAnswer, setShowModelAnswer] = useState(false);
 
-  // Exit confirmation and Exit Screen state
-  const [isExitModalOpen, setIsExitModalOpen] = useState(false);
-  const [isExited, setIsExited] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const timerRef = useRef(null);
 
-  // Score modal state
-  const [isScoreModalOpen, setIsScoreModalOpen] = useState(() => {
-    return typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('showModal') === '1';
-  });
-  const [scoreResult, setScoreResult] = useState(() => {
-    if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('showModal') === '1') {
-      return {
-        overallBand: 7.0,
-        task1: {
-          band: 7.0,
-          wordCount: 168,
-          hasOverview: true,
-          metThreshold: true
-        },
-        task2: {
-          band: 7.0,
-          wordCount: 284,
-          paragraphs: 4,
-          metThreshold: true
-        },
-        criteria: {
-          taskResponse: 7.0,
-          coherence: 7.5,
-          lexical: 7.0,
-          grammar: 7.0
-        },
-        feedback: "Diagnostic Evaluation Completed. Strong cohesive progression and appropriate lexical choices."
-      };
-    }
-    return null;
-  });
-  const [isEvaluating, setIsEvaluating] = useState(false);
-
-  const countWords = (text) => {
-    return text.trim() ? text.trim().split(/\s+/).length : 0;
-  };
-
-  const task1Words = countWords(task1Text);
-  const task2Words = countWords(task2Text);
-
-  const currentTaskData = activeTask === 1 ? currentWritingTaskSet.task1 : currentWritingTaskSet.task2;
-  const currentWordCount = activeTask === 1 ? task1Words : task2Words;
-  const minRequired = currentTaskData.minWords;
-
-  // Handle next randomized unattempted task
-  const handlePracticeNext = () => {
-    const nextSelection = getNextWritingTask(currentWritingTaskSet.id);
-    setTaskSelection(nextSelection);
-    setActiveTask(1);
-    setTask1Text('');
-    setTask2Text('');
-    setShowModels(false);
-    setScoreResult(null);
-    setIsSubmitted(false);
-  };
-
-  // Progression check before exiting (only true if there is unsubmitted text)
-  const hasProgress = (task1Text.trim().length > 0 || task2Text.trim().length > 0) && !isSubmitted;
-
-  const handleBackClick = () => {
-    if (hasProgress && !isExamMode) {
-      setIsExitModalOpen(true);
-    } else if (onBackToDashboard) {
-      onBackToDashboard();
-    }
-  };
-
-  const handleConfirmExit = () => {
-    setIsExitModalOpen(false);
-    setTask1Text('');
-    setTask2Text('');
-    setIsExited(true);
-  };
-
-  const handleCloseScoreModal = () => {
-    setIsScoreModalOpen(false);
-    if (onBackToDashboard) {
-      onBackToDashboard();
-    }
-  };
-
-  // Strict score commit: calculated ONLY on explicit submit
-  const handleSubmitWriting = async () => {
-    setIsEvaluating(true);
-    try {
-      const apiKey = getApiKey();
-      let result = null;
-
-      if (apiKey) {
-        try {
-          result = await evaluateWritingWithGemini(
-            apiKey,
-            task1Text,
-            task2Text,
-            { task1: currentWritingTaskSet.task1.prompt, task2: currentWritingTaskSet.task2.prompt }
-          );
-        } catch (err) {
-          console.warn('Gemini evaluation failed, falling back to local scoring:', err);
+  const startTimer = () => {
+    timerRef.current = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(timerRef.current);
+          handleSubmit();
+          return 0;
         }
-      }
-
-      if (!result) {
-        result = evaluateWritingLocally(task1Text, task2Text);
-      }
-
-      setScoreResult(result);
-      setIsSubmitted(true);
-      setIsScoreModalOpen(true);
-      // Officially committed to scorecard and analytics ONLY here
-      saveSkillScore('writing', result);
-      // Record in attempted history so it goes into the attempted pool
-      recordAttemptedQuestionSet('writing', currentWritingTaskSet.id);
-
-      if (onComplete) {
-        onComplete(result);
-      }
-    } finally {
-      setIsEvaluating(false);
-    }
+        return t - 1;
+      });
+    }, 1000);
   };
 
-  if (isExited) {
+  useEffect(() => {
+    if (initialPhase === 'exam') {
+      startTimer();
+    }
+  }, [initialPhase]);
+
+  useEffect(() => {
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  const handleStartExam = () => {
+    setPhase('exam');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    startTimer();
+  };
+
+  const handleSubmit = async () => {
+    clearInterval(timerRef.current);
+    const wc1 = wordCount(t1);
+    const wc2 = wordCount(t2);
+
+    if (isMockMode) {
+      // In Full Mock Mode: evaluate responses and transition directly to Speaking
+      const evalResult = await evaluateWritingWithAI(getApiKey(), {
+        task1Text: t1,
+        task2Text: t2,
+        prompts: {
+          task1: test.task1?.prompt || '',
+          task2: test.task2?.prompt || ''
+        }
+      });
+      const computedResult = {
+        band: evalResult.overallBand,
+        task1Band: evalResult.task1Band,
+        task2Band: evalResult.task2Band,
+        task1Words: wc1,
+        task2Words: wc2,
+        t1,
+        t2,
+        ...evalResult
+      };
+      if (onComplete) onComplete(computedResult);
+      return;
+    }
+
+    setPhase('processing');
+    setTimeout(() => setProcessingStep(1), 600);
+    setTimeout(() => setProcessingStep(2), 1200);
+    setTimeout(() => setProcessingStep(3), 1800);
+
+    const evalResult = await evaluateWritingWithAI(getApiKey(), {
+      task1Text: t1,
+      task2Text: t2,
+      prompts: {
+        task1: test.task1?.prompt || '',
+        task2: test.task2?.prompt || ''
+      }
+    });
+
+    setTimeout(() => {
+      setResult({
+        band: evalResult.overallBand,
+        task1Band: evalResult.task1Band,
+        task2Band: evalResult.task2Band,
+        task1Words: wc1,
+        task2Words: wc2,
+        t1,
+        t2,
+        ...evalResult
+      });
+      setPhase('results');
+    }, 2400);
+  };
+
+  /* ──────────────────────────────────────────────────────────
+     1. INTRO SCREEN
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'intro') {
     return (
-      <ExitScreen
-        sectionTitle="IELTS Academic Writing Practice"
-        onReturnToDashboard={() => {
-          setIsExited(false);
-          if (onBackToDashboard) onBackToDashboard();
-        }}
-        onRestart={() => {
-          setIsExited(false);
-          handlePracticeNext();
-        }}
+      <ExamStartScreen
+        section="Writing"
+        sectionKey="writing"
+        testTitle={test?.title || 'IELTS Writing Practice'}
+        subtitle="Two authentic IELTS Academic tasks under official timed test conditions: Task 1 Visual Report & Task 2 Discursive Essay."
+        metaItems={[
+          { label: '2 Tasks', sub: 'Report (T1) & Essay (T2)' },
+          { label: '60 Minutes', sub: 'Strict timed sequence' },
+          { label: 'Band 0–9', sub: 'Official-style scoring' },
+        ]}
+        rules={[
+          'Task 1: Summarize visual information by selecting and reporting the main features (min 150 words).',
+          'Task 2: Write a formal discursive essay presenting a supported argument (min 250 words).',
+          'Underlength submissions are penalized. Task 2 carries twice the weight of Task 1 in final score.',
+        ]}
+        scoringInfo="Assessed across Task Achievement / Response, Coherence & Cohesion, Lexical Resource, and Grammatical Range & Accuracy."
+        ctaText="START WRITING TEST"
+        onStart={handleStartExam}
+        onBack={onBack}
       />
     );
   }
 
-  return (
-    <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      {/* Top Header & Breadcrumb */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {onBackToDashboard && !isExamMode && (
-            <button
-              className="btn btn-ghost"
-              onClick={handleBackClick}
-              style={{ padding: '6px 12px', fontSize: 13 }}
-            >
-              <ArrowLeft size={15} />
-              <span>Back to Dashboard</span>
-            </button>
-          )}
+  /* ──────────────────────────────────────────────────────────
+     2. PROCESSING SCREEN (Section 22)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'processing') {
+    return (
+      <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <div style={{
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: 'var(--r-container)',
+          padding: '56px 40px'
+        }}>
+          <div style={{
+            width: 48,
+            height: 48,
+            borderRadius: '50%',
+            border: '3px solid var(--border-subtle)',
+            borderTopColor: 'var(--coral)',
+            margin: '0 auto 24px',
+            animation: 'spin 0.8s linear infinite'
+          }} />
 
-          <div className="segmented-control">
-            <button
-              className={`segmented-btn ${activeTask === 1 ? 'active' : ''}`}
-              onClick={() => setActiveTask(1)}
-            >
-              <span>Task 1 (Report)</span>
-              <span className="badge badge-neutral" style={{ fontSize: 10 }}>
-                {task1Words} / 150 words
-              </span>
-            </button>
-            <button
-              className={`segmented-btn ${activeTask === 2 ? 'active' : ''}`}
-              onClick={() => setActiveTask(2)}
-            >
-              <span>Task 2 (Essay)</span>
-              <span className="badge badge-neutral" style={{ fontSize: 10 }}>
-                {task2Words} / 250 words
-              </span>
-            </button>
+          <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
+            Analysing your writing...
+          </h2>
+          <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
+            Evaluating word count thresholds, paragraph coherence, and official criteria.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
+            {[
+              { label: 'Task Response & Overview Presence', active: processingStep >= 0 },
+              { label: 'Coherence & Cohesion Paragraphing', active: processingStep >= 1 },
+              { label: 'Lexical Variety & Academic Collocations', active: processingStep >= 2 },
+              { label: 'Grammatical Complexity & Punctuation', active: processingStep >= 3 },
+            ].map((step, idx) => (
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)'
+              }}>
+                <div style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: '50%',
+                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
+                  color: step.active ? '#10B981' : 'transparent',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 11
+                }}>
+                  <Icon name="check" size={12} />
+                </div>
+                {step.label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     3. RESULTS SCREEN (Section 23 & 25)
+     ────────────────────────────────────────────────────────── */
+  /* ──────────────────────────────────────────────────────────
+     3. RESULTS SCREEN (Cognition Unified Design Language)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'results') {
+    const isCompleted = result?.evaluationStatus === 'completed' && typeof result?.band === 'number';
+    const isFailed = result?.evaluationStatus === 'failed' || result?.band === null;
+
+    const handleSaveAndReturn = () => {
+      const attemptId = createAttemptId('writing');
+      const canonicalAttempt = {
+        id: attemptId,
+        type: 'writing',
+        testId: test?.testId || testId || 'writing-practice',
+        testLabel: test?.title || 'IELTS Writing Practice',
+        startedAt: new Date(Date.now() - 3600000).toISOString(),
+        completedAt: new Date().toISOString(),
+        status: 'completed',
+        overallBand: isCompleted ? result.band : null,
+        writing: {
+          band: isCompleted ? result.band : null,
+          task1Band: isCompleted ? result.task1Band : null,
+          task2Band: isCompleted ? result.task2Band : null,
+          evaluationStatus: result?.evaluationStatus || 'failed',
+          criteria: result?.criteria || null,
+          overallSummary: result?.overallSummary || '',
+          task1Feedback: result?.task1Feedback || '',
+          task2Feedback: result?.task2Feedback || '',
+          strengths: result?.strengths || '',
+          areasForImprovement: result?.areasForImprovement || '',
+          task1Words: result?.task1Words || 0,
+          task2Words: result?.task2Words || 0,
+          t1,
+          t2
+        }
+      };
+
+      if (onComplete) {
+        onComplete(canonicalAttempt.writing);
+      }
+    };
+
+    const criteriaList = [
+      {
+        id: 'ta',
+        title: 'Task Achievement / Response',
+        data: result?.criteria?.taskAchievement || result?.criteria?.taskResponse,
+        defaultNote: 'Fulfillment of prompt requirements, clear overview in Task 1, and developed position in Task 2.'
+      },
+      {
+        id: 'cc',
+        title: 'Coherence & Cohesion',
+        data: result?.criteria?.coherenceAndCohesion,
+        defaultNote: 'Logical progression between paragraphs, clear central topic per paragraph, and linking device balance.'
+      },
+      {
+        id: 'lr',
+        title: 'Lexical Resource',
+        data: result?.criteria?.lexicalResource,
+        defaultNote: 'Academic register, vocabulary range, collocations, precision, and spelling accuracy.'
+      },
+      {
+        id: 'gra',
+        title: 'Grammatical Range & Accuracy',
+        data: result?.criteria?.grammaticalRangeAndAccuracy || result?.criteria?.grammaticalRange,
+        defaultNote: 'Variety of complex sentence structures, punctuation control, and frequency of error-free sentences.'
+      }
+    ];
+
+    return (
+      <div className="exam-results-screen" style={{ maxWidth: 1080, margin: '40px auto', padding: '0 24px 80px' }}>
+        {/* Navigation Breadcrumb */}
+        <button
+          onClick={onBack}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            fontSize: 14,
+            fontWeight: 700,
+            color: 'var(--text-secondary)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            marginBottom: 24
+          }}
+        >
+          <Icon name="arrowLeft" size={16} /> Back to Dashboard
+        </button>
+
+        {/* ── 1. WRITING PRACTICE COMPLETE HERO CARD ── */}
+        <div style={{
+          background: 'var(--bg-card)',
+          border: '1.5px solid #151313',
+          borderRadius: 24,
+          padding: '40px',
+          marginBottom: 32,
+          boxShadow: '0 4px 0 #151313',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 28
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              fontSize: 12,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              fontWeight: 800,
+              padding: '4px 12px',
+              borderRadius: 8,
+              background: '#151313',
+              color: '#FFFFFF',
+              marginBottom: 12
+            }}>
+              WRITING PRACTICE COMPLETE
+            </div>
+            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
+              Writing Assessment
+            </h1>
+            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
+              Task 1: <strong style={{ color: 'var(--text-primary)' }}>{result?.task1Words || 0} words</strong> (min 150) · Task 2: <strong style={{ color: 'var(--text-primary)' }}>{result?.task2Words || 0} words</strong> (min 250)
+            </p>
+          </div>
+
+          <div style={{
+            background: 'var(--bg-canvas)',
+            padding: '24px 36px',
+            borderRadius: 20,
+            textAlign: 'center',
+            border: '1.5px solid #151313',
+            boxShadow: '0 2px 0 #151313',
+            minWidth: 180
+          }}>
+            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              {isCompleted ? 'OVERALL BAND' : 'AI EVALUATION'}
+            </div>
+            <div style={{
+              fontSize: isCompleted ? 54 : 20,
+              fontWeight: 800,
+              color: isCompleted ? 'var(--c-coral)' : 'var(--text-secondary)',
+              lineHeight: 1.1,
+              marginTop: 6,
+              fontFamily: 'Kodchasan, sans-serif'
+            }}>
+              {isCompleted ? result.band.toFixed(1) : (isFailed ? 'Unavailable' : 'Pending')}
+            </div>
+            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
+              Target: {getTargetBand() || '8.0'}
+            </div>
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Subtle Pool Status Indicator (No interactive shuffle button) */}
+        {/* ── 2. AI NOTICE IF KEY MISSING OR FAILED ── */}
+        {isFailed && (
           <div style={{
-            fontSize: 12,
-            color: 'var(--text-muted)',
-            padding: '4px 10px',
-            borderRadius: 'var(--radius-pill)',
-            background: 'var(--bg-canvas)',
-            border: '1px solid var(--border-subtle)',
+            background: 'rgba(255, 87, 52, 0.08)',
+            border: '1.5px solid #151313',
+            borderRadius: 18,
+            padding: '20px 24px',
+            marginBottom: 32,
+            boxShadow: '0 3px 0 #151313',
             display: 'flex',
             alignItems: 'center',
-            gap: 6
+            gap: 16
           }}>
-            <span style={{
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              background: 'var(--accent-amber)'
-            }} />
-            <span>Unattempted Pool • {taskSelection.poolInfo?.remainingInPool || 1} of {taskSelection.poolInfo?.totalCount || 3}</span>
+            <Icon name="alertCircle" size={24} style={{ color: 'var(--c-coral)', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 15, color: '#151313' }}>
+                AI Evaluation Unavailable
+              </div>
+              <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 4 }}>
+                {result?.message || 'To receive official IELTS criteria scoring and detailed band feedback, configure your Google Gemini API key in Settings.'}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── 3. FOUR ASSESSMENT CRITERIA CARDS ── */}
+        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
+          Official Assessment Criteria
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginBottom: 36 }}>
+          {criteriaList.map((c) => {
+            const hasBand = typeof c.data?.band === 'number';
+
+            return (
+              <div
+                key={c.id}
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1.5px solid #151313',
+                  borderRadius: 20,
+                  padding: 24,
+                  boxShadow: '0 3px 0 #151313',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 10
+                }}
+              >
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>
+                  {c.title}
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+                  <span style={{ fontSize: 36, fontWeight: 800, color: hasBand ? 'var(--c-coral)' : 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
+                    {hasBand ? c.data.band.toFixed(1) : '--'}
+                  </span>
+                  {hasBand && <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>}
+                </div>
+
+                <div style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5, marginTop: 4 }}>
+                  {c.data?.rationale || c.data?.evidence || c.defaultNote}
+                </div>
+
+                {c.data?.improvementFocus && (
+                  <div style={{ fontSize: 12, color: 'var(--text-primary)', fontWeight: 600, marginTop: 'auto', paddingTop: 8, borderTop: '1px solid rgba(21,19,19,0.1)' }}>
+                    <strong style={{ color: 'var(--c-coral)' }}>Focus: </strong>{c.data.improvementFocus}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── 4. PERFORMANCE SUMMARY & FEEDBACK ── */}
+        {(result?.overallSummary || result?.task1Feedback || result?.task2Feedback || result?.strengths || result?.areasForImprovement) && (
+          <div style={{
+            background: 'var(--bg-card)',
+            border: '1.5px solid #151313',
+            borderRadius: 20,
+            padding: '28px 32px',
+            marginBottom: 36,
+            boxShadow: '0 3px 0 #151313'
+          }}>
+            <h3 style={{ fontSize: 18, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>
+              Examiner Diagnostic Feedback
+            </h3>
+            {result?.overallSummary && (
+              <p style={{ fontSize: 15, color: 'var(--text-primary)', lineHeight: 1.6, margin: '0 0 20px' }}>
+                {result.overallSummary}
+              </p>
+            )}
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+              {result?.task1Feedback && (
+                <div style={{ padding: 18, borderRadius: 14, background: 'rgba(252, 204, 66, 0.12)', border: '1px solid #151313' }}>
+                  <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                    Task 1 Feedback ({isCompleted && result.task1Band ? `Band ${result.task1Band}` : 'Report'})
+                  </div>
+                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    {result.task1Feedback}
+                  </div>
+                </div>
+              )}
+
+              {result?.task2Feedback && (
+                <div style={{ padding: 18, borderRadius: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313' }}>
+                  <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                    Task 2 Feedback ({isCompleted && result.task2Band ? `Band ${result.task2Band}` : 'Essay'})
+                  </div>
+                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    {result.task2Feedback}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {(result?.strengths || result?.areasForImprovement) && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginTop: 20 }}>
+                {result?.strengths && (
+                  <div style={{ padding: 16, borderRadius: 14, background: 'var(--bg-canvas)', border: '1px solid rgba(21,19,19,0.2)' }}>
+                    <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                      Observed Strengths
+                    </div>
+                    <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                      {result.strengths}
+                    </div>
+                  </div>
+                )}
+                {result?.areasForImprovement && (
+                  <div style={{ padding: 16, borderRadius: 14, background: 'rgba(255, 87, 52, 0.08)', border: '1px solid #151313' }}>
+                    <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                      Areas for Improvement
+                    </div>
+                    <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                      {result.areasForImprovement}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── 5. YOUR SUBMISSIONS ── */}
+        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
+          Your Submitted Essays
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 44 }}>
+          {/* Task 1 */}
+          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 18, padding: '24px', boxShadow: '0 3px 0 #151313' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+              <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--c-coral)', textTransform: 'uppercase' }}>Task 1 Submission</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', padding: '2px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid #151313' }}>
+                {wordCount(t1)} words
+              </span>
+            </div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12, fontStyle: 'italic' }}>
+              {test.task1?.prompt}
+            </div>
+            <div style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap', padding: '16px', background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)' }}>
+              {t1 || '(No response submitted)'}
+            </div>
           </div>
 
-          {!isExamMode && (
-            <button
-              className="btn btn-secondary"
-              onClick={() => setShowModels(!showModels)}
-              style={{ fontSize: 12.5 }}
-            >
-              <Award size={15} color="var(--accent-amber)" />
-              <span>{showModels ? 'Hide Model Answers' : 'View Band 8+ Models'}</span>
-            </button>
-          )}
+          {/* Task 2 */}
+          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 18, padding: '24px', boxShadow: '0 3px 0 #151313' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+              <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--c-coral)', textTransform: 'uppercase' }}>Task 2 Submission</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', padding: '2px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid #151313' }}>
+                {wordCount(t2)} words
+              </span>
+            </div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12, fontStyle: 'italic' }}>
+              {test.task2?.prompt}
+            </div>
+            <div style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap', padding: '16px', background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)' }}>
+              {t2 || '(No response submitted)'}
+            </div>
+          </div>
+        </div>
 
-          <CountdownTimer initialMinutes={activeTask === 1 ? 20 : 40} isActive={true} />
-
-          <button
-            className="btn btn-primary"
-            onClick={handleSubmitWriting}
-            disabled={isEvaluating}
+        {/* ── 6. PROMINENT SAVE SCORE & RETURN BUTTON ── */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          gap: 16,
+          paddingTop: 16,
+          borderTop: '1.5px solid #151313'
+        }}>
+          <motion.button
+            id="save-writing-result-btn"
+            type="button"
+            onClick={handleSaveAndReturn}
+            whileHover={{ y: -3, boxShadow: '0 6px 0 #151313' }}
+            whileTap={{ y: 2, scale: 0.98, boxShadow: '0 1px 0 #151313' }}
+            transition={{ type: 'spring', stiffness: 500, damping: 25 }}
             style={{
-              background: 'linear-gradient(135deg, #e9b949, #d97706)',
-              color: '#111',
-              fontWeight: 600,
-              fontSize: 13.5
+              padding: '16px 36px',
+              borderRadius: 16,
+              background: '#FF5734',
+              color: '#151313',
+              fontSize: 16,
+              fontWeight: 800,
+              border: '1.5px solid #151313',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              boxShadow: '0 4px 0 #151313',
+              fontFamily: 'Kodchasan, sans-serif'
             }}
           >
-            {isEvaluating ? (
-              <span>Evaluating...</span>
-            ) : (
-              <>
-                <Send size={14} />
-                <span>Submit Writing for Score</span>
-              </>
-            )}
+            <Icon name="check" size={18} />
+            <span>Save Score & Return to Dashboard</span>
+          </motion.button>
+        </div>
+      </div>
+    );
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     4. EXAM INTERFACE (Focused Document Editor)
+     ────────────────────────────────────────────────────────── */
+  const wc1 = wordCount(t1);
+  const wc2 = wordCount(t2);
+  const currentTask = task === 1 ? test.task1 : test.task2;
+  const minWords = task === 1 ? 150 : 250;
+  const currentWc = task === 1 ? wc1 : wc2;
+  const metMin = currentWc >= minWords;
+
+  return (
+    <div className="exam-focus-layout">
+      {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
+      <div className="exam-focus-header">
+        <div className="exam-focus-header-left">
+          <span className="exam-focus-tag" style={{ background: 'var(--c-coral)', color: '#FFFFFF', borderColor: '#151313' }}>
+            IELTS WRITING PRACTICE
+          </span>
+          <h2 className="exam-focus-title">
+            {test?.title || 'Academic Writing Test'}
+          </h2>
+        </div>
+
+        <div className="exam-focus-header-right">
+          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} title="Time remaining">
+            <Icon name="clock" size={16} />
+            <span>{FMT(timeLeft)}</span>
+          </div>
+
+          <button
+            type="button"
+            className="exam-focus-exit-btn"
+            onClick={() => {
+              if (window.confirm('Exit writing practice? Your response will be lost.')) onBack();
+            }}
+            title="Exit test and return to Dashboard"
+          >
+            <span>Exit Exam</span>
           </button>
         </div>
       </div>
 
-      {/* Task Set Title Badge */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span className="badge badge-neutral" style={{ fontSize: 11 }}>
-          {currentWritingTaskSet.title}
-        </span>
-        <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-          IELTS Academic Writing Format
-        </span>
-      </div>
-
-      {/* Side-by-Side Prompt & Editor with LOCKED layout */}
-      <div className="writing-layout">
-        {/* Left: Prompt & Map Image (Independently Scrollable) */}
-        <div className="writing-prompt-card">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span className="badge badge-amber">{currentTaskData.title}</span>
-            <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-              Suggested: {currentTaskData.timeSuggestedMinutes} minutes
-            </span>
-          </div>
-
-          <div style={{
-            fontSize: 14.5,
-            lineHeight: 1.6,
-            background: 'var(--bg-card)',
-            padding: '16px',
-            borderRadius: 'var(--radius-sm)',
-            borderLeft: '3px solid var(--accent-amber)',
-            whiteSpace: 'pre-line'
-          }}>
-            {currentTaskData.prompt}
-          </div>
-
-          {/* Task 1 Image if present */}
-          {activeTask === 1 && currentTaskData.image && (
-            <div style={{ marginTop: 12 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>Exam Visual Diagram / Material</span>
-                <button 
-                  className="btn btn-ghost" 
-                  onClick={() => setIsImageZoomed(true)}
-                  style={{ padding: '4px 8px', fontSize: 12 }}
-                >
-                  <ZoomIn size={14} />
-                  <span>Enlarge Full View</span>
-                </button>
+      {/* ── 2. WRITING WORKSPACE (Single Task View) ── */}
+      <div style={{
+        background: 'var(--bg-card)',
+        border: 'var(--border-dark)',
+        borderRadius: 'var(--r-card)',
+        padding: '32px 40px',
+        boxShadow: '0 3px 0 #151313',
+        minHeight: 'calc(100vh - 210px)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+        maxWidth: 960,
+        margin: '0 auto'
+      }}>
+        {/* PROMPT AREA */}
+        <div>
+          <h3 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Task {task}</h3>
+          
+          {task === 1 ? (
+            <>
+              <div style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 20 }}>
+                {test.task1?.promptHtml ? (
+                  <span dangerouslySetInnerHTML={{ __html: test.task1.promptHtml }} />
+                ) : (
+                  test.task1?.instructions || test.task1?.prompt
+                )}
               </div>
-
-              <div 
-                style={{
-                  background: '#ffffff',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: 'var(--radius-md)',
-                  padding: '12px',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.25)'
-                }}
-                onClick={() => setIsImageZoomed(true)}
-                title="Click to zoom in"
-              >
-                <img
-                  src={currentTaskData.image}
-                  alt="IELTS Task 1 Visual"
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '380px',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    borderRadius: 'var(--radius-sm)',
-                    display: 'inline-block'
-                  }}
+              {test.task1?.image?.file && (
+                <img 
+                  src={test.task1.image.file} 
+                  alt="Task 1 Diagram" 
+                  style={{ width: '100%', maxWidth: '500px', display: 'block', margin: '16px auto', borderRadius: 8, border: '1px solid var(--border-subtle)' }} 
                 />
-              </div>
-            </div>
-          )}
-
-          {/* Model Answers Accordion */}
-          {showModels && (
-            <div style={{
-              marginTop: 12,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 16,
-              borderTop: '1px solid var(--border-subtle)',
-              paddingTop: 16
-            }}>
-              {activeTask === 1 ? (
-                <div style={{ background: 'var(--bg-card)', padding: 16, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
-                  <span className="badge badge-green" style={{ marginBottom: 6 }}>{currentWritingTaskSet.task1.modelBand8.band}</span>
-                  <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', fontSize: 13, lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-                    {currentWritingTaskSet.task1.modelBand8.text}
-                  </pre>
-                </div>
-              ) : (
-                <div style={{ background: 'var(--bg-card)', padding: 16, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
-                  <span className="badge badge-green" style={{ marginBottom: 6 }}>{currentWritingTaskSet.task2.modelBand85.band}</span>
-                  <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', fontSize: 13, lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-                    {currentWritingTaskSet.task2.modelBand85.text}
-                  </pre>
-                </div>
               )}
-            </div>
+            </>
+          ) : (
+            <>
+              <div style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 20 }}>
+                {test.task2?.promptHtml ? (
+                  <span dangerouslySetInnerHTML={{ __html: test.task2.promptHtml }} />
+                ) : (
+                  test.task2?.instructions || test.task2?.prompt
+                )}
+              </div>
+            </>
           )}
         </div>
 
-        {/* Right: Locked Essay Editor */}
-        <div className="writing-editor-card">
-          <div className="word-count-meter">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ fontWeight: 600 }}>Words:</span>
-              <span style={{ 
-                fontFamily: 'var(--font-mono)', 
-                fontSize: 15, 
-                fontWeight: 700,
-                color: currentWordCount >= minRequired ? 'var(--accent-green)' : 'var(--accent-amber)'
-              }}>
-                {currentWordCount}
-              </span>
-              <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>
-                / {minRequired} minimum
-              </span>
-            </div>
-
-            <span className={`badge ${currentWordCount >= minRequired ? 'badge-green' : 'badge-neutral'}`}>
-              {currentWordCount >= minRequired ? 'Requirement Met' : `${minRequired - currentWordCount} words to go`}
+        {/* RESPONSE AREA */}
+        <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: 12 }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '12px 16px',
+            background: 'var(--bg-canvas)',
+            border: '1.5px solid #151313',
+            borderRadius: 14,
+          }}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-secondary)' }}>
+              Target: <strong style={{ color: 'var(--text-primary)' }}>{minWords} words</strong>
+            </span>
+            <span style={{
+              fontSize: 13,
+              fontWeight: 800,
+              color: metMin ? '#10B981' : 'var(--c-coral)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6
+            }}>
+              {metMin ? <Icon name="check" size={14} /> : null}
+              {currentWc} words
             </span>
           </div>
-
           <textarea
-            className="writing-textarea"
-            placeholder={activeTask === 1 ? "Begin summarizing the Task 1 diagram/map here..." : "Write your Task 2 essay response here..."}
-            value={activeTask === 1 ? task1Text : task2Text}
-            onChange={(e) => {
-              if (activeTask === 1) setTask1Text(e.target.value);
-              else setTask2Text(e.target.value);
+            value={task === 1 ? t1 : t2}
+            onChange={(e) => task === 1 ? setT1(e.target.value) : setT2(e.target.value)}
+            placeholder={`Write your Task ${task} response here...`}
+            style={{
+              width: '100%', flex: 1, minHeight: 300, padding: '18px 20px', borderRadius: 16, background: '#FFFFFF',
+              border: '1.5px solid #151313', fontFamily: 'Kodchasan, sans-serif', fontSize: 15, resize: 'vertical'
             }}
           />
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: 'var(--text-muted)' }}>
-            <span>Unsubmitted attempts are not added to your scorecard</span>
-            <span>IELTS Academic Writing Criteria: TR • CC • LR • GRA</span>
-          </div>
         </div>
       </div>
 
-      {/* Sticky Bottom Action Navigation Bar (Always visible without scrolling) */}
-      <div className="sticky-bottom-action-bar">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          <span className={`badge ${currentWordCount >= minRequired ? 'badge-green' : 'badge-amber'}`} style={{ fontSize: 13, padding: '5px 12px' }}>
-            {activeTask === 1 ? 'Task 1 (Report)' : 'Task 2 (Essay)'}: {currentWordCount} / {minRequired} words
-          </span>
-          <span style={{ fontSize: 12.5, color: 'var(--text-secondary)' }}>
-            {currentWordCount >= minRequired ? 'Minimum requirement fulfilled ✓' : `${minRequired - currentWordCount} words remaining`}
-          </span>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          {activeTask === 2 && (
-            <button
-              className="btn btn-secondary"
-              onClick={() => {
-                setActiveTask(1);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{ borderRadius: 'var(--radius-pill)', padding: '9px 18px', fontSize: 13 }}
-            >
-              <ArrowLeft size={14} />
-              <span>Previous: Task 1</span>
-            </button>
-          )}
-
-          {activeTask === 1 ? (
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                setActiveTask(2);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 22px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-blue), #1a6cb8)',
-                boxShadow: '0 4px 14px rgba(35, 131, 226, 0.35)',
-                fontWeight: 600
-              }}
-            >
-              <span>Next Section: Task 2 (Essay)</span>
-              <ArrowRight size={15} />
-            </button>
-          ) : isSubmitted ? (
-            <button
-              className="btn btn-primary"
-              onClick={onBackToDashboard}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 24px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-green), #16a34a)',
-                boxShadow: '0 4px 14px rgba(34, 197, 94, 0.35)',
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6
-              }}
-            >
-              <CheckCircle2 size={16} />
-              <span>Evaluation Complete • Return to Dashboard</span>
-              <ArrowRight size={15} />
-            </button>
-          ) : (
-            <button
-              className="btn btn-primary"
-              onClick={handleSubmitWriting}
-              disabled={isEvaluating}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 24px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-amber), #d97706)',
-                boxShadow: '0 4px 14px rgba(245, 158, 11, 0.35)',
-                fontWeight: 600
-              }}
-            >
-              {isEvaluating ? (
-                <span>Evaluating with Examiner AI...</span>
-              ) : (
-                <>
-                  <Send size={15} />
-                  <span>Submit Writing for Evaluation</span>
-                </>
-              )}
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Scorecard Modal */}
-      <WritingScoreModal
-        isOpen={isScoreModalOpen}
-        onClose={handleCloseScoreModal}
-        scoreResult={scoreResult}
-        onRetake={handlePracticeNext}
+      {/* ── 3. UNIVERSAL 3-ZONE EXAM BOTTOM NAVIGATION ── */}
+      <ExamBottomNav
+        onPrevious={() => setTask(1)}
+        isPreviousDisabled={task === 1}
+        previousLabel="Previous Task"
+        sections={[
+          { label: 'Task 1', isCompleted: wc1 >= 150 },
+          { label: 'Task 2', isCompleted: wc2 >= 250 }
+        ]}
+        activeSectionIndex={task - 1}
+        onSelectSection={(idx) => setTask(idx + 1)}
+        onNext={() => {
+          if (task === 1) {
+            setTask(2);
+          } else {
+            handleSubmit();
+          }
+        }}
+        nextLabel={task === 1 ? 'Next Task' : (isMockMode ? 'Next Section: Speaking' : 'Submit & Evaluate Writing')}
+        isSubmit={task === 2 && !isMockMode}
+        nextActionId={isMockMode ? 'next-mock-speaking' : 'submit-writing-exam'}
       />
-
-      {/* Exit Confirmation Guard Modal */}
-      <ExitConfirmationModal
-        isOpen={isExitModalOpen}
-        onCancel={() => setIsExitModalOpen(false)}
-        onConfirm={handleConfirmExit}
-        sectionTitle="Writing Practice Session"
-      />
-
-      {/* Enlarged Map Modal */}
-      {isImageZoomed && currentTaskData.image && (
-        <div className="modal-overlay" onClick={() => setIsImageZoomed(false)}>
-          <div 
-            className="modal-content" 
-            style={{ maxWidth: 960, background: '#191919', padding: 24 }} 
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <div>
-                <h3 style={{ fontSize: 16, fontWeight: 600, margin: 0 }}>Task 1 Visual Material — Full High Resolution</h3>
-                <p style={{ fontSize: 12, color: 'var(--text-muted)', margin: '4px 0 0 0' }}>{currentWritingTaskSet.title}</p>
-              </div>
-              <button className="btn btn-secondary" onClick={() => setIsImageZoomed(false)}>Close</button>
-            </div>
-            <div style={{
-              background: '#ffffff',
-              borderRadius: 'var(--radius-md)',
-              padding: 16,
-              textAlign: 'center',
-              maxHeight: '75vh',
-              overflowY: 'auto'
-            }}>
-              <img 
-                src={currentTaskData.image} 
-                alt="Diagram Enlarged" 
-                style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-sm)', display: 'inline-block' }} 
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

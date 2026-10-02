@@ -30,3 +30,17 @@ scratch/
 
 # Large audio assets (hosted on GitHub Releases instead)
 public/audio/*.mp3
+
+# Python cache artifacts
+__pycache__/
+*.pyc
+
+# Content-extraction run outputs (regenerable; raw source lives outside the repo)
+tmp/
+
+# Heavy runtime media — active content assets too large for version control.
+# canonical/v2 packages reference assets/ via runtime paths; public/wp-content
+# mirrors the raw source's WordPress uploads and is served by the dev server.
+src/data/canonical/v2/assets/
+public/wp-content/
+public/videos

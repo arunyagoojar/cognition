@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-10-02T06:27:01.521Z",
+  "status": "INVENTORY_COMPLETE",
+  "totals": {
+    "totalPackages": 564,
+    "totalQuestionOrPromptRecords": 14906,
+    "totalUsableRecords": 2718,
+    "totalQuarantinedRecords": 12367
+  },
+  "listening": {
+    "packages": 97,
+    "complete4SectionTests": 97,
+    "partialTests": 0,
+    "sections": 388,
+    "groups": 830,
+    "totalQuestions": 3880,
+    "usableQuestions": 2694,
+    "quarantinedQuestions": 1186,
+    "malformedQuestions": 1186,
+    "emptyQuestions": 0,
+    "duplicateQuestions": 131,
+    "unsupportedTypes": 0,
+    "questionsWithAudio": 3880,
+    "questionsWithoutAudio": 0,
+    "groupsWithInstructions": 830,
+    "groupsWithOptions": 0,
+    "typeDistribution": {
+      "MULTIPLE_CHOICE_SINGLE": {
+        "total": 844,
+        "usable": 662,
+        "quarantined": 182
+      },
+      "NOTE_COMPLETION": {
+        "total": 1501,
+        "usable": 1299,
+        "quarantined": 202
+      },
+      "MAP_LABELING": {
+        "total": 136,
+        "usable": 107,
+        "quarantined": 29
+      },
+      "SHORT_ANSWER": {
+        "total": 41,
+        "usable": 41,
+        "quarantined": 0
+      },
+      "TABLE_COMPLETION": {
+        "total": 269,
+        "usable": 45,
+        "quarantined": 224
+      },
+      "MULTIPLE_CHOICE_MULTI": {
+        "total": 321,
+        "usable": 0,
+        "quarantined": 321
+      },
+      "SENTENCE_COMPLETION": {
+        "total": 349,
+        "usable": 305,
+        "quarantined": 44
+      },
+      "FORM_COMPLETION": {
+        "total": 230,
+        "usable": 159,
+        "quarantined": 71
+      },
+      "SUMMARY_COMPLETION": {
+        "total": 91,
+        "usable": 27,
+        "quarantined": 64
+      },
+      "DIAGRAM_LABELING": {
+        "total": 74,
+        "usable": 25,
+        "quarantined": 49
+      },
+      "MATCHING": {
+        "total": 24,
+        "usable": 24,
+        "quarantined": 0
+      }
+    },
+    "quarantineReasons": {
+      "ONLY_ANSWER_FIELD": 378,
+      "OPTIONS_MISSING_WHEN_REQUIRED": 493,
+      "DUPLICATE_QUESTION": 131,
+      "ONLY_BLANK": 183,
+      "INVALID_QUESTION_NUMBER": 1
+    },
+    "uniqueAudioAssets": 96,
+    "missingAudioAssets": 0,
+    "crossTestExactDuplicates": 86
+  },
+  "reading": {
+    "packages": 275,
+    "complete3PassageTests": 275,
+    "partialTests": 0,
+    "passages": 825,
+    "groups": 2361,
+    "totalQuestions": 11000,
+    "usableQuestions": 0,
+    "quarantinedQuestions": 11000,
+    "malformedQuestions": 11000,
+    "emptyQuestions": 0,
+    "duplicateQuestions": 0,
+    "unsupportedTypes": 0,
+    "typeDistribution": {
+      "MATCHING_FEATURES": {
+        "total": 771,
+        "usable": 0,
+        "quarantined": 771
+      },
+      "YES_NO_NOT_GIVEN": {
+        "total": 422,
+        "usable": 0,
+        "quarantined": 422
+      },
+      "MULTIPLE_CHOICE_SINGLE": {
+        "total": 1048,
+        "usable": 0,
+        "quarantined": 1048
+      },
+      "MULTIPLE_CHOICE_MULTI": {
+        "total": 250,
+        "usable": 0,
+        "quarantined": 250
+      },
+      "NOTE_COMPLETION": {
+        "total": 406,
+        "usable": 0,
+        "quarantined": 406
+      },
+      "SUMMARY_COMPLETION": {
+        "total": 1321,
+        "usable": 0,
+        "quarantined": 1321
+      },
+      "DIAGRAM_LABELING": {
+        "total": 335,
+        "usable": 0,
+        "quarantined": 335
+      },
+      "MATCHING_INFORMATION": {
+        "total": 879,
+        "usable": 0,
+        "quarantined": 879
+      },
+      "SHORT_ANSWER": {
+        "total": 223,
+        "usable": 0,
+        "quarantined": 223
+      },
+      "MATCHING_HEADINGS": {
+        "total": 782,
+        "usable": 0,
+        "quarantined": 782
+      },
+      "UNCLASSIFIED": {
+        "total": 3122,
+        "usable": 0,
+        "quarantined": 3122
+      },
+      "SENTENCE_COMPLETION": {
+        "total": 856,
+        "usable": 0,
+        "quarantined": 856
+      },
+      "MATCHING": {
+        "total": 320,
+        "usable": 0,
+        "quarantined": 320
+      },
+      "TABLE_COMPLETION": {
+        "total": 257,
+        "usable": 0,
+        "quarantined": 257
+      },
+      "FORM_COMPLETION": {
+        "total": 8,
+        "usable": 0,
+        "quarantined": 8
+      }
+    },
+    "quarantineReasons": {
+      "QUESTION_TEXT_IS_GROUP_INSTRUCTION": 11000
+    }
+  },
+  "writing": {
+    "packages": 13,
+    "task1Records": 13,
+    "task2Records": 13,
+    "academicTask1": 13,
+    "generalTask1": 0,
+    "task2Total": 13,
+    "usableTask1": 12,
+    "usableTask2": 12,
+    "usableTotal": 24,
+    "quarantinedTasks": 2,
+    "missingPrompt": 0,
+    "missingImage": 0,
+    "malformed": 2,
+    "duplicate": 0,
+    "quarantineReasons": {
+      "EXTRACTION_GARBAGE": 2
+    },
+    "taskTypes": {
+      "TASK_1_TABLE": 12,
+      "TASK_2_ESSAY": 13,
+      "TASK_1_GRAPH": 1
+    }
+  },
+  "speaking": {
+    "packages": 179,
+    "part1Questions": 0,
+    "part2CueCards": 0,
+    "part3Questions": 0,
+    "completePart1Sets": 0,
+    "completePart2Records": 0,
+    "completePart3Records": 0,
+    "completeSetsP1P2P3": 0,
+    "recordsWithMissingPrompts": 179,
+    "recordsWithMalformedPrompts": 0,
+    "sampleAnswerLeakageRecords": 179,
+    "quarantinedPackages": 179,
+    "usablePrompts": 0,
+    "rootCause": {
+      "canonicalDataMissing": true,
+      "adapterMappingWrong": false,
+      "packageStructureIncompatible": false,
+      "promptInDifferentField": false,
+      "extractionMalformed": true,
+      "description": "The extraction script deterministically failed: all 179 packages contain prompts: [] and cue_card_instructions: null. The topic was hardcoded to \"Talk about a time when you gave advice to someone\" across all 179 files, while the blog post sample answer text was captured into supporting_text with ad codes. Zero actual speaking prompts or cue card bullet points exist in canonical v2."
+    }
+  }
+}

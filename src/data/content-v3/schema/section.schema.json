@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CognitionContentV3ListeningSection",
+  "type": "OBJECT",
+  "required": [
+    "id",
+    "testId",
+    "sectionNumber",
+    "audio",
+    "questionGroups",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "testId": { "type": "string" },
+    "sectionNumber": { "type": "number", "minimum": 1, "maximum": 4 },
+    "audio": {
+      "type": "object",
+      "required": ["path", "exists"],
+      "properties": {
+        "id": { "type": "string" },
+        "path": { "type": "string" },
+        "exists": { "type": "boolean" },
+        "originalSrc": { "type": ["string", "null"] }
+      }
+    },
+    "questionGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "questionType", "questions"],
+        "properties": {
+          "id": { "type": "string" },
+          "questionType": { "type": "string" },
+          "instruction": { "type": "string" },
+          "sharedContent": { "type": ["string", "null"] },
+          "sharedOptions": { "type": "array", "items": { "type": "string" } },
+          "questions": {
+            "type": "array",
+            "items": { "$ref": "question.schema.json" }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "NEEDS_REVIEW", "QUARANTINED"]
+    }
+  }
+}

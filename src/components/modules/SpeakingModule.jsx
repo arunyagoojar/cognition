@@ -1,631 +1,1084 @@
-import React, { useState, useEffect } from 'react';
-import AudioRecorder from '../common/AudioRecorder';
-import SpeakingScoreModal from './SpeakingScoreModal';
-import ExitConfirmationModal from '../common/ExitConfirmationModal';
-import ExitScreen from '../common/ExitScreen';
-import { Clock, Sparkles, ArrowLeft, ArrowRight, Send, Play, Pause, RotateCcw, CheckCircle2 } from 'lucide-react';
-import { evaluateSpeakingLocally, evaluateSpeakingWithGemini } from '../../utils/speakingScorer';
-import { saveSkillScore, getApiKey, recordAttemptedQuestionSet } from '../../utils/storage';
-import { getNextSpeakingTest, SPEAKING_TEST_POOLS } from '../../data/questionPools/speakingPool';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'motion/react';
+import { Icon } from '../common/Icon';
+import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
+import ExamStartScreen from './ExamStartScreen';
+import ExamBottomNav from './ExamBottomNav';
+import HtmlContentRenderer from '../common/HtmlContentRenderer';
+import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
+import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob } from '../../utils/audio/audioStore';
+import { getApiKey, createAttemptId, getTargetBand } from '../../utils/storage';
 
-export default function SpeakingModule({ testData, onComplete, isExamMode = false, onBackToDashboard }) {
-  // Initialize speaking test from unattempted primary pool (randomized initial start)
-  const [testSelection, setTestSelection] = useState(() => {
-    return getNextSpeakingTest();
-  });
-  const currentSpeakingTest = testSelection.test;
+const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
-  const [activePart, setActivePart] = useState(() => Number(new URLSearchParams(window.location.search).get('part')) || 1);
-  const [prepTimeRemaining, setPrepTimeRemaining] = useState(60);
-  const [isPrepActive, setIsPrepActive] = useState(false);
-  const [notes, setNotes] = useState('');
-  const [showSampleAnswers, setShowSampleAnswers] = useState(false);
+export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+  const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
+  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
+  const [partIdx, setPartIdx] = useState(0);
+  const [questionIdx, setQuestionIdx] = useState(0);
 
-  // Storage for recorded responses & transcripts across all parts
-  const [recordings, setRecordings] = useState({});
-  const [transcripts, setTranscripts] = useState({});
-  const [durations, setDurations] = useState({});
+  // Audio recording state
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordSeconds, setRecordSeconds] = useState(0);
+  const [recordings, setRecordings] = useState({}); // key: `${partIdx}_${qIdx}` -> { blob, url, duration, transcript }
+  const [activePlaybackUrl, setActivePlaybackUrl] = useState(null);
+  const [liveTranscript, setLiveTranscript] = useState('');
 
-  // Exit Confirmation Modal and Exit Screen state
-  const [isExitModalOpen, setIsExitModalOpen] = useState(() => {
-    return typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('showExitModal') === '1';
-  });
-  const [isExited, setIsExited] = useState(false);
+  const getTargetSeconds = (p) => {
+    return 840; // 14 minutes for full test
+  };
+  const targetSeconds = getTargetSeconds(partIdx);
 
-  // Score modal state
-  const [isScoreModalOpen, setIsScoreModalOpen] = useState(false);
-  const [scoreResult, setScoreResult] = useState(null);
-  const [isEvaluating, setIsEvaluating] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState('');
+  const recognitionRef = useRef(null);
+  const liveTranscriptRef = useRef('');
+  const recordSecondsRef = useRef(0);
 
-  // 1-minute cue card prep timer
+  // Cue card prep timer (Part 2)
+  const [prepSecondsLeft, setPrepSecondsLeft] = useState(null);
+
+  // Processing screen state
+  const [processingStep, setProcessingStep] = useState(0);
+
+  // Final evaluated result
+  const [result, setResult] = useState(null);
+
+  const mediaRecorderRef = useRef(null);
+  const recordIntervalRef = useRef(null);
+  const prepIntervalRef = useRef(null);
+  const audioPlayerRef = useRef(null);
+
   useEffect(() => {
-    let interval = null;
-    if (isPrepActive && prepTimeRemaining > 0) {
-      interval = setInterval(() => {
-        setPrepTimeRemaining(prev => prev - 1);
-      }, 1000);
-    } else if (prepTimeRemaining === 0) {
-      setIsPrepActive(false);
-    }
-    return () => clearInterval(interval);
-  }, [isPrepActive, prepTimeRemaining]);
+    return () => {
+      clearInterval(recordIntervalRef.current);
+      clearInterval(prepIntervalRef.current);
+      // Revoke any active object URLs on unmount to prevent memory leaks
+      Object.values(recordings).forEach(rec => {
+        if (rec && rec.url) URL.revokeObjectURL(rec.url);
+      });
+    };
+  }, [recordings]);
 
-  const handleRecordingSaved = (key, blob, url, transcriptText, secs) => {
-    if (url) {
-      setRecordings(prev => ({ ...prev, [key]: url }));
-    }
-    if (transcriptText) {
-      setTranscripts(prev => ({ ...prev, [key]: transcriptText }));
-    }
-    if (secs) {
-      setDurations(prev => ({ ...prev, [key]: secs }));
-    }
+  const currentPart = test.parts[partIdx];
+  const isCueCardPart = currentPart?.partNumber === 2;
+  const totalQuestionsInPart = currentPart?.questions?.length || 1;
+  const currentKey = `${partIdx}_${questionIdx}`;
+  const currentRecording = recordings[currentKey];
+
+  // Current question data
+  const currentQuestion = currentPart?.questions?.[questionIdx];
+
+  const handleStartExam = () => {
+    setPhase('exam');
+    setPartIdx(0);
+    setQuestionIdx(0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
-  // Retake / Next attempt action: select the next unattempted test set from pool
-  const handlePracticeNext = () => {
-    setIsScoreModalOpen(false);
-    const nextSelection = getNextSpeakingTest(currentSpeakingTest.id);
-    setTestSelection(nextSelection);
-    setActivePart(1);
-    setRecordings({});
-    setTranscripts({});
-    setDurations({});
-    setNotes('');
-    setPrepTimeRemaining(60);
-    setIsPrepActive(false);
-    setScoreResult(null);
-    setIsSubmitted(false);
-  };
-
-  // Progression check before exiting (only true if there is unsubmitted speech)
-  const hasProgress = (Object.keys(recordings).length > 0 || 
-                      Object.keys(transcripts).length > 0 || 
-                      notes.trim().length > 0) && !isSubmitted;
-
-  const handleBackClick = () => {
-    if (hasProgress && !isExamMode) {
-      setIsExitModalOpen(true);
-    } else if (onBackToDashboard) {
-      onBackToDashboard();
-    }
-  };
-
-  const handleConfirmExit = () => {
-    setIsExitModalOpen(false);
-    // Explicitly discard progression without updating scores or analytics
-    setRecordings({});
-    setTranscripts({});
-    setDurations({});
-    setNotes('');
-    setIsExited(true);
-  };
-
-  const handleCloseScoreModal = () => {
-    setIsScoreModalOpen(false);
-    if (onBackToDashboard) {
-      onBackToDashboard();
-    }
-  };
-
-  // Strict score commit: only runs when user has recorded at least one part
-  const handleSubmitSpeaking = async () => {
-    // Guard: require at least one recording or transcript from the user
-    const hasAnyRecording = Object.keys(recordings).length > 0 || Object.keys(transcripts).length > 0;
-    if (!hasAnyRecording) {
-      setSubmitError('Please record at least one speaking response before submitting.');
-      return;
-    }
-    setSubmitError('');
-    setIsEvaluating(true);
+  const startRecording = async () => {
     try {
-      const apiKey = getApiKey();
-      let result;
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const chunks = [];
+      const mimeType = detectSupportedAudioMimeType();
+      const mr = new MediaRecorder(stream, { mimeType });
+      setLiveTranscript('');
+      liveTranscriptRef.current = '';
 
-      // Only use what the user actually recorded — no fake fallback
-      const activeTranscripts = transcripts;
-      const activeDurations = durations;
+      // Live Speech-to-Text transcription via browser API
+      const SpeechRecognition = typeof window !== 'undefined'
+        ? (window.SpeechRecognition || window.webkitSpeechRecognition)
+        : null;
 
-      if (apiKey) {
+      if (SpeechRecognition) {
         try {
-          result = await evaluateSpeakingWithGemini(
-            apiKey,
-            activeTranscripts,
-            `${currentSpeakingTest.title} (Parts 1, 2, and 3)`
-          );
-        } catch (err) {
-          console.warn('Gemini evaluation failed, falling back to local scoring:', err);
+          const rec = new SpeechRecognition();
+          rec.continuous = true;
+          rec.interimResults = true;
+          rec.lang = 'en-US';
+          rec.onresult = (e) => {
+            let full = '';
+            for (let i = 0; i < e.results.length; i++) {
+              full += e.results[i][0].transcript + ' ';
+            }
+            const clean = full.trim();
+            setLiveTranscript(clean);
+            liveTranscriptRef.current = clean;
+          };
+          rec.onerror = () => {};
+          rec.start();
+          recognitionRef.current = rec;
+        } catch (e) {
+          console.warn('SpeechRecognition initialization error', e);
         }
       }
 
-      if (!result) {
-        result = evaluateSpeakingLocally(activeTranscripts, activeDurations);
-      }
+      mr.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) chunks.push(e.data);
+      };
 
-      setScoreResult(result);
-      setIsScoreModalOpen(true);
-      setIsSubmitted(true);
-      // Only here is the score officially committed to scorecard & analytics
-      saveSkillScore('speaking', result);
-      // Record in attempted history so it goes into the attempted pool
-      recordAttemptedQuestionSet('speaking', currentSpeakingTest.id);
+      mr.onstop = () => {
+        const mimeType = detectSupportedAudioMimeType();
+        const blob = createAudioBlob(chunks, mimeType);
+        const url = URL.createObjectURL(blob);
+        const transcriptText = liveTranscriptRef.current || '';
+        const dur = recordSecondsRef.current || 30;
+        
+        const qId = currentKey;
+        const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
 
-      if (onComplete) {
-        onComplete(result);
-      }
-    } finally {
-      setIsEvaluating(false);
+        saveAudioRecording({
+          recordingId,
+          attemptId: 'temp_attempt',
+          questionId: qId,
+          blob,
+          mimeType,
+          duration: dur
+        }).catch(e => console.warn('Failed to save to IndexedDB', e));
+
+        setRecordings(prev => {
+          if (prev[qId] && prev[qId].url) {
+            URL.revokeObjectURL(prev[qId].url);
+          }
+          return {
+            ...prev,
+            [qId]: {
+              recordingId,
+              blob,
+              duration: dur,
+              transcript: transcriptText,
+              qText: currentQuestion || (currentPart?.questions ? currentPart.questions.join(' ') : 'Speaking prompt')
+            }
+          };
+        });
+        setActivePlaybackUrl(url);
+        stream.getTracks().forEach(t => t.stop());
+      };
+
+      mr.start();
+      mediaRecorderRef.current = mr;
+      setIsRecording(true);
+      setRecordSeconds(0);
+      recordSecondsRef.current = 0;
+      setActivePlaybackUrl(null);
+
+      recordIntervalRef.current = setInterval(() => {
+        setRecordSeconds(s => {
+          const next = s + 1;
+          recordSecondsRef.current = next;
+
+          // Target reached with 5-second grace period: at +5s automatically stop recording!
+          if (next >= targetSeconds + 5) {
+            setTimeout(() => {
+              stopRecording();
+            }, 30);
+          }
+          return next;
+        });
+      }, 1000);
+    } catch (err) {
+      alert('Microphone access is required for IELTS Speaking practice. Please allow microphone permissions.');
     }
   };
 
-  const currentPartData = currentSpeakingTest.parts.find(p => p.part === activePart) || currentSpeakingTest.parts[0];
+  const stopRecording = () => {
+    clearInterval(recordIntervalRef.current);
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch (_) {}
+      recognitionRef.current = null;
+    }
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      mediaRecorderRef.current.stop();
+    }
+    setIsRecording(false);
+  };
 
-  if (isExited) {
+  const startPrepTimer = (duration = 60) => {
+    setPrepSecondsLeft(duration);
+    prepIntervalRef.current = setInterval(() => {
+      setPrepSecondsLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(prepIntervalRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const handleNext = () => {
+    stopRecording();
+    setActivePlaybackUrl(null);
+    handleFinish();
+  };
+
+  const handlePrevious = () => {
+    stopRecording();
+    setActivePlaybackUrl(null);
+  };
+
+  const handleFinish = async () => {
+    stopRecording();
+    const transcripts = {};
+    const durations = {};
+    Object.entries(recordings).forEach(([k, rec]) => {
+      transcripts[k] = rec.transcript || '';
+      durations[k] = rec.duration || 30;
+    });
+
+    if (isMockMode) {
+      // In Full Mock Mode: evaluate responses and pass directly to MockExamFlow
+      const evalResult = await evaluateSpeakingResponses({
+        transcripts,
+        testMeta: { title: test?.title || 'IELTS Academic Speaking Test' },
+        durations
+      });
+      const computedResult = {
+        band: evalResult.overallSpeakingBand,
+        recordings,
+        transcripts,
+        ...evalResult
+      };
+      if (onComplete) onComplete(computedResult);
+      return;
+    }
+
+    setPhase('processing');
+    setTimeout(() => setProcessingStep(1), 700);
+    setTimeout(() => setProcessingStep(2), 1400);
+    setTimeout(() => setProcessingStep(3), 2100);
+
+    const evalResult = await evaluateSpeakingResponses({
+      transcripts,
+      testMeta: { title: test?.title || 'IELTS Academic Speaking Test' },
+      durations
+    });
+
+    setTimeout(() => {
+      setResult({
+        band: evalResult.overallBand,
+        recordings,
+        transcripts,
+        recordedCount: Object.keys(recordings).length,
+        totalParts: test.parts.length,
+        ...evalResult
+      });
+      setPhase('results');
+    }, 2800);
+  };
+
+  /* ──────────────────────────────────────────────────────────
+     1. INTRO VIEW
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'intro') {
     return (
-      <ExitScreen
-        sectionTitle="IELTS Speaking Interview Session"
-        onReturnToDashboard={() => {
-          setIsExited(false);
-          if (onBackToDashboard) onBackToDashboard();
-        }}
-        onRestart={() => {
-          setIsExited(false);
-          handlePracticeNext();
-        }}
+      <ExamStartScreen
+        section="Speaking"
+        sectionKey="speaking"
+        testTitle={test?.title || 'IELTS Speaking Practice'}
+        subtitle="Simulate an authentic face-to-face IELTS interview with simulated examiner prompts, cue card preparation, and speech evaluation."
+        metaItems={[
+          { label: '3 Parts', sub: 'Interview, Cue Card, Discussion' },
+          { label: '14 Minutes', sub: 'Strict timed sequence' },
+          { label: 'Band 0–9', sub: 'Official-style scoring' },
+        ]}
+        rules={[
+          'Ensure your microphone is connected and authorized in your browser before starting.',
+          'Part 1: Short conversational responses on familiar everyday topics.',
+          'Part 2: 1 minute of note preparation followed by a 2-minute sustained monologue.',
+          'Part 3: In-depth abstract discussion on broader societal and global themes.',
+        ]}
+        scoringInfo="Assessed across Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation according to official IELTS band descriptors."
+        ctaText="START SPEAKING TEST"
+        onStart={handleStartExam}
+        onBack={onBack}
       />
     );
   }
 
-  return (
-    <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      {/* Top Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {onBackToDashboard && !isExamMode && (
-            <button
-              className="btn btn-ghost"
-              onClick={handleBackClick}
-              style={{ padding: '6px 12px', fontSize: 13 }}
-            >
-              <ArrowLeft size={15} />
-              <span>Back to Dashboard</span>
-            </button>
-          )}
+  /* ──────────────────────────────────────────────────────────
+     2. PROCESSING SCREEN (Section 22)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'processing') {
+    return (
+      <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <div style={{
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-subtle)',
+          borderRadius: 'var(--r-container)',
+          padding: '56px 40px'
+        }}>
+          <div style={{
+            width: 48,
+            height: 48,
+            borderRadius: '50%',
+            border: '3px solid var(--border-subtle)',
+            borderTopColor: 'var(--coral)',
+            margin: '0 auto 24px',
+            animation: 'spin 0.8s linear infinite'
+          }} />
 
-          <div className="segmented-control">
-            {currentSpeakingTest.parts.map((p) => (
-              <button
-                key={p.part}
-                className={`segmented-btn ${activePart === p.part ? 'active' : ''}`}
-                onClick={() => setActivePart(p.part)}
-              >
-                <span>Part {p.part}</span>
-                <span className="badge badge-neutral" style={{ fontSize: 10 }}>
-                  {p.part === 1 ? 'Interview' : p.part === 2 ? 'Cue Card' : 'Discussion'}
-                </span>
-              </button>
+          <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
+            Analysing your performance...
+          </h2>
+          <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
+            Evaluating official IELTS assessment criteria across your recordings.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
+            {[
+              { label: 'Fluency & Coherence', active: processingStep >= 0 },
+              { label: 'Lexical Resource & Vocabulary', active: processingStep >= 1 },
+              { label: 'Grammatical Range & Accuracy', active: processingStep >= 2 },
+              { label: 'Pronunciation & Intonation Flow', active: processingStep >= 3 },
+            ].map((step, idx) => (
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)',
+                transition: 'color 0.3s ease'
+              }}>
+                <div style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: '50%',
+                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
+                  color: step.active ? '#10B981' : 'transparent',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 11
+                }}>
+                  <Icon name="check" size={12} />
+                </div>
+                {step.label}
+              </div>
             ))}
           </div>
         </div>
+      </div>
+    );
+  }
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Subtle Pool Status Indicator (No interactive shuffle button) */}
-          <div style={{
-            fontSize: 12,
-            color: 'var(--text-muted)',
-            padding: '4px 10px',
-            borderRadius: 'var(--radius-pill)',
-            background: 'var(--bg-canvas)',
-            border: '1px solid var(--border-subtle)',
-            display: 'flex',
+  /* ──────────────────────────────────────────────────────────
+     3. RESULTS SCREEN (Cognition Unified Design Language)
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'results') {
+    const isCompleted = result?.status === 'completed' && typeof result?.overallSpeakingBand === 'number';
+    const isPartial = result?.status === 'partial';
+    const isFailed = result?.status === 'not_attempted' || result?.status === 'failed' || (!isCompleted && !isPartial);
+
+    const handleSaveAndReturn = () => {
+      // Create canonical attempt payload
+      const attemptId = createAttemptId('speaking');
+      const canonicalAttempt = {
+        id: attemptId,
+        type: 'speaking',
+        testId: test?.testId || testId || 'speaking-practice',
+        testLabel: test?.title || 'IELTS Speaking Practice',
+        startedAt: new Date(Date.now() - 900000).toISOString(),
+        completedAt: new Date().toISOString(),
+        status: 'completed',
+        overallBand: isCompleted ? result.overallSpeakingBand : null,
+        speaking: {
+          band: isCompleted ? result.overallSpeakingBand : null,
+          evaluationStatus: result?.status || 'failed',
+          criteria: result?.criteria || null,
+          overallSummary: result?.overallSummary || '',
+          strengths: result?.strengths || '',
+          areasForImprovement: result?.areasForImprovement || '',
+          recordedCount: Object.keys(recordings).length,
+          recordings,
+          transcripts: result?.transcripts || {}
+        }
+      };
+
+      if (onComplete) {
+        onComplete(canonicalAttempt.speaking);
+      }
+    };
+
+    const criteriaList = [
+      {
+        id: 'fluency',
+        title: 'Fluency & Coherence',
+        data: result?.criteria?.fluencyAndCoherence,
+        defaultNote: 'Speech continuity, hesitation, linking phrases, and idea development.'
+      },
+      {
+        id: 'lexical',
+        title: 'Lexical Resource',
+        data: result?.criteria?.lexicalResource,
+        defaultNote: 'Topic vocabulary range, academic phrasing, precision, and collocation.'
+      },
+      {
+        id: 'grammar',
+        title: 'Grammatical Range & Accuracy',
+        data: result?.criteria?.grammaticalRangeAndAccuracy,
+        defaultNote: 'Syntactic complexity, tense control, clause variety, and grammatical precision.'
+      },
+      {
+        id: 'pronunciation',
+        title: 'Pronunciation',
+        data: result?.criteria?.pronunciation,
+        defaultNote: 'Phonological clarity, word stress, sentence intonation, and connected speech.'
+      }
+    ];
+
+    return (
+      <div className="exam-results-screen" style={{ maxWidth: 1080, margin: '40px auto', padding: '0 24px 80px' }}>
+        {/* Navigation Breadcrumb */}
+        <button
+          onClick={onBack}
+          style={{
+            display: 'inline-flex',
             alignItems: 'center',
-            gap: 6
-          }}>
-            <span style={{
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              background: 'var(--accent-purple)'
-            }} />
-            <span>Unattempted Pool • {testSelection.poolInfo?.remainingInPool || 1} of {testSelection.poolInfo?.totalCount || 5}</span>
+            gap: 8,
+            fontSize: 14,
+            fontWeight: 700,
+            color: 'var(--text-secondary)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            marginBottom: 24
+          }}
+        >
+          <Icon name="arrowLeft" size={16} /> Back to Dashboard
+        </button>
+
+        {/* ── 1. SPEAKING PRACTICE COMPLETE HERO CARD ── */}
+        <div style={{
+          background: 'var(--bg-card)',
+          border: '1.5px solid #151313',
+          borderRadius: 24,
+          padding: '40px',
+          marginBottom: 32,
+          boxShadow: '0 4px 0 #151313',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 28
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              fontSize: 12,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              fontWeight: 800,
+              padding: '4px 12px',
+              borderRadius: 8,
+              background: '#151313',
+              color: '#FFFFFF',
+              marginBottom: 12
+            }}>
+              SPEAKING PRACTICE COMPLETE
+            </div>
+            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
+              Speaking Assessment
+            </h1>
+            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
+              {isCompleted ? 'Your Speaking evaluation is ready.' : 'Speaking interview completed. Evaluated using official IELTS descriptors.'}
+            </p>
           </div>
 
-          {!isExamMode && (
-            <button
-              className="btn btn-secondary"
-              onClick={() => setShowSampleAnswers(!showSampleAnswers)}
-              style={{ fontSize: 12.5 }}
-            >
-              <Sparkles size={15} color="var(--accent-purple)" />
-              <span>{showSampleAnswers ? 'Hide Model Answers' : 'View Band 8.5 Answers'}</span>
-            </button>
-          )}
+          <div style={{
+            background: 'var(--bg-canvas)',
+            padding: '24px 36px',
+            borderRadius: 20,
+            textAlign: 'center',
+            border: '1.5px solid #151313',
+            boxShadow: '0 2px 0 #151313',
+            minWidth: 180
+          }}>
+            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              {isCompleted ? 'OVERALL BAND' : 'AI EVALUATION'}
+            </div>
+            <div style={{
+              fontSize: isCompleted ? 54 : 20,
+              fontWeight: 800,
+              color: isCompleted ? 'var(--c-coral)' : 'var(--text-secondary)',
+              lineHeight: 1.1,
+              marginTop: 6,
+              fontFamily: 'Kodchasan, sans-serif'
+            }}>
+              {isCompleted ? result.overallSpeakingBand.toFixed(1) : (isPartial ? 'Partial' : 'Unavailable')}
+            </div>
+            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
+              Target: {getTargetBand() || '8.0'}
+            </div>
+          </div>
+        </div>
 
-          <span className="badge badge-purple" style={{ fontSize: 13, padding: '4px 10px' }}>
-            <Clock size={13} />
-            {currentPartData.duration}
-          </span>
+        {isFailed && !isPartial && (
+          <div style={{
+            background: 'rgba(255, 87, 52, 0.08)',
+            border: '1.5px solid #151313',
+            borderRadius: 18,
+            padding: '20px 24px',
+            marginBottom: 32,
+            boxShadow: '0 3px 0 #151313',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16
+          }}>
+            <Icon name="alertCircle" size={24} style={{ color: 'var(--c-coral)', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 15, color: '#151313' }}>
+                AI Evaluation Unavailable
+              </div>
+              <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 4 }}>
+                {result?.message || 'To receive official IELTS criteria scoring and detailed band feedback, configure your Google Gemini API key in Settings.'}
+              </div>
+            </div>
+          </div>
+        )}
+        
+        {isPartial && (
+          <div style={{
+            background: 'rgba(245, 158, 11, 0.08)',
+            border: '1.5px solid #151313',
+            borderRadius: 18,
+            padding: '20px 24px',
+            marginBottom: 32,
+            boxShadow: '0 3px 0 #151313',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16
+          }}>
+            <Icon name="alertCircle" size={24} style={{ color: '#F59E0B', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 15, color: '#151313' }}>
+                Partial Attempt Recorded
+              </div>
+              <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 4 }}>
+                {`You answered ${result?.coverage?.questionsAnswered} out of ${result?.coverage?.questionsExpected} expected questions. An overall IELTS Speaking band requires attempting all 3 parts of the interview.`}
+              </div>
+            </div>
+          </div>
+        )}
 
-          <button
-            className="btn btn-primary"
-            onClick={handleSubmitSpeaking}
-            disabled={isEvaluating}
+        {/* ── 3. FOUR ASSESSMENT CRITERIA CARDS ── */}
+        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
+          Assessment Criteria
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginBottom: 36 }}>
+          {criteriaList.map((c) => {
+            const hasBand = typeof c.data?.band === 'number';
+            const isAudioReq = c.data?.status === 'insufficient_audio_evidence';
+
+            return (
+              <div
+                key={c.id}
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1.5px solid #151313',
+                  borderRadius: 20,
+                  padding: 24,
+                  boxShadow: '0 3px 0 #151313',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 10
+                }}
+              >
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>
+                  {c.title}
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+                  <span style={{ fontSize: 36, fontWeight: 800, color: hasBand ? 'var(--c-coral)' : 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
+                    {hasBand ? c.data.band.toFixed(1) : '--'}
+                  </span>
+                  {hasBand && <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>}
+                </div>
+
+                {isAudioReq && (
+                  <span style={{
+                    display: 'inline-block',
+                    fontSize: 11,
+                    fontWeight: 800,
+                    padding: '3px 8px',
+                    borderRadius: 6,
+                    background: '#151313',
+                    color: '#BE94F5',
+                    alignSelf: 'flex-start'
+                  }}>
+                    Acoustic Evidence Required
+                  </span>
+                )}
+
+                <div style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5, marginTop: 4 }}>
+                  {c.data?.rationale || c.data?.evidence || c.defaultNote}
+                </div>
+
+                {c.data?.improvementFocus && (
+                  <div style={{ fontSize: 12, color: 'var(--text-primary)', fontWeight: 600, marginTop: 'auto', paddingTop: 8, borderTop: '1px solid rgba(21,19,19,0.1)' }}>
+                    <strong style={{ color: 'var(--c-coral)' }}>Focus: </strong>{c.data.improvementFocus}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── 4. PERFORMANCE SUMMARY ── */}
+        {(result?.overallSummary || result?.strengths || result?.areasForImprovement) && (
+          <div style={{
+            background: 'var(--bg-card)',
+            border: '1.5px solid #151313',
+            borderRadius: 20,
+            padding: '28px 32px',
+            marginBottom: 36,
+            boxShadow: '0 3px 0 #151313'
+          }}>
+            <h3 style={{ fontSize: 18, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>
+              Performance Summary
+            </h3>
+            {result?.overallSummary && (
+              <p style={{ fontSize: 15, color: 'var(--text-primary)', lineHeight: 1.6, margin: '0 0 16px' }}>
+                {result.overallSummary}
+              </p>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              {result?.strengths && (
+                <div style={{ padding: 16, borderRadius: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313' }}>
+                  <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                    Observed Strengths
+                  </div>
+                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    {result.strengths}
+                  </div>
+                </div>
+              )}
+              {result?.areasForImprovement && (
+                <div style={{ padding: 16, borderRadius: 14, background: 'rgba(255, 87, 52, 0.08)', border: '1px solid #151313' }}>
+                  <div style={{ fontWeight: 800, fontSize: 13, color: '#151313', textTransform: 'uppercase', marginBottom: 6 }}>
+                    Areas for Improvement
+                  </div>
+                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    {result.areasForImprovement}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* ── 5. YOUR RESPONSES (EVIDENCE & PLAYBACK) ── */}
+        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
+          Your Responses & Evidence
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 44 }}>
+          {Object.entries(recordings).map(([key, item]) => {
+            const [pIdx, qI] = key.split('_');
+            return (
+              <div
+                key={key}
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1.5px solid #151313',
+                  borderRadius: 18,
+                  padding: '20px 24px',
+                  boxShadow: '0 3px 0 #151313',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                  <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--c-coral)', textTransform: 'uppercase' }}>
+                    Part {Number(pIdx) + 1} · Question {Number(qI) + 1}
+                  </div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', padding: '2px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid #151313' }}>
+                    Duration: {FMT(item.duration)}
+                  </div>
+                </div>
+
+                <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>
+                  {item.qText || 'Speaking prompt'}
+                </div>
+
+                {item.transcript ? (
+                  <div style={{
+                    fontSize: 13.5,
+                    fontStyle: 'italic',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.5,
+                    padding: '10px 14px',
+                    borderRadius: 10,
+                    background: 'var(--bg-canvas)',
+                    border: '1px solid rgba(21,19,19,0.15)'
+                  }}>
+                    "{item.transcript}"
+                  </div>
+                ) : (
+                  <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+                    No speech transcript captured.
+                  </div>
+                )}
+
+                <div style={{ marginTop: 4 }}>
+                  <audio
+                    controls
+                    src={item.url}
+                    style={{
+                      width: '100%',
+                      maxWidth: 360,
+                      height: 38,
+                      borderRadius: 10
+                    }}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── 6. PROMINENT SAVE SCORE & RETURN BUTTON ── */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          gap: 16,
+          paddingTop: 16,
+          borderTop: '1.5px solid #151313'
+        }}>
+          <motion.button
+            id="save-speaking-result-btn"
+            type="button"
+            onClick={handleSaveAndReturn}
+            whileHover={{ y: -3, boxShadow: '0 6px 0 #151313' }}
+            whileTap={{ y: 2, scale: 0.98, boxShadow: '0 1px 0 #151313' }}
+            transition={{ type: 'spring', stiffness: 500, damping: 25 }}
             style={{
-              background: 'linear-gradient(135deg, #9065b0, #7c3aed)',
-              color: '#fff',
-              fontWeight: 600,
-              fontSize: 13.5
+              padding: '16px 36px',
+              borderRadius: 16,
+              background: '#FF5734',
+              color: '#151313',
+              fontSize: 16,
+              fontWeight: 800,
+              border: '1.5px solid #151313',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              boxShadow: '0 4px 0 #151313',
+              fontFamily: 'Kodchasan, sans-serif'
             }}
           >
-            {isEvaluating ? (
-              <span>Evaluating...</span>
-            ) : (
-              <>
-                <Send size={14} />
-                <span>Submit Speaking Test</span>
-              </>
-            )}
+            <Icon name="check" size={18} />
+            <span>Save Score & Return to Dashboard</span>
+          </motion.button>
+        </div>
+      </div>
+    );
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     4. EXAM INTERFACE (Sections 16, 17, 18, 19, 20)
+     ────────────────────────────────────────────────────────── */
+  const isPartRecorded = isCueCardPart ? Boolean(currentRecording) : currentPart?.questions?.every((_, qI) => Boolean(recordings[`${partIdx}_${qI}`]));
+
+  return (
+    <div className="exam-focus-layout" style={{ maxWidth: 1080 }}>
+      {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
+      <div className="exam-focus-header">
+        <div className="exam-focus-header-left">
+          <span className="exam-focus-tag" style={{ background: '#151313', color: '#FFFFFF', borderColor: '#151313' }}>
+            IELTS SPEAKING PRACTICE
+          </span>
+          <h2 className="exam-focus-title">
+            Part {partIdx + 1} of {test.parts.length} · {currentPart?.title}
+          </h2>
+        </div>
+
+        <div className="exam-focus-header-right">
+          <div className="exam-focus-timer-pill" title="Current question status">
+            <Icon name="mic" size={16} />
+            <span>Question {questionIdx + 1} of {totalQuestionsInPart}</span>
+          </div>
+
+          <button
+            type="button"
+            className="exam-focus-exit-btn"
+            onClick={() => {
+              if (window.confirm('Exit speaking practice? Your audio for this session will be discarded.')) {
+                onBack();
+              }
+            }}
+            title="Exit interview and return to Dashboard"
+          >
+            <span>Exit Exam</span>
           </button>
         </div>
       </div>
 
-      {/* Active Test Theme Indicator */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span className="badge badge-neutral" style={{ fontSize: 11 }}>
-          {currentSpeakingTest.title}
-        </span>
-        <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-          IELTS Academic Speaking Test Format
-        </span>
-      </div>
-
-      {/* Submit Validation Error */}
-      {submitError && (
+      {/* ── 2. QUESTION SELECTOR FOR MULTI-QUESTION PARTS (PART 1 & 3) ── */}
+      {!isCueCardPart && currentPart?.questions && currentPart.questions.length > 1 && (
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 10,
-          background: 'rgba(239, 68, 68, 0.1)',
-          border: '1px solid rgba(239, 68, 68, 0.35)',
-          borderRadius: 'var(--radius-md)',
-          padding: '10px 14px',
-          fontSize: 13,
-          color: 'var(--accent-red)'
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: 12,
+          padding: '0 4px'
         }}>
-          <span>⚠️</span>
-          <span>{submitError}</span>
-        </div>
-      )}
-
-      {/* Part 1: Introduction & Familiar Topics */}
-      {activePart === 1 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div className="card">
-            <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>
-              Part 1: Interview & Familiar Questions
-            </h2>
-            <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-              Theme: {currentPartData.theme} — Respond naturally with 2-3 full sentences for each question.
-            </p>
+          <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--text-secondary)' }}>
+            Select Question:
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {currentPartData.questions.map((q, idx) => (
-              <div key={q.id} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div>
-                    <span className="badge badge-neutral" style={{ marginBottom: 6 }}>Question {idx + 1}</span>
-                    <h3 style={{ fontSize: 16, fontWeight: 600 }}>{q.question}</h3>
-                  </div>
-                </div>
-
-                <AudioRecorder
-                  label={`Record Answer for Q${idx + 1}`}
-                  onRecordingComplete={(blob, url, text, secs) => handleRecordingSaved(q.id, blob, url, text, secs)}
-                />
-
-                {showSampleAnswers && (
-                  <div style={{
-                    background: 'var(--bg-canvas)',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
-                    padding: '14px',
-                    borderLeft: '3px solid var(--accent-purple)'
-                  }}>
-                    <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent-purple)', marginBottom: 4 }}>
-                      Band 8.5 Model Response:
-                    </div>
-                    <p style={{ fontSize: 13.5, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 6 }}>
-                      "{q.sampleAnswer}"
-                    </p>
-                    <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-                      💡 Examiner Tip: {q.tip}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div style={{ display: 'flex', gap: 8 }}>
+            {currentPart.questions.map((q, idx) => {
+              const isSelected = idx === questionIdx;
+              const hasRec = Boolean(recordings[`${partIdx}_${idx}`]);
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => {
+                    stopRecording();
+                    setQuestionIdx(idx);
+                    setActivePlaybackUrl(null);
+                  }}
+                  style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: 10,
+                    fontSize: 13.5,
+                    fontWeight: 800,
+                    border: isSelected ? '2px solid #151313' : '1.5px solid #151313',
+                    background: isSelected ? '#151313' : hasRec ? 'rgba(16,185,129,0.14)' : 'var(--bg-card)',
+                    color: isSelected ? '#FFFFFF' : hasRec ? '#10B981' : 'var(--text-primary)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: isSelected ? '0 2px 0 #151313' : 'none',
+                    transition: 'all 140ms ease'
+                  }}
+                  title={hasRec ? `Question ${idx + 1} (Recorded)` : `Question ${idx + 1}`}
+                >
+                  {hasRec && !isSelected ? '✓' : idx + 1}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
 
-      {/* Part 2: Long Turn (Cue Card) */}
-      {activePart === 2 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <div className="speaking-studio-grid">
-            {/* Left: Cue Card */}
-            <div className="cue-card-box">
-              <span className="badge badge-blue" style={{ marginBottom: 12 }}>Candidate Cue Card</span>
-              <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, lineHeight: 1.4 }}>
-                {currentPartData.cueCard.topic}
-              </h2>
-              <div style={{ fontSize: 14, color: 'var(--text-secondary)', marginBottom: 12 }}>
-                You should say:
-              </div>
-              <ul style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14, lineHeight: 1.6 }}>
-                {currentPartData.cueCard.prompts.map((p, i) => (
-                  <li key={i}>{p}</li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 20, fontSize: 12, color: 'var(--text-muted)', borderTop: '1px solid var(--border-subtle)', paddingTop: 12 }}>
-                You have 1 minute to prepare and make notes. You should talk for 1 to 2 minutes.
-              </div>
-            </div>
-
-            {/* Right: 1-Minute Prep Timer & Notes Scratchpad */}
-            <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: 15, fontWeight: 600 }}>1-Minute Preparation</h3>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  {!isPrepActive ? (
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => { setIsPrepActive(true); setPrepTimeRemaining(60); }}
-                      style={{ padding: '4px 12px', fontSize: 12.5 }}
-                    >
-                      <Play size={13} />
-                      <span>Start Prep Timer</span>
-                    </button>
-                  ) : (
-                    <button
-                      className="btn btn-secondary"
-                      onClick={() => setIsPrepActive(false)}
-                      style={{ padding: '4px 12px', fontSize: 12.5 }}
-                    >
-                      <Pause size={13} />
-                      <span>Pause</span>
-                    </button>
-                  )}
-                  <button
-                    className="btn btn-ghost"
-                    onClick={() => { setIsPrepActive(false); setPrepTimeRemaining(60); }}
-                    style={{ padding: 4 }}
-                    title="Reset timer"
-                  >
-                    <RotateCcw size={14} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Circular Prep Display */}
-              <div className="speaking-timer-circle" style={{ borderColor: prepTimeRemaining < 10 ? 'var(--accent-red)' : 'var(--accent-blue)' }}>
-                <span className="speaking-timer-seconds" style={{ color: prepTimeRemaining < 10 ? 'var(--accent-red)' : 'var(--text-primary)' }}>
-                  {prepTimeRemaining}s
-                </span>
-                <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>prep remaining</span>
-              </div>
-
-              {/* Digital Scratchpad */}
-              <div>
-                <label style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-secondary)', display: 'block', marginBottom: 6 }}>
-                  Scratchpad (Jot down your keywords & structure during the 1 min):
-                </label>
-                <textarea
-                  style={{ width: '100%', minHeight: 90, fontSize: 13 }}
-                  placeholder="e.g. 1. Context & location 2. Key participants 3. Sensory impressions 4. Retrospective perspective..."
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* 2-Minute Speech Recording Box */}
-          <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <h3 style={{ fontSize: 16, fontWeight: 600 }}>Record Your 2-Minute Speech</h3>
-            <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-              Speak continuously without stopping for at least 1 minute and 40 seconds to target Band 7.5+.
-            </p>
-
-            <AudioRecorder
-              label="Start 2-Minute Speech Recording"
-              onRecordingComplete={(blob, url, text, secs) => handleRecordingSaved('part2_speech', blob, url, text, secs)}
-            />
-
-            {showSampleAnswers && (
-              <div style={{
-                background: 'var(--bg-canvas)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-md)',
-                padding: '20px',
-                marginTop: 8
-              }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--accent-green)', marginBottom: 8 }}>
-                  Band 8.5 Model Monologue Transcript:
-                </div>
-                <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', fontSize: 13.5, lineHeight: 1.7, color: 'var(--text-primary)' }}>
-                  {currentPartData.cueCard.modelAnswer}
-                </pre>
-                <div style={{ marginTop: 12, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                  {currentPartData.cueCard.keyVocabulary.map((word, wIdx) => (
-                    <span key={wIdx} className="badge badge-purple">
-                      {word}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Part 3: Two-Way Discussion */}
-      {activePart === 3 && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div className="card">
-            <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>
-              Part 3: In-Depth Discussion
-            </h2>
-            <p style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-              Theme: {currentPartData.theme} — Provide abstract analysis, contrast viewpoints, and justify opinions.
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {currentPartData.questions.map((q, idx) => (
-              <div key={q.id} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div>
-                    <span className="badge badge-purple" style={{ marginBottom: 6 }}>{q.subtopic}</span>
-                    <h3 style={{ fontSize: 16, fontWeight: 600 }}>{q.question}</h3>
-                  </div>
-                </div>
-
-                <AudioRecorder
-                  label={`Record Discussion for Q${idx + 1}`}
-                  onRecordingComplete={(blob, url, text, secs) => handleRecordingSaved(q.id, blob, url, text, secs)}
-                />
-
-                {showSampleAnswers && (
-                  <div style={{
-                    background: 'var(--bg-canvas)',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
-                    padding: '14px',
-                    borderLeft: '3px solid var(--accent-purple)'
-                  }}>
-                    <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent-purple)', marginBottom: 4 }}>
-                      Band 8.5 Model Response:
-                    </div>
-                    <p style={{ fontSize: 13.5, color: 'var(--text-primary)', lineHeight: 1.6, marginBottom: 6 }}>
-                      "{q.sampleAnswer}"
-                    </p>
-                    <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-                      💡 Evaluation Tip: {q.tip}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Sticky Bottom Action Navigation Bar (Always visible without scrolling) */}
-      <div className="sticky-bottom-action-bar">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-          <span className="badge badge-purple" style={{ fontSize: 12, padding: '4px 10px', flexShrink: 0 }}>
-            Part {activePart} / 3 — {activePart === 1 ? 'Introduction' : activePart === 2 ? 'Long Turn' : 'Discussion'}
-          </span>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          {activePart > 1 && (
-            <button
-              className="btn btn-secondary"
-              onClick={() => {
-                setActivePart(prev => Math.max(1, prev - 1));
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{ borderRadius: 'var(--radius-pill)', padding: '9px 18px', fontSize: 13 }}
-            >
-              <ArrowLeft size={14} />
-              <span>Previous: Part {activePart - 1}</span>
-            </button>
-          )}
-
-          {activePart < 3 ? (
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                setActivePart(prev => Math.min(3, prev + 1));
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 22px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-purple), #7c3aed)',
-                boxShadow: '0 4px 14px rgba(168, 85, 247, 0.35)',
-                fontWeight: 600
-              }}
-            >
-              <span>Next Section: Part {activePart + 1}</span>
-              <ArrowRight size={15} />
-            </button>
-          ) : isSubmitted ? (
-            <button
-              className="btn btn-primary"
-              onClick={onBackToDashboard}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 24px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-green), #16a34a)',
-                boxShadow: '0 4px 14px rgba(34, 197, 94, 0.35)',
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6
-              }}
-            >
-              <CheckCircle2 size={16} />
-              <span>Evaluation Complete • Return to Dashboard</span>
-              <ArrowRight size={15} />
-            </button>
-          ) : (
-            <button
-              className="btn btn-primary"
-              onClick={handleSubmitSpeaking}
-              disabled={isEvaluating}
-              style={{
-                borderRadius: 'var(--radius-pill)',
-                padding: '10px 24px',
-                fontSize: 13.5,
-                background: 'linear-gradient(135deg, var(--accent-purple), #7c3aed)',
-                boxShadow: '0 4px 14px rgba(168, 85, 247, 0.35)',
-                fontWeight: 600
-              }}
-            >
-              {isEvaluating ? (
-                <span>Evaluating Speech with Examiner AI...</span>
-              ) : (
-                <>
-                  <Send size={15} />
-                  <span>Submit Speaking for Evaluation</span>
-                </>
-              )}
-            </button>
-          )}
-        </div>
+      {/* ── 3. QUESTION PROMPT CARD ── */}
+      <div style={{
+        background: 'var(--bg-card)',
+        border: 'var(--border-dark)',
+        borderRadius: 'var(--r-card)',
+        padding: '36px 36px',
+        boxShadow: '0 3px 0 #151313'
+      }}>
+        <h3 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: 'var(--text-primary)' }}>
+          {isCueCardPart ? 'Part 2: Candidate Task Card' : `Question ${questionIdx + 1}`}
+        </h3>
+        <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--text-primary)' }}>
+          {currentQuestion || (currentPart?.questions ? currentPart.questions.join('\n') : 'No question available.')}
+        </p>
       </div>
 
-      {/* Scorecard Modal */}
-      <SpeakingScoreModal
-        isOpen={isScoreModalOpen}
-        onClose={handleCloseScoreModal}
-        scoreResult={scoreResult}
-        onRetake={handlePracticeNext}
-      />
+      {/* ── 4. SUBSTANTIAL RECORDING INTERACTION AREA ── */}
+      <div style={{
+        background: 'var(--bg-card)',
+        border: 'var(--border-dark)',
+        borderRadius: 'var(--r-card)',
+        padding: '32px 36px',
+        boxShadow: '0 3px 0 #151313',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 16
+      }}>
+        {/* STATE 1: READY */}
+        {!isRecording && !currentRecording && (
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 14.5, fontWeight: 500, color: 'var(--text-secondary)', marginBottom: 16 }}>
+              Ready to answer this question. Speak clearly into your microphone.
+            </div>
+            <motion.button
+              id="start-record-btn"
+              type="button"
+              className="speaking-record-cta"
+              onClick={startRecording}
+              whileHover={{ y: -2, boxShadow: '0 6px 0 #151313' }}
+              whileTap={{ y: 2, scale: 0.98, boxShadow: '0 2px 0 #151313' }}
+              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+            >
+              <Icon name="mic" size={20} />
+              <span>Start Recording</span>
+            </motion.button>
+          </div>
+        )}
 
-      {/* Exit Confirmation Guard Modal */}
-      <ExitConfirmationModal
-        isOpen={isExitModalOpen}
-        onCancel={() => setIsExitModalOpen(false)}
-        onConfirm={handleConfirmExit}
-        sectionTitle="Speaking Practice Session"
+        {/* STATE 2: RECORDING (Countdown, Grace Period, Auto-Stop) */}
+        {isRecording && (
+          <div style={{ textAlign: 'center', width: '100%', maxWidth: 480 }}>
+            {/* Timer & Status Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 12,
+              padding: '10px 22px',
+              borderRadius: 'var(--r-pill)',
+              background: recordSeconds >= targetSeconds ? 'rgba(255, 87, 52, 0.12)' : 'var(--surface-sunken)',
+              border: `1.5px solid ${recordSeconds >= targetSeconds ? 'var(--coral)' : 'var(--border)'}`,
+              marginBottom: 14
+            }}>
+              <span style={{
+                width: 12,
+                height: 12,
+                borderRadius: '50%',
+                background: 'var(--coral)',
+                boxShadow: '0 0 10px var(--coral)',
+                animation: 'pulse 1s infinite'
+              }} />
+              <span style={{
+                fontSize: 20,
+                fontWeight: 800,
+                fontFamily: 'Kodchasan, monospace',
+                color: recordSeconds >= targetSeconds ? 'var(--coral)' : (targetSeconds - recordSeconds <= 10 ? 'var(--coral)' : 'var(--text-primary)')
+              }}>
+                {recordSeconds < targetSeconds
+                  ? FMT(targetSeconds - recordSeconds)
+                  : `+00:${String(Math.min(5, recordSeconds - targetSeconds)).padStart(2, '0')}`}
+              </span>
+              <span style={{
+                fontSize: 12.5,
+                fontWeight: 700,
+                color: recordSeconds >= targetSeconds ? 'var(--coral)' : 'var(--text-muted)'
+              }}>
+                {recordSeconds >= targetSeconds ? 'Finish your answer' : `Target: ${targetSeconds}s`}
+              </span>
+            </div>
+
+            {/* Subtle Progress Bar */}
+            <div style={{
+              width: '100%',
+              height: 6,
+              background: 'var(--surface-sunken)',
+              borderRadius: 3,
+              overflow: 'hidden',
+              marginBottom: 18,
+              border: '1px solid var(--border-subtle)'
+            }}>
+              <div style={{
+                height: '100%',
+                width: `${Math.min(100, (recordSeconds / targetSeconds) * 100)}%`,
+                background: recordSeconds >= targetSeconds ? 'var(--coral)' : (targetSeconds - recordSeconds <= 10 ? 'var(--coral)' : 'var(--near-black)'),
+                transition: 'width 1s linear, background-color 0.3s ease'
+              }} />
+            </div>
+
+            {/* Live speech preview if speech detected */}
+            {liveTranscript && (
+              <div style={{
+                fontSize: 13,
+                color: 'var(--text-secondary)',
+                fontStyle: 'italic',
+                marginBottom: 16,
+                maxHeight: 52,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                padding: '0 8px'
+              }}>
+                "{liveTranscript}"
+              </div>
+            )}
+
+            <div>
+              <motion.button
+                id="stop-record-btn"
+                type="button"
+                className="speaking-stop-cta"
+                onClick={stopRecording}
+                whileHover={{ y: -2, boxShadow: '0 6px 0 #151313' }}
+                whileTap={{ y: 2, scale: 0.98, boxShadow: '0 2px 0 #151313' }}
+                transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+              >
+                <span style={{ width: 12, height: 12, background: 'var(--coral)', borderRadius: 2 }} />
+                <span>{recordSeconds >= targetSeconds ? 'Finish Answer' : 'Stop Recording'}</span>
+              </motion.button>
+            </div>
+          </div>
+        )}
+
+        {/* STATE 3: RECORDED / AUTO-STOPPED */}
+        {!isRecording && currentRecording && (
+          <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              fontSize: 14,
+              fontWeight: 700,
+              color: '#10B981',
+              background: 'rgba(16,185,129,0.1)',
+              padding: '6px 14px',
+              borderRadius: 'var(--r-pill)',
+              border: '1px solid rgba(16,185,129,0.3)'
+            }}>
+              <Icon name="check" size={16} />
+              <span>Recording saved ({FMT(currentRecording.duration)})</span>
+            </div>
+
+            <audio ref={audioPlayerRef} controls src={currentRecording.url} style={{ width: '100%', maxWidth: 460, height: 40 }} />
+
+            {/* User Spoken Transcript Display */}
+            {currentRecording.transcript && (
+              <div style={{
+                width: '100%',
+                maxWidth: 480,
+                padding: '12px 16px',
+                background: 'var(--surface-sunken)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 12,
+                fontSize: 13,
+                lineHeight: 1.5,
+                color: 'var(--text-primary)',
+                textAlign: 'left'
+              }}>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', marginBottom: 4 }}>
+                  Spoken Transcript
+                </div>
+                "{currentRecording.transcript}"
+              </div>
+            )}
+
+            <div style={{ display: 'flex', gap: 12 }}>
+              <button
+                type="button"
+                className="speaking-secondary-btn"
+                onClick={startRecording}
+              >
+                <Icon name="mic" size={15} />
+                <span>Record Again</span>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ── 5. UNIVERSAL 3-ZONE EXAM BOTTOM NAVIGATION ── */}
+      <ExamBottomNav
+        onPrevious={() => {}}
+        isPreviousDisabled={true}
+        previousLabel=""
+        sections={[{ label: 'Full Speaking Test', isCompleted: Boolean(recordings['0_0']) }]}
+        activeSectionIndex={0}
+        onSelectSection={() => {}}
+        onNext={handleFinish}
+        nextLabel={isMockMode ? 'Submit Mock Test' : 'Finish & Grade Exam'}
+        isSubmit={true}
+        nextActionId={'finish-speaking-exam'}
       />
     </div>
   );

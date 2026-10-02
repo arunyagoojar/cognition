@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CognitionContentV3WritingTask",
+  "type": "OBJECT",
+  "required": [
+    "id",
+    "testId",
+    "taskNumber",
+    "taskType",
+    "prompt",
+    "wordRequirement",
+    "status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "testId": { "type": "string" },
+    "taskNumber": { "type": "number", "enum": [1, 2] },
+    "taskType": {
+      "type": "string",
+      "enum": [
+        "TASK_1_TABLE",
+        "TASK_1_GRAPH",
+        "TASK_1_CHART",
+        "TASK_1_MAP",
+        "TASK_1_PROCESS",
+        "TASK_1_LETTER",
+        "TASK_2_ESSAY"
+      ]
+    },
+    "prompt": { "type": "string" },
+    "wordRequirement": { "type": "number" },
+    "visual": {
+      "type": ["object", "null"],
+      "properties": {
+        "type": { "type": "string", "enum": ["TABLE", "IMAGE", "NONE"] },
+        "tableData": {
+          "type": ["object", "null"],
+          "properties": {
+            "title": { "type": "string" },
+            "headers": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "imagePath": { "type": ["string", "null"] }
+      }
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "properties": {
+        "sourceFile": { "type": "string" },
+        "sourceHash": { "type": ["string", "null"] }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["VERIFIED", "NEEDS_REVIEW", "QUARANTINED"]
+    }
+  }
+}
