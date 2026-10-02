@@ -1,0 +1,13 @@
+name = "cognition-api"
+main = "worker/src/index.js"
+compatibility_date = "2024-12-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cognition-db"
+database_id = "edd1e971-91b6-4f37-bd9d-b49b763e7b7c"
+migrations_dir = "migrations"
+
+[vars]
+CLERK_PUBLISHABLE_KEY = ""
+# CLERK_SECRET_KEY is set as a secret: npx wrangler secret put CLERK_SECRET_KEY

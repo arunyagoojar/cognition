@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useUser, useClerk } from '@clerk/react';
+import { useUser, useClerk, useAuth } from '@clerk/react';
 import { motion, AnimatePresence } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
 import SettingsModal from './components/dashboard/SettingsModal';
@@ -26,6 +26,7 @@ import {
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING } from './data/production/productionContent.js';
+import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete } from './utils/api';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -37,6 +38,8 @@ export default function App() {
 function AppWithAuth() {
   const { isLoaded: authLoaded, isSignedIn } = useUser();
   const { openSignIn } = useClerk();
+  const auth = useAuth();
+  setClerkAuth(auth);
   // Prevent flash: don't render the app until Clerk session is resolved
   if (!authLoaded) {
     return (
@@ -59,6 +62,21 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('omniprep_theme') || 'light');
   const [targetBand, setTargetBand] = useState(() => getTargetBand() || '8.0');
+
+  // Sync preferences from D1 on auth change
+  useEffect(() => {
+    if (!isSignedIn || !authLoaded) return;
+    syncUserProvision().then(user => {
+      if (user?.target_band && user.target_band !== getTargetBand()) {
+        saveTargetBand(user.target_band);
+        setTargetBand(user.target_band);
+      }
+      if (user?.theme && user.theme !== theme) {
+        setTheme(user.theme);
+        document.documentElement.setAttribute('data-theme', user.theme);
+      }
+    });
+  }, [isSignedIn, authLoaded]);
   const [scores, setScores] = useState(getSkillScores());
   const [completedLessons, setCompletedLessons] = useState(getCompletedLessons());
 
@@ -83,7 +101,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(t => t === 'dark' ? 'light' : 'dark');
+    const newTheme = t === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    syncPreferences({ theme: newTheme });
   };
 
   const refreshScores = () => {
@@ -111,6 +132,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   const handleCompleteSkill = (skill, scoreData) => {
     saveSkillScore(skill, scoreData);
+    syncAttempt(scoreData);
     refreshScores();
     setView('home');
   };
@@ -378,6 +400,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
         onChangeTargetBand={(b) => {
           setTargetBand(b);
           saveTargetBand(b);
+          syncPreferences({ target_band: b });
         }}
         onResetScores={handleResetScores}
       />
