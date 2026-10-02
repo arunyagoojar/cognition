@@ -27,6 +27,7 @@ import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING } from './data/production/productionContent.js';
 import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete } from './utils/api';
+import { createAttemptId } from './utils/storage';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -132,7 +133,15 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   const handleCompleteSkill = (skill, scoreData) => {
     saveSkillScore(skill, scoreData);
-    syncAttempt(scoreData);
+    // Modules pass their inner result object (no id/type) — envelope it here so
+    // the cloud attempt record is always complete and persistent.
+    syncAttempt({
+      ...scoreData,
+      id: scoreData?.id || createAttemptId(skill),
+      type: skill,
+      testId: scoreData?.testId || selectedExamId,
+      testLabel: scoreData?.testLabel || '',
+    });
     refreshScores();
     setView('home');
   };

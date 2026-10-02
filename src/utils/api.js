@@ -5,7 +5,9 @@
 
 // import.meta.env only exists under Vite — fall back to process.env in Node tests.
 const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
-const API_BASE = viteEnv.VITE_API_BASE_URL || '/api';
+// Callers pass paths that already start with /api — the base is a prefix only.
+// Same-origin builds leave this empty; dev .env sets the absolute Worker URL.
+const API_BASE = viteEnv.VITE_API_BASE_URL ?? '';
 const PUBLISHABLE_KEY = viteEnv.VITE_CLERK_PUBLISHABLE_KEY;
 
 let clerkAuth = null;

@@ -8,8 +8,9 @@
  */
 
 export const AI_MODELS = {
-  primary: 'gemini-2.0-flash',
-  fallback: 'gemini-1.5-flash',
+  // Auto-updating alias — survives upstream model retirements.
+  primary: 'gemini-flash-latest',
+  fallback: 'gemini-2.5-flash',
 };
 
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
@@ -228,7 +229,7 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
     body: JSON.stringify({
       system_instruction: { parts: [{ text: systemPrompt }] },
       contents: [{ parts: [{ text: userPrompt }] }],
-      generationConfig: { temperature: 0.2, maxOutputTokens: 2048 },
+      generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
     }),
     signal: AbortSignal.timeout(45000),
   });

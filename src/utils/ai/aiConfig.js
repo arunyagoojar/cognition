@@ -4,8 +4,8 @@
 export const AI_CONFIG = {
   // Provider: Google Gemini
   gemini: {
-    primaryModel: 'gemini-2.0-flash', // High-performance production multimodal model
-    secondaryModel: 'gemini-1.5-flash', // High-volume / secondary verification model
+    primaryModel: 'gemini-flash-latest', // Auto-updating alias (survives model retirements)
+    secondaryModel: 'gemini-2.5-flash', // Stable secondary model
     temperature: 0.2,
     maxOutputTokens: 2048,
     rateLimitCooldownMs: 60000,

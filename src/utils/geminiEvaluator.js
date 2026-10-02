@@ -6,8 +6,8 @@ import { getAiCacheItem, setAiCacheItem } from './storage.js';
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
-  primaryModel: 'gemini-2.0-flash',
-  fallbackModel: 'gemini-1.5-flash',
+  primaryModel: 'gemini-flash-latest',
+  fallbackModel: 'gemini-2.5-flash',
   temperature: 0.2,
   maxOutputTokens: 2048,
   rateLimitCooldownMs: 60000,
