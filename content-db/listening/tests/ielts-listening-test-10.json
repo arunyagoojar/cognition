@@ -609,8 +609,17 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A In the morning",
+     "B In the afternoon",
+     "C At night",
      "8. When will the caller arrive at the airport?\nA In the morning\nB In the afternoon\nC At night",
+     "A Subway",
+     "B Bus",
+     "C Taxi",
      "9. How will the caller get to the hotel?\nA Subway\nB Bus\nC Taxi",
+     "A 10:00",
+     "B 12:00",
+     "C 2:00",
      "10. What time does the hotel front desk close?\nA 10:00\nB 12:00\nC 2:00"
     ],
     "figures": null,
@@ -759,7 +768,7 @@
    "groupId": "g05",
    "part": 2,
    "startQ": 13,
-   "endQ": 15,
+   "endQ": 20,
    "partExplicit": false,
    "instruction": {
     "text": "Complete the information below. Write NO MORE THAN TWO WORDS.",
@@ -874,161 +883,130 @@
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Fifth Stop: (15) ␦"
      }
-    }
-   ],
-   "provenance": {
-    "elementPath": "entry-content.children[13]",
-    "rawExcerpt": "Questions 13-15\nComplete the information below. Write NO MORE THAN TWO WORDS."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g06",
-   "part": 2,
-   "startQ": 16,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Complete the chart below. Write NO MORE THAN ONE WORD for each answer.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Complete the chart below. Write NO MORE THAN ONE WORD for each answer."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "(16) ␦ (17) ␦",
-     "(18) ␦ (19) ␦",
-     "(20) ␦"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [
+    },
     {
      "number": 16,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Enjoy the ______ of the bay",
       "segments": [
+       "Enjoy the",
        {
         "blank": 16
        },
-       {
-        "blank": 17
-       }
+       "of the bay"
       ]
      },
      "options": null,
-     "blankContext": "line: (16) ␦ (17) ␦",
+     "blankContext": "table row 2 col 2",
      "correctAnswer": "view",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
-      "rawExcerpt": "(16) ␦ (17) ␦"
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Enjoy the (16)………………………..of the bay"
      }
     },
     {
      "number": 17,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Look at the ______",
       "segments": [
-       {
-        "blank": 16
-       },
+       "Look at the",
        {
         "blank": 17
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (16) ␦ (17) ␦",
+     "blankContext": "table row 3 col 2",
      "correctAnswer": "boats",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
-      "rawExcerpt": "(16) ␦ (17) ␦"
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Look at the (17)…………………………"
      }
     },
     {
      "number": 18,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "______ fish",
       "segments": [
        {
         "blank": 18
        },
-       {
-        "blank": 19
-       }
+       "fish"
       ]
      },
      "options": null,
-     "blankContext": "line: (18) ␦ (19) ␦",
+     "blankContext": "table row 4 col 2",
      "correctAnswer": "eat",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
-      "rawExcerpt": "(18) ␦ (19) ␦"
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "(18)……………………fish"
      }
     },
     {
      "number": 19,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Purchase ______",
       "segments": [
-       {
-        "blank": 18
-       },
+       "Purchase",
        {
         "blank": 19
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (18) ␦ (19) ␦",
+     "blankContext": "table row 5 col 2",
      "correctAnswer": "baskets",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
-      "rawExcerpt": "(18) ␦ (19) ␦"
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Purchase (19)………………"
      }
     },
     {
      "number": 20,
      "type": "completion",
      "stem": {
-      "plain": "______",
+      "plain": "Visit the ______",
       "segments": [
+       "Visit the",
        {
         "blank": 20
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (20) ␦",
+     "blankContext": "table row 6 col 2",
      "correctAnswer": "theatre",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
-      "rawExcerpt": "(20) ␦"
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Visit the (20)…………………….."
      }
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[16]",
-    "rawExcerpt": "Questions 16-20\nComplete the chart below. Write NO MORE THAN ONE WORD for each answer."
+    "elementPath": "entry-content.children[13]",
+    "rawExcerpt": "Questions 13-15\nComplete the information below. Write NO MORE THAN TWO WORDS."
    },
+   "markerRange": [
+    13,
+    15
+   ],
+   "mergedGroups": [
+    "g06"
+   ],
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },

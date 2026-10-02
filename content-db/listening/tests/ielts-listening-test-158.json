@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "5a35d37985493af5799f09b1e4c09b242cf15f3f03216da1541f8d1c7e3187d9",
+ "contentFingerprint": "975ac8452141e79ca4f691db8979d9ec02320b9cf915cc2493d90a89c664d18a",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -252,6 +252,22 @@
    {
     "number": 10,
     "value": "silver paper"
+   },
+   {
+    "number": 11,
+    "value": "king street"
+   },
+   {
+    "number": 12,
+    "value": "central"
+   },
+   {
+    "number": 13,
+    "value": "half hour"
+   },
+   {
+    "number": 14,
+    "value": "refreshments"
    },
    {
     "number": 15,
@@ -662,19 +678,117 @@
    "endQ": 14,
    "partExplicit": true,
    "instruction": {
-    "text": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. TRAIN INFORMATION 11. Local services depart from ␦ railway station. 12. National services depart from the ␦ railway station. 13. Trains for London depart every ␦ each day during the week. 14. The price of a first class ticket includes ␦",
+    "text": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. TRAIN INFORMATION\n11. Local services depart from ␦ railway station.\n12. National services depart from the ␦ railway station.\n13. Trains for London depart every ␦ each day during the week.\n14. The price of a first class ticket includes ␦"
+    "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "sentences",
     "table": null,
-    "segments": null,
+    "segments": [
+     "TRAIN INFORMATION",
+     "TRAIN INFORMATION\n11. Local services depart from ␦ railway station.\n12. National services depart from the ␦ railway station.\n13. Trains for London depart every ␦ each day during the week.\n14. The price of a first class ticket includes ␦"
+    ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "Local services depart from ______ railway station.",
+      "segments": [
+       "Local services depart from",
+       {
+        "blank": 11
+       },
+       "railway station."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. Local services depart from ␦ railway station. (input box in source)",
+     "correctAnswer": "king street",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "11. Local services depart from ␦ railway station."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "National services depart from the ______ railway station.",
+      "segments": [
+       "National services depart from the",
+       {
+        "blank": 12
+       },
+       "railway station."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. National services depart from the ␦ railway station. (input box in source)",
+     "correctAnswer": "central",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "12. National services depart from the ␦ railway station."
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "Trains for London depart every ______ each day during the week.",
+      "segments": [
+       "Trains for London depart every",
+       {
+        "blank": 13
+       },
+       "each day during the week."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. Trains for London depart every ␦ each day during the week. (input box in source)",
+     "correctAnswer": "half hour",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "13. Trains for London depart every ␦ each day during the week."
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "The price of a first class ticket includes ______",
+      "segments": [
+       "The price of a first class ticket includes",
+       {
+        "blank": 14
+       },
+       {
+        "blank": 14
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. The price of a first class ticket includes ␦ (input box in source)",
+     "correctAnswer": "refreshments",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "14. The price of a first class ticket includes ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11-14\nComplete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer."
@@ -1137,12 +1251,33 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A all feet off the ground",
+     "B at least one foot on the ground",
+     "C two feet off the ground",
      "31. Some photographs of a horse running showed\nA all feet off the ground\nB at least one foot on the ground\nC two feet off the ground",
+     "A designed a system to use the technology Edison had invited",
+     "B used available technology to make a new system",
+     "C was already an expert in motion picture technology",
      "32. The Scotsman employed by Edison\nA designed a system to use the technology Edison had invited\nB used available technology to make a new system\nC was already an expert in motion picture technology",
+     "A only one person could be filmed",
+     "B people could only see very short films",
+     "C the camera was very heavy",
      "33. One major problem with the first system was that\nA only one person could be filmed\nB people could only see very short films\nC the camera was very heavy",
+     "A been told about the American system",
+     "B seen the American system",
+     "C used the American system",
      "34. Rival systems started to appear in Europe after people had\nA been told about the American system\nB seen the American system\nC used the American system",
+     "A a French team working alone",
+     "B a Fernch and German team working together",
+     "C a German team who invented the word ‘cinema’",
      "35. In 1895, a famous new system was developed by\nA a French team working alone\nB a Fernch and German team working together\nC a German team who invented the word ‘cinema’",
+     "A the subject matters",
+     "B the camera",
+     "C the film projector",
      "36. Longer filmes were not made at the time because of problems involving\nA the subject matters\nB the camera\nC the film projector",
+     "A removing tension between the film reels",
+     "B adding three more films reels to the system",
+     "C making one of the film reels more effective",
      "37. The ‘Lantham Loop’ invention relied on\nA removing tension between the film reels\nB adding three more films reels to the system\nC making one of the film reels more effective"
     ],
     "figures": null,
@@ -1411,18 +1546,6 @@
  "quarantinedUnits": [
   {
    "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     14
-    ]
-   }
-  },
-  {
-   "unit": "group",
    "groupId": "g05",
    "reasonCode": "PHANTOM_SPLIT_MERGED",
    "evidence": {
@@ -1452,8 +1575,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 26,
- "quarantinedCount": 3,
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 2,
  "status": "flagged",
  "schemaErrors": []
 }

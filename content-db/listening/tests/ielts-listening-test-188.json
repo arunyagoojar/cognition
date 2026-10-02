@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "bcb507959a02df9e1a8ccb3946375d5690870f56a1b3b2e85eb8bfdc3afc0bd7",
+ "contentFingerprint": "95c2a6010fe27dd54c99885d29f0814b9011c79c530ecf951d19bb729564674c",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -262,6 +262,10 @@
    {
     "number": 10,
     "value": "March"
+   },
+   {
+    "number": 11,
+    "value": "C"
    },
    {
     "number": 12,
@@ -638,7 +642,7 @@
   {
    "groupId": "g02",
    "part": 2,
-   "startQ": 12,
+   "startQ": 11,
    "endQ": 14,
    "partExplicit": true,
    "instruction": {
@@ -648,18 +652,47 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Local council report on traffic and highways",
+     "A cuts to public transport.",
+     "B poor maintenance of roads.",
+     "C changes in the type of traffic.",
      "Local council report on traffic and highways\n11. A survey found people’s main concern about traffic in the area was\nA cuts to public transport.\nB poor maintenance of roads.\nC changes in the type of traffic.",
+     "A It will be widened.",
+     "B It will be extended.",
+     "C It will be resurfaced.",
      "12. Which change will shortly be made to the cycle path next to the river?\nA It will be widened.\nB It will be extended.\nC It will be resurfaced.",
+     "A the Post Office has moved.",
+     "B the proposed location is unsafe.",
+     "C funding is not available at present.",
      "13. Plans for a pedestrian crossing have been postponed because\nA the Post Office has moved.\nB the proposed location is unsafe.\nC funding is not available at present.",
+     "B asking motorists to switch off engines when waiting at the level crossing.",
+     "C warning pedestrians to leave enough time when crossing the railway line.",
      "14. On Station Road, notices have been erected\nA telling cyclists not to leave their bikes outside the station ticket office.\nB asking motorists to switch off engines when waiting at the level crossing.\nC warning pedestrians to leave enough time when crossing the railway line."
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 11,
+     "type": "short_answer",
+     "stem": {
+      "plain": "A survey found people’s main concern about traffic in the area was",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "11. A survey found people’s main concern about traffic in the area was"
+     }
+    },
     {
      "number": 12,
      "type": "short_answer",
@@ -716,11 +749,6 @@
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11-14\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    11,
-    14
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1384,7 +1412,7 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 35,
+ "verifiedQuestionCount": 36,
  "quarantinedCount": 2,
  "status": "flagged",
  "schemaErrors": []

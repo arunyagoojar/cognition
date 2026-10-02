@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "8d39bdc57ae21672ac333e0d489b301bc694b3682692592d59537b5d835150f0",
+ "contentFingerprint": "98d71bfdf1a40429fd42caf8792a7d076f26c9f6c20819e770bb1ba57452b947",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -252,6 +252,10 @@
    {
     "number": 10,
     "value": "friday"
+   },
+   {
+    "number": 11,
+    "value": "C"
    },
    {
     "number": 12,
@@ -640,7 +644,7 @@
   {
    "groupId": "g02",
    "part": 2,
-   "startQ": 12,
+   "startQ": 11,
    "endQ": 15,
    "partExplicit": true,
    "instruction": {
@@ -650,19 +654,52 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "BICYCLES FOR THE WORLD",
+     "A as a tourist guide",
+     "B as part of his studies",
+     "C as a voluntary worker",
      "BICYCLES FOR THE WORLD\n11. In 1993 Dan Pearman went to Ecuador\nA as a tourist guide\nB as part of his studies\nC as a voluntary worker",
+     "A employed carpenters from the area",
+     "B was the most skilled craftsman in the town",
+     "C found it easy to reach customers",
      "12. Dan’s neighbour was successful in business because he\nA employed carpenters from the area\nB was the most skilled craftsman in the town\nC found it easy to reach customers",
+     "A getting enough bicycles to send regularly",
+     "B finding new areas which need the bicycles",
+     "C charging for the bicycles it sends abroad",
      "13. Dan says the charity relies on\nA getting enough bicycles to send regularly\nB finding new areas which need the bicycles\nC charging for the bicycles it sends abroad",
+     "A It has received the greatest number of bikes",
+     "B It has almost as many bikes as Amsterdam",
+     "C Its economy has been totally transformed",
      "14. What does Dan say about the town of Rivas?\nA It has received the greatest number of bikes\nB It has almost as many bikes as Amsterdam\nC Its economy has been totally transformed",
+     "A It couldn’t meet its overheads",
+     "B It had to delay sending the bikes",
+     "C It was criticized in the British media",
      "15. What problem did the charity face in August 2000?\nA It couldn’t meet its overheads\nB It had to delay sending the bikes\nC It was criticized in the British media"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 11,
+     "type": "short_answer",
+     "stem": {
+      "plain": "In 1993 Dan Pearman went to Ecuador",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "11. In 1993 Dan Pearman went to Ecuador"
+     }
+    },
     {
      "number": 12,
      "type": "short_answer",
@@ -736,11 +773,6 @@
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11-15\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    11,
-    15
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1482,7 +1514,7 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
+ "verifiedQuestionCount": 37,
  "quarantinedCount": 1,
  "status": "flagged",
  "schemaErrors": []

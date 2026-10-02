@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "e3d9ea79f18b35d36928c31f0368729d3bfa82723ac2423006e1006f21a7167d",
+ "contentFingerprint": "208903f2f11f21cea951775f47269a2d5bfb1b627539993c84076a820067dc42",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -340,6 +340,10 @@
    {
     "number": 30,
     "value": "statistics"
+   },
+   {
+    "number": 31,
+    "value": "B"
    },
    {
     "number": 32,
@@ -1383,7 +1387,7 @@
   {
    "groupId": "g09",
    "part": 4,
-   "startQ": 32,
+   "startQ": 31,
    "endQ": 33,
    "partExplicit": true,
    "instruction": {
@@ -1393,17 +1397,44 @@
     "originalText": ""
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Monosodium Glutamate (MSG)",
+     "A the history of monosodium glutamate",
+     "B the way monosodium glutamate works",
+     "C where monosodium glutamate is used",
      "Monosodium Glutamate (MSG)\n31. The speaker says the main topic of the lecture is\nA the history of monosodium glutamate\nB the way monosodium glutamate works\nC where monosodium glutamate is used",
+     "A made monosodium glutamate",
+     "B began using kombu",
+     "C identified glutamate",
      "32. In 1908, scientists in Japan\nA made monosodium glutamate\nB began using kombu\nC identified glutamate",
+     "A It began to be manufactured on a large scale",
+     "B The Japanese began extracting it from natural sources",
+     "C It became much more expensive to produce",
      "33. What change occurred in the manufacture of glutamate in 1956?\nA It began to be manufactured on a large scale\nB The Japanese began extracting it from natural sources\nC It became much more expensive to produce"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 31,
+     "type": "short_answer",
+     "stem": {
+      "plain": "The speaker says the main topic of the lecture is",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "quarantined",
+     "provenance": {
+      "elementPath": "entry-content.children[25]",
+      "rawExcerpt": "31. The speaker says the main topic of the lecture is"
+     }
+    },
     {
      "number": 32,
      "type": "short_answer",
@@ -1443,11 +1474,6 @@
     "elementPath": "entry-content.children[24]",
     "rawExcerpt": "Part 4: Questions 31-33"
    },
-   "markerRange": [
-    31,
-    33
-   ],
-   "rangeReconciled": true,
    "status": "quarantined"
   },
   {
@@ -1697,6 +1723,7 @@
    "unit": "group",
    "groupId": "g09",
    "questionNumbers": [
+    31,
     32,
     33
    ],

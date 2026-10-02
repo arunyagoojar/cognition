@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "33ce33df51d9fbbf666485a272e904169052035f6b431cde93c967dbc2810eab",
+ "contentFingerprint": "8bd20ba6bf3eb591201c295b058a696c6a6e21b802a499705da138439760961e",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -292,6 +292,10 @@
    {
     "number": 20,
     "value": "photo card"
+   },
+   {
+    "number": 21,
+    "value": "C"
    },
    {
     "number": 22,
@@ -987,7 +991,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 25,
    "partExplicit": true,
    "instruction": {
@@ -997,19 +1001,52 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Global Design Competition",
+     "A produce an energy-efficient design",
+     "B adapt an existing energy-saving appliance",
+     "C develop a new use for current technology.",
      "Global Design Competition\n21. Students entering the design competition have to\nA produce an energy-efficient design\nB adapt an existing energy-saving appliance\nC develop a new use for current technology.",
+     "A more appealing",
+     "B more common",
+     "C more economical",
      "22. John chose a dishwasher because he wanted to make dishwashers\nA more appealing\nB more common\nC more economical",
+     "A for decoration",
+     "B to switch it on",
+     "C to stop water escaping",
      "23. The stone in John’s ‘Rockpool’ design is used\nA for decoration\nB to switch it on\nC to stop water escaping",
+     "A changes back to a gas",
+     "B dries the dishes",
+     "C is allowed to cool",
      "24. In the holding chamber, the carbon dioxide\nA changes back to a gas\nB dries the dishes\nC is allowed to cool",
+     "A is released into the air",
+     "B is disposed of with the waste",
+     "C is collected ready to be re-used",
      "25. At the end of the cleaning process, the carbon dioxide\nA is released into the air\nB is disposed of with the waste\nC is collected ready to be re-used"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "Students entering the design competition have to",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[11]",
+      "rawExcerpt": "21. Students entering the design competition have to"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -1083,11 +1120,6 @@
     "elementPath": "entry-content.children[10]",
     "rawExcerpt": "Part 3: Questions 21-25\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    25
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1551,7 +1583,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

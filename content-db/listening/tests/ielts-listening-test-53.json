@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "184099124f2e230837af21a20a3512ebd99520cece8f990f662d29be0da3cd48",
+ "contentFingerprint": "ce568d6c8018797d21703691933863657b9176eea0e8cc62e467da14a9a0ffc9",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -253,6 +253,26 @@
    {
     "number": 10,
     "value": "diary"
+   },
+   {
+    "number": 11,
+    "value": "1 million"
+   },
+   {
+    "number": 12,
+    "value": "tourism"
+   },
+   {
+    "number": 13,
+    "value": "southeast"
+   },
+   {
+    "number": 14,
+    "value": "lawyer"
+   },
+   {
+    "number": 15,
+    "value": "7"
    },
    {
     "number": 16,
@@ -615,19 +635,142 @@
    "endQ": 15,
    "partExplicit": true,
    "instruction": {
-    "text": "Complete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer. Mount Rushmore 11. The government finally paid ␦ to complete the heads of four United States Presidents. 12. The purpose of the construction of the president’s heads is to develop ␦ 13. The carvings face ␦ to experience maximum exposure to sunlight. 14. In 1885, the mountain was renamed after a ␦ 15. It took ␦ years to finish the project.",
+    "text": "Complete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer.",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Complete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer. Mount Rushmore\n11. The government finally paid ␦ to complete the heads of four United States Presidents.\n12. The purpose of the construction of the president’s heads is to develop ␦\n13. The carvings face ␦ to experience maximum exposure to sunlight.\n14. In 1885, the mountain was renamed after a ␦\n15. It took ␦ years to finish the project."
+    "originalText": "Complete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "sentences",
     "table": null,
-    "segments": null,
+    "segments": [
+     "Mount Rushmore",
+     "Mount Rushmore\n11. The government finally paid ␦ to complete the heads of four United States Presidents.\n12. The purpose of the construction of the president’s heads is to develop ␦\n13. The carvings face ␦ to experience maximum exposure to sunlight.\n14. In 1885, the mountain was renamed after a ␦\n15. It took ␦ years to finish the project."
+    ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "The government finally paid ______ to complete the heads of four United States Presidents.",
+      "segments": [
+       "The government finally paid",
+       {
+        "blank": 11
+       },
+       "to complete the heads of four United States Presidents."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. The government finally paid ␦ to complete the heads of four United (input box in source)",
+     "correctAnswer": "1 million",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "11. The government finally paid ␦ to complete the heads of four United States Presidents."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "The purpose of the construction of the president’s heads is to develop ______",
+      "segments": [
+       "The purpose of the construction of the president’s heads is to develop",
+       {
+        "blank": 12
+       },
+       {
+        "blank": 12
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. The purpose of the construction of the president’s heads is to dev (input box in source)",
+     "correctAnswer": "tourism",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "12. The purpose of the construction of the president’s heads is to develop ␦"
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "The carvings face ______ to experience maximum exposure to sunlight.",
+      "segments": [
+       "The carvings face",
+       {
+        "blank": 13
+       },
+       "to experience maximum exposure to sunlight."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. The carvings face ␦ to experience maximum exposure to sunlight. (input box in source)",
+     "correctAnswer": "southeast",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "13. The carvings face ␦ to experience maximum exposure to sunlight."
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "In 1885, the mountain was renamed after a ______",
+      "segments": [
+       "In 1885, the mountain was renamed after a",
+       {
+        "blank": 14
+       },
+       {
+        "blank": 14
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. In 1885, the mountain was renamed after a ␦ (input box in source)",
+     "correctAnswer": "lawyer",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "14. In 1885, the mountain was renamed after a ␦"
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "It took ______ years to finish the project.",
+      "segments": [
+       "It took",
+       {
+        "blank": 15
+       },
+       "years to finish the project."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. It took ␦ years to finish the project. (input box in source)",
+     "correctAnswer": "7",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "15. It took ␦ years to finish the project."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the sentences below. Write ONE WORD AND/OR A NUMBER for each answer."
@@ -1309,23 +1452,10 @@
   "fnameInputs": 35
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     15
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 32,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

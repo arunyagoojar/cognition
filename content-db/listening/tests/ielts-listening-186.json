@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "1107d9a584fa726a32bc9c5669a2dc1a3aec40537f249a9fcf893cfbc3fe5843",
+ "contentFingerprint": "c4bd0e2bd749669cb6ac256bfb4650d95caaf6c1007fc1bffdbce0ab420fd129",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -288,6 +288,10 @@
    {
     "number": 20,
     "value": "B, C"
+   },
+   {
+    "number": 21,
+    "value": "B"
    },
    {
     "number": 22,
@@ -638,10 +642,25 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A tourist information centre.",
+     "B a private home.",
+     "C a local council building.",
      "11. Dartfield House school used to be\nA tourist information centre.\nB a private home.\nC a local council building.",
+     "A All buildings on the main site will be improved.",
+     "B The lower school site will be used for new homes.",
+     "C Additional school buildings will be constructed on the lower school site.",
      "12. What is planned with regard to the lower school?\nA All buildings on the main site will be improved.\nB The lower school site will be used for new homes.\nC Additional school buildings will be constructed on the lower school site.",
+     "A long queuing times.",
+     "B changes to the school timetable.",
+     "C dissatisfaction with the menus.",
      "13. The catering has been changed because of\nA long queuing times.\nB changes to the school timetable.\nC dissatisfaction with the menus.",
+     "A help their children to decide in advance which serving point to use.",
+     "B make sure their children have enough money for food.",
+     "C advise their children on healthy food to eat.",
      "14. Parents are asked to\nA help their children to decide in advance which serving point to use.\nB make sure their children have enough money for food.\nC advise their children on healthy food to eat.",
+     "A Food will still be served there.",
+     "B Only staff will have access to it.",
+     "C Pupils can take their food into it.",
      "15. What does the speaker say about the existing canteen?\nA Food will still be served there.\nB Only staff will have access to it.\nC Pupils can take their food into it."
     ],
     "figures": null,
@@ -902,7 +921,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 24,
    "partExplicit": true,
    "instruction": {
@@ -912,18 +931,48 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Assignment on sleep and dreams",
+     "A our memories cannot cope with too much information.",
+     "B we might otherwise be confused about what is real.",
+     "C we do not think they are important.",
      "Assignment on sleep and dreams\n21. Luke read that one reason why we often forget dreams is that\nA our memories cannot cope with too much information.\nB we might otherwise be confused about what is real.\nC we do not think they are important.",
+     "A It may just be due to chance.",
+     "B It only happens with certain types of event.",
+     "C It happens more often than some people think.",
      "22. What do Luke and Susie agree about dreams predicting the future?\nA It may just be due to chance.\nB It only happens with certain types of event.\nC It happens more often than some people think.",
+     "A had controversial results.",
+     "B used faulty research methodology.",
+     "C failed to reach any clear conclusions.",
      "23. Susie says that a study on pre-school children having a short nap in the day\nA had controversial results.\nB used faulty research methodology.\nC failed to reach any clear conclusions.",
+     "A statistical analysis.",
+     "B making an action plan.",
+     "C self-assessment.",
      "24. In their last assignment, both students had problems with\nA statistical analysis.\nB making an action plan.\nC self-assessment."
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "Luke read that one reason why we often forget dreams is that",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[20]",
+      "rawExcerpt": "21. Luke read that one reason why we often forget dreams is that"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -980,11 +1029,6 @@
     "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Part 3: Questions 21-24\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    24
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1496,7 +1540,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 38,
+ "verifiedQuestionCount": 39,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

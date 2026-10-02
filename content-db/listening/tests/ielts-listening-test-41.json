@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "49b505778f5950e200c265cf240e6f921b622328781e69b36bbe458a9c5c2d7c",
+ "contentFingerprint": "3d7624945812bf5bb415342da4cae2657d3cbb2796ef80bc40d095e1bdf34693",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -273,6 +273,18 @@
    {
     "number": 20,
     "value": "appearance"
+   },
+   {
+    "number": 21,
+    "value": "investigate"
+   },
+   {
+    "number": 22,
+    "value": "sunny and warm"
+   },
+   {
+    "number": 23,
+    "value": "change"
    },
    {
     "number": 24,
@@ -891,15 +903,90 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Effects of weather on mood",
      "Effects of weather on mood\n21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an effect on a person’s mood.\n22. They expect to find that ‘good’ weather (weather which is ␦ and ␦ ) has a positive effect on a person’s mood.\n23. Stella defines ‘effect on mood’ as a ␦ in the way a person feels."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 21,
+     "type": "completion",
+     "stem": {
+      "plain": "Phil and Stella’s goal is to ______ the hypothesis that weather has an effect on a person’s mood.",
+      "segments": [
+       "Phil and Stella’s goal is to",
+       {
+        "blank": 21
+       },
+       "the hypothesis that weather has an effect on a person’s mood."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an  (input box in source)",
+     "correctAnswer": "investigate",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an effect on a person’s mood."
+     }
+    },
+    {
+     "number": 22,
+     "type": "completion",
+     "stem": {
+      "plain": "They expect to find that ‘good’ weather (weather which is ______ and ______ ) has a positive effect on a person’s mood.",
+      "segments": [
+       "They expect to find that ‘good’ weather (weather which is",
+       {
+        "blank": 22
+       },
+       "and",
+       {
+        "blank": 22
+       },
+       ") has a positive effect on a person’s mood."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 22. They expect to find that ‘good’ weather (weather which is ␦ and ␦  (input box in source)",
+     "correctAnswer": "sunny and warm",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "22. They expect to find that ‘good’ weather (weather which is ␦ and ␦ ) has a positive effect on a person’s mood."
+     }
+    },
+    {
+     "number": 23,
+     "type": "completion",
+     "stem": {
+      "plain": "Stella defines ‘effect on mood’ as a ______ in the way a person feels.",
+      "segments": [
+       "Stella defines ‘effect on mood’ as a",
+       {
+        "blank": 23
+       },
+       "in the way a person feels."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 23. Stella defines ‘effect on mood’ as a ␦ in the way a person feels. (input box in source)",
+     "correctAnswer": "change",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "23. Stella defines ‘effect on mood’ as a ␦ in the way a person feels."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Part 3: Questions 21-23\nComplete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
@@ -1529,23 +1616,10 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     21,
-     23
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

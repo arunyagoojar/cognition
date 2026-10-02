@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "50a9445008dd355811d01316331dc9f90572210232d3a7b293b5ac5e6dd265c7",
+ "contentFingerprint": "ca6a9bf8697c2372d23cc691507a19da5160d2c83b39c1b60eba971cfa3d1b66",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -273,6 +273,26 @@
    {
     "number": 15,
     "value": "B"
+   },
+   {
+    "number": 16,
+    "value": "polished stone"
+   },
+   {
+    "number": 17,
+    "value": "shops"
+   },
+   {
+    "number": 18,
+    "value": "garden"
+   },
+   {
+    "number": 19,
+    "value": "seating"
+   },
+   {
+    "number": 20,
+    "value": "plants"
    },
    {
     "number": 21,
@@ -855,15 +875,142 @@
     "originalText": "Complete the sentences. Write NO MORE THAN TWO WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Changes to University Plaza",
      "Changes to University Plaza\n16. Instead of concrete, the paths will be ␦\n17. The rear corner will have ␦\n18. The left hand strip will have a ␦\n19. In the middle, there will be ␦\n20. The walls will have ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 16,
+     "type": "completion",
+     "stem": {
+      "plain": "Instead of concrete, the paths will be ______",
+      "segments": [
+       "Instead of concrete, the paths will be",
+       {
+        "blank": 16
+       },
+       {
+        "blank": 16
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 16. Instead of concrete, the paths will be ␦ (input box in source)",
+     "correctAnswer": "polished stone",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "16. Instead of concrete, the paths will be ␦"
+     }
+    },
+    {
+     "number": 17,
+     "type": "completion",
+     "stem": {
+      "plain": "The rear corner will have ______",
+      "segments": [
+       "The rear corner will have",
+       {
+        "blank": 17
+       },
+       {
+        "blank": 17
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 17. The rear corner will have ␦ (input box in source)",
+     "correctAnswer": "shops",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "17. The rear corner will have ␦"
+     }
+    },
+    {
+     "number": 18,
+     "type": "completion",
+     "stem": {
+      "plain": "The left hand strip will have a ______",
+      "segments": [
+       "The left hand strip will have a",
+       {
+        "blank": 18
+       },
+       {
+        "blank": 18
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 18. The left hand strip will have a ␦ (input box in source)",
+     "correctAnswer": "garden",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "18. The left hand strip will have a ␦"
+     }
+    },
+    {
+     "number": 19,
+     "type": "completion",
+     "stem": {
+      "plain": "In the middle, there will be ______",
+      "segments": [
+       "In the middle, there will be",
+       {
+        "blank": 19
+       },
+       {
+        "blank": 19
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 19. In the middle, there will be ␦ (input box in source)",
+     "correctAnswer": "seating",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "19. In the middle, there will be ␦"
+     }
+    },
+    {
+     "number": 20,
+     "type": "completion",
+     "stem": {
+      "plain": "The walls will have ______",
+      "segments": [
+       "The walls will have",
+       {
+        "blank": 20
+       },
+       {
+        "blank": 20
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 20. The walls will have ␦ (input box in source)",
+     "correctAnswer": "plants",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "20. The walls will have ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Questions 16-20\nComplete the sentences. Write NO MORE THAN TWO WORDS for each answer."
@@ -1534,23 +1681,10 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     16,
-     20
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

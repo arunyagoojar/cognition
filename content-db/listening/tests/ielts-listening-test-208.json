@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "dd1c1c45219c10721ec31a7f03ff44d00790317fc1c00cd62705cead54c1dac2",
+ "contentFingerprint": "19d573852ef7809d5b1604002474b51b824d847386dd071b53fa76be21220491",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -291,6 +291,10 @@
    },
    {
     "number": 20,
+    "value": "B"
+   },
+   {
+    "number": 21,
     "value": "B"
    },
    {
@@ -930,7 +934,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 23,
    "partExplicit": true,
    "instruction": {
@@ -940,17 +944,44 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Presentation on houses of the future",
+     "A meeting the deadline",
+     "B finding suitable examples",
+     "C including original ideas",
      "Presentation on houses of the future\n\n21. Which aspect of their presentation are Mia and Leo both concerned about?\n\nA meeting the deadline\n\nB finding suitable examples\n\nC including original ideas",
+     "A family groups.",
+     "B old people.",
+     "C single people.",
      "22. The students decide to focus their assignment on housing for\n\nA family groups.\n\nB old people.\n\nC single people.",
+     "A repurposing offices and factories.",
+     "B constructing tall buildings.",
+     "C developing creative ideas for smaller homes.",
      "23. The students agree that demand for accommodation in urban areas should be met by\n\nA repurposing offices and factories.\n\nB constructing tall buildings.\n\nC developing creative ideas for smaller homes."
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "Which aspect of their presentation are Mia and Leo both concerned about?",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "21. Which aspect of their presentation are Mia and Leo both concerned about?"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -990,11 +1021,6 @@
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21-23\n\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    23
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1445,7 +1471,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

@@ -379,7 +379,9 @@ def extract(slug, page, key):
                         g.questions.append(q)
             continue
         if g is not None and INPUT_ROW.match(text):
-            g.stimulus_segments.append(text)
+            # interactive input rows duplicate blanks already captured in tables
+            if g.stimulus_table is None:
+                g.stimulus_segments.append(text)
             continue
         # a part marker can share a block with input rows (site formatting); if the
         # block starts with input rows and contains a marker line, treat the marker
@@ -501,13 +503,16 @@ def extract(slug, page, key):
                 g.stimulus_kind = "box_match"
                 continue
         # generic numbered-line items (short answers / sentence completion with
-        # input placeholders), numbers must sit inside the group's declared range
-        if QITEM.match(text):
+        # input placeholders); scan every line — blocks often open with a title
+        if any(QITEM.match(l.strip()) for l in text.split("\n")):
             added = False
             for line in text.split("\n"):
                 line = line.strip()
                 qm = QITEM.match(line)
-                if not qm: continue
+                if not qm:
+                    if line and not looks_like_instruction(line):
+                        g.stimulus_segments.append(line)
+                    continue
                 n = int(qm.group(1))
                 if not (g.start_q <= n <= g.end_q): continue
                 if any(x.number == n for x in g.questions): continue

@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "ea17d6d6de058500c6b4959f66b61301f918414eeeecc105d863fb00d827a731",
+ "contentFingerprint": "142e45a3ecd7b4be0464f847389c6067a18786ac35ca170f8509f2fa42964b81",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -262,6 +262,26 @@
    {
     "number": 10,
     "value": "50%"
+   },
+   {
+    "number": 11,
+    "value": "1.30"
+   },
+   {
+    "number": 12,
+    "value": "25 december"
+   },
+   {
+    "number": 13,
+    "value": "car parking"
+   },
+   {
+    "number": 14,
+    "value": "45"
+   },
+   {
+    "number": 15,
+    "value": "tables"
    },
    {
     "number": 19,
@@ -669,15 +689,136 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "THE DINOSAUR MUSEUM",
      "THE DINOSAUR MUSEUM\n11. The museum closes at ␦ p.m. on Mondays.\n12. The museum is not open on ␦\n13. School groups are met by tour guides in the ␦\n14. The whole visit takes 90 minutes, including ␦ minutes for the guided tour.\n15. There are ␦ behind the museum where students can have lunch."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "The museum closes at ______ p.m. on Mondays.",
+      "segments": [
+       "The museum closes at",
+       {
+        "blank": 11
+       },
+       "p.m. on Mondays."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. The museum closes at ␦ p.m. on Mondays. (input box in source)",
+     "correctAnswer": "1.30",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "11. The museum closes at ␦ p.m. on Mondays."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "The museum is not open on ______",
+      "segments": [
+       "The museum is not open on",
+       {
+        "blank": 12
+       },
+       {
+        "blank": 12
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. The museum is not open on ␦ (input box in source)",
+     "correctAnswer": "25 december",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "12. The museum is not open on ␦"
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "School groups are met by tour guides in the ______",
+      "segments": [
+       "School groups are met by tour guides in the",
+       {
+        "blank": 13
+       },
+       {
+        "blank": 13
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. School groups are met by tour guides in the ␦ (input box in source)",
+     "correctAnswer": "car parking",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "13. School groups are met by tour guides in the ␦"
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "The whole visit takes 90 minutes, including ______ minutes for the guided tour.",
+      "segments": [
+       "The whole visit takes 90 minutes, including",
+       {
+        "blank": 14
+       },
+       "minutes for the guided tour."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. The whole visit takes 90 minutes, including ␦ minutes for the guid (input box in source)",
+     "correctAnswer": "45",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "14. The whole visit takes 90 minutes, including ␦ minutes for the guided tour."
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "There are ______ behind the museum where students can have lunch.",
+      "segments": [
+       "There are",
+       {
+        "blank": 15
+       },
+       "behind the museum where students can have lunch."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. There are ␦ behind the museum where students can have lunch. (input box in source)",
+     "correctAnswer": "tables",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "15. There are ␦ behind the museum where students can have lunch."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
@@ -1376,18 +1517,6 @@
  "quarantinedUnits": [
   {
    "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     15
-    ]
-   }
-  },
-  {
-   "unit": "group",
    "groupId": "g04",
    "reasonCode": "PHANTOM_SPLIT_MERGED",
    "evidence": {
@@ -1427,8 +1556,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 29,
- "quarantinedCount": 4,
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 3,
  "status": "flagged",
  "schemaErrors": []
 }

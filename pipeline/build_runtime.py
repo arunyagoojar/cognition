@@ -28,31 +28,39 @@ def esc(s):
 
 BLANK_IN_TEXT = re.compile(r"\((\d{1,2})\)\s*[.…·]{0,}")
 INPUT_PLACEHOLDER = "\u2426"
+INPUT_ROW_LIKE = re.compile(r"^(?:\(\d{1,2}\)[….…·\s\u2426]*)+$")
 
 def input_tag(n, qids_seen):
     qids_seen.add(n)
     return f'<input data-qid="q{n}" class="cognition-exam-input" autocomplete="off" />'
 
 
-def line_to_html(line, qids_seen):
-    """Convert one stimulus text line to HTML with inline inputs at blank positions."""
+def line_to_html(line, qids_seen, skip_qids=None):
+    """Convert one stimulus text line to HTML with inline inputs at blank positions.
+    Blanks whose qid is in skip_qids render as static underlines (already answered
+    elsewhere in the same group)."""
+    skip_qids = skip_qids or set()
     out = []
     last = 0
     found = False
     for m in BLANK_IN_TEXT.finditer(line):
+        n = int(m.group(1))
         out.append(esc(line[last:m.start()]))
-        out.append(input_tag(int(m.group(1)), qids_seen))
+        if n in skip_qids:
+            out.append('<span class="blank-static">______</span>')
+        else:
+            out.append(input_tag(n, qids_seen))
         last = m.end()
         found = True
     out.append(esc(line[last:]))
     res = "".join(out)
     if not found and INPUT_PLACEHOLDER in line:
-        # input-box placeholders: associate with a "N." line number when present
         qm = re.match(r"^\s*(\d{1,2})\.\s*", line)
         if qm:
             n = int(qm.group(1))
-            res = esc(line).replace(INPUT_PLACEHOLDER, input_tag(n, qids_seen), 1)
-            qids_seen.add(n)
+            ph = input_tag(n, qids_seen) if n not in skip_qids else '<span class="blank-static">______</span>'
+            res = esc(line).replace(INPUT_PLACEHOLDER, ph, 1)
+            if n not in skip_qids: qids_seen.add(n)
     return res
 
 def stim_line_class(line):
@@ -67,7 +75,8 @@ def stim_line_class(line):
         return "stim-subsection"
     return "stim-line"
 
-def stimulus_to_html(g, qids_seen):
+def stimulus_to_html(g, qids_seen, owned=None):
+    owned = owned if owned is not None else set()
     parts = []
     stim = g["stimulus"]
     # visuals are emitted separately (group.visualHtml) so each logical visual
@@ -75,24 +84,45 @@ def stimulus_to_html(g, qids_seen):
     if stim.get("table"):
         rows = stim["table"]["rows"]
         if rows:
-            parts.append("<table class=\"stimulus-table\">")
+            parts.append('<table class="stimulus-table bordered">')
             for r_i, row in enumerate(rows):
                 cells = []
                 for cell in row:
                     segs, last = [], 0
                     for m in BLANK_IN_TEXT.finditer(cell):
                         segs.append(esc(cell[last:m.start()]))
-                        segs.append(input_tag(int(m.group(1)), qids_seen))
+                        n_cell = int(m.group(1))
+                        if owned is not None and n_cell not in owned:
+                            segs.append('<span class="blank-static">______</span>')
+                        else:
+                            segs.append(input_tag(n_cell, qids_seen))
                         last = m.end()
                     segs.append(esc(cell[last:]))
                     cells.append("".join(segs).replace(INPUT_PLACEHOLDER, ""))
                 parts.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
             parts.append("</table>")
+    cell_text = " ".join(" ".join(r) for r in (stim.get("table") or {}).get("rows", [])) if stim.get("table") else ""
+    emitted_qids = set()
     for seg in (stim.get("segments") or []):
         for line in seg.split("\n"):
-            h = line_to_html(line, qids_seen)
+            stripped = line.strip()
+            line_qids = {int(m.group(1)) for m in re.finditer(r"\((\d{1,2})\)", stripped)}
+            if "\u2426" in stripped and not line_qids:
+                qm = re.match(r"^(\d{1,2})\.", stripped)
+                if qm: line_qids = {int(qm.group(1))}
+            # a blank is rendered exactly once per group: prose lines win over the
+            # site's bare interactive-input rows; table cells win over both
+            is_bare_input_row = bool(INPUT_ROW_LIKE.match(stripped)) or (
+                "\u2426" in stripped and len(stripped) <= 14 and not re.search(r"[A-Za-z]{3}", stripped))
+            if (line_qids & emitted_qids) or (is_bare_input_row and (line_qids & (qids_seen | emitted_qids))):
+                continue
+            if stim.get("table") and (INPUT_ROW_LIKE.match(stripped)
+                                       or (stripped and stripped in cell_text and len(stripped) > 2)):
+                continue
+            h = line_to_html(line, qids_seen, skip_qids=(emitted_qids | (set(line_qids) - owned)))
+            emitted_qids |= line_qids
             if h.strip():
-                cls = stim_line_class(line.strip())
+                cls = stim_line_class(stripped)
                 parts.append(f'<p class="{cls}">{h}</p>')
     if stim.get("sharedOptions"):
         opts = " ".join(f"<strong>{esc(o['letter'])}</strong> {esc(o['text'] or '—')}" for o in stim["sharedOptions"])
@@ -133,8 +163,9 @@ def build_listening_runtime(rec):
     for part in sorted(parts):
         p = parts[part]
         group_objs, flat_qs, html_parts = [], [], []
+        owned_by_group = {id(g): {q["number"] for q in gqs} for g, gqs in p["groups"]}
         for g, gqs in p["groups"]:
-            gh = stimulus_to_html(g, qids_seen)
+            gh = stimulus_to_html(g, qids_seen, owned=owned_by_group[id(g)])
             html_parts.append(gh)
             q_objs = []
             for q in gqs:
@@ -224,19 +255,33 @@ def build_listening_runtime(rec):
     }
 
 def build_speaking_runtime(rec):
+    """Phase 4: full 3-part packages. Part 2 topic = authentic Makkar (SOURCE_PRACTICE);
+    bullets + Part 1/3 = generated practice, provenance-tagged per item."""
+    assembled = ASSEMBLED_BY_SLUG.get(rec["slug"], {})
     return {
         "id": rec["id"],
         "slug": rec["slug"],
         "title": rec["cueCard"]["topic"] or rec["title"],
         "hubNumber": rec.get("hubNumber"),
         "status": rec["status"],
-        "cueCard": {"topic": rec["cueCard"]["topic"], "bulletPrompts": rec["cueCard"]["bulletPrompts"],
+        "category": assembled.get("category"),
+        "cueCard": {"topic": rec["cueCard"]["topic"],
+                     "leadIn": assembled.get("part2", {}).get("cueCard", {}).get("leadIn", "You should say:"),
+                     "bulletPrompts": assembled.get("part2", {}).get("cueCard", {}).get("bullets", []),
+                     "finalInstruction": assembled.get("part2", {}).get("cueCard", {}).get("final", ""),
                      "bulletsNote": rec["cueCard"]["bulletsNote"]},
-        "coverage": rec["coverage"],
+        "part1": assembled.get("part1", {"available": False}),
+        "part3": assembled.get("part3", {"available": False}),
+        "coverage": {"part1": assembled.get("part1", {}).get("available") and "generated_practice" or "unavailable",
+                      "part2": "available",
+                      "part3": assembled.get("part3", {}).get("available") and "generated_practice" or "unavailable"},
         "sampleAnswer": {"sentences": rec["sampleAnswer"]["sentences"],
                           "usage": rec["sampleAnswer"]["usage"]},
         "source": {"slug": rec["slug"], "sha256": rec["provenance"]["page"]["sha256"][:16]},
     }
+
+ASSEMBLED = json.load(open(os.path.join(OUT, "speaking/generated/assembled_packages.json")))
+ASSEMBLED_BY_SLUG = {p["slug"]: p for p in ASSEMBLED["packages"]}
 
 def main():
     os.makedirs(RUNTIME, exist_ok=True)

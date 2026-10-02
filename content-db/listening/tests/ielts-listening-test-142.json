@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "9079087ed94eb83550a4389690059379144a3f91b6ed71eedddfdba97e6267d4",
+ "contentFingerprint": "ddb98b213d1669a6c64c868c5b8edd169d80d51ec5e476acdc7523bc3f6320a5",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -254,6 +254,10 @@
     "value": "training"
    },
    {
+    "number": 11,
+    "value": "A"
+   },
+   {
     "number": 12,
     "value": "C"
    },
@@ -280,6 +284,10 @@
    {
     "number": 24,
     "value": "E"
+   },
+   {
+    "number": 25,
+    "value": "A"
    },
    {
     "number": 26,
@@ -614,7 +622,7 @@
   {
    "groupId": "g02",
    "part": 2,
-   "startQ": 12,
+   "startQ": 11,
    "endQ": 14,
    "partExplicit": true,
    "instruction": {
@@ -624,18 +632,48 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "New city developments",
+     "A local people",
+     "B the City Council",
+     "C the SWRDC",
      "New city developments\n11. The idea for the two new developments in the city came from\nA local people\nB the City Council\nC the SWRDC",
+     "A its architectural style",
+     "B its heating system",
+     "C its method of water treatment",
      "12. What is unusual about Brackenside pool?\nA its architectural style\nB its heating system\nC its method of water treatment",
+     "A the late opening date",
+     "B the post of the project",
+     "C the size of the facilities",
      "13. Local newspapers have raised worries about\nA the late opening date\nB the post of the project\nC the size of the facilities",
+     "A whose statue will be at the door",
+     "B the exact opening times",
+     "C who will open it",
      "14. What decision has not yet been made about the pool?\nA whose statue will be at the door\nB the exact opening times\nC who will open it"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 11,
+     "type": "short_answer",
+     "stem": {
+      "plain": "The idea for the two new developments in the city came from",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[3]",
+      "rawExcerpt": "11. The idea for the two new developments in the city came from"
+     }
+    },
     {
      "number": 12,
      "type": "short_answer",
@@ -692,11 +730,6 @@
     "elementPath": "entry-content.children[2]",
     "rawExcerpt": "Part 2: Questions 11-14\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    11,
-    14
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -890,7 +923,7 @@
   {
    "groupId": "g06",
    "part": 3,
-   "startQ": 26,
+   "startQ": 25,
    "endQ": 30,
    "partExplicit": false,
    "instruction": {
@@ -900,20 +933,56 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "The later life of Thor Heyerdahl",
+     "A the fact that Eastern countries were far away",
+     "B the lack of materials for boat building",
+     "C the direction of the winds and currents",
      "The later life of Thor Heyerdahl\n25. According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to\nA the fact that Eastern countries were far away\nB the lack of materials for boat building\nC the direction of the winds and currents",
+     "A to overcome a research setback",
+     "B to demonstrate a personal quality",
+     "C to test a new theory",
      "26. Which do the speakers agree was the main reason for Heyerdahl’s raft journey?\nA to overcome a research setback\nB to demonstrate a personal quality\nC to test a new theory",
+     "A the fact that he was the first person to do it",
+     "B the speed of crossing the Pacific",
+     "C the use of authentic construction methods",
      "27. What was most important to Heyerdahl about his raft journey?\nA the fact that he was the first person to do it\nB the speed of crossing the Pacific\nC the use of authentic construction methods",
+     "A to build a stone statue",
+     "B to sail a reed boat",
+     "C to learn the local language",
      "28. Why did Heyerdahl go to Easter Island?\nA to build a stone statue\nB to sail a reed boat\nC to learn the local language",
+     "A theories about Polynesian origins",
+     "B the development of archaeological methodology",
+     "C establishing archaeology as an academic subject",
      "29. In Olivia’s opinion, Heyerdahl’s greatest influence was on\nA theories about Polynesian origins\nB the development of archaeological methodology\nC establishing archaeology as an academic subject",
+     "A Its style is out of date",
+     "B Its content is over-simplified",
+     "C Its methodology is flawed",
      "30. Which criticism do the speakers make of William Oliver’s textbook?\nA Its style is out of date\nB Its content is over-simplified\nC Its methodology is flawed"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 25,
+     "type": "short_answer",
+     "stem": {
+      "plain": "According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[17]",
+      "rawExcerpt": "25. According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to"
+     }
+    },
     {
      "number": 26,
      "type": "short_answer",
@@ -1005,11 +1074,6 @@
     "rawExcerpt": "Questions 25-30\nChoose the correct letter, A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
-   "markerRange": [
-    25,
-    30
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1328,7 +1392,7 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 32,
+ "verifiedQuestionCount": 34,
  "quarantinedCount": 1,
  "status": "flagged",
  "schemaErrors": []

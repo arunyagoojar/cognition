@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "d5a6e2975e0c1f5f36e51eae2e624fb53547b60808bf8a2b420bfa169a0c4194",
+ "contentFingerprint": "07d6dc8e210cb9944de714ea02090de6c6912402d378fde1f24baba356bded91",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -273,6 +273,30 @@
    },
    {
     "number": 15,
+    "value": "C"
+   },
+   {
+    "number": 16,
+    "value": "B"
+   },
+   {
+    "number": 17,
+    "value": "C"
+   },
+   {
+    "number": 18,
+    "value": "D"
+   },
+   {
+    "number": 19,
+    "value": "D"
+   },
+   {
+    "number": 20,
+    "value": "A"
+   },
+   {
+    "number": 21,
     "value": "C"
    },
    {
@@ -708,8 +732,17 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A It has brought in extra money",
+     "B It made the work of the trust better known",
+     "C It has attracted more members.",
      "13. Why is Alice so pleased the Trust has won the Charity Commission award?\nA It has brought in extra money\nB It made the work of the trust better known\nC It has attracted more members.",
+     "A noise",
+     "B oil leaks",
+     "C movement of ships",
      "14. Alice says oil exploration causes problems to dolphins because of\nA noise\nB oil leaks\nC movement of ships",
+     "A she saw one swimming near her home",
+     "B she heard a speaker at her school",
+     "C she read a book about them",
      "15. Alice became interested in dolphins when\nA she saw one swimming near her home\nB she heard a speaker at her school\nC she read a book about them"
     ],
     "figures": null,
@@ -788,16 +821,143 @@
     "originalText": "Which dolphin does Alice make each of the following comments about?"
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Comments",
      "Comments\n16. It has not been seen this year ␦\n17. It is photographed more than the others ␦\n18. It is always very energetic ␦\n19. It is the newest one in the scheme ␦\n20. It has an unusual shape ␦",
      "Dolphins\nA Moondancer\nB Echo\nC Kiwi\nD Samson"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 16,
+     "type": "completion",
+     "stem": {
+      "plain": "It has not been seen this year ______",
+      "segments": [
+       "It has not been seen this year",
+       {
+        "blank": 16
+       },
+       {
+        "blank": 16
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 16. It has not been seen this year ␦ (input box in source)",
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "16. It has not been seen this year ␦"
+     }
+    },
+    {
+     "number": 17,
+     "type": "completion",
+     "stem": {
+      "plain": "It is photographed more than the others ______",
+      "segments": [
+       "It is photographed more than the others",
+       {
+        "blank": 17
+       },
+       {
+        "blank": 17
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 17. It is photographed more than the others ␦ (input box in source)",
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "17. It is photographed more than the others ␦"
+     }
+    },
+    {
+     "number": 18,
+     "type": "completion",
+     "stem": {
+      "plain": "It is always very energetic ______",
+      "segments": [
+       "It is always very energetic",
+       {
+        "blank": 18
+       },
+       {
+        "blank": 18
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 18. It is always very energetic ␦ (input box in source)",
+     "correctAnswer": "D",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "18. It is always very energetic ␦"
+     }
+    },
+    {
+     "number": 19,
+     "type": "completion",
+     "stem": {
+      "plain": "It is the newest one in the scheme ______",
+      "segments": [
+       "It is the newest one in the scheme",
+       {
+        "blank": 19
+       },
+       {
+        "blank": 19
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 19. It is the newest one in the scheme ␦ (input box in source)",
+     "correctAnswer": "D",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "19. It is the newest one in the scheme ␦"
+     }
+    },
+    {
+     "number": 20,
+     "type": "completion",
+     "stem": {
+      "plain": "It has an unusual shape ______",
+      "segments": [
+       "It has an unusual shape",
+       {
+        "blank": 20
+       },
+       {
+        "blank": 20
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 20. It has an unusual shape ␦ (input box in source)",
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "20. It has an unusual shape ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Questions 16-20\nWhich dolphin does Alice make each of the following comments about?"
@@ -808,7 +968,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 25,
    "partExplicit": true,
    "instruction": {
@@ -818,19 +978,52 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Theatre Studies Course",
+     "A the stories his grandfather told him",
+     "B the times when he watched his grandfather working",
+     "C the way he imagined his grandfather at work",
      "Theatre Studies Course\n21. What helped Rob to prepare to play the character of a doctor?\nA the stories his grandfather told him\nB the times when he watched his grandfather working\nC the way he imagined his grandfather at work",
+     "A repetition of words and phrases",
+     "B scenery painted in dull colours",
+     "C long pauses within conversations",
      "22. In the play’s first scene, the boredom of village life was suggested by\nA repetition of words and phrases\nB scenery painted in dull colours\nC long pauses within conversations",
+     "A He likes to have clear guidelines",
+     "B He copes well with stress",
+     "C He thinks he is a good leader",
      "23. What has Rob learned about himself through working in a group?\nA He likes to have clear guidelines\nB He copes well with stress\nC He thinks he is a good leader",
+     "A political developments",
+     "B changing social attitudes",
+     "C economic transformations",
      "24. To support the production, research material was used which described\nA political developments\nB changing social attitudes\nC economic transformations",
+     "A one person forgetting their words",
+     "B an equipment failure",
+     "C the injury of one character",
      "25. What problem did the students overcome in the final rehearsal?\nA one person forgetting their words\nB an equipment failure\nC the injury of one character"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "What helped Rob to prepare to play the character of a doctor?",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "21. What helped Rob to prepare to play the character of a doctor?"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -904,11 +1097,6 @@
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 3: Questions 21-25\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    25
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1361,20 +1549,7 @@
   "fnameInputs": 30
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     16,
-     20
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1382,8 +1557,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 1,
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []
 }

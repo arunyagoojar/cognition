@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "7b8065c9408bee54563b3f6491f30f0c886b0e56e46923cc5430cfaebee113c2",
+ "contentFingerprint": "a45c5385c59529acb6b59f2ef2cc598296cc68251f9e9f018c91bc08bca14419",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -274,6 +274,10 @@
     "value": "farm"
    },
    {
+    "number": 14,
+    "value": "C"
+   },
+   {
     "number": 15,
     "value": "B"
    },
@@ -296,6 +300,10 @@
    {
     "number": 20,
     "value": "E"
+   },
+   {
+    "number": 21,
+    "value": "C"
    },
    {
     "number": 22,
@@ -767,7 +775,7 @@
   {
    "groupId": "g03",
    "part": 2,
-   "startQ": 15,
+   "startQ": 14,
    "endQ": 16,
    "partExplicit": false,
    "instruction": {
@@ -777,17 +785,44 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Longfield Park",
+     "A prepare food with herbs",
+     "B meet a well-known herbalist",
+     "C dye cloth with herbs",
      "Longfield Park\n14. As part of Monday’s activity, visitors will\nA prepare food with herbs\nB meet a well-known herbalist\nC dye cloth with herbs",
+     "A only group bookings are accepted",
+     "B visitors should book in advance",
+     "C attendance is free",
      "15. For the activity on Wednesday,\nA only group bookings are accepted\nB visitors should book in advance\nC attendance is free",
+     "A come in suitable clothing",
+     "B make sure they are able to stay for the whole day",
+     "C tell the rangers before the event what they wish to do",
      "16. For the activity on Saturday, visitors should\nA come in suitable clothing\nB make sure they are able to stay for the whole day\nC tell the rangers before the event what they wish to do"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 14,
+     "type": "short_answer",
+     "stem": {
+      "plain": "As part of Monday’s activity, visitors will",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "14. As part of Monday’s activity, visitors will"
+     }
+    },
     {
      "number": 15,
      "type": "short_answer",
@@ -828,11 +863,6 @@
     "rawExcerpt": "Questions 14-16\nChoose the correct letter, A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
-   "markerRange": [
-    14,
-    16
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -936,7 +966,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 24,
    "partExplicit": true,
    "instruction": {
@@ -946,18 +976,48 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Self-Access Centre",
+     "A they enjoy the variety of equipment",
+     "B they like being able to work on their own",
+     "C it is an important part of their studies",
      "Self-Access Centre\n21. Students want to keep the Self-Access Centre because\nA they enjoy the variety of equipment\nB they like being able to work on their own\nC it is an important part of their studies",
+     "A close the Self-Access Centre",
+     "B move the Self-Access Centre elsewhere",
+     "C restrict access to the Self-Access Centre",
      "22. Some teachers would prefer to\nA close the Self-Access Centre\nB move the Self-Access Centre elsewhere\nC restrict access to the Self-Access Centre",
+     "A the size of the library",
+     "B difficulty in getting help",
+     "C the lack of materials",
      "23. The students’ main concern about using the library would be\nA the size of the library\nB difficulty in getting help\nC the lack of materials",
+     "A the cost of upgrading the centre",
+     "B the lack of space in the centre",
+     "C the difficulty in supervising the centre",
      "24. The Director of Studies is concerned about\nA the cost of upgrading the centre\nB the lack of space in the centre\nC the difficulty in supervising the centre"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "Students want to keep the Self-Access Centre because",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "21. Students want to keep the Self-Access Centre because"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -1014,11 +1074,6 @@
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21-24\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    24
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1567,7 +1622,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 38,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "0a70edff736c1c8c4d4d4074786bff3d8d07c1d4eca58c1144353d7f40bf8c2f",
+ "contentFingerprint": "e96805ce48fb3e517f9ba75d2b4f5e980deefa5a361ddf6b297417c7a91dd9b0",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -294,6 +294,10 @@
    {
     "number": 20,
     "value": "E"
+   },
+   {
+    "number": 21,
+    "value": "B"
    },
    {
     "number": 22,
@@ -829,7 +833,13 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A on Saturday morning only",
+     "B all day Saturday",
+     "C for the whole weekend",
      "17. A champion athlete will be in the shop\nA on Saturday morning only\nB all day Saturday\nC for the whole weekend",
+     "A gym membership",
+     "B a video",
+     "C a calendar",
      "18. The first person to answer 20 quiz questions correctly will win\nA gym membership\nB a video\nC a calendar"
     ],
     "figures": null,
@@ -952,7 +962,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 30,
    "partExplicit": true,
    "instruction": {
@@ -962,24 +972,71 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Course Feedback",
+     "A he was not nervous",
+     "B his style was good",
+     "C the presentation was the best in his group",
      "Course Feedback\n21. One reason why Spiros felt happy about his marketing presentation was that\nA he was not nervous\nB his style was good\nC the presentation was the best in his group",
+     "A Their presentations were not interesting ‘",
+     "B They found their presentations stressful",
      "22. What surprised Hiroko about the other students’ presentations?\nA Their presentations were not interesting ‘\nB They found their presentations stressful\nC They didn’t look at the audience enough",
+     "A delighted",
+     "B dissatisfied",
+     "C embarrassed",
      "23. After she gave her presentation, Hiroko felt\nA delighted\nB dissatisfied\nC embarrassed",
+     "A not very happy",
+     "B really pleased",
+     "C fairly confident",
      "24. How does Spiros feel about his performance in tutorials?\nA not very happy\nB really pleased\nC fairly confident",
+     "A They are polite to each other",
+     "B They agree to take turns in speaking",
+     "C They know each other well",
      "25. Why can the other students participate so easily in discussions?\nA They are polite to each other\nB They agree to take turns in speaking\nC They know each other well",
+     "A She finds the other students’ opinions more interesting",
+     "B She is making more of a contribution",
+     "C The tutor includes her in the discussion",
      "26. Why is Hiroko feeling more positive about tutorials now?\nA She finds the other students’ opinions more interesting\nB She is making more of a contribution\nC The tutor includes her in the discussion",
+     "A consulted reference materials",
+     "B had extra tutorials with her lecturers",
+     "C borrowed lecture notes from other students",
      "27. To help her understand lectures, Hiroko\nA consulted reference materials\nB had extra tutorials with her lecturers\nC borrowed lecture notes from other students",
+     "A He reads faster than he used to",
+     "B It still takes him a long time to read",
+     "C He tends to struggle with new vocabulary",
      "28. What does Spiros think of his reading skills?\nA He reads faster than he used to\nB It still takes him a long time to read\nC He tends to struggle with new vocabulary",
+     "A environmental studies",
+     "B health education",
+     "C engineering",
      "29. What is Hiroko’s subject area?\nA environmental studies\nB health education\nC engineering",
+     "A learn more vocabulary",
+     "B read more in their own subject areas",
+     "C develop better reading strategies",
      "30. Hiroko thinks that in the reading classes the students should\nA learn more vocabulary\nB read more in their own subject areas\nC develop better reading strategies"
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "One reason why Spiros felt happy about his marketing presentation was that",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "21. One reason why Spiros felt happy about his marketing presentation was that"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -1138,11 +1195,6 @@
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Part 3: Questions 21-30\nChoose the correct letter, A, B or C."
    },
-   "markerRange": [
-    21,
-    30
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1463,7 +1515,7 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 39,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []

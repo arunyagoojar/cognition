@@ -96,15 +96,46 @@ for (const t of PRODUCTION_LISTENING) {
   }
 }
 
+// ── Regression: every question listed exactly once per part ──
+// Each question is answered in exactly ONE group: either as inline data-qid
+// input(s) in that group's stimulus (multi-part blanks may render several boxes
+// sharing one answer) or as one standalone block — never across groups and
+// never inline + standalone.
+for (const t of PRODUCTION_LISTENING) {
+  for (const p of t.parts) {
+    const owner = {};
+    for (const g of p.questionGroups) {
+      const inline = new Set([...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1]));
+      for (const q of g.questions) {
+        const isInline = inline.has(q.id);
+        const prev = owner[q.id];
+        check(!prev, `question listed once: ${t.slug} S${p.part} ${q.id} (${prev || '—'} then ${g.groupId}${isInline ? ' inline' : ' standalone'})`);
+        owner[q.id] = `${g.groupId}${isInline ? ' inline' : ' standalone'}`;
+      }
+    }
+  }
+}
+
 // ── Speaking ─────────────────────────────────────────────────
 console.log('== Production Speaking ==');
 check(PRODUCTION_SPEAKING.length >= 175, `speaking corpus size (${PRODUCTION_SPEAKING.length})`);
 for (const s of PRODUCTION_SPEAKING) {
-  check(s.coverage.part2 === 'available', `part2 available (${s.slug})`);
-  check(s.coverage.part1 === 'unavailable' && s.coverage.part3 === 'unavailable',
-    `partial coverage declared explicitly (${s.slug})`);
-  check(typeof s.cueCard.topic === 'string' && s.cueCard.topic.length > 3, `topic present (${s.slug})`);
-  check(Array.isArray(s.sampleAnswer.sentences), `sample answer stored separately (${s.slug})`);
+  // 3-part interview: Part 2 topic authentic; Part 1/3 provenance-tagged practice
+  check(s.cueCard.topic?.length > 3, `topic present (${s.slug})`);
+  check((s.cueCard.bulletPrompts || []).length >= 3, `cue-card bullets 3+ (${s.slug})`);
+  check(Boolean(s.cueCard.finalInstruction), `final explain instruction (${s.slug})`);
+  check(s.part1?.available === true && s.part1?.provenanceType === 'GENERATED_PRACTICE',
+    `part1 provenance-tagged practice (${s.slug})`);
+  check(s.part3?.available === true && s.part3?.provenanceType === 'GENERATED_PRACTICE',
+    `part3 provenance-tagged practice (${s.slug})`);
+  check(s.coverage.part2 === 'available' && s.coverage.part1 === 'generated_practice'
+    && s.coverage.part3 === 'generated_practice', `coverage states honest (${s.slug})`);
+  check(Array.isArray(s.sampleAnswer?.sentences), `sample answer stored separately (${s.slug})`);
+  // Part 3 must connect to the Part 2 topic (at least the anchored opening question)
+  check((s.part3?.questions || []).length >= 3, `part3 has discussion questions (${s.slug})`);
+  for (const q of s.part3?.questions || []) {
+    check(q.generated === true && q.generator && q.generatedAt, `part3 provenance per item (${s.slug})`);
+  }
 }
 
 if (failures > 0) {

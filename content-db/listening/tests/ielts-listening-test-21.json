@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "8781b39fc4720bdf01f73f12c0143c9cca4bacd1f34f302d69a23c324ea54ea2",
+ "contentFingerprint": "8df2e55af46eb4b5e9b03ca90ddb19d9eac1ec951af9f7e4545ae0aaf149debe",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -229,6 +229,22 @@
    {
     "number": 6,
     "value": "A"
+   },
+   {
+    "number": 7,
+    "value": "birds"
+   },
+   {
+    "number": 8,
+    "value": "flowers"
+   },
+   {
+    "number": 9,
+    "value": "mushrooms"
+   },
+   {
+    "number": 10,
+    "value": "river"
    },
    {
     "number": 11,
@@ -573,15 +589,111 @@
     "originalText": "Complete the sentences below. Write ONE WORD ONLY for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Paxton Nature Reserve",
      "Paxton Nature Reserve\n7. Paxton is a good for seeing rare ␦ all year around.\n8. This is a particularly good time for seeing certain unusual ␦\n9. Visitors will be able to learn about ␦ and then collect some.\n10. Part of the ␦ has been made suitable for swimming."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 7,
+     "type": "completion",
+     "stem": {
+      "plain": "Paxton is a good for seeing rare ______ all year around.",
+      "segments": [
+       "Paxton is a good for seeing rare",
+       {
+        "blank": 7
+       },
+       "all year around."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 7. Paxton is a good for seeing rare ␦ all year around. (input box in source)",
+     "correctAnswer": "birds",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "7. Paxton is a good for seeing rare ␦ all year around."
+     }
+    },
+    {
+     "number": 8,
+     "type": "completion",
+     "stem": {
+      "plain": "This is a particularly good time for seeing certain unusual ______",
+      "segments": [
+       "This is a particularly good time for seeing certain unusual",
+       {
+        "blank": 8
+       },
+       {
+        "blank": 8
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 8. This is a particularly good time for seeing certain unusual ␦ (input box in source)",
+     "correctAnswer": "flowers",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "8. This is a particularly good time for seeing certain unusual ␦"
+     }
+    },
+    {
+     "number": 9,
+     "type": "completion",
+     "stem": {
+      "plain": "Visitors will be able to learn about ______ and then collect some.",
+      "segments": [
+       "Visitors will be able to learn about",
+       {
+        "blank": 9
+       },
+       "and then collect some."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 9. Visitors will be able to learn about ␦ and then collect some. (input box in source)",
+     "correctAnswer": "mushrooms",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "9. Visitors will be able to learn about ␦ and then collect some."
+     }
+    },
+    {
+     "number": 10,
+     "type": "completion",
+     "stem": {
+      "plain": "Part of the ______ has been made suitable for swimming.",
+      "segments": [
+       "Part of the",
+       {
+        "blank": 10
+       },
+       "has been made suitable for swimming."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 10. Part of the ␦ has been made suitable for swimming. (input box in source)",
+     "correctAnswer": "river",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "10. Part of the ␦ has been made suitable for swimming."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Questions 7-10\nComplete the sentences below. Write ONE WORD ONLY for each answer."
@@ -1481,23 +1593,10 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     7,
-     10
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

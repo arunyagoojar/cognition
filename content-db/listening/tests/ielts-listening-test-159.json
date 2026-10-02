@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "2cff592d618717961ca791821690f937fa46153aec1d8d549950b73e2a18a19b",
+ "contentFingerprint": "119ad6429702ec4ab964333a4b5b723b4d46041c0d273a5e7683ee43d34ec450",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -292,6 +292,34 @@
     "value": "D"
    },
    {
+    "number": 18,
+    "value": "field"
+   },
+   {
+    "number": 19,
+    "value": "footbridge"
+   },
+   {
+    "number": 20,
+    "value": "viewpoint"
+   },
+   {
+    "number": 21,
+    "value": "entertainment industry"
+   },
+   {
+    "number": 22,
+    "value": "telephone interviews"
+   },
+   {
+    "number": 23,
+    "value": "30"
+   },
+   {
+    "number": 24,
+    "value": "male and female"
+   },
+   {
     "number": 25,
     "value": "jazz"
    },
@@ -330,6 +358,18 @@
    {
     "number": 34,
     "value": "B"
+   },
+   {
+    "number": 35,
+    "value": "people"
+   },
+   {
+    "number": 36,
+    "value": "water, sand"
+   },
+   {
+    "number": 37,
+    "value": "scotland"
    },
    {
     "number": 38,
@@ -873,15 +913,88 @@
     "originalText": "Complete the sentences below. Write ONE WORD ONLY."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "RIVER WALK",
      "RIVER WALK\n18. You can walk through the ␦ that goes along the river bank.\n19. You can go over the ␦ and then into a wooded area.\n20. On your way back, you could also go up to the ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 18,
+     "type": "completion",
+     "stem": {
+      "plain": "You can walk through the ______ that goes along the river bank.",
+      "segments": [
+       "You can walk through the",
+       {
+        "blank": 18
+       },
+       "that goes along the river bank."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 18. You can walk through the ␦ that goes along the river bank. (input box in source)",
+     "correctAnswer": "field",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "18. You can walk through the ␦ that goes along the river bank."
+     }
+    },
+    {
+     "number": 19,
+     "type": "completion",
+     "stem": {
+      "plain": "You can go over the ______ and then into a wooded area.",
+      "segments": [
+       "You can go over the",
+       {
+        "blank": 19
+       },
+       "and then into a wooded area."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 19. You can go over the ␦ and then into a wooded area. (input box in source)",
+     "correctAnswer": "footbridge",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "19. You can go over the ␦ and then into a wooded area."
+     }
+    },
+    {
+     "number": 20,
+     "type": "completion",
+     "stem": {
+      "plain": "On your way back, you could also go up to the ______",
+      "segments": [
+       "On your way back, you could also go up to the",
+       {
+        "blank": 20
+       },
+       {
+        "blank": 20
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 20. On your way back, you could also go up to the ␦ (input box in source)",
+     "correctAnswer": "viewpoint",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "20. On your way back, you could also go up to the ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Question 18-20\nComplete the sentences below. Write ONE WORD ONLY."
@@ -902,15 +1015,113 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN THREE WORDS OR A NUMBER."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "MARKETING ASSIGNMENT",
      "MARKETING ASSIGNMENT\n21. For their assignment, the students must investigate one part of the ␦\n22. The method the students must use to collect data is ␦\n23. In total, the students must interview ␦ people.\n24. Jack thinks the music preferences of ␦ listeners are similar."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 21,
+     "type": "completion",
+     "stem": {
+      "plain": "For their assignment, the students must investigate one part of the ______",
+      "segments": [
+       "For their assignment, the students must investigate one part of the",
+       {
+        "blank": 21
+       },
+       {
+        "blank": 21
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 21. For their assignment, the students must investigate one part of th (input box in source)",
+     "correctAnswer": "entertainment industry",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "21. For their assignment, the students must investigate one part of the ␦"
+     }
+    },
+    {
+     "number": 22,
+     "type": "completion",
+     "stem": {
+      "plain": "The method the students must use to collect data is ______",
+      "segments": [
+       "The method the students must use to collect data is",
+       {
+        "blank": 22
+       },
+       {
+        "blank": 22
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 22. The method the students must use to collect data is ␦ (input box in source)",
+     "correctAnswer": "telephone interviews",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "22. The method the students must use to collect data is ␦"
+     }
+    },
+    {
+     "number": 23,
+     "type": "completion",
+     "stem": {
+      "plain": "In total, the students must interview ______ people.",
+      "segments": [
+       "In total, the students must interview",
+       {
+        "blank": 23
+       },
+       "people."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 23. In total, the students must interview ␦ people. (input box in source)",
+     "correctAnswer": "30",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "23. In total, the students must interview ␦ people."
+     }
+    },
+    {
+     "number": 24,
+     "type": "completion",
+     "stem": {
+      "plain": "Jack thinks the music preferences of ______ listeners are similar.",
+      "segments": [
+       "Jack thinks the music preferences of",
+       {
+        "blank": 24
+       },
+       "listeners are similar."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 24. Jack thinks the music preferences of ␦ listeners are similar. (input box in source)",
+     "correctAnswer": "male and female",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "24. Jack thinks the music preferences of ␦ listeners are similar."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[14]",
     "rawExcerpt": "Part 3: Question 21-24\nComplete the sentences below. Write NO MORE THAN THREE WORDS OR A NUMBER."
@@ -1250,7 +1461,7 @@
   {
    "groupId": "g08",
    "part": 4,
-   "startQ": 38,
+   "startQ": 35,
    "endQ": 40,
    "partExplicit": false,
    "instruction": {
@@ -1260,9 +1471,11 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "STONE TOOLS",
+     "• The farmers needed homes which were permanent dwellings.",
      "STONE TOOLS\n35. Ploughs could either have been pulled by ␦ or by cattle.\n• The farmers needed homes which were permanent dwellings.\n36. In the final stages of axe-making ␦ and ␦ were necessary for grinding and polishing.\n37. Irish axes were exported from Ireland to ␦ and England.",
      "POTTERY MAKING\n• The colonisers used clay to make pots.",
      "38. The ␦ of the pots was often polished to make them watertight.\n39. Clay from ␦ areas was generally used.\n40. Decoration was only put around the ␦ of the earliest pots."
@@ -1271,6 +1484,79 @@
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 35,
+     "type": "completion",
+     "stem": {
+      "plain": "Ploughs could either have been pulled by ______ or by cattle.",
+      "segments": [
+       "Ploughs could either have been pulled by",
+       {
+        "blank": 35
+       },
+       "or by cattle."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 35. Ploughs could either have been pulled by ␦ or by cattle. (input box in source)",
+     "correctAnswer": "people",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[28]",
+      "rawExcerpt": "35. Ploughs could either have been pulled by ␦ or by cattle."
+     }
+    },
+    {
+     "number": 36,
+     "type": "completion",
+     "stem": {
+      "plain": "In the final stages of axe-making ______ and ______ were necessary for grinding and polishing.",
+      "segments": [
+       "In the final stages of axe-making",
+       {
+        "blank": 36
+       },
+       "and",
+       {
+        "blank": 36
+       },
+       "were necessary for grinding and polishing."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 36. In the final stages of axe-making ␦ and ␦ were necessary for grind (input box in source)",
+     "correctAnswer": "water, sand",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[28]",
+      "rawExcerpt": "36. In the final stages of axe-making ␦ and ␦ were necessary for grinding and polishing."
+     }
+    },
+    {
+     "number": 37,
+     "type": "completion",
+     "stem": {
+      "plain": "Irish axes were exported from Ireland to ______ and England.",
+      "segments": [
+       "Irish axes were exported from Ireland to",
+       {
+        "blank": 37
+       },
+       "and England."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 37. Irish axes were exported from Ireland to ␦ and England. (input box in source)",
+     "correctAnswer": "scotland",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[28]",
+      "rawExcerpt": "37. Irish axes were exported from Ireland to ␦ and England."
+     }
+    },
     {
      "number": 38,
      "type": "completion",
@@ -1346,11 +1632,6 @@
     "rawExcerpt": "Question 35-40\nComplete the sentences below. Write NO MORE THAN TWO WORDS each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "markerRange": [
-    35,
-    40
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   }
  ],
@@ -1381,32 +1662,7 @@
   "fnameInputs": 34
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     18,
-     20
-    ]
-   }
-  },
-  {
-   "unit": "group",
-   "groupId": "g05",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     21,
-     24
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1414,8 +1670,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 30,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []
 }

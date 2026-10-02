@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "949819eee36ba27f0eb4db7348ce49c62e8a2d27447aec06673a4fdabb2ea080",
+ "contentFingerprint": "ca871cbd2202eef4ef04ccba6de88ba064787ec71300223ab0221406aa1f8fc8",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -281,6 +281,10 @@
    {
     "number": 20,
     "value": "C"
+   },
+   {
+    "number": 21,
+    "value": "investigate"
    },
    {
     "number": 22,
@@ -900,7 +904,7 @@
   {
    "groupId": "g04",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 23,
    "partExplicit": true,
    "instruction": {
@@ -910,9 +914,10 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Effects on weather on mood",
      "Effects on weather on mood\n21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an effect on a person’s mood.",
      "22. They expect to find that ‘good’ weather (weather which is ␦ ) has a positive effect on a person’s mood.",
      "23. Stella defines effect on mood’ as a ␦ in the way a person feels."
@@ -921,6 +926,29 @@
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "completion",
+     "stem": {
+      "plain": "Phil and Stella’s goal is to ______ the hypothesis that weather has an effect on a person’s mood.",
+      "segments": [
+       "Phil and Stella’s goal is to",
+       {
+        "blank": 21
+       },
+       "the hypothesis that weather has an effect on a person’s mood."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an  (input box in source)",
+     "correctAnswer": "investigate",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[19]",
+      "rawExcerpt": "21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an effect on a person’s mood."
+     }
+    },
     {
      "number": 22,
      "type": "completion",
@@ -972,11 +1000,6 @@
     "elementPath": "entry-content.children[18]",
     "rawExcerpt": "Part 3: Questions 21-23\nComplete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
    },
-   "markerRange": [
-    21,
-    23
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1540,7 +1563,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 38,
+ "verifiedQuestionCount": 39,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

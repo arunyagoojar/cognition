@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "2ef2980cdd5fd241e04edb9bf891b49defd3266835983b9b331cafe412ed2227",
+ "contentFingerprint": "83c6ab92ac9fca44534b463b0cae5edaddfa9f0778ca380dd6eb2a4bb4d73d06",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -255,6 +255,26 @@
     "value": "quiet"
    },
    {
+    "number": 11,
+    "value": "sundays"
+   },
+   {
+    "number": 12,
+    "value": "1998"
+   },
+   {
+    "number": 13,
+    "value": "100000"
+   },
+   {
+    "number": 14,
+    "value": "government"
+   },
+   {
+    "number": 15,
+    "value": "research"
+   },
+   {
     "number": 16,
     "value": "conference centre"
    },
@@ -273,6 +293,10 @@
    {
     "number": 20,
     "value": "stamp display"
+   },
+   {
+    "number": 21,
+    "value": "B"
    },
    {
     "number": 22,
@@ -686,15 +710,140 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "The British Library",
      "The British Library\n11. The reading rooms are only open for group visits on ␦\n12. The library was officially opened in ␦\n13. All the library rooms together cover ␦ meter square.\n14. The library is financed by the ␦\n15. The main function of the library is to provide resources for people doing ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "The reading rooms are only open for group visits on ______",
+      "segments": [
+       "The reading rooms are only open for group visits on",
+       {
+        "blank": 11
+       },
+       {
+        "blank": 11
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. The reading rooms are only open for group visits on ␦ (input box in source)",
+     "correctAnswer": "sundays",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "11. The reading rooms are only open for group visits on ␦"
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "The library was officially opened in ______",
+      "segments": [
+       "The library was officially opened in",
+       {
+        "blank": 12
+       },
+       {
+        "blank": 12
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. The library was officially opened in ␦ (input box in source)",
+     "correctAnswer": "1998",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "12. The library was officially opened in ␦"
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "All the library rooms together cover ______ meter square.",
+      "segments": [
+       "All the library rooms together cover",
+       {
+        "blank": 13
+       },
+       "meter square."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. All the library rooms together cover ␦ meter square. (input box in source)",
+     "correctAnswer": "100000",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "13. All the library rooms together cover ␦ meter square."
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "The library is financed by the ______",
+      "segments": [
+       "The library is financed by the",
+       {
+        "blank": 14
+       },
+       {
+        "blank": 14
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. The library is financed by the ␦ (input box in source)",
+     "correctAnswer": "government",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "14. The library is financed by the ␦"
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "The main function of the library is to provide resources for people doing ______",
+      "segments": [
+       "The main function of the library is to provide resources for people doing",
+       {
+        "blank": 15
+       },
+       {
+        "blank": 15
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. The main function of the library is to provide resources for peopl (input box in source)",
+     "correctAnswer": "research",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "15. The main function of the library is to provide resources for people doing ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the sentences below. Write NO MORE THAN THREE WORDS for each answer."
@@ -855,7 +1004,7 @@
   {
    "groupId": "g05",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 25,
    "partExplicit": true,
    "instruction": {
@@ -865,19 +1014,52 @@
     "originalText": "Choose the correct answer A. B or C"
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Project on work placement",
+     "A describe a policy.",
+     "B investigate an assumption.",
+     "C identify a problem.",
      "Project on work placement\n21. The main aim of Dave’s project is to\nA describe a policy.\nB investigate an assumption.\nC identify a problem.",
+     "A schools.",
+     "B colleges.",
+     "C universities.",
      "22. Dave’s project is based on schemes in\nA schools.\nB colleges.\nC universities.",
+     "A 15",
+     "B 50",
+     "C 150",
      "23. How many academic organisations returned Dave’s questionnaire?\nA 15\nB 50\nC 150",
+     "A Human Resources Managers.",
+     "B Line Managers.",
+     "C owners.",
      "24. Dave wanted his questionnaires to be completed by company\nA Human Resources Managers.\nB Line Managers.\nC owners.",
+     "A respondents.",
+     "B appendices.",
+     "C companies.",
      "25. Dr Green wants Dave to provide a full list of\nA respondents.\nB appendices.\nC companies."
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "The main aim of Dave’s project is to",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "21. The main aim of Dave’s project is to"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -951,11 +1133,6 @@
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21-25\nChoose the correct answer A. B or C"
    },
-   "markerRange": [
-    21,
-    25
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1319,18 +1496,6 @@
  "quarantinedUnits": [
   {
    "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     15
-    ]
-   }
-  },
-  {
-   "unit": "group",
    "groupId": "g08",
    "reasonCode": "PHANTOM_SPLIT_MERGED",
    "evidence": {
@@ -1343,8 +1508,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 29,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 35,
+ "quarantinedCount": 1,
  "status": "flagged",
  "schemaErrors": []
 }

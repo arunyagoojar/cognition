@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "b3999692f54ab99520f9d43480074d86c23f55fbb33227b3827321f07a738349",
+ "contentFingerprint": "5d2a3e2a30824a5f0cfa7d5610bb97afd7f6fee086596c97d4773d7df8f08d03",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -221,6 +221,18 @@
    {
     "number": 2,
     "value": "C"
+   },
+   {
+    "number": 3,
+    "value": "Wesley"
+   },
+   {
+    "number": 4,
+    "value": "70"
+   },
+   {
+    "number": 5,
+    "value": "fifth"
    },
    {
     "number": 6,
@@ -457,19 +469,95 @@
    "endQ": 5,
    "partExplicit": false,
    "instruction": {
-    "text": "Complete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer. Complete the details for Margaret’s address: 3. Street: ␦ 4. Number: ␦ 5. Location: ␦ house on the left",
+    "text": "Complete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer.",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Complete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer. Complete the details for Margaret’s address:\n3. Street: ␦\n4. Number: ␦\n5. Location: ␦ house on the left"
+    "originalText": "Complete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "sentences",
     "table": null,
-    "segments": null,
+    "segments": [
+     "Complete the details for Margaret’s address:\n3. Street: ␦\n4. Number: ␦\n5. Location: ␦ house on the left"
+    ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 3,
+     "type": "completion",
+     "stem": {
+      "plain": "Street: ______",
+      "segments": [
+       "Street:",
+       {
+        "blank": 3
+       },
+       {
+        "blank": 3
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 3. Street: ␦ (input box in source)",
+     "correctAnswer": "Wesley",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "3. Street: ␦"
+     }
+    },
+    {
+     "number": 4,
+     "type": "completion",
+     "stem": {
+      "plain": "Number: ______",
+      "segments": [
+       "Number:",
+       {
+        "blank": 4
+       },
+       {
+        "blank": 4
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 4. Number: ␦ (input box in source)",
+     "correctAnswer": "70",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "4. Number: ␦"
+     }
+    },
+    {
+     "number": 5,
+     "type": "completion",
+     "stem": {
+      "plain": "Location: ______ house on the left",
+      "segments": [
+       "Location:",
+       {
+        "blank": 5
+       },
+       "house on the left"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 5. Location: ␦ house on the left (input box in source)",
+     "correctAnswer": "fifth",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "5. Location: ␦ house on the left"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Questions 3-5\nComplete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer."
@@ -1748,18 +1836,6 @@
  "quarantinedUnits": [
   {
    "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     3,
-     5
-    ]
-   }
-  },
-  {
-   "unit": "group",
    "groupId": "g04",
    "reasonCode": "PHANTOM_SPLIT_MERGED",
    "evidence": {
@@ -1792,8 +1868,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 3,
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 2,
  "status": "flagged",
  "schemaErrors": []
 }

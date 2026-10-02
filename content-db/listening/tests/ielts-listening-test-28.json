@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "803af518fb2a46ab5cea4c3715deb05f384820747aa2181b02319ca311f52664",
+ "contentFingerprint": "40c2834098bf8628bf20d402cc721a0b36528704eb40a1f89904e81ac07d656e",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -255,6 +255,10 @@
    {
     "number": 10,
     "value": "local"
+   },
+   {
+    "number": 11,
+    "value": "fisherman"
    },
    {
     "number": 12,
@@ -648,7 +652,7 @@
   {
    "groupId": "g02",
    "part": 2,
-   "startQ": 12,
+   "startQ": 11,
    "endQ": 17,
    "partExplicit": true,
    "instruction": {
@@ -658,9 +662,10 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/ OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "The story of John Manjiro",
      "The story of John Manjiro\n11. Manjiro started work as a ␦ when he was still a young boy.",
      "12. He spent ␦ on a deserted island before he was rescued.",
      "13. He became friends with William Whitefield who was a ship’s ␦",
@@ -673,6 +678,29 @@
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "Manjiro started work as a ______ when he was still a young boy.",
+      "segments": [
+       "Manjiro started work as a",
+       {
+        "blank": 11
+       },
+       "when he was still a young boy."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. Manjiro started work as a ␦ when he was still a young boy. (input box in source)",
+     "correctAnswer": "fisherman",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[5]",
+      "rawExcerpt": "11. Manjiro started work as a ␦ when he was still a young boy."
+     }
+    },
     {
      "number": 12,
      "type": "completion",
@@ -822,11 +850,6 @@
     "elementPath": "entry-content.children[4]",
     "rawExcerpt": "Part 2: Questions 11-17\nComplete the sentences below. Write NO MORE THAN TWO WORDS AND/ OR A NUMBER for each answer."
    },
-   "markerRange": [
-    11,
-    17
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1566,7 +1589,7 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 39,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []

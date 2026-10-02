@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "f2dcd376d6e8eab377251331e3bbf85192b0d00f1dfeb77c74fc9814006aa7ed",
+ "contentFingerprint": "f80d64cf2234b1a16fd3d52724634cd2eb1530325fd43bf29fe704f0615f718d",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -271,6 +271,18 @@
    {
     "number": 17,
     "value": "government lottery"
+   },
+   {
+    "number": 18,
+    "value": "F"
+   },
+   {
+    "number": 19,
+    "value": "A"
+   },
+   {
+    "number": 20,
+    "value": "D"
    },
    {
     "number": 21,
@@ -1049,12 +1061,89 @@
     "table": null,
     "segments": [
      "A Best spread of risks to meet investors’ objectives\nB Known, guaranteed returns for fixed period of time\nC Should be purchased if buyer is optimistic\nD High risk, potentially high returns\nE Always mean investment in new, small companies with excellent technologies\nF Provide steady returns",
+     "Item",
      "Item\n18. Blue chip stocks ␦\n19. Balanced portfolios ␦\n20. Venture capital investments ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 18,
+     "type": "completion",
+     "stem": {
+      "plain": "Blue chip stocks ______",
+      "segments": [
+       "Blue chip stocks",
+       {
+        "blank": 18
+       },
+       {
+        "blank": 18
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 18. Blue chip stocks ␦ (input box in source)",
+     "correctAnswer": "F",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "18. Blue chip stocks ␦"
+     }
+    },
+    {
+     "number": 19,
+     "type": "completion",
+     "stem": {
+      "plain": "Balanced portfolios ______",
+      "segments": [
+       "Balanced portfolios",
+       {
+        "blank": 19
+       },
+       {
+        "blank": 19
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 19. Balanced portfolios ␦ (input box in source)",
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "19. Balanced portfolios ␦"
+     }
+    },
+    {
+     "number": 20,
+     "type": "completion",
+     "stem": {
+      "plain": "Venture capital investments ______",
+      "segments": [
+       "Venture capital investments",
+       {
+        "blank": 20
+       },
+       {
+        "blank": 20
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 20. Venture capital investments ␦ (input box in source)",
+     "correctAnswer": "D",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "20. Venture capital investments ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[21]",
     "rawExcerpt": "Questions 18-20\nSelect the correct letter A-F and write next to the questions 18 to 20."
@@ -1861,18 +1950,6 @@
      15
     ]
    }
-  },
-  {
-   "unit": "group",
-   "groupId": "g11",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     18,
-     20
-    ]
-   }
   }
  ],
  "validationWarnings": [
@@ -1882,8 +1959,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 1,
  "status": "flagged",
  "schemaErrors": []
 }

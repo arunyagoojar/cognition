@@ -48,9 +48,6 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
         return (
           <span key={index} className="inline-blank">
-            {qId && /^q\d+$/.test(qId) && (
-              <span className="blank-num">{qId.replace('q', '')}</span>
-            )}
             <input
               type="text"
               data-qid={qId}
@@ -59,6 +56,9 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
               className="cognition-exam-input"
               style={{ display: 'inline-block', width: '150px', margin: '0 4px' }}
             />
+            {qId && /^q\d+$/.test(qId) && (
+              <b className="blank-num">{qId.replace('q', '')}</b>
+            )}
           </span>
         );
       }

@@ -3082,23 +3082,38 @@ input, textarea, select {
   letter-spacing: 0.002em;
 }
 .exam-doc .stim-title {
-  font-weight: 700;
-  font-size: 18px;
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 17px;
   letter-spacing: 0.01em;
-  margin: 14px 0 6px;
+  margin: 16px 0 8px;
 }
 .exam-doc .stim-title:first-child { margin-top: 0; }
 .exam-doc .stim-subsection {
+  font-family: var(--font-family);
   font-weight: 700;
-  font-size: 15.5px;
-  margin: 12px 0 4px;
+  font-size: 14.5px;
+  margin: 14px 0 6px;
   color: var(--text-primary);
 }
 .exam-doc .stim-bullet {
-  margin: 2px 0 2px 20px;
+  margin: 3px 0 3px 20px;
   text-indent: -12px;
+  line-height: 1.6;
 }
-.exam-doc .stim-line { margin: 3px 0; }
+.exam-doc .stim-line { margin: 4px 0; line-height: 1.6; }
+.exam-doc table.stimulus-table { margin: 10px 0; }
+.exam-doc table.stimulus-table.bordered td {
+  border: 1.5px solid var(--text-primary);
+  border-width: 1.5px;
+  border-style: solid;
+}
+.exam-doc table.bordered tr:first-child td {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--surface-sunken);
+}
 .exam-doc .stimulus-options {
   background: var(--surface-sunken);
   border: 1px solid var(--border-subtle);
@@ -3139,21 +3154,14 @@ input, textarea, select {
   border-bottom-color: var(--c-yellow, #F5C518);
   background: #fff;
 }
-.inline-blank { position: relative; display: inline-block; margin: 0 2px; }
+.inline-blank { display: inline-block; margin: 0 2px; white-space: nowrap; }
 .inline-blank .blank-num {
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: var(--font-family);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
-  color: var(--text-secondary);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0 5px;
-  line-height: 14px;
+  color: var(--text-primary);
+  margin-left: 3px;
+  vertical-align: baseline;
 }
 /* exam question block (standalone questions) */
 .exam-doc .exam-q-num { font-weight: 700; margin-right: 6px; }

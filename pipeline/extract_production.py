@@ -358,6 +358,33 @@ def process(slug, page_loader):
     # cambridge identity (advisory, only where the book pages map it)
     rec["cambridgeIdentity"] = IDENTITY.get(slug, [])
 
+    # shared-stimulus merge: a group whose stimulus is only interactive input rows
+    # (no table, no prose) duplicates blanks already present in the previous group's
+    # stimulus — merge it so each question is listed exactly once.
+    INPUT_ROW_ONLY = re.compile(r"^(?:\(\d{1,2}\)[….…·\s\u2426]*)+$")
+    merged_into = {}
+    gi = 1
+    while gi < len(groups_json):
+        gB = groups_json[gi]
+        segs = [s for s in (gB["stimulus"].get("segments") or [])]
+        rows_only = (not gB["stimulus"].get("table")) and segs and all(INPUT_ROW_ONLY.match(s.strip()) for s in segs)
+        if rows_only and gi > 0:
+            gA = groups_json[gi - 1]
+            numsB = {q["number"] for q in gB["questions"]}
+            segsA_text = " ".join(gA["stimulus"].get("segments") or []) + " " + json.dumps(gA["stimulus"].get("table") or {})
+            covered = all(f"({n})" in segsA_text for n in numsB) and numsB
+            if covered:
+                have = {q["number"] for q in gA["questions"]}
+                gA["questions"].extend(q for q in gB["questions"] if q["number"] not in have)
+                gA["questions"].sort(key=lambda q: q["number"])
+                lo = min(gA["startQ"], gB["startQ"]); hi = max(gA["endQ"], gB["endQ"])
+                gA["markerRange"] = [gA["startQ"], gA["endQ"]]
+                gA["startQ"], gA["endQ"] = lo, hi
+                gA["mergedGroups"] = (gA.get("mergedGroups") or []) + [gB["groupId"]]
+                groups_json.pop(gi)
+                continue
+        gi += 1
+
     # part assignment for groups that never saw an explicit part marker:
     # standard IELTS listening section boundaries, unless the test's explicit
     # markers conflict. Every assignment by this rule is recorded.

@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "ecb18ce1fa6fc5e9e856ee2da0b09201a72529e293cf96a864851086325d38b8",
+ "contentFingerprint": "fe828727b8d8d44b26cd495f2e704aef945a9d4bf3f1086a3f90f8f8452438dd",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -276,6 +276,18 @@
    {
     "number": 10,
     "value": "yentob"
+   },
+   {
+    "number": 11,
+    "value": "coal and firewood"
+   },
+   {
+    "number": 12,
+    "value": "local craftsmen"
+   },
+   {
+    "number": 13,
+    "value": "160"
    },
    {
     "number": 14,
@@ -706,15 +718,92 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "RIVERSIDE INDUSTRIAL VILLAGE",
      "RIVERSIDE INDUSTRIAL VILLAGE\n11. Riverside Village was a good place to start an industry because it had water, raw materials and fuels such as ␦ and ␦\n12. The metal industry was established at Riverside Village by ␦ who lived in the area.\n13. There were over ␦ water-powered mills in the area in the eighteenth century."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "Riverside Village was a good place to start an industry because it had water, raw materials and fuels such as ______ and ______",
+      "segments": [
+       "Riverside Village was a good place to start an industry because it had water, raw materials and fuels such as",
+       {
+        "blank": 11
+       },
+       "and",
+       {
+        "blank": 11
+       },
+       {
+        "blank": 11
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. Riverside Village was a good place to start an industry because it (input box in source)",
+     "correctAnswer": "coal and firewood",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "11. Riverside Village was a good place to start an industry because it had water, raw materials and fuels such as ␦ and ␦"
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "The metal industry was established at Riverside Village by ______ who lived in the area.",
+      "segments": [
+       "The metal industry was established at Riverside Village by",
+       {
+        "blank": 12
+       },
+       "who lived in the area."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. The metal industry was established at Riverside Village by ␦ who l (input box in source)",
+     "correctAnswer": "local craftsmen",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "12. The metal industry was established at Riverside Village by ␦ who lived in the area."
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "There were over ______ water-powered mills in the area in the eighteenth century.",
+      "segments": [
+       "There were over",
+       {
+        "blank": 13
+       },
+       "water-powered mills in the area in the eighteenth century."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. There were over ␦ water-powered mills in the area in the eighteent (input box in source)",
+     "correctAnswer": "160",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "13. There were over ␦ water-powered mills in the area in the eighteenth century."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Part 2: Questions 11-13\nComplete the sentences below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
@@ -937,7 +1026,13 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A she was doing work for another course.",
+     "B it was a really big assignment.",
+     "C she hasn’t spent time in the library.",
      "21. Melanie says she has not started the assignment because\nA she was doing work for another course.\nB it was a really big assignment.\nC she hasn’t spent time in the library.",
+     "A planning problems.",
+     "B problems with assignment deadlines.",
+     "C personal illness or accident.",
      "22. The lecturer says that reasonable excuses for extensions are\nA planning problems.\nB problems with assignment deadlines.\nC personal illness or accident."
     ],
     "figures": null,
@@ -1522,20 +1617,7 @@
   "fnameInputs": 39
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     13
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1543,8 +1625,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 37,
- "quarantinedCount": 1,
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []
 }

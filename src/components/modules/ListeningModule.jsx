@@ -493,19 +493,6 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         </div>
       </div>
 
-      {/* ── 2. SECTION HEADER (once per section) ── */}
-      <div style={{
-        background: 'var(--bg-card)',
-        border: 'var(--border-dark)',
-        borderRadius: 'var(--r-card)',
-        padding: '12px 22px',
-        boxShadow: '0 3px 0 #151313'
-      }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-          IELTS Listening Section {partIdx + 1}
-        </div>
-      </div>
-
       {/* ── 3. COGNITION NATIVE AUDIO PLAYER ── */}
       {currentPart?.audioFile && (
         <div className="audio-player-cognition">

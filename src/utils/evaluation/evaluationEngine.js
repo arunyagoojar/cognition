@@ -6,6 +6,7 @@ import { AIProvider } from '../ai/aiProvider.js';
 import { calculateReadingBand, calculateListeningBand, calculateOverallBand } from '../bandCalculator.js';
 import { normalizeAnswer } from '../../data/canonical/normalizer.js';
 import { recordAttempt } from '../performanceStore.js';
+import { getApiKey, getGroqApiKey } from '../storage.js';
 
 /**
  * Checks whether candidate answer matches official answer using deterministic normalizer.
@@ -245,30 +246,63 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
 /**
  * Evaluates Speaking interview responses via AI examiner:
  */
-export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, attemptId = 'anon' }) {
+/**
+ * Speaking evaluation with explicit, mutually consistent states.
+ *
+ * evaluationState ∈ NOT_ASSESSED | NOT_CONFIGURED | COMPLETED | FAILED | PARTIAL
+ * - transcript alone can never produce a pronunciation score (no audio-capable
+ *   evaluator exists) — pronunciation is always reported as Not assessed.
+ * - criterion scores and "unavailable" banners can never appear together:
+ *   criteria are null unless evaluationState === COMPLETED (or PARTIAL with an
+ *   explicit availableCriteria list).
+ * - notes are planning material and are never sent to the evaluator.
+ */
+export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, attemptId = 'anon' }) {
   const spokenWords = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
-  if (!spokenWords || spokenWords.split(/\s+/).length < 5) {
-    return {
-      status: 'not_attempted',
-      band: null,
-      criteria: null,
-      message: 'No audio or spoken transcript recorded.'
-    };
-  }
 
   const partsAttempted = new Set();
   let questionsAnswered = 0;
-  
   Object.keys(transcripts).forEach(k => {
     if (transcripts[k] && transcripts[k].split(/\s+/).length >= 5) {
       questionsAnswered++;
-      // Keys are typically in the format 'part0_q0' or similar
       const match = k.match(/part(\d+)/i);
       if (match) partsAttempted.add(match[1]);
     }
   });
+  const isCoverageComplete = partsAttempted.size >= 3 && questionsAnswered >= 8;
+  const coverage = { partsAttempted: Array.from(partsAttempted), questionsAnswered, questionsExpected: 14, isComplete: isCoverageComplete };
 
-  const isComplete = partsAttempted.size >= 3 && questionsAnswered >= 8;
+  const pronunciationNotAssessed = {
+    assessed: false,
+    band: null,
+    reason: 'Audio pronunciation analysis is not currently available. Pronunciation is never inferred from transcription accuracy.',
+  };
+
+  if (!spokenWords || spokenWords.split(/\s+/).length < 5) {
+    return {
+      evaluationState: 'NOT_ASSESSED',
+      status: 'not_attempted',
+      band: null,
+      overallSpeakingBand: null,
+      criteria: { pronunciation: pronunciationNotAssessed },
+      coverage,
+      message: 'No audio or spoken transcript recorded.'
+    };
+  }
+
+  // Evaluation configuration must gate the display of criterion scores.
+  const hasEvaluator = Boolean(getApiKey() || getGroqApiKey());
+  if (!hasEvaluator) {
+    return {
+      evaluationState: 'NOT_CONFIGURED',
+      status: isCoverageComplete ? 'completed' : 'partial',
+      band: null,
+      overallSpeakingBand: null,
+      criteria: { pronunciation: pronunciationNotAssessed },
+      coverage,
+      message: 'AI evaluation is unavailable. Add an API key in Settings to receive criterion-level feedback.',
+    };
+  }
 
   const res = await AIProvider.evaluateSpeaking({
     transcripts,
@@ -277,11 +311,49 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     attemptId
   });
 
+  if (!res || res.status !== 'completed' || !res.criteria) {
+    return {
+      evaluationState: 'FAILED',
+      status: isCoverageComplete ? 'completed' : 'partial',
+      band: null,
+      overallSpeakingBand: null,
+      criteria: { pronunciation: pronunciationNotAssessed },
+      coverage,
+      message: res?.message || 'The evaluation service could not score this attempt. You can retry.',
+      retryable: true,
+    };
+  }
+
+  // Hard honesty rule: strip any model-returned pronunciation score.
+  const criteria = { ...res.criteria, pronunciation: pronunciationNotAssessed };
+
+  if (!isCoverageComplete) {
+    return {
+      evaluationState: 'PARTIAL',
+      status: 'partial',
+      band: res.band ?? null,
+      overallSpeakingBand: null,
+      responseFeedbackBand: res.band ?? null,
+      criteria,
+      overallSummary: res.overallSummary || '',
+      strengths: res.strengths || '',
+      areasForImprovement: res.areasForImprovement || '',
+      provider: res.provider,
+      coverage,
+    };
+  }
+
   return {
-    overallSpeakingBand: isComplete ? res.overallBand : null,
-    status: isComplete ? 'completed' : 'partial',
-    coverage: { partsAttempted: Array.from(partsAttempted), questionsAnswered, questionsExpected: 14, isComplete },
-    ...res
+    evaluationState: 'COMPLETED',
+    status: 'completed',
+    band: res.band ?? null,
+    overallSpeakingBand: res.overallBand ?? null,
+    criteria,
+    overallSummary: res.overallSummary || '',
+    strengths: res.strengths || '',
+    areasForImprovement: res.areasForImprovement || '',
+    provider: res.provider,
+    coverage,
   };
 }
 

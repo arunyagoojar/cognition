@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "45243944ba6052dd8db219d3e176de74df9f2c4b8274ca9b4b2c2d8453ae2549",
+ "contentFingerprint": "6eb7c108a220707dd88fdc4776a5b01d573e66936b727e972efba8a1e53c46af",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -245,6 +245,34 @@
    {
     "number": 10,
     "value": "coffee table"
+   },
+   {
+    "number": 11,
+    "value": "plan"
+   },
+   {
+    "number": 12,
+    "value": "on foot"
+   },
+   {
+    "number": 13,
+    "value": "sensible clothes"
+   },
+   {
+    "number": 14,
+    "value": "weather"
+   },
+   {
+    "number": 15,
+    "value": "volunteers"
+   },
+   {
+    "number": 16,
+    "value": "accidents"
+   },
+   {
+    "number": 17,
+    "value": "finish line"
    },
    {
     "number": 18,
@@ -673,15 +701,182 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Marathon – tips for spectators",
      "Marathon – tips for spectators\n11. To enjoy the day, make sure you ␦ it first.\n12. Travel ␦ within the city centre.\n13. Wear ␦ on the day.\n14. Check the ␦ the night before the marathon\n15. Let the ␦ give drinks to runners.\n16. Ray on one side of the road to avoid ␦\n17. Don’t arrange to meet runners near the ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "To enjoy the day, make sure you ______ it first.",
+      "segments": [
+       "To enjoy the day, make sure you",
+       {
+        "blank": 11
+       },
+       "it first."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. To enjoy the day, make sure you ␦ it first. (input box in source)",
+     "correctAnswer": "plan",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "11. To enjoy the day, make sure you ␦ it first."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "Travel ______ within the city centre.",
+      "segments": [
+       "Travel",
+       {
+        "blank": 12
+       },
+       "within the city centre."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. Travel ␦ within the city centre. (input box in source)",
+     "correctAnswer": "on foot",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "12. Travel ␦ within the city centre."
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "Wear ______ on the day.",
+      "segments": [
+       "Wear",
+       {
+        "blank": 13
+       },
+       "on the day."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. Wear ␦ on the day. (input box in source)",
+     "correctAnswer": "sensible clothes",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "13. Wear ␦ on the day."
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "Check the ______ the night before the marathon",
+      "segments": [
+       "Check the",
+       {
+        "blank": 14
+       },
+       "the night before the marathon"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. Check the ␦ the night before the marathon (input box in source)",
+     "correctAnswer": "weather",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "14. Check the ␦ the night before the marathon"
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "Let the ______ give drinks to runners.",
+      "segments": [
+       "Let the",
+       {
+        "blank": 15
+       },
+       "give drinks to runners."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. Let the ␦ give drinks to runners. (input box in source)",
+     "correctAnswer": "volunteers",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "15. Let the ␦ give drinks to runners."
+     }
+    },
+    {
+     "number": 16,
+     "type": "completion",
+     "stem": {
+      "plain": "Ray on one side of the road to avoid ______",
+      "segments": [
+       "Ray on one side of the road to avoid",
+       {
+        "blank": 16
+       },
+       {
+        "blank": 16
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 16. Ray on one side of the road to avoid ␦ (input box in source)",
+     "correctAnswer": "accidents",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "16. Ray on one side of the road to avoid ␦"
+     }
+    },
+    {
+     "number": 17,
+     "type": "completion",
+     "stem": {
+      "plain": "Don’t arrange to meet runners near the ______",
+      "segments": [
+       "Don’t arrange to meet runners near the",
+       {
+        "blank": 17
+       },
+       {
+        "blank": 17
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 17. Don’t arrange to meet runners near the ␦ (input box in source)",
+     "correctAnswer": "finish line",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "17. Don’t arrange to meet runners near the ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Part 2: Questions 11-17\nComplete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
@@ -785,11 +980,29 @@
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A He wasn’t aide to get there on time.",
+     "B He didn’t know all the modems.",
+     "C He couldn’t understand everything.",
      "21. What does Ahmed say about last week’s seminar?\nA He wasn’t aide to get there on time.\nB He didn’t know all the modems.\nC He couldn’t understand everything.",
+     "A He was better prepared than some students.",
+     "B He completed some useful work.",
+     "C He read some useful articles.",
      "22. What does the tutor say about Ahmed’s preparation for the seminar?\nA He was better prepared than some students.\nB He completed some useful work.\nC He read some useful articles.",
+     "A He tended to speak to his neighbour only.",
+     "B He spoke when other students were talking.",
+     "C He felt embarrassed when students looked at him",
      "23. What does Ahmed say about his participation in the seminar?\nA He tended to speak to his neighbour only.\nB He spoke when other students were talking.\nC He felt embarrassed when students looked at him",
+     "A speaking at the right time",
+     "B taking enough notes",
+     "C staying focused",
      "24. What does Ahmed worry about most in seminars?\nA speaking at the right time\nB taking enough notes\nC staying focused",
+     "A He hasn’t thought about it.",
+     "B He’d like to change",
+     "C He feels he is acting a part.",
      "25. What does Ahmed say about his role in the group?\nA He hasn’t thought about it.\nB He’d like to change\nC He feels he is acting a part.",
+     "A give other modems more help with their work.",
+     "B observe the behaviour of other students.",
+     "C ask other students for their views.",
      "26. At the next seminar, Ahmed, tutor suggests that he should\nA give other modems more help with their work.\nB observe the behaviour of other students.\nC ask other students for their views."
     ],
     "figures": null,
@@ -1345,23 +1558,10 @@
   "fnameInputs": 30
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     17
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 33,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

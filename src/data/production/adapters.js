@@ -71,11 +71,49 @@ export function adaptProductionListening(rec, includeAnswers = false) {
  * as 'partial' and withholds the overall band).
  */
 export function adaptProductionSpeaking(pkg) {
-  const cueCardLines = [
-    pkg.cueCard.topic,
-    ...(pkg.cueCard.bulletPrompts || []),
-  ].filter(Boolean);
-
+  // Full 3-part interview shape. Per-part provenance travels with each part:
+  // Part 1/Part 3 are generated practice; the Part 2 topic is authentic Makkar.
+  const p1 = pkg.part1 || { available: false };
+  const p3 = pkg.part3 || { available: false };
+  const parts = [];
+  if (p1.available) {
+    parts.push({
+      partNumber: 1,
+      part: 1,
+      title: 'Part 1 · Introduction & Interview',
+      instructions: 'Answer the questions in full sentences. Approx. 4–5 minutes for this part in a real test.',
+      questions: p1.topicSet?.questions || [],
+      followUps: p1.topicSet?.followUps || [],
+      provenanceType: p1.provenanceType,
+      topicSetTopic: p1.topicSet?.topic,
+    });
+  }
+  parts.push({
+    partNumber: 2,
+    part: 2,
+    title: 'Part 2 · Long Turn',
+    instructions: '1 minute to prepare (make notes), then speak for up to 2 minutes.',
+    cueCard: {
+      topic: pkg.cueCard.topic,
+      leadIn: pkg.cueCard.leadIn || 'You should say:',
+      bulletPrompts: pkg.cueCard.bulletPrompts || [],
+      finalInstruction: pkg.cueCard.finalInstruction || '',
+    },
+    questions: [pkg.cueCard.topic],
+    topicProvenance: pkg.part2?.topic?.provenanceType || 'SOURCE_PRACTICE',
+    topicSource: pkg.part2?.topic?.source || null,
+    sampleAnswer: pkg.sampleAnswer,
+  });
+  if (p3.available) {
+    parts.push({
+      partNumber: 3,
+      part: 3,
+      title: 'Part 3 · Discussion',
+      instructions: 'Discuss the questions with the examiner. Give extended, developed answers.',
+      questions: (p3.questions || []).map(q => q.question),
+      provenanceType: p3.provenanceType,
+    });
+  }
   return {
     testId: pkg.id,
     id: pkg.id,
@@ -83,19 +121,11 @@ export function adaptProductionSpeaking(pkg) {
     title: `IELTS Speaking — ${pkg.cueCard.topic || 'Cue Card'}`,
     isRandomized: false,
     coverage: pkg.coverage,
+    category: pkg.category,
     hubNumber: pkg.hubNumber,
     sampleAnswer: pkg.sampleAnswer,
     source: pkg.source,
-    parts: [
-      {
-        partNumber: 2,
-        part: 2,
-        title: 'Part 2 · Cue Card',
-        instructions: 'Read the cue card, use the preparation time, then speak for up to two minutes.',
-        cueCard: pkg.cueCard,
-        questions: cueCardLines,
-      },
-    ],
+    parts,
   };
 }
 

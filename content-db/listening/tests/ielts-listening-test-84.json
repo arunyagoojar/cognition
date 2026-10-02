@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "579c38df500282fe12a28657c72506d276975322f4f0096806d8d5d052683913",
+ "contentFingerprint": "3619c262acb2a94b93b8527d0aa1431fccc51e20df1705f783c3ac6151dd790a",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -293,6 +293,10 @@
    {
     "number": 20,
     "value": "A"
+   },
+   {
+    "number": 21,
+    "value": "C"
    },
    {
     "number": 22,
@@ -981,7 +985,7 @@
   {
    "groupId": "g06",
    "part": 3,
-   "startQ": 22,
+   "startQ": 21,
    "endQ": 25,
    "partExplicit": true,
    "instruction": {
@@ -991,19 +995,52 @@
     "originalText": "Choose the correct letter; A, B or C"
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "Food Waste",
+     "A . It focused more on packaging than wasted food.",
+     "B . It proved that households produced more waste than restaurants.",
+     "C . It included liquid waste as well as solid waste.",
      "Food Waste\n21. What point does Robert make about the 2013 study in Britain?\nA . It focused more on packaging than wasted food.\nB . It proved that households produced more waste than restaurants.\nC . It included liquid waste as well as solid waste.",
+     "A . food production.",
+     "B . transport of food to landfill sites.",
+     "C . distribution of food products.",
      "22. The speakers agree that food waste reports should emphasise the connection between carbon dioxide emissions and\nA . food production.\nB . transport of food to landfill sites.\nC . distribution of food products.",
+     "A . the nutritional value of food products.",
+     "B . the origin of food products.",
+     "C . the chemicals found in food products.",
      "23. Television programmes now tend to focus on\nA . the nutritional value of food products.\nB . the origin of food products.\nC . the chemicals found in food products.",
+     "A . the moral aspect.",
+     "B . the environmental impact.",
+     "C . the economic effect.",
      "24. For Anna, the most significant point about food waste is\nA . the moral aspect.\nB . the environmental impact.\nC . the economic effect.",
+     "A . handing out a questionnaire.",
+     "B . providing statistical evidence.",
+     "C . showing images of wasted food.",
      "25. Anna and Robert decide to begin their presentation by\nA . handing out a questionnaire.\nB . providing statistical evidence.\nC . showing images of wasted food."
     ],
     "figures": null,
     "sharedOptions": null
    },
    "questions": [
+    {
+     "number": 21,
+     "type": "short_answer",
+     "stem": {
+      "plain": "What point does Robert make about the 2013 study in Britain?",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "21. What point does Robert make about the 2013 study in Britain?"
+     }
+    },
     {
      "number": 22,
      "type": "short_answer",
@@ -1077,11 +1114,6 @@
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21-25\nChoose the correct letter; A, B or C"
    },
-   "markerRange": [
-    21,
-    25
-   ],
-   "rangeReconciled": true,
    "status": "verified"
   },
   {
@@ -1503,7 +1535,7 @@
  "unparsed": [],
  "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
+ "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
  "schemaErrors": []

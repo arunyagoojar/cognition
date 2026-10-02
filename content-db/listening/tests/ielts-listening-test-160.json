@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "782a9335a60b94f094adffbfa2a894aec8e74bce3a5154f0f62a89687fa8e307",
+ "contentFingerprint": "9af7a624fee8321582cc5fd9ff5e421a47775ce4e06dade217e80e272d3f1f2e",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -348,6 +348,30 @@
    {
     "number": 34,
     "value": "C"
+   },
+   {
+    "number": 35,
+    "value": "1450"
+   },
+   {
+    "number": 36,
+    "value": "disease"
+   },
+   {
+    "number": 37,
+    "value": "prince"
+   },
+   {
+    "number": 38,
+    "value": "diet"
+   },
+   {
+    "number": 39,
+    "value": "attack humans"
+   },
+   {
+    "number": 40,
+    "value": "leadership"
    }
   ]
  },
@@ -1474,15 +1498,161 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "THE GIR SANCTUARY",
      "THE GIR SANCTUARY\n35. The sanctuary has an area of approximately ␦ square kilometers\n36. One threat to the lions in the sanctuary is ␦\n37. The ancestors of the Gir Sanctuary lions were protected by a ␦\n38. A large part of lions’ ␦ consists of animals belonging to local farmers\n39. The lions sometimes ␦ especially when water is short\n40. In ancient India a man would fight a lion as a test of ␦"
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 35,
+     "type": "completion",
+     "stem": {
+      "plain": "The sanctuary has an area of approximately ______ square kilometers",
+      "segments": [
+       "The sanctuary has an area of approximately",
+       {
+        "blank": 35
+       },
+       "square kilometers"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 35. The sanctuary has an area of approximately ␦ square kilometers (input box in source)",
+     "correctAnswer": "1450",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "35. The sanctuary has an area of approximately ␦ square kilometers"
+     }
+    },
+    {
+     "number": 36,
+     "type": "completion",
+     "stem": {
+      "plain": "One threat to the lions in the sanctuary is ______",
+      "segments": [
+       "One threat to the lions in the sanctuary is",
+       {
+        "blank": 36
+       },
+       {
+        "blank": 36
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 36. One threat to the lions in the sanctuary is ␦ (input box in source)",
+     "correctAnswer": "disease",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "36. One threat to the lions in the sanctuary is ␦"
+     }
+    },
+    {
+     "number": 37,
+     "type": "completion",
+     "stem": {
+      "plain": "The ancestors of the Gir Sanctuary lions were protected by a ______",
+      "segments": [
+       "The ancestors of the Gir Sanctuary lions were protected by a",
+       {
+        "blank": 37
+       },
+       {
+        "blank": 37
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 37. The ancestors of the Gir Sanctuary lions were protected by a ␦ (input box in source)",
+     "correctAnswer": "prince",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "37. The ancestors of the Gir Sanctuary lions were protected by a ␦"
+     }
+    },
+    {
+     "number": 38,
+     "type": "completion",
+     "stem": {
+      "plain": "A large part of lions’ ______ consists of animals belonging to local farmers",
+      "segments": [
+       "A large part of lions’",
+       {
+        "blank": 38
+       },
+       "consists of animals belonging to local farmers"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 38. A large part of lions’ ␦ consists of animals belonging to local fa (input box in source)",
+     "correctAnswer": "diet",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "38. A large part of lions’ ␦ consists of animals belonging to local farmers"
+     }
+    },
+    {
+     "number": 39,
+     "type": "completion",
+     "stem": {
+      "plain": "The lions sometimes ______ especially when water is short",
+      "segments": [
+       "The lions sometimes",
+       {
+        "blank": 39
+       },
+       "especially when water is short"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 39. The lions sometimes ␦ especially when water is short (input box in source)",
+     "correctAnswer": "attack humans",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "39. The lions sometimes ␦ especially when water is short"
+     }
+    },
+    {
+     "number": 40,
+     "type": "completion",
+     "stem": {
+      "plain": "In ancient India a man would fight a lion as a test of ______",
+      "segments": [
+       "In ancient India a man would fight a lion as a test of",
+       {
+        "blank": 40
+       },
+       {
+        "blank": 40
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 40. In ancient India a man would fight a lion as a test of ␦ (input box in source)",
+     "correctAnswer": "leadership",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[23]",
+      "rawExcerpt": "40. In ancient India a man would fight a lion as a test of ␦"
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[22]",
     "rawExcerpt": "Questions 35-40\nComplete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
@@ -1520,23 +1690,10 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g08",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     35,
-     40
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "e33ed52f5c01923ee3fbc7e1917d943ec2fd1e934f687d09ff2c66d966c75c47",
+ "contentFingerprint": "b0da01ff44400edd39526a60267ae785a4f51740da23c507c8a20fc661f82f11",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -247,6 +247,26 @@
     "value": "50%"
    },
    {
+    "number": 11,
+    "value": "1.30"
+   },
+   {
+    "number": 12,
+    "value": "25 December"
+   },
+   {
+    "number": 13,
+    "value": "car parking"
+   },
+   {
+    "number": 14,
+    "value": "45"
+   },
+   {
+    "number": 15,
+    "value": "tables"
+   },
+   {
     "number": 19,
     "value": "B"
    },
@@ -341,7 +361,7 @@
    "groupId": "g01",
    "part": 1,
    "startQ": 1,
-   "endQ": 2,
+   "endQ": 10,
    "partExplicit": true,
    "instruction": {
     "text": "Choose the correct letter A, B or C.",
@@ -456,237 +476,197 @@
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. George wants to sit at the back so they can"
      }
-    }
-   ],
-   "provenance": {
-    "elementPath": "entry-content.children[0]",
-    "rawExcerpt": "Part 1: Questions 1 and 2\nChoose the correct letter A, B or C."
-   },
-   "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 1,
-   "startQ": 3,
-   "endQ": 10,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Complete the form below. Write NO MORE THAN TWO WORDS OR A NUMBER.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Complete the form below. Write NO MORE THAN TWO WORDS OR A NUMBER."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "(3) ␦ (4) ␦",
-     "(5) ␦ (6) ␦",
-     "(7) ␦ (8) ␦",
-     "(9) ␦ (10) ␦"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [
+    },
     {
      "number": 3,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Address: ______ Westsea",
       "segments": [
+       "Address:",
        {
         "blank": 3
        },
-       {
-        "blank": 4
-       }
+       "Westsea"
       ]
      },
      "options": null,
-     "blankContext": "line: (3) ␦ (4) ␦",
+     "blankContext": "line: Address: (3)………………..Westsea",
      "correctAnswer": "48 north avenue",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(3) ␦ (4) ␦"
+      "elementPath": "entry-content.children[5]",
+      "rawExcerpt": "Address: (3)………………..Westsea"
      }
     },
     {
      "number": 4,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Postcode: ______",
       "segments": [
-       {
-        "blank": 3
-       },
+       "Postcode:",
        {
         "blank": 4
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (3) ␦ (4) ␦",
+     "blankContext": "line: Postcode: (4)…………….",
      "correctAnswer": "WS62YH",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(3) ␦ (4) ␦"
+      "elementPath": "entry-content.children[6]",
+      "rawExcerpt": "Postcode: (4)……………."
      }
     },
     {
      "number": 5,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Telephone: ______",
       "segments": [
+       "Telephone:",
        {
         "blank": 5
-       },
-       {
-        "blank": 6
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (5) ␦ (6) ␦",
+     "blankContext": "line: Telephone: (5)……………….",
      "correctAnswer": "01674553242",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(5) ␦ (6) ␦"
+      "elementPath": "entry-content.children[7]",
+      "rawExcerpt": "Telephone: (5)………………."
      }
     },
     {
      "number": 6,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "Singer (price includes ______ in the garden",
       "segments": [
-       {
-        "blank": 5
-       },
+       "Singer (price includes",
        {
         "blank": 6
-       }
+       },
+       "in the garden"
       ]
      },
      "options": null,
-     "blankContext": "line: (5) ␦ (6) ␦",
+     "blankContext": "table row 3 col 2",
      "correctAnswer": "drinks/ refreshments",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(5) ␦ (6) ␦"
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "Singer (price includes (6)……………..in the garden"
      }
     },
     {
      "number": 7,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "______ Anna Ventura",
       "segments": [
        {
         "blank": 7
        },
-       {
-        "blank": 8
-       }
+       "Anna Ventura"
       ]
      },
      "options": null,
-     "blankContext": "line: (7) ␦ (8) ␦",
+     "blankContext": "table row 4 col 2",
      "correctAnswer": "pianist/ piano player",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(7) ␦ (8) ␦"
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "(7)……………………Anna Ventura"
      }
     },
     {
      "number": 8,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "______ £…………….",
       "segments": [
        {
-        "blank": 7
-       },
-       {
         "blank": 8
-       }
+       },
+       "£……………."
       ]
      },
      "options": null,
-     "blankContext": "line: (7) ␦ (8) ␦",
+     "blankContext": "table row 5 col 3",
      "correctAnswer": "10.50",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(7) ␦ (8) ␦"
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "(8) £……………."
      }
     },
     {
      "number": 9,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "______",
       "segments": [
        {
         "blank": 9
-       },
-       {
-        "blank": 10
        }
       ]
      },
      "options": null,
-     "blankContext": "line: (9) ␦ (10) ␦",
+     "blankContext": "table row 5 col 4",
      "correctAnswer": "4",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(9) ␦ (10) ␦"
+      "elementPath": "entry-content.children[8]",
+      "rawExcerpt": "(9)…………………"
      }
     },
     {
      "number": 10,
      "type": "completion",
      "stem": {
-      "plain": "______ ______",
+      "plain": "NB: Children/ students/ senior citizens have ______ discount on all tickets",
       "segments": [
-       {
-        "blank": 9
-       },
+       "NB: Children/ students/ senior citizens have",
        {
         "blank": 10
-       }
+       },
+       "discount on all tickets"
       ]
      },
      "options": null,
-     "blankContext": "line: (9) ␦ (10) ␦",
+     "blankContext": "line: NB: Children/ students/ senior citizens have (10)………………..discount on a",
      "correctAnswer": "50%",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
-      "rawExcerpt": "(9) ␦ (10) ␦"
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "NB: Children/ students/ senior citizens have (10)………………..discount on all tickets"
      }
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Questions 3-10\nComplete the form below. Write NO MORE THAN TWO WORDS OR A NUMBER."
+    "elementPath": "entry-content.children[0]",
+    "rawExcerpt": "Part 1: Questions 1 and 2\nChoose the correct letter A, B or C."
    },
-   "partAssignedBy": "inherited_no_marker",
+   "markerRange": [
+    1,
+    2
+   ],
+   "mergedGroups": [
+    "g02"
+   ],
    "status": "verified"
   },
   {
@@ -702,15 +682,136 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "THE DINOSAUR MUSEUM",
      "THE DINOSAUR MUSEUM\n11. The museum closes at ␦ p.m. on Mondays.\n12. The museum is not open on ␦\n13. School groups are met by tour guides in the ␦\n14. The whole visit takes 90 minutes, including ␦ minutes for the guided tour.\n15. There are ␦ behind the museum where students can have lunch."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "The museum closes at ______ p.m. on Mondays.",
+      "segments": [
+       "The museum closes at",
+       {
+        "blank": 11
+       },
+       "p.m. on Mondays."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. The museum closes at ␦ p.m. on Mondays. (input box in source)",
+     "correctAnswer": "1.30",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "11. The museum closes at ␦ p.m. on Mondays."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "The museum is not open on ______",
+      "segments": [
+       "The museum is not open on",
+       {
+        "blank": 12
+       },
+       {
+        "blank": 12
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. The museum is not open on ␦ (input box in source)",
+     "correctAnswer": "25 December",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "12. The museum is not open on ␦"
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "School groups are met by tour guides in the ______",
+      "segments": [
+       "School groups are met by tour guides in the",
+       {
+        "blank": 13
+       },
+       {
+        "blank": 13
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. School groups are met by tour guides in the ␦ (input box in source)",
+     "correctAnswer": "car parking",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "13. School groups are met by tour guides in the ␦"
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "The whole visit takes 90 minutes, including ______ minutes for the guided tour.",
+      "segments": [
+       "The whole visit takes 90 minutes, including",
+       {
+        "blank": 14
+       },
+       "minutes for the guided tour."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. The whole visit takes 90 minutes, including ␦ minutes for the guid (input box in source)",
+     "correctAnswer": "45",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "14. The whole visit takes 90 minutes, including ␦ minutes for the guided tour."
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "There are ______ behind the museum where students can have lunch.",
+      "segments": [
+       "There are",
+       {
+        "blank": 15
+       },
+       "behind the museum where students can have lunch."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. There are ␦ behind the museum where students can have lunch. (input box in source)",
+     "correctAnswer": "tables",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[13]",
+      "rawExcerpt": "15. There are ␦ behind the museum where students can have lunch."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the sentences below. Write NO MORE THAN TWO WORDS OR A NUMBER."
@@ -1468,18 +1569,6 @@
  "quarantinedUnits": [
   {
    "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     15
-    ]
-   }
-  },
-  {
-   "unit": "group",
    "groupId": "g04",
    "reasonCode": "PHANTOM_SPLIT_MERGED",
    "evidence": {
@@ -1492,8 +1581,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 32,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 1,
  "status": "flagged",
  "schemaErrors": []
 }

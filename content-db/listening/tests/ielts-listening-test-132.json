@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "15e1f66f2a5c2c284fa7dc3e8a44ddd5cb897fcc7234d06f8f3355234656545a",
+ "contentFingerprint": "8262351811f1fa60fd80706d13253db2e729bcf0310a5b2ef2ab96069d682d90",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -260,6 +260,30 @@
    {
     "number": 10,
     "value": "E"
+   },
+   {
+    "number": 11,
+    "value": "breakfast"
+   },
+   {
+    "number": 12,
+    "value": "paintings"
+   },
+   {
+    "number": 13,
+    "value": "castle"
+   },
+   {
+    "number": 14,
+    "value": "famous people"
+   },
+   {
+    "number": 15,
+    "value": "antiques show"
+   },
+   {
+    "number": 16,
+    "value": "old postcards"
    },
    {
     "number": 17,
@@ -685,16 +709,157 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "The Hotel",
      "The Hotel\n11. You must book ␦ in advance.\n12. There are some interesting ␦ in the lounge.",
+     "Activities",
      "Activities\n13. The visit to the ␦ has been cancelled.\n14. There will be a talk about ␦ from the area on Saturday.\n15. The visit to the ␦ will take place on Saturday.\n16. There is a collection of ␦ in the art gallery."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 11,
+     "type": "completion",
+     "stem": {
+      "plain": "You must book ______ in advance.",
+      "segments": [
+       "You must book",
+       {
+        "blank": 11
+       },
+       "in advance."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 11. You must book ␦ in advance. (input box in source)",
+     "correctAnswer": "breakfast",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[11]",
+      "rawExcerpt": "11. You must book ␦ in advance."
+     }
+    },
+    {
+     "number": 12,
+     "type": "completion",
+     "stem": {
+      "plain": "There are some interesting ______ in the lounge.",
+      "segments": [
+       "There are some interesting",
+       {
+        "blank": 12
+       },
+       "in the lounge."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 12. There are some interesting ␦ in the lounge. (input box in source)",
+     "correctAnswer": "paintings",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[11]",
+      "rawExcerpt": "12. There are some interesting ␦ in the lounge."
+     }
+    },
+    {
+     "number": 13,
+     "type": "completion",
+     "stem": {
+      "plain": "The visit to the ______ has been cancelled.",
+      "segments": [
+       "The visit to the",
+       {
+        "blank": 13
+       },
+       "has been cancelled."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 13. The visit to the ␦ has been cancelled. (input box in source)",
+     "correctAnswer": "castle",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[12]",
+      "rawExcerpt": "13. The visit to the ␦ has been cancelled."
+     }
+    },
+    {
+     "number": 14,
+     "type": "completion",
+     "stem": {
+      "plain": "There will be a talk about ______ from the area on Saturday.",
+      "segments": [
+       "There will be a talk about",
+       {
+        "blank": 14
+       },
+       "from the area on Saturday."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 14. There will be a talk about ␦ from the area on Saturday. (input box in source)",
+     "correctAnswer": "famous people",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[12]",
+      "rawExcerpt": "14. There will be a talk about ␦ from the area on Saturday."
+     }
+    },
+    {
+     "number": 15,
+     "type": "completion",
+     "stem": {
+      "plain": "The visit to the ______ will take place on Saturday.",
+      "segments": [
+       "The visit to the",
+       {
+        "blank": 15
+       },
+       "will take place on Saturday."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 15. The visit to the ␦ will take place on Saturday. (input box in source)",
+     "correctAnswer": "antiques show",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[12]",
+      "rawExcerpt": "15. The visit to the ␦ will take place on Saturday."
+     }
+    },
+    {
+     "number": 16,
+     "type": "completion",
+     "stem": {
+      "plain": "There is a collection of ______ in the art gallery.",
+      "segments": [
+       "There is a collection of",
+       {
+        "blank": 16
+       },
+       "in the art gallery."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 16. There is a collection of ␦ in the art gallery. (input box in source)",
+     "correctAnswer": "old postcards",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[12]",
+      "rawExcerpt": "16. There is a collection of ␦ in the art gallery."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[10]",
     "rawExcerpt": "Part 2: Questions 11-16\nComplete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
@@ -1497,23 +1662,10 @@
   "fnameInputs": 37
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     16
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }

@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "782dfc064d70601b8fe2861723d3301b73a72f6e72494d17289267a5d9ab44f6",
+ "contentFingerprint": "05100d1e78e79ef415fae86185a0b85c3a9d02411045154d456c8afbe2d52ac1",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -283,6 +283,18 @@
    {
     "number": 17,
     "value": "soup"
+   },
+   {
+    "number": 18,
+    "value": "light/ torch"
+   },
+   {
+    "number": 19,
+    "value": "jacket"
+   },
+   {
+    "number": 20,
+    "value": "trails/ path"
    },
    {
     "number": 21,
@@ -853,15 +865,88 @@
     "originalText": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "In the cave you should:",
      "In the cave you should:\n18. carry a ␦\n19. wear a ␦ and a hat.\n20. keep to the ␦ at all times."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 18,
+     "type": "completion",
+     "stem": {
+      "plain": "carry a ______",
+      "segments": [
+       "carry a",
+       {
+        "blank": 18
+       },
+       {
+        "blank": 18
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 18. carry a ␦ (input box in source)",
+     "correctAnswer": "light/ torch",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "18. carry a ␦"
+     }
+    },
+    {
+     "number": 19,
+     "type": "completion",
+     "stem": {
+      "plain": "wear a ______ and a hat.",
+      "segments": [
+       "wear a",
+       {
+        "blank": 19
+       },
+       "and a hat."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 19. wear a ␦ and a hat. (input box in source)",
+     "correctAnswer": "jacket",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "19. wear a ␦ and a hat."
+     }
+    },
+    {
+     "number": 20,
+     "type": "completion",
+     "stem": {
+      "plain": "keep to the ______ at all times.",
+      "segments": [
+       "keep to the",
+       {
+        "blank": 20
+       },
+       "at all times."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 20. keep to the ␦ at all times. (input box in source)",
+     "correctAnswer": "trails/ path",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "20. keep to the ␦ at all times."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Questions 18-20\nComplete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
@@ -1665,20 +1750,7 @@
   "fnameInputs": 38
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     18,
-     20
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1686,8 +1758,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 37,
- "quarantinedCount": 1,
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
  "status": "flagged",
  "schemaErrors": []
 }

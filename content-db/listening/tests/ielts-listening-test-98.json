@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "ef4fb70d2ddcaac0fbd42e65a838efdf8247f22fb09e1f8b19e6d414265a6f99",
+ "contentFingerprint": "7390ec67d3ed6a2dbbbb6bbe2ee6a2ee041563bf0e2dab3a30a317e2ac49f76d",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -349,6 +349,22 @@
    {
     "number": 36,
     "value": "garbage"
+   },
+   {
+    "number": 37,
+    "value": "600"
+   },
+   {
+    "number": 38,
+    "value": "coral reefs"
+   },
+   {
+    "number": 39,
+    "value": "australia and japan"
+   },
+   {
+    "number": 40,
+    "value": "22,000"
    }
   ]
  },
@@ -1638,15 +1654,109 @@
     "originalText": "Complete the notes below. Write NO MORE THAN THREE WORDS AND/ OR A NUMBER for each answer."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "sentences",
     "table": null,
     "segments": [
+     "‘The census of marine life’ indicates:",
      "‘The census of marine life’ indicates:\n37. There are over ␦ invasive species in the Mediterranean Sea.\n38. The area with ␦ has a high rate of speciation\n39. The two countries, ␦ have the most marine species in the world.\n40. There will be around ␦ fish species in the world according to the survey."
     ],
     "figures": null,
     "sharedOptions": null
    },
-   "questions": [],
+   "questions": [
+    {
+     "number": 37,
+     "type": "completion",
+     "stem": {
+      "plain": "There are over ______ invasive species in the Mediterranean Sea.",
+      "segments": [
+       "There are over",
+       {
+        "blank": 37
+       },
+       "invasive species in the Mediterranean Sea."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 37. There are over ␦ invasive species in the Mediterranean Sea. (input box in source)",
+     "correctAnswer": "600",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[27]",
+      "rawExcerpt": "37. There are over ␦ invasive species in the Mediterranean Sea."
+     }
+    },
+    {
+     "number": 38,
+     "type": "completion",
+     "stem": {
+      "plain": "The area with ______ has a high rate of speciation",
+      "segments": [
+       "The area with",
+       {
+        "blank": 38
+       },
+       "has a high rate of speciation"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 38. The area with ␦ has a high rate of speciation (input box in source)",
+     "correctAnswer": "coral reefs",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[27]",
+      "rawExcerpt": "38. The area with ␦ has a high rate of speciation"
+     }
+    },
+    {
+     "number": 39,
+     "type": "completion",
+     "stem": {
+      "plain": "The two countries, ______ have the most marine species in the world.",
+      "segments": [
+       "The two countries,",
+       {
+        "blank": 39
+       },
+       "have the most marine species in the world."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 39. The two countries, ␦ have the most marine species in the world. (input box in source)",
+     "correctAnswer": "australia and japan",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[27]",
+      "rawExcerpt": "39. The two countries, ␦ have the most marine species in the world."
+     }
+    },
+    {
+     "number": 40,
+     "type": "completion",
+     "stem": {
+      "plain": "There will be around ______ fish species in the world according to the survey.",
+      "segments": [
+       "There will be around",
+       {
+        "blank": 40
+       },
+       "fish species in the world according to the survey."
+      ]
+     },
+     "options": null,
+     "blankContext": "line: 40. There will be around ␦ fish species in the world according to the  (input box in source)",
+     "correctAnswer": "22,000",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[27]",
+      "rawExcerpt": "40. There will be around ␦ fish species in the world according to the survey."
+     }
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[26]",
     "rawExcerpt": "Questions 37-40\nComplete the notes below. Write NO MORE THAN THREE WORDS AND/ OR A NUMBER for each answer."
@@ -1688,23 +1798,10 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g09",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     37,
-     40
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
  "schemaErrors": []
 }
