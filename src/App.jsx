@@ -30,9 +30,17 @@ import { PRODUCTION_READING } from './data/production/productionContent.js';
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 export default function App() {
+  const hasClerk = Boolean(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+  return hasClerk ? <AppWithAuth /> : <AppContent signedIn={true} openSignIn={() => {}} />;
+}
+
+function AppWithAuth() {
   const { isLoaded: authLoaded, isSignedIn } = useUser();
   const { openSignIn } = useClerk();
+  return <AppContent authLoaded={authLoaded} isSignedIn={isSignedIn} openSignIn={openSignIn} />;
+}
 
+function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {} }) {
   const [view, setView] = useState(() => {
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.status === 'in_progress') {
@@ -142,7 +150,7 @@ export default function App() {
 
   // ── Auth-gated practice start: app is freely browsable, sign-in required at practice entry ──
   const startSkillProtected = (skillId) => {
-    if (PUBLISHABLE_KEY && !isSignedIn) {
+    if (!isSignedIn) {
       openSignIn();
       return;
     }
@@ -150,7 +158,7 @@ export default function App() {
   };
 
   const startMockProtected = (examId) => {
-    if (PUBLISHABLE_KEY && !isSignedIn) {
+    if (!isSignedIn) {
       openSignIn();
       return;
     }

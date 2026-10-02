@@ -6,12 +6,13 @@ import App from './App.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
-if (!PUBLISHABLE_KEY) {
-  console.warn('[Cognition] VITE_CLERK_PUBLISHABLE_KEY is not set — authentication disabled.')
-}
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+function Root() {
+  // Without a Clerk key, render without auth — the app is fully functional
+  if (!PUBLISHABLE_KEY) {
+    console.warn('[Cognition] VITE_CLERK_PUBLISHABLE_KEY is not set — authentication disabled.')
+    return <App />
+  }
+  return (
     <ClerkProvider
       publishableKey={PUBLISHABLE_KEY}
       appearance={{
@@ -24,15 +25,15 @@ createRoot(document.getElementById('root')).render(
           colorInputBackground: '#F7F7F5',
           colorInputText: '#151313',
         },
-        elements: {
-          card: 'clerk-card',
-          modalContent: 'clerk-modal',
-          socialButtonsBlockButton: 'clerk-social-btn',
-          formButtonPrimary: 'clerk-primary-btn',
-        },
       }}
     >
       <App />
     </ClerkProvider>
+  )
+}
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Root />
   </StrictMode>,
 )

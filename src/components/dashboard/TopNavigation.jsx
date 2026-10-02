@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 
