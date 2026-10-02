@@ -49,3 +49,10 @@ public/videos
 # too heavy for git (same rationale as public/wp-content)
 public/videos/
 .env
+
+# Wrangler local simulator state (uploads without --remote land here)
+.wrangler/state/
+
+# Original source media kept for forensic retention only
+content-db/orig/
+ffmpeg2pass-0.log*

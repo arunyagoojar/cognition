@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveMediaUrl } from '../../utils/media.js';
 
 export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }) {
   if (!htmlContent) return null;
@@ -93,7 +94,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
       if (node.id) props.id = node.id;
       if (node.className) props.className = node.className;
       if (node.getAttribute('src')) {
-        props.src = node.getAttribute('src').replace(/^(\.\.\/)+wp-content/, '/wp-content');
+        props.src = resolveMediaUrl(node.getAttribute('src').replace(/^(\.\.\/)+wp-content/, '/wp-content'));
       }
       if (node.getAttribute('href')) {
         props.href = node.getAttribute('href').replace(/^(\.\.\/)+wp-content/, '/wp-content');

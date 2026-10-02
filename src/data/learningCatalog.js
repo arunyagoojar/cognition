@@ -1,4 +1,6 @@
 // IELTS Video Learning Catalog curated from official IELTS Media library
+import { resolveMediaUrl } from '../utils/media.js';
+
 export const LEARNING_SKILLS = [
   {
     id: 'speaking',
@@ -15,7 +17,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 1,
         title: 'Expressing Opinions & Nuanced Views',
         duration: '15m',
-        videoUrl: '/videos/Speaking/001 How to give your opinion.mp4',
+        videoUrl: resolveMediaUrl('/videos/Speaking/001 How to give your opinion.mp4'),
         description: 'Learn how to move beyond basic phrases like "I think" to sophisticated stance markers such as "From my perspective" and "I tend to believe".',
         takeaways: [
           'Use epistemic hedging ("It could be argued that...") rather than absolutes',
@@ -30,7 +32,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 2,
         title: 'Mastering Speaking Part 1: Fluency & Speed',
         duration: '18m',
-        videoUrl: '/videos/Speaking/002 IELTS Speaking Task 1.mp4',
+        videoUrl: resolveMediaUrl('/videos/Speaking/002 IELTS Speaking Task 1.mp4'),
         description: 'Overcome hesitation and master the 2-3 sentence formula for personal interview questions without unnatural pauses.',
         takeaways: [
           'Answer directly in sentence 1, elaborate in sentence 2, provide example in sentence 3',
@@ -45,7 +47,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 3,
         title: 'Mastering Speaking Part 2: Long Turn & Cue Card',
         duration: '24m',
-        videoUrl: '/videos/Speaking/003 IELTS Speaking Task 2.mp4',
+        videoUrl: resolveMediaUrl('/videos/Speaking/003 IELTS Speaking Task 2.mp4'),
         description: 'Structure your 1-minute preparation note-taking to sustain a fluent, coherent 2-minute monologue across all 4 cue card prompts.',
         takeaways: [
           'Divide your note-sheet into 4 quadrants matching the 4 bullet points',
@@ -60,7 +62,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 4,
         title: 'Mastering Speaking Part 3: Abstract Discussion',
         duration: '20m',
-        videoUrl: '/videos/Speaking/004 IELTS Speaking Task 3.mp4',
+        videoUrl: resolveMediaUrl('/videos/Speaking/004 IELTS Speaking Task 3.mp4'),
         description: 'Transition from personal anecdotes to societal, philosophical, and macroscopic analysis needed for Band 7.5+.',
         takeaways: [
           'Speak in terms of demographics: "Older generations often...", "Younger professionals tend to..."',
@@ -86,7 +88,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 1,
         title: 'Avoiding Informal Language & Punctuation Traps',
         duration: '12m',
-        videoUrl: '/videos/Writing/001 How to use ETC., AND SO ON, ....mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/001 How to use ETC., AND SO ON, ....mp4'),
         description: 'Why phrases like "etc.", "and so on", and exclamation marks are forbidden in Academic Writing and how to replace them.',
         takeaways: [
           'Never write "etc." or "..." in IELTS essays',
@@ -101,7 +103,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 2,
         title: 'Additive Transitions: In Addition, Moreover, Furthermore',
         duration: '16m',
-        videoUrl: '/videos/Writing/002 Writing - Transitions - in addition, moreover, furthermore, another.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/002 Writing - Transitions - in addition, moreover, furthermore, another.mp4'),
         description: 'Seamlessly link secondary arguments without sounding repetitive or mechanical.',
         takeaways: [
           'Place transitions adverbially: "This policy, furthermore, mitigates urban gridlock"',
@@ -116,7 +118,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 3,
         title: 'Causal Transitions: Therefore, Thus, Consequently',
         duration: '15m',
-        videoUrl: '/videos/Writing/003 Writing - Transitions - THEREFORE, THUS, CONSEQUENTLY.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/003 Writing - Transitions - THEREFORE, THUS, CONSEQUENTLY.mp4'),
         description: 'Construct airtight logical deductions that boost Coherence and Cohesion to Band 8+.',
         takeaways: [
           'Use "Consequently" to highlight real-world outcomes',
@@ -131,7 +133,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 4,
         title: 'Task 1 Comparisons: 6 Advanced Structures',
         duration: '18m',
-        videoUrl: '/videos/Writing/004 Writing - Compare -  6 ways to compare.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/004 Writing - Compare -  6 ways to compare.mp4'),
         description: 'Move beyond "higher than" into sophisticated proportional syntax and comparative ratios.',
         takeaways: [
           'Master twofold, threefold, and exponential increases',
@@ -146,7 +148,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 5,
         title: 'Academic Paragraph Cohesion & Topic Sentences',
         duration: '17m',
-        videoUrl: '/videos/Writing/005 Writing Skills- The Paragraph.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/005 Writing Skills- The Paragraph.mp4'),
         description: 'How to construct unified body paragraphs with a single controlling idea, clear supporting evidence, and macroscopic impact.',
         takeaways: [
           'Topic sentence must state the central claim without premature specifics',
@@ -161,7 +163,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 6,
         title: 'Task 1 Architecture: Overview & Main Features',
         duration: '22m',
-        videoUrl: '/videos/Writing/006 Writing Task 1 - What to write.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/006 Writing Task 1 - What to write.mp4'),
         description: 'The definitive method for identifying macro trends vs micro data points to guarantee Band 7+ in Task Achievement.',
         takeaways: [
           'The overview paragraph is MANDATORY — omit it and your score is capped at Band 5',
@@ -176,7 +178,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 7,
         title: 'Task 2 Architecture: The Band 8+ Introduction',
         duration: '20m',
-        videoUrl: '/videos/Writing/007 Writing Task 2 - The Introduction.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/007 Writing Task 2 - The Introduction.mp4'),
         description: 'Write effective introductions in 4 minutes: prompt paraphrasing, balanced perspective, and clear thesis statement.',
         takeaways: [
           'Paraphrase the prompt using synonyms and grammatical reordering',
@@ -191,7 +193,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 8,
         title: 'Tone, Register & Formal Vocabulary',
         duration: '19m',
-        videoUrl: '/videos/Writing/008 Writing Letters formal  informal English.mp4',
+        videoUrl: resolveMediaUrl('/videos/Writing/008 Writing Letters formal  informal English.mp4'),
         description: 'Distinguish between colloquial and high-register academic vocabulary across IELTS prompts.',
         takeaways: [
           'Avoid contractions: write "do not" instead of "don\'t"',
@@ -217,7 +219,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 1,
         title: 'Academic vs General Reading Differences',
         duration: '14m',
-        videoUrl: '/videos/Reading/001 IELTS Reading - General and Academic.mp4',
+        videoUrl: resolveMediaUrl('/videos/Reading/001 IELTS Reading - General and Academic.mp4'),
         description: 'Understanding the complex syntax, dense academic journals, and abstract vocabulary characteristic of the Academic test.',
         takeaways: [
           'Academic reading passages are sourced from research journals and scientific publications',
@@ -232,7 +234,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 2,
         title: 'Core Reading Strategies I: Skimming & Scanning',
         duration: '19m',
-        videoUrl: '/videos/Reading/002 IELTS Reading Strategies  1.mp4',
+        videoUrl: resolveMediaUrl('/videos/Reading/002 IELTS Reading Strategies  1.mp4'),
         description: 'How to skim a 900-word passage in 2 minutes for thematic landmarks, then scan for dates, names, and technical terms.',
         takeaways: [
           'Read the first and last sentence of each paragraph during initial skim',
@@ -247,7 +249,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 3,
         title: 'Core Reading Strategies II: Detailed Analysis',
         duration: '21m',
-        videoUrl: '/videos/Reading/003 IELTS Reading strategies 2.mp4',
+        videoUrl: resolveMediaUrl('/videos/Reading/003 IELTS Reading strategies 2.mp4'),
         description: 'Tackling True/False/Not Given questions and eliminating ambiguity between False and Not Given.',
         takeaways: [
           'FALSE means the text contradicts the statement',
@@ -262,7 +264,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 4,
         title: 'Top 10 High-Scoring Reading Tips',
         duration: '16m',
-        videoUrl: '/videos/Reading/004 IELTS Reading Top 10 Tips.mp4',
+        videoUrl: resolveMediaUrl('/videos/Reading/004 IELTS Reading Top 10 Tips.mp4'),
         description: 'Time allocation management: 17 mins for Passage 1, 20 mins for Passage 2, 23 mins for Passage 3.',
         takeaways: [
           'Transfer answers immediately — there is no 10-minute transfer time in Reading',
@@ -277,7 +279,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 5,
         title: 'Achieving Band 8+ in Academic Reading',
         duration: '25m',
-        videoUrl: '/videos/Reading/005 How to succeed on IELTS Reading.mp4',
+        videoUrl: resolveMediaUrl('/videos/Reading/005 How to succeed on IELTS Reading.mp4'),
         description: 'Synthesizing paragraph summaries and tackling the most challenging Passage 3 philosophical texts.',
         takeaways: [
           'Identify synonyms between question stems and passage paraphrases',
@@ -303,7 +305,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 1,
         title: 'Listening Section Overview & Test Structure',
         duration: '12m',
-        videoUrl: '/videos/Listening/001 Listening Overview.mp4',
+        videoUrl: resolveMediaUrl('/videos/Listening/001 Listening Overview.mp4'),
         description: 'The progression from Part 1 social conversations through Part 4 continuous university monologues.',
         takeaways: [
           'Part 1: Social inquiry / transaction (2 speakers)',
@@ -319,7 +321,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 2,
         title: 'Active Note-Taking & Prediction Skills',
         duration: '18m',
-        videoUrl: '/videos/Listening/002 Notetaking Skills.mp4',
+        videoUrl: resolveMediaUrl('/videos/Listening/002 Notetaking Skills.mp4'),
         description: 'Predicting word classes, prepositions, and grammatical formats in the 30-second prep window.',
         takeaways: [
           'Anticipate part of speech: noun, number, adjective, or verb',
@@ -334,7 +336,7 @@ export const LEARNING_SKILLS = [
         lessonNumber: 3,
         title: 'Top 14 Cambridge Listening Strategies',
         duration: '22m',
-        videoUrl: '/videos/Listening/003 IELTS Listening  Top 14 tips.mp4',
+        videoUrl: resolveMediaUrl('/videos/Listening/003 IELTS Listening  Top 14 tips.mp4'),
         description: 'Detecting speaker self-corrections ("No wait, let me check..."), negative distractors, and spelling rules.',
         takeaways: [
           'Distractor Trap: Speakers frequently change their minds halfway through',

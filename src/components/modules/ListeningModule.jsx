@@ -498,7 +498,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         <div className="audio-player-cognition">
           <audio
             ref={audioRef}
-            src={currentPart.audioFile.replace(/^(\.\.\/)+wp-content/, '/wp-content')}
+            src={currentPart.audioFile}
             onTimeUpdate={handleAudioTimeUpdate}
             onEnded={() => setIsPlaying(false)}
           />

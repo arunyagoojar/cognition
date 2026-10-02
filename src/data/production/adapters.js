@@ -12,6 +12,7 @@ import {
   PRODUCTION_WRITING,
   PRODUCTION_READING,
 } from './productionContent.js';
+import { resolveMediaUrl } from '../../utils/media.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
   const rec = PRODUCTION_LISTENING.find(t =>
@@ -41,9 +42,9 @@ export function adaptProductionListening(rec, includeAnswers = false) {
       part: p.part,
       title: p.title,
       instructions: p.instructions,
-      audioFile: p.audioFile || rec.audio.appPath || null,
+      audioFile: resolveMediaUrl(p.audioFile || rec.audio.appPath) || null,
       audioFlags: rec.audio.flags,
-      htmlContent: p.htmlContent,
+      htmlContent: resolvePromptHtml(p.htmlContent),
       questions: p.questions.map(q => ({
         ...q,
         answer: includeAnswers ? q.answer : null,
@@ -205,6 +206,10 @@ export function getRandomProductionWritingTask(kind) {
  * Academic Reading tests: 3 passages, question groups, answers from the verified
  * production database. includeAnswers gates the answer key like Listening.
  */
+function resolvePromptHtml(html) {
+    return html.replace(/src="(\/wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p)}"`);
+}
+
 export function adaptProductionReading(rec, includeAnswers = false) {
   return {
     testId: rec.testId,
