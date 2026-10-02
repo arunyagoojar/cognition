@@ -17,7 +17,18 @@ createRoot(document.getElementById('root')).render(
       appearance={{
         variables: {
           fontFamily: "'Kodchasan', -apple-system, sans-serif",
-          borderRadius: '16px',
+          borderRadius: '18px',
+          colorPrimary: '#FF5734',
+          colorBackground: '#FFFFFF',
+          colorText: '#151313',
+          colorInputBackground: '#F7F7F5',
+          colorInputText: '#151313',
+        },
+        elements: {
+          card: 'clerk-card',
+          modalContent: 'clerk-modal',
+          socialButtonsBlockButton: 'clerk-social-btn',
+          formButtonPrimary: 'clerk-primary-btn',
         },
       }}
     >
