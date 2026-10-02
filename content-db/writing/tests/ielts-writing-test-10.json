@@ -1,0 +1,96 @@
+{
+ "id": "writing.test-0010.60ea47fc",
+ "module": "writing",
+ "sourceNumbers": [
+  10
+ ],
+ "slug": "ielts-writing-test-10",
+ "title": "IELTS Academic Writing Test 10",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-10/index.html",
+   "sha256": "4f311e47211ddbe418df1591befb0d89c2cf1024ca3752d78c8936984d2c6b36",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-10/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. underground railway systems",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. underground railway",
+   "regionBlocks": 4
+  },
+  "table": {
+   "rows": [
+    [
+     "City",
+     "Date opened",
+     "Kilometers of route",
+     "Passengers per year (in millions)"
+    ],
+    [
+     "London",
+     "1863",
+     "394",
+     "775"
+    ],
+    [
+     "Paris",
+     "1900",
+     "199",
+     "1191"
+    ],
+    [
+     "Tokyo",
+     "1927",
+     "155",
+     "1927"
+    ],
+    [
+     "Washington DC",
+     "1976",
+     "126",
+     "144"
+    ],
+    [
+     "Kyoto",
+     "1981",
+     "11",
+     "45"
+    ],
+    [
+     "Los Angeles",
+     "2001",
+     "28",
+     "50"
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Some say that the most important thing about being rich is that one has the opportunity to help others. To what extent do you agree or disagree? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Some say that the most important thing about being rich is that one has the opportunity to help others. To what extent do you agree or disagree? Write at least 250 words.",
+   "regionBlocks": 4
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "27956b46ae97ab80772ed10c147adf2240c02d23d55dd2595fdb1e8667bc1059"
+}

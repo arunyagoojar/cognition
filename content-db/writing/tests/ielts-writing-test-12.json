@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0012.ef8801ca",
+ "module": "writing",
+ "sourceNumbers": [
+  12
+ ],
+ "slug": "ielts-writing-test-12",
+ "title": "IELTS Academic Writing Test 12",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-12/index.html",
+   "sha256": "0d0262366ba912232727eeda16b8a4e1df2d123ca9c9cc2b564a2efb3ed0d325",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-12/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The chart below shows male and female fitness membership between 1970 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The chart below shows male and female fitness membership between 1970 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+   "regionBlocks": 4
+  },
+  "visual": {
+   "assetId": "asset.1ba9b152dacb",
+   "sourcePath": "wp-content/uploads/2024/09/test-12-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-12-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-12-min.png",
+   "sha256": "1ba9b152dacba7f8b16553fe348d5ff806ced8a5142656287ce5ace988427844",
+   "bytes": 9060,
+   "mimeType": "image/webp",
+   "width": 465,
+   "height": 275,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-12/index.html",
+   "visualType": "other"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "As a country develops, people tend to buy more cars. Do the advantages for the individual outweigh the disadvantages for the environment? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "As a country develops, people tend to buy more cars. Do the advantages for the individual outweigh the disadvantages for the environment? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "bc7cc0e9d46c359c8d4c3c10ac3d331568daf7c4dea7dc66b082a6d91994786c"
+}

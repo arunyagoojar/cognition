@@ -1,0 +1,69 @@
+{
+ "id": "writing.test-0044.493c6856",
+ "module": "writing",
+ "sourceNumbers": [
+  44
+ ],
+ "slug": "ielts-writing-test-44",
+ "title": "IELTS Academic Writing Test 44",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-44/index.html",
+   "sha256": "cad01b926cf874585ff8a5ecee94db1279e968a724e611f5164cfa52464678c3",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-44/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The diagrams below show the life cycle of the silkworm and the stages in the production of silk cloth. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+  "wordLimitMin": null,
+  "provenance": {
+   "rawExcerpt": "The diagrams below show the life cycle of the silkworm and the stages in the production of silk cloth. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+   "regionBlocks": 3
+  },
+  "visual": {
+   "assetId": "asset.5bbd4e7858df",
+   "sourcePath": "wp-content/uploads/2024/09/test-44-1-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-44-1-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-44-1-min.png",
+   "sha256": "5bbd4e7858df85f7c92ce37088976ea04c1ad3d6442efeeef6079176c99b46c8",
+   "bytes": 15086,
+   "mimeType": "image/webp",
+   "width": 525,
+   "height": 375,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-44/index.html",
+   "visualType": "process"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Some people believe bicycles have a lot of advantages, whereas others believe bicycles have more disadvantages. Discuss both views and give your opinion. Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Some people believe bicycles have a lot of advantages, whereas others believe bicycles have more disadvantages. Discuss both views and give your opinion. Give reasons for your answer and include any relevant examples from your own knowledge",
+   "regionBlocks": 4
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [
+  {
+   "unit": "task1",
+   "code": "EXTRA_IMGS_IGNORED",
+   "detail": "additional distinct images after the first were recorded, not used: ['../wp-content/uploads/2024/09/im-44.png']"
+  }
+ ],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "8884ac33dd2da1048ad6fc93fe64bdde7bb450b866179321e82795c3f332c20c"
+}

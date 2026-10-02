@@ -1,0 +1,94 @@
+{
+ "id": "writing.test-0016.78cc2e0e",
+ "module": "writing",
+ "sourceNumbers": [
+  16
+ ],
+ "slug": "ielts-writing-test-16",
+ "title": "IELTS Academic Writing Test 16",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-16/index.html",
+   "sha256": "c901e1c976825647c6e449621859124190922117575878ff323af39d687906b7",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-16/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The table below shows the monthly expenditure of an average Australian family in 1991 and 2001. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The table below shows the monthly expenditure of an average Australian family in 1991 and 2001. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+   "regionBlocks": 3
+  },
+  "table": {
+   "rows": [
+    [
+     "",
+     "Australian dollar per month – 1991",
+     "Australian dollar per month – 2001"
+    ],
+    [
+     "food",
+     "155",
+     "160"
+    ],
+    [
+     "Electricity and gas",
+     "75",
+     "120"
+    ],
+    [
+     "Clothing",
+     "30",
+     "20"
+    ],
+    [
+     "Housing",
+     "95",
+     "100"
+    ],
+    [
+     "Transport",
+     "70",
+     "45"
+    ],
+    [
+     "Other goods and services",
+     "250",
+     "270"
+    ],
+    [
+     "Total",
+     "675",
+     "715"
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Individuals should improve the environment or is it the government and large companies that should take action? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Individuals should improve the environment or is it the government and large companies that should take action? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "249a717945fc05f03b6e2196e0d111247fea2e8698edfc6bb1ba70c940873192"
+}

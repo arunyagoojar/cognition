@@ -1,0 +1,84 @@
+{
+ "id": "writing.test-0076.38d54805",
+ "module": "writing",
+ "sourceNumbers": [
+  76
+ ],
+ "slug": "ielts-writing-test-76",
+ "title": "IELTS Academic Writing Test 76",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-76/index.html",
+   "sha256": "3113b397bf020dd2270d581004f9a521fd343e4ba7240e365c5c0983a6255f3c",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-76/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. sales: Week of October 7-13",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. sales: Week of Oct",
+   "regionBlocks": 4
+  },
+  "table": {
+   "rows": [
+    [
+     "",
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday",
+     "Sunday"
+    ],
+    [
+     "Lunch",
+     "$2,400",
+     "$2,450",
+     "$2,400",
+     "$2,375",
+     "$2,500",
+     "$1,950",
+     "$1,550"
+    ],
+    [
+     "Dinner",
+     "$3,623",
+     "$3,850",
+     "$3,445",
+     "$3,800",
+     "$4,350",
+     "$2,900",
+     "$2,450"
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Some people use technology to take advice for their medical problems rather than seeing a doctor. Why this is so? It is positive or negative development according to you? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Some people use technology to take advice for their medical problems rather than seeing a doctor. Why this is so? It is positive or negative development according to you? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "a18112a4d029dd4f17c29733aec7c37904170588e234929e09e7f5c162db4d06"
+}

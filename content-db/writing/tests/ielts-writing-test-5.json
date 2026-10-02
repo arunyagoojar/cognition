@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0005.2d7641f1",
+ "module": "writing",
+ "sourceNumbers": [
+  5
+ ],
+ "slug": "ielts-writing-test-5",
+ "title": "IELTS Academic Writing Test 5",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-5/index.html",
+   "sha256": "26946c15f8e315b1822df1694374c20894f0c17333f76d13b6b7104f45b050a8",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-5/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The bar chart below shows the percentage of Australian men and women in different age groups who did regular physical activity in 2010. Summarize the information by selecting and reporting the main features and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The bar chart below shows the percentage of Australian men and women in different age groups who did regular physical activity in 2010. Summarize the information by selecting and reporting the main features and make comparisons where releva",
+   "regionBlocks": 4
+  },
+  "visual": {
+   "assetId": "asset.e620db50cf28",
+   "sourcePath": "wp-content/uploads/2024/09/test-5-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-5-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-5-min.png",
+   "sha256": "e620db50cf2818b2181adff64c70e5a5fd5adcbb765545c62e8c3f8295f1e2c5",
+   "bytes": 7380,
+   "mimeType": "image/webp",
+   "width": 597,
+   "height": 350,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-5/index.html",
+   "visualType": "bar_chart"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Human activity has had a negative effect on plants and animal all over the world. Some people think that it is too late to do something about it. Others think that there is still time to take effective action. Discuss both sides and give your opinion. Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Human activity has had a negative effect on plants and animal all over the world. Some people think that it is too late to do something about it. Others think that there is still time to take effective action. Discuss both sides and give yo",
+   "regionBlocks": 4
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "331428a8bd92893cdb58d1fe58f8b81c4af085f805a3c0bb2ad52048a0c1cc16"
+}

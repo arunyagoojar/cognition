@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0004.8dbbc3e4",
+ "module": "writing",
+ "sourceNumbers": [
+  4
+ ],
+ "slug": "ielts-writing-test-4",
+ "title": "IELTS Academic Writing Test 4",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-4/index.html",
+   "sha256": "8549a42bc5884bb472bd8ed6f6612b0ae62d67ffcb4666597611720e9848bff4",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-4/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The plans below show the layout of a university’s sports centre now, and how it will look after redevelopment. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The plans below show the layout of a university’s sports centre now, and how it will look after redevelopment. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 w",
+   "regionBlocks": 4
+  },
+  "visual": {
+   "assetId": "asset.e47af9f82a34",
+   "sourcePath": "wp-content/uploads/2024/09/test-4-min-1.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-4-min-1.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-4-min-1.png",
+   "sha256": "e47af9f82a341d5987d8c0ca138c8750b2b0901278de956d9e41b4cf61f9b883",
+   "bytes": 16152,
+   "mimeType": "image/webp",
+   "width": 507,
+   "height": 454,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-4/index.html",
+   "visualType": "other"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "In spite of the advances made in agriculture, many people around the world still go hungry. Why is this the case? What can be done about this problem? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "In spite of the advances made in agriculture, many people around the world still go hungry. Why is this the case? What can be done about this problem? Give reasons for your answer and include any relevant examples from your own knowledge or",
+   "regionBlocks": 6
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "05ad09f665e079ad6469dad59c94e5a6c56123380d36b38010d963c115b6a201"
+}

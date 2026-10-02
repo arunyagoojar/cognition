@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0123.d2693b68",
+ "module": "writing",
+ "sourceNumbers": [
+  123
+ ],
+ "slug": "ielts-writing-test-123",
+ "title": "IELTS Academic Writing Test 123",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-123/index.html",
+   "sha256": "7d765987bc5047b3aa45c0e84993ef3803e3922910c9140051ac8de0a93f1a9b",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-123/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The diagram below shows how a biofuel called ethanol is produced. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The diagram below shows how a biofuel called ethanol is produced. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+   "regionBlocks": 3
+  },
+  "visual": {
+   "assetId": "asset.6d9a5f3c22d0",
+   "sourcePath": "wp-content/uploads/2024/09/test-123-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-123-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-123-min.png",
+   "sha256": "6d9a5f3c22d0f672c0442430174521f67c14974b55a30110fed5f958cc88059c",
+   "bytes": 32112,
+   "mimeType": "image/webp",
+   "width": 663,
+   "height": 660,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-123/index.html",
+   "visualType": "process"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "It is important for everyone, including young people, to save money for their future. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "It is important for everyone, including young people, to save money for their future. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relevant examples from your own knowledge or exp",
+   "regionBlocks": 2
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "5566de31367cabe7135964fe3ca2bace29f71c5b7bf4843eb43b7a79289fd8b5"
+}

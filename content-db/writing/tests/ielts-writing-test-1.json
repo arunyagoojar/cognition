@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0001.4e948708",
+ "module": "writing",
+ "sourceNumbers": [
+  1
+ ],
+ "slug": "ielts-writing-test-1",
+ "title": "IELTS Academic Writing Test 1",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-1/index.html",
+   "sha256": "472c5dd07d7cae9c2609ee22eaa560917d98d15db47e386bd1448b0d9b149868",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-1/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The two maps below show road access to a city hospital in 2007 and 2010. Summarize the information by selecting and reporting the main features and make comparisons wherever relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The two maps below show road access to a city hospital in 2007 and 2010. Summarize the information by selecting and reporting the main features and make comparisons wherever relevant. Write at least 150 words.",
+   "regionBlocks": 3
+  },
+  "visual": {
+   "assetId": "asset.ccae577bdb28",
+   "sourcePath": "wp-content/uploads/2024/09/test-1-min-1.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-1-min-1.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-1-min-1.png",
+   "sha256": "ccae577bdb289b566b4ec812a4b77095412d272dfb5b3ed275aba89afde64f60",
+   "bytes": 13054,
+   "mimeType": "image/webp",
+   "width": 513,
+   "height": 480,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-1/index.html",
+   "visualType": "map"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Living in a country where you have to speak a foreign language can cause serious social problems, as well as practical problems. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Living in a country where you have to speak a foreign language can cause serious social problems, as well as practical problems. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relev",
+   "regionBlocks": 4
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "26da08d4a94cbad9e020e9cab00011b784d90d6d9b133f2a4ba695b29234a8b9"
+}

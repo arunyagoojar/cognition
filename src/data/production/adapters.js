@@ -9,6 +9,7 @@
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
+  PRODUCTION_WRITING,
 } from './productionContent.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
@@ -140,4 +141,59 @@ export function getRandomProductionSpeakingPackage() {
   if (!pool.length) return null;
   const pick = pool[Math.floor(Math.random() * pool.length)];
   return adaptProductionSpeaking(pick);
+}
+
+
+/**
+ * Writing production adapter (Phase 5).
+ * Academic Writing tests with exact source prompts and Task 1 visuals/tables.
+ * Full test = Task 1 + Task 2 from the SAME source package (relationship preserved);
+ * practice mode may serve a single task via getProductionWritingTask.
+ */
+export function adaptProductionWriting(rec) {
+  return {
+    testId: rec.testId,
+    id: rec.id,
+    slug: rec.slug,
+    title: rec.title,
+    kind: rec.kind,
+    isRandomized: false,
+    durationMinutes: 60,
+    task1: rec.task1 ? {
+      ...rec.task1,
+      instructions: rec.task1.instructions || (rec.task1.wordLimitMin ? `Write at least ${rec.task1.wordLimitMin} words.` : ''),
+    } : null,
+    task2: rec.task2 ? {
+      ...rec.task2,
+      instructions: rec.task2.wordLimitMin ? `Write at least ${rec.task2.wordLimitMin} words.` : '',
+    } : null,
+    source: rec.provenance || null,
+  };
+}
+
+export function getProductionWritingTest(testId) {
+  const rec = PRODUCTION_WRITING.find(w =>
+    String(w.testId) === String(testId) || w.id === testId || w.slug === testId);
+  return rec ? adaptProductionWriting(rec) : null;
+}
+
+export function getRandomProductionWritingTest() {
+  if (!PRODUCTION_WRITING.length) return null;
+  const rec = PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
+  return adaptProductionWriting(rec);
+}
+
+export function getRandomProductionWritingTask(kind) {
+  // practice mode: a random verified task of the requested kind (1 or 2),
+  // wrapped in a single-task test object; source package id travels with it
+  const pool = PRODUCTION_WRITING.filter(w => w[kind === 1 ? 'task1' : 'task2']);
+  if (!pool.length) return null;
+  const rec = pool[Math.floor(Math.random() * pool.length)];
+  const full = adaptProductionWriting(rec);
+  return {
+    ...full,
+    title: `IELTS Academic Writing — Task ${kind} Practice`,
+    practiceTask: kind,
+    sourcePackageId: rec.id,
+  };
 }

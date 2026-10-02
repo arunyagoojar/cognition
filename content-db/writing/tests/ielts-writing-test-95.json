@@ -1,0 +1,69 @@
+{
+ "id": "writing.test-0095.b0a6b4f7",
+ "module": "writing",
+ "sourceNumbers": [
+  95
+ ],
+ "slug": "ielts-writing-test-95",
+ "title": "IELTS Academic Writing Test 95",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-95/index.html",
+   "sha256": "5918ebe47a136a67ce405c35561a4c85992103eca8174f566f210d791115cac1",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-95/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The diagrams below show the design for a wave-energy machine and its location. Summarise the information by selecting and reporting the main features and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The diagrams below show the design for a wave-energy machine and its location. Summarise the information by selecting and reporting the main features and make comparisons where relevant. Write at least 150 words.",
+   "regionBlocks": 5
+  },
+  "visual": {
+   "assetId": "asset.3bee1b44289d",
+   "sourcePath": "wp-content/uploads/2024/09/test-95-1-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-95-1-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-95-1-min.png",
+   "sha256": "3bee1b44289d87794467e73e571199ab48cfd30a50f5a82136fc93e5d5fa08f8",
+   "bytes": 11592,
+   "mimeType": "image/webp",
+   "width": 454,
+   "height": 338,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-95/index.html",
+   "visualType": "other"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "In many countries, the tradition of families having meals together is disappearing. Why is this happening? What will be the effects of it on the family and society? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "In many countries, the tradition of families having meals together is disappearing. Why is this happening? What will be the effects of it on the family and society? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [
+  {
+   "unit": "task1",
+   "code": "EXTRA_IMGS_IGNORED",
+   "detail": "additional distinct images after the first were recorded, not used: ['../wp-content/uploads/2024/09/test-95-min.png']"
+  }
+ ],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "546179cf555c913092588be9c33d484eb834475dff927b7175713040910a67f8"
+}

@@ -1,14 +1,23 @@
-import { buildDynamicPracticeManifest } from '../content/contentTestBuilder.js';
-import { getWritingTestAdapter } from '../content/contentAdapter.js';
-
-export function getRandomizedWritingTest(seed = null) {
-  const activeSeed = seed !== null ? seed : `write-dyn-${Date.now()}`;
-  const manifest = buildDynamicPracticeManifest({ seed: activeSeed, testType: 'UNKNOWN' });
-  return getWritingTestAdapter(manifest);
-}
+/**
+ * Writing data layer — PRODUCTION CONTENT (Phase 5).
+ * Academic Writing tests from the production database; source Task 1 + Task 2
+ * relationships preserved. Practice mode can serve a single task.
+ */
+import {
+  getProductionWritingTest,
+  getRandomProductionWritingTest,
+  getRandomProductionWritingTask,
+} from '../production/adapters.js';
 
 export function getWritingTest(testId) {
   if (!testId) return getRandomizedWritingTest();
-  const manifest = buildDynamicPracticeManifest({ seed: testId, testType: 'UNKNOWN' });
-  return getWritingTestAdapter(manifest);
+  return getProductionWritingTest(testId) || getRandomProductionWritingTest();
+}
+
+export function getRandomizedWritingTest() {
+  return getRandomProductionWritingTest();
+}
+
+export function getRandomizedWritingTask(taskKind) {
+  return getRandomProductionWritingTask(taskKind);
 }

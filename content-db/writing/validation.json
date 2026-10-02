@@ -1,0 +1,22 @@
+{
+ "validator": "pipeline/validate_writing.py",
+ "records": 132,
+ "task1Records": 132,
+ "task2Records": 132,
+ "images": {
+  "resolved": 120,
+  "hash_match": 120,
+  "html_table": 12
+ },
+ "errors": [],
+ "warnings": [],
+ "reconciliation": {
+  "discovered": 132,
+  "production": 132,
+  "quarantined": 0,
+  "duplicates": 0,
+  "irrelevant": 0,
+  "sum": 132,
+  "reconciles": true
+ }
+}

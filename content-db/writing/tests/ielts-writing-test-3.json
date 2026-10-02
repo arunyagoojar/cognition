@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0003.9bdcd0d3",
+ "module": "writing",
+ "sourceNumbers": [
+  3
+ ],
+ "slug": "ielts-writing-test-3",
+ "title": "IELTS Academic Writing Test 3",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-3/index.html",
+   "sha256": "2a7f7630feaf0c94c91e077d123cd8e6a0951aabe3b3275b9e64161396e86774",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-3/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The bar chart below shows the top ten countries for the production and consumption of electricity in 2014. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The bar chart below shows the top ten countries for the production and consumption of electricity in 2014. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words",
+   "regionBlocks": 4
+  },
+  "visual": {
+   "assetId": "asset.a0ddef6e23bc",
+   "sourcePath": "wp-content/uploads/2024/09/test-3-min-1.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-3-min-1.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-3-min-1.png",
+   "sha256": "a0ddef6e23bc24279cd748b3cec96671467ceeb831b1b92d839ec082683cb3e4",
+   "bytes": 13144,
+   "mimeType": "image/webp",
+   "width": 452,
+   "height": 462,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-3/index.html",
+   "visualType": "bar_chart"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Some people say History is one of the most important school subjects. Other people think that in today’s world subjects like Science and technology are more important than History. Discuss both views and give your own opinion. Give reasons for your answer and include any relevant example form your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Some people say History is one of the most important school subjects. Other people think that in today’s world subjects like Science and technology are more important than History. Discuss both views and give your own opinion. Give reasons ",
+   "regionBlocks": 5
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "467c64c1520bb7afa2388112238dae8d829fc48ae6269bb94af51e8bcfdd9818"
+}

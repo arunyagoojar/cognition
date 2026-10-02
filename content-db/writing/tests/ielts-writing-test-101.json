@@ -1,0 +1,63 @@
+{
+ "id": "writing.test-0101.6d062d29",
+ "module": "writing",
+ "sourceNumbers": [
+  101
+ ],
+ "slug": "ielts-writing-test-101",
+ "title": "IELTS Academic Writing Test 101",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-101/index.html",
+   "sha256": "b1770a62a373bead9be2b49e6ef72cf987946578a3a7bdf902249a969ee372d5",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-101/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The charts below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The charts below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much. Summarize the information by selecting and reporting the main features, and make comparisons where ",
+   "regionBlocks": 3
+  },
+  "visual": {
+   "assetId": "asset.2b54c075b6e7",
+   "sourcePath": "wp-content/uploads/2024/09/test-101-min.png",
+   "originalSrc": "../wp-content/uploads/2024/09/test-101-min.png",
+   "exists": true,
+   "path": "wp-content/uploads/2024/09/test-101-min.png",
+   "sha256": "2b54c075b6e7e596f8d3781e5a0b1e12a8bb9f847586564b1283d59881ef1a25",
+   "bytes": 17082,
+   "mimeType": "image/webp",
+   "width": 445,
+   "height": 451,
+   "sourceElementEvidence": "img element within Task 1 region of ielts-writing-test-101/index.html",
+   "visualType": "other"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Some people believe that it is best to accept a bad situation, such as an unsatisfactory job or shortage of money. Others argue that it is better to try and improve such situations. Discuss both views and give your own opinion. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Some people believe that it is best to accept a bad situation, such as an unsatisfactory job or shortage of money. Others argue that it is better to try and improve such situations. Discuss both views and give your own opinion. Write at lea",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "0c7d1ea545f53875835f0989aa3da2e25ad1acba51026722054513f9bb16770a"
+}

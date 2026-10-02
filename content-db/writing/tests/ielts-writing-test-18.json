@@ -1,0 +1,94 @@
+{
+ "id": "writing.test-0018.58eb4b1a",
+ "module": "writing",
+ "sourceNumbers": [
+  18
+ ],
+ "slug": "ielts-writing-test-18",
+ "title": "IELTS Academic Writing Test 18",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-18/index.html",
+   "sha256": "8fcbf5580c64b1cb70d2757dbf2b95acf52820b943de34d1a8183ea10d395508",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-18/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The table below shows the average band scores for students from different language groups taking the IELTS General Test in 2010. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The table below shows the average band scores for students from different language groups taking the IELTS General Test in 2010. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Wr",
+   "regionBlocks": 3
+  },
+  "table": {
+   "rows": [
+    [
+     "",
+     "Listening",
+     "Reading",
+     "Writing",
+     "Speaking",
+     "Overall"
+    ],
+    [
+     "German",
+     "6.8",
+     "6.3",
+     "6.6",
+     "6.9",
+     "6.7"
+    ],
+    [
+     "French",
+     "6.3",
+     "6.1",
+     "6.5",
+     "6.6",
+     "6.5"
+    ],
+    [
+     "Indonesian",
+     "6.3",
+     "6.1",
+     "6.1",
+     "6.7",
+     "6.3"
+    ],
+    [
+     "Malay",
+     "6.2",
+     "6.4",
+     "6.0",
+     "6.6",
+     "6.4"
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Today, many people want to get married and have children in their thirties rather than when they are younger. Is it a positive or negative development? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Today, many people want to get married and have children in their thirties rather than when they are younger. Is it a positive or negative development? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "bec862cece8d1a1bd1fd7c6c127022477f9255d6a99167ada7e0b534658a63ee"
+}

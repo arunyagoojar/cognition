@@ -9,16 +9,17 @@
 import { buildAuthenticMockManifest, buildDynamicPracticeManifest } from '../content/contentTestBuilder.js';
 import {
   getReadingTestAdapter,
-  getWritingTestAdapter,
 } from '../content/contentAdapter.js';
 import { getPackagesByTestType } from '../content/contentRepository.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
+  PRODUCTION_WRITING,
 } from '../production/productionContent.js';
 import {
   adaptProductionListening,
   adaptProductionSpeaking,
+  adaptProductionWriting,
 } from '../production/adapters.js';
 
 // The test rotation queue is driven by the production Listening corpus.
@@ -51,7 +52,13 @@ export function getAuthenticExam(testId) {
   const listening = pickProductionListening(testId);
   const speaking = pickProductionSpeaking();
 
-  // Reading + Writing remain V2-backed (out of Phase 3 scope).
+  // Writing now comes from the production database, matched by test number
+  // (Writing test N pairs with Listening test N as the source packages are numbered).
+  const writingRec = PRODUCTION_WRITING.find(w => String(w.testId) === String(testId))
+    || PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
+  const writing = writingRec ? adaptProductionWriting(writingRec) : null;
+
+  // Reading remains V2-backed (not yet migrated).
   const manifest = buildAuthenticMockManifest({ seed: testId, testType: 'UNKNOWN' });
 
   if (!listening) {
@@ -69,10 +76,10 @@ export function getAuthenticExam(testId) {
     title: `Authentic Mock Exam (${listening.title})`,
     book: 'Cognition Production Content',
     isRandomized: false,
-    manifest, // reading/writing source of truth (V2) — to be replaced in a later phase
+    manifest, // reading source of truth (V2) — to be replaced in a later phase
     listening,
     reading: getReadingTestAdapter(manifest),
-    writing: getWritingTestAdapter(manifest),
+    writing,
     speaking
   };
 }
@@ -82,6 +89,8 @@ export function getRandomizedFullExam(seed = null) {
 
   const manifest = buildDynamicPracticeManifest({ seed: activeSeed, testType: 'UNKNOWN' });
 
+  const writingRec = PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
+
   return {
     testId: `mock-random-${activeSeed}`,
     title: `Dynamic Cambridge IELTS Mock Exam (${activeSeed})`,
@@ -90,7 +99,7 @@ export function getRandomizedFullExam(seed = null) {
     manifest,
     listening: pickProductionListening(null),
     reading: getReadingTestAdapter(manifest),
-    writing: getWritingTestAdapter(manifest),
+    writing: writingRec ? adaptProductionWriting(writingRec) : null,
     speaking: pickProductionSpeaking()
   };
 }

@@ -1,0 +1,102 @@
+{
+ "id": "writing.test-0043.62211419",
+ "module": "writing",
+ "sourceNumbers": [
+  43
+ ],
+ "slug": "ielts-writing-test-43",
+ "title": "IELTS Academic Writing Test 43",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-43/index.html",
+   "sha256": "34f5d84017ee9e5711e1f58f026a2099e9aab18aba0c038da6be67dc3a37bc16",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-43/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. cinema viewing figures for films by country in millions",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. cinema viewing figure",
+   "regionBlocks": 4
+  },
+  "table": {
+   "rows": [
+    [
+     "",
+     "Action",
+     "Romance",
+     "Comedy",
+     "Horror",
+     "Total"
+    ],
+    [
+     "India",
+     "8",
+     "7.5",
+     "6.5",
+     "2.5",
+     "24.5"
+    ],
+    [
+     "Ireland",
+     "7.6",
+     "3.8",
+     "5.5",
+     "6.4",
+     "23.3"
+    ],
+    [
+     "New Zealand",
+     "7.2",
+     "4.5",
+     "3.9",
+     "4.7",
+     "20.3"
+    ],
+    [
+     "Japan",
+     "7.1",
+     "4.5",
+     "4.0",
+     "2.2",
+     "17.8"
+    ],
+    [
+     "Total",
+     "29.9",
+     "20.3",
+     "19.9",
+     "15.8",
+     ""
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Social media has replaced the traditional methods of communicating, and people use more and more social media to communicate, and to follow news and events. Do the advantages outweigh the disadvantages? Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Social media has replaced the traditional methods of communicating, and people use more and more social media to communicate, and to follow news and events. Do the advantages outweigh the disadvantages? Write at least 250 words.",
+   "regionBlocks": 3
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "69a7a5b4c5f229c9bf455c3b8eb70247b9f15982659295bbdb5b5fbe1a57c5f3"
+}

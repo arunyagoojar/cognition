@@ -1,0 +1,94 @@
+{
+ "id": "writing.test-0025.4942b8b5",
+ "module": "writing",
+ "sourceNumbers": [
+  25
+ ],
+ "slug": "ielts-writing-test-25",
+ "title": "IELTS Academic Writing Test 25",
+ "pipelineVersion": "production-writing-1.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-writing-test-25/index.html",
+   "sha256": "4930de65a96289c49f73d56e37e982f649539cddbe63fca400e931b36f0dd05f",
+   "manifestHashMatch": true,
+   "url": "https://practicepteonline.com/ielts-writing-test-25/"
+  },
+  "extractionMethod": "deterministic_dom_v1.writing",
+  "sourceRoot": "/Users/arunyagoojar/Downloads/ielts-website"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "task1": {
+  "taskNumber": 1,
+  "prompt": "The table below presents the number of children ever born to women aged 40-44 years in Australia for each year the information was collected since 1981. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "wordLimitMin": 150,
+  "provenance": {
+   "rawExcerpt": "The table below presents the number of children ever born to women aged 40-44 years in Australia for each year the information was collected since 1981. Summarise the information by selecting and reporting the main features, and make compar",
+   "regionBlocks": 3
+  },
+  "table": {
+   "rows": [
+    [
+     "Year",
+     "None %",
+     "One child %",
+     "Two children %",
+     "Three children %",
+     "Four or more children %"
+    ],
+    [
+     "2006",
+     "15.9",
+     "13.2",
+     "38.3",
+     "21.5",
+     "11.0"
+    ],
+    [
+     "1996",
+     "12.8",
+     "11.3",
+     "38.2",
+     "24.6",
+     "13.1"
+    ],
+    [
+     "1986",
+     "9.7",
+     "8.7",
+     "35.6",
+     "27.0",
+     "18.9"
+    ],
+    [
+     "1981",
+     "8.5",
+     "7.6",
+     "29.0",
+     "27.4",
+     "27.6"
+    ]
+   ],
+   "visualType": "table"
+  }
+ },
+ "task2": {
+  "taskNumber": 2,
+  "prompt": "Tourism is encouraged in many countries. Does tourism bring more advantages or disadvantages to a country? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+  "wordLimitMin": 250,
+  "provenance": {
+   "rawExcerpt": "Tourism is encouraged in many countries. Does tourism bring more advantages or disadvantages to a country? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
+   "regionBlocks": 4
+  }
+ },
+ "quarantinedUnits": [],
+ "validationWarnings": [],
+ "status": "verified",
+ "completeness": {
+  "task1": true,
+  "task2": true
+ },
+ "kind": "complete_test",
+ "contentFingerprint": "86837e0d61b2860143af122258785e9c9c676ee1ecb44d7174f7aef0154f34c8"
+}
