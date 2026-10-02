@@ -3762,7 +3762,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .cognition-auth-modal,
 .cl-modalContent {
-  width: 92vw !important;
+  width: 100% !important;
   max-width: 390px !important;
   border-radius: 28px !important;
   border: var(--border-dark) !important;
@@ -3771,21 +3771,31 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   overflow: hidden !important;
   margin: auto !important;
   padding: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
 }
 
+.cl-rootBox,
+.cl-signIn-root,
+.cl-signUp-root,
 .cognition-auth-cardbox,
 .cl-cardBox {
   width: 100% !important;
-  max-width: 390px !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  max-width: 100% !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
 }
 
 .cognition-auth-card,
 .cl-card {
   position: relative !important;
   width: 100% !important;
-  max-width: 390px !important;
+  max-width: 100% !important;
   background: var(--bg-card) !important;
   box-shadow: none !important;
   border: none !important;
@@ -3793,6 +3803,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   padding: 24px 26px !important;
   box-sizing: border-box !important;
   font-family: var(--font-family) !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
 }
 
 /* Modal Close Button */
@@ -3828,6 +3842,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   text-align: center !important;
   margin: 0 0 16px 0 !important;
   padding: 0 !important;
+  width: 100% !important;
 }
 .cognition-auth-title,
 .cl-headerTitle {
@@ -3846,20 +3861,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* Social Buttons Container */
-.cl-socialButtonsRoot,
+.cl-socialButtonsRoot {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
 .cl-socialButtons {
   display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
   width: 100% !important;
-}
-
-/* Hide unconfigured/empty Apple and GitHub provider buttons */
-.cl-socialButtonsIconButton__apple,
-.cl-socialButtonsIconButton__github,
-.cl-socialButtonsBlockButton__apple,
-.cl-socialButtonsBlockButton__github {
-  display: none !important;
+  box-sizing: border-box !important;
 }
 
 /* Hide the floating 'Last used' black badge on the social button */
@@ -3869,10 +3882,37 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   display: none !important;
 }
 
-/* Social Buttons (Google block & fallback icon-button) */
+/* Icon Buttons (Apple, GitHub, Google row) */
+.cl-socialButtonsIconButton {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--surface-interactive) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 14px !important;
+  padding: 10px 14px !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  box-shadow: 0 2px 0 var(--border-color) !important;
+  color: var(--text-primary) !important;
+  cursor: pointer !important;
+  transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button), background var(--dur-micro) !important;
+}
+.cl-socialButtonsIconButton:hover {
+  background: var(--surface-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 0 var(--border-color) !important;
+}
+.cl-socialButtonsIconButton:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 1px 0 var(--border-color) !important;
+}
+
+/* Block Buttons (when rendered as full width) */
 .cognition-auth-social-btn,
-.cl-socialButtonsBlockButton,
-.cl-socialButtonsIconButton__google {
+.cl-socialButtonsBlockButton {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -3890,15 +3930,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   text-decoration: none !important;
 }
 .cognition-auth-social-btn:hover,
-.cl-socialButtonsBlockButton:hover,
-.cl-socialButtonsIconButton__google:hover {
+.cl-socialButtonsBlockButton:hover {
   background: var(--surface-hover) !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 3px 0 var(--border-color) !important;
 }
 .cognition-auth-social-btn:active,
-.cl-socialButtonsBlockButton:active,
-.cl-socialButtonsIconButton__google:active {
+.cl-socialButtonsBlockButton:active {
   transform: translateY(1px) !important;
   box-shadow: 0 1px 0 var(--border-color) !important;
 }
@@ -3909,17 +3947,35 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   font-weight: 700 !important;
   color: var(--text-primary) !important;
 }
-.cl-socialButtonsIconButton__google::after {
-  content: 'Continue with Google';
-  font-family: var(--font-family) !important;
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  color: var(--text-primary) !important;
-}
+
+/* Provider Icons - Fix Apple & GitHub CSS Mask visibility */
 .cognition-auth-social-icon,
-.cl-socialButtonsProviderIcon {
+.cl-socialButtonsProviderIcon,
+.cl-providerIcon {
   width: 18px !important;
   height: 18px !important;
+  display: inline-block !important;
+}
+.cl-socialButtonsProviderIcon__apple,
+.cl-providerIcon__apple,
+.cl-socialButtonsProviderIcon__github,
+.cl-providerIcon__github {
+  background-color: var(--text-primary) !important;
+  display: inline-block !important;
+  width: 18px !important;
+  height: 18px !important;
+  mask-size: contain !important;
+  -webkit-mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  -webkit-mask-position: center !important;
+}
+.cl-socialButtonsProviderIcon__google,
+.cl-providerIcon__google {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 /* Divider */
