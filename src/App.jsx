@@ -23,7 +23,7 @@ import {
   getActiveMockSession,
 } from './utils/storage';
 import { subscribePerformanceStore } from './utils/performanceStore';
-import { getNextTestInRotation } from './utils/testQueue';
+import { getRandomTestId } from './utils/testQueue';
 
 export default function App() {
   const [view, setView] = useState(() => {
@@ -46,13 +46,12 @@ export default function App() {
   });
 
   // Rotating randomized test queue initial next recommendation
-  const initialRotation = getNextTestInRotation();
   const [selectedExamId, setSelectedExamId] = useState(() => {
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.examId) {
       return activeMock.examId;
     }
-    return initialRotation.testId;
+    return getRandomTestId();
   });
 
   useEffect(() => {
@@ -76,6 +75,14 @@ export default function App() {
     return unsubscribe;
   }, []);
 
+  // Every practice start serves a fresh random test (avoiding recent repeats)
+  const startSkill = (skillId) => {
+    if (skillId === 'listening') {
+      setSelectedExamId(getRandomTestId());
+    }
+    setView(skillId);
+  };
+
   const handleCompleteSkill = (skill, scoreData) => {
     saveSkillScore(skill, scoreData);
     refreshScores();
@@ -86,8 +93,6 @@ export default function App() {
     resetSkillScores();
     refreshScores();
   };
-
-  const rotation = getNextTestInRotation();
 
   // Helper for diagnostic weakness/strength pill on Performance
   const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
@@ -169,7 +174,7 @@ export default function App() {
             <PracticeSection
               scores={scores}
               targetBand={targetBand}
-              onStartSkill={(skillId) => setView(skillId)}
+              onStartSkill={startSkill}
             />
 
             {/* 4. Final Mock Test Hero with Rotating Randomized Test Queue */}
@@ -178,7 +183,7 @@ export default function App() {
               selectedExam={selectedExamId}
               onSelectExam={setSelectedExamId}
               onStartMock={(examId) => {
-                if (examId) setSelectedExamId(examId);
+                setSelectedExamId(examId || getRandomTestId());
                 setView('mock');
               }}
             />
@@ -198,7 +203,7 @@ export default function App() {
               scores={scores}
               targetBand={targetBand}
               onBack={() => setView('home')}
-              onStartSkill={(skillId) => setView(skillId)}
+              onStartSkill={startSkill}
             />
           </motion.div>
         )}
@@ -215,7 +220,7 @@ export default function App() {
             <LearningHubPage
               onBack={() => setView('home')}
               onContextChange={(ctx) => setLearningContext(ctx)}
-              onOpenPractice={(skillId) => setView(skillId)}
+              onOpenPractice={startSkill}
             />
           </motion.div>
         )}

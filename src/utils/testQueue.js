@@ -1,7 +1,26 @@
 // Persistent Rotating Randomized Test Queue for IELTS Practice & Full Mock Exams
 import { AVAILABLE_AUTHENTIC_TESTS } from '../data/exams/examAssembler.js';
 
-const QUEUE_STORAGE_KEY = 'omniprep_test_rotation_queue_v1';
+const QUEUE_STORAGE_KEY = 'omniprep_test_rotation_queue_v2';
+const RECENT_KEY = 'omniprep_recent_tests_v1';
+
+/**
+ * Random test id, avoiding the last few recently served tests so consecutive
+ * practice sessions always feel fresh (exit + restart gives a new test).
+ */
+export function getRandomTestId(excludeCount = 5) {
+  const all = AVAILABLE_AUTHENTIC_TESTS.map(t => t.id);
+  let recent = [];
+  try {
+    recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
+  } catch (_) { recent = []; }
+  const pool = all.filter(id => !recent.includes(id));
+  const pickFrom = pool.length ? pool : all;
+  const pick = pickFrom[Math.floor(Math.random() * pickFrom.length)];
+  recent = [pick, ...recent.filter(id => id !== pick)].slice(0, excludeCount);
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify(recent)); } catch (_) {}
+  return pick;
+}
 
 /**
  * Modern Fisher-Yates shuffle algorithm.
@@ -90,15 +109,19 @@ export function initializeOrSyncQueue() {
  * A completed test will NOT appear again until all available tests in the rotation cycle are completed.
  */
 export function getNextTestInRotation() {
-  const { queue, completedInCycle, cycleNumber } = initializeOrSyncQueue();
+  const { completedInCycle, cycleNumber } = initializeOrSyncQueue();
   const allTests = AVAILABLE_AUTHENTIC_TESTS;
 
-  // Find the next test ID in the queue that has not been completed in this cycle
-  const nextId = queue.find(id => !completedInCycle.includes(id)) || queue[0];
-  const testMeta = allTests.find(t => t.id === nextId) || allTests[0];
+  // Random pick among the tests not yet completed in this rotation cycle —
+  // every practice start serves a fresh test (old behaviour replayed a fixed order).
+  const uncompleted = allTests.filter(t => !completedInCycle.includes(t.id));
+  const pool = uncompleted.length ? uncompleted : allTests;
+  const testMeta = pool[Math.floor(Math.random() * pool.length)];
+  const nextId = testMeta.id;
 
   const completedCount = completedInCycle.length;
   const totalCount = allTests.length;
+  const queue = allTests.map(t => t.id);
   const positionInRotation = completedCount + 1;
 
   return {
