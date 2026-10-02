@@ -37,7 +37,15 @@ export default function App() {
 function AppWithAuth() {
   const { isLoaded: authLoaded, isSignedIn } = useUser();
   const { openSignIn } = useClerk();
-  return <AppContent authLoaded={authLoaded} isSignedIn={isSignedIn} openSignIn={openSignIn} />;
+  // Prevent flash: don't render the app until Clerk session is resolved
+  if (!authLoaded) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-canvas)' }}>
+        <div style={{ width: 28, height: 28, borderRadius: '50%', border: '3px solid var(--border-subtle)', borderTopColor: 'var(--c-coral)', animation: 'spin 0.8s linear infinite' }} />
+      </div>
+    );
+  }
+  return <AppContent isSignedIn={isSignedIn} openSignIn={openSignIn} />;
 }
 
 function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {} }) {

@@ -3,8 +3,8 @@ import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
-  const { isSignedIn, user } = useUser();
-  const { openSignIn, signOut } = useClerk();
+  const { isSignedIn, isLoaded, user } = useUser();
+  const { openSignIn, openUserProfile, signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -34,7 +34,7 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
       </div>
 
       <div className="nav-actions">
-        {isSignedIn ? (
+        {!isLoaded ? null : isSignedIn ? (
           <div className="account-menu-wrap" ref={menuRef}>
             <button
               className="account-menu-btn"
@@ -54,7 +54,16 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
                   <div className="account-menu-email-full">{email}</div>
                 </div>
                 <div className="account-menu-sep" />
-                <button className="account-menu-item" onClick={() => { setMenuOpen(false); signOut(); }}>
+                <button className="account-menu-item" onClick={() => { setMenuOpen(false); onOpenSettings(); }}>
+                  <Icon name="gear" size={14} />
+                  <span>Settings</span>
+                </button>
+                <button className="account-menu-item" onClick={() => { setMenuOpen(false); openUserProfile(); }}>
+                  <Icon name="user" size={14} />
+                  <span>Manage account</span>
+                </button>
+                <div className="account-menu-sep" />
+                <button className="account-menu-item account-menu-signout" onClick={() => { setMenuOpen(false); signOut(); }}>
                   <Icon name="back" size={14} />
                   <span>Sign out</span>
                 </button>
