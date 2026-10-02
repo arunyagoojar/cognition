@@ -44,7 +44,7 @@ export default function PerformanceOverview({
       name: 'Speaking',
       icon: 'mic',
       band: scores?.speaking?.band ?? null,
-      color: 'var(--c-near-black)',
+      color: 'var(--c-speaker)',
     }
   ];
 
