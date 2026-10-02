@@ -4,7 +4,7 @@
 
 import { AIProvider } from '../ai/aiProvider.js';
 import { calculateReadingBand, calculateListeningBand, calculateOverallBand } from '../bandCalculator.js';
-import { normalizeAnswer } from '../../data/canonical/normalizer.js';
+import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
 import { getApiKey, getGroqApiKey } from '../storage.js';
 

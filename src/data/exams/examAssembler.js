@@ -3,12 +3,8 @@
  *
  * Listening and Speaking are served from the production content database
  * (content-db → src/data/production/productionContent.js). Reading and Writing
- * remain on the V2 content source until their production databases are built
- * (Phase 3 scope: Listening + Speaking only).
+ * and Reading are served from the production content database.
  */
-import { buildAuthenticMockManifest, buildDynamicPracticeManifest } from '../content/contentTestBuilder.js';
-
-import { getPackagesByTestType } from '../content/contentRepository.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
@@ -60,7 +56,7 @@ export function getAuthenticExam(testId) {
   const readingRec = PRODUCTION_READING.find(r => String(r.testId) === String(testId))
     || PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
 
-  const manifest = buildAuthenticMockManifest({ seed: testId, testType: 'UNKNOWN' });
+  const manifest = { seed: testId, testType: 'UNKNOWN', source: 'production-database' };
 
   if (!listening) {
     return {
@@ -90,7 +86,7 @@ export function getRandomizedFullExam(seed = null) {
   const savedTestId = PRODUCTION_LISTENING.some(t => String(t.testId) === String(seed))
     ? String(seed) : null;
 
-  const manifest = buildDynamicPracticeManifest({ seed: activeSeed, testType: 'UNKNOWN' });
+  const manifest = { seed: activeSeed, testType: 'UNKNOWN', source: 'production-database' };
 
   const listening = pickProductionListening(savedTestId);
   const listeningTestId = listening?.testId;
