@@ -3489,35 +3489,511 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   transform: translateY(2px);
   box-shadow: 0 1px 0 var(--text-primary);
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
+
+/* ─── Compact Account Modal (Cognition Neobrutalist) ─────────────── */
+.account-modal-card {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: var(--r-card);
+  box-shadow: 4px 4px 0px var(--border-color);
+  width: 100%;
+  max-width: 400px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.account-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.account-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account-modal-title {
+  font-family: var(--font-family);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.account-modal-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+}
+.account-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+}
+.account-modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-interactive);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background var(--dur-micro) var(--ease-smooth);
+}
+.account-modal-close-btn:hover {
+  background: var(--surface-hover);
+}
+.account-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.account-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.account-field-label {
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+.account-email-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface-interactive);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 14px;
+}
+.account-email-icon-wrap {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.account-email-text {
+  flex: 1;
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-email-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.12);
+  padding: 3px 7px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.account-danger-zone {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+.account-delete-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 14px;
+  background: rgba(232, 70, 36, 0.06);
+  border: 1.5px solid var(--c-coral);
+  color: var(--c-coral);
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(232, 70, 36, 0.2);
+  transition: all var(--dur-button) var(--ease-smooth);
+}
+.account-delete-btn:hover {
+  background: var(--c-coral);
+  color: #151313;
+  box-shadow: 0 3px 0 var(--border-color);
+  transform: translateY(-1px);
+}
+.account-delete-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--border-color);
+}
+.account-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.account-confirm-box {
+  background: rgba(232, 70, 36, 0.07);
+  border: 1.5px solid var(--c-coral);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.account-confirm-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-coral);
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 13.5px;
+}
+.account-confirm-desc {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.account-confirm-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+.account-confirm-cancel-btn {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--surface-interactive);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-family);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--dur-micro);
+}
+.account-confirm-cancel-btn:hover {
+  background: var(--surface-hover);
+}
+.account-confirm-delete-btn {
+  flex: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--c-coral);
+  border: 1.5px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #151313;
+  cursor: pointer;
+  box-shadow: 0 2px 0 var(--border-color);
+  transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button);
+}
+.account-confirm-delete-btn:hover:not(:disabled) {
+  background: var(--c-coral-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 var(--border-color);
+}
+.account-confirm-delete-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--border-color);
+}
+.account-confirm-delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.account-delete-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(21, 19, 19, 0.3);
+  border-top-color: #151313;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.account-delete-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: rgba(232, 70, 36, 0.1);
+  border-radius: 10px;
+  border: 1px solid var(--c-coral);
+  color: var(--c-coral);
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
 }
 
-/* ─── Clerk modal styling to match Cognition ────────────────────── */
-.clerk-card, .cl-modalContent {
+/* ─── Clerk Modal Styling (Cognition Aesthetic & Ultra-Compact) ──── */
+.cognition-auth-backdrop,
+.cl-modalBackdrop {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(5px) !important;
+  z-index: 1200 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cognition-auth-modal,
+.cl-modalContent {
+  width: 92vw !important;
+  max-width: 390px !important;
   border-radius: 28px !important;
-  border: 1.5px solid #151313 !important;
-  box-shadow: 0 6px 0 #151313 !important;
+  border: var(--border-dark) !important;
+  box-shadow: 4px 4px 0px var(--border-color) !important;
+  background: var(--bg-card) !important;
+  overflow: hidden !important;
+  margin: auto !important;
+  padding: 0 !important;
 }
-.clerk-social-btn {
-  border-radius: 12px !important;
-  border: 1.5px solid rgba(21,19,19,0.15) !important;
+
+.cognition-auth-cardbox,
+.cl-cardBox {
+  width: 100% !important;
+  max-width: 390px !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
-.clerk-primary-btn {
-  border-radius: 14px !important;
-  background: #FF5734 !important;
-  color: #151313 !important;
+
+.cognition-auth-card,
+.cl-card {
+  width: 100% !important;
+  max-width: 390px !important;
+  background: var(--bg-card) !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 28px !important;
+  padding: 24px 26px !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-family) !important;
+}
+
+/* Header */
+.cognition-auth-header,
+.cl-header {
+  text-align: center !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+.cognition-auth-title,
+.cl-headerTitle {
+  font-family: var(--font-family) !important;
+  font-size: 20px !important;
   font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  letter-spacing: -0.01em !important;
 }
-[data-theme="dark"] .clerk-card, [data-theme="dark"] .cl-modalContent {
-  background: #201D1D !important;
-  border-color: #F7F7F5 !important;
-  box-shadow: 0 6px 0 rgba(247,247,245,0.9) !important;
-  color: #F7F7F5 !important;
+.cognition-auth-subtitle,
+.cl-headerSubtitle {
+  font-family: var(--font-family) !important;
+  font-size: 13px !important;
+  color: var(--text-secondary) !important;
+  margin-top: 4px !important;
 }
-[data-theme="dark"] .clerk-primary-btn {
-  background: #FF6B4A !important;
+
+/* Social Buttons (Google) */
+.cognition-auth-social-btn,
+.cl-socialButtonsBlockButton {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background: var(--surface-interactive) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 14px !important;
+  padding: 10px 16px !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  box-shadow: 0 2px 0 var(--border-color) !important;
+  color: var(--text-primary) !important;
+  cursor: pointer !important;
+  transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button) !important;
+}
+.cognition-auth-social-btn:hover,
+.cl-socialButtonsBlockButton:hover {
+  background: var(--surface-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 0 var(--border-color) !important;
+}
+.cognition-auth-social-btn:active,
+.cl-socialButtonsBlockButton:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 1px 0 var(--border-color) !important;
+}
+.cognition-auth-social-text,
+.cl-socialButtonsBlockButtonText {
+  font-family: var(--font-family) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+.cognition-auth-social-icon,
+.cl-socialButtonsProviderIcon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Divider */
+.cognition-auth-divider,
+.cl-dividerRow {
+  margin: 14px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.cognition-auth-divider-line,
+.cl-dividerLine {
+  background: var(--border-subtle) !important;
+  height: 1px !important;
+  flex: 1 !important;
+}
+.cognition-auth-divider-text,
+.cl-dividerText {
+  font-family: var(--font-family) !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: var(--text-tertiary) !important;
+  text-transform: lowercase !important;
+}
+
+/* Form Fields */
+.cognition-auth-field,
+.cl-formField {
+  margin-bottom: 12px !important;
+}
+.cognition-auth-label,
+.cl-formFieldLabel {
+  font-family: var(--font-family) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+.cognition-auth-input,
+.cl-formFieldInput {
+  background: var(--surface-interactive) !important;
+  border: 1.5px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-family) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  padding: 10px 14px !important;
+  min-height: 42px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  transition: border-color var(--dur-micro) var(--ease-smooth), box-shadow var(--dur-micro) !important;
+}
+.cognition-auth-input:focus,
+.cl-formFieldInput:focus {
+  border-color: var(--c-coral) !important;
+  box-shadow: 0 0 0 2px rgba(255, 87, 52, 0.22) !important;
+  outline: none !important;
+}
+
+/* Submit Button */
+.cognition-auth-submit,
+.cl-formButtonPrimary {
+  background: var(--c-coral) !important;
   color: #151313 !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 3px 0 var(--border-color) !important;
+  font-family: var(--font-family) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  padding: 11px 20px !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  margin-top: 8px !important;
+  transition: transform var(--dur-button) var(--ease-smooth), box-shadow var(--dur-button) !important;
+}
+.cognition-auth-submit:hover,
+.cl-formButtonPrimary:hover {
+  background: var(--c-coral-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 0 var(--border-color) !important;
+}
+.cognition-auth-submit:active,
+.cl-formButtonPrimary:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 1px 0 var(--border-color) !important;
+}
+
+/* Footer */
+.cognition-auth-footer,
+.cl-footer {
+  margin-top: 14px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  text-align: center !important;
+}
+.cognition-auth-footer-text,
+.cl-footerActionText {
+  font-family: var(--font-family) !important;
+  font-size: 12.5px !important;
+  color: var(--text-secondary) !important;
+}
+.cognition-auth-footer-link,
+.cl-footerActionLink {
+  font-family: var(--font-family) !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: var(--c-coral) !important;
+  text-decoration: none !important;
+  margin-left: 5px !important;
+}
+.cognition-auth-footer-link:hover,
+.cl-footerActionLink:hover {
+  text-decoration: underline !important;
+}
+
+/* Development Badge / Watermark */
+.cl-internal-b3fm6y,
+.cl-developmentBadge,
+.cl-footerPages {
+  font-size: 11px !important;
+  opacity: 0.65 !important;
+  margin-top: 6px !important;
+  text-align: center !important;
+}
+
+/* Fallback: If Clerk UserProfile is ever invoked directly */
+.cl-userProfile-root {
+  max-width: 440px !important;
+  margin: auto !important;
+}
+.cl-userProfile-root .cl-navbar {
+  display: none !important;
 }
 
 /* ─── Compact account dropdown (Phase 8) ────────────────────────── */

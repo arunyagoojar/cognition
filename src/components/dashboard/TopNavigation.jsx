@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
+import AccountModal from './AccountModal';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
   const { isSignedIn, isLoaded, user } = useUser();
-  const { openSignIn, openUserProfile, signOut } = useClerk();
+  const { openSignIn, signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [accountModalOpen, setAccountModalOpen] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -58,9 +60,9 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
                   <Icon name="gear" size={14} />
                   <span>Settings</span>
                 </button>
-                <button className="account-menu-item" onClick={() => { setMenuOpen(false); openUserProfile(); }}>
+                <button className="account-menu-item" onClick={() => { setMenuOpen(false); setAccountModalOpen(true); }}>
                   <Icon name="user" size={14} />
-                  <span>Manage account</span>
+                  <span>Account</span>
                 </button>
                 <div className="account-menu-sep" />
                 <button className="account-menu-item account-menu-signout" onClick={() => { setMenuOpen(false); signOut(); }}>
@@ -80,6 +82,11 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
           </button>
         )}
       </div>
+
+      <AccountModal
+        isOpen={accountModalOpen}
+        onClose={() => setAccountModalOpen(false)}
+      />
     </header>
   );
 }
