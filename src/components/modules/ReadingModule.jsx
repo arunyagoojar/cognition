@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedReadingTest, getReadingTest } from '../../data/reading/index';
 import { calculateReadingBand, isAnswerCorrect } from '../../utils/bandCalculator';
-import { recordAttemptedQuestionSet } from '../../utils/storage';
+import { recordAttemptedQuestionSet, createAttemptId } from '../../utils/storage';
+import { evaluateReadingResponses } from '../../utils/evaluation/evaluationEngine';
 import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
@@ -10,10 +11,12 @@ import QuestionRenderer from '../common/QuestionRenderer';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
+
 export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
   const [test] = useState(() => initialTest || (testId ? getReadingTest(testId) : getRandomizedReadingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [answers, setAnswers] = useState({});
+  const attemptIdRef = useRef(createAttemptId('reading'));
   const [timeLeft, setTimeLeft] = useState(60 * 60);
   const [result, setResult] = useState(null);
   const [processingStep, setProcessingStep] = useState(0);
@@ -50,17 +53,23 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
     startTimer();
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     clearInterval(timerRef.current);
 
-    // Reading no longer has embedded questions with answers in the json right now
-    // We will bypass deterministic grading for now or rely on evaluation engine if AI evaluation handles it.
-    // For now, let's just create a dummy result structure so the flow can continue.
+    // Deterministic scoring against the official answer key (zero AI).
+    const graded = getReadingTest(test?.testId || testId, true) || test;
+    const evalResult = await evaluateReadingResponses({
+      passages: graded?.passages || [],
+      answers,
+      attemptId: attemptIdRef.current
+    });
+
     const computedResult = {
-      band: null,
-      raw: 0,
-      total: 40,
-      percentage: 0,
+      ...evalResult,
+      band: evalResult.band,
+      raw: evalResult.raw,
+      total: evalResult.total || 40,
+      percentage: evalResult.percentage || 0,
       answers
     };
 

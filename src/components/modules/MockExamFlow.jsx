@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedFullExam } from '../../data/exams/examAssembler';
+import { getProductionWritingTest } from '../../data/production/adapters';
 import {
   saveActiveMockSession,
   getActiveMockSession,

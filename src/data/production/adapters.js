@@ -210,6 +210,30 @@ function resolvePromptHtml(html) {
     return html.replace(/src="(\/wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p)}"`);
 }
 
+/**
+ * Reading extraction left most question groups as plain text (structured
+ * records exist only for a subset of groups). Inject answerable blanks into
+ * numbered question lines so every question is enterable; qid qN matches the
+ * global answer-key numbering used by structured records.
+ */
+function injectReadingBlanks(html) {
+  if (!html || html.includes('data-qid=')) return html;
+  const blank = (n) => `<span class="inline-blank"><input type="text" data-qid="q${n}" class="cognition-exam-input" style="display:inline-block;width:130px;margin:0 4px" autocomplete="off" /><b class="blank-num">${n}</b></span> `;
+  // Numbered question lines appear either as their own <p> or as newline-
+  // separated lines inside a paragraph: "12. text" / "12 text" / "12) text".
+  return html
+    .replace(/<p>(\s*)(\d{1,2})([\.\)]?)\s/g, (m, sp, num) => {
+      const n = parseInt(num, 10);
+      if (!Number.isInteger(n) || n < 1 || n > 40) return m;
+      return `<p>${sp}${blank(n)}`;
+    })
+    .replace(/\n(\d{1,2})([\.\)]?)\s(?=[^\n])/g, (m, num, dot) => {
+      const n = parseInt(num, 10);
+      if (!Number.isInteger(n) || n < 1 || n > 40) return m;
+      return `\n${blank(n)}`;
+    });
+}
+
 export function adaptProductionReading(rec, includeAnswers = false) {
   return {
     testId: rec.testId,
@@ -222,7 +246,7 @@ export function adaptProductionReading(rec, includeAnswers = false) {
     passages: rec.passages.map(p => ({
       passageNumber: p.passageNumber,
       title: p.title,
-      htmlContent: p.htmlContent,
+      htmlContent: injectReadingBlanks(p.htmlContent),
       questions: p.questions.map(q => ({
         ...q,
         answer: includeAnswers ? q.answer : null,
@@ -232,7 +256,7 @@ export function adaptProductionReading(rec, includeAnswers = false) {
         groupType: g.groupType,
         instructions: g.instructions,
         options: g.options,
-        htmlContent: g.htmlContent,
+        htmlContent: injectReadingBlanks(g.htmlContent),
         questions: g.questions.map(q => ({
           ...q,
           answer: includeAnswers ? q.answer : null,

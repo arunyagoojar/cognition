@@ -390,6 +390,18 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
                     if (v && v.status === 'completed') saveSkillScore(k, v);
                   });
                 }
+                syncAttempt({
+                  id: createAttemptId('mock'),
+                  type: 'mock',
+                  testId: record?.testId || '',
+                  testLabel: record?.testLabel || 'Full IELTS Mock Exam',
+                  status: record?.status || 'completed',
+                  band: record?.overallBand ?? null,
+                  data: {
+                    skills: record?.skills || null,
+                    overallSummary: record?.overallSummary ?? null,
+                  },
+                });
                 refreshScores();
                 setView('home');
               }}

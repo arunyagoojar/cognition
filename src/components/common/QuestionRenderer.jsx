@@ -22,18 +22,26 @@ export default function QuestionRenderer({ question, value, onChange }) {
       case 'single_select':
       case 'map_select':
         if (options && options.length > 0) {
+          // Radio list — the exam convention (visible choices beat dropdowns).
           return (
-            <select
-              className="cognition-exam-select"
-              value={value || ''}
-              onChange={handleChange}
-              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
-            >
-              <option value="">Select…</option>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
               {options.map(o => (
-                <option key={o.id} value={o.id}>{o.id}{o.id !== o.label ? ` - ${o.label}` : ''}</option>
+                <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name={question.id}
+                    value={o.id}
+                    checked={value === o.id}
+                    onChange={handleChange}
+                    style={{ accentColor: 'var(--c-yellow)', width: 16, height: 16, marginTop: 2, flexShrink: 0 }}
+                  />
+                  <span>
+                    <strong>{o.id}</strong>
+                    {o.label && o.id !== o.label ? ` — ${o.label}` : ''}
+                  </span>
+                </label>
               ))}
-            </select>
+            </div>
           );
         }
         // Fallback to text if options are missing for some reason

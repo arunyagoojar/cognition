@@ -34,7 +34,7 @@ function pickProductionListening(testId) {
   const match = PRODUCTION_LISTENING.find(
     t => String(t.testId) === String(testId) || t.id === String(testId));
   const rec = match || PRODUCTION_LISTENING[Math.floor(Math.random() * PRODUCTION_LISTENING.length)];
-  return rec ? adaptProductionListening(rec, false) : null;
+  return rec ? adaptProductionListening(rec, true) : null;
 }
 
 function pickProductionSpeaking() {
@@ -75,7 +75,7 @@ export function getAuthenticExam(testId) {
     isRandomized: false,
     manifest, // reading source of truth (V2) — to be replaced in a later phase
     listening,
-    reading: readingRec ? adaptProductionReading(readingRec) : null,
+    reading: readingRec ? adaptProductionReading(readingRec, true) : null,
     writing,
     speaking
   };
@@ -102,7 +102,7 @@ export function getRandomizedFullExam(seed = null) {
     isRandomized: !savedTestId,
     manifest,
     listening,
-    reading: readingRec ? adaptProductionReading(readingRec) : null,
+    reading: readingRec ? adaptProductionReading(readingRec, true) : null,
     writing: writingRec ? adaptProductionWriting(writingRec) : null,
     speaking: pickProductionSpeaking()
   };

@@ -345,12 +345,17 @@ def build_reading_runtime(rec):
                 input_type = "text"
                 options = None
                 if qtype == "mcq_single":
-                    input_type = "single_select"
                     options = q.get("options") or None
+                    # A usable choice list needs at least two real options;
+                    # degraded extractions degrade to typed answers.
+                    input_type = "single_select" if options and len(options) >= 2 else "text"
                 elif qtype in ("matching_headings", "matching_information", "matching_features", "matching_box"):
-                    input_type = "single_select"
                     options = g.get("sharedOptions") or None
-                    if qtype == "tfng": input_type = "text"
+                    if options and len(options) >= 2:
+                        input_type = "single_select"
+                    else:
+                        options = None
+                        input_type = "text"
                 elif qtype == "tfng":
                     input_type = "text"
                 elif qtype == "ynng":
@@ -482,6 +487,10 @@ def main():
         rec = json.load(open(f))
         if rec["status"] in ("quarantined", "duplicate") or rec.get("kind") not in ("full_test", "practice_test"):
             excluded.append({"slug": rec["slug"], "reason": rec["status"] or "incomplete"})
+            continue
+        total_q = sum(len(g.get("questions", [])) for p in rec.get("passages", []) for g in p.get("questionGroups", []))
+        if total_q == 0:
+            excluded.append({"slug": rec["slug"], "reason": "no_structured_questions"})
             continue
         read_runtime.append(build_reading_runtime(rec))
     for f in sorted(glob.glob(os.path.join(OUT, "writing", "tests", "*.json"))):
