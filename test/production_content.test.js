@@ -60,6 +60,42 @@ for (const t of PRODUCTION_LISTENING) {
 console.log(`  tests: ${PRODUCTION_LISTENING.length}, questions: ${qTotal}, answers: ${qWithAnswer}, audio resolved: ${audioOk}, images: ${imgOk}/${imgTotal}`);
 check(qWithAnswer === qTotal, 'every emitted question has a mapped answer');
 
+// ── Regression: no duplicate visual may reach the render tree ──
+// Root cause (Phase 4): source pages embed lazy-load <img data-src> plus a
+// <noscript><img src> fallback; both were captured into group stimulus.
+for (const t of PRODUCTION_LISTENING) {
+  const perUrl = {};
+  for (const p of t.parts) {
+    for (const g of p.questionGroups) {
+      const imgs = g.htmlContent.match(/<img[^>]*src="([^"]+)"/g) || [];
+      for (const im of imgs) {
+        const url = im.match(/src="([^"]+)"/)[1];
+        check(!perUrl[url], `image rendered once per test ${t.slug}: ${url}`);
+        perUrl[url] = true;
+      }
+      // a visual never appears both as visualHtml and inside htmlContent
+      if (g.visualHtml) {
+        check(!(g.htmlContent || '').includes('<img'), `visualHtml exclusive in ${t.slug} ${g.groupId}`);
+      }
+    }
+  }
+}
+
+// ── Regression: no interactive-placeholder glyphs in rendered exam text ──
+// ('\u2426' was the source site's answer-box glyph; must never reach stems)
+for (const t of PRODUCTION_LISTENING) {
+  for (const p of t.parts) {
+    check(!p.htmlContent.includes('\u2426'), `no placeholder glyph in ${t.slug} S${p.part} html`);
+    for (const g of p.questionGroups) {
+      check(!(g.htmlContent || '').includes('\u2426'), `no glyph in ${t.slug} ${g.groupId} html`);
+      for (const q of g.questions) {
+        const text = [q.questionText, q.prompt, ...(q.options || []).map(o => o.label)].join(' ');
+        check(!text.includes('\u2426'), `no glyph in ${t.slug} ${q.id}`);
+      }
+    }
+  }
+}
+
 // ── Speaking ─────────────────────────────────────────────────
 console.log('== Production Speaking ==');
 check(PRODUCTION_SPEAKING.length >= 175, `speaking corpus size (${PRODUCTION_SPEAKING.length})`);

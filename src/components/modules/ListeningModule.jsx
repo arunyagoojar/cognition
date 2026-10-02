@@ -493,19 +493,16 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         </div>
       </div>
 
-      {/* ── 2. INSTRUCTIONS / CONTEXT CARD ── */}
+      {/* ── 2. SECTION HEADER (once per section) ── */}
       <div style={{
         background: 'var(--bg-card)',
         border: 'var(--border-dark)',
         borderRadius: 'var(--r-card)',
-        padding: '22px 28px',
+        padding: '12px 22px',
         boxShadow: '0 3px 0 #151313'
       }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>
-          IELTS LISTENING SECTION {partIdx + 1}
-        </div>
-        <div style={{ fontSize: 15, fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.55 }}>
-          {currentPart?.instructions}
+        <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+          IELTS Listening Section {partIdx + 1}
         </div>
       </div>
 
@@ -575,36 +572,21 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
             [...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1])
           );
           const standalone = (g.questions || []).filter(q => !inlineIds.has(q.id));
-          return (
-            <div key={g.groupId || gIdx} style={{
-              background: 'var(--bg-card)',
-              border: 'var(--border-dark)',
-              borderRadius: 'var(--r-card)',
-              padding: '26px 30px',
-              boxShadow: '0 3px 0 #151313',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 14
-            }}>
-              {g.instructions && (
-                <div style={{
-                  fontWeight: 800, fontSize: 13.5, color: 'var(--text-primary)',
-                  background: 'var(--surface-sunken)', padding: '10px 16px',
-                  borderRadius: 10, border: '1px solid var(--border-subtle)',
-                  letterSpacing: '0.01em'
-                }}>
-                  Questions {g.questions?.[0]?.questionNumber}
-                  {g.questions?.length > 1 && `–${g.questions[g.questions.length - 1]?.questionNumber}`} · {g.instructions}
-                  {g.wordLimit && <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}> ({g.wordLimit})</span>}
-                </div>
-              )}
-              {g.groupType !== 'mcq' && (
-                <HtmlContentRenderer
-                  htmlContent={g.htmlContent}
-                  answers={answers}
-                  setAnswers={setAnswers}
-                />
-              )}
+          const hasVisual = Boolean(g.visualHtml);
+          // Visual-aware layout: map/diagram-style stimuli leave meaningful space
+          // beside them; table/notes groups keep the visual full-width.
+          const visualAware = hasVisual && !['table', 'notes'].includes(g.groupType);
+          const qRange = g.questions?.length
+            ? `${g.questions[0].questionNumber}${g.questions.length > 1 ? `–${g.questions[g.questions.length - 1].questionNumber}` : ''}`
+            : '';
+          const visual = <div className="exam-visual" dangerouslySetInnerHTML={{ __html: g.visualHtml }} />;
+          const items = (
+            <div className="exam-visual-items">
+              <HtmlContentRenderer
+                htmlContent={g.htmlContent}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
               {standalone.map(q => (
                 <QuestionRenderer
                   key={q.id}
@@ -613,6 +595,52 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
                   onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))}
                 />
               ))}
+            </div>
+          );
+          return (
+            <div key={g.groupId || gIdx} className="exam-doc" style={{
+              background: 'var(--bg-card)',
+              border: 'var(--border-dark)',
+              borderRadius: 'var(--r-card)',
+              padding: '20px 26px',
+              boxShadow: '0 3px 0 #151313',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8
+            }}>
+              {/* consolidated group header — range + instruction appear ONCE */}
+              <div style={{
+                fontWeight: 600, fontSize: 13, color: 'var(--text-primary)',
+                borderBottom: '1px solid var(--border-subtle)',
+                paddingBottom: 8, marginBottom: 4
+              }}>
+                <span style={{ fontWeight: 800 }}>Questions {qRange}</span>
+                {g.instructions && <span>. {g.instructions}</span>}
+                {g.wordLimit && <span style={{ color: 'var(--text-secondary)' }}> — {g.wordLimit}</span>}
+              </div>
+              {visualAware ? (
+                <div className="exam-visual-row">
+                  {visual}
+                  {items}
+                </div>
+              ) : (
+                <>
+                  {hasVisual && <div className="exam-visual" style={{ marginBottom: 10 }}>{visual}</div>}
+                  <HtmlContentRenderer
+                    htmlContent={g.htmlContent}
+                    answers={answers}
+                    setAnswers={setAnswers}
+                  />
+                  {standalone.map(q => (
+                    <QuestionRenderer
+                      key={q.id}
+                      question={q}
+                      value={answers[q.id]}
+                      onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))}
+                    />
+                  ))}
+                </>
+              )}
             </div>
           );
         })}

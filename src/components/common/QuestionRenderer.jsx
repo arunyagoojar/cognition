@@ -23,12 +23,13 @@ export default function QuestionRenderer({ question, value, onChange }) {
       case 'map_select':
         if (options && options.length > 0) {
           return (
-            <select 
-              value={value || ''} 
+            <select
+              className="cognition-exam-select"
+              value={value || ''}
               onChange={handleChange}
-              style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
+              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
             >
-              <option value="">Select an option...</option>
+              <option value="">Select…</option>
               {options.map(o => (
                 <option key={o.id} value={o.id}>{o.id}{o.id !== o.label ? ` - ${o.label}` : ''}</option>
               ))}
@@ -78,12 +79,13 @@ export default function QuestionRenderer({ question, value, onChange }) {
       default:
         if (questionType === 'true_false_not_given') {
           return (
-            <select 
-              value={value || ''} 
+            <select
+              className="cognition-exam-select"
+              value={value || ''}
               onChange={handleChange}
-              style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
+              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
             >
-              <option value="">Select answer...</option>
+              <option value="">Select…</option>
               <option value="TRUE">TRUE</option>
               <option value="FALSE">FALSE</option>
               <option value="NOT GIVEN">NOT GIVEN</option>
@@ -92,12 +94,13 @@ export default function QuestionRenderer({ question, value, onChange }) {
         }
         if (questionType === 'yes_no_not_given') {
           return (
-            <select 
-              value={value || ''} 
+            <select
+              className="cognition-exam-select"
+              value={value || ''}
               onChange={handleChange}
-              style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
+              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
             >
-              <option value="">Select answer...</option>
+              <option value="">Select…</option>
               <option value="YES">YES</option>
               <option value="NO">NO</option>
               <option value="NOT GIVEN">NOT GIVEN</option>
@@ -117,30 +120,19 @@ export default function QuestionRenderer({ question, value, onChange }) {
   };
 
   return (
-    <div style={{
-      padding: '16px',
-      background: 'var(--surface)',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: '12px',
-      marginBottom: '16px'
+    <div className="exam-doc" style={{
+      padding: '10px 0',
+      borderBottom: '1px solid var(--border-subtle)',
+      marginBottom: '2px'
     }}>
-      <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-        <div style={{
-          width: 28, height: 28, flexShrink: 0,
-          background: 'var(--surface-elevated)', border: '1px solid var(--border)',
-          borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)'
-        }}>
-          {questionNumber}
-        </div>
-        <div style={{ flex: 1 }}>
-          {questionText && (
-            <div style={{ fontSize: 14, color: 'var(--text-primary)', marginBottom: 8, lineHeight: 1.5 }}>
-              <span dangerouslySetInnerHTML={{ __html: questionText.replace(/wp-content/g, '/wp-content') }} />
-            </div>
-          )}
-          {renderInput()}
-        </div>
+      <div style={{ fontSize: 15.5, color: 'var(--text-primary)', lineHeight: 1.5 }}>
+        <span className="exam-q-num">{questionNumber}.</span>
+        {questionText && (
+          <span dangerouslySetInnerHTML={{ __html: questionText.replace(/wp-content/g, '/wp-content') }} />
+        )}
+      </div>
+      <div style={{ marginTop: 6 }}>
+        {renderInput()}
       </div>
     </div>
   );

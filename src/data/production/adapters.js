@@ -52,6 +52,7 @@ export function adaptProductionListening(rec, includeAnswers = false) {
         instructions: g.instructions,
         wordLimit: g.wordLimit,
         options: g.options,
+        visualHtml: g.visualHtml || null,
         htmlContent: g.htmlContent,
         questions: g.questions.map(q => ({
           ...q,

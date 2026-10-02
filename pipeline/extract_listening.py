@@ -263,6 +263,10 @@ def segment_with_blanks(text):
     if text[last:].strip(): segs.append(text[last:].strip())
     return segs
 
+def strip_placeholder(s):
+    """The site's interactive answer-box glyphs must never reach stems/rendered text."""
+    return norm((s or "").replace("\u2426", " "))
+
 def segments_to_plain(segs):
     out = []
     for s in segs:
@@ -339,10 +343,12 @@ def extract(slug, page, key):
         if text.startswith("__FIGURE__"):
             fig = text.split(" ", 1)[1] if " " in text else ""
             if fig:
+                fig = fig.replace("../", "")
                 if g is not None:
-                    g.figure_srcs.append(fig.replace("../", ""))
-                else:
-                    pending_figures.append(fig.replace("../", ""))
+                    if fig not in g.figure_srcs:
+                        g.figure_srcs.append(fig)
+                elif fig not in pending_figures:
+                    pending_figures.append(fig)
             continue
         if text == "__TABLE__":
             if g is None: continue
@@ -360,7 +366,7 @@ def extract(slug, page, key):
                         n = int(qm.group(1))
                         if any(x.number == n for x in g.questions): continue
                         g.questions.append(Question(number=n, qtype="matching_box",
-                                                    stem_plain=norm(qm.group(2)), raw_excerpt=cell,
+                                                    stem_plain=strip_placeholder(qm.group(2)), raw_excerpt=cell,
                                                     element_path=path))
                         continue
                     for mm in BLANK_TOK.finditer(cell):
@@ -431,12 +437,12 @@ def extract(slug, page, key):
                     mcq = parse_inline_mcq(line)
                     if mcq:
                         number, stem, options = mcq
-                        q = Question(number=number, qtype="mcq_single", stem_plain=stem,
+                        q = Question(number=number, qtype="mcq_single", stem_plain=strip_placeholder(stem),
                                      options=options, raw_excerpt=line, element_path=path)
                     else:
                         qm = QITEM.match(line)
                         q = Question(number=int(qm.group(1)), qtype="mcq_single",
-                                     stem_plain=norm(qm.group(2)), raw_excerpt=line,
+                                     stem_plain=strip_placeholder(qm.group(2)), raw_excerpt=line,
                                      element_path=path)
                     g.questions.append(q)
                     pending["mcq"] = q
@@ -470,7 +476,7 @@ def extract(slug, page, key):
                 qm = QITEM.match(line.strip())
                 if qm and len(line.strip()) < 80:
                     g.questions.append(Question(number=int(qm.group(1)), qtype="matching_box",
-                                                stem_plain=norm(qm.group(2)).replace("\u2426", "").strip(),
+                                                stem_plain=strip_placeholder(qm.group(2)),
                                                 raw_excerpt=line.strip(),
                                                 element_path=path))
                     g.stimulus_kind = "box_match"
@@ -483,7 +489,7 @@ def extract(slug, page, key):
                 if qm and len(line.strip()) < 90:
                     kind = "map_labeling" if re.search(r"map", g.instruction_raw, re.I) else "diagram_labeling"
                     g.questions.append(Question(number=int(qm.group(1)), qtype=kind,
-                                                stem_plain=norm(qm.group(2)), raw_excerpt=line.strip(),
+                                                stem_plain=strip_placeholder(qm.group(2)), raw_excerpt=line.strip(),
                                                 element_path=path))
                     g.stimulus_kind = "map" if kind == "map_labeling" else "diagram"
                     added = True
@@ -520,7 +526,7 @@ def extract(slug, page, key):
                     q.stem_plain = norm(rest.replace("\u2426", " ______ "))
                     q.blank_context = q.blank_context + " (input box in source)"
                 else:
-                    q = Question(number=n, qtype="short_answer", stem_plain=rest,
+                    q = Question(number=n, qtype="short_answer", stem_plain=strip_placeholder(rest),
                                  raw_excerpt=line, element_path=path)
                 g.questions.append(q)
                 if g.stimulus_kind == "none": g.stimulus_kind = "sentences"

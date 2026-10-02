@@ -55,17 +55,23 @@ def line_to_html(line, qids_seen):
             qids_seen.add(n)
     return res
 
+def stim_line_class(line):
+    """Presentation hierarchy from deterministic text signals (source text unchanged)."""
+    letters = [c for c in line if c.isalpha()]
+    if letters and line.upper() == line and len(line) <= 60:
+        return "stim-title"
+    if line.startswith("•") or line.startswith("- "):
+        return "stim-bullet"
+    if len(line) <= 44 and ":" not in line and not any(c.isdigit() for c in line) \
+       and not line.endswith((".", "?", "!", ",")):
+        return "stim-subsection"
+    return "stim-line"
+
 def stimulus_to_html(g, qids_seen):
     parts = []
-    heading = f"Questions {g['startQ']}" + (f"–{g['endQ']}" if g['endQ'] != g['startQ'] else "")
-    if g["instruction"].get("wordLimit"):
-        heading += f" <span class=\"stimulus-wordlimit\">({esc(g['instruction']['wordLimit'])})</span>"
-    parts.append(f'<p class="stimulus-heading"><strong>{heading}</strong></p>')
     stim = g["stimulus"]
-    if stim.get("figures"):
-        for f in stim["figures"]:
-            rel = f[10:] if f.startswith("wp-content/") else f
-            parts.append(f'<p><img src="/wp-content/{esc(rel)}" style="max-width:100%" alt="test stimulus" /></p>')
+    # visuals are emitted separately (group.visualHtml) so each logical visual
+    # renders exactly once, wherever the layout places it
     if stim.get("table"):
         rows = stim["table"]["rows"]
         if rows:
@@ -86,7 +92,8 @@ def stimulus_to_html(g, qids_seen):
         for line in seg.split("\n"):
             h = line_to_html(line, qids_seen)
             if h.strip():
-                parts.append(f"<p>{h}</p>")
+                cls = stim_line_class(line.strip())
+                parts.append(f'<p class="{cls}">{h}</p>')
     if stim.get("sharedOptions"):
         opts = " ".join(f"<strong>{esc(o['letter'])}</strong> {esc(o['text'] or '—')}" for o in stim["sharedOptions"])
         parts.append(f'<p class="stimulus-options">{opts}</p>')
@@ -137,6 +144,14 @@ def build_listening_runtime(rec):
                     opts = [{"id": o["letter"], "label": o["text"] or ""} for o in q["options"]]
                 elif g["stimulus"].get("sharedOptions") and q["type"] in ("matching_box", "map_labeling", "diagram_labeling", "mcq_multi"):
                     opts = [{"id": o["letter"], "label": o["text"] or ""} for o in g["stimulus"]["sharedOptions"]]
+                elif q["type"] in ("map_labeling", "diagram_labeling"):
+                    # letters live on the visual itself; derive the range from the
+                    # group instruction ("Write the correct letter A-I next to…")
+                    m = re.search(r"letter ([A-Z])[-–]([A-Z])", g["instruction"]["text"] or "")
+                    if m:
+                        a, b = ord(m.group(1)), ord(m.group(2))
+                        if a <= b <= a + 12:
+                            opts = [{"id": chr(c), "label": ""} for c in range(a, b + 1)]
                 stem = q["stem"] or {}
                 text_plain = stem.get("plain") or ""
                 prompt, suffix = text_plain, ""
@@ -157,11 +172,18 @@ def build_listening_runtime(rec):
                     "type": q["type"],
                 })
             flat_qs.extend(q_objs)
+            visual_html = None
+            if g["stimulus"].get("figures"):
+                def _fig_url(f):
+                    rel = f[len("wp-content/"):] if f.startswith("wp-content/") else f
+                    return f'<img src="/wp-content/{esc(rel)}" style="max-width:100%" alt="test stimulus" />'
+                visual_html = "\n".join(_fig_url(f) for f in g["stimulus"]["figures"])
             group_objs.append({
                 "groupId": g["groupId"],
                 "instructions": g["instruction"]["text"] or None,
                 "wordLimit": g["instruction"].get("wordLimit") or None,
                 "groupType": g["stimulus"]["kind"],
+                "visualHtml": visual_html,
                 "options": ([{"id": o["letter"], "label": o["text"] or ""} for o in g["stimulus"]["sharedOptions"]]
                              if g["stimulus"].get("sharedOptions") else None),
                 "htmlContent": gh,

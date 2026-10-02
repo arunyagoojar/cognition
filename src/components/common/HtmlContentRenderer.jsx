@@ -47,14 +47,19 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
         }
 
         return (
-          <input
-            key={index}
-            type="text"
-            value={val}
-            onChange={(e) => setAnswers(prev => ({ ...prev, [qId]: e.target.value }))}
-            className="cognition-exam-input"
-            style={{ display: 'inline-block', width: '150px', margin: '0 4px' }}
-          />
+          <span key={index} className="inline-blank">
+            {qId && /^q\d+$/.test(qId) && (
+              <span className="blank-num">{qId.replace('q', '')}</span>
+            )}
+            <input
+              type="text"
+              data-qid={qId}
+              value={val}
+              onChange={(e) => setAnswers(prev => ({ ...prev, [qId]: e.target.value }))}
+              className="cognition-exam-input"
+              style={{ display: 'inline-block', width: '150px', margin: '0 4px' }}
+            />
+          </span>
         );
       }
 
