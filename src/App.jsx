@@ -29,10 +29,10 @@ import { PRODUCTION_READING } from './data/production/productionContent.js';
 import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete } from './utils/api';
 import { createAttemptId } from './utils/storage';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js';
 
 export default function App() {
-  const hasClerk = Boolean(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+  const hasClerk = Boolean(PUBLISHABLE_KEY);
   return hasClerk ? <AppWithAuth /> : <AppContent signedIn={true} openSignIn={() => {}} />;
 }
 

@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { ClerkProvider } from '@clerk/react'
 import './index.css'
 import App from './App.jsx'
-
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js'
 
 function Root() {
   // Without a Clerk key, render without auth — the app is fully functional
