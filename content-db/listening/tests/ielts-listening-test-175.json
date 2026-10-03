@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-175",
  "title": "IELTS Listening Test 175",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-175/index.html",
-   "sha256": "64e967975c5b6ab4d579b72fca5a5c8420cce4469d08c9a6af368b26e781c476",
-   "manifestHashMatch": true,
+   "sha256": "211dc6dd9e5fa7bb275d5001790fc784438d147915655aa0b77597b194afc941",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-175/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "188de80530f9a6eae031c412af3dec61adfb3bfd0bb8170247e282b42cbed4a3",
+ "contentFingerprint": "d48c6568f00436c082fb83dccd04fd6223129dda7a58f75ad8a1c4ad28ffce99",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -416,8 +416,10 @@
      "Crime reference number allocated – (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -439,7 +441,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Nationality: (1) ␦"
-     }
+     },
+     "keyRaw": "Canadian"
     },
     {
      "number": 2,
@@ -462,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Reason for visit: business (to buy antique (2) ␦ )"
-     }
+     },
+     "keyRaw": "furniture"
     },
     {
      "number": 3,
@@ -485,7 +489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Current address: (3) ␦ Apartments (No 15)"
-     }
+     },
+     "keyRaw": "park"
     },
     {
      "number": 4,
@@ -508,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Items stolen: – a wallet containing approximately (4) £ ␦"
-     }
+     },
+     "keyRaw": "250"
     },
     {
      "number": 5,
@@ -530,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "– a (5) ␦"
-     }
+     },
+     "keyRaw": "phone"
     },
     {
      "number": 6,
@@ -552,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Date of theft: (6) ␦"
-     }
+     },
+     "keyRaw": "10(th) September"
     },
     {
      "number": 7,
@@ -575,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Location: outside the (7) ␦ at about 4 pm"
-     }
+     },
+     "keyRaw": "museum"
     },
     {
      "number": 8,
@@ -598,7 +607,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Details of suspect: – some boys asked for the (8) ␦ then ran off"
-     }
+     },
+     "keyRaw": "time"
     },
     {
      "number": 9,
@@ -621,7 +631,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– he was about 12, slim build with (9) ␦ hair"
-     }
+     },
+     "keyRaw": "blond(e)"
     },
     {
      "number": 10,
@@ -643,7 +654,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Crime reference number allocated – (10) ␦"
-     }
+     },
+     "keyRaw": "87954 82361"
     }
    ],
    "provenance": {
@@ -651,34 +663,6 @@
     "rawExcerpt": "Part 1: – Questions 1-10\nComplete the form below. Write ONE WORD AND/OR A NUMBER for each answer."
    },
    "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 20,
-   "partExplicit": true,
-   "instruction": {
-    "text": "",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": ""
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Induction talk for new apprentices"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Part 2: Questions 11 – 20"
-   },
-   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -700,14 +684,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "get to know colleagues B learn from any mistakes C ask lots of questions D react positively to feedback"
+      "text": "get to know colleagues"
+     },
+     {
+      "letter": "B",
+      "text": "learn from any mistakes"
+     },
+     {
+      "letter": "C",
+      "text": "ask lots of questions"
+     },
+     {
+      "letter": "D",
+      "text": "react positively to feedback"
      },
      {
       "letter": "E",
       "text": "enjoy new challenges"
      }
+    ],
+    "optionPreface": [
+     "Which TWO pieces of advice for the first week of an apprenticeship does the manager give?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -724,7 +724,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -735,13 +736,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C (in any order)",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C (in any order)"
     }
    ],
    "provenance": {
@@ -749,6 +751,43 @@
     "rawExcerpt": "Questions 11 and 12\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:11-12",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO pieces of advice for the first week of an apprenticeship does the manager give?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "get to know colleagues"
+     },
+     {
+      "letter": "B",
+      "text": "learn from any mistakes"
+     },
+     {
+      "letter": "C",
+      "text": "ask lots of questions"
+     },
+     {
+      "letter": "D",
+      "text": "react positively to feedback"
+     },
+     {
+      "letter": "E",
+      "text": "enjoy new challenges"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -771,14 +810,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "confidence-building B making career plans C completing difficult tasks D making a weekly timetable"
+      "text": "confidence-building"
+     },
+     {
+      "letter": "B",
+      "text": "making career plans"
+     },
+     {
+      "letter": "C",
+      "text": "completing difficult tasks"
+     },
+     {
+      "letter": "D",
+      "text": "making a weekly timetable"
      },
      {
       "letter": "E",
       "text": "reviewing progress"
      }
+    ],
+    "optionPreface": [
+     "Which TWO things does the manager say mentors can help with?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -795,7 +850,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -806,13 +862,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "E (in any order)",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E (in any order)"
     }
    ],
    "provenance": {
@@ -820,6 +877,43 @@
     "rawExcerpt": "Questions 13 and 14\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:13-14",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO things does the manager say mentors can help with?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "confidence-building"
+     },
+     {
+      "letter": "B",
+      "text": "making career plans"
+     },
+     {
+      "letter": "C",
+      "text": "completing difficult tasks"
+     },
+     {
+      "letter": "D",
+      "text": "making a weekly timetable"
+     },
+     {
+      "letter": "E",
+      "text": "reviewing progress"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -841,8 +935,10 @@
      "Company policy for apprentices"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -859,7 +955,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "15. Using the internet ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
@@ -876,7 +973,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "16. Flexible working ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -893,7 +991,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "17. Booking holidays ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -910,7 +1009,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "18. Working overtime ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -927,7 +1027,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "19. Wearing trainers ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -944,7 +1045,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "20. Bringing food to work ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -952,6 +1054,25 @@
     "rawExcerpt": "Questions 15 – 20\nWhat does the manager say about each of the following aspects of the company policy for apprentices?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "instruction",
+    "instructionText": "What does the manager say about each of the following aspects of the company policy for apprentices? Write the correct letter, A, B or C, next to Questions 15-20.",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It is encouraged."
+     },
+     {
+      "letter": "B",
+      "text": "There are some restrictions."
+     },
+     {
+      "letter": "C",
+      "text": "It is against the rules."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -967,43 +1088,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Cities built by the sea",
-     "A contain nearly half the world’s population.",
-     "B include most of the world’s largest cities.",
-     "C are growing twice as fast as other cities.",
-     "21. Carla and Rob were surprised to learn that coastal cities\nA contain nearly half the world’s population.\nB include most of the world’s largest cities.\nC are growing twice as fast as other cities.",
-     "A may bring pollution to the cities.",
-     "B may reduce the land available for agriculture.",
-     "C may mean the countryside is spoiled by industry.",
-     "22. According to Rob, building coastal cities near to rivers\nA may bring pollution to the cities.\nB may reduce the land available for agriculture.\nC may mean the countryside is spoiled by industry.",
-     "A There were not enough of them.",
-     "B They were made of unsuitable materials.",
-     "C They did not allow for the effects of climate change.",
-     "23. What mistake was made when building water drainage channels in Miami in the 1950s?\nA There were not enough of them.\nB They were made of unsuitable materials.\nC They did not allow for the effects of climate change.",
-     "A take measures to restore ecosystems",
-     "B pay for a new flood prevention system",
-     "C stop disposing of waste materials into the ocean",
-     "24. What do Rob and Carla think that the authorities in Miami should do immediately?\nA take measures to restore ecosystems\nB pay for a new flood prevention system\nC stop disposing of waste materials into the ocean",
-     "A greater coordination of activities",
-     "B more sharing of information",
-     "C agreement on shared policies",
-     "25. What do they agree should be the priority for international action?\nA greater coordination of activities\nB more sharing of information\nC agreement on shared policies"
+     "Cities built by the sea"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Carla and Rob were surprised to learn that coastal cities",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "contain nearly half the world’s population."
+      },
+      {
+       "letter": "B",
+       "text": "include most of the world’s largest cities."
+      },
+      {
+       "letter": "C",
+       "text": "are growing twice as fast as other cities."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1011,16 +1127,30 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "21. Carla and Rob were surprised to learn that coastal cities"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "According to Rob, building coastal cities near to rivers",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "may bring pollution to the cities."
+      },
+      {
+       "letter": "B",
+       "text": "may reduce the land available for agriculture."
+      },
+      {
+       "letter": "C",
+       "text": "may mean the countryside is spoiled by industry."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1028,16 +1158,30 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "22. According to Rob, building coastal cities near to rivers"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What mistake was made when building water drainage channels in Miami in the 1950s?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "There were not enough of them."
+      },
+      {
+       "letter": "B",
+       "text": "They were made of unsuitable materials."
+      },
+      {
+       "letter": "C",
+       "text": "They did not allow for the effects of climate change."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1045,16 +1189,30 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "23. What mistake was made when building water drainage channels in Miami in the 1950s?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do Rob and Carla think that the authorities in Miami should do immediately?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "take measures to restore ecosystems"
+      },
+      {
+       "letter": "B",
+       "text": "pay for a new flood prevention system"
+      },
+      {
+       "letter": "C",
+       "text": "stop disposing of waste materials into the ocean"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1062,16 +1220,30 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "24. What do Rob and Carla think that the authorities in Miami should do immediately?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do they agree should be the priority for international action?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "greater coordination of activities"
+      },
+      {
+       "letter": "B",
+       "text": "more sharing of information"
+      },
+      {
+       "letter": "C",
+       "text": "agreement on shared policies"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1079,7 +1251,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "25. What do they agree should be the priority for international action?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1108,14 +1281,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "use visuals B keep it short C involve other students D check the information is accurate E provide a handout F focus on one example"
+      "text": "use visuals"
+     },
+     {
+      "letter": "B",
+      "text": "keep it short"
+     },
+     {
+      "letter": "C",
+      "text": "involve other students"
+     },
+     {
+      "letter": "D",
+      "text": "check the information is accurate"
+     },
+     {
+      "letter": "E",
+      "text": "provide a handout"
+     },
+     {
+      "letter": "F",
+      "text": "focus on one example"
      },
      {
       "letter": "G",
       "text": "do online research"
      }
+    ],
+    "optionPreface": [
+     "Decisions"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1132,7 +1329,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "26. Historical background ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 27,
@@ -1149,7 +1347,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "27. Geographical factors ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1166,7 +1365,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "28. Past mistakes ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 29,
@@ -1183,7 +1383,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "29. Future risks ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 30,
@@ -1200,7 +1401,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "30. International implications ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1208,6 +1410,40 @@
     "rawExcerpt": "Questions 26 – 30\nWhat decision do the students make about each of the following parts of their presentation?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Decisions",
+    "options": [
+     {
+      "letter": "A",
+      "text": "use visuals"
+     },
+     {
+      "letter": "B",
+      "text": "keep it short"
+     },
+     {
+      "letter": "C",
+      "text": "involve other students"
+     },
+     {
+      "letter": "D",
+      "text": "check the information is accurate"
+     },
+     {
+      "letter": "E",
+      "text": "provide a handout"
+     },
+     {
+      "letter": "F",
+      "text": "focus on one example"
+     },
+     {
+      "letter": "G",
+      "text": "do online research"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1255,8 +1491,10 @@
      "Ocean thermal energy conversion\nUses a difference in temperature between the surface and lower levels Water brought to the surface in a pipe"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1278,7 +1516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "More energy required because of growth in population and (31) ␦"
-     }
+     },
+     "keyRaw": "industry"
     },
     {
      "number": 32,
@@ -1301,7 +1540,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "Advantage: waves provide a (32) ␦ source of renewable energy"
-     }
+     },
+     "keyRaw": "constant"
     },
     {
      "number": 33,
@@ -1323,7 +1563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• waves can move in any (33) ␦"
-     }
+     },
+     "keyRaw": "direction"
     },
     {
      "number": 34,
@@ -1346,7 +1587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• movement of sand, etc. on the (34) ␦ of the ocean may be affected"
-     }
+     },
+     "keyRaw": "floor"
     },
     {
      "number": 35,
@@ -1369,7 +1611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "Tides are more (35) ␦ than waves"
-     }
+     },
+     "keyRaw": "predictable"
     },
     {
      "number": 36,
@@ -1392,7 +1635,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• will be created in a (36) ␦ at Swansea"
-     }
+     },
+     "keyRaw": "bay"
     },
     {
      "number": 37,
@@ -1415,7 +1659,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• stored water is released through (37) ␦ , driving the turbines in the reverse direction"
-     }
+     },
+     "keyRaw": "gates"
     },
     {
      "number": 38,
@@ -1438,7 +1683,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "• no (38) ␦ is required to make it work"
-     }
+     },
+     "keyRaw": "fuel"
     },
     {
      "number": 39,
@@ -1460,7 +1706,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "• likely to create a number of (39) ␦"
-     }
+     },
+     "keyRaw": "jobs"
     },
     {
      "number": 40,
@@ -1483,7 +1730,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "• may harm fish and birds, e.g. by affecting (40) ␦ and building up silt"
-     }
+     },
+     "keyRaw": "migration"
     }
    ],
    "provenance": {
@@ -1532,15 +1780,6 @@
      20
     ]
    }
-  },
-  {
-   "unit": "group",
-   "groupId": "g02",
-   "questionNumbers": [],
-   "reasonCode": "INSTRUCTION_MISSING",
-   "evidence": {
-    "instructionRaw": "Part 2: Questions 11 – 20"
-   }
   }
  ],
  "validationWarnings": [
@@ -1551,7 +1790,8 @@
   }
  ],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 2,
- "status": "flagged",
+ "quarantinedCount": 1,
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

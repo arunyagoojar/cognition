@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-12",
  "title": "IELTS Listening Test 12",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-12/index.html",
-   "sha256": "4237ca4f0fbe2cff64fbfc5441518a2938d908412b3a1ace115362156c111721",
-   "manifestHashMatch": true,
+   "sha256": "07c5e8c134715de7b8cca7c9aef429ffd994cfa567bd37501c895910c53cf6bf",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-12/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -417,8 +417,10 @@
      "Contact number: (10) 084 ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -441,7 +443,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Day and date of event: (1) ␦ November"
-     }
+     },
+     "keyRaw": "Saturday 25"
     },
     {
      "number": 2,
@@ -463,7 +466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Number attending event: (2) ␦"
-     }
+     },
+     "keyRaw": "55"
     },
     {
      "number": 3,
@@ -486,7 +490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "5 dozens sets of (3) ␦ and ␦"
-     }
+     },
+     "keyRaw": "knives/ forks"
     },
     {
      "number": 4,
@@ -508,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "40 plastic (4) ␦"
-     }
+     },
+     "keyRaw": "(garden) chairs"
     },
     {
      "number": 5,
@@ -530,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Six (5) ␦"
-     }
+     },
+     "keyRaw": "ice buckets"
     },
     {
      "number": 6,
@@ -552,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(6) ␦ package: 5pm Saturday – 10am Monday: $1350 + tax"
-     }
+     },
+     "keyRaw": "same day"
     },
     {
      "number": 7,
@@ -574,7 +582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(7) ␦ $50 (within 10Km)"
-     }
+     },
+     "keyRaw": "home delivery"
     },
     {
      "number": 8,
@@ -597,7 +606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Small glasses – (8) ␦ per item"
-     }
+     },
+     "keyRaw": "$3.50"
     },
     {
      "number": 9,
@@ -619,7 +629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Full name: (9) ␦"
-     }
+     },
+     "keyRaw": "Susan Millins"
     },
     {
      "number": 10,
@@ -642,7 +653,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Contact number: (10) 084 ␦"
-     }
+     },
+     "keyRaw": "3987695"
     }
    ],
    "provenance": {
@@ -670,15 +682,25 @@
     "figures": null,
     "sharedOptions": [
      {
+      "letter": "A",
+      "text": "swifts"
+     },
+     {
       "letter": "B",
       "text": "bats"
      },
      {
       "letter": "C",
-      "text": "cockroaches D centipedes"
+      "text": "cockroaches"
+     },
+     {
+      "letter": "D",
+      "text": "centipedes"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -695,7 +717,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. feed on the guardrail beside the path ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -712,7 +735,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. are dangerous to people ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 13,
@@ -729,7 +753,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. collect in large groups ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -746,7 +771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "14. fly only at night ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -763,12 +789,35 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "15. live on the roof of the cave ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-15\nMatch the creatures to their behavior. Write the correct letter A, B, C or D next to questions 11-15."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "swifts"
+     },
+     {
+      "letter": "B",
+      "text": "bats"
+     },
+     {
+      "letter": "C",
+      "text": "cockroaches"
+     },
+     {
+      "letter": "D",
+      "text": "centipedes"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -791,8 +840,10 @@
      "16. What is the guano from the caves used for? ␦\n17. What are the birds’ nests from the cave used for? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -817,7 +868,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. What is the guano from the caves used for? ␦"
-     }
+     },
+     "keyRaw": "fertilizer"
     },
     {
      "number": 17,
@@ -842,7 +894,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. What are the birds’ nests from the cave used for? ␦"
-     }
+     },
+     "keyRaw": "soup"
     }
    ],
    "provenance": {
@@ -872,8 +925,10 @@
      "In the cave you should:\n18. carry a ␦\n19. wear a ␦ and a hat.\n20. keep to the ␦ at all times."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -898,7 +953,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. carry a ␦"
-     }
+     },
+     "keyRaw": "light/ torch"
     },
     {
      "number": 19,
@@ -921,7 +977,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "19. wear a ␦ and a hat."
-     }
+     },
+     "keyRaw": "jacket"
     },
     {
      "number": 20,
@@ -944,7 +1001,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. keep to the ␦ at all times."
-     }
+     },
+     "keyRaw": "trails/ path"
     }
    ],
    "provenance": {
@@ -971,8 +1029,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1002,7 +1062,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "21. Mary has been called in for a meeting because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1032,7 +1093,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "22. The most important part of planning a field trip is:"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1062,7 +1124,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "23. Leaders must develop"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1090,8 +1153,10 @@
      "24. Mary’s plan must consider ␦ such as local rain or wind, the land and the party members.\n25. Mary’s plan does not need to consider things such as tropical storms or serious illnesses, which are known as ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1114,7 +1179,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. Mary’s plan must consider ␦ such as local rain or wind, the land and the party members."
-     }
+     },
+     "keyRaw": "factors"
     },
     {
      "number": 25,
@@ -1139,7 +1205,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "25. Mary’s plan does not need to consider things such as tropical storms or serious illnesses, which are known as ␦"
-     }
+     },
+     "keyRaw": "events"
     }
    ],
    "provenance": {
@@ -1176,8 +1243,10 @@
      "• Do not allow (30) ␦ to be responsible for transport"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1199,7 +1268,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Everyone needs warm clothing and a (26) ␦"
-     }
+     },
+     "keyRaw": "raincoat"
     },
     {
      "number": 27,
@@ -1221,7 +1291,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Hiking – first aid kit, map and a (27) ␦"
-     }
+     },
+     "keyRaw": "compass"
     },
     {
      "number": 28,
@@ -1244,7 +1315,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Avoid routes where an avalanche, mudslide or (28) ␦ is possible"
-     }
+     },
+     "keyRaw": "flash flood"
     },
     {
      "number": 29,
@@ -1267,7 +1339,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Think about the fitness and (29) ␦ of the group"
-     }
+     },
+     "keyRaw": "experience"
     },
     {
      "number": 30,
@@ -1290,7 +1363,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Do not allow (30) ␦ to be responsible for transport"
-     }
+     },
+     "keyRaw": "student drivers"
     }
    ],
    "provenance": {
@@ -1322,8 +1396,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test12.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1347,7 +1423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "ear drum"
     },
     {
      "number": 32,
@@ -1371,7 +1448,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "auditory nerve"
     },
     {
      "number": 33,
@@ -1395,7 +1473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "speech processor"
     },
     {
      "number": 34,
@@ -1419,7 +1498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "receiver"
     }
    ],
    "provenance": {
@@ -1448,8 +1528,10 @@
      "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets different (36) ␦ from an implant, so users must relearn how to hear. Cochlear implants are not a cure. Users need ongoing training in (37) ␦ , lip-reading and sign language. The surgery can damage nerves. It may also destroy any (38) ␦ ; in such cases, those users cannot go back to using a hearing aid. The most important factor for selecting users is the (39) ␦ of their deafness and also age and previous speaking ability. Finally, the condition of the nerve cells in the cochlea is a factor because (40) ␦ can damage these cells."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1492,7 +1574,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "amplify"
     },
     {
      "number": 36,
@@ -1535,7 +1618,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "sound signals"
     },
     {
      "number": 37,
@@ -1578,7 +1662,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "speech therapy"
     },
     {
      "number": 38,
@@ -1621,7 +1706,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "natural hearing"
     },
     {
      "number": 39,
@@ -1664,7 +1750,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "duration"
     },
     {
      "number": 40,
@@ -1707,7 +1794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Hearing aids (35) ␦ normal sounds, so they are good for mild hearing loss but not for severe loss. Cochlear implants help some people a lot, but do not work so well for everyone. The brain gets differ"
-     }
+     },
+     "keyRaw": "disease"
     }
    ],
    "provenance": {
@@ -1760,6 +1848,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

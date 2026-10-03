@@ -1,0 +1,56 @@
+{
+ "slug": "ielts-listening-test-151",
+ "status": "duplicate",
+ "sourceSha256": "1066451af78920c2671b93356fc769072e4f97aeffd031d84d09a594f733db5d",
+ "units": [
+  {
+   "unit": "group",
+   "groupId": "g06",
+   "questionNumbers": [
+    21,
+    22,
+    24,
+    25,
+    26
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 3: Questions 21-26\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": [
+     "23 Why did Paul change from one project to another?\nA His first job was not well"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24,
+     25,
+     26
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

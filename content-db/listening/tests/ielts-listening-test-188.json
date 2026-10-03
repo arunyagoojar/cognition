@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-188",
  "title": "IELTS Listening Test 188",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-188/index.html",
-   "sha256": "0532265bdf08ae52d841aa8e6e60e222fe8a357c9950f7cab13297f9ea69a05e",
-   "manifestHashMatch": true,
+   "sha256": "dcd34ca3ba09e4886fdede5921d3cc62aa04d66ddaa3b966fe1360e401d5718f",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-188/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "95c2a6010fe27dd54c99885d29f0814b9011c79c530ecf951d19bb729564674c",
+ "contentFingerprint": "b90aae31d0ad0f176492f18452724505e54929d3e41695c652f07c9247f238cb",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -304,6 +304,22 @@
     "value": "H"
    },
    {
+    "number": 21,
+    "value": "B, C"
+   },
+   {
+    "number": 22,
+    "value": "B, C"
+   },
+   {
+    "number": 23,
+    "value": "B, C"
+   },
+   {
+    "number": 24,
+    "value": "B, C"
+   },
+   {
     "number": 25,
     "value": "C"
    },
@@ -403,8 +419,10 @@
      "• deadline for final payment: end of (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -427,7 +445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• available for week beginning (1) ␦ May"
-     }
+     },
+     "keyRaw": "28th"
     },
     {
      "number": 2,
@@ -450,7 +469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• cost for the week: (2) £ ␦"
-     }
+     },
+     "keyRaw": "550"
     },
     {
      "number": 3,
@@ -473,7 +493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• (3) ␦ Cottage"
-     }
+     },
+     "keyRaw": "Chervil"
     },
     {
      "number": 4,
@@ -495,7 +516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• building was originally a (4) ␦"
-     }
+     },
+     "keyRaw": "Garage"
     },
     {
      "number": 5,
@@ -517,7 +539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• walk through doors from living room into a (5) ␦"
-     }
+     },
+     "keyRaw": "Garden"
     },
     {
      "number": 6,
@@ -540,7 +563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• several (6) ␦ spaces at the front"
-     }
+     },
+     "keyRaw": "Parking"
     },
     {
      "number": 7,
@@ -562,7 +586,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• central heating and stove that burns (7) ␦"
-     }
+     },
+     "keyRaw": "Wood"
     },
     {
      "number": 8,
@@ -585,7 +610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• views of old (8) ␦ from living room"
-     }
+     },
+     "keyRaw": "Bridge"
     },
     {
      "number": 9,
@@ -608,7 +634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• view of hilltop (9) ␦ from the bedroom"
-     }
+     },
+     "keyRaw": "Monument"
     },
     {
      "number": 10,
@@ -630,7 +657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• deadline for final payment: end of (10) ␦"
-     }
+     },
+     "keyRaw": "March"
     }
    ],
    "provenance": {
@@ -652,38 +680,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Local council report on traffic and highways",
-     "A cuts to public transport.",
-     "B poor maintenance of roads.",
-     "C changes in the type of traffic.",
-     "Local council report on traffic and highways\n11. A survey found people’s main concern about traffic in the area was\nA cuts to public transport.\nB poor maintenance of roads.\nC changes in the type of traffic.",
-     "A It will be widened.",
-     "B It will be extended.",
-     "C It will be resurfaced.",
-     "12. Which change will shortly be made to the cycle path next to the river?\nA It will be widened.\nB It will be extended.\nC It will be resurfaced.",
-     "A the Post Office has moved.",
-     "B the proposed location is unsafe.",
-     "C funding is not available at present.",
-     "13. Plans for a pedestrian crossing have been postponed because\nA the Post Office has moved.\nB the proposed location is unsafe.\nC funding is not available at present.",
-     "B asking motorists to switch off engines when waiting at the level crossing.",
-     "C warning pedestrians to leave enough time when crossing the railway line.",
-     "14. On Station Road, notices have been erected\nA telling cyclists not to leave their bikes outside the station ticket office.\nB asking motorists to switch off engines when waiting at the level crossing.\nC warning pedestrians to leave enough time when crossing the railway line."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "A survey found people’s main concern about traffic in the area was",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "cuts to public transport."
+      },
+      {
+       "letter": "B",
+       "text": "poor maintenance of roads."
+      },
+      {
+       "letter": "C",
+       "text": "changes in the type of traffic."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -691,16 +717,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. A survey found people’s main concern about traffic in the area was"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which change will shortly be made to the cycle path next to the river?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It will be widened."
+      },
+      {
+       "letter": "B",
+       "text": "It will be extended."
+      },
+      {
+       "letter": "C",
+       "text": "It will be resurfaced."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -708,16 +748,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. Which change will shortly be made to the cycle path next to the river?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Plans for a pedestrian crossing have been postponed because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the Post Office has moved."
+      },
+      {
+       "letter": "B",
+       "text": "the proposed location is unsafe."
+      },
+      {
+       "letter": "C",
+       "text": "funding is not available at present."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -725,16 +779,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. Plans for a pedestrian crossing have been postponed because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "On Station Road, notices have been erected",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "telling cyclists not to leave their bikes outside the station ticket office."
+      },
+      {
+       "letter": "B",
+       "text": "asking motorists to switch off engines when waiting at the level crossing."
+      },
+      {
+       "letter": "C",
+       "text": "warning pedestrians to leave enough time when crossing the railway line."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -742,7 +810,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. On Station Road, notices have been erected"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -772,8 +841,10 @@
     "figures": [
      "wp-content/uploads/2024/09/test-188-new.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -786,11 +857,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. New car park ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -803,11 +875,12 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. New cricket pitch ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -820,11 +893,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. Children’s playground ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -837,11 +911,12 @@
      "blankContext": null,
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. Skateboard ramp ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 19,
@@ -854,11 +929,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "19. Pavilion ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 20,
@@ -871,11 +947,12 @@
      "blankContext": null,
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. Notice board ␦"
-     }
+     },
+     "keyRaw": "H"
     }
    ],
    "provenance": {
@@ -883,7 +960,7 @@
     "rawExcerpt": "Questions 15-20\nLabel the map below. Write the correct letter, A-l, next to Questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g04",
@@ -892,22 +969,119 @@
    "endQ": 22,
    "partExplicit": true,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important? A reducing noise pollution B reducing traffic congestion C improving air quality D encouraging health and fitness E making cycling affordable",
+    "text": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important? A reducing noise pollution B reducing traffic congestion C improving air quality D encouraging health and fitness E making cycling affordable"
+    "originalText": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "reducing noise pollution"
+     },
+     {
+      "letter": "B",
+      "text": "reducing traffic congestion"
+     },
+     {
+      "letter": "C",
+      "text": "improving air quality"
+     },
+     {
+      "letter": "D",
+      "text": "encouraging health and fitness"
+     },
+     {
+      "letter": "E",
+      "text": "making cycling affordable"
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 21,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important?"
+     },
+     "keyRaw": "B, C"
+    },
+    {
+     "number": 22,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[15]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO benefits of city bike-sharing schemes do the students agree are the most important?"
+     },
+     "keyRaw": "B, C"
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
-    "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E.\nWhich TWO benefits of city bike-sharing schemes do the students agree are the most important?\nA reducing noise pollution\nB reducing traffic congest"
+    "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E.\nWhich TWO benefits of city bike-sharing schemes do the students agree are the most important?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO benefits of city bike-sharing schemes do the students agree are the most important?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "reducing noise pollution"
+     },
+     {
+      "letter": "B",
+      "text": "reducing traffic congestion"
+     },
+     {
+      "letter": "C",
+      "text": "improving air quality"
+     },
+     {
+      "letter": "D",
+      "text": "encouraging health and fitness"
+     },
+     {
+      "letter": "E",
+      "text": "making cycling affordable"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -918,24 +1092,121 @@
    "endQ": 24,
    "partExplicit": false,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes? A Bikes should have a GPS system. B The app should be easy to use. C Public awareness should be raised. D Only one scheme should be available. E There should be a large network of cycle lanes.",
+    "text": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes? A Bikes should have a GPS system. B The app should be easy to use. C Public awareness should be raised. D Only one scheme should be available. E There should be a large network of cycle lanes."
+    "originalText": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "Bikes should have a GPS system."
+     },
+     {
+      "letter": "B",
+      "text": "The app should be easy to use."
+     },
+     {
+      "letter": "C",
+      "text": "Public awareness should be raised."
+     },
+     {
+      "letter": "D",
+      "text": "Only one scheme should be available."
+     },
+     {
+      "letter": "E",
+      "text": "There should be a large network of cycle lanes."
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 23,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[17]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes?"
+     },
+     "keyRaw": "B, C"
+    },
+    {
+     "number": 24,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[17]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO things do the students think are necessary for successful bike-sharing schemes?"
+     },
+     "keyRaw": "B, C"
+    }
+   ],
    "provenance": {
-    "elementPath": "entry-content.children[16]",
-    "rawExcerpt": "Questions 23-24\nChoose TWO letters, A-E.\nWhich TWO things do the students think are necessary for successful bike-sharing schemes?\nA Bikes should have a GPS system.\nB The app should be easy to use.\nC "
+    "elementPath": "entry-content.children[17]",
+    "rawExcerpt": "Questions 23-24\nChoose TWO letters, A-E.\nWhich TWO things do the students think are necessary for successful bike-sharing schemes?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:23-24",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO things do the students think are necessary for successful bike-sharing schemes?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Bikes should have a GPS system."
+     },
+     {
+      "letter": "B",
+      "text": "The app should be easy to use."
+     },
+     {
+      "letter": "C",
+      "text": "Public awareness should be raised."
+     },
+     {
+      "letter": "D",
+      "text": "Only one scheme should be available."
+     },
+     {
+      "letter": "E",
+      "text": "There should be a large network of cycle lanes."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -958,14 +1229,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "They agree it has been disappointing. B They think it should be cheaper. C They are surprised it has been so successful. D They agree that more investment is required. E They think the system has been well designed. F They disagree about the reasons for its success."
+      "text": "They agree it has been disappointing."
+     },
+     {
+      "letter": "B",
+      "text": "They think it should be cheaper."
+     },
+     {
+      "letter": "C",
+      "text": "They are surprised it has been so successful."
+     },
+     {
+      "letter": "D",
+      "text": "They agree that more investment is required."
+     },
+     {
+      "letter": "E",
+      "text": "They think the system has been well designed."
+     },
+     {
+      "letter": "F",
+      "text": "They disagree about the reasons for its success."
      },
      {
       "letter": "G",
       "text": "They think it has expanded too quickly."
      }
+    ],
+    "optionPreface": [
+     "Opinion of bike-sharing scheme"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -980,9 +1275,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. Amsterdam ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -997,9 +1293,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "26. Dublin ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 27,
@@ -1014,9 +1311,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "27. London ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 28,
@@ -1031,9 +1329,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "28. Buenos Aires ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 29,
@@ -1048,9 +1347,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "29. New York ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1065,16 +1365,51 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "30. Sydney ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[17]",
+    "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Questions 25-30\nWhat is the speakers’ opinion of the bike-sharing schemes in each of the following cities?\nChoose SIX answers from the box and write the correct letter, A-G, next to Questions 25-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Opinion of bike-sharing scheme",
+    "options": [
+     {
+      "letter": "A",
+      "text": "They agree it has been disappointing."
+     },
+     {
+      "letter": "B",
+      "text": "They think it should be cheaper."
+     },
+     {
+      "letter": "C",
+      "text": "They are surprised it has been so successful."
+     },
+     {
+      "letter": "D",
+      "text": "They agree that more investment is required."
+     },
+     {
+      "letter": "E",
+      "text": "They think the system has been well designed."
+     },
+     {
+      "letter": "F",
+      "text": "They disagree about the reasons for its success."
+     },
+     {
+      "letter": "G",
+      "text": "They think it has expanded too quickly."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1115,8 +1450,10 @@
      "• The arrival of farming meant the (40) ␦ was destroyed."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1137,9 +1474,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• 1507 – Portuguese ships transporting (31) ␦ stopped at the island to collect food and water."
-     }
+     },
+     "keyRaw": "Spice(s)"
     },
     {
      "number": 32,
@@ -1160,9 +1498,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• 1638 – The Dutch established a (32) ␦ on the island."
-     }
+     },
+     "keyRaw": "Colony/ settlement"
     },
     {
      "number": 33,
@@ -1182,9 +1521,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• A Dutch painting suggests the dodo was very (33) ␦"
-     }
+     },
+     "keyRaw": "Fat"
     },
     {
      "number": 34,
@@ -1204,9 +1544,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• The only remaining soft tissue is a dried (34) ␦"
-     }
+     },
+     "keyRaw": "Head"
     },
     {
      "number": 35,
@@ -1226,9 +1567,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Recent studies of a dodo skeleton suggest the birds were capable of rapid (35) ␦"
-     }
+     },
+     "keyRaw": "Movement"
     },
     {
      "number": 36,
@@ -1248,9 +1590,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• It’s thought they were able to use their small wings to maintain (36) ␦"
-     }
+     },
+     "keyRaw": "Balance/ balancing"
     },
     {
      "number": 37,
@@ -1271,9 +1614,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Their (37) ␦ was of average size."
-     }
+     },
+     "keyRaw": "Brain"
     },
     {
      "number": 38,
@@ -1294,9 +1638,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Their sense of (38) ␦ enabled them to find food."
-     }
+     },
+     "keyRaw": "Smell"
     },
     {
      "number": 39,
@@ -1317,9 +1662,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[23]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• (39) ␦ also escaped onto the island and ate the birds’ eggs."
-     }
+     },
+     "keyRaw": "Rats"
     },
     {
      "number": 40,
@@ -1340,13 +1686,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[23]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• The arrival of farming meant the (40) ␦ was destroyed."
-     }
+     },
+     "keyRaw": "Forest"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[20]",
+    "elementPath": "entry-content.children[22]",
     "rawExcerpt": "Part 4: Questions 31-40\nComplete the notes below. Write ONE WORD ONLY for each answer."
    },
    "status": "verified"
@@ -1381,27 +1728,109 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 15,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     21,
-     22
-    ]
+    "stem": "New car park",
+    "answer": "C",
+    "rawExcerpt": "15. New car park ␦",
+    "options": null
    }
   },
   {
-   "unit": "group",
-   "groupId": "g05",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 16,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     23,
-     24
-    ]
+    "stem": "New cricket pitch",
+    "answer": "F",
+    "rawExcerpt": "16. New cricket pitch ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 17,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Children’s playground",
+    "answer": "A",
+    "rawExcerpt": "17. Children’s playground ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 18,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Skateboard ramp",
+    "answer": "I",
+    "rawExcerpt": "18. Skateboard ramp ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Pavilion",
+    "answer": "E",
+    "rawExcerpt": "19. Pavilion ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 20,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Notice board",
+    "answer": "H",
+    "rawExcerpt": "20. Notice board ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
    }
   }
  ],
@@ -1412,8 +1841,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

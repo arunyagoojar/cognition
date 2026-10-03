@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-114",
  "title": "IELTS Listening Test 114",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-114/index.html",
-   "sha256": "c5a791918ace9a3d010926d7ccdbbfd21e95f797ff74acf52574d16de5515d62",
-   "manifestHashMatch": true,
+   "sha256": "398c173fabc41a3f97f2cfa09144b3a173ebbb61c00e251e6955af25ed8abde2",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-114/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -420,8 +420,10 @@
      "Pay: by (7) ␦ only"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -444,7 +446,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Rental: £50 a week, or (1) £ ␦ a day"
-     }
+     },
+     "keyRaw": "14"
     },
     {
      "number": 2,
@@ -467,7 +470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Late return fee: (2) £ ␦ per extra hour"
-     }
+     },
+     "keyRaw": "1.25"
     },
     {
      "number": 3,
@@ -490,7 +494,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Deposit: (3) £ ␦ returnable"
-     }
+     },
+     "keyRaw": "60"
     },
     {
      "number": 4,
@@ -513,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Accessories: £5 for (4) ␦ : pannier or handlebar type"
-     }
+     },
+     "keyRaw": "bags"
     },
     {
      "number": 5,
@@ -535,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Free: pump, repair kit, strong (5) ␦"
-     }
+     },
+     "keyRaw": "lock"
     },
     {
      "number": 6,
@@ -558,7 +565,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Insurance: included, but must pay for first (6) £ ␦ of claim"
-     }
+     },
+     "keyRaw": "100"
     },
     {
      "number": 7,
@@ -581,7 +589,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Pay: by (7) ␦ only"
-     }
+     },
+     "keyRaw": "credit card"
     }
    ],
    "provenance": {
@@ -614,19 +623,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test114-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 8
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (8) ␦",
@@ -636,18 +643,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 9,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 9
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (9) ␦",
@@ -657,18 +662,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 10,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 10
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (10) ␦",
@@ -678,7 +681,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(10) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -686,6 +691,33 @@
     "rawExcerpt": "Questions 8-10\nLabel the map below. Write the appropriate letter A-E on the map."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "health centre"
+     },
+     {
+      "letter": "B",
+      "text": "Maple Leaf pub"
+     },
+     {
+      "letter": "C",
+      "text": "Clark’s cycle hire"
+     },
+     {
+      "letter": "D",
+      "text": "supermarket"
+     },
+     {
+      "letter": "E",
+      "text": "garage"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -745,8 +777,10 @@
      "(17) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -769,7 +803,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Landscape photography, (11) ………."
-     }
+     },
+     "keyRaw": "stamp collecting"
     },
     {
      "number": 12,
@@ -791,7 +826,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(12) ………….. RELIGIOUS"
-     }
+     },
+     "keyRaw": "social"
     },
     {
      "number": 13,
@@ -813,7 +849,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(13) ………….., Afro-Caribbean"
-     }
+     },
+     "keyRaw": "China"
     },
     {
      "number": 14,
@@ -835,7 +872,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(14) …………"
-     }
+     },
+     "keyRaw": "charities"
     },
     {
      "number": 15,
@@ -857,7 +895,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(15) …………"
-     }
+     },
+     "keyRaw": "political"
     },
     {
      "number": 16,
@@ -880,7 +919,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Republicans, (16) …………"
-     }
+     },
+     "keyRaw": "liberal democrats"
     },
     {
      "number": 17,
@@ -902,7 +942,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(17) ………….., amateur theatre"
-     }
+     },
+     "keyRaw": "light opera"
     }
    ],
    "provenance": {
@@ -928,8 +969,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -959,7 +1002,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "18. In this city, clubs and societies are mainly paid for by"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 19,
@@ -989,7 +1033,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "19. Finding the right club might influence your choice of"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -1019,7 +1064,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "20. What should you do if the right club does not exist?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1052,8 +1098,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test114-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1077,7 +1125,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "(background) reading"
     },
     {
      "number": 22,
@@ -1101,7 +1150,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "content"
     },
     {
      "number": 23,
@@ -1125,7 +1175,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "edit (notes)"
     },
     {
      "number": 24,
@@ -1149,7 +1200,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "next lecture"
     },
     {
      "number": 25,
@@ -1170,7 +1222,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(25) ␦"
-     }
+     },
+     "keyRaw": "week"
     }
    ],
    "provenance": {
@@ -1198,8 +1251,10 @@
      "26. Where should you sit when you attend a lecture? ␦\n27. What should you do if you miss an important point? ␦\n28. Why must your notes be easy to read? ␦\n29. What do we call expressions which indicate what is coming next? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1224,7 +1279,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "26. Where should you sit when you attend a lecture? ␦"
-     }
+     },
+     "keyRaw": "at the front"
     },
     {
      "number": 27,
@@ -1249,7 +1305,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "27. What should you do if you miss an important point? ␦"
-     }
+     },
+     "keyRaw": "leave a space"
     },
     {
      "number": 28,
@@ -1274,7 +1331,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "28. Why must your notes be easy to read? ␦"
-     }
+     },
+     "keyRaw": "it saves time"
     },
     {
      "number": 29,
@@ -1299,7 +1357,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "29. What do we call expressions which indicate what is coming next? ␦"
-     }
+     },
+     "keyRaw": "signpost words"
     }
    ],
    "provenance": {
@@ -1328,8 +1387,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test114-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 30,
@@ -1359,11 +1420,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "30. Where does Carlos write summing up points on his notes?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1371,7 +1433,7 @@
     "rawExcerpt": "Question 30\nChoose the correct letter A, B, C or D."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g08",
@@ -1392,8 +1454,10 @@
      "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s new opal fields and mass immigration from (34) ␦ created a boom, despite the extreme climate which forced about (35) ␦ of the population to live underground, where they built hotels, churches and the world’s only underground (36) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1435,7 +1499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "690"
     },
     {
      "number": 32,
@@ -1477,7 +1542,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "1915"
     },
     {
      "number": 33,
@@ -1519,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "first world war"
     },
     {
      "number": 34,
@@ -1561,7 +1628,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "Europe"
     },
     {
      "number": 35,
@@ -1603,7 +1671,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "70%"
     },
     {
      "number": 36,
@@ -1645,7 +1714,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The Australian mining town of Coober Pedy is about (31) ␦ kms south of Alice Springs. Opals were first found in the area in (32) ␦ and people began to settle there after the (33) ␦ In the late 1940s n"
-     }
+     },
+     "keyRaw": "shopping centre"
     }
    ],
    "provenance": {
@@ -1686,8 +1756,10 @@
       "letter": "C",
       "text": "far from Coober Pedy"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1704,7 +1776,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "37. the town of Woomera ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 38,
@@ -1721,7 +1794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "38. the opal museum ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 39,
@@ -1738,7 +1812,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "39. the Dingo Fence ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 40,
@@ -1755,7 +1830,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "40. the set of films ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1763,6 +1839,24 @@
     "rawExcerpt": "Questions 37-40\nWrite the appropriate letters A, B or C next to questions 37-40."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "in the town of Coober Pedy"
+     },
+     {
+      "letter": "B",
+      "text": "near Coober Pedy"
+     },
+     {
+      "letter": "C",
+      "text": "far from Coober Pedy"
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1801,7 +1895,51 @@
   "fnameInputs": 36
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 30,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Where does Carlos write summing up points on his notes?",
+    "answer": "B",
+    "rawExcerpt": "30. Where does Carlos write summing up points on his notes?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1809,8 +1947,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

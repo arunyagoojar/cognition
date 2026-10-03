@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-124",
  "title": "IELTS Listening Test 124",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-124/index.html",
-   "sha256": "e3e7bc052de480868ef78afa245a142cf0e54e4a7087dec3f2093f9e35ceb6a8",
-   "manifestHashMatch": true,
+   "sha256": "c3567a75f21c832f3e04bf8a86929e8e660db06b76a395ef9c5334cb2cb2cd1a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-124/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -386,8 +386,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -421,7 +423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. Where do they plan to travel?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 2,
@@ -455,7 +458,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. Where do they plan to stay during the holiday?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -481,8 +485,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 3,
@@ -495,11 +501,12 @@
      "blankContext": null,
      "correctAnswer": "B, D, E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "3. What will they take with them?"
-     }
+     },
+     "keyRaw": "B, D, E"
     }
    ],
    "provenance": {
@@ -507,7 +514,7 @@
     "rawExcerpt": "Question 3\nChoose THREE letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -526,8 +533,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -561,7 +570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "4. How much money do they need for the tour?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 5,
@@ -591,7 +601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "5. How will they pay the house fee?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -623,8 +634,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -649,7 +662,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "6. When will they depart for the holiday? ␦"
-     }
+     },
+     "keyRaw": "14 April"
     },
     {
      "number": 7,
@@ -674,7 +688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "7. Where is the place they are going to stay located? ␦"
-     }
+     },
+     "keyRaw": "opposite rainforest park"
     },
     {
      "number": 8,
@@ -699,7 +714,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "8. Why do many tourists go to this place? ␦"
-     }
+     },
+     "keyRaw": "bush walking"
     },
     {
      "number": 9,
@@ -720,7 +736,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "(venomous) snakes"
     },
     {
      "number": 10,
@@ -741,7 +758,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(10) ␦"
-     }
+     },
+     "keyRaw": "(irritation) plants"
     }
    ],
    "provenance": {
@@ -773,8 +791,10 @@
      "In 1988, Brisbane held the (13) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -793,11 +813,12 @@
      "blankContext": "line: Besides sunny cafes, Brisbane also offers artistic atmosphere with man",
      "correctAnswer": "museums, art galleries",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Besides sunny cafes, Brisbane also offers artistic atmosphere with many (11) ␦ and ␦"
-     }
+     },
+     "keyRaw": "museums, art galleries"
     },
     {
      "number": 12,
@@ -820,7 +841,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Being established in (12) ␦ , Brisbane has become the third biggest city."
-     }
+     },
+     "keyRaw": "1842"
     },
     {
      "number": 13,
@@ -842,14 +864,15 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "In 1988, Brisbane held the (13) ␦"
-     }
+     },
+     "keyRaw": "world expo"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 2: Questions 11-13\nFill in the blanks with NO MORE THAN THREE WORDS for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -892,8 +915,10 @@
      "(16) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -915,7 +940,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(14)…………………festival"
-     }
+     },
+     "keyRaw": "comedy"
     },
     {
      "number": 15,
@@ -937,7 +963,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Outdoor festival of (15)………………."
-     }
+     },
+     "keyRaw": "arts"
     },
     {
      "number": 16,
@@ -959,7 +986,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Cockroach (16)…………………."
-     }
+     },
+     "keyRaw": "races"
     }
    ],
    "provenance": {
@@ -1017,8 +1045,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -1040,7 +1070,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "paths, beach and (17)………………"
-     }
+     },
+     "keyRaw": "weekend market"
     },
     {
      "number": 18,
@@ -1059,11 +1090,12 @@
      "blankContext": "table row 3 col 2",
      "correctAnswer": "hold, feed",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "to (18)……………….koalas or…………………kangaroos"
-     }
+     },
+     "keyRaw": "hold, feed"
     },
     {
      "number": 19,
@@ -1084,7 +1116,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(19)………………."
-     }
+     },
+     "keyRaw": "sunset cruise"
     },
     {
      "number": 20,
@@ -1103,11 +1136,12 @@
      "blankContext": "table row 6 col 2",
      "correctAnswer": "hiking, camping",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "great for (20)…………………….and……………….."
-     }
+     },
+     "keyRaw": "hiking, camping"
     }
    ],
    "provenance": {
@@ -1115,7 +1149,7 @@
     "rawExcerpt": "Questions 17-20\nFill in the table with NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g08",
@@ -1134,8 +1168,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1165,7 +1201,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "21. What does George have to do next?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1195,7 +1232,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "22. What is Anna’s market research project on?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1225,7 +1263,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "23. What did the results of George’s survey show?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1256,8 +1295,10 @@
      "Although new broadcasts are violent, people felt they should not be banned as they are (26) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1279,7 +1320,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "Children might see the heroes of violent films as (24) ␦"
-     }
+     },
+     "keyRaw": "role models"
     },
     {
      "number": 25,
@@ -1302,7 +1344,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "However, there is a (25) ␦ who feel that violent films should be banned."
-     }
+     },
+     "keyRaw": "minority of people"
     },
     {
      "number": 26,
@@ -1324,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Although new broadcasts are violent, people felt they should not be banned as they are (26) ␦"
-     }
+     },
+     "keyRaw": "reality/ real"
     }
    ],
    "provenance": {
@@ -1356,8 +1400,10 @@
      "30. What is the best type of questions for a good questionnaire? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1382,7 +1428,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "27. How many questionnaires did George get back? ␦"
-     }
+     },
+     "keyRaw": "70"
     },
     {
      "number": 28,
@@ -1407,7 +1454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "28. Anna says George’s survey does not represent? ␦"
-     }
+     },
+     "keyRaw": "public"
     },
     {
      "number": 29,
@@ -1432,7 +1480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "29. Where is Anna going to interview her respondents? ␦"
-     }
+     },
+     "keyRaw": "shopping mall"
     },
     {
      "number": 30,
@@ -1457,7 +1506,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "30. What is the best type of questions for a good questionnaire? ␦"
-     }
+     },
+     "keyRaw": "multiple choice (questions)"
     }
    ],
    "provenance": {
@@ -1525,8 +1575,10 @@
      "(39) ␦ (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1549,7 +1601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "A particular program: combine (31) ␦ and real life exploration"
-     }
+     },
+     "keyRaw": "textbook learning"
     },
     {
      "number": 32,
@@ -1571,7 +1624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "Purpose: make students aware of international communication and (32) ␦"
-     }
+     },
+     "keyRaw": "global environment"
     },
     {
      "number": 33,
@@ -1598,7 +1652,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "– in Cairns: classes on (33)…………….protection – a (34)………………..of Queensland"
-     }
+     },
+     "keyRaw": "coral"
     },
     {
      "number": 34,
@@ -1625,7 +1680,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "– in Cairns: classes on (33)…………….protection – a (34)………………..of Queensland"
-     }
+     },
+     "keyRaw": "study tour"
     },
     {
      "number": 36,
@@ -1648,7 +1704,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "– professors teach (36)…………….. – learn African cultures through trips"
-     }
+     },
+     "keyRaw": "wild life management"
     },
     {
      "number": 39,
@@ -1671,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "combine (39)………….and instruction in sailing"
-     }
+     },
+     "keyRaw": "ocean research"
     },
     {
      "number": 37,
@@ -1694,7 +1752,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "3 or 4 safaris – students (37)…………….outside for 6 days"
-     }
+     },
+     "keyRaw": "camp"
     },
     {
      "number": 40,
@@ -1717,7 +1776,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "every participant (40)…………….. and navigates the ship in turn"
-     }
+     },
+     "keyRaw": "operates"
     },
     {
      "number": 35,
@@ -1739,7 +1799,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "(35)…………….. semester credits"
-     }
+     },
+     "keyRaw": "6"
     },
     {
      "number": 38,
@@ -1761,7 +1822,8 @@
      "provenance": {
       "elementPath": "entry-content.children[43]",
       "rawExcerpt": "(38) $……………."
-     }
+     },
+     "keyRaw": "4,950"
     }
    ],
    "provenance": {
@@ -1803,10 +1865,87 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 3,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "What will they take with them?",
+    "answer": "B, D, E",
+    "rawExcerpt": "3. What will they take with them?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 11,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Besides sunny cafes, Brisbane also offers artistic atmosphere with many ______ and",
+    "answer": "museums, art galleries",
+    "rawExcerpt": "Besides sunny cafes, Brisbane also offers artistic atmosphere with many (11) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 18,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "to ______ koalas or…………………kangaroos",
+    "answer": "hold, feed",
+    "rawExcerpt": "to (18)……………….koalas or…………………kangaroos",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "great for ______ and………………..",
+    "answer": "hiking, camping",
+    "rawExcerpt": "great for (20)…………………….and………………..",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     3,
+     11,
+     18,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 36,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

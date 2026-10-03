@@ -7,12 +7,12 @@
  "slug": "ielts-listening-185",
  "title": "IELTS Listening Test 185",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-185/index.html",
-   "sha256": "3b7c7f113cbad1fc8fa401bb2694743548e3ad9bf3a53700436645bfba16645d",
-   "manifestHashMatch": true,
+   "sha256": "6f1eb78dd3ddeb6d483ed7b19bfe4d4dba4e35e78b340b869a9de40c29eab528",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-185/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "5fc181559be643e7981d15c59c4ded7054940df8a5338df862e8ddd48ef04bd1",
+ "contentFingerprint": "6ba5340855c3e97a330c20d7727a06de1d4717ce5bb6f49ad909aaf4a927008d",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -421,8 +421,10 @@
      "Plenty of (10) ␦ is available."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -445,7 +447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Create a cover for an (1) ␦ so they can drop it from a height without breaking it."
-     }
+     },
+     "keyRaw": "Egg"
     },
     {
      "number": 2,
@@ -467,7 +470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Take part in a competition to build the tallest (2) ␦"
-     }
+     },
+     "keyRaw": "Tower"
     },
     {
      "number": 3,
@@ -490,7 +494,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Make a (3) ␦ powered by a balloon."
-     }
+     },
+     "keyRaw": "Car"
     },
     {
      "number": 4,
@@ -513,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Build model cars, trucks and (4) ␦ and learn how to program them so they can move."
-     }
+     },
+     "keyRaw": "Animals"
     },
     {
      "number": 5,
@@ -536,7 +542,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Take part in a competition to build the longest (5) ␦ using card and wood."
-     }
+     },
+     "keyRaw": "Bridge"
     },
     {
      "number": 6,
@@ -559,7 +566,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Create a short (6) ␦ with special software."
-     }
+     },
+     "keyRaw": "Movie/ film"
     },
     {
      "number": 7,
@@ -582,7 +590,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Build, (7) ␦ and program a humanoid robot."
-     }
+     },
+     "keyRaw": "Decorate"
     },
     {
      "number": 8,
@@ -605,7 +614,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Held on (8) ␦ from 10 am to 11 am"
-     }
+     },
+     "keyRaw": "Wednesdays"
     },
     {
      "number": 9,
@@ -628,7 +638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Building 10A, (9) ␦ Industrial Estate, Grasford"
-     }
+     },
+     "keyRaw": "Fradstone"
     },
     {
      "number": 10,
@@ -651,7 +662,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Plenty of (10) ␦ is available."
-     }
+     },
+     "keyRaw": "Parking"
     }
    ],
    "provenance": {
@@ -673,38 +685,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A 1923",
-     "B 1924",
-     "C 1926",
-     "11. Stevenson’s was founded in\n\nA 1923\n\nB 1924\n\nC 1926",
-     "A the healthcare industry",
-     "B the automotive industry",
-     "C the machine tools industry",
-     "12. Originally, Stevenson’s manufactured goods for\n\nA the healthcare industry\n\nB the automotive industry\n\nC the machine tools industry",
-     "A The company has recently moved",
-     "B The company has no plans to move",
-     "C The company is going to move shortly",
-     "13. What does the speaker say about the company premises?\n\nA The company has recently moved\n\nB The company has no plans to move\n\nC The company is going to move shortly",
-     "A time to do research",
-     "B meetings with a teacher",
-     "C talks by staff",
-     "14. The programme for the work experience group includes\n\nA time to do research\n\nB meetings with a teacher\n\nC talks by staff"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Stevenson’s was founded in",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "1923"
+      },
+      {
+       "letter": "B",
+       "text": "1924"
+      },
+      {
+       "letter": "C",
+       "text": "1926"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -712,16 +722,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. Stevenson’s was founded in"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Originally, Stevenson’s manufactured goods for",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the healthcare industry"
+      },
+      {
+       "letter": "B",
+       "text": "the automotive industry"
+      },
+      {
+       "letter": "C",
+       "text": "the machine tools industry"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -729,16 +753,30 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. Originally, Stevenson’s manufactured goods for"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the speaker say about the company premises?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The company has recently moved"
+      },
+      {
+       "letter": "B",
+       "text": "The company has no plans to move"
+      },
+      {
+       "letter": "C",
+       "text": "The company is going to move shortly"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -746,16 +784,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. What does the speaker say about the company premises?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The programme for the work experience group includes",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "time to do research"
+      },
+      {
+       "letter": "B",
+       "text": "meetings with a teacher"
+      },
+      {
+       "letter": "C",
+       "text": "talks by staff"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -763,7 +815,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. The programme for the work experience group includes"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -791,8 +844,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test185.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -809,7 +864,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. Coffee room ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 16,
@@ -826,7 +882,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. Warehouse ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
@@ -843,7 +900,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "17. Staff Canteen ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 18,
@@ -860,7 +918,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "18. Meeting Room ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 19,
@@ -877,7 +936,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "19. Human Resources ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 20,
@@ -894,7 +954,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "20. Boardroom ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -902,6 +963,52 @@
     "rawExcerpt": "Questions 15-20\n\nLabel the map below. Write the correct letter A-J next to questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     },
+     {
+      "letter": "J",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -924,14 +1031,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the Bird Park visit B the workshop sessions C the Natural History Museum visit D the projects done in previous years"
+      "text": "the Bird Park visit"
+     },
+     {
+      "letter": "B",
+      "text": "the workshop sessions"
+     },
+     {
+      "letter": "C",
+      "text": "the Natural History Museum visit"
+     },
+     {
+      "letter": "D",
+      "text": "the projects done in previous years"
      },
      {
       "letter": "E",
       "text": "the handouts with research sources"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -942,13 +1063,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO parts of the introductory stage to their art projects do Jess and Tom agree were useful?"
-     }
+     },
+     "keyRaw": "C, E"
     },
     {
      "number": 22,
@@ -959,18 +1081,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO parts of the introductory stage to their art projects do Jess and Tom agree were useful?"
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[16]",
     "rawExcerpt": "Part 3: Questions 21 and 22"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO parts of the introductory stage to their art projects do Jess and Tom agree were useful?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the Bird Park visit"
+     },
+     {
+      "letter": "B",
+      "text": "the workshop sessions"
+     },
+     {
+      "letter": "C",
+      "text": "the Natural History Museum visit"
+     },
+     {
+      "letter": "D",
+      "text": "the projects done in previous years"
+     },
+     {
+      "letter": "E",
+      "text": "the handouts with research sources"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -994,14 +1154,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "by giving a rationale for their action plans B by being less specific about the outcome C by adding a video diary presentation D by providing a timeline and a mind map"
+      "text": "by giving a rationale for their action plans"
+     },
+     {
+      "letter": "B",
+      "text": "by being less specific about the outcome"
+     },
+     {
+      "letter": "C",
+      "text": "by adding a video diary presentation"
+     },
+     {
+      "letter": "D",
+      "text": "by providing a timeline and a mind map"
      },
      {
       "letter": "E",
       "text": "by making their notes more evaluative"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1012,13 +1186,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO ways do both Jess and Tom decide to change their proposals?"
-     }
+     },
+     "keyRaw": "B, E"
     },
     {
      "number": 24,
@@ -1029,13 +1204,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO ways do both Jess and Tom decide to change their proposals?"
-     }
+     },
+     "keyRaw": "B, E"
     }
    ],
    "provenance": {
@@ -1043,6 +1219,43 @@
     "rawExcerpt": "Questions 23 and 24"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:23-24",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "In which TWO ways do both Jess and Tom decide to change their proposals?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "by giving a rationale for their action plans"
+     },
+     {
+      "letter": "B",
+      "text": "by being less specific about the outcome"
+     },
+     {
+      "letter": "C",
+      "text": "by adding a video diary presentation"
+     },
+     {
+      "letter": "D",
+      "text": "by providing a timeline and a mind map"
+     },
+     {
+      "letter": "E",
+      "text": "by making their notes more evaluative"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1065,14 +1278,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "childhood memory B hope for the future C fast movement D a potential threat E the power of colour F the continuity of life G protection of nature"
+      "text": "childhood memory"
+     },
+     {
+      "letter": "B",
+      "text": "hope for the future"
+     },
+     {
+      "letter": "C",
+      "text": "fast movement"
+     },
+     {
+      "letter": "D",
+      "text": "a potential threat"
+     },
+     {
+      "letter": "E",
+      "text": "the power of colour"
+     },
+     {
+      "letter": "F",
+      "text": "the continuity of life"
+     },
+     {
+      "letter": "G",
+      "text": "protection of nature"
      },
      {
       "letter": "H",
       "text": "a confused attitude to nature"
      }
+    ],
+    "optionPreface": [
+     "Personal meanings"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1089,7 +1330,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "25. Falcon (Landseer) ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 26,
@@ -1106,7 +1348,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. Fish hawk (Audubon) ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
@@ -1123,7 +1366,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. Kingfisher (van Gogh) ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1140,7 +1384,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. Portrait of William Wells ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 29,
@@ -1157,7 +1402,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. Vairumati (Gauguin) ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 30,
@@ -1174,7 +1420,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "30. Portrait of Giovanni de Medici ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -1182,6 +1429,44 @@
     "rawExcerpt": "Questions 25-30\n\nWhich personal meaning do the students decide to give to each of the following pictures? Choose SIX answers from the list and write the correct letter, A-H, next to Questions 25-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Personal meanings",
+    "options": [
+     {
+      "letter": "A",
+      "text": "childhood memory"
+     },
+     {
+      "letter": "B",
+      "text": "hope for the future"
+     },
+     {
+      "letter": "C",
+      "text": "fast movement"
+     },
+     {
+      "letter": "D",
+      "text": "a potential threat"
+     },
+     {
+      "letter": "E",
+      "text": "the power of colour"
+     },
+     {
+      "letter": "F",
+      "text": "the continuity of life"
+     },
+     {
+      "letter": "G",
+      "text": "protection of nature"
+     },
+     {
+      "letter": "H",
+      "text": "a confused attitude to nature"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1224,8 +1509,10 @@
      "• It teaches people that having a strong character is more important than anything else."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1248,7 +1535,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Stoicism is still relevant today because of its (31) ␦ appeal."
-     }
+     },
+     "keyRaw": "Practical"
     },
     {
      "number": 32,
@@ -1270,7 +1558,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• The Stoics’ ideas are surprisingly well known, despite not being intended for (32) ␦"
-     }
+     },
+     "keyRaw": "Publications"
     },
     {
      "number": 33,
@@ -1293,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Epictetus said that external events cannot be controlled but the (33) ␦ people make in response can be controlled."
-     }
+     },
+     "keyRaw": "Choices"
     },
     {
      "number": 34,
@@ -1315,7 +1605,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• A Stoic is someone who has a different view on experiences which others would consider as (34) ␦"
-     }
+     },
+     "keyRaw": "Negative"
     },
     {
      "number": 35,
@@ -1338,7 +1629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• George Washington organised a (35) ␦ about Cato to motivate his men."
-     }
+     },
+     "keyRaw": "Play"
     },
     {
      "number": 36,
@@ -1361,7 +1653,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Adam Smith’s ideas on (36) ␦ were influenced by Stoicism."
-     }
+     },
+     "keyRaw": "Capitalism"
     },
     {
      "number": 37,
@@ -1384,7 +1677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "– the treatment for (37) ␦ is based on ideas from Stoicism"
-     }
+     },
+     "keyRaw": "Depression"
     },
     {
      "number": 38,
@@ -1406,7 +1700,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "– people learn to base their thinking on (38) ␦"
-     }
+     },
+     "keyRaw": "Logic"
     },
     {
      "number": 39,
@@ -1428,7 +1723,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• In business, people benefit from Stoicism by identifying obstacles as (39) ␦"
-     }
+     },
+     "keyRaw": "Opportunity"
     },
     {
      "number": 40,
@@ -1451,7 +1747,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• It requires a lot of (40) ␦ but Stoicism can help people to lead a good life."
-     }
+     },
+     "keyRaw": "Practice/ practise"
     }
    ],
    "provenance": {
@@ -1498,6 +1795,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

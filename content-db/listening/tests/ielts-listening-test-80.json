@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-80",
  "title": "IELTS Listening Test 80",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-80/index.html",
-   "sha256": "a3e6caff042397ce918a379533ed020948027529496a40778b48eb59dd61ec6a",
-   "manifestHashMatch": true,
+   "sha256": "82910fa0b0b39d0c511179e30698e59a8ef9e43d423960021a6501ef071308d8",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-80/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -422,8 +422,10 @@
      "• After hours put keys in box near the office on the (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -445,7 +447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Booking reference number – (1) ␦"
-     }
+     },
+     "keyRaw": "743002"
     },
     {
      "number": 2,
@@ -468,7 +471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Office just by (2) ␦ terminal"
-     }
+     },
+     "keyRaw": "international"
     },
     {
      "number": 3,
@@ -491,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Opening hours (3) ␦ to ␦"
-     }
+     },
+     "keyRaw": "6.15 pm"
     },
     {
      "number": 4,
@@ -514,7 +519,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• After hours charges – (4) $ ␦"
-     }
+     },
+     "keyRaw": "30"
     },
     {
      "number": 5,
@@ -536,7 +542,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Cheapest model of car available – (5) ␦"
-     }
+     },
+     "keyRaw": "echo"
     },
     {
      "number": 6,
@@ -559,7 +566,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Information needed when booking – (6) ␦ number"
-     }
+     },
+     "keyRaw": "credit card"
     },
     {
      "number": 7,
@@ -581,7 +589,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Length of hire period (7) ␦"
-     }
+     },
+     "keyRaw": "7"
     },
     {
      "number": 8,
@@ -604,7 +613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Reduce cost by driving under (8) ␦ km per week"
-     }
+     },
+     "keyRaw": "1000"
     },
     {
      "number": 9,
@@ -626,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Insurance does not cover – (9) ␦"
-     }
+     },
+     "keyRaw": "luggage"
     },
     {
      "number": 10,
@@ -648,7 +659,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• After hours put keys in box near the office on the (10) ␦"
-     }
+     },
+     "keyRaw": "pavement"
     }
    ],
    "provenance": {
@@ -672,12 +684,27 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "Essential requirements\nA foreign languages\nB willingness to travel abroad\nC professional qualification"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "foreign languages"
+     },
+     {
+      "letter": "B",
+      "text": "willingness to travel abroad"
+     },
+     {
+      "letter": "C",
+      "text": "professional qualification"
+     }
+    ],
+    "optionPreface": [
+     "Essential requirements"
+    ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -694,7 +721,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. conference organizer ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -711,7 +739,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. catering manager ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -728,7 +757,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. housekeeper ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -745,7 +775,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "14. fitness centre staff ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -762,12 +793,31 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. reservations assistant ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11-15\nThe following are essential requirements for which job?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "Essential requirements",
+    "options": [
+     {
+      "letter": "A",
+      "text": "foreign languages"
+     },
+     {
+      "letter": "B",
+      "text": "willingness to travel abroad"
+     },
+     {
+      "letter": "C",
+      "text": "professional qualification"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -800,26 +850,43 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "CV B names of referees C work permit D recruitment seminar E evidence of qualifications F conditions of employment"
+      "text": "CV"
+     },
+     {
+      "letter": "B",
+      "text": "names of referees"
+     },
+     {
+      "letter": "C",
+      "text": "work permit"
+     },
+     {
+      "letter": "D",
+      "text": "recruitment seminar"
+     },
+     {
+      "letter": "E",
+      "text": "evidence of qualifications"
+     },
+     {
+      "letter": "F",
+      "text": "conditions of employment"
      },
      {
       "letter": "G",
       "text": "initial interview"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Receive personal code and check ______",
-      "segments": [
-       "• Receive personal code and check",
-       {
-        "blank": 16
-       }
-      ]
+      "plain": "• Receive personal code and check",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Receive personal code and check (16) ␦",
@@ -829,19 +896,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Receive personal code and check (16) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 17,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Send in form and attach ______",
-      "segments": [
-       "• Send in form and attach",
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "• Send in form and attach",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Send in form and attach (17) ␦",
@@ -851,19 +915,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Send in form and attach (17) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Receive reply and confirm ______",
-      "segments": [
-       "• Receive reply and confirm",
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "• Receive reply and confirm",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Receive reply and confirm (18) ␦",
@@ -873,19 +934,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Receive reply and confirm (18) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Send in ______",
-      "segments": [
-       "• Send in",
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "• Send in",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Send in (19) ␦",
@@ -895,19 +953,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Send in (19) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Attend ______",
-      "segments": [
-       "• Attend",
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "• Attend",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Attend (20) ␦",
@@ -917,7 +972,9 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Attend (20) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -925,6 +982,40 @@
     "rawExcerpt": "Questions 16-20\nChoose FIVE answers from the list and write the correct letter A-G next to questions 16-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "CV"
+     },
+     {
+      "letter": "B",
+      "text": "names of referees"
+     },
+     {
+      "letter": "C",
+      "text": "work permit"
+     },
+     {
+      "letter": "D",
+      "text": "recruitment seminar"
+     },
+     {
+      "letter": "E",
+      "text": "evidence of qualifications"
+     },
+     {
+      "letter": "F",
+      "text": "conditions of employment"
+     },
+     {
+      "letter": "G",
+      "text": "initial interview"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -947,14 +1038,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "problems of access B the cost of construction C the time needed to install it D who will look after it"
+      "text": "problems of access"
+     },
+     {
+      "letter": "B",
+      "text": "the cost of construction"
+     },
+     {
+      "letter": "C",
+      "text": "the time needed to install it"
+     },
+     {
+      "letter": "D",
+      "text": "who will look after it"
      },
      {
       "letter": "E",
       "text": "how to support the weight of it"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -971,7 +1076,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO possible objections to a roof garden are discussed?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -988,12 +1094,50 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO possible objections to a roof garden are discussed?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO possible objections to a roof garden are discussed?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "problems of access"
+     },
+     {
+      "letter": "B",
+      "text": "the cost of construction"
+     },
+     {
+      "letter": "C",
+      "text": "the time needed to install it"
+     },
+     {
+      "letter": "D",
+      "text": "who will look after it"
+     },
+     {
+      "letter": "E",
+      "text": "how to support the weight of it"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1017,14 +1161,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "waterproof barrier materials B drainage systems C tank designs D lightweight construction materials"
+      "text": "waterproof barrier materials"
+     },
+     {
+      "letter": "B",
+      "text": "drainage systems"
+     },
+     {
+      "letter": "C",
+      "text": "tank designs"
+     },
+     {
+      "letter": "D",
+      "text": "lightweight construction materials"
      },
      {
       "letter": "E",
       "text": "watering systems"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1041,7 +1199,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO recent developments in roof garden building are mentioned?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1058,7 +1217,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO recent developments in roof garden building are mentioned?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1066,6 +1226,43 @@
     "rawExcerpt": "Questions 23 and 24\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:23-24",
+    "answerSet": [
+     "A",
+     "E"
+    ],
+    "prompt": "Which TWO recent developments in roof garden building are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "waterproof barrier materials"
+     },
+     {
+      "letter": "B",
+      "text": "drainage systems"
+     },
+     {
+      "letter": "C",
+      "text": "tank designs"
+     },
+     {
+      "letter": "D",
+      "text": "lightweight construction materials"
+     },
+     {
+      "letter": "E",
+      "text": "watering systems"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1087,8 +1284,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test80-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1105,7 +1304,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. wall ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 26,
@@ -1122,7 +1322,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "26. electric wire ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 27,
@@ -1139,7 +1340,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "27. fibre optic cable ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1156,7 +1358,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "28. wooden post ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 29,
@@ -1173,7 +1376,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "29. glass cap ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1190,7 +1394,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "30. acrylic rod ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1198,6 +1403,44 @@
     "rawExcerpt": "Questions 25-30\nLabel the diagram below. Write the correct letter A-H next to questions 25-30"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1224,8 +1467,10 @@
      "• E.g. US East Coast display – grairs from south are small, light colored and (36) ␦ in shape"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1255,7 +1500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Developed by Rob Holman in North Carolina with other researchers. Research is vital for understanding (31) ␦ Matches information from under the water with information from a (32) ␦ According to S. Jef"
-     }
+     },
+     "keyRaw": "beach erosion"
     },
     {
      "number": 32,
@@ -1285,7 +1531,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Developed by Rob Holman in North Carolina with other researchers. Research is vital for understanding (31) ␦ Matches information from under the water with information from a (32) ␦ According to S. Jef"
-     }
+     },
+     "keyRaw": "(fixed) camera"
     },
     {
      "number": 33,
@@ -1315,7 +1562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Developed by Rob Holman in North Carolina with other researchers. Research is vital for understanding (31) ␦ Matches information from under the water with information from a (32) ␦ According to S. Jef"
-     }
+     },
+     "keyRaw": "storm"
     },
     {
      "number": 34,
@@ -1337,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Dr. H. has samples from every (34) ␦"
-     }
+     },
+     "keyRaw": "continent"
     },
     {
      "number": 35,
@@ -1359,7 +1608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Used in teaching students of (35) ␦"
-     }
+     },
+     "keyRaw": "geology"
     },
     {
      "number": 36,
@@ -1382,7 +1632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• E.g. US East Coast display – grairs from south are small, light colored and (36) ␦ in shape"
-     }
+     },
+     "keyRaw": "round"
     }
    ],
    "provenance": {
@@ -1413,8 +1664,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test80-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1438,7 +1691,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(37) ␦ (38) ␦"
-     }
+     },
+     "keyRaw": "spoon"
     },
     {
      "number": 38,
@@ -1462,7 +1716,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(37) ␦ (38) ␦"
-     }
+     },
+     "keyRaw": "permanent marker"
     },
     {
      "number": 39,
@@ -1486,7 +1741,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(39) ␦ (40) ␦"
-     }
+     },
+     "keyRaw": "newspaper"
     },
     {
      "number": 40,
@@ -1510,7 +1766,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(39) ␦ (40) ␦"
-     }
+     },
+     "keyRaw": "(identification) label"
     }
    ],
    "provenance": {
@@ -1563,6 +1820,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

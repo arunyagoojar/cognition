@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-1",
  "title": "IELTS Listening Test 1",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-1/index.html",
-   "sha256": "9e0f8141232df9bc5537fdae1d211fa61f9760ed1b0a8e7e9a951145b5fdd34e",
-   "manifestHashMatch": true,
+   "sha256": "0e5a28651c91f3febecb4d2cad83de02fb4b980423c4a75b647c4fad992b6be6",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-1/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "1c01a897379d909577cdddf38c93d88db71d2ebbecb21e51a6115e2e3466d8df",
+ "contentFingerprint": "5e2de083a05f48f7093ad9adf9610643a35e48585829cd86278fbcba80364f77",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -423,8 +423,10 @@
      "(5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -447,7 +449,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "– Just (1)…………. .meters from beach – Near shops"
-     }
+     },
+     "keyRaw": "300"
     },
     {
      "number": 2,
@@ -469,7 +472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(2)…………..Apartments"
-     }
+     },
+     "keyRaw": "sunshade"
     },
     {
      "number": 3,
@@ -491,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Greek paintings and (3)………."
-     }
+     },
+     "keyRaw": "balcony"
     },
     {
      "number": 4,
@@ -514,7 +519,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "– Overlooking (4)…………… – Near a supermarket and a disco"
-     }
+     },
+     "keyRaw": "forest(s)"
     },
     {
      "number": 5,
@@ -536,7 +542,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(5) £…….."
-     }
+     },
+     "keyRaw": "319"
     }
    ],
    "provenance": {
@@ -594,8 +601,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -617,7 +626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(6) £…………….."
-     }
+     },
+     "keyRaw": "10,000"
     },
     {
      "number": 7,
@@ -640,7 +650,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "£ 600 additional benefit allows a (7)………………..to travel to resort"
-     }
+     },
+     "keyRaw": "relative"
     },
     {
      "number": 8,
@@ -662,7 +673,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(8)…………………….departure"
-     }
+     },
+     "keyRaw": "missed"
     },
     {
      "number": 9,
@@ -684,7 +696,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Up to £ 3000 £ 500 for one (9)…………………"
-     }
+     },
+     "keyRaw": "item"
     },
     {
      "number": 10,
@@ -706,7 +719,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Name of assistant manager: Ben (10)………………………….."
-     }
+     },
+     "keyRaw": "Ludlow"
     }
    ],
    "provenance": {
@@ -735,8 +749,10 @@
      "WINRIDGE FOREST RAILWAY PARK"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -766,7 +782,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Simon’s idea for a theme park came from"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -796,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. When they started, the family decided to open the park only when"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -826,7 +844,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. Since opening, the park has had"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -855,14 +874,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "advertising B animal care C building D educational links E engine maintenance F food and drink G sales"
+      "text": "advertising"
+     },
+     {
+      "letter": "B",
+      "text": "animal care"
+     },
+     {
+      "letter": "C",
+      "text": "building"
+     },
+     {
+      "letter": "D",
+      "text": "educational links"
+     },
+     {
+      "letter": "E",
+      "text": "engine maintenance"
+     },
+     {
+      "letter": "F",
+      "text": "food and drink"
+     },
+     {
+      "letter": "G",
+      "text": "sales"
      },
      {
       "letter": "H",
       "text": "staffing"
      }
+    ],
+    "optionPreface": [
+     "Area of work"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -879,7 +926,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "14. Simon ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 15,
@@ -896,7 +944,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. Liz ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 16,
@@ -913,7 +962,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. Sarah ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -930,7 +980,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. Duncan ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -947,7 +998,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. Judith ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -955,6 +1007,44 @@
     "rawExcerpt": "Questions 14-18\nWhat is currently the main area of work of each of the following people?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Area of work",
+    "options": [
+     {
+      "letter": "A",
+      "text": "advertising"
+     },
+     {
+      "letter": "B",
+      "text": "animal care"
+     },
+     {
+      "letter": "C",
+      "text": "building"
+     },
+     {
+      "letter": "D",
+      "text": "educational links"
+     },
+     {
+      "letter": "E",
+      "text": "engine maintenance"
+     },
+     {
+      "letter": "F",
+      "text": "food and drink"
+     },
+     {
+      "letter": "G",
+      "text": "sales"
+     },
+     {
+      "letter": "H",
+      "text": "staffing"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -998,8 +1088,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -1021,7 +1113,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(19)……………… sq mt"
-     }
+     },
+     "keyRaw": "120"
     },
     {
      "number": 20,
@@ -1043,7 +1136,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(20)………….yaer olds"
-     }
+     },
+     "keyRaw": "5-12"
     }
    ],
    "provenance": {
@@ -1108,8 +1202,10 @@
      "January"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1131,7 +1227,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Dissertation topic: the (21) ␦"
-     }
+     },
+     "keyRaw": "fishing industry"
     },
     {
      "number": 22,
@@ -1153,7 +1250,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Strengths: (22) ␦"
-     }
+     },
+     "keyRaw": "statistics"
     },
     {
      "number": 23,
@@ -1175,7 +1273,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Poor (23) ␦"
-     }
+     },
+     "keyRaw": "note-taking"
     },
     {
      "number": 24,
@@ -1197,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Increase (24)…………….."
-     }
+     },
+     "keyRaw": "confidence"
     },
     {
      "number": 25,
@@ -1219,7 +1319,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Dissertations tend to contain the same (25)…………….."
-     }
+     },
+     "keyRaw": "ideas"
     },
     {
      "number": 26,
@@ -1242,7 +1343,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Use the (26)………………service"
-     }
+     },
+     "keyRaw": "student support"
     },
     {
      "number": 27,
@@ -1264,7 +1366,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Limited (27)……………….."
-     }
+     },
+     "keyRaw": "places"
     },
     {
      "number": 28,
@@ -1286,7 +1389,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Can be too (28)……………….."
-     }
+     },
+     "keyRaw": "general"
     },
     {
      "number": 29,
@@ -1308,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Read all notes (29) ␦"
-     }
+     },
+     "keyRaw": "3 times"
     },
     {
      "number": 30,
@@ -1330,7 +1435,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Next tutorial date: (30) ␦"
-     }
+     },
+     "keyRaw": "25"
     }
    ],
    "provenance": {
@@ -1352,30 +1458,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A had no experience of living in a rural area",
-     "B were interested in environmental issues",
-     "C wanted a professional project manager",
-     "31. The owners of the underground house\nA had no experience of living in a rural area\nB were interested in environmental issues\nC wanted a professional project manager",
-     "A The land was quite cheap",
-     "B Stone was being extracted nearby",
-     "C It was in a completely unspoilt area",
-     "32. What does the speaker say about the site of the house?\nA The land was quite cheap\nB Stone was being extracted nearby\nC It was in a completely unspoilt area"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The owners of the underground house",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "had no experience of living in a rural area"
+      },
+      {
+       "letter": "B",
+       "text": "were interested in environmental issues"
+      },
+      {
+       "letter": "C",
+       "text": "wanted a professional project manager"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1383,16 +1495,30 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "31. The owners of the underground house"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the speaker say about the site of the house?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The land was quite cheap"
+      },
+      {
+       "letter": "B",
+       "text": "Stone was being extracted nearby"
+      },
+      {
+       "letter": "C",
+       "text": "It was in a completely unspoilt area"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1400,7 +1526,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "32. What does the speaker say about the site of the house?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1446,8 +1573,10 @@
      "• But the house will have paid its ‘environmental debt’ within (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1469,7 +1598,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• The south-facing side was constructed of two layers of (33) ␦"
-     }
+     },
+     "keyRaw": "glass"
     },
     {
      "number": 34,
@@ -1491,7 +1621,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• A layer of foam was used to improve the (34) ␦"
-     }
+     },
+     "keyRaw": "insulation"
     },
     {
      "number": 35,
@@ -1513,7 +1644,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• To increase the light, the building has many internal mirrors and (35) ␦"
-     }
+     },
+     "keyRaw": "windows"
     },
     {
      "number": 36,
@@ -1535,7 +1667,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• In future, the house may produce more (36) ␦"
-     }
+     },
+     "keyRaw": "electricity"
     },
     {
      "number": 37,
@@ -1557,7 +1690,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Recycled wood was used for the (37) ␦"
-     }
+     },
+     "keyRaw": "floor(s)"
     },
     {
      "number": 38,
@@ -1579,7 +1713,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• The system for processing domestic (38) ␦"
-     }
+     },
+     "keyRaw": "waste"
     },
     {
      "number": 39,
@@ -1601,7 +1736,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• The use of large quantities of (39) ␦"
-     }
+     },
+     "keyRaw": "concrete"
     },
     {
      "number": 40,
@@ -1623,7 +1759,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• But the house will have paid its ‘environmental debt’ within (40) ␦"
-     }
+     },
+     "keyRaw": "15 years"
     }
    ],
    "provenance": {
@@ -1671,10 +1808,21 @@
   "fnameInputs": 35
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "test",
+   "reasonCode": "RENDER_CHECK_FAILED",
+   "evidence": {
+    "defects": [
+     "part 1: artifact in stimulus ('……………..')"
+    ]
+   }
+  }
+ ],
  "validationWarnings": [],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "quarantinedCount": 1,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -1,17 +1,219 @@
 {
  "slug": "ielts-listening-test-16",
- "sourceSha256": "83b13cb9073f98317472b04787c9d54e374d148ddaa6456601a9342eb488dfce",
+ "status": "quarantined",
+ "sourceSha256": "35be932990dff40035742ee7dcf60656bb42228c6543dae465a9363c367ad911",
  "units": [
   {
-   "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 11,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     6,
-     10
+    "stem": "Doors Open",
+    "answer": "A, C",
+    "rawExcerpt": "11. Doors Open",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 12,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "The Observatory",
+    "answer": "A, C",
+    "rawExcerpt": "12. The Observatory",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 13,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Planetarium Shows",
+    "answer": "C, D",
+    "rawExcerpt": "13. Planetarium Shows",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 14,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "All tickets",
+    "answer": "A, C",
+    "rawExcerpt": "14. All tickets",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 21,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "(21) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 22,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "(22) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 23,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "(23) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 33,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     21,
+     22,
+     23
+    ],
+    "outOfRange": []
    }
   }
  ]

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-111.html",
  "title": "IELTS Listening Test 111",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-111.html",
-   "sha256": "d34941a8644d2c950ffb5c15909de32a59707ffaefdea86c9a1324f69d33f3c7",
-   "manifestHashMatch": true,
+   "sha256": "b705732f76acf7b702a6a9025139e23b6883fd51a01c9463e1a663c3cf2042b4",
+   "manifestHashMatch": false,
    "url": null
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -416,8 +416,10 @@
      "Part time course: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -439,7 +441,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Current occupation: (1) ␦"
-     }
+     },
+     "keyRaw": "salesman"
     },
     {
      "number": 2,
@@ -462,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Length of living in the north: (2) ␦ years"
-     }
+     },
+     "keyRaw": "9"
     },
     {
      "number": 3,
@@ -484,7 +488,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Exact living area: (3) ␦"
-     }
+     },
+     "keyRaw": "spring park"
     },
     {
      "number": 4,
@@ -506,7 +511,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of accommodation: a shared (4) ␦"
-     }
+     },
+     "keyRaw": "apartment"
     },
     {
      "number": 5,
@@ -529,7 +535,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Public transport: take the (5) ␦ or a taxi"
-     }
+     },
+     "keyRaw": "train"
     },
     {
      "number": 6,
@@ -551,7 +558,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Frequency of eating out: (6) ␦"
-     }
+     },
+     "keyRaw": "once a month"
     },
     {
      "number": 7,
@@ -573,7 +581,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Places for entertainment: the places people usually go to, such as some great (7) ␦"
-     }
+     },
+     "keyRaw": "clubs"
     },
     {
      "number": 8,
@@ -595,7 +604,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Other free time activity: go to the (8) ␦"
-     }
+     },
+     "keyRaw": "cinema"
     },
     {
      "number": 9,
@@ -617,7 +627,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Preferred exercises: go swimming, go to the gym, go (9) ␦"
-     }
+     },
+     "keyRaw": "sailing"
     },
     {
      "number": 10,
@@ -639,7 +650,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Part time course: (10) ␦"
-     }
+     },
+     "keyRaw": "japanese"
     }
    ],
    "provenance": {
@@ -667,8 +679,10 @@
      "Tourism in the mining community"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -698,7 +712,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. What does the speaker say about hard hats?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -728,7 +743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. What does the speaker say about the outside area of the mine?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -758,7 +774,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. Visitors who have difficulty in going up and down"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -788,7 +805,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. What is prohibited everywhere?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
@@ -818,7 +836,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "15. What does the speaker say about underground tunnels?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -850,22 +869,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test111-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 16
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (16) ␦ (17) ␦",
@@ -875,21 +889,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 17,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 16
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (16) ␦ (17) ␦",
@@ -899,21 +908,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "I",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 18
-       },
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (18) ␦ (19) ␦",
@@ -923,21 +927,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(18) ␦ (19) ␦"
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 18
-       },
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (18) ␦ (19) ␦",
@@ -947,18 +946,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(18) ␦ (19) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (20) ␦",
@@ -968,7 +965,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(20) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -976,6 +975,48 @@
     "rawExcerpt": "Questions 16-20\nLabel the map below. Write correct letter A-I next to questions 16-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1006,8 +1047,10 @@
      "• Scales: the (27) ␦ and species the possible age etc."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1030,7 +1073,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• The (21) ␦ should be carefully chosen"
-     }
+     },
+     "keyRaw": "watching time"
     },
     {
      "number": 22,
@@ -1053,7 +1097,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• State of the sea: (22) ␦ or choppy"
-     }
+     },
+     "keyRaw": "calm"
     },
     {
      "number": 23,
@@ -1075,7 +1120,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• And state of (23) ␦"
-     }
+     },
+     "keyRaw": "weather"
     },
     {
      "number": 24,
@@ -1097,7 +1143,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• Visibility: (24) ␦"
-     }
+     },
+     "keyRaw": "100 meters"
     },
     {
      "number": 25,
@@ -1119,7 +1166,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• Details in need of attention: the appearance of (25) ␦"
-     }
+     },
+     "keyRaw": "fishing boats"
     },
     {
      "number": 26,
@@ -1142,7 +1190,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• The (26) ␦ and appearance of whales"
-     }
+     },
+     "keyRaw": "behavior"
     },
     {
      "number": 27,
@@ -1165,7 +1214,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• Scales: the (27) ␦ and species the possible age etc."
-     }
+     },
+     "keyRaw": "group size"
     }
    ],
    "provenance": {
@@ -1195,8 +1245,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test111-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1217,11 +1269,12 @@
      "blankContext": "line: 28. Sperm whale ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "28. Sperm whale ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1242,11 +1295,12 @@
      "blankContext": "line: 29. Northern right whale ␦ (input box in source)",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "29. Northern right whale ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1267,11 +1321,12 @@
      "blankContext": "line: 30. Minke whale ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "30. Minke whale ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1279,7 +1334,7 @@
     "rawExcerpt": "Questions 28-30\nMatch the following types of whales with the pictures given according to different feature descriptions."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -1300,8 +1355,10 @@
      "Biography of Samuel Cunard and his shipping company"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1331,7 +1388,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "31. Where did he get the shipping experience?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1361,7 +1419,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "32. The company experienced"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
@@ -1391,7 +1450,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "33. Why did he want the mail contact?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 34,
@@ -1421,7 +1481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "34. What did he do when he won the bid?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 35,
@@ -1451,7 +1512,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "35. Why did he choose Boston?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 36,
@@ -1481,7 +1543,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "36. What could be revealed about the 1844 event?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1512,8 +1575,10 @@
      "40. Afterwards, companies poured more money into decoration which made the ships more like ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1536,7 +1601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "37. He improved the sail safety by using ␦ communication."
-     }
+     },
+     "keyRaw": "radio"
     },
     {
      "number": 38,
@@ -1558,7 +1624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "38. ␦ were produced on the board, so passengers would not feel uneasy during the journey."
-     }
+     },
+     "keyRaw": "newspapers"
     },
     {
      "number": 39,
@@ -1581,7 +1648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "39. Before 1912, shipping companies paid more attention to the ␦ of the ships."
-     }
+     },
+     "keyRaw": "speed"
     },
     {
      "number": 40,
@@ -1606,7 +1674,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "40. Afterwards, companies poured more money into decoration which made the ships more like ␦"
-     }
+     },
+     "keyRaw": "hotels"
     }
    ],
    "provenance": {
@@ -1646,7 +1715,66 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 28,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Sperm whale ______",
+    "answer": "B",
+    "rawExcerpt": "28. Sperm whale ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 29,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Northern right whale ______",
+    "answer": "C",
+    "rawExcerpt": "29. Northern right whale ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 30,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Minke whale ______",
+    "answer": "A",
+    "rawExcerpt": "30. Minke whale ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     28,
+     29,
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1654,8 +1782,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

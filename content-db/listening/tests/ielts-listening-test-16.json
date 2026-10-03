@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-16",
  "title": "IELTS Listening Test 16",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-16/index.html",
-   "sha256": "83b13cb9073f98317472b04787c9d54e374d148ddaa6456601a9342eb488dfce",
-   "manifestHashMatch": true,
+   "sha256": "35be932990dff40035742ee7dcf60656bb42228c6543dae465a9363c367ad911",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-16/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "5e8d77568bda68763a9d76ac6344a698a4dfa5c6fad9f7dbd0f240cb4a4e213c",
+ "contentFingerprint": "87f8e8d19ea6d8b33b18f7cfb217049fd33659641c1f0c058c9e21b304b1ae9b",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -227,6 +227,26 @@
     "value": "6"
    },
    {
+    "number": 6,
+    "value": "bookit"
+   },
+   {
+    "number": 7,
+    "value": "password"
+   },
+   {
+    "number": 8,
+    "value": "location"
+   },
+   {
+    "number": 9,
+    "value": "view"
+   },
+   {
+    "number": 10,
+    "value": "schedule"
+   },
+   {
     "number": 11,
     "value": "A, C"
    },
@@ -397,8 +417,10 @@
      "(5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -421,7 +443,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "8.30 am to (1)………….pm weekdays"
-     }
+     },
+     "keyRaw": "10"
     },
     {
      "number": 2,
@@ -443,7 +466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Near Stratton Street and (2)…………….."
-     }
+     },
+     "keyRaw": "royal parade"
     },
     {
      "number": 3,
@@ -466,7 +490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Open to (3)…………students only"
-     }
+     },
+     "keyRaw": "biomedical"
     },
     {
      "number": 4,
@@ -489,7 +514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Level 5, building 8, (4)………………Swan Street"
-     }
+     },
+     "keyRaw": "360"
     },
     {
      "number": 5,
@@ -512,7 +538,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "10 am – 12 midnight Monday to Friday 10 am – (5)………………..pm Saturdays and Sundays"
-     }
+     },
+     "keyRaw": "6"
     }
    ],
    "provenance": {
@@ -528,22 +555,150 @@
    "endQ": 10,
    "partExplicit": false,
    "instruction": {
-    "text": "Complete the flow chart below. Write NO MORE THAN ONE WORD for each answer. Process of booking a computer • Step 1: log in to (6) ␦ using your student number and (7) ␦ • Step 2: choose the resource type you would like to use • Step 3: select (8) ␦ of computer • Step 4: select date of booking using (9) ␦ options • Step 5: complete your booking. Your name should appear on the booking (10) ␦",
+    "text": "Complete the flow chart below. Write NO MORE THAN ONE WORD for each answer.",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Complete the flow chart below. Write NO MORE THAN ONE WORD for each answer. Process of booking a computer • Step 1: log in to (6) ␦ using your student number and (7) ␦ • Step 2: choose the resource type you would like to use • Step 3: select (8) ␦ of computer • Step 4: select date of booking using (9) ␦ options • Step 5: complete your booking. Your name should appear on the booking (10) ␦"
+    "originalText": "Complete the flow chart below. Write NO MORE THAN ONE WORD for each answer."
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "notes",
     "table": null,
-    "segments": null,
+    "segments": [
+     "Process of booking a computer",
+     "• Step 1: log in to (6) ␦ using your student number and",
+     "(7) ␦",
+     "• Step 2: choose the resource type you would like to use",
+     "• Step 3: select (8) ␦ of computer",
+     "• Step 4: select date of booking using (9) ␦ options",
+     "• Step 5: complete your booking. Your name should appear on the booking",
+     "(10) ␦"
+    ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 6,
+     "type": "completion",
+     "stem": {
+      "plain": "• Step 1: log in to ______ using your student number and",
+      "segments": [
+       "• Step 1: log in to",
+       {
+        "blank": 6
+       },
+       "using your student number and"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: • Step 1: log in to (6) ␦ using your student number and",
+     "correctAnswer": "bookit",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "• Step 1: log in to (6) ␦ using your student number and"
+     },
+     "keyRaw": "bookit"
+    },
+    {
+     "number": 7,
+     "type": "completion",
+     "stem": {
+      "plain": "______",
+      "segments": [
+       {
+        "blank": 7
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: (7) ␦",
+     "correctAnswer": "password",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "(7) ␦"
+     },
+     "keyRaw": "password"
+    },
+    {
+     "number": 8,
+     "type": "completion",
+     "stem": {
+      "plain": "• Step 3: select ______ of computer",
+      "segments": [
+       "• Step 3: select",
+       {
+        "blank": 8
+       },
+       "of computer"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: • Step 3: select (8) ␦ of computer",
+     "correctAnswer": "location",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "• Step 3: select (8) ␦ of computer"
+     },
+     "keyRaw": "location"
+    },
+    {
+     "number": 9,
+     "type": "completion",
+     "stem": {
+      "plain": "• Step 4: select date of booking using ______ options",
+      "segments": [
+       "• Step 4: select date of booking using",
+       {
+        "blank": 9
+       },
+       "options"
+      ]
+     },
+     "options": null,
+     "blankContext": "line: • Step 4: select date of booking using (9) ␦ options",
+     "correctAnswer": "view",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "• Step 4: select date of booking using (9) ␦ options"
+     },
+     "keyRaw": "view"
+    },
+    {
+     "number": 10,
+     "type": "completion",
+     "stem": {
+      "plain": "______",
+      "segments": [
+       {
+        "blank": 10
+       }
+      ]
+     },
+     "options": null,
+     "blankContext": "line: (10) ␦",
+     "correctAnswer": "schedule",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[4]",
+      "rawExcerpt": "(10) ␦"
+     },
+     "keyRaw": "schedule"
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
-    "rawExcerpt": "Questions 6-10\nComplete the flow chart below. Write NO MORE THAN ONE WORD for each answer.\nProcess of booking a computer\n• Step 1: log in to (6) ␦ using your student number and\n(7) ␦\n• Step 2: choose "
+    "rawExcerpt": "Questions 6-10\nComplete the flow chart below. Write NO MORE THAN ONE WORD for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -565,8 +720,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -579,11 +736,12 @@
      "blankContext": null,
      "correctAnswer": "A, C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[5]",
+      "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. Doors Open"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 12,
@@ -596,11 +754,12 @@
      "blankContext": null,
      "correctAnswer": "A, C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[6]",
+      "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. The Observatory"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 13,
@@ -613,11 +772,12 @@
      "blankContext": null,
      "correctAnswer": "C, D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[7]",
+      "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. Planetarium Shows"
-     }
+     },
+     "keyRaw": "C, D"
     },
     {
      "number": 14,
@@ -630,18 +790,19 @@
      "blankContext": null,
      "correctAnswer": "A, C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[8]",
+      "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. All tickets"
-     }
+     },
+     "keyRaw": "A, C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[4]",
+    "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Section 2: Questions 11-14\nChoose TWO answers for each question."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g04",
@@ -662,8 +823,10 @@
      "15. The tour of the telescope dome includes access to the ␦ of the building\n16. Tour participants are advised to have suitable ␦\n17. Visitors to the Crawford Collection can see items from the astronomical ␦ on display\n18. The children’s craft workshops take place in the ␦\n19. During the craft workshops children can construct a model of a ␦\n20. Children also have the opportunity to colour a ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -684,9 +847,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "15. The tour of the telescope dome includes access to the ␦ of the building"
-     }
+     },
+     "keyRaw": "roof"
     },
     {
      "number": 16,
@@ -709,9 +873,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "16. Tour participants are advised to have suitable ␦"
-     }
+     },
+     "keyRaw": "shoes"
     },
     {
      "number": 17,
@@ -732,9 +897,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "17. Visitors to the Crawford Collection can see items from the astronomical ␦ on display"
-     }
+     },
+     "keyRaw": "library"
     },
     {
      "number": 18,
@@ -757,9 +923,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "18. The children’s craft workshops take place in the ␦"
-     }
+     },
+     "keyRaw": "visitor centre"
     },
     {
      "number": 19,
@@ -782,9 +949,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "19. During the craft workshops children can construct a model of a ␦"
-     }
+     },
+     "keyRaw": "telescope"
     },
     {
      "number": 20,
@@ -807,13 +975,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "20. Children also have the opportunity to colour a ␦"
-     }
+     },
+     "keyRaw": "planet"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[9]",
+    "elementPath": "entry-content.children[10]",
     "rawExcerpt": "Questions 15-20\nComplete the sentences using NO MORE THAN TWO WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -843,7 +1012,126 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "cans B cooling tanks C metal plates D metal screws E paint F satellites"
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
+    ],
+    "optionPreface": null
+   },
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 21,
+     "type": "matching_box",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": "line: (21) ␦",
+     "correctAnswer": "D",
+     "answerFound": true,
+     "status": "quarantined",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "(21) ␦"
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
+    },
+    {
+     "number": 22,
+     "type": "matching_box",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": "line: (22) ␦",
+     "correctAnswer": "E",
+     "answerFound": true,
+     "status": "quarantined",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "(22) ␦"
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
+    },
+    {
+     "number": 23,
+     "type": "matching_box",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": "line: (23) ␦",
+     "correctAnswer": "F",
+     "answerFound": true,
+     "status": "quarantined",
+     "provenance": {
+      "elementPath": "entry-content.children[14]",
+      "rawExcerpt": "(23) ␦"
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
+    }
+   ],
+   "provenance": {
+    "elementPath": "entry-content.children[12]",
+    "rawExcerpt": "Section 3: Questions 21-23\nChoose THREE letters A-G."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
      },
      {
       "letter": "G",
@@ -851,76 +1139,7 @@
      }
     ]
    },
-   "questions": [
-    {
-     "number": 21,
-     "type": "completion",
-     "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 21
-       }
-      ]
-     },
-     "options": null,
-     "blankContext": "line: (21) ␦",
-     "correctAnswer": "D",
-     "answerFound": true,
-     "status": "verified",
-     "provenance": {
-      "elementPath": "entry-content.children[13]",
-      "rawExcerpt": "(21) ␦"
-     }
-    },
-    {
-     "number": 22,
-     "type": "completion",
-     "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 22
-       }
-      ]
-     },
-     "options": null,
-     "blankContext": "line: (22) ␦",
-     "correctAnswer": "E",
-     "answerFound": true,
-     "status": "verified",
-     "provenance": {
-      "elementPath": "entry-content.children[13]",
-      "rawExcerpt": "(22) ␦"
-     }
-    },
-    {
-     "number": 23,
-     "type": "completion",
-     "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 23
-       }
-      ]
-     },
-     "options": null,
-     "blankContext": "line: (23) ␦",
-     "correctAnswer": "F",
-     "answerFound": true,
-     "status": "verified",
-     "provenance": {
-      "elementPath": "entry-content.children[13]",
-      "rawExcerpt": "(23) ␦"
-     }
-    }
-   ],
-   "provenance": {
-    "elementPath": "entry-content.children[11]",
-    "rawExcerpt": "Section 3: Questions 21-23\nChoose THREE letters A-G."
-   },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -944,20 +1163,17 @@
      "A China\nB Europe\nC India\nD Russia\nE United States"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ 28%",
-      "segments": [
-       {
-        "blank": 24
-       },
-       "28%"
-      ]
+      "plain": "28%",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (24) 28% ␦",
@@ -965,21 +1181,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[16]",
+      "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(24) 28% ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 25,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ 29%",
-      "segments": [
-       {
-        "blank": 25
-       },
-       "29%"
-      ]
+      "plain": "29%",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (25) 29% ␦",
@@ -987,21 +1200,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[16]",
+      "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(25) 29% ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 26,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ 37%",
-      "segments": [
-       {
-        "blank": 26
-       },
-       "37%"
-      ]
+      "plain": "37%",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (26) 37% ␦",
@@ -1009,16 +1219,45 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[16]",
+      "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(26) 37% ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[15]",
+    "elementPath": "entry-content.children[16]",
     "rawExcerpt": "Questions 24-26\nWhich country is responsible for depositing the following percentages of space junk?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "China"
+     },
+     {
+      "letter": "B",
+      "text": "Europe"
+     },
+     {
+      "letter": "C",
+      "text": "India"
+     },
+     {
+      "letter": "D",
+      "text": "Russia"
+     },
+     {
+      "letter": "E",
+      "text": "United States"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1067,21 +1306,17 @@
      "A a grown up gorilla\nB a double decker bus\nC the desert\nD Eastern Australia\nE the 1980s\nF 2001\nG 100 tonnes\nH the South Pacific"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "– Size and weight of ______ – Was in space for two decades",
-      "segments": [
-       "– Size and weight of",
-       {
-        "blank": 27
-       },
-       "– Was in space for two decades"
-      ]
+      "plain": "– Size and weight of – Was in space for two decades",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 2 col 3",
@@ -1089,25 +1324,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Size and weight of (27)…………….. – Was in space for two decades"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "– Ended up in ______ – Weight of ______",
-      "segments": [
-       "– Ended up in",
-       {
-        "blank": 28
-       },
-       "– Weight of",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "– Ended up in – Weight of",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 3 col 3",
@@ -1115,25 +1343,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Ended up in (28)…………….. – Weight of (29)………………"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "– Ended up in ______ – Weight of ______",
-      "segments": [
-       "– Ended up in",
-       {
-        "blank": 28
-       },
-       "– Weight of",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "– Ended up in – Weight of",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 3 col 3",
@@ -1141,21 +1362,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Ended up in (28)…………….. – Weight of (29)………………"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "– Larger than UARS – Ended up in ______",
-      "segments": [
-       "– Larger than UARS – Ended up in",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "– Larger than UARS – Ended up in",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 4 col 3",
@@ -1163,16 +1381,57 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Larger than UARS – Ended up in (30)…………………."
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[18]",
+    "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Questions 27-30\nComplete the table below. Choose the answers from the options and write the appropriate letter A-I next to questions 27-30.\nSpace Junk – Satellites"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "a grown up gorilla"
+     },
+     {
+      "letter": "B",
+      "text": "a double decker bus"
+     },
+     {
+      "letter": "C",
+      "text": "the desert"
+     },
+     {
+      "letter": "D",
+      "text": "Eastern Australia"
+     },
+     {
+      "letter": "E",
+      "text": "the 1980s"
+     },
+     {
+      "letter": "F",
+      "text": "2001"
+     },
+     {
+      "letter": "G",
+      "text": "100 tonnes"
+     },
+     {
+      "letter": "H",
+      "text": "the South Pacific"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1220,8 +1479,10 @@
      "(35) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1242,9 +1503,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Decompression zone (sometimes called the (31)………………zone)"
-     }
+     },
+     "keyRaw": "dead"
     },
     {
      "number": 32,
@@ -1264,9 +1526,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Situated immediately inside the entrance and is generally free of (32)…………………….."
-     }
+     },
+     "keyRaw": "stock"
     },
     {
      "number": 33,
@@ -1287,9 +1550,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "To encourage the customer to (33)………………to the supermarket"
-     }
+     },
+     "keyRaw": "adjust"
     },
     {
      "number": 34,
@@ -1309,9 +1573,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(34)………………………zone"
-     }
+     },
+     "keyRaw": "dwell"
     },
     {
      "number": 35,
@@ -1331,13 +1596,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "To display (35)…………….."
-     }
+     },
+     "keyRaw": "offers"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[22]",
+    "elementPath": "entry-content.children[23]",
     "rawExcerpt": "Section 4: Questions 31-35\nComplete the table below. Use NO MORE THAN TWO WORDS for each answer."
    },
    "status": "verified"
@@ -1361,8 +1627,10 @@
      "A fruit and vegetables\nB bread and milk\nC cheap tinned foods\nD flowers\nE sunglasses"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1377,9 +1645,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "36. They are referred to as distress goods ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 37,
@@ -1394,9 +1663,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "37. They are always located at the front of the supermarket ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 38,
@@ -1411,9 +1681,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "38. They are referred to as destination goods ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 39,
@@ -1428,9 +1699,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "39. They are normally located below eye level ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 40,
@@ -1445,16 +1717,44 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "40. They are often located at the check-out ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[26]",
+    "elementPath": "entry-content.children[27]",
     "rawExcerpt": "Questions 36-40\nWhich items do the following sentences apply to?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "fruit and vegetables"
+     },
+     {
+      "letter": "B",
+      "text": "bread and milk"
+     },
+     {
+      "letter": "C",
+      "text": "cheap tinned foods"
+     },
+     {
+      "letter": "D",
+      "text": "flowers"
+     },
+     {
+      "letter": "E",
+      "text": "sunglasses"
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1492,21 +1792,223 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 11,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     6,
-     10
+    "stem": "Doors Open",
+    "answer": "A, C",
+    "rawExcerpt": "11. Doors Open",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 12,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "The Observatory",
+    "answer": "A, C",
+    "rawExcerpt": "12. The Observatory",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 13,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Planetarium Shows",
+    "answer": "C, D",
+    "rawExcerpt": "13. Planetarium Shows",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 14,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "All tickets",
+    "answer": "A, C",
+    "rawExcerpt": "14. All tickets",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 21,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "(21) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 22,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "(22) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 23,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "(23) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "cans"
+     },
+     {
+      "letter": "B",
+      "text": "cooling tanks"
+     },
+     {
+      "letter": "C",
+      "text": "metal plates"
+     },
+     {
+      "letter": "D",
+      "text": "metal screws"
+     },
+     {
+      "letter": "E",
+      "text": "paint"
+     },
+     {
+      "letter": "F",
+      "text": "satellites"
+     },
+     {
+      "letter": "G",
+      "text": "whole rackets"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 33,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     21,
+     22,
+     23
+    ],
+    "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 33,
+ "quarantinedCount": 8,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

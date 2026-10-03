@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-135",
  "title": "IELTS Listening Test 135",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-135/index.html",
-   "sha256": "93a548c27cb7d850b7e453fa03a6438bab73aeda705bc014c16c3801680f0f6a",
-   "manifestHashMatch": true,
+   "sha256": "76e3e45daf987d90cad1e08ed08104743308fec4f038f947583fbbbcacb8a853",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-135/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -412,8 +412,10 @@
      "• Secretary’s phone number is (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -436,7 +438,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Prize recently won by (1) ␦ section"
-     }
+     },
+     "keyRaw": "youth"
     },
     {
      "number": 2,
@@ -459,7 +462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Usually problems (2) ␦ plays"
-     }
+     },
+     "keyRaw": "comedy"
     },
     {
      "number": 3,
@@ -481,7 +485,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Next auditions will be on Tuesday, (3) ␦"
-     }
+     },
+     "keyRaw": "12 March"
     },
     {
      "number": 4,
@@ -504,7 +509,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Help is needed with (4) ␦ and ␦"
-     }
+     },
+     "keyRaw": "publicity"
     },
     {
      "number": 5,
@@ -527,7 +533,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Rehearsals take place in the (5) ␦ hall"
-     }
+     },
+     "keyRaw": "community"
     },
     {
      "number": 6,
@@ -549,7 +556,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Nearest car park for rehearsals is in Ashburton Road opposite the (6) ␦"
-     }
+     },
+     "keyRaw": "sports centre"
     },
     {
      "number": 7,
@@ -572,7 +580,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Annual membership fee is (7) £ ␦"
-     }
+     },
+     "keyRaw": "180"
     },
     {
      "number": 8,
@@ -594,7 +603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Extra payment for (8) ␦"
-     }
+     },
+     "keyRaw": "costumes"
     },
     {
      "number": 9,
@@ -616,7 +626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Secretary’s name is Sarah (9) ␦"
-     }
+     },
+     "keyRaw": "Sawdicott"
     },
     {
      "number": 10,
@@ -638,7 +649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Secretary’s phone number is (10) ␦"
-     }
+     },
+     "keyRaw": "07955240063"
     }
    ],
    "provenance": {
@@ -664,8 +676,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -695,7 +709,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. What does the charity Forward thinking do?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -725,7 +740,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. What benefit of Forward thinking’s work does Jasmine mention?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 13,
@@ -755,7 +771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. When did the organization become known as Forward thinking?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
@@ -785,7 +802,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. Where does Forward thinking operate?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -815,7 +833,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "15. Jasmine explains that the Colville Centre is"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -839,12 +858,27 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "Class participants\nA children and teenagers\nB adults\nC all ages"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "children and teenagers"
+     },
+     {
+      "letter": "B",
+      "text": "adults"
+     },
+     {
+      "letter": "C",
+      "text": "all ages"
+     }
+    ],
+    "optionPreface": [
+     "Class participants"
+    ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -861,7 +895,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. Learn Salsa ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -878,7 +913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "17. Smooth Movers ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -895,7 +931,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. Art of the Forest ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -912,7 +949,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. The Money Maze ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -929,7 +967,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. Make a Play ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -937,6 +976,24 @@
     "rawExcerpt": "Questions 16-20\nWho can take part in each of the classes?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Class participants",
+    "options": [
+     {
+      "letter": "A",
+      "text": "children and teenagers"
+     },
+     {
+      "letter": "B",
+      "text": "adults"
+     },
+     {
+      "letter": "C",
+      "text": "all ages"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -965,28 +1022,51 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "air quality B journey times C land use D leisure facilities E means of transport F parking facilities G number of pedestrians H place of employment"
+      "text": "air quality"
+     },
+     {
+      "letter": "B",
+      "text": "journey times"
+     },
+     {
+      "letter": "C",
+      "text": "land use"
+     },
+     {
+      "letter": "D",
+      "text": "leisure facilities"
+     },
+     {
+      "letter": "E",
+      "text": "means of transport"
+     },
+     {
+      "letter": "F",
+      "text": "parking facilities"
+     },
+     {
+      "letter": "G",
+      "text": "number of pedestrians"
+     },
+     {
+      "letter": "H",
+      "text": "place of employment"
      },
      {
       "letter": "I",
       "text": "traffic flow"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 21
-       },
-       {
-        "blank": 22
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (21) ␦ (22) ␦",
@@ -996,21 +1076,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 22,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 21
-       },
-       {
-        "blank": 22
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (21) ␦ (22) ␦",
@@ -1020,21 +1095,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 23,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 23
-       },
-       {
-        "blank": 24
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (23) ␦ (24) ␦",
@@ -1044,21 +1114,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "I",
+     "convertedFrom": "completion"
     },
     {
      "number": 24,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 23
-       },
-       {
-        "blank": 24
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (23) ␦ (24) ␦",
@@ -1068,21 +1133,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 25,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 25
-       },
-       {
-        "blank": 26
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (25) ␦ (26) ␦",
@@ -1092,21 +1152,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(25) ␦ (26) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 26,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 25
-       },
-       {
-        "blank": 26
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (25) ␦ (26) ␦",
@@ -1116,12 +1171,56 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(25) ␦ (26) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[18]",
     "rawExcerpt": "Part 3: Questions 21-26\nComplete the flow chart below. Choose SIX answers from the list and write the correct letter A-I next to questions 21-26."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "air quality"
+     },
+     {
+      "letter": "B",
+      "text": "journey times"
+     },
+     {
+      "letter": "C",
+      "text": "land use"
+     },
+     {
+      "letter": "D",
+      "text": "leisure facilities"
+     },
+     {
+      "letter": "E",
+      "text": "means of transport"
+     },
+     {
+      "letter": "F",
+      "text": "parking facilities"
+     },
+     {
+      "letter": "G",
+      "text": "number of pedestrians"
+     },
+     {
+      "letter": "H",
+      "text": "place of employment"
+     },
+     {
+      "letter": "I",
+      "text": "traffic flow"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1144,8 +1243,10 @@
      "A Stefan\nB Lauren\nC both Stefan and Lauren"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1162,7 +1263,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "27. draw graphs and maps ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1179,7 +1281,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "28. choose photographs ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1196,7 +1299,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "29. write report ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1213,7 +1317,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "30. do presentation ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1221,6 +1326,25 @@
     "rawExcerpt": "Questions 27-30\nWho will be responsible for each task?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Stefan"
+     },
+     {
+      "letter": "B",
+      "text": "Lauren"
+     },
+     {
+      "letter": "C",
+      "text": "both Stefan and Lauren"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1247,8 +1371,10 @@
      "35. Potters worked in a few ␦ situated on the small hills of North Staffordshire."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1271,7 +1397,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "31. In the eighteenth century, the ␦ still determined how most people made a living."
-     }
+     },
+     "keyRaw": "land"
     },
     {
      "number": 32,
@@ -1294,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "32. In the ground were minerals which supported the many ␦ of the region."
-     }
+     },
+     "keyRaw": "industries/ trades"
     },
     {
      "number": 33,
@@ -1319,7 +1447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "33. Since the late sixteenth century the French settlers had made ␦"
-     }
+     },
+     "keyRaw": "glass"
     },
     {
      "number": 34,
@@ -1342,7 +1471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "34. In Cheshire ␦ was mined and transported on the river Mersey."
-     }
+     },
+     "keyRaw": "salt"
     },
     {
      "number": 35,
@@ -1365,7 +1495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "35. Potters worked in a few ␦ situated on the small hills of North Staffordshire."
-     }
+     },
+     "keyRaw": "villages"
     }
    ],
    "provenance": {
@@ -1402,8 +1533,10 @@
      "• Made from a (40) ␦ of clay and flint"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1426,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• Potters used (36) ␦ day"
-     }
+     },
+     "keyRaw": "local"
     },
     {
      "number": 37,
@@ -1448,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• Saved money on (37) ␦"
-     }
+     },
+     "keyRaw": "fuel"
     },
     {
      "number": 38,
@@ -1470,7 +1605,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• Needed two things in the kiln to be (38) ␦"
-     }
+     },
+     "keyRaw": "waterproof"
     },
     {
      "number": 39,
@@ -1493,7 +1629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• Fragility led to high (39) ␦ during manufacturing"
-     }
+     },
+     "keyRaw": "wastage"
     },
     {
      "number": 40,
@@ -1516,7 +1653,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "• Made from a (40) ␦ of clay and flint"
-     }
+     },
+     "keyRaw": "mixture/ mix"
     }
    ],
    "provenance": {
@@ -1565,6 +1703,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

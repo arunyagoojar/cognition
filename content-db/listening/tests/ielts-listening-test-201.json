@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-201",
  "title": "IELTS Listening Test 201",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-201/index.html",
-   "sha256": "437a34d0547374842fd08f5ca3a0393a6d5dfbbad284bae91a17c03f43f6dc01",
-   "manifestHashMatch": true,
+   "sha256": "4efde1fa4b1841871ba71a1e8578e25230c0da76dc783d16e02ccf983c3c4c5c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-201/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "b147dd2616360982179b4d77087f31244ce71fd66f7f9d344835e63701952ea6",
+ "contentFingerprint": "2a44982699a77fbf7a5068dcd3f255304818f6e02a7e9f462cda50144c09340a",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -422,8 +422,10 @@
     },
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -445,7 +447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Good for people who are especially keen on (1)"
-     }
+     },
+     "keyRaw": "Fish"
     },
     {
      "number": 2,
@@ -468,7 +471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Quite expensive The (2) is a good place for a drink"
-     }
+     },
+     "keyRaw": "Roof"
     },
     {
      "number": 3,
@@ -490,7 +494,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(3) food, good for sharing"
-     }
+     },
+     "keyRaw": "Spanish"
     },
     {
      "number": 4,
@@ -513,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Staff are very friendly Need to pay £ 50 deposit A limited selection of (4) Food on the menu"
-     }
+     },
+     "keyRaw": "Vegetarians"
     },
     {
      "number": 5,
@@ -535,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The (5)"
-     }
+     },
+     "keyRaw": "Audley"
     },
     {
      "number": 6,
@@ -557,7 +564,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "At the top of a (6)"
-     }
+     },
+     "keyRaw": "Hotel"
     },
     {
      "number": 7,
@@ -584,7 +592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "A famous chef All the (7) are very good Only uses (8) ingredients"
-     }
+     },
+     "keyRaw": "Reviews"
     },
     {
      "number": 8,
@@ -611,7 +620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "A famous chef All the (7) are very good Only uses (8) ingredients"
-     }
+     },
+     "keyRaw": "Local"
     },
     {
      "number": 9,
@@ -638,7 +648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Set lunch costs (9) per person Portions probably of (10) size"
-     }
+     },
+     "keyRaw": "Thirty"
     },
     {
      "number": 10,
@@ -665,7 +676,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Set lunch costs (9) per person Portions probably of (10) size"
-     }
+     },
+     "keyRaw": "Average"
     }
    ],
    "provenance": {
@@ -687,46 +699,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A it lasts longer in the ground.",
-     "B it is practised by more people.",
-     "C it can be repaired more easily.",
-     "11. Heather says pottery differs from other art forms because\n\nA it lasts longer in the ground.\n\nB it is practised by more people.\n\nC it can be repaired more easily.",
-     "A the clay it was made with.",
-     "B the marks that are on it.",
-     "C the basic shape of it.",
-     "12. Archaeologists sometimes identify the use of ancient pottery from\n\nA the clay it was made with.\n\nB the marks that are on it.\n\nC the basic shape of it.",
-     "A create an item that looks very old.",
-     "B find something that they are good at.",
-     "C make something that will outlive them.",
-     "13. Some people join Heather’s pottery class because they want to\n\nA create an item that looks very old.\n\nB find something that they are good at.\n\nC make something that will outlive them.",
-     "A its calming effect",
-     "B its messy nature",
-     "C its physical benefits",
-     "14. What does Heather value most about being a potter?\n\nA its calming effect\n\nB its messy nature\n\nC its physical benefits",
-     "A bring friends to join courses.",
-     "B have never made a pot before.",
-     "C try to learn techniques too quickly.",
-     "15. Most of the visitors to Edelman Pottery\n\nA bring friends to join courses.\n\nB have never made a pot before.\n\nC try to learn techniques too quickly.",
-     "A put on their aprons.",
-     "B change their clothes.",
-     "C take off their jewellery.",
-     "16. Heather reminds her visitors that they should\n\nA put on their aprons.\n\nB change their clothes.\n\nC take off their jewellery."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Heather says pottery differs from other art forms because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "it lasts longer in the ground."
+      },
+      {
+       "letter": "B",
+       "text": "it is practised by more people."
+      },
+      {
+       "letter": "C",
+       "text": "it can be repaired more easily."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -734,16 +736,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "11. Heather says pottery differs from other art forms because"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Archaeologists sometimes identify the use of ancient pottery from",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the clay it was made with."
+      },
+      {
+       "letter": "B",
+       "text": "the marks that are on it."
+      },
+      {
+       "letter": "C",
+       "text": "the basic shape of it."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -751,16 +767,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "12. Archaeologists sometimes identify the use of ancient pottery from"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Some people join Heather’s pottery class because they want to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "create an item that looks very old."
+      },
+      {
+       "letter": "B",
+       "text": "find something that they are good at."
+      },
+      {
+       "letter": "C",
+       "text": "make something that will outlive them."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -768,16 +798,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "13. Some people join Heather’s pottery class because they want to"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Heather value most about being a potter?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "its calming effect"
+      },
+      {
+       "letter": "B",
+       "text": "its messy nature"
+      },
+      {
+       "letter": "C",
+       "text": "its physical benefits"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -785,16 +829,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. What does Heather value most about being a potter?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Most of the visitors to Edelman Pottery",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "bring friends to join courses."
+      },
+      {
+       "letter": "B",
+       "text": "have never made a pot before."
+      },
+      {
+       "letter": "C",
+       "text": "try to learn techniques too quickly."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -802,16 +860,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. Most of the visitors to Edelman Pottery"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Heather reminds her visitors that they should",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "put on their aprons."
+      },
+      {
+       "letter": "B",
+       "text": "change their clothes."
+      },
+      {
+       "letter": "C",
+       "text": "take off their jewellery."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -819,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. Heather reminds her visitors that they should"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -848,14 +921,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "what their function is B hen they were invented C ways of keeping them safe D where to put one in your home"
+      "text": "what their function is"
+     },
+     {
+      "letter": "B",
+      "text": "hen they were invented"
+     },
+     {
+      "letter": "C",
+      "text": "ways of keeping them safe"
+     },
+     {
+      "letter": "D",
+      "text": "where to put one in your home"
      },
      {
       "letter": "E",
       "text": "what some people use instead of one"
      }
+    ],
+    "optionPreface": [
+     "Which TWO things does Heather explain about kilns?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -866,13 +955,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, E"
     },
     {
      "number": 18,
@@ -883,13 +973,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, E"
     }
    ],
    "provenance": {
@@ -897,6 +988,43 @@
     "rawExcerpt": "Questions 17 and 18\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:17-18",
+    "answerSet": [
+     "A",
+     "E"
+    ],
+    "prompt": "Which TWO things does Heather explain about kilns?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "what their function is"
+     },
+     {
+      "letter": "B",
+      "text": "hen they were invented"
+     },
+     {
+      "letter": "C",
+      "text": "ways of keeping them safe"
+     },
+     {
+      "letter": "D",
+      "text": "where to put one in your home"
+     },
+     {
+      "letter": "E",
+      "text": "what some people use instead of one"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -919,26 +1047,18 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Some are hard to hold."
-     },
-     {
-      "letter": "B",
-      "text": "Some are worth buying."
-     },
-     {
-      "letter": "C",
-      "text": "Some are essential items."
-     },
-     {
-      "letter": "D",
-      "text": "Some have memorable names."
+      "text": "Some are hard to hold. B Some are worth buying. C Some are essential items. D Some have memorable names."
      },
      {
       "letter": "E",
       "text": "Some are available for use by participants."
      }
+    ],
+    "optionPreface": [
+     "Which TWO points does Heather make about a potter’s tools?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -951,11 +1071,12 @@
      "blankContext": null,
      "correctAnswer": "C, E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A E."
-     }
+     },
+     "keyRaw": "C, E"
     },
     {
      "number": 20,
@@ -968,11 +1089,12 @@
      "blankContext": null,
      "correctAnswer": "C, E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A E."
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
@@ -980,33 +1102,7 @@
     "rawExcerpt": "Questions 19 and 20\n\nChoose TWO letters, A E."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g05",
-   "part": 3,
-   "startQ": 21,
-   "endQ": 30,
-   "partExplicit": true,
-   "instruction": {
-    "text": "",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": ""
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[14]",
-    "rawExcerpt": "Part 3: Question 21 -30"
-   },
-   "status": "quarantined"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -1028,14 +1124,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "social media B smaller nuclear families C urban design D longer lifespans"
+      "text": "social media"
+     },
+     {
+      "letter": "B",
+      "text": "smaller nuclear families"
+     },
+     {
+      "letter": "C",
+      "text": "urban design"
+     },
+     {
+      "letter": "D",
+      "text": "longer lifespans"
      },
      {
       "letter": "E",
       "text": "a mobile workforce"
      }
+    ],
+    "optionPreface": [
+     "Which TWO things do the students both believe are responsible for the increase in loneliness?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1046,13 +1158,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C, E"
     },
     {
      "number": 22,
@@ -1063,13 +1176,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
@@ -1077,6 +1191,43 @@
     "rawExcerpt": "Questions 21 and 22\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:21-22",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO things do the students both believe are responsible for the increase in loneliness?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "social media"
+     },
+     {
+      "letter": "B",
+      "text": "smaller nuclear families"
+     },
+     {
+      "letter": "C",
+      "text": "urban design"
+     },
+     {
+      "letter": "D",
+      "text": "longer lifespans"
+     },
+     {
+      "letter": "E",
+      "text": "a mobile workforce"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1099,14 +1250,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "a weakened immune system B dementia C cancer D obesity"
+      "text": "a weakened immune system"
+     },
+     {
+      "letter": "B",
+      "text": "dementia"
+     },
+     {
+      "letter": "C",
+      "text": "cancer"
+     },
+     {
+      "letter": "D",
+      "text": "obesity"
      },
      {
       "letter": "E",
       "text": "cardiovascular disease"
      }
+    ],
+    "optionPreface": [
+     "Which TWO health risks associated with loneliness do the students agree are based on solid evidence?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1117,13 +1284,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 24,
@@ -1134,13 +1302,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, C"
     }
    ],
    "provenance": {
@@ -1148,6 +1317,43 @@
     "rawExcerpt": "Questions 23 and 24\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:23-24",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO health risks associated with loneliness do the students agree are based on solid evidence?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "a weakened immune system"
+     },
+     {
+      "letter": "B",
+      "text": "dementia"
+     },
+     {
+      "letter": "C",
+      "text": "cancer"
+     },
+     {
+      "letter": "D",
+      "text": "obesity"
+     },
+     {
+      "letter": "E",
+      "text": "cardiovascular disease"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1170,14 +1376,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It has little practical relevance. B It needs further investigation. C It is misleading. D It should be more widely accepted."
+      "text": "It has little practical relevance."
+     },
+     {
+      "letter": "B",
+      "text": "It needs further investigation."
+     },
+     {
+      "letter": "C",
+      "text": "It is misleading."
+     },
+     {
+      "letter": "D",
+      "text": "It should be more widely accepted."
      },
      {
       "letter": "E",
       "text": "It is difficult to understand."
      }
+    ],
+    "optionPreface": [
+     "Which TWO opinions do both the students express about the evolutionary theory of loneliness?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1188,13 +1410,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, B",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, B"
     },
     {
      "number": 26,
@@ -1205,13 +1428,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, B",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A, B"
     }
    ],
    "provenance": {
@@ -1219,6 +1443,43 @@
     "rawExcerpt": "Questions 25 and 26\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g08:25-26",
+    "answerSet": [
+     "A",
+     "B"
+    ],
+    "prompt": "Which TWO opinions do both the students express about the evolutionary theory of loneliness?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It has little practical relevance."
+     },
+     {
+      "letter": "B",
+      "text": "It needs further investigation."
+     },
+     {
+      "letter": "C",
+      "text": "It is misleading."
+     },
+     {
+      "letter": "D",
+      "text": "It should be more widely accepted."
+     },
+     {
+      "letter": "E",
+      "text": "It is difficult to understand."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1234,39 +1495,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Loneliness and mental health",
-     "A doubt that there will ever be a medical cure for loneliness.",
-     "B claim that the link between loneliness and mental health is overstated.",
-     "C express frustration that loneliness is not taken more seriously.",
-     "27. When comparing loneliness to depression, the students\n\nA doubt that there will ever be a medical cure for loneliness.\n\nB claim that the link between loneliness and mental health is overstated.\n\nC express frustration that loneliness is not taken more seriously.",
-     "A to explain how difficult loneliness can be",
-     "B to highlight a situation that most students will recognise",
-     "C to emphasise that feeling lonely is more common for men than women",
-     "28. Why do the students decide to start their presentation with an example from their own experience?\n\nA to explain how difficult loneliness can be\n\nB to highlight a situation that most students will recognise\n\nC to emphasise that feeling lonely is more common for men than women",
-     "A it creates a sense of belonging.",
-     "B it builds self-confidence.",
-     "C it makes people feel more positive.",
-     "29. The students agree that talking to strangers is a good strategy for dealing with loneliness because\n\nA it creates a sense of belonging.\n\nB it builds self-confidence.\n\nC it makes people feel more positive.",
-     "A similar to loneliness.",
-     "B necessary for mental health.",
-     "C an enjoyable experience.",
-     "30. The students find it difficult to understand why solitude is considered to be\n\nA similar to loneliness.\n\nB necessary for mental health.\n\nC an enjoyable experience."
+     "Loneliness and mental health"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When comparing loneliness to depression, the students",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "doubt that there will ever be a medical cure for loneliness."
+      },
+      {
+       "letter": "B",
+       "text": "claim that the link between loneliness and mental health is overstated."
+      },
+      {
+       "letter": "C",
+       "text": "express frustration that loneliness is not taken more seriously."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1274,16 +1534,30 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. When comparing loneliness to depression, the students"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Why do the students decide to start their presentation with an example from their own experience?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "to explain how difficult loneliness can be"
+      },
+      {
+       "letter": "B",
+       "text": "to highlight a situation that most students will recognise"
+      },
+      {
+       "letter": "C",
+       "text": "to emphasise that feeling lonely is more common for men than women"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1291,16 +1565,30 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. Why do the students decide to start their presentation with an example from their own experience?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students agree that talking to strangers is a good strategy for dealing with loneliness because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "it creates a sense of belonging."
+      },
+      {
+       "letter": "B",
+       "text": "it builds self-confidence."
+      },
+      {
+       "letter": "C",
+       "text": "it makes people feel more positive."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1308,16 +1596,30 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "29. The students agree that talking to strangers is a good strategy for dealing with loneliness because"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students find it difficult to understand why solitude is considered to be",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "similar to loneliness."
+      },
+      {
+       "letter": "B",
+       "text": "necessary for mental health."
+      },
+      {
+       "letter": "C",
+       "text": "an enjoyable experience."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1325,7 +1627,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "30. The students find it difficult to understand why solitude is considered to be"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1372,8 +1675,10 @@
      "• Instead of road transport, goods could be transported by large freight barges and electric (39) ␦ or, in future, by (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1396,7 +1701,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "o pollution from (31) ␦ on the river bank."
-     }
+     },
+     "keyRaw": "Factories"
     },
     {
      "number": 32,
@@ -1418,7 +1724,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• In1957, the River Thames in London wasd1:1elared biologically (32) ␦"
-     }
+     },
+     "keyRaw": "Dead"
     },
     {
      "number": 33,
@@ -1441,7 +1748,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Seals and even a (33) ␦ have been seen in the River Thames."
-     }
+     },
+     "keyRaw": "Whale"
     },
     {
      "number": 34,
@@ -1463,7 +1771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Riverside warehouses are converted to restaurants and (34) ␦"
-     }
+     },
+     "keyRaw": "Apartments"
     },
     {
      "number": 35,
@@ -1485,7 +1794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o build a riverside (35) ␦"
-     }
+     },
+     "keyRaw": "Park"
     },
     {
      "number": 36,
@@ -1508,7 +1818,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o Display (36) ␦ projects."
-     }
+     },
+     "keyRaw": "Art"
     },
     {
      "number": 37,
@@ -1531,7 +1842,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• In Paris, (37) ␦ are created on the 8’desof the river every summer."
-     }
+     },
+     "keyRaw": "Beaches"
     },
     {
      "number": 38,
@@ -1554,7 +1866,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Over 2 billion passengers already travel by (38) ␦ in cities round the world."
-     }
+     },
+     "keyRaw": "Ferry"
     },
     {
      "number": 39,
@@ -1580,7 +1893,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Instead of road transport, goods could be transported by large freight barges and electric (39) ␦ or, in future, by (40) ␦"
-     }
+     },
+     "keyRaw": "Bikes"
     },
     {
      "number": 40,
@@ -1606,7 +1920,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Instead of road transport, goods could be transported by large freight barges and electric (39) ␦ or, in future, by (40) ␦"
-     }
+     },
+     "keyRaw": "Drone"
     }
    ],
    "provenance": {
@@ -1657,12 +1972,49 @@
    }
   },
   {
-   "unit": "group",
-   "groupId": "g05",
-   "questionNumbers": [],
-   "reasonCode": "INSTRUCTION_MISSING",
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
    "evidence": {
-    "instructionRaw": "Part 3: Question 21 -30"
+    "stem": "",
+    "answer": "C, E",
+    "rawExcerpt": "Choose TWO letters, A E.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "C, E",
+    "rawExcerpt": "Choose TWO letters, A E.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     19,
+     20
+    ],
+    "outOfRange": []
    }
   }
  ],
@@ -1673,8 +2025,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

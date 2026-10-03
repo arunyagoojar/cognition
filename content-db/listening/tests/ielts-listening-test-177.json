@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-177",
  "title": "IELTS Listening Test 177",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-177/index.html",
-   "sha256": "992acdd3f43e3b5cef3de1a007fd58243858bddedd0362719cdc72e9599386cb",
-   "manifestHashMatch": true,
+   "sha256": "4a35cba38c4860f9992079a1591815b1e5eff65c29b5f7f0fe3fa17abd8a2316",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-177/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -412,8 +412,10 @@
      "• near to restaurants and many (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -440,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• the (1) ␦ room for talks, (projector and (2) ␦ available)"
-     }
+     },
+     "keyRaw": "Tesla"
     },
     {
      "number": 2,
@@ -467,7 +470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• the (1) ␦ room for talks, (projector and (2) ␦ available)"
-     }
+     },
+     "keyRaw": "microphone"
     },
     {
      "number": 3,
@@ -489,7 +493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• area for coffee and an (3) ␦"
-     }
+     },
+     "keyRaw": "exhibition"
     },
     {
      "number": 4,
@@ -512,7 +517,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• free (4) ␦ throughout"
-     }
+     },
+     "keyRaw": "wifi"
     },
     {
      "number": 5,
@@ -535,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• a standard buffet lunch costs (5) $ ␦ per head"
-     }
+     },
+     "keyRaw": "45"
     },
     {
      "number": 6,
@@ -558,7 +565,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Rooms will cost (6) $ ␦ including breakfast."
-     }
+     },
+     "keyRaw": "135"
     },
     {
      "number": 7,
@@ -580,7 +588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• The hotel also has a spa and rooftop (7) ␦"
-     }
+     },
+     "keyRaw": "pool"
     },
     {
      "number": 8,
@@ -602,7 +611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• There’s a free shuttle service to the (8) ␦"
-     }
+     },
+     "keyRaw": "airport"
     },
     {
      "number": 9,
@@ -625,7 +635,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Wilby Street (quite near the (9) ␦ )"
-     }
+     },
+     "keyRaw": "sea"
     },
     {
      "number": 10,
@@ -647,7 +658,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• near to restaurants and many (10) ␦"
-     }
+     },
+     "keyRaw": "clubs"
     }
    ],
    "provenance": {
@@ -676,14 +688,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "decorating B cleaning C delivering meals D shopping"
+      "text": "decorating"
+     },
+     {
+      "letter": "B",
+      "text": "cleaning"
+     },
+     {
+      "letter": "C",
+      "text": "delivering meals"
+     },
+     {
+      "letter": "D",
+      "text": "shopping"
      },
      {
       "letter": "E",
       "text": "childcare"
      }
+    ],
+    "optionPreface": [
+     "Which TWO activities that volunteers do are mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -700,7 +728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -711,18 +740,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "E (in any order)",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E (in any order)"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "A",
+     "E"
+    ],
+    "prompt": "Which TWO activities that volunteers do are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "decorating"
+     },
+     {
+      "letter": "B",
+      "text": "cleaning"
+     },
+     {
+      "letter": "C",
+      "text": "delivering meals"
+     },
+     {
+      "letter": "D",
+      "text": "shopping"
+     },
+     {
+      "letter": "E",
+      "text": "childcare"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -746,14 +813,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "learning how to be part of a team B having a sense of purpose C realising how lucky they are D improved ability at time management"
+      "text": "learning how to be part of a team"
+     },
+     {
+      "letter": "B",
+      "text": "having a sense of purpose"
+     },
+     {
+      "letter": "C",
+      "text": "realising how lucky they are"
+     },
+     {
+      "letter": "D",
+      "text": "improved ability at time management"
      },
      {
       "letter": "E",
       "text": "boosting their employment prospects"
      }
+    ],
+    "optionPreface": [
+     "Which TWO ways that volunteers can benefit from volunteering are mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -770,7 +853,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -781,13 +865,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "E (in any order)",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E (in any order)"
     }
    ],
    "provenance": {
@@ -795,6 +880,43 @@
     "rawExcerpt": "Questions 13 and 14\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO ways that volunteers can benefit from volunteering are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "learning how to be part of a team"
+     },
+     {
+      "letter": "B",
+      "text": "having a sense of purpose"
+     },
+     {
+      "letter": "C",
+      "text": "realising how lucky they are"
+     },
+     {
+      "letter": "D",
+      "text": "improved ability at time management"
+     },
+     {
+      "letter": "E",
+      "text": "boosting their employment prospects"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -819,14 +941,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "overcome physical difficulties B rediscover skills not used for a long time C improve their communication skills D solve problems independently E escape isolation F remember past times"
+      "text": "overcome physical difficulties"
+     },
+     {
+      "letter": "B",
+      "text": "rediscover skills not used for a long time"
+     },
+     {
+      "letter": "C",
+      "text": "improve their communication skills"
+     },
+     {
+      "letter": "D",
+      "text": "solve problems independently"
+     },
+     {
+      "letter": "E",
+      "text": "escape isolation"
+     },
+     {
+      "letter": "F",
+      "text": "remember past times"
      },
      {
       "letter": "G",
       "text": "start a new hobby"
      }
+    ],
+    "optionPreface": [
+     "What volunteers have helped people to do"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -843,7 +989,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "15. Habib ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 16,
@@ -860,7 +1007,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. Consuela ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -877,7 +1025,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "17. Minh ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 18,
@@ -894,7 +1043,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. Tanya ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 19,
@@ -911,7 +1061,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. Alexei ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 20,
@@ -928,7 +1079,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. Juba ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -936,6 +1088,40 @@
     "rawExcerpt": "Questions 15 – 20\nWhat has each of the following volunteers helped someone to do?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "What volunteers have helped people to do",
+    "options": [
+     {
+      "letter": "A",
+      "text": "overcome physical difficulties"
+     },
+     {
+      "letter": "B",
+      "text": "rediscover skills not used for a long time"
+     },
+     {
+      "letter": "C",
+      "text": "improve their communication skills"
+     },
+     {
+      "letter": "D",
+      "text": "solve problems independently"
+     },
+     {
+      "letter": "E",
+      "text": "escape isolation"
+     },
+     {
+      "letter": "F",
+      "text": "remember past times"
+     },
+     {
+      "letter": "G",
+      "text": "start a new hobby"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -963,8 +1149,10 @@
      "Joe hopes the band will attend a (26) ␦ next month."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -987,7 +1175,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "It consists of around (21) ␦ students."
-     }
+     },
+     "keyRaw": "50"
     },
     {
      "number": 22,
@@ -1010,7 +1199,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "It is due to play in a (22) ␦ band competition."
-     }
+     },
+     "keyRaw": "regional"
     },
     {
      "number": 23,
@@ -1032,7 +1222,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "It has been invited to play in the town’s (23) ␦"
-     }
+     },
+     "keyRaw": "carnival"
     },
     {
      "number": 24,
@@ -1054,7 +1245,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "They have listened to a talk by a (24) ␦"
-     }
+     },
+     "keyRaw": "drummer"
     },
     {
      "number": 25,
@@ -1077,7 +1269,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Joe will discuss a (25) ␦ with the band."
-     }
+     },
+     "keyRaw": "film"
     },
     {
      "number": 26,
@@ -1100,7 +1293,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Joe hopes the band will attend a (26) ␦ next month."
-     }
+     },
+     "keyRaw": "parade"
     }
    ],
    "provenance": {
@@ -1129,14 +1323,34 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "makes a lot of mistakes in rehearsals B keeps making unhelpful suggestions C has difficulty with rhythm D misses too many rehearsals E has a health problem"
+      "text": "makes a lot of mistakes in rehearsals"
+     },
+     {
+      "letter": "B",
+      "text": "keeps making unhelpful suggestions"
+     },
+     {
+      "letter": "C",
+      "text": "has difficulty with rhythm"
+     },
+     {
+      "letter": "D",
+      "text": "misses too many rehearsals"
+     },
+     {
+      "letter": "E",
+      "text": "has a health problem"
      },
      {
       "letter": "F",
       "text": "doesn’t mix with other students"
      }
+    ],
+    "optionPreface": [
+     "Problems"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1153,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. flutist ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 28,
@@ -1170,7 +1385,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. trumpeter ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1187,7 +1403,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. trombonist ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1204,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "30. percussionist ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1212,6 +1430,36 @@
     "rawExcerpt": "Questions 27 – 30\nWhat problem does Joe mention in connection with each of the following band members?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Problems",
+    "options": [
+     {
+      "letter": "A",
+      "text": "makes a lot of mistakes in rehearsals"
+     },
+     {
+      "letter": "B",
+      "text": "keeps making unhelpful suggestions"
+     },
+     {
+      "letter": "C",
+      "text": "has difficulty with rhythm"
+     },
+     {
+      "letter": "D",
+      "text": "misses too many rehearsals"
+     },
+     {
+      "letter": "E",
+      "text": "has a health problem"
+     },
+     {
+      "letter": "F",
+      "text": "doesn’t mix with other students"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1256,8 +1504,10 @@
      "• festival will include his music for the 1996 (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1280,7 +1530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• studied piano and (31) ␦ before turning to composition"
-     }
+     },
+     "keyRaw": "violin"
     },
     {
      "number": 32,
@@ -1303,7 +1554,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• compositions show a great deal of (32) ␦ and are drawn from various cultural sources"
-     }
+     },
+     "keyRaw": "energy"
     },
     {
      "number": 33,
@@ -1325,7 +1577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• her music is very expressive and also (33) ␦"
-     }
+     },
+     "keyRaw": "complex"
     },
     {
      "number": 34,
@@ -1348,7 +1601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• festival will include her (34) ␦ called The Oresteia"
-     }
+     },
+     "keyRaw": "opera"
     },
     {
      "number": 35,
@@ -1370,7 +1624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• Lim described the sounds in The Oresteia as (35) ␦"
-     }
+     },
+     "keyRaw": "disturbing"
     },
     {
      "number": 36,
@@ -1392,7 +1647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• The Tower of Remoteness is performed by piano and (36) ␦"
-     }
+     },
+     "keyRaw": "clarinet"
     },
     {
      "number": 37,
@@ -1414,7 +1670,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• celebrates Australia’s cultural (37) ␦"
-     }
+     },
+     "keyRaw": "diversity"
     },
     {
      "number": 38,
@@ -1437,7 +1694,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• studied (38) ␦ before studying music"
-     }
+     },
+     "keyRaw": "physics"
     },
     {
      "number": 39,
@@ -1459,7 +1717,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• became well known as composer of music for (39) ␦"
-     }
+     },
+     "keyRaw": "dance"
     },
     {
      "number": 40,
@@ -1481,7 +1740,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• festival will include his music for the 1996 (40) ␦"
-     }
+     },
+     "keyRaw": "Olympics"
     }
    ],
    "provenance": {
@@ -1534,6 +1794,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

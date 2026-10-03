@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-143",
  "title": "IELTS Listening Test 143",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-143/index.html",
-   "sha256": "f2c22f97790813acc1b6c0b6a9d2534e0a580435420e341adfdc5366b8cbc877",
-   "manifestHashMatch": true,
+   "sha256": "d3a441e724afbc75664a723c349f82f99974c1879c581bed947a60d074d2b60a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-143/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "07d6dc8e210cb9944de714ea02090de6c6912402d378fde1f24baba356bded91",
+ "contentFingerprint": "599952acd8e4e5a0b009b81ebb4d111202d2c29490fd4cece756a0493924f568",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -413,8 +413,10 @@
      "Will pay each (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -436,7 +438,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Age: (1) ␦"
-     }
+     },
+     "keyRaw": "4"
     },
     {
      "number": 2,
@@ -459,7 +462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address: (2) ␦ Road, Woodside 4032"
-     }
+     },
+     "keyRaw": "46 wombat"
     },
     {
      "number": 3,
@@ -481,7 +485,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Days enrolled for: Monday and (3) ␦"
-     }
+     },
+     "keyRaw": "thursday"
     },
     {
      "number": 4,
@@ -504,7 +509,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Start time: (4) ␦ am"
-     }
+     },
+     "keyRaw": "8.30"
     },
     {
      "number": 5,
@@ -527,7 +533,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Childcare group: the (5) ␦ group"
-     }
+     },
+     "keyRaw": "red"
     },
     {
      "number": 6,
@@ -549,7 +556,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Which meals are required each day? (6) ␦"
-     }
+     },
+     "keyRaw": "lunch"
     },
     {
      "number": 7,
@@ -571,7 +579,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Medical conditions: need (7) ␦"
-     }
+     },
+     "keyRaw": "glasses"
     },
     {
      "number": 8,
@@ -593,7 +602,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Emergency contact: Jenny (8) ␦"
-     }
+     },
+     "keyRaw": "BALL"
     },
     {
      "number": 9,
@@ -615,7 +625,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Relationship to child: (9) ␦"
-     }
+     },
+     "keyRaw": "aunt"
     },
     {
      "number": 10,
@@ -637,7 +648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Will pay each (10) ␦"
-     }
+     },
+     "keyRaw": "month"
     }
    ],
    "provenance": {
@@ -666,14 +678,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Children make up most of the membership B It’s the country’s largest conservation organisation C It helps finance campaigns for changes in fishing practices D It employs several dolphin experts full-time"
+      "text": "Children make up most of the membership"
+     },
+     {
+      "letter": "B",
+      "text": "It’s the country’s largest conservation organisation"
+     },
+     {
+      "letter": "C",
+      "text": "It helps finance campaigns for changes in fishing practices"
+     },
+     {
+      "letter": "D",
+      "text": "It employs several dolphin experts full-time"
      },
      {
       "letter": "E",
       "text": "Volunteers help in various ways"
      }
+    ],
+    "optionPreface": [
+     "Which TWO things does Alice say about the Dolphin Conservation Trust?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -690,7 +718,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -707,12 +736,50 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO things does Alice say about the Dolphin Conservation Trust?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Children make up most of the membership"
+     },
+     {
+      "letter": "B",
+      "text": "It’s the country’s largest conservation organisation"
+     },
+     {
+      "letter": "C",
+      "text": "It helps finance campaigns for changes in fishing practices"
+     },
+     {
+      "letter": "D",
+      "text": "It employs several dolphin experts full-time"
+     },
+     {
+      "letter": "E",
+      "text": "Volunteers help in various ways"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -729,34 +796,36 @@
     "originalText": "Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A It has brought in extra money",
-     "B It made the work of the trust better known",
-     "C It has attracted more members.",
-     "13. Why is Alice so pleased the Trust has won the Charity Commission award?\nA It has brought in extra money\nB It made the work of the trust better known\nC It has attracted more members.",
-     "A noise",
-     "B oil leaks",
-     "C movement of ships",
-     "14. Alice says oil exploration causes problems to dolphins because of\nA noise\nB oil leaks\nC movement of ships",
-     "A she saw one swimming near her home",
-     "B she heard a speaker at her school",
-     "C she read a book about them",
-     "15. Alice became interested in dolphins when\nA she saw one swimming near her home\nB she heard a speaker at her school\nC she read a book about them"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Why is Alice so pleased the Trust has won the Charity Commission award?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It has brought in extra money"
+      },
+      {
+       "letter": "B",
+       "text": "It made the work of the trust better known"
+      },
+      {
+       "letter": "C",
+       "text": "It has attracted more members."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -764,16 +833,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "13. Why is Alice so pleased the Trust has won the Charity Commission award?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Alice says oil exploration causes problems to dolphins because of",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "noise"
+      },
+      {
+       "letter": "B",
+       "text": "oil leaks"
+      },
+      {
+       "letter": "C",
+       "text": "movement of ships"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -781,16 +864,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. Alice says oil exploration causes problems to dolphins because of"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Alice became interested in dolphins when",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "she saw one swimming near her home"
+      },
+      {
+       "letter": "B",
+       "text": "she heard a speaker at her school"
+      },
+      {
+       "letter": "C",
+       "text": "she read a book about them"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -798,7 +895,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. Alice became interested in dolphins when"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -829,23 +927,17 @@
      "Dolphins\nA Moondancer\nB Echo\nC Kiwi\nD Samson"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "It has not been seen this year ______",
-      "segments": [
-       "It has not been seen this year",
-       {
-        "blank": 16
-       },
-       {
-        "blank": 16
-       }
-      ]
+      "plain": "It has not been seen this year",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 16. It has not been seen this year ␦ (input box in source)",
@@ -855,22 +947,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "16. It has not been seen this year ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 17,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "It is photographed more than the others ______",
-      "segments": [
-       "It is photographed more than the others",
-       {
-        "blank": 17
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "It is photographed more than the others",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 17. It is photographed more than the others ␦ (input box in source)",
@@ -880,22 +966,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "17. It is photographed more than the others ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "It is always very energetic ______",
-      "segments": [
-       "It is always very energetic",
-       {
-        "blank": 18
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "It is always very energetic",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 18. It is always very energetic ␦ (input box in source)",
@@ -905,22 +985,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "18. It is always very energetic ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "It is the newest one in the scheme ______",
-      "segments": [
-       "It is the newest one in the scheme",
-       {
-        "blank": 19
-       },
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "It is the newest one in the scheme",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 19. It is the newest one in the scheme ␦ (input box in source)",
@@ -930,22 +1004,16 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "19. It is the newest one in the scheme ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "It has an unusual shape ______",
-      "segments": [
-       "It has an unusual shape",
-       {
-        "blank": 20
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "It has an unusual shape",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 20. It has an unusual shape ␦ (input box in source)",
@@ -955,7 +1023,9 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "20. It has an unusual shape ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -963,6 +1033,29 @@
     "rawExcerpt": "Questions 16-20\nWhich dolphin does Alice make each of the following comments about?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 2,
+    "title": "Dolphins",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Moondancer"
+     },
+     {
+      "letter": "B",
+      "text": "Echo"
+     },
+     {
+      "letter": "C",
+      "text": "Kiwi"
+     },
+     {
+      "letter": "D",
+      "text": "Samson"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -978,43 +1071,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Theatre Studies Course",
-     "A the stories his grandfather told him",
-     "B the times when he watched his grandfather working",
-     "C the way he imagined his grandfather at work",
-     "Theatre Studies Course\n21. What helped Rob to prepare to play the character of a doctor?\nA the stories his grandfather told him\nB the times when he watched his grandfather working\nC the way he imagined his grandfather at work",
-     "A repetition of words and phrases",
-     "B scenery painted in dull colours",
-     "C long pauses within conversations",
-     "22. In the play’s first scene, the boredom of village life was suggested by\nA repetition of words and phrases\nB scenery painted in dull colours\nC long pauses within conversations",
-     "A He likes to have clear guidelines",
-     "B He copes well with stress",
-     "C He thinks he is a good leader",
-     "23. What has Rob learned about himself through working in a group?\nA He likes to have clear guidelines\nB He copes well with stress\nC He thinks he is a good leader",
-     "A political developments",
-     "B changing social attitudes",
-     "C economic transformations",
-     "24. To support the production, research material was used which described\nA political developments\nB changing social attitudes\nC economic transformations",
-     "A one person forgetting their words",
-     "B an equipment failure",
-     "C the injury of one character",
-     "25. What problem did the students overcome in the final rehearsal?\nA one person forgetting their words\nB an equipment failure\nC the injury of one character"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What helped Rob to prepare to play the character of a doctor?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the stories his grandfather told him"
+      },
+      {
+       "letter": "B",
+       "text": "the times when he watched his grandfather working"
+      },
+      {
+       "letter": "C",
+       "text": "the way he imagined his grandfather at work"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1022,16 +1108,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "21. What helped Rob to prepare to play the character of a doctor?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In the play’s first scene, the boredom of village life was suggested by",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "repetition of words and phrases"
+      },
+      {
+       "letter": "B",
+       "text": "scenery painted in dull colours"
+      },
+      {
+       "letter": "C",
+       "text": "long pauses within conversations"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1039,16 +1139,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "22. In the play’s first scene, the boredom of village life was suggested by"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What has Rob learned about himself through working in a group?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "He likes to have clear guidelines"
+      },
+      {
+       "letter": "B",
+       "text": "He copes well with stress"
+      },
+      {
+       "letter": "C",
+       "text": "He thinks he is a good leader"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1056,16 +1170,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "23. What has Rob learned about himself through working in a group?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "To support the production, research material was used which described",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "political developments"
+      },
+      {
+       "letter": "B",
+       "text": "changing social attitudes"
+      },
+      {
+       "letter": "C",
+       "text": "economic transformations"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1073,16 +1201,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "24. To support the production, research material was used which described"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What problem did the students overcome in the final rehearsal?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "one person forgetting their words"
+      },
+      {
+       "letter": "B",
+       "text": "an equipment failure"
+      },
+      {
+       "letter": "C",
+       "text": "the injury of one character"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1090,7 +1232,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "25. What problem did the students overcome in the final rehearsal?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1145,8 +1288,12 @@
       "letter": "G",
       "text": "ask for help"
      }
+    ],
+    "optionPreface": [
+     "Action"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1163,7 +1310,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "26. in the second year of the course ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 27,
@@ -1180,7 +1328,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "27. when first choosing where to go ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 28,
@@ -1197,7 +1346,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "28. when sending in your choice ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1214,7 +1364,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "29. when writing your personal statement ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 30,
@@ -1231,7 +1382,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "30. when doing the year abroad ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1239,6 +1391,40 @@
     "rawExcerpt": "Questions 26-30\nWhat action is needed for the following stages in doing the ‘year abroad’ option?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Action",
+    "options": [
+     {
+      "letter": "A",
+      "text": "be on time"
+     },
+     {
+      "letter": "B",
+      "text": "get a letter of recommendation"
+     },
+     {
+      "letter": "C",
+      "text": "plan for the final year"
+     },
+     {
+      "letter": "D",
+      "text": "make sure the institution’s focus is relevant"
+     },
+     {
+      "letter": "E",
+      "text": "show ability in Theatre Studies"
+     },
+     {
+      "letter": "F",
+      "text": "make travel arrangements and bookings"
+     },
+     {
+      "letter": "G",
+      "text": "ask for help"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1286,8 +1472,10 @@
      "Prevention Focus is good for work such as a surgeon Leaders’ actions affect which focus people use."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1309,7 +1497,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Promotion goals focus on (31) ␦"
-     }
+     },
+     "keyRaw": "achievements"
     },
     {
      "number": 32,
@@ -1331,7 +1520,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• comes from one’s (32) ␦"
-     }
+     },
+     "keyRaw": "personality"
     },
     {
      "number": 33,
@@ -1354,7 +1544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "The (33) ␦ Factor"
-     }
+     },
+     "keyRaw": "situational"
     },
     {
      "number": 34,
@@ -1376,7 +1567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• we are more likely to focus on promotion goals when with a (34) ␦"
-     }
+     },
+     "keyRaw": "friend"
     },
     {
      "number": 35,
@@ -1399,7 +1591,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Promotion Focus: People think about an ideal version of themselves, their (35) ␦ and their gains."
-     }
+     },
+     "keyRaw": "aspirations"
     },
     {
      "number": 36,
@@ -1422,7 +1615,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Leadership behaviour and (36) ␦ affects people’s focus"
-     }
+     },
+     "keyRaw": "style"
     },
     {
      "number": 37,
@@ -1445,7 +1639,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• pay special attention to the (37) ␦ of their followers"
-     }
+     },
+     "keyRaw": "development"
     },
     {
      "number": 38,
@@ -1467,7 +1662,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• passionately communicate a clear (38) ␦"
-     }
+     },
+     "keyRaw": "vision"
     },
     {
      "number": 39,
@@ -1490,7 +1686,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• create (39) ␦ to make expectations clear"
-     }
+     },
+     "keyRaw": "structures"
     },
     {
      "number": 40,
@@ -1512,7 +1709,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Promotion Focus is good for jobs requiring (40) ␦"
-     }
+     },
+     "keyRaw": "innovations"
     }
    ],
    "provenance": {
@@ -1559,6 +1757,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

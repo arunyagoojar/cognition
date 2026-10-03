@@ -1,0 +1,33 @@
+{
+ "slug": "ielts-listening-test-18",
+ "status": "quarantined",
+ "sourceSha256": "150faff0e307815fbfe5a4a67af6c1df143c60e80d28baaaa460d3048de7bb3e",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 7,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "– Funny – Lazy – Not ______ or………… – Outdoor type",
+    "answer": "competitive, stressed",
+    "rawExcerpt": "– Funny – Lazy – Not (7)…………or………… – Outdoor type",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     7
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

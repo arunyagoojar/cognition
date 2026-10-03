@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-163",
  "title": "IELTS Listening Test 163",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-163/index.html",
-   "sha256": "0f564b0e97ac812b16ac7f40cd0bce9f55c6cd61aefe327c8ed527fa416b9757",
-   "manifestHashMatch": true,
+   "sha256": "5f64698aada4fe1d336ff8e7899a629731baa76b889e3f842d937960a1ae3e4d",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-163/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "4e0bec139d8dc06e92184c716c84356690bedad6df6434c74d709f8dc3c963ca",
+ "contentFingerprint": "db8a3cfcc5b866cf8a98b6244386a6d44b452ae04ad25a5a09b5ccac4f6d686a",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -412,8 +412,10 @@
      "Condition: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -435,7 +437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Engine size: (1) ␦"
-     }
+     },
+     "keyRaw": "1.4 litres"
     },
     {
      "number": 2,
@@ -457,7 +460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Type of gears: (2) ␦"
-     }
+     },
+     "keyRaw": "automatic"
     },
     {
      "number": 3,
@@ -480,7 +484,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Preferred color: (3) ␦ blue"
-     }
+     },
+     "keyRaw": "light"
     },
     {
      "number": 4,
@@ -502,7 +507,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Customer wishes to arrange (4) ␦"
-     }
+     },
+     "keyRaw": "credit"
     },
     {
      "number": 5,
@@ -524,7 +530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Name: Wendy (5) ␦"
-     }
+     },
+     "keyRaw": "Harries"
     },
     {
      "number": 6,
@@ -546,7 +553,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Title: (6) ␦"
-     }
+     },
+     "keyRaw": "doctor"
     },
     {
      "number": 7,
@@ -569,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Address: (7) ␦ hampshire GU8 9EW"
-     }
+     },
+     "keyRaw": "Alton"
     },
     {
      "number": 8,
@@ -592,7 +601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Contact number: (for (8) ␦ only) 0798257643"
-     }
+     },
+     "keyRaw": "messages"
     },
     {
      "number": 9,
@@ -615,7 +625,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Model: Name: (9) ␦ Year: 1994"
-     }
+     },
+     "keyRaw": "lion"
     },
     {
      "number": 10,
@@ -637,7 +648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Condition: (10) ␦"
-     }
+     },
+     "keyRaw": "reasonable"
     }
    ],
    "provenance": {
@@ -666,14 +678,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "higher than average results in examinations B good transport links with central London C near London Airport D special government funding"
+      "text": "higher than average results in examinations"
+     },
+     {
+      "letter": "B",
+      "text": "good transport links with central London"
+     },
+     {
+      "letter": "C",
+      "text": "near London Airport"
+     },
+     {
+      "letter": "D",
+      "text": "special government funding"
      },
      {
       "letter": "E",
       "text": "good links with local industry"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -690,7 +716,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters A-E. What TWO advantages does the speaker say Rexford University has for the students he is speaking to?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -707,12 +734,50 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters A-E. What TWO advantages does the speaker say Rexford University has for the students he is speaking to?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Part 2: Questions 11 and 12"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "What TWO advantages does the speaker say Rexford University has for the students he is speaking to?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "higher than average results in examinations"
+     },
+     {
+      "letter": "B",
+      "text": "good transport links with central London"
+     },
+     {
+      "letter": "C",
+      "text": "near London Airport"
+     },
+     {
+      "letter": "D",
+      "text": "special government funding"
+     },
+     {
+      "letter": "E",
+      "text": "good links with local industry"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -744,8 +809,10 @@
      "what to peak"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -767,7 +834,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "– delays in sending (13) ␦"
-     }
+     },
+     "keyRaw": "references"
     },
     {
      "number": 14,
@@ -789,7 +857,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(14) ␦ who can give information and advice"
-     }
+     },
+     "keyRaw": "country"
     },
     {
      "number": 15,
@@ -812,7 +881,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "– English (15) ␦ and food"
-     }
+     },
+     "keyRaw": "weather"
     }
    ],
    "provenance": {
@@ -835,42 +905,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A offered accommodation with local families.",
-     "B given special help by their lecturers.",
-     "C expected to work independently.",
-     "16. The speaker says international students at UK universities will be\nA offered accommodation with local families.\nB given special help by their lecturers.\nC expected to work independently.",
-     "A Most places are given to undergraduates.",
-     "B No places are available for postgraduates with families.",
-     "C A limited number of places are available for new postgraduates.",
-     "17. What does the speaker say about university accommodation on campus?\nA Most places are given to undergraduates.\nB No places are available for postgraduates with families.\nC A limited number of places are available for new postgraduates.",
-     "A several months in advance.",
-     "B two or three weeks in advance.",
-     "C at the beginning of term.",
-     "18. Students wishing to live off-campus should apply\nA several months in advance.\nB two or three weeks in advance.\nC at the beginning of term.",
-     "A send a list of agents for students to contact.",
-     "B contact accommodation agencies for students.",
-     "C ensure that students have suitable accommodation.",
-     "19. The university accommodation officer will\nA send a list of agents for students to contact.\nB contact accommodation agencies for students.\nC ensure that students have suitable accommodation.",
-     "A tell their lecturers if they have problems understanding.",
-     "B have private English lessons when they arrive.",
-     "C practise their spoken English before they arrive.",
-     "20. With regard to their English, the speaker advises the students to\nA tell their lecturers if they have problems understanding.\nB have private English lessons when they arrive.\nC practise their spoken English before they arrive."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The speaker says international students at UK universities will be",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "offered accommodation with local families."
+      },
+      {
+       "letter": "B",
+       "text": "given special help by their lecturers."
+      },
+      {
+       "letter": "C",
+       "text": "expected to work independently."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -878,16 +942,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. The speaker says international students at UK universities will be"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the speaker say about university accommodation on campus?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Most places are given to undergraduates."
+      },
+      {
+       "letter": "B",
+       "text": "No places are available for postgraduates with families."
+      },
+      {
+       "letter": "C",
+       "text": "A limited number of places are available for new postgraduates."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -895,16 +973,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "17. What does the speaker say about university accommodation on campus?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Students wishing to live off-campus should apply",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "several months in advance."
+      },
+      {
+       "letter": "B",
+       "text": "two or three weeks in advance."
+      },
+      {
+       "letter": "C",
+       "text": "at the beginning of term."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -912,16 +1004,30 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. Students wishing to live off-campus should apply"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The university accommodation officer will",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "send a list of agents for students to contact."
+      },
+      {
+       "letter": "B",
+       "text": "contact accommodation agencies for students."
+      },
+      {
+       "letter": "C",
+       "text": "ensure that students have suitable accommodation."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -929,16 +1035,30 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "19. The university accommodation officer will"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "With regard to their English, the speaker advises the students to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "tell their lecturers if they have problems understanding."
+      },
+      {
+       "letter": "B",
+       "text": "have private English lessons when they arrive."
+      },
+      {
+       "letter": "C",
+       "text": "practise their spoken English before they arrive."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -946,7 +1066,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "20. With regard to their English, the speaker advises the students to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1016,8 +1137,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1043,7 +1166,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Dates: From (21) ␦ to (22) ␦"
-     }
+     },
+     "keyRaw": "5 May"
     },
     {
      "number": 22,
@@ -1069,7 +1193,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Dates: From (21) ␦ to (22) ␦"
-     }
+     },
+     "keyRaw": "16 July"
     },
     {
      "number": 23,
@@ -1096,7 +1221,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– (23)………………… – useful to have (24)……………..at beginning of course"
-     }
+     },
+     "keyRaw": "was clear"
     },
     {
      "number": 24,
@@ -1123,7 +1249,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– (23)………………… – useful to have (24)……………..at beginning of course"
-     }
+     },
+     "keyRaw": "course outline"
     },
     {
      "number": 25,
@@ -1146,7 +1273,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– too much work in (25)…………….of the course, could be more easily balanced"
-     }
+     },
+     "keyRaw": "2 half"
     },
     {
      "number": 26,
@@ -1168,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– good (26)………………….."
-     }
+     },
+     "keyRaw": "teaching"
     },
     {
      "number": 27,
@@ -1191,7 +1320,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– some (27)………………….sessions went on too long"
-     }
+     },
+     "keyRaw": "group discussion"
     },
     {
      "number": 28,
@@ -1213,7 +1343,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– good (28)……………."
-     }
+     },
+     "keyRaw": "handouts"
     },
     {
      "number": 29,
@@ -1236,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– too much (29)……………… – can we know criteria for marking final exam?"
-     }
+     },
+     "keyRaw": "written work"
     },
     {
      "number": 30,
@@ -1258,7 +1390,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "– excellent (30)………………."
-     }
+     },
+     "keyRaw": "student support"
     }
    ],
    "provenance": {
@@ -1287,8 +1420,10 @@
      "31. By 2008, carbon dioxide emissions need to be ␦ lower than in 1990.\n32. Recycling saves energy and reduces emissions from landfill sites and ␦\n33. People say that one problem is a lack of ‘ ␦ ‘ sites for household waste.\n34. Glass designed to be utilised for ␦ cannot be recycled with other types of glass.\n35. In the UK, ␦ tons of glass is recycled each year."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1311,7 +1446,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "31. By 2008, carbon dioxide emissions need to be ␦ lower than in 1990."
-     }
+     },
+     "keyRaw": "12.5%"
     },
     {
      "number": 32,
@@ -1336,7 +1472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "32. Recycling saves energy and reduces emissions from landfill sites and ␦"
-     }
+     },
+     "keyRaw": "incineration plants"
     },
     {
      "number": 33,
@@ -1359,7 +1496,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "33. People say that one problem is a lack of ‘ ␦ ‘ sites for household waste."
-     }
+     },
+     "keyRaw": "drop-off"
     },
     {
      "number": 34,
@@ -1382,7 +1520,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "34. Glass designed to be utilised for ␦ cannot be recycled with other types of glass."
-     }
+     },
+     "keyRaw": "cooking"
     },
     {
      "number": 35,
@@ -1405,7 +1544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "35. In the UK, ␦ tons of glass is recycled each year."
-     }
+     },
+     "keyRaw": "500,000"
     }
    ],
    "provenance": {
@@ -1474,8 +1614,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1497,7 +1639,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "material used for making (36)………………………"
-     }
+     },
+     "keyRaw": "roads"
     },
     {
      "number": 37,
@@ -1519,7 +1662,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(37)……………….for use on farms"
-     }
+     },
+     "keyRaw": "soil conditioner"
     },
     {
      "number": 38,
@@ -1541,7 +1685,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(38)…………………for collecting waste"
-     }
+     },
+     "keyRaw": "containers"
     },
     {
      "number": 39,
@@ -1562,7 +1707,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(39)…………………."
-     }
+     },
+     "keyRaw": "pencils"
     },
     {
      "number": 40,
@@ -1583,7 +1729,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(40)………………….."
-     }
+     },
+     "keyRaw": "business cards"
     }
    ],
    "provenance": {
@@ -1634,5 +1781,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

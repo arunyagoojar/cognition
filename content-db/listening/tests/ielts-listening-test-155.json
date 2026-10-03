@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-155",
  "title": "IELTS Listening Test 155",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-155/index.html",
-   "sha256": "10b37411f8556ae2759dbed19c5d14772358419b62c453690e0daa5ac4335bab",
-   "manifestHashMatch": true,
+   "sha256": "399e462085fbc81e7c53139d508745e5ceae063e874d4452f05c26af885ccbde",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-155/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -26,7 +26,7 @@
   }
  ],
  "hubEnumerated": true,
- "duplicateOf": null,
+ "duplicateOf": "ielts-listening-test-9",
  "contentFingerprint": "8e33b0faaf3890aa8e29db6ddc5486363dcbc6e0ed122603c124acc405b7ac9c",
  "audio": {
   "status": "resolved",
@@ -412,8 +412,10 @@
      "Student is in the (2) ␦ year of the course."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -435,7 +437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Student in studying (1) ␦"
-     }
+     },
+     "keyRaw": "business"
     },
     {
      "number": 2,
@@ -458,7 +461,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Student is in the (2) ␦ year of the course."
-     }
+     },
+     "keyRaw": "third"
     }
    ],
    "provenance": {
@@ -511,8 +515,10 @@
      "(5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 3,
@@ -534,7 +540,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "in the (3)…………………"
-     }
+     },
+     "keyRaw": "sports centre"
     },
     {
      "number": 4,
@@ -555,7 +562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "(4)…………………."
-     }
+     },
+     "keyRaw": "cleaner"
     },
     {
      "number": 5,
@@ -577,7 +585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "in the (5)………………….."
-     }
+     },
+     "keyRaw": "library"
     }
    ],
    "provenance": {
@@ -636,8 +645,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -662,7 +673,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(6)……………….., room no. (7)…………………"
-     }
+     },
+     "keyRaw": "international house"
     },
     {
      "number": 7,
@@ -687,7 +699,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(6)……………….., room no. (7)…………………"
-     }
+     },
+     "keyRaw": "B659"
     },
     {
      "number": 8,
@@ -709,7 +722,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(8)……………..at the English language centre"
-     }
+     },
+     "keyRaw": "office assistant"
     },
     {
      "number": 9,
@@ -731,7 +745,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "respond to enquiries and (9)………………."
-     }
+     },
+     "keyRaw": "answer phone"
     },
     {
      "number": 10,
@@ -754,7 +769,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Friday at (10)………………am"
-     }
+     },
+     "keyRaw": "11.30"
     }
    ],
    "provenance": {
@@ -783,8 +799,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test155-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -814,7 +832,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. On the holiday, you will be walking for"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -840,11 +859,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. What proportion of the sponsorship money goes to charity?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -874,7 +894,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. Each walker’s sponsorship money goes to one"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -904,7 +925,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. When you start the trek you must be"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -934,7 +956,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. As you walk you will carry"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
@@ -964,14 +987,15 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. The Semira Region has a long tradition of"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Part 2: Questions 11-16\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -1037,8 +1061,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -1060,7 +1086,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "spend all day in a (17)……………"
-     }
+     },
+     "keyRaw": "forest"
     },
     {
      "number": 18,
@@ -1083,7 +1110,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "see a (18)……………….with old carvings"
-     }
+     },
+     "keyRaw": "temple"
     },
     {
      "number": 19,
@@ -1105,7 +1133,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "swim in a (19)…………….."
-     }
+     },
+     "keyRaw": "waterfall"
     },
     {
      "number": 20,
@@ -1127,7 +1156,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "visit a (20)………………"
-     }
+     },
+     "keyRaw": "village"
     }
    ],
    "provenance": {
@@ -1159,8 +1189,10 @@
      "• Scientists from (22) ␦ have worked on the projects so far"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1182,7 +1214,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Float is shaped like a (21) ␦"
-     }
+     },
+     "keyRaw": "cigar"
     },
     {
      "number": 22,
@@ -1205,7 +1238,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Scientists from (22) ␦ have worked on the projects so far"
-     }
+     },
+     "keyRaw": "13 countries"
     }
    ],
    "provenance": {
@@ -1237,8 +1271,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test155-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1259,7 +1295,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(23) ␦"
-     }
+     },
+     "keyRaw": "activated"
     },
     {
      "number": 24,
@@ -1280,7 +1317,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(24) ␦"
-     }
+     },
+     "keyRaw": "50 km"
     },
     {
      "number": 25,
@@ -1301,7 +1339,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(25) ␦"
-     }
+     },
+     "keyRaw": "temperature"
     }
    ],
    "provenance": {
@@ -1326,12 +1365,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A At present\nB In the near future\nC In the long term future"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "At present"
+     },
+     {
+      "letter": "B",
+      "text": "In the near future"
+     },
+     {
+      "letter": "C",
+      "text": "In the long term future"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1348,7 +1400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "26. understanding of El Nino ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 27,
@@ -1365,7 +1418,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "27. understanding of climate change ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1382,7 +1436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "28. naval rescues ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1399,7 +1454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "29. sustainable fishing practices ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1416,7 +1472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "30. crop selection ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1424,6 +1481,24 @@
     "rawExcerpt": "Questions 26-30\nIn what time period can data from the float projects help with the following things?\nWrite the correct letter A, B or C next to questions 26-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "At present"
+     },
+     {
+      "letter": "B",
+      "text": "In the near future"
+     },
+     {
+      "letter": "C",
+      "text": "In the long term future"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1443,8 +1518,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1474,7 +1551,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "31. According to the speaker, how might a guest feel when staying in a luxury hotel?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1504,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "32. According to recent research, luxury hotels overlook the need to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1534,7 +1613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "33. The company focused their research on"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1560,18 +1640,19 @@
      "blankContext": null,
      "correctAnswer": "c",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "34. What is the impact of the outside environment on a hotel guest?"
-     }
+     },
+     "keyRaw": "c"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[30]",
     "rawExcerpt": "Part 4: Questions 31-34\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g10",
@@ -1599,8 +1680,10 @@
      "• leaving small treats in their rooms – e.g. cosmetics or (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1623,7 +1706,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• cater specifically for (35) ␦ travellers"
-     }
+     },
+     "keyRaw": "business"
     },
     {
      "number": 36,
@@ -1646,7 +1730,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• provide a stylish (36) ␦ for guests to use"
-     }
+     },
+     "keyRaw": "kitchen"
     },
     {
      "number": 37,
@@ -1669,7 +1754,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• set a trend throughout the (37) ␦ which becomes permanent"
-     }
+     },
+     "keyRaw": "world"
     },
     {
      "number": 38,
@@ -1692,7 +1778,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• offering the chance to (38) ␦ their ordinary routine life"
-     }
+     },
+     "keyRaw": "escape"
     },
     {
      "number": 39,
@@ -1714,7 +1801,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• making sure that they are cared for in all respects – like a (39) ␦"
-     }
+     },
+     "keyRaw": "baby"
     },
     {
      "number": 40,
@@ -1736,7 +1824,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• leaving small treats in their rooms – e.g. cosmetics or (40) ␦"
-     }
+     },
+     "keyRaw": "chocolate"
     }
    ],
    "provenance": {
@@ -1779,10 +1868,103 @@
   "fnameInputs": 30
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "What proportion of the sponsorship money goes to charity?",
+    "answer": "C",
+    "rawExcerpt": "12. What proportion of the sponsorship money goes to charity?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 34,
+   "reasonCode": "KEY_NOT_A_LETTER",
+   "reasonCodes": [
+    "KEY_NOT_A_LETTER"
+   ],
+   "evidence": {
+    "stem": "What is the impact of the outside environment on a hotel guest?",
+    "answer": "c",
+    "rawExcerpt": "34. What is the impact of the outside environment on a hotel guest?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "It has a considerable effect"
+     },
+     {
+      "letter": "B",
+      "text": "It has a very limited effect"
+     },
+     {
+      "letter": "C",
+      "text": "It has no effect whatsoever"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     12,
+     34
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
- "schemaErrors": []
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 3,
+ "status": "duplicate",
+ "fullTestEligible": false,
+ "schemaErrors": [],
+ "duplicateEvidence": {
+  "reasonCode": "CAMBRIDGE_NEAR_DUPLICATE",
+  "cambridgeIdentity": [
+   {
+    "book": 7,
+    "test": 3,
+    "source": "official-ielts-tests-book-7",
+    "label": "Listening Test 7.3"
+   }
+  ],
+  "conflictingKeyItems": [
+   {
+    "number": 1,
+    "this": "business",
+    "canonical": "busines"
+   },
+   {
+    "number": 24,
+    "this": "50 km",
+    "canonical": "50km"
+   }
+  ]
+ }
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-40",
  "title": "IELTS Listening Test 40",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-40/index.html",
-   "sha256": "9d922d59342b4c982245592943b769b8ffdeb7efff8b048755df2c86ab3bb2d4",
-   "manifestHashMatch": true,
+   "sha256": "638ebc5dce43190108655430696e007be67036ddfd39003afb8ab19ef182680f",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-40/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -388,8 +388,10 @@
      "1. Current gas safety certificate? ␦\n2. Gas inspection within last twelve months? ␦\n3. Electricity checked in last five years? ␦\n4. Sufficient electric sockets? ␦\n5. Fire detection equipment that works? ␦\n6. Previous tenants all returned keys? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -410,11 +412,12 @@
      "blankContext": "line: 1. Current gas safety certificate? ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "1. Current gas safety certificate? ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 2,
@@ -435,11 +438,12 @@
      "blankContext": "line: 2. Gas inspection within last twelve months? ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "2. Gas inspection within last twelve months? ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 3,
@@ -460,11 +464,12 @@
      "blankContext": "line: 3. Electricity checked in last five years? ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "3. Electricity checked in last five years? ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 4,
@@ -485,11 +490,12 @@
      "blankContext": "line: 4. Sufficient electric sockets? ␦ (input box in source)",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "4. Sufficient electric sockets? ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 5,
@@ -510,11 +516,12 @@
      "blankContext": "line: 5. Fire detection equipment that works? ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "5. Fire detection equipment that works? ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 6,
@@ -535,18 +542,19 @@
      "blankContext": "line: 6. Previous tenants all returned keys? ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "6. Previous tenants all returned keys? ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-6"
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -565,8 +573,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 7,
@@ -596,7 +606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "7. On which floor is the storeroom?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 8,
@@ -626,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "8. What is the temperature of the hot water?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 9,
@@ -656,7 +668,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. How big is the garden?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 10,
@@ -686,7 +699,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "10. What size is the television?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -713,8 +727,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -744,7 +760,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. At the Wildlife Haven there are not any"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -774,7 +791,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. The guests were told to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -831,8 +849,10 @@
      "(15) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -854,7 +874,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Away from (13)……………"
-     }
+     },
+     "keyRaw": "walking tracks"
     },
     {
      "number": 14,
@@ -876,7 +897,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Departs at (14)…………….."
-     }
+     },
+     "keyRaw": "7"
     },
     {
      "number": 15,
@@ -897,7 +919,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(15)…………………."
-     }
+     },
+     "keyRaw": "waterfall walk"
     }
    ],
    "provenance": {
@@ -932,8 +955,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -954,7 +979,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(16) ␦"
-     }
+     },
+     "keyRaw": "footwear"
     },
     {
      "number": 17,
@@ -975,7 +1001,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(17) ␦"
-     }
+     },
+     "keyRaw": "socks"
     },
     {
      "number": 18,
@@ -996,7 +1023,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(18) ␦"
-     }
+     },
+     "keyRaw": "hat"
     },
     {
      "number": 19,
@@ -1017,7 +1045,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(19) ␦"
-     }
+     },
+     "keyRaw": "spiders"
     },
     {
      "number": 20,
@@ -1038,7 +1067,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(20) ␦"
-     }
+     },
+     "keyRaw": "wild berries"
     }
    ],
    "provenance": {
@@ -1107,8 +1137,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1134,7 +1166,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Dates: From (21) ␦ to (22) ␦"
-     }
+     },
+     "keyRaw": "5 May"
     },
     {
      "number": 22,
@@ -1160,7 +1193,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Dates: From (21) ␦ to (22) ␦"
-     }
+     },
+     "keyRaw": "16 July"
     },
     {
      "number": 23,
@@ -1187,7 +1221,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– (23)……………. – useful to have (24)……………..at beginning of course"
-     }
+     },
+     "keyRaw": "(was) clear"
     },
     {
      "number": 24,
@@ -1214,7 +1249,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– (23)……………. – useful to have (24)……………..at beginning of course"
-     }
+     },
+     "keyRaw": "(course) outline"
     },
     {
      "number": 25,
@@ -1237,7 +1273,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– too much work in (25)……………..of the course – could be more evenly balanced"
-     }
+     },
+     "keyRaw": "2nd half"
     },
     {
      "number": 26,
@@ -1259,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– good (26)………………….."
-     }
+     },
+     "keyRaw": "(standard of) teaching"
     },
     {
      "number": 27,
@@ -1282,7 +1320,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– some (27)…………….sessions went too long"
-     }
+     },
+     "keyRaw": "(group) discussion"
     },
     {
      "number": 28,
@@ -1304,7 +1343,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– good (28)…………………"
-     }
+     },
+     "keyRaw": "handouts"
     },
     {
      "number": 29,
@@ -1327,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– too much (29)………………. – can we know criteria for making final exams?"
-     }
+     },
+     "keyRaw": "written work"
     },
     {
      "number": 30,
@@ -1349,7 +1390,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "– excellent (30)…………………"
-     }
+     },
+     "keyRaw": "student support"
     }
    ],
    "provenance": {
@@ -1380,8 +1422,10 @@
      "34. Which invention is the biggest problem for the environment? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1406,7 +1450,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "31. Where was a Stone Age rubbish dump found? ␦"
-     }
+     },
+     "keyRaw": "Norway"
     },
     {
      "number": 32,
@@ -1431,7 +1476,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "32. In Medieval Times what type of waste was most common? ␦"
-     }
+     },
+     "keyRaw": "organic"
     },
     {
      "number": 33,
@@ -1456,7 +1502,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "33. What did science link with waste? ␦"
-     }
+     },
+     "keyRaw": "disease"
     },
     {
      "number": 34,
@@ -1481,7 +1528,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "34. Which invention is the biggest problem for the environment? ␦"
-     }
+     },
+     "keyRaw": "plastic"
     }
    ],
    "provenance": {
@@ -1511,8 +1559,10 @@
      "(37) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1533,7 +1583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(35) ␦"
-     }
+     },
+     "keyRaw": "mass manufacturing"
     },
     {
      "number": 36,
@@ -1554,7 +1605,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(36) ␦"
-     }
+     },
+     "keyRaw": "packaging"
     },
     {
      "number": 37,
@@ -1575,7 +1627,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(37) ␦"
-     }
+     },
+     "keyRaw": "disposable goods"
     }
    ],
    "provenance": {
@@ -1605,23 +1658,17 @@
      "38. incineration ␦\n39. landfill ␦\n40. recycling ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "incineration ______",
-      "segments": [
-       "incineration",
-       {
-        "blank": 38
-       },
-       {
-        "blank": 38
-       }
-      ]
+      "plain": "incineration",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 38. incineration ␦ (input box in source)",
@@ -1631,22 +1678,16 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "38. incineration ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 39,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "landfill ______",
-      "segments": [
-       "landfill",
-       {
-        "blank": 39
-       },
-       {
-        "blank": 39
-       }
-      ]
+      "plain": "landfill",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 39. landfill ␦ (input box in source)",
@@ -1656,22 +1697,16 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "39. landfill ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 40,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "recycling ______",
-      "segments": [
-       "recycling",
-       {
-        "blank": 40
-       },
-       {
-        "blank": 40
-       }
-      ]
+      "plain": "recycling",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 40. recycling ␦ (input box in source)",
@@ -1681,7 +1716,9 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "40. recycling ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1689,6 +1726,37 @@
     "rawExcerpt": "Questions 38-40"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Denmark"
+     },
+     {
+      "letter": "B",
+      "text": "Germany"
+     },
+     {
+      "letter": "C",
+      "text": "Japan"
+     },
+     {
+      "letter": "D",
+      "text": "Switzerland"
+     },
+     {
+      "letter": "E",
+      "text": "UK"
+     },
+     {
+      "letter": "F",
+      "text": "USA"
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1720,10 +1788,118 @@
   "fnameInputs": 34
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 1,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Current gas safety certificate? ______",
+    "answer": "A",
+    "rawExcerpt": "1. Current gas safety certificate? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Gas inspection within last twelve months? ______",
+    "answer": "A",
+    "rawExcerpt": "2. Gas inspection within last twelve months? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 3,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Electricity checked in last five years? ______",
+    "answer": "B",
+    "rawExcerpt": "3. Electricity checked in last five years? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 4,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Sufficient electric sockets? ______",
+    "answer": "C",
+    "rawExcerpt": "4. Sufficient electric sockets? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 5,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Fire detection equipment that works? ______",
+    "answer": "B",
+    "rawExcerpt": "5. Fire detection equipment that works? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 6,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Previous tenants all returned keys? ______",
+    "answer": "A",
+    "rawExcerpt": "6. Previous tenants all returned keys? ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

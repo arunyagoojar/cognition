@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-176",
  "title": "IELTS Listening Test 176",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-176/index.html",
-   "sha256": "b92782a7ae61b2ab2c33272db577a772e71ef2f72e219b584063deeda7d7ac85",
-   "manifestHashMatch": true,
+   "sha256": "1b5a3d387285b95b27ec249fff475147a021f4abcbcffc56d700da3486596d0c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-176/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "a09d2cbf5bfa8bc0064bd7d5433ad25a829de2b6108abd855693060a89c30d58",
+ "contentFingerprint": "8f503c126af37cd6dd5a63a0ce960e7534ceb470799d99e00492dc6954f8c443",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -404,8 +404,10 @@
      "no regular medication apart from (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -427,7 +429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Contact phone: (1) ␦"
-     }
+     },
+     "keyRaw": "219 442 9785"
     },
     {
      "number": 2,
@@ -450,7 +453,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Date of birth: (2) ␦ , 1992"
-     }
+     },
+     "keyRaw": "10(th) October"
     },
     {
      "number": 3,
@@ -472,7 +476,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Occupation works as a: (3) ␦"
-     }
+     },
+     "keyRaw": "manager"
     },
     {
      "number": 4,
@@ -495,7 +500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Insurance company: (4) ␦ Life insurance"
-     }
+     },
+     "keyRaw": "Cawley"
     },
     {
      "number": 5,
@@ -517,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Type of problem: pain in her left (5) ␦"
-     }
+     },
+     "keyRaw": "knee"
     },
     {
      "number": 6,
@@ -540,7 +547,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "When it began: (6) ␦ ago"
-     }
+     },
+     "keyRaw": "3 weeks"
     },
     {
      "number": 7,
@@ -563,7 +571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Sports played: belongs to a (7) ␦ club"
-     }
+     },
+     "keyRaw": "tennis"
     },
     {
      "number": 8,
@@ -586,7 +595,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "goes (8) ␦ regularly"
-     }
+     },
+     "keyRaw": "running"
     },
     {
      "number": 9,
@@ -609,7 +619,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Medical history: injured her (9) ␦ last year"
-     }
+     },
+     "keyRaw": "shoulder"
     },
     {
      "number": 10,
@@ -631,7 +642,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "no regular medication apart from (10) ␦"
-     }
+     },
+     "keyRaw": "vitamins"
     }
    ],
    "provenance": {
@@ -653,43 +665,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Visit to Branley Castle",
-     "A repairs were carried out to the guest rooms.",
-     "B a new building was constructed for her.",
-     "C a fire damaged part of the main hall.",
-     "11. Before Queen Elizabeth I visited the castle in 1576,\nA repairs were carried out to the guest rooms.\nB a new building was constructed for her.\nC a fire damaged part of the main hall.",
-     "A the government.",
-     "B the Fenys family.",
-     "C an entertainment company.",
-     "12. In 1982, the castle was sold to\nA the government.\nB the Fenys family.\nC an entertainment company.",
-     "A speak to experts on the history of the castle.",
-     "B interact with actors dressed as famous characters.",
-     "C see models of historical figures moving and talking.",
-     "13. In some of the rooms, visitors can\nA speak to experts on the history of the castle.\nB interact with actors dressed as famous characters.\nC see models of historical figures moving and talking.",
-     "A see an 800-year-old tree.",
-     "B go to an art exhibition.",
-     "C visit a small zoo.",
-     "14. In the castle park, visitors can\nA see an 800-year-old tree.\nB go to an art exhibition.\nC visit a small zoo.",
-     "A afternoon tea in the conservatory.",
-     "B the chance to meet the castle’s owners.",
-     "C a photograph together on the Great Staircase.",
-     "15. At the end of the visit, the group will have\nA afternoon tea in the conservatory.\nB the chance to meet the castle’s owners.\nC a photograph together on the Great Staircase."
+     "Visit to Branley Castle"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Before Queen Elizabeth I visited the castle in 1576,",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "repairs were carried out to the guest rooms."
+      },
+      {
+       "letter": "B",
+       "text": "a new building was constructed for her."
+      },
+      {
+       "letter": "C",
+       "text": "a fire damaged part of the main hall."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -697,16 +704,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. Before Queen Elizabeth I visited the castle in 1576,"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In 1982, the castle was sold to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the government."
+      },
+      {
+       "letter": "B",
+       "text": "the Fenys family."
+      },
+      {
+       "letter": "C",
+       "text": "an entertainment company."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -714,16 +735,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. In 1982, the castle was sold to"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In some of the rooms, visitors can",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "speak to experts on the history of the castle."
+      },
+      {
+       "letter": "B",
+       "text": "interact with actors dressed as famous characters."
+      },
+      {
+       "letter": "C",
+       "text": "see models of historical figures moving and talking."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -731,16 +766,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "13. In some of the rooms, visitors can"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In the castle park, visitors can",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "see an 800-year-old tree."
+      },
+      {
+       "letter": "B",
+       "text": "go to an art exhibition."
+      },
+      {
+       "letter": "C",
+       "text": "visit a small zoo."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -748,16 +797,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "14. In the castle park, visitors can"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "At the end of the visit, the group will have",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "afternoon tea in the conservatory."
+      },
+      {
+       "letter": "B",
+       "text": "the chance to meet the castle’s owners."
+      },
+      {
+       "letter": "C",
+       "text": "a photograph together on the Great Staircase."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -765,7 +828,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. At the end of the visit, the group will have"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -793,8 +857,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test176.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -811,7 +877,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "16. Starting point for walking the walls ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 17,
@@ -828,7 +895,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "17. Bow and arrow display ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 18,
@@ -845,7 +913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "18. Hunting birds display ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 19,
@@ -862,7 +931,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "19. Traditional dancing ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -879,7 +949,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "20. Shop ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -887,37 +958,43 @@
     "rawExcerpt": "Questions 16 – 20\nLabel the plan below. Write the correct letter A-H next to questions 16-20."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g04",
-   "part": 3,
-   "startQ": 21,
-   "endQ": 24,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Choose the correct letter, A, B or C.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Choose the correct letter, A, B or C."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Woolly mammoths on St Paul’s Island",
-     "21 How will Rosie and Martin introduce their presentation?\nA with a drawing of woolly mammoths in their natural habitat\nB with a timeline showing when woolly mammoths lived\nC with a video clip about woolly mammoths",
-     "22 What was surprising about the mammoth tooth found by Russell Graham?\nA It was still embedded in the mammoth’s jawbone.\nB It was from an unknown species of mammoth.\nC It was not as old as mammoth remains from elsewhere.",
-     "23 The students will use an animated diagram to demonstrate how the mammoths\nA became isolated on the island.\nB spread from the island to other areas.\nC coexisted with other animals on the island.",
-     "24 According to Martin, what is unusual about the date of the mammoths’ extinction on the island?\nA how exact it is\nB how early it is\nC how it was established"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[19]",
-    "rawExcerpt": "Part 3: Questions 21 – 24\nChoose the correct letter, A, B or C."
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -943,14 +1020,40 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "make it more interactive B reduce visual input C add personal opinions D contact one of the researchers E make detailed notes F find information online G check timing"
+      "text": "make it more interactive"
+     },
+     {
+      "letter": "B",
+      "text": "reduce visual input"
+     },
+     {
+      "letter": "C",
+      "text": "add personal opinions"
+     },
+     {
+      "letter": "D",
+      "text": "contact one of the researchers"
+     },
+     {
+      "letter": "E",
+      "text": "make detailed notes"
+     },
+     {
+      "letter": "F",
+      "text": "find information online"
+     },
+     {
+      "letter": "G",
+      "text": "check timing"
      },
      {
       "letter": "H",
       "text": "organise the content more clearly"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -967,7 +1070,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "25. Introduction ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 26,
@@ -984,7 +1088,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "26. Discovery of the mammoth tooth ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 27,
@@ -1001,7 +1106,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "27. Initial questions asked by the researchers ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1018,7 +1124,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "28. Further research carried out on the island ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 29,
@@ -1035,7 +1142,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "29. Findings and possible explanations ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 30,
@@ -1052,7 +1160,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "30. Relevance to the present day ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1060,6 +1169,44 @@
     "rawExcerpt": "Questions 25 – 30\nWhat action will the students take for each of the following sections of their presentation?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 25-3"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "make it more interactive"
+     },
+     {
+      "letter": "B",
+      "text": "reduce visual input"
+     },
+     {
+      "letter": "C",
+      "text": "add personal opinions"
+     },
+     {
+      "letter": "D",
+      "text": "contact one of the researchers"
+     },
+     {
+      "letter": "E",
+      "text": "make detailed notes"
+     },
+     {
+      "letter": "F",
+      "text": "find information online"
+     },
+     {
+      "letter": "G",
+      "text": "check timing"
+     },
+     {
+      "letter": "H",
+      "text": "organise the content more clearly"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1103,8 +1250,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1127,7 +1276,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• many cultures invented (31) ␦ and other ceremonies to make the weather gods friendly"
-     }
+     },
+     "keyRaw": "dances"
     },
     {
      "number": 32,
@@ -1149,7 +1299,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• people needed to observe and interpret the sky to ensure their (32) ␦"
-     }
+     },
+     "keyRaw": "survival"
     },
     {
      "number": 33,
@@ -1170,7 +1321,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(33) ␦"
-     }
+     },
+     "keyRaw": "clouds"
     },
     {
      "number": 34,
@@ -1193,7 +1345,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• by 300 BC, the Chinese had a calendar made up of a number of (34) ␦ connected with the weather"
-     }
+     },
+     "keyRaw": "festivals"
     },
     {
      "number": 35,
@@ -1215,7 +1368,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Aristotle also described haloes and (35) ␦"
-     }
+     },
+     "keyRaw": "comets"
     },
     {
      "number": 36,
@@ -1238,7 +1392,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• many proverbs, e.g. about the significance of the colour of the (36) ␦ , passed on accurate information."
-     }
+     },
+     "keyRaw": "sky"
     },
     {
      "number": 37,
@@ -1261,7 +1416,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• 15th century: scientists recognised value of (37) ␦ for the first time"
-     }
+     },
+     "keyRaw": "instruments"
     },
     {
      "number": 38,
@@ -1283,7 +1439,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• Galileo invented the (38) ␦"
-     }
+     },
+     "keyRaw": "thermometer"
     },
     {
      "number": 39,
@@ -1305,7 +1462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• 18th century: Franklin identified the movement of (39) ␦"
-     }
+     },
+     "keyRaw": "storms"
     },
     {
      "number": 40,
@@ -1326,7 +1484,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "telegraph"
     }
    ],
    "provenance": {
@@ -1375,6 +1534,68 @@
      24
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 21,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 22,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [
@@ -1385,7 +1606,8 @@
   }
  ],
  "verifiedQuestionCount": 36,
- "quarantinedCount": 1,
- "status": "flagged",
+ "quarantinedCount": 6,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

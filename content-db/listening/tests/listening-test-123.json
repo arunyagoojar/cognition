@@ -7,12 +7,12 @@
  "slug": "listening-test-123",
  "title": "IELTS Listening Test 123",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "listening-test-123/index.html",
-   "sha256": "314baf77c853f3123dea7c795f2fe4af59d5ca70908d0b8d617ca606eed273b8",
-   "manifestHashMatch": true,
+   "sha256": "819bd81cb18da262a1fc3758620fe3eafd3ff5127002da528649ad1aacdab986",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/listening-test-123/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -397,8 +397,10 @@
      "1. Louise’s last bus pass began ␦ ago.\n2. Louise now wants to be contacted by ␦\n3. Unlike her previous bus pass, Louise’s new one will have a ␦ on it.\n4. The new bus pass has gone up in price by ␦\n5. Louise has to put her ␦ on her bus pass to make it valid."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -421,7 +423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. Louise’s last bus pass began ␦ ago."
-     }
+     },
+     "keyRaw": "6 months"
     },
     {
      "number": 2,
@@ -446,7 +449,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. Louise now wants to be contacted by ␦"
-     }
+     },
+     "keyRaw": "email"
     },
     {
      "number": 3,
@@ -469,7 +473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "3. Unlike her previous bus pass, Louise’s new one will have a ␦ on it."
-     }
+     },
+     "keyRaw": "photo(card)"
     },
     {
      "number": 4,
@@ -494,7 +499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "4. The new bus pass has gone up in price by ␦"
-     }
+     },
+     "keyRaw": "5%"
     },
     {
      "number": 5,
@@ -517,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "5. Louise has to put her ␦ on her bus pass to make it valid."
-     }
+     },
+     "keyRaw": "signature"
     }
    ],
    "provenance": {
@@ -546,14 +553,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "West Gate Shopping Centre B West Howe C The University D The Town Centre Post Office E The Town Hall F The Hospital G The Arrowdown Sports Centre"
+      "text": "West Gate Shopping Centre"
+     },
+     {
+      "letter": "B",
+      "text": "West Howe"
+     },
+     {
+      "letter": "C",
+      "text": "The University"
+     },
+     {
+      "letter": "D",
+      "text": "The Town Centre Post Office"
+     },
+     {
+      "letter": "E",
+      "text": "The Town Hall"
+     },
+     {
+      "letter": "F",
+      "text": "The Hospital"
+     },
+     {
+      "letter": "G",
+      "text": "The Arrowdown Sports Centre"
      },
      {
       "letter": "H",
       "text": "The Cinema"
      }
+    ],
+    "optionPreface": [
+     "Locations"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -570,7 +605,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "6. Bus Stop Q ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 7,
@@ -587,7 +623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "7. Bus Stop G ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 8,
@@ -604,7 +641,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "8. Bus Stop A ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -612,6 +650,44 @@
     "rawExcerpt": "Questions 6-8\nWhich bus stop matches each location?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Locations",
+    "options": [
+     {
+      "letter": "A",
+      "text": "West Gate Shopping Centre"
+     },
+     {
+      "letter": "B",
+      "text": "West Howe"
+     },
+     {
+      "letter": "C",
+      "text": "The University"
+     },
+     {
+      "letter": "D",
+      "text": "The Town Centre Post Office"
+     },
+     {
+      "letter": "E",
+      "text": "The Town Hall"
+     },
+     {
+      "letter": "F",
+      "text": "The Hospital"
+     },
+     {
+      "letter": "G",
+      "text": "The Arrowdown Sports Centre"
+     },
+     {
+      "letter": "H",
+      "text": "The Cinema"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -634,14 +710,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "The cinema B Local train services C The local football club D The local theatre"
+      "text": "The cinema"
+     },
+     {
+      "letter": "B",
+      "text": "Local train services"
+     },
+     {
+      "letter": "C",
+      "text": "The local football club"
+     },
+     {
+      "letter": "D",
+      "text": "The local theatre"
      },
      {
       "letter": "E",
       "text": "The local museum"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -658,7 +748,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO of the following will Louise get discounts on prices with her bus pass?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -675,7 +766,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO of the following will Louise get discounts on prices with her bus pass?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -683,6 +775,43 @@
     "rawExcerpt": "Questions 9 and 10\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:9-10",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO of the following will Louise get discounts on prices with her bus pass?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "The cinema"
+     },
+     {
+      "letter": "B",
+      "text": "Local train services"
+     },
+     {
+      "letter": "C",
+      "text": "The local football club"
+     },
+     {
+      "letter": "D",
+      "text": "The local theatre"
+     },
+     {
+      "letter": "E",
+      "text": "The local museum"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -704,8 +833,10 @@
      "11. Which organization founded the adult education centre? ␦\n12. How often is the teaching of the adult education centre’s teachers assessed? ␦\n13. Where can all the lesson resources be found online? ␦\n14. How long is one of the teachers’ weekly online tutorial sessions? ␦\n15. At what time does the administration section in the Langdon Street close to the general public? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -730,7 +861,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. Which organization founded the adult education centre? ␦"
-     }
+     },
+     "keyRaw": "(town) council"
     },
     {
      "number": 12,
@@ -755,7 +887,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. How often is the teaching of the adult education centre’s teachers assessed? ␦"
-     }
+     },
+     "keyRaw": "every 6 months"
     },
     {
      "number": 13,
@@ -780,7 +913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. Where can all the lesson resources be found online? ␦"
-     }
+     },
+     "keyRaw": "interactive classroom"
     },
     {
      "number": 14,
@@ -805,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. How long is one of the teachers’ weekly online tutorial sessions? ␦"
-     }
+     },
+     "keyRaw": "3 hours"
     },
     {
      "number": 15,
@@ -830,7 +965,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "15. At what time does the administration section in the Langdon Street close to the general public? ␦"
-     }
+     },
+     "keyRaw": "2 pm"
     }
    ],
    "provenance": {
@@ -887,8 +1023,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -911,7 +1049,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "– European languages and others – for different abilities – (16)………………..available on the website"
-     }
+     },
+     "keyRaw": "self-assessment test"
     },
     {
      "number": 17,
@@ -934,7 +1073,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "– short 1-day courses or longer ones to gain a qualification – computer software, (17)…………………search engine optimization and website development"
-     }
+     },
+     "keyRaw": "bookkeeping"
     },
     {
      "number": 18,
@@ -956,7 +1096,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Photography and (18)……………"
-     }
+     },
+     "keyRaw": "computers for photography"
     },
     {
      "number": 19,
@@ -979,7 +1120,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "– specialty of the popular introduction to cooking – basics and some more advanced topics covered – learn all about store cupboard ingredients – learn important techniques – (19)………………..for fast and f"
-     }
+     },
+     "keyRaw": "shortcuts"
     },
     {
      "number": 20,
@@ -1002,7 +1144,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "– course run by studying practical exercises with discussion and examples – given an insight to the creative process – hopeful writers can learn the (20)………………..for creating fiction"
-     }
+     },
+     "keyRaw": "skills"
     }
    ],
    "provenance": {
@@ -1067,8 +1210,10 @@
      "(25) ␦ (26) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1090,7 +1235,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(21)…………….not dial up"
-     }
+     },
+     "keyRaw": "broadband"
     },
     {
      "number": 22,
@@ -1113,7 +1259,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "avoid questions related to travel to avoid creating (22)……………..in the answers"
-     }
+     },
+     "keyRaw": "bias"
     },
     {
      "number": 23,
@@ -1135,7 +1282,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "focus on locked in contracts and length of (23)…………………………."
-     }
+     },
+     "keyRaw": "notice (periods)"
     },
     {
      "number": 24,
@@ -1157,7 +1305,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Transparency regarding (24)…………………"
-     }
+     },
+     "keyRaw": "tariffs"
     },
     {
      "number": 25,
@@ -1180,7 +1329,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "very topical; communication companies look for the best (25)……………from a deal rather than their customer’s financial well-being"
-     }
+     },
+     "keyRaw": "profit"
     },
     {
      "number": 26,
@@ -1202,7 +1352,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Mobile phones – users’ satisfaction with their (26)………………"
-     }
+     },
+     "keyRaw": "signal reception"
     }
    ],
    "provenance": {
@@ -1228,8 +1379,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1259,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "27. When will the four students conduct their survey?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1289,7 +1443,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "28. Where is the final decision to conduct the survey?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1319,8 +1474,10 @@
      "30. Martin’s trip to the ␦ prevents him meeting the others on Sunday evening."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
@@ -1343,7 +1500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "29. Abbie suggests that the group meets the next day to collate the survey’s results and perform some ␦ on them."
-     }
+     },
+     "keyRaw": "(statistical) analysis"
     },
     {
      "number": 30,
@@ -1366,7 +1524,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "30. Martin’s trip to the ␦ prevents him meeting the others on Sunday evening."
-     }
+     },
+     "keyRaw": "cinema"
     }
    ],
    "provenance": {
@@ -1418,8 +1577,10 @@
      "• These fields are thought to be (37) ␦ (existing a few thousands years)"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1442,7 +1603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Most of the energy comes from the (31) ␦ of radioactive minerals"
-     }
+     },
+     "keyRaw": "(natural) decay"
     },
     {
      "number": 32,
@@ -1464,7 +1626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• In the 20th century Iceland changed from a poor country to one with a high (32) ␦"
-     }
+     },
+     "keyRaw": "standard of living"
     },
     {
      "number": 33,
@@ -1487,7 +1650,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• The North American and Eurasian tectonic plates move at (33) ␦ cm annually"
-     }
+     },
+     "keyRaw": "2"
     },
     {
      "number": 34,
@@ -1510,7 +1674,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Creates a lot of volcanic activity and regular (34) ␦ (not usually dangerous)"
-     }
+     },
+     "keyRaw": "earthquakes"
     },
     {
      "number": 35,
@@ -1533,7 +1698,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• Found in the (35) ␦ or nearby"
-     }
+     },
+     "keyRaw": "volcanic zones"
     },
     {
      "number": 36,
@@ -1555,7 +1721,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• Shown at surface usually as (36) ␦"
-     }
+     },
+     "keyRaw": "steam (vents)"
     },
     {
      "number": 37,
@@ -1578,7 +1745,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• These fields are thought to be (37) ␦ (existing a few thousands years)"
-     }
+     },
+     "keyRaw": "transient"
     }
    ],
    "provenance": {
@@ -1610,8 +1778,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test123.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1632,7 +1802,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(38) ␦"
-     }
+     },
+     "keyRaw": "steam"
     },
     {
      "number": 39,
@@ -1653,7 +1824,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(39) ␦"
-     }
+     },
+     "keyRaw": "(local) substation"
     },
     {
      "number": 40,
@@ -1674,7 +1846,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "cooling tower"
     }
    ],
    "provenance": {
@@ -1718,5 +1891,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

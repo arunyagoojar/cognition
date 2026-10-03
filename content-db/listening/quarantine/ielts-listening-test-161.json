@@ -1,17 +1,50 @@
 {
  "slug": "ielts-listening-test-161",
- "sourceSha256": "bdb18c0141b448e5518c3685207a02f659eadf0c5fdadc08bbda21938b87a065",
+ "status": "quarantined",
+ "sourceSha256": "37a7d172b77e588094139280c1944c6e7624c70851fefb9511108e067dce739d",
  "units": [
   {
-   "unit": "group",
-   "groupId": "g05",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 24,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     20,
-     20
-    ]
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A—E. What TWO types of coursework are required each month on the part-time course?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 25,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A—E. What TWO types of coursework are required each month on the part-time course?",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     24,
+     25
+    ],
+    "outOfRange": []
    }
   }
  ]

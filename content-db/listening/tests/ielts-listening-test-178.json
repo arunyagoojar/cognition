@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-178",
  "title": "IELTS Listening Test 178",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-178/index.html",
-   "sha256": "946103e55cb8b559f0030bac7e82aef683d6c024f86f3ced90feee893a47bd0b",
-   "manifestHashMatch": true,
+   "sha256": "30716cdf5efce9db90988fbeab8eb53e165623c2a234f94edd312fde5f0c1601",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-178/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -393,8 +393,10 @@
      "Accommodation: in hotel rooms or (7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -416,7 +418,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "– number of people who can sit down to eat: (1) ␦"
-     }
+     },
+     "keyRaw": "85"
     },
     {
      "number": 2,
@@ -439,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "– can go out and see the (2) ␦ in pots on the terrace"
-     }
+     },
+     "keyRaw": "roses"
     },
     {
      "number": 3,
@@ -461,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "– terrace has a view of a group of (3) ␦"
-     }
+     },
+     "keyRaw": "trees"
     },
     {
      "number": 4,
@@ -483,7 +488,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "– has a (4) ␦"
-     }
+     },
+     "keyRaw": "stage"
     },
     {
      "number": 5,
@@ -506,7 +512,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "– can give a (5) ␦ while people are eating"
-     }
+     },
+     "keyRaw": "speech"
     },
     {
      "number": 6,
@@ -529,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "– will provide (6) ␦ if there are any problems"
-     }
+     },
+     "keyRaw": "support"
     },
     {
      "number": 7,
@@ -551,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Accommodation: in hotel rooms or (7) ␦"
-     }
+     },
+     "keyRaw": "cabins"
     }
    ],
    "provenance": {
@@ -584,10 +593,18 @@
      },
      {
       "letter": "B",
-      "text": "available at extra charge C not available"
+      "text": "available at extra charge"
+     },
+     {
+      "letter": "C",
+      "text": "not available"
      }
+    ],
+    "optionPreface": [
+     "Availability"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -604,7 +621,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "8. outdoor swimming pool ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 9,
@@ -621,7 +639,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "9. gym ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 10,
@@ -638,7 +657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "10. tennis courts ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -646,6 +666,24 @@
     "rawExcerpt": "Questions 8 – 10\nWhat is said about using each of the following hotel facilities?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Availability",
+    "options": [
+     {
+      "letter": "A",
+      "text": "included in cost of hiring room"
+     },
+     {
+      "letter": "B",
+      "text": "available at extra charge"
+     },
+     {
+      "letter": "C",
+      "text": "not available"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -668,14 +706,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "all downhill B suitable for beginners C only in good weather D food included E no charge F swimming possible G fully booked today"
+      "text": "all downhill"
+     },
+     {
+      "letter": "B",
+      "text": "suitable for beginners"
+     },
+     {
+      "letter": "C",
+      "text": "only in good weather"
+     },
+     {
+      "letter": "D",
+      "text": "food included"
+     },
+     {
+      "letter": "E",
+      "text": "no charge"
+     },
+     {
+      "letter": "F",
+      "text": "swimming possible"
+     },
+     {
+      "letter": "G",
+      "text": "fully booked today"
      },
      {
       "letter": "H",
       "text": "transport not included"
      }
+    ],
+    "optionPreface": [
+     "Information"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -692,7 +758,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "11. dolphin watching ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 12,
@@ -709,7 +776,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "12. forest walk ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 13,
@@ -726,7 +794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "13. cycle trip ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -743,7 +812,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. local craft tour ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 15,
@@ -760,7 +830,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. observatory trip ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 16,
@@ -777,12 +848,51 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. horse riding ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 2: Questions 11-16\nWhat information does the speaker give about each of the following excursions?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "Information",
+    "options": [
+     {
+      "letter": "A",
+      "text": "all downhill"
+     },
+     {
+      "letter": "B",
+      "text": "suitable for beginners"
+     },
+     {
+      "letter": "C",
+      "text": "only in good weather"
+     },
+     {
+      "letter": "D",
+      "text": "food included"
+     },
+     {
+      "letter": "E",
+      "text": "no charge"
+     },
+     {
+      "letter": "F",
+      "text": "swimming possible"
+     },
+     {
+      "letter": "G",
+      "text": "fully booked today"
+     },
+     {
+      "letter": "H",
+      "text": "transport not included"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -806,14 +916,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "You pay extra for drinks. B You must book it in advance. C You get a reduction if you buy two tickets. D You can meet the performers."
+      "text": "You pay extra for drinks."
+     },
+     {
+      "letter": "B",
+      "text": "You must book it in advance."
+     },
+     {
+      "letter": "C",
+      "text": "You get a reduction if you buy two tickets."
+     },
+     {
+      "letter": "D",
+      "text": "You can meet the performers."
      },
      {
       "letter": "E",
       "text": "You can take part in the show."
      }
+    ],
+    "optionPreface": [
+     "Which TWO things does the speaker say about the attraction called Musical Favourites?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -830,7 +956,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -841,13 +968,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "D (in any order)",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "D (in any order)"
     }
    ],
    "provenance": {
@@ -855,6 +983,43 @@
     "rawExcerpt": "Questions 17 and 18\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:17-18",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO things does the speaker say about the attraction called Musical Favourites?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "You pay extra for drinks."
+     },
+     {
+      "letter": "B",
+      "text": "You must book it in advance."
+     },
+     {
+      "letter": "C",
+      "text": "You get a reduction if you buy two tickets."
+     },
+     {
+      "letter": "D",
+      "text": "You can meet the performers."
+     },
+     {
+      "letter": "E",
+      "text": "You can take part in the show."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -877,14 +1042,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Visitors can dance after the meal. B There is a choice of food. C Visitors wear historical costume. D Knives and forks are not used."
+      "text": "Visitors can dance after the meal."
+     },
+     {
+      "letter": "B",
+      "text": "There is a choice of food."
+     },
+     {
+      "letter": "C",
+      "text": "Visitors wear historical costume."
+     },
+     {
+      "letter": "D",
+      "text": "Knives and forks are not used."
      },
      {
       "letter": "E",
       "text": "The entertainment includes horse races."
      }
+    ],
+    "optionPreface": [
+     "Which TWO things does the speaker say about the Castle Feast?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -901,7 +1082,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -912,13 +1094,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "D (in any order)",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "D (in any order)"
     }
    ],
    "provenance": {
@@ -926,33 +1109,42 @@
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g06",
-   "part": 3,
-   "startQ": 21,
-   "endQ": 25,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Choose the correct letter A, B or C.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Choose the correct letter A, B or C."
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": [
-     "[orphan option block: 21 What does Trevor find interesting about the purpose of children’s literature?]"
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:19-20",
+    "answerSet": [
+     "A",
+     "D"
     ],
-    "figures": null,
-    "sharedOptions": null
+    "prompt": "Which TWO things does the speaker say about the Castle Feast?",
+    "instructionText": "Choose TWO letters, A-E."
    },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[20]",
-    "rawExcerpt": "Part 3: Questions 21 – 25"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Visitors can dance after the meal."
+     },
+     {
+      "letter": "B",
+      "text": "There is a choice of food."
+     },
+     {
+      "letter": "C",
+      "text": "Visitors wear historical costume."
+     },
+     {
+      "letter": "D",
+      "text": "Knives and forks are not used."
+     },
+     {
+      "letter": "E",
+      "text": "The entertainment includes horse races."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -976,14 +1168,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "translated into many other languages B hard to read C inspired a work in a different area of art D more popular than the author’s other works E original title refers to another book F started a new genre"
+      "text": "translated into many other languages"
+     },
+     {
+      "letter": "B",
+      "text": "hard to read"
+     },
+     {
+      "letter": "C",
+      "text": "inspired a work in a different area of art"
+     },
+     {
+      "letter": "D",
+      "text": "more popular than the author’s other works"
+     },
+     {
+      "letter": "E",
+      "text": "original title refers to another book"
+     },
+     {
+      "letter": "F",
+      "text": "started a new genre"
      },
      {
       "letter": "G",
       "text": "unlikely topic"
      }
+    ],
+    "optionPreface": [
+     "Comments"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1000,7 +1216,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "26. Perrault’s fairy tales ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 27,
@@ -1017,7 +1234,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "27. The Swiss Family Robinson ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 28,
@@ -1034,7 +1252,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "28. The Nutcracker and The Mouse King ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1051,7 +1270,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "29. The Lord of the Rings ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1068,7 +1288,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "30. War Horse ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -1076,6 +1297,40 @@
     "rawExcerpt": "Questions 26 – 30\nWhat comment is made about each of these stories?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Comments",
+    "options": [
+     {
+      "letter": "A",
+      "text": "translated into many other languages"
+     },
+     {
+      "letter": "B",
+      "text": "hard to read"
+     },
+     {
+      "letter": "C",
+      "text": "inspired a work in a different area of art"
+     },
+     {
+      "letter": "D",
+      "text": "more popular than the author’s other works"
+     },
+     {
+      "letter": "E",
+      "text": "original title refers to another book"
+     },
+     {
+      "letter": "F",
+      "text": "started a new genre"
+     },
+     {
+      "letter": "G",
+      "text": "unlikely topic"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1120,8 +1375,10 @@
      "– others carrying containers of olive oil or (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1143,7 +1400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• had a semicircle of large stones round a (31) ␦"
-     }
+     },
+     "keyRaw": "spring"
     },
     {
      "number": 32,
@@ -1166,7 +1424,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• research carried out into structures, (32) ␦ and human remains"
-     }
+     },
+     "keyRaw": "tools"
     },
     {
      "number": 33,
@@ -1188,7 +1447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• used in the oil industry, e.g. to make (33) ␦"
-     }
+     },
+     "keyRaw": "maps"
     },
     {
      "number": 34,
@@ -1210,7 +1470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• problems: they were expensive and (34) ␦"
-     }
+     },
+     "keyRaw": "heavy"
     },
     {
      "number": 35,
@@ -1231,7 +1492,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "(35) ␦"
-     }
+     },
+     "keyRaw": "marble"
     },
     {
      "number": 36,
@@ -1254,7 +1516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• (36) ␦ is used for short distance communication, acoustic waves for long distance"
-     }
+     },
+     "keyRaw": "light"
     },
     {
      "number": 37,
@@ -1277,7 +1540,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "• AUV can send data to another AUV that has better (37) ␦ , for example"
-     }
+     },
+     "keyRaw": "cameras"
     },
     {
      "number": 38,
@@ -1303,7 +1567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "– one carrying (38) ␦ supplies; tablets may have been used for cleaning the (39) ␦"
-     }
+     },
+     "keyRaw": "medical"
     },
     {
      "number": 39,
@@ -1329,7 +1594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "– one carrying (38) ␦ supplies; tablets may have been used for cleaning the (39) ␦"
-     }
+     },
+     "keyRaw": "eyes"
     },
     {
      "number": 40,
@@ -1351,7 +1617,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "– others carrying containers of olive oil or (40) ␦"
-     }
+     },
+     "keyRaw": "wine"
     }
    ],
    "provenance": {
@@ -1397,6 +1664,81 @@
      25
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 21,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 22,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 25,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24,
+     25
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [
@@ -1407,7 +1749,8 @@
   }
  ],
  "verifiedQuestionCount": 35,
- "quarantinedCount": 1,
- "status": "flagged",
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

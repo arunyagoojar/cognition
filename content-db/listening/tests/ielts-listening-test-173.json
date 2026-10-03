@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-173",
  "title": "IELTS Listening Test 173",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-173/index.html",
-   "sha256": "4b5e278a660c85e5fd530b5c7ae4211fe6cd403e96fa9f98e3540363ab4a07cf",
-   "manifestHashMatch": true,
+   "sha256": "e2a14d6ff3d1e06e14bcde6931be1512cd8fedba7714b7cb24805659e185e1c1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-173/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -414,12 +414,14 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test173-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -432,11 +434,13 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "1. A B C D"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 2,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -449,11 +453,13 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "2. A B C D"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 3,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -466,11 +472,13 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "3. A B C D"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 4,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -483,7 +491,9 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "4. A B C D"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -495,6 +505,29 @@
     5
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 1,
+    "title": "5 How much money does the woman give the man?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "$2.00"
+     },
+     {
+      "letter": "B",
+      "text": "$3.00"
+     },
+     {
+      "letter": "C",
+      "text": "$3.50"
+     },
+     {
+      "letter": "D",
+      "text": "$5.00"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -520,8 +553,10 @@
      "Course: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -543,7 +578,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Name of student: (6) ␦"
-     }
+     },
+     "keyRaw": "Julia Perkins"
     },
     {
      "number": 7,
@@ -566,7 +602,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Address: (7) Flat/5 ␦"
-     }
+     },
+     "keyRaw": "15 Waratah Road"
     },
     {
      "number": 8,
@@ -588,7 +625,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Town: (8) ␦"
-     }
+     },
+     "keyRaw": "Brisbane"
     },
     {
      "number": 9,
@@ -610,7 +648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Tel: (9) ␦"
-     }
+     },
+     "keyRaw": "to be advised"
     },
     {
      "number": 10,
@@ -632,7 +671,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Course: (10) ␦"
-     }
+     },
+     "keyRaw": "first year law"
     }
    ],
    "provenance": {
@@ -667,12 +707,14 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test173-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "What must the students do as part of registration at the university?",
       "segments": null
@@ -685,7 +727,9 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "12. What must the students do as part of registration at the university?"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -697,6 +741,29 @@
     12
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "12. What must the students do as part of registration at the university?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Check the notice board in the Law Faculty"
+     },
+     {
+      "letter": "B",
+      "text": "Find out about lectures"
+     },
+     {
+      "letter": "C",
+      "text": "Organise tutorial groups"
+     },
+     {
+      "letter": "D",
+      "text": "Pay the union fees"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -761,8 +828,10 @@
      "• Some open for a limited time on Saturdays."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -784,7 +853,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(13) ………….."
-     }
+     },
+     "keyRaw": "hope street"
     },
     {
      "number": 14,
@@ -807,7 +877,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "• Must provide (14) ␦ I can support myself."
-     }
+     },
+     "keyRaw": "evidence"
     },
     {
      "number": 15,
@@ -830,7 +901,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• Take with me: (15) ␦ and letter of enrollment."
-     }
+     },
+     "keyRaw": "passport"
     },
     {
      "number": 16,
@@ -852,7 +924,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• Recommended account: (16) ␦"
-     }
+     },
+     "keyRaw": "current account"
     },
     {
      "number": 17,
@@ -874,7 +947,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• Bank supplies: (17) ␦"
-     }
+     },
+     "keyRaw": "chequebook"
     },
     {
      "number": 18,
@@ -897,7 +971,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• Cashcard: (you can (18) ␦ cash at any time.)"
-     }
+     },
+     "keyRaw": "withdraw"
     },
     {
      "number": 19,
@@ -920,7 +995,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• Switch/Delta cards: (take the money (19) ␦ the account.)"
-     }
+     },
+     "keyRaw": "directly from"
     },
     {
      "number": 20,
@@ -942,7 +1018,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• Must have (20) ␦"
-     }
+     },
+     "keyRaw": "permission of bank"
     },
     {
      "number": 21,
@@ -965,7 +1042,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Most banks open until (21) ␦ during the week."
-     }
+     },
+     "keyRaw": "4.30 to 5"
     }
    ],
    "provenance": {
@@ -1003,8 +1081,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test173-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 22,
@@ -1027,7 +1107,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• (22) ␦ produced every day in the US — more cans produced than nails or"
-     }
+     },
+     "keyRaw": "300 million"
     },
     {
      "number": 23,
@@ -1048,7 +1129,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(23) ␦"
-     }
+     },
+     "keyRaw": "paper clips"
     },
     {
      "number": 24,
@@ -1070,7 +1152,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• each can weighs 0.48 ounces — thinner than two (24) ␦"
-     }
+     },
+     "keyRaw": "magazine pages"
     },
     {
      "number": 25,
@@ -1093,7 +1176,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• can take more than 90 pounds of pressure per square inch — over (25) ␦ the pressure of a car tyre"
-     }
+     },
+     "keyRaw": "three times"
     },
     {
      "number": 26,
@@ -1117,7 +1201,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(26) ␦ (27) ␦"
-     }
+     },
+     "keyRaw": "thicker"
     },
     {
      "number": 27,
@@ -1141,7 +1226,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(26) ␦ (27) ␦"
-     }
+     },
+     "keyRaw": "label"
     },
     {
      "number": 28,
@@ -1165,7 +1251,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(28) ␦ (29) ␦"
-     }
+     },
+     "keyRaw": "dome"
     },
     {
      "number": 29,
@@ -1189,7 +1276,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(28) ␦ (29) ␦"
-     }
+     },
+     "keyRaw": "flange"
     },
     {
      "number": 30,
@@ -1213,7 +1301,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(30) ␦ (31) ␦"
-     }
+     },
+     "keyRaw": "25%"
     },
     {
      "number": 31,
@@ -1237,7 +1326,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(30) ␦ (31) ␦"
-     }
+     },
+     "keyRaw": "scored opening"
     }
    ],
    "provenance": {
@@ -1283,8 +1373,10 @@
      "Sports physiology is also known as (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 32,
@@ -1306,7 +1398,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• To experience (32) ␦"
-     }
+     },
+     "keyRaw": "university lecture"
     },
     {
      "number": 33,
@@ -1328,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• To find out about (33) ␦"
-     }
+     },
+     "keyRaw": "sports studies"
     },
     {
      "number": 34,
@@ -1350,7 +1444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Sports (34) ␦"
-     }
+     },
+     "keyRaw": "management"
     },
     {
      "number": 35,
@@ -1372,7 +1467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "The psychologists work with (35) ␦"
-     }
+     },
+     "keyRaw": "top athletes"
     },
     {
      "number": 36,
@@ -1394,7 +1490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "They want to discover what (36) ␦"
-     }
+     },
+     "keyRaw": "makes winners"
     },
     {
      "number": 37,
@@ -1416,7 +1513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Sports marketing looks at (37) ␦"
-     }
+     },
+     "keyRaw": "market forces"
     },
     {
      "number": 38,
@@ -1438,7 +1536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Sport now competes with (38) ␦"
-     }
+     },
+     "keyRaw": "leisure activities"
     },
     {
      "number": 39,
@@ -1460,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Spectators want (39) ␦"
-     }
+     },
+     "keyRaw": "entertainment"
     },
     {
      "number": 40,
@@ -1482,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Sports physiology is also known as (40) ␦"
-     }
+     },
+     "keyRaw": "exercise science"
     }
    ],
    "provenance": {
@@ -1532,7 +1633,54 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 5,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 11,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
+   "evidence": {
+    "questionsOutsideTheirSection": [
+     21,
+     31
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     5,
+     11
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1541,7 +1689,8 @@
   }
  ],
  "verifiedQuestionCount": 38,
- "quarantinedCount": 0,
- "status": "flagged",
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

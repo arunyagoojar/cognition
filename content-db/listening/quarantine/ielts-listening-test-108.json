@@ -1,0 +1,51 @@
+{
+ "slug": "ielts-listening-test-108",
+ "status": "quarantined",
+ "sourceSha256": "8673b77bc15520bb4d417ba402dadae5087d24c6076b3bbafa009b70a64f0a1c",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 29,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters, A-E Which TWO things are true about the participants in the study on the traffic-light system?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 30,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Choose TWO letters, A-E Which TWO things are true about the participants in the study on the traffic-light system?",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     29,
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

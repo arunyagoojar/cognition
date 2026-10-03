@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-91",
  "title": "IELTS Listening Test 91",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-91/index.html",
-   "sha256": "6e277b5726bcc0cc72b2756fb2bcd8508e0abf2c385d4900561e9d7ca3de4c0f",
-   "manifestHashMatch": true,
+   "sha256": "70b2961474f19f2add516094180560fbe28201315ccafac0242291a187cdd36c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-91/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -411,8 +411,10 @@
      "• Evenings and weekends: free (10) ␦ is available"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -434,7 +436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• An expanded section for books on (1) ␦"
-     }
+     },
+     "keyRaw": "travel"
     },
     {
      "number": 2,
@@ -456,7 +459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• A new section on local (2) ␦"
-     }
+     },
+     "keyRaw": "history"
     },
     {
      "number": 3,
@@ -479,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• A community room for meetings (also possible to (3) ␦ there)"
-     }
+     },
+     "keyRaw": "study"
     },
     {
      "number": 4,
@@ -501,7 +506,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• A new section of books for (4) ␦"
-     }
+     },
+     "keyRaw": "teenagers"
     },
     {
      "number": 5,
@@ -523,7 +529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• The next Science club meeting: experiments using things from your (5) ␦"
-     }
+     },
+     "keyRaw": "kitchen"
     },
     {
      "number": 6,
@@ -545,7 +552,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• This Friday: a local author talks about a novel based on a real (6) ␦"
-     }
+     },
+     "keyRaw": "crime"
     },
     {
      "number": 7,
@@ -568,7 +576,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• IT support is available on Tuesday-no (7) ␦ is necessary"
-     }
+     },
+     "keyRaw": "appointment/ booking"
     },
     {
      "number": 8,
@@ -591,7 +600,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Free check of blood (8) ␦ and cholesterol levels"
-     }
+     },
+     "keyRaw": "sugar"
     },
     {
      "number": 9,
@@ -613,7 +623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• The library shop sells wall charts, cards and (9) ␦"
-     }
+     },
+     "keyRaw": "stamps"
     },
     {
      "number": 10,
@@ -636,7 +647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Evenings and weekends: free (10) ␦ is available"
-     }
+     },
+     "keyRaw": "parking"
     }
    ],
    "provenance": {
@@ -665,14 +677,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "16-30 years B 31-42 years C 43-54 years D 55-64 years"
+      "text": "16-30 years"
+     },
+     {
+      "letter": "B",
+      "text": "31-42 years"
+     },
+     {
+      "letter": "C",
+      "text": "43-54 years"
+     },
+     {
+      "letter": "D",
+      "text": "55-64 years"
      },
      {
       "letter": "E",
       "text": "over 65 years"
      }
+    ],
+    "optionPreface": [
+     "Which TWO age groups are taking increasing numbers of holidays with BC Travel?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -689,7 +717,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 12,
@@ -706,12 +735,50 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "D",
+     "E"
+    ],
+    "prompt": "Which TWO age groups are taking increasing numbers of holidays with BC Travel?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "16-30 years"
+     },
+     {
+      "letter": "B",
+      "text": "31-42 years"
+     },
+     {
+      "letter": "C",
+      "text": "43-54 years"
+     },
+     {
+      "letter": "D",
+      "text": "55-64 years"
+     },
+     {
+      "letter": "E",
+      "text": "over 65 years"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -735,14 +802,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "clients make new friends B clients learn a useful skill C clients learn about a different culture D clients are excited by the risk involved"
+      "text": "clients make new friends"
+     },
+     {
+      "letter": "B",
+      "text": "clients learn a useful skill"
+     },
+     {
+      "letter": "C",
+      "text": "clients learn about a different culture"
+     },
+     {
+      "letter": "D",
+      "text": "clients are excited by the risk involved"
      },
      {
       "letter": "E",
       "text": "clients find them good value for money"
      }
+    ],
+    "optionPreface": [
+     "Which TWO are the main reasons given for the popularity of activity holidays?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -759,7 +842,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -776,7 +860,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -784,6 +869,43 @@
     "rawExcerpt": "Questions 13 and 14\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO are the main reasons given for the popularity of activity holidays?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "clients make new friends"
+     },
+     {
+      "letter": "B",
+      "text": "clients learn a useful skill"
+     },
+     {
+      "letter": "C",
+      "text": "clients learn about a different culture"
+     },
+     {
+      "letter": "D",
+      "text": "clients are excited by the risk involved"
+     },
+     {
+      "letter": "E",
+      "text": "clients find them good value for money"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -803,8 +925,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -834,7 +958,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "15. How does BC Travel plan to expand the painting holidays?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -864,7 +989,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. Why are BC Travel’s cooking holidays unusual?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -894,7 +1020,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "17. What does the speaker say about the photography holidays?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -947,8 +1074,10 @@
      "(18) ␦\n(19) ␦\n(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -970,7 +1099,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "– personally designed programme – also reduces (18)……………"
-     }
+     },
+     "keyRaw": "stress"
     },
     {
      "number": 19,
@@ -992,7 +1122,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19)……………….control"
-     }
+     },
+     "keyRaw": "weight"
     },
     {
      "number": 20,
@@ -1014,7 +1145,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "– wide variety of levels – one holiday that is specially designed for (20)…………………"
-     }
+     },
+     "keyRaw": "families"
     }
    ],
    "provenance": {
@@ -1069,8 +1201,10 @@
      "• Do not end with (26) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1089,11 +1223,12 @@
      "blankContext": "line: • Locate and read relevant articles, noting key information and also (",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Locate and read relevant articles, noting key information and also (21) ␦ identify a problem or need"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1115,11 +1250,12 @@
      "blankContext": "line: • Select interviewees – these may be site (22) ␦ , visitors for city (",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Select interviewees – these may be site (22) ␦ , visitors for city (23) ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 23,
@@ -1141,11 +1277,12 @@
      "blankContext": "line: • Select interviewees – these may be site (22) ␦ , visitors for city (",
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Select interviewees – these may be site (22) ␦ , visitors for city (23) ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 24,
@@ -1164,11 +1301,12 @@
      "blankContext": "line: • Check whether (24) ␦ of interviewees can be used",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Check whether (24) ␦ of interviewees can be used"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1186,11 +1324,12 @@
      "blankContext": "line: • Select relevant information and try to identify (25) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Select relevant information and try to identify (25) ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1208,18 +1347,19 @@
      "blankContext": "line: • Do not end with (26) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Do not end with (26) ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[17]",
     "rawExcerpt": "(18) ␦\n(19) ␦\n(20) ␦\nPart 3: Questions 21-26"
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g07",
@@ -1238,8 +1378,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1269,7 +1411,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. Natalie and Dave agree one reason why so few people visit Horton Castle is that"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1299,7 +1442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "28. Natalie and Dave agree that the greatest problem with a visitor centre could be"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1329,7 +1473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "29. What does Dave say about conditions in the town of Horton?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1359,7 +1504,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "30. According to Natalie, one way to prevent damage to the castle site would be to"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1407,8 +1553,10 @@
      "• New regulations for mercury emissions will affect everyone’s energy (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1430,7 +1578,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• It has also recently been found to affect birds which feed on (31) ␦"
-     }
+     },
+     "keyRaw": "insects"
     },
     {
      "number": 32,
@@ -1453,7 +1602,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o The effects on birds’ (32) ␦ or mental processes e.g. memory"
-     }
+     },
+     "keyRaw": "behaviour"
     },
     {
      "number": 33,
@@ -1476,7 +1626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o The effects on bird song (usually learned from a bird’s (33) ␦ )"
-     }
+     },
+     "keyRaw": "father"
     },
     {
      "number": 34,
@@ -1498,7 +1649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o Songs learned by birds exposed to mercury are less (34) ␦"
-     }
+     },
+     "keyRaw": "complex"
     },
     {
      "number": 35,
@@ -1520,7 +1672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o This may have a negative effect on birds’ (35) ␦"
-     }
+     },
+     "keyRaw": "reproduction"
     },
     {
      "number": 36,
@@ -1543,7 +1696,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o Allow more (36) ␦ for the experimenter"
-     }
+     },
+     "keyRaw": "control"
     },
     {
      "number": 37,
@@ -1566,7 +1720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Migrating birds such as (37) ␦ containing mercury may be eaten by humans"
-     }
+     },
+     "keyRaw": "ducks"
     },
     {
      "number": 38,
@@ -1588,7 +1743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Mercury also causes problems in learning (38) ␦"
-     }
+     },
+     "keyRaw": "language"
     },
     {
      "number": 39,
@@ -1611,7 +1767,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Mercury in a mother’s body from (39) ␦ may affect the unborn child"
-     }
+     },
+     "keyRaw": "food"
     },
     {
      "number": 40,
@@ -1633,7 +1790,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• New regulations for mercury emissions will affect everyone’s energy (40) ␦"
-     }
+     },
+     "keyRaw": "cost/ price"
     }
    ],
    "provenance": {
@@ -1679,10 +1837,118 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 21,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Locate and read relevant articles, noting key information and also ______ identify a problem or need",
+    "answer": "C",
+    "rawExcerpt": "• Locate and read relevant articles, noting key information and also (21) ␦ identify a problem or need",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 22,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Select interviewees – these may be site ______ , visitors for city ______",
+    "answer": "E",
+    "rawExcerpt": "• Select interviewees – these may be site (22) ␦ , visitors for city (23) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 23,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Select interviewees – these may be site ______ , visitors for city ______",
+    "answer": "H",
+    "rawExcerpt": "• Select interviewees – these may be site (22) ␦ , visitors for city (23) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 24,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Check whether ______ of interviewees can be used",
+    "answer": "B",
+    "rawExcerpt": "• Check whether (24) ␦ of interviewees can be used",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 25,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Select relevant information and try to identify ______",
+    "answer": "A",
+    "rawExcerpt": "• Select relevant information and try to identify (25) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 26,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "• Do not end with ______",
+    "answer": "F",
+    "rawExcerpt": "• Do not end with (26) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24,
+     25,
+     26
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

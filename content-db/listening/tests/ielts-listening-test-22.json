@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-22",
  "title": "IELTS Listening Test 22",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-22/index.html",
-   "sha256": "44e5e99f831d09cef61988a0fc42b591a3152b0b71fd3ce9ad5689f33e8bad9e",
-   "manifestHashMatch": true,
+   "sha256": "bc0d2be38d78fae061f1d8ce2e455d0360455be9e392bf5b0406ff2710d2b5de",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-22/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -374,8 +374,10 @@
      "Date of birth: Day: 24 Month: (5) ␦ Year: 1981"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -398,7 +400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address: apartment 3, 86 (1) ␦ street, Pimlico"
-     }
+     },
+     "keyRaw": "bridge"
     },
     {
      "number": 2,
@@ -420,7 +423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Post code: (2) ␦"
-     }
+     },
+     "keyRaw": "2065"
     },
     {
      "number": 3,
@@ -442,7 +446,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(3) ␦ (work)"
-     }
+     },
+     "keyRaw": "84561307"
     },
     {
      "number": 4,
@@ -464,7 +469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Driver’s licence number: (4) ␦"
-     }
+     },
+     "keyRaw": "4040AC"
     },
     {
      "number": 5,
@@ -487,40 +493,14 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Date of birth: Day: 24 Month: (5) ␦ Year: 1981"
-     }
+     },
+     "keyRaw": "March"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-5\nComplete the notes below. Write NO MORE THAN ONE WORD OR A NUMBER."
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 1,
-   "startQ": 6,
-   "endQ": 8,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle THREE letters A-F. What type of books does Angela like? A sport B travel C classics D history E cooking F nature",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle THREE letters A-F. What type of books does Angela like?\nA sport\nB travel\nC classics\nD history\nE cooking\nF nature"
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[3]",
-    "rawExcerpt": "Questions 6-8\nCircle THREE letters A-F."
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },
   {
@@ -542,8 +522,10 @@
      "9. How much does it cost to join the library? ␦\n10. When will Angela’s card be ready? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -568,7 +550,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "9. How much does it cost to join the library? ␦"
-     }
+     },
+     "keyRaw": "$20"
     },
     {
      "number": 10,
@@ -593,7 +576,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "10. When will Angela’s card be ready? ␦"
-     }
+     },
+     "keyRaw": "next week"
     }
    ],
    "provenance": {
@@ -620,8 +604,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -651,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. What is one of the new advantages in the dining facilities?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -681,7 +668,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. What was one problem with the dining options last year?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -709,8 +697,10 @@
      "13. ␦ and pasta are an example of ␦ food\n14. American food consists of ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -732,11 +722,12 @@
      "blankContext": "line: 13. ␦ and pasta are an example of ␦ food (input box in source)",
      "correctAnswer": "Pizza, Italian",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. ␦ and pasta are an example of ␦ food"
-     }
+     },
+     "keyRaw": "Pizza, Italian"
     },
     {
      "number": 14,
@@ -757,11 +748,12 @@
      "blankContext": "line: 14. American food consists of ␦ (input box in source)",
      "correctAnswer": "hamburgers, hot dogs",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. American food consists of ␦"
-     }
+     },
+     "keyRaw": "hamburgers, hot dogs"
     }
    ],
    "provenance": {
@@ -769,7 +761,7 @@
     "rawExcerpt": "Questions 13 and 14\nWrite NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -788,8 +780,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -819,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "15. Why does the school say the food will be better?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -853,7 +848,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. When will the dining facilities open and close?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -883,7 +879,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "17. What can students do if they are hungry in the afternoon?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -913,41 +910,13 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "18. What must you do to eat in the dining facilities if you are not a student?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Questions 15-18\nChoose the correct letter A, B or C."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g07",
-   "part": 2,
-   "startQ": 19,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Select TWO answers.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Select TWO answers."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Which of the following are rules of the dining facilities?\nA do not waste food\nB you may bring friends in to eat\nC bring your own plates and trays\nD clean your own plates and trays\nE don’t litter"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[17]",
-    "rawExcerpt": "Questions 19 and 20\nSelect TWO answers."
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -1000,8 +969,10 @@
      "(25) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1023,7 +994,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Sit – (21)…………………."
-     }
+     },
+     "keyRaw": "stay"
     },
     {
      "number": 22,
@@ -1045,7 +1017,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– (22)……………………….."
-     }
+     },
+     "keyRaw": "speak"
     },
     {
      "number": 23,
@@ -1067,7 +1040,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Patrolling – (23)………………."
-     }
+     },
+     "keyRaw": "barking"
     },
     {
      "number": 24,
@@ -1089,7 +1063,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– Knocking someone down – (24)………………….."
-     }
+     },
+     "keyRaw": "biting"
     },
     {
      "number": 25,
@@ -1111,7 +1086,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "– (25)……………………."
-     }
+     },
+     "keyRaw": "sniffing"
     }
    ],
    "provenance": {
@@ -1137,8 +1113,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1155,7 +1133,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. physical training ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
@@ -1172,7 +1151,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. search training ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1189,7 +1169,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. attack training ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1206,7 +1187,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. barking ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1223,7 +1205,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "30. biting ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1231,6 +1214,25 @@
     "rawExcerpt": "Questions 26-30\nWrite the appropriate letter A-C next to questions 26-30"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "instruction",
+    "instructionText": "Write the appropriate letter A-C next to questions 26-30 According to the speaker for which dogs are the following kinds of training most useful?",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "small dogs"
+     },
+     {
+      "letter": "B",
+      "text": "intelligent dogs"
+     },
+     {
+      "letter": "C",
+      "text": "large dogs"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1284,8 +1286,10 @@
      "(36) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1306,7 +1310,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(31)………………."
-     }
+     },
+     "keyRaw": "7am – 12am"
     },
     {
      "number": 32,
@@ -1327,7 +1332,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(32)……………"
-     }
+     },
+     "keyRaw": "basement"
     },
     {
      "number": 33,
@@ -1349,7 +1355,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Treadmills, weight set (33)……………"
-     }
+     },
+     "keyRaw": "pin-pong tables"
     },
     {
      "number": 34,
@@ -1370,7 +1377,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(34)…………………."
-     }
+     },
+     "keyRaw": "2nd floor"
     },
     {
      "number": 35,
@@ -1391,7 +1399,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(35)……………….."
-     }
+     },
+     "keyRaw": "24 hours"
     },
     {
      "number": 36,
@@ -1413,7 +1422,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36)……………..microwave oven, store"
-     }
+     },
+     "keyRaw": "refrigerator"
     }
    ],
    "provenance": {
@@ -1444,8 +1454,10 @@
      "40. The third rule of the building: ␦ are not permitted in the building."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1466,11 +1478,12 @@
      "blankContext": "line: 37. List three activities that Saturday Morning Outings have included  (input box in source)",
      "correctAnswer": "fishing, hiking, cycling",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "37. List three activities that Saturday Morning Outings have included in the past ␦"
-     }
+     },
+     "keyRaw": "fishing, hiking, cycling"
     },
     {
      "number": 38,
@@ -1493,7 +1506,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "38. There are ␦ spaces available for the volleyball team."
-     }
+     },
+     "keyRaw": "20"
     },
     {
      "number": 39,
@@ -1516,7 +1530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "39. The first rule of the building: ␦ must be kept to a minimum after 11 pm. The second rule of the building: All visitors must sign in at the front of the building."
-     }
+     },
+     "keyRaw": "noise levels"
     },
     {
      "number": 40,
@@ -1539,7 +1554,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "40. The third rule of the building: ␦ are not permitted in the building."
-     }
+     },
+     "keyRaw": "alcohol and drugs"
     }
    ],
    "provenance": {
@@ -1547,7 +1563,7 @@
     "rawExcerpt": "Questions 37-40\nComplete the sentences below. Write NO MORE THAN THREE WORDS AND/ OR A NUMBER for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1597,11 +1613,135 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 13,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "______ and pasta are an example of ______ food",
+    "answer": "Pizza, Italian",
+    "rawExcerpt": "13. ␦ and pasta are an example of ␦ food",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 14,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "American food consists of ______",
+    "answer": "hamburgers, hot dogs",
+    "rawExcerpt": "14. American food consists of ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 37,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "List three activities that Saturday Morning Outings have included in the past ______",
+    "answer": "fishing, hiking, cycling",
+    "rawExcerpt": "37. List three activities that Saturday Morning Outings have included in the past ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 6,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 7,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8,
+     13,
+     14,
+     19,
+     20,
+     37
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 32,
+ "quarantinedCount": 11,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

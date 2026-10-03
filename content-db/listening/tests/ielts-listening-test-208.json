@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-208",
  "title": "IELTS Listening Test 208",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-208/index.html",
-   "sha256": "46fc76638fd2e4521af14cc806beec1b6cea712e6f5cfd5b4c1a759a83ac2186",
-   "manifestHashMatch": true,
+   "sha256": "75f22befbbe12f1e0990fbae4c805e3598f8c1a4a8e2c3eb6a54ba6bbe882c25",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-208/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "19d573852ef7809d5b1604002474b51b824d847386dd071b53fa76be21220491",
+ "contentFingerprint": "883f50382ac71cd5455f7994c7ffc3971cef80ed1502a376a8915e99338763e7",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -409,8 +409,10 @@
      "• Believes the (10) ␦ is unnecessary"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -432,7 +434,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Name: Martyn (1) ␦"
-     }
+     },
+     "keyRaw": "Leigh"
     },
     {
      "number": 2,
@@ -454,7 +457,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Today’s journey to Broadbeach town centre: used his (2) ␦"
-     }
+     },
+     "keyRaw": "Motorbike"
     },
     {
      "number": 3,
@@ -476,7 +480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Has visited the (3) ␦"
-     }
+     },
+     "keyRaw": "Hairdresser"
     },
     {
      "number": 4,
@@ -498,7 +503,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Looking for a new (4) ␦"
-     }
+     },
+     "keyRaw": "Suit"
     },
     {
      "number": 5,
@@ -521,7 +527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Collecting (5) ␦ (after repair)"
-     }
+     },
+     "keyRaw": "Laptop"
     },
     {
      "number": 6,
@@ -543,7 +550,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Preferred day for shopping: (6) ␦"
-     }
+     },
+     "keyRaw": "Monday"
     },
     {
      "number": 7,
@@ -565,7 +573,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• Thinks there are too many places selling (7) ␦"
-     }
+     },
+     "keyRaw": "Coffee"
     },
     {
      "number": 8,
@@ -587,7 +596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• Would like more places to buy (8) ␦"
-     }
+     },
+     "keyRaw": "Books"
     },
     {
      "number": 9,
@@ -610,7 +620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Likes the (9) ␦ best"
-     }
+     },
+     "keyRaw": "Plants"
     },
     {
      "number": 10,
@@ -633,7 +644,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Believes the (10) ␦ is unnecessary"
-     }
+     },
+     "keyRaw": "Cinema"
     }
    ],
    "provenance": {
@@ -662,14 +674,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the Digital Marketing Centre B the TalkCon Zone C the Breakout area D the Business Village"
+      "text": "the Digital Marketing Centre"
+     },
+     {
+      "letter": "B",
+      "text": "the TalkCon Zone"
+     },
+     {
+      "letter": "C",
+      "text": "the Breakout area"
+     },
+     {
+      "letter": "D",
+      "text": "the Business Village"
      },
      {
       "letter": "E",
       "text": "the Business Connections Zone"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -680,13 +706,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO areas of the business exhibition did James Craig promote his company last year?"
-     }
+     },
+     "keyRaw": "C, E"
     },
     {
      "number": 12,
@@ -697,18 +724,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO areas of the business exhibition did James Craig promote his company last year?"
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[4]",
     "rawExcerpt": "Part 2: Questions 11 and 12\n\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "In which TWO areas of the business exhibition did James Craig promote his company last year?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the Digital Marketing Centre"
+     },
+     {
+      "letter": "B",
+      "text": "the TalkCon Zone"
+     },
+     {
+      "letter": "C",
+      "text": "the Breakout area"
+     },
+     {
+      "letter": "D",
+      "text": "the Business Village"
+     },
+     {
+      "letter": "E",
+      "text": "the Business Connections Zone"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -732,14 +797,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "They are available to all members of exhibiting companies. B They can be used for both food and clothing. C They only apply if people spend at least £400. D They can be used by family members."
+      "text": "They are available to all members of exhibiting companies."
+     },
+     {
+      "letter": "B",
+      "text": "They can be used for both food and clothing."
+     },
+     {
+      "letter": "C",
+      "text": "They only apply if people spend at least £400."
+     },
+     {
+      "letter": "D",
+      "text": "They can be used by family members."
      },
      {
       "letter": "E",
       "text": "The percentage saved is always the same."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -750,13 +829,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, B",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO facts are given about discounts on popular brands available to exhibitors?"
-     }
+     },
+     "keyRaw": "A, B"
     },
     {
      "number": 14,
@@ -767,13 +847,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, B",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO facts are given about discounts on popular brands available to exhibitors?"
-     }
+     },
+     "keyRaw": "A, B"
     }
    ],
    "provenance": {
@@ -781,6 +862,43 @@
     "rawExcerpt": "Questions 13 and 14\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "A",
+     "B"
+    ],
+    "prompt": "Which TWO facts are given about discounts on popular brands available to exhibitors?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "They are available to all members of exhibiting companies."
+     },
+     {
+      "letter": "B",
+      "text": "They can be used for both food and clothing."
+     },
+     {
+      "letter": "C",
+      "text": "They only apply if people spend at least £400."
+     },
+     {
+      "letter": "D",
+      "text": "They can be used by family members."
+     },
+     {
+      "letter": "E",
+      "text": "The percentage saved is always the same."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -803,18 +921,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Supporting job seekers B Dealing with personal problems C Effects of an unexpectedly rapid expansion D"
+      "text": "Supporting job seekers"
      },
      {
-      "letter": "A",
-      "text": "global range of business experiences E Coping with financial set-backs F Developing a company in response to changing markets"
+      "letter": "B",
+      "text": "Dealing with personal problems"
+     },
+     {
+      "letter": "C",
+      "text": "Effects of an unexpectedly rapid expansion"
+     },
+     {
+      "letter": "D",
+      "text": "A global range of business experiences"
+     },
+     {
+      "letter": "E",
+      "text": "Coping with financial set-backs"
+     },
+     {
+      "letter": "F",
+      "text": "Developing a company in response to changing markets"
      },
      {
       "letter": "G",
       "text": "Combining business success with contributions to charities"
      }
+    ],
+    "optionPreface": [
+     "Topics"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -831,7 +969,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. Jim Clowrie ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -848,7 +987,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. David France ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 17,
@@ -865,7 +1005,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. Oliver Stanton ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 18,
@@ -882,7 +1023,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. Francesca Heptonstall ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -899,7 +1041,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. Salman Khan ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 20,
@@ -916,7 +1059,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. Annie Craven ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -929,6 +1073,40 @@
     16
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "box",
+    "title": "Topics",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Supporting job seekers"
+     },
+     {
+      "letter": "B",
+      "text": "Dealing with personal problems"
+     },
+     {
+      "letter": "C",
+      "text": "Effects of an unexpectedly rapid expansion"
+     },
+     {
+      "letter": "D",
+      "text": "A global range of business experiences"
+     },
+     {
+      "letter": "E",
+      "text": "Coping with financial set-backs"
+     },
+     {
+      "letter": "F",
+      "text": "Developing a company in response to changing markets"
+     },
+     {
+      "letter": "G",
+      "text": "Combining business success with contributions to charities"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -944,35 +1122,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Presentation on houses of the future",
-     "A meeting the deadline",
-     "B finding suitable examples",
-     "C including original ideas",
-     "Presentation on houses of the future\n\n21. Which aspect of their presentation are Mia and Leo both concerned about?\n\nA meeting the deadline\n\nB finding suitable examples\n\nC including original ideas",
-     "A family groups.",
-     "B old people.",
-     "C single people.",
-     "22. The students decide to focus their assignment on housing for\n\nA family groups.\n\nB old people.\n\nC single people.",
-     "A repurposing offices and factories.",
-     "B constructing tall buildings.",
-     "C developing creative ideas for smaller homes.",
-     "23. The students agree that demand for accommodation in urban areas should be met by\n\nA repurposing offices and factories.\n\nB constructing tall buildings.\n\nC developing creative ideas for smaller homes."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which aspect of their presentation are Mia and Leo both concerned about?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "meeting the deadline"
+      },
+      {
+       "letter": "B",
+       "text": "finding suitable examples"
+      },
+      {
+       "letter": "C",
+       "text": "including original ideas"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -980,16 +1159,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "21. Which aspect of their presentation are Mia and Leo both concerned about?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students decide to focus their assignment on housing for",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "family groups."
+      },
+      {
+       "letter": "B",
+       "text": "old people."
+      },
+      {
+       "letter": "C",
+       "text": "single people."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -997,16 +1190,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "22. The students decide to focus their assignment on housing for"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students agree that demand for accommodation in urban areas should be met by",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "repurposing offices and factories."
+      },
+      {
+       "letter": "B",
+       "text": "constructing tall buildings."
+      },
+      {
+       "letter": "C",
+       "text": "developing creative ideas for smaller homes."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1014,7 +1221,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. The students agree that demand for accommodation in urban areas should be met by"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1042,8 +1250,10 @@
      "Opinions\n\nA This could cause unnecessary anxiety.\n\nB This would be especially beneficial for city residents.\n\nC This would be challenging for young people.\n\nD This would have environmental benefits.\n\nE This could encourage creativity.\n\nF This could lead to social problems.\n\nG This could enable retired people to share a project.\n\nH This would help some people but cause problems for others.\n\nI This would suit both existing and new members of a household."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1060,7 +1270,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "24. use of roof space for gardens ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1077,7 +1288,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. shared working spaces ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 26,
@@ -1094,7 +1306,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "26. moveable internal wails ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 27,
@@ -1111,7 +1324,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "27. smart mirrors in bathrooms ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1128,7 +1342,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "28. bike sheds with charging points ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 29,
@@ -1145,7 +1360,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "29. restriction of cars to certain areas ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 30,
@@ -1162,7 +1378,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "30. communal vegetable plots ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -1170,6 +1387,49 @@
     "rawExcerpt": "Questions 24-30\n\nWhat opinion is given about each of the following developments? Choose SEVEN answers from the box and write the correct letter, A-l, next to Questions 24-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": "Opinions",
+    "options": [
+     {
+      "letter": "A",
+      "text": "This could cause unnecessary anxiety."
+     },
+     {
+      "letter": "B",
+      "text": "This would be especially beneficial for city residents."
+     },
+     {
+      "letter": "C",
+      "text": "This would be challenging for young people."
+     },
+     {
+      "letter": "D",
+      "text": "This would have environmental benefits."
+     },
+     {
+      "letter": "E",
+      "text": "This could encourage creativity."
+     },
+     {
+      "letter": "F",
+      "text": "This could lead to social problems."
+     },
+     {
+      "letter": "G",
+      "text": "This could enable retired people to share a project."
+     },
+     {
+      "letter": "H",
+      "text": "This would help some people but cause problems for others."
+     },
+     {
+      "letter": "I",
+      "text": "This would suit both existing and new members of a household."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1206,8 +1466,10 @@
      "• A future study will investigate the best (40) ␦ for the music."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1229,7 +1491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Surgery impacts patients because they may experience discomfort or unwelcome changes to their (31) ␦"
-     }
+     },
+     "keyRaw": "Routine"
     },
     {
      "number": 32,
@@ -1252,7 +1515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• A study reviewed data from about 100 (32) ␦ and found that listening to music"
-     }
+     },
+     "keyRaw": "Trials"
     },
     {
      "number": 33,
@@ -1275,7 +1539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The patients in the study all listened to music with a (33) ␦ effect."
-     }
+     },
+     "keyRaw": "Calming"
     },
     {
      "number": 34,
@@ -1297,7 +1562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The music was mostly played through music (34) ␦"
-     }
+     },
+     "keyRaw": "Pillows"
     },
     {
      "number": 35,
@@ -1319,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Patients reported an absence or low levels of (35) ␦"
-     }
+     },
+     "keyRaw": "Anxiety"
     },
     {
      "number": 36,
@@ -1342,7 +1609,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Medical records confirmed that patients who were played music in hospital needed less (36) ␦ than those who weren’t played music."
-     }
+     },
+     "keyRaw": "Medication"
     },
     {
      "number": 37,
@@ -1364,7 +1632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The best results were achieved when patients were played music while they were (37) ␦"
-     }
+     },
+     "keyRaw": "Awake"
     },
     {
      "number": 38,
@@ -1386,7 +1655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The study concluded that playing music was effective because it served as a (38) ␦"
-     }
+     },
+     "keyRaw": "Distraction"
     },
     {
      "number": 39,
@@ -1409,7 +1679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The researchers recommend playing either music or sounds from (39) ␦ to all surgical patients."
-     }
+     },
+     "keyRaw": "Nature"
     },
     {
      "number": 40,
@@ -1432,7 +1703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• A future study will investigate the best (40) ␦ for the music."
-     }
+     },
+     "keyRaw": "Volume"
     }
    ],
    "provenance": {
@@ -1474,5 +1746,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-162",
  "title": "IELTS Listening Test 162",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-162/index.html",
-   "sha256": "e47de681da5ed612e013f53bbc9fba57a71b3d978a930e99b379c753ce0b8f73",
-   "manifestHashMatch": true,
+   "sha256": "c19e8994513ab89b17449b89a515656906d9002ce2c9ee1d94136065fd5ee4e8",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-162/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "98d71bfdf1a40429fd42caf8792a7d076f26c9f6c20819e770bb1ba57452b947",
+ "contentFingerprint": "9d535172987f52e8a34500e8a750a3746c7c2c62dea8e92897f46984be20ee09",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -395,8 +395,10 @@
      "• held on (10) ␦ evenings"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• two (1) ␦ and"
-     }
+     },
+     "keyRaw": "photos"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• two forms of I.D. e.g. driving licence, (2) ␦"
-     }
+     },
+     "keyRaw": "bank statement"
     },
     {
      "number": 3,
@@ -464,7 +468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Cost to join per year (without current student card): (3) £ ␦"
-     }
+     },
+     "keyRaw": "125 per year"
     },
     {
      "number": 4,
@@ -486,7 +491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Number of items allowed: (members of public) (4) ␦"
-     }
+     },
+     "keyRaw": "8"
     },
     {
      "number": 5,
@@ -509,7 +515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Fines start at (5) £ ␦"
-     }
+     },
+     "keyRaw": "1.50"
     },
     {
      "number": 6,
@@ -532,7 +539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Computers can be booked up to (6) ␦ hours in advance"
-     }
+     },
+     "keyRaw": "48"
     },
     {
      "number": 7,
@@ -559,7 +567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Library holds most national papers, (7) ␦ , and magazines need (8) ␦ to use photocopier"
-     }
+     },
+     "keyRaw": "local papers"
     },
     {
      "number": 8,
@@ -586,7 +595,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Library holds most national papers, (7) ␦ , and magazines need (8) ␦ to use photocopier"
-     }
+     },
+     "keyRaw": "cards"
     },
     {
      "number": 9,
@@ -609,7 +619,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• tutor is John (9) ␦ and"
-     }
+     },
+     "keyRaw": "grantigham"
     },
     {
      "number": 10,
@@ -632,7 +643,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• held on (10) ␦ evenings"
-     }
+     },
+     "keyRaw": "friday"
     }
    ],
    "provenance": {
@@ -654,43 +666,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "BICYCLES FOR THE WORLD",
-     "A as a tourist guide",
-     "B as part of his studies",
-     "C as a voluntary worker",
-     "BICYCLES FOR THE WORLD\n11. In 1993 Dan Pearman went to Ecuador\nA as a tourist guide\nB as part of his studies\nC as a voluntary worker",
-     "A employed carpenters from the area",
-     "B was the most skilled craftsman in the town",
-     "C found it easy to reach customers",
-     "12. Dan’s neighbour was successful in business because he\nA employed carpenters from the area\nB was the most skilled craftsman in the town\nC found it easy to reach customers",
-     "A getting enough bicycles to send regularly",
-     "B finding new areas which need the bicycles",
-     "C charging for the bicycles it sends abroad",
-     "13. Dan says the charity relies on\nA getting enough bicycles to send regularly\nB finding new areas which need the bicycles\nC charging for the bicycles it sends abroad",
-     "A It has received the greatest number of bikes",
-     "B It has almost as many bikes as Amsterdam",
-     "C Its economy has been totally transformed",
-     "14. What does Dan say about the town of Rivas?\nA It has received the greatest number of bikes\nB It has almost as many bikes as Amsterdam\nC Its economy has been totally transformed",
-     "A It couldn’t meet its overheads",
-     "B It had to delay sending the bikes",
-     "C It was criticized in the British media",
-     "15. What problem did the charity face in August 2000?\nA It couldn’t meet its overheads\nB It had to delay sending the bikes\nC It was criticized in the British media"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In 1993 Dan Pearman went to Ecuador",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "as a tourist guide"
+      },
+      {
+       "letter": "B",
+       "text": "as part of his studies"
+      },
+      {
+       "letter": "C",
+       "text": "as a voluntary worker"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -698,16 +703,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. In 1993 Dan Pearman went to Ecuador"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Dan’s neighbour was successful in business because he",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "employed carpenters from the area"
+      },
+      {
+       "letter": "B",
+       "text": "was the most skilled craftsman in the town"
+      },
+      {
+       "letter": "C",
+       "text": "found it easy to reach customers"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -715,16 +734,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. Dan’s neighbour was successful in business because he"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Dan says the charity relies on",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "getting enough bicycles to send regularly"
+      },
+      {
+       "letter": "B",
+       "text": "finding new areas which need the bicycles"
+      },
+      {
+       "letter": "C",
+       "text": "charging for the bicycles it sends abroad"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -732,16 +765,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. Dan says the charity relies on"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Dan say about the town of Rivas?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It has received the greatest number of bikes"
+      },
+      {
+       "letter": "B",
+       "text": "It has almost as many bikes as Amsterdam"
+      },
+      {
+       "letter": "C",
+       "text": "Its economy has been totally transformed"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -749,16 +796,30 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. What does Dan say about the town of Rivas?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What problem did the charity face in August 2000?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It couldn’t meet its overheads"
+      },
+      {
+       "letter": "B",
+       "text": "It had to delay sending the bikes"
+      },
+      {
+       "letter": "C",
+       "text": "It was criticized in the British media"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -766,7 +827,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "15. What problem did the charity face in August 2000?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -794,8 +856,10 @@
      "16. How much money did the charity receive when it won an award? ␦\n17. What is the charity currently hoping to buy? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -820,7 +884,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "16. How much money did the charity receive when it won an award? ␦"
-     }
+     },
+     "keyRaw": "pound 75,000"
     },
     {
      "number": 17,
@@ -845,39 +910,13 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "17. What is the charity currently hoping to buy? ␦"
-     }
+     },
+     "keyRaw": "computers"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[11]",
     "rawExcerpt": "Questions 16 and 17"
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g04",
-   "part": 2,
-   "startQ": 18,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Which THREE things can the general public do to help the charity Pedal Power? A organise a bicycle collection B repair the donated bikes C donate their unwanted tools D do voluntary work in its office E hold an event to raise money F identify areas that need bikes G write to the government",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Which THREE things can the general public do to help the charity Pedal Power? A organise a bicycle collection\nB repair the donated bikes\nC donate their unwanted tools\nD do voluntary work in its office\nE hold an event to raise money\nF identify areas that need bikes\nG write to the government"
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[14]",
-    "rawExcerpt": "Questions 18-20"
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -934,8 +973,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -957,7 +998,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– using the camera – going to British (21)……………"
-     }
+     },
+     "keyRaw": "home"
     },
     {
      "number": 22,
@@ -980,7 +1022,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "contact with students doing other courses (has asked some to (22)……….with him)"
-     }
+     },
+     "keyRaw": "come to dinner"
     },
     {
      "number": 23,
@@ -1003,7 +1046,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– listening to instructions – learning (23)…………. vocabulary"
-     }
+     },
+     "keyRaw": "technical"
     },
     {
      "number": 24,
@@ -1025,7 +1069,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "listening to British students’ language because of: – normal speed – large amount of (24)……………."
-     }
+     },
+     "keyRaw": "slang"
     },
     {
      "number": 25,
@@ -1052,7 +1097,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– operating video camera – working with other people: – learning about (25)………… – compromising – (26)…………people who have different views"
-     }
+     },
+     "keyRaw": "cooperating"
     },
     {
      "number": 26,
@@ -1079,7 +1125,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– operating video camera – working with other people: – learning about (25)………… – compromising – (26)…………people who have different views"
-     }
+     },
+     "keyRaw": "persuading"
     },
     {
      "number": 27,
@@ -1101,7 +1148,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "the importance of (27)……………….."
-     }
+     },
+     "keyRaw": "editing"
     },
     {
      "number": 28,
@@ -1128,7 +1176,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– decide when to (28)………….each stage at the beginning – make more efforts to (29)……………….with the camera"
-     }
+     },
+     "keyRaw": "complete"
     },
     {
      "number": 29,
@@ -1155,7 +1204,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "– decide when to (28)………….each stage at the beginning – make more efforts to (29)……………….with the camera"
-     }
+     },
+     "keyRaw": "experiment"
     },
     {
      "number": 30,
@@ -1177,7 +1227,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "do not make the film too (30)………………………"
-     }
+     },
+     "keyRaw": "long"
     }
    ],
    "provenance": {
@@ -1222,8 +1273,10 @@
      "– research assistants, administrative and technical positions"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1246,7 +1299,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• more than (31) ␦ times as big as the UK"
-     }
+     },
+     "keyRaw": "58"
     },
     {
      "number": 32,
@@ -1268,7 +1322,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• most of the area is classified as (32) ␦"
-     }
+     },
+     "keyRaw": "desert"
     },
     {
      "number": 33,
@@ -1291,7 +1346,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• (33) ␦ is integrated with technical support"
-     }
+     },
+     "keyRaw": "science"
     },
     {
      "number": 34,
@@ -1314,7 +1370,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• stations contain accommodation, work areas, a kitchen, a (34) ␦ and a gym"
-     }
+     },
+     "keyRaw": "small hospital"
     },
     {
      "number": 35,
@@ -1337,7 +1394,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• supplies were brought to Zero One station by sledge from a (35) ␦ at the edge of the ice 15 km away"
-     }
+     },
+     "keyRaw": "ship"
     },
     {
      "number": 36,
@@ -1360,7 +1418,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• problem of snow build-ups solved by building stations on (36) ␦ with adjustable legs"
-     }
+     },
+     "keyRaw": "platforms"
     },
     {
      "number": 37,
@@ -1383,7 +1442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• average daily requirement for an adult in Antarctica is approximately (37) ␦ kilocalories"
-     }
+     },
+     "keyRaw": "3500"
     },
     {
      "number": 38,
@@ -1406,7 +1466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "– measuring changes in the ice-cap (because of effects on sea levels and (38) ␦ )"
-     }
+     },
+     "keyRaw": "currents"
     },
     {
      "number": 39,
@@ -1429,7 +1490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "– analysing air from bubbles in ice to measure (39) ␦ caused by human activity"
-     }
+     },
+     "keyRaw": "pollution"
     },
     {
      "number": 40,
@@ -1452,7 +1514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Many openings for (40) ␦ people including"
-     }
+     },
+     "keyRaw": "young"
     }
    ],
    "provenance": {
@@ -1511,11 +1574,61 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 37,
- "quarantinedCount": 1,
- "status": "flagged",
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

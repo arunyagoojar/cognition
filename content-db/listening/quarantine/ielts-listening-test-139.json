@@ -1,0 +1,49 @@
+{
+ "slug": "ielts-listening-test-139",
+ "status": "quarantined",
+ "sourceSha256": "6334dd1fbc147437252983fdf30f533b1ceee2ebf5960217e48d5c9a24a3f6fa",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Both ______ and ______ are the local products that are promoted and marketed every year with a variety of events and festivals.",
+    "answer": "strawberries, grapes",
+    "rawExcerpt": "20. Both ␦ and ␦ are the local products that are promoted and marketed every year with a variety of events and festivals.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 35,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "One critical problem of carrying out questionnaires is that they are deficient in both ______ and ______",
+    "answer": "information, marketing",
+    "rawExcerpt": "35. One critical problem of carrying out questionnaires is that they are deficient in both ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     20,
+     35
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

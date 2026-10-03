@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-33",
  "title": "IELTS Listening Test 33",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-33/index.html",
-   "sha256": "c7cd43c97cb82f6152db47133eb8b853e286d150d5c7faafba5d198c6a57fcfa",
-   "manifestHashMatch": true,
+   "sha256": "4494ba553fd082cc7ae125263647d778bdc54172d0b7a1d5f70320381cc8af92",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-33/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -375,8 +375,10 @@
      "Date of birth : 25th (5) ␦ , 1977"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -398,7 +400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address : (1) ␦"
-     }
+     },
+     "keyRaw": "black"
     },
     {
      "number": 2,
@@ -420,7 +423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Post code : (2) ␦"
-     }
+     },
+     "keyRaw": "2085"
     },
     {
      "number": 3,
@@ -443,7 +447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Telephone : 98356712(home), (3) (work) ␦"
-     }
+     },
+     "keyRaw": "94561309"
     },
     {
      "number": 4,
@@ -465,7 +470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Driver’s licence number : (4) ␦"
-     }
+     },
+     "keyRaw": "2020BD"
     },
     {
      "number": 5,
@@ -488,40 +494,14 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Date of birth : 25th (5) ␦ , 1977"
-     }
+     },
+     "keyRaw": "July"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-5\nComplete the form below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer.\nVIDEO LIBRARY APPLICATION FORM"
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 1,
-   "startQ": 6,
-   "endQ": 8,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle THREE letters A-F. What types of films does Louise like? A Action B Comedies C Musicals D Romance E Westerns F Wildlife",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle THREE letters A-F. What types of films does Louise like?\nA Action\nB Comedies\nC Musicals\nD Romance\nE Westerns\nF Wildlife"
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[5]",
-    "rawExcerpt": "Questions 6-8\nCircle THREE letters A-F."
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },
   {
@@ -543,8 +523,10 @@
      "9. How much does it cost to join the library? ␦\n10. When will Louise’s card be ready? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -569,7 +551,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "9. How much does it cost to join the library? ␦"
-     }
+     },
+     "keyRaw": "$25"
     },
     {
      "number": 10,
@@ -594,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "10. When will Louise’s card be ready? ␦"
-     }
+     },
+     "keyRaw": "next week"
     }
    ],
    "provenance": {
@@ -627,8 +611,10 @@
      "Climbed highest peak in (13) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -651,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Prepared a (11) ␦ for the trip"
-     }
+     },
+     "keyRaw": "route book"
     },
     {
      "number": 12,
@@ -673,7 +660,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Total length of trip (12) ␦"
-     }
+     },
+     "keyRaw": "900 miles"
     },
     {
      "number": 13,
@@ -695,7 +683,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Climbed highest peak in (13) ␦"
-     }
+     },
+     "keyRaw": "North America"
     }
    ],
    "provenance": {
@@ -721,8 +710,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -752,7 +743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "14. What took the group by surprise?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
@@ -782,70 +774,13 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. How did Charles feel about having to change routes?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Questions 14 and 15\nCircle the correct letter A-C."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g06",
-   "part": 2,
-   "startQ": 16,
-   "endQ": 18,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle THREE letters A-F.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle THREE letters A-F."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "What does Charles say about his friends?\nA He met them at one stage on the trip\nB They kept all their meeting arrangements\nC One of them helped arrange the transport\nD One of them owned the hotel they stayed in\nE Some of them travelled with him\nF Only one group lasted 96 days"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[15]",
-    "rawExcerpt": "Questions 16-18\nCircle THREE letters A-F."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g07",
-   "part": 2,
-   "startQ": 19,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle TWO letters A-E.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle TWO letters A-E."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "What does Charles say about the donkeys?\nA He rode them when he was tired\nB He named them after places\nC One of them died\nD They behaved unpredictably\nE They were very small"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[17]",
-    "rawExcerpt": "Questions 19 and 20\nCircle TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -899,8 +834,10 @@
      "(25) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -921,7 +858,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(21)……………….."
-     }
+     },
+     "keyRaw": "(on) friday"
     },
     {
      "number": 22,
@@ -942,7 +880,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(22)……………….."
-     }
+     },
+     "keyRaw": "biology"
     },
     {
      "number": 23,
@@ -963,7 +902,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(23)………………."
-     }
+     },
+     "keyRaw": "57"
     },
     {
      "number": 24,
@@ -984,7 +924,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(24)……………….."
-     }
+     },
+     "keyRaw": "43"
     },
     {
      "number": 25,
@@ -1005,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(25)……………….."
-     }
+     },
+     "keyRaw": "wednesday"
     }
    ],
    "provenance": {
@@ -1033,8 +975,10 @@
      "26. What is Jane’s study strategy in lectures? ␦\n27. What is Tim’s study strategy for reading? ␦\n28. What is the subject of Tim’s first lecture? ␦\n29. What is the title of Tim’s first essay? ␦\n30. What is the subject of Jane’s first essay? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1059,7 +1003,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "26. What is Jane’s study strategy in lectures? ␦"
-     }
+     },
+     "keyRaw": "records them"
     },
     {
      "number": 27,
@@ -1084,7 +1029,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. What is Tim’s study strategy for reading? ␦"
-     }
+     },
+     "keyRaw": "skimming"
     },
     {
      "number": 28,
@@ -1109,7 +1055,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "28. What is the subject of Tim’s first lecture? ␦"
-     }
+     },
+     "keyRaw": "French Revolution"
     },
     {
      "number": 29,
@@ -1134,7 +1081,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "29. What is the title of Tim’s first essay? ␦"
-     }
+     },
+     "keyRaw": "why study history"
     },
     {
      "number": 30,
@@ -1159,7 +1107,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "30. What is the subject of Jane’s first essay? ␦"
-     }
+     },
+     "keyRaw": "animal language"
     }
    ],
    "provenance": {
@@ -1226,8 +1175,10 @@
      "(36) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1248,7 +1199,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(31)……………………."
-     }
+     },
+     "keyRaw": "4 month certificate"
     },
     {
      "number": 32,
@@ -1270,7 +1222,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(32)………………in sports administration"
-     }
+     },
+     "keyRaw": "employment/ job"
     },
     {
      "number": 33,
@@ -1291,7 +1244,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(33)………………….."
-     }
+     },
+     "keyRaw": "one year diploma"
     },
     {
      "number": 34,
@@ -1312,7 +1266,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(34)…………………"
-     }
+     },
+     "keyRaw": "none"
     },
     {
      "number": 35,
@@ -1333,7 +1288,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(35)………………….."
-     }
+     },
+     "keyRaw": "6 month certificate"
     },
     {
      "number": 36,
@@ -1350,11 +1306,12 @@
      "blankContext": "line: (36) ␦",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36) ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1362,7 +1319,7 @@
     "rawExcerpt": "Part 3: Questions 31-36\nComplete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer."
    },
    "partUnusual": true,
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g11",
@@ -1389,8 +1346,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test33.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1407,11 +1366,12 @@
      "blankContext": "line: (37) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(37) ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 38,
@@ -1428,11 +1388,12 @@
      "blankContext": "line: (38) ␦",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(38) ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 39,
@@ -1449,11 +1410,12 @@
      "blankContext": "line: (39) ␦",
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(39) ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 40,
@@ -1470,11 +1432,12 @@
      "blankContext": "line: (40) ␦",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1487,7 +1450,7 @@
     40
    ],
    "rangeReconciled": true,
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1556,11 +1519,219 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 36,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(36) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 37,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "F",
+    "rawExcerpt": "(37) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 38,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(38) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 39,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "G",
+    "rawExcerpt": "(39) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 40,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "D",
+    "rawExcerpt": "(40) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 6,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 7,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
+   "evidence": {
+    "questionsOutsideTheirSection": [
+     31,
+     32,
+     33,
+     34,
+     35
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 27,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8,
+     16,
+     17,
+     18,
+     19,
+     20,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 32,
- "quarantinedCount": 3,
- "status": "flagged",
+ "verifiedQuestionCount": 27,
+ "quarantinedCount": 18,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

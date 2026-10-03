@@ -7,19 +7,19 @@
  "slug": "ielts-listening-test-133",
  "title": "IELTS Listening Test 133",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-133/index.html",
-   "sha256": "e1bb1547218ee43e97d7c092175c1b3855a128d458e2f58b150914bfb92a05ce",
-   "manifestHashMatch": true,
+   "sha256": "df08c770dc5b1cf1c016d44fd4770de0eed4b752f0067f53781e5f8298e3ec63",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-133/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
  },
  "cambridgeIdentity": [],
  "hubEnumerated": true,
- "duplicateOf": null,
+ "duplicateOf": "ielts-listening-6",
  "contentFingerprint": "e17cd94c38350cac7ccc878c3125efeb7205a18cd6dd17d943b291d1952c5beb",
  "audio": {
   "status": "resolved",
@@ -396,8 +396,10 @@
      "First Berlin course begins: (5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Customer’s name: (1) ␦"
-     }
+     },
+     "keyRaw": "John Petterson"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Maximum class size: (2) ␦"
-     }
+     },
+     "keyRaw": "12"
     },
     {
      "number": 3,
@@ -463,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Hours of study per day (weekdays): (3) ␦"
-     }
+     },
+     "keyRaw": "5"
     },
     {
      "number": 4,
@@ -485,7 +490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Most expensive accommodation: (4) ␦"
-     }
+     },
+     "keyRaw": "bed and breakfast"
     },
     {
      "number": 5,
@@ -507,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "First Berlin course begins: (5) ␦"
-     }
+     },
+     "keyRaw": "8 June"
     }
    ],
    "provenance": {
@@ -536,14 +543,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "computer B computer disks C dictionary D translation exercises"
+      "text": "computer"
+     },
+     {
+      "letter": "B",
+      "text": "computer disks"
+     },
+     {
+      "letter": "C",
+      "text": "dictionary"
+     },
+     {
+      "letter": "D",
+      "text": "translation exercises"
      },
      {
       "letter": "E",
       "text": "textbooks"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -560,7 +581,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO things does he need to buy for the course?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 7,
@@ -577,7 +599,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E. Which TWO things does he need to buy for the course?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -585,6 +608,43 @@
     "rawExcerpt": "Questions 6 and 7\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:6-7",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO things does he need to buy for the course?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "computer"
+     },
+     {
+      "letter": "B",
+      "text": "computer disks"
+     },
+     {
+      "letter": "C",
+      "text": "dictionary"
+     },
+     {
+      "letter": "D",
+      "text": "translation exercises"
+     },
+     {
+      "letter": "E",
+      "text": "textbooks"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -608,8 +668,10 @@
      "10. To get a free course you need to find ␦ other people."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -632,7 +694,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "8. Without the student discount, the course costs ␦ Euros."
-     }
+     },
+     "keyRaw": "550"
     },
     {
      "number": 9,
@@ -657,7 +720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "9. Payment can be made by credit card or by ␦"
-     }
+     },
+     "keyRaw": "bank transfer"
     },
     {
      "number": 10,
@@ -680,7 +744,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "10. To get a free course you need to find ␦ other people."
-     }
+     },
+     "keyRaw": "five"
     }
    ],
    "provenance": {
@@ -713,8 +778,10 @@
      "15. A Danish study shows that hormones are over ␦ more dangerous than was previously thought."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -737,7 +804,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "11. Ministers and officials put the ␦ of the agriculture business first."
-     }
+     },
+     "keyRaw": "profits"
     },
     {
      "number": 12,
@@ -760,7 +828,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "12. Hormones make cattle ␦ thus making meat production more profitable."
-     }
+     },
+     "keyRaw": "grow faster"
     },
     {
      "number": 13,
@@ -783,7 +852,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "13. The use of hormones was banned over ␦ ago in Europe."
-     }
+     },
+     "keyRaw": "20 years"
     },
     {
      "number": 14,
@@ -808,7 +878,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "14. The USA and Canada asked the WTO to declare the ban ␦"
-     }
+     },
+     "keyRaw": "illegal"
     },
     {
      "number": 15,
@@ -831,7 +902,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "15. A Danish study shows that hormones are over ␦ more dangerous than was previously thought."
-     }
+     },
+     "keyRaw": "200 times"
     }
    ],
    "provenance": {
@@ -860,8 +932,10 @@
      "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which on paper does not allow the use of (18) ␦ However, when some EU inspectors visited a Brazilian farm, they found a (19) ␦ of the banned substance. This is not the first food scandal we have had in this country. Several months ago, a well-known chocolate company found out its sweets were contaminated with (20) ␦ of salmonella."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -900,7 +974,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which o"
-     }
+     },
+     "keyRaw": "imported"
     },
     {
      "number": 17,
@@ -939,7 +1014,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which o"
-     }
+     },
+     "keyRaw": "40%"
     },
     {
      "number": 18,
@@ -978,7 +1054,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which o"
-     }
+     },
+     "keyRaw": "(growth) hormones"
     },
     {
      "number": 19,
@@ -1017,7 +1094,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which o"
-     }
+     },
+     "keyRaw": "large stockpile"
     },
     {
      "number": 20,
@@ -1056,7 +1134,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "The government has not been testing beef which is (16) ␦ much to the anger of Mr. Verral. About (17) ␦ of the beef which British people eat comes from abroad, some of it from Brazil, a country which o"
-     }
+     },
+     "keyRaw": "a rare form"
     }
    ],
    "provenance": {
@@ -1086,8 +1165,10 @@
      "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also important to choose (23) ␦ you enjoy. Top achievers spend over (24) ␦ of their working hours doing work they prefer. They want (25) ␦ not just external rewards."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1126,7 +1207,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also import"
-     }
+     },
+     "keyRaw": "decline"
     },
     {
      "number": 22,
@@ -1165,7 +1247,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also import"
-     }
+     },
+     "keyRaw": "strict limits"
     },
     {
      "number": 23,
@@ -1204,7 +1287,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also import"
-     }
+     },
+     "keyRaw": "a career"
     },
     {
      "number": 24,
@@ -1243,7 +1327,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also import"
-     }
+     },
+     "keyRaw": "two-thirds"
     },
     {
      "number": 25,
@@ -1282,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Although it is thought that people who bring work home every night would be top achievers, they tend to peak early and then go into (21) ␦ High achievers work hard, but within (22) ␦ It is also import"
-     }
+     },
+     "keyRaw": "internal satisfaction"
     }
    ],
    "provenance": {
@@ -1308,8 +1394,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1339,7 +1427,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "26. Top achievers take risks"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
@@ -1369,7 +1458,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "27. Very often perfectionists"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1399,7 +1489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "28. When top achievers make mistakes"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1429,7 +1520,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "29. Top achievers tend to be people who"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1459,7 +1551,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "30. Loners"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1486,8 +1579,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1517,7 +1612,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "31. Exposure to bright light"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 32,
@@ -1547,7 +1643,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "32. Melatonin’s role in SAD is"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 33,
@@ -1577,7 +1674,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "33. Subsyndromal SAD"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1607,7 +1705,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "34. You would expect the typical SAD sufferer to be"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1635,8 +1734,10 @@
      "35. Depression probably has a ␦ as it seems to run in the family.\n36. Many SAD sufferers have a ␦ craving.\n37. Serotonin has a ␦ effect on the brain.\n38. The serotonin system of the brain cannot regulate itself well during ␦\n39. Some neurotransmitters may be ␦ in certain cases.\n40. Many SAD patients put on fat in late autumn, just as ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1659,7 +1760,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "35. Depression probably has a ␦ as it seems to run in the family."
-     }
+     },
+     "keyRaw": "genetic component"
     },
     {
      "number": 36,
@@ -1682,7 +1784,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "36. Many SAD sufferers have a ␦ craving."
-     }
+     },
+     "keyRaw": "carbohydrate"
     },
     {
      "number": 37,
@@ -1705,7 +1808,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "37. Serotonin has a ␦ effect on the brain."
-     }
+     },
+     "keyRaw": "soothing"
     },
     {
      "number": 38,
@@ -1730,7 +1834,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "38. The serotonin system of the brain cannot regulate itself well during ␦"
-     }
+     },
+     "keyRaw": "winter"
     },
     {
      "number": 39,
@@ -1753,7 +1858,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "39. Some neurotransmitters may be ␦ in certain cases."
-     }
+     },
+     "keyRaw": "inadequate"
     },
     {
      "number": 40,
@@ -1778,7 +1884,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "40. Many SAD patients put on fat in late autumn, just as ␦"
-     }
+     },
+     "keyRaw": "hibernations"
     }
    ],
    "provenance": {
@@ -1821,6 +1928,23 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
- "schemaErrors": []
+ "status": "duplicate",
+ "fullTestEligible": false,
+ "schemaErrors": [],
+ "duplicateEvidence": {
+  "reasonCode": "CAMBRIDGE_NEAR_DUPLICATE",
+  "cambridgeIdentity": [],
+  "conflictingKeyItems": [
+   {
+    "number": 5,
+    "this": "8 June",
+    "canonical": "8th June"
+   },
+   {
+    "number": 38,
+    "this": "winter",
+    "canonical": "(the) winter"
+   }
+  ]
+ }
 }

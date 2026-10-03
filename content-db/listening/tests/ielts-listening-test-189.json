@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-189",
  "title": "IELTS Listening Test 189",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-189/index.html",
-   "sha256": "2d94602745e7d5572650ee9887b97f2ea5ea512eb7a86c45a7cf144778cc914c",
-   "manifestHashMatch": true,
+   "sha256": "23954763671ea3c9e90e8d9025dca0afa860305694d61548d5ace5c42af4eee8",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-189/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -418,8 +418,10 @@
      "• cost of session (no camping): (10) £ ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -442,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• making sure the beach does not have (1) ␦ on it"
-     }
+     },
+     "keyRaw": "Litter"
     },
     {
      "number": 2,
@@ -464,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• no (2) ␦"
-     }
+     },
+     "keyRaw": "Dogs"
     },
     {
      "number": 3,
@@ -487,7 +491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• next task is taking action to attract (3) ␦ to the place"
-     }
+     },
+     "keyRaw": "Insects"
     },
     {
      "number": 4,
@@ -509,7 +514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• identifying types of (4) ␦"
-     }
+     },
+     "keyRaw": "Butterflies"
     },
     {
      "number": 5,
@@ -531,7 +537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• building a new (5) ␦"
-     }
+     },
+     "keyRaw": "Wall"
     },
     {
      "number": 6,
@@ -553,7 +560,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• walk across the sands and reach the (6) ␦"
-     }
+     },
+     "keyRaw": "Island"
     },
     {
      "number": 7,
@@ -575,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• wear appropriate (7) ␦"
-     }
+     },
+     "keyRaw": "Boots"
     },
     {
      "number": 8,
@@ -598,7 +607,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• suitable for (8) ␦ to participate in"
-     }
+     },
+     "keyRaw": "Beginners"
     },
     {
      "number": 9,
@@ -621,7 +631,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• making (9) ␦ out of wood"
-     }
+     },
+     "keyRaw": "Spoons"
     },
     {
      "number": 10,
@@ -644,7 +655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• cost of session (no camping): (10) £ ␦"
-     }
+     },
+     "keyRaw": "35/ thirty five"
     }
    ],
    "provenance": {
@@ -670,8 +682,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -701,7 +715,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. What is the maximum number of people who can stand on each side of the boat?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -731,7 +746,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. What color are the tour boats?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -761,7 +777,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. Which lunchbox is suitable for someone who does not eat meat or fish?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -791,7 +808,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. What should people do with their litter?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -820,14 +838,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "why it was built B who built it C how long it took to build D who staffed it"
+      "text": "why it was built"
+     },
+     {
+      "letter": "B",
+      "text": "who built it"
+     },
+     {
+      "letter": "C",
+      "text": "how long it took to build"
+     },
+     {
+      "letter": "D",
+      "text": "who staffed it"
      },
      {
       "letter": "E",
       "text": "what it was built with"
      }
+    ],
+    "optionPreface": [
+     "Which TWO features of the lighthouse does Lou mention?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -838,13 +872,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A or D",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A or D"
     },
     {
      "number": 16,
@@ -855,13 +890,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A or D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A or D"
     }
    ],
    "provenance": {
@@ -869,6 +905,43 @@
     "rawExcerpt": "Questions 15 and 16\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:15-16",
+    "answerSet": [
+     "A",
+     "D"
+    ],
+    "prompt": "Which TWO features of the lighthouse does Lou mention?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "why it was built"
+     },
+     {
+      "letter": "B",
+      "text": "who built it"
+     },
+     {
+      "letter": "C",
+      "text": "how long it took to build"
+     },
+     {
+      "letter": "D",
+      "text": "who staffed it"
+     },
+     {
+      "letter": "E",
+      "text": "what it was built with"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -891,14 +964,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "sea eagles B fur seals C dolphins D whales"
+      "text": "sea eagles"
+     },
+     {
+      "letter": "B",
+      "text": "fur seals"
+     },
+     {
+      "letter": "C",
+      "text": "dolphins"
+     },
+     {
+      "letter": "D",
+      "text": "whales"
      },
      {
       "letter": "E",
       "text": "penguins"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -909,13 +996,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B or C",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO types of creature might come close to the boat?"
-     }
+     },
+     "keyRaw": "B or C"
     },
     {
      "number": 18,
@@ -926,13 +1014,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B or C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO types of creature might come close to the boat?"
-     }
+     },
+     "keyRaw": "B or C"
     }
    ],
    "provenance": {
@@ -940,6 +1029,43 @@
     "rawExcerpt": "Questions 17 and 18\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:17-18",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO types of creature might come close to the boat?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "sea eagles"
+     },
+     {
+      "letter": "B",
+      "text": "fur seals"
+     },
+     {
+      "letter": "C",
+      "text": "dolphins"
+     },
+     {
+      "letter": "D",
+      "text": "whales"
+     },
+     {
+      "letter": "E",
+      "text": "penguins"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -962,14 +1088,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Only large tourist boats can visit them. B The entrances to them are often blocked. C It is too dangerous for individuals to go near them D Someone will explain what is inside them."
+      "text": "Only large tourist boats can visit them."
+     },
+     {
+      "letter": "B",
+      "text": "The entrances to them are often blocked."
+     },
+     {
+      "letter": "C",
+      "text": "It is too dangerous for individuals to go near them"
+     },
+     {
+      "letter": "D",
+      "text": "Someone will explain what is inside them."
      },
      {
       "letter": "E",
       "text": "They cannot be reached on foot."
      }
+    ],
+    "optionPreface": [
+     "Which TWO points does Lou make about the caves?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -980,13 +1122,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "D or E",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "D or E"
     },
     {
      "number": 20,
@@ -997,13 +1140,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "D or E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "D or E"
     }
    ],
    "provenance": {
@@ -1011,6 +1155,43 @@
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:19-20",
+    "answerSet": [
+     "D",
+     "E"
+    ],
+    "prompt": "Which TWO points does Lou make about the caves?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Only large tourist boats can visit them."
+     },
+     {
+      "letter": "B",
+      "text": "The entrances to them are often blocked."
+     },
+     {
+      "letter": "C",
+      "text": "It is too dangerous for individuals to go near them"
+     },
+     {
+      "letter": "D",
+      "text": "Someone will explain what is inside them."
+     },
+     {
+      "letter": "E",
+      "text": "They cannot be reached on foot."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1032,8 +1213,10 @@
      "Work experience for veterinary science students"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1063,7 +1246,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "21. What problem did both Diana and Tim have when arranging their work experience?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -1093,7 +1277,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "22. Tim was pleased to be able to help"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1123,7 +1308,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "23. Diana says the sheep on her farm"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1153,7 +1339,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "24. What did the students learn about adding supplements to chicken feed?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1183,7 +1370,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "25. What happened when Diana was working with dairy cows?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1213,7 +1401,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "26. What did both farmers mention about vets and farming?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1242,14 +1431,34 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Tim found this easier than expected. B Tim thought this was not very clearly organised. C Diana may do some further study on this. D They both found the reading required for this was difficult. E Tim was shocked at something he learned on this module."
+      "text": "Tim found this easier than expected."
+     },
+     {
+      "letter": "B",
+      "text": "Tim thought this was not very clearly organised."
+     },
+     {
+      "letter": "C",
+      "text": "Diana may do some further study on this."
+     },
+     {
+      "letter": "D",
+      "text": "They both found the reading required for this was difficult."
+     },
+     {
+      "letter": "E",
+      "text": "Tim was shocked at something he learned on this module."
      },
      {
       "letter": "F",
       "text": "They were both surprised how little is known about some aspects of this."
      }
+    ],
+    "optionPreface": [
+     "Opinions"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1266,7 +1475,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "27. Medical terminology ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1283,7 +1493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "28. Diet and nutrition ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 29,
@@ -1300,7 +1511,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "29. Animal disease ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 30,
@@ -1317,7 +1529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "30. Wildlife medication ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1325,6 +1538,36 @@
     "rawExcerpt": "Questions 27-30\nWhat opinion do the students give about each of the following modules on their veterinary science course?\nChoose FOUR answers from the box and write the correct letter, A-F, next to qu"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Opinions",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Tim found this easier than expected."
+     },
+     {
+      "letter": "B",
+      "text": "Tim thought this was not very clearly organised."
+     },
+     {
+      "letter": "C",
+      "text": "Diana may do some further study on this."
+     },
+     {
+      "letter": "D",
+      "text": "They both found the reading required for this was difficult."
+     },
+     {
+      "letter": "E",
+      "text": "Tim was shocked at something he learned on this module."
+     },
+     {
+      "letter": "F",
+      "text": "They were both surprised how little is known about some aspects of this."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1364,8 +1607,10 @@
      "– research has shown that Alzheimer’s sufferers experience less (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1387,7 +1632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Mazes are a type of (31) ␦"
-     }
+     },
+     "keyRaw": "Puzzle"
     },
     {
      "number": 32,
@@ -1410,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "– (32) ␦ is needed to navigate through a maze"
-     }
+     },
+     "keyRaw": "Logic"
     },
     {
      "number": 33,
@@ -1432,7 +1679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "– the word ‘maze’ is derived from a word meaning a feeling of (33) ␦"
-     }
+     },
+     "keyRaw": "Confusion"
     },
     {
      "number": 34,
@@ -1455,7 +1703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "– they have frequently been used in (34) ␦ and prayer"
-     }
+     },
+     "keyRaw": "Meditation"
     },
     {
      "number": 35,
@@ -1478,7 +1727,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• Ancient carvings on (35) ␦ have been found across many cultures"
-     }
+     },
+     "keyRaw": "Stone"
     },
     {
      "number": 36,
@@ -1500,7 +1750,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• Ancient Greeks used the symbol on (36) ␦"
-     }
+     },
+     "keyRaw": "Coins"
     },
     {
      "number": 37,
@@ -1523,7 +1774,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• The largest surviving example of a turf labyrinth once had a big (37) ␦ at its centre"
-     }
+     },
+     "keyRaw": "Tree"
     },
     {
      "number": 38,
@@ -1546,7 +1798,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "• Believed to have a beneficial impact on mental and physical health, e.g., walking a maze can reduce a person’s (38) ␦ rate"
-     }
+     },
+     "keyRaw": "Breathing"
     },
     {
      "number": 39,
@@ -1568,7 +1821,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "– patients who can’t walk can use ‘finger labyrinths’ made from (39) ␦"
-     }
+     },
+     "keyRaw": "Paper"
     },
     {
      "number": 40,
@@ -1590,7 +1844,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "– research has shown that Alzheimer’s sufferers experience less (40) ␦"
-     }
+     },
+     "keyRaw": "Anxiety"
     }
    ],
    "provenance": {
@@ -1642,6 +1897,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

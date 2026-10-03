@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-72",
  "title": "IELTS Listening Test 72",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-72/index.html",
-   "sha256": "963adf33d37d9b0f473599bc81448faeb704cecffd19307362cfc737978a6c77",
-   "manifestHashMatch": true,
+   "sha256": "04238bfab25a50a1db4ce4555fe2f41dd951107cc5d56c6f438b6e37d046438b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-72/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -406,8 +406,10 @@
      "Opinion of cost of accommodation: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -429,7 +431,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Total number of visits: (1) ␦"
-     }
+     },
+     "keyRaw": "3"
     },
     {
      "number": 2,
@@ -451,7 +454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Best thing about the city: (2) ␦"
-     }
+     },
+     "keyRaw": "amazing weather"
     },
     {
      "number": 3,
@@ -473,7 +477,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Favorite attraction: (3) ␦"
-     }
+     },
+     "keyRaw": "town hall"
     },
     {
      "number": 4,
@@ -495,7 +500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Best thing about destination’s dining options: (4) ␦"
-     }
+     },
+     "keyRaw": "variety"
     },
     {
      "number": 5,
@@ -517,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Method of transport to destination: by (5) ␦"
-     }
+     },
+     "keyRaw": "plane"
     },
     {
      "number": 6,
@@ -539,7 +546,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Age group: (6) ␦"
-     }
+     },
+     "keyRaw": "over 40"
     },
     {
      "number": 7,
@@ -561,7 +569,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Income level: (7) ␦"
-     }
+     },
+     "keyRaw": "mid-range"
     },
     {
      "number": 8,
@@ -582,7 +591,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "tourism"
     },
     {
      "number": 9,
@@ -604,7 +614,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Occupation: (9) ␦"
-     }
+     },
+     "keyRaw": "computer programmer"
     },
     {
      "number": 10,
@@ -626,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Opinion of cost of accommodation: (10) ␦"
-     }
+     },
+     "keyRaw": "good value"
     }
    ],
    "provenance": {
@@ -659,8 +671,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test72.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -677,7 +691,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "11. Science Museum ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -694,7 +709,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. National History Museum ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -711,7 +727,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "13. Car Park ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 14,
@@ -728,7 +745,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. Shopping Mall ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -745,12 +763,39 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "15. Primary School ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[4]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the map below. Write the correct letter A-E next to questions 11-15."
+   },
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -774,14 +819,36 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "New entrance B Free lunch provided C Free information provided D Increase in size E Additional signs F New exhibitions"
+      "text": "New entrance"
+     },
+     {
+      "letter": "B",
+      "text": "Free lunch provided"
+     },
+     {
+      "letter": "C",
+      "text": "Free information provided"
+     },
+     {
+      "letter": "D",
+      "text": "Increase in size"
+     },
+     {
+      "letter": "E",
+      "text": "Additional signs"
+     },
+     {
+      "letter": "F",
+      "text": "New exhibitions"
      },
      {
       "letter": "G",
       "text": "New structure"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -798,7 +865,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "16. Car Park ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 17,
@@ -815,7 +883,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "17. Primary School ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 18,
@@ -832,7 +901,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "18. Science Museum ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -849,7 +919,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "19. National History Museum ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 20,
@@ -866,7 +937,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "20. Shopping Mall ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -874,6 +946,40 @@
     "rawExcerpt": "Questions 16-20\nWhat is the improvement of each main point of interest in the area?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "New entrance"
+     },
+     {
+      "letter": "B",
+      "text": "Free lunch provided"
+     },
+     {
+      "letter": "C",
+      "text": "Free information provided"
+     },
+     {
+      "letter": "D",
+      "text": "Increase in size"
+     },
+     {
+      "letter": "E",
+      "text": "Additional signs"
+     },
+     {
+      "letter": "F",
+      "text": "New exhibitions"
+     },
+     {
+      "letter": "G",
+      "text": "New structure"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -907,12 +1013,14 @@
      "C keep on topic."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The proposal will",
       "segments": null
@@ -925,11 +1033,13 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "21. The proposal will"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The proposal will consist mostly of",
       "segments": null
@@ -942,7 +1052,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "22. The proposal will consist mostly of"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -954,6 +1066,25 @@
     23
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": "21. The proposal will",
+    "options": [
+     {
+      "letter": "A",
+      "text": "be reviewed by two examiners."
+     },
+     {
+      "letter": "B",
+      "text": "be added to the final grade."
+     },
+     {
+      "letter": "C",
+      "text": "be returned with feedback."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -975,8 +1106,10 @@
      "24. There is no need to ␦ lots of people.\n25. Pay attention to the ␦ of the final report.\n26. Prepare ␦ , one for the teaches, another for the students themselves.\n27. The deadline of the final paper is ␦\n28. The students can ␦ their topics before the beginning of April.\n29. Students deciding to change topics must deliver a ␦ to the research in advance.\n30. At the beginning of the report, the hypothesis and an outline of the ␦ are needed."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -999,7 +1132,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "24. There is no need to ␦ lots of people."
-     }
+     },
+     "keyRaw": "interview"
     },
     {
      "number": 25,
@@ -1022,7 +1156,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "25. Pay attention to the ␦ of the final report."
-     }
+     },
+     "keyRaw": "format"
     },
     {
      "number": 26,
@@ -1045,7 +1180,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "26. Prepare ␦ , one for the teaches, another for the students themselves."
-     }
+     },
+     "keyRaw": "2 copies"
     },
     {
      "number": 27,
@@ -1070,7 +1206,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "27. The deadline of the final paper is ␦"
-     }
+     },
+     "keyRaw": "May 11"
     },
     {
      "number": 28,
@@ -1093,7 +1230,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "28. The students can ␦ their topics before the beginning of April."
-     }
+     },
+     "keyRaw": "change"
     },
     {
      "number": 29,
@@ -1116,7 +1254,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "29. Students deciding to change topics must deliver a ␦ to the research in advance."
-     }
+     },
+     "keyRaw": "note"
     },
     {
      "number": 30,
@@ -1139,7 +1278,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "30. At the beginning of the report, the hypothesis and an outline of the ␦ are needed."
-     }
+     },
+     "keyRaw": "procedure"
     }
    ],
    "provenance": {
@@ -1182,8 +1322,10 @@
      "• A good scene for a water purification commercial would be (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1206,7 +1348,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• The (31) ␦ customers must travel affects the probability that they will buy the product."
-     }
+     },
+     "keyRaw": "distance"
     },
     {
      "number": 32,
@@ -1229,7 +1372,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Advertising slogans are easier to remember if there is a (32) ␦ played with them."
-     }
+     },
+     "keyRaw": "sound"
     },
     {
      "number": 33,
@@ -1252,7 +1396,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Mandy’s Candy Store appeals to people’s sense of (33) ␦ to draw in customers."
-     }
+     },
+     "keyRaw": "smell"
     },
     {
      "number": 34,
@@ -1275,7 +1420,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• To an ad campaign for digital products, it is (34) ␦ that is extremely important."
-     }
+     },
+     "keyRaw": "flexibility"
     },
     {
      "number": 35,
@@ -1298,7 +1444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• The customer’s (35) ␦ after he or she experiences the ad is most important."
-     }
+     },
+     "keyRaw": "reaction"
     },
     {
      "number": 36,
@@ -1321,7 +1468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• On international flights, it is wise for the advertisement to be displayed in the common (36) ␦ of most passengers."
-     }
+     },
+     "keyRaw": "languages"
     },
     {
      "number": 37,
@@ -1343,7 +1491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Very few young people buy (37) ␦"
-     }
+     },
+     "keyRaw": "newspaper"
     },
     {
      "number": 38,
@@ -1365,7 +1514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• The UNESCO website would be a good place to advertise for companies aiming to improve the (38) ␦"
-     }
+     },
+     "keyRaw": "environment"
     },
     {
      "number": 39,
@@ -1387,7 +1537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• One good location to place ads for sunscreen is the (39) ␦"
-     }
+     },
+     "keyRaw": "swimming pool"
     },
     {
      "number": 40,
@@ -1409,7 +1560,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• A good scene for a water purification commercial would be (40) ␦"
-     }
+     },
+     "keyRaw": "national park"
     }
    ],
    "provenance": {
@@ -1446,7 +1598,31 @@
   "fnameInputs": 37
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     23
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1455,7 +1631,8 @@
   }
  ],
  "verifiedQuestionCount": 39,
- "quarantinedCount": 0,
- "status": "flagged",
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

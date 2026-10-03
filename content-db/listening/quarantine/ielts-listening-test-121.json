@@ -1,0 +1,46 @@
+{
+ "slug": "ielts-listening-test-121",
+ "status": "quarantined",
+ "sourceSha256": "bb156b21fdb142a65ca818ce7d1024b76e9b4b50a9723483bd2981f9a908ca51",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which map shows the correct location of the seller’s house?",
+    "answer": "B",
+    "rawExcerpt": "10. Which map shows the correct location of the seller’s house?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     10
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

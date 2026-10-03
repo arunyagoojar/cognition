@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-89",
- "sourceSha256": "1d3f0f489cfb555b2cfea6151f27c6f1cdf211e22b8627ccb016c61a057b6440",
+ "status": "quarantined",
+ "sourceSha256": "6e86057b03fc4e8981aa4191fd8441588cf0ab01775dca4c685da7c3d4e646e9",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,42 @@
      15,
      16
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 15,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     15,
+     16
+    ],
+    "outOfRange": []
    }
   }
  ]

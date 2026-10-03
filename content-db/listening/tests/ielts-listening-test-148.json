@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-148",
  "title": "IELTS Listening Test 148",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-148/index.html",
-   "sha256": "e314988cc650fa1a7b4a7e57089682531419f8beafb525db08333adef61e2020",
-   "manifestHashMatch": true,
+   "sha256": "8e4f02dc609e049d7c08a6d78eb9fdbabfc7d141613de46c3ae923202a5a80c0",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-148/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "a05123c38467f4b2bb8ad10dd7cb9adfbfe7c1f1102bc4bc9dffe059607dbbbe",
+ "contentFingerprint": "6a6519b765e9f828e0a9215900449f2aaf337498f9cff8533729fa9d22ad13c6",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -428,8 +428,10 @@
      "(3) ␦ (4) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -451,7 +453,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "especially good with (1)……………."
-     }
+     },
+     "keyRaw": "babies"
     },
     {
      "number": 2,
@@ -474,7 +477,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The (2)………………Health Practice"
-     }
+     },
+     "keyRaw": "Eschol"
     },
     {
      "number": 3,
@@ -497,7 +501,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "offers (3)………………..appointments"
-     }
+     },
+     "keyRaw": "evening"
     },
     {
      "number": 4,
@@ -519,7 +524,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Dr. (4)……………"
-     }
+     },
+     "keyRaw": "Gormley"
     }
    ],
    "provenance": {
@@ -548,14 +554,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "acupuncture B employment medicals C sports injury therapy D travel advice"
+      "text": "acupuncture"
+     },
+     {
+      "letter": "B",
+      "text": "employment medicals"
+     },
+     {
+      "letter": "C",
+      "text": "sports injury therapy"
+     },
+     {
+      "letter": "D",
+      "text": "travel advice"
      },
      {
       "letter": "E",
       "text": "vaccinations"
      }
+    ],
+    "optionPreface": [
+     "Which TWO of the following are offered free of charge at Shore Lane Health Centre?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -572,7 +594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 6,
@@ -589,7 +612,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -597,6 +621,43 @@
     "rawExcerpt": "Questions 5 and 6\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:5-6",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO of the following are offered free of charge at Shore Lane Health Centre?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "acupuncture"
+     },
+     {
+      "letter": "B",
+      "text": "employment medicals"
+     },
+     {
+      "letter": "C",
+      "text": "sports injury therapy"
+     },
+     {
+      "letter": "D",
+      "text": "travel advice"
+     },
+     {
+      "letter": "E",
+      "text": "vaccinations"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -647,8 +708,10 @@
      "(9) ␦ (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 7,
@@ -671,7 +734,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "useful for people with asthma or (7)…………….problems"
-     }
+     },
+     "keyRaw": "heart"
     },
     {
      "number": 8,
@@ -694,7 +758,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "the (8)………….(Shore Lane)"
-     }
+     },
+     "keyRaw": "primary school"
     },
     {
      "number": 9,
@@ -716,7 +781,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "9th March at (9)………….."
-     }
+     },
+     "keyRaw": "4.30"
     },
     {
      "number": 10,
@@ -738,7 +804,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "for all (10)………………"
-     }
+     },
+     "keyRaw": "ages"
     }
    ],
    "provenance": {
@@ -771,8 +838,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test-148.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -789,11 +858,12 @@
      "blankContext": "line: (11) ␦",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(11) ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -810,11 +880,12 @@
      "blankContext": "line: (12) ␦",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(12) ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -831,18 +902,19 @@
      "blankContext": "line: (13) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(13) ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[10]",
     "rawExcerpt": "Part 2: Questions 11-13\nLabel the diagram below. Choose THREE answers from the box and write the correct letters A-E."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -864,14 +936,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "in box on washing machine B in cupboard on landing C in chest of drawers D next to window in living room E on shelf of back door F on top of television"
+      "text": "in box on washing machine"
+     },
+     {
+      "letter": "B",
+      "text": "in cupboard on landing"
+     },
+     {
+      "letter": "C",
+      "text": "in chest of drawers"
+     },
+     {
+      "letter": "D",
+      "text": "next to window in living room"
+     },
+     {
+      "letter": "E",
+      "text": "on shelf of back door"
+     },
+     {
+      "letter": "F",
+      "text": "on top of television"
      },
      {
       "letter": "G",
       "text": "under kitchen sink"
      }
+    ],
+    "optionPreface": [
+     "Locations"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -888,7 +984,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "14. Pillows ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -905,7 +1002,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. Washing powder ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 16,
@@ -922,7 +1020,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "16. Key ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 17,
@@ -939,7 +1038,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "17. Light bulbs ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -956,7 +1056,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "18. Map ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -964,6 +1065,40 @@
     "rawExcerpt": "Questions 14-18\nWhere can each of the following items be found?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Locations",
+    "options": [
+     {
+      "letter": "A",
+      "text": "in box on washing machine"
+     },
+     {
+      "letter": "B",
+      "text": "in cupboard on landing"
+     },
+     {
+      "letter": "C",
+      "text": "in chest of drawers"
+     },
+     {
+      "letter": "D",
+      "text": "next to window in living room"
+     },
+     {
+      "letter": "E",
+      "text": "on shelf of back door"
+     },
+     {
+      "letter": "F",
+      "text": "on top of television"
+     },
+     {
+      "letter": "G",
+      "text": "under kitchen sink"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -987,8 +1122,10 @@
      "Railway museum closed on (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -1010,7 +1147,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Phone number for takeaway pizzas – (19) ␦"
-     }
+     },
+     "keyRaw": "732281"
     },
     {
      "number": 20,
@@ -1032,7 +1170,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Railway museum closed on (20) ␦"
-     }
+     },
+     "keyRaw": "thursday"
     }
    ],
    "provenance": {
@@ -1055,29 +1194,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A completed a course",
-     "B done two years of a course",
-     "C found her course difficult",
-     "21. In her home country, Kira had\nA completed a course\nB done two years of a course\nC found her course difficult",
-     "A read faster",
-     "C change her way of thinking",
-     "22. To succeed with assignments, Kira had to\nA read faster\nB write faster\nC change her way of thinking"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In her home country, Kira had",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "completed a course"
+      },
+      {
+       "letter": "B",
+       "text": "done two years of a course"
+      },
+      {
+       "letter": "C",
+       "text": "found her course difficult"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1085,16 +1231,30 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "21. In her home country, Kira had"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "To succeed with assignments, Kira had to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "read faster"
+      },
+      {
+       "letter": "B",
+       "text": "write faster"
+      },
+      {
+       "letter": "C",
+       "text": "change her way of thinking"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1102,7 +1262,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "22. To succeed with assignments, Kira had to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1130,8 +1291,10 @@
      "23. Kira says that lecturers are easier to ␦ than those in her home country.\n24. Paul suggests that Kira may be more ␦ than when she was studying before.\n25. Kira says that students want to discuss things that worry them or that ␦ them very much."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1154,7 +1317,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "23. Kira says that lecturers are easier to ␦ than those in her home country."
-     }
+     },
+     "keyRaw": "approach"
     },
     {
      "number": 24,
@@ -1177,7 +1341,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "24. Paul suggests that Kira may be more ␦ than when she was studying before."
-     }
+     },
+     "keyRaw": "mature"
     },
     {
      "number": 25,
@@ -1200,7 +1365,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "25. Kira says that students want to discuss things that worry them or that ␦ them very much."
-     }
+     },
+     "keyRaw": "interest"
     }
    ],
    "provenance": {
@@ -1229,8 +1395,10 @@
      "26. How did the students do their practical sessions? ␦\n27. In the second semester how often did Kira work in a hospital? ␦\n28. How much full-time work did Kira do during the year? ␦\n29. Having completed the year, how does Kira feel? ␦\n30. In addition to the language, what do overseas students need to become familiar with? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1255,7 +1423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "26. How did the students do their practical sessions? ␦"
-     }
+     },
+     "keyRaw": "groups"
     },
     {
      "number": 27,
@@ -1280,7 +1449,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "27. In the second semester how often did Kira work in a hospital? ␦"
-     }
+     },
+     "keyRaw": "every 2 days"
     },
     {
      "number": 28,
@@ -1305,7 +1475,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "28. How much full-time work did Kira do during the year? ␦"
-     }
+     },
+     "keyRaw": "2 weeks"
     },
     {
      "number": 29,
@@ -1330,7 +1501,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "29. Having completed the year, how does Kira feel? ␦"
-     }
+     },
+     "keyRaw": "confident"
     },
     {
      "number": 30,
@@ -1355,7 +1527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "30. In addition to the language, what do overseas students need to become familiar with? ␦"
-     }
+     },
+     "keyRaw": "education system"
     }
    ],
    "provenance": {
@@ -1378,47 +1551,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Wildlife in city gardens",
-     "A They were concerned about the decline of one species",
-     "B They were interested in the effects of city growth",
-     "C They wanted to investigate a recent phenomenon",
-     "31. What led the group to choose their topic?\nA They were concerned about the decline of one species\nB They were interested in the effects of city growth\nC They wanted to investigate a recent phenomenon",
-     "A consulting some official documents",
-     "B taking large-scale photos",
-     "C discussions with town surveyors",
-     "32. The exact proportion of land devoted to private gardens was confirmed by\nA consulting some official documents\nB taking large-scale photos\nC discussions with town surveyors",
-     "A take part in formal interviews",
-     "B keep a record of animals they saw",
-     "C get in contact when they saw a rare species",
-     "33. The group asked garden owners to\nA take part in formal interviews\nB keep a record of animals they saw\nC get in contact when they saw a rare species",
-     "A which had a large number of animal species",
-     "B which they considered to be representative",
-     "C which had stable populations of rare animals",
-     "34. The group made their observations in gardens\nA which had a large number of animal species\nB which they considered to be representative\nC which had stable populations of rare animals",
-     "A wildlife problems in rural areas",
-     "B urban animal populations",
-     "C current gardening practices",
-     "35. The group did extensive reading on\nA wildlife problems in rural areas\nB urban animal populations\nC current gardening practices",
-     "A a lot of data has been obtained about them",
-     "B the group were most interested in them",
-     "C they best indicated general trends",
-     "36. The speaker focuses on three animal species because\nA a lot of data has been obtained about them\nB the group were most interested in them\nC they best indicated general trends"
+     "Wildlife in city gardens"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What led the group to choose their topic?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "They were concerned about the decline of one species"
+      },
+      {
+       "letter": "B",
+       "text": "They were interested in the effects of city growth"
+      },
+      {
+       "letter": "C",
+       "text": "They wanted to investigate a recent phenomenon"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1426,16 +1590,30 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "31. What led the group to choose their topic?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The exact proportion of land devoted to private gardens was confirmed by",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "consulting some official documents"
+      },
+      {
+       "letter": "B",
+       "text": "taking large-scale photos"
+      },
+      {
+       "letter": "C",
+       "text": "discussions with town surveyors"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1443,16 +1621,30 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "32. The exact proportion of land devoted to private gardens was confirmed by"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The group asked garden owners to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "take part in formal interviews"
+      },
+      {
+       "letter": "B",
+       "text": "keep a record of animals they saw"
+      },
+      {
+       "letter": "C",
+       "text": "get in contact when they saw a rare species"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1460,16 +1652,30 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "33. The group asked garden owners to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 34,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The group made their observations in gardens",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "which had a large number of animal species"
+      },
+      {
+       "letter": "B",
+       "text": "which they considered to be representative"
+      },
+      {
+       "letter": "C",
+       "text": "which had stable populations of rare animals"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1477,16 +1683,30 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "34. The group made their observations in gardens"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 35,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The group did extensive reading on",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "wildlife problems in rural areas"
+      },
+      {
+       "letter": "B",
+       "text": "urban animal populations"
+      },
+      {
+       "letter": "C",
+       "text": "current gardening practices"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1494,16 +1714,30 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "35. The group did extensive reading on"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 36,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The speaker focuses on three animal species because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a lot of data has been obtained about them"
+      },
+      {
+       "letter": "B",
+       "text": "the group were most interested in them"
+      },
+      {
+       "letter": "C",
+       "text": "they best indicated general trends"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1511,7 +1745,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "36. The speaker focuses on three animal species because"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1563,8 +1798,10 @@
      "(39) ␦ (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1585,7 +1822,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "(37)………………"
-     }
+     },
+     "keyRaw": "frogs"
     },
     {
      "number": 38,
@@ -1608,7 +1846,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "safe from (38)…………….when in cities"
-     }
+     },
+     "keyRaw": "predators"
     },
     {
      "number": 39,
@@ -1631,7 +1870,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "easy to (39)………………..them accurately"
-     }
+     },
+     "keyRaw": "count"
     },
     {
      "number": 40,
@@ -1654,7 +1894,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "– a variety of (40)………………to eat – more nesting places available"
-     }
+     },
+     "keyRaw": "seeds"
     }
    ],
    "provenance": {
@@ -1689,10 +1930,70 @@
   "fnameInputs": 30
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 11,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(11) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(12) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 13,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "E",
+    "rawExcerpt": "(13) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

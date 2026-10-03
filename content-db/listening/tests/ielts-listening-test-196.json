@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-196",
  "title": "IELTS Listening Test 196",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-196/index.html",
-   "sha256": "bdd781108d14885228f566736ddab0e2561652d67c1489e0bb0010dc20fda763",
-   "manifestHashMatch": true,
+   "sha256": "1ccd1bde2066a12a05b0931cdb4652037c31b520c16210dd223a56a1490d7fa5",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-196/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "f92e0e2511c2288edf919afb4a980307fbcf52ce3ad8c4e389acbe99f8c70f23",
+ "contentFingerprint": "4fa10aca9d397142cf39179766b5d556f3543c9263208b30dae2000510a24780",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -412,8 +412,10 @@
      "• (10) ␦ is available onsite"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -435,7 +437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Role : (1) ␦"
-     }
+     },
+     "keyRaw": "Receptionist"
     },
     {
      "number": 2,
@@ -462,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Location : Fordham (2) ␦ Centre, (3) ␦ Road, Fordham"
-     }
+     },
+     "keyRaw": "Medical"
     },
     {
      "number": 3,
@@ -489,7 +493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Location : Fordham (2) ␦ Centre, (3) ␦ Road, Fordham"
-     }
+     },
+     "keyRaw": "Chastens"
     },
     {
      "number": 4,
@@ -512,7 +517,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• making (4) ␦ and reorganising them"
-     }
+     },
+     "keyRaw": "Appointments"
     },
     {
      "number": 5,
@@ -534,7 +540,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• maintaining the internal (5) ␦"
-     }
+     },
+     "keyRaw": "Database"
     },
     {
      "number": 6,
@@ -557,7 +564,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• (6) ␦ (essential)"
-     }
+     },
+     "keyRaw": "Experience"
     },
     {
      "number": 7,
@@ -580,7 +588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• a calm and (7) ␦ manner"
-     }
+     },
+     "keyRaw": "Confident"
     },
     {
      "number": 8,
@@ -603,7 +612,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• a (8) ␦ job – further opportunities may be available"
-     }
+     },
+     "keyRaw": "Temporary"
     },
     {
      "number": 9,
@@ -626,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• hours: 7.45 am to (9) ␦ p.m. Monday to Friday"
-     }
+     },
+     "keyRaw": "1.15"
     },
     {
      "number": 10,
@@ -649,7 +660,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• (10) ␦ is available onsite"
-     }
+     },
+     "keyRaw": "Parking"
     }
    ],
    "provenance": {
@@ -671,38 +683,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A a factory.",
-     "B a private home.",
-     "C a hall of residence.",
-     "11. The museum building was originally\nA a factory.\nB a private home.\nC a hall of residence.",
-     "A teaching rooms.",
-     "B a research library.",
-     "C administration offices.",
-     "12. The university uses part of the museum building as\nA teaching rooms.\nB a research library.\nC administration offices.",
-     "A Visitors decide whether or not they wish to pay.",
-     "B Only children and students receive a discount.",
-     "C The museum charges extra for special exhibitions.",
-     "13. What does the guide say about the entrance fee?\nA Visitors decide whether or not they wish to pay.\nB Only children and students receive a discount.\nC The museum charges extra for special exhibitions.",
-     "A cameras",
-     "B coats",
-     "C bags",
-     "14. What are visitors advised to leave in the cloakroom?\nA cameras\nB coats\nC bags"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The museum building was originally",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a factory."
+      },
+      {
+       "letter": "B",
+       "text": "a private home."
+      },
+      {
+       "letter": "C",
+       "text": "a hall of residence."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -710,16 +720,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. The museum building was originally"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The university uses part of the museum building as",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "teaching rooms."
+      },
+      {
+       "letter": "B",
+       "text": "a research library."
+      },
+      {
+       "letter": "C",
+       "text": "administration offices."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -727,16 +751,30 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. The university uses part of the museum building as"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the guide say about the entrance fee?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Visitors decide whether or not they wish to pay."
+      },
+      {
+       "letter": "B",
+       "text": "Only children and students receive a discount."
+      },
+      {
+       "letter": "C",
+       "text": "The museum charges extra for special exhibitions."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -744,16 +782,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. What does the guide say about the entrance fee?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What are visitors advised to leave in the cloakroom?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "cameras"
+      },
+      {
+       "letter": "B",
+       "text": "coats"
+      },
+      {
+       "letter": "C",
+       "text": "bags"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -761,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. What are visitors advised to leave in the cloakroom?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -790,14 +843,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Parents must supervise their children. B There are new things to see. C It is closed today. D This is only for school groups. E There is a quiz for visitors. F It features something created by students. G An expert is here today."
+      "text": "Parents must supervise their children."
+     },
+     {
+      "letter": "B",
+      "text": "There are new things to see."
+     },
+     {
+      "letter": "C",
+      "text": "It is closed today."
+     },
+     {
+      "letter": "D",
+      "text": "This is only for school groups."
+     },
+     {
+      "letter": "E",
+      "text": "There is a quiz for visitors."
+     },
+     {
+      "letter": "F",
+      "text": "It features something created by students."
+     },
+     {
+      "letter": "G",
+      "text": "An expert is here today."
      },
      {
       "letter": "H",
       "text": "There is a one-way system."
      }
+    ],
+    "optionPreface": [
+     "Information"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -814,7 +895,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. Four Seasons ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 16,
@@ -831,7 +913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. Farmhouse Kitchen ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 17,
@@ -848,7 +931,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. A Year on the Farm ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 18,
@@ -865,7 +949,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. Wagon Walk ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -882,7 +967,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "19. Bees are Magic ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -899,7 +985,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. The Pond ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -907,6 +994,44 @@
     "rawExcerpt": "Questions 15-20\nWhat information does the speaker give about each of the following areas of the museum? Choose SIX answers from the box and write the correct letter, A-H, next to Questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Information",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Parents must supervise their children."
+     },
+     {
+      "letter": "B",
+      "text": "There are new things to see."
+     },
+     {
+      "letter": "C",
+      "text": "It is closed today."
+     },
+     {
+      "letter": "D",
+      "text": "This is only for school groups."
+     },
+     {
+      "letter": "E",
+      "text": "There is a quiz for visitors."
+     },
+     {
+      "letter": "F",
+      "text": "It features something created by students."
+     },
+     {
+      "letter": "G",
+      "text": "An expert is here today."
+     },
+     {
+      "letter": "H",
+      "text": "There is a one-way system."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -929,14 +1054,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "solving problems B following instructions C working cooperatively D learning through play"
+      "text": "solving problems"
+     },
+     {
+      "letter": "B",
+      "text": "following instructions"
+     },
+     {
+      "letter": "C",
+      "text": "working cooperatively"
+     },
+     {
+      "letter": "D",
+      "text": "learning through play"
      },
      {
       "letter": "E",
       "text": "developing hand-eye coordination"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -947,13 +1086,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO educational skills were shown in the video of children doing origami?"
-     }
+     },
+     "keyRaw": "B, D"
     },
     {
      "number": 22,
@@ -964,18 +1104,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO educational skills were shown in the video of children doing origami?"
-     }
+     },
+     "keyRaw": "B, D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E. Which TWO educational skills were shown in the video of children doing origami?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO educational skills were shown in the video of children doing origami?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "solving problems"
+     },
+     {
+      "letter": "B",
+      "text": "following instructions"
+     },
+     {
+      "letter": "C",
+      "text": "working cooperatively"
+     },
+     {
+      "letter": "D",
+      "text": "learning through play"
+     },
+     {
+      "letter": "E",
+      "text": "developing hand-eye coordination"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -999,14 +1177,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "demonstrated independence B asked for teacher support C developed a competitive attitude D seemed to find the activity calming E seemed pleased with the results F seemed confused"
+      "text": "demonstrated independence"
+     },
+     {
+      "letter": "B",
+      "text": "asked for teacher support"
+     },
+     {
+      "letter": "C",
+      "text": "developed a competitive attitude"
+     },
+     {
+      "letter": "D",
+      "text": "seemed to find the activity calming"
+     },
+     {
+      "letter": "E",
+      "text": "seemed pleased with the results"
+     },
+     {
+      "letter": "F",
+      "text": "seemed confused"
      },
      {
       "letter": "G",
       "text": "seemed to find the activity easy"
      }
+    ],
+    "optionPreface": [
+     "Comments"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1023,7 +1225,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "23. Sid ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 24,
@@ -1040,7 +1243,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "24. Jack ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1057,7 +1261,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. Naomi ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1074,7 +1279,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "26. Anya ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 27,
@@ -1091,7 +1297,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "27. Zara ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1099,6 +1306,40 @@
     "rawExcerpt": "Questions 23-27\nWhich comment do the students make about each of the following children in the video? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions 23-27."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Comments",
+    "options": [
+     {
+      "letter": "A",
+      "text": "demonstrated independence"
+     },
+     {
+      "letter": "B",
+      "text": "asked for teacher support"
+     },
+     {
+      "letter": "C",
+      "text": "developed a competitive attitude"
+     },
+     {
+      "letter": "D",
+      "text": "seemed to find the activity calming"
+     },
+     {
+      "letter": "E",
+      "text": "seemed pleased with the results"
+     },
+     {
+      "letter": "F",
+      "text": "seemed confused"
+     },
+     {
+      "letter": "G",
+      "text": "seemed to find the activity easy"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1114,34 +1355,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A make models that demonstrate the different stages.",
-     "B check children understand the terminology involved.",
-     "C tell children not to worry if they find the activity difficult.",
-     "28. Before starting an origami activity in class, the students think it is important for the teacher to\nA make models that demonstrate the different stages.\nB check children understand the terminology involved.\nC tell children not to worry if they find the activity difficult.",
-     "A they may not think that crafts are important.",
-     "B they may not have the necessary skills.",
-     "C they may worry that it will take up too much time.",
-     "29. The students agree that some teachers might be unwilling to use origami in class because\nA they may not think that crafts are important.\nB they may not have the necessary skills.\nC they may worry that it will take up too much time.",
-     "A to correct a particular misunderstanding",
-     "B to set a challenge",
-     "C to introduce a new concept",
-     "30. Why do the students decide to use origami in their maths teaching practice?\nA to correct a particular misunderstanding\nB to set a challenge\nC to introduce a new concept"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Before starting an origami activity in class, the students think it is important for the teacher to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "make models that demonstrate the different stages."
+      },
+      {
+       "letter": "B",
+       "text": "check children understand the terminology involved."
+      },
+      {
+       "letter": "C",
+       "text": "tell children not to worry if they find the activity difficult."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1149,16 +1392,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "28. Before starting an origami activity in class, the students think it is important for the teacher to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students agree that some teachers might be unwilling to use origami in class because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "they may not think that crafts are important."
+      },
+      {
+       "letter": "B",
+       "text": "they may not have the necessary skills."
+      },
+      {
+       "letter": "C",
+       "text": "they may worry that it will take up too much time."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1166,16 +1423,30 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. The students agree that some teachers might be unwilling to use origami in class because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Why do the students decide to use origami in their maths teaching practice?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "to correct a particular misunderstanding"
+      },
+      {
+       "letter": "B",
+       "text": "to set a challenge"
+      },
+      {
+       "letter": "C",
+       "text": "to introduce a new concept"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1183,7 +1454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "30. Why do the students decide to use origami in their maths teaching practice?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1231,8 +1503,10 @@
      "• Victor Hugo’s (40) ␦ gave ownership of the house to the city of Paris in 1927. ‘"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1255,7 +1529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• We know more about its overall (31) ␦ than about its author."
-     }
+     },
+     "keyRaw": "Plot"
     },
     {
      "number": 32,
@@ -1278,7 +1553,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• He spoke publicly about social issues, such as (32) ␦ and education."
-     }
+     },
+     "keyRaw": "Poverty"
     },
     {
      "number": 33,
@@ -1300,7 +1576,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• Victor Hugo had to live elsewhere in (33) ␦"
-     }
+     },
+     "keyRaw": "Europe"
     },
     {
      "number": 34,
@@ -1323,7 +1600,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• He used his income from the sale of some (34) ␦ he had written to buy a house on Guernsey."
-     }
+     },
+     "keyRaw": "Poetry"
     },
     {
      "number": 35,
@@ -1346,7 +1624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• The ground floor contains portraits, (35) ␦ and tapestries that he valued."
-     }
+     },
+     "keyRaw": "Drawings"
     },
     {
      "number": 36,
@@ -1369,7 +1648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• He bought cheap (36) ␦ made of wood and turned this into beautiful wall carvings."
-     }
+     },
+     "keyRaw": "Furniture"
     },
     {
      "number": 37,
@@ -1392,7 +1672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• The first floor consists of furnished areas with wallpaper and (37) ␦ that have a Chinese design."
-     }
+     },
+     "keyRaw": "Lamps"
     },
     {
      "number": 38,
@@ -1414,7 +1695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• He wrote in a room at the top of the house that had a view of the (38) ␦"
-     }
+     },
+     "keyRaw": "Harbour/ harbor"
     },
     {
      "number": 39,
@@ -1437,7 +1719,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• He entertained other writers as well as poor (39) ␦ in his house."
-     }
+     },
+     "keyRaw": "Children"
     },
     {
      "number": 40,
@@ -1460,7 +1743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Victor Hugo’s (40) ␦ gave ownership of the house to the city of Paris in 1927. ‘"
-     }
+     },
+     "keyRaw": "Relatives"
     }
    ],
    "provenance": {
@@ -1507,6 +1791,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

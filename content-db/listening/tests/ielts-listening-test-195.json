@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-195",
  "title": "IELTS Listening Test 195",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-195/index.html",
-   "sha256": "fc9fb9e65dd715c0f48db19d21eabd008810988704977993e6bb939a89498f9b",
-   "manifestHashMatch": true,
+   "sha256": "dd3e643b51fa5be74dc8a0404b7f84d4615e45dc4e37dd2106b0e46aa1a1900f",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-195/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "d04cdb162abc3340b8fec4032ab82f9f6e0b01c5928ebf4c79114f2f9b5dde36",
+ "contentFingerprint": "439f1c7c25c88bef5d36d6a3290c86af39a76354c7543387a254e1341d32a335",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -403,8 +403,10 @@
      "Type of membership: (4) ␦ membership (£ 30)"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -427,7 +429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Home address : 52 (1) ␦ Street, Peacetown"
-     }
+     },
+     "keyRaw": "Marrowfield"
     },
     {
      "number": 2,
@@ -449,7 +452,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Heard about us : from a (2) ␦"
-     }
+     },
+     "keyRaw": "Relative"
     },
     {
      "number": 3,
@@ -471,7 +475,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Reasons for joining: to enter competitions and to (3) ␦"
-     }
+     },
+     "keyRaw": "Socialize/ socialize"
     },
     {
      "number": 4,
@@ -494,7 +499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of membership: (4) ␦ membership (£ 30)"
-     }
+     },
+     "keyRaw": "Full"
     }
    ],
    "provenance": {
@@ -558,8 +564,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -580,7 +588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(5)………………"
-     }
+     },
+     "keyRaw": "Domestic life"
     },
     {
      "number": 6,
@@ -602,7 +611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Scene must show some (6)……………"
-     }
+     },
+     "keyRaw": "Clouds"
     },
     {
      "number": 7,
@@ -625,7 +635,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The (7)……………. was wrong"
-     }
+     },
+     "keyRaw": "Timing"
     },
     {
      "number": 8,
@@ -646,7 +657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(8)………………"
-     }
+     },
+     "keyRaw": "Animal magic"
     },
     {
      "number": 9,
@@ -668,7 +680,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Scene must show (9)…………….."
-     }
+     },
+     "keyRaw": "(animal) movement"
     },
     {
      "number": 10,
@@ -691,7 +704,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The photograph was too (10) …….."
-     }
+     },
+     "keyRaw": "Dark"
     }
    ],
    "provenance": {
@@ -721,14 +735,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Don’t pick more than one variety of mushroom at a time. B Don’t pick mushrooms near busy roads. C Don’t eat mushrooms given to you. D Don’t eat mushrooms while picking them."
+      "text": "Don’t pick more than one variety of mushroom at a time."
+     },
+     {
+      "letter": "B",
+      "text": "Don’t pick mushrooms near busy roads."
+     },
+     {
+      "letter": "C",
+      "text": "Don’t eat mushrooms given to you."
+     },
+     {
+      "letter": "D",
+      "text": "Don’t eat mushrooms while picking them."
      },
      {
       "letter": "E",
       "text": "Don’t pick old mushrooms."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -739,13 +767,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, C",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO warnings does Dan give about picking mushrooms?"
-     }
+     },
+     "keyRaw": "B, C"
     },
     {
      "number": 12,
@@ -756,18 +785,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO warnings does Dan give about picking mushrooms?"
-     }
+     },
+     "keyRaw": "B, C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters, A-E. Which TWO warnings does Dan give about picking mushrooms?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:11-12",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO warnings does Dan give about picking mushrooms?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Don’t pick more than one variety of mushroom at a time."
+     },
+     {
+      "letter": "B",
+      "text": "Don’t pick mushrooms near busy roads."
+     },
+     {
+      "letter": "C",
+      "text": "Don’t eat mushrooms given to you."
+     },
+     {
+      "letter": "D",
+      "text": "Don’t eat mushrooms while picking them."
+     },
+     {
+      "letter": "E",
+      "text": "Don’t pick old mushrooms."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -791,14 +858,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Mushrooms should always be peeled before eating. B Mushrooms eaten by animals may be unsafe. C Cooking destroys toxins in mushrooms. D Brightly coloured mushrooms can be edible."
+      "text": "Mushrooms should always be peeled before eating."
+     },
+     {
+      "letter": "B",
+      "text": "Mushrooms eaten by animals may be unsafe."
+     },
+     {
+      "letter": "C",
+      "text": "Cooking destroys toxins in mushrooms."
+     },
+     {
+      "letter": "D",
+      "text": "Brightly coloured mushrooms can be edible."
      },
      {
       "letter": "E",
       "text": "All poisonous mushrooms have a bad smell."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -809,13 +890,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO ideas about wild mushrooms does Dan say are correct?"
-     }
+     },
+     "keyRaw": "B, D"
     },
     {
      "number": 14,
@@ -826,13 +908,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO ideas about wild mushrooms does Dan say are correct?"
-     }
+     },
+     "keyRaw": "B, D"
     }
    ],
    "provenance": {
@@ -840,6 +923,43 @@
     "rawExcerpt": "Questions 13 and 14\nChoose TWO letters, A-E. Which TWO ideas about wild mushrooms does Dan say are correct?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:13-14",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO ideas about wild mushrooms does Dan say are correct?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Mushrooms should always be peeled before eating."
+     },
+     {
+      "letter": "B",
+      "text": "Mushrooms eaten by animals may be unsafe."
+     },
+     {
+      "letter": "C",
+      "text": "Cooking destroys toxins in mushrooms."
+     },
+     {
+      "letter": "D",
+      "text": "Brightly coloured mushrooms can be edible."
+     },
+     {
+      "letter": "E",
+      "text": "All poisonous mushrooms have a bad smell."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -855,46 +975,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A Choose wooded areas.",
-     "B Don’t disturb wildlife.",
-     "C Get there early.",
-     "15. What advice does Dan give about picking mushrooms in parks?\nA Choose wooded areas.\nB Don’t disturb wildlife.\nC Get there early.",
-     "A use a mushroom app.",
-     "B join a group.",
-     "C take a reference book.",
-     "16. Dan says it is a good idea for beginners to\nA use a mushroom app.\nB join a group.\nC take a reference book.",
-     "A selecting only fully grown mushrooms",
-     "B picking a limited amount of mushrooms",
-     "C avoiding areas where rare mushroom species grow",
-     "17. What does Dan say is important for conservation?\nA selecting only fully grown mushrooms\nB picking a limited amount of mushrooms\nC avoiding areas where rare mushroom species grow",
-     "A a huge demand for them from restaurants.",
-     "B a lack of rain in this part of the country.",
-     "C a rise in building developments locally.",
-     "18. According to Dan, some varieties of wild mushrooms are in decline because there is\nA a huge demand for them from restaurants.\nB a lack of rain in this part of the country.\nC a rise in building developments locally.",
-     "A keep them in the fridge for no more than two days.",
-     "B keep them in a brown bag in a dark room.",
-     "C leave them for a period after washing them.",
-     "19. Dan says that when storing mushrooms, people should\nA keep them in the fridge for no more than two days.\nB keep them in a brown bag in a dark room.\nC leave them for a period after washing them.",
-     "A Experiment with different recipes.",
-     "B Expect some to have a strong taste.",
-     "C Cook them for a long time.",
-     "20. What does Dan say about trying new varieties of mushrooms?\nA Experiment with different recipes.\nB Expect some to have a strong taste.\nC Cook them for a long time."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What advice does Dan give about picking mushrooms in parks?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Choose wooded areas."
+      },
+      {
+       "letter": "B",
+       "text": "Don’t disturb wildlife."
+      },
+      {
+       "letter": "C",
+       "text": "Get there early."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -902,16 +1012,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. What advice does Dan give about picking mushrooms in parks?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Dan says it is a good idea for beginners to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "use a mushroom app."
+      },
+      {
+       "letter": "B",
+       "text": "join a group."
+      },
+      {
+       "letter": "C",
+       "text": "take a reference book."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -919,16 +1043,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "16. Dan says it is a good idea for beginners to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Dan say is important for conservation?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "selecting only fully grown mushrooms"
+      },
+      {
+       "letter": "B",
+       "text": "picking a limited amount of mushrooms"
+      },
+      {
+       "letter": "C",
+       "text": "avoiding areas where rare mushroom species grow"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -936,16 +1074,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. What does Dan say is important for conservation?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "According to Dan, some varieties of wild mushrooms are in decline because there is",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a huge demand for them from restaurants."
+      },
+      {
+       "letter": "B",
+       "text": "a lack of rain in this part of the country."
+      },
+      {
+       "letter": "C",
+       "text": "a rise in building developments locally."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -953,16 +1105,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "18. According to Dan, some varieties of wild mushrooms are in decline because there is"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Dan says that when storing mushrooms, people should",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "keep them in the fridge for no more than two days."
+      },
+      {
+       "letter": "B",
+       "text": "keep them in a brown bag in a dark room."
+      },
+      {
+       "letter": "C",
+       "text": "leave them for a period after washing them."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -970,16 +1136,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "19. Dan says that when storing mushrooms, people should"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Dan say about trying new varieties of mushrooms?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Experiment with different recipes."
+      },
+      {
+       "letter": "B",
+       "text": "Expect some to have a strong taste."
+      },
+      {
+       "letter": "C",
+       "text": "Cook them for a long time."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -987,7 +1167,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. What does Dan say about trying new varieties of mushrooms?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1017,14 +1198,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Their actions were ineffective. B They are still influential today. C They have received unfair criticism. D They were proved right."
+      "text": "Their actions were ineffective."
+     },
+     {
+      "letter": "B",
+      "text": "They are still influential today."
+     },
+     {
+      "letter": "C",
+      "text": "They have received unfair criticism."
+     },
+     {
+      "letter": "D",
+      "text": "They were proved right."
      },
      {
       "letter": "E",
       "text": "Their attitude is understandable."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1035,13 +1230,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO opinions about the Luddites do the students express?"
-     }
+     },
+     "keyRaw": "A, E"
     },
     {
      "number": 22,
@@ -1052,18 +1248,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO opinions about the Luddites do the students express?"
-     }
+     },
+     "keyRaw": "A, E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[18]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E. Which TWO opinions about the Luddites do the students express?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:21-22",
+    "answerSet": [
+     "A",
+     "E"
+    ],
+    "prompt": "Which TWO opinions about the Luddites do the students express?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Their actions were ineffective."
+     },
+     {
+      "letter": "B",
+      "text": "They are still influential today."
+     },
+     {
+      "letter": "C",
+      "text": "They have received unfair criticism."
+     },
+     {
+      "letter": "D",
+      "text": "They were proved right."
+     },
+     {
+      "letter": "E",
+      "text": "Their attitude is understandable."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1087,14 +1321,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Work will be more rewarding. B Unemployment will fall. C People will want to delay retiring. D Working hours will be shorter."
+      "text": "Work will be more rewarding."
+     },
+     {
+      "letter": "B",
+      "text": "Unemployment will fall."
+     },
+     {
+      "letter": "C",
+      "text": "People will want to delay retiring."
+     },
+     {
+      "letter": "D",
+      "text": "Working hours will be shorter."
      },
      {
       "letter": "E",
       "text": "People will change jobs more frequently."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1105,13 +1353,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO predictions about the future of work are the students doubtful about?"
-     }
+     },
+     "keyRaw": "B, D"
     },
     {
      "number": 24,
@@ -1122,13 +1371,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO predictions about the future of work are the students doubtful about?"
-     }
+     },
+     "keyRaw": "B, D"
     }
    ],
    "provenance": {
@@ -1136,6 +1386,43 @@
     "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E. Which TWO predictions about the future of work are the students doubtful about?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:23-24",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO predictions about the future of work are the students doubtful about?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Work will be more rewarding."
+     },
+     {
+      "letter": "B",
+      "text": "Unemployment will fall."
+     },
+     {
+      "letter": "C",
+      "text": "People will want to delay retiring."
+     },
+     {
+      "letter": "D",
+      "text": "Working hours will be shorter."
+     },
+     {
+      "letter": "E",
+      "text": "People will change jobs more frequently."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1164,8 +1451,12 @@
       "letter": "G",
       "text": "Both employment and productivity have risen."
      }
+    ],
+    "optionPreface": [
+     "Comments"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1178,11 +1469,12 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "25. Accountants ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 26,
@@ -1195,11 +1487,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. Hairdressers ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 27,
@@ -1212,11 +1505,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. Administrative staff ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1229,11 +1523,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. Agricultural workers ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1246,11 +1541,12 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. Care workers ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 30,
@@ -1263,11 +1559,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "30. Bank clerks ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1275,7 +1572,7 @@
     "rawExcerpt": "Questions 25-30\nWhat comment do the students make about each of the following jobs? Choose SIX answers from the box and write the correct letter, A—G, next to Questions 25-30."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g09",
@@ -1313,8 +1610,10 @@
      "3. A coordinated system must be designed to create (40) ␦ in its users."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1337,7 +1636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• would aim to set up legal and (31) ␦ ways of improving safety."
-     }
+     },
+     "keyRaw": "Technical"
     },
     {
      "number": 32,
@@ -1364,7 +1664,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Satellites are now quite (32) ␦ and therefore more widespread (e.g. there are constellations made up of (33) ␦ of satellites)."
-     }
+     },
+     "keyRaw": "Cheap"
     },
     {
      "number": 33,
@@ -1391,7 +1692,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Satellites are now quite (32) ␦ and therefore more widespread (e.g. there are constellations made up of (33) ␦ of satellites)."
-     }
+     },
+     "keyRaw": "Thousands"
     },
     {
      "number": 34,
@@ -1413,7 +1715,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• At present, satellites are not required to transmit information to help with their (34) ␦"
-     }
+     },
+     "keyRaw": "Identification"
     },
     {
      "number": 35,
@@ -1436,7 +1739,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• There are few systems for (35) ␦ satellites."
-     }
+     },
+     "keyRaw": "Tracking"
     },
     {
      "number": 36,
@@ -1459,7 +1763,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Operators may be unwilling to share details of satellites used for (36) ␦ or commercial reasons."
-     }
+     },
+     "keyRaw": "Military"
     },
     {
      "number": 37,
@@ -1482,7 +1787,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• It may be hard to collect details of the object’s (37) ␦ at a given time."
-     }
+     },
+     "keyRaw": "Location"
     },
     {
      "number": 38,
@@ -1505,7 +1811,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Scientists can only make a (38) ␦ about where the satellite will go."
-     }
+     },
+     "keyRaw": "Prediction"
     },
     {
      "number": 39,
@@ -1527,7 +1834,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "2. The information should be combined in one (39) ␦"
-     }
+     },
+     "keyRaw": "Database"
     },
     {
      "number": 40,
@@ -1550,7 +1858,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "3. A coordinated system must be designed to create (40) ␦ in its users."
-     }
+     },
+     "keyRaw": "Trust"
     }
    ],
    "provenance": {
@@ -1587,7 +1896,114 @@
   "fnameInputs": 26
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 25,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Accountants",
+    "answer": "G",
+    "rawExcerpt": "25. Accountants ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 26,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Hairdressers",
+    "answer": "E",
+    "rawExcerpt": "26. Hairdressers ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 27,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Administrative staff",
+    "answer": "B",
+    "rawExcerpt": "27. Administrative staff ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 28,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Agricultural workers",
+    "answer": "C",
+    "rawExcerpt": "28. Agricultural workers ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 29,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Care workers",
+    "answer": "F",
+    "rawExcerpt": "29. Care workers ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 30,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Bank clerks",
+    "answer": "A",
+    "rawExcerpt": "30. Bank clerks ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1595,8 +2011,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

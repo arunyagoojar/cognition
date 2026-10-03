@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-141",
  "title": "IELTS Listening Test 141",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-141/index.html",
-   "sha256": "eeeb223798cf70c03a66973c88e5c39e302a4808f856131c473d1afae5c0416e",
-   "manifestHashMatch": true,
+   "sha256": "5dd271ae78da595a13faad471c3669f2e5aa236d428794409cb9ca40f827cda0",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-141/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "8bd20ba6bf3eb591201c295b058a696c6a6e21b802a499705da138439760961e",
+ "contentFingerprint": "f5befc035ef1e326f47f01f120ad6cf38fdecf5867393ec2114c64aaa1039485",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -408,8 +408,10 @@
      "• At San Diego: wants to spend time on the (6) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -432,7 +434,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Address: 24, (1) ␦ Road"
-     }
+     },
+     "keyRaw": "Ardleigh"
     },
     {
      "number": 2,
@@ -454,7 +457,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Heard about company from: (2) ␦"
-     }
+     },
+     "keyRaw": "newspaper"
     },
     {
      "number": 3,
@@ -477,7 +481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Los Angeles: customer wants to visit some (3) ␦ parks with their children"
-     }
+     },
+     "keyRaw": "theme"
     },
     {
      "number": 4,
@@ -499,7 +504,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Yosemite Park: customer wants to stay in a lodge, not a (4) ␦"
-     }
+     },
+     "keyRaw": "tent"
     },
     {
      "number": 5,
@@ -522,7 +528,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Customer wants to see the (5) ␦ on the way to Cambria"
-     }
+     },
+     "keyRaw": "castle"
     },
     {
      "number": 6,
@@ -544,7 +551,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• At San Diego: wants to spend time on the (6) ␦"
-     }
+     },
+     "keyRaw": "beach"
     }
    ],
    "provenance": {
@@ -597,8 +605,10 @@
      "(9) ␦ (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 7,
@@ -620,7 +630,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "(7)…………km"
-     }
+     },
+     "keyRaw": "2020"
     },
     {
      "number": 8,
@@ -642,7 +653,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "– accommodation – car – one (8)……….."
-     }
+     },
+     "keyRaw": "flight"
     },
     {
      "number": 9,
@@ -664,7 +676,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "(9) £…………."
-     }
+     },
+     "keyRaw": "429"
     },
     {
      "number": 10,
@@ -686,7 +699,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "– accommodation – car – one (10)………………"
-     }
+     },
+     "keyRaw": "dinner"
     }
    ],
    "provenance": {
@@ -716,14 +730,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the gym B the tracks C the indoor pool D the outdoor pool"
+      "text": "the gym"
+     },
+     {
+      "letter": "B",
+      "text": "the tracks"
+     },
+     {
+      "letter": "C",
+      "text": "the indoor pool"
+     },
+     {
+      "letter": "D",
+      "text": "the outdoor pool"
      },
      {
       "letter": "E",
       "text": "the sports training for children"
      }
+    ],
+    "optionPreface": [
+     "Which TWO facilities at the leisure club have recently been improved?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -740,7 +770,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -757,12 +788,50 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:11-12",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO facilities at the leisure club have recently been improved?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the gym"
+     },
+     {
+      "letter": "B",
+      "text": "the tracks"
+     },
+     {
+      "letter": "C",
+      "text": "the indoor pool"
+     },
+     {
+      "letter": "D",
+      "text": "the outdoor pool"
+     },
+     {
+      "letter": "E",
+      "text": "the sports training for children"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -795,8 +864,10 @@
      "• Members should always take their (20) ␦ with them."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -818,7 +889,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• New members should describe any (13) ␦"
-     }
+     },
+     "keyRaw": "health problems"
     },
     {
      "number": 14,
@@ -841,7 +913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• The (14) ␦ will be explained to you before you use the equipment."
-     }
+     },
+     "keyRaw": "safety rules"
     },
     {
      "number": 15,
@@ -863,7 +936,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• You will be given a six-week (15) ␦"
-     }
+     },
+     "keyRaw": "plan"
     },
     {
      "number": 16,
@@ -886,7 +960,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• There is a compulsory £90 (16) ␦ fee for members."
-     }
+     },
+     "keyRaw": "joining"
     },
     {
      "number": 17,
@@ -909,7 +984,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Gold members are given (17) ␦ to all the LP clubs."
-     }
+     },
+     "keyRaw": "free entry"
     },
     {
      "number": 18,
@@ -932,7 +1008,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Premier members are given priority during (18) ␦ hours."
-     }
+     },
+     "keyRaw": "peak"
     },
     {
      "number": 19,
@@ -955,7 +1032,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Premier members can bring some (19) ␦ every month."
-     }
+     },
+     "keyRaw": "guests"
     },
     {
      "number": 20,
@@ -978,7 +1056,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Members should always take their (20) ␦ with them."
-     }
+     },
+     "keyRaw": "photo card"
     }
    ],
    "provenance": {
@@ -1001,43 +1080,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Global Design Competition",
-     "A produce an energy-efficient design",
-     "B adapt an existing energy-saving appliance",
-     "C develop a new use for current technology.",
-     "Global Design Competition\n21. Students entering the design competition have to\nA produce an energy-efficient design\nB adapt an existing energy-saving appliance\nC develop a new use for current technology.",
-     "A more appealing",
-     "B more common",
-     "C more economical",
-     "22. John chose a dishwasher because he wanted to make dishwashers\nA more appealing\nB more common\nC more economical",
-     "A for decoration",
-     "B to switch it on",
-     "C to stop water escaping",
-     "23. The stone in John’s ‘Rockpool’ design is used\nA for decoration\nB to switch it on\nC to stop water escaping",
-     "A changes back to a gas",
-     "B dries the dishes",
-     "C is allowed to cool",
-     "24. In the holding chamber, the carbon dioxide\nA changes back to a gas\nB dries the dishes\nC is allowed to cool",
-     "A is released into the air",
-     "B is disposed of with the waste",
-     "C is collected ready to be re-used",
-     "25. At the end of the cleaning process, the carbon dioxide\nA is released into the air\nB is disposed of with the waste\nC is collected ready to be re-used"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Students entering the design competition have to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "produce an energy-efficient design"
+      },
+      {
+       "letter": "B",
+       "text": "adapt an existing energy-saving appliance"
+      },
+      {
+       "letter": "C",
+       "text": "develop a new use for current technology."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1045,16 +1117,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "21. Students entering the design competition have to"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "John chose a dishwasher because he wanted to make dishwashers",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "more appealing"
+      },
+      {
+       "letter": "B",
+       "text": "more common"
+      },
+      {
+       "letter": "C",
+       "text": "more economical"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1062,16 +1148,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "22. John chose a dishwasher because he wanted to make dishwashers"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The stone in John’s ‘Rockpool’ design is used",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "for decoration"
+      },
+      {
+       "letter": "B",
+       "text": "to switch it on"
+      },
+      {
+       "letter": "C",
+       "text": "to stop water escaping"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1079,16 +1179,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "23. The stone in John’s ‘Rockpool’ design is used"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In the holding chamber, the carbon dioxide",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "changes back to a gas"
+      },
+      {
+       "letter": "B",
+       "text": "dries the dishes"
+      },
+      {
+       "letter": "C",
+       "text": "is allowed to cool"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1096,16 +1210,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "24. In the holding chamber, the carbon dioxide"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "At the end of the cleaning process, the carbon dioxide",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "is released into the air"
+      },
+      {
+       "letter": "B",
+       "text": "is disposed of with the waste"
+      },
+      {
+       "letter": "C",
+       "text": "is collected ready to be re-used"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1113,7 +1241,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "25. At the end of the cleaning process, the carbon dioxide"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1145,8 +1274,10 @@
      "• The professor will check the (30) ␦ information in John’s written report."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1168,7 +1299,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• John needs help preparing for his (26) ␦"
-     }
+     },
+     "keyRaw": "presentation"
     },
     {
      "number": 27,
@@ -1191,7 +1323,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• The professor advises John to make a (27) ␦ of his design."
-     }
+     },
+     "keyRaw": "model"
     },
     {
      "number": 28,
@@ -1213,7 +1346,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• John’s main problem is getting good quality (28) ␦"
-     }
+     },
+     "keyRaw": "materials"
     },
     {
      "number": 29,
@@ -1235,7 +1369,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• The professor suggests John apply for a (29) ␦"
-     }
+     },
+     "keyRaw": "grant"
     },
     {
      "number": 30,
@@ -1258,7 +1393,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• The professor will check the (30) ␦ information in John’s written report."
-     }
+     },
+     "keyRaw": "technical"
     }
    ],
    "provenance": {
@@ -1305,8 +1441,10 @@
      "• Maintenance and (40) ␦ of the spirit bears’ territory is needed."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1328,7 +1466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• Its colour comes from an uncommon (31) ␦"
-     }
+     },
+     "keyRaw": "gene"
     },
     {
      "number": 32,
@@ -1350,7 +1489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• Local people believe that it has unusual (32) ␦"
-     }
+     },
+     "keyRaw": "powers"
     },
     {
      "number": 33,
@@ -1372,7 +1512,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• They protect the bear from (33) ␦"
-     }
+     },
+     "keyRaw": "strangers"
     },
     {
      "number": 34,
@@ -1395,7 +1536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Tree roots stop (34) ␦ along salmon streams."
-     }
+     },
+     "keyRaw": "erosion"
     },
     {
      "number": 35,
@@ -1417,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• It is currently found on a small number of (35) ␦"
-     }
+     },
+     "keyRaw": "islands"
     },
     {
      "number": 36,
@@ -1440,7 +1583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Habitat is being lost due to deforestation and construction of (36) ␦ by logging companies."
-     }
+     },
+     "keyRaw": "roads"
     },
     {
      "number": 37,
@@ -1463,7 +1607,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Unrestricted (37) ␦ is affecting the salmon supply."
-     }
+     },
+     "keyRaw": "fishing"
     },
     {
      "number": 38,
@@ -1485,7 +1630,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• The bears’ existence is also threatened by their low rate of (38) ␦"
-     }
+     },
+     "keyRaw": "reproduction"
     },
     {
      "number": 39,
@@ -1508,7 +1654,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Logging companies must improve their (39) ␦ of logging."
-     }
+     },
+     "keyRaw": "methods"
     },
     {
      "number": 40,
@@ -1531,7 +1678,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Maintenance and (40) ␦ of the spirit bears’ territory is needed."
-     }
+     },
+     "keyRaw": "expansion"
     }
    ],
    "provenance": {
@@ -1581,10 +1729,21 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "test",
+   "reasonCode": "RENDER_CHECK_FAILED",
+   "evidence": {
+    "defects": [
+     "part 1: artifact in stimulus ('………….')"
+    ]
+   }
+  }
+ ],
  "validationWarnings": [],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "quarantinedCount": 1,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

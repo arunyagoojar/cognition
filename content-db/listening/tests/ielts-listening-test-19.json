@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-19",
  "title": "IELTS Listening Test 19",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-19/index.html",
-   "sha256": "27bf85794740a02b0b62765802b8ecf1062b3c52149eec97d0c20211e8bfcd0f",
-   "manifestHashMatch": true,
+   "sha256": "97fb191a9da316d7c6ddfed0e43204f15a77768ec6d3833bdd7ca99f839098d3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-19/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "61c794269de6310f49d0fbe61806b5f2ff9455f84c814f7fecf57be021f7e607",
+ "contentFingerprint": "05b4d96b7bb6c05beabe1b8f49883996ea28d9888c915bc84109ca6eb92467ac",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -400,8 +400,10 @@
      "Open (10) ␦ later at weekends"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -423,7 +425,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Occupation: (1) ␦"
-     }
+     },
+     "keyRaw": "accountant"
     },
     {
      "number": 2,
@@ -445,7 +448,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Age group: (2) ␦"
-     }
+     },
+     "keyRaw": "over 50"
     },
     {
      "number": 3,
@@ -467,7 +471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of membership: (3) ␦"
-     }
+     },
+     "keyRaw": "family"
     },
     {
      "number": 4,
@@ -490,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Length of membership: (4) ␦ years"
-     }
+     },
+     "keyRaw": "9"
     },
     {
      "number": 5,
@@ -512,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Why joined: recommended by a (5) ␦"
-     }
+     },
+     "keyRaw": "doctor"
     },
     {
      "number": 6,
@@ -534,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Facility used most: (6) ␦"
-     }
+     },
+     "keyRaw": "(swimming) pool"
     },
     {
      "number": 7,
@@ -557,7 +565,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Facility not used (if any): tennis courts (because reluctant to (7) ␦ )"
-     }
+     },
+     "keyRaw": "pay (extra)"
     },
     {
      "number": 8,
@@ -579,7 +588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Suggestions for improvements: have more (8) ␦"
-     }
+     },
+     "keyRaw": "social events"
     },
     {
      "number": 9,
@@ -602,7 +612,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Install (9) ␦ in the gym"
-     }
+     },
+     "keyRaw": "air conditioning"
     },
     {
      "number": 10,
@@ -625,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Open (10) ␦ later at weekends"
-     }
+     },
+     "keyRaw": "restaurant"
     }
    ],
    "provenance": {
@@ -665,27 +677,43 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "air B ash C earth D grass E sticks F stones"
+      "text": "air"
+     },
+     {
+      "letter": "B",
+      "text": "ash"
+     },
+     {
+      "letter": "C",
+      "text": "earth"
+     },
+     {
+      "letter": "D",
+      "text": "grass"
+     },
+     {
+      "letter": "E",
+      "text": "sticks"
+     },
+     {
+      "letter": "F",
+      "text": "stones"
      },
      {
       "letter": "G",
       "text": "water"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Arrange a row of ______ over the pit",
-      "segments": [
-       "• Arrange a row of",
-       {
-        "blank": 11
-       },
-       "over the pit"
-      ]
+      "plain": "• Arrange a row of over the pit",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Arrange a row of (11) ␦ over the pit",
@@ -695,20 +723,16 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Arrange a row of (11) ␦ over the pit"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 12,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Place ______ on top",
-      "segments": [
-       "• Place",
-       {
-        "blank": 12
-       },
-       "on top"
-      ]
+      "plain": "• Place on top",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Place (12) ␦ on top",
@@ -718,19 +742,16 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Place (12) ␦ on top"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 13,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Remove ______",
-      "segments": [
-       "• Remove",
-       {
-        "blank": 13
-       }
-      ]
+      "plain": "• Remove",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Remove (13) ␦",
@@ -740,19 +761,16 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Remove (13) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 14,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Cover the pit with ______",
-      "segments": [
-       "• Cover the pit with",
-       {
-        "blank": 14
-       }
-      ]
+      "plain": "• Cover the pit with",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Cover the pit with (14) ␦",
@@ -762,19 +780,16 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Cover the pit with (14) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 15,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Place wrapped food on top and cover it with ______",
-      "segments": [
-       "• Place wrapped food on top and cover it with",
-       {
-        "blank": 15
-       }
-      ]
+      "plain": "• Place wrapped food on top and cover it with",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Place wrapped food on top and cover it with (15) ␦",
@@ -784,20 +799,16 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Place wrapped food on top and cover it with (15) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 16,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• Remove the stick and put ______ into the hole",
-      "segments": [
-       "• Remove the stick and put",
-       {
-        "blank": 16
-       },
-       "into the hole"
-      ]
+      "plain": "• Remove the stick and put into the hole",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • Remove the stick and put (16) ␦ into the hole",
@@ -807,12 +818,48 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Remove the stick and put (16) ␦ into the hole"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[4]",
     "rawExcerpt": "Part 2: Questions 11-16\nComplete the flow chart below. Choose SIX answers from the box and write the correct letter A-G next to questions 11-16."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "air"
+     },
+     {
+      "letter": "B",
+      "text": "ash"
+     },
+     {
+      "letter": "C",
+      "text": "earth"
+     },
+     {
+      "letter": "D",
+      "text": "grass"
+     },
+     {
+      "letter": "E",
+      "text": "sticks"
+     },
+     {
+      "letter": "F",
+      "text": "stones"
+     },
+     {
+      "letter": "G",
+      "text": "water"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -836,14 +883,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It’s suitable for windy weather. B The fire is lit below the bottom end of the bamboo. C The bamboo is cut into equal lengths. D The oven hangs from a stick."
+      "text": "It’s suitable for windy weather."
+     },
+     {
+      "letter": "B",
+      "text": "The fire is lit below the bottom end of the bamboo."
+     },
+     {
+      "letter": "C",
+      "text": "The bamboo is cut into equal lengths."
+     },
+     {
+      "letter": "D",
+      "text": "The oven hangs from a stick."
      },
      {
       "letter": "E",
       "text": "It cooks food by steaming it."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -860,7 +921,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO characteristics apply to the bamboo oven?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -877,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO characteristics apply to the bamboo oven?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -885,6 +948,43 @@
     "rawExcerpt": "Questions 17-18\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:17-18",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO characteristics apply to the bamboo oven?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It’s suitable for windy weather."
+     },
+     {
+      "letter": "B",
+      "text": "The fire is lit below the bottom end of the bamboo."
+     },
+     {
+      "letter": "C",
+      "text": "The bamboo is cut into equal lengths."
+     },
+     {
+      "letter": "D",
+      "text": "The oven hangs from a stick."
+     },
+     {
+      "letter": "E",
+      "text": "It cooks food by steaming it."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -907,14 +1007,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Cooking doesn’t make poisonous fungi edible. B Edible wild fungi can be eaten without cooking. C Wild fungi are highly nutritious. D Some edible fungi look very similar to poisonous varieties."
+      "text": "Cooking doesn’t make poisonous fungi edible."
+     },
+     {
+      "letter": "B",
+      "text": "Edible wild fungi can be eaten without cooking."
+     },
+     {
+      "letter": "C",
+      "text": "Wild fungi are highly nutritious."
+     },
+     {
+      "letter": "D",
+      "text": "Some edible fungi look very similar to poisonous varieties."
      },
      {
       "letter": "E",
       "text": "Fungi which cannot be identified should only be eaten in small quantities."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -931,7 +1045,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of advice does the speaker give about eating wild fungi?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -948,7 +1063,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of advice does the speaker give about eating wild fungi?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -956,6 +1072,43 @@
     "rawExcerpt": "Questions 19-20\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:19-20",
+    "answerSet": [
+     "A",
+     "D"
+    ],
+    "prompt": "Which TWO pieces of advice does the speaker give about eating wild fungi?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Cooking doesn’t make poisonous fungi edible."
+     },
+     {
+      "letter": "B",
+      "text": "Edible wild fungi can be eaten without cooking."
+     },
+     {
+      "letter": "C",
+      "text": "Wild fungi are highly nutritious."
+     },
+     {
+      "letter": "D",
+      "text": "Some edible fungi look very similar to poisonous varieties."
+     },
+     {
+      "letter": "E",
+      "text": "Fungi which cannot be identified should only be eaten in small quantities."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -971,43 +1124,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Research project on attitudes towards study",
-     "A her classmates had been very interested in it.",
-     "B it would help prepare her for her first teaching post.",
-     "C she had been inspired by a particular book.",
-     "21. Phoebe’s main reason for choosing her topic was that\nA her classmates had been very interested in it.\nB it would help prepare her for her first teaching post.\nC she had been inspired by a particular book.",
-     "A the effect of teacher discipline.",
-     "B the variety of learning activities.",
-     "C levels of pupil confidence.",
-     "22. Phoebe’s main research question related to\nA the effect of teacher discipline.\nB the variety of learning activities.\nC levels of pupil confidence.",
-     "A gender did not influence behaviour significantly.",
-     "B girls were more negative about school than boys.",
-     "C boys were more talkative than girls in class.",
-     "23. Phoebe was most surprised by her finding that\nA gender did not influence behaviour significantly.\nB girls were more negative about school than boys.\nC boys were more talkative than girls in class.",
-     "A teachers should be flexible in their lesson planning.",
-     "B brighter children learn from supporting weaker ones.",
-     "C children vary from each other in unpredictable ways.",
-     "24. Regarding teaching, Phoebe says she has learned that\nA teachers should be flexible in their lesson planning.\nB brighter children learn from supporting weaker ones.\nC children vary from each other in unpredictable ways.",
-     "A recognise the limitations of such small-scale research.",
-     "B reflect on her own research experience in an interesting way.",
-     "C design her research in such a way as to minimise difficulties.",
-     "25. Tony is particularly impressed by Phoebe’s ability to\nA recognise the limitations of such small-scale research.\nB reflect on her own research experience in an interesting way.\nC design her research in such a way as to minimise difficulties."
+     "Research project on attitudes towards study"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Phoebe’s main reason for choosing her topic was that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "her classmates had been very interested in it."
+      },
+      {
+       "letter": "B",
+       "text": "it would help prepare her for her first teaching post."
+      },
+      {
+       "letter": "C",
+       "text": "she had been inspired by a particular book."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1015,16 +1163,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "21. Phoebe’s main reason for choosing her topic was that"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Phoebe’s main research question related to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the effect of teacher discipline."
+      },
+      {
+       "letter": "B",
+       "text": "the variety of learning activities."
+      },
+      {
+       "letter": "C",
+       "text": "levels of pupil confidence."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1032,16 +1194,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. Phoebe’s main research question related to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Phoebe was most surprised by her finding that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "gender did not influence behaviour significantly."
+      },
+      {
+       "letter": "B",
+       "text": "girls were more negative about school than boys."
+      },
+      {
+       "letter": "C",
+       "text": "boys were more talkative than girls in class."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1049,16 +1225,30 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "23. Phoebe was most surprised by her finding that"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Regarding teaching, Phoebe says she has learned that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "teachers should be flexible in their lesson planning."
+      },
+      {
+       "letter": "B",
+       "text": "brighter children learn from supporting weaker ones."
+      },
+      {
+       "letter": "C",
+       "text": "children vary from each other in unpredictable ways."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1066,16 +1256,30 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. Regarding teaching, Phoebe says she has learned that"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Tony is particularly impressed by Phoebe’s ability to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "recognise the limitations of such small-scale research."
+      },
+      {
+       "letter": "B",
+       "text": "reflect on her own research experience in an interesting way."
+      },
+      {
+       "letter": "C",
+       "text": "design her research in such a way as to minimise difficulties."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1083,7 +1287,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. Tony is particularly impressed by Phoebe’s ability to"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1112,14 +1317,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Obtaining permission B Deciding on a suitable focus C Concentrating while gathering data D Working collaboratively E Processing data she had gathered F Finding a suitable time to conduct the research"
+      "text": "Obtaining permission"
+     },
+     {
+      "letter": "B",
+      "text": "Deciding on a suitable focus"
+     },
+     {
+      "letter": "C",
+      "text": "Concentrating while gathering data"
+     },
+     {
+      "letter": "D",
+      "text": "Working collaboratively"
+     },
+     {
+      "letter": "E",
+      "text": "Processing data she had gathered"
+     },
+     {
+      "letter": "F",
+      "text": "Finding a suitable time to conduct the research"
      },
      {
       "letter": "G",
       "text": "Getting hold of suitable equipment"
      }
+    ],
+    "optionPreface": [
+     "Difficulties"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1136,7 +1365,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "26. Observing lessons ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 27,
@@ -1153,7 +1383,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. Interviewing teachers ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 28,
@@ -1170,7 +1401,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "28. Interviewing pupils ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1187,7 +1419,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "29. Using questionnaires ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 30,
@@ -1204,7 +1437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "30. Taking photographs ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1212,6 +1446,40 @@
     "rawExcerpt": "Questions 26-30\nWhat did Phoebe find difficult about the different research techniques she used?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Difficulties",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Obtaining permission"
+     },
+     {
+      "letter": "B",
+      "text": "Deciding on a suitable focus"
+     },
+     {
+      "letter": "C",
+      "text": "Concentrating while gathering data"
+     },
+     {
+      "letter": "D",
+      "text": "Working collaboratively"
+     },
+     {
+      "letter": "E",
+      "text": "Processing data she had gathered"
+     },
+     {
+      "letter": "F",
+      "text": "Finding a suitable time to conduct the research"
+     },
+     {
+      "letter": "G",
+      "text": "Getting hold of suitable equipment"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1241,8 +1509,10 @@
      "38. Plantlife is trialling novel techniques across ␦ areas of England.\n39. One measure is to introduce ␦ for seedlings.\n40. A further step is to plant ␦ from healthy bushes."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1267,7 +1537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "31. Juniper was one of the first plants to colonise Britain after the last ␦"
-     }
+     },
+     "keyRaw": "ice age"
     },
     {
      "number": 32,
@@ -1290,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "32. Its smoke is virtually ␦ so juniper wood was used as fuel in illegal activities."
-     }
+     },
+     "keyRaw": "invisible"
     },
     {
      "number": 33,
@@ -1313,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "33. Oils from the plant were used to prevent ␦ spreading."
-     }
+     },
+     "keyRaw": "infections"
     },
     {
      "number": 34,
@@ -1336,7 +1609,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "34. Nowadays, its berries are widely used to ␦ food and drink"
-     }
+     },
+     "keyRaw": "flavor"
     },
     {
      "number": 35,
@@ -1361,7 +1635,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "35. Juniper plants also support several species of insects and ␦"
-     }
+     },
+     "keyRaw": "fungi"
     },
     {
      "number": 36,
@@ -1384,7 +1659,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "36. In current juniper populations, ratios of the ␦ are poor."
-     }
+     },
+     "keyRaw": "sexes"
     },
     {
      "number": 37,
@@ -1407,7 +1683,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "37. Many of the bushes in each group are of the same age so ␦ of whole populations is rapid."
-     }
+     },
+     "keyRaw": "extinction"
     },
     {
      "number": 38,
@@ -1430,7 +1707,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "38. Plantlife is trialling novel techniques across ␦ areas of England."
-     }
+     },
+     "keyRaw": "lowland"
     },
     {
      "number": 39,
@@ -1453,7 +1731,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "39. One measure is to introduce ␦ for seedlings."
-     }
+     },
+     "keyRaw": "shelter"
     },
     {
      "number": 40,
@@ -1476,7 +1755,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "40. A further step is to plant ␦ from healthy bushes."
-     }
+     },
+     "keyRaw": "cuttings"
     }
    ],
    "provenance": {
@@ -1519,6 +1799,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-171",
  "title": "IELTS Listening Test 171",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-171/index.html",
-   "sha256": "9f37fbc5a5171389078a3722ad174e5449e147b4da85ec06e5a0428b30667b1b",
-   "manifestHashMatch": true,
+   "sha256": "87bf52661c32da657da5f60b3ad09977c42f6ed9ea845bb931bada5225ef175b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-171/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -354,12 +354,14 @@
      "wp-content/uploads/2024/09/lis-test171.png",
      "wp-content/uploads/2024/10/im-70.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -372,11 +374,13 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "1. A B C D"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 2,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "A B C D",
       "segments": null
@@ -389,7 +393,9 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "2. A B C D"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -401,6 +407,29 @@
     5
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 1,
+    "title": "3 What did she have inside her briefcase?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "wallet, pens and novel"
+     },
+     {
+      "letter": "B",
+      "text": "papers and wallet"
+     },
+     {
+      "letter": "C",
+      "text": "pens and novel"
+     },
+     {
+      "letter": "D",
+      "text": "papers, pen and novel"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -426,8 +455,10 @@
      "Estimated value of lost item: (10) £ ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -449,7 +480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Name: Mary (6) ␦"
-     }
+     },
+     "keyRaw": "Prescott"
     },
     {
      "number": 7,
@@ -476,7 +508,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Address: Flat 2, (7) ␦ and (8) ␦ Road Canterbury"
-     }
+     },
+     "keyRaw": "41"
     },
     {
      "number": 8,
@@ -503,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Address: Flat 2, (7) ␦ and (8) ␦ Road Canterbury"
-     }
+     },
+     "keyRaw": "fountain"
     },
     {
      "number": 9,
@@ -525,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Telephone: (9) ␦"
-     }
+     },
+     "keyRaw": "752239"
     },
     {
      "number": 10,
@@ -548,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Estimated value of lost item: (10) £ ␦"
-     }
+     },
+     "keyRaw": "pound 65"
     }
    ],
    "provenance": {
@@ -556,34 +592,6 @@
     "rawExcerpt": "Questions 6-10\nComplete the form Write NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g03",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 13,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Circle the THREE other items which are mentioned in the news headlines.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle the THREE other items which are mentioned in the news headlines."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "NEWS HEADLINES\nA Rivers flood in the north\nB Money promised for drought victims – Example\nC Nurses on strike in Melbourne\nD Passengers rescued from ship\nE Passengers rescued from plane\nF Bus and train drivers national strike threat\nG Teachers demand more pay\nH New uniform for QANTAS staff\nI National airports under new management"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[12]",
-    "rawExcerpt": "Part 2: Questions 11-13\nCircle the THREE other items which are mentioned in the news headlines."
-   },
    "status": "verified"
   },
   {
@@ -607,8 +615,10 @@
      "(19) ␦ The operation was helped because of the good weather. The passengers thanked the (20) ␦ for saving their lives but unfortunately they lost their (21) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -638,7 +648,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "The Government plans to give (14) $ ␦ to assist the farmers. This money was to be spent on improving Sydney’s (15) ␦ but has now been re-allocated. Australia has experienced its worst drought in over "
-     }
+     },
+     "keyRaw": "$ 250 million"
     },
     {
      "number": 15,
@@ -668,7 +679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "The Government plans to give (14) $ ␦ to assist the farmers. This money was to be spent on improving Sydney’s (15) ␦ but has now been re-allocated. Australia has experienced its worst drought in over "
-     }
+     },
+     "keyRaw": "road system"
     },
     {
      "number": 16,
@@ -698,7 +710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "The Government plans to give (14) $ ␦ to assist the farmers. This money was to be spent on improving Sydney’s (15) ␦ but has now been re-allocated. Australia has experienced its worst drought in over "
-     }
+     },
+     "keyRaw": "too late"
     },
     {
      "number": 17,
@@ -725,7 +738,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "An aeroplane which was carrying a group of (17) ␦ was forced to land just (18) ␦ minutes after take-off. The passengers were rescued by"
-     }
+     },
+     "keyRaw": "school children"
     },
     {
      "number": 18,
@@ -752,7 +766,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "An aeroplane which was carrying a group of (17) ␦ was forced to land just (18) ␦ minutes after take-off. The passengers were rescued by"
-     }
+     },
+     "keyRaw": "3"
     },
     {
      "number": 19,
@@ -781,7 +796,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19) ␦ The operation was helped because of the good weather. The passengers thanked the (20) ␦ for saving their lives but unfortunately they lost their (21) ␦"
-     }
+     },
+     "keyRaw": "boats"
     },
     {
      "number": 20,
@@ -810,7 +826,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19) ␦ The operation was helped because of the good weather. The passengers thanked the (20) ␦ for saving their lives but unfortunately they lost their (21) ␦"
-     }
+     },
+     "keyRaw": "pilot"
     },
     {
      "number": 21,
@@ -839,7 +856,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19) ␦ The operation was helped because of the good weather. The passengers thanked the (20) ␦ for saving their lives but unfortunately they lost their (21) ␦"
-     }
+     },
+     "keyRaw": "instruments"
     }
    ],
    "provenance": {
@@ -847,37 +865,6 @@
     "rawExcerpt": "Questions 14-21\nComplete the notes below by writing NO MORE THAN THREE WORDS in the spaces provided."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g05",
-   "part": 3,
-   "startQ": 22,
-   "endQ": 25,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Circle the appropriate letter.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle the appropriate letter."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "22 The orientation meeting\nA took place recently\nB took place last term\nC will take place tomorrow\nD will take place next week",
-     "23 Attendance at lectures is\nA optional after 4 pm\nB closely monitored\nC difficult to enforce\nD sometimes unnecessary",
-     "24 Tutorials take place\nA every morning\nB twice a week\nC three mornings a week\nD three afternoons a week",
-     "25 The lecturer’s name is\nA Roberts\nB Rawson\nC Rogers\nD Robertson"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[17]",
-    "rawExcerpt": "Part 3: Questions 22-25\nCircle the appropriate letter."
-   },
    "status": "verified"
   },
   {
@@ -908,8 +895,10 @@
      "Focus of course: focus on (31) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -932,7 +921,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• (26) ␦ for 25 minutes"
-     }
+     },
+     "keyRaw": "talk"
     },
     {
      "number": 27,
@@ -954,7 +944,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• (27) ␦"
-     }
+     },
+     "keyRaw": "write up work"
     },
     {
      "number": 28,
@@ -976,7 +967,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Essay Topic: usually (28) ␦"
-     }
+     },
+     "keyRaw": "can choose"
     },
     {
      "number": 29,
@@ -998,7 +990,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Type of exam: (29) ␦"
-     }
+     },
+     "keyRaw": "open book"
     },
     {
      "number": 30,
@@ -1020,7 +1013,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Library: important books are in (30) ␦"
-     }
+     },
+     "keyRaw": "closed reserve"
     },
     {
      "number": 31,
@@ -1042,7 +1036,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Focus of course: focus on (31) ␦"
-     }
+     },
+     "keyRaw": "vocational"
     }
    ],
    "provenance": {
@@ -1050,35 +1045,6 @@
     "rawExcerpt": "Questions 26-31\nComplete the notes below using NO MORE THAN THREE WORDS."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g07",
-   "part": 4,
-   "startQ": 32,
-   "endQ": 33,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Circle the appropriate letter.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle the appropriate letter."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "32 The speaker works within the Faculty of\nA Science and Technology\nB Arts and Social Sciences\nC Architecture\nD Law",
-     "33 The faculty consists firstly of\nA subjects\nB degrees\nC divisions\nD departments"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[25]",
-    "rawExcerpt": "Part 4: Questions 32 and 33\nCircle the appropriate letter."
-   },
    "status": "verified"
   },
   {
@@ -1103,8 +1069,10 @@
      "(36) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1126,7 +1094,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(34) ␦ and ␦"
-     }
+     },
+     "keyRaw": "history and economics"
     },
     {
      "number": 35,
@@ -1149,7 +1118,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Students may have problems with (35) ␦ and"
-     }
+     },
+     "keyRaw": "deadlines"
     },
     {
      "number": 36,
@@ -1170,44 +1140,13 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(36) ␦"
-     }
+     },
+     "keyRaw": "attendance"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[28]",
     "rawExcerpt": "Questions 34-36\nComplete the notes with NO MORE THAN THREE WORDS."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g09",
-   "part": 4,
-   "startQ": 37,
-   "endQ": 40,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle the appropriate letter.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle the appropriate letter."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "37 The speaker says students can visit her\nA every morning\nB some mornings\nC mornings only\nD Friday morning",
-     "38 According to the speaker, a tutorial\nA is a type of lecture\nB is less important than a lecture\nC provides a chance to share views\nD provides an alternative to groupwork",
-     "39 When writing essays, the speaker advises the students to\nA research their work well\nB name the books they have read\nC share work with their friends\nD avoid using other writers’ ideas",
-     "40 The speaker thinks that plagiarism is\nA a common problem\nB an acceptable risk\nC a minor concern\nD a serious offence"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[30]",
-    "rawExcerpt": "Questions 37-40\nCircle the appropriate letter."
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -1290,6 +1229,241 @@
      40
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 3,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 4,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 5,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 11,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 13,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "H"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 22,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 25,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 32,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 37,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_TEST",
+   "evidence": {
+    "note": "section boundaries are not 10/10/10/10; 16 source questions are not extractable"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
+   "evidence": {
+    "questionsOutsideTheirSection": [
+     21,
+     31
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 24,
+    "missingOrQuarantined": [
+     3,
+     4,
+     5,
+     11,
+     12,
+     13,
+     22,
+     23,
+     24,
+     25,
+     32,
+     33,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [
@@ -1300,7 +1474,8 @@
   }
  ],
  "verifiedQuestionCount": 24,
- "quarantinedCount": 4,
- "status": "flagged",
+ "quarantinedCount": 23,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

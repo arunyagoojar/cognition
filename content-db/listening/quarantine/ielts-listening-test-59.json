@@ -1,0 +1,127 @@
+{
+ "slug": "ielts-listening-test-59",
+ "status": "quarantined",
+ "sourceSha256": "12b64e21c6f6b2384f9810f60a0849932fa50f006f08db970144ef7ffe23deed",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Which TWO groups of patients receive free medication?",
+    "answer": "B and E",
+    "rawExcerpt": "19. Which TWO groups of patients receive free medication?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 31,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which column of the bar chart represents the figures quoted?",
+    "answer": "A",
+    "rawExcerpt": "31. Which column of the bar chart represents the figures quoted?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 37,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(37) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 38,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "A",
+    "rawExcerpt": "(38) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 39,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(39) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 40,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(40) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     19,
+     31,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

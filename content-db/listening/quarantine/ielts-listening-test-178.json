@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-178",
- "sourceSha256": "946103e55cb8b559f0030bac7e82aef683d6c024f86f3ced90feee893a47bd0b",
+ "status": "quarantined",
+ "sourceSha256": "30716cdf5efce9db90988fbeab8eb53e165623c2a234f94edd312fde5f0c1601",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,81 @@
      21,
      25
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 21,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 22,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 25,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24,
+     25
+    ],
+    "outOfRange": []
    }
   }
  ]

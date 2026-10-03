@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-90",
  "title": "IELTS Listening Test 90",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-90/index.html",
-   "sha256": "14ea5e606a57a9f4fd191a8916a5a17ff6ddba3d36c847d1ba6f1c7dd62e1dd7",
-   "manifestHashMatch": true,
+   "sha256": "887320dc3395f5c1298124678d887f29f84cdff69ba45ffa40a44521d8ef2c5e",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-90/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -413,8 +413,10 @@
      "• Tickets available online from festival box office and from shops which have the festival (10) ␦ in their windows"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -436,7 +438,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• In town centre, starting at (1) ␦"
-     }
+     },
+     "keyRaw": "2.45"
     },
     {
      "number": 2,
@@ -459,7 +462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• A (2) ␦ will perform"
-     }
+     },
+     "keyRaw": "band"
     },
     {
      "number": 3,
@@ -486,7 +490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Performance of a (3) ␦ about Hele Tungate (a (4) ␦ )"
-     }
+     },
+     "keyRaw": "play"
     },
     {
      "number": 4,
@@ -513,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Performance of a (3) ␦ about Hele Tungate (a (4) ␦ )"
-     }
+     },
+     "keyRaw": "scientist"
     },
     {
      "number": 5,
@@ -535,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Evening fireworks display situated across the (5) ␦"
-     }
+     },
+     "keyRaw": "river"
     },
     {
      "number": 6,
@@ -557,7 +564,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Videos about relationships that children have with their (6) ␦"
-     }
+     },
+     "keyRaw": "grandparents"
     },
     {
      "number": 7,
@@ -580,7 +588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Venue: (7) ␦ House"
-     }
+     },
+     "keyRaw": "handsworth"
     },
     {
      "number": 8,
@@ -603,7 +612,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Performance of (8) ␦ dances"
-     }
+     },
+     "keyRaw": "traditional"
     },
     {
      "number": 9,
@@ -626,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Venue: the (9) ␦ market in the town centre"
-     }
+     },
+     "keyRaw": "outdoor"
     },
     {
      "number": 10,
@@ -649,7 +660,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Tickets available online from festival box office and from shops which have the festival (10) ␦ in their windows"
-     }
+     },
+     "keyRaw": "logo"
     }
    ],
    "provenance": {
@@ -675,8 +687,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -706,7 +720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. When the group meet at the airport they will have"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -736,7 +751,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. The group will be met at Munich airport by"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -766,7 +782,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. How much will they pay per night for a double room at the hotel?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -796,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. What type of restaurant will they go to on Tuesday evening?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -826,7 +844,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "15. Who will they meet on Wednesday afternoon?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -881,8 +900,12 @@
       "letter": "G",
       "text": "The performance will be attended by officials from the town"
      }
+    ],
+    "optionPreface": [
+     "Comments"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -899,7 +922,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "16. Wednesday ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -916,7 +940,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "17. Thursday ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -933,7 +958,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "18. Friday ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 19,
@@ -950,7 +976,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. Saturday ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 20,
@@ -967,7 +994,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "20. Monday ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -975,6 +1003,40 @@
     "rawExcerpt": "Questions 16-20\nWhat does the man say about the play on each of the following days? Choose FIVE answers from options given below."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Comments",
+    "options": [
+     {
+      "letter": "A",
+      "text": "The playwright will be present"
+     },
+     {
+      "letter": "B",
+      "text": "The play was written to celebrate an anniversary"
+     },
+     {
+      "letter": "C",
+      "text": "The play will be performed inside historic building"
+     },
+     {
+      "letter": "D",
+      "text": "The play will be accompanies by live music"
+     },
+     {
+      "letter": "E",
+      "text": "The play will be performed outdoors"
+     },
+     {
+      "letter": "F",
+      "text": "The paly will be performed for the first time"
+     },
+     {
+      "letter": "G",
+      "text": "The performance will be attended by officials from the town"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -994,8 +1056,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1025,7 +1089,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "21. James chose to take Scandinavian Studies because when he was a child"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1055,7 +1120,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. When he graduates James would like to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1085,7 +1151,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "23. Which course will end this term?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
@@ -1115,7 +1182,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. They agree that James’ literature paper this term will be on"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1145,7 +1213,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. Beth recommends that James’ paper should be"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1181,27 +1250,43 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "bullet points B film C notes D structure E student paper F textbook"
+      "text": "bullet points"
+     },
+     {
+      "letter": "B",
+      "text": "film"
+     },
+     {
+      "letter": "C",
+      "text": "notes"
+     },
+     {
+      "letter": "D",
+      "text": "structure"
+     },
+     {
+      "letter": "E",
+      "text": "student paper"
+     },
+     {
+      "letter": "F",
+      "text": "textbook"
      },
      {
       "letter": "G",
       "text": "documentary"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• He’ll read a ______ and choose his topic",
-      "segments": [
-       "• He’ll read a",
-       {
-        "blank": 26
-       },
-       "and choose his topic"
-      ]
+      "plain": "• He’ll read a and choose his topic",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • He’ll read a (26) ␦ and choose his topic",
@@ -1211,20 +1296,16 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• He’ll read a (26) ␦ and choose his topic"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• He’ll borrow a ______ from Beth",
-      "segments": [
-       "• He’ll borrow a",
-       {
-        "blank": 27
-       },
-       "from Beth"
-      ]
+      "plain": "• He’ll borrow a from Beth",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • He’ll borrow a (27) ␦ from Beth",
@@ -1234,20 +1315,16 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• He’ll borrow a (27) ␦ from Beth"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• He’ll plan the ______ of the paper",
-      "segments": [
-       "• He’ll plan the",
-       {
-        "blank": 28
-       },
-       "of the paper"
-      ]
+      "plain": "• He’ll plan the of the paper",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • He’ll plan the (28) ␦ of the paper",
@@ -1257,19 +1334,16 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• He’ll plan the (28) ␦ of the paper"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• He’ll read some material and write ______",
-      "segments": [
-       "• He’ll read some material and write",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "• He’ll read some material and write",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • He’ll read some material and write (29) ␦",
@@ -1279,19 +1353,16 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• He’ll read some material and write (29) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• He’ll write paper using ______",
-      "segments": [
-       "• He’ll write paper using",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "• He’ll write paper using",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • He’ll write paper using (30) ␦",
@@ -1301,7 +1372,9 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• He’ll write paper using (30) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1309,6 +1382,40 @@
     "rawExcerpt": "Questions 26-30\nComplete the flow chart below."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "bullet points"
+     },
+     {
+      "letter": "B",
+      "text": "film"
+     },
+     {
+      "letter": "C",
+      "text": "notes"
+     },
+     {
+      "letter": "D",
+      "text": "structure"
+     },
+     {
+      "letter": "E",
+      "text": "student paper"
+     },
+     {
+      "letter": "F",
+      "text": "textbook"
+     },
+     {
+      "letter": "G",
+      "text": "documentary"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1344,8 +1451,10 @@
      "Someone from outside the company may be given the role of (40) ␦ in order to resolve conflicts"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1367,7 +1476,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Conflict mostly consists of behavior in the general category of (31) ␦"
-     }
+     },
+     "keyRaw": "bullying"
     },
     {
      "number": 32,
@@ -1389,7 +1499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Often a result of people wanting to prove their (32) ␦"
-     }
+     },
+     "keyRaw": "superiority"
     },
     {
      "number": 33,
@@ -1412,7 +1523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Also cause by differences in (33) ␦ between people"
-     }
+     },
+     "keyRaw": "personality"
     },
     {
      "number": 34,
@@ -1434,7 +1546,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(34) ␦ conflicts: people more concerned about own team than about company"
-     }
+     },
+     "keyRaw": "structural"
     },
     {
      "number": 35,
@@ -1457,7 +1570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Conflict related stress can cause (35) ␦ that may last for months"
-     }
+     },
+     "keyRaw": "absence"
     },
     {
      "number": 36,
@@ -1480,7 +1594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Many have both (36) ␦ and anxiety"
-     }
+     },
+     "keyRaw": "confidence"
     },
     {
      "number": 37,
@@ -1502,7 +1617,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "There may be conflict between people who have different (37) ␦"
-     }
+     },
+     "keyRaw": "visions"
     },
     {
      "number": 38,
@@ -1525,7 +1641,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "A structure that is more (38) ␦ may create a feeling of uncertainty about who staff should report to"
-     }
+     },
+     "keyRaw": "democratic"
     },
     {
      "number": 39,
@@ -1547,7 +1664,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Bosses need to try hard to gain (39) ␦"
-     }
+     },
+     "keyRaw": "respect"
     },
     {
      "number": 40,
@@ -1570,7 +1688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Someone from outside the company may be given the role of (40) ␦ in order to resolve conflicts"
-     }
+     },
+     "keyRaw": "mediator"
     }
    ],
    "provenance": {
@@ -1622,6 +1741,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

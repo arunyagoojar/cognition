@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-27",
  "title": "IELTS Listening Test 27",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-27/index.html",
-   "sha256": "691b67796fd0218a435869944284a78ca7b08c6e3e76feeb7b9d8d86cde3eab8",
-   "manifestHashMatch": true,
+   "sha256": "db55851bd4e4816bdd39fb5d484f391863fff016c5a6f49eeba99f412c089070",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-27/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -366,8 +366,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -401,7 +403,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. How much is the beginner’s course?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 2,
@@ -435,7 +438,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. What does the club insurance cover?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 3,
@@ -469,7 +473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "3. How do the girls want to travel?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -502,8 +507,10 @@
      "Type of card: (7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -525,7 +532,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Address: C10 Mr and Mrs (4) ␦"
-     }
+     },
+     "keyRaw": "McDonald"
     },
     {
      "number": 5,
@@ -547,7 +555,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(5) ␦ Newcastle"
-     }
+     },
+     "keyRaw": "PO Box 2492"
     },
     {
      "number": 6,
@@ -569,7 +578,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Fax no.: 0249 (6) ␦"
-     }
+     },
+     "keyRaw": "760412"
     },
     {
      "number": 7,
@@ -591,7 +601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Type of card: (7) ␦"
-     }
+     },
+     "keyRaw": "Visa"
     }
    ],
    "provenance": {
@@ -635,8 +646,10 @@
      "9. Which TWO accommodation options mentioned are near the paragliding school?\nA camping\nB youth hostel\nC family\nD backpackers\nE caravan park\nF bed and breakfast\nG cheap hotel"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -649,11 +662,12 @@
      "blankContext": null,
      "correctAnswer": "D, F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "8. Which TWO of the following items must people take with them?"
-     }
+     },
+     "keyRaw": "D, F"
     },
     {
      "number": 9,
@@ -666,11 +680,12 @@
      "blankContext": null,
      "correctAnswer": "A, F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "9. Which TWO accommodation options mentioned are near the paragliding school?"
-     }
+     },
+     "keyRaw": "A, F"
     }
    ],
    "provenance": {
@@ -678,7 +693,7 @@
     "rawExcerpt": "Questions 8 and 9\nCircle TWO letters from A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g04",
@@ -699,8 +714,10 @@
      "10. Which weekend do the girls decide to go? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 10,
@@ -725,7 +742,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "10. Which weekend do the girls decide to go? ␦"
-     }
+     },
+     "keyRaw": "after exams"
     }
    ],
    "provenance": {
@@ -758,8 +776,10 @@
      "Main feature of park is the: (13) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -781,7 +801,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Purpose of the trip: (11) ␦"
-     }
+     },
+     "keyRaw": "a holiday"
     },
     {
      "number": 12,
@@ -803,7 +824,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Recorded years of Aboriginal life: (12) ␦"
-     }
+     },
+     "keyRaw": "over 40,000 years"
     },
     {
      "number": 13,
@@ -825,7 +847,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Main feature of park is the: (13) ␦"
-     }
+     },
+     "keyRaw": "walls of China"
     }
    ],
    "provenance": {
@@ -851,8 +874,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -882,7 +907,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "14. What took Alan by surprise?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
@@ -912,70 +938,13 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. How did Alan feel about having to wait in the park becaue of rain?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Questions 14 and 15\nChoose the correct letter A-C."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g07",
-   "part": 2,
-   "startQ": 16,
-   "endQ": 18,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle THREE letters A-F.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle THREE letters A-F."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "What does Alan say about those who helped him?\nA there were no other campers nearby\nB they willingly helped in the search\nC they kept our spirits up\nD they provided some dry clothes\nE the park ranger was unable to get through\nF the helicopter pilot led the search very well"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[16]",
-    "rawExcerpt": "Questions 16-18\nCircle THREE letters A-F."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g08",
-   "part": 2,
-   "startQ": 19,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle TWO letters A-F.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle TWO letters A-F."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "What does Alan say about the discoveries on the wall?\nA he took photos of them\nB they could be clearly seen\nC some were large\nD they were unique\nE they proved to be ancient"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[18]",
-    "rawExcerpt": "Questions 19 and 20\nCircle TWO letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -1029,8 +998,10 @@
      "(25) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1051,7 +1022,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(21)…………………"
-     }
+     },
+     "keyRaw": "thursday"
     },
     {
      "number": 22,
@@ -1072,7 +1044,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(22)…………………"
-     }
+     },
+     "keyRaw": "psychology"
     },
     {
      "number": 23,
@@ -1093,7 +1066,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(23)…………………"
-     }
+     },
+     "keyRaw": "14"
     },
     {
      "number": 24,
@@ -1114,7 +1088,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(24)…………………"
-     }
+     },
+     "keyRaw": "5"
     },
     {
      "number": 25,
@@ -1135,7 +1110,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(25)…………………"
-     }
+     },
+     "keyRaw": "wednesday"
     }
    ],
    "provenance": {
@@ -1167,8 +1143,10 @@
      "30. What is the subject of Sally’s first tutorial paper? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1193,7 +1171,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. What is Sally’s study strategy in lectures? ␦"
-     }
+     },
+     "keyRaw": "write everything"
     },
     {
      "number": 27,
@@ -1218,7 +1197,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "27. What is Ben’s study strategy for reading? ␦"
-     }
+     },
+     "keyRaw": "skim and underline"
     },
     {
      "number": 28,
@@ -1243,7 +1223,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "28. What is the subject of Ben’s first lecture? ␦"
-     }
+     },
+     "keyRaw": "the industrial revolution"
     },
     {
      "number": 29,
@@ -1268,7 +1249,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "29. What is the title of Ben’s first tutorial paper? ␦"
-     }
+     },
+     "keyRaw": "why study architecture"
     },
     {
      "number": 30,
@@ -1293,7 +1275,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "30. What is the subject of Sally’s first tutorial paper? ␦"
-     }
+     },
+     "keyRaw": "needs for sleep"
     }
    ],
    "provenance": {
@@ -1359,8 +1342,10 @@
      "(35) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1382,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "Diploma in Psychology – (31)…………….."
-     }
+     },
+     "keyRaw": "one year"
     },
     {
      "number": 32,
@@ -1403,7 +1389,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(32)…………………"
-     }
+     },
+     "keyRaw": "none"
     },
     {
      "number": 33,
@@ -1425,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(33)………………… – 3 years"
-     }
+     },
+     "keyRaw": "bachelors of art"
     },
     {
      "number": 34,
@@ -1446,7 +1434,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(34)………………………"
-     }
+     },
+     "keyRaw": "degree in psychology"
     },
     {
      "number": 35,
@@ -1468,7 +1457,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(35)………………… – 12 months"
-     }
+     },
+     "keyRaw": "clinical psychology diploma"
     }
    ],
    "provenance": {
@@ -1556,19 +1546,19 @@
       "letter": "G",
       "text": "a career in an insurance office"
      }
+    ],
+    "optionPreface": [
+     "Type of job"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 36
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 2 col 2",
@@ -1578,18 +1568,16 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(36)…………………………"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 37,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 37
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 3 col 2",
@@ -1599,18 +1587,16 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(37)…………………………"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 38,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 38
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 4 col 2",
@@ -1620,18 +1606,16 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(38)…………………………"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 39,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 39
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 5 col 2",
@@ -1641,18 +1625,16 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(39)…………………………"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 40,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 40
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 6 col 2",
@@ -1662,7 +1644,9 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "(40)…………………………"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1670,6 +1654,40 @@
     "rawExcerpt": "Questions 36-40\nComplete the table below. Write the appropriate letters A-G next to questions 36-40."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Type of job",
+    "options": [
+     {
+      "letter": "A",
+      "text": "a job requiring an unspecified degree"
+     },
+     {
+      "letter": "B",
+      "text": "working with people who are ill"
+     },
+     {
+      "letter": "C",
+      "text": "managing a factory"
+     },
+     {
+      "letter": "D",
+      "text": "a research psychologist"
+     },
+     {
+      "letter": "E",
+      "text": "a housewife with time on her hands"
+     },
+     {
+      "letter": "F",
+      "text": "a part time student"
+     },
+     {
+      "letter": "G",
+      "text": "a career in an insurance office"
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1726,11 +1744,119 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 8,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Which TWO of the following items must people take with them?",
+    "answer": "D, F",
+    "rawExcerpt": "8. Which TWO of the following items must people take with them?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 9,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Which TWO accommodation options mentioned are near the paragliding school?",
+    "answer": "A, F",
+    "rawExcerpt": "9. Which TWO accommodation options mentioned are near the paragliding school?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 33,
+    "missingOrQuarantined": [
+     8,
+     9,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 33,
+ "quarantinedCount": 10,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

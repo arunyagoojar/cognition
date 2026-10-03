@@ -1,0 +1,36 @@
+{
+ "slug": "ielts-listening-test-38",
+ "status": "quarantined",
+ "sourceSha256": "4c684aa12d713e996fe8fcbe72d4297d3625828a624f109e752d4f2b53fff882",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 38,
+   "reasonCode": "MULTI_COUNT_MISMATCH",
+   "reasonCodes": [
+    "MULTI_COUNT_MISMATCH",
+    "MULTI_KEY_UNRESOLVED",
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "A, D",
+    "rawExcerpt": "Choose TWO letters A-F.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     38
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

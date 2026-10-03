@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-75",
  "title": "IELTS Listening Test 75",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-75/index.html",
-   "sha256": "1f7d88be78c9b85c244b51b30eeb57f3a1d86581b4b92ad3c1fb8ff600bc31ed",
-   "manifestHashMatch": true,
+   "sha256": "50a52556c0da2f7e7221c54c833c055147acb8a3a3fb61c64587138b583f9eb3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-75/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "f6b29a8e491ad3ecff823ef8b0324fe500e5d5d4f3bbc57794a212c5597fa6c8",
+ "contentFingerprint": "43c017e8905b8523a074c314f45f934264b1cca7a687189368def86521636a80",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -410,8 +410,10 @@
      "Best way to contact: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -433,7 +435,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Open in: (1) ␦"
-     }
+     },
+     "keyRaw": "July"
     },
     {
      "number": 2,
@@ -455,7 +458,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Length of exhibition: (2) ␦"
-     }
+     },
+     "keyRaw": "3 days"
     },
     {
      "number": 3,
@@ -477,7 +481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Some cars are available to observe and others are for (3) ␦"
-     }
+     },
+     "keyRaw": "test driving"
     },
     {
      "number": 4,
@@ -500,7 +505,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The (4) ␦ is prohibited to take into the museum."
-     }
+     },
+     "keyRaw": "camera"
     },
     {
      "number": 5,
@@ -523,7 +529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Price of the ticket: (5) £ ␦ (in advance)."
-     }
+     },
+     "keyRaw": "110"
     },
     {
      "number": 6,
@@ -546,7 +553,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Transfer to Mark (6) ␦ (Box Office Manager)."
-     }
+     },
+     "keyRaw": "edgeworth"
     },
     {
      "number": 7,
@@ -569,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Held in the (7) ␦ Palace this year."
-     }
+     },
+     "keyRaw": "summer"
     },
     {
      "number": 8,
@@ -591,7 +600,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Not far from (8) ␦"
-     }
+     },
+     "keyRaw": "city centre"
     },
     {
      "number": 9,
@@ -614,7 +624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Website: www. (9) ␦ .com."
-     }
+     },
+     "keyRaw": "directions"
     },
     {
      "number": 10,
@@ -636,7 +647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Best way to contact: (10) ␦"
-     }
+     },
+     "keyRaw": "enquiring online"
     }
    ],
    "provenance": {
@@ -658,42 +670,36 @@
     "originalText": "Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A 3,000.",
-     "B 5,000.",
-     "C 11,000.",
-     "11. How many patients does the hospital consult every year?\nA 3,000.\nB 5,000.\nC 11,000.",
-     "A On weekday mornings.",
-     "B Three days a week.",
-     "C Only on Mondays and Fridays.",
-     "12. When can patients meet the female doctor?\nA On weekday mornings.\nB Three days a week.\nC Only on Mondays and Fridays.",
-     "A Mr. Roberts.",
-     "B Mr Green.",
-     "C Mr. Edwards.",
-     "13. Who is the expert on treating hearing loss?\nA Mr. Roberts.\nB Mr Green.\nC Mr. Edwards.",
-     "A The supermarket in the town.",
-     "B Pharmacies nearby the city centre.",
-     "C The health care’s pharmacy.",
-     "14. Where are patients recommended to buy their medicine?\nA The supermarket in the town.\nB Pharmacies nearby the city centre.\nC The health care’s pharmacy.",
-     "A Letting one student attend the consultation.",
-     "B Asking postgraduate students to do treatment.",
-     "C Meeting students in group discussion.",
-     "15. What will the patients be asked about whether they are willing to do?\nA Letting one student attend the consultation.\nB Asking postgraduate students to do treatment.\nC Meeting students in group discussion."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How many patients does the hospital consult every year?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "3,000."
+      },
+      {
+       "letter": "B",
+       "text": "5,000."
+      },
+      {
+       "letter": "C",
+       "text": "11,000."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -701,16 +707,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "11. How many patients does the hospital consult every year?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When can patients meet the female doctor?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "On weekday mornings."
+      },
+      {
+       "letter": "B",
+       "text": "Three days a week."
+      },
+      {
+       "letter": "C",
+       "text": "Only on Mondays and Fridays."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -718,16 +738,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "12. When can patients meet the female doctor?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Who is the expert on treating hearing loss?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Mr. Roberts."
+      },
+      {
+       "letter": "B",
+       "text": "Mr Green."
+      },
+      {
+       "letter": "C",
+       "text": "Mr. Edwards."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -735,16 +769,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "13. Who is the expert on treating hearing loss?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Where are patients recommended to buy their medicine?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The supermarket in the town."
+      },
+      {
+       "letter": "B",
+       "text": "Pharmacies nearby the city centre."
+      },
+      {
+       "letter": "C",
+       "text": "The health care’s pharmacy."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -752,16 +800,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. Where are patients recommended to buy their medicine?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What will the patients be asked about whether they are willing to do?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Letting one student attend the consultation."
+      },
+      {
+       "letter": "B",
+       "text": "Asking postgraduate students to do treatment."
+      },
+      {
+       "letter": "C",
+       "text": "Meeting students in group discussion."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -769,7 +831,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. What will the patients be asked about whether they are willing to do?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -797,8 +860,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test75.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -815,7 +880,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. Reception ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -832,7 +898,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. Mr. Green’s room ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 18,
@@ -849,7 +916,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. Medical Records Office ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 19,
@@ -866,7 +934,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. Surgery Room ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 20,
@@ -883,7 +952,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. Manager’s Office ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -891,6 +961,44 @@
     "rawExcerpt": "Questions 16-20\nLabel the map below. Write the correct letter, A-H, next to questions 16-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -915,14 +1023,36 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "lightning restrictions B alternative lighting C reduce the number of insects D decline in the number of species E climate changes F impacts on the growth of animals"
+      "text": "lightning restrictions"
+     },
+     {
+      "letter": "B",
+      "text": "alternative lighting"
+     },
+     {
+      "letter": "C",
+      "text": "reduce the number of insects"
+     },
+     {
+      "letter": "D",
+      "text": "decline in the number of species"
+     },
+     {
+      "letter": "E",
+      "text": "climate changes"
+     },
+     {
+      "letter": "F",
+      "text": "impacts on the growth of animals"
      },
      {
       "letter": "G",
       "text": "impacts on water quality"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -939,7 +1069,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "21. Ken Simpson ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -956,7 +1087,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "22. Dave Kepler ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -973,7 +1105,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "23. Sharon Grey ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 24,
@@ -990,7 +1123,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "24. Maria Jackson ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 25,
@@ -1007,12 +1141,47 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "25. Barbara Swallow ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21-25\nWhat is the main opinion of each of the following people?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "lightning restrictions"
+     },
+     {
+      "letter": "B",
+      "text": "alternative lighting"
+     },
+     {
+      "letter": "C",
+      "text": "reduce the number of insects"
+     },
+     {
+      "letter": "D",
+      "text": "decline in the number of species"
+     },
+     {
+      "letter": "E",
+      "text": "climate changes"
+     },
+     {
+      "letter": "F",
+      "text": "impacts on the growth of animals"
+     },
+     {
+      "letter": "G",
+      "text": "impacts on water quality"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1029,30 +1198,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A It makes no difference.",
-     "B Species will die out in natural light.",
-     "C Species will die out in artificial light.",
-     "26. What does Jim think about the difference among species in natural and artificial light?\nA It makes no difference.\nB Species will die out in natural light.\nC Species will die out in artificial light.",
-     "A governments didn’t increase any spending on them.",
-     "B most theories had nothing to do with the exam.",
-     "C many theories lack solid proof in the field.",
-     "27. One reason why Jim and Jane felt unsatisfied about the theories discussed in the lecture was that\nA governments didn’t increase any spending on them.\nB most theories had nothing to do with the exam.\nC many theories lack solid proof in the field."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Jim think about the difference among species in natural and artificial light?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It makes no difference."
+      },
+      {
+       "letter": "B",
+       "text": "Species will die out in natural light."
+      },
+      {
+       "letter": "C",
+       "text": "Species will die out in artificial light."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1060,16 +1235,30 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "26. What does Jim think about the difference among species in natural and artificial light?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "One reason why Jim and Jane felt unsatisfied about the theories discussed in the lecture was that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "governments didn’t increase any spending on them."
+      },
+      {
+       "letter": "B",
+       "text": "most theories had nothing to do with the exam."
+      },
+      {
+       "letter": "C",
+       "text": "many theories lack solid proof in the field."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1077,7 +1266,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "27. One reason why Jim and Jane felt unsatisfied about the theories discussed in the lecture was that"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1107,14 +1297,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "quality of life tourism В wildlife park animals С migration birds D animals living in rural areas E animals living in tropical climate F the impact of different environment on animals"
+      "text": "quality of life tourism В wildlife park animals С migration birds"
+     },
+     {
+      "letter": "D",
+      "text": "animals living in rural areas"
+     },
+     {
+      "letter": "E",
+      "text": "animals living in tropical climate"
+     },
+     {
+      "letter": "F",
+      "text": "the impact of different environment on animals"
      },
      {
       "letter": "G",
       "text": "pandas in the zoo"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1127,11 +1331,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1144,11 +1349,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1161,11 +1367,12 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1173,7 +1380,7 @@
     "rawExcerpt": "Questions 28-30\nChoose THREE letters, A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g07",
@@ -1195,14 +1402,22 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "cooperation В competition С moral values D player’s physical protection"
+      "text": "cooperation В competition С moral values"
+     },
+     {
+      "letter": "D",
+      "text": "player’s physical protection"
      },
      {
       "letter": "E",
       "text": "business model"
      }
+    ],
+    "optionPreface": [
+     "Which TWO aspects did the new rules at the end of the 19th century focus on?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1215,11 +1430,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters, A-E"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1232,18 +1448,19 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters, A-E"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[24]",
     "rawExcerpt": "Part 4: Questions 31 and 32\nChoose TWO letters, A-E"
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g08",
@@ -1272,8 +1489,10 @@
      "• In 1910s, (40) ␦ football players were approved of in the game."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1295,7 +1514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• At present the main reason why UK schools push football education is the pressure from (33) ␦"
-     }
+     },
+     "keyRaw": "parents"
     },
     {
      "number": 34,
@@ -1318,7 +1538,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Prior to the 19th, football players used different (34) ␦ of rules."
-     }
+     },
+     "keyRaw": "versions"
     },
     {
      "number": 35,
@@ -1341,7 +1562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• People attempted to standardise the rules from the whole (35) ␦ , known as the ‘Cambridge Rules’ in 1848."
-     }
+     },
+     "keyRaw": "country"
     },
     {
      "number": 36,
@@ -1364,7 +1586,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Attendences were increasing due to the improvement of infrastructure and the (36) ␦ system."
-     }
+     },
+     "keyRaw": "transport"
     },
     {
      "number": 37,
@@ -1387,7 +1610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Football became popular and it is regarded as a (37) ␦ event."
-     }
+     },
+     "keyRaw": "social"
     },
     {
      "number": 38,
@@ -1410,7 +1634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• The football clubs were responsible for most of the (38) ␦ and development for the football association."
-     }
+     },
+     "keyRaw": "funding"
     },
     {
      "number": 39,
@@ -1433,7 +1658,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• (39) ␦ against other teams were also organised by the football clubs."
-     }
+     },
+     "keyRaw": "competitions"
     },
     {
      "number": 40,
@@ -1456,7 +1682,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• In 1910s, (40) ␦ football players were approved of in the game."
-     }
+     },
+     "keyRaw": "professional"
     }
    ],
    "provenance": {
@@ -1492,7 +1719,103 @@
   "fnameInputs": 28
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 28,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 29,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 30,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "Choose THREE letters, A-G. Which THREE topics are they interested in studying in the future?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 31,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "C",
+    "rawExcerpt": "Choose TWO letters, A-E",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 32,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters, A-E",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     28,
+     29,
+     30,
+     31,
+     32
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1500,8 +1823,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 35,
+ "quarantinedCount": 6,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

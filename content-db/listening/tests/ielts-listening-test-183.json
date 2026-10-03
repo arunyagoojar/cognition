@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-183",
  "title": "IELTS Listening Test 183",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-183/index.html",
-   "sha256": "a57a11f447376013baba619e8eee1f0703be70929b9a5c96d73ccb3a52bb1f13",
-   "manifestHashMatch": true,
+   "sha256": "cc8ca0f851d1a4fa8920528679fd7c6391b27d868311d59e8f7b7bd0caf68bdd",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-183/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -424,8 +424,10 @@
      "• (10) ␦ service"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -448,7 +450,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Administrative assistant in a company that produces (1) ␦ (North London)"
-     }
+     },
+     "keyRaw": "Furniture"
     },
     {
      "number": 2,
@@ -471,7 +474,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Go to (2) ␦ and take notes"
-     }
+     },
+     "keyRaw": "Meetings"
     },
     {
      "number": 3,
@@ -493,7 +497,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Management of (3) ␦"
-     }
+     },
+     "keyRaw": "Diary"
     },
     {
      "number": 4,
@@ -515,7 +520,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Attention to (4) ␦"
-     }
+     },
+     "keyRaw": "Detail(s)"
     },
     {
      "number": 5,
@@ -538,7 +544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Need a minimum of (5) ␦ of experience of teleconferencing"
-     }
+     },
+     "keyRaw": "1/ one year"
     },
     {
      "number": 6,
@@ -560,7 +567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Managing (6) ␦"
-     }
+     },
+     "keyRaw": "Deliveries"
     },
     {
      "number": 7,
@@ -582,7 +590,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Very organized and (7) ␦"
-     }
+     },
+     "keyRaw": "Tidy"
     },
     {
      "number": 8,
@@ -604,7 +613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Used to working in a (8) ␦"
-     }
+     },
+     "keyRaw": "Team"
     },
     {
      "number": 9,
@@ -626,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Able to cope with items that are (9) ␦"
-     }
+     },
+     "keyRaw": "Heavy"
     },
     {
      "number": 10,
@@ -649,7 +660,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• (10) ␦ service"
-     }
+     },
+     "keyRaw": "Customer"
     }
    ],
    "provenance": {
@@ -677,8 +689,10 @@
      "Street Play Scheme"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -708,7 +722,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "11. When did the Street Play Scheme first take place?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -738,7 +753,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "12. How often is Beechwood Road closed to traffic now?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -768,7 +784,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "13. Who is responsible for closing the road?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
@@ -798,7 +815,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "14. Residents who want to use their cars"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -828,7 +846,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "15. Alice says that Street Play Schemes are most needed in"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -858,7 +877,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "16. What has been the reaction of residents who are not parents?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -887,14 +907,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "increased physical activity B increased sense of independence C opportunity to learn new games D opportunity to be part of a community"
+      "text": "increased physical activity"
+     },
+     {
+      "letter": "B",
+      "text": "increased sense of independence"
+     },
+     {
+      "letter": "C",
+      "text": "opportunity to learn new games"
+     },
+     {
+      "letter": "D",
+      "text": "opportunity to be part of a community"
      },
      {
       "letter": "E",
       "text": "opportunity to make new friends"
      }
+    ],
+    "optionPreface": [
+     "Which TWO benefits for children does Alice think are the most important?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -905,13 +941,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B, D"
     },
     {
      "number": 18,
@@ -922,13 +959,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B, D"
     }
    ],
    "provenance": {
@@ -936,6 +974,43 @@
     "rawExcerpt": "Questions 17 and 18\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:17-18",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO benefits for children does Alice think are the most important?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "increased physical activity"
+     },
+     {
+      "letter": "B",
+      "text": "increased sense of independence"
+     },
+     {
+      "letter": "C",
+      "text": "opportunity to learn new games"
+     },
+     {
+      "letter": "D",
+      "text": "opportunity to be part of a community"
+     },
+     {
+      "letter": "E",
+      "text": "opportunity to make new friends"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -958,14 +1033,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "more shoppers B improved safety C less air pollution D more relaxed atmosphere"
+      "text": "more shoppers"
+     },
+     {
+      "letter": "B",
+      "text": "improved safety"
+     },
+     {
+      "letter": "C",
+      "text": "less air pollution"
+     },
+     {
+      "letter": "D",
+      "text": "more relaxed atmosphere"
      },
      {
       "letter": "E",
       "text": "less noise pollution"
      }
+    ],
+    "optionPreface": [
+     "Which TWO results of the King Street experiment surprised Alice?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -976,13 +1067,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A, E"
     },
     {
      "number": 20,
@@ -993,13 +1085,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A, E"
     }
    ],
    "provenance": {
@@ -1007,6 +1100,43 @@
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:19-20",
+    "answerSet": [
+     "A",
+     "E"
+    ],
+    "prompt": "Which TWO results of the King Street experiment surprised Alice?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "more shoppers"
+     },
+     {
+      "letter": "B",
+      "text": "improved safety"
+     },
+     {
+      "letter": "C",
+      "text": "less air pollution"
+     },
+     {
+      "letter": "D",
+      "text": "more relaxed atmosphere"
+     },
+     {
+      "letter": "E",
+      "text": "less noise pollution"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1034,8 +1164,10 @@
      "• The (26) ␦ the writer may make about the reader"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1058,7 +1190,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• What (21) ␦ the item is on"
-     }
+     },
+     "keyRaw": "Page"
     },
     {
      "number": 22,
@@ -1081,7 +1214,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• The (22) ␦ of the item, including the headline"
-     }
+     },
+     "keyRaw": "Size"
     },
     {
      "number": 23,
@@ -1104,7 +1238,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Any (23) ␦ accompanying the item"
-     }
+     },
+     "keyRaw": "Graphic(s)"
     },
     {
      "number": 24,
@@ -1127,7 +1262,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• The (24) ␦ of the item e.g. what’s made prominent"
-     }
+     },
+     "keyRaw": "Structure"
     },
     {
      "number": 25,
@@ -1149,7 +1285,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• The writer’s main (25) ␦"
-     }
+     },
+     "keyRaw": "Purpose"
     },
     {
      "number": 26,
@@ -1172,7 +1309,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• The (26) ␦ the writer may make about the reader"
-     }
+     },
+     "keyRaw": "Assumption(s)"
     }
    ],
    "provenance": {
@@ -1196,12 +1334,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A she will definitely look for a suitable article\nB she may look for a suitable article\nC she definitely won’t look for an article"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "she will definitely look for a suitable article"
+     },
+     {
+      "letter": "B",
+      "text": "she may look for a suitable article"
+     },
+     {
+      "letter": "C",
+      "text": "she definitely won’t look for an article"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1218,7 +1369,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "27. national news item ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1235,7 +1387,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "28. editorial ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1252,7 +1405,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "29. human interest ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1269,7 +1423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "30. arts ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1277,6 +1432,24 @@
     "rawExcerpt": "Questions 27-30\nWhat does Hazel decide to do about each of the following types of articles? Write the correct letter A, B or C for questions 27-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "she will definitely look for a suitable article"
+     },
+     {
+      "letter": "B",
+      "text": "she may look for a suitable article"
+     },
+     {
+      "letter": "C",
+      "text": "she definitely won’t look for an article"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1319,8 +1492,10 @@
      "• From 1800s, there was no longer a (40) ␦ on soap"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1342,7 +1517,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Water was used to wash off (31) ␦"
-     }
+     },
+     "keyRaw": "Mud"
     },
     {
      "number": 32,
@@ -1365,7 +1541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Soap like material found in (32) ␦ cylinders"
-     }
+     },
+     "keyRaw": "Clay"
     },
     {
      "number": 33,
@@ -1387,7 +1564,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Used a strigil – scraper made of (33) ␦"
-     }
+     },
+     "keyRaw": "Metal"
     },
     {
      "number": 34,
@@ -1409,7 +1587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• Used soap to colour their (34) ␦"
-     }
+     },
+     "keyRaw": "Hair"
     },
     {
      "number": 35,
@@ -1432,7 +1611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• From about 312 BC, water carried to Roman (35) ␦ by aqueducts"
-     }
+     },
+     "keyRaw": "Bath(s)"
     },
     {
      "number": 36,
@@ -1454,7 +1634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "• Decline in bathing contributed to occurrence of (36) ␦"
-     }
+     },
+     "keyRaw": "Disease(s)"
     },
     {
      "number": 37,
@@ -1477,7 +1658,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "• (37) ␦ began to be added to soap"
-     }
+     },
+     "keyRaw": "Perfume"
     },
     {
      "number": 38,
@@ -1499,7 +1681,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• 1791: Leblanc invented a way of making soda ash from (38) ␦"
-     }
+     },
+     "keyRaw": "Salt"
     },
     {
      "number": 39,
@@ -1521,7 +1704,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• Early 1800s: Chevreul turned soapmaking into a (39) ␦"
-     }
+     },
+     "keyRaw": "Science"
     },
     {
      "number": 40,
@@ -1544,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• From 1800s, there was no longer a (40) ␦ on soap"
-     }
+     },
+     "keyRaw": "Tax"
     }
    ],
    "provenance": {
@@ -1597,6 +1782,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-33",
- "sourceSha256": "c7cd43c97cb82f6152db47133eb8b853e286d150d5c7faafba5d198c6a57fcfa",
+ "status": "quarantined",
+ "sourceSha256": "4494ba553fd082cc7ae125263647d778bdc54172d0b7a1d5f70320381cc8af92",
  "units": [
   {
    "unit": "group",
@@ -36,6 +37,213 @@
      19,
      20
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 36,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(36) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 37,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "F",
+    "rawExcerpt": "(37) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 38,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(38) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 39,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "G",
+    "rawExcerpt": "(39) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 40,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "D",
+    "rawExcerpt": "(40) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 6,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 7,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
+   "evidence": {
+    "questionsOutsideTheirSection": [
+     31,
+     32,
+     33,
+     34,
+     35
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 27,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8,
+     16,
+     17,
+     18,
+     19,
+     20,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ]

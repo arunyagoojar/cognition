@@ -1,0 +1,97 @@
+{
+ "slug": "ielts-listening-test-62",
+ "status": "quarantined",
+ "sourceSha256": "b9256354b8672a010b491c6747a2cb77761aac54a75cbcf87b308ea21c095008",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 5,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Family: ______",
+    "answer": "married, no children",
+    "rawExcerpt": "Family: (5) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 17,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Teacher-led discussion ______",
+    "answer": "E",
+    "rawExcerpt": "17. Teacher-led discussion ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Writing skills ______",
+    "answer": "C",
+    "rawExcerpt": "18. Writing skills ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "On-call teacher ______",
+    "answer": "I",
+    "rawExcerpt": "19. On-call teacher ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Language exchange ______",
+    "answer": "F",
+    "rawExcerpt": "20. Language exchange ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     5,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

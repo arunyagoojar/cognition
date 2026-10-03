@@ -1,0 +1,134 @@
+{
+ "slug": "ielts-listening-test-170",
+ "status": "quarantined",
+ "sourceSha256": "c5d760230881cb0c3614997feff1333bc1479a0027f2ca7c11789fa8f60e1f02",
+ "units": [
+  {
+   "unit": "group",
+   "groupId": "g09",
+   "questionNumbers": [
+    31,
+    32,
+    34,
+    35
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 4: Questions 31-35\nCircle the correct letters A-C",
+    "orphanOptionBlocks": [
+     "A\nB\nC"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 36,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Avoid eye contact with other drivers",
+    "answer": "B",
+    "rawExcerpt": "36. Avoid eye contact with other drivers",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 37,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Inform someone of your likely arrival time",
+    "answer": "A",
+    "rawExcerpt": "37. Inform someone of your likely arrival time",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 38,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Ensure car keys are ready when you return to the car",
+    "answer": "C",
+    "rawExcerpt": "38. Ensure car keys are ready when you return to the car",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 39,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Leave plenty of space when parking",
+    "answer": "B",
+    "rawExcerpt": "39. Leave plenty of space when parking",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 40,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Keep all doors locked",
+    "answer": "C",
+    "rawExcerpt": "40. Keep all doors locked",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 30,
+    "missingOrQuarantined": [
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

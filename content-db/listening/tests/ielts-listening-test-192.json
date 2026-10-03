@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-192",
  "title": "IELTS Listening Test 192",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-192/index.html",
-   "sha256": "204897c6f4e05cdcbdeafa89d9b825ac7940aaf5e21816027bade4090dac456c",
-   "manifestHashMatch": true,
+   "sha256": "13ff85b490241c9718fd8f9d63e63ad6be2a25a5aba9a62c62c5eed92c095366",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-192/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "4addb2ab061059340a5888566039c59e31ff963079bc9d6e36b4bbdd062aca64",
+ "contentFingerprint": "757381ebac6f510fc11f17808bcccc12a8be84d4ec313bbb02231cbec023afb7",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -416,8 +416,10 @@
      "• Customers send a (10) ␦ after each visit"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -440,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Cleaning the (1) ␦ throughout the apartment"
-     }
+     },
+     "keyRaw": "Floor(s)"
     },
     {
      "number": 2,
@@ -462,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o Cleaning the (2) ␦"
-     }
+     },
+     "keyRaw": "Fridge"
     },
     {
      "number": 3,
@@ -485,7 +489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o Ironing clothes – (3) ␦ only"
-     }
+     },
+     "keyRaw": "Shirts"
     },
     {
      "number": 4,
@@ -508,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o Cleaning all the (4) ␦ from the inside"
-     }
+     },
+     "keyRaw": "Windows"
     },
     {
      "number": 5,
@@ -530,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o Washing down the (5) ␦"
-     }
+     },
+     "keyRaw": "Balcony"
     },
     {
      "number": 6,
@@ -553,7 +560,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• They can organise a plumber or an (6) ␦ if necessary"
-     }
+     },
+     "keyRaw": "Electrician"
     },
     {
      "number": 7,
@@ -575,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• A special cleaning service is available for customers who are allergic to (7) ␦"
-     }
+     },
+     "keyRaw": "Dust"
     },
     {
      "number": 8,
@@ -597,7 +606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Before being hired, all cleaners have a background check carried out by the (8) ␦"
-     }
+     },
+     "keyRaw": "Police"
     },
     {
      "number": 9,
@@ -620,7 +630,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• All cleaners are given (9) ␦ for two weeks"
-     }
+     },
+     "keyRaw": "Training"
     },
     {
      "number": 10,
@@ -643,7 +654,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Customers send a (10) ␦ after each visit"
-     }
+     },
+     "keyRaw": "Review"
     }
    ],
    "provenance": {
@@ -665,38 +677,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A a lack of training.",
-     "B long hours.",
-     "C low pay.",
-     "11. Many hotel managers are unaware that their staff often\nA a lack of training.\nB long hours.\nC low pay.",
-     "A an increased workload",
-     "B low morale",
-     "C an inability to meet targets",
-     "12. What is the impact of high staff turnover on managers?\nA an increased workload\nB low morale\nC an inability to meet targets",
-     "A failing to treat staff equally",
-     "B reorganising shifts without warning",
-     "C neglecting to have enough staff during busy periods",
-     "13. What mistake should managers always avoid?\nA failing to treat staff equally\nB reorganising shifts without warning\nC neglecting to have enough staff during busy periods",
-     "A a fall in customer complaints",
-     "B an increase in loyalty club membership",
-     "C a rise in spending per customer",
-     "14. What unexpected benefit did Dunwich hotel notice after improving staff retention rates?\nA a fall in customer complaints\nB an increase in loyalty club membership\nC a rise in spending per customer"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Many hotel managers are unaware that their staff often",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a lack of training."
+      },
+      {
+       "letter": "B",
+       "text": "long hours."
+      },
+      {
+       "letter": "C",
+       "text": "low pay."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -704,16 +714,30 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Many hotel managers are unaware that their staff often"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What is the impact of high staff turnover on managers?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "an increased workload"
+      },
+      {
+       "letter": "B",
+       "text": "low morale"
+      },
+      {
+       "letter": "C",
+       "text": "an inability to meet targets"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -721,16 +745,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. What is the impact of high staff turnover on managers?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What mistake should managers always avoid?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "failing to treat staff equally"
+      },
+      {
+       "letter": "B",
+       "text": "reorganising shifts without warning"
+      },
+      {
+       "letter": "C",
+       "text": "neglecting to have enough staff during busy periods"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -738,16 +776,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. What mistake should managers always avoid?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What unexpected benefit did Dunwich hotel notice after improving staff retention rates?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a fall in customer complaints"
+      },
+      {
+       "letter": "B",
+       "text": "an increase in loyalty club membership"
+      },
+      {
+       "letter": "C",
+       "text": "a rise in spending per customer"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -755,7 +807,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. What unexpected benefit did Dunwich hotel notice after improving staff retention rates?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -783,8 +836,10 @@
      "Ways of reducing staff turnover\nA improving relationships and teamwork\nB offering incentives and financial benefits\nC providing career opportunities"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -801,7 +856,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. The Sun Club ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -818,7 +874,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. The Portland ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
@@ -835,7 +892,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "17. Bluewater Hotels ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -852,7 +910,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "18. Pentlow Hotels ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -869,7 +928,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "19. Green Planet ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -886,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "20. The Amesbury ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -894,6 +955,25 @@
     "rawExcerpt": "Questions 15-20\nWhich way of reducing staff turnover was used in each of the following hotels? Write the correct letter, A, B or C, next to Questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": "Ways of reducing staff turnover",
+    "options": [
+     {
+      "letter": "A",
+      "text": "improving relationships and teamwork"
+     },
+     {
+      "letter": "B",
+      "text": "offering incentives and financial benefits"
+     },
+     {
+      "letter": "C",
+      "text": "providing career opportunities"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -916,14 +996,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "He should have felt more positive about them. B The training was too challenging for him. C He could have worked harder at them. D His parents were disappointed in him."
+      "text": "He should have felt more positive about them."
+     },
+     {
+      "letter": "B",
+      "text": "The training was too challenging for him."
+     },
+     {
+      "letter": "C",
+      "text": "He could have worked harder at them."
+     },
+     {
+      "letter": "D",
+      "text": "His parents were disappointed in him."
      },
      {
       "letter": "E",
       "text": "His fellow students admired him."
      }
+    ],
+    "optionPreface": [
+     "Which TWO points do Thomas and Jeanne make about Thomas’s sporting activities at school?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -934,13 +1030,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C or E",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C or E"
     },
     {
      "number": 22,
@@ -951,18 +1048,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C or E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C or E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[16]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO points do Thomas and Jeanne make about Thomas’s sporting activities at school?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "He should have felt more positive about them."
+     },
+     {
+      "letter": "B",
+      "text": "The training was too challenging for him."
+     },
+     {
+      "letter": "C",
+      "text": "He could have worked harder at them."
+     },
+     {
+      "letter": "D",
+      "text": "His parents were disappointed in him."
+     },
+     {
+      "letter": "E",
+      "text": "His fellow students admired him."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -986,14 +1121,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "disbelief B relief C stress D gratitude"
+      "text": "disbelief"
+     },
+     {
+      "letter": "B",
+      "text": "relief"
+     },
+     {
+      "letter": "C",
+      "text": "stress"
+     },
+     {
+      "letter": "D",
+      "text": "gratitude"
      },
      {
       "letter": "E",
       "text": "homesickness"
      }
+    ],
+    "optionPreface": [
+     "Which TWO feelings did Thomas experience when he was in Kenya?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1004,13 +1155,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A or D",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A or D"
     },
     {
      "number": 24,
@@ -1021,13 +1173,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A or D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A or D"
     }
    ],
    "provenance": {
@@ -1035,6 +1188,43 @@
     "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:23-24",
+    "answerSet": [
+     "A",
+     "D"
+    ],
+    "prompt": "Which TWO feelings did Thomas experience when he was in Kenya?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "disbelief"
+     },
+     {
+      "letter": "B",
+      "text": "relief"
+     },
+     {
+      "letter": "C",
+      "text": "stress"
+     },
+     {
+      "letter": "D",
+      "text": "gratitude"
+     },
+     {
+      "letter": "E",
+      "text": "homesickness"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1057,14 +1247,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It could cause excessive sweating. B The material was being mass produced for another purpose. C People often needed to make their own. D It often had to be replaced. E The material was expensive. F It was unpopular among spectators. G It caused injuries."
+      "text": "It could cause excessive sweating."
+     },
+     {
+      "letter": "B",
+      "text": "The material was being mass produced for another purpose."
+     },
+     {
+      "letter": "C",
+      "text": "People often needed to make their own."
+     },
+     {
+      "letter": "D",
+      "text": "It often had to be replaced."
+     },
+     {
+      "letter": "E",
+      "text": "The material was expensive."
+     },
+     {
+      "letter": "F",
+      "text": "It was unpopular among spectators."
+     },
+     {
+      "letter": "G",
+      "text": "It caused injuries."
      },
      {
       "letter": "H",
       "text": "No one using it liked it at first."
      }
+    ],
+    "optionPreface": [
+     "Comments about the development of the equipment"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1081,7 +1299,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "25. the table tennis bat ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
@@ -1098,7 +1317,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. the cricket helmet ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 27,
@@ -1115,7 +1335,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. the cycle helmet ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1132,7 +1353,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "28. the golf club ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 29,
@@ -1149,7 +1371,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. the hockey stick ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1166,7 +1389,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. the football ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -1174,6 +1398,44 @@
     "rawExcerpt": "Questions 25-30\nWhat comment do the students make about the development of each of the following items of sporting equipment? Choose SIX answers from the box and write the correct letter, A-H, next to"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Comments about the development of the equipment",
+    "options": [
+     {
+      "letter": "A",
+      "text": "It could cause excessive sweating."
+     },
+     {
+      "letter": "B",
+      "text": "The material was being mass produced for another purpose."
+     },
+     {
+      "letter": "C",
+      "text": "People often needed to make their own."
+     },
+     {
+      "letter": "D",
+      "text": "It often had to be replaced."
+     },
+     {
+      "letter": "E",
+      "text": "The material was expensive."
+     },
+     {
+      "letter": "F",
+      "text": "It was unpopular among spectators."
+     },
+     {
+      "letter": "G",
+      "text": "It caused injuries."
+     },
+     {
+      "letter": "H",
+      "text": "No one using it liked it at first."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1216,8 +1478,10 @@
      "o A huge quantity of sap is needed to make a (40) ␦ of maple syrup"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1239,7 +1503,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Color described as (31) ␦"
-     }
+     },
+     "keyRaw": "Golden"
     },
     {
      "number": 32,
@@ -1262,7 +1527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Very (32) ␦ compared to refined sugar"
-     }
+     },
+     "keyRaw": "Healthy"
     },
     {
      "number": 33,
@@ -1285,7 +1551,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Best growing conditions and (33) ␦ are in Canada and North America"
-     }
+     },
+     "keyRaw": "Climate"
     },
     {
      "number": 34,
@@ -1308,7 +1575,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Used hot (34) ␦ to heat the sap"
-     }
+     },
+     "keyRaw": "Rock(s)"
     },
     {
      "number": 35,
@@ -1331,7 +1599,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o Tree trunks may not have the correct (35) ␦ until they have been growing for 40 years"
-     }
+     },
+     "keyRaw": "Diameter"
     },
     {
      "number": 36,
@@ -1354,7 +1623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o A tap is drilled into the trunk and a (36) ␦ carries the sap into a bucket"
-     }
+     },
+     "keyRaw": "Tube"
     },
     {
      "number": 37,
@@ -1376,7 +1646,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o Large pens of sap called evaporators are heated by means of a (37) ␦"
-     }
+     },
+     "keyRaw": "Fire"
     },
     {
      "number": 38,
@@ -1399,7 +1670,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o A lot of (38) ␦ is produced during the evaporation process"
-     }
+     },
+     "keyRaw": "Stream"
     },
     {
      "number": 39,
@@ -1422,7 +1694,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o Sugar sand is removed because it makes the syrup look (39) ␦ and affects the taste"
-     }
+     },
+     "keyRaw": "Cloudy"
     },
     {
      "number": 40,
@@ -1445,7 +1718,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o A huge quantity of sap is needed to make a (40) ␦ of maple syrup"
-     }
+     },
+     "keyRaw": "Litre/ liter"
     }
    ],
    "provenance": {
@@ -1492,6 +1766,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

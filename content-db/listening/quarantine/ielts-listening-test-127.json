@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-127",
- "sourceSha256": "e85175a6c0779fc86a3efa831f9a7132241b542c91bc72016d88c315af07dae9",
+ "status": "quarantined",
+ "sourceSha256": "5f543ad4d09e24b9fdecc72b76f931e6a0e9e1fbacf0a06692161b093c33b550",
  "units": [
   {
    "unit": "group",
@@ -48,6 +49,191 @@
      17,
      18
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 1,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "What does the applicant work on for a living?",
+    "answer": "B",
+    "rawExcerpt": "1. What does the applicant work on for a living?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "What kind of pet does the applicant have?",
+    "answer": "A",
+    "rawExcerpt": "2. What kind of pet does the applicant have?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 7,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 9,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 10,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 13,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 14,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 15,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 29,
+    "missingOrQuarantined": [
+     1,
+     2,
+     7,
+     8,
+     9,
+     10,
+     13,
+     14,
+     15,
+     17,
+     18
+    ],
+    "outOfRange": []
    }
   }
  ]

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-5",
  "title": "IELTS Listening Test 5",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-5/index.html",
-   "sha256": "1f3d9f9532f3185fd7fd671f6695fa0f8080c43caf3fba7236a18141a196dc18",
-   "manifestHashMatch": true,
+   "sha256": "6a10df4a47ff3d1fdc55570c9554469d2eafdb5dce536c4508b7710e95903d9b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-5/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -394,8 +394,10 @@
      "Starting: September 1st"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -418,7 +420,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Preferred location: in the (1) ␦ area of town"
-     }
+     },
+     "keyRaw": "central"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Maximum monthly rent: (2) £ ␦"
-     }
+     },
+     "keyRaw": "600"
     },
     {
      "number": 3,
@@ -463,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Length of let required: (3) ␦"
-     }
+     },
+     "keyRaw": "2 years"
     }
    ],
    "provenance": {
@@ -526,8 +531,10 @@
      "(8) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -549,7 +556,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "No (4)………………….."
-     }
+     },
+     "keyRaw": "garage"
     },
     {
      "number": 5,
@@ -572,7 +580,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "The (5)………………… is too large"
-     }
+     },
+     "keyRaw": "garden"
     },
     {
      "number": 6,
@@ -594,7 +603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Living room, kitchen, diner and a (6)…………………"
-     }
+     },
+     "keyRaw": "study"
     },
     {
      "number": 7,
@@ -616,7 +626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Too (7)…………………….."
-     }
+     },
+     "keyRaw": "noisy"
     },
     {
      "number": 8,
@@ -638,7 +649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(8) £ ………"
-     }
+     },
+     "keyRaw": "595"
     }
    ],
    "provenance": {
@@ -668,14 +680,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "museum B concert hall C cinema D sports centre"
+      "text": "museum"
+     },
+     {
+      "letter": "B",
+      "text": "concert hall"
+     },
+     {
+      "letter": "C",
+      "text": "cinema"
+     },
+     {
+      "letter": "D",
+      "text": "sports centre"
      },
      {
       "letter": "E",
       "text": "swimming pool"
      }
+    ],
+    "optionPreface": [
+     "Which TWO facilities in the district of Devon Close are open to the public at the moment?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -692,7 +720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -709,7 +738,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -717,6 +747,43 @@
     "rawExcerpt": "Questions 9 and 10\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:9-10",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO facilities in the district of Devon Close are open to the public at the moment?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "museum"
+     },
+     {
+      "letter": "B",
+      "text": "concert hall"
+     },
+     {
+      "letter": "C",
+      "text": "cinema"
+     },
+     {
+      "letter": "D",
+      "text": "sports centre"
+     },
+     {
+      "letter": "E",
+      "text": "swimming pool"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -745,8 +812,10 @@
      "Open: (16) ␦ days per year"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -768,7 +837,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Well known for: (11) ␦"
-     }
+     },
+     "keyRaw": "classical music concerts"
     },
     {
      "number": 12,
@@ -790,7 +860,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "restaurants and a (12) ␦"
-     }
+     },
+     "keyRaw": "bookshop"
     },
     {
      "number": 13,
@@ -817,7 +888,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "1960s-1970s: centre was (13) ␦ and built in (14) ␦ – opened to public"
-     }
+     },
+     "keyRaw": "planned"
     },
     {
      "number": 14,
@@ -844,7 +916,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "1960s-1970s: centre was (13) ␦ and built in (14) ␦ – opened to public"
-     }
+     },
+     "keyRaw": "1983"
     },
     {
      "number": 15,
@@ -866,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Managed by: the (15) ␦"
-     }
+     },
+     "keyRaw": "city council"
     },
     {
      "number": 16,
@@ -889,7 +963,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Open: (16) ␦ days per year"
-     }
+     },
+     "keyRaw": "363"
     }
    ],
    "provenance": {
@@ -949,8 +1024,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -971,7 +1048,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(17)………………….."
-     }
+     },
+     "keyRaw": "garden hall"
     },
     {
      "number": 18,
@@ -993,7 +1071,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(18)……………….(Canadian Flim)"
-     }
+     },
+     "keyRaw": "three lives"
     },
     {
      "number": 19,
@@ -1015,7 +1094,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(19) £……."
-     }
+     },
+     "keyRaw": "4.50"
     },
     {
      "number": 20,
@@ -1037,7 +1117,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(20)……………………(art exhibition)"
-     }
+     },
+     "keyRaw": "faces of China"
     }
    ],
    "provenance": {
@@ -1064,8 +1145,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1095,7 +1178,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "21. Paul decided to get work experience in South America because he wanted"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1125,7 +1209,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "22. What project work did Paul originally intend to get involved in?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1155,7 +1240,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. Why did Paul change from one project to another?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1185,7 +1271,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "24. In the village community, he learnt how important it was to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1215,7 +1302,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "25. What does Paul say about his project manager?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1245,7 +1333,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "26. Paul was surprised to be given"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1269,12 +1358,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A He will do this.\nB He might do this.\nC He won’t do this."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "He will do this."
+     },
+     {
+      "letter": "B",
+      "text": "He might do this."
+     },
+     {
+      "letter": "C",
+      "text": "He won’t do this."
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1291,7 +1393,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. Gender studies in Latin America ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1308,7 +1411,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "28. Second language acquisition ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1325,7 +1429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. Indigenous women’s lives ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1342,7 +1447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. Portuguese language studies ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1350,6 +1456,24 @@
     "rawExcerpt": "Questions 27-30"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "He will do this."
+     },
+     {
+      "letter": "B",
+      "text": "He might do this."
+     },
+     {
+      "letter": "C",
+      "text": "He won’t do this."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1369,8 +1493,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1400,7 +1526,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. Compared to introducing new business processes, attempts to copy existing processes are"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1430,7 +1557,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "32. Most research into the repetition of success in business has"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1460,7 +1588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "33. What does the speaker say about consulting experts?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 34,
@@ -1490,7 +1619,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "34. An expert’s knowledge about a business system may be incomplete because"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1532,8 +1662,10 @@
      "o The (40) ␦ of original employees"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1556,7 +1688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Create an ideal (35) ␦ from the best parts of several processes"
-     }
+     },
+     "keyRaw": "combination/ system"
     },
     {
      "number": 36,
@@ -1578,7 +1711,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Disadvantages were overlooked e.g. effect of changes on (36) ␦"
-     }
+     },
+     "keyRaw": "safety"
     },
     {
      "number": 37,
@@ -1600,7 +1734,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Change (37) ␦"
-     }
+     },
+     "keyRaw": "attitude"
     },
     {
      "number": 38,
@@ -1622,7 +1757,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Impose rigorous (38) ␦"
-     }
+     },
+     "keyRaw": "control"
     },
     {
      "number": 39,
@@ -1644,7 +1780,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "o Physical features of the (39) ␦"
-     }
+     },
+     "keyRaw": "factory"
     },
     {
      "number": 40,
@@ -1667,7 +1804,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "o The (40) ␦ of original employees"
-     }
+     },
+     "keyRaw": "skills"
     }
    ],
    "provenance": {
@@ -1714,5 +1852,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

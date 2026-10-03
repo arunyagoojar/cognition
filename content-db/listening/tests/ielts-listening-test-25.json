@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-25",
  "title": "IELTS Listening Test 25",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-25/index.html",
-   "sha256": "49c00b3ed295f2e043e92a88a772ed35bb6787478419dfb4d3df85f8a2d44958",
-   "manifestHashMatch": true,
+   "sha256": "cb5c829e88d6aed53a5718d7c8a213b6f70e00e6d88c16c7ac0809669843a795",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-25/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -393,8 +393,10 @@
      "Type of insurance: (7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -416,7 +418,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Name: (1) ␦"
-     }
+     },
+     "keyRaw": "Anna Grieves"
     },
     {
      "number": 2,
@@ -439,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Source of enquiry: saw ad in (2) ␦ magazine"
-     }
+     },
+     "keyRaw": "holiday world"
     },
     {
      "number": 3,
@@ -461,7 +465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Holiday reference: (3) ␦"
-     }
+     },
+     "keyRaw": "FT4551"
     },
     {
      "number": 4,
@@ -483,7 +488,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Number of people: (4) ␦"
-     }
+     },
+     "keyRaw": "3"
     },
     {
      "number": 5,
@@ -505,7 +511,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Preferred departure dates: (5) ␦"
-     }
+     },
+     "keyRaw": "16 August"
     },
     {
      "number": 6,
@@ -527,7 +534,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Number of nights: (6) ␦"
-     }
+     },
+     "keyRaw": "11"
     },
     {
      "number": 7,
@@ -549,7 +557,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of insurance: (7) ␦"
-     }
+     },
+     "keyRaw": "super"
     }
    ],
    "provenance": {
@@ -578,14 +587,40 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "arts demonstration B dance show C museums trip D bus tour at night E picnic lunches F river trip G room with balcony"
+      "text": "arts demonstration"
+     },
+     {
+      "letter": "B",
+      "text": "dance show"
+     },
+     {
+      "letter": "C",
+      "text": "museums trip"
+     },
+     {
+      "letter": "D",
+      "text": "bus tour at night"
+     },
+     {
+      "letter": "E",
+      "text": "picnic lunches"
+     },
+     {
+      "letter": "F",
+      "text": "river trip"
+     },
+     {
+      "letter": "G",
+      "text": "room with balcony"
      },
      {
       "letter": "H",
       "text": "trip to mountains"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -602,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE options does the woman want to book?"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 9,
@@ -619,7 +655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE options does the woman want to book?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 10,
@@ -636,7 +673,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE options does the woman want to book?"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -644,6 +682,56 @@
     "rawExcerpt": "Questions 8-10\n\nChoose THREE letters A-H."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g02:8-10",
+    "answerSet": [
+     "A",
+     "F",
+     "G"
+    ],
+    "prompt": "Which THREE options does the woman want to book?",
+    "instructionText": "Choose THREE letters A-H."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "arts demonstration"
+     },
+     {
+      "letter": "B",
+      "text": "dance show"
+     },
+     {
+      "letter": "C",
+      "text": "museums trip"
+     },
+     {
+      "letter": "D",
+      "text": "bus tour at night"
+     },
+     {
+      "letter": "E",
+      "text": "picnic lunches"
+     },
+     {
+      "letter": "F",
+      "text": "river trip"
+     },
+     {
+      "letter": "G",
+      "text": "room with balcony"
+     },
+     {
+      "letter": "H",
+      "text": "trip to mountains"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -674,8 +762,10 @@
      "• Prizes given by the (17) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -697,7 +787,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Set up in (11) ␦"
-     }
+     },
+     "keyRaw": "1992"
     },
     {
      "number": 12,
@@ -719,7 +810,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Aim: raise money for the (12) ␦"
-     }
+     },
+     "keyRaw": "hospital"
     },
     {
      "number": 13,
@@ -741,7 +833,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Teams to supply own (13) ␦"
-     }
+     },
+     "keyRaw": "numbers"
     },
     {
      "number": 14,
@@ -764,7 +857,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Teams should (14) ␦ together"
-     }
+     },
+     "keyRaw": "train"
     },
     {
      "number": 15,
@@ -786,7 +880,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Important to bring enough (15) ␦"
-     }
+     },
+     "keyRaw": "food and drink"
     },
     {
      "number": 16,
@@ -808,7 +903,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Race will finish in the (16) ␦"
-     }
+     },
+     "keyRaw": "main square"
     },
     {
      "number": 17,
@@ -830,7 +926,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "• Prizes given by the (17) ␦"
-     }
+     },
+     "keyRaw": "minister for health"
     }
    ],
    "provenance": {
@@ -863,77 +960,97 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "badges B bread and cake stall C swimming event D concert E door to door collecting F picnic G postcards"
+      "text": "badges"
+     },
+     {
+      "letter": "B",
+      "text": "bread and cake stall"
+     },
+     {
+      "letter": "C",
+      "text": "swimming event"
+     },
+     {
+      "letter": "D",
+      "text": "concert"
+     },
+     {
+      "letter": "E",
+      "text": "door to door collecting"
+     },
+     {
+      "letter": "F",
+      "text": "picnic"
+     },
+     {
+      "letter": "G",
+      "text": "postcards"
      },
      {
       "letter": "H",
       "text": "quiz I second hand sale"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (18) ␦",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(18) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(19) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (20) ␦",
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(20) ␦"
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -941,7 +1058,45 @@
     "rawExcerpt": "Questions 18-20\n\nChoose THREE letters A-H."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "badges"
+     },
+     {
+      "letter": "B",
+      "text": "bread and cake stall"
+     },
+     {
+      "letter": "C",
+      "text": "swimming event"
+     },
+     {
+      "letter": "D",
+      "text": "concert"
+     },
+     {
+      "letter": "E",
+      "text": "door to door collecting"
+     },
+     {
+      "letter": "F",
+      "text": "picnic"
+     },
+     {
+      "letter": "G",
+      "text": "postcards"
+     },
+     {
+      "letter": "H",
+      "text": "quiz I second hand sale"
+     }
+    ]
+   },
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -958,12 +1113,27 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "What do the students decide about each topic for Joe’s presentation?\n\nA Joe will definitely include this topic\n\nB Joe might include this topic\n\nC Joe will not include this topic"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "Joe will definitely include this topic"
+     },
+     {
+      "letter": "B",
+      "text": "Joe might include this topic"
+     },
+     {
+      "letter": "C",
+      "text": "Joe will not include this topic"
+     }
+    ],
+    "optionPreface": [
+     "What do the students decide about each topic for Joe’s presentation?"
+    ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -980,7 +1150,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "21. cultural aspects of naming people ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -997,7 +1168,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. similarities across languages in naming practices ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1014,7 +1186,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. meanings of first names ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1031,7 +1204,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "24. place names describing geographic features ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1048,12 +1222,31 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "26. origins of names of countries ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[14]",
     "rawExcerpt": "Part 3: Questions 21-26\n\nWrite the correct letter A, B or C next to questions 21-26."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "What do the students decide about each topic for Joe’s presentation?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Joe will definitely include this topic"
+     },
+     {
+      "letter": "B",
+      "text": "Joe might include this topic"
+     },
+     {
+      "letter": "C",
+      "text": "Joe will not include this topic"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1076,8 +1269,10 @@
      "Researchers showed a group of students many common nouns, brand names and (27) ␦ Students found it easier to identify brand names when they were shown in (28) ␦ Researchers think that (29) ␦ is important in making brand names special within the brain. Brand names create a number of (30) ␦ within the brain."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1112,7 +1307,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Researchers showed a group of students many common nouns, brand names and (27) ␦ Students found it easier to identify brand names when they were shown in (28) ␦ Researchers think that (29) ␦ is import"
-     }
+     },
+     "keyRaw": "meaningless words"
     },
     {
      "number": 28,
@@ -1147,7 +1343,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Researchers showed a group of students many common nouns, brand names and (27) ␦ Students found it easier to identify brand names when they were shown in (28) ␦ Researchers think that (29) ␦ is import"
-     }
+     },
+     "keyRaw": "capital letters"
     },
     {
      "number": 29,
@@ -1182,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Researchers showed a group of students many common nouns, brand names and (27) ␦ Students found it easier to identify brand names when they were shown in (28) ␦ Researchers think that (29) ␦ is import"
-     }
+     },
+     "keyRaw": "color"
     },
     {
      "number": 30,
@@ -1217,7 +1415,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Researchers showed a group of students many common nouns, brand names and (27) ␦ Students found it easier to identify brand names when they were shown in (28) ␦ Researchers think that (29) ␦ is import"
-     }
+     },
+     "keyRaw": "associations"
     }
    ],
    "provenance": {
@@ -1260,8 +1459,10 @@
      "Recent interest in use for carrying (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1284,7 +1485,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Instead of (31) ␦ in the US civil war"
-     }
+     },
+     "keyRaw": "spies"
     },
     {
      "number": 32,
@@ -1306,7 +1508,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• To make (32) ␦"
-     }
+     },
+     "keyRaw": "maps"
     },
     {
      "number": 33,
@@ -1329,7 +1532,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• To (33) ␦ for research"
-     }
+     },
+     "keyRaw": "collect data"
     },
     {
      "number": 34,
@@ -1351,7 +1555,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• As part of studies of (34) ␦"
-     }
+     },
+     "keyRaw": "climate"
     },
     {
      "number": 35,
@@ -1374,7 +1579,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Create less (35) ␦ than gas balloons"
-     }
+     },
+     "keyRaw": "lift"
     },
     {
      "number": 36,
@@ -1397,7 +1603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Early examples had no (36) ␦ for crew"
-     }
+     },
+     "keyRaw": "weather protection"
     },
     {
      "number": 37,
@@ -1419,7 +1626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "To be efficient needed a (37) ␦"
-     }
+     },
+     "keyRaw": "framework"
     },
     {
      "number": 38,
@@ -1441,7 +1649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Success of (38) ␦"
-     }
+     },
+     "keyRaw": "airlines"
     },
     {
      "number": 39,
@@ -1463,7 +1672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Series of (39) ␦"
-     }
+     },
+     "keyRaw": "crashes"
     },
     {
      "number": 40,
@@ -1485,7 +1695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Recent interest in use for carrying (40) ␦"
-     }
+     },
+     "keyRaw": "cargo"
     }
    ],
    "provenance": {
@@ -1533,7 +1744,178 @@
   "fnameInputs": 37
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "C",
+    "rawExcerpt": "(18) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "badges"
+     },
+     {
+      "letter": "B",
+      "text": "bread and cake stall"
+     },
+     {
+      "letter": "C",
+      "text": "swimming event"
+     },
+     {
+      "letter": "D",
+      "text": "concert"
+     },
+     {
+      "letter": "E",
+      "text": "door to door collecting"
+     },
+     {
+      "letter": "F",
+      "text": "picnic"
+     },
+     {
+      "letter": "G",
+      "text": "postcards"
+     },
+     {
+      "letter": "H",
+      "text": "quiz I second hand sale"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "A",
+    "rawExcerpt": "(19) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "badges"
+     },
+     {
+      "letter": "B",
+      "text": "bread and cake stall"
+     },
+     {
+      "letter": "C",
+      "text": "swimming event"
+     },
+     {
+      "letter": "D",
+      "text": "concert"
+     },
+     {
+      "letter": "E",
+      "text": "door to door collecting"
+     },
+     {
+      "letter": "F",
+      "text": "picnic"
+     },
+     {
+      "letter": "G",
+      "text": "postcards"
+     },
+     {
+      "letter": "H",
+      "text": "quiz I second hand sale"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "H",
+    "rawExcerpt": "(20) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "badges"
+     },
+     {
+      "letter": "B",
+      "text": "bread and cake stall"
+     },
+     {
+      "letter": "C",
+      "text": "swimming event"
+     },
+     {
+      "letter": "D",
+      "text": "concert"
+     },
+     {
+      "letter": "E",
+      "text": "door to door collecting"
+     },
+     {
+      "letter": "F",
+      "text": "picnic"
+     },
+     {
+      "letter": "G",
+      "text": "postcards"
+     },
+     {
+      "letter": "H",
+      "text": "quiz I second hand sale"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 25,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     18,
+     19,
+     20,
+     25
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1541,8 +1923,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 36,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-160",
  "title": "IELTS Listening Test 160",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-160/index.html",
-   "sha256": "0dc6073202b5ca67abbac464037ed054d1d282cf9b96bb9547255a3e954c21d7",
-   "manifestHashMatch": true,
+   "sha256": "5f3dc5b6b25e0f88c16185917fff8a0cf8665b8cd8ca221a3a45d7fdb9ac6215",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-160/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -410,8 +410,10 @@
      "Taxi costs (9) £ ␦ or take bus number (10) ␦ from station."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -434,7 +436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Three day cost: (1) £ ␦"
-     }
+     },
+     "keyRaw": "75"
     },
     {
      "number": 2,
@@ -457,7 +460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Payment by (2) ␦ or on arrival"
-     }
+     },
+     "keyRaw": "check"
     },
     {
      "number": 3,
@@ -480,7 +484,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• (3) £ ␦ per night"
-     }
+     },
+     "keyRaw": "15"
     },
     {
      "number": 4,
@@ -503,7 +508,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• (4) £ ␦ per night"
-     }
+     },
+     "keyRaw": "25"
     },
     {
      "number": 5,
@@ -526,7 +532,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Approximately (5) ␦ walk from conference centre"
-     }
+     },
+     "keyRaw": "10 minutes"
     },
     {
      "number": 6,
@@ -548,7 +555,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• (6) ␦"
-     }
+     },
+     "keyRaw": "conference park"
     },
     {
      "number": 7,
@@ -574,7 +582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Conference centre is on (7) ␦ Park road next to (8) ␦"
-     }
+     },
+     "keyRaw": "south"
     },
     {
      "number": 8,
@@ -600,7 +609,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Conference centre is on (7) ␦ Park road next to (8) ␦"
-     }
+     },
+     "keyRaw": "library"
     },
     {
      "number": 9,
@@ -627,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Taxi costs (9) £ ␦ or take bus number (10) ␦ from station."
-     }
+     },
+     "keyRaw": "5"
     },
     {
      "number": 10,
@@ -654,7 +665,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Taxi costs (9) £ ␦ or take bus number (10) ␦ from station."
-     }
+     },
+     "keyRaw": "21 A"
     }
    ],
    "provenance": {
@@ -683,14 +695,26 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the blue team B the yellow team C the green team"
+      "text": "the blue team"
+     },
+     {
+      "letter": "B",
+      "text": "the yellow team"
+     },
+     {
+      "letter": "C",
+      "text": "the green team"
      },
      {
       "letter": "D",
       "text": "the red team"
      }
+    ],
+    "optionPreface": [
+     "Teams"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -707,7 +731,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "11. checking entrance tickets ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 12,
@@ -724,7 +749,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "12. preparing refreshments ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -741,12 +767,35 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "13. directing car park traffic ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[2]",
     "rawExcerpt": "Part 2: Questions 11-13\nWhich team will do each of the following jobs?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "Teams",
+    "options": [
+     {
+      "letter": "A",
+      "text": "the blue team"
+     },
+     {
+      "letter": "B",
+      "text": "the yellow team"
+     },
+     {
+      "letter": "C",
+      "text": "the green team"
+     },
+     {
+      "letter": "D",
+      "text": "the red team"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -816,8 +865,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -840,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– information about pay – will give out the (14)…………..forms"
-     }
+     },
+     "keyRaw": "tax"
     },
     {
      "number": 15,
@@ -863,7 +915,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– will discuss conference centre plan – will explain about arrangements for (15)……………and fire exits"
-     }
+     },
+     "keyRaw": "security"
     },
     {
      "number": 16,
@@ -885,7 +938,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– go to staff canteen on the (16)……………"
-     }
+     },
+     "keyRaw": "ground floor"
     },
     {
      "number": 17,
@@ -911,7 +965,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– go to (17)…………….. – video title: (18)…………….."
-     }
+     },
+     "keyRaw": "lecture room 311"
     },
     {
      "number": 18,
@@ -937,7 +992,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– go to (17)…………….. – video title: (18)…………….."
-     }
+     },
+     "keyRaw": "safety at work"
     },
     {
      "number": 19,
@@ -960,7 +1016,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "– go to the (19)……………….. on 1st floor"
-     }
+     },
+     "keyRaw": "main hall"
     },
     {
      "number": 20,
@@ -982,7 +1039,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Meet the (20)……………"
-     }
+     },
+     "keyRaw": "team leaders"
     }
    ],
    "provenance": {
@@ -1013,8 +1071,10 @@
      "The Fordham library includes resources for teaching in (24) ␦ education and special needs. Current issues of periodicals are available at both libraries although (25) ␦ issues are only available at Fordham."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1045,7 +1105,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "The libraries on both sites provide internet access and have a variety of (21) ␦ materials on education. The Castle Road library has books on sociology together with (22) ␦ and other resources relevan"
-     }
+     },
+     "keyRaw": "reference"
     },
     {
      "number": 22,
@@ -1076,7 +1137,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "The libraries on both sites provide internet access and have a variety of (21) ␦ materials on education. The Castle Road library has books on sociology together with (22) ␦ and other resources relevan"
-     }
+     },
+     "keyRaw": "textbooks"
     },
     {
      "number": 23,
@@ -1107,7 +1169,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "The libraries on both sites provide internet access and have a variety of (21) ␦ materials on education. The Castle Road library has books on sociology together with (22) ␦ and other resources relevan"
-     }
+     },
+     "keyRaw": "secondary"
     },
     {
      "number": 24,
@@ -1134,7 +1197,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "The Fordham library includes resources for teaching in (24) ␦ education and special needs. Current issues of periodicals are available at both libraries although (25) ␦ issues are only available at Fo"
-     }
+     },
+     "keyRaw": "primary"
     },
     {
      "number": 25,
@@ -1161,7 +1225,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "The Fordham library includes resources for teaching in (24) ␦ education and special needs. Current issues of periodicals are available at both libraries although (25) ␦ issues are only available at Fo"
-     }
+     },
+     "keyRaw": "back"
     }
    ],
    "provenance": {
@@ -1189,8 +1254,10 @@
      "26. Which books cannot be renewed by telephone or email? ␦\n27. How much time is allowed to return recalled books? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1215,7 +1282,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "26. Which books cannot be renewed by telephone or email? ␦"
-     }
+     },
+     "keyRaw": "overdue books"
     },
     {
      "number": 27,
@@ -1240,7 +1308,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "27. How much time is allowed to return recalled books? ␦"
-     }
+     },
+     "keyRaw": "7 working days"
     }
    ],
    "provenance": {
@@ -1270,14 +1339,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "An introduction to the Internet B How to carry out research for a dissertation C Making good use of the whole range of library services D Planning a dissertation E Standard requirements when writing a dissertation F Using the Internet when doing research"
+      "text": "An introduction to the Internet"
+     },
+     {
+      "letter": "B",
+      "text": "How to carry out research for a dissertation"
+     },
+     {
+      "letter": "C",
+      "text": "Making good use of the whole range of library services"
+     },
+     {
+      "letter": "D",
+      "text": "Planning a dissertation"
+     },
+     {
+      "letter": "E",
+      "text": "Standard requirements when writing a dissertation"
+     },
+     {
+      "letter": "F",
+      "text": "Using the Internet when doing research"
      },
      {
       "letter": "G",
       "text": "What books and technical resources are available in the library"
      }
+    ],
+    "optionPreface": [
+     "Which THREE topics do this term’s study skills workshops cover?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1294,7 +1387,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters, A-G."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1311,7 +1405,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters, A-G."
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1328,7 +1423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters, A-G."
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1336,6 +1432,52 @@
     "rawExcerpt": "Questions 28-30\nChoose THREE letters, A-G."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g06:28-30",
+    "answerSet": [
+     "C",
+     "E",
+     "F"
+    ],
+    "prompt": "Which THREE topics do this term’s study skills workshops cover?",
+    "instructionText": "Choose THREE letters, A-G."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "An introduction to the Internet"
+     },
+     {
+      "letter": "B",
+      "text": "How to carry out research for a dissertation"
+     },
+     {
+      "letter": "C",
+      "text": "Making good use of the whole range of library services"
+     },
+     {
+      "letter": "D",
+      "text": "Planning a dissertation"
+     },
+     {
+      "letter": "E",
+      "text": "Standard requirements when writing a dissertation"
+     },
+     {
+      "letter": "F",
+      "text": "Using the Internet when doing research"
+     },
+     {
+      "letter": "G",
+      "text": "What books and technical resources are available in the library"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1355,8 +1497,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1386,7 +1530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "31. When did Asiatic lions develop as a separate sub-species?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1416,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "32. Pictures of Asiatic lions can be seen on ancient coins from"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
@@ -1446,7 +1592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "33. Asiatic lions disappeared from Europe"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 34,
@@ -1476,7 +1623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "34. Very few African lions have"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1505,8 +1653,10 @@
      "THE GIR SANCTUARY\n35. The sanctuary has an area of approximately ␦ square kilometers\n36. One threat to the lions in the sanctuary is ␦\n37. The ancestors of the Gir Sanctuary lions were protected by a ␦\n38. A large part of lions’ ␦ consists of animals belonging to local farmers\n39. The lions sometimes ␦ especially when water is short\n40. In ancient India a man would fight a lion as a test of ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1529,7 +1679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "35. The sanctuary has an area of approximately ␦ square kilometers"
-     }
+     },
+     "keyRaw": "1450"
     },
     {
      "number": 36,
@@ -1554,7 +1705,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "36. One threat to the lions in the sanctuary is ␦"
-     }
+     },
+     "keyRaw": "disease"
     },
     {
      "number": 37,
@@ -1579,7 +1731,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "37. The ancestors of the Gir Sanctuary lions were protected by a ␦"
-     }
+     },
+     "keyRaw": "prince"
     },
     {
      "number": 38,
@@ -1602,7 +1755,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "38. A large part of lions’ ␦ consists of animals belonging to local farmers"
-     }
+     },
+     "keyRaw": "diet"
     },
     {
      "number": 39,
@@ -1625,7 +1779,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "39. The lions sometimes ␦ especially when water is short"
-     }
+     },
+     "keyRaw": "attack humans"
     },
     {
      "number": 40,
@@ -1650,7 +1805,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "40. In ancient India a man would fight a lion as a test of ␦"
-     }
+     },
+     "keyRaw": "leadership"
     }
    ],
    "provenance": {
@@ -1695,5 +1851,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

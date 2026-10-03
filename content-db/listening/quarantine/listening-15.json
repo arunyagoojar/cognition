@@ -1,6 +1,7 @@
 {
  "slug": "listening-15",
- "sourceSha256": "29cf05f56e32d9eff9b4349c809f5cd92800c196d66f485f1ab1e60338ac9b8d",
+ "status": "quarantined",
+ "sourceSha256": "05d086f7119ae4219c68bc3dfd28c54cc9c4eb308203919ef0ad8d39db7cc2ae",
  "units": [
   {
    "unit": "question",
@@ -8,18 +9,30 @@
    "questionNumber": 29,
    "reasonCode": "OPTIONS_MISSING",
    "reasonCodes": [
-    "OPTIONS_MISSING"
+    "OPTIONS_MISSING",
+    "ANSWER_NOT_IN_OPTIONS"
    ],
    "evidence": {
     "stem": "What was Anna’s first possible topic to write about?",
     "answer": "A",
-    "rawExcerpt": "",
+    "rawExcerpt": "29. What was Anna’s first possible topic to write about?",
     "options": [
      {
       "letter": "B",
       "text": "Australian taxes invested in overseas investment"
      }
     ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     29
+    ],
+    "outOfRange": []
    }
   }
  ]

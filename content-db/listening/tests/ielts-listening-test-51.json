@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-51",
  "title": "IELTS Listening Test 51",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-51/index.html",
-   "sha256": "1ece2605e81995dd3444d336c81fcf7b74890c9d7e47a559309a216d6f31f82e",
-   "manifestHashMatch": true,
+   "sha256": "74a3b971c842df676c76b4204d6f7bc03769eb4a7fef38c3123a96ef62616a48",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-51/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -396,8 +396,10 @@
      "Other? (7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Educational qualification: Degree in (1) ␦"
-     }
+     },
+     "keyRaw": "engineering"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Previous job: (2) ␦"
-     }
+     },
+     "keyRaw": "car salesman"
     },
     {
      "number": 3,
@@ -463,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Hobbies: (3) ␦"
-     }
+     },
+     "keyRaw": "chess"
     },
     {
      "number": 4,
@@ -485,7 +490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Main skills: (4) ␦"
-     }
+     },
+     "keyRaw": "electronics"
     },
     {
      "number": 5,
@@ -507,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Expected salary ($): (5) ␦"
-     }
+     },
+     "keyRaw": "1200"
     },
     {
      "number": 6,
@@ -529,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Can start? (6) ␦"
-     }
+     },
+     "keyRaw": "immediately"
     },
     {
      "number": 7,
@@ -551,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Other? (7) ␦"
-     }
+     },
+     "keyRaw": "Spanish"
     }
    ],
    "provenance": {
@@ -585,77 +594,93 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Problem solving skills B Diligence C Experience D Flexible hours E Independent thinking F Good personality"
+      "text": "Problem solving skills"
+     },
+     {
+      "letter": "B",
+      "text": "Diligence"
+     },
+     {
+      "letter": "C",
+      "text": "Experience"
+     },
+     {
+      "letter": "D",
+      "text": "Flexible hours"
+     },
+     {
+      "letter": "E",
+      "text": "Independent thinking"
+     },
+     {
+      "letter": "F",
+      "text": "Good personality"
      },
      {
       "letter": "G",
       "text": "Qualifications"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 8
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (8) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 9,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 9
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (9) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 10,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 10
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (10) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(10) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -663,7 +688,41 @@
     "rawExcerpt": "Questions 8-10\nChoose THREE letters from A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Problem solving skills"
+     },
+     {
+      "letter": "B",
+      "text": "Diligence"
+     },
+     {
+      "letter": "C",
+      "text": "Experience"
+     },
+     {
+      "letter": "D",
+      "text": "Flexible hours"
+     },
+     {
+      "letter": "E",
+      "text": "Independent thinking"
+     },
+     {
+      "letter": "F",
+      "text": "Good personality"
+     },
+     {
+      "letter": "G",
+      "text": "Qualifications"
+     }
+    ]
+   },
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -684,8 +743,10 @@
      "11. What does the centre provide first? ␦\n12. What is important to control? ␦\n13. What does the centre assess? ␦\n14. How often is the exercise schedule reviewed? ␦\n15. How many exercise programs are available? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -710,7 +771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. What does the centre provide first? ␦"
-     }
+     },
+     "keyRaw": "consultations"
     },
     {
      "number": 12,
@@ -735,7 +797,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. What is important to control? ␦"
-     }
+     },
+     "keyRaw": "diet"
     },
     {
      "number": 13,
@@ -760,7 +823,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. What does the centre assess? ␦"
-     }
+     },
+     "keyRaw": "fitness"
     },
     {
      "number": 14,
@@ -785,7 +849,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "14. How often is the exercise schedule reviewed? ␦"
-     }
+     },
+     "keyRaw": "monthly"
     },
     {
      "number": 15,
@@ -810,7 +875,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. How many exercise programs are available? ␦"
-     }
+     },
+     "keyRaw": "three"
     }
    ],
    "provenance": {
@@ -838,8 +904,10 @@
      "A Jogging machines\nB Yoga studio\nC Weight units\nD Front-desk area\nE Squash courts\nF Shower blocks\nG Swimming pool"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -856,7 +924,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "16. developing confidence ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
@@ -873,7 +942,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "17. reducing stress ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -890,7 +960,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "18. building fitness ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 19,
@@ -907,7 +978,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "19. meeting others ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 20,
@@ -924,7 +996,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "20. finding information ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -932,6 +1005,41 @@
     "rawExcerpt": "Questions 16-20\nWrite the correct letter A-G next to questions 16-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Jogging machines"
+     },
+     {
+      "letter": "B",
+      "text": "Yoga studio"
+     },
+     {
+      "letter": "C",
+      "text": "Weight units"
+     },
+     {
+      "letter": "D",
+      "text": "Front-desk area"
+     },
+     {
+      "letter": "E",
+      "text": "Squash courts"
+     },
+     {
+      "letter": "F",
+      "text": "Shower blocks"
+     },
+     {
+      "letter": "G",
+      "text": "Swimming pool"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -951,8 +1059,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -982,7 +1092,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "21. The position needs someone good at"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1012,7 +1123,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "22. The directors will select someone from the faculty of"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1042,7 +1154,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "23. The position will require the person to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1072,7 +1185,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "24. The position will come with a"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1102,7 +1216,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "25. The best aspect of the job is it"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1164,8 +1279,10 @@
      "(30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1186,7 +1303,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(26)…………………."
-     }
+     },
+     "keyRaw": "7"
     },
     {
      "number": 27,
@@ -1207,7 +1325,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(27)………………"
-     }
+     },
+     "keyRaw": "MBP"
     },
     {
      "number": 28,
@@ -1228,7 +1347,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(28)…………………….."
-     }
+     },
+     "keyRaw": "not stable"
     },
     {
      "number": 29,
@@ -1249,7 +1369,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(29)………………"
-     }
+     },
+     "keyRaw": "bad attitude"
     },
     {
      "number": 30,
@@ -1270,7 +1391,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(30)……………….."
-     }
+     },
+     "keyRaw": "health problems"
     }
    ],
    "provenance": {
@@ -1297,8 +1419,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1328,7 +1452,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "31. Caves are"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1358,7 +1483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "32. People who explore caves"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 33,
@@ -1388,7 +1514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "33. China has"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1433,8 +1560,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1456,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Usually involves (34)…………….."
-     }
+     },
+     "keyRaw": "limestone"
     },
     {
      "number": 35,
@@ -1478,7 +1608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Good example in (35)………………"
-     }
+     },
+     "keyRaw": "Iceland"
     },
     {
      "number": 36,
@@ -1500,7 +1631,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Generally quite (36)…………………"
-     }
+     },
+     "keyRaw": "short"
     },
     {
      "number": 37,
@@ -1524,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "calcium"
     },
     {
      "number": 38,
@@ -1548,7 +1681,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "flowstone"
     },
     {
      "number": 39,
@@ -1572,7 +1706,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "1986"
     },
     {
      "number": 40,
@@ -1593,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "bottom up"
     }
    ],
    "provenance": {
@@ -1633,10 +1769,157 @@
   "fnameInputs": 32
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 8,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "A",
+    "rawExcerpt": "(8) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Problem solving skills"
+     },
+     {
+      "letter": "B",
+      "text": "Diligence"
+     },
+     {
+      "letter": "C",
+      "text": "Experience"
+     },
+     {
+      "letter": "D",
+      "text": "Flexible hours"
+     },
+     {
+      "letter": "E",
+      "text": "Independent thinking"
+     },
+     {
+      "letter": "F",
+      "text": "Good personality"
+     },
+     {
+      "letter": "G",
+      "text": "Qualifications"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 9,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "(9) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Problem solving skills"
+     },
+     {
+      "letter": "B",
+      "text": "Diligence"
+     },
+     {
+      "letter": "C",
+      "text": "Experience"
+     },
+     {
+      "letter": "D",
+      "text": "Flexible hours"
+     },
+     {
+      "letter": "E",
+      "text": "Independent thinking"
+     },
+     {
+      "letter": "F",
+      "text": "Good personality"
+     },
+     {
+      "letter": "G",
+      "text": "Qualifications"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "(10) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Problem solving skills"
+     },
+     {
+      "letter": "B",
+      "text": "Diligence"
+     },
+     {
+      "letter": "C",
+      "text": "Experience"
+     },
+     {
+      "letter": "D",
+      "text": "Flexible hours"
+     },
+     {
+      "letter": "E",
+      "text": "Independent thinking"
+     },
+     {
+      "letter": "F",
+      "text": "Good personality"
+     },
+     {
+      "letter": "G",
+      "text": "Qualifications"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     8,
+     9,
+     10
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

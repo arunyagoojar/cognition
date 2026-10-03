@@ -1,29 +1,112 @@
 {
  "slug": "ielts-listening-test-188",
- "sourceSha256": "0532265bdf08ae52d841aa8e6e60e222fe8a357c9950f7cab13297f9ea69a05e",
+ "status": "quarantined",
+ "sourceSha256": "dcd34ca3ba09e4886fdede5921d3cc62aa04d66ddaa3b966fe1360e401d5718f",
  "units": [
   {
-   "unit": "group",
-   "groupId": "g04",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 15,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     21,
-     22
-    ]
+    "stem": "New car park",
+    "answer": "C",
+    "rawExcerpt": "15. New car park ␦",
+    "options": null
    }
   },
   {
-   "unit": "group",
-   "groupId": "g05",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 16,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     23,
-     24
-    ]
+    "stem": "New cricket pitch",
+    "answer": "F",
+    "rawExcerpt": "16. New cricket pitch ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 17,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Children’s playground",
+    "answer": "A",
+    "rawExcerpt": "17. Children’s playground ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 18,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Skateboard ramp",
+    "answer": "I",
+    "rawExcerpt": "18. Skateboard ramp ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Pavilion",
+    "answer": "E",
+    "rawExcerpt": "19. Pavilion ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g03",
+   "questionNumber": 20,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Notice board",
+    "answer": "H",
+    "rawExcerpt": "20. Notice board ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
    }
   }
  ]

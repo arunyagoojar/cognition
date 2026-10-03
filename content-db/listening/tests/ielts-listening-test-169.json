@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-169",
  "title": "IELTS Listening Test 169",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-169/index.html",
-   "sha256": "cd8090f34592c2d56d116dea5890341112a5f42aac91a94061bcf0e893a776bf",
-   "manifestHashMatch": true,
+   "sha256": "0066cb12b52e7e8b4da2b76bd290a16ab5171b6791edcd5021c87f8c8bbee2f3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-169/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "8ebd6ebf6ce3e10519bc2aadc2361997d6d20e1edbd1e85f29622b7ef925c62b",
+ "contentFingerprint": "4df21e0a70a540a2a7cf5c81198884bb2956df97a7b73a02c4c419ad0a44607f",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -214,6 +214,10 @@
   ],
   "answers": [
    {
+    "number": 1,
+    "value": "B"
+   },
+   {
     "number": 2,
     "value": "C"
    },
@@ -339,19 +343,23 @@
   {
    "groupId": "g01",
    "part": 1,
-   "startQ": 2,
+   "startQ": 1,
    "endQ": 4,
    "partExplicit": true,
    "instruction": {
-    "text": "1. The respondent works in A the professions B business C other",
+    "text": "",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "1. The respondent works in A the professions B business C other"
+    "originalText": ""
    },
    "stimulus": {
     "kind": "sentences",
     "table": null,
     "segments": [
+     "A the professions",
+     "B business",
+     "C other",
+     "1. The respondent works in\nA the professions\nB business\nC other",
      "A £ 0-15,000 a year",
      "B £ 15,000-35,000 a year",
      "C over £35,000 a year",
@@ -366,12 +374,33 @@
      "4. Every day the respondent watches TV for\nA 30 min – 1 hour\nB 1 hour – 2 hours\nC more than 2 hours"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
+     "number": 1,
+     "type": "matching_box",
+     "stem": {
+      "plain": "The respondent works in",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "quarantined",
+     "provenance": {
+      "elementPath": "entry-content.children[1]",
+      "rawExcerpt": "1. The respondent works in"
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
+    },
+    {
      "number": 2,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The respondent has a salary of",
       "segments": null
@@ -380,15 +409,17 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[1]",
+      "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. The respondent has a salary of"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 3,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The respondent watched TV for",
       "segments": null
@@ -397,15 +428,17 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[2]",
+      "elementPath": "entry-content.children[3]",
       "rawExcerpt": "3. The respondent watched TV for"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 4,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Every day the respondent watches TV for",
       "segments": null
@@ -414,23 +447,39 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "4. Every day the respondent watches TV for"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
-    "rawExcerpt": "Part 1: Questions 1-4\n1. The respondent works in\nA the professions\nB business\nC other"
+    "rawExcerpt": "Part 1: Questions 1-4"
    },
-   "markerRange": [
-    1,
-    4
-   ],
-   "rangeReconciled": true,
-   "status": "verified"
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": "1. The respondent works in",
+    "options": [
+     {
+      "letter": "A",
+      "text": "the professions"
+     },
+     {
+      "letter": "B",
+      "text": "business"
+     },
+     {
+      "letter": "C",
+      "text": "other"
+     }
+    ]
+   },
+   "status": "quarantined"
   },
   {
    "groupId": "g02",
@@ -449,8 +498,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -463,11 +514,12 @@
      "blankContext": null,
      "correctAnswer": "A, E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[5]",
+      "elementPath": "entry-content.children[6]",
       "rawExcerpt": "5. The respondent mainly watches TV"
-     }
+     },
+     "keyRaw": "A, E"
     },
     {
      "number": 6,
@@ -480,11 +532,12 @@
      "blankContext": null,
      "correctAnswer": "A, C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[6]",
+      "elementPath": "entry-content.children[7]",
       "rawExcerpt": "6. On the new channel the respondent would like to see more"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 7,
@@ -497,19 +550,20 @@
      "blankContext": null,
      "correctAnswer": "C, E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[7]",
+      "elementPath": "entry-content.children[8]",
       "rawExcerpt": "7. The respondent would advise the new channel to"
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[4]",
+    "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Questions 5-7\nChoose TWO letters A-E"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -528,8 +582,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -557,9 +613,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[9]",
+      "elementPath": "entry-content.children[10]",
       "rawExcerpt": "8. The respondent feels that adverts should occur only"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 9,
@@ -587,9 +644,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[10]",
+      "elementPath": "entry-content.children[11]",
       "rawExcerpt": "9. The respondent would like to attend special promotions if"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 10,
@@ -617,69 +675,15 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "10. The respondent would like to receive"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[8]",
+    "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Questions 8-10\nCircle the correct letter A-C"
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g04",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 14,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Circle FOUR letters A-G Which FOUR activities of the Union are mentioned by the speaker? A raising money for good causes B political campaigning C running a new agency D running a supermarket E providing cheap tickets F helping with accommodation G providing catering services",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle FOUR letters A-G Which FOUR activities of the Union are mentioned by the speaker? A raising money for good causes\nB political campaigning\nC running a new agency\nD running a supermarket\nE providing cheap tickets\nF helping with accommodation\nG providing catering services"
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[12]",
-    "rawExcerpt": "Part 2: Questions 11-14\nCircle FOUR letters A-G"
-   },
-   "status": "verified"
-  },
-  {
-   "groupId": "g05",
-   "part": 2,
-   "startQ": 15,
-   "endQ": 16,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle TWO letters A-E",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle TWO letters A-E"
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Which TWO of the following can you get advice about from the Union?\nA immigration\nB grants\nC medical problems\nD personal problems\nE legal matters"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[15]",
-    "rawExcerpt": "Questions 15 and 16\nCircle TWO letters A-E"
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -716,23 +720,19 @@
       "letter": "C",
       "text": "some distance from the centre of the town"
      }
+    ],
+    "optionPreface": [
+     "What are the locations of the following places in Radford?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "the hi-tech fitness centre ______",
-      "segments": [
-       "the hi-tech fitness centre",
-       {
-        "blank": 17
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "the hi-tech fitness centre",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 17. the hi-tech fitness centre ␦ (input box in source)",
@@ -740,24 +740,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "17. the hi-tech fitness centre ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "the ice rink ______",
-      "segments": [
-       "the ice rink",
-       {
-        "blank": 18
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "the ice rink",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 18. the ice rink ␦ (input box in source)",
@@ -765,24 +759,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "18. the ice rink ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "the new cinema ______",
-      "segments": [
-       "the new cinema",
-       {
-        "blank": 19
-       },
-       {
-        "blank": 19
-       }
-      ]
+      "plain": "the new cinema",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 19. the new cinema ␦ (input box in source)",
@@ -790,24 +778,18 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "19. the new cinema ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "the Theatre Royal ______",
-      "segments": [
-       "the Theatre Royal",
-       {
-        "blank": 20
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "the Theatre Royal",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 20. the Theatre Royal ␦ (input box in source)",
@@ -815,16 +797,36 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "20. the Theatre Royal ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[17]",
+    "elementPath": "entry-content.children[18]",
     "rawExcerpt": "Questions 17-20\nWrite the appropriate letters A-C against questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "What are the locations of the following places in Radford?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "part of the Metro Tower Building"
+     },
+     {
+      "letter": "B",
+      "text": "in the main square in the centre of the town"
+     },
+     {
+      "letter": "C",
+      "text": "some distance from the centre of the town"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -849,8 +851,10 @@
      "Extra programme offered on: (23) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -870,9 +874,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Hand-in-date: (21) ␦"
-     }
+     },
+     "keyRaw": "21 May"
     },
     {
      "number": 22,
@@ -893,9 +898,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Length: (22) ␦ to ␦"
-     }
+     },
+     "keyRaw": "18000-20000"
     },
     {
      "number": 23,
@@ -915,13 +921,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Extra programme offered on: (23) ␦"
-     }
+     },
+     "keyRaw": "research methods"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[20]",
+    "elementPath": "entry-content.children[21]",
     "rawExcerpt": "Part 3: Questions 21-23\nComplete the notes below. Write NO MORE THAN THREE WORDS OR A NUMBER for each answer."
    },
    "status": "verified"
@@ -975,8 +982,10 @@
      "(26) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -995,9 +1004,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(24)……………….."
-     }
+     },
+     "keyRaw": "plan"
     },
     {
      "number": 25,
@@ -1016,9 +1026,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(25)………………."
-     }
+     },
+     "keyRaw": "research"
     },
     {
      "number": 26,
@@ -1038,13 +1049,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "(26)……………….to………………."
-     }
+     },
+     "keyRaw": "march to may"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[22]",
+    "elementPath": "entry-content.children[23]",
     "rawExcerpt": "Question 24-26\nComplete the table below."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1116,8 +1128,10 @@
       "letter": "C",
       "text": ""
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1130,11 +1144,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[28]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "27. Buying a computer"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1147,11 +1162,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[28]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "28. Reading previous year’s dissertation"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1164,11 +1180,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[28]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "29. Using questionnaires as main research instrument"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1181,19 +1198,20 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[28]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "30. Interviewing tutors"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[26]",
+    "elementPath": "entry-content.children[27]",
     "rawExcerpt": "Questions 27-30"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g10",
@@ -1212,8 +1230,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1241,9 +1261,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "31. The driest continent is"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1271,9 +1292,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[32]",
+      "elementPath": "entry-content.children[33]",
       "rawExcerpt": "32. The evaporation rate in Australia is"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1301,9 +1323,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[33]",
+      "elementPath": "entry-content.children[34]",
       "rawExcerpt": "33. Rainfall in Australia hardly penetrates the soil because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 34,
@@ -1331,9 +1354,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[34]",
+      "elementPath": "entry-content.children[35]",
       "rawExcerpt": "34. In sandy soils water can"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 35,
@@ -1361,9 +1385,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[35]",
+      "elementPath": "entry-content.children[36]",
       "rawExcerpt": "35. Water is mainly pumped up for"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 36,
@@ -1391,9 +1416,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "36. Natural springs are located"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 37,
@@ -1421,44 +1447,16 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[37]",
+      "elementPath": "entry-content.children[38]",
       "rawExcerpt": "37. Underground water supplies"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[30]",
+    "elementPath": "entry-content.children[31]",
     "rawExcerpt": "Part 4: Questions 31-37\nCircle the correct letters A-C"
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g11",
-   "part": 4,
-   "startQ": 38,
-   "endQ": 40,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle THREE letters A-E",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle THREE letters A-E"
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Which THREE of the following uses of dam water are mentioned?\nA providing water for livestock\nB watering farmland\nC providing water for industry\nD controlling flood water\nE producing hydro-electric power"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[38]",
-    "rawExcerpt": "Questions 38-40\nCircle THREE letters A-E"
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   }
  ],
@@ -1515,11 +1513,276 @@
      40
     ]
    }
+  },
+  {
+   "unit": "group",
+   "groupId": "g01",
+   "questionNumbers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 1: Questions 1-4",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 5,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "The respondent mainly watches TV",
+    "answer": "A, E",
+    "rawExcerpt": "5. The respondent mainly watches TV",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "On the new channel the respondent would like to see more",
+    "answer": "A, C",
+    "rawExcerpt": "6. On the new channel the respondent would like to see more",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 7,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "The respondent would advise the new channel to",
+    "answer": "C, E",
+    "rawExcerpt": "7. The respondent would advise the new channel to",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 27,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Buying a computer",
+    "answer": "A",
+    "rawExcerpt": "27. Buying a computer",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 28,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Reading previous year’s dissertation",
+    "answer": "A",
+    "rawExcerpt": "28. Reading previous year’s dissertation",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 29,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Using questionnaires as main research instrument",
+    "answer": "C",
+    "rawExcerpt": "29. Using questionnaires as main research instrument",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 30,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Interviewing tutors",
+    "answer": "B",
+    "rawExcerpt": "30. Interviewing tutors",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 11,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 13,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 14,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "G"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 15,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 20,
+    "missingOrQuarantined": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     27,
+     28,
+     29,
+     30,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 30,
- "quarantinedCount": 3,
- "status": "flagged",
+ "verifiedQuestionCount": 20,
+ "quarantinedCount": 21,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

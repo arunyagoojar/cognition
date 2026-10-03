@@ -1,0 +1,75 @@
+{
+ "slug": "ielts-listening-test-155",
+ "status": "duplicate",
+ "sourceSha256": "399e462085fbc81e7c53139d508745e5ceae063e874d4452f05c26af885ccbde",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "What proportion of the sponsorship money goes to charity?",
+    "answer": "C",
+    "rawExcerpt": "12. What proportion of the sponsorship money goes to charity?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 34,
+   "reasonCode": "KEY_NOT_A_LETTER",
+   "reasonCodes": [
+    "KEY_NOT_A_LETTER"
+   ],
+   "evidence": {
+    "stem": "What is the impact of the outside environment on a hotel guest?",
+    "answer": "c",
+    "rawExcerpt": "34. What is the impact of the outside environment on a hotel guest?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "It has a considerable effect"
+     },
+     {
+      "letter": "B",
+      "text": "It has a very limited effect"
+     },
+     {
+      "letter": "C",
+      "text": "It has no effect whatsoever"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     12,
+     34
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

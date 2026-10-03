@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-132",
  "title": "IELTS Listening Test 132",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-132/index.html",
-   "sha256": "eba0554a65078dbb814c268db259b94ee70c581cdb2dffe22b3aee2f8a48550c",
-   "manifestHashMatch": true,
+   "sha256": "79d8e99477dc9862de6e07fa614acaafc3d14e91810df705bbb16fd382130445",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-132/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -403,8 +403,10 @@
      "1. Cheapest properties: £ ␦ per week\n2. Minimum period of contract ␦\n3. Office open Saturdays until ␦\n4. List of properties available on ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -427,7 +429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. Cheapest properties: £ ␦ per week"
-     }
+     },
+     "keyRaw": "90"
     },
     {
      "number": 2,
@@ -452,7 +455,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "2. Minimum period of contract ␦"
-     }
+     },
+     "keyRaw": "8 months"
     },
     {
      "number": 3,
@@ -477,7 +481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "3. Office open Saturdays until ␦"
-     }
+     },
+     "keyRaw": "4 pm"
     },
     {
      "number": 4,
@@ -502,7 +507,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "4. List of properties available on ␦"
-     }
+     },
+     "keyRaw": "Internet"
     }
    ],
    "provenance": {
@@ -535,77 +541,93 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "heating bills B kitchen equipment C plates and glasses D sheets and towels E telephone F television"
+      "text": "heating bills"
+     },
+     {
+      "letter": "B",
+      "text": "kitchen equipment"
+     },
+     {
+      "letter": "C",
+      "text": "plates and glasses"
+     },
+     {
+      "letter": "D",
+      "text": "sheets and towels"
+     },
+     {
+      "letter": "E",
+      "text": "telephone"
+     },
+     {
+      "letter": "F",
+      "text": "television"
      },
      {
       "letter": "G",
       "text": "water bill"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 5
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (5) ␦",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(5) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 6,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 6
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (6) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(6) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 7,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 7
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (7) ␦",
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(7) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -613,7 +635,41 @@
     "rawExcerpt": "Questions 5-7\nChoose THREE letters A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "heating bills"
+     },
+     {
+      "letter": "B",
+      "text": "kitchen equipment"
+     },
+     {
+      "letter": "C",
+      "text": "plates and glasses"
+     },
+     {
+      "letter": "D",
+      "text": "sheets and towels"
+     },
+     {
+      "letter": "E",
+      "text": "telephone"
+     },
+     {
+      "letter": "F",
+      "text": "television"
+     },
+     {
+      "letter": "G",
+      "text": "water bill"
+     }
+    ]
+   },
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -634,8 +690,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test132-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -652,7 +710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "8. Eastern Towers ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 9,
@@ -669,7 +728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "9. Granby Mansions ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 10,
@@ -686,7 +746,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "10. Busby Garden ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -694,6 +755,44 @@
     "rawExcerpt": "Questions 8-10\nLabel the map below. Write the correct letter A-H next to questions 8-10."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -718,8 +817,10 @@
      "Activities\n13. The visit to the ␦ has been cancelled.\n14. There will be a talk about ␦ from the area on Saturday.\n15. The visit to the ␦ will take place on Saturday.\n16. There is a collection of ␦ in the art gallery."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -742,7 +843,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. You must book ␦ in advance."
-     }
+     },
+     "keyRaw": "breakfast"
     },
     {
      "number": 12,
@@ -765,7 +867,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. There are some interesting ␦ in the lounge."
-     }
+     },
+     "keyRaw": "paintings"
     },
     {
      "number": 13,
@@ -788,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "13. The visit to the ␦ has been cancelled."
-     }
+     },
+     "keyRaw": "castle"
     },
     {
      "number": 14,
@@ -811,7 +915,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. There will be a talk about ␦ from the area on Saturday."
-     }
+     },
+     "keyRaw": "famous people"
     },
     {
      "number": 15,
@@ -834,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. The visit to the ␦ will take place on Saturday."
-     }
+     },
+     "keyRaw": "antiques show"
     },
     {
      "number": 16,
@@ -857,7 +963,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. There is a collection of ␦ in the art gallery."
-     }
+     },
+     "keyRaw": "old postcards"
     }
    ],
    "provenance": {
@@ -888,22 +995,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test132-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -913,21 +1015,16 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -937,21 +1034,16 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -961,21 +1053,16 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -985,7 +1072,9 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -993,6 +1082,48 @@
     "rawExcerpt": "Questions 17-20\nLabel the map below. Write the correct letter A-I next to questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1012,8 +1143,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1043,7 +1176,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "21. How old are the students of the nursing program?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1073,7 +1207,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "22. What do the speakers say about the group project?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
@@ -1103,7 +1238,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "23. Which part of the program surprised Paul?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1133,7 +1269,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. What do they feel about learning law?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1162,14 +1299,40 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "get feedback from teaching staff B do more reading C get help from school supporting staff D get help for nursing problems E manage time properly F be well prepared G review the notes regularly"
+      "text": "get feedback from teaching staff"
+     },
+     {
+      "letter": "B",
+      "text": "do more reading"
+     },
+     {
+      "letter": "C",
+      "text": "get help from school supporting staff"
+     },
+     {
+      "letter": "D",
+      "text": "get help for nursing problems"
+     },
+     {
+      "letter": "E",
+      "text": "manage time properly"
+     },
+     {
+      "letter": "F",
+      "text": "be well prepared"
+     },
+     {
+      "letter": "G",
+      "text": "review the notes regularly"
      },
      {
       "letter": "H",
       "text": "do not set unrealistic goals"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1186,7 +1349,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "25. Essays ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 26,
@@ -1203,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "26. Lectures ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 27,
@@ -1220,7 +1385,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. Research ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1237,7 +1403,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "28. Online forum ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1254,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "29. Placement tests ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1271,7 +1439,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "30. Freshmen ␦"
-     }
+     },
+     "keyRaw": "H"
     }
    ],
    "provenance": {
@@ -1279,6 +1448,44 @@
     "rawExcerpt": "Questions 25-30\nWhat are the suggestions offered by the speakers?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "get feedback from teaching staff"
+     },
+     {
+      "letter": "B",
+      "text": "do more reading"
+     },
+     {
+      "letter": "C",
+      "text": "get help from school supporting staff"
+     },
+     {
+      "letter": "D",
+      "text": "get help for nursing problems"
+     },
+     {
+      "letter": "E",
+      "text": "manage time properly"
+     },
+     {
+      "letter": "F",
+      "text": "be well prepared"
+     },
+     {
+      "letter": "G",
+      "text": "review the notes regularly"
+     },
+     {
+      "letter": "H",
+      "text": "do not set unrealistic goals"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1300,8 +1507,10 @@
      "31. Although it is called wild, most varieties of wild rice are ␦\n32. Wild rice is mostly found in lakes that have ␦ water.\n33. Wild rice was gathered by Indians before any ␦ ever arrived.\n34. Early visitors thought that wild rice had greatly increased the ␦ and ␦ of the Indians."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1326,7 +1535,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "31. Although it is called wild, most varieties of wild rice are ␦"
-     }
+     },
+     "keyRaw": "cultivated"
     },
     {
      "number": 32,
@@ -1349,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "32. Wild rice is mostly found in lakes that have ␦ water."
-     }
+     },
+     "keyRaw": "fresh"
     },
     {
      "number": 33,
@@ -1372,7 +1583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "33. Wild rice was gathered by Indians before any ␦ ever arrived."
-     }
+     },
+     "keyRaw": "explorers"
     },
     {
      "number": 34,
@@ -1395,18 +1607,19 @@
      "blankContext": "line: 34. Early visitors thought that wild rice had greatly increased the ␦  (input box in source)",
      "correctAnswer": "strength, hardiness",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "34. Early visitors thought that wild rice had greatly increased the ␦ and ␦ of the Indians."
-     }
+     },
+     "keyRaw": "strength, hardiness"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[25]",
     "rawExcerpt": "Part 4: Questions 31-34\nComplete the notes below. Write NO MORE THAN THREE WORDS for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g09",
@@ -1448,8 +1661,10 @@
      "(37) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1472,7 +1687,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "seeds (35)…………….into water"
-     }
+     },
+     "keyRaw": "blown"
     },
     {
      "number": 36,
@@ -1494,7 +1710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Grains (36)…………….."
-     }
+     },
+     "keyRaw": "too green"
     },
     {
      "number": 37,
@@ -1516,7 +1733,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(37)………………into the water"
-     }
+     },
+     "keyRaw": "fall off"
     }
    ],
    "provenance": {
@@ -1562,8 +1780,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1586,7 +1806,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "You need to harvest (38) ␦ pounds of seed to yield 1 pound of wild rice."
-     }
+     },
+     "keyRaw": "three"
     },
     {
      "number": 39,
@@ -1609,7 +1830,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Wild rice on the market that is harvested by (39) ␦ is slowly being pushed."
-     }
+     },
+     "keyRaw": "hand"
     },
     {
      "number": 40,
@@ -1631,7 +1853,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "hybridized and gathered in (40)…………….."
-     }
+     },
+     "keyRaw": "airboat"
     }
    ],
    "provenance": {
@@ -1662,10 +1885,173 @@
   "fnameInputs": 37
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 5,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "(5) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "heating bills"
+     },
+     {
+      "letter": "B",
+      "text": "kitchen equipment"
+     },
+     {
+      "letter": "C",
+      "text": "plates and glasses"
+     },
+     {
+      "letter": "D",
+      "text": "sheets and towels"
+     },
+     {
+      "letter": "E",
+      "text": "telephone"
+     },
+     {
+      "letter": "F",
+      "text": "television"
+     },
+     {
+      "letter": "G",
+      "text": "water bill"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "(6) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "heating bills"
+     },
+     {
+      "letter": "B",
+      "text": "kitchen equipment"
+     },
+     {
+      "letter": "C",
+      "text": "plates and glasses"
+     },
+     {
+      "letter": "D",
+      "text": "sheets and towels"
+     },
+     {
+      "letter": "E",
+      "text": "telephone"
+     },
+     {
+      "letter": "F",
+      "text": "television"
+     },
+     {
+      "letter": "G",
+      "text": "water bill"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 7,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "G",
+    "rawExcerpt": "(7) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "heating bills"
+     },
+     {
+      "letter": "B",
+      "text": "kitchen equipment"
+     },
+     {
+      "letter": "C",
+      "text": "plates and glasses"
+     },
+     {
+      "letter": "D",
+      "text": "sheets and towels"
+     },
+     {
+      "letter": "E",
+      "text": "telephone"
+     },
+     {
+      "letter": "F",
+      "text": "television"
+     },
+     {
+      "letter": "G",
+      "text": "water bill"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 34,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Early visitors thought that wild rice had greatly increased the ______ and ______ of the Indians.",
+    "answer": "strength, hardiness",
+    "rawExcerpt": "34. Early visitors thought that wild rice had greatly increased the ␦ and ␦ of the Indians.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     5,
+     6,
+     7,
+     34
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 36,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

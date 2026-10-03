@@ -1,0 +1,49 @@
+{
+ "slug": "ielts-listening-test-17",
+ "status": "quarantined",
+ "sourceSha256": "f5c17b7c820866cf7dce4501add37da4c41fb18e906ff250601878b33f2670ef",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 29,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "A",
+    "rawExcerpt": "(29) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 30,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "D",
+    "rawExcerpt": "(30) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     29,
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

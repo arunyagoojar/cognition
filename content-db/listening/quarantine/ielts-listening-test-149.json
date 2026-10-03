@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-149",
- "sourceSha256": "acc3e63237900f8950b9b4f33ed71f53cf7a163ceae9939230f9b0d4b57bf174",
+ "status": "duplicate",
+ "sourceSha256": "d26ba37f618722528c9fdbb36e9bb08ab41d1d19d3f724f939bb88dbfd79c39d",
  "units": [
   {
    "unit": "group",
@@ -27,12 +28,91 @@
    }
   },
   {
-   "unit": "group",
-   "groupId": "g07",
-   "questionNumbers": [],
-   "reasonCode": "INSTRUCTION_MISSING",
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
    "evidence": {
-    "instructionRaw": "Questions 25-27"
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "G"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 25,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 26,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 27,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     16,
+     17,
+     18,
+     25,
+     26,
+     27
+    ],
+    "outOfRange": []
    }
   }
  ]

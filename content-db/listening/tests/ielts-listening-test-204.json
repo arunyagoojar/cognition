@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-204",
  "title": "IELTS Listening Test 204",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-204/index.html",
-   "sha256": "23d531db0b411233e6380a10e384a5e55747c28718255c3b44d0faecdfb3a6d7",
-   "manifestHashMatch": true,
+   "sha256": "11bc878b3a1acdc13d84bd8b3a431a5267f68f28404938780b41847ed1bcbccc",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-204/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "7b951c68b345a802aa85a01157966573ebecc31aceb2073c8d175e00a5498c7a",
+ "contentFingerprint": "1455b9a8488d24688b667197f465bea9d146ca8592ddfda5de1cd32995f194e9",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -256,6 +256,14 @@
     "value": "Port"
    },
    {
+    "number": 13,
+    "value": "A, C"
+   },
+   {
+    "number": 14,
+    "value": "A, C"
+   },
+   {
     "number": 15,
     "value": "D"
    },
@@ -400,8 +408,10 @@
      "• climb Telegraph Hill to see a view of the (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -424,7 +434,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• (1) ␦ hotel on George Street"
-     }
+     },
+     "keyRaw": "King’s/ Kings"
     },
     {
      "number": 2,
@@ -447,7 +458,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• cost of family room per night: £ (2) ␦ (approx.)"
-     }
+     },
+     "keyRaw": "125"
     },
     {
      "number": 3,
@@ -470,7 +482,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• a (3) ␦ tour of the city centre (starts in Carlton Square)"
-     }
+     },
+     "keyRaw": "Walking"
     },
     {
      "number": 4,
@@ -493,7 +506,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• a trip by (4) ␦ to the old fort"
-     }
+     },
+     "keyRaw": "Boat"
     },
     {
      "number": 5,
@@ -515,7 +529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• best day to visit: (5) ␦"
-     }
+     },
+     "keyRaw": "Tuesday"
     },
     {
      "number": 6,
@@ -538,7 +553,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• see the exhibition about (6) ␦ , which opens soon"
-     }
+     },
+     "keyRaw": "Space"
     },
     {
      "number": 7,
@@ -561,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o good for (7) ␦ food"
-     }
+     },
+     "keyRaw": "Vegetarian"
     },
     {
      "number": 8,
@@ -584,7 +601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "o need to have lunch before (8) ␦ p.m."
-     }
+     },
+     "keyRaw": "2.30/ two-thirty"
     },
     {
      "number": 9,
@@ -607,7 +625,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• save up to (9) ␦ % on ticket prices at bargaintickets.com"
-     }
+     },
+     "keyRaw": "75/ seventy-five"
     },
     {
      "number": 10,
@@ -629,38 +648,13 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• climb Telegraph Hill to see a view of the (10) ␦"
-     }
+     },
+     "keyRaw": "Port"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[1]",
     "rawExcerpt": "Part 1: Questions 1-10\n\nComplete the notes below. Write ONE WORD AND/ OR A NUMBER for each answer."
-   },
-   "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 12,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO things does the speaker say about visiting the football stadium with children? A Children can get their photo taken with a football player. B There is a competition for children today. C Parents must stay with their children at all times. D Children will need sunhats and drinks. E The cafe has a special offer on meals for children.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E.\n\nWhich TWO things does the speaker say about visiting the football stadium with children?\n\n\n\nA Children can get their photo taken with a football player.\n\nB There is a competition for children today.\n\nC Parents must stay with their children at all times.\n\nD Children will need sunhats and drinks.\n\nE The cafe has a special offer on meals for children."
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[8]",
-    "rawExcerpt": "Part 2: Questions 11 and 12"
    },
    "status": "verified"
   },
@@ -671,24 +665,121 @@
    "endQ": 14,
    "partExplicit": false,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year? A VIP tour B 360 cinema experience C audio guide D dressing room tour E tours in other languages",
+    "text": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year? A VIP tour B 360 cinema experience C audio guide D dressing room tour E tours in other languages"
+    "originalText": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "VIP tour"
+     },
+     {
+      "letter": "B",
+      "text": "360 cinema experience"
+     },
+     {
+      "letter": "C",
+      "text": "audio guide"
+     },
+     {
+      "letter": "D",
+      "text": "dressing room tour"
+     },
+     {
+      "letter": "E",
+      "text": "tours in other languages"
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 13,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year?"
+     },
+     "keyRaw": "A, C"
+    },
+    {
+     "number": 14,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[10]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO features of the stadium tour are new this year?"
+     },
+     "keyRaw": "A, C"
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Questions 13 and 14\n\nChoose TWO letters, A-E.\n\nWhich TWO features of the stadium tour are new this year?\n\n\n\nA VIP tour\n\nB 360 cinema experience\n\nC audio guide\n\nD dressing room tour\n\nE tours in other l"
+    "rawExcerpt": "Questions 13 and 14\n\nChoose TWO letters, A-E.\n\nWhich TWO features of the stadium tour are new this year?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO features of the stadium tour are new this year?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "VIP tour"
+     },
+     {
+      "letter": "B",
+      "text": "360 cinema experience"
+     },
+     {
+      "letter": "C",
+      "text": "audio guide"
+     },
+     {
+      "letter": "D",
+      "text": "dressing room tour"
+     },
+     {
+      "letter": "E",
+      "text": "tours in other languages"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -713,14 +804,40 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "The introduction of pay for the players B a change to the design of the goal C the first use of lights for matches D the Introduction of goalkeepers E the first International match F two changes to the rules of the game G the introduction of a fee for spectators"
+      "text": "The introduction of pay for the players"
+     },
+     {
+      "letter": "B",
+      "text": "a change to the design of the goal"
+     },
+     {
+      "letter": "C",
+      "text": "the first use of lights for matches"
+     },
+     {
+      "letter": "D",
+      "text": "the Introduction of goalkeepers"
+     },
+     {
+      "letter": "E",
+      "text": "the first International match"
+     },
+     {
+      "letter": "F",
+      "text": "two changes to the rules of the game"
+     },
+     {
+      "letter": "G",
+      "text": "the introduction of a fee for spectators"
      },
      {
       "letter": "H",
       "text": "an agreement on the length of a game"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -735,9 +852,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. 1870 ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 16,
@@ -752,9 +870,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. 1874 ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -769,9 +888,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. 1875 ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -786,9 +906,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. 1877 ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 19,
@@ -803,9 +924,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "19. 1878 ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -820,16 +942,55 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. 1880 ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[11]",
+    "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Questions 15 – 20\n\nWhich event in the history of football in the UK took place in each of the following years? Choose SIX answers from the box and write the correct letter, A- H, next to Questions 15-"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "The introduction of pay for the players"
+     },
+     {
+      "letter": "B",
+      "text": "a change to the design of the goal"
+     },
+     {
+      "letter": "C",
+      "text": "the first use of lights for matches"
+     },
+     {
+      "letter": "D",
+      "text": "the Introduction of goalkeepers"
+     },
+     {
+      "letter": "E",
+      "text": "the first International match"
+     },
+     {
+      "letter": "F",
+      "text": "two changes to the rules of the game"
+     },
+     {
+      "letter": "G",
+      "text": "the introduction of a fee for spectators"
+     },
+     {
+      "letter": "H",
+      "text": "an agreement on the length of a game"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -852,14 +1013,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "improved fine motor skills B improved memory C improved concentration D improved imagination"
+      "text": "improved fine motor skills"
+     },
+     {
+      "letter": "B",
+      "text": "improved memory"
+     },
+     {
+      "letter": "C",
+      "text": "improved concentration"
+     },
+     {
+      "letter": "D",
+      "text": "improved imagination"
      },
      {
       "letter": "E",
       "text": "improved spatial awareness"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -870,13 +1045,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[15]",
+      "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E.\n\nWhich TWO benefits for children of learning to write did both students find surprising?"
-     }
+     },
+     "keyRaw": "C, E"
     },
     {
      "number": 22,
@@ -887,18 +1063,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[15]",
+      "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E.\n\nWhich TWO benefits for children of learning to write did both students find surprising?"
-     }
+     },
+     "keyRaw": "C, E"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[15]",
+    "elementPath": "entry-content.children[16]",
     "rawExcerpt": "Part 3: Questions 21 and 22"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:21-22",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO benefits for children of learning to write did both students find surprising?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "improved fine motor skills"
+     },
+     {
+      "letter": "B",
+      "text": "improved memory"
+     },
+     {
+      "letter": "C",
+      "text": "improved concentration"
+     },
+     {
+      "letter": "D",
+      "text": "improved imagination"
+     },
+     {
+      "letter": "E",
+      "text": "improved spatial awareness"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -922,14 +1136,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "not spacing letters correctly B not writing in a straight line C applying too much pressure when writing D confusing letter shapes"
+      "text": "not spacing letters correctly"
+     },
+     {
+      "letter": "B",
+      "text": "not writing in a straight line"
+     },
+     {
+      "letter": "C",
+      "text": "applying too much pressure when writing"
+     },
+     {
+      "letter": "D",
+      "text": "confusing letter shapes"
      },
      {
       "letter": "E",
       "text": "writing very slowly"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -940,13 +1168,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. For children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 24,
@@ -957,20 +1186,58 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. For children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?"
-     }
+     },
+     "keyRaw": "A, C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[18]",
+    "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Questions 23 and 24\n\nChoose TWO letters, A-E.\n\nFor children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:23-24",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "For children with dyspraxia, which TWO problems with handwriting do the students think are easiest to correct?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "not spacing letters correctly"
+     },
+     {
+      "letter": "B",
+      "text": "not writing in a straight line"
+     },
+     {
+      "letter": "C",
+      "text": "applying too much pressure when writing"
+     },
+     {
+      "letter": "D",
+      "text": "confusing letter shapes"
+     },
+     {
+      "letter": "E",
+      "text": "writing very slowly"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -986,140 +1253,206 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Teaching handwriting",
-     "A Children often lack motivation to learn that way.",
-     "B Children become fluent relatively quickly.",
-     "C Children react more positively if they make a mistake.",
-     "A cursive writing disadvantages a certain group of children.",
-     "B print writing is associated with lower academic performance.",
-     "C most teachers in the UK prefer a traditional approach to handwriting.",
-     "25. What does the woman say about using laptops to teach writing to children with dyslexia?\n\nA Children often lack motivation to learn that way.\n\nB Children become fluent relatively quickly.\n\nC Children react more positively if they make a mistake.\n\n\n\n26. When discussing whether to teach cursive or print writing, the woman thinks that\n\nA cursive writing disadvantages a certain group of children.\n\nB print writing is associated with lower academic performance.\n\nC most teachers in the UK prefer a traditional approach to handwriting.",
-     "A There is evidence to suggest grades are affected by poor handwriting.",
-     "B Neat handwriting is less important now than it used to be.",
-     "27. According to the students, what impact does poor handwriting have on exam performance?\n\nA There is evidence to suggest grades are affected by poor handwriting.\n\nB Neat handwriting is less important now than it used to be.\n\nC Candidates write more slowly and produce shorter answers.",
-     "A Touch typing will be taught before writing by hand.",
-     "C People will dislike handwriting on digital devices.",
-     "28. What prediction does the man make about the future of handwriting?\n\nA Touch typing will be taught before writing by hand.\n\nB Children will continue to learn to write by hand.\n\nC People will dislike handwriting on digital devices.",
-     "A take detailed notes.",
-     "B spell and punctuate.",
-     "C read old documents.",
-     "29. The woman is concerned that relying on digital devices has made it difficult for her to\n\nA take detailed notes.\n\nB spell and punctuate.\n\nC read old documents.",
-     "B embarrassed by comments made about it",
-     "C regretful that they have lost the habit",
-     "30. How do the students feel about their own handwriting?\n\nA concerned they are unable to write quickly\n\nB embarrassed by comments made about it\n\nC regretful that they have lost the habit"
+     "Teaching handwriting"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the woman say about using laptops to teach writing to children with dyslexia?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Children often lack motivation to learn that way."
+      },
+      {
+       "letter": "B",
+       "text": "Children become fluent relatively quickly."
+      },
+      {
+       "letter": "C",
+       "text": "Children react more positively if they make a mistake."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "25. What does the woman say about using laptops to teach writing to children with dyslexia?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When discussing whether to teach cursive or print writing, the woman thinks that",
       "segments": null
      },
-     "options": null,
-     "blankContext": null,
-     "correctAnswer": "A",
-     "answerFound": true,
-     "status": "verified",
-     "provenance": {
-      "elementPath": "entry-content.children[22]",
-      "rawExcerpt": "26. When discussing whether to teach cursive or print writing, the woman thinks that"
-     }
-    },
-    {
-     "number": 27,
-     "type": "short_answer",
-     "stem": {
-      "plain": "According to the students, what impact does poor handwriting have on exam performance?",
-      "segments": null
-     },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "cursive writing disadvantages a certain group of children."
+      },
+      {
+       "letter": "B",
+       "text": "print writing is associated with lower academic performance."
+      },
+      {
+       "letter": "C",
+       "text": "most teachers in the UK prefer a traditional approach to handwriting."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[23]",
-      "rawExcerpt": "27. According to the students, what impact does poor handwriting have on exam performance?"
-     }
+      "rawExcerpt": "26. When discussing whether to teach cursive or print writing, the woman thinks that"
+     },
+     "keyRaw": "A"
     },
     {
-     "number": 28,
-     "type": "short_answer",
+     "number": 27,
+     "type": "mcq_single",
      "stem": {
-      "plain": "What prediction does the man make about the future of handwriting?",
+      "plain": "According to the students, what impact does poor handwriting have on exam performance?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "There is evidence to suggest grades are affected by poor handwriting."
+      },
+      {
+       "letter": "B",
+       "text": "Neat handwriting is less important now than it used to be."
+      },
+      {
+       "letter": "C",
+       "text": "Candidates write more slowly and produce shorter answers."
+      }
+     ],
      "blankContext": null,
-     "correctAnswer": "B",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[24]",
-      "rawExcerpt": "28. What prediction does the man make about the future of handwriting?"
-     }
+      "rawExcerpt": "27. According to the students, what impact does poor handwriting have on exam performance?"
+     },
+     "keyRaw": "A"
     },
     {
-     "number": 29,
-     "type": "short_answer",
+     "number": 28,
+     "type": "mcq_single",
      "stem": {
-      "plain": "The woman is concerned that relying on digital devices has made it difficult for her to",
+      "plain": "What prediction does the man make about the future of handwriting?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Touch typing will be taught before writing by hand."
+      },
+      {
+       "letter": "B",
+       "text": "Children will continue to learn to write by hand."
+      },
+      {
+       "letter": "C",
+       "text": "People will dislike handwriting on digital devices."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[25]",
+      "rawExcerpt": "28. What prediction does the man make about the future of handwriting?"
+     },
+     "keyRaw": "B"
+    },
+    {
+     "number": 29,
+     "type": "mcq_single",
+     "stem": {
+      "plain": "The woman is concerned that relying on digital devices has made it difficult for her to",
+      "segments": null
+     },
+     "options": [
+      {
+       "letter": "A",
+       "text": "take detailed notes."
+      },
+      {
+       "letter": "B",
+       "text": "spell and punctuate."
+      },
+      {
+       "letter": "C",
+       "text": "read old documents."
+      }
+     ],
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[26]",
       "rawExcerpt": "29. The woman is concerned that relying on digital devices has made it difficult for her to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How do the students feel about their own handwriting?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "concerned they are unable to write quickly"
+      },
+      {
+       "letter": "B",
+       "text": "embarrassed by comments made about it"
+      },
+      {
+       "letter": "C",
+       "text": "regretful that they have lost the habit"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "30. How do the students feel about their own handwriting?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[20]",
+    "elementPath": "entry-content.children[21]",
     "rawExcerpt": "Questions 25-30\n\nChoose the correct letter, A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1162,8 +1495,10 @@
      "• A (40) ␦ of methods is usually most effective."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1184,9 +1519,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• They destroy (31) ␦ and other rodents."
-     }
+     },
+     "keyRaw": "Rats"
     },
     {
      "number": 32,
@@ -1206,9 +1542,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• They help to prevent farmers from being bitten by (32) ␦"
-     }
+     },
+     "keyRaw": "Snakes"
     },
     {
      "number": 33,
@@ -1229,9 +1566,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[29]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• They now support the economy by encouraging (33) ␦ in the area."
-     }
+     },
+     "keyRaw": "Tourism"
     },
     {
      "number": 34,
@@ -1252,9 +1590,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "o By (34) ␦ when they are hunting or sleeping"
-     }
+     },
+     "keyRaw": "Traffic"
     },
     {
      "number": 35,
@@ -1274,9 +1613,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "o by electrocution from contact with power lines, especially at times when there is a lot of (35) ␦"
-     }
+     },
+     "keyRaw": "Rain"
     },
     {
      "number": 36,
@@ -1297,9 +1637,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Local farmers may illegally shoot them or (36) ␦ them."
-     }
+     },
+     "keyRaw": "Poison"
     },
     {
      "number": 37,
@@ -1320,9 +1661,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• providing a (37) ␦ for chickens (expensive)"
-     }
+     },
+     "keyRaw": "Building"
     },
     {
      "number": 38,
@@ -1342,9 +1684,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "o keeping a (38) ␦"
-     }
+     },
+     "keyRaw": "Dog"
     },
     {
      "number": 39,
@@ -1364,9 +1707,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "o making a (39) ␦"
-     }
+     },
+     "keyRaw": "Noise"
     },
     {
      "number": 40,
@@ -1387,13 +1731,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• A (40) ␦ of methods is usually most effective."
-     }
+     },
+     "keyRaw": "Combination"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[27]",
+    "elementPath": "entry-content.children[28]",
     "rawExcerpt": "Part 4: Questions 31 – 40\n\nComplete the notes below. Write ONE WORD ONLY for each answer."
    },
    "status": "verified"
@@ -1440,15 +1785,39 @@
    }
   },
   {
-   "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 11,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
    "evidence": {
-    "markerRange": null,
-    "range": [
-     13,
-     14
-    ]
+    "keyValue": "B, C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B, C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     11,
+     12
+    ],
+    "outOfRange": []
    }
   }
  ],
@@ -1459,8 +1828,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

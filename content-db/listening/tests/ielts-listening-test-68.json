@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-68",
  "title": "IELTS Listening Test 68",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-68/index.html",
-   "sha256": "e416050ff3fefe6168f96fc01ca7b05d7c77d02d639d95e5afec33bc661cd3a0",
-   "manifestHashMatch": true,
+   "sha256": "655cdac9621d6d269b44379128c9debf6dbb4d026e4fba50deb41e3d6bce2c3f",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-68/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -388,8 +388,10 @@
      "Types of membership – 2"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. How much is the life-time membership of the Society?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 2,
@@ -449,7 +452,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "2. How much does the ordinary membership cost per year?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 3,
@@ -479,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "3. What are the opening times on week-days?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 4,
@@ -509,7 +514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "4. What is the arts programme at the Society like?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -542,8 +548,10 @@
      "Guest restrictions one per (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -565,7 +573,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Name Margaret (5) ␦"
-     }
+     },
+     "keyRaw": "Rochester"
     },
     {
      "number": 6,
@@ -587,7 +596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Address 55 (6) ␦"
-     }
+     },
+     "keyRaw": "stone avenue"
     },
     {
      "number": 7,
@@ -609,7 +619,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Postcode (7) ␦"
-     }
+     },
+     "keyRaw": "MA7 4PQ"
     },
     {
      "number": 8,
@@ -631,7 +642,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Work number 0207 895 2220 Extension (8) ␦"
-     }
+     },
+     "keyRaw": "6633"
     },
     {
      "number": 9,
@@ -653,7 +665,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Payment terms by (9) ␦"
-     }
+     },
+     "keyRaw": "(monthly) instalments"
     },
     {
      "number": 10,
@@ -675,7 +688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Guest restrictions one per (10) ␦"
-     }
+     },
+     "keyRaw": "fortnight"
     }
    ],
    "provenance": {
@@ -705,14 +719,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "free parking B free refreshments C new uniforms D free concert"
+      "text": "free parking"
+     },
+     {
+      "letter": "B",
+      "text": "free refreshments"
+     },
+     {
+      "letter": "C",
+      "text": "new uniforms"
+     },
+     {
+      "letter": "D",
+      "text": "free concert"
      },
      {
       "letter": "E",
       "text": "large tents"
      }
+    ],
+    "optionPreface": [
+     "What TWO changes to the organization of this year’s festival are mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -729,7 +759,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -746,12 +777,50 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:11-12",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "What TWO changes to the organization of this year’s festival are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "free parking"
+     },
+     {
+      "letter": "B",
+      "text": "free refreshments"
+     },
+     {
+      "letter": "C",
+      "text": "new uniforms"
+     },
+     {
+      "letter": "D",
+      "text": "free concert"
+     },
+     {
+      "letter": "E",
+      "text": "large tents"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -797,8 +866,10 @@
      "(15) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -820,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "beach (13)………….."
-     }
+     },
+     "keyRaw": "shop"
     },
     {
      "number": 14,
@@ -842,7 +914,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "arrange (14)………………"
-     }
+     },
+     "keyRaw": "seating"
     },
     {
      "number": 15,
@@ -864,7 +937,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(15)…………….am"
-     }
+     },
+     "keyRaw": "9.30"
     }
    ],
    "provenance": {
@@ -891,8 +965,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -922,7 +998,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. What does the speaker say about the judges in the competitions?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -952,7 +1029,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "17. The winner in each of the competitions will"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -982,7 +1060,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "18. The profits from the marathon will be given to the Children’s Hospital to help"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -1012,7 +1091,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. Wardens will be needed at the car park because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -1042,7 +1122,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "20. Bags will be provided by the council"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1069,8 +1150,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1100,7 +1183,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "21. In the practice exams, the students did"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1130,7 +1214,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "22. Adam thinks that essay papers are"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
@@ -1160,7 +1245,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "23. Mary criticizes multiple-choice questions, because"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1189,14 +1275,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the rest stations B 24 test stations C the recording D the examiners"
+      "text": "the rest stations"
+     },
+     {
+      "letter": "B",
+      "text": "24 test stations"
+     },
+     {
+      "letter": "C",
+      "text": "the recording"
+     },
+     {
+      "letter": "D",
+      "text": "the examiners"
      },
      {
       "letter": "E",
       "text": "the simulated patients"
      }
+    ],
+    "optionPreface": [
+     "Which TWO aspects of the role-play examination are mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1213,7 +1315,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1230,7 +1333,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1238,6 +1342,43 @@
     "rawExcerpt": "Questions 24 and 25\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:24-25",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO aspects of the role-play examination are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the rest stations"
+     },
+     {
+      "letter": "B",
+      "text": "24 test stations"
+     },
+     {
+      "letter": "C",
+      "text": "the recording"
+     },
+     {
+      "letter": "D",
+      "text": "the examiners"
+     },
+     {
+      "letter": "E",
+      "text": "the simulated patients"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1259,8 +1400,10 @@
      "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak, the problem-solving tested if people can (28) ␦ , organize their thoughts and demonstrate they can be part of a (29) ␦ Re-sits of the final exams are held in September. After that any problems are dealt with by (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1298,7 +1441,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak"
-     }
+     },
+     "keyRaw": "prioritize"
     },
     {
      "number": 27,
@@ -1336,7 +1480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak"
-     }
+     },
+     "keyRaw": "examiners"
     },
     {
      "number": 28,
@@ -1374,7 +1519,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak"
-     }
+     },
+     "keyRaw": "listen"
     },
     {
      "number": 29,
@@ -1412,7 +1558,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak"
-     }
+     },
+     "keyRaw": "team"
     },
     {
      "number": 30,
@@ -1450,7 +1597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In the problem-solving tests, students had to work in groups of four people and (26) ␦ to solve a problem. As they discussed the problem, (27) ␦ watched them. As well as assessing the ability to speak"
-     }
+     },
+     "keyRaw": "appeal"
     }
    ],
    "provenance": {
@@ -1477,8 +1625,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1508,7 +1658,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "31. The Indian Ocean differs from the Atlantic and Pacific Oceans"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 32,
@@ -1538,7 +1689,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "32. Approximately how much of the world’s total ocean area does the Indian Ocean constitute?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1568,7 +1720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "33. The island of Madagascar is"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1596,8 +1749,10 @@
      "34. Oceanographers and meteorologists are monitoring changes in the Indian ocean’s temperature and ␦\n35. An assessment is being made of the impact of the changes on low-lying ␦ and ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1622,7 +1777,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "34. Oceanographers and meteorologists are monitoring changes in the Indian ocean’s temperature and ␦"
-     }
+     },
+     "keyRaw": "acidity"
     },
     {
      "number": 35,
@@ -1647,11 +1803,12 @@
      "blankContext": "line: 35. An assessment is being made of the impact of the changes on low-ly (input box in source)",
      "correctAnswer": "habitals, people",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "35. An assessment is being made of the impact of the changes on low-lying ␦ and ␦"
-     }
+     },
+     "keyRaw": "habitals, people"
     }
    ],
    "provenance": {
@@ -1659,7 +1816,7 @@
     "rawExcerpt": "Questions 34 and 35\nComplete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g11",
@@ -1691,8 +1848,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1715,7 +1874,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "Step 3 : Five buoys off Antarctica which are (36)………….and icebergs"
-     }
+     },
+     "keyRaw": "observing ice packs"
     },
     {
      "number": 37,
@@ -1738,7 +1898,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Step 4 : Satellites recording the (37)……………of icebergs"
-     }
+     },
+     "keyRaw": "size"
     },
     {
      "number": 38,
@@ -1761,7 +1922,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "Step 5 : (38)……………data received at institute"
-     }
+     },
+     "keyRaw": "raw"
     },
     {
      "number": 39,
@@ -1784,7 +1946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "Step 6 : Constantly processed by a (39)…………of computers"
-     }
+     },
+     "keyRaw": "bank"
     },
     {
      "number": 40,
@@ -1807,7 +1970,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "Step 8 : Then analysed by (40)……………around the world"
-     }
+     },
+     "keyRaw": "experts"
     }
    ],
    "provenance": {
@@ -1844,10 +2008,38 @@
   "fnameInputs": 22
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 35,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "An assessment is being made of the impact of the changes on low-lying ______ and ______",
+    "answer": "habitals, people",
+    "rawExcerpt": "35. An assessment is being made of the impact of the changes on low-lying ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     35
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

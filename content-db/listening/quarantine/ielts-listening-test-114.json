@@ -1,0 +1,50 @@
+{
+ "slug": "ielts-listening-test-114",
+ "status": "quarantined",
+ "sourceSha256": "398c173fabc41a3f97f2cfa09144b3a173ebbb61c00e251e6955af25ed8abde2",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 30,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Where does Carlos write summing up points on his notes?",
+    "answer": "B",
+    "rawExcerpt": "30. Where does Carlos write summing up points on his notes?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

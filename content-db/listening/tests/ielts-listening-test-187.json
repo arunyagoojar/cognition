@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-187",
  "title": "IELTS Listening Test 187",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-187/index.html",
-   "sha256": "1cf40eee645c35df8d8e48054919ecf67740486e82258a1eccaab9d6e012a905",
-   "manifestHashMatch": true,
+   "sha256": "0307553043affdcb6050cf73da975c39f45ebf5f8b4065b65ef5abd26f275368",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-187/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "3c1b5bc25089d25b435283d77758f4ae274b276de3a0837e30e9be5cc722615f",
+ "contentFingerprint": "613f7db2e7f64dd802de423ecf7b2e6c7b09626f8465da1edb63976f8b1806cb",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -256,6 +256,22 @@
     "value": "199"
    },
    {
+    "number": 11,
+    "value": "A, C"
+   },
+   {
+    "number": 12,
+    "value": "A, C"
+   },
+   {
+    "number": 13,
+    "value": "B, C"
+   },
+   {
+    "number": 14,
+    "value": "B, C"
+   },
+   {
     "number": 15,
     "value": "D"
    },
@@ -278,6 +294,22 @@
    {
     "number": 20,
     "value": "G"
+   },
+   {
+    "number": 21,
+    "value": "C, D"
+   },
+   {
+    "number": 22,
+    "value": "C, D"
+   },
+   {
+    "number": 23,
+    "value": "C, E"
+   },
+   {
+    "number": 24,
+    "value": "C, E"
    },
    {
     "number": 25,
@@ -386,8 +418,10 @@
      "• The course costs (10) $ ␦ per week."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -409,7 +443,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• First of all, children at this level are taken to practise in a (1) ␦"
-     }
+     },
+     "keyRaw": "Park"
     },
     {
      "number": 2,
@@ -432,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Instructors wear (2) ␦ shirts."
-     }
+     },
+     "keyRaw": "Blue"
     },
     {
      "number": 3,
@@ -455,7 +491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• A (3) ␦ is required and training is given."
-     }
+     },
+     "keyRaw": "Reference"
     },
     {
      "number": 4,
@@ -478,7 +515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• There are quiet times during the morning for a (4) ␦ or a game."
-     }
+     },
+     "keyRaw": "Story"
     },
     {
      "number": 5,
@@ -500,7 +538,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Classes are held even if there is (5) ␦"
-     }
+     },
+     "keyRaw": "Rain"
     },
     {
      "number": 6,
@@ -522,7 +561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• a (6) ␦"
-     }
+     },
+     "keyRaw": "Snack"
     },
     {
      "number": 7,
@@ -544,7 +584,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Charlie’s (7) ␦"
-     }
+     },
+     "keyRaw": "Medication"
     },
     {
      "number": 8,
@@ -567,7 +608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Before the class, his (8) ␦ will be checked."
-     }
+     },
+     "keyRaw": "Helmet"
     },
     {
      "number": 9,
@@ -590,7 +632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• He should then go to the (9) ␦ to meet his class instructor."
-     }
+     },
+     "keyRaw": "Tent"
     },
     {
      "number": 10,
@@ -613,7 +656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• The course costs (10) $ ␦ per week."
-     }
+     },
+     "keyRaw": "199"
     }
    ],
    "provenance": {
@@ -629,22 +673,119 @@
    "endQ": 12,
    "partExplicit": true,
    "instruction": {
-    "text": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors? A the active lifestyle B the above-average salaries C the flexible working opportunities D the opportunities for overseas travel E the chance to be in a natural environment",
+    "text": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors? A the active lifestyle B the above-average salaries C the flexible working opportunities D the opportunities for overseas travel E the chance to be in a natural environment"
+    "originalText": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "the active lifestyle"
+     },
+     {
+      "letter": "B",
+      "text": "the above-average salaries"
+     },
+     {
+      "letter": "C",
+      "text": "the flexible working opportunities"
+     },
+     {
+      "letter": "D",
+      "text": "the opportunities for overseas travel"
+     },
+     {
+      "letter": "E",
+      "text": "the chance to be in a natural environment"
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 11,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "A",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?"
+     },
+     "keyRaw": "A, C"
+    },
+    {
+     "number": 12,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[9]",
+      "rawExcerpt": "Choose TWO letters, A-E. According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?"
+     },
+     "keyRaw": "A, C"
+    }
+   ],
    "provenance": {
     "elementPath": "entry-content.children[9]",
-    "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters, A-E.\nAccording to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?\nA the active lifestyle\nB the above-ave"
+    "rawExcerpt": "Part 2: Questions 11 and 12\nChoose TWO letters, A-E.\nAccording to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "According to Megan, what are the TWO main advantages of working in the agriculture and horticulture sectors?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the active lifestyle"
+     },
+     {
+      "letter": "B",
+      "text": "the above-average salaries"
+     },
+     {
+      "letter": "C",
+      "text": "the flexible working opportunities"
+     },
+     {
+      "letter": "D",
+      "text": "the opportunities for overseas travel"
+     },
+     {
+      "letter": "E",
+      "text": "the chance to be in a natural environment"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -655,24 +796,121 @@
    "endQ": 14,
    "partExplicit": false,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors? A the increasing risk of accidents B being in a very quiet location C difficult weather conditions at times D the cost of housing E the level of physical fitness required",
+    "text": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors? A the increasing risk of accidents B being in a very quiet location C difficult weather conditions at times D the cost of housing E the level of physical fitness required"
+    "originalText": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "the increasing risk of accidents"
+     },
+     {
+      "letter": "B",
+      "text": "being in a very quiet location"
+     },
+     {
+      "letter": "C",
+      "text": "difficult weather conditions at times"
+     },
+     {
+      "letter": "D",
+      "text": "the cost of housing"
+     },
+     {
+      "letter": "E",
+      "text": "the level of physical fitness required"
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 13,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "B",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[11]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors?"
+     },
+     "keyRaw": "B, C"
+    },
+    {
+     "number": 14,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[11]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO of the following are likely to be disadvantages for people working outdoors?"
+     },
+     "keyRaw": "B, C"
+    }
+   ],
    "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Questions 13 and 14\nChoose TWO letters, A-E.\nWhich TWO of the following are likely to be disadvantages for people working outdoors?\nA the increasing risk of accidents\nB being in a very quiet location\n"
+    "elementPath": "entry-content.children[11]",
+    "rawExcerpt": "Questions 13 and 14\nChoose TWO letters, A-E.\nWhich TWO of the following are likely to be disadvantages for people working outdoors?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO of the following are likely to be disadvantages for people working outdoors?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the increasing risk of accidents"
+     },
+     {
+      "letter": "B",
+      "text": "being in a very quiet location"
+     },
+     {
+      "letter": "C",
+      "text": "difficult weather conditions at times"
+     },
+     {
+      "letter": "D",
+      "text": "the cost of housing"
+     },
+     {
+      "letter": "E",
+      "text": "the level of physical fitness required"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -695,14 +933,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "not a permanent job B involves leading a team C experience not essential D intensive work but also fun E chance to earn more through overtime F chance for rapid promotion G accommodation available"
+      "text": "not a permanent job"
+     },
+     {
+      "letter": "B",
+      "text": "involves leading a team"
+     },
+     {
+      "letter": "C",
+      "text": "experience not essential"
+     },
+     {
+      "letter": "D",
+      "text": "intensive work but also fun"
+     },
+     {
+      "letter": "E",
+      "text": "chance to earn more through overtime"
+     },
+     {
+      "letter": "F",
+      "text": "chance for rapid promotion"
+     },
+     {
+      "letter": "G",
+      "text": "accommodation available"
      },
      {
       "letter": "H",
       "text": "local travel involved"
      }
+    ],
+    "optionPreface": [
+     "Information"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -717,9 +983,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. Fresh food commercial manager ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 16,
@@ -734,9 +1001,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. Agronomist ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 17,
@@ -751,9 +1019,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "17. Fresh produce buyer ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -768,9 +1037,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "18. Garden centre sales manager ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 19,
@@ -785,9 +1055,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "19. Tree technician ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -802,16 +1073,55 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[13]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "20. Farm worker ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[11]",
+    "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Questions 15-20\nWhat information does Megan give about each of the following job opportunities?\nChoose SIX answers from the box and write the correct letter, A-H, next to Questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Information",
+    "options": [
+     {
+      "letter": "A",
+      "text": "not a permanent job"
+     },
+     {
+      "letter": "B",
+      "text": "involves leading a team"
+     },
+     {
+      "letter": "C",
+      "text": "experience not essential"
+     },
+     {
+      "letter": "D",
+      "text": "intensive work but also fun"
+     },
+     {
+      "letter": "E",
+      "text": "chance to earn more through overtime"
+     },
+     {
+      "letter": "F",
+      "text": "chance for rapid promotion"
+     },
+     {
+      "letter": "G",
+      "text": "accommodation available"
+     },
+     {
+      "letter": "H",
+      "text": "local travel involved"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -821,22 +1131,119 @@
    "endQ": 22,
    "partExplicit": true,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners? A The results were what he had predicted. B The experiment was simple to set up. C A large sample of people was tested. D The subjects were unaware of what they were drinking. E The test was repeated several times for each person.",
+    "text": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners? A The results were what he had predicted. B The experiment was simple to set up. C A large sample of people was tested. D The subjects were unaware of what they were drinking. E The test was repeated several times for each person."
+    "originalText": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "The results were what he had predicted."
+     },
+     {
+      "letter": "B",
+      "text": "The experiment was simple to set up."
+     },
+     {
+      "letter": "C",
+      "text": "A large sample of people was tested."
+     },
+     {
+      "letter": "D",
+      "text": "The subjects were unaware of what they were drinking."
+     },
+     {
+      "letter": "E",
+      "text": "The test was repeated several times for each person."
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 21,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners?"
+     },
+     "keyRaw": "C, D"
+    },
+    {
+     "number": 22,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "D",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[16]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO points does Adam make about his experiment on artificial sweeteners?"
+     },
+     "keyRaw": "C, D"
+    }
+   ],
    "provenance": {
-    "elementPath": "entry-content.children[14]",
-    "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E.\nWhich TWO points does Adam make about his experiment on artificial sweeteners?\nA The results were what he had predicted.\nB The experiment was simpl"
+    "elementPath": "entry-content.children[16]",
+    "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E.\nWhich TWO points does Adam make about his experiment on artificial sweeteners?"
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:21-22",
+    "answerSet": [
+     "C",
+     "D"
+    ],
+    "prompt": "Which TWO points does Adam make about his experiment on artificial sweeteners?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "The results were what he had predicted."
+     },
+     {
+      "letter": "B",
+      "text": "The experiment was simple to set up."
+     },
+     {
+      "letter": "C",
+      "text": "A large sample of people was tested."
+     },
+     {
+      "letter": "D",
+      "text": "The subjects were unaware of what they were drinking."
+     },
+     {
+      "letter": "E",
+      "text": "The test was repeated several times for each person."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -847,24 +1254,121 @@
    "endQ": 24,
    "partExplicit": false,
    "instruction": {
-    "text": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts? A She used the wrong sort of nuts. B She used an unsuitable chemical. C She did not grind the nuts finely enough. D The information on the nut package was incorrect. E The weighing scales may have been unsuitable.",
+    "text": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts?",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts? A She used the wrong sort of nuts. B She used an unsuitable chemical. C She did not grind the nuts finely enough. D The information on the nut package was incorrect. E The weighing scales may have been unsuitable."
+    "originalText": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts?"
    },
    "stimulus": {
-    "kind": "none",
+    "kind": "box_match",
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "She used the wrong sort of nuts."
+     },
+     {
+      "letter": "B",
+      "text": "She used an unsuitable chemical."
+     },
+     {
+      "letter": "C",
+      "text": "She did not grind the nuts finely enough."
+     },
+     {
+      "letter": "D",
+      "text": "The information on the nut package was incorrect."
+     },
+     {
+      "letter": "E",
+      "text": "The weighing scales may have been unsuitable."
+     }
+    ],
+    "optionPreface": null
    },
-   "questions": [],
+   "orphanOptionBlocks": null,
+   "questions": [
+    {
+     "number": 23,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "C",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[18]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts?"
+     },
+     "keyRaw": "C, E"
+    },
+    {
+     "number": 24,
+     "type": "mcq_multi",
+     "stem": {
+      "plain": "",
+      "segments": null
+     },
+     "options": null,
+     "blankContext": null,
+     "correctAnswer": "E",
+     "answerFound": true,
+     "status": "verified",
+     "provenance": {
+      "elementPath": "entry-content.children[18]",
+      "rawExcerpt": "Choose TWO letters, A-E. Which TWO problems did Rosie have when measuring the fat content of nuts?"
+     },
+     "keyRaw": "C, E"
+    }
+   ],
    "provenance": {
-    "elementPath": "entry-content.children[15]",
-    "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E.\nWhich TWO problems did Rosie have when measuring the fat content of nuts?\nA She used the wrong sort of nuts.\nB She used an unsuitable chemical.\nC She did n"
+    "elementPath": "entry-content.children[18]",
+    "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E.\nWhich TWO problems did Rosie have when measuring the fat content of nuts?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:23-24",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO problems did Rosie have when measuring the fat content of nuts?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "She used the wrong sort of nuts."
+     },
+     {
+      "letter": "B",
+      "text": "She used an unsuitable chemical."
+     },
+     {
+      "letter": "C",
+      "text": "She did not grind the nuts finely enough."
+     },
+     {
+      "letter": "D",
+      "text": "The information on the nut package was incorrect."
+     },
+     {
+      "letter": "E",
+      "text": "The weighing scales may have been unsuitable."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -880,143 +1384,204 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A offered fewer options.",
-     "B had more low-calorie foods.",
-     "C were organised in a particular way.",
-     "25. Adam suggests that restaurants could reduce obesity if their menus\nA offered fewer options.\nB had more low-calorie foods.\nC were organised in a particular way.",
-     "A make calorie counts hard to understand.",
-     "B fail to provide accurate calorie counts.",
-     "C use ineffective methods to reduce calories.",
-     "26. The students agree that food manufacturers deliberately\nA make calorie counts hard to understand.\nB fail to provide accurate calorie counts.\nC use ineffective methods to reduce calories.",
-     "A The amount recommended is much too low.",
-     "B Most people overestimate how much they do.",
-     "C Women now exercise more than they used to.",
-     "27. What does Rosie say about levels of exercise in England?\nA The amount recommended is much too low.\nB Most people overestimate how much they do.\nC Women now exercise more than they used to.",
-     "A practical changes that can influence people’s behaviour.",
-     "B methods of helping people who have mobility problems.",
-     "C ways of preventing accidents by controlling crowd movement.",
-     "28. Adam refers to the location and width of stairs in a train station to illustrate\nA practical changes that can influence people’s behaviour.\nB methods of helping people who have mobility problems.\nC ways of preventing accidents by controlling crowd movement.",
-     "A They should probably leave it out.",
-     "B They need to do more research on it.",
-     "C They should discuss this with their tutor.",
-     "29. What do the students agree about including reference to exercise in their presentation?\nA They should probably leave it out.\nB They need to do more research on it.\nC They should discuss this with their tutor.",
-     "A prepare some slides for it",
-     "B find out how long they have for it",
-     "C decide on its content and organisation",
-     "30. What are the students going to do next for their presentation?\nA prepare some slides for it\nB find out how long they have for it\nC decide on its content and organisation"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Adam suggests that restaurants could reduce obesity if their menus",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "offered fewer options."
+      },
+      {
+       "letter": "B",
+       "text": "had more low-calorie foods."
+      },
+      {
+       "letter": "C",
+       "text": "were organised in a particular way."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. Adam suggests that restaurants could reduce obesity if their menus"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students agree that food manufacturers deliberately",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "make calorie counts hard to understand."
+      },
+      {
+       "letter": "B",
+       "text": "fail to provide accurate calorie counts."
+      },
+      {
+       "letter": "C",
+       "text": "use ineffective methods to reduce calories."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. The students agree that food manufacturers deliberately"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Rosie say about levels of exercise in England?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The amount recommended is much too low."
+      },
+      {
+       "letter": "B",
+       "text": "Most people overestimate how much they do."
+      },
+      {
+       "letter": "C",
+       "text": "Women now exercise more than they used to."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. What does Rosie say about levels of exercise in England?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Adam refers to the location and width of stairs in a train station to illustrate",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "practical changes that can influence people’s behaviour."
+      },
+      {
+       "letter": "B",
+       "text": "methods of helping people who have mobility problems."
+      },
+      {
+       "letter": "C",
+       "text": "ways of preventing accidents by controlling crowd movement."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[20]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. Adam refers to the location and width of stairs in a train station to illustrate"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do the students agree about including reference to exercise in their presentation?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "They should probably leave it out."
+      },
+      {
+       "letter": "B",
+       "text": "They need to do more research on it."
+      },
+      {
+       "letter": "C",
+       "text": "They should discuss this with their tutor."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "29. What do the students agree about including reference to exercise in their presentation?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What are the students going to do next for their presentation?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "prepare some slides for it"
+      },
+      {
+       "letter": "B",
+       "text": "find out how long they have for it"
+      },
+      {
+       "letter": "C",
+       "text": "decide on its content and organisation"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[26]",
       "rawExcerpt": "30. What are the students going to do next for their presentation?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[16]",
+    "elementPath": "entry-content.children[20]",
     "rawExcerpt": "Questions 25-30\nChoose the correct letter, A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1059,8 +1624,10 @@
      "• Everyday tasks like looking after (40) ␦ were done while knitting."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1081,9 +1648,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• We imagine someone like a (31) ␦ knitting."
-     }
+     },
+     "keyRaw": "Grandmother"
     },
     {
      "number": 32,
@@ -1104,9 +1672,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• A (32) ␦ ago, knitting was expected to disappear."
-     }
+     },
+     "keyRaw": "Decade"
     },
     {
      "number": 33,
@@ -1127,9 +1696,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• People are buying more (33) ␦ for knitting nowadays."
-     }
+     },
+     "keyRaw": "Equipment"
     },
     {
      "number": 34,
@@ -1150,9 +1720,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[25]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• gives support in times of (34) ␦ difficulty"
-     }
+     },
+     "keyRaw": "Economic"
     },
     {
      "number": 35,
@@ -1173,9 +1744,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[25]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• requires only (35) ␦ skills and little money to start"
-     }
+     },
+     "keyRaw": "Basic"
     },
     {
      "number": 36,
@@ -1196,9 +1768,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Findings show early knitted items to be (36) ␦ in shape."
-     }
+     },
+     "keyRaw": "Round"
     },
     {
      "number": 37,
@@ -1218,9 +1791,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• The first needles were made of natural materials such as wood and (37) ␦"
-     }
+     },
+     "keyRaw": "Bone"
     },
     {
      "number": 38,
@@ -1241,9 +1815,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Early yarns felt (38) ␦ to touch."
-     }
+     },
+     "keyRaw": "Rough"
     },
     {
      "number": 39,
@@ -1264,9 +1839,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Geographical areas had their own (39) ␦ of knitting."
-     }
+     },
+     "keyRaw": "Style"
     },
     {
      "number": 40,
@@ -1287,13 +1863,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Everyday tasks like looking after (40) ␦ were done while knitting."
-     }
+     },
+     "keyRaw": "Sheep"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[23]",
+    "elementPath": "entry-content.children[27]",
     "rawExcerpt": "Part 4: Questions 31-40\nComplete the notes below. Write ONE WORD ONLY for each answer."
    },
    "status": "verified"
@@ -1326,56 +1903,7 @@
   "fnameInputs": 26
  },
  "unparsed": [],
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "groupId": "g02",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     11,
-     12
-    ]
-   }
-  },
-  {
-   "unit": "group",
-   "groupId": "g03",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     13,
-     14
-    ]
-   }
-  },
-  {
-   "unit": "group",
-   "groupId": "g05",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     21,
-     22
-    ]
-   }
-  },
-  {
-   "unit": "group",
-   "groupId": "g06",
-   "reasonCode": "PHANTOM_SPLIT_MERGED",
-   "evidence": {
-    "markerRange": null,
-    "range": [
-     23,
-     24
-    ]
-   }
-  }
- ],
+ "quarantinedUnits": [],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1383,8 +1911,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 32,
- "quarantinedCount": 4,
- "status": "flagged",
+ "verifiedQuestionCount": 40,
+ "quarantinedCount": 0,
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

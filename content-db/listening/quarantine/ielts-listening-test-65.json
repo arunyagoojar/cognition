@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-65",
- "sourceSha256": "441b7a4a1e235f7714e8eaed81566852185e9d55ddfb16a68b3b80d387ca3f9f",
+ "status": "quarantined",
+ "sourceSha256": "6a252b3f9d23f760c3a607e2a19d55cbd8ed7ef151716fc1b79d941cc5a98f09",
  "units": [
   {
    "unit": "question",
@@ -13,7 +14,7 @@
    "evidence": {
     "stem": "The online quiz system",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "30. The online quiz system",
     "options": [
      {
       "letter": "A",
@@ -24,6 +25,97 @@
       "text": "keeps the quiz results confidential"
      }
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 35,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Experiences a sudden urge to eat ______",
+    "answer": "E",
+    "rawExcerpt": "35. Experiences a sudden urge to eat ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 36,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Hungers for any type of food ______",
+    "answer": "P",
+    "rawExcerpt": "36. Hungers for any type of food ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 37,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Need to satisfy the hunger as soon as possible ______",
+    "answer": "E",
+    "rawExcerpt": "37. Need to satisfy the hunger as soon as possible ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 38,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Will stop eating once full ______",
+    "answer": "P",
+    "rawExcerpt": "38. Will stop eating once full ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 39,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Will feel no sense of guilt after eating ______",
+    "answer": "P",
+    "rawExcerpt": "39. Will feel no sense of guilt after eating ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     30,
+     35,
+     36,
+     37,
+     38,
+     39
+    ],
+    "outOfRange": []
    }
   }
  ]

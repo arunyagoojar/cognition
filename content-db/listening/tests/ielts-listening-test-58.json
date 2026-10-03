@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-58",
  "title": "IELTS Listening Test 58",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-58/index.html",
-   "sha256": "93226da99261568ef8d9d2c09c2726e28557226789c3ae7e2b47183f1162b64f",
-   "manifestHashMatch": true,
+   "sha256": "c329415fbff4a2a2f8387899ccdde22a7f312ce0be8ecf3e5772f15d3f2a3809",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-58/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -420,14 +420,36 @@
     "sharedOptions": [
      {
       "letter": "B",
-      "text": "save money C study geography D study English E do some winter sports F go sailing G join a walking tour"
+      "text": "save money"
+     },
+     {
+      "letter": "C",
+      "text": "study geography"
+     },
+     {
+      "letter": "D",
+      "text": "study English"
+     },
+     {
+      "letter": "E",
+      "text": "do some winter sports"
+     },
+     {
+      "letter": "F",
+      "text": "go sailing"
+     },
+     {
+      "letter": "G",
+      "text": "join a walking tour"
      },
      {
       "letter": "H",
       "text": "meet young people"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -440,11 +462,12 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 2,
@@ -457,11 +480,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 3,
@@ -474,18 +498,19 @@
      "blankContext": null,
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family"
-     }
+     },
+     "keyRaw": "H"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[1]",
     "rawExcerpt": "Part 1: Questions 1-3\nChoose THREE letters B-H."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -512,8 +537,10 @@
      "Method of payment credit card"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -536,7 +563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Address: (4) ␦ Kew"
-     }
+     },
+     "keyRaw": "29 Loch Street"
     },
     {
      "number": 5,
@@ -559,7 +587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Mobile: (5) 0402 ␦"
-     }
+     },
+     "keyRaw": "558992"
     },
     {
      "number": 6,
@@ -581,7 +610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Day and date of departure: (6) ␦"
-     }
+     },
+     "keyRaw": "Saturday 1 May"
     },
     {
      "number": 7,
@@ -603,7 +633,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Length of course (7) ␦"
-     }
+     },
+     "keyRaw": "8 weeks"
     }
    ],
    "provenance": {
@@ -636,19 +667,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test58-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 8
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (8) ␦",
@@ -658,18 +687,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 9,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 9
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (9) ␦",
@@ -679,18 +706,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 10,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 10
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (10) ␦",
@@ -700,7 +725,9 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(10) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -708,6 +735,40 @@
     "rawExcerpt": "Questions 8-10\nLabel the map below. Write the correct letter A-G next to questions 8-10."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -729,8 +790,10 @@
      "11. ␦ are often known by their famous bridges.\n12. The speaker compares a bridge to a cathedral or ␦\n13. Sydney Harbour Bridge is nicknamed ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -752,7 +815,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. ␦ are often known by their famous bridges."
-     }
+     },
+     "keyRaw": "cities"
     },
     {
      "number": 12,
@@ -777,7 +841,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. The speaker compares a bridge to a cathedral or ␦"
-     }
+     },
+     "keyRaw": "palace"
     },
     {
      "number": 13,
@@ -802,7 +867,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. Sydney Harbour Bridge is nicknamed ␦"
-     }
+     },
+     "keyRaw": "coat hanger"
     }
    ],
    "provenance": {
@@ -855,8 +921,10 @@
      "(18) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -878,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(14) ……………… agreed to finance bridge"
-     }
+     },
+     "keyRaw": "state/ government"
     },
     {
      "number": 15,
@@ -900,7 +969,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "(15) …………. – 1926"
-     }
+     },
+     "keyRaw": "1924"
     },
     {
      "number": 16,
@@ -923,7 +993,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Contract signed with engineering firm Construction involved: – knocking down (16) ……….. – creation of many jobs"
-     }
+     },
+     "keyRaw": "800 houses"
     },
     {
      "number": 17,
@@ -946,7 +1017,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Bridge completed at a cost of (17) £ ………."
-     }
+     },
+     "keyRaw": "9.5 million"
     },
     {
      "number": 18,
@@ -969,7 +1041,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Opening ceremony: Ribbon cut by a man riding a (18) ……….."
-     }
+     },
+     "keyRaw": "horse"
     }
    ],
    "provenance": {
@@ -998,8 +1071,10 @@
      "19. How long is the tunnel? ␦\n20. Name ONE thing the tunnel can withstand. ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -1024,7 +1099,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "19. How long is the tunnel? ␦"
-     }
+     },
+     "keyRaw": "2.3 km"
     },
     {
      "number": 20,
@@ -1049,7 +1125,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "20. Name ONE thing the tunnel can withstand. ␦"
-     }
+     },
+     "keyRaw": "ship"
     }
    ],
    "provenance": {
@@ -1085,8 +1162,10 @@
      "wp-content/uploads/2024/09/lis-test58-2.png",
      "wp-content/uploads/2024/09/lis-test58-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1111,7 +1190,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "21. Which graph shows the distribution of animals painted on the caves? ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -1135,7 +1215,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(22) ␦ (23) ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 23,
@@ -1159,7 +1240,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(22) ␦ (23) ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 24,
@@ -1183,7 +1265,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(24) ␦ (25) ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 25,
@@ -1207,7 +1290,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(24) ␦ (25) ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1228,7 +1312,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "(26) ␦"
-     }
+     },
+     "keyRaw": "painted gallery"
     },
     {
      "number": 27,
@@ -1249,7 +1334,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "(27) ␦"
-     }
+     },
+     "keyRaw": "main gallery"
     }
    ],
    "provenance": {
@@ -1280,8 +1366,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1311,7 +1399,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "28. The cave was closed in 1963 because."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1341,7 +1430,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "29. How does David feel about the closure of the cave?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1371,7 +1461,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "30. How can people enjoy the drawings today?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1405,8 +1496,10 @@
      "• (32) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1428,7 +1521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "(31) ␦ and ␦ represent only two aspects of marketing."
-     }
+     },
+     "keyRaw": "selling and advertising"
     },
     {
      "number": 32,
@@ -1450,7 +1544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• (32) ␦"
-     }
+     },
+     "keyRaw": "making money"
     }
    ],
    "provenance": {
@@ -1481,8 +1576,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test58-4.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1503,7 +1600,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "(33) ␦"
-     }
+     },
+     "keyRaw": "warmth and safety"
     },
     {
      "number": 34,
@@ -1524,7 +1622,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "(34) ␦"
-     }
+     },
+     "keyRaw": "individual"
     }
    ],
    "provenance": {
@@ -1553,8 +1652,10 @@
      "A customer observation\nB free offers\nC in-store surveys"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1571,7 +1672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "35. supermarkets ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 36,
@@ -1588,7 +1690,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "36. department stores ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 37,
@@ -1605,7 +1708,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "37. fast-food companies ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 38,
@@ -1622,7 +1726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "38. theme parks ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1630,6 +1735,25 @@
     "rawExcerpt": "Questions 35-38"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "customer observation"
+     },
+     {
+      "letter": "B",
+      "text": "free offers"
+     },
+     {
+      "letter": "C",
+      "text": "in-store surveys"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1663,8 +1787,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 40,
@@ -1687,7 +1813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[46]",
       "rawExcerpt": "– poor – good – (40) ……………"
-     }
+     },
+     "keyRaw": "better than expected"
     },
     {
      "number": 39,
@@ -1710,7 +1837,8 @@
      "provenance": {
       "elementPath": "entry-content.children[46]",
       "rawExcerpt": "– unhappy – (39) …………. – delighted"
-     }
+     },
+     "keyRaw": "satisfies"
     }
    ],
    "provenance": {
@@ -1754,6 +1882,51 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 1,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 3,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "H",
+    "rawExcerpt": "Choose THREE letters B-H. Which THREE other activities does the customer want to do?\nA visit family",
+    "options": null
+   }
+  },
+  {
    "unit": "group",
    "groupId": "g07",
    "questionNumbers": [
@@ -1766,8 +1939,32 @@
     27
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 3 : Question 21"
+    "instructionRaw": "Part 3 : Question 21",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 30,
+    "missingOrQuarantined": [
+     1,
+     2,
+     3,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27
+    ],
+    "outOfRange": []
    }
   }
  ],
@@ -1778,8 +1975,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 33,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-193",
  "title": "IELTS Listening Test 193",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-193/index.html",
-   "sha256": "ce39705b2a5d285c1cd2a9ce342f25fee4992ac150c61d2617ba0bec8679bbcf",
-   "manifestHashMatch": true,
+   "sha256": "14d093fa87b9cf8977821391561a45e595f02d5df0630aef6306f8157fc132cd",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-193/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "2eb4a1621f7d0559f24283b5c0525f40975aa2e84e3c2367beb29011de913bc5",
+ "contentFingerprint": "370e38be8f1a9c3e55dd5301a2dc2a0354899f7fac44a4ec89e0f88216832279",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -412,8 +412,10 @@
      "Doesn’t own a bike because of a lack of (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -435,7 +437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Postcode : (1) ␦"
-     }
+     },
+     "keyRaw": "DW307YZ"
     },
     {
      "number": 2,
@@ -457,7 +460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Date of bus journey: (2) ␦"
-     }
+     },
+     "keyRaw": "24(th) April"
     },
     {
      "number": 3,
@@ -479,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Reason for trip: shopping and visit to the (3) ␦"
-     }
+     },
+     "keyRaw": "Dentist"
     },
     {
      "number": 4,
@@ -502,7 +507,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Travelled by bus because cost of (4) ␦ too high"
-     }
+     },
+     "keyRaw": "Parking"
     },
     {
      "number": 5,
@@ -525,7 +531,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Got on bus at (5) ␦ Street"
-     }
+     },
+     "keyRaw": "Claxby"
     },
     {
      "number": 6,
@@ -547,7 +554,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Complaints about bus service bus today was (6) ␦"
-     }
+     },
+     "keyRaw": "Late"
     },
     {
      "number": 7,
@@ -569,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Frequency of buses in the (7) ␦"
-     }
+     },
+     "keyRaw": "Evening"
     },
     {
      "number": 8,
@@ -592,7 +601,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Goes to the (8) ␦ By car"
-     }
+     },
+     "keyRaw": "Supermarket"
     },
     {
      "number": 9,
@@ -614,7 +624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Dislikes traveling by bike in the city centre because of the (9) ␦"
-     }
+     },
+     "keyRaw": "Pollution"
     },
     {
      "number": 10,
@@ -636,7 +647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Doesn’t own a bike because of a lack of (10) ␦"
-     }
+     },
+     "keyRaw": "Storage"
     }
    ],
    "provenance": {
@@ -658,35 +670,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Becoming a volunteer for ACE",
-     "A They are too small.",
-     "B There are not enough of them.",
-     "C Some of them are very close together.",
-     "11. Why does the speaker apologise about the seats?\nA They are too small.\nB There are not enough of them.\nC Some of them are very close together.",
-     "A The age of volunteers is less important than other factors.",
-     "B Young volunteers are less reliable than older ones.",
-     "C Most volunteers are about 60 years old.",
-     "12. What does the speaker say about the age of volunteers?\nA The age of volunteers is less important than other factors.\nB Young volunteers are less reliable than older ones.\nC Most volunteers are about 60 years old.",
-     "A It is continuous.",
-     "B It is conducted by a manager.",
-     "C It takes place online.",
-     "13. What does the speaker say about training?\nA It is continuous.\nB It is conducted by a manager.\nC It takes place online."
+     "Becoming a volunteer for ACE"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Why does the speaker apologise about the seats?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "They are too small."
+      },
+      {
+       "letter": "B",
+       "text": "There are not enough of them."
+      },
+      {
+       "letter": "C",
+       "text": "Some of them are very close together."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -694,16 +709,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. Why does the speaker apologise about the seats?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the speaker say about the age of volunteers?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The age of volunteers is less important than other factors."
+      },
+      {
+       "letter": "B",
+       "text": "Young volunteers are less reliable than older ones."
+      },
+      {
+       "letter": "C",
+       "text": "Most volunteers are about 60 years old."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -711,16 +740,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "12. What does the speaker say about the age of volunteers?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the speaker say about training?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It is continuous."
+      },
+      {
+       "letter": "B",
+       "text": "It is conducted by a manager."
+      },
+      {
+       "letter": "C",
+       "text": "It takes place online."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -728,7 +771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "13. What does the speaker say about training?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -757,14 +801,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "their financial situation B their level of commitment C their work experience D their ambition"
+      "text": "their financial situation"
+     },
+     {
+      "letter": "B",
+      "text": "their level of commitment"
+     },
+     {
+      "letter": "C",
+      "text": "their work experience"
+     },
+     {
+      "letter": "D",
+      "text": "their ambition"
      },
      {
       "letter": "E",
       "text": "their availability"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -775,13 +833,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO issues does the speaker ask the audience to consider before they apply to be volunteers?"
-     }
+     },
+     "keyRaw": "B, E"
     },
     {
      "number": 15,
@@ -792,13 +851,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO issues does the speaker ask the audience to consider before they apply to be volunteers?"
-     }
+     },
+     "keyRaw": "B, E"
     }
    ],
    "provenance": {
@@ -806,6 +866,43 @@
     "rawExcerpt": "Questions 14 and 15\nChoose TWO letters, A-E. Which TWO issues does the speaker ask the audience to consider before they apply to be volunteers?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:14-15",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO issues does the speaker ask the audience to consider before they apply to be volunteers?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "their financial situation"
+     },
+     {
+      "letter": "B",
+      "text": "their level of commitment"
+     },
+     {
+      "letter": "C",
+      "text": "their work experience"
+     },
+     {
+      "letter": "D",
+      "text": "their ambition"
+     },
+     {
+      "letter": "E",
+      "text": "their availability"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -828,14 +925,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "experience on stage B original, new ideas C parenting skills D an understanding of food and diet E retail experience F a good memory"
+      "text": "experience on stage"
+     },
+     {
+      "letter": "B",
+      "text": "original, new ideas"
+     },
+     {
+      "letter": "C",
+      "text": "parenting skills"
+     },
+     {
+      "letter": "D",
+      "text": "an understanding of food and diet"
+     },
+     {
+      "letter": "E",
+      "text": "retail experience"
+     },
+     {
+      "letter": "F",
+      "text": "a good memory"
      },
      {
       "letter": "G",
       "text": "a good level of fitness"
      }
+    ],
+    "optionPreface": [
+     "Helpful things volunteers might offer"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -852,7 +973,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "16. Fundraising ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -869,7 +991,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "17. Litter collection ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 18,
@@ -886,7 +1009,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "18. ‘Playmates’ ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 19,
@@ -903,7 +1027,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "19. Story club ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -920,7 +1045,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "20. First aid ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -928,6 +1054,40 @@
     "rawExcerpt": "Questions 16-20\nWhat does the speaker suggest would be helpful for each of the following areas of voluntary work? Choose FIVE answers from the box and write the correct letter, A-G, next to Questions "
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Helpful things volunteers might offer",
+    "options": [
+     {
+      "letter": "A",
+      "text": "experience on stage"
+     },
+     {
+      "letter": "B",
+      "text": "original, new ideas"
+     },
+     {
+      "letter": "C",
+      "text": "parenting skills"
+     },
+     {
+      "letter": "D",
+      "text": "an understanding of food and diet"
+     },
+     {
+      "letter": "E",
+      "text": "retail experience"
+     },
+     {
+      "letter": "F",
+      "text": "a good memory"
+     },
+     {
+      "letter": "G",
+      "text": "a good level of fitness"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -943,47 +1103,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Talk on Jobs in fashion design",
-     "A Her view of the speaker was blocked.",
-     "B She was unable to find an empty seat.",
-     "C The students next to her were talking.",
-     "21. What problem did Chantal have at the start of the talk?\nA Her view of the speaker was blocked.\nB She was unable to find an empty seat.\nC The students next to her were talking.",
-     "A It has become more competitive than it used to be.",
-     "B There is more variety in it than they had realised.",
-     "C Some areas of it are more exciting than others.",
-     "22. What were Hugo and Chantal surprised to hear about the job market?\nA It has become more competitive than it used to be.\nB There is more variety in it than they had realised.\nC Some areas of it are more exciting than others.",
-     "A unfair to them at times.",
-     "B hard for them to follow.",
-     "C critical of the industry.",
-     "23. Hugo and Chantal agree that the speaker’s message was\nA unfair to them at times.\nB hard for them to follow.\nC critical of the industry.",
-     "A when they received the advice",
-     "B how much advice was given",
-     "C who gave the advice",
-     "24. What do Huao and Chantal criticise about their school careers advice?\nA when they received the advice\nB how much advice was given\nC who gave the advice",
-     "A which is the best career in fashion.",
-     "B when to choose a career in fashion.",
-     "C why they would like a career in fashion.",
-     "25. When discussing their future, Hugo and Chantal disagree on\nA which is the best career in fashion.\nB when to choose a career in fashion.\nC why they would like a career in fashion.",
-     "A He is realistic about the practice.",
-     "B He feels the practice is dishonest.",
-     "C He thinks others want to change the practice.",
-     "26. How does Hugo feel about being an unpaid assistant?\nA He is realistic about the practice.\nB He feels the practice is dishonest.\nC He thinks others want to change the practice."
+     "Talk on Jobs in fashion design"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What problem did Chantal have at the start of the talk?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Her view of the speaker was blocked."
+      },
+      {
+       "letter": "B",
+       "text": "She was unable to find an empty seat."
+      },
+      {
+       "letter": "C",
+       "text": "The students next to her were talking."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -991,16 +1142,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "21. What problem did Chantal have at the start of the talk?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What were Hugo and Chantal surprised to hear about the job market?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It has become more competitive than it used to be."
+      },
+      {
+       "letter": "B",
+       "text": "There is more variety in it than they had realised."
+      },
+      {
+       "letter": "C",
+       "text": "Some areas of it are more exciting than others."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1008,16 +1173,30 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "22. What were Hugo and Chantal surprised to hear about the job market?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Hugo and Chantal agree that the speaker’s message was",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "unfair to them at times."
+      },
+      {
+       "letter": "B",
+       "text": "hard for them to follow."
+      },
+      {
+       "letter": "C",
+       "text": "critical of the industry."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1025,16 +1204,30 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "23. Hugo and Chantal agree that the speaker’s message was"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do Huao and Chantal criticise about their school careers advice?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "when they received the advice"
+      },
+      {
+       "letter": "B",
+       "text": "how much advice was given"
+      },
+      {
+       "letter": "C",
+       "text": "who gave the advice"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1042,16 +1235,30 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "24. What do Huao and Chantal criticise about their school careers advice?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When discussing their future, Hugo and Chantal disagree on",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "which is the best career in fashion."
+      },
+      {
+       "letter": "B",
+       "text": "when to choose a career in fashion."
+      },
+      {
+       "letter": "C",
+       "text": "why they would like a career in fashion."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1059,16 +1266,30 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "25. When discussing their future, Hugo and Chantal disagree on"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How does Hugo feel about being an unpaid assistant?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "He is realistic about the practice."
+      },
+      {
+       "letter": "B",
+       "text": "He feels the practice is dishonest."
+      },
+      {
+       "letter": "C",
+       "text": "He thinks others want to change the practice."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1076,7 +1297,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "26. How does Hugo feel about being an unpaid assistant?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1105,14 +1327,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "being dishonest to her employer B paying too much attention to how she looked C expecting to become well-known D trying to earn a lot of money"
+      "text": "being dishonest to her employer"
+     },
+     {
+      "letter": "B",
+      "text": "paying too much attention to how she looked"
+     },
+     {
+      "letter": "C",
+      "text": "expecting to become well-known"
+     },
+     {
+      "letter": "D",
+      "text": "trying to earn a lot of money"
      },
      {
       "letter": "E",
       "text": "openly disliking her client"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1123,13 +1359,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO mistakes did the speaker admit she made in her first job?"
-     }
+     },
+     "keyRaw": "B, E"
     },
     {
      "number": 28,
@@ -1140,13 +1377,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO mistakes did the speaker admit she made in her first job?"
-     }
+     },
+     "keyRaw": "B, E"
     }
    ],
    "provenance": {
@@ -1154,6 +1392,43 @@
     "rawExcerpt": "Questions 27 and 28\nChoose TWO letters, A-E. Which TWO mistakes did the speaker admit she made in her first job?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:27-28",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO mistakes did the speaker admit she made in her first job?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "being dishonest to her employer"
+     },
+     {
+      "letter": "B",
+      "text": "paying too much attention to how she looked"
+     },
+     {
+      "letter": "C",
+      "text": "expecting to become well-known"
+     },
+     {
+      "letter": "D",
+      "text": "trying to earn a lot of money"
+     },
+     {
+      "letter": "E",
+      "text": "openly disliking her client"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1176,14 +1451,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the reasons people return fashion items B how much time people have to shop for clothes C fashion designs people want but can’t find D the best time of year for fashion buying"
+      "text": "the reasons people return fashion items"
+     },
+     {
+      "letter": "B",
+      "text": "how much time people have to shop for clothes"
+     },
+     {
+      "letter": "C",
+      "text": "fashion designs people want but can’t find"
+     },
+     {
+      "letter": "D",
+      "text": "the best time of year for fashion buying"
      },
      {
       "letter": "E",
       "text": "the most popular fashion sizes"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
@@ -1194,13 +1483,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of retail information do Hugo and Chantal agree would be useful?"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 30,
@@ -1211,13 +1501,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of retail information do Hugo and Chantal agree would be useful?"
-     }
+     },
+     "keyRaw": "A, C"
     }
    ],
    "provenance": {
@@ -1225,6 +1516,43 @@
     "rawExcerpt": "Questions 29 and 30\nChoose TWO letters, A-E. Which TWO pieces of retail information do Hugo and Chantal agree would be useful?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:29-30",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO pieces of retail information do Hugo and Chantal agree would be useful?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the reasons people return fashion items"
+     },
+     {
+      "letter": "B",
+      "text": "how much time people have to shop for clothes"
+     },
+     {
+      "letter": "C",
+      "text": "fashion designs people want but can’t find"
+     },
+     {
+      "letter": "D",
+      "text": "the best time of year for fashion buying"
+     },
+     {
+      "letter": "E",
+      "text": "the most popular fashion sizes"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1265,8 +1593,10 @@
      "• an increase in (40) ␦ as a contributor to GDP"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1289,7 +1619,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• damage to (31) ␦ in the park"
-     }
+     },
+     "keyRaw": "Fences"
     },
     {
      "number": 32,
@@ -1312,7 +1643,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "• a suitable group of elephants from the same (32) ␦ was selected"
-     }
+     },
+     "keyRaw": "Family"
     },
     {
      "number": 33,
@@ -1335,7 +1667,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "• vets and park staff made use of (33) ␦ to help guide the elephants into an open plain"
-     }
+     },
+     "keyRaw": "Helicopters"
     },
     {
      "number": 34,
@@ -1357,7 +1690,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o this process had to be completed quickly to reduce (34) ␦"
-     }
+     },
+     "keyRaw": "Stress"
     },
     {
      "number": 35,
@@ -1380,7 +1714,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o elephants had to be turned on their (35) ␦ to avoid damage to their lungs"
-     }
+     },
+     "keyRaw": "Sides"
     },
     {
      "number": 36,
@@ -1403,7 +1738,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o elephants’ (36) ␦ had to be monitored constantly"
-     }
+     },
+     "keyRaw": "Breathing"
     },
     {
      "number": 37,
@@ -1426,7 +1762,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o data including the size of their tusks and (37) ␦ was taken"
-     }
+     },
+     "keyRaw": "Feet"
     },
     {
      "number": 38,
@@ -1449,7 +1786,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• (38) ␦ opportunities"
-     }
+     },
+     "keyRaw": "Employment"
     },
     {
      "number": 39,
@@ -1471,7 +1809,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• a reduction in the number of poachers and (39) ␦"
-     }
+     },
+     "keyRaw": "Weapons"
     },
     {
      "number": 40,
@@ -1494,7 +1833,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• an increase in (40) ␦ as a contributor to GDP"
-     }
+     },
+     "keyRaw": "Tourism"
     }
    ],
    "provenance": {
@@ -1541,6 +1881,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

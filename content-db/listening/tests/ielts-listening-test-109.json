@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-109",
  "title": "IELTS Listening Test 109",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-109/index.html",
-   "sha256": "a0e3162ba4e1265f6d9ede969c3249e93fcb34430ce070ea7ed5a826f39458b7",
-   "manifestHashMatch": true,
+   "sha256": "09550fc4f136fd22db930fe2744f2d6e72440c8e1ae12dd5921cf0e14385acab",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-109/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -396,8 +396,10 @@
      "Second day’s activity: go to the water plant to see how to purify the water for drinking"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Destination: the Warrangamba dam and (1) ␦"
-     }
+     },
+     "keyRaw": "water treatment plan"
     },
     {
      "number": 2,
@@ -442,7 +445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Departing time of coach: at (2) ␦ next Monday"
-     }
+     },
+     "keyRaw": "8 am"
     },
     {
      "number": 3,
@@ -465,7 +469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Length of journey there: (3) ␦ roughly and three hours back"
-     }
+     },
+     "keyRaw": "2.5 hours"
     },
     {
      "number": 4,
@@ -487,7 +492,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "First day’s activity: (4) ␦"
-     }
+     },
+     "keyRaw": "visit (the) dam"
     },
     {
      "number": 5,
@@ -509,7 +515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Spending the night: in (5) ␦"
-     }
+     },
+     "keyRaw": "youth hostel"
     },
     {
      "number": 6,
@@ -531,7 +538,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Meals provided: in the form of (6) ␦"
-     }
+     },
+     "keyRaw": "breakfast (and) supper"
     },
     {
      "number": 7,
@@ -554,7 +562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Sydney’s daily water consumption: equal to water to fill (7) ␦ full size Olympic swimming pools"
-     }
+     },
+     "keyRaw": "600"
     }
    ],
    "provenance": {
@@ -583,14 +592,34 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "binoculars B camera C penknife D map E raincoat"
+      "text": "binoculars"
+     },
+     {
+      "letter": "B",
+      "text": "camera"
+     },
+     {
+      "letter": "C",
+      "text": "penknife"
+     },
+     {
+      "letter": "D",
+      "text": "map"
+     },
+     {
+      "letter": "E",
+      "text": "raincoat"
      },
      {
       "letter": "F",
       "text": "mobile phone"
      }
+    ],
+    "optionPreface": [
+     "Which THREE things does Cesar recommend bringing?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -607,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 9,
@@ -624,7 +654,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 10,
@@ -641,7 +672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -649,6 +681,48 @@
     "rawExcerpt": "Questions 8-10\nChoose THREE letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g02:8-10",
+    "answerSet": [
+     "B",
+     "E",
+     "F"
+    ],
+    "prompt": "Which THREE things does Cesar recommend bringing?",
+    "instructionText": "Choose THREE letters A-F."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "binoculars"
+     },
+     {
+      "letter": "B",
+      "text": "camera"
+     },
+     {
+      "letter": "C",
+      "text": "penknife"
+     },
+     {
+      "letter": "D",
+      "text": "map"
+     },
+     {
+      "letter": "E",
+      "text": "raincoat"
+     },
+     {
+      "letter": "F",
+      "text": "mobile phone"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -670,8 +744,10 @@
      "11. The last programme in the present series is ␦\n12. Miss Patty Ching has been rewarded as ‘Consumer of ␦ ’ for her persistent effort to see through a result of a complaint.\n13. She took ␦ of photographs on her tour in Europe.\n14. What happened to her photos after she gave them to Top-class photo services for developing? ␦\n15. The photo services compensated her ␦ for the loss in the end."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -696,7 +772,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. The last programme in the present series is ␦"
-     }
+     },
+     "keyRaw": "consumer’s choice"
     },
     {
      "number": 12,
@@ -719,7 +796,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "12. Miss Patty Ching has been rewarded as ‘Consumer of ␦ ’ for her persistent effort to see through a result of a complaint."
-     }
+     },
+     "keyRaw": "Patty Ching"
     },
     {
      "number": 13,
@@ -742,7 +820,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "13. She took ␦ of photographs on her tour in Europe."
-     }
+     },
+     "keyRaw": "360"
     },
     {
      "number": 14,
@@ -767,7 +846,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "14. What happened to her photos after she gave them to Top-class photo services for developing? ␦"
-     }
+     },
+     "keyRaw": "vanished"
     },
     {
      "number": 15,
@@ -790,7 +870,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "15. The photo services compensated her ␦ for the loss in the end."
-     }
+     },
+     "keyRaw": "$2000"
     }
    ],
    "provenance": {
@@ -816,8 +897,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -851,7 +934,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "16. What is the problem that many listeners write about?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -885,7 +969,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "17. How much was the sale price of the belt that Mr. Alvin liked?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -919,7 +1004,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "18. Why should the consumer make a complaint about bad articles or service?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 19,
@@ -953,7 +1039,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "19. What should a consumer do when complaining in person?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -987,7 +1074,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. What should a customer do when complaining on the phone?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1023,8 +1111,10 @@
      "If no, reasons: (22) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1046,7 +1136,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Student number: (21) ␦"
-     }
+     },
+     "keyRaw": "C97H85"
     },
     {
      "number": 22,
@@ -1068,7 +1159,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "If no, reasons: (22) ␦"
-     }
+     },
+     "keyRaw": "(has) practical experience"
     }
    ],
    "provenance": {
@@ -1096,8 +1188,10 @@
      "23. The final date of the examination should be ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1118,11 +1212,12 @@
      "blankContext": "line: 23. The final date of the examination should be ␦ (input box in source)",
      "correctAnswer": "20 June, 25 June",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "23. The final date of the examination should be ␦"
-     }
+     },
+     "keyRaw": "20 June, 25 June"
     }
    ],
    "provenance": {
@@ -1130,7 +1225,7 @@
     "rawExcerpt": "Question 23\nComplete the notes below. Write TWO DATES for the answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g07",
@@ -1149,8 +1244,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1184,7 +1281,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. Dr. Richardson explains that the set exercises"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1218,7 +1316,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. Dr. Richardson explains that essays 1 and 2"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1253,8 +1352,10 @@
      "Assignment 3 (28) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1272,11 +1373,12 @@
      "blankContext": "line: Set exercises (26) ␦",
      "correctAnswer": "M",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Set exercises (26) ␦"
-     }
+     },
+     "keyRaw": "M"
     },
     {
      "number": 27,
@@ -1294,11 +1396,12 @@
      "blankContext": "line: Assignment 1 (27) ␦",
      "correctAnswer": "T",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Assignment 1 (27) ␦"
-     }
+     },
+     "keyRaw": "T"
     },
     {
      "number": 28,
@@ -1316,11 +1419,12 @@
      "blankContext": "line: Assignment 3 (28) ␦",
      "correctAnswer": "J",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Assignment 3 (28) ␦"
-     }
+     },
+     "keyRaw": "J"
     }
    ],
    "provenance": {
@@ -1328,7 +1432,7 @@
     "rawExcerpt": "Questions 26-28\nComplete the table by writing ONE or TWO appropriate letters (M, T, A or J) as explained below."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g09",
@@ -1353,12 +1457,14 @@
      "29. Which two time slots does Dr. Richardson suggest David use for his essay?\nA six o’clock and midmorning\nB breakfast and six o’clock\nC midmorning and midnight\nD midday and ten o’clock"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Which two time slots does Dr. Richardson suggest David use for his essay?",
       "segments": null
@@ -1371,7 +1477,9 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "29. Which two time slots does Dr. Richardson suggest David use for his essay?"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -1379,6 +1487,29 @@
     "rawExcerpt": "Questions 29\nChoose the correct answer."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "29. Which two time slots does Dr. Richardson suggest David use for his essay?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "six o’clock and midmorning"
+     },
+     {
+      "letter": "B",
+      "text": "breakfast and six o’clock"
+     },
+     {
+      "letter": "C",
+      "text": "midmorning and midnight"
+     },
+     {
+      "letter": "D",
+      "text": "midday and ten o’clock"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1400,8 +1531,10 @@
      "30. What will David do before he decided which part of the programmes to use? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 30,
@@ -1426,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "30. What will David do before he decided which part of the programmes to use? ␦"
-     }
+     },
+     "keyRaw": "collect sample"
     }
    ],
    "provenance": {
@@ -1453,8 +1587,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1484,7 +1620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "31. What does John Upton compare a computer virus to?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1531,8 +1668,10 @@
      "(34) ␦ (35) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 32,
@@ -1555,7 +1694,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "In 1949 (32)…………………..of virus was presented by John Neumann, an addicted computer fan"
-     }
+     },
+     "keyRaw": "first model"
     },
     {
      "number": 33,
@@ -1581,7 +1721,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "(33)…………………..game was developed by a group of Americans for (34)……………….on computers"
-     }
+     },
+     "keyRaw": "core wars"
     },
     {
      "number": 34,
@@ -1607,7 +1748,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "(33)…………………..game was developed by a group of Americans for (34)……………….on computers"
-     }
+     },
+     "keyRaw": "entertainment"
     },
     {
      "number": 35,
@@ -1630,7 +1772,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "Development of a new (35)……………….in the 1980s"
-     }
+     },
+     "keyRaw": "pastime"
     }
    ],
    "provenance": {
@@ -1657,8 +1800,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1688,7 +1833,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "36. What does the speaker find surprising?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1720,8 +1866,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1742,7 +1890,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "(37) ␦"
-     }
+     },
+     "keyRaw": "be (very) careful"
     },
     {
      "number": 38,
@@ -1763,7 +1912,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "(38) ␦"
-     }
+     },
+     "keyRaw": "avoid trouble"
     },
     {
      "number": 39,
@@ -1784,7 +1934,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "(39) ␦"
-     }
+     },
+     "keyRaw": "understand"
     },
     {
      "number": 40,
@@ -1805,7 +1956,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "be (well) prepared"
     }
    ],
    "provenance": {
@@ -1843,10 +1995,86 @@
   "fnameInputs": 27
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 23,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "The final date of the examination should be ______",
+    "answer": "20 June, 25 June",
+    "rawExcerpt": "23. The final date of the examination should be ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 26,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Set exercises ______",
+    "answer": "M",
+    "rawExcerpt": "Set exercises (26) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 27,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Assignment 1 ______",
+    "answer": "T",
+    "rawExcerpt": "Assignment 1 (27) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 28,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Assignment 3 ______",
+    "answer": "J",
+    "rawExcerpt": "Assignment 3 (28) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     23,
+     26,
+     27,
+     28
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 36,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

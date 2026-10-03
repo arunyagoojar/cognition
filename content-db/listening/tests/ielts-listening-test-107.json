@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-107",
  "title": "IELTS Listening Test 107",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-107/index.html",
-   "sha256": "4f7453597eebf62219b144da0f620bc0e50bcb219d858e4676b740f94b2275ef",
-   "manifestHashMatch": true,
+   "sha256": "a9bb09bbec1c156208c847913836554bef19433d92e8d0b274f98ff05f76f3ad",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-107/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -405,8 +405,10 @@
      "• In the (10) ␦ opposite the station"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -429,7 +431,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Average rent: (1) £ ␦ a month"
-     }
+     },
+     "keyRaw": "850"
     },
     {
      "number": 2,
@@ -451,7 +454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Linda travels to work by (2) ␦"
-     }
+     },
+     "keyRaw": "bike"
     },
     {
      "number": 3,
@@ -474,7 +478,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Limited (3) ␦ in city centre"
-     }
+     },
+     "keyRaw": "parking"
     },
     {
      "number": 4,
@@ -497,7 +502,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Trains to London every (4) ␦ minutes"
-     }
+     },
+     "keyRaw": "30"
     },
     {
      "number": 5,
@@ -519,7 +525,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Poor train service at (5) ␦"
-     }
+     },
+     "keyRaw": "weekend(s)"
     },
     {
      "number": 6,
@@ -542,7 +549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• New (6) ␦ opened recently"
-     }
+     },
+     "keyRaw": "cinema"
     },
     {
      "number": 7,
@@ -565,7 +573,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• (7) ␦ has excellent reputation"
-     }
+     },
+     "keyRaw": "hospital"
     },
     {
      "number": 8,
@@ -588,7 +597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Good (8) ␦ on Bridge Street"
-     }
+     },
+     "keyRaw": "dentist"
     },
     {
      "number": 9,
@@ -611,7 +621,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• Meet Linda on (9) ␦ after 5.30 pm"
-     }
+     },
+     "keyRaw": "thursday"
     },
     {
      "number": 10,
@@ -634,7 +645,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• In the (10) ␦ opposite the station"
-     }
+     },
+     "keyRaw": "cafe"
     }
    ],
    "provenance": {
@@ -663,14 +675,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "not dependent on season B enjoyable C low risk of injury D fitness level unimportant E sociable F fast results"
+      "text": "not dependent on season"
+     },
+     {
+      "letter": "B",
+      "text": "enjoyable"
+     },
+     {
+      "letter": "C",
+      "text": "low risk of injury"
+     },
+     {
+      "letter": "D",
+      "text": "fitness level unimportant"
+     },
+     {
+      "letter": "E",
+      "text": "sociable"
+     },
+     {
+      "letter": "F",
+      "text": "fast results"
      },
      {
       "letter": "G",
       "text": "motivating"
      }
+    ],
+    "optionPreface": [
+     "Advantages"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -687,7 +723,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "11. using a gym ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 12,
@@ -704,7 +741,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "12. running ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 13,
@@ -721,7 +759,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "13. swimming ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -738,7 +777,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. cycling ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -755,7 +795,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. doing yoga ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -772,12 +813,47 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. training with a personal trainer ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-16"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "Advantages",
+    "options": [
+     {
+      "letter": "A",
+      "text": "not dependent on season"
+     },
+     {
+      "letter": "B",
+      "text": "enjoyable"
+     },
+     {
+      "letter": "C",
+      "text": "low risk of injury"
+     },
+     {
+      "letter": "D",
+      "text": "fitness level unimportant"
+     },
+     {
+      "letter": "E",
+      "text": "sociable"
+     },
+     {
+      "letter": "F",
+      "text": "fast results"
+     },
+     {
+      "letter": "G",
+      "text": "motivating"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -801,14 +877,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "lack of time B loss of confidence C too much effort required D high costs"
+      "text": "lack of time"
+     },
+     {
+      "letter": "B",
+      "text": "loss of confidence"
+     },
+     {
+      "letter": "C",
+      "text": "too much effort required"
+     },
+     {
+      "letter": "D",
+      "text": "high costs"
      },
      {
       "letter": "E",
       "text": "feeling less successful than others"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -825,7 +915,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Choose TWO letters A-E. For which TWO reasons does the speaker say people give up going to the gym?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -842,7 +933,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Choose TWO letters A-E. For which TWO reasons does the speaker say people give up going to the gym?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -850,6 +942,43 @@
     "rawExcerpt": "Questions 17 and 18"
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:17-18",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "For which TWO reasons does the speaker say people give up going to the gym?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "lack of time"
+     },
+     {
+      "letter": "B",
+      "text": "loss of confidence"
+     },
+     {
+      "letter": "C",
+      "text": "too much effort required"
+     },
+     {
+      "letter": "D",
+      "text": "high costs"
+     },
+     {
+      "letter": "E",
+      "text": "feeling less successful than others"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -872,14 +1001,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "write goals down B have achievable aims C set a time limit D give yourself rewards"
+      "text": "write goals down"
+     },
+     {
+      "letter": "B",
+      "text": "have achievable aims"
+     },
+     {
+      "letter": "C",
+      "text": "set a time limit"
+     },
+     {
+      "letter": "D",
+      "text": "give yourself rewards"
      },
      {
       "letter": "E",
       "text": "challenge yourself"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -892,11 +1035,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -909,11 +1053,12 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -921,7 +1066,7 @@
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters A-E,"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -942,8 +1087,10 @@
      "Project on using natural dyes to colour fabrics"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -973,7 +1120,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "21. What first inspired Jim to choose this project?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1003,7 +1151,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "22. Jim eventually decided to do a practical investigation which involved"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
@@ -1033,7 +1182,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "23. When doing his experiments Jim was surprised by"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1063,7 +1213,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "24. What problem did Jim have with using tartrazine as a fabric dye?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1092,14 +1243,42 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "it is expensive B the color is too strong C the color is not long lasting D it is very poisonous E it can damage the fabric F the color may be unexpected G it is unsuitable for some fabrics"
+      "text": "it is expensive"
+     },
+     {
+      "letter": "B",
+      "text": "the color is too strong"
+     },
+     {
+      "letter": "C",
+      "text": "the color is not long lasting"
+     },
+     {
+      "letter": "D",
+      "text": "it is very poisonous"
+     },
+     {
+      "letter": "E",
+      "text": "it can damage the fabric"
+     },
+     {
+      "letter": "F",
+      "text": "the color may be unexpected"
+     },
+     {
+      "letter": "G",
+      "text": "it is unsuitable for some fabrics"
      },
      {
       "letter": "H",
       "text": "it is not generally available"
      }
+    ],
+    "optionPreface": [
+     "Problems"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1116,7 +1295,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "25. turmeric ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1133,7 +1313,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "26. Beetroot ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 27,
@@ -1150,7 +1331,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "27. Tyrian purple ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 28,
@@ -1167,7 +1349,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "28. Lowood ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 29,
@@ -1184,7 +1367,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "29. cochineal ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1201,7 +1385,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "30. metal oxide ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1209,6 +1394,44 @@
     "rawExcerpt": "Questions 25-30"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Problems",
+    "options": [
+     {
+      "letter": "A",
+      "text": "it is expensive"
+     },
+     {
+      "letter": "B",
+      "text": "the color is too strong"
+     },
+     {
+      "letter": "C",
+      "text": "the color is not long lasting"
+     },
+     {
+      "letter": "D",
+      "text": "it is very poisonous"
+     },
+     {
+      "letter": "E",
+      "text": "it can damage the fabric"
+     },
+     {
+      "letter": "F",
+      "text": "the color may be unexpected"
+     },
+     {
+      "letter": "G",
+      "text": "it is unsuitable for some fabrics"
+     },
+     {
+      "letter": "H",
+      "text": "it is not generally available"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1250,8 +1473,10 @@
      "• This may be in order to reduce chances of (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1273,7 +1498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• They are brown but recongisable by their blue (31) ␦"
-     }
+     },
+     "keyRaw": "tongue(s)"
     },
     {
      "number": 32,
@@ -1295,7 +1521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Their diet consists mainly of (32) ␦"
-     }
+     },
+     "keyRaw": "plants"
     },
     {
      "number": 33,
@@ -1317,7 +1544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Their main predators are large birds and (33) ␦"
-     }
+     },
+     "keyRaw": "snakes"
     },
     {
      "number": 34,
@@ -1340,7 +1568,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• One study found that lizards can use the (34) ␦ to help them navigate"
-     }
+     },
+     "keyRaw": "sky"
     },
     {
      "number": 35,
@@ -1363,7 +1592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• Observations show that these lizards keep the same (35) ␦ for several years"
-     }
+     },
+     "keyRaw": "partner(s)"
     },
     {
      "number": 36,
@@ -1386,7 +1616,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o To improve the survival of their young (but little (36) ␦ has been noted between parents and children)"
-     }
+     },
+     "keyRaw": "contact"
     },
     {
      "number": 37,
@@ -1409,7 +1640,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "o To provide (37) ␦ for female lizards"
-     }
+     },
+     "keyRaw": "protection"
     },
     {
      "number": 38,
@@ -1432,7 +1664,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• A study was carried out using GPS systems attached to the (38) ␦ of the lizards"
-     }
+     },
+     "keyRaw": "tail(s)"
     },
     {
      "number": 39,
@@ -1454,7 +1687,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "(39) ␦ taken"
-     }
+     },
+     "keyRaw": "steps"
     },
     {
      "number": 40,
@@ -1476,7 +1710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "• This may be in order to reduce chances of (40) ␦"
-     }
+     },
+     "keyRaw": "injury/ injuries"
     }
    ],
    "provenance": {
@@ -1513,7 +1748,52 @@
   "fnameInputs": 32
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1521,8 +1801,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 3,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-156",
- "sourceSha256": "2788f6e557e27ef2d93404f7be1379912678c840f96cfed706f9f6115b5bef8f",
+ "status": "duplicate",
+ "sourceSha256": "d4ffb48e8a1aaca188981b255709e2924134e9f568d9720733ae136fe6f68431",
  "units": [
   {
    "unit": "group",
@@ -11,8 +12,25 @@
     33
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 4: Questions 31-33"
+    "instructionRaw": "Part 4: Questions 31-33",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     31,
+     32,
+     33
+    ],
+    "outOfRange": []
    }
   }
  ]

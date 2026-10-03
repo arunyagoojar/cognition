@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-121",
  "title": "IELTS Listening Test 121",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-121/index.html",
-   "sha256": "9851f8addfe0879a42ae8c82e489b733fa5330153780520c75cd8e3cb56dc763",
-   "manifestHashMatch": true,
+   "sha256": "bb156b21fdb142a65ca818ce7d1024b76e9b4b50a9723483bd2981f9a908ca51",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-121/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -411,8 +411,10 @@
      "• Address: 41 Oak Rise, Stanton"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -434,7 +436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Width: (1) ␦"
-     }
+     },
+     "keyRaw": "75 cm"
     },
     {
      "number": 2,
@@ -456,7 +459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Made of: (2) ␦"
-     }
+     },
+     "keyRaw": "wood"
     },
     {
      "number": 3,
@@ -478,7 +482,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Cost: (3) ␦"
-     }
+     },
+     "keyRaw": "£15"
     },
     {
      "number": 4,
@@ -500,7 +505,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Color: (4) ␦"
-     }
+     },
+     "keyRaw": "cream"
     },
     {
      "number": 5,
@@ -523,7 +529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Number of shelves: six (four are (5) ␦ )"
-     }
+     },
+     "keyRaw": "adjustable"
     },
     {
      "number": 6,
@@ -549,7 +556,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Other features: almost 80 years old, has a (6) ␦ at the bottom, and has glass (7) ␦"
-     }
+     },
+     "keyRaw": "cupboard"
     },
     {
      "number": 7,
@@ -575,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Other features: almost 80 years old, has a (6) ␦ at the bottom, and has glass (7) ␦"
-     }
+     },
+     "keyRaw": "doors"
     },
     {
      "number": 8,
@@ -597,7 +606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• Cost: (8) ␦"
-     }
+     },
+     "keyRaw": "£95"
     },
     {
      "number": 9,
@@ -619,7 +629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Name: Mrs (9) ␦"
-     }
+     },
+     "keyRaw": "Blake"
     }
    ],
    "provenance": {
@@ -647,8 +658,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test121.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 10,
@@ -674,11 +687,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "10. Which map shows the correct location of the seller’s house?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -686,7 +700,7 @@
     "rawExcerpt": "Question 10\nChoose the correct letter A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -708,8 +722,10 @@
      "The paintings will be displayed in the Star Gallery and in a nearby (11) ␦ The sale of pictures will begin at (12) ␦ on Thursday, and there will be refreshments beforehand. The money raised will all be used to help (13) ␦ children in New Zealand and other countries."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -740,7 +756,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "The paintings will be displayed in the Star Gallery and in a nearby (11) ␦ The sale of pictures will begin at (12) ␦ on Thursday, and there will be refreshments beforehand. The money raised will all b"
-     }
+     },
+     "keyRaw": "cafe"
     },
     {
      "number": 12,
@@ -771,7 +788,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "The paintings will be displayed in the Star Gallery and in a nearby (11) ␦ The sale of pictures will begin at (12) ␦ on Thursday, and there will be refreshments beforehand. The money raised will all b"
-     }
+     },
+     "keyRaw": "7.30 pm"
     },
     {
      "number": 13,
@@ -802,7 +820,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "The paintings will be displayed in the Star Gallery and in a nearby (11) ␦ The sale of pictures will begin at (12) ␦ on Thursday, and there will be refreshments beforehand. The money raised will all b"
-     }
+     },
+     "keyRaw": "disabled"
     }
    ],
    "provenance": {
@@ -861,8 +880,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -885,7 +906,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– pictures of the (14)…………………of New Zealand"
-     }
+     },
+     "keyRaw": "birds"
     },
     {
      "number": 15,
@@ -908,7 +930,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– originally from Taiwan – had a number of (15)………………there"
-     }
+     },
+     "keyRaw": "exhibitions"
     },
     {
      "number": 16,
@@ -931,7 +954,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– (16)………………..paintings – strong colors"
-     }
+     },
+     "keyRaw": "abstract"
     },
     {
      "number": 17,
@@ -953,7 +977,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– has shown pictures in many countries – is an artist and a website (17)……………………"
-     }
+     },
+     "keyRaw": "designer"
     },
     {
      "number": 18,
@@ -975,7 +1000,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– soft colors, various media – mainly does (18)………….."
-     }
+     },
+     "keyRaw": "portraits"
     },
     {
      "number": 19,
@@ -998,7 +1024,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– lived in New Zealand for (19)…………… – Korean"
-     }
+     },
+     "keyRaw": "2 years"
     },
     {
      "number": 20,
@@ -1021,7 +1048,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "– paintings are based on (20)…………… – watercolors of New Zealand landscapes"
-     }
+     },
+     "keyRaw": "photos"
     }
    ],
    "provenance": {
@@ -1050,8 +1078,10 @@
      "A they must do this\nB they can do this if they want to\nC they cannot do this"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1068,7 +1098,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "21. Choose a writer from a list provided ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -1085,7 +1116,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. Get biographical information from the internet ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1102,7 +1134,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "23. Study a collection of poems ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1119,7 +1152,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. Make a one hour video ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1136,12 +1170,32 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "25. Refer to key facts in the writer’s life ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[17]",
     "rawExcerpt": "Part 3: Questions 21-25\nWhat instructions were the students give about their project?"
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "they must do this"
+     },
+     {
+      "letter": "B",
+      "text": "they can do this if they want to"
+     },
+     {
+      "letter": "C",
+      "text": "they cannot do this"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1172,8 +1226,10 @@
      "• Artistic and technical design of video – 25%"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1196,7 +1252,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Extract chosen from the author’s work must reflect the (26) ␦ and ␦ of the author."
-     }
+     },
+     "keyRaw": "interests (and) styles"
     },
     {
      "number": 27,
@@ -1219,7 +1276,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Students must find sound effects and (27) ␦ to match the texts they choose."
-     }
+     },
+     "keyRaw": "visuals"
     },
     {
      "number": 28,
@@ -1242,7 +1300,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Students must use a (28) ␦ of computer software programs to make the video."
-     }
+     },
+     "keyRaw": "range"
     },
     {
      "number": 29,
@@ -1265,7 +1324,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Students must include information about the (29) ␦ of all material"
-     }
+     },
+     "keyRaw": "sources"
     },
     {
      "number": 30,
@@ -1288,7 +1348,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• (30) ␦ (must represent essence of author’s work) – 50%"
-     }
+     },
+     "keyRaw": "content"
     }
    ],
    "provenance": {
@@ -1315,8 +1376,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1346,7 +1409,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. ‘Extremophiles’ are life forms that can live in"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1376,7 +1440,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "32. The researchers think that some of the organisms they found in Antarctica are"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1406,7 +1471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "33. The researchers were the first people to find life forms in the Antarctica"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1434,8 +1500,10 @@
      "34. Access to the sun’s heat can create a ␦ for some organisms.\n35. The deeper the soil, the higher the ␦ of salt.\n36. Salt can protect organisms against the effects of ␦ even at very low temperatures.\n37. All living things must have access to ␦ water.\n38. Salt plays a part in the process of ␦ which prevents freezing.\n39. The environment of ␦ is similar to the dry valleys of Antarctica.\n40. This research may provide evidence of the existence of extraterrestrial life forms and their possible ␦ on other planets."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1458,7 +1526,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "34. Access to the sun’s heat can create a ␦ for some organisms."
-     }
+     },
+     "keyRaw": "microclimate"
     },
     {
      "number": 35,
@@ -1481,7 +1550,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "35. The deeper the soil, the higher the ␦ of salt."
-     }
+     },
+     "keyRaw": "concentration"
     },
     {
      "number": 36,
@@ -1504,7 +1574,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "36. Salt can protect organisms against the effects of ␦ even at very low temperatures."
-     }
+     },
+     "keyRaw": "frost"
     },
     {
      "number": 37,
@@ -1527,7 +1598,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "37. All living things must have access to ␦ water."
-     }
+     },
+     "keyRaw": "liquid"
     },
     {
      "number": 38,
@@ -1550,7 +1622,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "38. Salt plays a part in the process of ␦ which prevents freezing."
-     }
+     },
+     "keyRaw": "supercooling"
     },
     {
      "number": 39,
@@ -1573,7 +1646,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "39. The environment of ␦ is similar to the dry valleys of Antarctica."
-     }
+     },
+     "keyRaw": "mars"
     },
     {
      "number": 40,
@@ -1596,7 +1670,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "40. This research may provide evidence of the existence of extraterrestrial life forms and their possible ␦ on other planets."
-     }
+     },
+     "keyRaw": "locations"
     }
    ],
    "provenance": {
@@ -1638,10 +1713,51 @@
   "fnameInputs": 37
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which map shows the correct location of the seller’s house?",
+    "answer": "B",
+    "rawExcerpt": "10. Which map shows the correct location of the seller’s house?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     10
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

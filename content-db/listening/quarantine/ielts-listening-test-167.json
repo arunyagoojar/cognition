@@ -1,0 +1,71 @@
+{
+ "slug": "ielts-listening-test-167",
+ "status": "quarantined",
+ "sourceSha256": "6c1eebf9d209c121b82256273c3aa4bdbab980d2aed9006ee1497f8f967c0833",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 38,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Which TWO facilities did the students request in the new Union building?",
+    "answer": "D and F",
+    "rawExcerpt": "38. Which TWO facilities did the students request in the new Union building?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 40,
+   "reasonCode": "MULTI_LETTER_KEY_ON_SINGLE_SELECT",
+   "reasonCodes": [
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Which TWO security measures have been requested?",
+    "answer": "A and C",
+    "rawExcerpt": "40. Which TWO security measures have been requested?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "closed circuit TV"
+     },
+     {
+      "letter": "B",
+      "text": "show Union card on entering the building"
+     },
+     {
+      "letter": "C",
+      "text": "show Union card when asked"
+     },
+     {
+      "letter": "D",
+      "text": "sport searched of bags"
+     },
+     {
+      "letter": "E",
+      "text": "permanent security office on site"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     38,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

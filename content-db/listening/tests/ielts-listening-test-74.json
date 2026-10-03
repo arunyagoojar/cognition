@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-74",
  "title": "IELTS Listening Test 74",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-74/index.html",
-   "sha256": "ce52e427bc3514fa232ca1a8721c9a2cd55323fc48a427c9bec081de4843f1f2",
-   "manifestHashMatch": true,
+   "sha256": "7e496975e32f149d606822e03a045a53be4eb1b11dc199079566d9adaac2ce36",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-74/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "248764c3b157431fcad1d5ba6e782f912444534e2ec025ab893c17b6ba022a6b",
+ "contentFingerprint": "ac927af28c32e4a93326efe4bb7967bcb8219a14e42a923f9ea73fd3cbca5b0b",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -401,8 +401,10 @@
      "What Jim need to do before move-in: take (10) ␦ in the morning"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -424,7 +426,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "The total rent: Peter £110 & Jim £ (1) ␦"
-     }
+     },
+     "keyRaw": "80"
     },
     {
      "number": 2,
@@ -446,7 +449,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Car parking: in the (2) ␦"
-     }
+     },
+     "keyRaw": "garage"
     },
     {
      "number": 3,
@@ -469,7 +473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "A place to buy things: (3) ␦ because Jim works there"
-     }
+     },
+     "keyRaw": "supermarket"
     },
     {
      "number": 4,
@@ -492,7 +497,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "The fees they should share: (4) ␦ fees"
-     }
+     },
+     "keyRaw": "petrol"
     },
     {
      "number": 5,
@@ -515,7 +521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "The (5) ␦ is needed in the kitchen"
-     }
+     },
+     "keyRaw": "heater"
     },
     {
      "number": 6,
@@ -538,7 +545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Jim will buy a (6) ␦ at the store"
-     }
+     },
+     "keyRaw": "toaster"
     },
     {
      "number": 7,
@@ -560,7 +568,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Location of the telephone: in the (7) ␦"
-     }
+     },
+     "keyRaw": "kitchen"
     },
     {
      "number": 8,
@@ -582,7 +591,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Move-in date: (8) ␦"
-     }
+     },
+     "keyRaw": "1 June"
     },
     {
      "number": 9,
@@ -604,7 +614,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Watching the game together: (9) ␦"
-     }
+     },
+     "keyRaw": "friday evening"
     },
     {
      "number": 10,
@@ -627,7 +638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "What Jim need to do before move-in: take (10) ␦ in the morning"
-     }
+     },
+     "keyRaw": "exam"
     }
    ],
    "provenance": {
@@ -655,8 +667,10 @@
      "11. The program is made for travelers to make ␦\n12. The program operates in cooperation with ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -681,7 +695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "11. The program is made for travelers to make ␦"
-     }
+     },
+     "keyRaw": "money"
     },
     {
      "number": 12,
@@ -706,7 +721,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "12. The program operates in cooperation with ␦"
-     }
+     },
+     "keyRaw": "school"
     }
    ],
    "provenance": {
@@ -735,14 +751,34 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": ". home stay B . no summer program C . minimum time requirement D . formal report required E . specific time period"
+      "text": ". home stay"
+     },
+     {
+      "letter": "B",
+      "text": ". no summer program"
+     },
+     {
+      "letter": "C",
+      "text": ". minimum time requirement"
+     },
+     {
+      "letter": "D",
+      "text": ". formal report required"
+     },
+     {
+      "letter": "E",
+      "text": ". specific time period"
      },
      {
       "letter": "F",
       "text": ". agriculture"
      }
+    ],
+    "optionPreface": [
+     "Internship Stipulation"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -759,7 +795,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. USA ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 14,
@@ -776,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. Australia ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -793,7 +831,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "15. South Africa ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 16,
@@ -810,7 +849,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. India ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -818,6 +858,36 @@
     "rawExcerpt": "Questions 13-16"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Internship Stipulation",
+    "options": [
+     {
+      "letter": "A",
+      "text": ". home stay"
+     },
+     {
+      "letter": "B",
+      "text": ". no summer program"
+     },
+     {
+      "letter": "C",
+      "text": ". minimum time requirement"
+     },
+     {
+      "letter": "D",
+      "text": ". formal report required"
+     },
+     {
+      "letter": "E",
+      "text": ". specific time period"
+     },
+     {
+      "letter": "F",
+      "text": ". agriculture"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -833,37 +903,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A Record activity every day.",
-     "B Formal report.",
-     "C Talk the experience with the assessor.",
-     "17. What should you do to get the Global Traveling Certificate?\nA Record activity every day.\nB Formal report.\nC Talk the experience with the assessor.",
-     "A only after you come back.",
-     "B while on the trip.",
-     "C before you leave.",
-     "18. You can apply for the certificate\nA only after you come back.\nB while on the trip.\nC before you leave.",
-     "A The day before you leave.",
-     "B One month before you return.",
-     "19. When should you pay the final installment?\nA The day before you leave.\nB One month before you return.\nC Before you can get your plane ticket.",
-     "A to take a health check.",
-     "B to attend the workshop.",
-     "C to meet people with whom you will work.",
-     "20. Before your application, you need\nA to take a health check.\nB to attend the workshop.\nC to meet people with whom you will work."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What should you do to get the Global Traveling Certificate?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Record activity every day."
+      },
+      {
+       "letter": "B",
+       "text": "Formal report."
+      },
+      {
+       "letter": "C",
+       "text": "Talk the experience with the assessor."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -871,16 +940,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "17. What should you do to get the Global Traveling Certificate?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "You can apply for the certificate",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "only after you come back."
+      },
+      {
+       "letter": "B",
+       "text": "while on the trip."
+      },
+      {
+       "letter": "C",
+       "text": "before you leave."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -888,16 +971,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. You can apply for the certificate"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When should you pay the final installment?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The day before you leave."
+      },
+      {
+       "letter": "B",
+       "text": "One month before you return."
+      },
+      {
+       "letter": "C",
+       "text": "Before you can get your plane ticket."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -905,16 +1002,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. When should you pay the final installment?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Before your application, you need",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "to take a health check."
+      },
+      {
+       "letter": "B",
+       "text": "to attend the workshop."
+      },
+      {
+       "letter": "C",
+       "text": "to meet people with whom you will work."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -922,7 +1033,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. Before your application, you need"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -986,8 +1098,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1008,7 +1122,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(21)………………………….."
-     }
+     },
+     "keyRaw": "student loans"
     },
     {
      "number": 22,
@@ -1030,7 +1145,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "check at the (22)……………….."
-     }
+     },
+     "keyRaw": "finance officer"
     },
     {
      "number": 23,
@@ -1052,7 +1168,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Views on (23)…………………"
-     }
+     },
+     "keyRaw": "smoking"
     },
     {
      "number": 24,
@@ -1074,7 +1191,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "interview the manager of (24)………………."
-     }
+     },
+     "keyRaw": "supermarket"
     },
     {
      "number": 25,
@@ -1096,7 +1214,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Practice of (25)……………….."
-     }
+     },
+     "keyRaw": "natural medicine"
     },
     {
      "number": 26,
@@ -1118,7 +1237,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "find relevant information from the (26)………………."
-     }
+     },
+     "keyRaw": "careers office"
     },
     {
      "number": 27,
@@ -1140,7 +1260,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "as an (27)…………………"
-     }
+     },
+     "keyRaw": "email attachment"
     },
     {
      "number": 28,
@@ -1162,7 +1283,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "on (28)……………….."
-     }
+     },
+     "keyRaw": "5 November"
     },
     {
      "number": 29,
@@ -1188,7 +1310,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "first phase: (29)…………….. final phase: group (30)………………."
-     }
+     },
+     "keyRaw": "data analysis"
     },
     {
      "number": 30,
@@ -1214,7 +1337,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "first phase: (29)…………….. final phase: group (30)………………."
-     }
+     },
+     "keyRaw": "presentation"
     }
    ],
    "provenance": {
@@ -1257,8 +1381,10 @@
      "• A new building will be constructed aiming to produce zero waste and remove carbon dioxide from us as much as possible."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1281,7 +1407,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Commissioned by: (31) ␦ firm called Foster and Partners."
-     }
+     },
+     "keyRaw": "law"
     },
     {
      "number": 32,
@@ -1303,7 +1430,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Its shape is like a (32) ␦"
-     }
+     },
+     "keyRaw": "cigar"
     },
     {
      "number": 33,
@@ -1326,7 +1454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• It can reduce the carbon (33) ␦ of the city."
-     }
+     },
+     "keyRaw": "footprint"
     },
     {
      "number": 34,
@@ -1349,7 +1478,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• It lets (34) ␦ pass through the building, both reducing heating costs and brightening up the workspace."
-     }
+     },
+     "keyRaw": "light"
     },
     {
      "number": 35,
@@ -1371,7 +1501,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• One false story claimes that the exterior of the building is partly made of (35) ␦"
-     }
+     },
+     "keyRaw": "grass"
     },
     {
      "number": 36,
@@ -1394,7 +1525,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• links (36) ␦ with the workplace."
-     }
+     },
+     "keyRaw": "nature"
     },
     {
      "number": 37,
@@ -1417,7 +1549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• relies less on (37) ␦ for temperature control than other similar buildings."
-     }
+     },
+     "keyRaw": "air-conditioning"
     },
     {
      "number": 38,
@@ -1439,7 +1572,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• The atria that let fresh air pass through the interior are know as (38) ␦"
-     }
+     },
+     "keyRaw": "lungs"
     },
     {
      "number": 39,
@@ -1462,7 +1596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• There is a place for entertainment called the (39) ␦ at the top of the building."
-     }
+     },
+     "keyRaw": "clubroom"
     },
     {
      "number": 40,
@@ -1485,7 +1620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• It is likely that the entire (40) ␦ will be designed with more similarly eco-friendly buildings in future."
-     }
+     },
+     "keyRaw": "city"
     }
    ],
    "provenance": {
@@ -1537,5 +1673,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

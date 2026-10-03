@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-79",
  "title": "IELTS Listening Test 79",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-79/index.html",
-   "sha256": "021c9f9ab6c0caf949f8162d039f579fef1ba1ce794cac3dcdffacfaee2a7f3e",
-   "manifestHashMatch": true,
+   "sha256": "258132208ef941118c196b167c51b9b3b4926f519ed9f12fbff71e1182d8e3c5",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-79/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -416,8 +416,10 @@
      "Mobile number: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -440,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Currently staying in a (1) ␦ during the week"
-     }
+     },
+     "keyRaw": "hostel"
     },
     {
      "number": 2,
@@ -463,7 +466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Postal address: (2) 17, ␦ Street, Stamford, Lincs"
-     }
+     },
+     "keyRaw": "Buckleigh"
     },
     {
      "number": 3,
@@ -485,7 +489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Postcode: (3) ␦"
-     }
+     },
+     "keyRaw": "PE9 7QT"
     },
     {
      "number": 4,
@@ -507,7 +512,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Occupation: student and part time job as a (4) ␦"
-     }
+     },
+     "keyRaw": "waiter"
     },
     {
      "number": 5,
@@ -530,7 +536,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Studying (5) ␦ (major subject) and history (minor subject)"
-     }
+     },
+     "keyRaw": "politics"
     },
     {
      "number": 6,
@@ -556,7 +563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Hobbies: does a lot of (6) ␦ , and is interested in the (7) ␦"
-     }
+     },
+     "keyRaw": "cycling"
     },
     {
      "number": 7,
@@ -582,7 +590,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Hobbies: does a lot of (6) ␦ , and is interested in the (7) ␦"
-     }
+     },
+     "keyRaw": "cinema"
     },
     {
      "number": 8,
@@ -604,7 +613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "On Youth Council, wants to work with young people who are (8) ␦"
-     }
+     },
+     "keyRaw": "disabled"
     },
     {
      "number": 9,
@@ -627,7 +637,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Will come to talk to the Elections Officer next Monday at (9) ␦ pm"
-     }
+     },
+     "keyRaw": "4.30 pm"
     },
     {
      "number": 10,
@@ -649,7 +660,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Mobile number: (10) ␦"
-     }
+     },
+     "keyRaw": "07788136711"
     }
    ],
    "provenance": {
@@ -657,34 +669,6 @@
     "rawExcerpt": "Part 1: Questions 1-10\nComplete the notes below. Write ONE WORD AND/OR A NUMBER."
    },
    "status": "verified"
-  },
-  {
-   "groupId": "g02",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 20,
-   "partExplicit": true,
-   "instruction": {
-    "text": "",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": ""
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "New staff at theatre"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[3]",
-    "rawExcerpt": "Part 2: Questions 11-20"
-   },
-   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -706,18 +690,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Some rooms now have a different use. B"
+      "text": "Some rooms now have a different use."
      },
      {
-      "letter": "A",
-      "text": "different type of seating has been installed. C An elevator has been installed. D The outside of the building has been repaired."
+      "letter": "B",
+      "text": "A different type of seating has been installed."
+     },
+     {
+      "letter": "C",
+      "text": "An elevator has been installed."
+     },
+     {
+      "letter": "D",
+      "text": "The outside of the building has been repaired."
      },
      {
       "letter": "E",
       "text": "Extra seats have been added."
      }
+    ],
+    "optionPreface": [
+     "Which TWO changes have been made so far during the refurbishment of the theatre?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -734,7 +730,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
@@ -751,7 +748,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -759,6 +757,43 @@
     "rawExcerpt": "Questions 11 and 12\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:11-12",
+    "answerSet": [
+     "A",
+     "B"
+    ],
+    "prompt": "Which TWO changes have been made so far during the refurbishment of the theatre?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Some rooms now have a different use."
+     },
+     {
+      "letter": "B",
+      "text": "A different type of seating has been installed."
+     },
+     {
+      "letter": "C",
+      "text": "An elevator has been installed."
+     },
+     {
+      "letter": "D",
+      "text": "The outside of the building has been repaired."
+     },
+     {
+      "letter": "E",
+      "text": "Extra seats have been added."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -781,14 +816,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "rooms for hire B backstage tours C hire of costumes D a bookshop"
+      "text": "rooms for hire"
+     },
+     {
+      "letter": "B",
+      "text": "backstage tours"
+     },
+     {
+      "letter": "C",
+      "text": "hire of costumes"
+     },
+     {
+      "letter": "D",
+      "text": "a bookshop"
      },
      {
       "letter": "E",
       "text": "a cafe"
      }
+    ],
+    "optionPreface": [
+     "Which TWO facilities does the theatre currently offer to the public?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -805,7 +856,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -822,7 +874,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -830,6 +883,43 @@
     "rawExcerpt": "Questions 13 and 14\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:13-14",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO facilities does the theatre currently offer to the public?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "rooms for hire"
+     },
+     {
+      "letter": "B",
+      "text": "backstage tours"
+     },
+     {
+      "letter": "C",
+      "text": "hire of costumes"
+     },
+     {
+      "letter": "D",
+      "text": "a bookshop"
+     },
+     {
+      "letter": "E",
+      "text": "a cafe"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -852,14 +942,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "sound B acting C making puppets D make-up"
+      "text": "sound"
+     },
+     {
+      "letter": "B",
+      "text": "acting"
+     },
+     {
+      "letter": "C",
+      "text": "making puppets"
+     },
+     {
+      "letter": "D",
+      "text": "make-up"
      },
      {
       "letter": "E",
       "text": "lighting"
      }
+    ],
+    "optionPreface": [
+     "Which TWO workshops does the theatre currently offer?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -876,7 +982,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -893,7 +1000,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -901,6 +1009,43 @@
     "rawExcerpt": "Questions 15 and 16\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:15-16",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO workshops does the theatre currently offer?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "sound"
+     },
+     {
+      "letter": "B",
+      "text": "acting"
+     },
+     {
+      "letter": "C",
+      "text": "making puppets"
+     },
+     {
+      "letter": "D",
+      "text": "make-up"
+     },
+     {
+      "letter": "E",
+      "text": "lighting"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -925,22 +1070,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test79.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -950,21 +1090,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -974,21 +1109,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -998,21 +1128,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -1022,7 +1147,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1030,6 +1157,40 @@
     "rawExcerpt": "Questions 17-20\nLabel the plan below. Write the correct letter A-G, next to questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1051,8 +1212,10 @@
      "Rocky Bay field trip"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1082,7 +1245,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "21. What do the students agree should be included in their aims?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -1112,7 +1276,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "22. What equipment did they forget to take on the Field Trip?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
@@ -1142,7 +1307,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "23. In Helen’s procedure section, Colin suggests a change in"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
@@ -1172,7 +1338,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. What do they say about the method they used to measure wave speed?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1202,7 +1369,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. What mistake did Helen make when first drawing the map?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
@@ -1232,7 +1400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. What do they decide to do next with their map?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1261,14 +1430,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "lack of water B strong winds C lack of food D high temperatures"
+      "text": "lack of water"
+     },
+     {
+      "letter": "B",
+      "text": "strong winds"
+     },
+     {
+      "letter": "C",
+      "text": "lack of food"
+     },
+     {
+      "letter": "D",
+      "text": "high temperatures"
      },
      {
       "letter": "E",
       "text": "large waves"
      }
+    ],
+    "optionPreface": [
+     "Which TWO problems affecting organisms in the splash zone are mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1285,7 +1470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1302,7 +1488,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1310,6 +1497,43 @@
     "rawExcerpt": "Questions 27 and 28\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g08:27-28",
+    "answerSet": [
+     "A",
+     "D"
+    ],
+    "prompt": "Which TWO problems affecting organisms in the splash zone are mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "lack of water"
+     },
+     {
+      "letter": "B",
+      "text": "strong winds"
+     },
+     {
+      "letter": "C",
+      "text": "lack of food"
+     },
+     {
+      "letter": "D",
+      "text": "high temperatures"
+     },
+     {
+      "letter": "E",
+      "text": "large waves"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1332,14 +1556,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "inaccurate records of the habitat of organisms B influence on behaviour of organisms by observer C incorrect identification of some organisms D making generalisations from a small sample"
+      "text": "inaccurate records of the habitat of organisms"
+     },
+     {
+      "letter": "B",
+      "text": "influence on behaviour of organisms by observer"
+     },
+     {
+      "letter": "C",
+      "text": "incorrect identification of some organisms"
+     },
+     {
+      "letter": "D",
+      "text": "making generalisations from a small sample"
      },
      {
       "letter": "E",
       "text": "missing some organisms when counting"
      }
+    ],
+    "optionPreface": [
+     "Which TWO reasons for possible error will they include in their report?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
@@ -1356,7 +1596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1373,7 +1614,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1381,6 +1623,43 @@
     "rawExcerpt": "Questions 29 and 30\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g09:29-30",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which TWO reasons for possible error will they include in their report?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "inaccurate records of the habitat of organisms"
+     },
+     {
+      "letter": "B",
+      "text": "influence on behaviour of organisms by observer"
+     },
+     {
+      "letter": "C",
+      "text": "incorrect identification of some organisms"
+     },
+     {
+      "letter": "D",
+      "text": "making generalisations from a small sample"
+     },
+     {
+      "letter": "E",
+      "text": "missing some organisms when counting"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1421,8 +1700,10 @@
      "Some critics say the (40) ␦ style of building is inappropriate"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1445,7 +1726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Physical and (31) ␦ context"
-     }
+     },
+     "keyRaw": "social"
     },
     {
      "number": 32,
@@ -1467,7 +1749,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• On the site of a discussed (32) ␦"
-     }
+     },
+     "keyRaw": "factory"
     },
     {
      "number": 33,
@@ -1489,7 +1772,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Beside a (33) ␦"
-     }
+     },
+     "keyRaw": "canal"
     },
     {
      "number": 34,
@@ -1512,7 +1796,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "It’s approached by a (34) ␦ for pedestrians"
-     }
+     },
+     "keyRaw": "bridge"
     },
     {
      "number": 35,
@@ -1534,7 +1819,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "The building is the shape of a (35) ␦"
-     }
+     },
+     "keyRaw": "box"
     },
     {
      "number": 36,
@@ -1556,7 +1842,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "One exterior wall acts as a large (36) ␦"
-     }
+     },
+     "keyRaw": "screen"
     },
     {
      "number": 37,
@@ -1578,7 +1865,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• The floor is built on huge pads made of (37) ␦"
-     }
+     },
+     "keyRaw": "rubber"
     },
     {
      "number": 38,
@@ -1601,7 +1889,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• The walls are made of local wood and are (38) ␦ in shape"
-     }
+     },
+     "keyRaw": "curved"
     },
     {
      "number": 39,
@@ -1624,7 +1913,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Ceiling panels and (39) ␦ on walls allow adjustment of acoustics"
-     }
+     },
+     "keyRaw": "curtains"
     },
     {
      "number": 40,
@@ -1647,7 +1937,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Some critics say the (40) ␦ style of building is inappropriate"
-     }
+     },
+     "keyRaw": "international"
     }
    ],
    "provenance": {
@@ -1700,15 +1991,6 @@
      20
     ]
    }
-  },
-  {
-   "unit": "group",
-   "groupId": "g02",
-   "questionNumbers": [],
-   "reasonCode": "INSTRUCTION_MISSING",
-   "evidence": {
-    "instructionRaw": "Part 2: Questions 11-20"
-   }
   }
  ],
  "validationWarnings": [
@@ -1719,7 +2001,8 @@
   }
  ],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 2,
- "status": "flagged",
+ "quarantinedCount": 1,
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

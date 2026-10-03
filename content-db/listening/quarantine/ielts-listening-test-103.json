@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-103",
- "sourceSha256": "cde58c1b465b4d1d762329f150a7482cec04001d86e0091aa0d3d4bde41ab877",
+ "status": "quarantined",
+ "sourceSha256": "ea1d038d7679166403ba2763c5ba0a643f1217ccbd8bb164f59f09745984cf3c",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,68 @@
      37,
      40
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 37,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "objects"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "newspapers"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "packaging"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "maths"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ]

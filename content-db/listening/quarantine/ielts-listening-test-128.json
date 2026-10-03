@@ -1,0 +1,59 @@
+{
+ "slug": "ielts-listening-test-128",
+ "status": "quarantined",
+ "sourceSha256": "81c8886aee15c181dc9dd5a7158f349334c494347092f075ea15ed8d55cbc254",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 35,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which pie chart shows the percentage of respondents who experienced a problem in the supermarket?",
+    "answer": "B",
+    "rawExcerpt": "35. Which pie chart shows the percentage of respondents who experienced a problem in the supermarket?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 36,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     35,
+     36
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

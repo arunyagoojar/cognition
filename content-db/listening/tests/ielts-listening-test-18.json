@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-18",
  "title": "IELTS Listening Test 18",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-18/index.html",
-   "sha256": "ceb45710a10915e5386437d0fe421d68a553b66243d7c4e90b2bfb12e74d219e",
-   "manifestHashMatch": true,
+   "sha256": "150faff0e307815fbfe5a4a67af6c1df143c60e80d28baaaa460d3048de7bb3e",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-18/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -419,8 +419,10 @@
      "(7) ␦ (8) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -442,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(1)……………teacher"
-     }
+     },
+     "keyRaw": "sports"
     },
     {
      "number": 2,
@@ -465,7 +468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "– (2)………………. -Too health-conscious?"
-     }
+     },
+     "keyRaw": "energetic"
     },
     {
      "number": 3,
@@ -487,7 +491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(3)…………….because of equipment"
-     }
+     },
+     "keyRaw": "big room"
     },
     {
      "number": 4,
@@ -509,7 +514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "David (4)……………"
-     }
+     },
+     "keyRaw": "spencer"
     },
     {
      "number": 5,
@@ -531,7 +537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "– Older – Quiet – (5)……………."
-     }
+     },
+     "keyRaw": "hardworking"
     },
     {
      "number": 6,
@@ -552,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(6)…………………."
-     }
+     },
+     "keyRaw": "engineer"
     },
     {
      "number": 7,
@@ -571,11 +579,12 @@
      "blankContext": "table row 4 col 3",
      "correctAnswer": "competitive, stressed",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "– Funny – Lazy – Not (7)…………or………… – Outdoor type"
-     }
+     },
+     "keyRaw": "competitive, stressed"
     },
     {
      "number": 8,
@@ -597,14 +606,15 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Somewhere to keep his (8)……………….."
-     }
+     },
+     "keyRaw": "bicycle"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-8\nComplete the table below using NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -626,8 +636,10 @@
      "Leo would like to move in on (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -649,7 +661,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Leo’s phone number (mobile) (9) ␦"
-     }
+     },
+     "keyRaw": "07776872433"
     },
     {
      "number": 10,
@@ -671,7 +684,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Leo would like to move in on (10) ␦"
-     }
+     },
+     "keyRaw": "28 september"
     }
    ],
    "provenance": {
@@ -698,8 +712,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -729,7 +745,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "11. Refreshments will be served"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -759,7 +776,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. Nick Noble advertised"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -789,7 +807,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. The original number of founding members was about"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -819,7 +838,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "14. The club provides activities primarily for reasonable fit"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -882,8 +902,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -904,7 +926,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(15)………………."
-     }
+     },
+     "keyRaw": "tramping"
     },
     {
      "number": 16,
@@ -925,7 +948,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(16)…………………."
-     }
+     },
+     "keyRaw": "walks"
     },
     {
      "number": 17,
@@ -946,7 +970,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(17)……………….."
-     }
+     },
+     "keyRaw": "organiser"
     },
     {
      "number": 18,
@@ -967,7 +992,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(18)……………"
-     }
+     },
+     "keyRaw": "variable"
     },
     {
      "number": 19,
@@ -989,7 +1015,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(19)…………….weekends"
-     }
+     },
+     "keyRaw": "mystery"
     },
     {
      "number": 20,
@@ -1010,7 +1037,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(20)……………….."
-     }
+     },
+     "keyRaw": "chairman"
     }
    ],
    "provenance": {
@@ -1037,8 +1065,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1068,7 +1098,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "21. What is the main topic of assignment?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1098,7 +1129,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. According to Emilie which new technology will become the biggest competition for television?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1128,7 +1160,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "23. According to the tutor the average length of a television become"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1158,7 +1191,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. What part of the library is going to be closed for one week?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1188,7 +1222,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. Which body do they decide to complain to?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1218,7 +1253,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "26. What will the reprographics office do?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1246,8 +1282,10 @@
      "27. What does the tutor compare homemade videos with? ␦\n28. What is the title of Mrs Jone’s lecture? ␦\n29. Where is the lecture? ␦\n30. When is the final date for the assignment? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1272,7 +1310,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. What does the tutor compare homemade videos with? ␦"
-     }
+     },
+     "keyRaw": "a podcast"
     },
     {
      "number": 28,
@@ -1297,7 +1336,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "28. What is the title of Mrs Jone’s lecture? ␦"
-     }
+     },
+     "keyRaw": "culture and society"
     },
     {
      "number": 29,
@@ -1322,7 +1362,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. Where is the lecture? ␦"
-     }
+     },
+     "keyRaw": "university theatre"
     },
     {
      "number": 30,
@@ -1347,7 +1388,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. When is the final date for the assignment? ␦"
-     }
+     },
+     "keyRaw": "4 July"
     }
    ],
    "provenance": {
@@ -1376,8 +1418,10 @@
      "31. Samuel Wells ␦ before Scholastic House opened in 1903.\n32. There were ␦ original students.\n33. Scholastic House became ␦ in 1963.\n34. One of these students became a prominent ␦\n35. Scholastic House experienced difficulties during ␦\n36. The college has a tradition of learning and ␦\n37. Since 1972, controversial ␦ have been discussed."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1400,7 +1444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "31. Samuel Wells ␦ before Scholastic House opened in 1903."
-     }
+     },
+     "keyRaw": "died (in 1900)"
     },
     {
      "number": 32,
@@ -1423,7 +1468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "32. There were ␦ original students."
-     }
+     },
+     "keyRaw": "10"
     },
     {
      "number": 33,
@@ -1446,7 +1492,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "33. Scholastic House became ␦ in 1963."
-     }
+     },
+     "keyRaw": "co-educational"
     },
     {
      "number": 34,
@@ -1471,7 +1518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "34. One of these students became a prominent ␦"
-     }
+     },
+     "keyRaw": "teacher"
     },
     {
      "number": 35,
@@ -1496,7 +1544,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "35. Scholastic House experienced difficulties during ␦"
-     }
+     },
+     "keyRaw": "the great war"
     },
     {
      "number": 36,
@@ -1521,7 +1570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "36. The college has a tradition of learning and ␦"
-     }
+     },
+     "keyRaw": "tolerance"
     },
     {
      "number": 37,
@@ -1544,7 +1594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "37. Since 1972, controversial ␦ have been discussed."
-     }
+     },
+     "keyRaw": "topics/ issues"
     }
    ],
    "provenance": {
@@ -1570,8 +1621,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1601,7 +1654,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "38. The college discusses controversial issues because it"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 39,
@@ -1631,7 +1685,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "39. The principal believes that"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 40,
@@ -1661,7 +1716,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "40. The principal urges the students to"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1695,10 +1751,38 @@
   "fnameInputs": 27
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 7,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "– Funny – Lazy – Not ______ or………… – Outdoor type",
+    "answer": "competitive, stressed",
+    "rawExcerpt": "– Funny – Lazy – Not (7)…………or………… – Outdoor type",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     7
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

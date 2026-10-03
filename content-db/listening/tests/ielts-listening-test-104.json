@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-104",
  "title": "IELTS Listening Test 104",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-104/index.html",
-   "sha256": "beb0bf8005c10118c70e21e5b952255dcb130c4a99a692e6b06212ceba48b16e",
-   "manifestHashMatch": true,
+   "sha256": "e329a0b1b1b1d56267d50299dd0d9a23c4cecb28061d7a2bd4d025b0a4851ae7",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-104/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -396,8 +396,10 @@
      "No claim bonus: 6 years"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Registration: 3R1 (1) ␦"
-     }
+     },
+     "keyRaw": "JTW"
     },
     {
      "number": 2,
@@ -442,7 +445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Current mileage: (2) ␦ miles"
-     }
+     },
+     "keyRaw": "90,000"
     },
     {
      "number": 3,
@@ -464,7 +468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Overnight parking: (3) ␦"
-     }
+     },
+     "keyRaw": "on the road"
     },
     {
      "number": 4,
@@ -486,7 +491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Cover: third party (4) ␦"
-     }
+     },
+     "keyRaw": "fire and theft"
     }
    ],
    "provenance": {
@@ -515,14 +521,36 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "legal B 14 day cover courtesy car C driver injury D protected no claim bonus E breakdown F lost car key"
+      "text": "legal"
+     },
+     {
+      "letter": "B",
+      "text": "14 day cover courtesy car"
+     },
+     {
+      "letter": "C",
+      "text": "driver injury"
+     },
+     {
+      "letter": "D",
+      "text": "protected no claim bonus"
+     },
+     {
+      "letter": "E",
+      "text": "breakdown"
+     },
+     {
+      "letter": "F",
+      "text": "lost car key"
      },
      {
       "letter": "G",
       "text": "windscreen"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -539,7 +567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-G. Which additional cover does Liam want?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 6,
@@ -556,7 +585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-G. Which additional cover does Liam want?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 7,
@@ -573,7 +603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose THREE letters A-G. Which additional cover does Liam want?"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -581,6 +612,52 @@
     "rawExcerpt": "Questions 5-7\nChoose THREE letters A-G."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g02:5-7",
+    "answerSet": [
+     "B",
+     "D",
+     "G"
+    ],
+    "prompt": "Which additional cover does Liam want?",
+    "instructionText": "Choose THREE letters A-G."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "legal"
+     },
+     {
+      "letter": "B",
+      "text": "14 day cover courtesy car"
+     },
+     {
+      "letter": "C",
+      "text": "driver injury"
+     },
+     {
+      "letter": "D",
+      "text": "protected no claim bonus"
+     },
+     {
+      "letter": "E",
+      "text": "breakdown"
+     },
+     {
+      "letter": "F",
+      "text": "lost car key"
+     },
+     {
+      "letter": "G",
+      "text": "windscreen"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -610,8 +687,10 @@
      "How did the customer hear about Hartline? (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -633,7 +712,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Postcode: (8) ␦"
-     }
+     },
+     "keyRaw": "B561ED"
     },
     {
      "number": 9,
@@ -655,7 +735,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Payment by: (9) ␦"
-     }
+     },
+     "keyRaw": "debit card/ Visa card"
     },
     {
      "number": 10,
@@ -677,7 +758,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "How did the customer hear about Hartline? (10) ␦"
-     }
+     },
+     "keyRaw": "on the internet"
     }
    ],
    "provenance": {
@@ -706,8 +788,10 @@
      "11. Every year more than ␦ people try to climb Mont Blanc.\n12. Approximately ␦ reach the top every day in the summer months.\n13. In July 2007 there were 30 fatalities, chiefly due to ␦\n14. One danger is ␦ caused by other climbers."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -730,7 +814,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. Every year more than ␦ people try to climb Mont Blanc."
-     }
+     },
+     "keyRaw": "30,000"
     },
     {
      "number": 12,
@@ -753,7 +838,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. Approximately ␦ reach the top every day in the summer months."
-     }
+     },
+     "keyRaw": "200"
     },
     {
      "number": 13,
@@ -778,7 +864,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. In July 2007 there were 30 fatalities, chiefly due to ␦"
-     }
+     },
+     "keyRaw": "bad weather"
     },
     {
      "number": 14,
@@ -801,7 +888,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "14. One danger is ␦ caused by other climbers."
-     }
+     },
+     "keyRaw": "falling rocks"
     }
    ],
    "provenance": {
@@ -827,8 +915,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -858,7 +948,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. How did Katherine do her most recent climb?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -888,7 +979,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "16. Why did Katherine find her first climb on Mont Blanc difficult?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -918,7 +1010,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. What did Katherine do on her second climb that made it easier?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -948,14 +1041,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "be in good physical condition B have the right climbing equipment C wear several layers of clothing D protect yourself from the sun E climb with others"
+      "text": "be in good physical condition"
+     },
+     {
+      "letter": "B",
+      "text": "have the right climbing equipment"
+     },
+     {
+      "letter": "C",
+      "text": "wear several layers of clothing"
+     },
+     {
+      "letter": "D",
+      "text": "protect yourself from the sun"
+     },
+     {
+      "letter": "E",
+      "text": "climb with others"
      },
      {
       "letter": "F",
       "text": "acclimatize yourself to the altitude first"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -972,7 +1083,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters A-F. What has experience taught Katherine about climbing Mont Blanc?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -989,7 +1101,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters A-F. What has experience taught Katherine about climbing Mont Blanc?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 20,
@@ -1006,7 +1119,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose THREE letters A-F. What has experience taught Katherine about climbing Mont Blanc?"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1014,6 +1128,48 @@
     "rawExcerpt": "Questions 18-20\nChoose THREE letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g06:18-20",
+    "answerSet": [
+     "C",
+     "D",
+     "F"
+    ],
+    "prompt": "What has experience taught Katherine about climbing Mont Blanc?",
+    "instructionText": "Choose THREE letters A-F."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "be in good physical condition"
+     },
+     {
+      "letter": "B",
+      "text": "have the right climbing equipment"
+     },
+     {
+      "letter": "C",
+      "text": "wear several layers of clothing"
+     },
+     {
+      "letter": "D",
+      "text": "protect yourself from the sun"
+     },
+     {
+      "letter": "E",
+      "text": "climb with others"
+     },
+     {
+      "letter": "F",
+      "text": "acclimatize yourself to the altitude first"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1037,8 +1193,10 @@
      "23. How does Elaine suggest they spend their revision time between meetings? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1063,7 +1221,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "21. When do Elaine and Adam decide to meet for revision? ␦"
-     }
+     },
+     "keyRaw": "monday and thursday"
     },
     {
      "number": 22,
@@ -1088,7 +1247,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. What item does Adam think will help them work independently on revision? ␦"
-     }
+     },
+     "keyRaw": "timetable"
     },
     {
      "number": 23,
@@ -1113,7 +1273,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "23. How does Elaine suggest they spend their revision time between meetings? ␦"
-     }
+     },
+     "keyRaw": "arranging materials"
     }
    ],
    "provenance": {
@@ -1145,8 +1306,10 @@
      "28. Keep a record of your sources, such as the ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1171,7 +1334,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "24. It’s best to avoid notes ␦"
-     }
+     },
+     "keyRaw": "word for word"
     },
     {
      "number": 25,
@@ -1194,7 +1358,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "25. Relate ␦ to key theories and arguments."
-     }
+     },
+     "keyRaw": "facts"
     },
     {
      "number": 26,
@@ -1219,7 +1384,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "26. Using diagrams can help keep a lot of information ␦"
-     }
+     },
+     "keyRaw": "organised"
     },
     {
      "number": 27,
@@ -1244,7 +1410,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "27. Bullet points can enable you to highlight ␦"
-     }
+     },
+     "keyRaw": "key points"
     },
     {
      "number": 28,
@@ -1269,7 +1436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "28. Keep a record of your sources, such as the ␦"
-     }
+     },
+     "keyRaw": "author and publisher"
     }
    ],
    "provenance": {
@@ -1296,8 +1464,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
@@ -1327,7 +1497,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "29. In future revision sessions Adam suggests using past papers"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1357,7 +1528,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "30. Elaine suggests"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1384,8 +1556,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1415,7 +1589,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "31. According to the text, shared space"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1445,7 +1620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "32. Shared space design results in"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
@@ -1475,7 +1651,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "33. Supporters of shared space argue that it"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1504,23 +1681,17 @@
      "34. Insufficient experience amongst planners ␦\n35. A lack of important signage ␦\n36. Intimidation by motorists ␦\n37. The loss of familiar street furniture ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Insufficient experience amongst planners ______",
-      "segments": [
-       "Insufficient experience amongst planners",
-       {
-        "blank": 34
-       },
-       {
-        "blank": 34
-       }
-      ]
+      "plain": "Insufficient experience amongst planners",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 34. Insufficient experience amongst planners ␦ (input box in source)",
@@ -1530,22 +1701,16 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "34. Insufficient experience amongst planners ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 35,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "A lack of important signage ______",
-      "segments": [
-       "A lack of important signage",
-       {
-        "blank": 35
-       },
-       {
-        "blank": 35
-       }
-      ]
+      "plain": "A lack of important signage",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 35. A lack of important signage ␦ (input box in source)",
@@ -1555,22 +1720,16 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "35. A lack of important signage ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 36,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Intimidation by motorists ______",
-      "segments": [
-       "Intimidation by motorists",
-       {
-        "blank": 36
-       },
-       {
-        "blank": 36
-       }
-      ]
+      "plain": "Intimidation by motorists",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 36. Intimidation by motorists ␦ (input box in source)",
@@ -1580,22 +1739,16 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "36. Intimidation by motorists ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 37,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "The loss of familiar street furniture ______",
-      "segments": [
-       "The loss of familiar street furniture",
-       {
-        "blank": 37
-       },
-       {
-        "blank": 37
-       }
-      ]
+      "plain": "The loss of familiar street furniture",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 37. The loss of familiar street furniture ␦ (input box in source)",
@@ -1605,7 +1758,9 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "37. The loss of familiar street furniture ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1613,6 +1768,29 @@
     "rawExcerpt": "Questions 34-37\nMatch the groups A-D with their concerns about shared space 34-37."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Motorists"
+     },
+     {
+      "letter": "B",
+      "text": "Blind people"
+     },
+     {
+      "letter": "C",
+      "text": "Cyclists"
+     },
+     {
+      "letter": "D",
+      "text": "Supporters of shared space"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1637,14 +1815,24 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "on the internet B at the local library C at the proposed site"
+      "text": "on the internet"
+     },
+     {
+      "letter": "B",
+      "text": "at the local library"
+     },
+     {
+      "letter": "C",
+      "text": "at the proposed site"
      },
      {
       "letter": "D",
       "text": "at home"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1661,7 +1849,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Choose TWO letters A-D."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 39,
@@ -1678,7 +1867,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Choose TWO letters A-D."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1686,6 +1876,39 @@
     "rawExcerpt": "Questions 38 and 39\nChoose TWO letters A-D."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g12:38-39",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": null,
+    "instructionText": "Choose TWO letters A-D."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "on the internet"
+     },
+     {
+      "letter": "B",
+      "text": "at the local library"
+     },
+     {
+      "letter": "C",
+      "text": "at the proposed site"
+     },
+     {
+      "letter": "D",
+      "text": "at home"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1705,8 +1928,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 40,
@@ -1736,7 +1961,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "40. Questions must be designed so that they"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1771,6 +1997,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

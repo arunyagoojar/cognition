@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-166",
  "title": "IELTS Listening Test 166",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-166/index.html",
-   "sha256": "4a09c7db8d57b01f0cbb25cb2ae2b81b3ec796e1aa04f5e8f64573dce36df639",
-   "manifestHashMatch": true,
+   "sha256": "3645f881f1d2a07a3e5230ea36deac151da5473711e178730e4fe22794c5b2e8",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-166/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "2837ae000b17285c0481abeda546b472d893317dbe64e046084716e3875d05e8",
+ "contentFingerprint": "b051ade97b09da9040b5aedf99b7bbda85a071542a26f7bfe6ba0fe5ae5b1c95",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -389,42 +389,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A tea",
-     "B coffee",
-     "C a cold drink",
-     "1. What does Peter want to drink?\nA tea\nB coffee\nC a cold drink",
-     "A The exchange rate was down",
-     "B He was late",
-     "C The computers weren’t working",
-     "2. What caused Peter problems at the bank?\nA The exchange rate was down\nB He was late\nC The computers weren’t working",
-     "A an old friend",
-     "B an American man",
-     "C a German man",
-     "3. Who did Peter talk to at the bank?\nA an old friend\nB an American man\nC a German man",
-     "A the city",
-     "B the bus routes",
-     "C the train system",
-     "4. Henry gave Peter a map of\nA the city\nB the bus routes\nC the train system",
-     "A food and drinks",
-     "B just food",
-     "C just drinks",
-     "5. What do Peter and Sally decide to order?\nA food and drinks\nB just food\nC just drinks"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does Peter want to drink?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "tea"
+      },
+      {
+       "letter": "B",
+       "text": "coffee"
+      },
+      {
+       "letter": "C",
+       "text": "a cold drink"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -432,16 +426,30 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. What does Peter want to drink?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 2,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What caused Peter problems at the bank?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "The exchange rate was down"
+      },
+      {
+       "letter": "B",
+       "text": "He was late"
+      },
+      {
+       "letter": "C",
+       "text": "The computers weren’t working"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -449,16 +457,30 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. What caused Peter problems at the bank?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 3,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Who did Peter talk to at the bank?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "an old friend"
+      },
+      {
+       "letter": "B",
+       "text": "an American man"
+      },
+      {
+       "letter": "C",
+       "text": "a German man"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -466,16 +488,30 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "3. Who did Peter talk to at the bank?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 4,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Henry gave Peter a map of",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the city"
+      },
+      {
+       "letter": "B",
+       "text": "the bus routes"
+      },
+      {
+       "letter": "C",
+       "text": "the train system"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -483,16 +519,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "4. Henry gave Peter a map of"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 5,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do Peter and Sally decide to order?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "food and drinks"
+      },
+      {
+       "letter": "B",
+       "text": "just food"
+      },
+      {
+       "letter": "C",
+       "text": "just drinks"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -500,7 +550,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "5. What do Peter and Sally decide to order?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -531,8 +582,10 @@
      "Tourist attractions which have free entry: (8) ␦ and Markets"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -555,7 +608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Tourist attractions open all day: (6) ␦ and Gardens"
-     }
+     },
+     "keyRaw": "cathedral"
     },
     {
      "number": 7,
@@ -578,7 +632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Tourist attractions NOT open on Mondays: (7) ␦ and Castle"
-     }
+     },
+     "keyRaw": "markets"
     },
     {
      "number": 8,
@@ -601,7 +656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Tourist attractions which have free entry: (8) ␦ and Markets"
-     }
+     },
+     "keyRaw": "garden"
     }
    ],
    "provenance": {
@@ -630,8 +686,10 @@
      "9. The first place Peter and Sally will visit is the ␦\n10. At the Cathedral, Peter really wants to ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -656,7 +714,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "9. The first place Peter and Sally will visit is the ␦"
-     }
+     },
+     "keyRaw": "art gallery"
     },
     {
      "number": 10,
@@ -681,7 +740,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "10. At the Cathedral, Peter really wants to ␦"
-     }
+     },
+     "keyRaw": "climb the tower"
     }
    ],
    "provenance": {
@@ -708,8 +768,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -739,7 +801,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "11. The Counselling Service may contact tutors if"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -769,7 +832,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "12. Stress may be caused by"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 13,
@@ -799,7 +863,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. International students may find stress difficult to handle because"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -829,7 +894,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. A personal crisis may be caused by"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
@@ -859,7 +925,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. Students may lose self-esteem if"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
@@ -889,7 +956,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. Students should consult Glenda Roberts if"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
@@ -919,7 +987,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "17. Students in financial difficulties can receive"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -949,7 +1018,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "18. Loans are also available to students who"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 19,
@@ -979,7 +1049,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "19. The number of students counselled by the service last year was"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
@@ -1009,7 +1080,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "20. The speaker thinks the Counselling Service"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1042,8 +1114,10 @@
      "Part 3 Report on study: Number of words: (24) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1066,7 +1140,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Part 1 Essay: Title ‘Assess the two methods of (21) ␦ in social science research"
-     }
+     },
+     "keyRaw": "collecting data"
     },
     {
      "number": 22,
@@ -1088,7 +1163,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Number of words: (22) ␦"
-     }
+     },
+     "keyRaw": "1500"
     },
     {
      "number": 23,
@@ -1111,7 +1187,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Gather data from at least (23) ␦ subjects"
-     }
+     },
+     "keyRaw": "5"
     },
     {
      "number": 24,
@@ -1133,7 +1210,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Part 3 Report on study: Number of words: (24) ␦"
-     }
+     },
+     "keyRaw": "3000-4000"
     }
    ],
    "provenance": {
@@ -1162,14 +1240,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "The data is sometimes invalid B Too few people may respond C It is less likely to reveal the unexpected D It can only be used with literate populations"
+      "text": "The data is sometimes invalid"
+     },
+     {
+      "letter": "B",
+      "text": "Too few people may respond"
+     },
+     {
+      "letter": "C",
+      "text": "It is less likely to reveal the unexpected"
+     },
+     {
+      "letter": "D",
+      "text": "It can only be used with literate populations"
      },
      {
       "letter": "E",
       "text": "There is a delay between the distribution and return of questionnaires"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1186,7 +1278,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters A-E. What TWO disadvantages of the questionnaire form of data collection do the students discuss?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
@@ -1203,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters A-E. What TWO disadvantages of the questionnaire form of data collection do the students discuss?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1211,6 +1305,43 @@
     "rawExcerpt": "Questions 25 and 26\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:25-26",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "What TWO disadvantages of the questionnaire form of data collection do the students discuss?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "The data is sometimes invalid"
+     },
+     {
+      "letter": "B",
+      "text": "Too few people may respond"
+     },
+     {
+      "letter": "C",
+      "text": "It is less likely to reveal the unexpected"
+     },
+     {
+      "letter": "D",
+      "text": "It can only be used with literate populations"
+     },
+     {
+      "letter": "E",
+      "text": "There is a delay between the distribution and return of questionnaires"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1260,8 +1391,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1282,7 +1415,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(27)…………….."
-     }
+     },
+     "keyRaw": "Mehta"
     },
     {
      "number": 28,
@@ -1303,7 +1437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(28)…………………."
-     }
+     },
+     "keyRaw": "survey research"
     },
     {
      "number": 29,
@@ -1324,7 +1459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(29)…………………."
-     }
+     },
+     "keyRaw": "London University"
     },
     {
      "number": 30,
@@ -1345,7 +1481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(30)…………………"
-     }
+     },
+     "keyRaw": "1988"
     }
    ],
    "provenance": {
@@ -1372,8 +1509,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1403,7 +1542,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "31. Corporate crime is generally committed"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1433,7 +1573,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "32. Corporate crime does NOT include"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1471,8 +1612,10 @@
      "o Can make large (38) ␦ for company"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1495,7 +1638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• The (33) ␦ e.g. films"
-     }
+     },
+     "keyRaw": "mass media"
     },
     {
      "number": 34,
@@ -1517,7 +1661,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• (34) ␦"
-     }
+     },
+     "keyRaw": "academic circles"
     },
     {
      "number": 35,
@@ -1539,7 +1684,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• Often more complex and needing (35) ␦"
-     }
+     },
+     "keyRaw": "specialist knowledge"
     },
     {
      "number": 36,
@@ -1561,7 +1707,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• Victims often (36) ␦"
-     }
+     },
+     "keyRaw": "unaware"
     },
     {
      "number": 37,
@@ -1583,7 +1730,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "o May appear unimportant to (37) ␦"
-     }
+     },
+     "keyRaw": "individual customers"
     },
     {
      "number": 38,
@@ -1606,7 +1754,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "o Can make large (38) ␦ for company"
-     }
+     },
+     "keyRaw": "illegal profits"
     }
    ],
    "provenance": {
@@ -1636,14 +1785,34 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "was no-one’s fault B was not a corporate crime C was intentional D was caused by indifference E has tragic results"
+      "text": "was no-one’s fault"
+     },
+     {
+      "letter": "B",
+      "text": "was not a corporate crime"
+     },
+     {
+      "letter": "C",
+      "text": "was intentional"
+     },
+     {
+      "letter": "D",
+      "text": "was caused by indifference"
+     },
+     {
+      "letter": "E",
+      "text": "has tragic results"
      },
      {
       "letter": "F",
       "text": "made a large profit for the company"
      }
+    ],
+    "optionPreface": [
+     "The oil tanker explosion was an example of a crime which"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 39,
@@ -1660,7 +1829,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "Choose TWO letters A-F."
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 40,
@@ -1677,7 +1847,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "Choose TWO letters A-F."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1685,6 +1856,47 @@
     "rawExcerpt": "Questions 39 and 40\nChoose TWO letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g10:39-40",
+    "answerSet": [
+     "D",
+     "E"
+    ],
+    "prompt": "The oil tanker explosion was an example of a crime which",
+    "instructionText": "Choose TWO letters A-F."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "was no-one’s fault"
+     },
+     {
+      "letter": "B",
+      "text": "was not a corporate crime"
+     },
+     {
+      "letter": "C",
+      "text": "was intentional"
+     },
+     {
+      "letter": "D",
+      "text": "was caused by indifference"
+     },
+     {
+      "letter": "E",
+      "text": "has tragic results"
+     },
+     {
+      "letter": "F",
+      "text": "made a large profit for the company"
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1717,5 +1929,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-157",
- "sourceSha256": "508e38f99ef0102d0fb42c57783dde49dd95a4e362c4bcb171a84df323fd3f36",
+ "status": "quarantined",
+ "sourceSha256": "6742485795352850e138046a60768683ef55cbedda6c6bfd9b0e7ab416812136",
  "units": [
   {
    "unit": "group",
@@ -15,23 +16,84 @@
    }
   },
   {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 19,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "for ______ and ……………",
+    "answer": "monday, thursday",
+    "rawExcerpt": "for (19)…………..and ……………",
+    "options": null
+   }
+  },
+  {
    "unit": "group",
    "groupId": "g06",
    "questionNumbers": [
     21
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 3: Question 21"
+    "instructionRaw": "Part 3: Question 21",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "group",
-   "groupId": "g10",
-   "questionNumbers": [],
-   "reasonCode": "INSTRUCTION_MISSING",
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
    "evidence": {
-    "instructionRaw": "Questions 38-40"
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     19,
+     21,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ]

@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-52",
- "sourceSha256": "c2037187713aa316cf9151c449ddae80a1863be0ad0d4e9ed6637de51dfbc37e",
+ "status": "quarantined",
+ "sourceSha256": "79a4cedbe846eee047e3faf7c03226ceb1cb9468659e68717322edfa45e17890",
  "units": [
   {
    "unit": "question",
@@ -13,8 +14,99 @@
    "evidence": {
     "stem": "Which pie chart shows the proportion of men and women respondents?",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "33. Which pie chart shows the proportion of men and women respondents?",
     "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 36,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Tell them to leave",
+    "answer": "B",
+    "rawExcerpt": "36. Tell them to leave",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 37,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Contact the police if it gets too serious",
+    "answer": "A",
+    "rawExcerpt": "37. Contact the police if it gets too serious",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 38,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Protect the children",
+    "answer": "C",
+    "rawExcerpt": "38. Protect the children",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 39,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "When isolated make sure your car can be seen",
+    "answer": "B",
+    "rawExcerpt": "39. When isolated make sure your car can be seen",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 40,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Wear bright clothing",
+    "answer": "C",
+    "rawExcerpt": "40. Wear bright clothing",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     33,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ]

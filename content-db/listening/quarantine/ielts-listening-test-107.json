@@ -1,0 +1,51 @@
+{
+ "slug": "ielts-listening-test-107",
+ "status": "quarantined",
+ "sourceSha256": "a9bb09bbec1c156208c847913836554bef19433d92e8d0b274f98ff05f76f3ad",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A-E, Which TWO pieces of advice does the speaker give for setting goals?",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

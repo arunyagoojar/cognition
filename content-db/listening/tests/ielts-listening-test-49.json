@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-49",
  "title": "IELTS Listening Test 49",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-49/index.html",
-   "sha256": "92a5277d09b598770811cc9a137b9c265b6cc7dfe0d39c4dfcba5a38cbea5334",
-   "manifestHashMatch": true,
+   "sha256": "707fcab4c3a0b4ba3f16e191e374d6a10aca3ec273929fe035c2a799987c5762",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-49/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -390,8 +390,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test49.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -421,7 +423,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. What is Harry’s problem?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 2,
@@ -447,11 +450,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "2. Which of the items below does Harry want to sell?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 3,
@@ -481,7 +485,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "3. Where is Harry going to advertise his books for sale?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 4,
@@ -511,7 +516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "4. Andrea thinks it is unlikely students will buy the furniture because…"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 5,
@@ -541,14 +547,15 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "5. Andrea thinks that a second hand shop…"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[1]",
     "rawExcerpt": "Part 1: Questions 1-5\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -574,8 +581,10 @@
      "• (10) ␦ fridge and microwave to Andrea"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -598,7 +607,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• (6) ␦ furniture etc. in Trading Post"
-     }
+     },
+     "keyRaw": "advertise"
     },
     {
      "number": 7,
@@ -621,7 +631,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• (7) ␦ or sell kitchen things"
-     }
+     },
+     "keyRaw": "donate"
     },
     {
      "number": 8,
@@ -644,7 +655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Get (8) ␦ first from second hand shop"
-     }
+     },
+     "keyRaw": "quote"
     },
     {
      "number": 9,
@@ -667,7 +679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• Give clothes to (9) ␦ shop"
-     }
+     },
+     "keyRaw": "charity"
     },
     {
      "number": 10,
@@ -690,7 +703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "• (10) ␦ fridge and microwave to Andrea"
-     }
+     },
+     "keyRaw": "sell"
     }
    ],
    "provenance": {
@@ -717,8 +731,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -748,7 +764,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "11. What can visitors use free of charge?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -778,7 +795,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "12. Which of the following can visitors buy at the shop?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -808,7 +826,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. When did the Grand Opening of the baths occur?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -838,7 +857,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. The Romans built on the site"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -866,8 +886,10 @@
      "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in (18) ␦ In Roman times, the Sacred Spring was well known for its (19) ␦ The Temple was constructed between (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -909,7 +931,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "1.6 m"
     },
     {
      "number": 16,
@@ -951,7 +974,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "benches"
     },
     {
      "number": 17,
@@ -993,7 +1017,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "46"
     },
     {
      "number": 18,
@@ -1035,7 +1060,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "minerals"
     },
     {
      "number": 19,
@@ -1077,7 +1103,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "healing powers"
     },
     {
      "number": 20,
@@ -1119,7 +1146,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "The Great Bath is (15) ␦ deep. Around the bath area are alcoves where there were (16) ␦ and tables where bathers could relax. The water temperature of the Sacred Spring is (17) ␦ The water is rich in "
-     }
+     },
+     "keyRaw": "60 and 70"
     }
    ],
    "provenance": {
@@ -1148,8 +1176,10 @@
      "21. The best days for engineering students are ␦\n22. Students can get useful suggestions about ␦\n23. Use the internet to look at ␦ before the event."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1174,7 +1204,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "21. The best days for engineering students are ␦"
-     }
+     },
+     "keyRaw": "tuesday and wednesday"
     },
     {
      "number": 22,
@@ -1199,7 +1230,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "22. Students can get useful suggestions about ␦"
-     }
+     },
+     "keyRaw": "career paths"
     },
     {
      "number": 23,
@@ -1222,7 +1254,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "23. Use the internet to look at ␦ before the event."
-     }
+     },
+     "keyRaw": "company websites"
     }
    ],
    "provenance": {
@@ -1248,8 +1281,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1279,7 +1314,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "24. Fergus says that"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1309,7 +1345,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "25. The tutor thinks Fergus should"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1339,7 +1376,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "26. Fergus plans"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 27,
@@ -1369,7 +1407,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. The tutor suggests that Fergus"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1399,14 +1438,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "to get a job B to find out what employers want from you C to give employers your contact details D to discover which are the key companies to work for E to practice your communication skills"
+      "text": "to get a job"
+     },
+     {
+      "letter": "B",
+      "text": "to find out what employers want from you"
+     },
+     {
+      "letter": "C",
+      "text": "to give employers your contact details"
+     },
+     {
+      "letter": "D",
+      "text": "to discover which are the key companies to work for"
+     },
+     {
+      "letter": "E",
+      "text": "to practice your communication skills"
      },
      {
       "letter": "F",
       "text": "to make useful contacts"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1423,7 +1480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose THREE letters A-F. Why do the tutor and Fergus think it is useful to attend a jobs fair?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1440,7 +1498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose THREE letters A-F. Why do the tutor and Fergus think it is useful to attend a jobs fair?"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1457,7 +1516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose THREE letters A-F. Why do the tutor and Fergus think it is useful to attend a jobs fair?"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1465,6 +1525,48 @@
     "rawExcerpt": "Questions 28-30\nChoose THREE letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g07:28-30",
+    "answerSet": [
+     "B",
+     "E",
+     "F"
+    ],
+    "prompt": "Why do the tutor and Fergus think it is useful to attend a jobs fair?",
+    "instructionText": "Choose THREE letters A-F."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "to get a job"
+     },
+     {
+      "letter": "B",
+      "text": "to find out what employers want from you"
+     },
+     {
+      "letter": "C",
+      "text": "to give employers your contact details"
+     },
+     {
+      "letter": "D",
+      "text": "to discover which are the key companies to work for"
+     },
+     {
+      "letter": "E",
+      "text": "to practice your communication skills"
+     },
+     {
+      "letter": "F",
+      "text": "to make useful contacts"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1484,8 +1586,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1515,43 +1619,14 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "31. At the start of her talk Rebecca points out that new graduates can find it hard to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[28]",
     "rawExcerpt": "Part 4: Question 31\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g09",
-   "part": 4,
-   "startQ": 32,
-   "endQ": 33,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Circle TWO letters A-D.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle TWO letters A-D."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Which TWO of the following does Rebecca say worry new artists",
-     "A earning enough money\nB moving to a new environment\nC competing with other artists\nD having their work criticized"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[30]",
-    "rawExcerpt": "Questions 32 and 33\nCircle TWO letters A-D."
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },
   {
@@ -1571,8 +1646,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1602,7 +1679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "34. Rebecca decided to become an illustrator because it"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 35,
@@ -1632,7 +1710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "35. When she had developed a portfolio of illustrations, Rebecca found publishers"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1666,8 +1745,10 @@
      "Possibly use (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1689,7 +1770,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Get some artwork printed in magazines by entering (36) ␦"
-     }
+     },
+     "keyRaw": "competition"
     },
     {
      "number": 37,
@@ -1712,7 +1794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "Also you can (37) ␦ and ␦ mock up book pages."
-     }
+     },
+     "keyRaw": "design and print"
     },
     {
      "number": 38,
@@ -1734,7 +1817,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "Make an effort to use a variety of artistic (38) ␦"
-     }
+     },
+     "keyRaw": "styles"
     },
     {
      "number": 39,
@@ -1756,7 +1840,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "Aim for recognition by dividing work into distinct (39) ␦"
-     }
+     },
+     "keyRaw": "categories"
     },
     {
      "number": 40,
@@ -1778,7 +1863,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "Possibly use (40) ␦"
-     }
+     },
+     "keyRaw": "two names"
     }
    ],
    "provenance": {
@@ -1824,6 +1910,71 @@
      33
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which of the items below does Harry want to sell?",
+    "answer": "C",
+    "rawExcerpt": "2. Which of the items below does Harry want to sell?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 32,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     2,
+     32,
+     33
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [
@@ -1833,8 +1984,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 38,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

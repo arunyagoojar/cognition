@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-168",
  "title": "IELTS Listening Test 168",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-168/index.html",
-   "sha256": "293c94176b21fbded2ab7a0e948dc6542613be8b4351c591052714c8621092d4",
-   "manifestHashMatch": true,
+   "sha256": "3ed4fad31b8eab5b9160465a678e5028109bc1877cb8dd537b0cd870dd3adcbf",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-168/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "feebb32847dd714ff16bfa9f8f528e105dd251a1f478415c447c9d4385224236",
+ "contentFingerprint": "b5b50d6cc0ccb8988dde830a8174f99a7971ffb2005c7122b7ba17840697b76d",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -405,8 +405,10 @@
      "Ask student representative to prepare a: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -428,7 +430,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Venue: (1) ␦"
-     }
+     },
+     "keyRaw": "college dining room"
     },
     {
      "number": 2,
@@ -450,7 +453,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "The (2) ␦"
-     }
+     },
+     "keyRaw": "office staff"
     },
     {
      "number": 3,
@@ -472,7 +476,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "All the (3) ␦"
-     }
+     },
+     "keyRaw": "students"
     },
     {
      "number": 4,
@@ -494,7 +499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Date for sending invitations: (4) ␦"
-     }
+     },
+     "keyRaw": "10 december"
     },
     {
      "number": 5,
@@ -516,7 +522,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Collect money during the: (5) ␦"
-     }
+     },
+     "keyRaw": "coffee break"
     },
     {
      "number": 6,
@@ -538,7 +545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Suggested amount per person: (6) ␦"
-     }
+     },
+     "keyRaw": "6"
     },
     {
      "number": 7,
@@ -559,7 +567,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(7) ␦"
-     }
+     },
+     "keyRaw": "set of dictionaries"
     },
     {
      "number": 8,
@@ -580,7 +589,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "music"
     },
     {
      "number": 9,
@@ -601,7 +611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "photos"
     },
     {
      "number": 10,
@@ -623,7 +634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Ask student representative to prepare a: (10) ␦"
-     }
+     },
+     "keyRaw": "speech"
     }
    ],
    "provenance": {
@@ -645,42 +657,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A one",
-     "B two",
-     "C three",
-     "11. To find out how much holidays cost, you should press button\nA one\nB two\nC three",
-     "A only in Western Europe",
-     "B all over Europe",
-     "C outside Europe",
-     "12. Travelite currently offer walking holidays\nA only in Western Europe\nB all over Europe\nC outside Europe",
-     "A cater for a range of walking abilities",
-     "B are planned by guides from the local area",
-     "C are for people with good fitness levels",
-     "13. The walks offered by Travelite\nA cater for a range of walking abilities\nB are planned by guides from the local area\nC are for people with good fitness levels",
-     "A the same as other clients",
-     "B only a little more than other clients",
-     "C extra only if they stay in a large room",
-     "14. On Travelite holidays, people holidaying alone pay\nA the same as other clients\nB only a little more than other clients\nC extra only if they stay in a large room",
-     "A when guests request it",
-     "B most nights",
-     "C every night",
-     "15. Entertainment is provided\nA when guests request it\nB most nights\nC every night"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "To find out how much holidays cost, you should press button",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "one"
+      },
+      {
+       "letter": "B",
+       "text": "two"
+      },
+      {
+       "letter": "C",
+       "text": "three"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -688,16 +694,30 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "11. To find out how much holidays cost, you should press button"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Travelite currently offer walking holidays",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "only in Western Europe"
+      },
+      {
+       "letter": "B",
+       "text": "all over Europe"
+      },
+      {
+       "letter": "C",
+       "text": "outside Europe"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -705,16 +725,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "12. Travelite currently offer walking holidays"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The walks offered by Travelite",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "cater for a range of walking abilities"
+      },
+      {
+       "letter": "B",
+       "text": "are planned by guides from the local area"
+      },
+      {
+       "letter": "C",
+       "text": "are for people with good fitness levels"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -722,16 +756,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "13. The walks offered by Travelite"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "On Travelite holidays, people holidaying alone pay",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the same as other clients"
+      },
+      {
+       "letter": "B",
+       "text": "only a little more than other clients"
+      },
+      {
+       "letter": "C",
+       "text": "extra only if they stay in a large room"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -739,16 +787,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "14. On Travelite holidays, people holidaying alone pay"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Entertainment is provided",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "when guests request it"
+      },
+      {
+       "letter": "B",
+       "text": "most nights"
+      },
+      {
+       "letter": "C",
+       "text": "every night"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -756,7 +818,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "15. Entertainment is provided"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -809,8 +872,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -832,7 +897,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(16) $…………….."
-     }
+     },
+     "keyRaw": "180"
     },
     {
      "number": 17,
@@ -854,7 +920,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "pick up from the (17)………………."
-     }
+     },
+     "keyRaw": "nearest station"
     },
     {
      "number": 18,
@@ -877,7 +944,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "– book of (18)…………….. – maps"
-     }
+     },
+     "keyRaw": "local history"
     },
     {
      "number": 19,
@@ -899,7 +967,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(19) $…………….."
-     }
+     },
+     "keyRaw": "690"
     },
     {
      "number": 20,
@@ -921,7 +990,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "as above plus membership of a (20)……………."
-     }
+     },
+     "keyRaw": "walking club"
     }
    ],
    "provenance": {
@@ -985,8 +1055,10 @@
      "(25) ␦ (26) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1008,7 +1080,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(21)…………….and a table"
-     }
+     },
+     "keyRaw": "20 balloons"
     },
     {
      "number": 22,
@@ -1030,7 +1103,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "to show why we need standard (22)……………"
-     }
+     },
+     "keyRaw": "units of measurement"
     },
     {
      "number": 23,
@@ -1052,7 +1126,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(23)……………..and a jar of water"
-     }
+     },
+     "keyRaw": "rock salt"
     },
     {
      "number": 24,
@@ -1075,7 +1150,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "to show how (24)……………..grow"
-     }
+     },
+     "keyRaw": "crystals"
     },
     {
      "number": 25,
@@ -1097,7 +1173,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "cardboard, colored pens and a (25)………………."
-     }
+     },
+     "keyRaw": "string"
     },
     {
      "number": 26,
@@ -1120,7 +1197,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "to teach children about how (26)…………….is made up"
-     }
+     },
+     "keyRaw": "light"
     }
    ],
    "provenance": {
@@ -1155,26 +1233,49 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "too messy B too boring C too difficult D too much equipment E too long F too easy G too noisy"
+      "text": "too messy"
+     },
+     {
+      "letter": "B",
+      "text": "too boring"
+     },
+     {
+      "letter": "C",
+      "text": "too difficult"
+     },
+     {
+      "letter": "D",
+      "text": "too much equipment"
+     },
+     {
+      "letter": "E",
+      "text": "too long"
+     },
+     {
+      "letter": "F",
+      "text": "too easy"
+     },
+     {
+      "letter": "G",
+      "text": "too noisy"
      },
      {
       "letter": "H",
       "text": "too dangerous"
      }
+    ],
+    "optionPreface": [
+     "Problems"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Experiment 1: ______",
-      "segments": [
-       "Experiment 1:",
-       {
-        "blank": 27
-       }
-      ]
+      "plain": "Experiment 1:",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Experiment 1: (27) ␦",
@@ -1184,19 +1285,16 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Experiment 1: (27) ␦"
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Experiment 2: ______",
-      "segments": [
-       "Experiment 2:",
-       {
-        "blank": 28
-       }
-      ]
+      "plain": "Experiment 2:",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Experiment 2: (28) ␦",
@@ -1206,19 +1304,16 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Experiment 2: (28) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Experiment 3: ______",
-      "segments": [
-       "Experiment 3:",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "Experiment 3:",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Experiment 3: (29) ␦",
@@ -1228,19 +1323,16 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Experiment 3: (29) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Experiment 5: ______",
-      "segments": [
-       "Experiment 5:",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "Experiment 5:",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Experiment 5: (30) ␦",
@@ -1250,7 +1342,9 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Experiment 5: (30) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1258,6 +1352,44 @@
     "rawExcerpt": "Questions 27-30"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Problems",
+    "options": [
+     {
+      "letter": "A",
+      "text": "too messy"
+     },
+     {
+      "letter": "B",
+      "text": "too boring"
+     },
+     {
+      "letter": "C",
+      "text": "too difficult"
+     },
+     {
+      "letter": "D",
+      "text": "too much equipment"
+     },
+     {
+      "letter": "E",
+      "text": "too long"
+     },
+     {
+      "letter": "F",
+      "text": "too easy"
+     },
+     {
+      "letter": "G",
+      "text": "too noisy"
+     },
+     {
+      "letter": "H",
+      "text": "too dangerous"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1286,8 +1418,10 @@
      "Sharks locate food by using their (34) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1310,7 +1444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Weight heaviest: (31) ␦ kgs"
-     }
+     },
+     "keyRaw": "795"
     },
     {
      "number": 32,
@@ -1332,7 +1467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Swimming aide fins and (32) ␦"
-     }
+     },
+     "keyRaw": "tail"
     },
     {
      "number": 33,
@@ -1354,7 +1490,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Food gathered from the ocean (33) ␦"
-     }
+     },
+     "keyRaw": "floor"
     },
     {
      "number": 34,
@@ -1376,7 +1513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Sharks locate food by using their (34) ␦"
-     }
+     },
+     "keyRaw": "sense of smell"
     }
    ],
    "provenance": {
@@ -1419,12 +1557,14 @@
      "38. Most sharks are caught in\nA spring\nB summer\nC winter"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Shark meshing uses nets laid",
       "segments": null
@@ -1437,11 +1577,13 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "35. Shark meshing uses nets laid"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 36,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Other places that have taken up shark meshing include",
       "segments": null
@@ -1454,11 +1596,13 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "36. Other places that have taken up shark meshing include"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 37,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The average number of sharks caught in nets each year is",
       "segments": null
@@ -1471,11 +1615,13 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "37. The average number of sharks caught in nets each year is"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 38,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Most sharks are caught in",
       "segments": null
@@ -1488,7 +1634,9 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "38. Most sharks are caught in"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -1496,36 +1644,26 @@
     "rawExcerpt": "Questions 35-38"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": "35. Shark meshing uses nets laid",
+    "options": [
+     {
+      "letter": "A",
+      "text": "along the coastline"
+     },
+     {
+      "letter": "B",
+      "text": "at an angle to the beach"
+     },
+     {
+      "letter": "C",
+      "text": "from the beach to the sea"
+     }
+    ]
+   },
    "status": "quarantined"
-  },
-  {
-   "groupId": "g08",
-   "part": 4,
-   "startQ": 39,
-   "endQ": 40,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Which TWO factors reduce the benefits of shark nets?",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Which TWO factors reduce the benefits of shark nets?"
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "A nets wrongly positioned\nB strong waves and currents\nC too many fish\nD sharks cat holes in nets\nE moving sands\nF nets too short\nG holes in nets scare sharks"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[25]",
-    "rawExcerpt": "Questions 39 and 40\nWhich TWO factors reduce the benefits of shark nets?"
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
   }
  ],
  "counts": {
@@ -1587,14 +1725,59 @@
     38
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Questions 35-38"
+    "instructionRaw": "Questions 35-38",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 34,
- "quarantinedCount": 2,
- "status": "flagged",
+ "quarantinedCount": 5,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

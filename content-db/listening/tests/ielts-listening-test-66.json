@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-66",
  "title": "IELTS Listening Test 66",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-66/index.html",
-   "sha256": "85979edc0caecc69f247984076ba69446468a7e6c87397e32fad8517c00e2129",
-   "manifestHashMatch": true,
+   "sha256": "57c3fc45f207dda665dc60b540ed01975c37070f17cfeb63a1f58fa50ed00088",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-66/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "03a3bd9c2d3e11978840831fa86c87a6b8b6165ed1b3c21ca3ca02f15fca43f6",
+ "contentFingerprint": "24141823d667e19437beac3bd9d285ce5305be5fb7f36c2b97deecc0c432cf5a",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -402,8 +402,10 @@
      "Meet the heating engineer on (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -426,7 +428,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Cancel appointment with the (1) ␦ (Monday)"
-     }
+     },
+     "keyRaw": "hairdresser"
     },
     {
      "number": 2,
@@ -449,7 +452,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Begin taking the (2) ␦ (Tuesday)"
-     }
+     },
+     "keyRaw": "tablets"
     },
     {
      "number": 3,
@@ -479,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Buy (3) ␦ , a small bag, a spare (4) ␦ , an electrical (5) ␦"
-     }
+     },
+     "keyRaw": "sunglasses"
     },
     {
      "number": 4,
@@ -509,7 +514,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Buy (3) ␦ , a small bag, a spare (4) ␦ , an electrical (5) ␦"
-     }
+     },
+     "keyRaw": "lock"
     },
     {
      "number": 5,
@@ -539,7 +545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Buy (3) ␦ , a small bag, a spare (4) ␦ , an electrical (5) ␦"
-     }
+     },
+     "keyRaw": "adaptor"
     },
     {
      "number": 6,
@@ -561,7 +568,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Book a (6) ␦"
-     }
+     },
+     "keyRaw": "taxi"
     },
     {
      "number": 7,
@@ -583,7 +591,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Vet’s details: Name: Colin (7) ␦"
-     }
+     },
+     "keyRaw": "Jefferey"
     },
     {
      "number": 8,
@@ -605,7 +614,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Tel: (8) ␦"
-     }
+     },
+     "keyRaw": "0777594128"
     },
     {
      "number": 9,
@@ -628,7 +638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address: Fore street (opposite the (9) ␦ )"
-     }
+     },
+     "keyRaw": "church"
     },
     {
      "number": 10,
@@ -650,7 +661,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Meet the heating engineer on (10) ␦"
-     }
+     },
+     "keyRaw": "30 April"
     }
    ],
    "provenance": {
@@ -702,12 +714,14 @@
      "16. The deadline for entering a film in the competition is the end of\nA May.\nB June.\nC July."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Why was the Film Festival started?",
       "segments": null
@@ -720,11 +734,13 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "11. Why was the Film Festival started?"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "What is the price range for tickets?",
       "segments": null
@@ -737,11 +753,13 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "12. What is the price range for tickets?"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "As well as online, tickets for the films can be obtained",
       "segments": null
@@ -754,11 +772,13 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "13. As well as online, tickets for the films can be obtained"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Last year’s winning film was about",
       "segments": null
@@ -771,11 +791,13 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "14. Last year’s winning film was about"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "This year the competition prize is",
       "segments": null
@@ -788,11 +810,13 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "15. This year the competition prize is"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The deadline for entering a film in the competition is the end of",
       "segments": null
@@ -805,12 +829,33 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "16. The deadline for entering a film in the competition is the end of"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11-16\nChoose the correct answer A, B or C."
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "11. Why was the Film Festival started?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "To encourage local people to make films."
+     },
+     {
+      "letter": "B",
+      "text": "To bring more tourists to the town."
+     },
+     {
+      "letter": "C",
+      "text": "To use money released from another project."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -834,14 +879,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Ability to persuade. B Quality of the story. C Memorable characters. D Quality of photography."
+      "text": "Ability to persuade."
+     },
+     {
+      "letter": "B",
+      "text": "Quality of the story."
+     },
+     {
+      "letter": "C",
+      "text": "Memorable characters."
+     },
+     {
+      "letter": "D",
+      "text": "Quality of photography."
      },
      {
       "letter": "E",
       "text": "Originality."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -858,7 +917,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO main criteria are used to judge the film competition?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 18,
@@ -875,7 +935,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO main criteria are used to judge the film competition?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -883,6 +944,43 @@
     "rawExcerpt": "Questions 17 and 18\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:17-18",
+    "answerSet": [
+     "D",
+     "E"
+    ],
+    "prompt": "What TWO main criteria are used to judge the film competition?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Ability to persuade."
+     },
+     {
+      "letter": "B",
+      "text": "Quality of the story."
+     },
+     {
+      "letter": "C",
+      "text": "Memorable characters."
+     },
+     {
+      "letter": "D",
+      "text": "Quality of photography."
+     },
+     {
+      "letter": "E",
+      "text": "Originality."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -905,18 +1003,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "A new way of judging B"
+      "text": "A new way of judging"
      },
      {
-      "letter": "A",
-      "text": "different length of time C An additional age category D Different performance times"
+      "letter": "B",
+      "text": "A different length of time"
+     },
+     {
+      "letter": "C",
+      "text": "An additional age category"
+     },
+     {
+      "letter": "D",
+      "text": "Different performance times"
      },
      {
       "letter": "E",
       "text": "New locations for performances"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -933,7 +1041,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO changes will be made to the competition next year?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -950,7 +1059,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO changes will be made to the competition next year?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -958,6 +1068,43 @@
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:19-20",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "What TWO changes will be made to the competition next year?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "A new way of judging"
+     },
+     {
+      "letter": "B",
+      "text": "A different length of time"
+     },
+     {
+      "letter": "C",
+      "text": "An additional age category"
+     },
+     {
+      "letter": "D",
+      "text": "Different performance times"
+     },
+     {
+      "letter": "E",
+      "text": "New locations for performances"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -973,39 +1120,38 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "notes",
+    "kind": "mcq",
     "table": null,
     "segments": [
-     "Research on web-based crosswords",
-     "A it was on a topic familiar to most students.",
-     "B it covered both IT and education issues.",
-     "C it dealt with a very straightforward concept.",
-     "21. Leela and Jake chose this article because\nA it was on a topic familiar to most students.\nB it covered both IT and education issues.\nC it dealt with a very straightforward concept.",
-     "A They convinced them they would enjoy the experience.",
-     "B They said it would help them do a particular test.",
-     "C They offered to help them with their own research later on.",
-     "22. How did Leela and Jake persuade students to take part in their research?\nA They convinced them they would enjoy the experience.\nB They said it would help them do a particular test.\nC They offered to help them with their own research later on.",
-     "A it was too short for their purposes.",
-     "B it asked misleading questions.",
-     "C it contained out-of-date points.",
-     "23. Leela and Jake changed the design of the original questionnaire because\nA it was too short for their purposes.\nB it asked misleading questions.\nC it contained out-of-date points.",
-     "A it is normal for questionnaire returns to be low.",
-     "B so many students sent back their questionnaires.",
-     "C the questionnaire responses were of such high quality.",
-     "24. Leela was surprised by the fact that\nA it is normal for questionnaire returns to be low.\nB so many students sent back their questionnaires.\nC the questionnaire responses were of such high quality."
+     "Research on web-based crosswords"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Leela and Jake chose this article because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "it was on a topic familiar to most students."
+      },
+      {
+       "letter": "B",
+       "text": "it covered both IT and education issues."
+      },
+      {
+       "letter": "C",
+       "text": "it dealt with a very straightforward concept."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1013,16 +1159,30 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "21. Leela and Jake chose this article because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How did Leela and Jake persuade students to take part in their research?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "They convinced them they would enjoy the experience."
+      },
+      {
+       "letter": "B",
+       "text": "They said it would help them do a particular test."
+      },
+      {
+       "letter": "C",
+       "text": "They offered to help them with their own research later on."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1030,16 +1190,30 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. How did Leela and Jake persuade students to take part in their research?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Leela and Jake changed the design of the original questionnaire because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "it was too short for their purposes."
+      },
+      {
+       "letter": "B",
+       "text": "it asked misleading questions."
+      },
+      {
+       "letter": "C",
+       "text": "it contained out-of-date points."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1047,16 +1221,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "23. Leela and Jake changed the design of the original questionnaire because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Leela was surprised by the fact that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "it is normal for questionnaire returns to be low."
+      },
+      {
+       "letter": "B",
+       "text": "so many students sent back their questionnaires."
+      },
+      {
+       "letter": "C",
+       "text": "the questionnaire responses were of such high quality."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1064,7 +1252,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "24. Leela was surprised by the fact that"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1093,14 +1282,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It helped them spell complex technical terms. B It was an enjoyable experience. C It helped them concentrate effectively. D It increased their general motivation to study."
+      "text": "It helped them spell complex technical terms."
+     },
+     {
+      "letter": "B",
+      "text": "It was an enjoyable experience."
+     },
+     {
+      "letter": "C",
+      "text": "It helped them concentrate effectively."
+     },
+     {
+      "letter": "D",
+      "text": "It increased their general motivation to study."
      },
      {
       "letter": "E",
       "text": "It showed what they still needed to study."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1117,7 +1320,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO things did respondents say they liked most about doing the crossword?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1134,7 +1338,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO things did respondents say they liked most about doing the crossword?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1142,6 +1347,43 @@
     "rawExcerpt": "Questions 25-26\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:25-26",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "What TWO things did respondents say they liked most about doing the crossword?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It helped them spell complex technical terms."
+     },
+     {
+      "letter": "B",
+      "text": "It was an enjoyable experience."
+     },
+     {
+      "letter": "C",
+      "text": "It helped them concentrate effectively."
+     },
+     {
+      "letter": "D",
+      "text": "It increased their general motivation to study."
+     },
+     {
+      "letter": "E",
+      "text": "It showed what they still needed to study."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1164,14 +1406,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Students’ interest in doing similar exercises. B How much students liked doing the crossword. C Time taken to do the crossword. D Gender differences in appreciation."
+      "text": "Students’ interest in doing similar exercises."
+     },
+     {
+      "letter": "B",
+      "text": "How much students liked doing the crossword."
+     },
+     {
+      "letter": "C",
+      "text": "Time taken to do the crossword."
+     },
+     {
+      "letter": "D",
+      "text": "Gender differences in appreciation."
      },
      {
       "letter": "E",
       "text": "Opinions about using crosswords for formal assessment."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1188,7 +1444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO areas did these research findings differ from those of the original study?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 28,
@@ -1205,7 +1462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Choose TWO letters, A-E. In which TWO areas did these research findings differ from those of the original study?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1213,6 +1471,43 @@
     "rawExcerpt": "Questions 27-28\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:27-28",
+    "answerSet": [
+     "D",
+     "E"
+    ],
+    "prompt": "In which TWO areas did these research findings differ from those of the original study?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Students’ interest in doing similar exercises."
+     },
+     {
+      "letter": "B",
+      "text": "How much students liked doing the crossword."
+     },
+     {
+      "letter": "C",
+      "text": "Time taken to do the crossword."
+     },
+     {
+      "letter": "D",
+      "text": "Gender differences in appreciation."
+     },
+     {
+      "letter": "E",
+      "text": "Opinions about using crosswords for formal assessment."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1235,14 +1530,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "How to manage their time effectively. B How to process numerical data. C How to design research tools. D How to reference other people’s work."
+      "text": "How to manage their time effectively."
+     },
+     {
+      "letter": "B",
+      "text": "How to process numerical data."
+     },
+     {
+      "letter": "C",
+      "text": "How to design research tools."
+     },
+     {
+      "letter": "D",
+      "text": "How to reference other people’s work."
      },
      {
       "letter": "E",
       "text": "How to collaborate in research"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
@@ -1259,7 +1568,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO skills did Leela and Jake agree they had learned from the project?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1276,7 +1586,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters, A-E. What TWO skills did Leela and Jake agree they had learned from the project?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1284,6 +1595,43 @@
     "rawExcerpt": "Questions 29-30\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g08:29-30",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "What TWO skills did Leela and Jake agree they had learned from the project?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "How to manage their time effectively."
+     },
+     {
+      "letter": "B",
+      "text": "How to process numerical data."
+     },
+     {
+      "letter": "C",
+      "text": "How to design research tools."
+     },
+     {
+      "letter": "D",
+      "text": "How to reference other people’s work."
+     },
+     {
+      "letter": "E",
+      "text": "How to collaborate in research"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1315,8 +1663,10 @@
      "Workers should be reassured that their responses to questions are (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1338,7 +1688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Workers involved in the study were employed at a (31) ␦"
-     }
+     },
+     "keyRaw": "call centre"
     },
     {
      "number": 32,
@@ -1360,7 +1711,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Despite some apparent differences between groups of workers, the survey results were statistically (32) ␦"
-     }
+     },
+     "keyRaw": "inconclusive"
     },
     {
      "number": 33,
@@ -1383,7 +1735,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "The speaker analysed the study’s (33) ␦ to identify any problems with it."
-     }
+     },
+     "keyRaw": "methods"
     },
     {
      "number": 34,
@@ -1406,7 +1759,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "The various sub-groups were (34) ␦ in size."
-     }
+     },
+     "keyRaw": "unequal"
     },
     {
      "number": 35,
@@ -1428,7 +1782,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "Workers in the part-time group were mainly (35) ␦"
-     }
+     },
+     "keyRaw": "female/ women"
     },
     {
      "number": 36,
@@ -1451,7 +1806,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "The (36) ␦ of workers who agreed to take part in the study was disappointing."
-     }
+     },
+     "keyRaw": "response"
     },
     {
      "number": 37,
@@ -1474,7 +1830,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "Researchers were unable to (37) ␦ the circumstances in which workers filled out the questionnaire."
-     }
+     },
+     "keyRaw": "control"
     },
     {
      "number": 38,
@@ -1497,7 +1854,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "In future, the overall size of the (38) ␦ should be increased."
-     }
+     },
+     "keyRaw": "sample/ group"
     },
     {
      "number": 39,
@@ -1519,7 +1877,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "In future studies, workers should be prevented from having discussions with (39) ␦"
-     }
+     },
+     "keyRaw": "their colleagues"
     },
     {
      "number": 40,
@@ -1541,7 +1900,8 @@
      "provenance": {
       "elementPath": "entry-content.children[42]",
       "rawExcerpt": "Workers should be reassured that their responses to questions are (40) ␦"
-     }
+     },
+     "keyRaw": "confidential"
     }
    ],
    "provenance": {
@@ -1588,6 +1948,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

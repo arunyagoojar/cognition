@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-64",
  "title": "IELTS Listening Test 64",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-64/index.html",
-   "sha256": "b95e2fd06b2c4e1f4c122b5dc7a547519f2d9aa1ff920f3853cf895bf5714f30",
-   "manifestHashMatch": true,
+   "sha256": "3057991e01cae8050e23d8b992b345d9ebae50ea6cbb979003ef2925dbd7dee1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-64/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "b79d5ae55bb146d52caf947c69f646630fc0fe183d20a870ba902c7a96809110",
+ "contentFingerprint": "b10d99e0b97f042b861f2fccbebcc07f05966879bce261f723f6a156f2c4bdd2",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -428,8 +428,10 @@
      "(3) ␦ (4) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -451,7 +453,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(1)……………………..London"
-     }
+     },
+     "keyRaw": "southwest"
     },
     {
      "number": 2,
@@ -474,7 +477,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Two (2)………………….bedrooms"
-     }
+     },
+     "keyRaw": "double"
     },
     {
      "number": 3,
@@ -496,7 +500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "An (3)……………………."
-     }
+     },
+     "keyRaw": "office"
     },
     {
      "number": 4,
@@ -518,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Kitchen-diner, conservatory and (4)………………."
-     }
+     },
+     "keyRaw": "lounge"
     }
    ],
    "provenance": {
@@ -540,34 +546,36 @@
     "originalText": "Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A Change the bed linen",
-     "B Do some gardening work",
-     "C Clean the glass",
-     "5. Which of these extra services does the customer agree to do?\nA Change the bed linen\nB Do some gardening work\nC Clean the glass",
-     "A Curtains",
-     "B Carpets",
-     "C Mats",
-     "6. What does the customer want cleaned every three months?\nA Curtains\nB Carpets\nC Mats",
-     "A Wash and iron the clothes",
-     "B Iron the clothes",
-     "C Clean and dry the clothes",
-     "7. What does the customer want done with clothes?\nA Wash and iron the clothes\nB Iron the clothes\nC Clean and dry the clothes"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which of these extra services does the customer agree to do?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Change the bed linen"
+      },
+      {
+       "letter": "B",
+       "text": "Do some gardening work"
+      },
+      {
+       "letter": "C",
+       "text": "Clean the glass"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -575,16 +583,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "5. Which of these extra services does the customer agree to do?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 6,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the customer want cleaned every three months?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Curtains"
+      },
+      {
+       "letter": "B",
+       "text": "Carpets"
+      },
+      {
+       "letter": "C",
+       "text": "Mats"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -592,16 +614,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "6. What does the customer want cleaned every three months?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 7,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What does the customer want done with clothes?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Wash and iron the clothes"
+      },
+      {
+       "letter": "B",
+       "text": "Iron the clothes"
+      },
+      {
+       "letter": "C",
+       "text": "Clean and dry the clothes"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -609,7 +645,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "7. What does the customer want done with clothes?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -640,8 +677,10 @@
      "The maximum time of cleaning service is (10) ␦ hours"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -664,7 +703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "The agent’s address is 12 (8) ␦ Road."
-     }
+     },
+     "keyRaw": "amyes"
     },
     {
      "number": 9,
@@ -686,7 +726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "Her house will get cleaned next (9) ␦"
-     }
+     },
+     "keyRaw": "thursday"
     },
     {
      "number": 10,
@@ -709,7 +750,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "The maximum time of cleaning service is (10) ␦ hours"
-     }
+     },
+     "keyRaw": "3"
     }
    ],
    "provenance": {
@@ -732,50 +774,36 @@
     "originalText": "Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A educate people.",
-     "B persuade people to fly.",
-     "C provide people with comfort.",
-     "11. The main purpose of the service is to\nA educate people.\nB persuade people to fly.\nC provide people with comfort.",
-     "A 200",
-     "B 360",
-     "C 440",
-     "12. The number of people working at Sydney Airport is\nA 200\nB 360\nC 440",
-     "A their ability to stay calm.",
-     "B their friendliness.",
-     "C their skill at locating narcotics.",
-     "13. Dogs are chosen according to\nA their ability to stay calm.\nB their friendliness.\nC their skill at locating narcotics.",
-     "A 4,400.",
-     "B 52,000.",
-     "C 72,000.",
-     "14. The number of postal items processed last year amounted to\nA 4,400.\nB 52,000.\nC 72,000.",
-     "A will get arrested.",
-     "B will be refused on board.",
-     "C will be given a warning.",
-     "15. People carrying items that are not allowed\nA will get arrested.\nB will be refused on board.\nC will be given a warning.",
-     "A Carry-on items",
-     "B Plant seeds",
-     "C Parcels",
-     "16. Which of the following is NOT allowed to be taken on the flight?\nA Carry-on items\nB Plant seeds\nC Parcels",
-     "A It is returned to the passenger after examination.",
-     "B It is thrown away in a safe receptacle.",
-     "C It is passed on to higher-level authorities.",
-     "17. What is the proper security protocol for a pocket knife found in a carry-on suitcase?\nA It is returned to the passenger after examination.\nB It is thrown away in a safe receptacle.\nC It is passed on to higher-level authorities."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The main purpose of the service is to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "educate people."
+      },
+      {
+       "letter": "B",
+       "text": "persuade people to fly."
+      },
+      {
+       "letter": "C",
+       "text": "provide people with comfort."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -783,16 +811,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. The main purpose of the service is to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The number of people working at Sydney Airport is",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "200"
+      },
+      {
+       "letter": "B",
+       "text": "360"
+      },
+      {
+       "letter": "C",
+       "text": "440"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -800,16 +842,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. The number of people working at Sydney Airport is"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Dogs are chosen according to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "their ability to stay calm."
+      },
+      {
+       "letter": "B",
+       "text": "their friendliness."
+      },
+      {
+       "letter": "C",
+       "text": "their skill at locating narcotics."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -817,16 +873,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "13. Dogs are chosen according to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The number of postal items processed last year amounted to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "4,400."
+      },
+      {
+       "letter": "B",
+       "text": "52,000."
+      },
+      {
+       "letter": "C",
+       "text": "72,000."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -834,16 +904,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "14. The number of postal items processed last year amounted to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "People carrying items that are not allowed",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "will get arrested."
+      },
+      {
+       "letter": "B",
+       "text": "will be refused on board."
+      },
+      {
+       "letter": "C",
+       "text": "will be given a warning."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -851,16 +935,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. People carrying items that are not allowed"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which of the following is NOT allowed to be taken on the flight?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Carry-on items"
+      },
+      {
+       "letter": "B",
+       "text": "Plant seeds"
+      },
+      {
+       "letter": "C",
+       "text": "Parcels"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -868,16 +966,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. Which of the following is NOT allowed to be taken on the flight?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What is the proper security protocol for a pocket knife found in a carry-on suitcase?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "It is returned to the passenger after examination."
+      },
+      {
+       "letter": "B",
+       "text": "It is thrown away in a safe receptacle."
+      },
+      {
+       "letter": "C",
+       "text": "It is passed on to higher-level authorities."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -885,7 +997,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "17. What is the proper security protocol for a pocket knife found in a carry-on suitcase?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -915,8 +1028,10 @@
      "The customs must be given notice of the goods from (20) ␦ days before it arrives in Australia."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -938,7 +1053,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "The acceptable material for packing goods in Australia is (18) ␦"
-     }
+     },
+     "keyRaw": "paper"
     },
     {
      "number": 19,
@@ -960,7 +1076,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "The belongings most of time are refused due to problems with the (19) ␦"
-     }
+     },
+     "keyRaw": "package labels"
     },
     {
      "number": 20,
@@ -983,7 +1100,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "The customs must be given notice of the goods from (20) ␦ days before it arrives in Australia."
-     }
+     },
+     "keyRaw": "2 to 10"
     }
    ],
    "provenance": {
@@ -1017,22 +1135,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test64.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 21
-       },
-       {
-        "blank": 22
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (21) ␦ (22) ␦",
@@ -1042,21 +1155,16 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 22,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 21
-       },
-       {
-        "blank": 22
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (21) ␦ (22) ␦",
@@ -1066,21 +1174,16 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 23,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 23
-       },
-       {
-        "blank": 24
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (23) ␦ (24) ␦",
@@ -1090,21 +1193,16 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 24,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 23
-       },
-       {
-        "blank": 24
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (23) ␦ (24) ␦",
@@ -1114,21 +1212,16 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 25,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 25
-       },
-       {
-        "blank": 26
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (25) ␦ (26) ␦",
@@ -1138,21 +1231,16 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(25) ␦ (26) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 26,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 25
-       },
-       {
-        "blank": 26
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (25) ␦ (26) ␦",
@@ -1162,12 +1250,45 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "(25) ␦ (26) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Part 3: Questions 21-26\nWrite the correct letter, A-F, next to questions 21-26."
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Video resource centre"
+     },
+     {
+      "letter": "B",
+      "text": "Reading room"
+     },
+     {
+      "letter": "C",
+      "text": "Food service centre"
+     },
+     {
+      "letter": "D",
+      "text": "Periodicals section"
+     },
+     {
+      "letter": "E",
+      "text": "Enquiry desk"
+     },
+     {
+      "letter": "F",
+      "text": "Satellite TV station"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1193,8 +1314,10 @@
      "You can find more information in a (30) ␦ on my desk."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1217,7 +1340,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "If you need to find information on a certain book, you can use (27) ␦ check-out cards."
-     }
+     },
+     "keyRaw": "pink and yellow"
     },
     {
      "number": 28,
@@ -1240,7 +1364,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "If you want to find information in a specific field, use the (28) ␦ guides."
-     }
+     },
+     "keyRaw": "subjects"
     },
     {
      "number": 29,
@@ -1263,7 +1388,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Computers in some (29) ␦ cannot be linked to the network."
-     }
+     },
+     "keyRaw": "universities"
     },
     {
      "number": 30,
@@ -1286,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "You can find more information in a (30) ␦ on my desk."
-     }
+     },
+     "keyRaw": "blue folder"
     }
    ],
    "provenance": {
@@ -1309,42 +1436,36 @@
     "originalText": "Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A North Africa contains very little wildlife for the crocodile to prey on.",
-     "B she found no mention in the literature of their existence there.",
-     "C there is very little water in North Africa.",
-     "31. The student thought there were no crocodiles in Northern Africa because\nA North Africa contains very little wildlife for the crocodile to prey on.\nB she found no mention in the literature of their existence there.\nC there is very little water in North Africa.",
-     "A 20",
-     "B 38",
-     "C 46",
-     "32. Generally, crocodiles live in groups of about\nA 20\nB 38\nC 46",
-     "A hot, dry climates.",
-     "B hot, wet rainforests.",
-     "C warm, wet climates.",
-     "33. African crocodiles usually live in areas with\nA hot, dry climates.\nB hot, wet rainforests.\nC warm, wet climates.",
-     "A underground.",
-     "B in mountainsides.",
-     "C underwater.",
-     "34. Crocodiles in dry areas live in caves located\nA underground.\nB in mountainsides.\nC underwater.",
-     "A They were driven away by a fierce predator.",
-     "B Crocodiles evolved from desert creatures to wetland creatures.",
-     "C North Africa used to be wetland but slowly turned to desert over time.",
-     "35. What change caused changes in crocodile populations in North Africa?\nA They were driven away by a fierce predator.\nB Crocodiles evolved from desert creatures to wetland creatures.\nC North Africa used to be wetland but slowly turned to desert over time."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The student thought there were no crocodiles in Northern Africa because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "North Africa contains very little wildlife for the crocodile to prey on."
+      },
+      {
+       "letter": "B",
+       "text": "she found no mention in the literature of their existence there."
+      },
+      {
+       "letter": "C",
+       "text": "there is very little water in North Africa."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1352,16 +1473,30 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "31. The student thought there were no crocodiles in Northern Africa because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Generally, crocodiles live in groups of about",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "20"
+      },
+      {
+       "letter": "B",
+       "text": "38"
+      },
+      {
+       "letter": "C",
+       "text": "46"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1369,16 +1504,30 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "32. Generally, crocodiles live in groups of about"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "African crocodiles usually live in areas with",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "hot, dry climates."
+      },
+      {
+       "letter": "B",
+       "text": "hot, wet rainforests."
+      },
+      {
+       "letter": "C",
+       "text": "warm, wet climates."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1386,16 +1535,30 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "33. African crocodiles usually live in areas with"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 34,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Crocodiles in dry areas live in caves located",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "underground."
+      },
+      {
+       "letter": "B",
+       "text": "in mountainsides."
+      },
+      {
+       "letter": "C",
+       "text": "underwater."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1403,16 +1566,30 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "34. Crocodiles in dry areas live in caves located"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 35,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What change caused changes in crocodile populations in North Africa?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "They were driven away by a fierce predator."
+      },
+      {
+       "letter": "B",
+       "text": "Crocodiles evolved from desert creatures to wetland creatures."
+      },
+      {
+       "letter": "C",
+       "text": "North Africa used to be wetland but slowly turned to desert over time."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1420,7 +1597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "35. What change caused changes in crocodile populations in North Africa?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1452,8 +1630,10 @@
      "Researchers want to study more about population size, (40) ␦ , and relations to other populations of crocodiles."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1476,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "Desert crocodiles sometimes live in places with dry periods that last up to (36) ␦ months."
-     }
+     },
+     "keyRaw": "8"
     },
     {
      "number": 37,
@@ -1499,7 +1680,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "A hole dug by a female crocodile in which to lay eggs can have a (37) ␦ of up to 60 cm."
-     }
+     },
+     "keyRaw": "depth"
     },
     {
      "number": 38,
@@ -1522,7 +1704,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "Local people are not (38) ␦ crocodiles."
-     }
+     },
+     "keyRaw": "afraid of"
     },
     {
      "number": 39,
@@ -1545,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Crocodiles (39) ␦ out of fear when humans populate their habitat."
-     }
+     },
+     "keyRaw": "attack"
     },
     {
      "number": 40,
@@ -1568,7 +1752,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "Researchers want to study more about population size, (40) ␦ , and relations to other populations of crocodiles."
-     }
+     },
+     "keyRaw": "migration patterns"
     }
    ],
    "provenance": {
@@ -1616,5 +1801,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

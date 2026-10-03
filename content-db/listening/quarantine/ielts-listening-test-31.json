@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-31",
- "sourceSha256": "fa3e37b865878493df673e5642690fd2e7a10aa96d3248261595eaf25b8ae488",
+ "status": "quarantined",
+ "sourceSha256": "303565e6712495fd41ea59b51ca66934e23c714bf6708858a7bf5683dce765bb",
  "units": [
   {
    "unit": "group",
@@ -16,6 +17,64 @@
   },
   {
    "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which map shows Jack’s route to Margaret’s party?",
+    "answer": "C",
+    "rawExcerpt": "2. Which map shows Jack’s route to Margaret’s party?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 14,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Once you pay the entry fee, there are no extra costs ______",
+    "answer": "T",
+    "rawExcerpt": "14. Once you pay the entry fee, there are no extra costs ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 15,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "The park is open every day of the year ______",
+    "answer": "F",
+    "rawExcerpt": "15. The park is open every day of the year ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
    "groupId": "g12",
    "questionNumber": 28,
    "reasonCode": "OPTIONS_MISSING",
@@ -25,13 +84,40 @@
    "evidence": {
     "stem": "Shirley wants to research nuclear energy because",
     "answer": "B",
-    "rawExcerpt": "",
+    "rawExcerpt": "28. Shirley wants to research nuclear energy because",
     "options": [
      {
       "letter": "B",
       "text": "she wants to know how nuclear waste is disposed of"
      }
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "2563379"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     2,
+     8,
+     14,
+     15,
+     28
+    ],
+    "outOfRange": []
    }
   }
  ]

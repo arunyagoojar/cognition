@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-97",
- "sourceSha256": "0238aaa80b597f4ba5028942f1df7db2fdbafa48ba2bae65ba3fff6c99190dee",
+ "status": "quarantined",
+ "sourceSha256": "4872f32f3944ed4ac9a2bb46013d81974a9ff113612fa367afcff31411f67570",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,97 @@
      21,
      24
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "The location of Nikki’s house on the map is",
+    "answer": "A",
+    "rawExcerpt": "6. The location of Nikki’s house on the map is",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 21,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 22,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     6,
+     21,
+     22,
+     23,
+     24
+    ],
+    "outOfRange": []
    }
   }
  ]

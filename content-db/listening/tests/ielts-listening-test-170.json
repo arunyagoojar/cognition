@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-170",
  "title": "IELTS Listening Test 170",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-170/index.html",
-   "sha256": "12415e9285662954d8a6b600f627a8688180e28d9567fd8628785021667a5e37",
-   "manifestHashMatch": true,
+   "sha256": "c5d760230881cb0c3614997feff1333bc1479a0027f2ca7c11789fa8f60e1f02",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-170/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -402,8 +402,10 @@
      "Date moved in: (2) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -426,7 +428,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Address: Apartment 2, (1) ␦ , Newton"
-     }
+     },
+     "keyRaw": "16 rose lane"
     },
     {
      "number": 2,
@@ -448,7 +451,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Date moved in: (2) ␦"
-     }
+     },
+     "keyRaw": "27 June"
     }
    ],
    "provenance": {
@@ -464,10 +468,10 @@
    "endQ": 9,
    "partExplicit": false,
    "instruction": {
-    "text": "Complete the table below. Write A if the repair will be done immediately B if the repair will be done during the following week C if the repair will be done in two or more weeks",
+    "text": "Complete the table below. Write",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Complete the table below. Write A if the repair will be done immediately B if the repair will be done during the following week C if the repair will be done in two or more weeks"
+    "originalText": "Complete the table below. Write"
    },
    "stimulus": {
     "kind": "table",
@@ -501,14 +505,17 @@
      ]
     },
     "segments": [
+     "A if the repair will be done immediately\nB if the repair will be done during the following week\nC if the repair will be done in two or more weeks",
      "(3) ␦ (4) ␦",
      "(5) ␦ (6) ␦",
      "(7) ␦ (8) ␦",
      "(9) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 3,
@@ -527,20 +534,17 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(3)…………………"
-     }
+     },
+     "keyRaw": "door broken"
     },
     {
      "number": 4,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 4
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 2 col 3",
@@ -548,9 +552,11 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(4)……………….."
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 5,
@@ -569,9 +575,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(5)…………………."
-     }
+     },
+     "keyRaw": "no locks"
     },
     {
      "number": 6,
@@ -590,20 +597,17 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(6)…………………."
-     }
+     },
+     "keyRaw": "bathroom light"
     },
     {
      "number": 7,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 7
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 4 col 3",
@@ -611,9 +615,11 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(7)…………………"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 8,
@@ -632,20 +638,17 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(8)…………………."
-     }
+     },
+     "keyRaw": "kitchen curtains"
     },
     {
      "number": 9,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 9
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 5 col 3",
@@ -653,16 +656,37 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[3]",
+      "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(9)………………….."
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[2]",
-    "rawExcerpt": "Questions 3-9\nComplete the table below. Write\nA if the repair will be done immediately\nB if the repair will be done during the following week\nC if the repair will be done in two or more weeks"
+    "rawExcerpt": "Questions 3-9\nComplete the table below. Write"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "if the repair will be done immediately"
+     },
+     {
+      "letter": "B",
+      "text": "if the repair will be done during the following week"
+     },
+     {
+      "letter": "C",
+      "text": "if the repair will be done in two or more weeks"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -684,8 +708,10 @@
      "Workman to call between (10) ␦ and ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 10,
@@ -706,13 +732,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[6]",
+      "elementPath": "entry-content.children[7]",
       "rawExcerpt": "Workman to call between (10) ␦ and ␦"
-     }
+     },
+     "keyRaw": "1 pm and 5 pm"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[5]",
+    "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Question 10\nWrite NO MORE THAN THREE WORDS OR A NUMBER for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -735,8 +762,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -764,9 +793,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[8]",
+      "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. At rainforest lodge there aren’t any"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -794,13 +824,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[9]",
+      "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. The guests are told to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[7]",
+    "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nCircle the correct letters A-C"
    },
    "status": "verified"
@@ -853,8 +884,10 @@
      "(15) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -874,9 +907,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "tour to the (13)………………"
-     }
+     },
+     "keyRaw": "waterfall"
     },
     {
      "number": 14,
@@ -897,9 +931,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "departs at (14)………………..daily"
-     }
+     },
+     "keyRaw": "11"
     },
     {
      "number": 15,
@@ -918,13 +953,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(15)…………………"
-     }
+     },
+     "keyRaw": "spotlight"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[10]",
+    "elementPath": "entry-content.children[11]",
     "rawExcerpt": "Questions 13-15\nComplete the table below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -954,8 +990,10 @@
      "(19) ␦ and (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -974,9 +1012,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[14]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(16) ␦"
-     }
+     },
+     "keyRaw": "walking boots"
     },
     {
      "number": 17,
@@ -995,9 +1034,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[14]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(17) ␦"
-     }
+     },
+     "keyRaw": "socks"
     },
     {
      "number": 18,
@@ -1016,9 +1056,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[14]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(18) ␦"
-     }
+     },
+     "keyRaw": "long trousers"
     },
     {
      "number": 19,
@@ -1041,9 +1082,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[15]",
+      "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19) ␦ and (20) ␦"
-     }
+     },
+     "keyRaw": "snakes"
     },
     {
      "number": 20,
@@ -1066,13 +1108,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[15]",
+      "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(19) ␦ and (20) ␦"
-     }
+     },
+     "keyRaw": "plants"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[13]",
+    "elementPath": "entry-content.children[14]",
     "rawExcerpt": "Questions 16-20\nWrite NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1095,8 +1138,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1124,9 +1169,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "21. These sessions with a counsellor are"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1154,9 +1200,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[19]",
       "rawExcerpt": "22. The counsellor says that new students have to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1184,9 +1231,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "23. John complains that the resource centre"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1214,9 +1262,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[20]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "24. The counsellor suggests to John that"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1244,13 +1293,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "25. Before being able to help John the counsellor needs to"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[16]",
+    "elementPath": "entry-content.children[17]",
     "rawExcerpt": "Part 3: Questions 21-25\nCircle the correct letters A-C"
    },
    "status": "verified"
@@ -1282,8 +1332,10 @@
      "• Buy a good (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1303,9 +1355,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[23]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Leave time to (26) ␦"
-     }
+     },
+     "keyRaw": "check work"
     },
     {
      "number": 27,
@@ -1326,9 +1379,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Try to (27) ␦ lectures"
-     }
+     },
+     "keyRaw": "record"
     },
     {
      "number": 28,
@@ -1348,9 +1402,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[24]",
+      "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Check notes with (28) ␦"
-     }
+     },
+     "keyRaw": "friend"
     },
     {
      "number": 29,
@@ -1370,9 +1425,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[25]",
+      "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Choose topics of (29) ␦"
-     }
+     },
+     "keyRaw": "general interest"
     },
     {
      "number": 30,
@@ -1392,13 +1448,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[25]",
+      "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Buy a good (30) ␦"
-     }
+     },
+     "keyRaw": "dictionary"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[22]",
+    "elementPath": "entry-content.children[23]",
     "rawExcerpt": "Questions 26-30\nComplete the notes below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1419,14 +1476,16 @@
    "stimulus": {
     "kind": "mcq",
     "table": null,
-    "segments": [
-     "[orphan option block: A\nB\nC]"
-    ],
+    "segments": null,
     "figures": [
      "wp-content/uploads/2024/10/im-67.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": [
+    "A\nB\nC"
+   ],
    "questions": [
     {
      "number": 31,
@@ -1452,11 +1511,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[27]",
+      "elementPath": "entry-content.children[28]",
       "rawExcerpt": "31. John was first interested in the subject because of something"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1482,11 +1542,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[28]",
+      "elementPath": "entry-content.children[29]",
       "rawExcerpt": "32. The main research method was"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1512,11 +1573,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[31]",
+      "elementPath": "entry-content.children[32]",
       "rawExcerpt": "34. How many respondents were there?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 35,
@@ -1542,18 +1604,19 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[33]",
+      "elementPath": "entry-content.children[34]",
       "rawExcerpt": "35. The most common type of road rage incident involved"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[26]",
+    "elementPath": "entry-content.children[27]",
     "rawExcerpt": "Part 4: Questions 31-35\nCircle the correct letters A-C"
    },
-   "status": "verified"
+   "status": "quarantined"
   },
   {
    "groupId": "g10",
@@ -1633,8 +1696,10 @@
       "letter": "C",
       "text": ""
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1647,11 +1712,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "36. Avoid eye contact with other drivers"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 37,
@@ -1664,11 +1730,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "37. Inform someone of your likely arrival time"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 38,
@@ -1681,11 +1748,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "38. Ensure car keys are ready when you return to the car"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 39,
@@ -1698,11 +1766,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "39. Leave plenty of space when parking"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 40,
@@ -1715,19 +1784,20 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[36]",
+      "elementPath": "entry-content.children[37]",
       "rawExcerpt": "40. Keep all doors locked"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[34]",
+    "elementPath": "entry-content.children[35]",
     "rawExcerpt": "Questions 36-40\nWhich group gave the following advice?"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1764,10 +1834,139 @@
   "fnameInputs": 28
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "groupId": "g09",
+   "questionNumbers": [
+    31,
+    32,
+    34,
+    35
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 4: Questions 31-35\nCircle the correct letters A-C",
+    "orphanOptionBlocks": [
+     "A\nB\nC"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 36,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Avoid eye contact with other drivers",
+    "answer": "B",
+    "rawExcerpt": "36. Avoid eye contact with other drivers",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 37,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Inform someone of your likely arrival time",
+    "answer": "A",
+    "rawExcerpt": "37. Inform someone of your likely arrival time",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 38,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Ensure car keys are ready when you return to the car",
+    "answer": "C",
+    "rawExcerpt": "38. Ensure car keys are ready when you return to the car",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 39,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Leave plenty of space when parking",
+    "answer": "B",
+    "rawExcerpt": "39. Leave plenty of space when parking",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g10",
+   "questionNumber": 40,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Keep all doors locked",
+    "answer": "C",
+    "rawExcerpt": "40. Keep all doors locked",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 30,
+    "missingOrQuarantined": [
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 8,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

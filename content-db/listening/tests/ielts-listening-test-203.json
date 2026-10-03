@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-203",
  "title": "IELTS Listening Test 203",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-203/index.html",
-   "sha256": "9212966a1709f4dc57edf26faf30e67ce36258d8ef743f44144def6340c448ff",
-   "manifestHashMatch": true,
+   "sha256": "50d0cf6aaa25aa4e8faa1ac810a83b1a22792b7c8e2ab58e629c559631a255d3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-203/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "48c2d69c3df8e4e20cbeaf9cc387692cc496f8155d48284f3396146c81233b74",
+ "contentFingerprint": "19549634b86fac46ff650ac91133c44991ea0a2cd609a2928109734c21a21537",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -418,8 +418,10 @@
     },
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -442,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Price ranges from $105 to $ (1) per room per month"
-     }
+     },
+     "keyRaw": "239"
     },
     {
      "number": 2,
@@ -469,7 +472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The furniture is very (2) Delivers in 1-2 days Special offer: Free (3) with every living room set"
-     }
+     },
+     "keyRaw": "Modern"
     },
     {
      "number": 3,
@@ -496,7 +500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The furniture is very (2) Delivers in 1-2 days Special offer: Free (3) with every living room set"
-     }
+     },
+     "keyRaw": "Lamp"
     },
     {
      "number": 4,
@@ -518,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(4) And Oliver"
-     }
+     },
+     "keyRaw": "Aaron"
     },
     {
      "number": 5,
@@ -540,7 +546,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Mid-range prices 12% monthly fee for (5)"
-     }
+     },
+     "keyRaw": "Damage"
     },
     {
      "number": 6,
@@ -563,7 +570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Offers cheapest process for renting furniture and (6) items"
-     }
+     },
+     "keyRaw": "Electronic"
     },
     {
      "number": 7,
@@ -586,7 +594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Must have own (7) Minimum contract length: Six months"
-     }
+     },
+     "keyRaw": "Insurance"
     },
     {
      "number": 8,
@@ -608,7 +617,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(8) Rentals"
-     }
+     },
+     "keyRaw": "Space"
     },
     {
      "number": 9,
@@ -631,7 +641,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "See the (9) for the most up-to-date prices"
-     }
+     },
+     "keyRaw": "App"
     },
     {
      "number": 10,
@@ -653,7 +664,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(10) are allowed within 7 days of delivery"
-     }
+     },
+     "keyRaw": "Exchanges"
     }
    ],
    "provenance": {
@@ -675,46 +687,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A the castle owners",
-     "B a national charity",
-     "C the local council",
-     "11. Who was responsible for starting the community project?\n\nA the castle owners\n\nB a national charity\n\nC the local council",
-     "A Heavy rain had removed some of the soil.",
-     "B The ground was dug up by wild rabbits.",
-     "C A person with a metal detector searched the area.",
-     "12. How was the gold coin found?\n\nA Heavy rain had removed some of the soil.\n\nB The ground was dug up by wild rabbits.\n\nC A person with a metal detector searched the area.",
-     "A the lucky discovery of old records",
-     "B the bases of several structures visible in the grass",
-     "C the unusual stones found near the castle",
-     "13. What led the archaeologists to believe there was an ancient village on this site?\n\nA the lucky discovery of old records\n\nB the bases of several structures visible in the grass\n\nC the unusual stones found near the castle",
-     "A everyday pottery",
-     "B animal bones",
-     "C pieces of jewellery",
-     "14. What are the team still hoping to find?\n\nA everyday pottery\n\nB animal bones\n\nC pieces of jewellery",
-     "A the remains of a large palace",
-     "B the outline of fields",
-     "C a number of small huts",
-     "15. What was found on the other side of the river to the castle?\n\nA the remains of a large palace\n\nB the outline of fields\n\nC a number of small huts",
-     "A prepare a display for a museum",
-     "B take part in a television programme",
-     "C start to organise school visits",
-     "16. What do the team plan to do after work ends this summer?\n\nA prepare a display for a museum\n\nB take part in a television programme\n\nC start to organise school visits"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Who was responsible for starting the community project?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the castle owners"
+      },
+      {
+       "letter": "B",
+       "text": "a national charity"
+      },
+      {
+       "letter": "C",
+       "text": "the local council"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -722,16 +724,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "11. Who was responsible for starting the community project?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How was the gold coin found?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Heavy rain had removed some of the soil."
+      },
+      {
+       "letter": "B",
+       "text": "The ground was dug up by wild rabbits."
+      },
+      {
+       "letter": "C",
+       "text": "A person with a metal detector searched the area."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -739,16 +755,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "12. How was the gold coin found?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What led the archaeologists to believe there was an ancient village on this site?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the lucky discovery of old records"
+      },
+      {
+       "letter": "B",
+       "text": "the bases of several structures visible in the grass"
+      },
+      {
+       "letter": "C",
+       "text": "the unusual stones found near the castle"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -756,16 +786,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "13. What led the archaeologists to believe there was an ancient village on this site?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What are the team still hoping to find?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "everyday pottery"
+      },
+      {
+       "letter": "B",
+       "text": "animal bones"
+      },
+      {
+       "letter": "C",
+       "text": "pieces of jewellery"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -773,16 +817,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. What are the team still hoping to find?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What was found on the other side of the river to the castle?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the remains of a large palace"
+      },
+      {
+       "letter": "B",
+       "text": "the outline of fields"
+      },
+      {
+       "letter": "C",
+       "text": "a number of small huts"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -790,16 +848,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. What was found on the other side of the river to the castle?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What do the team plan to do after work ends this summer?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "prepare a display for a museum"
+      },
+      {
+       "letter": "B",
+       "text": "take part in a television programme"
+      },
+      {
+       "letter": "C",
+       "text": "start to organise school visits"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -807,44 +879,14 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. What do the team plan to do after work ends this summer?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11 – 16\n\nChoose the correct letter, A, B or C."
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g03",
-   "part": 2,
-   "startQ": 17,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Label the map below. Write the correct letter A-G next to questions 17-20.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Label the map below. Write the correct letter A-G next to questions 17-20."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "17 ␦\n\n18 ␦\n\n19 ␦\n\n20 ␦"
-    ],
-    "figures": [
-     "wp-content/uploads/2025/10/im.webp"
-    ],
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Questions 17 – 20\n\nLabel the map below. Write the correct letter A-G next to questions 17-20."
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },
   {
@@ -860,46 +902,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A was not familiar to their module leader.",
-     "B had not been chosen by other students.",
-     "C did not prove to be difficult to research.",
-     "21. Finn was pleased to discover that their topic\n\nA was not familiar to their module leader.\n\nB had not been chosen by other students.\n\nC did not prove to be difficult to research.",
-     "A theatres pay companies to produce them.",
-     "B few theatre-goers buy them nowadays.",
-     "C they contain far more adverts than previously.",
-     "22. Maya says a mistaken belief about theatre programmes is that\n\nA theatres pay companies to produce them.\n\nB few theatre-goers buy them nowadays.\n\nC they contain far more adverts than previously.",
-     "A were difficult for audiences to obtain.",
-     "B were given out free of charge.",
-     "C were seen as a kind of contract.",
-     "23. Finn was surprised that, in early British theatre, programmes\n\nA were difficult for audiences to obtain.\n\nB were given out free of charge.\n\nC were seen as a kind of contract.",
-     "A promoted their own plays.",
-     "B performed plays outdoors.",
-     "C had to tour with their plays.",
-     "24. Maya feels their project should include an explanation of why companies of actors\n\nA promoted their own plays.\n\nB performed plays outdoors.\n\nC had to tour with their plays.",
-     "A were more original.",
-     "B were more colourful.",
-     "C were more informative.",
-     "25. Finn and Maya both think that, compared to nineteenth-century programmes, those from the eighteenth century\n\nA were more original.\n\nB were more colourful.\n\nC were more informative.",
-     "A very few theatre programmes were printed in the USA.",
-     "B British theatre programmes failed to develop for so long.",
-     "C theatre programmes in Britain copied fashions from the USA.",
-     "26. Maya doesn’t fully understand why, in the twentieth century,\n\nA very few theatre programmes were printed in the USA.\n\nB British theatre programmes failed to develop for so long.\n\nC theatre programmes in Britain copied fashions from the USA."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Finn was pleased to discover that their topic",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "was not familiar to their module leader."
+      },
+      {
+       "letter": "B",
+       "text": "had not been chosen by other students."
+      },
+      {
+       "letter": "C",
+       "text": "did not prove to be difficult to research."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -907,16 +939,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "21. Finn was pleased to discover that their topic"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Maya says a mistaken belief about theatre programmes is that",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "theatres pay companies to produce them."
+      },
+      {
+       "letter": "B",
+       "text": "few theatre-goers buy them nowadays."
+      },
+      {
+       "letter": "C",
+       "text": "they contain far more adverts than previously."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -924,16 +970,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. Maya says a mistaken belief about theatre programmes is that"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Finn was surprised that, in early British theatre, programmes",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "were difficult for audiences to obtain."
+      },
+      {
+       "letter": "B",
+       "text": "were given out free of charge."
+      },
+      {
+       "letter": "C",
+       "text": "were seen as a kind of contract."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -941,16 +1001,30 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "23. Finn was surprised that, in early British theatre, programmes"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Maya feels their project should include an explanation of why companies of actors",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "promoted their own plays."
+      },
+      {
+       "letter": "B",
+       "text": "performed plays outdoors."
+      },
+      {
+       "letter": "C",
+       "text": "had to tour with their plays."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -958,16 +1032,30 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. Maya feels their project should include an explanation of why companies of actors"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Finn and Maya both think that, compared to nineteenth-century programmes, those from the eighteenth century",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "were more original."
+      },
+      {
+       "letter": "B",
+       "text": "were more colourful."
+      },
+      {
+       "letter": "C",
+       "text": "were more informative."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -975,16 +1063,30 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "25. Finn and Maya both think that, compared to nineteenth-century programmes, those from the eighteenth century"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Maya doesn’t fully understand why, in the twentieth century,",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "very few theatre programmes were printed in the USA."
+      },
+      {
+       "letter": "B",
+       "text": "British theatre programmes failed to develop for so long."
+      },
+      {
+       "letter": "C",
+       "text": "theatre programmes in Britain copied fashions from the USA."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -992,7 +1094,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "26. Maya doesn’t fully understand why, in the twentieth century,"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1027,26 +1130,41 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Its origin is somewhat controversial. B It is historically significant for a country. C It was effective at attracting audiences. D It is included in a recent project. E It contains insights into the show."
+      "text": "Its origin is somewhat controversial."
+     },
+     {
+      "letter": "B",
+      "text": "It is historically significant for a country."
+     },
+     {
+      "letter": "C",
+      "text": "It was effective at attracting audiences."
+     },
+     {
+      "letter": "D",
+      "text": "It is included in a recent project."
+     },
+     {
+      "letter": "E",
+      "text": "It contains insights into the show."
      },
      {
       "letter": "F",
       "text": "It resembles an artwork."
      }
+    ],
+    "optionPreface": [
+     "Comment about programme"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Ruy Bias ______",
-      "segments": [
-       "Ruy Bias",
-       {
-        "blank": 27
-       }
-      ]
+      "plain": "Ruy Bias",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Ruy Bias (27) ␦",
@@ -1056,19 +1174,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Ruy Bias (27) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Man of La Mancha ______",
-      "segments": [
-       "Man of La Mancha",
-       {
-        "blank": 28
-       }
-      ]
+      "plain": "Man of La Mancha",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Man of La Mancha (28) ␦",
@@ -1078,19 +1193,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Man of La Mancha (28) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "The Tragedy of Jane Shore ______",
-      "segments": [
-       "The Tragedy of Jane Shore",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "The Tragedy of Jane Shore",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: The Tragedy of Jane Shore (29) ␦",
@@ -1100,19 +1212,16 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "The Tragedy of Jane Shore (29) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "The Sailors’ Festival ______",
-      "segments": [
-       "The Sailors’ Festival",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "The Sailors’ Festival",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: The Sailors’ Festival (30) ␦",
@@ -1122,7 +1231,9 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "The Sailors’ Festival (30) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1130,6 +1241,36 @@
     "rawExcerpt": "Questions 27-30\n\nWhat comment is made about the programme for each of the following shows? Choose FOUR answers from the box and write the correct letter, A-F, next to Questions 27-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Comment about programme",
+    "options": [
+     {
+      "letter": "A",
+      "text": "Its origin is somewhat controversial."
+     },
+     {
+      "letter": "B",
+      "text": "It is historically significant for a country."
+     },
+     {
+      "letter": "C",
+      "text": "It was effective at attracting audiences."
+     },
+     {
+      "letter": "D",
+      "text": "It is included in a recent project."
+     },
+     {
+      "letter": "E",
+      "text": "It contains insights into the show."
+     },
+     {
+      "letter": "F",
+      "text": "It resembles an artwork."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1169,8 +1310,10 @@
      "o The (40) ␦ in offices is often too tow for women."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1192,7 +1335,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Designing products that can be accessed by a diverse range of people without the need for any (31) ␦"
-     }
+     },
+     "keyRaw": "Adaptation"
     },
     {
      "number": 32,
@@ -1215,7 +1359,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• Not the same as universal design: that is design for everyone, including catering for people with (32) ␦ problems."
-     }
+     },
+     "keyRaw": "Cognitive"
     },
     {
      "number": 33,
@@ -1238,7 +1383,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• (33) ␦ which are adjustable, avoiding back or neck problems"
-     }
+     },
+     "keyRaw": "Desks"
     },
     {
      "number": 34,
@@ -1261,7 +1407,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• (34) ␦ in public toilets which are easier to use"
-     }
+     },
+     "keyRaw": "Taps"
     },
     {
      "number": 35,
@@ -1284,7 +1431,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "o designers avoid using (35) ␦ in interfaces"
-     }
+     },
+     "keyRaw": "Blue"
     },
     {
      "number": 36,
@@ -1306,7 +1454,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "o people can make commands using a mouse, keyboard or their (36) ␦"
-     }
+     },
+     "keyRaw": "Voice"
     },
     {
      "number": 37,
@@ -1329,7 +1478,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o Seatbelts are especially problematic for (37) ␦ women."
-     }
+     },
+     "keyRaw": "Pregnant"
     },
     {
      "number": 38,
@@ -1351,7 +1501,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o PPE Jackets are often unsuitable because of the size of women’s (38) ␦"
-     }
+     },
+     "keyRaw": "Shoulders"
     },
     {
      "number": 39,
@@ -1374,7 +1525,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o PPE for female (39) ␦ officers dealing with emergencies is the worst."
-     }
+     },
+     "keyRaw": "Police"
     },
     {
      "number": 40,
@@ -1397,7 +1549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o The (40) ␦ in offices is often too tow for women."
-     }
+     },
+     "keyRaw": "Temperature"
     }
    ],
    "provenance": {
@@ -1450,6 +1603,68 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "G"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [
@@ -1460,7 +1675,8 @@
   }
  ],
  "verifiedQuestionCount": 36,
- "quarantinedCount": 1,
- "status": "flagged",
+ "quarantinedCount": 6,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

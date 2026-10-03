@@ -1,0 +1,46 @@
+{
+ "slug": "ielts-listening-test-125",
+ "status": "quarantined",
+ "sourceSha256": "f9329cec8da4cb5c9eccbed9aa0118cd69a624b047422b121cfb8426e58dbba7",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 15,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which map shows the correct location of the police station (marked P)?",
+    "answer": "B",
+    "rawExcerpt": "15. Which map shows the correct location of the police station (marked P)?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     15
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

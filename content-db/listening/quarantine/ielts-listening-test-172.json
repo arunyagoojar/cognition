@@ -1,0 +1,36 @@
+{
+ "slug": "ielts-listening-test-172",
+ "status": "quarantined",
+ "sourceSha256": "613cbdf35ebb18b51330c28f9ac05cb2c74c5857b30f0d3239b20ab1a749a5d1",
+ "units": [
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_NUMBERING",
+   "evidence": {
+    "keyNumbers": [
+     1,
+     39,
+     39
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "SOURCE_INCOMPLETE",
+   "evidence": {
+    "note": "the source page has 39 questions (no Q40)"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

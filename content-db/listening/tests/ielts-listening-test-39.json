@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-39",
  "title": "IELTS Listening Test 39",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-39/index.html",
-   "sha256": "46dbd8a725c88467d0d7ebe28b37a9bf4511fb465e768672891345bac207d9e7",
-   "manifestHashMatch": true,
+   "sha256": "4cb49e859602796df49c741438281cf48da2ef1a93e9bcc2df37e0d4a4d5a00f",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-39/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -420,8 +420,10 @@
      "Details of complaint: no (9) ␦ at station and a (10) ␦ was missing"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -443,7 +445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Holiday booked in name of: (1) ␦"
-     }
+     },
+     "keyRaw": "Andrew Sharpe"
     },
     {
      "number": 2,
@@ -466,7 +469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address: Flat 4, (2) ␦ Winchester S024ER"
-     }
+     },
+     "keyRaw": "beaconsfield house"
     },
     {
      "number": 3,
@@ -488,7 +492,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Daytime telephone number: (3) ␦"
-     }
+     },
+     "keyRaw": "037455793"
     },
     {
      "number": 4,
@@ -510,7 +515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Booking reference: (4) ␦"
-     }
+     },
+     "keyRaw": "MH66G4"
     },
     {
      "number": 5,
@@ -533,7 +539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Special offer? Yes, from (5) ␦ company"
-     }
+     },
+     "keyRaw": "credit card"
     },
     {
      "number": 6,
@@ -556,7 +563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Insurance? Yes, had (6) ␦ Policy"
-     }
+     },
+     "keyRaw": "gold star"
     },
     {
      "number": 7,
@@ -579,7 +587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Type of holiday booked: (7) ␦ Break"
-     }
+     },
+     "keyRaw": "mid-winter"
     },
     {
      "number": 8,
@@ -601,7 +610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Date holiday commenced: (8) ␦"
-     }
+     },
+     "keyRaw": "16 january"
     },
     {
      "number": 9,
@@ -628,7 +638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Details of complaint: no (9) ␦ at station and a (10) ␦ was missing"
-     }
+     },
+     "keyRaw": "taxi"
     },
     {
      "number": 10,
@@ -655,7 +666,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Details of complaint: no (9) ␦ at station and a (10) ␦ was missing"
-     }
+     },
+     "keyRaw": "bicycle"
     }
    ],
    "provenance": {
@@ -692,8 +704,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test39-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -713,11 +727,12 @@
      "blankContext": "line: (11) ␦ (12) ␦",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(11) ␦ (12) ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 12,
@@ -737,11 +752,12 @@
      "blankContext": "line: (11) ␦ (12) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(11) ␦ (12) ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -761,11 +777,12 @@
      "blankContext": "line: (13) ␦ (14) ␦",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(13) ␦ (14) ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
@@ -785,11 +802,12 @@
      "blankContext": "line: (13) ␦ (14) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(13) ␦ (14) ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 15,
@@ -806,18 +824,19 @@
      "blankContext": "line: (15) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(15) ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the table below. Choose your answers from the box."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -842,8 +861,10 @@
      "• Step 4: Will be sent a (20) ␦ about the hotel"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -866,7 +887,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Step 1: Complete a (16) ␦ form"
-     }
+     },
+     "keyRaw": "personal information"
     },
     {
      "number": 17,
@@ -889,7 +911,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Step 2: Do a (17) ␦ questionnaire"
-     }
+     },
+     "keyRaw": "skills"
     },
     {
      "number": 18,
@@ -916,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Step 3: If accepted go on a (18) ␦ course – includes (19) ␦ activities"
-     }
+     },
+     "keyRaw": "general"
     },
     {
      "number": 19,
@@ -943,7 +967,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Step 3: If accepted go on a (18) ␦ course – includes (19) ␦ activities"
-     }
+     },
+     "keyRaw": "role-play"
     },
     {
      "number": 20,
@@ -966,7 +991,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "• Step 4: Will be sent a (20) ␦ about the hotel"
-     }
+     },
+     "keyRaw": "video"
     }
    ],
    "provenance": {
@@ -995,8 +1021,10 @@
      "21. David feels that progress on the project has been slow because other members of the group are not ␦\n22. Jane thinks that ␦ were not clearly established.\n23. Dr. Wilson suggests that the group use the ␦ available from the resource centre.\n24. David doubts that the research will include an adequate ␦\n25. According to Dr. Wilson, the ␦ is now the most important thing to focus on.\n26. Jane believes the group could make more use of some ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1021,7 +1049,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "21. David feels that progress on the project has been slow because other members of the group are not ␦"
-     }
+     },
+     "keyRaw": "following the plan"
     },
     {
      "number": 22,
@@ -1044,7 +1073,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "22. Jane thinks that ␦ were not clearly established."
-     }
+     },
+     "keyRaw": "individual responsibilities"
     },
     {
      "number": 23,
@@ -1067,7 +1097,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "23. Dr. Wilson suggests that the group use the ␦ available from the resource centre."
-     }
+     },
+     "keyRaw": "advise service"
     },
     {
      "number": 24,
@@ -1092,7 +1123,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "24. David doubts that the research will include an adequate ␦"
-     }
+     },
+     "keyRaw": "reference section"
     },
     {
      "number": 25,
@@ -1115,7 +1147,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "25. According to Dr. Wilson, the ␦ is now the most important thing to focus on."
-     }
+     },
+     "keyRaw": "methodology"
     },
     {
      "number": 26,
@@ -1140,7 +1173,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "26. Jane believes the group could make more use of some ␦"
-     }
+     },
+     "keyRaw": "websites"
     }
    ],
    "provenance": {
@@ -1171,8 +1205,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test39-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1192,11 +1228,12 @@
      "blankContext": "line: (27) ␦ (28) ␦",
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(27) ␦ (28) ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 28,
@@ -1216,11 +1253,12 @@
      "blankContext": "line: (27) ␦ (28) ␦",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(27) ␦ (28) ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1240,11 +1278,12 @@
      "blankContext": "line: (29) ␦ (30) ␦",
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(29) ␦ (30) ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 30,
@@ -1264,11 +1303,12 @@
      "blankContext": "line: (29) ␦ (30) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(29) ␦ (30) ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1276,7 +1316,7 @@
     "rawExcerpt": "Questions 27-30\nComplete the timetable below. Choose your answers for the box."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -1297,8 +1337,10 @@
      "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever built its construction involved 1700 people in five countries. Most of its components had to be (33) ␦ and delivering them had to be coordinated with the (34) ␦ in the River Thames. On average 350 hours a week are spent on maintenance of the Eye and only (35) ␦ is used to clean the glass."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1337,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever bu"
-     }
+     },
+     "keyRaw": "competition"
     },
     {
      "number": 32,
@@ -1376,7 +1419,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever bu"
-     }
+     },
+     "keyRaw": "british airways"
     },
     {
      "number": 33,
@@ -1415,7 +1459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever bu"
-     }
+     },
+     "keyRaw": "invented"
     },
     {
      "number": 34,
@@ -1454,7 +1499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever bu"
-     }
+     },
+     "keyRaw": "tides"
     },
     {
      "number": 35,
@@ -1493,7 +1539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "The architects who designed the London Eye originally drew it for a (31) ␦ in 1993. Subsequently, they formed a partnership with (32) ␦ to develop the project. As the biggest observation wheel ever bu"
-     }
+     },
+     "keyRaw": "distilled water"
     }
    ],
    "provenance": {
@@ -1525,8 +1572,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test39-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1550,7 +1599,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "tension"
     },
     {
      "number": 37,
@@ -1574,7 +1624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "base cap"
     },
     {
      "number": 38,
@@ -1598,7 +1649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "A-frame"
     },
     {
      "number": 39,
@@ -1622,7 +1674,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "rings"
     },
     {
      "number": 40,
@@ -1643,7 +1696,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "boarding platform"
     }
    ],
    "provenance": {
@@ -1695,7 +1749,162 @@
   "fnameInputs": 40
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 11,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "D",
+    "rawExcerpt": "(11) ␦ (12) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 12,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "A",
+    "rawExcerpt": "(11) ␦ (12) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 13,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "C",
+    "rawExcerpt": "(13) ␦ (14) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 14,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "F",
+    "rawExcerpt": "(13) ␦ (14) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 15,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "E",
+    "rawExcerpt": "(15) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 27,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "H",
+    "rawExcerpt": "(27) ␦ (28) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 28,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "B",
+    "rawExcerpt": "(27) ␦ (28) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 29,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "G",
+    "rawExcerpt": "(29) ␦ (30) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 30,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______ ______",
+    "answer": "E",
+    "rawExcerpt": "(29) ␦ (30) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     27,
+     28,
+     29,
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1703,8 +1912,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 31,
+ "quarantinedCount": 10,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

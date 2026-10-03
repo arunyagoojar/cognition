@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-202",
  "title": "IELTS Listening Test 202",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-202/index.html",
-   "sha256": "8517b32fa720fd9cd1e2b56df337fa73fd583cd2829e1a5b4110510cc80a2ba2",
-   "manifestHashMatch": true,
+   "sha256": "61fd7a7227957cda6b5c83cb7e17e330ed038705bf254b25ddfab4aae5300cac",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-202/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "c384bbb849c87b5b58f8b97d3b2a2d93fa023eaa3f5d68890b0e7094d14337fd",
+ "contentFingerprint": "27242dde2383dba3f2d708e1f8ad6bafa8fa20178ac97c5b98049314e0fb7493",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -417,8 +417,10 @@
      "• help to reduce (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -440,7 +442,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• va (1) ␦"
-     }
+     },
+     "keyRaw": "Break"
     },
     {
      "number": 2,
@@ -463,7 +466,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• how much (2) ␦ the caring involves"
-     }
+     },
+     "keyRaw": "Time"
     },
     {
      "number": 3,
@@ -485,7 +489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "o helping her have a (3) ␦"
-     }
+     },
+     "keyRaw": "Shower"
     },
     {
      "number": 4,
@@ -507,7 +512,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "o dealing with (4) ␦"
-     }
+     },
+     "keyRaw": "Money"
     },
     {
      "number": 5,
@@ -529,7 +535,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• loss of (5) ␦"
-     }
+     },
+     "keyRaw": "Memory"
     },
     {
      "number": 6,
@@ -552,7 +559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• (6) ␦ her"
-     }
+     },
+     "keyRaw": "Lifting"
     },
     {
      "number": 7,
@@ -574,7 +582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• preventing a (7) ␦"
-     }
+     },
+     "keyRaw": "Fall"
     },
     {
      "number": 8,
@@ -596,7 +605,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• transport costs, e.g. cost of a (8) ␦"
-     }
+     },
+     "keyRaw": "Taxi"
     },
     {
      "number": 9,
@@ -618,7 +628,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• car-related costs, e.g. fuel and (9) ␦"
-     }
+     },
+     "keyRaw": "Insurance"
     },
     {
      "number": 10,
@@ -640,7 +651,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "• help to reduce (10) ␦"
-     }
+     },
+     "keyRaw": "Stress"
     }
    ],
    "provenance": {
@@ -669,14 +681,44 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "providing entertainment B providing publicity about a council service C contacting local businesses D giving advice to visitors E collecting feedback on events F selling tickets G introducing guest speakers at an event H encouraging cooperation between local organisations"
+      "text": "providing entertainment"
+     },
+     {
+      "letter": "B",
+      "text": "providing publicity about a council service"
+     },
+     {
+      "letter": "C",
+      "text": "contacting local businesses"
+     },
+     {
+      "letter": "D",
+      "text": "giving advice to visitors"
+     },
+     {
+      "letter": "E",
+      "text": "collecting feedback on events"
+     },
+     {
+      "letter": "F",
+      "text": "selling tickets"
+     },
+     {
+      "letter": "G",
+      "text": "introducing guest speakers at an event"
+     },
+     {
+      "letter": "H",
+      "text": "encouraging cooperation between local organisations"
      },
      {
       "letter": "I",
       "text": "helping people find their seats"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -693,7 +735,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "11. walking around the town centre ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 12,
@@ -710,7 +753,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. helping at concerts ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 13,
@@ -727,7 +771,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "13. getting involved with community groups ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 14,
@@ -744,7 +789,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "14. helping with a magazine ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 15,
@@ -761,7 +807,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. participating at lunches for retired people ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -778,12 +825,55 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "16. helping with the website ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Part 2: Questions 11-16"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "providing entertainment"
+     },
+     {
+      "letter": "B",
+      "text": "providing publicity about a council service"
+     },
+     {
+      "letter": "C",
+      "text": "contacting local businesses"
+     },
+     {
+      "letter": "D",
+      "text": "giving advice to visitors"
+     },
+     {
+      "letter": "E",
+      "text": "collecting feedback on events"
+     },
+     {
+      "letter": "F",
+      "text": "selling tickets"
+     },
+     {
+      "letter": "G",
+      "text": "introducing guest speakers at an event"
+     },
+     {
+      "letter": "H",
+      "text": "encouraging cooperation between local organisations"
+     },
+     {
+      "letter": "I",
+      "text": "helping people find their seats"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -800,38 +890,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A the music festival",
-     "B the science festival",
-     "C the book festival",
-     "17. Which event requires the largest number of volunteers?\n\nA the music festival\n\nB the science festival\n\nC the book festival",
-     "A interpersonal skills",
-     "B personal interest in the event",
-     "C flexibility",
-     "18. What is the most important requirement for volunteers at the festivals?\n\nA interpersonal skills\n\nB personal interest in the event\n\nC flexibility",
-     "A 2 September.",
-     "B 9 September.",
-     "C 23 September.",
-     "19. New volunteers will start working in the week beginning\n\nA 2 September.\n\nB 9 September.\n\nC 23 September.",
-     "A a boat trip",
-     "B a barbecue",
-     "C a party",
-     "20. What is the next annual event for volunteers?\n\nA a boat trip\n\nB a barbecue\n\nC a party"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which event requires the largest number of volunteers?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the music festival"
+      },
+      {
+       "letter": "B",
+       "text": "the science festival"
+      },
+      {
+       "letter": "C",
+       "text": "the book festival"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -839,16 +927,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "17. Which event requires the largest number of volunteers?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What is the most important requirement for volunteers at the festivals?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "interpersonal skills"
+      },
+      {
+       "letter": "B",
+       "text": "personal interest in the event"
+      },
+      {
+       "letter": "C",
+       "text": "flexibility"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -856,16 +958,30 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. What is the most important requirement for volunteers at the festivals?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "New volunteers will start working in the week beginning",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "2 September."
+      },
+      {
+       "letter": "B",
+       "text": "9 September."
+      },
+      {
+       "letter": "C",
+       "text": "23 September."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -873,16 +989,30 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. New volunteers will start working in the week beginning"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 20,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What is the next annual event for volunteers?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a boat trip"
+      },
+      {
+       "letter": "B",
+       "text": "a barbecue"
+      },
+      {
+       "letter": "C",
+       "text": "a party"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -890,7 +1020,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "20. What is the next annual event for volunteers?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -922,14 +1053,36 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "The information given about this was too vague B This may not be relevant to their course. C This will involve only a small number of statistics. D It will be easy to find facts about this. E The facts about this may not be reliable. F No useful research has been done on this."
+      "text": "The information given about this was too vague"
+     },
+     {
+      "letter": "B",
+      "text": "This may not be relevant to their course."
+     },
+     {
+      "letter": "C",
+      "text": "This will involve only a small number of statistics."
+     },
+     {
+      "letter": "D",
+      "text": "It will be easy to find facts about this."
+     },
+     {
+      "letter": "E",
+      "text": "The facts about this may not be reliable."
+     },
+     {
+      "letter": "F",
+      "text": "No useful research has been done on this."
      },
      {
       "letter": "G",
       "text": "The information provided about this was interesting."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -946,7 +1099,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "21. Population ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 22,
@@ -963,7 +1117,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "22. Health ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 23,
@@ -980,7 +1135,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "23. Economies ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -997,7 +1153,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. Culture ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1014,12 +1171,47 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "25. Poverty ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Part 3: Questions 21-25"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "The information given about this was too vague"
+     },
+     {
+      "letter": "B",
+      "text": "This may not be relevant to their course."
+     },
+     {
+      "letter": "C",
+      "text": "This will involve only a small number of statistics."
+     },
+     {
+      "letter": "D",
+      "text": "It will be easy to find facts about this."
+     },
+     {
+      "letter": "E",
+      "text": "The facts about this may not be reliable."
+     },
+     {
+      "letter": "F",
+      "text": "No useful research has been done on this."
+     },
+     {
+      "letter": "G",
+      "text": "The information provided about this was interesting."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1036,42 +1228,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A crime.",
-     "B housing.",
-     "C unemployment.",
-     "26. Rosie says that in her own city the main problem is\n\nA crime.\n\nB housing.\n\nC unemployment.",
-     "A conference centres",
-     "B sports centres",
-     "C retail centres",
-     "27. What recent additions to the outskirts of their cities are both students happy about?\n\nA conference centres\n\nB sports centres\n\nC retail centres",
-     "A have unexpected costs.",
-     "B damage the urban environment.",
-     "C destroy valuable historical buildings.",
-     "28. The students agree that developing disused industrial sites may\n\nA have unexpected costs.\n\nB damage the urban environment.\n\nC destroy valuable historical buildings.",
-     "A daily collections for waste recycling.",
-     "B sustainable energy use.",
-     "C free transport for everyone.",
-     "29. The students will mention Masdar City as an example of an attempt to achieve\n\nA daily collections for waste recycling.\n\nB sustainable energy use.\n\nC free transport for everyone.",
-     "A what its objectives were.",
-     "B why there was opposition to it.",
-     "C how much of it has actually been built.",
-     "30. When discussing the Eco town of Greenhill Abbots, Colin is uncertain about\n\nA what its objectives were.\n\nB why there was opposition to it.\n\nC how much of it has actually been built."
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Rosie says that in her own city the main problem is",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "crime."
+      },
+      {
+       "letter": "B",
+       "text": "housing."
+      },
+      {
+       "letter": "C",
+       "text": "unemployment."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1079,16 +1265,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "26. Rosie says that in her own city the main problem is"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What recent additions to the outskirts of their cities are both students happy about?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "conference centres"
+      },
+      {
+       "letter": "B",
+       "text": "sports centres"
+      },
+      {
+       "letter": "C",
+       "text": "retail centres"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1096,16 +1296,30 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. What recent additions to the outskirts of their cities are both students happy about?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students agree that developing disused industrial sites may",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "have unexpected costs."
+      },
+      {
+       "letter": "B",
+       "text": "damage the urban environment."
+      },
+      {
+       "letter": "C",
+       "text": "destroy valuable historical buildings."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1113,16 +1327,30 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "28. The students agree that developing disused industrial sites may"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students will mention Masdar City as an example of an attempt to achieve",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "daily collections for waste recycling."
+      },
+      {
+       "letter": "B",
+       "text": "sustainable energy use."
+      },
+      {
+       "letter": "C",
+       "text": "free transport for everyone."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1130,16 +1358,30 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. The students will mention Masdar City as an example of an attempt to achieve"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When discussing the Eco town of Greenhill Abbots, Colin is uncertain about",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "what its objectives were."
+      },
+      {
+       "letter": "B",
+       "text": "why there was opposition to it."
+      },
+      {
+       "letter": "C",
+       "text": "how much of it has actually been built."
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1147,7 +1389,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "30. When discussing the Eco town of Greenhill Abbots, Colin is uncertain about"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1196,8 +1439,10 @@
      "o Overuse of resources resulted in poor quality (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1220,7 +1465,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• The growth in interest in food fashions started with (31) ␦ of food being shared on social media."
-     }
+     },
+     "keyRaw": "Photos/ photographs/ pictures"
     },
     {
      "number": 32,
@@ -1243,7 +1489,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Sales of (32) ␦ food brands have grown this way."
-     }
+     },
+     "keyRaw": "Vegan"
     },
     {
      "number": 33,
@@ -1266,7 +1513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Famous (33) ␦ are influential."
-     }
+     },
+     "keyRaw": "Chefs/ cooks"
     },
     {
      "number": 34,
@@ -1289,7 +1537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "o (34) ␦ were invited to visit growers in South Africa."
-     }
+     },
+     "keyRaw": "Journalists/ reporters"
     },
     {
      "number": 35,
@@ -1312,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "o Advertising focused on its (35) ␦ benefits."
-     }
+     },
+     "keyRaw": "Health"
     },
     {
      "number": 36,
@@ -1335,7 +1585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o Promotion in the USA through (36) ␦ shops reduced the need for advertising."
-     }
+     },
+     "keyRaw": "Coffee"
     },
     {
      "number": 37,
@@ -1357,7 +1608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o It appealed to consumers who are concerned about the (37) ␦"
-     }
+     },
+     "keyRaw": "Environment"
     },
     {
      "number": 38,
@@ -1380,7 +1632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "o has helped strengthen the (38) ␦ of Norwegian seafood."
-     }
+     },
+     "keyRaw": "Reputation"
     },
     {
      "number": 39,
@@ -1402,7 +1655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "o Its success led to an increase in its (39) ␦"
-     }
+     },
+     "keyRaw": "Price/ cost"
     },
     {
      "number": 40,
@@ -1424,7 +1678,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "o Overuse of resources resulted in poor quality (40) ␦"
-     }
+     },
+     "keyRaw": "Soil"
     }
    ],
    "provenance": {
@@ -1471,6 +1726,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

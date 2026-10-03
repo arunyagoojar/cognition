@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-30",
- "sourceSha256": "ddfd4745edd7481c10bddb15c10a4fa31d5ce95018bb329dd73329886e120695",
+ "status": "quarantined",
+ "sourceSha256": "6afaf507a5cc5f3311d11701739a37997a4c93f5e0ca6edb6cfa95dd5ff734e4",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,87 @@
      28,
      30
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Which kind of family does the girls prefer?",
+    "answer": "B and D",
+    "rawExcerpt": "6. Which kind of family does the girls prefer?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Pounds and US dollars are not very useful now in Eznia, so you should take ______ or with you.",
+    "answer": "Yen, Australian dollar",
+    "rawExcerpt": "Pounds and US dollars are not very useful now in Eznia, so you should take (20) ␦ or ␦ with you.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 28,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 29,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 30,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     6,
+     20,
+     28,
+     29,
+     30
+    ],
+    "outOfRange": []
    }
   }
  ]

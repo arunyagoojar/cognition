@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-206",
  "title": "IELTS Listening Test 206",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-206/index.html",
-   "sha256": "72770893a82217c57544edad2a2473abe49f577f15ba520816e6788e2fb8c80f",
-   "manifestHashMatch": true,
+   "sha256": "afbbcbe9b9fc1af8920299cfd3fb2c1da626ad7a33059e9ce90821c359e22d32",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-206/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -448,8 +448,10 @@
      "One day classes at Steynford College"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -470,7 +472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(1)"
-     }
+     },
+     "keyRaw": "13th of January/ 13.01"
     },
     {
      "number": 2,
@@ -492,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(2) £"
-     }
+     },
+     "keyRaw": "48/forty-eight"
     },
     {
      "number": 3,
@@ -514,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "There is also an extra charge for ingredients. Participants make white bread, sourdough and (3)"
-     }
+     },
+     "keyRaw": "Pizza"
     },
     {
      "number": 4,
@@ -540,7 +545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The teacher trained in (4) Bring a (5)"
-     }
+     },
+     "keyRaw": "India"
     },
     {
      "number": 5,
@@ -566,7 +572,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "The teacher trained in (4) Bring a (5)"
-     }
+     },
+     "keyRaw": "Mirror"
     },
     {
      "number": 6,
@@ -587,7 +594,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(6)"
-     }
+     },
+     "keyRaw": "6th of April/ 06.04"
     },
     {
      "number": 7,
@@ -610,7 +618,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Only (7) ingredients are used. The candles can be used as presents."
-     }
+     },
+     "keyRaw": "Natural"
     },
     {
      "number": 8,
@@ -632,7 +641,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(8) £"
-     }
+     },
+     "keyRaw": "67.50/ sixty-seven fifty"
     },
     {
      "number": 9,
@@ -654,7 +664,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Bring an apron or old (9)"
-     }
+     },
+     "keyRaw": "Shirt"
     },
     {
      "number": 10,
@@ -677,7 +688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Learn how to · use a drill, saw and (10) · put up a shelf."
-     }
+     },
+     "keyRaw": "Hammer"
     }
    ],
    "provenance": {
@@ -706,14 +718,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Stop for lunch in an ancient town. B Don’t miss the ruins of a certain building. C Catch a boat to the start of this walk. D Be careful of the steep and rocky paths."
+      "text": "Stop for lunch in an ancient town."
+     },
+     {
+      "letter": "B",
+      "text": "Don’t miss the ruins of a certain building."
+     },
+     {
+      "letter": "C",
+      "text": "Catch a boat to the start of this walk."
+     },
+     {
+      "letter": "D",
+      "text": "Be careful of the steep and rocky paths."
      },
      {
       "letter": "E",
       "text": "Don’t worry about getting lost."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -724,13 +750,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of advice are given about the Marsden Coastal Walk?"
-     }
+     },
+     "keyRaw": "B, E"
     },
     {
      "number": 12,
@@ -741,18 +768,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO pieces of advice are given about the Marsden Coastal Walk?"
-     }
+     },
+     "keyRaw": "B, E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11 and 12\n\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g02:11-12",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO pieces of advice are given about the Marsden Coastal Walk?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Stop for lunch in an ancient town."
+     },
+     {
+      "letter": "B",
+      "text": "Don’t miss the ruins of a certain building."
+     },
+     {
+      "letter": "C",
+      "text": "Catch a boat to the start of this walk."
+     },
+     {
+      "letter": "D",
+      "text": "Be careful of the steep and rocky paths."
+     },
+     {
+      "letter": "E",
+      "text": "Don’t worry about getting lost."
+     }
+    ]
    },
    "status": "verified"
   },
@@ -776,18 +841,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "This walk is mostly downhill. B The paths can get busy during the day. C This is a circular walk. D"
+      "text": "This walk is mostly downhill."
      },
      {
-      "letter": "A",
-      "text": "tower stands on the site of an older structure."
+      "letter": "B",
+      "text": "The paths can get busy during the day."
+     },
+     {
+      "letter": "C",
+      "text": "This is a circular walk."
+     },
+     {
+      "letter": "D",
+      "text": "A tower stands on the site of an older structure."
      },
      {
       "letter": "E",
       "text": "There are far-reaching views the whole way."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -798,13 +873,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, D",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO things are said about the Melby Heritage Walk?"
-     }
+     },
+     "keyRaw": "C, D"
     },
     {
      "number": 14,
@@ -815,13 +891,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO things are said about the Melby Heritage Walk?"
-     }
+     },
+     "keyRaw": "C, D"
     }
    ],
    "provenance": {
@@ -829,6 +906,43 @@
     "rawExcerpt": "Questions 13 and 14\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g03:13-14",
+    "answerSet": [
+     "C",
+     "D"
+    ],
+    "prompt": "Which TWO things are said about the Melby Heritage Walk?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "This walk is mostly downhill."
+     },
+     {
+      "letter": "B",
+      "text": "The paths can get busy during the day."
+     },
+     {
+      "letter": "C",
+      "text": "This is a circular walk."
+     },
+     {
+      "letter": "D",
+      "text": "A tower stands on the site of an older structure."
+     },
+     {
+      "letter": "E",
+      "text": "There are far-reaching views the whole way."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -850,8 +964,10 @@
     "figures": [
      "wp-content/uploads/2026/07/map.webp"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -868,7 +984,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "15. Exhibition ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 16,
@@ -885,7 +1002,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. Baths ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -902,7 +1020,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. Tools ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 18,
@@ -919,7 +1038,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. Vehicles ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -936,7 +1056,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. Ponies ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 20,
@@ -953,7 +1074,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. Education centre ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -961,6 +1083,48 @@
     "rawExcerpt": "Questions 15-20\n\nLabel the map below. Write the correct letters A-I next to questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -983,14 +1147,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the amount of plastic in the ocean B the number of diseases caused by contaminated food C the amount of food that is wasted D the number of people who are obese"
+      "text": "the amount of plastic in the ocean"
+     },
+     {
+      "letter": "B",
+      "text": "the number of diseases caused by contaminated food"
+     },
+     {
+      "letter": "C",
+      "text": "the amount of food that is wasted"
+     },
+     {
+      "letter": "D",
+      "text": "the number of people who are obese"
      },
      {
       "letter": "E",
       "text": "the result of treating animals with antibiotics"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1001,13 +1179,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO facts in the sessions on food safety were new information for Nadia and Fergus?"
-     }
+     },
+     "keyRaw": "B, E"
     },
     {
      "number": 22,
@@ -1018,18 +1197,56 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "B, E",
+     "correctAnswer": "E",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO facts in the sessions on food safety were new information for Nadia and Fergus?"
-     }
+     },
+     "keyRaw": "B, E"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 3: Questions 21 and 22\n\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:21-22",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO facts in the sessions on food safety were new information for Nadia and Fergus?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the amount of plastic in the ocean"
+     },
+     {
+      "letter": "B",
+      "text": "the number of diseases caused by contaminated food"
+     },
+     {
+      "letter": "C",
+      "text": "the amount of food that is wasted"
+     },
+     {
+      "letter": "D",
+      "text": "the number of people who are obese"
+     },
+     {
+      "letter": "E",
+      "text": "the result of treating animals with antibiotics"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1053,14 +1270,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "the new technology it used B the publicity it received C the use of multiple tests on food items D the variety of dietary requirements included"
+      "text": "the new technology it used"
+     },
+     {
+      "letter": "B",
+      "text": "the publicity it received"
+     },
+     {
+      "letter": "C",
+      "text": "the use of multiple tests on food items"
+     },
+     {
+      "letter": "D",
+      "text": "the variety of dietary requirements included"
      },
      {
       "letter": "E",
       "text": "the way information was made widely accessible"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1071,13 +1302,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, D",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO features of a project aiming to prevent food fraud impressed Fergus?"
-     }
+     },
+     "keyRaw": "C, D"
     },
     {
      "number": 24,
@@ -1088,13 +1320,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "C, D",
+     "correctAnswer": "D",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO features of a project aiming to prevent food fraud impressed Fergus?"
-     }
+     },
+     "keyRaw": "C, D"
     }
    ],
    "provenance": {
@@ -1102,6 +1335,43 @@
     "rawExcerpt": "Questions 23 and 24\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:23-24",
+    "answerSet": [
+     "C",
+     "D"
+    ],
+    "prompt": "Which TWO features of a project aiming to prevent food fraud impressed Fergus?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the new technology it used"
+     },
+     {
+      "letter": "B",
+      "text": "the publicity it received"
+     },
+     {
+      "letter": "C",
+      "text": "the use of multiple tests on food items"
+     },
+     {
+      "letter": "D",
+      "text": "the variety of dietary requirements included"
+     },
+     {
+      "letter": "E",
+      "text": "the way information was made widely accessible"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1124,14 +1394,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "sustainable fishing B targeted nutrition C global differences in consumption D sustainable agriculture"
+      "text": "sustainable fishing"
+     },
+     {
+      "letter": "B",
+      "text": "targeted nutrition"
+     },
+     {
+      "letter": "C",
+      "text": "global differences in consumption"
+     },
+     {
+      "letter": "D",
+      "text": "sustainable agriculture"
      },
      {
       "letter": "E",
       "text": "digital technology and food"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1142,13 +1426,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO topics do both students recommend should be included in the course?"
-     }
+     },
+     "keyRaw": "A, C"
     },
     {
      "number": 26,
@@ -1159,13 +1444,14 @@
      },
      "options": null,
      "blankContext": null,
-     "correctAnswer": "A, C",
+     "correctAnswer": "C",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E. Which TWO topics do both students recommend should be included in the course?"
-     }
+     },
+     "keyRaw": "A, C"
     }
    ],
    "provenance": {
@@ -1173,6 +1459,43 @@
     "rawExcerpt": "Questions 25 and 26\n\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:25-26",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO topics do both students recommend should be included in the course?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "sustainable fishing"
+     },
+     {
+      "letter": "B",
+      "text": "targeted nutrition"
+     },
+     {
+      "letter": "C",
+      "text": "global differences in consumption"
+     },
+     {
+      "letter": "D",
+      "text": "sustainable agriculture"
+     },
+     {
+      "letter": "E",
+      "text": "digital technology and food"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1201,26 +1524,39 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "This was challenging but enjoyable. B This led to some disagreement. C This was easy to decide on. D This was helped by the guidelines provided. E This seemed like an unnecessary stage."
+      "text": "This was challenging but enjoyable."
+     },
+     {
+      "letter": "B",
+      "text": "This led to some disagreement."
+     },
+     {
+      "letter": "C",
+      "text": "This was easy to decide on."
+     },
+     {
+      "letter": "D",
+      "text": "This was helped by the guidelines provided."
+     },
+     {
+      "letter": "E",
+      "text": "This seemed like an unnecessary stage."
      },
      {
       "letter": "F",
       "text": "This involved selecting a new ingredient."
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• initial aim ______",
-      "segments": [
-       "• initial aim",
-       {
-        "blank": 27
-       }
-      ]
+      "plain": "• initial aim",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • initial aim (27) ␦",
@@ -1230,19 +1566,16 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• initial aim (27) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• literature review ______",
-      "segments": [
-       "• literature review",
-       {
-        "blank": 28
-       }
-      ]
+      "plain": "• literature review",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • literature review (28) ␦",
@@ -1252,19 +1585,16 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• literature review (28) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• product development ______",
-      "segments": [
-       "• product development",
-       {
-        "blank": 29
-       }
-      ]
+      "plain": "• product development",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • product development (29) ␦",
@@ -1274,19 +1604,16 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• product development (29) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "• product production ______",
-      "segments": [
-       "• product production",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "• product production",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: • product production (30) ␦",
@@ -1296,7 +1623,9 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• product production (30) ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1304,6 +1633,36 @@
     "rawExcerpt": "Questions 27-30\n\nComplete the flow-chart below. Choose FOUR answers from the box and write the correct letter, A-F, next to Questions 27-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "This was challenging but enjoyable."
+     },
+     {
+      "letter": "B",
+      "text": "This led to some disagreement."
+     },
+     {
+      "letter": "C",
+      "text": "This was easy to decide on."
+     },
+     {
+      "letter": "D",
+      "text": "This was helped by the guidelines provided."
+     },
+     {
+      "letter": "E",
+      "text": "This seemed like an unnecessary stage."
+     },
+     {
+      "letter": "F",
+      "text": "This involved selecting a new ingredient."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1341,8 +1700,10 @@
      "• improving marketing on social media with high quality (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1365,7 +1726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• (31) ␦ is one of the worst problems."
-     }
+     },
+     "keyRaw": "Pollution"
     },
     {
      "number": 32,
@@ -1388,7 +1750,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• A tourist (32) ␦ is being introduced in some cities to reduce numbers, e.g. Barcelona."
-     }
+     },
+     "keyRaw": "Tax"
     },
     {
      "number": 33,
@@ -1411,7 +1774,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Bruges: action was taken to limit day trips from the nearby port because the city was becoming a ‘theme park’ (e.g. many shops were only stocking (33) ␦ and souvenirs)."
-     }
+     },
+     "keyRaw": "Chocolate"
     },
     {
      "number": 34,
@@ -1434,7 +1798,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Dubrovnik: limits the number of tourists by managing the (34) ␦ of cruise ship arrivals."
-     }
+     },
+     "keyRaw": "Timing"
     },
     {
      "number": 35,
@@ -1457,7 +1822,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• There is an assumption about the (35) ␦ of cruises."
-     }
+     },
+     "keyRaw": "Cost"
     },
     {
      "number": 36,
@@ -1479,7 +1845,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• People think there may be too many (36) ␦"
-     }
+     },
+     "keyRaw": "Rules"
     },
     {
      "number": 37,
@@ -1502,7 +1869,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• having a wide range of activities e.g. boxing, (37) ␦ and well-being programmes."
-     }
+     },
+     "keyRaw": "Diving"
     },
     {
      "number": 38,
@@ -1525,7 +1893,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• offering a diverse selection of food including (38) ␦ options."
-     }
+     },
+     "keyRaw": "Vegan"
     },
     {
      "number": 39,
@@ -1547,7 +1916,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• providing reliable (39) ␦"
-     }
+     },
+     "keyRaw": "Wifi"
     },
     {
      "number": 40,
@@ -1569,7 +1939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• improving marketing on social media with high quality (40) ␦"
-     }
+     },
+     "keyRaw": "Videos"
     }
    ],
    "provenance": {
@@ -1615,5 +1986,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

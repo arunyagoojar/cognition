@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-76",
  "title": "IELTS Listening Test 76",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-76/index.html",
-   "sha256": "802ebcbec94ef204bba0c0af759eed2452bca12727211a4d36c1660043d6a3de",
-   "manifestHashMatch": true,
+   "sha256": "1786b155d818042246e3ac5b4b61099f60348dfd03354e8e0269f9de4a03ab0c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-76/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -395,8 +395,10 @@
      "Home: 798662"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Address: (1) ␦ road, Exeter"
-     }
+     },
+     "keyRaw": "33 hillcrest"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Postcode: (2) ␦"
-     }
+     },
+     "keyRaw": "AL698GQ"
     },
     {
      "number": 3,
@@ -463,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Telephone: work: (3) ␦"
-     }
+     },
+     "keyRaw": "754688"
     }
    ],
    "provenance": {
@@ -489,8 +494,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -520,7 +527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "4. What aspect of the flight does the man complain about?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 5,
@@ -550,7 +558,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "5. What does the main think about the food served during the flight?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 6,
@@ -580,7 +589,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "6. What does the man think of the service of the staff?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -609,8 +619,10 @@
      "7. The man felt satisfied with ␦ because it was quick.\n8. During the flight ␦ facilities helped him distract from other poor quality of the service.\n9. As a gift a 20% discount on the ␦ fees will be offered.\n10. The flight company also offers the man a ␦ worth £20."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 7,
@@ -633,7 +645,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "7. The man felt satisfied with ␦ because it was quick."
-     }
+     },
+     "keyRaw": "security"
     },
     {
      "number": 8,
@@ -656,7 +669,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "8. During the flight ␦ facilities helped him distract from other poor quality of the service."
-     }
+     },
+     "keyRaw": "entertainment"
     },
     {
      "number": 9,
@@ -679,7 +693,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "9. As a gift a 20% discount on the ␦ fees will be offered."
-     }
+     },
+     "keyRaw": "hotel"
     },
     {
      "number": 10,
@@ -702,7 +717,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "10. The flight company also offers the man a ␦ worth £20."
-     }
+     },
+     "keyRaw": "phone card"
     }
    ],
    "provenance": {
@@ -727,12 +743,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A they are very interested\nB they might be less interested\nC they are not interested"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "they are very interested"
+     },
+     {
+      "letter": "B",
+      "text": "they might be less interested"
+     },
+     {
+      "letter": "C",
+      "text": "they are not interested"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -749,7 +778,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "11. a free gift ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -766,7 +796,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "12. a driver for an extra fee ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -783,7 +814,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. a package service ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -800,7 +832,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "14. updated car models ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -817,7 +850,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. a discount ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -834,12 +868,31 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. a new branch company ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[11]",
     "rawExcerpt": "Part 2: Questions 11-16\nWhat is customer’s attitude towards the following services?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "they are very interested"
+     },
+     {
+      "letter": "B",
+      "text": "they might be less interested"
+     },
+     {
+      "letter": "C",
+      "text": "they are not interested"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -860,8 +913,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -891,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "17. What is the problem of the public transport?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -921,7 +977,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. According to the speaker what is true about the transportation?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 19,
@@ -951,7 +1008,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "19. According to the speaker what is true about the bus?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -981,7 +1039,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "20. What is the existing situation about the price of bus tickets?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1008,8 +1067,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1039,7 +1100,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "21. What was the most difficult problem when the company was founded?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1069,7 +1131,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "22. What is the staff unsatisfied with?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1099,7 +1162,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "23. What was the problem of the manager?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
@@ -1129,7 +1193,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "24. What does the staff think of the new manager of the company?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1159,7 +1224,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "25. What achievement has the organization made already?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1188,8 +1254,10 @@
      "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ is of great importance to staying organised. To enhance the organisation skills, there is a section on (28) ␦ in the library where some valuable books can be found. In addition, the library contains some useful resources, such as a collection of documentaries on personal organisation, the literature on (29) ␦ , and the articles on the (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1227,7 +1295,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ i"
-     }
+     },
+     "keyRaw": "solution"
     },
     {
      "number": 27,
@@ -1265,7 +1334,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ i"
-     }
+     },
+     "keyRaw": "role of motivation"
     },
     {
      "number": 28,
@@ -1303,7 +1373,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ i"
-     }
+     },
+     "keyRaw": "culture"
     },
     {
      "number": 29,
@@ -1341,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ i"
-     }
+     },
+     "keyRaw": "management of change"
     },
     {
      "number": 30,
@@ -1379,7 +1451,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "Since the company opened, there have been many problems with employment, but there is no (26) ␦ He needs to find a venue for financial training. It is very hard to run an organisation and the (27) ␦ i"
-     }
+     },
+     "keyRaw": "nature of volunteering"
     }
    ],
    "provenance": {
@@ -1424,8 +1497,10 @@
      "• The government should make (40) ␦ for the architects."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1448,7 +1523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• Cases and examples are from practice conducted in (31) ␦ as well as rural areas."
-     }
+     },
+     "keyRaw": "cities"
     },
     {
      "number": 32,
@@ -1470,7 +1546,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• Funds have been received from a (32) ␦"
-     }
+     },
+     "keyRaw": "bank"
     },
     {
      "number": 33,
@@ -1493,7 +1570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• (33) ␦ experience lower levels of acid in damaging pollutants."
-     }
+     },
+     "keyRaw": "skyscrapers"
     },
     {
      "number": 34,
@@ -1515,7 +1593,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• In recent years, Alter Project focuses on the buildings made of (34) ␦"
-     }
+     },
+     "keyRaw": "stone"
     },
     {
      "number": 35,
@@ -1538,7 +1617,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• (35) ␦ is used to reduce pollution in Sky Tower."
-     }
+     },
+     "keyRaw": "recycled glass"
     },
     {
      "number": 36,
@@ -1561,7 +1641,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Construction is affected by the increased (36) ␦ in winter."
-     }
+     },
+     "keyRaw": "rainfall"
     },
     {
      "number": 37,
@@ -1584,7 +1665,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Humidity affects the (37) ␦ buildings whose grain can be condensed by moisture from the air."
-     }
+     },
+     "keyRaw": "wooden"
     },
     {
      "number": 38,
@@ -1607,7 +1689,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• Ground conditions can be a problem when the density of the (38) ␦ is wrong."
-     }
+     },
+     "keyRaw": "soil"
     },
     {
      "number": 39,
@@ -1630,7 +1713,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• Architects can now monitor the (39) ␦ of buildings."
-     }
+     },
+     "keyRaw": "movement"
     },
     {
      "number": 40,
@@ -1653,7 +1737,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• The government should make (40) ␦ for the architects."
-     }
+     },
+     "keyRaw": "guidelines"
     }
    ],
    "provenance": {
@@ -1698,6 +1783,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

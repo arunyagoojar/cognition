@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-182",
- "sourceSha256": "6ad2e92338e15335ea0fcbc93d8866f0265f7f7ff7aa2389d4cd5272f3d4c63a",
+ "status": "quarantined",
+ "sourceSha256": "f72da96da2547ca41dce7f788dac463fe8c49d9b380408ad9b3933cb2d8cc141",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,138 @@
      23,
      24
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 15,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "statue of Diane Gosforth",
+    "answer": "E",
+    "rawExcerpt": "15. statue of Diane Gosforth ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 16,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "wooden sculptures",
+    "answer": "C",
+    "rawExcerpt": "16. wooden sculptures ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 17,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "playground",
+    "answer": "B",
+    "rawExcerpt": "17. playground ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "maze",
+    "answer": "A",
+    "rawExcerpt": "18. maze ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "tennis courts",
+    "answer": "G",
+    "rawExcerpt": "19. tennis courts ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "fitness area",
+    "answer": "D",
+    "rawExcerpt": "20. fitness area ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B, C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B, C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     23,
+     24
+    ],
+    "outOfRange": []
    }
   }
  ]

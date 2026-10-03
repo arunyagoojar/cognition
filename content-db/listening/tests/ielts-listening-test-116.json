@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-116",
  "title": "IELTS Listening Test 116",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-116/index.html",
-   "sha256": "852c054bd7c2dfb0ae514dc11f4e403eb6ef43d853f43a99083895969f822fd8",
-   "manifestHashMatch": true,
+   "sha256": "d0c0a721fbea9cdc40697f24df1b1ebd68656ed2fe331567f4953243f2e18a85",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-116/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -381,20 +381,17 @@
      "Possible causes of stress\nA bad management\nB dual-career family\nC fear of unemployment\nD new technologies\nE physical surroundings\nF powerlessness\nG too much work"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Kikuko ______",
-      "segments": [
-       "Kikuko",
-       {
-        "blank": 1
-       }
-      ]
+      "plain": "Kikuko",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Kikuko (1) ␦",
@@ -404,19 +401,16 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Kikuko (1) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 2,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Boris ______",
-      "segments": [
-       "Boris",
-       {
-        "blank": 2
-       }
-      ]
+      "plain": "Boris",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Boris (2) ␦",
@@ -426,19 +420,16 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Boris (2) ␦"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 3,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Etienne ______",
-      "segments": [
-       "Etienne",
-       {
-        "blank": 3
-       }
-      ]
+      "plain": "Etienne",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Etienne (3) ␦",
@@ -448,19 +439,16 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Etienne (3) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 4,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Nagwa ______",
-      "segments": [
-       "Nagwa",
-       {
-        "blank": 4
-       }
-      ]
+      "plain": "Nagwa",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: Nagwa (4) ␦",
@@ -470,12 +458,49 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Nagwa (4) ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-4\nComplete the list of reasons why these people suffer from stress. Choose from the list of possible causes below."
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 5,
+    "title": "Possible causes of stress",
+    "options": [
+     {
+      "letter": "A",
+      "text": "bad management"
+     },
+     {
+      "letter": "B",
+      "text": "dual-career family"
+     },
+     {
+      "letter": "C",
+      "text": "fear of unemployment"
+     },
+     {
+      "letter": "D",
+      "text": "new technologies"
+     },
+     {
+      "letter": "E",
+      "text": "physical surroundings"
+     },
+     {
+      "letter": "F",
+      "text": "powerlessness"
+     },
+     {
+      "letter": "G",
+      "text": "too much work"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -500,8 +525,10 @@
      "(7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -522,7 +549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(5) ␦"
-     }
+     },
+     "keyRaw": "balanced diet"
     },
     {
      "number": 6,
@@ -543,7 +571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(6) ␦"
-     }
+     },
+     "keyRaw": "drink less coffee"
     },
     {
      "number": 7,
@@ -564,7 +593,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(7) ␦"
-     }
+     },
+     "keyRaw": "take regular exercise"
     }
    ],
    "provenance": {
@@ -615,8 +645,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -637,7 +669,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(8)…………………………"
-     }
+     },
+     "keyRaw": "manage time better"
     },
     {
      "number": 9,
@@ -658,7 +691,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(9)……………………….."
-     }
+     },
+     "keyRaw": "make plans"
     },
     {
      "number": 10,
@@ -679,7 +713,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(10)…………………….."
-     }
+     },
+     "keyRaw": "do training courses"
     }
    ],
    "provenance": {
@@ -723,8 +758,10 @@
      "Size – stand (20) ␦ meter high and hold ␦ audiences"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -743,11 +780,12 @@
      "blankContext": "line: Material – 2.3 million stones of (11) ␦ high and ␦ tons",
      "correctAnswer": "138 m, 2.5",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Material – 2.3 million stones of (11) ␦ high and ␦ tons"
-     }
+     },
+     "keyRaw": "138 m, 2.5"
     },
     {
      "number": 12,
@@ -766,11 +804,12 @@
      "blankContext": "line: Tools – (12) ␦ and ␦ tools",
      "correctAnswer": "stone, copper",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Tools – (12) ␦ and ␦ tools"
-     }
+     },
+     "keyRaw": "stone, copper"
     },
     {
      "number": 13,
@@ -792,7 +831,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Astronomical significance – arranged to north by using two stars moving around (13) ␦"
-     }
+     },
+     "keyRaw": "sky polar point"
     },
     {
      "number": 14,
@@ -814,7 +854,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Material – made completely of (14) ␦"
-     }
+     },
+     "keyRaw": "marble"
     },
     {
      "number": 15,
@@ -833,11 +874,12 @@
      "blankContext": "line: Design ideals – (15) ␦ and ␦",
      "correctAnswer": "logic, reason",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Design ideals – (15) ␦ and ␦"
-     }
+     },
+     "keyRaw": "logic, reason"
     },
     {
      "number": 16,
@@ -859,7 +901,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "The height and width are designed with the logic of (16) ␦"
-     }
+     },
+     "keyRaw": "geometry"
     },
     {
      "number": 17,
@@ -881,7 +924,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "Symbolization – (17) ␦"
-     }
+     },
+     "keyRaw": "democracy"
     },
     {
      "number": 18,
@@ -900,11 +944,12 @@
      "blankContext": "line: Significance – show Romans’ (18) ␦ nature and ␦ thinking",
      "correctAnswer": "practical, political",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Significance – show Romans’ (18) ␦ nature and ␦ thinking"
-     }
+     },
+     "keyRaw": "practical, political"
     },
     {
      "number": 19,
@@ -927,7 +972,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Function – to (19) ␦ the crowds"
-     }
+     },
+     "keyRaw": "entertain"
     },
     {
      "number": 20,
@@ -946,18 +992,19 @@
      "blankContext": "line: Size – stand (20) ␦ meter high and hold ␦ audiences",
      "correctAnswer": "48, 50000",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Size – stand (20) ␦ meter high and hold ␦ audiences"
-     }
+     },
+     "keyRaw": "48, 50000"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[11]",
     "rawExcerpt": "Part 2: Questions 11-20\nComplete the notes below. Write NO MORE THAN THREE WORDS for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -976,8 +1023,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1007,7 +1056,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "21. The main aim of Dave’s project is to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1037,7 +1087,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "22. Dave’s project is based on schemes in"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1067,7 +1118,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "23. How many academic organisations returned Dave’s questionnaire?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1097,7 +1149,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "24. Dave wanted his questionnaires to be completed by company?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1127,7 +1180,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "25. Dr. Green wants Dave to provide a full list of"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1163,8 +1217,10 @@
      "• Constraints on learning – provide better links to the (30) ␦ from research"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1187,7 +1243,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Improve the (26) ␦ of ideas"
-     }
+     },
+     "keyRaw": "organisation"
     },
     {
      "number": 27,
@@ -1210,7 +1267,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Include a (27) ␦ of ‘Work Placement’"
-     }
+     },
+     "keyRaw": "definition"
     },
     {
      "number": 28,
@@ -1233,7 +1291,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Have separate sections for literature survey and research (28) ␦ and methods"
-     }
+     },
+     "keyRaw": "aims"
     },
     {
      "number": 29,
@@ -1256,7 +1315,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• (29) ␦ development – good"
-     }
+     },
+     "keyRaw": "key skills"
     },
     {
      "number": 30,
@@ -1279,7 +1339,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Constraints on learning – provide better links to the (30) ␦ from research"
-     }
+     },
+     "keyRaw": "evidence"
     }
    ],
    "provenance": {
@@ -1308,8 +1369,10 @@
      "31. Besides sporting injuries, sports medicine doctors deal more with ␦ problems of common individuals\n32. The total care offered by sports medicine doctors includes workouts, instant care and ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1332,7 +1395,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. Besides sporting injuries, sports medicine doctors deal more with ␦ problems of common individuals"
-     }
+     },
+     "keyRaw": "general joints"
     },
     {
      "number": 32,
@@ -1357,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "32. The total care offered by sports medicine doctors includes workouts, instant care and ␦"
-     }
+     },
+     "keyRaw": "surgery"
     }
    ],
    "provenance": {
@@ -1397,8 +1462,10 @@
      "• Without (37) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1417,11 +1484,12 @@
      "blankContext": "line: • Problem – the damages of tissues can cause the joints to (33) ␦ and ",
      "correctAnswer": "ache, feel stiff",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Problem – the damages of tissues can cause the joints to (33) ␦ and ␦"
-     }
+     },
+     "keyRaw": "ache, feel stiff"
     },
     {
      "number": 34,
@@ -1443,7 +1511,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Preventive measures – X-rays to determine potential (34) ␦"
-     }
+     },
+     "keyRaw": "trouble spots"
     },
     {
      "number": 35,
@@ -1466,7 +1535,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• The repetition of motions can cause (35) ␦ of the soft tissue"
-     }
+     },
+     "keyRaw": "chronic overuse"
     },
     {
      "number": 36,
@@ -1489,7 +1559,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• The injured joints receive the (36) ␦ of mixture of healing protein and blood"
-     }
+     },
+     "keyRaw": "injection"
     },
     {
      "number": 37,
@@ -1511,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Without (37) ␦"
-     }
+     },
+     "keyRaw": "side effects"
     }
    ],
    "provenance": {
@@ -1519,36 +1591,7 @@
     "rawExcerpt": "Questions 33-37\nComplete the notes below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g09",
-   "part": 4,
-   "startQ": 38,
-   "endQ": 40,
-   "partExplicit": false,
-   "instruction": {
-    "text": "What is the advice of preventing sports injuries? Circle THREE letters from A-F.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "What is the advice of preventing sports injuries? Circle THREE letters from A-F."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "A lighten the training tenseness\nB practice constant fitness-training activities\nC perform enough fitness exercises\nD do enough preparatory exercises before training\nE stop doing exercises when you don’t feel well\nF use homemade medicines"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[33]",
-    "rawExcerpt": "Questions 38-40\nWhat is the advice of preventing sports injuries?"
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1600,11 +1643,157 @@
      40
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 11,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Material – 2.3 million stones of ______ high and tons",
+    "answer": "138 m, 2.5",
+    "rawExcerpt": "Material – 2.3 million stones of (11) ␦ high and ␦ tons",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Tools – ______ and tools",
+    "answer": "stone, copper",
+    "rawExcerpt": "Tools – (12) ␦ and ␦ tools",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 15,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Design ideals – ______ and",
+    "answer": "logic, reason",
+    "rawExcerpt": "Design ideals – (15) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Significance – show Romans’ ______ nature and thinking",
+    "answer": "practical, political",
+    "rawExcerpt": "Significance – show Romans’ (18) ␦ nature and ␦ thinking",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Size – stand ______ meter high and hold audiences",
+    "answer": "48, 50000",
+    "rawExcerpt": "Size – stand (20) ␦ meter high and hold ␦ audiences",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 33,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "• Problem – the damages of tissues can cause the joints to ______ and",
+    "answer": "ache, feel stiff",
+    "rawExcerpt": "• Problem – the damages of tissues can cause the joints to (33) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     15,
+     18,
+     20,
+     33,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 37,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 31,
+ "quarantinedCount": 11,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-117",
  "title": "IELTS Listening Test 117",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-117/index.html",
-   "sha256": "dffa809226b4f7e316f3ca575a84a432fdc755d4acb2aba186d39cb4179021b4",
-   "manifestHashMatch": true,
+   "sha256": "ded008174f5e9288be5bba843981e91ebe4aa1b913c830db9c36e0c6102d4ef7",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-117/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -399,8 +399,10 @@
      "Email address: (10) ␦ @uniconf.edu.au"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -422,7 +424,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Conference dates: (1) ␦"
-     }
+     },
+     "keyRaw": "18-20 October"
     },
     {
      "number": 2,
@@ -444,7 +447,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Conference venue: (2) ␦"
-     }
+     },
+     "keyRaw": "the pacific hotel"
     },
     {
      "number": 3,
@@ -466,7 +470,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Reservations phone no.: (3) ␦"
-     }
+     },
+     "keyRaw": "0793332266"
     },
     {
      "number": 4,
@@ -488,7 +493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Student rate per day: (4) ␦"
-     }
+     },
+     "keyRaw": "$60"
     },
     {
      "number": 5,
@@ -510,7 +516,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Contact person: (5) ␦"
-     }
+     },
+     "keyRaw": "professor burt"
     },
     {
      "number": 6,
@@ -532,7 +539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Closing date for talks: (6) ␦"
-     }
+     },
+     "keyRaw": "last friday"
     },
     {
      "number": 7,
@@ -554,7 +562,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Summary should have: (7) ␦"
-     }
+     },
+     "keyRaw": "an interesting title"
     },
     {
      "number": 8,
@@ -576,7 +585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Maximum length: (8) ␦"
-     }
+     },
+     "keyRaw": "300 words"
     },
     {
      "number": 9,
@@ -598,7 +608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Also send: (9) ␦"
-     }
+     },
+     "keyRaw": "brief CV"
     },
     {
      "number": 10,
@@ -621,7 +632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Email address: (10) ␦ @uniconf.edu.au"
-     }
+     },
+     "keyRaw": "info"
     }
    ],
    "provenance": {
@@ -649,8 +661,10 @@
      "11. The house was built between ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -675,7 +689,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "11. The house was built between ␦"
-     }
+     },
+     "keyRaw": "1771-1778"
     }
    ],
    "provenance": {
@@ -706,12 +721,14 @@
      "12. It was originally constructed as a/ an:\nA family home\nB office\nC public house"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "It was originally constructed as a/ an:",
       "segments": null
@@ -724,7 +741,9 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. It was originally constructed as a/ an:"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -732,6 +751,25 @@
     "rawExcerpt": "Question 12\nTick one letter A-C."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 3,
+    "title": "12. It was originally constructed as a/ an:",
+    "options": [
+     {
+      "letter": "A",
+      "text": "family home"
+     },
+     {
+      "letter": "B",
+      "text": "office"
+     },
+     {
+      "letter": "C",
+      "text": "public house"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -753,8 +791,10 @@
      "13. The house contains art from ␦\n14. Until recently, the art gallery was ␦\n15. Tomorrow’s talk will be on ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -779,7 +819,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "13. The house contains art from ␦"
-     }
+     },
+     "keyRaw": "all over Europe"
     },
     {
      "number": 14,
@@ -804,7 +845,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "14. Until recently, the art gallery was ␦"
-     }
+     },
+     "keyRaw": "closed to public"
     },
     {
      "number": 15,
@@ -829,7 +871,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "15. Tomorrow’s talk will be on ␦"
-     }
+     },
+     "keyRaw": "the art gallery"
     }
    ],
    "provenance": {
@@ -858,8 +901,10 @@
      "16. Breakfast is served in the cafeteria or ␦\n17. You can choose between English breakfast or ␦\n18. A car park was built because of an increase in ␦\n19. The garden contains many ␦\n20. The animals at Apsley House are all ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -884,7 +929,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "16. Breakfast is served in the cafeteria or ␦"
-     }
+     },
+     "keyRaw": "your room"
     },
     {
      "number": 17,
@@ -909,7 +955,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. You can choose between English breakfast or ␦"
-     }
+     },
+     "keyRaw": "vegetarian food"
     },
     {
      "number": 18,
@@ -934,7 +981,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. A car park was built because of an increase in ␦"
-     }
+     },
+     "keyRaw": "visitors"
     },
     {
      "number": 19,
@@ -959,7 +1007,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. The garden contains many ␦"
-     }
+     },
+     "keyRaw": "animals"
     },
     {
      "number": 20,
@@ -984,7 +1033,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. The animals at Apsley House are all ␦"
-     }
+     },
+     "keyRaw": "very friendly"
     }
    ],
    "provenance": {
@@ -1011,8 +1061,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1042,7 +1094,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "21. Which college does Chris suggest would be best?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1072,7 +1125,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "22. What entry requirements are common to all the colleges?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1102,7 +1156,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. How much does the course at Leeds Conservatory of Contemporary Music cost?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1132,7 +1187,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "24. What other expenses are payable to the colleges?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1162,7 +1218,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "25. When is the deadline for Leeds Conservatory of Contemporary Music?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1191,14 +1248,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "large gardens B multiple sites C practice rooms D recording studio E research facility F student canteen"
+      "text": "large gardens"
+     },
+     {
+      "letter": "B",
+      "text": "multiple sites"
+     },
+     {
+      "letter": "C",
+      "text": "practice rooms"
+     },
+     {
+      "letter": "D",
+      "text": "recording studio"
+     },
+     {
+      "letter": "E",
+      "text": "research facility"
+     },
+     {
+      "letter": "F",
+      "text": "student canteen"
      },
      {
       "letter": "G",
       "text": "technology suite"
      }
+    ],
+    "optionPreface": [
+     "Facilities"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1215,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. Northdown College ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 27,
@@ -1232,7 +1314,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. The Academy in London ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1249,7 +1332,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "28. Leeds Conservatory of Contemporary Music ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1266,7 +1350,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. The Henry Music Institute ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 30,
@@ -1283,7 +1368,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. The James Academy of Music ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1291,6 +1377,40 @@
     "rawExcerpt": "Questions 26-30\nWhich facilities do the colleges have?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Facilities",
+    "options": [
+     {
+      "letter": "A",
+      "text": "large gardens"
+     },
+     {
+      "letter": "B",
+      "text": "multiple sites"
+     },
+     {
+      "letter": "C",
+      "text": "practice rooms"
+     },
+     {
+      "letter": "D",
+      "text": "recording studio"
+     },
+     {
+      "letter": "E",
+      "text": "research facility"
+     },
+     {
+      "letter": "F",
+      "text": "student canteen"
+     },
+     {
+      "letter": "G",
+      "text": "technology suite"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1313,8 +1433,10 @@
      "31. According to the speaker, art and music can benefit patients’ emotional ␦ and physical well-being.\n32. Florence Nightingale first noted the improvements in the year ␦\n33. The results of many did not prove a link between health and art as they were rarely ␦\n34. The American study looked at the effects of architecture on patients’ ␦\n35. The patients who were in a ward with a ␦ were not in hospital for as long and needed less medication."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1337,7 +1459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. According to the speaker, art and music can benefit patients’ emotional ␦ and physical well-being."
-     }
+     },
+     "keyRaw": "social"
     },
     {
      "number": 32,
@@ -1362,7 +1485,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "32. Florence Nightingale first noted the improvements in the year ␦"
-     }
+     },
+     "keyRaw": "1860"
     },
     {
      "number": 33,
@@ -1387,7 +1511,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "33. The results of many did not prove a link between health and art as they were rarely ␦"
-     }
+     },
+     "keyRaw": "strictly controlled"
     },
     {
      "number": 34,
@@ -1412,7 +1537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "34. The American study looked at the effects of architecture on patients’ ␦"
-     }
+     },
+     "keyRaw": "recovery time"
     },
     {
      "number": 35,
@@ -1435,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "35. The patients who were in a ward with a ␦ were not in hospital for as long and needed less medication."
-     }
+     },
+     "keyRaw": "nice view"
     }
    ],
    "provenance": {
@@ -1493,8 +1620,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1515,7 +1644,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(36)……………………"
-     }
+     },
+     "keyRaw": "live music"
     },
     {
      "number": 37,
@@ -1536,7 +1666,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(37)…………………."
-     }
+     },
+     "keyRaw": "artistic pictures"
     },
     {
      "number": 38,
@@ -1557,7 +1688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(38)…………………….."
-     }
+     },
+     "keyRaw": "less pain"
     },
     {
      "number": 39,
@@ -1578,7 +1710,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "(39)……………………."
-     }
+     },
+     "keyRaw": "classical (music)"
     },
     {
      "number": 40,
@@ -1600,7 +1733,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "staff (40)……………….."
-     }
+     },
+     "keyRaw": "(felt) happier"
     }
    ],
    "provenance": {
@@ -1638,5 +1772,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

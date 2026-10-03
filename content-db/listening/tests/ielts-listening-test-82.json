@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-82",
  "title": "IELTS Listening Test 82",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-82/index.html",
-   "sha256": "21003d4d22f327f040b6a800534a27617fba471eab18ed40cab1de0946740131",
-   "manifestHashMatch": true,
+   "sha256": "624152e103abcadd0b83e718035df2b687fdaa158eed4d7a37bd9030b8d94139",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-82/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -391,8 +391,10 @@
      "Starting: September 1"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -415,7 +417,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Student name: Maria Teresa (1) ␦ Vila"
-     }
+     },
+     "keyRaw": "GONZALEZ"
     },
     {
      "number": 2,
@@ -437,7 +440,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Student number: (2) ␦"
-     }
+     },
+     "keyRaw": "SHU300715PG"
     },
     {
      "number": 3,
@@ -459,7 +463,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Faculty: Modern (3) ␦"
-     }
+     },
+     "keyRaw": "languages"
     }
    ],
    "provenance": {
@@ -506,8 +511,10 @@
      "(6) ␦ (7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 4,
@@ -530,7 +537,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "located near (4)…………….and main campus"
-     }
+     },
+     "keyRaw": "station"
     },
     {
      "number": 5,
@@ -553,7 +561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "£ (5)…………….per week"
-     }
+     },
+     "keyRaw": "£99"
     },
     {
      "number": 6,
@@ -576,7 +585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "located near (6)…………………entrance to campus"
-     }
+     },
+     "keyRaw": "west"
     },
     {
      "number": 7,
@@ -598,7 +608,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(7)………….room option – 1 bedroom – £ 180 per week – 2 bedrooms – £ 110 per week per person"
-     }
+     },
+     "keyRaw": "2"
     }
    ],
    "provenance": {
@@ -628,14 +639,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "parking garage B laundry room C ensuite bathroom D kitchen"
+      "text": "parking garage"
+     },
+     {
+      "letter": "B",
+      "text": "laundry room"
+     },
+     {
+      "letter": "C",
+      "text": "ensuite bathroom"
+     },
+     {
+      "letter": "D",
+      "text": "kitchen"
      },
      {
       "letter": "E",
       "text": "study bedroom"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -652,7 +677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose THREE letters A-E. Which THREE of the following are features of accommodation at the Cube?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 9,
@@ -669,7 +695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose THREE letters A-E. Which THREE of the following are features of accommodation at the Cube?"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 10,
@@ -686,7 +713,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "Choose THREE letters A-E. Which THREE of the following are features of accommodation at the Cube?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -694,6 +722,44 @@
     "rawExcerpt": "Questions 8-10\nChoose THREE letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g03:8-10",
+    "answerSet": [
+     "C",
+     "D",
+     "E"
+    ],
+    "prompt": "Which THREE of the following are features of accommodation at the Cube?",
+    "instructionText": "Choose THREE letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "parking garage"
+     },
+     {
+      "letter": "B",
+      "text": "laundry room"
+     },
+     {
+      "letter": "C",
+      "text": "ensuite bathroom"
+     },
+     {
+      "letter": "D",
+      "text": "kitchen"
+     },
+     {
+      "letter": "E",
+      "text": "study bedroom"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -721,8 +787,10 @@
      "1 year ago they started activities for (16) ␦ groups"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -745,7 +813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "Established: (11) ␦ years ago by John and Nancy Barker"
-     }
+     },
+     "keyRaw": "10"
     },
     {
      "number": 12,
@@ -767,7 +836,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "As teens the Barkers enjoyed: Climbing, kayaking, white water rafting, pot-holing, (12) ␦"
-     }
+     },
+     "keyRaw": "walking"
     },
     {
      "number": 13,
@@ -790,7 +860,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "At university they organized: motor trips, (13) ␦ tours"
-     }
+     },
+     "keyRaw": "rock climbing"
     },
     {
      "number": 14,
@@ -813,7 +884,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "5 years ago they (14) ␦ their regular jobs"
-     }
+     },
+     "keyRaw": "gave up"
     },
     {
      "number": 15,
@@ -835,7 +907,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(15) ␦ years later they began running activity tours"
-     }
+     },
+     "keyRaw": "2"
     },
     {
      "number": 16,
@@ -858,7 +931,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "1 year ago they started activities for (16) ␦ groups"
-     }
+     },
+     "keyRaw": "school"
     }
    ],
    "provenance": {
@@ -906,8 +980,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -930,7 +1006,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "10 jeeps (17)……………..people per jeep"
-     }
+     },
+     "keyRaw": "8"
     },
     {
      "number": 18,
@@ -953,7 +1030,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Morning: 8 am Afternoon: (18)…………pm to 6 pm Evening: 7-11 pm"
-     }
+     },
+     "keyRaw": "2"
     },
     {
      "number": 19,
@@ -975,7 +1053,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Family (19)……………….."
-     }
+     },
+     "keyRaw": "exclusive"
     },
     {
      "number": 20,
@@ -998,7 +1077,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "1 jeep/ jeeps if (20)………….party"
-     }
+     },
+     "keyRaw": "large"
     }
    ],
    "provenance": {
@@ -1025,8 +1105,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1056,7 +1138,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "21. Jess wants to start the meeting by"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1086,7 +1169,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "22. What are Matt and Jess planning to study?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1116,7 +1200,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "23. How far apart are the plots supposed to be?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1146,7 +1231,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "24. Where can the bamboo sticks be purchased?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1176,7 +1262,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "25. One person throws the frame and the other person"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1206,7 +1293,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "26. The instructions sound complicated because"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 27,
@@ -1236,7 +1324,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "27. Jess thinks Matt should do the throwing because"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1260,12 +1349,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A they will go there\nB they might go there\nC they will not go there"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "they will go there"
+     },
+     {
+      "letter": "B",
+      "text": "they might go there"
+     },
+     {
+      "letter": "C",
+      "text": "they will not go there"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1282,7 +1384,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "28. the lowland around the marsh ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 29,
@@ -1299,7 +1402,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "29. behind the beach ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 30,
@@ -1316,7 +1420,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "30. behind the headland near the bay ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1324,6 +1429,24 @@
     "rawExcerpt": "Questions 28-30\nWhat do Matt and Jess decide about each of the possible locations?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "they will go there"
+     },
+     {
+      "letter": "B",
+      "text": "they might go there"
+     },
+     {
+      "letter": "C",
+      "text": "they will not go there"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1343,8 +1466,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1374,7 +1499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "31. Compared to other industries, tourism has"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1404,7 +1530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "32. In global tourism there is a"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
@@ -1434,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "33. Some countries with high levels of tourism still have"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 34,
@@ -1464,7 +1592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "34. Geo-tourism is all about"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1502,8 +1631,10 @@
      "• This would make for a good (40) ␦ for each customer"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1526,7 +1657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "• Avoid (35) ␦ men"
-     }
+     },
+     "keyRaw": "middle"
     },
     {
      "number": 36,
@@ -1549,7 +1681,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "• Many teen schedule (36) ␦ year between school and university"
-     }
+     },
+     "keyRaw": "gap"
     },
     {
      "number": 37,
@@ -1571,7 +1704,8 @@
      "provenance": {
       "elementPath": "entry-content.children[40]",
       "rawExcerpt": "• Volunteering organisations charge up to £ (37) ␦"
-     }
+     },
+     "keyRaw": "£3500"
     },
     {
      "number": 38,
@@ -1594,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "• Customers are looking for organisations that can suggest (38) ␦ projects"
-     }
+     },
+     "keyRaw": "worthwhile"
     },
     {
      "number": 39,
@@ -1616,7 +1751,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "• Organisers would charge flat (39) ␦"
-     }
+     },
+     "keyRaw": "fee"
     },
     {
      "number": 40,
@@ -1639,7 +1775,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "• This would make for a good (40) ␦ for each customer"
-     }
+     },
+     "keyRaw": "commission"
     }
    ],
    "provenance": {
@@ -1685,5 +1822,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

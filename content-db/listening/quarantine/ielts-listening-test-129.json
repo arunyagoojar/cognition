@@ -1,7 +1,83 @@
 {
  "slug": "ielts-listening-test-129",
- "sourceSha256": "effddac3147bfeab4170cfc6066b64265de3a633e9d552a5de67161fcd7850c9",
+ "status": "quarantined",
+ "sourceSha256": "25629f818bb47b24f92c2f79b3057c295de81e86228207476c0a2e92dac7d48a",
  "units": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 7,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "I",
+    "rawExcerpt": "(7)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 9,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(9)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(6)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 8,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(8)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "I",
+    "rawExcerpt": "(10)…………………",
+    "options": null
+   }
+  },
   {
    "unit": "question",
    "groupId": "g04",
@@ -13,7 +89,7 @@
    "evidence": {
     "stem": "has her own children?",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "17. has her own children? ␦",
     "options": null
    }
   },
@@ -28,7 +104,7 @@
    "evidence": {
     "stem": "often sleeps at the centre?",
     "answer": "A",
-    "rawExcerpt": "",
+    "rawExcerpt": "18. often sleeps at the centre? ␦",
     "options": null
    }
   },
@@ -43,8 +119,26 @@
    "evidence": {
     "stem": "is good with shy children?",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "19. is good with shy children? ␦",
     "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     17,
+     18,
+     19
+    ],
+    "outOfRange": []
    }
   }
  ]

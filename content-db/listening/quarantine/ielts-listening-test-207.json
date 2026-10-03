@@ -1,0 +1,90 @@
+{
+ "slug": "ielts-listening-test-207",
+ "status": "quarantined",
+ "sourceSha256": "16b19b969df147390d0476992638071ac2fe896c369c7de1314e88b2ed96f349",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 21,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B, D",
+    "rawExcerpt": "Choose TWO letters, A-E. Which TWO points do the speakers make about the terms ‘ethical’ and ‘sustainable’ fashion? Choose TWO letters, A-E.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 22,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B, D",
+    "rawExcerpt": "Choose TWO letters, A-E. Which TWO points do the speakers make about the terms ‘ethical’ and ‘sustainable’ fashion? Choose TWO letters, A-E.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 23,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D, E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 24,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D, E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 28,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     21,
+     22,
+     23,
+     24,
+     28
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

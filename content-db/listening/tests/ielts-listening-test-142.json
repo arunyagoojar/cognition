@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-142",
  "title": "IELTS Listening Test 142",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-142/index.html",
-   "sha256": "686720df436ae2d10aa9b45f1e1fdb5e8375a403ac965b362c0aa12f3b5600ed",
-   "manifestHashMatch": true,
+   "sha256": "399267496bb14197b9077b16adeb0d1c140b853eaaa237a778ace95fb6b91102",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-142/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "ddb98b213d1669a6c64c868c5b8edd169d80d51ec5e476acdc7523bc3f6320a5",
+ "contentFingerprint": "9992b28df0f85987064339dd718118528bd5ea69f69f16746934237b91d7877c",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -385,8 +385,10 @@
      "• The opportunity to have cycling (10) ␦ on busy roads"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -408,7 +410,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Name: Lusia (1) ␦"
-     }
+     },
+     "keyRaw": "Hardie"
     },
     {
      "number": 2,
@@ -431,7 +434,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Address: (2) ␦ White Stone Road"
-     }
+     },
+     "keyRaw": "19"
     },
     {
      "number": 3,
@@ -453,7 +457,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Postcode: (3) ␦"
-     }
+     },
+     "keyRaw": "GT82LC"
     },
     {
      "number": 4,
@@ -475,7 +480,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Occupation: (4) ␦"
-     }
+     },
+     "keyRaw": "hairdresser"
     },
     {
      "number": 5,
@@ -497,7 +503,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Reason for visit to town: to go to the (5) ␦"
-     }
+     },
+     "keyRaw": "dentist"
     },
     {
      "number": 6,
@@ -519,7 +526,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Suggestions for improvement: better (6) ␦"
-     }
+     },
+     "keyRaw": "lighting"
     },
     {
      "number": 7,
@@ -541,7 +549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "More frequent (7) ␦"
-     }
+     },
+     "keyRaw": "trains"
     },
     {
      "number": 8,
@@ -564,7 +573,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Having (8) ␦ parking places for bicycles"
-     }
+     },
+     "keyRaw": "safe"
     },
     {
      "number": 9,
@@ -587,7 +597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• Being able to use a (9) ␦ at work"
-     }
+     },
+     "keyRaw": "shower"
     },
     {
      "number": 10,
@@ -610,7 +621,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "• The opportunity to have cycling (10) ␦ on busy roads"
-     }
+     },
+     "keyRaw": "training"
     }
    ],
    "provenance": {
@@ -632,39 +644,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "New city developments",
-     "A local people",
-     "B the City Council",
-     "C the SWRDC",
-     "New city developments\n11. The idea for the two new developments in the city came from\nA local people\nB the City Council\nC the SWRDC",
-     "A its architectural style",
-     "B its heating system",
-     "C its method of water treatment",
-     "12. What is unusual about Brackenside pool?\nA its architectural style\nB its heating system\nC its method of water treatment",
-     "A the late opening date",
-     "B the post of the project",
-     "C the size of the facilities",
-     "13. Local newspapers have raised worries about\nA the late opening date\nB the post of the project\nC the size of the facilities",
-     "A whose statue will be at the door",
-     "B the exact opening times",
-     "C who will open it",
-     "14. What decision has not yet been made about the pool?\nA whose statue will be at the door\nB the exact opening times\nC who will open it"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The idea for the two new developments in the city came from",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "local people"
+      },
+      {
+       "letter": "B",
+       "text": "the City Council"
+      },
+      {
+       "letter": "C",
+       "text": "the SWRDC"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -672,16 +681,30 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "11. The idea for the two new developments in the city came from"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What is unusual about Brackenside pool?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "its architectural style"
+      },
+      {
+       "letter": "B",
+       "text": "its heating system"
+      },
+      {
+       "letter": "C",
+       "text": "its method of water treatment"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -689,16 +712,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "12. What is unusual about Brackenside pool?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Local newspapers have raised worries about",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the late opening date"
+      },
+      {
+       "letter": "B",
+       "text": "the post of the project"
+      },
+      {
+       "letter": "C",
+       "text": "the size of the facilities"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -706,16 +743,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "13. Local newspapers have raised worries about"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What decision has not yet been made about the pool?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "whose statue will be at the door"
+      },
+      {
+       "letter": "B",
+       "text": "the exact opening times"
+      },
+      {
+       "letter": "C",
+       "text": "who will open it"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -723,60 +774,14 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "14. What decision has not yet been made about the pool?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[2]",
     "rawExcerpt": "Part 2: Questions 11-14\nChoose the correct letter, A, B or C."
    },
-   "status": "verified"
-  },
-  {
-   "groupId": "g03",
-   "part": 2,
-   "startQ": 15,
-   "endQ": 20,
-   "partExplicit": false,
-   "instruction": {
-    "text": "Which feature is related to each of the following areas of the world represented in the playground? Choose SIX answers from the box and write the correct letter, A-l, next to questions 15-20.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Which feature is related to each of the following areas of the world represented in the playground? Choose SIX answers from the box and write the correct letter, A-l, next to questions 15-20."
-   },
-   "stimulus": {
-    "kind": "table",
-    "table": {
-     "rows": [
-      [
-       "A ancient forts",
-       "B waterways",
-       "C ice and snow",
-       "D jewels",
-       "E local animals"
-      ],
-      [
-       "F mountains",
-       "G music and film",
-       "H space travel",
-       "I volcanoes",
-       ""
-      ]
-     ]
-    },
-    "segments": [
-     "Areas of the world\n15 Asia ␦\n16 Antarctica ␦\n17 South America ␦\n18 North America ␦\n19 Europe ␦\n20 Africa ␦",
-     "Features"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[7]",
-    "rawExcerpt": "Questions 15-20\nWhich feature is related to each of the following areas of the world represented in the playground?"
-   },
-   "partAssignedBy": "inherited_no_marker",
    "status": "verified"
   },
   {
@@ -799,14 +804,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "camping B climbing C collecting D hunting"
+      "text": "camping"
+     },
+     {
+      "letter": "B",
+      "text": "climbing"
+     },
+     {
+      "letter": "C",
+      "text": "collecting"
+     },
+     {
+      "letter": "D",
+      "text": "hunting"
      },
      {
       "letter": "E",
       "text": "reading"
      }
+    ],
+    "optionPreface": [
+     "Which TWO hobbies was Thor Heyerdahl very interested in as a youth?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -823,7 +844,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -840,12 +862,50 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters, A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g04:21-22",
+    "answerSet": [
+     "B",
+     "C"
+    ],
+    "prompt": "Which TWO hobbies was Thor Heyerdahl very interested in as a youth?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "camping"
+     },
+     {
+      "letter": "B",
+      "text": "climbing"
+     },
+     {
+      "letter": "C",
+      "text": "collecting"
+     },
+     {
+      "letter": "D",
+      "text": "hunting"
+     },
+     {
+      "letter": "E",
+      "text": "reading"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -869,14 +929,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "to examine ancient carvings B to experience an isolated place C to formulate a new theory D to learn survival skills"
+      "text": "to examine ancient carvings"
+     },
+     {
+      "letter": "B",
+      "text": "to experience an isolated place"
+     },
+     {
+      "letter": "C",
+      "text": "to formulate a new theory"
+     },
+     {
+      "letter": "D",
+      "text": "to learn survival skills"
      },
      {
       "letter": "E",
       "text": "to study the impact of an extreme environment"
      }
+    ],
+    "optionPreface": [
+     "Which do the speakers say are the TWO reasons why Heyerdahl went to live on an island?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -893,7 +969,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -910,7 +987,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -918,6 +996,43 @@
     "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:23-24",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which do the speakers say are the TWO reasons why Heyerdahl went to live on an island?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "to examine ancient carvings"
+     },
+     {
+      "letter": "B",
+      "text": "to experience an isolated place"
+     },
+     {
+      "letter": "C",
+      "text": "to formulate a new theory"
+     },
+     {
+      "letter": "D",
+      "text": "to learn survival skills"
+     },
+     {
+      "letter": "E",
+      "text": "to study the impact of an extreme environment"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -933,47 +1048,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "The later life of Thor Heyerdahl",
-     "A the fact that Eastern countries were far away",
-     "B the lack of materials for boat building",
-     "C the direction of the winds and currents",
-     "The later life of Thor Heyerdahl\n25. According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to\nA the fact that Eastern countries were far away\nB the lack of materials for boat building\nC the direction of the winds and currents",
-     "A to overcome a research setback",
-     "B to demonstrate a personal quality",
-     "C to test a new theory",
-     "26. Which do the speakers agree was the main reason for Heyerdahl’s raft journey?\nA to overcome a research setback\nB to demonstrate a personal quality\nC to test a new theory",
-     "A the fact that he was the first person to do it",
-     "B the speed of crossing the Pacific",
-     "C the use of authentic construction methods",
-     "27. What was most important to Heyerdahl about his raft journey?\nA the fact that he was the first person to do it\nB the speed of crossing the Pacific\nC the use of authentic construction methods",
-     "A to build a stone statue",
-     "B to sail a reed boat",
-     "C to learn the local language",
-     "28. Why did Heyerdahl go to Easter Island?\nA to build a stone statue\nB to sail a reed boat\nC to learn the local language",
-     "A theories about Polynesian origins",
-     "B the development of archaeological methodology",
-     "C establishing archaeology as an academic subject",
-     "29. In Olivia’s opinion, Heyerdahl’s greatest influence was on\nA theories about Polynesian origins\nB the development of archaeological methodology\nC establishing archaeology as an academic subject",
-     "A Its style is out of date",
-     "B Its content is over-simplified",
-     "C Its methodology is flawed",
-     "30. Which criticism do the speakers make of William Oliver’s textbook?\nA Its style is out of date\nB Its content is over-simplified\nC Its methodology is flawed"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the fact that Eastern countries were far away"
+      },
+      {
+       "letter": "B",
+       "text": "the lack of materials for boat building"
+      },
+      {
+       "letter": "C",
+       "text": "the direction of the winds and currents"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -981,16 +1085,30 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "25. According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which do the speakers agree was the main reason for Heyerdahl’s raft journey?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "to overcome a research setback"
+      },
+      {
+       "letter": "B",
+       "text": "to demonstrate a personal quality"
+      },
+      {
+       "letter": "C",
+       "text": "to test a new theory"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -998,16 +1116,30 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "26. Which do the speakers agree was the main reason for Heyerdahl’s raft journey?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What was most important to Heyerdahl about his raft journey?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the fact that he was the first person to do it"
+      },
+      {
+       "letter": "B",
+       "text": "the speed of crossing the Pacific"
+      },
+      {
+       "letter": "C",
+       "text": "the use of authentic construction methods"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1015,16 +1147,30 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "27. What was most important to Heyerdahl about his raft journey?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Why did Heyerdahl go to Easter Island?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "to build a stone statue"
+      },
+      {
+       "letter": "B",
+       "text": "to sail a reed boat"
+      },
+      {
+       "letter": "C",
+       "text": "to learn the local language"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1032,16 +1178,30 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "28. Why did Heyerdahl go to Easter Island?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In Olivia’s opinion, Heyerdahl’s greatest influence was on",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "theories about Polynesian origins"
+      },
+      {
+       "letter": "B",
+       "text": "the development of archaeological methodology"
+      },
+      {
+       "letter": "C",
+       "text": "establishing archaeology as an academic subject"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1049,16 +1209,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "29. In Olivia’s opinion, Heyerdahl’s greatest influence was on"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Which criticism do the speakers make of William Oliver’s textbook?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Its style is out of date"
+      },
+      {
+       "letter": "B",
+       "text": "Its content is over-simplified"
+      },
+      {
+       "letter": "C",
+       "text": "Its methodology is flawed"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1066,7 +1240,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. Which criticism do the speakers make of William Oliver’s textbook?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -1112,8 +1287,10 @@
      "• more and more (40) ␦ workers"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1136,7 +1313,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• greater (31) ␦ among companies"
-     }
+     },
+     "keyRaw": "competition"
     },
     {
      "number": 32,
@@ -1159,7 +1337,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• increase in power of large (32) ␦ companies"
-     }
+     },
+     "keyRaw": "global"
     },
     {
      "number": 33,
@@ -1182,7 +1361,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• rising (33) ␦ in certain countries"
-     }
+     },
+     "keyRaw": "demand"
     },
     {
      "number": 34,
@@ -1205,7 +1385,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• more discussion with (34) ␦ before making business decisions"
-     }
+     },
+     "keyRaw": "customers"
     },
     {
      "number": 35,
@@ -1227,7 +1408,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• environmental concerns which may lead to more (35) ␦"
-     }
+     },
+     "keyRaw": "regulation"
     },
     {
      "number": 36,
@@ -1249,7 +1431,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• more teams will be formed to work on a particular (36) ␦"
-     }
+     },
+     "keyRaw": "project"
     },
     {
      "number": 37,
@@ -1272,7 +1455,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• businesses may need to offer hours that are (37) ␦ , or the chance to work remotely"
-     }
+     },
+     "keyRaw": "flexible"
     },
     {
      "number": 38,
@@ -1294,7 +1478,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• increasing need for managers to provide good (38) ␦"
-     }
+     },
+     "keyRaw": "leadership"
     },
     {
      "number": 39,
@@ -1317,7 +1502,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• changes influenced by (39) ␦ taking senior roles"
-     }
+     },
+     "keyRaw": "women"
     },
     {
      "number": 40,
@@ -1340,7 +1526,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• more and more (40) ␦ workers"
-     }
+     },
+     "keyRaw": "self-employed"
     }
    ],
    "provenance": {
@@ -1389,11 +1576,100 @@
      20
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 15,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 16,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 17,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "H"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 34,
- "quarantinedCount": 1,
- "status": "flagged",
+ "quarantinedCount": 8,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-85",
  "title": "IELTS Listening Test 85",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-85/index.html",
-   "sha256": "18ff2ca20712d53dae7776b9a410499ca3fbb208f0bcd0a8c25c9b078ebaffdd",
-   "manifestHashMatch": true,
+   "sha256": "0e55357e5f9feb44cd6314655077c6c7fa3259b49d621c971f0baf98f0eda0a1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-85/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -410,8 +410,10 @@
      "Phone number: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -434,7 +436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Description of main item: black with thin (1) ␦ stripes"
-     }
+     },
+     "keyRaw": "white"
     },
     {
      "number": 2,
@@ -457,7 +460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Other items: a set of (2) ␦ keys"
-     }
+     },
+     "keyRaw": "office"
     },
     {
      "number": 3,
@@ -480,7 +484,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "A (3) ␦ in a box"
-     }
+     },
+     "keyRaw": "camera"
     },
     {
      "number": 4,
@@ -502,7 +507,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "A blue (4) ␦"
-     }
+     },
+     "keyRaw": "umbrella"
     },
     {
      "number": 5,
@@ -524,7 +530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Date and time: 2-2.30 pm on (5) ␦"
-     }
+     },
+     "keyRaw": "13 May"
     },
     {
      "number": 6,
@@ -547,7 +554,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Basic route: caller travelled from the (6) ␦ to Highbury"
-     }
+     },
+     "keyRaw": "airport"
     },
     {
      "number": 7,
@@ -569,7 +577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Mode of travel: caller thinks she left suitcase in a (7) ␦"
-     }
+     },
+     "keyRaw": "taxi"
     },
     {
      "number": 8,
@@ -591,7 +600,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Name: Lisa (8) ␦"
-     }
+     },
+     "keyRaw": "docherty"
     },
     {
      "number": 9,
@@ -614,7 +624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Address: 15A (9) ␦ Rd. Highbury"
-     }
+     },
+     "keyRaw": "river"
     },
     {
      "number": 10,
@@ -636,7 +647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Phone number: (10) ␦"
-     }
+     },
+     "keyRaw": "07979605437"
     }
    ],
    "provenance": {
@@ -664,8 +676,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test85.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -682,7 +696,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "11. supermarket ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 12,
@@ -699,7 +714,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "12. climbing supplies store ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 13,
@@ -716,7 +732,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "13. museum ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -733,7 +750,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "14. bike hire ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 15,
@@ -750,12 +768,51 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "15. café ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11-15\nLabel the map below. Write correct letter A-H next to questions 11-15."
+   },
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -778,8 +835,10 @@
      "A It is possible to get lost here.\nB It only offers basic accommodation.\nC It requires physical strength."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -796,7 +855,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "16. North point ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -813,7 +873,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "17. Silver river ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -830,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "18. Valley crossing ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -847,7 +909,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "19. Stonebridge ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -864,7 +927,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "20. Henderson ridge ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -872,6 +936,25 @@
     "rawExcerpt": "Questions 16-20\nWhat comment does the speaker make about each of the following tracks?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It is possible to get lost here."
+     },
+     {
+      "letter": "B",
+      "text": "It only offers basic accommodation."
+     },
+     {
+      "letter": "C",
+      "text": "It requires physical strength."
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -891,8 +974,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -922,7 +1007,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "21. Why has James chosen to do a case study on the company Furniture Rossi?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -952,7 +1038,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "22. According to James, why did Luca Rossi start a furniture company?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 23,
@@ -982,7 +1069,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "23. What gave Furniture Rossi a competitive advantage over other furniture companies?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1012,7 +1100,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "24. What does the tutor recommend James does when writing the second draft of his case study?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1042,7 +1131,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "25. What do the tutor and James agree was wrong with James’ last presentation?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1096,27 +1186,43 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "website B locations C designs D TV advertising campaigns E quality F values"
+      "text": "website"
+     },
+     {
+      "letter": "B",
+      "text": "locations"
+     },
+     {
+      "letter": "C",
+      "text": "designs"
+     },
+     {
+      "letter": "D",
+      "text": "TV advertising campaigns"
+     },
+     {
+      "letter": "E",
+      "text": "quality"
+     },
+     {
+      "letter": "F",
+      "text": "values"
      },
      {
       "letter": "G",
       "text": "software programs"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "The product ______ led to a wider customer base",
-      "segments": [
-       "The product",
-       {
-        "blank": 26
-       },
-       "led to a wider customer base"
-      ]
+      "plain": "The product led to a wider customer base",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 2 col 1",
@@ -1126,20 +1232,16 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "The product (26)………………..led to a wider customer base"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 27,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Greater customer demand meant other ______ were needed",
-      "segments": [
-       "Greater customer demand meant other",
-       {
-        "blank": 27
-       },
-       "were needed"
-      ]
+      "plain": "Greater customer demand meant other were needed",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 3 col 1",
@@ -1149,20 +1251,16 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Greater customer demand meant other (27)…………….were needed"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 28,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Better ______ increased overall profitability",
-      "segments": [
-       "Better",
-       {
-        "blank": 28
-       },
-       "increased overall profitability"
-      ]
+      "plain": "Better increased overall profitability",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 4 col 1",
@@ -1172,20 +1270,16 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Better (28)…………………..increased overall profitability"
-     }
+     },
+     "keyRaw": "G",
+     "convertedFrom": "completion"
     },
     {
      "number": 29,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Changes to the ______ were brought on by customer complaints",
-      "segments": [
-       "Changes to the",
-       {
-        "blank": 29
-       },
-       "were brought on by customer complaints"
-      ]
+      "plain": "Changes to the were brought on by customer complaints",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 5 col 1",
@@ -1195,19 +1289,16 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Changes to the (29)…………………..were brought on by customer complaints"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 30,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "Furniture Rossi wants to make people more aware of its ______",
-      "segments": [
-       "Furniture Rossi wants to make people more aware of its",
-       {
-        "blank": 30
-       }
-      ]
+      "plain": "Furniture Rossi wants to make people more aware of its",
+      "segments": null
      },
      "options": null,
      "blankContext": "table row 6 col 1",
@@ -1217,7 +1308,9 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Furniture Rossi wants to make people more aware of its (30)…………………"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -1225,6 +1318,40 @@
     "rawExcerpt": "Questions 26-30\nComplete the flow chart below. Choose FIVE answers from the list below and write the correct letter A-G next to questions 26-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "website"
+     },
+     {
+      "letter": "B",
+      "text": "locations"
+     },
+     {
+      "letter": "C",
+      "text": "designs"
+     },
+     {
+      "letter": "D",
+      "text": "TV advertising campaigns"
+     },
+     {
+      "letter": "E",
+      "text": "quality"
+     },
+     {
+      "letter": "F",
+      "text": "values"
+     },
+     {
+      "letter": "G",
+      "text": "software programs"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1258,8 +1385,10 @@
      "• Later for social, spiritual and (36) ␦ reasons."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1281,7 +1410,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• (31) ␦"
-     }
+     },
+     "keyRaw": "migration"
     },
     {
      "number": 32,
@@ -1303,7 +1433,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Humans often had large (32) ␦"
-     }
+     },
+     "keyRaw": "eyes"
     },
     {
      "number": 33,
@@ -1326,7 +1457,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Animals were common but a (33) ␦ was always drawn from the side or from above."
-     }
+     },
+     "keyRaw": "lizard"
     },
     {
      "number": 34,
@@ -1349,7 +1481,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Unlikely that contact through (34) ␦ resulted in similar artistic styles"
-     }
+     },
+     "keyRaw": "trade"
     },
     {
      "number": 35,
@@ -1371,7 +1504,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Firstly for reasons of (35) ␦"
-     }
+     },
+     "keyRaw": "survival"
     },
     {
      "number": 36,
@@ -1394,7 +1528,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Later for social, spiritual and (36) ␦ reasons."
-     }
+     },
+     "keyRaw": "political"
     }
    ],
    "provenance": {
@@ -1428,8 +1563,10 @@
      "• (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1451,7 +1588,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• (37) ␦"
-     }
+     },
+     "keyRaw": "ships"
     },
     {
      "number": 38,
@@ -1473,7 +1611,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "• (38) ␦"
-     }
+     },
+     "keyRaw": "horses"
     },
     {
      "number": 39,
@@ -1495,7 +1634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• (39) ␦"
-     }
+     },
+     "keyRaw": "industry"
     },
     {
      "number": 40,
@@ -1517,7 +1657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• (40) ␦"
-     }
+     },
+     "keyRaw": "tourism"
     }
    ],
    "provenance": {
@@ -1565,5 +1706,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-57",
  "title": "IELTS Listening Test 57",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-57/index.html",
-   "sha256": "c6e83fe9f31e6dab25511afe905ce99432e3ba33e173068b946fdcb34b2a1818",
-   "manifestHashMatch": true,
+   "sha256": "95d025165cf95055d3d2285501a4b93c96f5a16943df421d2036211761825feb",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-57/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -404,12 +404,14 @@
      "5. Hannah’s new flat\nA is a bit noisy\nB is on the second floor\nC has two bedrooms\nD has a large roof terrace"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "How long did Hannah think it would take her to find a place to live?",
       "segments": null
@@ -422,11 +424,13 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. How long did Hannah think it would take her to find a place to live?"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 2,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "There is not enough accommodation to rent because",
       "segments": null
@@ -439,11 +443,13 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. There is not enough accommodation to rent because"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 3,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "£400 a month for rent is",
       "segments": null
@@ -456,11 +462,13 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "3. £400 a month for rent is"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 4,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "At the moment Hannah is living",
       "segments": null
@@ -473,11 +481,13 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "4. At the moment Hannah is living"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 5,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Hannah’s new flat",
       "segments": null
@@ -490,12 +500,37 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "5. Hannah’s new flat"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1-5\nCircle the appropriate letters A-D."
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "1. How long did Hannah think it would take her to find a place to live?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "three weeks"
+     },
+     {
+      "letter": "B",
+      "text": "less than three weeks"
+     },
+     {
+      "letter": "C",
+      "text": "more than three weeks"
+     },
+     {
+      "letter": "D",
+      "text": "more than four weeks"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -520,8 +555,10 @@
      "(7) ␦ 9RJ."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -543,7 +580,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(6) ␦ Whitehart Road"
-     }
+     },
+     "keyRaw": "22B"
     },
     {
      "number": 7,
@@ -565,7 +603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(7) ␦ 9RJ."
-     }
+     },
+     "keyRaw": "EX15"
     }
    ],
    "provenance": {
@@ -594,8 +633,10 @@
      "8. Hannah plans to travel to her parents’ house on Friday ␦\n9. Hannah’s Dad will return the van on ␦\n10. The journey time is about ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -620,7 +661,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "8. Hannah plans to travel to her parents’ house on Friday ␦"
-     }
+     },
+     "keyRaw": "evening after work"
     },
     {
      "number": 9,
@@ -645,7 +687,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "9. Hannah’s Dad will return the van on ␦"
-     }
+     },
+     "keyRaw": "saturday evening"
     },
     {
      "number": 10,
@@ -670,7 +713,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "10. The journey time is about ␦"
-     }
+     },
+     "keyRaw": "3 hours"
     }
    ],
    "provenance": {
@@ -678,34 +722,6 @@
     "rawExcerpt": "Questions 8-10\nWrite NO MORE THAN THREE WORDS to complete each space."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g04",
-   "part": 2,
-   "startQ": 11,
-   "endQ": 14,
-   "partExplicit": true,
-   "instruction": {
-    "text": "Circle FOUR letters A-H.",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "Circle FOUR letters A-H."
-   },
-   "stimulus": {
-    "kind": "notes",
-    "table": null,
-    "segments": [
-     "Which FOUR planned developments are mentioned?\nA a village town hall\nB a leisure centre\nC a play area for children\nD a hospital\nE an industrial development\nF extra houses\nG a steel works\nH a motorway"
-    ],
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Part 2: Questions 11-14\nCircle FOUR letters A-H."
-   },
    "status": "verified"
   },
   {
@@ -765,8 +781,10 @@
       "letter": "B",
       "text": ""
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -779,11 +797,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. The Mayor"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -796,11 +815,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. The conservation group spokesman"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -813,11 +833,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. The local MP"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 18,
@@ -830,11 +851,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "18. The local shopkeeper"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -842,7 +864,7 @@
     "rawExcerpt": "Questions 15-18"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -861,8 +883,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -896,7 +920,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. Upton is"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -930,7 +955,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "20. The College has"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -959,8 +985,10 @@
      "21. How many essays do the students have to write? ␦\n22. What percentage does the written exam account for? ␦\n23. How many marks did Carl get for his latest essay? ␦\n24. How many marks did Pamela get for her latest essay? ␦\n25. When was the marking system explained before? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -985,7 +1013,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "21. How many essays do the students have to write? ␦"
-     }
+     },
+     "keyRaw": "5"
     },
     {
      "number": 22,
@@ -1010,7 +1039,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. What percentage does the written exam account for? ␦"
-     }
+     },
+     "keyRaw": "50%"
     },
     {
      "number": 23,
@@ -1035,7 +1065,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "23. How many marks did Carl get for his latest essay? ␦"
-     }
+     },
+     "keyRaw": "18"
     },
     {
      "number": 24,
@@ -1060,7 +1091,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. How many marks did Pamela get for her latest essay? ␦"
-     }
+     },
+     "keyRaw": "14"
     },
     {
      "number": 25,
@@ -1085,7 +1117,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "25. When was the marking system explained before? ␦"
-     }
+     },
+     "keyRaw": "in first tutorial"
     }
    ],
    "provenance": {
@@ -1148,8 +1181,10 @@
      "(30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1172,7 +1207,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "very good, lots of (26)…………….examples"
-     }
+     },
+     "keyRaw": "relevant"
     },
     {
      "number": 29,
@@ -1193,7 +1229,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(29)………………."
-     }
+     },
+     "keyRaw": "excellent"
     },
     {
      "number": 27,
@@ -1214,7 +1251,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(27)……………………"
-     }
+     },
+     "keyRaw": "elegant"
     },
     {
      "number": 28,
@@ -1236,7 +1274,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "disappointing but rewrite (28)……………….."
-     }
+     },
+     "keyRaw": "impossible"
     },
     {
      "number": 30,
@@ -1257,7 +1296,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(30)…………………."
-     }
+     },
+     "keyRaw": "much better"
     }
    ],
    "provenance": {
@@ -1286,8 +1326,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test57.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1321,7 +1363,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. The total number of lectures mentioned by the lecturer is"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1355,7 +1398,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "32. The lunch break of the average British worker is"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1385,11 +1429,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "33. Which graph shows the change as regards sick leave?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1423,7 +1468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "34. There will be another lecture on stress in work and study"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 35,
@@ -1457,14 +1503,15 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "35. Which of the following is mentioned?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[24]",
     "rawExcerpt": "Part 4: Questions 31-35\nCircle the correct letters A-D."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g10",
@@ -1488,8 +1535,10 @@
      "Car industry once though to be (39) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1512,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Employees now working (36) ␦ physically and mentally"
-     }
+     },
+     "keyRaw": "beyond their limits"
     },
     {
      "number": 37,
@@ -1534,7 +1584,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Productivity up in many (37) ␦"
-     }
+     },
+     "keyRaw": "areas of industry"
     },
     {
      "number": 38,
@@ -1556,7 +1607,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "In 2002, local car plant vehicle per employee on rise to (38) ␦"
-     }
+     },
+     "keyRaw": "100"
     },
     {
      "number": 39,
@@ -1578,7 +1630,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "Car industry once though to be (39) ␦"
-     }
+     },
+     "keyRaw": "collapsing"
     }
    ],
    "provenance": {
@@ -1605,8 +1658,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 40,
@@ -1640,7 +1695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "40. Dr Butt asks those students to see him who"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1685,11 +1741,171 @@
      14
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 15,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "The Mayor",
+    "answer": "A",
+    "rawExcerpt": "15. The Mayor",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 16,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "The conservation group spokesman",
+    "answer": "A",
+    "rawExcerpt": "16. The conservation group spokesman",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 17,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "The local MP",
+    "answer": "B",
+    "rawExcerpt": "17. The local MP",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 18,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "The local shopkeeper",
+    "answer": "B",
+    "rawExcerpt": "18. The local shopkeeper",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 33,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which graph shows the change as regards sick leave?",
+    "answer": "A",
+    "rawExcerpt": "33. Which graph shows the change as regards sick leave?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 11,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 13,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "F"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 14,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "H"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     33
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 1,
- "status": "flagged",
+ "verifiedQuestionCount": 31,
+ "quarantinedCount": 11,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

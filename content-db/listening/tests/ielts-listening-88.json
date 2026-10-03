@@ -7,12 +7,12 @@
  "slug": "ielts-listening-88",
  "title": "IELTS Listening Test 88",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-88/index.html",
-   "sha256": "62e42a14fda984e2fbe86c5cfb82ad612e3b8ca65cde2d24260c4f80b0f57173",
-   "manifestHashMatch": true,
+   "sha256": "e74e5f9d320b93fe9f89bfa628552727841f0570f5ad7c14da8f2138d6abc809",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-88/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -412,8 +412,10 @@
      "• Possibility of talking to a (10) ␦ reporter"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -435,7 +437,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• Training needed in how to produce (1) ␦"
-     }
+     },
+     "keyRaw": "douments"
     },
     {
      "number": 2,
@@ -458,7 +461,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• The home has a (2) ␦ and someone to play it"
-     }
+     },
+     "keyRaw": "keyboard"
     },
     {
      "number": 3,
@@ -480,7 +484,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Thursday mornings: growing (3) ␦"
-     }
+     },
+     "keyRaw": "flowers"
     },
     {
      "number": 4,
@@ -503,7 +508,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• The home does not have many (4) ␦ for gardening"
-     }
+     },
+     "keyRaw": "tools"
     },
     {
      "number": 5,
@@ -526,7 +532,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Go in on (5) ␦ any time"
-     }
+     },
+     "keyRaw": "saturday"
     },
     {
      "number": 6,
@@ -548,7 +555,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Interview with assistant called (6) ␦"
-     }
+     },
+     "keyRaw": "Mairead"
     },
     {
      "number": 7,
@@ -571,7 +579,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "• Address of home: 73 (7) ␦ road"
-     }
+     },
+     "keyRaw": "bridge"
     },
     {
      "number": 8,
@@ -593,7 +602,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Agreed to help on (8) ␦"
-     }
+     },
+     "keyRaw": "May 14"
     },
     {
      "number": 9,
@@ -615,7 +625,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Will show visitors where to (9) ␦"
-     }
+     },
+     "keyRaw": "park"
     },
     {
      "number": 10,
@@ -638,7 +649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "• Possibility of talking to a (10) ␦ reporter"
-     }
+     },
+     "keyRaw": "newspaper"
     }
    ],
    "provenance": {
@@ -666,8 +678,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test88.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -684,7 +698,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "11. Newspapers ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -701,7 +716,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "12. Computers ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 13,
@@ -718,7 +734,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "13. Photocopier ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -735,7 +752,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. Café ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 15,
@@ -752,12 +770,51 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "15. Sports books ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[5]",
     "rawExcerpt": "Part 2: Questions 11-15\nLabel the plan below. Write the correct letters A-H next to questions 11-15."
+   },
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -810,8 +867,10 @@
      "(20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -834,7 +893,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "buying for the (16)……………..centre"
-     }
+     },
+     "keyRaw": "films"
     },
     {
      "number": 17,
@@ -857,7 +917,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "help with writing (17)……………….for courses"
-     }
+     },
+     "keyRaw": "reports"
     },
     {
      "number": 18,
@@ -879,7 +940,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "information on topics related to the (18)………………"
-     }
+     },
+     "keyRaw": "region"
     },
     {
      "number": 19,
@@ -901,7 +963,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "finding a (19)…………………….."
-     }
+     },
+     "keyRaw": "job"
     },
     {
      "number": 20,
@@ -923,7 +986,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "help with (20)…………………."
-     }
+     },
+     "keyRaw": "housing"
     }
    ],
    "provenance": {
@@ -987,8 +1051,12 @@
       "letter": "I",
       "text": "work on a previous assignment"
      }
+    ],
+    "optionPreface": [
+     "What helped Stewart"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1005,7 +1073,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "21. finding a location ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 22,
@@ -1022,7 +1091,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "22. Deciding on equipment ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 23,
@@ -1039,7 +1109,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. writing the script ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
@@ -1056,7 +1127,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "24. Casting ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 25,
@@ -1073,7 +1145,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "25. filming ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
@@ -1090,7 +1163,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "26. Editing ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 27,
@@ -1107,12 +1181,55 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "27. designing the DVD cover ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Part 3: Questions 21-27"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "What helped Stewart",
+    "options": [
+     {
+      "letter": "A",
+      "text": "advice from friends"
+     },
+     {
+      "letter": "B",
+      "text": "information on a website"
+     },
+     {
+      "letter": "C",
+      "text": "being allowed extra time"
+     },
+     {
+      "letter": "D",
+      "text": "meeting a professional film maker"
+     },
+     {
+      "letter": "E",
+      "text": "good weather conditions"
+     },
+     {
+      "letter": "F",
+      "text": "getting a better computer"
+     },
+     {
+      "letter": "G",
+      "text": "support of a manager"
+     },
+     {
+      "letter": "H",
+      "text": "help from a family member"
+     },
+     {
+      "letter": "I",
+      "text": "work on a previous assignment"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1140,8 +1257,10 @@
      "• Ideas for distribution of the film"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1163,7 +1282,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• His understanding of the Association’s (28) ␦"
-     }
+     },
+     "keyRaw": "aims/ goals"
     },
     {
      "number": 29,
@@ -1185,7 +1305,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• Increased co-operation between (29) ␦"
-     }
+     },
+     "keyRaw": "staff"
     },
     {
      "number": 30,
@@ -1208,7 +1329,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• Continuous (30) ␦ which led to a better product"
-     }
+     },
+     "keyRaw": "feedback"
     }
    ],
    "provenance": {
@@ -1257,8 +1379,10 @@
      "• Scientists will analyse what the birds include in their (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1281,7 +1405,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• Betty (new Caledonian crow) made a (31) ␦ out of wire to move a bucket of food"
-     }
+     },
+     "keyRaw": "hook"
     },
     {
      "number": 32,
@@ -1304,7 +1429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• Three stages: crows needed to move a (32) ␦ in order to reach a short stick"
-     }
+     },
+     "keyRaw": "string"
     },
     {
      "number": 33,
@@ -1327,7 +1453,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Crows used sticks to investigate whether there was any (33) ␦ from an object"
-     }
+     },
+     "keyRaw": "danger"
     },
     {
      "number": 34,
@@ -1349,7 +1476,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Barney used a stick to investigate a snake made of (34) ␦"
-     }
+     },
+     "keyRaw": "rubber"
     },
     {
      "number": 35,
@@ -1371,7 +1499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "• Pierre used a stick to investigate a (35) ␦"
-     }
+     },
+     "keyRaw": "light"
     },
     {
      "number": 36,
@@ -1393,7 +1522,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Unclear whether this is evidence of the birds’ (36) ␦"
-     }
+     },
+     "keyRaw": "intelligence"
     },
     {
      "number": 37,
@@ -1415,7 +1545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Scientist have attached very small cameras to birds’ (37) ␦"
-     }
+     },
+     "keyRaw": "tails"
     },
     {
      "number": 38,
@@ -1438,7 +1569,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Food in the form of beetle larvae provides plenty of (38) ␦ for the birds"
-     }
+     },
+     "keyRaw": "energy"
     },
     {
      "number": 39,
@@ -1461,7 +1593,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Larvae’s specific (39) ␦ composition can be identified in birds that feed on them"
-     }
+     },
+     "keyRaw": "chemical"
     },
     {
      "number": 40,
@@ -1483,7 +1616,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Scientists will analyse what the birds include in their (40) ␦"
-     }
+     },
+     "keyRaw": "diet"
     }
    ],
    "provenance": {
@@ -1533,5 +1667,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

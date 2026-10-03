@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-81",
  "title": "IELTS Listening Test 81",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-81/index.html",
-   "sha256": "d6b336e1838a666129bda9844434997ab4fdb7a6572ae9d332a2887648ccc335",
-   "manifestHashMatch": true,
+   "sha256": "2f77b1ada34d3444dc6901a50c046627db7b27fcb0cc4dd9831ee14845f8b394",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-81/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -403,8 +403,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -434,7 +436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. What did Nadia buy at the bookshop?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 2,
@@ -464,7 +467,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "2. Thomas is interested in the play about"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 3,
@@ -494,7 +498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "3. The couple in the bookshop were discussing"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 4,
@@ -524,7 +529,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "4. How does Nadia want her coffee?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 5,
@@ -554,7 +560,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "5. What kind of muffin does Nadia want?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -578,12 +585,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A they will definitely visit\nB they might visit\nC they will not visit"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "they will definitely visit"
+     },
+     {
+      "letter": "B",
+      "text": "they might visit"
+     },
+     {
+      "letter": "C",
+      "text": "they will not visit"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -600,7 +620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "6. the Tower of London ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 7,
@@ -617,7 +638,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "7. the Wheel ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 8,
@@ -634,7 +656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "8. Westminster ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 9,
@@ -651,7 +674,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "9. the British Museum ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -668,7 +692,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "10. Buckingham Palace ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -676,6 +701,24 @@
     "rawExcerpt": "Questions 6-10\nHow likely are Thomas and Nadia to visit the following attractions?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "they will definitely visit"
+     },
+     {
+      "letter": "B",
+      "text": "they might visit"
+     },
+     {
+      "letter": "C",
+      "text": "they will not visit"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -701,8 +744,10 @@
      "15. Where can visitors buy a cup of tea? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -727,7 +772,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "11. What time does the museum open on Thursday morning? ␦"
-     }
+     },
+     "keyRaw": "10"
     },
     {
      "number": 12,
@@ -752,7 +798,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "12. How much does it cost to hire a multi-media guide? ␦"
-     }
+     },
+     "keyRaw": "4.5 pounds"
     },
     {
      "number": 13,
@@ -777,7 +824,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. Where should visitors leave their coats and bags? ␦"
-     }
+     },
+     "keyRaw": "cloakroom"
     },
     {
      "number": 14,
@@ -802,7 +850,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. How much does it cost to leave a package there? ␦"
-     }
+     },
+     "keyRaw": "one pound"
     },
     {
      "number": 15,
@@ -827,7 +876,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. Where can visitors buy a cup of tea? ␦"
-     }
+     },
+     "keyRaw": "cafe"
     }
    ],
    "provenance": {
@@ -859,8 +909,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test81-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -884,7 +936,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "shop"
     },
     {
      "number": 17,
@@ -908,7 +961,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "library"
     },
     {
      "number": 18,
@@ -932,7 +986,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(18) ␦ (19) ␦"
-     }
+     },
+     "keyRaw": "ancient"
     },
     {
      "number": 19,
@@ -956,7 +1011,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(18) ␦ (19) ␦"
-     }
+     },
+     "keyRaw": "restrooms"
     },
     {
      "number": 20,
@@ -977,7 +1033,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(20) ␦"
-     }
+     },
+     "keyRaw": "sculptures"
     }
    ],
    "provenance": {
@@ -1028,8 +1085,10 @@
      "o (30) ␦ and ␦ of paper is important; tips for writing (to be covered in next two weeks)"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1052,7 +1111,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "• Use scientific method based on empirical evidence (= (21) ␦ )"
-     }
+     },
+     "keyRaw": "observation"
     },
     {
      "number": 22,
@@ -1074,7 +1134,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "o a commonly held belief e.g. lack of sleep has negative impact on (22) ␦"
-     }
+     },
+     "keyRaw": "test performance"
     },
     {
      "number": 23,
@@ -1096,7 +1157,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "o an everyday problem e.g. research different memorization (23) ␦"
-     }
+     },
+     "keyRaw": "strategies"
     },
     {
      "number": 24,
@@ -1119,7 +1181,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Conduct (24) ␦ research"
-     }
+     },
+     "keyRaw": "background"
     },
     {
      "number": 25,
@@ -1141,7 +1204,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "o Make notes and create (25) ␦"
-     }
+     },
+     "keyRaw": "bibliography"
     },
     {
      "number": 26,
@@ -1163,7 +1227,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Standardize your (26) ␦"
-     }
+     },
+     "keyRaw": "procedures"
     },
     {
      "number": 27,
@@ -1185,7 +1250,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "• Use different (27) ␦"
-     }
+     },
+     "keyRaw": "techniques"
     },
     {
      "number": 28,
@@ -1207,7 +1273,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "o Stratified random sample – select from subsets with different (28) ␦"
-     }
+     },
+     "keyRaw": "characteristics"
     },
     {
      "number": 29,
@@ -1230,7 +1297,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "o Use (29) ␦ methods (to be covered next week)"
-     }
+     },
+     "keyRaw": "statistical"
     },
     {
      "number": 30,
@@ -1249,18 +1317,19 @@
      "blankContext": "line: o (30) ␦ and ␦ of paper is important; tips for writing (to be covered ",
      "correctAnswer": "format, structure",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "o (30) ␦ and ␦ of paper is important; tips for writing (to be covered in next two weeks)"
-     }
+     },
+     "keyRaw": "format, structure"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[21]",
     "rawExcerpt": "Part 3: Questions 21-30\nComplete the notes below. Write NO MORE THAN TWO WORDS for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -1305,8 +1374,10 @@
      "(33) ␦ (34) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1328,7 +1399,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(31) …………."
-     }
+     },
+     "keyRaw": "wheat"
     },
     {
      "number": 32,
@@ -1350,7 +1422,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(32) ……….."
-     }
+     },
+     "keyRaw": "rice"
     },
     {
      "number": 33,
@@ -1372,7 +1445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "(33) …………"
-     }
+     },
+     "keyRaw": "900"
     },
     {
      "number": 34,
@@ -1395,7 +1469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "Cereal grown for (34) ……………"
-     }
+     },
+     "keyRaw": "oil"
     }
    ],
    "provenance": {
@@ -1423,8 +1498,10 @@
      "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet land so availability of land is quite limited by (36) ␦ type and (37) ␦ supply. The dry-land variety gives poorer yields and poorer (38) ␦ No weed killers have been developed yet that do not harm the main crop. Heavy machines are unable to work in paddy fields so most rice is still grown (39) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1462,7 +1539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet "
-     }
+     },
+     "keyRaw": "food energy"
     },
     {
      "number": 36,
@@ -1500,7 +1578,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet "
-     }
+     },
+     "keyRaw": "soil"
     },
     {
      "number": 37,
@@ -1538,7 +1617,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet "
-     }
+     },
+     "keyRaw": "water"
     },
     {
      "number": 38,
@@ -1576,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet "
-     }
+     },
+     "keyRaw": "quality"
     },
     {
      "number": 39,
@@ -1614,7 +1695,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "Rice gives more (35) ␦ per hectare than other cereal crops and production has increased over 100% in recent years because of better yields. Land area has only increased by 30% due to the need for wet "
-     }
+     },
+     "keyRaw": "by hand"
     }
    ],
    "provenance": {
@@ -1645,8 +1727,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test81-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 40,
@@ -1667,7 +1751,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "India"
     }
    ],
    "provenance": {
@@ -1710,7 +1795,34 @@
   "fnameInputs": 36
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 30,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "o ______ and of paper is important; tips for writing (to be covered in next two weeks)",
+    "answer": "format, structure",
+    "rawExcerpt": "o (30) ␦ and ␦ of paper is important; tips for writing (to be covered in next two weeks)",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     30
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1718,8 +1830,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-158",
- "sourceSha256": "f2a5c179c8864a9882e8d643b455d39527f68abc5e971bc30cffa17642298a48",
+ "status": "quarantined",
+ "sourceSha256": "6d1a7310c4ac5b04b098e750bdd30d1cf427080f91f630f55f49e1b708beaf89",
  "units": [
   {
    "unit": "group",
@@ -27,8 +28,68 @@
     37
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 4: Questions 31-37"
+    "instructionRaw": "Part 4: Questions 31-37",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 18,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 19,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 20,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "G"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 30,
+    "missingOrQuarantined": [
+     18,
+     19,
+     20,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37
+    ],
+    "outOfRange": []
    }
   }
  ]

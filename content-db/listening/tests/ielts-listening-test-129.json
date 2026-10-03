@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-129",
  "title": "IELTS Listening Test 129",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-129/index.html",
-   "sha256": "effddac3147bfeab4170cfc6066b64265de3a633e9d552a5de67161fcd7850c9",
-   "manifestHashMatch": true,
+   "sha256": "25629f818bb47b24f92c2f79b3057c295de81e86228207476c0a2e92dac7d48a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-129/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -389,8 +389,10 @@
      "1. Peter and Mary’s diet will be both sensible and ␦\n2. Every two months, they can eat ␦\n3. On Saturdays, they will go ␦\n4. This coming Saturday, they will go to ␦\n5. In every meal, there will be ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -415,7 +417,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. Peter and Mary’s diet will be both sensible and ␦"
-     }
+     },
+     "keyRaw": "practical"
     },
     {
      "number": 2,
@@ -440,7 +443,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. Every two months, they can eat ␦"
-     }
+     },
+     "keyRaw": "pizzas"
     },
     {
      "number": 3,
@@ -465,7 +469,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "3. On Saturdays, they will go ␦"
-     }
+     },
+     "keyRaw": "(light) walking"
     },
     {
      "number": 4,
@@ -490,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "4. This coming Saturday, they will go to ␦"
-     }
+     },
+     "keyRaw": "pine park"
     },
     {
      "number": 5,
@@ -515,7 +521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "5. In every meal, there will be ␦"
-     }
+     },
+     "keyRaw": "fruit juice"
     }
    ],
    "provenance": {
@@ -566,8 +573,10 @@
      "(10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 7,
@@ -584,11 +593,12 @@
      "blankContext": "table row 2 col 3",
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(7)…………………"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 9,
@@ -605,11 +615,12 @@
      "blankContext": "table row 2 col 4",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(9)…………………"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 6,
@@ -626,11 +637,12 @@
      "blankContext": "table row 3 col 2",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(6)…………………"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 8,
@@ -647,11 +659,12 @@
      "blankContext": "table row 3 col 3",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(8)…………………"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 10,
@@ -668,11 +681,12 @@
      "blankContext": "table row 3 col 4",
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(10)…………………"
-     }
+     },
+     "keyRaw": "I"
     }
    ],
    "provenance": {
@@ -680,7 +694,7 @@
     "rawExcerpt": "Questions 6-10\nChoose the correct letter C, I or B."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -725,8 +739,10 @@
      "(15) ␦ (16) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -748,7 +764,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "walls are (11)……………….."
-     }
+     },
+     "keyRaw": "padded"
     },
     {
      "number": 13,
@@ -770,7 +787,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "teachers are able to teach a (13)…………………"
-     }
+     },
+     "keyRaw": "special skill"
     },
     {
      "number": 15,
@@ -793,7 +811,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "they (15)……………..surfaces daily"
-     }
+     },
+     "keyRaw": "disinfect"
     },
     {
      "number": 12,
@@ -815,7 +834,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "includes the (12)………………"
-     }
+     },
+     "keyRaw": "corners"
     },
     {
      "number": 14,
@@ -837,7 +857,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "there are many special (14)………………"
-     }
+     },
+     "keyRaw": "learning toys"
     },
     {
      "number": 16,
@@ -859,7 +880,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "procedures to limit the spread of (16)………………."
-     }
+     },
+     "keyRaw": "germs"
     }
    ],
    "provenance": {
@@ -885,8 +907,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -903,7 +927,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "17. has her own children? ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -920,7 +945,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "18. often sleeps at the centre? ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 19,
@@ -937,7 +963,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. is good with shy children? ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 20,
@@ -967,7 +994,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "20. is a good cook? ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1004,8 +1032,10 @@
      "(25) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1028,7 +1058,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Step 1 : Decide on (21)……………you like"
-     }
+     },
+     "keyRaw": "topic"
     },
     {
      "number": 22,
@@ -1051,7 +1082,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "Step 2 : Focus on (22)…………….area of interest"
-     }
+     },
+     "keyRaw": "current"
     },
     {
      "number": 23,
@@ -1074,7 +1106,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Step 3 : Write (23)………………statement"
-     }
+     },
+     "keyRaw": "thesis"
     },
     {
      "number": 24,
@@ -1096,7 +1129,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "Step 4 : Create (24)……………."
-     }
+     },
+     "keyRaw": "outline"
     },
     {
      "number": 25,
@@ -1119,7 +1153,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "Step 5 : Ensure this (25)…………….clearly"
-     }
+     },
+     "keyRaw": "progresses"
     }
    ],
    "provenance": {
@@ -1147,8 +1182,10 @@
      "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The formatting must follow the (29) ␦ issued by the university, as well as the word count decided by the lecturer, although it can vary by (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1186,7 +1223,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The fo"
-     }
+     },
+     "keyRaw": "aspects"
     },
     {
      "number": 27,
@@ -1224,7 +1262,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The fo"
-     }
+     },
+     "keyRaw": "real-life"
     },
     {
      "number": 28,
@@ -1262,7 +1301,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The fo"
-     }
+     },
+     "keyRaw": "necessary"
     },
     {
      "number": 29,
@@ -1300,7 +1340,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The fo"
-     }
+     },
+     "keyRaw": "style-guide"
     },
     {
      "number": 30,
@@ -1338,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "There are several (26) ␦ involved in producing a good essay. The writer must think independently, and give (27) ␦ examples as support, each one with a reference (which is academically (28) ␦ ). The fo"
-     }
+     },
+     "keyRaw": "10%"
     }
    ],
    "provenance": {
@@ -1365,8 +1407,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1396,7 +1440,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "31. Geocentrism"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 32,
@@ -1426,7 +1471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "32. Heliocentrism"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1456,7 +1502,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "33. The night sky"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1502,8 +1549,10 @@
      "(40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1533,7 +1582,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– started the Copernican (34)………………… – his book published the year he (35)…………….. – this book generated little (36)………………"
-     }
+     },
+     "keyRaw": "revolution"
     },
     {
      "number": 35,
@@ -1563,7 +1613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– started the Copernican (34)………………… – his book published the year he (35)…………….. – this book generated little (36)………………"
-     }
+     },
+     "keyRaw": "died"
     },
     {
      "number": 36,
@@ -1593,7 +1644,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– started the Copernican (34)………………… – his book published the year he (35)…………….. – this book generated little (36)………………"
-     }
+     },
+     "keyRaw": "attention"
     },
     {
      "number": 37,
@@ -1619,7 +1671,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– Galileo was persecuted – (37)…………………was killed – even the sun believed to be in (38)………………."
-     }
+     },
+     "keyRaw": "Bruno"
     },
     {
      "number": 38,
@@ -1645,7 +1698,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– Galileo was persecuted – (37)…………………was killed – even the sun believed to be in (38)………………."
-     }
+     },
+     "keyRaw": "motion"
     },
     {
      "number": 39,
@@ -1672,7 +1726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– based on the (39)……………… – believers also support creationism – (40)……………of Americans believe in this"
-     }
+     },
+     "keyRaw": "bible"
     },
     {
      "number": 40,
@@ -1699,7 +1754,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "– based on the (39)……………… – believers also support creationism – (40)……………of Americans believe in this"
-     }
+     },
+     "keyRaw": "20%"
     }
    ],
    "provenance": {
@@ -1748,6 +1804,81 @@
  "quarantinedUnits": [
   {
    "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 7,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "I",
+    "rawExcerpt": "(7)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 9,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(9)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "B",
+    "rawExcerpt": "(6)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 8,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "C",
+    "rawExcerpt": "(8)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "______",
+    "answer": "I",
+    "rawExcerpt": "(10)…………………",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
    "groupId": "g04",
    "questionNumber": 17,
    "reasonCode": "OPTIONS_MISSING",
@@ -1757,7 +1888,7 @@
    "evidence": {
     "stem": "has her own children?",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "17. has her own children? ␦",
     "options": null
    }
   },
@@ -1772,7 +1903,7 @@
    "evidence": {
     "stem": "often sleeps at the centre?",
     "answer": "A",
-    "rawExcerpt": "",
+    "rawExcerpt": "18. often sleeps at the centre? ␦",
     "options": null
    }
   },
@@ -1787,14 +1918,33 @@
    "evidence": {
     "stem": "is good with shy children?",
     "answer": "C",
-    "rawExcerpt": "",
+    "rawExcerpt": "19. is good with shy children? ␦",
     "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     17,
+     18,
+     19
+    ],
+    "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 37,
- "quarantinedCount": 3,
- "status": "flagged",
+ "verifiedQuestionCount": 32,
+ "quarantinedCount": 9,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

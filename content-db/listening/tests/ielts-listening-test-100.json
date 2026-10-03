@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-100",
  "title": "IELTS Listening Test 100",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-100/index.html",
-   "sha256": "4568dbc5df069d6971873ea038b4cfe4daa96de857c4753f8335131b250900c7",
-   "manifestHashMatch": true,
+   "sha256": "aceea98a3335dc94556c6646a348d5d799c81e425bc072ab3b5125c0dc7d20d3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-100/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -396,8 +396,10 @@
      "o Tours start at 7 am and finish at (5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -419,7 +421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• They will be coming to London on (1) ␦"
-     }
+     },
+     "keyRaw": "10 July"
     },
     {
      "number": 2,
@@ -441,7 +444,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• He’s going with his sister and his (2) ␦"
-     }
+     },
+     "keyRaw": "parents"
     },
     {
      "number": 3,
@@ -468,7 +472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "o The cost is (3) £ ␦ for adults and (4) £ ␦ for children"
-     }
+     },
+     "keyRaw": "29"
     },
     {
      "number": 4,
@@ -495,7 +500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "o The cost is (3) £ ␦ for adults and (4) £ ␦ for children"
-     }
+     },
+     "keyRaw": "14"
     },
     {
      "number": 5,
@@ -517,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "o Tours start at 7 am and finish at (5) ␦"
-     }
+     },
+     "keyRaw": "6 pm"
     }
    ],
    "provenance": {
@@ -546,14 +553,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Buckingham Palace B Big Ben C Harrods D Houses of Parliament E Hyde Park F St Paul’s Cathedral"
+      "text": "Buckingham Palace"
+     },
+     {
+      "letter": "B",
+      "text": "Big Ben"
+     },
+     {
+      "letter": "C",
+      "text": "Harrods"
+     },
+     {
+      "letter": "D",
+      "text": "Houses of Parliament"
+     },
+     {
+      "letter": "E",
+      "text": "Hyde Park"
+     },
+     {
+      "letter": "F",
+      "text": "St Paul’s Cathedral"
      },
      {
       "letter": "G",
       "text": "London Eye"
      }
+    ],
+    "optionPreface": [
+     "Which three places does the tourist decide he’s likely to see?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -566,11 +597,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters A-G."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 7,
@@ -583,11 +615,12 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters A-G."
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 8,
@@ -600,11 +633,12 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Choose TWO letters A-G."
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -612,7 +646,7 @@
     "rawExcerpt": "Questions 6-8\nChoose TWO letters A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -631,8 +665,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -662,7 +698,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. How will the tourist buy the tickets?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -692,7 +729,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "10. How long before he leaves should he buy his tickets?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -719,8 +757,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -750,7 +790,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. Each day, pandas need to eat:"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -780,7 +821,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. If pandas are cared for away from the wild, they can live for approximately:"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -809,14 +851,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Public awareness B Ecotourism C Poaching D Other wildlife"
+      "text": "Public awareness"
+     },
+     {
+      "letter": "B",
+      "text": "Ecotourism"
+     },
+     {
+      "letter": "C",
+      "text": "Poaching"
+     },
+     {
+      "letter": "D",
+      "text": "Other wildlife"
      },
      {
       "letter": "E",
       "text": "Building of roads and railroads"
      }
+    ],
+    "optionPreface": [
+     "Select two things that are endangering pandas:"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -833,7 +891,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
@@ -850,7 +909,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -858,6 +918,43 @@
     "rawExcerpt": "Questions 13-14\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:13-14",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Select two things that are endangering pandas:",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Public awareness"
+     },
+     {
+      "letter": "B",
+      "text": "Ecotourism"
+     },
+     {
+      "letter": "C",
+      "text": "Poaching"
+     },
+     {
+      "letter": "D",
+      "text": "Other wildlife"
+     },
+     {
+      "letter": "E",
+      "text": "Building of roads and railroads"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -879,8 +976,10 @@
      "15. What proportion of the panda population in China is protected by reserves? ␦\n16. What did the WWF create which encouraged people to support pandas? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -905,7 +1004,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "15. What proportion of the panda population in China is protected by reserves? ␦"
-     }
+     },
+     "keyRaw": "61%"
     },
     {
      "number": 16,
@@ -930,7 +1030,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "16. What did the WWF create which encouraged people to support pandas? ␦"
-     }
+     },
+     "keyRaw": "logo"
     }
    ],
    "provenance": {
@@ -966,8 +1067,10 @@
      "• The number of pandas in the wild is (20) ␦ so they will not become extinct"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -990,7 +1093,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• They are extremely (17) ␦ to look after"
-     }
+     },
+     "keyRaw": "expensive"
     },
     {
      "number": 18,
@@ -1012,7 +1116,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "• They have a diet that is not (18) ␦"
-     }
+     },
+     "keyRaw": "nutritious"
     },
     {
      "number": 19,
@@ -1035,7 +1140,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• They are in danger because (19) ␦ are damaging the forests"
-     }
+     },
+     "keyRaw": "humans"
     },
     {
      "number": 20,
@@ -1058,7 +1164,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• The number of pandas in the wild is (20) ␦ so they will not become extinct"
-     }
+     },
+     "keyRaw": "increasing"
     }
    ],
    "provenance": {
@@ -1085,8 +1192,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1116,7 +1225,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "21. What is the problem that the students are having with the project?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
@@ -1146,7 +1256,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "22. When can extensions be granted?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1170,12 +1281,37 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A knowledge about their customers\nB long-term gain\nC competition\nD customer satisfaction\nE employees\nF external factors"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "knowledge about their customers"
+     },
+     {
+      "letter": "B",
+      "text": "long-term gain"
+     },
+     {
+      "letter": "C",
+      "text": "competition"
+     },
+     {
+      "letter": "D",
+      "text": "customer satisfaction"
+     },
+     {
+      "letter": "E",
+      "text": "employees"
+     },
+     {
+      "letter": "F",
+      "text": "external factors"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1192,7 +1328,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "23. Princeton Windows ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1209,7 +1346,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "24. MK Cars ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1226,7 +1364,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "25. Lakeside Golf ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 26,
@@ -1243,7 +1382,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. Bryson’s Meats ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 27,
@@ -1260,7 +1400,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. Mojo’s Music Shop ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1268,6 +1409,36 @@
     "rawExcerpt": "Questions 23-27\nChoose your answers from the box and write the letters A–G next to questions 23–27."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "knowledge about their customers"
+     },
+     {
+      "letter": "B",
+      "text": "long-term gain"
+     },
+     {
+      "letter": "C",
+      "text": "competition"
+     },
+     {
+      "letter": "D",
+      "text": "customer satisfaction"
+     },
+     {
+      "letter": "E",
+      "text": "employees"
+     },
+     {
+      "letter": "F",
+      "text": "external factors"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1290,14 +1461,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It has good managers B It has been operating for too long C There aren’t enough music shops D It needs more innovative marketing E It will close down in the end"
+      "text": "It has good managers"
+     },
+     {
+      "letter": "B",
+      "text": "It has been operating for too long"
+     },
+     {
+      "letter": "C",
+      "text": "There aren’t enough music shops"
+     },
+     {
+      "letter": "D",
+      "text": "It needs more innovative marketing"
+     },
+     {
+      "letter": "E",
+      "text": "It will close down in the end"
      },
      {
       "letter": "F",
       "text": "It has a good long-term future"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1314,7 +1503,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "28. Sarah ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 29,
@@ -1331,7 +1521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "29. John ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1348,7 +1539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "30. Neil ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1356,6 +1548,36 @@
     "rawExcerpt": "Questions 28-30\nChoose your answers from the box and write the letters A-F next to questions 28-30."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It has good managers"
+     },
+     {
+      "letter": "B",
+      "text": "It has been operating for too long"
+     },
+     {
+      "letter": "C",
+      "text": "There aren’t enough music shops"
+     },
+     {
+      "letter": "D",
+      "text": "It needs more innovative marketing"
+     },
+     {
+      "letter": "E",
+      "text": "It will close down in the end"
+     },
+     {
+      "letter": "F",
+      "text": "It has a good long-term future"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1409,8 +1631,10 @@
      "• playful behaviour may include other (40) ␦ such as humans"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1432,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• found (31) ␦"
-     }
+     },
+     "keyRaw": "worldwide"
     },
     {
      "number": 32,
@@ -1455,7 +1680,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• super-pods may have more than (32) ␦ dolphins"
-     }
+     },
+     "keyRaw": "1000"
     },
     {
      "number": 33,
@@ -1477,7 +1703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• help other animals – Moko helped a whale and calf escape from (33) ␦"
-     }
+     },
+     "keyRaw": "shallow water"
     },
     {
      "number": 34,
@@ -1499,7 +1726,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• discovered in May 2005 that young bottlenose dolphins learn to (34) ␦"
-     }
+     },
+     "keyRaw": "use tools"
     },
     {
      "number": 35,
@@ -1521,7 +1749,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• dolphins pass knowledge from mothers to daughters, whereas primates pass to (35) ␦"
-     }
+     },
+     "keyRaw": "both sexes"
     },
     {
      "number": 36,
@@ -1544,7 +1773,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• Like humans, this is due to disagreements over (36) ␦ and competition for females"
-     }
+     },
+     "keyRaw": "companions"
     },
     {
      "number": 37,
@@ -1567,7 +1797,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "• dolphins have a variety of feeding methods, some of which are (37) ␦ to one population"
-     }
+     },
+     "keyRaw": "exclusive"
     },
     {
      "number": 38,
@@ -1590,7 +1821,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "o (38) ␦ or strand feeding"
-     }
+     },
+     "keyRaw": "beach"
     },
     {
      "number": 39,
@@ -1613,7 +1845,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "o (39) ␦ away from another dolphin throwing it out the water"
-     }
+     },
+     "keyRaw": "taking it"
     },
     {
      "number": 40,
@@ -1636,7 +1869,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "• playful behaviour may include other (40) ␦ such as humans"
-     }
+     },
+     "keyRaw": "species"
     }
    ],
    "provenance": {
@@ -1672,7 +1906,69 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 6,
+   "reasonCode": "MULTI_COUNT_MISMATCH",
+   "reasonCodes": [
+    "MULTI_COUNT_MISMATCH",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A-G.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 7,
+   "reasonCode": "MULTI_COUNT_MISMATCH",
+   "reasonCodes": [
+    "MULTI_COUNT_MISMATCH",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A-G.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 8,
+   "reasonCode": "MULTI_COUNT_MISMATCH",
+   "reasonCodes": [
+    "MULTI_COUNT_MISMATCH",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "G",
+    "rawExcerpt": "Choose TWO letters A-G.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     6,
+     7,
+     8
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1680,8 +1976,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 4,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

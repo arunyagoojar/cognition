@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-11",
  "title": "IELTS Listening Test 11",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-11/index.html",
-   "sha256": "43ccfe56e1838656c9b82b2c2d2dc6eb878177658ee63f232f85d94b84d32b03",
-   "manifestHashMatch": true,
+   "sha256": "178ca5e5d448b850e3bec03e94e665e3c23cef7f4e3ec7c4757d68813021bd1b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-11/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "c926f1f043c269c9b73436f8e24534a59c67e8118f0f52834f677955e8442c13",
+ "contentFingerprint": "863c94e5555e8809f05c0c437c3ba39a2b4e2356a6e59198850f34f2175cdf54",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -435,8 +435,10 @@
      "(9) ␦ (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -458,7 +460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Harold (1)…………………….."
-     }
+     },
+     "keyRaw": "Kramer"
     },
     {
      "number": 2,
@@ -480,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(2)…………………….Fulton Avenue apartment 12"
-     }
+     },
+     "keyRaw": "58"
     },
     {
      "number": 3,
@@ -501,7 +505,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(3)…………………………….."
-     }
+     },
+     "keyRaw": "residential"
     },
     {
      "number": 4,
@@ -522,7 +527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(4)…………………………….."
-     }
+     },
+     "keyRaw": "office manager"
     },
     {
      "number": 5,
@@ -543,7 +549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(5)………………………………….."
-     }
+     },
+     "keyRaw": "6375559014"
     },
     {
      "number": 6,
@@ -564,7 +571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(6)…………………………….."
-     }
+     },
+     "keyRaw": "nine years"
     },
     {
      "number": 7,
@@ -589,7 +597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(7)……………………….. and (8)…………………………."
-     }
+     },
+     "keyRaw": "long distance"
     },
     {
      "number": 8,
@@ -614,7 +623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "(7)……………………….. and (8)…………………………."
-     }
+     },
+     "keyRaw": "internet"
     },
     {
      "number": 9,
@@ -640,7 +650,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Day (9)…………………….. Time of day (10)………………………"
-     }
+     },
+     "keyRaw": "friday"
     },
     {
      "number": 10,
@@ -666,7 +677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "Day (9)…………………….. Time of day (10)………………………"
-     }
+     },
+     "keyRaw": "morning"
     }
    ],
    "provenance": {
@@ -689,34 +701,36 @@
     "originalText": "Answer the questions below. Choose the correct letter, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A Fairgrounds",
-     "B Park",
-     "C School",
-     "11. The fair will take place at the\nA Fairgrounds\nB Park\nC School",
-     "A Morning",
-     "B Afternoon",
-     "C Evening",
-     "12. The fair will begin on Friday\nA Morning\nB Afternoon\nC Evening",
-     "A Parade",
-     "B Dance performance",
-     "C Speech by the major",
-     "13. The fair will begin with a\nA Parade\nB Dance performance\nC Speech by the major"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The fair will take place at the",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Fairgrounds"
+      },
+      {
+       "letter": "B",
+       "text": "Park"
+      },
+      {
+       "letter": "C",
+       "text": "School"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -724,16 +738,30 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "11. The fair will take place at the"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The fair will begin on Friday",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Morning"
+      },
+      {
+       "letter": "B",
+       "text": "Afternoon"
+      },
+      {
+       "letter": "C",
+       "text": "Evening"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -741,16 +769,30 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "12. The fair will begin on Friday"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The fair will begin with a",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Parade"
+      },
+      {
+       "letter": "B",
+       "text": "Dance performance"
+      },
+      {
+       "letter": "C",
+       "text": "Speech by the major"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -758,7 +800,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "13. The fair will begin with a"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -816,8 +859,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -839,7 +884,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(15)…………………….show"
-     }
+     },
+     "keyRaw": "clown"
     },
     {
      "number": 16,
@@ -861,7 +907,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(16)………………………….by the lake"
-     }
+     },
+     "keyRaw": "concert"
     },
     {
      "number": 17,
@@ -883,7 +930,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(17)…………………….contest"
-     }
+     },
+     "keyRaw": "singing"
     },
     {
      "number": 18,
@@ -913,7 +961,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(18)…………………food (19)…………….for children (20)……………….for sale"
-     }
+     },
+     "keyRaw": "international"
     },
     {
      "number": 19,
@@ -943,7 +992,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(18)…………………food (19)…………….for children (20)……………….for sale"
-     }
+     },
+     "keyRaw": "games"
     },
     {
      "number": 20,
@@ -973,7 +1023,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(18)…………………food (19)…………….for children (20)……………….for sale"
-     }
+     },
+     "keyRaw": "crafts"
     }
    ],
    "provenance": {
@@ -1005,8 +1056,10 @@
      "(23) ␦ to the university admissions office."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1029,7 +1082,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "First, read the (21) ␦ Find courses that match your work experience. Then write"
-     }
+     },
+     "keyRaw": "university catalog"
     },
     {
      "number": 22,
@@ -1051,7 +1105,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(22) ␦ of your work experience. Submit that together with a letter from your"
-     }
+     },
+     "keyRaw": "a summary"
     },
     {
      "number": 23,
@@ -1073,7 +1128,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(23) ␦ to the university admissions office."
-     }
+     },
+     "keyRaw": "work supervisor"
     }
    ],
    "provenance": {
@@ -1089,18 +1145,22 @@
    "endQ": 28,
    "partExplicit": false,
    "instruction": {
-    "text": "Where can the items listed below be found? A admissions office B counseling center C library Write the correct letter, A, B, or C, next to questions 24-28.",
+    "text": "Where can the items listed below be found? Write the correct letter, A, B, or C, next to questions 24-28.",
     "wordLimit": "",
     "removedResidue": [],
-    "originalText": "Where can the items listed below be found? A admissions office B counseling center C library Write the correct letter, A, B, or C, next to questions 24-28."
+    "originalText": "Where can the items listed below be found? Write the correct letter, A, B, or C, next to questions 24-28."
    },
    "stimulus": {
     "kind": "diagram",
     "table": null,
-    "segments": null,
+    "segments": [
+     "A admissions office\nB counseling center\nC library"
+    ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1115,9 +1175,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "24. university catalog ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1132,9 +1193,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "25. application for admission form ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1149,9 +1211,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "26. requirements list ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 27,
@@ -1166,9 +1229,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "27. recommendation forms ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1183,16 +1247,36 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[17]",
+      "elementPath": "entry-content.children[18]",
       "rawExcerpt": "28. job listings ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
-    "rawExcerpt": "Questions 24-28\nWhere can the items listed below be found?\nA admissions office\nB counseling center\nC library"
+    "rawExcerpt": "Questions 24-28\nWhere can the items listed below be found?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "admissions office"
+     },
+     {
+      "letter": "B",
+      "text": "counseling center"
+     },
+     {
+      "letter": "C",
+      "text": "library"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1208,59 +1292,80 @@
     "originalText": "Choose the correct letters, A, B, or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A Discounted books",
-     "B The work-study program",
-     "C A free bus pass",
-     "29. What are full-time students eligible for?\nA Discounted books\nB The work-study program\nC A free bus pass",
-     "A Speak with a counselor",
-     "B Apply to the admissions office",
-     "C Make arrangements with a bank",
-     "30. How can a student get financial assistance?\nA Speak with a counselor\nB Apply to the admissions office\nC Make arrangements with a bank"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What are full-time students eligible for?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Discounted books"
+      },
+      {
+       "letter": "B",
+       "text": "The work-study program"
+      },
+      {
+       "letter": "C",
+       "text": "A free bus pass"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[19]",
+      "elementPath": "entry-content.children[20]",
       "rawExcerpt": "29. What are full-time students eligible for?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How can a student get financial assistance?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Speak with a counselor"
+      },
+      {
+       "letter": "B",
+       "text": "Apply to the admissions office"
+      },
+      {
+       "letter": "C",
+       "text": "Make arrangements with a bank"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[20]",
+      "elementPath": "entry-content.children[21]",
       "rawExcerpt": "30. How can a student get financial assistance?"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[18]",
+    "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Questions 29 and 30\nChoose the correct letters, A, B, or C."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1306,8 +1411,10 @@
      "(35) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1328,9 +1435,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Lives in (31)……………………..of North America"
-     }
+     },
+     "keyRaw": "forested area"
     },
     {
      "number": 32,
@@ -1354,9 +1462,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Ninety percent of diet consists of (32)……………….., also eats (33)………………………."
-     }
+     },
+     "keyRaw": "plant foods"
     },
     {
      "number": 33,
@@ -1380,9 +1489,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Ninety percent of diet consists of (32)……………….., also eats (33)………………………."
-     }
+     },
+     "keyRaw": "insects/ fish"
     },
     {
      "number": 34,
@@ -1402,9 +1512,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Baby bear cubs are born in (34)…………………………"
-     }
+     },
+     "keyRaw": "the winter"
     },
     {
      "number": 35,
@@ -1425,13 +1536,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[22]",
+      "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Black bears live for about (35)………………….in the wild"
-     }
+     },
+     "keyRaw": "25 years"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[21]",
+    "elementPath": "entry-content.children[22]",
     "rawExcerpt": "Part 4: Questions 31-35\nComplete the chart with information about the black bear. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer."
    },
    "status": "verified"
@@ -1455,8 +1567,10 @@
      "36. Has a patch of light fur on its chest ␦\n37. Weighs 225 kilos ␦\n38. Has a shoulder hump ␦\n39. Has pointed ears ␦\n40. Has shorter claws ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1477,11 +1591,12 @@
      "blankContext": "line: 36. Has a patch of light fur on its chest ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "36. Has a patch of light fur on its chest ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 37,
@@ -1502,11 +1617,12 @@
      "blankContext": "line: 37. Weighs 225 kilos ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "37. Weighs 225 kilos ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 38,
@@ -1527,11 +1643,12 @@
      "blankContext": "line: 38. Has a shoulder hump ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "38. Has a shoulder hump ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 39,
@@ -1552,11 +1669,12 @@
      "blankContext": "line: 39. Has pointed ears ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "39. Has pointed ears ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 40,
@@ -1577,19 +1695,20 @@
      "blankContext": "line: 40. Has shorter claws ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "40. Has shorter claws ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[24]",
+    "elementPath": "entry-content.children[25]",
     "rawExcerpt": "Questions 36-40\nWhich characteristics fit black bears and which fit grizzly bears?"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1623,10 +1742,115 @@
   "fnameInputs": 34
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 36,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Has a patch of light fur on its chest ______",
+    "answer": "A",
+    "rawExcerpt": "36. Has a patch of light fur on its chest ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 37,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Weighs 225 kilos ______",
+    "answer": "B",
+    "rawExcerpt": "37. Weighs 225 kilos ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 38,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Has a shoulder hump ______",
+    "answer": "B",
+    "rawExcerpt": "38. Has a shoulder hump ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 39,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Has pointed ears ______",
+    "answer": "A",
+    "rawExcerpt": "39. Has pointed ears ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 40,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Has shorter claws ______",
+    "answer": "A",
+    "rawExcerpt": "40. Has shorter claws ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 14,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 34,
+    "missingOrQuarantined": [
+     14,
+     36,
+     37,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

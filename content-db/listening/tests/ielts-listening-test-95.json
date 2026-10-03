@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-95",
  "title": "IELTS Listening Test 95",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-95/index.html",
-   "sha256": "e202ac0d289f7e3bea5ed86bba664ffa67c51649c1cbde2e7604c3b2b41c1241",
-   "manifestHashMatch": true,
+   "sha256": "f4363d9e5d04f2c166036bd12d058891d3610cfd69298b462fbbffd1464c3bd1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-95/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -401,8 +401,10 @@
      "• National Youth Services – money was (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -425,7 +427,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Contact address: (1) ␦ Drayton, DR68AB"
-     }
+     },
+     "keyRaw": "230 south road"
     },
     {
      "number": 2,
@@ -448,7 +451,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Description of group: amateur theatre group ( (2) ␦ members)"
-     }
+     },
+     "keyRaw": "18"
     },
     {
      "number": 3,
@@ -471,7 +475,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Involved in drama (3) ␦ and ␦"
-     }
+     },
+     "keyRaw": "activities (and) workshops"
     },
     {
      "number": 4,
@@ -494,7 +499,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Amount of money requested: (4) £ ␦"
-     }
+     },
+     "keyRaw": "£250"
     },
     {
      "number": 5,
@@ -517,7 +523,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Description of project: to produce a short (5) ␦ play for young children"
-     }
+     },
+     "keyRaw": "interactive"
     },
     {
      "number": 6,
@@ -540,7 +547,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Money needed for: (6) ␦ for scenery"
-     }
+     },
+     "keyRaw": "materials"
     },
     {
      "number": 7,
@@ -562,7 +570,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Cost of (7) ␦"
-     }
+     },
+     "keyRaw": "insurance"
     },
     {
      "number": 8,
@@ -583,7 +592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "publicity"
     },
     {
      "number": 9,
@@ -606,7 +616,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "• Acknowledged in the (9) ␦ given to audience"
-     }
+     },
+     "keyRaw": "programme"
     },
     {
      "number": 10,
@@ -628,7 +639,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "• National Youth Services – money was (10) ␦"
-     }
+     },
+     "keyRaw": "not available/ unvailable"
     }
    ],
    "provenance": {
@@ -652,12 +664,14 @@
    "stimulus": {
     "kind": "mcq",
     "table": null,
-    "segments": [
-     "[orphan option block: 12 To enjoy cultural activities, the people of Darwin tend to\nA travel to southe]"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": [
+    "12 To enjoy cultural activities, the people of Darwin tend to\nA travel to southe"
+   ],
    "questions": [
     {
      "number": 11,
@@ -683,11 +697,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Joanne says that visitors to Darwin are often surprised by"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -713,11 +728,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. The Chinese temple in Darwin"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 14,
@@ -743,11 +759,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. The main problem with travelling by bicycle is"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
@@ -773,18 +790,19 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "15. What does Joanne say about swimming in the sea?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-15\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
+   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -805,8 +823,10 @@
      "A a flower market\nB a chance to feed the fish\nC good nightlife\nD international arts and crafts\nE good cheap international food\nF a trip to catch fish\nG shops and seafood restaurants\nH a wide range of different plants"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -823,7 +843,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. ‘Aquascene’ ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -840,7 +861,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "17. Smith Street Mall ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 18,
@@ -857,7 +879,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. Cullen Bay Marina ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 19,
@@ -874,7 +897,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. Fannie Bay ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 20,
@@ -891,7 +915,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. Mitchell Street ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -899,6 +924,45 @@
     "rawExcerpt": "Questions 16-20\nWhat can you find at each of the places below?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "a flower market"
+     },
+     {
+      "letter": "B",
+      "text": "a chance to feed the fish"
+     },
+     {
+      "letter": "C",
+      "text": "good nightlife"
+     },
+     {
+      "letter": "D",
+      "text": "international arts and crafts"
+     },
+     {
+      "letter": "E",
+      "text": "good cheap international food"
+     },
+     {
+      "letter": "F",
+      "text": "a trip to catch fish"
+     },
+     {
+      "letter": "G",
+      "text": "shops and seafood restaurants"
+     },
+     {
+      "letter": "H",
+      "text": "a wide range of different plants"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -923,8 +987,10 @@
      "23. Stella defines effect on mood’ as a ␦ in the way a person feels."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -947,7 +1013,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "21. Phil and Stella’s goal is to ␦ the hypothesis that weather has an effect on a person’s mood."
-     }
+     },
+     "keyRaw": "investigate"
     },
     {
      "number": 22,
@@ -970,7 +1037,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. They expect to find that ‘good’ weather (weather which is ␦ ) has a positive effect on a person’s mood."
-     }
+     },
+     "keyRaw": "sunny (and) warm"
     },
     {
      "number": 23,
@@ -993,7 +1061,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "23. Stella defines effect on mood’ as a ␦ in the way a person feels."
-     }
+     },
+     "keyRaw": "change"
     }
    ],
    "provenance": {
@@ -1021,8 +1090,10 @@
      "A the benefits of moving to a warmer environment\nB the type of weather with the worst effect on mood\nC how past events affect attitudes to weather\nD the important effect of stress on mood\nE the important effect of hours of sunshine on mood\nF psychological problems due to having to cope with bad weather"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1039,7 +1110,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "24. Vickers ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 25,
@@ -1056,7 +1128,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "25. Whitebourne ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 26,
@@ -1073,7 +1146,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "26. Haverton ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
@@ -1090,7 +1164,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "27. Stanfield ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1098,6 +1173,37 @@
     "rawExcerpt": "Questions 24-27\nWhat information was given by each writer?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "the benefits of moving to a warmer environment"
+     },
+     {
+      "letter": "B",
+      "text": "the type of weather with the worst effect on mood"
+     },
+     {
+      "letter": "C",
+      "text": "how past events affect attitudes to weather"
+     },
+     {
+      "letter": "D",
+      "text": "the important effect of stress on mood"
+     },
+     {
+      "letter": "E",
+      "text": "the important effect of hours of sunshine on mood"
+     },
+     {
+      "letter": "F",
+      "text": "psychological problems due to having to cope with bad weather"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1120,14 +1226,40 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "how to analyse their results B their methods of presentation C the design of their questionnaire D the location of their survey E weather variables to be measured F the dates of their survey G the size of their survey"
+      "text": "how to analyse their results"
+     },
+     {
+      "letter": "B",
+      "text": "their methods of presentation"
+     },
+     {
+      "letter": "C",
+      "text": "the design of their questionnaire"
+     },
+     {
+      "letter": "D",
+      "text": "the location of their survey"
+     },
+     {
+      "letter": "E",
+      "text": "weather variables to be measured"
+     },
+     {
+      "letter": "F",
+      "text": "the dates of their survey"
+     },
+     {
+      "letter": "G",
+      "text": "the size of their survey"
      },
      {
       "letter": "H",
       "text": "the source of data on weather variables"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1144,7 +1276,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE things do Phil and Stella still have to decide on?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1161,7 +1294,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE things do Phil and Stella still have to decide on?"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 30,
@@ -1178,7 +1312,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Choose THREE letters A-H. Which THREE things do Phil and Stella still have to decide on?"
-     }
+     },
+     "keyRaw": "H"
     }
    ],
    "provenance": {
@@ -1186,6 +1321,56 @@
     "rawExcerpt": "Questions 28-30\nChoose THREE letters A-H."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 3,
+    "unorderedGroup": "g06:28-30",
+    "answerSet": [
+     "B",
+     "F",
+     "H"
+    ],
+    "prompt": "Which THREE things do Phil and Stella still have to decide on?",
+    "instructionText": "Choose THREE letters A-H."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "how to analyse their results"
+     },
+     {
+      "letter": "B",
+      "text": "their methods of presentation"
+     },
+     {
+      "letter": "C",
+      "text": "the design of their questionnaire"
+     },
+     {
+      "letter": "D",
+      "text": "the location of their survey"
+     },
+     {
+      "letter": "E",
+      "text": "weather variables to be measured"
+     },
+     {
+      "letter": "F",
+      "text": "the dates of their survey"
+     },
+     {
+      "letter": "G",
+      "text": "the size of their survey"
+     },
+     {
+      "letter": "H",
+      "text": "the source of data on weather variables"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1208,14 +1393,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "differences between rich and poor students B high numbers dropping out of education C falling standards of students D poor results compared with other nationalities E low scores of overseas students"
+      "text": "differences between rich and poor students"
+     },
+     {
+      "letter": "B",
+      "text": "high numbers dropping out of education"
+     },
+     {
+      "letter": "C",
+      "text": "falling standards of students"
+     },
+     {
+      "letter": "D",
+      "text": "poor results compared with other nationalities"
+     },
+     {
+      "letter": "E",
+      "text": "low scores of overseas students"
      },
      {
       "letter": "F",
       "text": "differences between rural and urban students"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1228,11 +1431,12 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 32,
@@ -1245,18 +1449,19 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[29]",
     "rawExcerpt": "Part 4: Questions 31 and 32\nChoose TWO letters A-F"
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g08",
@@ -1278,14 +1483,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "more employment for teachers B improvement in general health of the population C reduction in number of days taken off sick by teachers D better use of existing buildings and resources E better level of education of workforce"
+      "text": "more employment for teachers"
+     },
+     {
+      "letter": "B",
+      "text": "improvement in general health of the population"
+     },
+     {
+      "letter": "C",
+      "text": "reduction in number of days taken off sick by teachers"
+     },
+     {
+      "letter": "D",
+      "text": "better use of existing buildings and resources"
+     },
+     {
+      "letter": "E",
+      "text": "better level of education of workforce"
      },
      {
       "letter": "F",
       "text": "availability of better qualified teachers"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1298,11 +1521,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 34,
@@ -1315,11 +1539,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1327,7 +1552,7 @@
     "rawExcerpt": "Questions 33 and 34\nChoose TWO letters A-F"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g09",
@@ -1382,8 +1607,10 @@
      "(39) ␦ (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1405,7 +1632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "in total (35)…………."
-     }
+     },
+     "keyRaw": "12000"
     },
     {
      "number": 36,
@@ -1428,7 +1656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "significant benefit especially for (36)……………..pupils"
-     }
+     },
+     "keyRaw": "minority"
     },
     {
      "number": 37,
@@ -1450,7 +1679,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "(37)……………..schools"
-     }
+     },
+     "keyRaw": "all"
     },
     {
      "number": 38,
@@ -1477,7 +1707,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "– shortage of (38)……………especially in poorer areas – no proper method for (39)……………of project"
-     }
+     },
+     "keyRaw": "teachers"
     },
     {
      "number": 39,
@@ -1504,7 +1735,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "– shortage of (38)……………especially in poorer areas – no proper method for (39)……………of project"
-     }
+     },
+     "keyRaw": "evaluation"
     },
     {
      "number": 40,
@@ -1527,7 +1759,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "14 schools with pupils from (40)……………families"
-     }
+     },
+     "keyRaw": "poor"
     }
    ],
    "provenance": {
@@ -1561,10 +1794,127 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "groupId": "g02",
+   "questionNumbers": [
+    11,
+    13,
+    14,
+    15
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 2: Questions 11-15\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": [
+     "12 To enjoy cultural activities, the people of Darwin tend to\nA travel to southe"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 31,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "A",
+    "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 32,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 33,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 34,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     31,
+     32,
+     33,
+     34
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 31,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

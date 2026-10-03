@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-174",
  "title": "IELTS Listening Test 174",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-174/index.html",
-   "sha256": "04eb9193fd93b504db312061063626a95fda971476d20859952a74d3fe3028c0",
-   "manifestHashMatch": true,
+   "sha256": "32e27a15cc9c33c5a5f14df6398fa74ea620fcc7f76950ef28ea3d3cdc9fc5cf",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-174/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -435,14 +435,17 @@
     "kind": "mcq",
     "table": null,
     "segments": [
-     "4 Which picture shows the correct location of the Administration office?",
-     "[orphan option block: A\nB\nC\nD]"
+     "4 Which picture shows the correct location of the Administration office?"
     ],
     "figures": [
      "wp-content/uploads/2024/09/lis-test174-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": [
+    "A\nB\nC\nD"
+   ],
    "questions": [
     {
      "number": 1,
@@ -472,11 +475,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "1. What are the parking regulations on campus?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 2,
@@ -506,11 +510,12 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "2. The administration office is in"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 3,
@@ -540,11 +545,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "3. If you do not have a parking sticker, the following action will be taken:"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -556,7 +562,7 @@
     4
    ],
    "rangeReconciled": true,
-   "status": "verified"
+   "status": "quarantined"
   },
   {
    "groupId": "g02",
@@ -582,8 +588,10 @@
      "Make of car: (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
@@ -605,7 +613,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Name: (5) ␦"
-     }
+     },
+     "keyRaw": "Richard Lee"
     },
     {
      "number": 6,
@@ -627,7 +636,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Address: Flat 13 (6) ␦"
-     }
+     },
+     "keyRaw": "30 enmore road"
     },
     {
      "number": 7,
@@ -649,7 +659,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Suburb: (7) ␦"
-     }
+     },
+     "keyRaw": "newport"
     },
     {
      "number": 8,
@@ -671,7 +682,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Faculty: (8) ␦"
-     }
+     },
+     "keyRaw": "architecture"
     },
     {
      "number": 9,
@@ -693,7 +705,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Registration Number: (9) ␦"
-     }
+     },
+     "keyRaw": "LJX058K"
     },
     {
      "number": 10,
@@ -715,7 +728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Make of car: (10) ␦"
-     }
+     },
+     "keyRaw": "Ford"
     }
    ],
    "provenance": {
@@ -749,12 +763,14 @@
      "12. Where must the sticker be displayed? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Cashier’s office opens at",
       "segments": null
@@ -767,7 +783,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "11. Cashier’s office opens at"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 12,
@@ -792,12 +810,36 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "12. Where must the sticker be displayed? ␦"
-     }
+     },
+     "keyRaw": "window"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[13]",
     "rawExcerpt": "Part 2: Questions 11 and 12"
+   },
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "11. Cashier’s office opens at",
+    "options": [
+     {
+      "letter": "A",
+      "text": "12.15"
+     },
+     {
+      "letter": "B",
+      "text": "2.00"
+     },
+     {
+      "letter": "C",
+      "text": "2.15"
+     },
+     {
+      "letter": "D",
+      "text": "4.30"
+     }
+    ]
    },
    "status": "quarantined"
   },
@@ -827,8 +869,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test174-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 13,
@@ -852,7 +896,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(13) ␦ (14) ␦"
-     }
+     },
+     "keyRaw": "November 1991"
     },
     {
      "number": 14,
@@ -876,7 +921,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(13) ␦ (14) ␦"
-     }
+     },
+     "keyRaw": "ships"
     },
     {
      "number": 15,
@@ -900,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(15) ␦ (16) ␦"
-     }
+     },
+     "keyRaw": "green arrows"
     },
     {
      "number": 16,
@@ -924,7 +971,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(15) ␦ (16) ␦"
-     }
+     },
+     "keyRaw": "information desk"
     },
     {
      "number": 17,
@@ -948,7 +996,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "stairs to climb"
     },
     {
      "number": 18,
@@ -972,7 +1021,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "every hour"
     },
     {
      "number": 19,
@@ -996,7 +1046,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "captain cook"
     },
     {
      "number": 20,
@@ -1020,7 +1071,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "the sea"
     },
     {
      "number": 21,
@@ -1044,7 +1096,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "australian artists"
     },
     {
      "number": 22,
@@ -1068,7 +1121,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "$70"
     },
     {
      "number": 23,
@@ -1089,7 +1143,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "(23) ␦"
-     }
+     },
+     "keyRaw": "souvenirs"
     }
    ],
    "provenance": {
@@ -1137,12 +1192,14 @@
      "27. The airline companies want to\nA increase profits.\nB benefit the passenger.\nC sell cheap seats.\nD improve the service."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Mark is going to talk briefly about",
       "segments": null
@@ -1155,11 +1212,13 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "24. Mark is going to talk briefly about"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "According to Susan, air fares are lowest when they",
       "segments": null
@@ -1172,11 +1231,13 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "25. According to Susan, air fares are lowest when they"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "Mark thinks revenue management is",
       "segments": null
@@ -1189,11 +1250,13 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "26. Mark thinks revenue management is"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "short_answer"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "matching_box",
      "stem": {
       "plain": "The airline companies want to",
       "segments": null
@@ -1206,7 +1269,9 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "27. The airline companies want to"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "short_answer"
     }
    ],
    "provenance": {
@@ -1218,6 +1283,29 @@
     32
    ],
    "rangeReconciled": true,
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 4,
+    "title": "24. Mark is going to talk briefly about",
+    "options": [
+     {
+      "letter": "A",
+      "text": "marketing new products."
+     },
+     {
+      "letter": "B",
+      "text": "pricing strategies."
+     },
+     {
+      "letter": "C",
+      "text": "managing large companies."
+     },
+     {
+      "letter": "D",
+      "text": "setting sales targets."
+     }
+    ]
+   },
    "status": "quarantined"
   },
   {
@@ -1244,8 +1332,10 @@
      "(32) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 28,
@@ -1267,7 +1357,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(28) ␦ and"
-     }
+     },
+     "keyRaw": "law has changed"
     },
     {
      "number": 29,
@@ -1288,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(29) ␦"
-     }
+     },
+     "keyRaw": "computer programs"
     },
     {
      "number": 30,
@@ -1310,7 +1402,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "In future people will be able to book airline tickets (30) ␦"
-     }
+     },
+     "keyRaw": "from home"
     },
     {
      "number": 31,
@@ -1333,7 +1426,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "Also being marketed m this way are (31) ␦ and"
-     }
+     },
+     "keyRaw": "hotels"
     },
     {
      "number": 32,
@@ -1354,7 +1448,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(32) ␦"
-     }
+     },
+     "keyRaw": "hire cars"
     }
    ],
    "provenance": {
@@ -1389,8 +1484,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test174-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1411,7 +1508,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(33) ␦"
-     }
+     },
+     "keyRaw": "displays"
     },
     {
      "number": 34,
@@ -1432,7 +1530,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(34) ␦"
-     }
+     },
+     "keyRaw": "TV cameras"
     },
     {
      "number": 35,
@@ -1453,7 +1552,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(35) ␦"
-     }
+     },
+     "keyRaw": "recorder"
     },
     {
      "number": 36,
@@ -1474,7 +1574,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(36) ␦"
-     }
+     },
+     "keyRaw": "spaceman"
     },
     {
      "number": 37,
@@ -1495,7 +1596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "(37) ␦"
-     }
+     },
+     "keyRaw": "position"
     }
    ],
    "provenance": {
@@ -1529,8 +1631,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test174-4.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1551,7 +1655,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(38) ␦"
-     }
+     },
+     "keyRaw": "walk"
     },
     {
      "number": 39,
@@ -1572,7 +1677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(39) ␦"
-     }
+     },
+     "keyRaw": "at eye level"
     },
     {
      "number": 40,
@@ -1593,7 +1699,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "hotspots"
     },
     {
      "number": 41,
@@ -1614,7 +1721,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(41) ␦"
-     }
+     },
+     "keyRaw": "special offers"
     },
     {
      "number": 42,
@@ -1635,7 +1743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "(42) ␦"
-     }
+     },
+     "keyRaw": "chocolates"
     }
    ],
    "provenance": {
@@ -1688,14 +1797,37 @@
  "quarantinedUnits": [
   {
    "unit": "group",
+   "groupId": "g01",
+   "questionNumbers": [
+    1,
+    2,
+    3
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 1: Questions 1-4",
+    "orphanOptionBlocks": [
+     "A\nB\nC\nD"
+    ]
+   }
+  },
+  {
+   "unit": "group",
    "groupId": "g03",
    "questionNumbers": [
     11,
     12
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 2: Questions 11 and 12"
+    "instructionRaw": "Part 2: Questions 11 and 12",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1708,8 +1840,80 @@
     27
    ],
    "reasonCode": "INSTRUCTION_MISSING",
+   "reasonCodes": [
+    "INSTRUCTION_MISSING"
+   ],
    "evidence": {
-    "instructionRaw": "Part 3: Questions 24-32"
+    "instructionRaw": "Part 3: Questions 24-32",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 4,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_NUMBERING",
+   "evidence": {
+    "keyNumbers": [
+     1,
+     42,
+     42
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_TEST",
+   "evidence": {
+    "note": "old 42-question format (Q1-42)"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
+   "evidence": {
+    "questionsOutsideTheirSection": [
+     21,
+     22,
+     23,
+     31,
+     32,
+     41,
+     42
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     1,
+     2,
+     3,
+     4,
+     11,
+     12,
+     24,
+     25,
+     26,
+     27
+    ],
+    "outOfRange": [
+     41,
+     42
+    ]
    }
   }
  ],
@@ -1720,8 +1924,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 32,
+ "quarantinedCount": 8,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

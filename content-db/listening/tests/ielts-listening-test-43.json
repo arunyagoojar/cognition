@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-43",
  "title": "IELTS Listening Test 43",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-43/index.html",
-   "sha256": "b08a4aaac5b995ac610201e06aa02abddfb70ac5084ba3cc3a5e9419c12931b9",
-   "manifestHashMatch": true,
+   "sha256": "dbd4e0ed3cca3a2beef3d3f4b9a4f9549bceccc2ba62fac3370cee67351f95a3",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-43/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -459,8 +459,10 @@
      "(7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -481,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(1)………………………."
-     }
+     },
+     "keyRaw": "yaris"
     },
     {
      "number": 2,
@@ -502,7 +505,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(2)………………………."
-     }
+     },
+     "keyRaw": "yellow"
     },
     {
      "number": 3,
@@ -523,7 +527,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(3)………………………."
-     }
+     },
+     "keyRaw": "4"
     },
     {
      "number": 4,
@@ -544,7 +549,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(4)………………………."
-     }
+     },
+     "keyRaw": "2"
     },
     {
      "number": 5,
@@ -565,7 +571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(5)………………………."
-     }
+     },
+     "keyRaw": "radio"
     },
     {
      "number": 6,
@@ -586,7 +593,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(6)………………………."
-     }
+     },
+     "keyRaw": "12,400"
     },
     {
      "number": 7,
@@ -607,7 +615,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(7)………………………."
-     }
+     },
+     "keyRaw": "3"
     }
    ],
    "provenance": {
@@ -640,77 +649,93 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "lots of registration B being highly manoeuvrable C being easy to park D fuel efficiency E quick acceleration F good resale potential"
+      "text": "lots of registration"
+     },
+     {
+      "letter": "B",
+      "text": "being highly manoeuvrable"
+     },
+     {
+      "letter": "C",
+      "text": "being easy to park"
+     },
+     {
+      "letter": "D",
+      "text": "fuel efficiency"
+     },
+     {
+      "letter": "E",
+      "text": "quick acceleration"
+     },
+     {
+      "letter": "F",
+      "text": "good resale potential"
      },
      {
       "letter": "G",
       "text": "smoothly running engine"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 8
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (8) ␦",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(8) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 9,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 9
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (9) ␦",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(9) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 10,
-     "type": "completion",
+     "type": "matching_box",
      "stem": {
-      "plain": "______",
-      "segments": [
-       {
-        "blank": 10
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (10) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "(10) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -718,7 +743,41 @@
     "rawExcerpt": "Questions 8-10\nChoose THREE answers from the list and write correct letter A-G next to questions 8-10."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "lots of registration"
+     },
+     {
+      "letter": "B",
+      "text": "being highly manoeuvrable"
+     },
+     {
+      "letter": "C",
+      "text": "being easy to park"
+     },
+     {
+      "letter": "D",
+      "text": "fuel efficiency"
+     },
+     {
+      "letter": "E",
+      "text": "quick acceleration"
+     },
+     {
+      "letter": "F",
+      "text": "good resale potential"
+     },
+     {
+      "letter": "G",
+      "text": "smoothly running engine"
+     }
+    ]
+   },
+   "status": "flagged"
   },
   {
    "groupId": "g03",
@@ -739,8 +798,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test43-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -757,7 +818,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Wilsons ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -774,7 +836,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. DVD shop ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 13,
@@ -791,7 +854,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. Student union office ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 14,
@@ -808,7 +872,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. Engineering institute ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 15,
@@ -825,7 +890,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "15. Fitness room ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 16,
@@ -842,12 +908,59 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. Bookshop ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Part 2: Questions 11-16\nIdentify the areas on the map. Write correct letter A-J next to questions 11-16."
+   },
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     },
+     {
+      "letter": "J",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -870,8 +983,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test43-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -884,11 +999,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. Yoga club ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -901,11 +1017,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. Aerobic dancing ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 19,
@@ -918,11 +1035,12 @@
      "blankContext": null,
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. Prayer centre ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 20,
@@ -935,11 +1053,12 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. Chess club ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -947,7 +1066,7 @@
     "rawExcerpt": "Questions 17-20\nComplete the timetable. Write the correct letter A-I next to questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -968,8 +1087,10 @@
      "The most important part of a presentation is the (21) ␦ , thus it is important to use a hook, such as a surprising fact, (22) ␦ , or a puzzling problem. The best presenters treat their audiences as (23) ␦ and (24) ␦ them in the subject matter, which they make interesting."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1004,7 +1125,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "The most important part of a presentation is the (21) ␦ , thus it is important to use a hook, such as a surprising fact, (22) ␦ , or a puzzling problem. The best presenters treat their audiences as (2"
-     }
+     },
+     "keyRaw": "first minute"
     },
     {
      "number": 22,
@@ -1039,7 +1161,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "The most important part of a presentation is the (21) ␦ , thus it is important to use a hook, such as a surprising fact, (22) ␦ , or a puzzling problem. The best presenters treat their audiences as (2"
-     }
+     },
+     "keyRaw": "interesting story"
     },
     {
      "number": 23,
@@ -1074,7 +1197,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "The most important part of a presentation is the (21) ␦ , thus it is important to use a hook, such as a surprising fact, (22) ␦ , or a puzzling problem. The best presenters treat their audiences as (2"
-     }
+     },
+     "keyRaw": "equals"
     },
     {
      "number": 24,
@@ -1109,7 +1233,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "The most important part of a presentation is the (21) ␦ , thus it is important to use a hook, such as a surprising fact, (22) ␦ , or a puzzling problem. The best presenters treat their audiences as (2"
-     }
+     },
+     "keyRaw": "involve"
     }
    ],
    "provenance": {
@@ -1172,8 +1297,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1195,7 +1322,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "(25)…………………..context"
-     }
+     },
+     "keyRaw": "historical"
     },
     {
      "number": 26,
@@ -1218,7 +1346,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Cultural (26)………….and management styles"
-     }
+     },
+     "keyRaw": "differences"
     },
     {
      "number": 27,
@@ -1241,7 +1370,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Complexity of (27)………………..workplace"
-     }
+     },
+     "keyRaw": "multicultural"
     },
     {
      "number": 28,
@@ -1263,7 +1393,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Review productive (28)……………….."
-     }
+     },
+     "keyRaw": "diversity"
     },
     {
      "number": 29,
@@ -1285,7 +1416,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Theory of human (29)……………….."
-     }
+     },
+     "keyRaw": "universals"
     },
     {
      "number": 30,
@@ -1307,7 +1439,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Prepare answers related to industrial (30)………………….."
-     }
+     },
+     "keyRaw": "democracy"
     }
    ],
    "provenance": {
@@ -1340,8 +1473,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test43-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1365,7 +1500,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "hydrogen"
     },
     {
      "number": 32,
@@ -1389,7 +1525,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "approach"
     },
     {
      "number": 33,
@@ -1413,7 +1550,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "similar"
     },
     {
      "number": 34,
@@ -1437,7 +1575,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "heat"
     },
     {
      "number": 35,
@@ -1458,7 +1597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(35) ␦"
-     }
+     },
+     "keyRaw": "energy"
     }
    ],
    "provenance": {
@@ -1490,8 +1630,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test43-4.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1515,7 +1657,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "Tokamak"
     },
     {
      "number": 37,
@@ -1539,7 +1682,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "magnetic field"
     },
     {
      "number": 38,
@@ -1563,7 +1707,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "cooled"
     },
     {
      "number": 39,
@@ -1587,7 +1732,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "unstable"
     },
     {
      "number": 40,
@@ -1608,7 +1754,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "one second"
     }
    ],
    "provenance": {
@@ -1656,10 +1803,221 @@
   "fnameInputs": 40
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 8,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "C",
+    "rawExcerpt": "(8) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "lots of registration"
+     },
+     {
+      "letter": "B",
+      "text": "being highly manoeuvrable"
+     },
+     {
+      "letter": "C",
+      "text": "being easy to park"
+     },
+     {
+      "letter": "D",
+      "text": "fuel efficiency"
+     },
+     {
+      "letter": "E",
+      "text": "quick acceleration"
+     },
+     {
+      "letter": "F",
+      "text": "good resale potential"
+     },
+     {
+      "letter": "G",
+      "text": "smoothly running engine"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 9,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "(9) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "lots of registration"
+     },
+     {
+      "letter": "B",
+      "text": "being highly manoeuvrable"
+     },
+     {
+      "letter": "C",
+      "text": "being easy to park"
+     },
+     {
+      "letter": "D",
+      "text": "fuel efficiency"
+     },
+     {
+      "letter": "E",
+      "text": "quick acceleration"
+     },
+     {
+      "letter": "F",
+      "text": "good resale potential"
+     },
+     {
+      "letter": "G",
+      "text": "smoothly running engine"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 10,
+   "reasonCode": "STEM_MISSING_IN_SOURCE",
+   "reasonCodes": [
+    "STEM_MISSING_IN_SOURCE"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "F",
+    "rawExcerpt": "(10) ␦",
+    "options": [
+     {
+      "letter": "A",
+      "text": "lots of registration"
+     },
+     {
+      "letter": "B",
+      "text": "being highly manoeuvrable"
+     },
+     {
+      "letter": "C",
+      "text": "being easy to park"
+     },
+     {
+      "letter": "D",
+      "text": "fuel efficiency"
+     },
+     {
+      "letter": "E",
+      "text": "quick acceleration"
+     },
+     {
+      "letter": "F",
+      "text": "good resale potential"
+     },
+     {
+      "letter": "G",
+      "text": "smoothly running engine"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 17,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Yoga club",
+    "answer": "C",
+    "rawExcerpt": "17. Yoga club ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Aerobic dancing",
+    "answer": "E",
+    "rawExcerpt": "18. Aerobic dancing ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Prayer centre",
+    "answer": "I",
+    "rawExcerpt": "19. Prayer centre ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Chess club",
+    "answer": "G",
+    "rawExcerpt": "20. Chess club ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 33,
+    "missingOrQuarantined": [
+     8,
+     9,
+     10,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 33,
+ "quarantinedCount": 8,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

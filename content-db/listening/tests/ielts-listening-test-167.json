@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-167",
  "title": "IELTS Listening Test 167",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-167/index.html",
-   "sha256": "b6d8459efc5c01024e91b3c7904611dff4c2acd9f9a0167d651adcd291559bfb",
-   "manifestHashMatch": true,
+   "sha256": "6c1eebf9d209c121b82256273c3aa4bdbab980d2aed9006ee1497f8f967c0833",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-167/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "5c6acc0ecc0eb827944c8386455b7838e18beb97ccdf8f155220bf800bbb3498",
+ "contentFingerprint": "39fc32a0fad983b951475b05c856a08add2a48611668d462a1b7a3ac1042489e",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -401,8 +401,10 @@
      "Accommodation required from: (4) ␦ 7th September"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -424,7 +426,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Length of time in Australia: (1) ␦"
-     }
+     },
+     "keyRaw": "1.5 year"
     },
     {
      "number": 2,
@@ -447,7 +450,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Present address: Flat 1, 539, (2) ␦ Road Canterbury 2036"
-     }
+     },
+     "keyRaw": "forest"
     },
     {
      "number": 3,
@@ -470,7 +474,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Present course: (3) ␦ English"
-     }
+     },
+     "keyRaw": "academic"
     },
     {
      "number": 4,
@@ -493,7 +498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Accommodation required from: (4) ␦ 7th September"
-     }
+     },
+     "keyRaw": "thursday"
     }
    ],
    "provenance": {
@@ -515,34 +521,36 @@
     "originalText": "Choose the correct letter, A, B or C"
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A single room",
-     "B twin room",
-     "C triple room",
-     "5. Sara requires a\nA single room\nB twin room\nC triple room",
-     "A family",
-     "B single person",
-     "C couple",
-     "6. She would prefer to live with a\nA family\nB single person\nC couple",
-     "A flat",
-     "B house",
-     "C studio apartment",
-     "7. She would like to live in a\nA flat\nB house\nC studio apartment"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 5,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Sara requires a",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "single room"
+      },
+      {
+       "letter": "B",
+       "text": "twin room"
+      },
+      {
+       "letter": "C",
+       "text": "triple room"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -550,16 +558,30 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "5. Sara requires a"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 6,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "She would prefer to live with a",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "family"
+      },
+      {
+       "letter": "B",
+       "text": "single person"
+      },
+      {
+       "letter": "C",
+       "text": "couple"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -567,16 +589,30 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "6. She would prefer to live with a"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 7,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "She would like to live in a",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "flat"
+      },
+      {
+       "letter": "B",
+       "text": "house"
+      },
+      {
+       "letter": "C",
+       "text": "studio apartment"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -584,7 +620,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "7. She would like to live in a"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -613,8 +650,10 @@
      "8. The ␦ will be $320.\n9. She needs to pay the rent by cash or cheque on a ␦ basis.\n10. She needs to pay her part of the ␦ bill"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -637,7 +676,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "8. The ␦ will be $320."
-     }
+     },
+     "keyRaw": "deposit"
     },
     {
      "number": 9,
@@ -660,7 +700,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. She needs to pay the rent by cash or cheque on a ␦ basis."
-     }
+     },
+     "keyRaw": "monthly"
     },
     {
      "number": 10,
@@ -683,7 +724,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "10. She needs to pay her part of the ␦ bill"
-     }
+     },
+     "keyRaw": "telephone"
     }
    ],
    "provenance": {
@@ -706,38 +748,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A 1-13 January",
-     "B 5-17 January",
-     "C 25-31 January",
-     "11. When is this year’s festival being held?\nA 1-13 January\nB 5-17 January\nC 25-31 January",
-     "A theatre",
-     "B dance",
-     "C exhibitions",
-     "12. What will the reviewer concentrate on today?\nA theatre\nB dance\nC exhibitions",
-     "A one",
-     "B two",
-     "C several",
-     "13. How many circuses are there in the festival?\nA one\nB two\nC several",
-     "A in a theatre",
-     "B in a tent",
-     "C in a stadium",
-     "14. Where does Circus Romano perform?\nA in a theatre\nB in a tent\nC in a stadium"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "When is this year’s festival being held?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "1-13 January"
+      },
+      {
+       "letter": "B",
+       "text": "5-17 January"
+      },
+      {
+       "letter": "C",
+       "text": "25-31 January"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -745,16 +785,30 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. When is this year’s festival being held?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "What will the reviewer concentrate on today?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "theatre"
+      },
+      {
+       "letter": "B",
+       "text": "dance"
+      },
+      {
+       "letter": "C",
+       "text": "exhibitions"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -762,16 +816,30 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "12. What will the reviewer concentrate on today?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "How many circuses are there in the festival?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "one"
+      },
+      {
+       "letter": "B",
+       "text": "two"
+      },
+      {
+       "letter": "C",
+       "text": "several"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -779,16 +847,30 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. How many circuses are there in the festival?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Where does Circus Romano perform?",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "in a theatre"
+      },
+      {
+       "letter": "B",
+       "text": "in a tent"
+      },
+      {
+       "letter": "C",
+       "text": "in a stadium"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -796,7 +878,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "14. Where does Circus Romano perform?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -857,8 +940,10 @@
      "(19) ␦ (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -880,7 +965,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "music and (15)………………."
-     }
+     },
+     "keyRaw": "lights"
     },
     {
      "number": 16,
@@ -901,7 +987,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(16)……………"
-     }
+     },
+     "keyRaw": "adults"
     },
     {
      "number": 17,
@@ -922,7 +1009,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(17)…………….."
-     }
+     },
+     "keyRaw": "studio theatre"
     },
     {
      "number": 18,
@@ -943,7 +1031,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(18)………………."
-     }
+     },
+     "keyRaw": "whole family"
     },
     {
      "number": 19,
@@ -964,7 +1053,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(19)…………….."
-     }
+     },
+     "keyRaw": "city gardens"
     },
     {
      "number": 20,
@@ -985,7 +1075,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(20)…………….."
-     }
+     },
+     "keyRaw": "young children"
     }
    ],
    "provenance": {
@@ -1008,62 +1099,36 @@
     "originalText": "Choose the correct letter, A. B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "A people going back to college",
-     "B postgraduate students",
-     "C business executives",
-     "21. The man wants information on courses for\nA people going back to college\nB postgraduate students\nC business executives",
-     "A one day",
-     "B two days",
-     "C three days",
-     "22. The ‘Study for Success’ seminar lasts for\nA one day\nB two days\nC three days",
-     "A confidence",
-     "B speed",
-     "C clarity",
-     "23. In the seminar the work on writing aims to improve\nA confidence\nB speed\nC clarity",
-     "A analytically",
-     "B as fast as possible",
-     "C thoroughly",
-     "24. Reading sessions help students to read\nA analytically\nB as fast as possible\nC thoroughly",
-     "A prepare learners physically",
-     "B encourage interest in learning",
-     "C develop literacy skills",
-     "25. The seminar tries to\nA prepare learners physically\nB encourage interest in learning\nC develop literacy skills",
-     "A use time effectively",
-     "B stay healthy",
-     "C select appropriate materials",
-     "26. A key component of the course is learning how to\nA use time effectively\nB stay healthy\nC select appropriate materials",
-     "A register with the Faculty Office",
-     "B contact their Course Convenor",
-     "C reserve a place in advance",
-     "27. Students who want to do the ‘Study for Success’ seminar should\nA register with the Faculty Office\nB contact their Course Convenor\nC reserve a place in advance",
-     "A Monday, Wednesday and Friday",
-     "B Monday, Tuesday and Wednesday",
-     "C Monday, Thursday and Friday",
-     "28. The ‘Learning Skills for University Study’ course takes place on\nA Monday, Wednesday and Friday\nB Monday, Tuesday and Wednesday\nC Monday, Thursday and Friday",
-     "A a physical training component",
-     "B advice on coping with stress",
-     "C a detailed weekly planner",
-     "29. A feature of this course is\nA a physical training component\nB advice on coping with stress\nC a detailed weekly planner",
-     "A he is over forty",
-     "B he wants to start at the beginning",
-     "C he seeks to revise his skills",
-     "30. The man chooses the ‘Study for Success’ seminar because\nA he is over forty\nB he wants to start at the beginning\nC he seeks to revise his skills"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The man wants information on courses for",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "people going back to college"
+      },
+      {
+       "letter": "B",
+       "text": "postgraduate students"
+      },
+      {
+       "letter": "C",
+       "text": "business executives"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1071,16 +1136,30 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "21. The man wants information on courses for"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The ‘Study for Success’ seminar lasts for",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "one day"
+      },
+      {
+       "letter": "B",
+       "text": "two days"
+      },
+      {
+       "letter": "C",
+       "text": "three days"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1088,16 +1167,30 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "22. The ‘Study for Success’ seminar lasts for"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "In the seminar the work on writing aims to improve",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "confidence"
+      },
+      {
+       "letter": "B",
+       "text": "speed"
+      },
+      {
+       "letter": "C",
+       "text": "clarity"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1105,16 +1198,30 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "23. In the seminar the work on writing aims to improve"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Reading sessions help students to read",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "analytically"
+      },
+      {
+       "letter": "B",
+       "text": "as fast as possible"
+      },
+      {
+       "letter": "C",
+       "text": "thoroughly"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1122,16 +1229,30 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "24. Reading sessions help students to read"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The seminar tries to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "prepare learners physically"
+      },
+      {
+       "letter": "B",
+       "text": "encourage interest in learning"
+      },
+      {
+       "letter": "C",
+       "text": "develop literacy skills"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1139,16 +1260,30 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "25. The seminar tries to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "A key component of the course is learning how to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "use time effectively"
+      },
+      {
+       "letter": "B",
+       "text": "stay healthy"
+      },
+      {
+       "letter": "C",
+       "text": "select appropriate materials"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -1156,16 +1291,30 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. A key component of the course is learning how to"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 27,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Students who want to do the ‘Study for Success’ seminar should",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "register with the Faculty Office"
+      },
+      {
+       "letter": "B",
+       "text": "contact their Course Convenor"
+      },
+      {
+       "letter": "C",
+       "text": "reserve a place in advance"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1173,16 +1322,30 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "27. Students who want to do the ‘Study for Success’ seminar should"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The ‘Learning Skills for University Study’ course takes place on",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "Monday, Wednesday and Friday"
+      },
+      {
+       "letter": "B",
+       "text": "Monday, Tuesday and Wednesday"
+      },
+      {
+       "letter": "C",
+       "text": "Monday, Thursday and Friday"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1190,16 +1353,30 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "28. The ‘Learning Skills for University Study’ course takes place on"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "A feature of this course is",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "a physical training component"
+      },
+      {
+       "letter": "B",
+       "text": "advice on coping with stress"
+      },
+      {
+       "letter": "C",
+       "text": "a detailed weekly planner"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1207,16 +1384,30 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "29. A feature of this course is"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The man chooses the ‘Study for Success’ seminar because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "he is over forty"
+      },
+      {
+       "letter": "B",
+       "text": "he wants to start at the beginning"
+      },
+      {
+       "letter": "C",
+       "text": "he seeks to revise his skills"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1224,7 +1415,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "30. The man chooses the ‘Study for Success’ seminar because"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1257,8 +1449,10 @@
      "• results collated and report produced by Union Committee"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1280,7 +1474,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• these points informed the design of A (31) ␦"
-     }
+     },
+     "keyRaw": "questionnaire"
     },
     {
      "number": 32,
@@ -1303,7 +1498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• (there were (32) ␦ respondents)"
-     }
+     },
+     "keyRaw": "about 2000"
     }
    ],
    "provenance": {
@@ -1355,8 +1551,10 @@
      "(37) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 33,
@@ -1378,7 +1576,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "city centre near faculty of (33)……………."
-     }
+     },
+     "keyRaw": "education"
     },
     {
      "number": 34,
@@ -1400,7 +1599,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "out of town near the (34)……………"
-     }
+     },
+     "keyRaw": "halls of residence"
     },
     {
      "number": 35,
@@ -1423,7 +1623,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "problems with (35)………………….and. ………"
-     }
+     },
+     "keyRaw": "traffic and parking"
     },
     {
      "number": 36,
@@ -1445,7 +1646,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "close to (36)……………"
-     }
+     },
+     "keyRaw": "lecture rooms"
     },
     {
      "number": 37,
@@ -1467,7 +1669,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "access to living quarters, large site so more (37)…………………"
-     }
+     },
+     "keyRaw": "facilities"
     }
    ],
    "provenance": {
@@ -1494,8 +1697,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1508,11 +1713,12 @@
      "blankContext": null,
      "correctAnswer": "D and F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "38. Which TWO facilities did the students request in the new Union building?"
-     }
+     },
+     "keyRaw": "D and F"
     }
    ],
    "provenance": {
@@ -1520,7 +1726,7 @@
     "rawExcerpt": "Question 38\nChoose TWO letters A-G."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g10",
@@ -1539,8 +1745,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 39,
@@ -1570,7 +1778,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "39. Which argument was used AGAINST having a drama theatre?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1618,8 +1827,10 @@
       "letter": "E",
       "text": "permanent security office on site"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 40,
@@ -1632,11 +1843,12 @@
      "blankContext": null,
      "correctAnswer": "A and C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "40. Which TWO security measures have been requested?"
-     }
+     },
+     "keyRaw": "A and C"
     }
    ],
    "provenance": {
@@ -1644,7 +1856,33 @@
     "rawExcerpt": "Question 40\nChoose TWO letters A-F."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "closed circuit TV"
+     },
+     {
+      "letter": "B",
+      "text": "show Union card on entering the building"
+     },
+     {
+      "letter": "C",
+      "text": "show Union card when asked"
+     },
+     {
+      "letter": "D",
+      "text": "sport searched of bags"
+     },
+     {
+      "letter": "E",
+      "text": "permanent security office on site"
+     }
+    ]
+   },
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1671,10 +1909,76 @@
   "fnameInputs": 20
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g09",
+   "questionNumber": 38,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Which TWO facilities did the students request in the new Union building?",
+    "answer": "D and F",
+    "rawExcerpt": "38. Which TWO facilities did the students request in the new Union building?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g11",
+   "questionNumber": 40,
+   "reasonCode": "MULTI_LETTER_KEY_ON_SINGLE_SELECT",
+   "reasonCodes": [
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "Which TWO security measures have been requested?",
+    "answer": "A and C",
+    "rawExcerpt": "40. Which TWO security measures have been requested?",
+    "options": [
+     {
+      "letter": "A",
+      "text": "closed circuit TV"
+     },
+     {
+      "letter": "B",
+      "text": "show Union card on entering the building"
+     },
+     {
+      "letter": "C",
+      "text": "show Union card when asked"
+     },
+     {
+      "letter": "D",
+      "text": "sport searched of bags"
+     },
+     {
+      "letter": "E",
+      "text": "permanent security office on site"
+     }
+    ]
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     38,
+     40
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 3,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-36",
  "title": "IELTS Listening Test 36",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-36/index.html",
-   "sha256": "e87d4310a444421980dadf2a92572f89565ad700191cd888f1c7dd60527b0efd",
-   "manifestHashMatch": true,
+   "sha256": "089c0fdb3c00aa21575610bc1dcd064e3b97398643ddd20ff39d4aa177ef5493",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-36/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -399,8 +399,10 @@
      "1. There will be ␦ passengers on the train.\n2. The students leave the school ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -423,7 +425,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "1. There will be ␦ passengers on the train."
-     }
+     },
+     "keyRaw": "34"
     },
     {
      "number": 2,
@@ -448,7 +451,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "2. The students leave the school ␦"
-     }
+     },
+     "keyRaw": "on monday"
     }
    ],
    "provenance": {
@@ -481,8 +485,10 @@
      "Purpose of hire: visit to Stonehenge and (8) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 3,
@@ -504,7 +510,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Name of client: (3) ␦"
-     }
+     },
+     "keyRaw": "Paul Scott"
     },
     {
      "number": 4,
@@ -527,7 +534,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Address: Down Language School, Down House, (4) ␦ Brighton"
-     }
+     },
+     "keyRaw": "hill street"
     },
     {
      "number": 5,
@@ -550,7 +558,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Contact number: (5) ␦ to be contacted on 01273512634"
-     }
+     },
+     "keyRaw": "school secretary"
     },
     {
      "number": 6,
@@ -572,7 +581,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Pick-up time: (6) ␦"
-     }
+     },
+     "keyRaw": "7.30"
     },
     {
      "number": 7,
@@ -594,7 +604,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Return time: (7) ␦"
-     }
+     },
+     "keyRaw": "11 pm"
     },
     {
      "number": 8,
@@ -616,7 +627,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Purpose of hire: visit to Stonehenge and (8) ␦"
-     }
+     },
+     "keyRaw": "bath"
     }
    ],
    "provenance": {
@@ -645,8 +657,10 @@
      "9. What does the cost of hiring the coach include? ␦\n10. Who does the customer have to speak to before confirming the booking? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -671,7 +685,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. What does the cost of hiring the coach include? ␦"
-     }
+     },
+     "keyRaw": "tax and insurance"
     },
     {
      "number": 10,
@@ -696,7 +711,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "10. Who does the customer have to speak to before confirming the booking? ␦"
-     }
+     },
+     "keyRaw": "school accountant"
     }
    ],
    "provenance": {
@@ -725,8 +741,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test36.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -739,11 +757,12 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. tourist information ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 12,
@@ -756,11 +775,12 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. Car park ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 13,
@@ -773,11 +793,12 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. Museum ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 14,
@@ -790,11 +811,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. picnic area ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -807,18 +829,19 @@
      "blankContext": null,
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "15. Gift shop ␦"
-     }
+     },
+     "keyRaw": "H"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-15\nMap the places and write correct letter next to questions 11-15."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -840,14 +863,32 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "museum B castle C fireworks D gardens E rock concert"
+      "text": "museum"
+     },
+     {
+      "letter": "B",
+      "text": "castle"
+     },
+     {
+      "letter": "C",
+      "text": "fireworks"
+     },
+     {
+      "letter": "D",
+      "text": "gardens"
+     },
+     {
+      "letter": "E",
+      "text": "rock concert"
      },
      {
       "letter": "F",
       "text": "jazz concert"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -860,11 +901,12 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 17,
@@ -877,11 +919,12 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 18,
@@ -894,11 +937,12 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -906,7 +950,7 @@
     "rawExcerpt": "Questions 16-18\nWhich THREE activities or events do you need to pay to get in?"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g06",
@@ -928,8 +972,10 @@
      "20. Who does the Age Concern help? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -954,7 +1000,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "19. How often is the charity event held? ␦"
-     }
+     },
+     "keyRaw": "every year"
     },
     {
      "number": 20,
@@ -979,7 +1026,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. Who does the Age Concern help? ␦"
-     }
+     },
+     "keyRaw": "elderly people"
     }
    ],
    "provenance": {
@@ -1006,8 +1054,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1037,7 +1087,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "21. Before giving his presentation Paul is worried about"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 22,
@@ -1067,7 +1118,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "22. Paul’s friends advise him not to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
@@ -1097,7 +1149,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "23. Why does Paul like the idea of the timeline?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1127,7 +1180,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "24. Paul is going to show famous works of art to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 25,
@@ -1157,7 +1211,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "25. Paul wants his presentation to"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1187,7 +1242,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "26. What does Isabel say about modern artists?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1219,8 +1275,10 @@
      "• Find pictures using a (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1242,7 +1300,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Go to fine art section in (27) ␦"
-     }
+     },
+     "keyRaw": "library"
     },
     {
      "number": 28,
@@ -1265,7 +1324,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Ask (28) ␦ for access to slide bank"
-     }
+     },
+     "keyRaw": "staff"
     },
     {
      "number": 29,
@@ -1287,7 +1347,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• If not, use the (29) ␦"
-     }
+     },
+     "keyRaw": "computers"
     },
     {
      "number": 30,
@@ -1309,7 +1370,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "• Find pictures using a (30) ␦"
-     }
+     },
+     "keyRaw": "search engine"
     }
    ],
    "provenance": {
@@ -1336,8 +1398,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1367,7 +1431,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "31. What does the speaker say about newspapers?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1397,7 +1462,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "32. What significant event took place in 1956?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 33,
@@ -1427,7 +1493,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "33. What does the speaker consider to be the main problem with nuclear fusion?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1455,8 +1522,10 @@
      "34. Temperatures of at least ␦ degrees are needed for fusion to take place.\n35. Creating the pressure required in a ␦ is a major technological problem."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 34,
@@ -1479,7 +1548,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "34. Temperatures of at least ␦ degrees are needed for fusion to take place."
-     }
+     },
+     "keyRaw": "100 million"
     },
     {
      "number": 35,
@@ -1502,7 +1572,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "35. Creating the pressure required in a ␦ is a major technological problem."
-     }
+     },
+     "keyRaw": "fusion reactor"
     }
    ],
    "provenance": {
@@ -1531,8 +1602,10 @@
      "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel so that it does not come into contact with the sides of the (37) ␦ Another one will raise the temperature of the fuel pellet to that required to start the (38) ␦ Extra energy released in this process will be used to produce (39) ␦ that can be used to generate electricity. It is believed that the amount of energy that can be produced from (40) ␦ of fusion fuel is equivalent to that which can be produced from 10000 tonnes of fossil fuel."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1571,7 +1644,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel "
-     }
+     },
+     "keyRaw": "lasers"
     },
     {
      "number": 37,
@@ -1610,7 +1684,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel "
-     }
+     },
+     "keyRaw": "reactor"
     },
     {
      "number": 38,
@@ -1649,7 +1724,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel "
-     }
+     },
+     "keyRaw": "reaction"
     },
     {
      "number": 39,
@@ -1688,7 +1764,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel "
-     }
+     },
+     "keyRaw": "steam"
     },
     {
      "number": 40,
@@ -1727,7 +1804,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "In order for nuclear fusion to produce useful quantities of energy isotopes of hydrogen must be brought together at extremely high temperatures and pressures. A number of (36) ␦ will suspend the fuel "
-     }
+     },
+     "keyRaw": "1 kg"
     }
    ],
    "provenance": {
@@ -1760,7 +1838,149 @@
   "fnameInputs": 28
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 11,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "tourist information",
+    "answer": "F",
+    "rawExcerpt": "11. tourist information ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Car park",
+    "answer": "G",
+    "rawExcerpt": "12. Car park ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 13,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Museum",
+    "answer": "D",
+    "rawExcerpt": "13. Museum ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 14,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "picnic area",
+    "answer": "B",
+    "rawExcerpt": "14. picnic area ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 15,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "Gift shop",
+    "answer": "H",
+    "rawExcerpt": "15. Gift shop ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 16,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 17,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "C",
+    "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F.",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 18,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Which THREE activities or events do you need to pay to get in? Choose THREE letters A-F.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 32,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1768,8 +1988,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 32,
+ "quarantinedCount": 9,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

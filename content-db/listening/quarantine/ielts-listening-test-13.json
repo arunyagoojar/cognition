@@ -1,0 +1,93 @@
+{
+ "slug": "ielts-listening-test-13",
+ "status": "quarantined",
+ "sourceSha256": "a6a18cc409f42c0da3101175eaab6f1f67488bb732b43c0663ef9f285c00f17f",
+ "units": [
+  {
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    11,
+    12
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 2: Questions 11-14\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": [
+     "13 Jack works with some advanced cyclists who want to develop\nA international co",
+     "14 CitiCyclist supports the view that cyclists should\nA have separate sections o"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 27,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which bar chart represents the marks given by the tutor?",
+    "answer": "C",
+    "rawExcerpt": "27. Which bar chart represents the marks given by the tutor?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 13,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 14,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     27
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

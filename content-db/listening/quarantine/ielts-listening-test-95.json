@@ -1,0 +1,122 @@
+{
+ "slug": "ielts-listening-test-95",
+ "status": "quarantined",
+ "sourceSha256": "f4363d9e5d04f2c166036bd12d058891d3610cfd69298b462fbbffd1464c3bd1",
+ "units": [
+  {
+   "unit": "group",
+   "groupId": "g02",
+   "questionNumbers": [
+    11,
+    13,
+    14,
+    15
+   ],
+   "reasonCode": "ORPHAN_OPTION_BLOCK",
+   "reasonCodes": [
+    "ORPHAN_OPTION_BLOCK"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 2: Questions 11-15\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": [
+     "12 To enjoy cultural activities, the people of Darwin tend to\nA travel to southe"
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 31,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "A",
+    "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 32,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "D",
+    "rawExcerpt": "Choose TWO letters A-F Which TWO of the following problems are causing concern to educational authorities in the USA?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 33,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "B",
+    "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 34,
+   "reasonCode": "MULTI_PROMPT_MISSING",
+   "reasonCodes": [
+    "MULTI_PROMPT_MISSING",
+    "OPTIONS_MISSING"
+   ],
+   "evidence": {
+    "stem": "",
+    "answer": "E",
+    "rawExcerpt": "Choose TWO letters A-F According to the speaker, what are two advantages of reducing class sizes?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 12,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "C"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     31,
+     32,
+     33,
+     34
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

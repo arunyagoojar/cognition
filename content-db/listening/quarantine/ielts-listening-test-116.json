@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-116",
- "sourceSha256": "852c054bd7c2dfb0ae514dc11f4e403eb6ef43d853f43a99083895969f822fd8",
+ "status": "quarantined",
+ "sourceSha256": "d0c0a721fbea9cdc40697f24df1b1ebd68656ed2fe331567f4953243f2e18a85",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,151 @@
      38,
      40
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 11,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Material – 2.3 million stones of ______ high and tons",
+    "answer": "138 m, 2.5",
+    "rawExcerpt": "Material – 2.3 million stones of (11) ␦ high and ␦ tons",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 12,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Tools – ______ and tools",
+    "answer": "stone, copper",
+    "rawExcerpt": "Tools – (12) ␦ and ␦ tools",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 15,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Design ideals – ______ and",
+    "answer": "logic, reason",
+    "rawExcerpt": "Design ideals – (15) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Significance – show Romans’ ______ nature and thinking",
+    "answer": "practical, political",
+    "rawExcerpt": "Significance – show Romans’ (18) ␦ nature and ␦ thinking",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Size – stand ______ meter high and hold audiences",
+    "answer": "48, 50000",
+    "rawExcerpt": "Size – stand (20) ␦ meter high and hold ␦ audiences",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 33,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "• Problem – the damages of tissues can cause the joints to ______ and",
+    "answer": "ache, feel stiff",
+    "rawExcerpt": "• Problem – the damages of tissues can cause the joints to (33) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 38,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 39,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 40,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 31,
+    "missingOrQuarantined": [
+     11,
+     12,
+     15,
+     18,
+     20,
+     33,
+     38,
+     39,
+     40
+    ],
+    "outOfRange": []
    }
   }
  ]

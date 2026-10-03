@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-32",
- "sourceSha256": "9aa5fa3d4907eb299ab7674b18a36ca54abefa0dddffdf45141af699e8cfb0f3",
+ "status": "quarantined",
+ "sourceSha256": "98a00d274f50c47b375bf0ab35f42b6d71fee451f35a24f9faa4d67ff12f5e08",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,55 @@
      33,
      35
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "B"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 34,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "E"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 35,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "G"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     33,
+     34,
+     35
+    ],
+    "outOfRange": []
    }
   }
  ]

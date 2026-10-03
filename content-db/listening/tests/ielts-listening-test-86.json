@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-86",
  "title": "IELTS Listening Test 86",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-86/index.html",
-   "sha256": "c289c79736bfa762008b873063a888604459f2ddc58bcbf82ec0555e610b570d",
-   "manifestHashMatch": true,
+   "sha256": "1cf4deb025b1533b91710cbc9c37a9b3ed85522b2abe25e50586bf995ff5b029",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-86/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -400,8 +400,10 @@
      "How did you first hear about us? Through a (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -424,7 +426,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Contact phone number: (1) 0044 ␦"
-     }
+     },
+     "keyRaw": "2086132978"
     },
     {
      "number": 2,
@@ -447,7 +450,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Email address: (2) richard@ ␦ co.uk"
-     }
+     },
+     "keyRaw": "visiontech"
     },
     {
      "number": 3,
@@ -469,7 +473,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Occupation: a local (3) ␦"
-     }
+     },
+     "keyRaw": "doctor"
     },
     {
      "number": 4,
@@ -492,7 +497,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of accommodation: a 2 bedroom apartment wanted (must have its own (4) ␦ )"
-     }
+     },
+     "keyRaw": "garage"
     },
     {
      "number": 5,
@@ -515,7 +521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "No (5) ␦ required"
-     }
+     },
+     "keyRaw": "furniture"
     },
     {
      "number": 6,
@@ -538,7 +545,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "A (6) ␦ in the kitchen is preferable"
-     }
+     },
+     "keyRaw": "fridge"
     },
     {
      "number": 7,
@@ -560,7 +568,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Preferred location: near a (7) ␦"
-     }
+     },
+     "keyRaw": "school"
     },
     {
      "number": 8,
@@ -583,7 +592,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Maximum rent: (8) ␦ per month"
-     }
+     },
+     "keyRaw": "950"
     },
     {
      "number": 9,
@@ -606,7 +616,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Other requests: the accommodation has to be (9) ␦ in the daytime"
-     }
+     },
+     "keyRaw": "quiet"
     },
     {
      "number": 10,
@@ -628,7 +639,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "How did you first hear about us? Through a (10) ␦"
-     }
+     },
+     "keyRaw": "friend"
     }
    ],
    "provenance": {
@@ -660,8 +672,10 @@
      "It’s a good idea to buy good-quality (15) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -683,7 +697,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The police officer suggests neighbours give each other their (11) ␦"
-     }
+     },
+     "keyRaw": "contact details"
     },
     {
      "number": 12,
@@ -705,7 +720,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Neighbours should discuss what to do if there’s any kind of (12) ␦"
-     }
+     },
+     "keyRaw": "emergency"
     },
     {
      "number": 13,
@@ -727,7 +743,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "It’s a good idea to leave on the (13) ␦"
-     }
+     },
+     "keyRaw": "radio"
     },
     {
      "number": 14,
@@ -749,7 +766,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Think carefully about where you put any (14) ␦"
-     }
+     },
+     "keyRaw": "(extra) keys"
     },
     {
      "number": 15,
@@ -771,7 +789,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "It’s a good idea to buy good-quality (15) ␦"
-     }
+     },
+     "keyRaw": "(window) locks"
     }
    ],
    "provenance": {
@@ -800,14 +819,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "install more lighting B have more police officers on patrol C remove surrounding vegetation D contact local police E fix damage quickly F change road design"
+      "text": "install more lighting"
+     },
+     {
+      "letter": "B",
+      "text": "have more police officers on patrol"
+     },
+     {
+      "letter": "C",
+      "text": "remove surrounding vegetation"
+     },
+     {
+      "letter": "D",
+      "text": "contact local police"
+     },
+     {
+      "letter": "E",
+      "text": "fix damage quickly"
+     },
+     {
+      "letter": "F",
+      "text": "change road design"
      },
      {
       "letter": "G",
       "text": "use security cameras"
      }
+    ],
+    "optionPreface": [
+     "Proposed crime prevention measures"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -824,7 +867,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "16. skate park ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 17,
@@ -841,7 +885,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "17. local primary schools ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 18,
@@ -858,7 +903,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "18. Abbostford street ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 19,
@@ -875,7 +921,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "19. shops on Victoria street ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 20,
@@ -892,7 +939,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "20. supermarket car park ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -900,6 +948,40 @@
     "rawExcerpt": "Questions 16-20"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": "Proposed crime prevention measures",
+    "options": [
+     {
+      "letter": "A",
+      "text": "install more lighting"
+     },
+     {
+      "letter": "B",
+      "text": "have more police officers on patrol"
+     },
+     {
+      "letter": "C",
+      "text": "remove surrounding vegetation"
+     },
+     {
+      "letter": "D",
+      "text": "contact local police"
+     },
+     {
+      "letter": "E",
+      "text": "fix damage quickly"
+     },
+     {
+      "letter": "F",
+      "text": "change road design"
+     },
+     {
+      "letter": "G",
+      "text": "use security cameras"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -919,8 +1001,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -950,7 +1034,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "21. Mike suggests they begin their presentation by"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -980,7 +1065,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "22. Karina doesn’t want to discuss the production of ethanol because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 23,
@@ -1010,7 +1096,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "23. Which source of biofuel do the students agree is least environmentally friendly?"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
@@ -1040,7 +1127,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "24. What is the main problem facing the development of the biofuel industry in the USA?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 25,
@@ -1070,7 +1158,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "25. Karina doubts that sugar cane production in Brazil will"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 26,
@@ -1100,7 +1189,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "26. Karina and Mike conclude that in order to increase the use of biofuels"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1134,8 +1224,10 @@
      "• (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1157,7 +1249,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• (27) ␦"
-     }
+     },
+     "keyRaw": "(global) hunger"
     },
     {
      "number": 28,
@@ -1179,7 +1272,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• (28) ␦"
-     }
+     },
+     "keyRaw": "pollution"
     },
     {
      "number": 29,
@@ -1201,7 +1295,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• (29) ␦"
-     }
+     },
+     "keyRaw": "wood"
     },
     {
      "number": 30,
@@ -1223,7 +1318,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• (30) ␦"
-     }
+     },
+     "keyRaw": "grass"
     }
    ],
    "provenance": {
@@ -1253,8 +1349,10 @@
      "In 1973, Mark Granovetter claimed that the influence of ‘weak-ties’ can affect the behaviour of populations in the fields of information science, politics and (31) ␦ Although friends-of-friends may be unlike us, they have similar enough (32) ␦ to have a beneficial effect on our lives. An example of this influence is when we hear about (33) ␦ Because information about them is provided by weak-ties. Since Granovetter proposed his theory, other studies have shown that weak-tie networks also benefit our (34) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1288,7 +1386,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "In 1973, Mark Granovetter claimed that the influence of ‘weak-ties’ can affect the behaviour of populations in the fields of information science, politics and (31) ␦ Although friends-of-friends may be"
-     }
+     },
+     "keyRaw": "marketing"
     },
     {
      "number": 32,
@@ -1322,7 +1421,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "In 1973, Mark Granovetter claimed that the influence of ‘weak-ties’ can affect the behaviour of populations in the fields of information science, politics and (31) ␦ Although friends-of-friends may be"
-     }
+     },
+     "keyRaw": "interests"
     },
     {
      "number": 33,
@@ -1356,7 +1456,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "In 1973, Mark Granovetter claimed that the influence of ‘weak-ties’ can affect the behaviour of populations in the fields of information science, politics and (31) ␦ Although friends-of-friends may be"
-     }
+     },
+     "keyRaw": "jobs"
     },
     {
      "number": 34,
@@ -1390,7 +1491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "In 1973, Mark Granovetter claimed that the influence of ‘weak-ties’ can affect the behaviour of populations in the fields of information science, politics and (31) ␦ Although friends-of-friends may be"
-     }
+     },
+     "keyRaw": "health"
     }
    ],
    "provenance": {
@@ -1419,14 +1521,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "people can gain higher self-esteem B people can access useful medical information C people can form relationships more quickly D people can improve academic performance"
+      "text": "people can gain higher self-esteem"
+     },
+     {
+      "letter": "B",
+      "text": "people can access useful medical information"
+     },
+     {
+      "letter": "C",
+      "text": "people can form relationships more quickly"
+     },
+     {
+      "letter": "D",
+      "text": "people can improve academic performance"
      },
      {
       "letter": "E",
       "text": "people can be reliably informed about current affairs"
      }
+    ],
+    "optionPreface": [
+     "Which does the speaker believe are TWO real benefits of online social networking?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1443,7 +1561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 36,
@@ -1460,7 +1579,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1468,6 +1588,43 @@
     "rawExcerpt": "Questions 35 and 36\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:35-36",
+    "answerSet": [
+     "C",
+     "E"
+    ],
+    "prompt": "Which does the speaker believe are TWO real benefits of online social networking?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "people can gain higher self-esteem"
+     },
+     {
+      "letter": "B",
+      "text": "people can access useful medical information"
+     },
+     {
+      "letter": "C",
+      "text": "people can form relationships more quickly"
+     },
+     {
+      "letter": "D",
+      "text": "people can improve academic performance"
+     },
+     {
+      "letter": "E",
+      "text": "people can be reliably informed about current affairs"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1490,14 +1647,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "criminal activity B poorer grades at school C a decline in physical fitness D less work done by employees"
+      "text": "criminal activity"
+     },
+     {
+      "letter": "B",
+      "text": "poorer grades at school"
+     },
+     {
+      "letter": "C",
+      "text": "a decline in physical fitness"
+     },
+     {
+      "letter": "D",
+      "text": "less work done by employees"
      },
      {
       "letter": "E",
       "text": "loss of career prospects"
      }
+    ],
+    "optionPreface": [
+     "Which TWO problems related to online social networking will increase, according to the speaker?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 37,
@@ -1514,7 +1687,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 38,
@@ -1531,7 +1705,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
@@ -1539,6 +1714,43 @@
     "rawExcerpt": "Questions 37 and 38\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g08:37-38",
+    "answerSet": [
+     "A",
+     "D"
+    ],
+    "prompt": "Which TWO problems related to online social networking will increase, according to the speaker?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "criminal activity"
+     },
+     {
+      "letter": "B",
+      "text": "poorer grades at school"
+     },
+     {
+      "letter": "C",
+      "text": "a decline in physical fitness"
+     },
+     {
+      "letter": "D",
+      "text": "less work done by employees"
+     },
+     {
+      "letter": "E",
+      "text": "loss of career prospects"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1561,14 +1773,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "They are not helpful for developing certain social skills. B They cannot fully reveal a person’s real character. C They are not a good starting point for building new relationships. D They do not encourage people to widen their social circle."
+      "text": "They are not helpful for developing certain social skills."
+     },
+     {
+      "letter": "B",
+      "text": "They cannot fully reveal a person’s real character."
+     },
+     {
+      "letter": "C",
+      "text": "They are not a good starting point for building new relationships."
+     },
+     {
+      "letter": "D",
+      "text": "They do not encourage people to widen their social circle."
      },
      {
       "letter": "E",
       "text": "They will not retain their popularity with the young generation."
      }
+    ],
+    "optionPreface": [
+     "Which TWO claims are made by Robin Dunbar about social networking sites?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 39,
@@ -1585,7 +1813,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 40,
@@ -1602,7 +1831,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1610,6 +1840,43 @@
     "rawExcerpt": "Questions 39 and 40\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g09:39-40",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO claims are made by Robin Dunbar about social networking sites?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "They are not helpful for developing certain social skills."
+     },
+     {
+      "letter": "B",
+      "text": "They cannot fully reveal a person’s real character."
+     },
+     {
+      "letter": "C",
+      "text": "They are not a good starting point for building new relationships."
+     },
+     {
+      "letter": "D",
+      "text": "They do not encourage people to widen their social circle."
+     },
+     {
+      "letter": "E",
+      "text": "They will not retain their popularity with the young generation."
+     }
+    ]
+   },
    "status": "verified"
   }
  ],
@@ -1653,6 +1920,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

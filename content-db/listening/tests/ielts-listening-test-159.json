@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-159",
  "title": "IELTS Listening Test 159",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-159/index.html",
-   "sha256": "3f823ad2ac19827f7096ecc3f16c7c7889d24122389797fab2ab37b2dcb3e58f",
-   "manifestHashMatch": true,
+   "sha256": "ac3ae88ea165d46d73f4ce3865d8dc3805be9e8617c4d27dcdde34f81cf00bc0",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-159/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -419,8 +419,10 @@
      "Requests: Supply information about the bank’s (10) ␦ service"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -443,7 +445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of current account: The (1) ␦ account"
-     }
+     },
+     "keyRaw": "select"
     },
     {
      "number": 2,
@@ -465,7 +468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Date of birth: (2) ␦"
-     }
+     },
+     "keyRaw": "27-1-1973"
     },
     {
      "number": 3,
@@ -488,7 +492,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Current address: (3) ␦ Exeter"
-     }
+     },
+     "keyRaw": "15 riverside"
     },
     {
      "number": 4,
@@ -510,7 +515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Time at current address: (4) ␦"
-     }
+     },
+     "keyRaw": "2 weeks"
     },
     {
      "number": 5,
@@ -532,7 +538,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Telephone: work (5) ␦"
-     }
+     },
+     "keyRaw": "616295"
     },
     {
      "number": 6,
@@ -554,7 +561,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Occupation: (6) ␦"
-     }
+     },
+     "keyRaw": "engineer"
     },
     {
      "number": 7,
@@ -577,7 +585,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Identity (security): Name of his (7) ␦ :Siti"
-     }
+     },
+     "keyRaw": "mother"
     },
     {
      "number": 8,
@@ -600,7 +609,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Opening sum: (8) £ ␦ to be transferred from Fransen Bank, Utrecht"
-     }
+     },
+     "keyRaw": "2,000"
     },
     {
      "number": 9,
@@ -622,7 +632,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Statements: Every (9) ␦"
-     }
+     },
+     "keyRaw": "month"
     },
     {
      "number": 10,
@@ -645,7 +656,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Requests: Supply information about the bank’s (10) ␦ service"
-     }
+     },
+     "keyRaw": "internet"
     }
    ],
    "provenance": {
@@ -671,8 +683,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -702,7 +716,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "11. When the writer Sebastian George first saw Rosewood House, he"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -732,7 +747,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "12. Before buying the house. George had"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 13,
@@ -762,7 +778,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "13. According to the speaker, George viewed Rosewood House as"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -793,22 +810,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test159.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 14
-       },
-       {
-        "blank": 15
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (14) ␦ (15) ␦",
@@ -818,21 +830,16 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(14) ␦ (15) ␦"
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     },
     {
      "number": 15,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 14
-       },
-       {
-        "blank": 15
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (14) ␦ (15) ␦",
@@ -842,21 +849,16 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(14) ␦ (15) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 16,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 16
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (16) ␦ (17) ␦",
@@ -866,21 +868,16 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     },
     {
      "number": 17,
-     "type": "completion",
+     "type": "map_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 16
-       },
-       {
-        "blank": 17
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (16) ␦ (17) ␦",
@@ -890,7 +887,9 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(16) ␦ (17) ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -898,6 +897,52 @@
     "rawExcerpt": "Question 14-17\nLabel the map below. Write correct letters A-J next to questions 14-17."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     },
+     {
+      "letter": "J",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -920,8 +965,10 @@
      "RIVER WALK\n18. You can walk through the ␦ that goes along the river bank.\n19. You can go over the ␦ and then into a wooded area.\n20. On your way back, you could also go up to the ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -944,7 +991,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "18. You can walk through the ␦ that goes along the river bank."
-     }
+     },
+     "keyRaw": "field"
     },
     {
      "number": 19,
@@ -967,7 +1015,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. You can go over the ␦ and then into a wooded area."
-     }
+     },
+     "keyRaw": "footbridge"
     },
     {
      "number": 20,
@@ -992,7 +1041,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "20. On your way back, you could also go up to the ␦"
-     }
+     },
+     "keyRaw": "viewpoint"
     }
    ],
    "provenance": {
@@ -1022,8 +1072,10 @@
      "MARKETING ASSIGNMENT\n21. For their assignment, the students must investigate one part of the ␦\n22. The method the students must use to collect data is ␦\n23. In total, the students must interview ␦ people.\n24. Jack thinks the music preferences of ␦ listeners are similar."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1048,7 +1100,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "21. For their assignment, the students must investigate one part of the ␦"
-     }
+     },
+     "keyRaw": "entertainment industry"
     },
     {
      "number": 22,
@@ -1073,7 +1126,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "22. The method the students must use to collect data is ␦"
-     }
+     },
+     "keyRaw": "telephone interviews"
     },
     {
      "number": 23,
@@ -1096,7 +1150,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "23. In total, the students must interview ␦ people."
-     }
+     },
+     "keyRaw": "30"
     },
     {
      "number": 24,
@@ -1119,7 +1174,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "24. Jack thinks the music preferences of ␦ listeners are similar."
-     }
+     },
+     "keyRaw": "male and female"
     }
    ],
    "provenance": {
@@ -1168,8 +1224,10 @@
      "• (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1191,7 +1249,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• (25) ␦"
-     }
+     },
+     "keyRaw": "jazz"
     },
     {
      "number": 26,
@@ -1213,7 +1272,8 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "• (26) ␦"
-     }
+     },
+     "keyRaw": "classical"
     },
     {
      "number": 27,
@@ -1235,7 +1295,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "• (27) ␦"
-     }
+     },
+     "keyRaw": "concerts"
     },
     {
      "number": 28,
@@ -1257,7 +1318,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "• (28) ␦"
-     }
+     },
+     "keyRaw": "department stores"
     },
     {
      "number": 29,
@@ -1279,7 +1341,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• (29) ␦"
-     }
+     },
+     "keyRaw": "club"
     },
     {
      "number": 30,
@@ -1301,7 +1364,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "• (30) ␦"
-     }
+     },
+     "keyRaw": "opera house"
     }
    ],
    "provenance": {
@@ -1328,8 +1392,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1359,7 +1425,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "31. According to the speaker, it is not clear"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 32,
@@ -1389,7 +1456,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "32. What point does the speaker make about breeding animals in Neolithic Ireland?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 33,
@@ -1419,7 +1487,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "33. What does the speaker say about the transportation of animals?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1449,7 +1518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "34. What is the main evidence for cereal crops in Neolithic Ireland?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1481,8 +1551,10 @@
      "38. The ␦ of the pots was often polished to make them watertight.\n39. Clay from ␦ areas was generally used.\n40. Decoration was only put around the ␦ of the earliest pots."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 35,
@@ -1505,7 +1577,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "35. Ploughs could either have been pulled by ␦ or by cattle."
-     }
+     },
+     "keyRaw": "people"
     },
     {
      "number": 36,
@@ -1528,11 +1601,12 @@
      "blankContext": "line: 36. In the final stages of axe-making ␦ and ␦ were necessary for grind (input box in source)",
      "correctAnswer": "water, sand",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "36. In the final stages of axe-making ␦ and ␦ were necessary for grinding and polishing."
-     }
+     },
+     "keyRaw": "water, sand"
     },
     {
      "number": 37,
@@ -1555,7 +1629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "37. Irish axes were exported from Ireland to ␦ and England."
-     }
+     },
+     "keyRaw": "scotland"
     },
     {
      "number": 38,
@@ -1578,7 +1653,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "38. The ␦ of the pots was often polished to make them watertight."
-     }
+     },
+     "keyRaw": "outside"
     },
     {
      "number": 39,
@@ -1601,7 +1677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "39. Clay from ␦ areas was generally used."
-     }
+     },
+     "keyRaw": "local"
     },
     {
      "number": 40,
@@ -1624,7 +1701,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "40. Decoration was only put around the ␦ of the earliest pots."
-     }
+     },
+     "keyRaw": "tops"
     }
    ],
    "provenance": {
@@ -1632,7 +1710,7 @@
     "rawExcerpt": "Question 35-40\nComplete the sentences below. Write NO MORE THAN TWO WORDS each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   }
  ],
  "counts": {
@@ -1662,7 +1740,34 @@
   "fnameInputs": 34
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 36,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "In the final stages of axe-making ______ and ______ were necessary for grinding and polishing.",
+    "answer": "water, sand",
+    "rawExcerpt": "36. In the final stages of axe-making ␦ and ␦ were necessary for grinding and polishing.",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 39,
+    "missingOrQuarantined": [
+     36
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1670,8 +1775,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 39,
+ "quarantinedCount": 2,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

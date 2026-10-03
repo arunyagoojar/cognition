@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-31",
  "title": "IELTS Listening Test 31",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-31/index.html",
-   "sha256": "fa3e37b865878493df673e5642690fd2e7a10aa96d3248261595eaf25b8ae488",
-   "manifestHashMatch": true,
+   "sha256": "303565e6712495fd41ea59b51ca66934e23c714bf6708858a7bf5683dce765bb",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-31/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -392,8 +392,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test31.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -423,7 +425,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "1. What is the name of the pub?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 2,
@@ -449,18 +452,19 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. Which map shows Jack’s route to Margaret’s party?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1 and 2\nChoose the correct letter A, B or C."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -481,8 +485,10 @@
      "Complete the details for Margaret’s address:\n3. Street: ␦\n4. Number: ␦\n5. Location: ␦ house on the left"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 3,
@@ -507,7 +513,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "3. Street: ␦"
-     }
+     },
+     "keyRaw": "Wesley"
     },
     {
      "number": 4,
@@ -532,7 +539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "4. Number: ␦"
-     }
+     },
+     "keyRaw": "70"
     },
     {
      "number": 5,
@@ -555,7 +563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[6]",
       "rawExcerpt": "5. Location: ␦ house on the left"
-     }
+     },
+     "keyRaw": "fifth"
     }
    ],
    "provenance": {
@@ -582,8 +591,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -613,7 +624,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "6. Which statement is correct?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 7,
@@ -643,39 +655,13 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "7. Jack is worried that Mike may be"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Questions 6 and 7\nChoose the correct letter A, B or C."
-   },
-   "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
-  },
-  {
-   "groupId": "g04",
-   "part": 1,
-   "startQ": 8,
-   "endQ": 8,
-   "partExplicit": false,
-   "instruction": {
-    "text": "What is Mike’s mobile number? ␦",
-    "wordLimit": "",
-    "removedResidue": [],
-    "originalText": "What is Mike’s mobile number? ␦"
-   },
-   "stimulus": {
-    "kind": "none",
-    "table": null,
-    "segments": null,
-    "figures": null,
-    "sharedOptions": null
-   },
-   "questions": [],
-   "provenance": {
-    "elementPath": "entry-content.children[10]",
-    "rawExcerpt": "Question 8\nWhat is Mike’s mobile number? ␦"
    },
    "partAssignedBy": "inherited_no_marker",
    "status": "verified"
@@ -700,14 +686,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "it is dark B it is hidden C the letterbox was behind a bush D someone is coming down the street"
+      "text": "it is dark"
+     },
+     {
+      "letter": "B",
+      "text": "it is hidden"
+     },
+     {
+      "letter": "C",
+      "text": "the letterbox was behind a bush"
+     },
+     {
+      "letter": "D",
+      "text": "someone is coming down the street"
      },
      {
       "letter": "E",
       "text": "he has to call Mike"
      }
+    ],
+    "optionPreface": [
+     "Jack cannot find the house because"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -722,9 +724,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 10,
@@ -739,16 +742,54 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[11]",
+      "elementPath": "entry-content.children[12]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[11]",
+    "elementPath": "entry-content.children[12]",
     "rawExcerpt": "Questions 9 and 10\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:9-10",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Jack cannot find the house because",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "it is dark"
+     },
+     {
+      "letter": "B",
+      "text": "it is hidden"
+     },
+     {
+      "letter": "C",
+      "text": "the letterbox was behind a bush"
+     },
+     {
+      "letter": "D",
+      "text": "someone is coming down the street"
+     },
+     {
+      "letter": "E",
+      "text": "he has to call Mike"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -768,8 +809,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -797,9 +840,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[14]",
+      "elementPath": "entry-content.children[15]",
       "rawExcerpt": "11. Who provides the money to run the park?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -827,9 +871,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[15]",
+      "elementPath": "entry-content.children[16]",
       "rawExcerpt": "12. When did the park move to the public open space?"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -857,13 +902,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[16]",
+      "elementPath": "entry-content.children[17]",
       "rawExcerpt": "13. How much do primary school children pay?"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[13]",
+    "elementPath": "entry-content.children[14]",
     "rawExcerpt": "Part 2: Questions 11-13\nChoose the correct letter A, B or C."
    },
    "status": "verified"
@@ -887,8 +933,10 @@
      "14. Once you pay the entry fee, there are no extra costs ␦\n15. The park is open every day of the year ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
@@ -909,11 +957,12 @@
      "blankContext": "line: 14. Once you pay the entry fee, there are no extra costs ␦ (input box in source)",
      "correctAnswer": "T",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[19]",
       "rawExcerpt": "14. Once you pay the entry fee, there are no extra costs ␦"
-     }
+     },
+     "keyRaw": "T"
     },
     {
      "number": 15,
@@ -934,19 +983,20 @@
      "blankContext": "line: 15. The park is open every day of the year ␦ (input box in source)",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[18]",
+      "elementPath": "entry-content.children[19]",
       "rawExcerpt": "15. The park is open every day of the year ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[17]",
+    "elementPath": "entry-content.children[18]",
     "rawExcerpt": "Questions 14 and 15\nWrite T (true) or F (false)"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g08",
@@ -993,8 +1043,10 @@
      "(18) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 16,
@@ -1014,9 +1066,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "View koalas in natural (16)……………………………"
-     }
+     },
+     "keyRaw": "environment"
     },
     {
      "number": 17,
@@ -1036,9 +1089,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "Walk through kangaroo (17)………………………."
-     }
+     },
+     "keyRaw": "enclosure"
     },
     {
      "number": 18,
@@ -1058,13 +1112,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[21]",
+      "elementPath": "entry-content.children[22]",
       "rawExcerpt": "11 am, 2 pm and (18)…………………….."
-     }
+     },
+     "keyRaw": "3.45 pm"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[19]",
+    "elementPath": "entry-content.children[20]",
     "rawExcerpt": "Questions 16-18\nComplete the table below. Write NO MORE THAN ONE WORD OR A NUMBER for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1090,14 +1145,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "farmyard B children’s show C working farm D country show"
+      "text": "farmyard"
+     },
+     {
+      "letter": "B",
+      "text": "children’s show"
+     },
+     {
+      "letter": "C",
+      "text": "working farm"
+     },
+     {
+      "letter": "D",
+      "text": "country show"
      },
      {
       "letter": "E",
       "text": "volunteer program"
      }
+    ],
+    "optionPreface": [
+     "Which TWO other attractions are also mentioned?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 19,
@@ -1112,9 +1183,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[23]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 20,
@@ -1129,16 +1201,54 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[23]",
+      "elementPath": "entry-content.children[24]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[23]",
+    "elementPath": "entry-content.children[24]",
     "rawExcerpt": "Questions 19 and 20\nChoose TWO letters A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g09:19-20",
+    "answerSet": [
+     "A",
+     "C"
+    ],
+    "prompt": "Which TWO other attractions are also mentioned?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "farmyard"
+     },
+     {
+      "letter": "B",
+      "text": "children’s show"
+     },
+     {
+      "letter": "C",
+      "text": "working farm"
+     },
+     {
+      "letter": "D",
+      "text": "country show"
+     },
+     {
+      "letter": "E",
+      "text": "volunteer program"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1160,8 +1270,10 @@
      "21. The project is about ␦\n22. It includes a group of fuels called ␦\n23. This type of fuel affects the weather by creating ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1184,9 +1296,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "21. The project is about ␦"
-     }
+     },
+     "keyRaw": "energy consumption"
     },
     {
      "number": 22,
@@ -1209,9 +1322,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "22. It includes a group of fuels called ␦"
-     }
+     },
+     "keyRaw": "fossil fuels"
     },
     {
      "number": 23,
@@ -1234,13 +1348,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[26]",
+      "elementPath": "entry-content.children[27]",
       "rawExcerpt": "23. This type of fuel affects the weather by creating ␦"
-     }
+     },
+     "keyRaw": "global warming"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[25]",
+    "elementPath": "entry-content.children[26]",
     "rawExcerpt": "Part 3: Questions 21-23\nComplete the sentences below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "status": "verified"
@@ -1264,8 +1379,10 @@
      "A natural gas\nB nuclear\nC oil\nD other"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 24,
@@ -1280,9 +1397,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "24. 45 percent ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 25,
@@ -1297,9 +1415,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "25. 20 percent ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 26,
@@ -1314,16 +1433,40 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[30]",
+      "elementPath": "entry-content.children[31]",
       "rawExcerpt": "26. 8 percent ␦"
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[27]",
+    "elementPath": "entry-content.children[28]",
     "rawExcerpt": "Questions 24-26\nWhat percentage of each fuel is used in the world?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "natural gas"
+     },
+     {
+      "letter": "B",
+      "text": "nuclear"
+     },
+     {
+      "letter": "C",
+      "text": "oil"
+     },
+     {
+      "letter": "D",
+      "text": "other"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1343,8 +1486,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1372,9 +1517,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[32]",
+      "elementPath": "entry-content.children[33]",
       "rawExcerpt": "27. Richard believes that the main problem with using fossil fuels is"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 28,
@@ -1394,9 +1540,10 @@
      "answerFound": true,
      "status": "quarantined",
      "provenance": {
-      "elementPath": "entry-content.children[33]",
+      "elementPath": "entry-content.children[34]",
       "rawExcerpt": "28. Shirley wants to research nuclear energy because"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 29,
@@ -1424,9 +1571,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[34]",
+      "elementPath": "entry-content.children[35]",
       "rawExcerpt": "29. Regarding other energy sources Richard"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 30,
@@ -1454,13 +1602,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[35]",
+      "elementPath": "entry-content.children[36]",
       "rawExcerpt": "30. For the next meeting Shirley will find some information about"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[31]",
+    "elementPath": "entry-content.children[32]",
     "rawExcerpt": "Questions 27-30\nChoose the correct letter A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
@@ -1489,8 +1638,10 @@
      "Public (40) ␦ will help ensure the survival of our plant and animal species."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1511,9 +1662,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[37]",
+      "elementPath": "entry-content.children[38]",
       "rawExcerpt": "Although we cannot do anything about the plants and animals that are already (31) ␦ we can do something about the many species in the world today that are in danger of becoming extinct in the future."
-     }
+     },
+     "keyRaw": "extinct"
     },
     {
      "number": 32,
@@ -1549,9 +1701,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[38]",
+      "elementPath": "entry-content.children[39]",
       "rawExcerpt": "The main reason for the growing number of (32) ␦ species is the destruction of their (33) ␦ The rapidly (34) ␦ human population needs more land and resources for (35) ␦ This is changing and destroying"
-     }
+     },
+     "keyRaw": "endangered"
     },
     {
      "number": 33,
@@ -1587,9 +1740,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[38]",
+      "elementPath": "entry-content.children[39]",
       "rawExcerpt": "The main reason for the growing number of (32) ␦ species is the destruction of their (33) ␦ The rapidly (34) ␦ human population needs more land and resources for (35) ␦ This is changing and destroying"
-     }
+     },
+     "keyRaw": "habitats"
     },
     {
      "number": 34,
@@ -1625,9 +1779,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[38]",
+      "elementPath": "entry-content.children[39]",
       "rawExcerpt": "The main reason for the growing number of (32) ␦ species is the destruction of their (33) ␦ The rapidly (34) ␦ human population needs more land and resources for (35) ␦ This is changing and destroying"
-     }
+     },
+     "keyRaw": "increasing"
     },
     {
      "number": 35,
@@ -1663,9 +1818,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[38]",
+      "elementPath": "entry-content.children[39]",
       "rawExcerpt": "The main reason for the growing number of (32) ␦ species is the destruction of their (33) ␦ The rapidly (34) ␦ human population needs more land and resources for (35) ␦ This is changing and destroying"
-     }
+     },
+     "keyRaw": "housing and food"
     },
     {
      "number": 36,
@@ -1701,9 +1857,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[38]",
+      "elementPath": "entry-content.children[39]",
       "rawExcerpt": "The main reason for the growing number of (32) ␦ species is the destruction of their (33) ␦ The rapidly (34) ␦ human population needs more land and resources for (35) ␦ This is changing and destroying"
-     }
+     },
+     "keyRaw": "survival"
     },
     {
      "number": 37,
@@ -1728,9 +1885,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[39]",
+      "elementPath": "entry-content.children[40]",
       "rawExcerpt": "One way we can save endangered species and permanently (37) ␦ these habitats is to create and support national parks and reserves. National parks encourage people to enjoy the (38) ␦ of species withou"
-     }
+     },
+     "keyRaw": "protect"
     },
     {
      "number": 38,
@@ -1755,9 +1913,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[39]",
+      "elementPath": "entry-content.children[40]",
       "rawExcerpt": "One way we can save endangered species and permanently (37) ␦ these habitats is to create and support national parks and reserves. National parks encourage people to enjoy the (38) ␦ of species withou"
-     }
+     },
+     "keyRaw": "beauty and diversity"
     },
     {
      "number": 39,
@@ -1778,9 +1937,10 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[40]",
+      "elementPath": "entry-content.children[41]",
       "rawExcerpt": "People who visit these parks must be sure to obey few rules. These include following fire regulations, leaving (39) ␦ placing all rubbish in a bin, not picking the flowers and not taking birds’ eggs."
-     }
+     },
+     "keyRaw": "pets at home"
     },
     {
      "number": 40,
@@ -1801,13 +1961,14 @@
      "answerFound": true,
      "status": "verified",
      "provenance": {
-      "elementPath": "entry-content.children[41]",
+      "elementPath": "entry-content.children[42]",
       "rawExcerpt": "Public (40) ␦ will help ensure the survival of our plant and animal species."
-     }
+     },
+     "keyRaw": "support (and awareness)"
     }
    ],
    "provenance": {
-    "elementPath": "entry-content.children[36]",
+    "elementPath": "entry-content.children[37]",
     "rawExcerpt": "Part 4: Questions 31-40\nComplete the summary below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "status": "verified"
@@ -1848,6 +2009,64 @@
   },
   {
    "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which map shows Jack’s route to Margaret’s party?",
+    "answer": "C",
+    "rawExcerpt": "2. Which map shows Jack’s route to Margaret’s party?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 14,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Once you pay the entry fee, there are no extra costs ______",
+    "answer": "T",
+    "rawExcerpt": "14. Once you pay the entry fee, there are no extra costs ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 15,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "The park is open every day of the year ______",
+    "answer": "F",
+    "rawExcerpt": "15. The park is open every day of the year ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
    "groupId": "g12",
    "questionNumber": 28,
    "reasonCode": "OPTIONS_MISSING",
@@ -1857,7 +2076,7 @@
    "evidence": {
     "stem": "Shirley wants to research nuclear energy because",
     "answer": "B",
-    "rawExcerpt": "",
+    "rawExcerpt": "28. Shirley wants to research nuclear energy because",
     "options": [
      {
       "letter": "B",
@@ -1865,11 +2084,39 @@
      }
     ]
    }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 8,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "2563379"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     2,
+     8,
+     14,
+     15,
+     28
+    ],
+    "outOfRange": []
+   }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 38,
- "quarantinedCount": 2,
- "status": "flagged",
+ "verifiedQuestionCount": 35,
+ "quarantinedCount": 7,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

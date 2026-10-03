@@ -1,0 +1,81 @@
+{
+ "slug": "ielts-listening-test-109",
+ "status": "quarantined",
+ "sourceSha256": "09550fc4f136fd22db930fe2744f2d6e72440c8e1ae12dd5921cf0e14385acab",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g06",
+   "questionNumber": 23,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "The final date of the examination should be ______",
+    "answer": "20 June, 25 June",
+    "rawExcerpt": "23. The final date of the examination should be ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 26,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Set exercises ______",
+    "answer": "M",
+    "rawExcerpt": "Set exercises (26) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 27,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Assignment 1 ______",
+    "answer": "T",
+    "rawExcerpt": "Assignment 1 (27) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g08",
+   "questionNumber": 28,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Assignment 3 ______",
+    "answer": "J",
+    "rawExcerpt": "Assignment 3 (28) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     23,
+     26,
+     27,
+     28
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

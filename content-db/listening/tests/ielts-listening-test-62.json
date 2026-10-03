@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-62",
  "title": "IELTS Listening Test 62",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-62/index.html",
-   "sha256": "396854e188e737d5c961537167825738b73c52feebe186abb9740305af290bd4",
-   "manifestHashMatch": true,
+   "sha256": "b9256354b8672a010b491c6747a2cb77761aac54a75cbcf87b308ea21c095008",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-62/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -423,8 +423,10 @@
      "Family: (5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -446,7 +448,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Time contacted: (1) ␦"
-     }
+     },
+     "keyRaw": "10.25 am"
     },
     {
      "number": 2,
@@ -468,7 +471,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Suburb: (2) ␦"
-     }
+     },
+     "keyRaw": "box hill"
     },
     {
      "number": 3,
@@ -490,7 +494,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Age group: (3) ␦"
-     }
+     },
+     "keyRaw": "30-39"
     },
     {
      "number": 4,
@@ -512,7 +517,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Occupation: (4) ␦"
-     }
+     },
+     "keyRaw": "domestic duties"
     },
     {
      "number": 5,
@@ -530,18 +536,19 @@
      "blankContext": "line: Family: (5) ␦",
      "correctAnswer": "married, no children",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Family: (5) ␦"
-     }
+     },
+     "keyRaw": "married, no children"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[1]",
     "rawExcerpt": "Part 1: Questions 1-5\nComplete the form below. Write NO MORE THAN THREE WORDS AND/ OR A NUMBER for each answer."
    },
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g02",
@@ -562,8 +569,10 @@
      "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will depend on whether she has enough (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -601,7 +610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will d"
-     }
+     },
+     "keyRaw": "walking"
     },
     {
      "number": 7,
@@ -639,7 +649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will d"
-     }
+     },
+     "keyRaw": "tighten"
     },
     {
      "number": 8,
@@ -677,7 +688,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will d"
-     }
+     },
+     "keyRaw": "hike"
     },
     {
      "number": 9,
@@ -715,7 +727,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will d"
-     }
+     },
+     "keyRaw": "swim"
     },
     {
      "number": 10,
@@ -753,7 +766,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "The subject undertakes exercise by regularly (6) ␦ She does yoga in order to relax and (7) ␦ her muscles. When she was younger she would (8) ␦ , and in the future, she may (9) ␦ , although that will d"
-     }
+     },
+     "keyRaw": "energy"
     }
    ],
    "provenance": {
@@ -784,23 +798,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test62-1.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Quiet reading ______",
-      "segments": [
-       "Quiet reading",
-       {
-        "blank": 11
-       },
-       {
-        "blank": 11
-       }
-      ]
+      "plain": "Quiet reading",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 11. Quiet reading ␦ (input box in source)",
@@ -810,22 +818,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Quiet reading ␦"
-     }
+     },
+     "keyRaw": "A",
+     "convertedFrom": "completion"
     },
     {
      "number": 12,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Computers ______",
-      "segments": [
-       "Computers",
-       {
-        "blank": 12
-       },
-       {
-        "blank": 12
-       }
-      ]
+      "plain": "Computers",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 12. Computers ␦ (input box in source)",
@@ -835,22 +837,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. Computers ␦"
-     }
+     },
+     "keyRaw": "E",
+     "convertedFrom": "completion"
     },
     {
      "number": 13,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Newspapers and magazines ______",
-      "segments": [
-       "Newspapers and magazines",
-       {
-        "blank": 13
-       },
-       {
-        "blank": 13
-       }
-      ]
+      "plain": "Newspapers and magazines",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 13. Newspapers and magazines ␦ (input box in source)",
@@ -860,22 +856,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. Newspapers and magazines ␦"
-     }
+     },
+     "keyRaw": "D",
+     "convertedFrom": "completion"
     },
     {
      "number": 14,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Reference books ______",
-      "segments": [
-       "Reference books",
-       {
-        "blank": 14
-       },
-       {
-        "blank": 14
-       }
-      ]
+      "plain": "Reference books",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 14. Reference books ␦ (input box in source)",
@@ -885,22 +875,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. Reference books ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 15,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Audio section ______",
-      "segments": [
-       "Audio section",
-       {
-        "blank": 15
-       },
-       {
-        "blank": 15
-       }
-      ]
+      "plain": "Audio section",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 15. Audio section ␦ (input box in source)",
@@ -910,22 +894,16 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "15. Audio section ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 16,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "Main library ______",
-      "segments": [
-       "Main library",
-       {
-        "blank": 16
-       },
-       {
-        "blank": 16
-       }
-      ]
+      "plain": "Main library",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: 16. Main library ␦ (input box in source)",
@@ -935,12 +913,44 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. Main library ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[6]",
     "rawExcerpt": "Part 2: Questions 11-16\nLabel the floor plan. Write correct letter A-F for each answer."
+   },
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     }
+    ]
    },
    "status": "verified"
   },
@@ -965,8 +975,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test62-2.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -987,11 +999,12 @@
      "blankContext": "line: 17. Teacher-led discussion ␦ (input box in source)",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "17. Teacher-led discussion ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 18,
@@ -1012,11 +1025,12 @@
      "blankContext": "line: 18. Writing skills ␦ (input box in source)",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "18. Writing skills ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 19,
@@ -1037,11 +1051,12 @@
      "blankContext": "line: 19. On-call teacher ␦ (input box in source)",
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "19. On-call teacher ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 20,
@@ -1062,11 +1077,12 @@
      "blankContext": "line: 20. Language exchange ␦ (input box in source)",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "20. Language exchange ␦"
-     }
+     },
+     "keyRaw": "F"
     }
    ],
    "provenance": {
@@ -1074,7 +1090,7 @@
     "rawExcerpt": "Questions 17-20\nComplete the timetable. Write the correct letter A-J for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "status": "flagged"
   },
   {
    "groupId": "g05",
@@ -1095,8 +1111,10 @@
      "One of the basic strategies when listening to lectures is to use (21) ␦ This saves time, but it is only effective if they can be (22) ␦ later. More generally, it is necessary to (23) ␦ the page in anticipation of the nature of the lecture. As an example, one can draw (24) ␦ , tables and flowcharts, consistent with the way the subject matter is presented."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1131,7 +1149,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "One of the basic strategies when listening to lectures is to use (21) ␦ This saves time, but it is only effective if they can be (22) ␦ later. More generally, it is necessary to (23) ␦ the page in ant"
-     }
+     },
+     "keyRaw": "symbols"
     },
     {
      "number": 22,
@@ -1166,7 +1185,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "One of the basic strategies when listening to lectures is to use (21) ␦ This saves time, but it is only effective if they can be (22) ␦ later. More generally, it is necessary to (23) ␦ the page in ant"
-     }
+     },
+     "keyRaw": "interpreted"
     },
     {
      "number": 23,
@@ -1201,7 +1221,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "One of the basic strategies when listening to lectures is to use (21) ␦ This saves time, but it is only effective if they can be (22) ␦ later. More generally, it is necessary to (23) ␦ the page in ant"
-     }
+     },
+     "keyRaw": "format"
     },
     {
      "number": 24,
@@ -1236,7 +1257,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "One of the basic strategies when listening to lectures is to use (21) ␦ This saves time, but it is only effective if they can be (22) ␦ later. More generally, it is necessary to (23) ␦ the page in ant"
-     }
+     },
+     "keyRaw": "headings"
     }
    ],
    "provenance": {
@@ -1293,8 +1315,10 @@
      "(29) ␦ (30) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1316,7 +1340,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "(25) ……… studies"
-     }
+     },
+     "keyRaw": "legal"
     },
     {
      "number": 26,
@@ -1339,7 +1364,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Flowchart showing courtroom processes and (26) …….."
-     }
+     },
+     "keyRaw": "procedures"
     },
     {
      "number": 27,
@@ -1362,7 +1388,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Table or spider-graph, linking (27) ……….. thoughts etc."
-     }
+     },
+     "keyRaw": "associated"
     },
     {
      "number": 28,
@@ -1385,7 +1412,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Network (like spider-graph but has (28) ………… )"
-     }
+     },
+     "keyRaw": "directions"
     },
     {
      "number": 29,
@@ -1408,7 +1436,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Linear (29) ……….."
-     }
+     },
+     "keyRaw": "notes"
     },
     {
      "number": 30,
@@ -1431,7 +1460,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Just use (30) …………."
-     }
+     },
+     "keyRaw": "headings"
     }
    ],
    "provenance": {
@@ -1464,8 +1494,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test62-3.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1489,7 +1521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "billion"
     },
     {
      "number": 32,
@@ -1513,7 +1546,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(31) ␦ (32) ␦"
-     }
+     },
+     "keyRaw": "cleanroom"
     },
     {
      "number": 33,
@@ -1537,7 +1571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "radiation"
     },
     {
      "number": 34,
@@ -1561,7 +1596,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(33) ␦ (34) ␦"
-     }
+     },
+     "keyRaw": "underground"
     },
     {
      "number": 35,
@@ -1582,7 +1618,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(35) ␦"
-     }
+     },
+     "keyRaw": "complex"
     }
    ],
    "provenance": {
@@ -1614,8 +1651,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test62-4.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 36,
@@ -1639,7 +1678,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "heavy water"
     },
     {
      "number": 37,
@@ -1663,7 +1703,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36) ␦ (37) ␦"
-     }
+     },
+     "keyRaw": "electronic"
     },
     {
      "number": 38,
@@ -1687,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "1000 tons"
     },
     {
      "number": 39,
@@ -1711,7 +1753,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(38) ␦ (39) ␦"
-     }
+     },
+     "keyRaw": "electric current"
     },
     {
      "number": 40,
@@ -1732,7 +1775,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(40) ␦"
-     }
+     },
+     "keyRaw": "control"
     }
    ],
    "provenance": {
@@ -1780,7 +1824,98 @@
   "fnameInputs": 40
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 5,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Family: ______",
+    "answer": "married, no children",
+    "rawExcerpt": "Family: (5) ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 17,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Teacher-led discussion ______",
+    "answer": "E",
+    "rawExcerpt": "17. Teacher-led discussion ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 18,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Writing skills ______",
+    "answer": "C",
+    "rawExcerpt": "18. Writing skills ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 19,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "On-call teacher ______",
+    "answer": "I",
+    "rawExcerpt": "19. On-call teacher ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g04",
+   "questionNumber": 20,
+   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "reasonCodes": [
+    "LETTER_KEY_ON_TEXT_QUESTION"
+   ],
+   "evidence": {
+    "stem": "Language exchange ______",
+    "answer": "F",
+    "rawExcerpt": "20. Language exchange ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     5,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1788,8 +1923,9 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "flagged",
+ "verifiedQuestionCount": 35,
+ "quarantinedCount": 6,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

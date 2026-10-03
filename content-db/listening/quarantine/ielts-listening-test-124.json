@@ -1,0 +1,82 @@
+{
+ "slug": "ielts-listening-test-124",
+ "status": "quarantined",
+ "sourceSha256": "c3567a75f21c832f3e04bf8a86929e8e660db06b76a395ef9c5334cb2cb2cd1a",
+ "units": [
+  {
+   "unit": "question",
+   "groupId": "g02",
+   "questionNumber": 3,
+   "reasonCode": "OPTIONS_MISSING",
+   "reasonCodes": [
+    "OPTIONS_MISSING",
+    "MULTI_LETTER_KEY_ON_SINGLE_SELECT"
+   ],
+   "evidence": {
+    "stem": "What will they take with them?",
+    "answer": "B, D, E",
+    "rawExcerpt": "3. What will they take with them?",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g05",
+   "questionNumber": 11,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "Besides sunny cafes, Brisbane also offers artistic atmosphere with many ______ and",
+    "answer": "museums, art galleries",
+    "rawExcerpt": "Besides sunny cafes, Brisbane also offers artistic atmosphere with many (11) ␦ and ␦",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 18,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "to ______ koalas or…………………kangaroos",
+    "answer": "hold, feed",
+    "rawExcerpt": "to (18)……………….koalas or…………………kangaroos",
+    "options": null
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g07",
+   "questionNumber": 20,
+   "reasonCode": "KEY_LIST_AMBIGUOUS",
+   "reasonCodes": [
+    "KEY_LIST_AMBIGUOUS"
+   ],
+   "evidence": {
+    "stem": "great for ______ and………………..",
+    "answer": "hiking, camping",
+    "rawExcerpt": "great for (20)…………………….and………………..",
+    "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     3,
+     11,
+     18,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ]
+}

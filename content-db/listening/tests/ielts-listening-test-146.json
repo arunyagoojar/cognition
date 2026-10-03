@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-146",
  "title": "IELTS Listening Test 146",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-146/index.html",
-   "sha256": "f2a48e14475f7e38e74c99d1cf190bd13831fa5c84f9c5c5235f865f11a7d497",
-   "manifestHashMatch": true,
+   "sha256": "c553ff4d22f683b4c49d2f2249da53c3cc04bc2cb7534978b2fb83b88ad5ca7c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-146/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -26,8 +26,8 @@
   }
  ],
  "hubEnumerated": true,
- "duplicateOf": null,
- "contentFingerprint": "a45c5385c59529acb6b59f2ef2cc598296cc68251f9e9f018c91bc08bca14419",
+ "duplicateOf": "ielts-listening-test-2",
+ "contentFingerprint": "290f337484fc5d144c6a018159b37d56c10f16f6bd8b8a505485a0f278586e66",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -416,8 +416,10 @@
      "To have a (10) ␦ area for socializing"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -439,7 +441,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Name: Anu (1) ␦"
-     }
+     },
+     "keyRaw": "Bhatt"
     },
     {
      "number": 2,
@@ -461,7 +464,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Date of birth: (2) ␦"
-     }
+     },
+     "keyRaw": "31 March"
     },
     {
      "number": 3,
@@ -483,7 +487,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Course of study: (3) ␦"
-     }
+     },
+     "keyRaw": "nursing"
     },
     {
      "number": 4,
@@ -505,7 +510,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Number of years planned in hall: (4) ␦"
-     }
+     },
+     "keyRaw": "2"
     },
     {
      "number": 5,
@@ -528,7 +534,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Special dietary requirements: no (5) ␦ (red)"
-     }
+     },
+     "keyRaw": "meat"
     },
     {
      "number": 6,
@@ -550,7 +557,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Preferred room type: a single (6) ␦"
-     }
+     },
+     "keyRaw": "bedsit"
     },
     {
      "number": 7,
@@ -573,7 +581,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Interests: the (7) ␦ and badminton"
-     }
+     },
+     "keyRaw": "theatre"
     },
     {
      "number": 8,
@@ -595,7 +604,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "Priorities in choice of hall: to be with other students who are (8) ␦"
-     }
+     },
+     "keyRaw": "mature/ older"
     },
     {
      "number": 9,
@@ -617,7 +627,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "To live outside the (9) ␦"
-     }
+     },
+     "keyRaw": "town"
     },
     {
      "number": 10,
@@ -640,7 +651,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "To have a (10) ␦ area for socializing"
-     }
+     },
+     "keyRaw": "shared"
     }
    ],
    "provenance": {
@@ -694,8 +706,10 @@
      "(13) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -717,7 +731,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "many different (11)……………….."
-     }
+     },
+     "keyRaw": "trees"
     },
     {
      "number": 12,
@@ -740,7 +755,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "between (12)…………………..and………………"
-     }
+     },
+     "keyRaw": "Friday/ Sunday"
     },
     {
      "number": 13,
@@ -763,7 +779,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "reconstruction of a 2,000 year old (13)………………with activities for children"
-     }
+     },
+     "keyRaw": "farm"
     }
    ],
    "provenance": {
@@ -785,35 +802,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Longfield Park",
-     "A prepare food with herbs",
-     "B meet a well-known herbalist",
-     "C dye cloth with herbs",
-     "Longfield Park\n14. As part of Monday’s activity, visitors will\nA prepare food with herbs\nB meet a well-known herbalist\nC dye cloth with herbs",
-     "A only group bookings are accepted",
-     "B visitors should book in advance",
-     "C attendance is free",
-     "15. For the activity on Wednesday,\nA only group bookings are accepted\nB visitors should book in advance\nC attendance is free",
-     "A come in suitable clothing",
-     "B make sure they are able to stay for the whole day",
-     "C tell the rangers before the event what they wish to do",
-     "16. For the activity on Saturday, visitors should\nA come in suitable clothing\nB make sure they are able to stay for the whole day\nC tell the rangers before the event what they wish to do"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 14,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "As part of Monday’s activity, visitors will",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "prepare food with herbs"
+      },
+      {
+       "letter": "B",
+       "text": "meet a well-known herbalist"
+      },
+      {
+       "letter": "C",
+       "text": "dye cloth with herbs"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -821,16 +839,30 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "14. As part of Monday’s activity, visitors will"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 15,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "For the activity on Wednesday,",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "only group bookings are accepted"
+      },
+      {
+       "letter": "B",
+       "text": "visitors should book in advance"
+      },
+      {
+       "letter": "C",
+       "text": "attendance is free"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -838,16 +870,30 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. For the activity on Wednesday,"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 16,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "For the activity on Saturday, visitors should",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "come in suitable clothing"
+      },
+      {
+       "letter": "B",
+       "text": "make sure they are able to stay for the whole day"
+      },
+      {
+       "letter": "C",
+       "text": "tell the rangers before the event what they wish to do"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
@@ -855,7 +901,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. For the activity on Saturday, visitors should"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -884,8 +931,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test146.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
@@ -902,7 +951,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "17. bird hide ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 18,
@@ -919,7 +969,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "18. dog-walking area ␦"
-     }
+     },
+     "keyRaw": "I"
     },
     {
      "number": 19,
@@ -936,7 +987,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "19. flower garden ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 20,
@@ -953,7 +1005,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "20. wooded area ␦"
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -961,6 +1014,48 @@
     "rawExcerpt": "Questions 17-20\nLabel the map below. Write the correct letter A-I next to questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     },
+     {
+      "letter": "I",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -976,39 +1071,36 @@
     "originalText": "Choose the correct letter, A, B or C."
    },
    "stimulus": {
-    "kind": "sentences",
+    "kind": "mcq",
     "table": null,
-    "segments": [
-     "Self-Access Centre",
-     "A they enjoy the variety of equipment",
-     "B they like being able to work on their own",
-     "C it is an important part of their studies",
-     "Self-Access Centre\n21. Students want to keep the Self-Access Centre because\nA they enjoy the variety of equipment\nB they like being able to work on their own\nC it is an important part of their studies",
-     "A close the Self-Access Centre",
-     "B move the Self-Access Centre elsewhere",
-     "C restrict access to the Self-Access Centre",
-     "22. Some teachers would prefer to\nA close the Self-Access Centre\nB move the Self-Access Centre elsewhere\nC restrict access to the Self-Access Centre",
-     "A the size of the library",
-     "B difficulty in getting help",
-     "C the lack of materials",
-     "23. The students’ main concern about using the library would be\nA the size of the library\nB difficulty in getting help\nC the lack of materials",
-     "A the cost of upgrading the centre",
-     "B the lack of space in the centre",
-     "C the difficulty in supervising the centre",
-     "24. The Director of Studies is concerned about\nA the cost of upgrading the centre\nB the lack of space in the centre\nC the difficulty in supervising the centre"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Students want to keep the Self-Access Centre because",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "they enjoy the variety of equipment"
+      },
+      {
+       "letter": "B",
+       "text": "they like being able to work on their own"
+      },
+      {
+       "letter": "C",
+       "text": "it is an important part of their studies"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1016,16 +1108,30 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "21. Students want to keep the Self-Access Centre because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 22,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "Some teachers would prefer to",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "close the Self-Access Centre"
+      },
+      {
+       "letter": "B",
+       "text": "move the Self-Access Centre elsewhere"
+      },
+      {
+       "letter": "C",
+       "text": "restrict access to the Self-Access Centre"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1033,16 +1139,30 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "22. Some teachers would prefer to"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 23,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The students’ main concern about using the library would be",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the size of the library"
+      },
+      {
+       "letter": "B",
+       "text": "difficulty in getting help"
+      },
+      {
+       "letter": "C",
+       "text": "the lack of materials"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
@@ -1050,16 +1170,30 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "23. The students’ main concern about using the library would be"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 24,
-     "type": "short_answer",
+     "type": "mcq_single",
      "stem": {
       "plain": "The Director of Studies is concerned about",
       "segments": null
      },
-     "options": null,
+     "options": [
+      {
+       "letter": "A",
+       "text": "the cost of upgrading the centre"
+      },
+      {
+       "letter": "B",
+       "text": "the lack of space in the centre"
+      },
+      {
+       "letter": "C",
+       "text": "the difficulty in supervising the centre"
+      }
+     ],
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
@@ -1067,7 +1201,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "24. The Director of Studies is concerned about"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1105,8 +1240,10 @@
      "Restrict personal use of (30) ␦ on computers."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1129,7 +1266,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "The level of the (25) ␦ materials, in particular, should be more clearly shown."
-     }
+     },
+     "keyRaw": "reading"
     },
     {
      "number": 26,
@@ -1152,7 +1290,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Update the (26) ␦ collection."
-     }
+     },
+     "keyRaw": "CD"
     },
     {
      "number": 27,
@@ -1175,7 +1314,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Buy some (27) ␦ and divide them up."
-     }
+     },
+     "keyRaw": "workbooks"
     },
     {
      "number": 28,
@@ -1198,7 +1338,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Speak to the teachers and organize a (28) ␦ for supervising the centre."
-     }
+     },
+     "keyRaw": "timetable"
     },
     {
      "number": 29,
@@ -1220,7 +1361,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Install an (29) ␦"
-     }
+     },
+     "keyRaw": "alarm"
     },
     {
      "number": 30,
@@ -1243,7 +1385,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Restrict personal use of (30) ␦ on computers."
-     }
+     },
+     "keyRaw": "emails"
     }
    ],
    "provenance": {
@@ -1332,8 +1475,10 @@
      "(39) ␦ (40) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1359,7 +1504,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– small – (31)…………….power source – few rules and procedures – communication by (32)……………"
-     }
+     },
+     "keyRaw": "central"
     },
     {
      "number": 32,
@@ -1385,7 +1531,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– small – (31)…………….power source – few rules and procedures – communication by (32)……………"
-     }
+     },
+     "keyRaw": "conversations"
     },
     {
      "number": 33,
@@ -1407,7 +1554,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– might not act (33)………………"
-     }
+     },
+     "keyRaw": "effectively"
     },
     {
      "number": 34,
@@ -1430,7 +1578,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– not afraid of (34)……………. – does not need job security"
-     }
+     },
+     "keyRaw": "risks"
     },
     {
      "number": 35,
@@ -1457,7 +1606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– large, many (35)……………. – specialized departments – rules and procedures e.g. job (36)……………………..and rules for discipline"
-     }
+     },
+     "keyRaw": "levels"
     },
     {
      "number": 36,
@@ -1484,7 +1634,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– large, many (35)……………. – specialized departments – rules and procedures e.g. job (36)……………………..and rules for discipline"
-     }
+     },
+     "keyRaw": "descriptions"
     },
     {
      "number": 37,
@@ -1507,7 +1658,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– economies of scale – successful when (37)…………………..ability is important"
-     }
+     },
+     "keyRaw": "technical"
     },
     {
      "number": 38,
@@ -1530,7 +1682,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– slow to see when (38)………………..is needed – slow to react"
-     }
+     },
+     "keyRaw": "change"
     },
     {
      "number": 39,
@@ -1552,7 +1705,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– does not want (39)………………"
-     }
+     },
+     "keyRaw": "responsibility"
     },
     {
      "number": 40,
@@ -1574,7 +1728,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "– (40)………………….."
-     }
+     },
+     "keyRaw": "flexible"
     }
    ],
    "provenance": {
@@ -1620,10 +1775,59 @@
   "fnameInputs": 33
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "test",
+   "reasonCode": "RENDER_CHECK_FAILED",
+   "evidence": {
+    "defects": [
+     "part 2: artifact in stimulus ('………………')"
+    ]
+   }
+  }
+ ],
  "validationWarnings": [],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
- "schemaErrors": []
+ "quarantinedCount": 1,
+ "status": "duplicate",
+ "fullTestEligible": false,
+ "schemaErrors": [],
+ "duplicateEvidence": {
+  "reasonCode": "CAMBRIDGE_NEAR_DUPLICATE",
+  "cambridgeIdentity": [
+   {
+    "book": 9,
+    "test": 2,
+    "source": "official-ielts-tests-book-9",
+    "label": "Listening Test 9.2"
+   }
+  ],
+  "conflictingKeyItems": [
+   {
+    "number": 28,
+    "this": "timetable",
+    "canonical": "timetable/ schedule"
+   },
+   {
+    "number": 30,
+    "this": "emails",
+    "canonical": "email(s)"
+   },
+   {
+    "number": 32,
+    "this": "conversations",
+    "canonical": "conversation(s)"
+   },
+   {
+    "number": 34,
+    "this": "risks",
+    "canonical": "risk(s)"
+   },
+   {
+    "number": 36,
+    "this": "descriptions",
+    "canonical": "description(s)"
+   }
+  ]
+ }
 }

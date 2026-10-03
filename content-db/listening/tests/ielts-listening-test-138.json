@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-138",
  "title": "IELTS Listening Test 138",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-138/index.html",
-   "sha256": "bed47a386ce1a8197ad15c53fda1eb59c9d941f78c21277b75a804ac024702ed",
-   "manifestHashMatch": true,
+   "sha256": "e04224233c3dbefc550b4a746bc48831e71a8cf009388c69c5d62e4399818b15",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-138/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -400,8 +400,10 @@
      "Number of tables: (8) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -423,7 +425,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Customer name: Mr. (1) ␦"
-     }
+     },
+     "keyRaw": "Sanders"
     },
     {
      "number": 2,
@@ -445,7 +448,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Daytime telephone number: (2) ␦"
-     }
+     },
+     "keyRaw": "4456786"
     },
     {
      "number": 3,
@@ -468,7 +472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Telephone number after 5 pm: As above (if no one answers, (3) ␦ )"
-     }
+     },
+     "keyRaw": "leave a message"
     },
     {
      "number": 4,
@@ -490,7 +495,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Number of guests: (4) ␦"
-     }
+     },
+     "keyRaw": "50"
     },
     {
      "number": 5,
@@ -512,7 +518,8 @@
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "Date: (5) ␦"
-     }
+     },
+     "keyRaw": "25 June"
     },
     {
      "number": 6,
@@ -534,7 +541,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Shape: (6) ␦"
-     }
+     },
+     "keyRaw": "round"
     },
     {
      "number": 7,
@@ -556,7 +564,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Size: (7) ␦"
-     }
+     },
+     "keyRaw": "large"
     },
     {
      "number": 8,
@@ -578,7 +587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Number of tables: (8) ␦"
-     }
+     },
+     "keyRaw": "5"
     }
    ],
    "provenance": {
@@ -604,8 +614,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 9,
@@ -635,7 +647,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. The man decided to book"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -665,7 +678,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "10. The man will have to pay"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -690,12 +704,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A before 1837\nB between 1837 and 1900\nC after 1900"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "before 1837"
+     },
+     {
+      "letter": "B",
+      "text": "between 1837 and 1900"
+     },
+     {
+      "letter": "C",
+      "text": "after 1900"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -712,7 +739,8 @@
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "11. The East Front was added to the building ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 12,
@@ -729,7 +757,8 @@
      "provenance": {
       "elementPath": "entry-content.children[13]",
       "rawExcerpt": "12. The last big structural change was made ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 13,
@@ -746,7 +775,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. The building was bombed ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 14,
@@ -763,7 +793,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. The building became a palace ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 15,
@@ -780,7 +811,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. The building was known as The Queen’s House ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 16,
@@ -797,7 +829,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. The Houses of Parliament were destroyed by fire ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 17,
@@ -814,12 +847,31 @@
      "provenance": {
       "elementPath": "entry-content.children[18]",
       "rawExcerpt": "17. The Marble Arch was moved ␦"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Part 2: Questions 11-17\nAccording to the speaker, when did the following happen?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "before 1837"
+     },
+     {
+      "letter": "B",
+      "text": "between 1837 and 1900"
+     },
+     {
+      "letter": "C",
+      "text": "after 1900"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -844,8 +896,10 @@
      "20. The public can visit the nineteen ␦ in August or September"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -868,7 +922,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "18. Up to ␦ people attend garden parties at the palace each year."
-     }
+     },
+     "keyRaw": "8000"
     },
     {
      "number": 19,
@@ -891,7 +946,8 @@
      "provenance": {
       "elementPath": "entry-content.children[21]",
       "rawExcerpt": "19. The garden contains more than ␦ species of wild flower."
-     }
+     },
+     "keyRaw": "350"
     },
     {
      "number": 20,
@@ -914,7 +970,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "20. The public can visit the nineteen ␦ in August or September"
-     }
+     },
+     "keyRaw": "state rooms"
     }
    ],
    "provenance": {
@@ -946,8 +1003,10 @@
      "24. What kind of approach to learning does social science use? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -972,7 +1031,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "21. What aspect of history is it important to learn something from? ␦"
-     }
+     },
+     "keyRaw": "(our) past mistakes"
     },
     {
      "number": 22,
@@ -997,7 +1057,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "22. What do we also need to know about our ancestors? ␦"
-     }
+     },
+     "keyRaw": "what they thought"
     },
     {
      "number": 23,
@@ -1022,7 +1083,8 @@
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "23. Where are transferable skills useful? ␦"
-     }
+     },
+     "keyRaw": "in a job"
     },
     {
      "number": 24,
@@ -1047,7 +1109,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "24. What kind of approach to learning does social science use? ␦"
-     }
+     },
+     "keyRaw": "flexible and adaptable"
     }
    ],
    "provenance": {
@@ -1075,8 +1138,10 @@
      "A This will focus on how each generation learns about its own culture\nB This necessarily includes a study of physics and chemistry\nC This is studied from the point of view of human behavior\nD This will only be covered in terms of its theory\nE This also covers the distribution of wealth\nF This includes the study of archaeology\nG This has received criticism for not being scientific enough\nH This includes some work on urban planning"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1093,7 +1158,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "25. Anthropology ␦"
-     }
+     },
+     "keyRaw": "F"
     },
     {
      "number": 26,
@@ -1110,7 +1176,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "26. Economics ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 27,
@@ -1127,7 +1194,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "27. Education ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 28,
@@ -1144,7 +1212,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "28. Geography ␦"
-     }
+     },
+     "keyRaw": "H"
     },
     {
      "number": 29,
@@ -1161,7 +1230,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "29. Law ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 30,
@@ -1178,7 +1248,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "30. Sociology and social work ␦"
-     }
+     },
+     "keyRaw": "G"
     }
    ],
    "provenance": {
@@ -1186,6 +1257,45 @@
     "rawExcerpt": "Questions 25-30\nWhat is said each of these subjects studied on a social studies course?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "stimulus_lines",
+    "segmentIndex": 0,
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "This will focus on how each generation learns about its own culture"
+     },
+     {
+      "letter": "B",
+      "text": "This necessarily includes a study of physics and chemistry"
+     },
+     {
+      "letter": "C",
+      "text": "This is studied from the point of view of human behavior"
+     },
+     {
+      "letter": "D",
+      "text": "This will only be covered in terms of its theory"
+     },
+     {
+      "letter": "E",
+      "text": "This also covers the distribution of wealth"
+     },
+     {
+      "letter": "F",
+      "text": "This includes the study of archaeology"
+     },
+     {
+      "letter": "G",
+      "text": "This has received criticism for not being scientific enough"
+     },
+     {
+      "letter": "H",
+      "text": "This includes some work on urban planning"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1205,8 +1315,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1236,7 +1348,8 @@
      "provenance": {
       "elementPath": "entry-content.children[33]",
       "rawExcerpt": "31. Students should complete their work on the 1950s"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 32,
@@ -1266,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[34]",
       "rawExcerpt": "32. According to the lecturer, the ‘baby boom’ happened"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 33,
@@ -1296,7 +1410,8 @@
      "provenance": {
       "elementPath": "entry-content.children[35]",
       "rawExcerpt": "33. In the sixties the USA had 70 million"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 34,
@@ -1326,7 +1441,8 @@
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "34. According to the lecturer, compared to the 1950s, the 1960s were"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 35,
@@ -1356,7 +1472,8 @@
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "35. According to the lecturer, literature changed the way women"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 36,
@@ -1386,7 +1503,8 @@
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "36. The rate of crime in the sixties"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 37,
@@ -1416,7 +1534,8 @@
      "provenance": {
       "elementPath": "entry-content.children[39]",
       "rawExcerpt": "37. What happened at the start of the 1960s?"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1444,8 +1563,10 @@
      "In October, 1962, US President Kennedy met advisers to discuss (38) ␦ which proved that the Cubans were installing nuclear missiles, presumably to use against the US. Kennedy was faced with three choices: to try to resolve the crisis diplomatically; to block the delivery of further weapons into Cuba; or to attack Cuba. Kennedy chose (39) ␦ option, which prevented the build up of more missiles and led to the withdrawal of the existing ones. Most are agreed that a (40) ␦ was narrowly avoided by Kennedy’s decision."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 38,
@@ -1476,7 +1597,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "In October, 1962, US President Kennedy met advisers to discuss (38) ␦ which proved that the Cubans were installing nuclear missiles, presumably to use against the US. Kennedy was faced with three choi"
-     }
+     },
+     "keyRaw": "(photographic) evidence"
     },
     {
      "number": 39,
@@ -1507,7 +1629,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "In October, 1962, US President Kennedy met advisers to discuss (38) ␦ which proved that the Cubans were installing nuclear missiles, presumably to use against the US. Kennedy was faced with three choi"
-     }
+     },
+     "keyRaw": "second"
     },
     {
      "number": 40,
@@ -1538,7 +1661,8 @@
      "provenance": {
       "elementPath": "entry-content.children[41]",
       "rawExcerpt": "In October, 1962, US President Kennedy met advisers to discuss (38) ␦ which proved that the Cubans were installing nuclear missiles, presumably to use against the US. Kennedy was faced with three choi"
-     }
+     },
+     "keyRaw": "(nuclear) war"
     }
    ],
    "provenance": {
@@ -1577,6 +1701,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

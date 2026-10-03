@@ -7,12 +7,12 @@
  "slug": "ielts-listening-83",
  "title": "IELTS Listening Test 83",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-83/index.html",
-   "sha256": "8e7d8e8a6cedf73a8001e032d80d4e37acf79ec1750e42062f40ae88c1ad06d5",
-   "manifestHashMatch": true,
+   "sha256": "d87c33b6c06baee7010a716159e6249026523b848b7bdc7a9f4865ee1d53b3a9",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-83/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -404,8 +404,10 @@
      "Payment details: total – £450, to be paid (5) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -427,7 +429,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Last name: (1) ␦"
-     }
+     },
+     "keyRaw": "Symonds"
     },
     {
      "number": 2,
@@ -449,7 +452,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Date of birth: 11th December (2) ␦"
-     }
+     },
+     "keyRaw": "1996"
     },
     {
      "number": 3,
@@ -471,7 +475,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Type of membership: (3) ␦"
-     }
+     },
+     "keyRaw": "full time"
     },
     {
      "number": 4,
@@ -493,7 +498,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Activities: badminton and (4) ␦"
-     }
+     },
+     "keyRaw": "swimming"
     },
     {
      "number": 5,
@@ -515,7 +521,8 @@
      "provenance": {
       "elementPath": "entry-content.children[3]",
       "rawExcerpt": "Payment details: total – £450, to be paid (5) ␦"
-     }
+     },
+     "keyRaw": "monthly"
     }
    ],
    "provenance": {
@@ -548,8 +555,10 @@
      "How did you hear about the club? (10) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 6,
@@ -571,7 +580,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "What exercises do you do regularly? (6) ␦"
-     }
+     },
+     "keyRaw": "jogging"
     },
     {
      "number": 7,
@@ -593,7 +603,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "Do you have any injuries? Has a (7) ␦"
-     }
+     },
+     "keyRaw": "bad ankle"
     },
     {
      "number": 8,
@@ -615,7 +626,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "What is your goal or target? A better (8) ␦"
-     }
+     },
+     "keyRaw": "fitness level"
     },
     {
      "number": 9,
@@ -637,7 +649,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "What is your occupation? A (9) ␦"
-     }
+     },
+     "keyRaw": "charity worker"
     },
     {
      "number": 10,
@@ -659,7 +672,8 @@
      "provenance": {
       "elementPath": "entry-content.children[5]",
       "rawExcerpt": "How did you hear about the club? (10) ␦"
-     }
+     },
+     "keyRaw": "radio"
     }
    ],
    "provenance": {
@@ -686,8 +700,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -717,7 +733,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "11. The next event at the hotel will be"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 12,
@@ -747,7 +764,8 @@
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "12. The number of guests will be"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 13,
@@ -777,7 +795,8 @@
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. Guests will start arriving at"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 14,
@@ -807,7 +826,8 @@
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "14. The entertainment will be a"
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -836,14 +856,28 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "Susan B Ahmed C Gary D Olav"
+      "text": "Susan"
+     },
+     {
+      "letter": "B",
+      "text": "Ahmed"
+     },
+     {
+      "letter": "C",
+      "text": "Gary"
+     },
+     {
+      "letter": "D",
+      "text": "Olav"
      },
      {
       "letter": "E",
       "text": "Monica"
      }
-    ]
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 15,
@@ -860,7 +894,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "15. offer drinks to guests ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -877,7 +912,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "16. take guests’ coats and hats ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 17,
@@ -894,7 +930,8 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "17. show guests where to go ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
@@ -902,6 +939,32 @@
     "rawExcerpt": "Questions 15-17\n\nWho will be responsible for the following jobs as the guests arrive?"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "Susan"
+     },
+     {
+      "letter": "B",
+      "text": "Ahmed"
+     },
+     {
+      "letter": "C",
+      "text": "Gary"
+     },
+     {
+      "letter": "D",
+      "text": "Olav"
+     },
+     {
+      "letter": "E",
+      "text": "Monica"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -926,8 +989,10 @@
      "There will be a total of three (20) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 18,
@@ -949,7 +1014,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "In order to get the guests to move to the restaurant the hotel manager will (18) ␦"
-     }
+     },
+     "keyRaw": "ring a bell"
     },
     {
      "number": 19,
@@ -971,7 +1037,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "Seating plans will be placed on each table and also in the (19) ␦"
-     }
+     },
+     "keyRaw": "lounge"
     },
     {
      "number": 20,
@@ -993,7 +1060,8 @@
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "There will be a total of three (20) ␦"
-     }
+     },
+     "keyRaw": "speeches"
     }
    ],
    "provenance": {
@@ -1026,8 +1094,10 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test83.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -1051,7 +1121,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "pine forests"
     },
     {
      "number": 22,
@@ -1075,7 +1146,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(21) ␦ (22) ␦"
-     }
+     },
+     "keyRaw": "water"
     },
     {
      "number": 23,
@@ -1099,7 +1171,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "print"
     },
     {
      "number": 24,
@@ -1123,7 +1196,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(23) ␦ (24) ␦"
-     }
+     },
+     "keyRaw": "sort"
     },
     {
      "number": 25,
@@ -1144,7 +1218,8 @@
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(25) ␦"
-     }
+     },
+     "keyRaw": "remove ink"
     }
    ],
    "provenance": {
@@ -1172,8 +1247,10 @@
      "26. What part of the assignment is Alan going to start working on? ␦\n\n27. Where will Melanie get more information on used paper collection? ␦\n\n28. What will they add to the assignment to make it more interesting? ␦\n\n29. What do they agree to complete by the end of the month? ␦\n\n30. Who will they ask to review their work? ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 26,
@@ -1198,7 +1275,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "26. What part of the assignment is Alan going to start working on? ␦"
-     }
+     },
+     "keyRaw": "introduction"
     },
     {
      "number": 27,
@@ -1223,7 +1301,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. Where will Melanie get more information on used paper collection? ␦"
-     }
+     },
+     "keyRaw": "council"
     },
     {
      "number": 28,
@@ -1248,7 +1327,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "28. What will they add to the assignment to make it more interesting? ␦"
-     }
+     },
+     "keyRaw": "data"
     },
     {
      "number": 29,
@@ -1273,7 +1353,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "29. What do they agree to complete by the end of the month? ␦"
-     }
+     },
+     "keyRaw": "first draft"
     },
     {
      "number": 30,
@@ -1298,7 +1379,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "30. Who will they ask to review their work? ␦"
-     }
+     },
+     "keyRaw": "tutor"
     }
    ],
    "provenance": {
@@ -1338,8 +1420,10 @@
      "c. Shaft – not (38) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1361,7 +1445,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Main purposes – warmth and (31) ␦"
-     }
+     },
+     "keyRaw": "protection"
     },
     {
      "number": 32,
@@ -1383,7 +1468,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Main component keratin – makes fingernails (32) ␦"
-     }
+     },
+     "keyRaw": "flexible"
     },
     {
      "number": 33,
@@ -1405,7 +1491,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Full head of hair can support a large weight – equal to two (33) ␦"
-     }
+     },
+     "keyRaw": "elephants"
     },
     {
      "number": 34,
@@ -1428,7 +1515,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Average number of strands of hair – (34) ␦ for an adult"
-     }
+     },
+     "keyRaw": "100,000"
     },
     {
      "number": 35,
@@ -1451,7 +1539,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "• Large amount of money spent on (35) ␦ for hair in the UK"
-     }
+     },
+     "keyRaw": "products"
     },
     {
      "number": 36,
@@ -1474,7 +1563,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "a. Bulb – like a (36) ␦ over end of hair follicle"
-     }
+     },
+     "keyRaw": "cap"
     },
     {
      "number": 37,
@@ -1497,7 +1587,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "b. Root – contains glands that supply (37) ␦ to hair strand"
-     }
+     },
+     "keyRaw": "oil"
     },
     {
      "number": 38,
@@ -1519,7 +1610,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "c. Shaft – not (38) ␦"
-     }
+     },
+     "keyRaw": "active"
     }
    ],
    "provenance": {
@@ -1549,8 +1641,10 @@
      "Vitamins C, D and E are all important for healthy hair and (40) ␦ are one of the best sources of Vitamin C."
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 39,
@@ -1572,7 +1666,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Changes in diet will take longer to affect your hair than your (39) ␦"
-     }
+     },
+     "keyRaw": "skin"
     },
     {
      "number": 40,
@@ -1595,7 +1690,8 @@
      "provenance": {
       "elementPath": "entry-content.children[27]",
       "rawExcerpt": "Vitamins C, D and E are all important for healthy hair and (40) ␦ are one of the best sources of Vitamin C."
-     }
+     },
+     "keyRaw": "blue-berries"
     }
    ],
    "provenance": {
@@ -1651,6 +1747,7 @@
  ],
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
- "status": "flagged",
+ "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

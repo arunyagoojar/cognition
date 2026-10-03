@@ -7,12 +7,12 @@
  "slug": "ielts-listening-test-77",
  "title": "IELTS Listening Test 77",
  "kind": "full_test",
- "pipelineVersion": "production-listening-1.0.0",
+ "pipelineVersion": "production-listening-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-listening-test-77/index.html",
-   "sha256": "c6108eed4a7a10ea8dce7b0f1fa18c9515495b19f1a3c26283ae8e1c0835b90a",
-   "manifestHashMatch": true,
+   "sha256": "d76bc69b98da10705c93fecf95f7d75180e5c4d862fb99ccc42a41e3c1595d94",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-listening-test-77/"
   },
   "extractionMethod": "deterministic_dom_v2.listening"
@@ -433,8 +433,10 @@
      "(7) ␦"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 1,
@@ -457,7 +459,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "the (1)…………….school"
-     }
+     },
+     "keyRaw": "secondary"
     },
     {
      "number": 2,
@@ -480,7 +483,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "also appearing: Carolyn Hart (plays the (2)……………..)"
-     }
+     },
+     "keyRaw": "flute"
     },
     {
      "number": 3,
@@ -502,7 +506,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "start behind the (3)………………"
-     }
+     },
+     "keyRaw": "cinema"
     },
     {
      "number": 4,
@@ -528,7 +533,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "– prize: tickets for (4)……………..held at the end of the festival – ducks can be bought in (5)…………….."
-     }
+     },
+     "keyRaw": "concert"
     },
     {
      "number": 5,
@@ -554,7 +560,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "– prize: tickets for (4)……………..held at the end of the festival – ducks can be bought in (5)…………….."
-     }
+     },
+     "keyRaw": "market"
     },
     {
      "number": 6,
@@ -576,7 +583,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "(6)……………….Hall"
-     }
+     },
+     "keyRaw": "Bythwaite"
     },
     {
      "number": 7,
@@ -598,7 +606,8 @@
      "provenance": {
       "elementPath": "entry-content.children[1]",
       "rawExcerpt": "prizes presented at 5 pm by a well known (7)………………."
-     }
+     },
+     "keyRaw": "actor"
     }
    ],
    "provenance": {
@@ -622,12 +631,25 @@
    "stimulus": {
     "kind": "box_match",
     "table": null,
-    "segments": [
-     "A mainly for children\nB mainly for adults\nC suitable for people of all ages"
-    ],
+    "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": [
+     {
+      "letter": "A",
+      "text": "mainly for children"
+     },
+     {
+      "letter": "B",
+      "text": "mainly for adults"
+     },
+     {
+      "letter": "C",
+      "text": "suitable for people of all ages"
+     }
+    ],
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 8,
@@ -644,7 +666,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "8. The Mystery of Muldoon ␦"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 9,
@@ -661,7 +684,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "9. Fire and Flood ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 10,
@@ -678,7 +702,8 @@
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "10. Silly Sailor ␦"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -686,6 +711,24 @@
     "rawExcerpt": "Questions 8-10"
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "mainly for children"
+     },
+     {
+      "letter": "B",
+      "text": "mainly for adults"
+     },
+     {
+      "letter": "C",
+      "text": "suitable for people of all ages"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -708,14 +751,38 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "was given by one person B was recently publicized in the media C includes some items given by members of the public D includes some items given by the artists E includes the most popular exhibits in the museum F is the largest of its kind in the country"
+      "text": "was given by one person"
+     },
+     {
+      "letter": "B",
+      "text": "was recently publicized in the media"
+     },
+     {
+      "letter": "C",
+      "text": "includes some items given by members of the public"
+     },
+     {
+      "letter": "D",
+      "text": "includes some items given by the artists"
+     },
+     {
+      "letter": "E",
+      "text": "includes the most popular exhibits in the museum"
+     },
+     {
+      "letter": "F",
+      "text": "is the largest of its kind in the country"
      },
      {
       "letter": "G",
       "text": "has had some of its contents relocated"
      }
+    ],
+    "optionPreface": [
+     "Comments"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 11,
@@ -732,7 +799,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "11. 20th-and 21st-century paintings ␦"
-     }
+     },
+     "keyRaw": "E"
     },
     {
      "number": 12,
@@ -749,7 +817,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "12. 19th-century paintings ␦"
-     }
+     },
+     "keyRaw": "D"
     },
     {
      "number": 13,
@@ -766,7 +835,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "13. Sculptures ␦"
-     }
+     },
+     "keyRaw": "G"
     },
     {
      "number": 14,
@@ -783,7 +853,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "14. ‘Around the world’ exhibition ␦"
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 15,
@@ -800,7 +871,8 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "15. Coins ␦"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 16,
@@ -817,12 +889,47 @@
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "16. Porcelain and glass ␦"
-     }
+     },
+     "keyRaw": "A"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[8]",
     "rawExcerpt": "Part 2: Questions 11-16\nWhat does the speaker say about each of the following collections?"
+   },
+   "optionPool": {
+    "source": "box",
+    "title": "Comments",
+    "options": [
+     {
+      "letter": "A",
+      "text": "was given by one person"
+     },
+     {
+      "letter": "B",
+      "text": "was recently publicized in the media"
+     },
+     {
+      "letter": "C",
+      "text": "includes some items given by members of the public"
+     },
+     {
+      "letter": "D",
+      "text": "includes some items given by the artists"
+     },
+     {
+      "letter": "E",
+      "text": "includes the most popular exhibits in the museum"
+     },
+     {
+      "letter": "F",
+      "text": "is the largest of its kind in the country"
+     },
+     {
+      "letter": "G",
+      "text": "has had some of its contents relocated"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -848,22 +955,17 @@
     "figures": [
      "wp-content/uploads/2024/09/lis-test77.png"
     ],
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 17,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -873,21 +975,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "F",
+     "convertedFrom": "completion"
     },
     {
      "number": 18,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 17
-       },
-       {
-        "blank": 18
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (17) ␦ (18) ␦",
@@ -897,21 +994,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(17) ␦ (18) ␦"
-     }
+     },
+     "keyRaw": "H",
+     "convertedFrom": "completion"
     },
     {
      "number": 19,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -921,21 +1013,16 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "C",
+     "convertedFrom": "completion"
     },
     {
      "number": 20,
-     "type": "completion",
+     "type": "diagram_labeling",
      "stem": {
-      "plain": "______ ______",
-      "segments": [
-       {
-        "blank": 19
-       },
-       {
-        "blank": 20
-       }
-      ]
+      "plain": "",
+      "segments": null
      },
      "options": null,
      "blankContext": "line: (19) ␦ (20) ␦",
@@ -945,7 +1032,9 @@
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "(19) ␦ (20) ␦"
-     }
+     },
+     "keyRaw": "B",
+     "convertedFrom": "completion"
     }
    ],
    "provenance": {
@@ -953,6 +1042,44 @@
     "rawExcerpt": "Questions 17-20\nLabel the plan below. Write the correct letter A-H, next to questions 17-20."
    },
    "partAssignedBy": "inherited_no_marker",
+   "optionPool": {
+    "source": "figure",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     },
+     {
+      "letter": "D",
+      "text": ""
+     },
+     {
+      "letter": "E",
+      "text": ""
+     },
+     {
+      "letter": "F",
+      "text": ""
+     },
+     {
+      "letter": "G",
+      "text": ""
+     },
+     {
+      "letter": "H",
+      "text": ""
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -975,14 +1102,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "They had all won prizes for their music B They had all made music recordings C They were all under 27 years old D They had all toured internationally"
+      "text": "They had all won prizes for their music"
+     },
+     {
+      "letter": "B",
+      "text": "They had all made music recordings"
+     },
+     {
+      "letter": "C",
+      "text": "They were all under 27 years old"
+     },
+     {
+      "letter": "D",
+      "text": "They had all toured internationally"
      },
      {
       "letter": "E",
       "text": "They all played a string instrument"
      }
+    ],
+    "optionPreface": [
+     "Which TWO characteristics were shared by the subjects of Joanna’s psychology study?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 21,
@@ -999,7 +1142,8 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 22,
@@ -1016,12 +1160,50 @@
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "Choose TWO letters A-E."
-     }
+     },
+     "keyRaw": "D"
     }
    ],
    "provenance": {
     "elementPath": "entry-content.children[15]",
     "rawExcerpt": "Part 3: Questions 21 and 22\nChoose TWO letters A-E."
+   },
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g05:21-22",
+    "answerSet": [
+     "B",
+     "D"
+    ],
+    "prompt": "Which TWO characteristics were shared by the subjects of Joanna’s psychology study?",
+    "instructionText": "Choose TWO letters A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "They had all won prizes for their music"
+     },
+     {
+      "letter": "B",
+      "text": "They had all made music recordings"
+     },
+     {
+      "letter": "C",
+      "text": "They were all under 27 years old"
+     },
+     {
+      "letter": "D",
+      "text": "They had all toured internationally"
+     },
+     {
+      "letter": "E",
+      "text": "They all played a string instrument"
+     }
+    ]
    },
    "status": "verified"
   },
@@ -1045,14 +1227,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "It meant rich data could be collected B It allowed the involvement of top performers C It led to a stressful atmosphere at times D It meant interview times had to be limited"
+      "text": "It meant rich data could be collected"
+     },
+     {
+      "letter": "B",
+      "text": "It allowed the involvement of top performers"
+     },
+     {
+      "letter": "C",
+      "text": "It led to a stressful atmosphere at times"
+     },
+     {
+      "letter": "D",
+      "text": "It meant interview times had to be limited"
      },
      {
       "letter": "E",
       "text": "It caused some technical problems"
      }
+    ],
+    "optionPreface": [
+     "Which TWO points does Joanna make about her use of telephone interviews?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 23,
@@ -1069,7 +1267,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 24,
@@ -1086,7 +1285,8 @@
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     }
    ],
    "provenance": {
@@ -1094,6 +1294,43 @@
     "rawExcerpt": "Questions 23 and 24\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g06:23-24",
+    "answerSet": [
+     "A",
+     "B"
+    ],
+    "prompt": "Which TWO points does Joanna make about her use of telephone interviews?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "It meant rich data could be collected"
+     },
+     {
+      "letter": "B",
+      "text": "It allowed the involvement of top performers"
+     },
+     {
+      "letter": "C",
+      "text": "It led to a stressful atmosphere at times"
+     },
+     {
+      "letter": "D",
+      "text": "It meant interview times had to be limited"
+     },
+     {
+      "letter": "E",
+      "text": "It caused some technical problems"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1116,14 +1353,30 @@
     "sharedOptions": [
      {
       "letter": "A",
-      "text": "regulations concerning concert dress B audience reactions to the dress of performers C changes in performer attitudes to concert dress D how choice of dress relates to performer roles"
+      "text": "regulations concerning concert dress"
+     },
+     {
+      "letter": "B",
+      "text": "audience reactions to the dress of performers"
+     },
+     {
+      "letter": "C",
+      "text": "changes in performer attitudes to concert dress"
+     },
+     {
+      "letter": "D",
+      "text": "how choice of dress relates to performer roles"
      },
      {
       "letter": "E",
       "text": "links between musical instrument and dress choice"
      }
+    ],
+    "optionPreface": [
+     "Which TWO topics did Joanna originally intend to investigate in her research?"
     ]
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 25,
@@ -1140,7 +1393,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "B"
     },
     {
      "number": 26,
@@ -1157,7 +1411,8 @@
      "provenance": {
       "elementPath": "entry-content.children[19]",
       "rawExcerpt": "Choose TWO letters, A-E."
-     }
+     },
+     "keyRaw": "E"
     }
    ],
    "provenance": {
@@ -1165,6 +1420,43 @@
     "rawExcerpt": "Questions 25 and 26\nChoose TWO letters, A-E."
    },
    "partAssignedBy": "inherited_no_marker",
+   "selection": {
+    "mode": "multi",
+    "selectCount": 2,
+    "unorderedGroup": "g07:25-26",
+    "answerSet": [
+     "B",
+     "E"
+    ],
+    "prompt": "Which TWO topics did Joanna originally intend to investigate in her research?",
+    "instructionText": "Choose TWO letters, A-E."
+   },
+   "optionPool": {
+    "source": "box",
+    "title": null,
+    "options": [
+     {
+      "letter": "A",
+      "text": "regulations concerning concert dress"
+     },
+     {
+      "letter": "B",
+      "text": "audience reactions to the dress of performers"
+     },
+     {
+      "letter": "C",
+      "text": "changes in performer attitudes to concert dress"
+     },
+     {
+      "letter": "D",
+      "text": "how choice of dress relates to performer roles"
+     },
+     {
+      "letter": "E",
+      "text": "links between musical instrument and dress choice"
+     }
+    ]
+   },
    "status": "verified"
   },
   {
@@ -1184,8 +1476,10 @@
     "table": null,
     "segments": null,
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 27,
@@ -1215,7 +1509,8 @@
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "27. Joanna concentrated on women performers because"
-     }
+     },
+     "keyRaw": "C"
     },
     {
      "number": 28,
@@ -1245,7 +1540,8 @@
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "28. Mike Frost’s article suggests that in popular music, women’s dress is affected by"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 29,
@@ -1275,7 +1571,8 @@
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "29. What did Joanna’s subjects say about the audience at a performance?"
-     }
+     },
+     "keyRaw": "A"
     },
     {
      "number": 30,
@@ -1305,7 +1602,8 @@
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "30. According to the speakers, musicians could learn from sports scientists about"
-     }
+     },
+     "keyRaw": "C"
     }
    ],
    "provenance": {
@@ -1354,8 +1652,10 @@
      "• giving farmers (40) ␦ for carbon storage, as well as their produce"
     ],
     "figures": null,
-    "sharedOptions": null
+    "sharedOptions": null,
+    "optionPreface": null
    },
+   "orphanOptionBlocks": null,
    "questions": [
     {
      "number": 31,
@@ -1377,7 +1677,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Erosion is more likely in soil that is (31) ␦"
-     }
+     },
+     "keyRaw": "dry"
     },
     {
      "number": 32,
@@ -1399,7 +1700,8 @@
      "provenance": {
       "elementPath": "entry-content.children[28]",
       "rawExcerpt": "• Lai found soil in Africa that was very (32) ␦"
-     }
+     },
+     "keyRaw": "hard"
     },
     {
      "number": 33,
@@ -1421,7 +1723,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Plants turn CO2 from the air into carbon based substance such as (33) ␦"
-     }
+     },
+     "keyRaw": "sugars"
     },
     {
      "number": 34,
@@ -1444,7 +1747,8 @@
      "provenance": {
       "elementPath": "entry-content.children[29]",
       "rawExcerpt": "• Some CO2 moves from the (34) ␦ of plants to microbes in soil"
-     }
+     },
+     "keyRaw": "roots"
     },
     {
      "number": 35,
@@ -1466,7 +1770,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• uses established practices to make sure soil remains fertile and (35) ␦"
-     }
+     },
+     "keyRaw": "moist/ wet/ damp"
     },
     {
      "number": 36,
@@ -1489,7 +1794,8 @@
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "• e.g. through year-round planting and increasing the (36) ␦ of plants that are grown"
-     }
+     },
+     "keyRaw": "variety"
     },
     {
      "number": 37,
@@ -1512,7 +1818,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• taking place on a big (37) ␦ farm"
-     }
+     },
+     "keyRaw": "cattle"
     },
     {
      "number": 38,
@@ -1534,7 +1841,8 @@
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "• uses compost made from waste from agriculture and (38) ␦"
-     }
+     },
+     "keyRaw": "gardens"
     },
     {
      "number": 39,
@@ -1557,7 +1865,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• aims to increase soil carbon by using (39) ␦ that are always green"
-     }
+     },
+     "keyRaw": "grasses"
     },
     {
      "number": 40,
@@ -1580,7 +1889,8 @@
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "• giving farmers (40) ␦ for carbon storage, as well as their produce"
-     }
+     },
+     "keyRaw": "payment/ money"
     }
    ],
    "provenance": {
@@ -1623,5 +1933,6 @@
  "verifiedQuestionCount": 40,
  "quarantinedCount": 0,
  "status": "verified",
+ "fullTestEligible": true,
  "schemaErrors": []
 }

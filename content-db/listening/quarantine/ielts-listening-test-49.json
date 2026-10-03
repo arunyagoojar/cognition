@@ -1,6 +1,7 @@
 {
  "slug": "ielts-listening-test-49",
- "sourceSha256": "92a5277d09b598770811cc9a137b9c265b6cc7dfe0d39c4dfcba5a38cbea5334",
+ "status": "quarantined",
+ "sourceSha256": "707fcab4c3a0b4ba3f16e191e374d6a10aca3ec273929fe035c2a799987c5762",
  "units": [
   {
    "unit": "group",
@@ -12,6 +13,71 @@
      32,
      33
     ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": "g01",
+   "questionNumber": 2,
+   "reasonCode": "OPTION_TEXT_EMPTY",
+   "reasonCodes": [
+    "OPTION_TEXT_EMPTY"
+   ],
+   "evidence": {
+    "stem": "Which of the items below does Harry want to sell?",
+    "answer": "C",
+    "rawExcerpt": "2. Which of the items below does Harry want to sell?",
+    "options": [
+     {
+      "letter": "A",
+      "text": ""
+     },
+     {
+      "letter": "B",
+      "text": ""
+     },
+     {
+      "letter": "C",
+      "text": ""
+     }
+    ]
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 32,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "A"
+   }
+  },
+  {
+   "unit": "question",
+   "groupId": null,
+   "questionNumber": 33,
+   "reasonCode": "QUESTION_NOT_EXTRACTED",
+   "reasonCodes": [
+    "QUESTION_NOT_EXTRACTED"
+   ],
+   "evidence": {
+    "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 37,
+    "missingOrQuarantined": [
+     2,
+     32,
+     33
+    ],
+    "outOfRange": []
    }
   }
  ]
