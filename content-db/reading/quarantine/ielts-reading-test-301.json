@@ -1,49 +1,22 @@
 {
  "slug": "ielts-reading-test-301",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "extracted": 6,
-    "expected": 4
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     29
-    ],
-    "extracted": 5,
-    "expected": 3
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 30,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g04 range 14-17 got 6"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g05 range 27-29 got 5"
+   "groupId": "p3.q30-34",
+   "range": [
+    30,
+    34
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Match ONE of the researchers (A-D) to each of the statements (30-34) below. There may be more than one correct answer."
   }
  ]
 }

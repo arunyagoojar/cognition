@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-41",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Reading Passage 1 has five paragraphs, A-E. Choose the most suitable heading for each para-graph from the list of headin"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     11,
-     15
-    ],
-    "instruction": "Match each definition below with the term it defines. Write the letter of the term, A-H, on your Answer Sheet. There are"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     35,
-     40
-    ],
-    "instruction": "Match each fact about anesthesia with the type of anesthetic that it refers to. There are more types of anesthetics list"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
-   }
+   "groupId": "p3.q35-40",
+   "range": [
+    35,
+    40
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Match each fact about anesthesia with the type of anesthetic that it refers to. There are more types of anesthetics listed than facts, so you won’t use them all. Write the correct letter, A-H, in boxe"
   }
  ]
 }

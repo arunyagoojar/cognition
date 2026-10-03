@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-161",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Choose one phrase (A-K) from the List of phrases to complete each Key point below. Write the appropriate letters (A-K) i"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Complete the diagrams. Choose NO MORE THAN TWO WORDS from the passage for each answer. Questions 18-22\nClassify the foll"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
+   "groupId": "p2.q14-17",
+   "range": [
+    14,
+    17
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the diagrams. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

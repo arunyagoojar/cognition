@@ -1,43 +1,33 @@
 {
  "slug": "ielts-reading-test-234",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     3
-    ],
-    "instruction": "Choose THREE letters A-G. Write your answers in boxes 1-3 on your answer sheet. NB Your answers may be given in any orde"
-   }
+   "groupId": "p2.q21-25",
+   "range": [
+    21,
+    25
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
   },
   {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 3,
-    "title": "Passage 3",
-    "groups": [
-     [
-      32,
-      36
-     ],
-     [
-      37,
-      40
-     ]
-    ]
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 29,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q26-31",
+   "range": [
+    26,
+    31
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Reading Passage 3 has nine paragraphs A-I. Choose the correct heading for paragraphs B, C and E-H from the list of headings below. Write the correct number i-x in boxes 26-31 on your answer sheet."
   }
  ]
 }

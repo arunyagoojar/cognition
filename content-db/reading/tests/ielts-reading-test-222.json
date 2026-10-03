@@ -1,728 +1,2117 @@
 {
  "id": "reading.test-0222.2f4c286a",
  "module": "reading",
+ "slug": "ielts-reading-test-222",
  "sourceNumbers": [
   222
  ],
- "slug": "ielts-reading-test-222",
  "title": "IELTS Academic Reading Test 222",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-222/index.html",
-   "sha256": "bac717c7ed2532a031cb2f5ec218480552f194ff999f80c3d1979e46ee7fe0db",
-   "manifestHashMatch": true,
+   "sha256": "4d2b388c8ec42f51dc113ed2e8293398594c9ebf284694db86b5472665d1289b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-222/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "Oval"
+   },
+   {
+    "number": 2,
+    "raw": "Husk"
+   },
+   {
+    "number": 3,
+    "raw": "Seed"
+   },
+   {
+    "number": 4,
+    "raw": "Mace"
+   },
+   {
+    "number": 5,
+    "raw": "False"
+   },
+   {
+    "number": 6,
+    "raw": "Not given"
+   },
+   {
+    "number": 7,
+    "raw": "True"
+   },
+   {
+    "number": 8,
+    "raw": "Arabs"
+   },
+   {
+    "number": 9,
+    "raw": "Plague"
+   },
+   {
+    "number": 10,
+    "raw": "Lime"
+   },
+   {
+    "number": 11,
+    "raw": "Run"
+   },
+   {
+    "number": 12,
+    "raw": "Mauritius"
+   },
+   {
+    "number": 13,
+    "raw": "Tsunami"
+   },
+   {
+    "number": 14,
+    "raw": "C"
+   },
+   {
+    "number": 15,
+    "raw": "B"
+   },
+   {
+    "number": 16,
+    "raw": "E"
+   },
+   {
+    "number": 17,
+    "raw": "G"
+   },
+   {
+    "number": 18,
+    "raw": "D"
+   },
+   {
+    "number": 19,
+    "raw": "Human error"
+   },
+   {
+    "number": 20,
+    "raw": "Car (-) sharing"
+   },
+   {
+    "number": 21,
+    "raw": "Ownership"
+   },
+   {
+    "number": 22,
+    "raw": "Mileage"
+   },
+   {
+    "number": 23,
+    "raw": "C, D"
+   },
+   {
+    "number": 24,
+    "raw": "C, D"
+   },
+   {
+    "number": 25,
+    "raw": "A, E"
+   },
+   {
+    "number": 26,
+    "raw": "A, E"
+   },
+   {
+    "number": 27,
+    "raw": "A"
+   },
+   {
+    "number": 28,
+    "raw": "C"
+   },
+   {
+    "number": 29,
+    "raw": "C"
+   },
+   {
+    "number": 30,
+    "raw": "D"
+   },
+   {
+    "number": 31,
+    "raw": "A"
+   },
+   {
+    "number": 32,
+    "raw": "B"
+   },
+   {
+    "number": 33,
+    "raw": "E"
+   },
+   {
+    "number": 34,
+    "raw": "A"
+   },
+   {
+    "number": 35,
+    "raw": "D"
+   },
+   {
+    "number": 36,
+    "raw": "E"
+   },
+   {
+    "number": 37,
+    "raw": "B"
+   },
+   {
+    "number": 38,
+    "raw": "(unique) expeditions"
+   },
+   {
+    "number": 39,
+    "raw": "Uncontacted/ isolated"
+   },
+   {
+    "number": 40,
+    "raw": "(land) surface"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "nutmeg – a valuable spice",
    "paragraphs": [
-    "The nutmeg tree, Myristica fragrans, is a large evergreen tree native to Southeast Asia. Until the late 18th century, it only grew in one place in the world: a small group of islands in the Banda Sea, part of the Moluccas – or Spice Islands – in northeastern Indonesia. The tree is thickly branched with dense foliage of tough, dark green oval leaves, and produces small, yellow, bell-shaped flowers and pale yellow pear-shaped fruits. The fruit is encased in a fleshy husk. When the fruit is ripe, this husk splits into two halves along a ridge running the length of the fruit. Inside is a purple-brown shiny seed, 2-3 cm long by about 2cm across, surrounded by a lacy red or crimson covering called an ‘aril’. These are the sources of the two spices nutmeg and mace, the former being produced from the dried seed and the latter from the aril.",
-    "Nutmeg was a highly prized and costly ingredient in European cuisine in the Middle Ages, and was used as a flavouring, medicinal, and preservative agent. Throughout this period, the Arabs were the exclusive importers of the spice to Europe. They sold nutmeg for high prices to merchants based in Venice, but they never revealed the exact location of the source of this extremely valuable commodity. The Arab-Venetian dominance of the trade finally ended in 1512, when the Portuguese reached the Banda Islands and began exploiting its precious resources.",
-    "Always in danger of competition from neighbouring Spain, the Portuguese began subcontracting their spice distribution to Dutch traders. Profits began to flow into the Netherlands, and the Dutch commercial fleet swiftly grew into one of the largest in the world. The Dutch quietly gained control of most of the shipping and trading of spices in Northern Europe. Then, in 1580, Portugal fell under Spanish rule, and by the end of the 16th century the Dutch found themselves locked out of the market. As prices for pepper, nutmeg, and other spices soared across Europe, they decided to fight back.",
-    "In 1602, Dutch merchants founded the VOC, a trading corporation better known as the Dutch East India Company. By 1617, the VOC was the richest commercial operation in the world. The company had 50,000 employees worldwide, with a private army of 30,000 men and a fleet of 200 ships. At the same time, thousands of people across Europe were dying of the plague, a highly contagious and deadly disease. Doctors were desperate for a way to stop the spread of this disease, and they decided nutmeg held the cure. Everybody wanted nutmeg, and many were willing to spare no expense to have it. Nutmeg bought for a few pennies in Indonesia could be sold for 68,000 times its original cost on the streets of London. The only problem was the short supply. And that’s where the Dutch found their opportunity.",
-    "The Banda Islands were ruled by local sultans who insisted on maintaining a neutral trading policy towards foreign powers. This allowed them to avoid the presence of Portuguese or Spanish troops on their soil, but it also left them unprotected from other invaders. In 1621, the Dutch arrived and took over. Once securely in control of the Bandas, the Dutch went to work protecting their new investment. They concentrated all nutmeg production into a few easily guarded areas, uprooting and destroying any trees outside the plantation zones. Anyone caught growing a nutmeg seedling or carrying seeds without the proper authority was severely punished. In addition, all exported nutmeg was covered with lime to make sure there was no chance a fertile seed which could be grown elsewhere would leave the islands. There was only one obstacle to Dutch domination. One of the Banda Islands, a sliver of land called Run, only 3 Ion long by less than 1 km wide, was under the control of the British. After decades of fighting for control of this tiny island, the Dutch and British arrived at a compromise settlement, the Treaty of Breda, in 1667. Intent on securing their hold over every nutmeg-producing island, the Dutch offered a trade: if the British would give them the island of Run, they would in turn give Britain a distant and much less valuable island in North America. The British agreed. That other island was Manhattan, which is how New Amsterdam became New York. The Dutch now had a monopoly over the nutmeg trade which would last for another century.",
-    "Then, in 1770, a Frenchman named Pierre Poivre successfully smuggled nutmeg plants to safety in Mauritius, an island off the coast of Africa. Some of these were later exported to the Caribbean where they thrived, especially on the island of Grenada. Next, in 1778, a volcanic eruption in the Banda region caused a tsunami that wiped out half the nutmeg groves. Finally, in 1809, the British returned to Indonesia and seized the Banda Islands by force. They returned the islands to the Dutch in 1817, but not before transplanting hundreds of nutmeg seedlings to plantations in several locations across southern Asia. The Dutch nutmeg monopoly was over.",
-    "Today, nutmeg is grown in Indonesia, the Caribbean, India, Malaysia, Papua New Guinea and Sri Lanka, and world nutmeg production is estimated to average between 10,000 and 12,000 tonnes per year."
+    {
+     "type": "text",
+     "text": "The nutmeg tree, Myristica fragrans, is a large evergreen tree native to Southeast Asia. Until the late 18th century, it only grew in one place in the world: a small group of islands in the Banda Sea, part of the Moluccas – or Spice Islands – in northeastern Indonesia. The tree is thickly branched with dense foliage of tough, dark green oval leaves, and produces small, yellow, bell-shaped flowers and pale yellow pear-shaped fruits. The fruit is encased in a fleshy husk. When the fruit is ripe, this husk splits into two halves along a ridge running the length of the fruit. Inside is a purple-brown shiny seed, 2-3 cm long by about 2cm across, surrounded by a lacy red or crimson covering called an ‘aril’. These are the sources of the two spices nutmeg and mace, the former being produced from the dried seed and the latter from the aril."
+    },
+    {
+     "type": "text",
+     "text": "Nutmeg was a highly prized and costly ingredient in European cuisine in the Middle Ages, and was used as a flavouring, medicinal, and preservative agent. Throughout this period, the Arabs were the exclusive importers of the spice to Europe. They sold nutmeg for high prices to merchants based in Venice, but they never revealed the exact location of the source of this extremely valuable commodity. The Arab-Venetian dominance of the trade finally ended in 1512, when the Portuguese reached the Banda Islands and began exploiting its precious resources."
+    },
+    {
+     "type": "text",
+     "text": "Always in danger of competition from neighbouring Spain, the Portuguese began subcontracting their spice distribution to Dutch traders. Profits began to flow into the Netherlands, and the Dutch commercial fleet swiftly grew into one of the largest in the world. The Dutch quietly gained control of most of the shipping and trading of spices in Northern Europe. Then, in 1580, Portugal fell under Spanish rule, and by the end of the 16th century the Dutch found themselves locked out of the market. As prices for pepper, nutmeg, and other spices soared across Europe, they decided to fight back."
+    },
+    {
+     "type": "text",
+     "text": "In 1602, Dutch merchants founded the VOC, a trading corporation better known as the Dutch East India Company. By 1617, the VOC was the richest commercial operation in the world. The company had 50,000 employees worldwide, with a private army of 30,000 men and a fleet of 200 ships. At the same time, thousands of people across Europe were dying of the plague, a highly contagious and deadly disease. Doctors were desperate for a way to stop the spread of this disease, and they decided nutmeg held the cure. Everybody wanted nutmeg, and many were willing to spare no expense to have it. Nutmeg bought for a few pennies in Indonesia could be sold for 68,000 times its original cost on the streets of London. The only problem was the short supply. And that’s where the Dutch found their opportunity."
+    },
+    {
+     "type": "text",
+     "text": "The Banda Islands were ruled by local sultans who insisted on maintaining a neutral trading policy towards foreign powers. This allowed them to avoid the presence of Portuguese or Spanish troops on their soil, but it also left them unprotected from other invaders. In 1621, the Dutch arrived and took over. Once securely in control of the Bandas, the Dutch went to work protecting their new investment. They concentrated all nutmeg production into a few easily guarded areas, uprooting and destroying any trees outside the plantation zones. Anyone caught growing a nutmeg seedling or carrying seeds without the proper authority was severely punished. In addition, all exported nutmeg was covered with lime to make sure there was no chance a fertile seed which could be grown elsewhere would leave the islands. There was only one obstacle to Dutch domination. One of the Banda Islands, a sliver of land called Run, only 3 Ion long by less than 1 km wide, was under the control of the British. After decades of fighting for control of this tiny island, the Dutch and British arrived at a compromise settlement, the Treaty of Breda, in 1667. Intent on securing their hold over every nutmeg-producing island, the Dutch offered a trade: if the British would give them the island of Run, they would in turn give Britain a distant and much less valuable island in North America. The British agreed. That other island was Manhattan, which is how New Amsterdam became New York. The Dutch now had a monopoly over the nutmeg trade which would last for another century."
+    },
+    {
+     "type": "text",
+     "text": "Then, in 1770, a Frenchman named Pierre Poivre successfully smuggled nutmeg plants to safety in Mauritius, an island off the coast of Africa. Some of these were later exported to the Caribbean where they thrived, especially on the island of Grenada. Next, in 1778, a volcanic eruption in the Banda region caused a tsunami that wiped out half the nutmeg groves. Finally, in 1809, the British returned to Indonesia and seized the Banda Islands by force. They returned the islands to the Dutch in 1817, but not before transplanting hundreds of nutmeg seedlings to plantations in several locations across southern Asia. The Dutch nutmeg monopoly was over."
+    },
+    {
+     "type": "text",
+     "text": "Today, nutmeg is grown in Indonesia, the Caribbean, India, Malaysia, Papua New Guinea and Sri Lanka, and world nutmeg production is estimated to average between 10,000 and 12,000 tonnes per year."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Complete the notes below. Write ONE WORD ONLY from the passage for each answer.",
-     "wordLimit": "",
-     "qtype": "note_completion",
+     "groupId": "p1.q01-04",
      "startQ": 1,
      "endQ": 4,
-     "stimulusSegments": [
-      "The nutmeg tree and fruit"
-     ],
-     "sharedOptions": null,
+     "type": "note_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the notes below. Write ONE WORD ONLY from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": {
+      "title": "The nutmeg tree and fruit",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "• The leaves of the tree are ",
+         {
+          "blank": 1
+         },
+         "in shape"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• The ",
+         {
+          "blank": 2
+         },
+         "surrounds the fruit and breaks open when the fruit is ripe"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• The ",
+         {
+          "blank": 3
+         },
+         "is used to produce the spice nutmeg"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• The covering known as the aril is used to produce ",
+         {
+          "blank": 4
+         }
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 1,
-       "type": "completion",
-       "stem": {
-        "plain": "• The leaves of the tree are (1) ______ in shape",
-        "segments": [
-         "• The leaves of the tree are",
-         {
-          "blank": 1
-         },
-         "……………….. in shape"
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Oval",
+        "value": "Oval",
+        "accepted": [
+         "Oval"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Oval",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• The leaves of the tree are (1) ……………….. in shape",
-        "elementPath": "children[9]"
        }
       },
       {
        "number": 2,
-       "type": "completion",
-       "stem": {
-        "plain": "• The (2) ______ surrounds the fruit and breaks open when the fruit is ripe",
-        "segments": [
-         "• The",
-         {
-          "blank": 2
-         },
-         "………………. surrounds the fruit and breaks open when the fruit is ripe"
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Husk",
+        "value": "Husk",
+        "accepted": [
+         "Husk"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Husk",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• The (2) ………………. surrounds the fruit and breaks open when the fruit is ripe",
-        "elementPath": "children[9]"
        }
       },
       {
        "number": 3,
-       "type": "completion",
-       "stem": {
-        "plain": "• The (3) ______ is used to produce the spice nutmeg",
-        "segments": [
-         "• The",
-         {
-          "blank": 3
-         },
-         "………………. is used to produce the spice nutmeg"
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Seed",
+        "value": "Seed",
+        "accepted": [
+         "Seed"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Seed",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• The (3) ………………. is used to produce the spice nutmeg",
-        "elementPath": "children[9]"
        }
       },
       {
        "number": 4,
-       "type": "completion",
-       "stem": {
-        "plain": "• The covering known as the aril is used to produce (4) ______",
-        "segments": [
-         "• The covering known as the aril is used to produce",
-         {
-          "blank": 4
-         },
-         "………………"
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Mace",
+        "value": "Mace",
+        "accepted": [
+         "Mace"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Mace",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• The covering known as the aril is used to produce (4) ………………",
-        "elementPath": "children[9]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[8]",
-      "rawExcerpt": "Questions 1-4\nComplete the notes below. Write ONE WORD ONLY from the passage for each answer."
+      "headerLine": 8,
+      "lineRange": [
+       8,
+       14
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-4",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the notes below. Write ONE WORD ONLY from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The nutmeg tree and fruit",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "• The leaves of the tree are (1) ……………….. in shape",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• The (2) ………………. surrounds the fruit and breaks open when the fruit is ripe",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• The (3) ………………. is used to produce the spice nutmeg",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• The covering known as the aril is used to produce (4) ………………",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 5-7, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q05-07",
      "startQ": 5,
      "endQ": 7,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 5-7, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 5,
        "type": "tfng",
-       "stem": {
-        "plain": "In the Middle Ages, most Europeans knew where nutmeg was grown.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. In the Middle Ages, most Europeans knew where nutmeg was grown.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "In the Middle Ages, most Europeans knew where nutmeg was grown."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 6,
        "type": "tfng",
-       "stem": {
-        "plain": "The VOC was the world’s first major trading company.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. The VOC was the world’s first major trading company.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "The VOC was the world’s first major trading company."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "Following the Treaty of Breda, the Dutch had control of all the islands where nutmeg grew.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. Following the Treaty of Breda, the Dutch had control of all the islands where nutmeg grew.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Following the Treaty of Breda, the Dutch had control of all the islands where nutmeg grew."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[10]",
-      "rawExcerpt": "Questions 5-7\nDo the following statements agree with the information given in Reading Passage 1? In boxes 5-7, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is "
+      "headerLine": 15,
+      "lineRange": [
+       15,
+       22
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 5-7",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1? In boxes 5-7, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. In the Middle Ages, most Europeans knew where nutmeg was grown.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. The VOC was the world’s first major trading company.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. Following the Treaty of Breda, the Dutch had control of all the islands where nutmeg grew.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q08-13",
+     "startQ": 8,
+     "endQ": 13,
+     "type": "table_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "table",
+        "rows": [
+         [
+          [
+           "Middle ages"
+          ],
+          [
+           "Nutmeg was brought to Europe by the ",
+           {
+            "blank": 8
+           }
+          ]
+         ],
+         [
+          [
+           "16th century"
+          ],
+          [
+           "European nations took control of the nutmeg trade"
+          ]
+         ],
+         [
+          [
+           "17th century"
+          ],
+          [
+           "Demand for nutmeg grew, as it was believed to be effective against the disease known as the ",
+           {
+            "blank": 9
+           },
+           "The Dutch – took control of the Banda Islands – restricted nutmeg production to a few areas – put ",
+           {
+            "blank": 10
+           },
+           "on nutmeg to avoid it being cultivated outside the islands – finally obtained the island of ",
+           {
+            "blank": 11
+           },
+           "from the British"
+          ]
+         ],
+         [
+          [
+           "Late 18th century"
+          ],
+          [
+           "1770 – nutmeg plants were secretly taken to ",
+           {
+            "blank": 12
+           },
+           "1778 – half the Banda Islands’ nutmeg plantations were destroyed by a ",
+           {
+            "blank": 13
+           }
+          ]
+         ]
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Arabs",
+        "value": "Arabs",
+        "accepted": [
+         "Arabs"
+        ]
+       }
+      },
+      {
+       "number": 9,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Plague",
+        "value": "Plague",
+        "accepted": [
+         "Plague"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Lime",
+        "value": "Lime",
+        "accepted": [
+         "Lime"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Run",
+        "value": "Run",
+        "accepted": [
+         "Run"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Mauritius",
+        "value": "Mauritius",
+        "accepted": [
+         "Mauritius"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Tsunami",
+        "value": "Tsunami",
+        "accepted": [
+         "Tsunami"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 23,
+      "lineRange": [
+       23,
+       25
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 8-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the table below. Choose ONE WORD ONLY from the passage.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Middle ages ; Nutmeg was brought to Europe by the (8)……………….. | 16th century ; European nations took control of the nutmeg trade | 17th century ; Demand for nutmeg grew, as it was believed to be effective against the disease known as the (9)…………… The Dutch – took control of the Banda Islands – restricted nutmeg production to a few areas – put (10)……………..on nutmeg to avoid it being cultivated outsi",
+        "kind": "table",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "The impact of driverless cars",
+   "title": "driverless cars",
    "paragraphs": [
-    "A The automotive sector is well used to adapting to automation in manufacturing. The implementation of robotic car manufacture from the 1970s onwards led to significant cost savings and improvements in the reliability and flexibility of vehicle mass production. A new challenge to vehicle production is now on the horizon and, again, it comes from automation. However, this time it is not to do with the manufacturing process, but with the vehicles themselves.",
-    "Research projects on vehicle automation are not new. Vehicles with limited self-driving capabilities have been around for more than 50 years, resulting in significant contributions towards driver assistance systems. But since Google announced in 2010 that it had been trialling self-driving cars on the streets of California, progress in this field has quickly gathered pace.",
-    "B There are many reasons why technology is advancing so fast. One frequently cited motive is safety; indeed, research at the UK’s Transport Research Laboratory has demonstrated that more than 90 percent of road collisions involve human error as a contributory factor, and it is the primary cause in the vast majority. Automation may help to reduce the incidence of this.",
-    "Another aim is to free the time people spend driving for other purposes. If the vehicle can do some or all of the driving, it may be possible to be productive, to socialise or simply to relax while automation systems have responsibility for safe control of the vehicle. If the vehicle can do the driving, those who are challenged by existing mobility models – such as older or disabled travellers – may be able to enjoy significantly greater travel autonomy.",
-    "C Beyond these direct benefits, we can consider the wider implications for transport and society, and how manufacturing processes might need to respond as a result. At present, the average car spends more than 90 percent of its life parked. Automation means that initiatives for car-sharing become much more viable, particularly in urban areas with significant travel demand. If a significant proportion of the population choose to use shared automated vehicles, mobility demand can be met by far fewer vehicles.",
-    "D The Massachusetts Institute of Technology investigated automated mobility in Singapore, finding that fewer than 30 percent of the vehicles currently used would be required if fully automated car sharing could be implemented. If this is the case, it might mean that we need to manufacture far fewer vehicles to meet demand. However, the number of trips being taken would probably increase, partly because empty vehicles would have to be moved from one customer to the next.",
-    "Modelling work by the University of Michigan Transportation Research Institute suggests automated vehicles might reduce vehicle ownership by 43 percent, but that vehicles’ average annual mileage would double as a result. As a consequence, each vehicle would be used more intensively, and might need replacing sooner. This faster rate of turnover may mean that vehicle production will not necessarily decrease.",
-    "E Automation may prompt other changes in vehicle manufacture. If we move to a model where consumers are tending not to own a single vehicle but to purchase access to a range of vehicles through a mobility provider, drivers will have the freedom to select one that best suits their needs for a particular journey, rather than making a compromise across all their requirements.",
-    "Since, for most of the time, most of the seats in most cars are unoccupied, this may boost production of a smaller, more efficient range of vehicles that suit the needs of individuals. Specialised vehicles may then be available for exceptional journeys, such as going on a family camping trip or helping a son or daughter move to university.",
-    "F There are a number of hurdles to overcome in delivering automated vehicles to our roads. These include the technical difficulties in ensuring that the vehicle works reliably in the infinite range of traffic, weather and road situations it might encounter; the regulatory challenges in understanding how liability and enforcement might change when drivers are no longer essential for vehicle operation; and the societal changes that may be required for communities to trust and accept automated vehicles as being a valuable part of the mobility landscape.",
-    "G It’s clear that there are many challenges that need to be addressed but, through robust and targeted research, these can most probably be conquered within the next 10 years. Mobility will change in such potentially significant ways and in association with so many other technological developments, such as telepresence and virtual reality, that it is hard to make concrete predictions about the future. However, one thing is certain: change is coming, and the need to be flexible in response to this will be vital for those involved in manufacturing the vehicles that will deliver future mobility.",
-    "Figures from the Transport Research Laboratory indicate that most motor accidents are partly due to (19) ……………., so the introduction of driverless vehicles will result in greater safety. In addition to the direct benefits of automation, it may bring other advantages. For example, schemes for (20) ………………… will be more workable, especially in towns and cities, resulting in fewer cars on the road. According to the University of Michigan Transportation Research Institute, there could be a 43 percent drop in (21) ……………..of cars. However, this would mean that the yearly (22) …………………. of each car would, on average, be twice as high as it currently is. This would lead to a higher turnover of vehicles, and therefore no reduction in automotive manufacturing."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The automotive sector is well used to adapting to automation in manufacturing. The implementation of robotic car manufacture from the 1970s onwards led to significant cost savings and improvements in the reliability and flexibility of vehicle mass production. A new challenge to vehicle production is now on the horizon and, again, it comes from automation. However, this time it is not to do with the manufacturing process, but with the vehicles themselves."
+    },
+    {
+     "type": "text",
+     "text": "Research projects on vehicle automation are not new. Vehicles with limited self-driving capabilities have been around for more than 50 years, resulting in significant contributions towards driver assistance systems. But since Google announced in 2010 that it had been trialling self-driving cars on the streets of California, progress in this field has quickly gathered pace."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "There are many reasons why technology is advancing so fast. One frequently cited motive is safety; indeed, research at the UK’s Transport Research Laboratory has demonstrated that more than 90 percent of road collisions involve human error as a contributory factor, and it is the primary cause in the vast majority. Automation may help to reduce the incidence of this."
+    },
+    {
+     "type": "text",
+     "text": "Another aim is to free the time people spend driving for other purposes. If the vehicle can do some or all of the driving, it may be possible to be productive, to socialise or simply to relax while automation systems have responsibility for safe control of the vehicle. If the vehicle can do the driving, those who are challenged by existing mobility models – such as older or disabled travellers – may be able to enjoy significantly greater travel autonomy."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Beyond these direct benefits, we can consider the wider implications for transport and society, and how manufacturing processes might need to respond as a result. At present, the average car spends more than 90 percent of its life parked. Automation means that initiatives for car-sharing become much more viable, particularly in urban areas with significant travel demand. If a significant proportion of the population choose to use shared automated vehicles, mobility demand can be met by far fewer vehicles."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "The Massachusetts Institute of Technology investigated automated mobility in Singapore, finding that fewer than 30 percent of the vehicles currently used would be required if fully automated car sharing could be implemented. If this is the case, it might mean that we need to manufacture far fewer vehicles to meet demand. However, the number of trips being taken would probably increase, partly because empty vehicles would have to be moved from one customer to the next."
+    },
+    {
+     "type": "text",
+     "text": "Modelling work by the University of Michigan Transportation Research Institute suggests automated vehicles might reduce vehicle ownership by 43 percent, but that vehicles’ average annual mileage would double as a result. As a consequence, each vehicle would be used more intensively, and might need replacing sooner. This faster rate of turnover may mean that vehicle production will not necessarily decrease."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Automation may prompt other changes in vehicle manufacture. If we move to a model where consumers are tending not to own a single vehicle but to purchase access to a range of vehicles through a mobility provider, drivers will have the freedom to select one that best suits their needs for a particular journey, rather than making a compromise across all their requirements."
+    },
+    {
+     "type": "text",
+     "text": "Since, for most of the time, most of the seats in most cars are unoccupied, this may boost production of a smaller, more efficient range of vehicles that suit the needs of individuals. Specialised vehicles may then be available for exceptional journeys, such as going on a family camping trip or helping a son or daughter move to university."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "There are a number of hurdles to overcome in delivering automated vehicles to our roads. These include the technical difficulties in ensuring that the vehicle works reliably in the infinite range of traffic, weather and road situations it might encounter; the regulatory challenges in understanding how liability and enforcement might change when drivers are no longer essential for vehicle operation; and the societal changes that may be required for communities to trust and accept automated vehicles as being a valuable part of the mobility landscape."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "It’s clear that there are many challenges that need to be addressed but, through robust and targeted research, these can most probably be conquered within the next 10 years. Mobility will change in such potentially significant ways and in association with so many other technological developments, such as telepresence and virtual reality, that it is hard to make concrete predictions about the future. However, one thing is certain: change is coming, and the need to be flexible in response to this will be vital for those involved in manufacturing the vehicles that will deliver future mobility."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Reading Passage 2 has seven sections, A-G. Which section contains the following information? Write the correct letter, A-G, in boxes 14-18.",
-     "wordLimit": "",
-     "qtype": "short_answer",
+     "groupId": "p2.q14-18",
      "startQ": 14,
      "endQ": 18,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has seven sections, A-G. Which section contains the following information? Write the correct letter, A-G, in boxes 14-18.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
-       "type": "short_answer",
-       "stem": {
-        "plain": "reference to the amount of time when a car is not in use",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. reference to the amount of time when a car is not in use",
-        "elementPath": "children[28]"
+       "type": "matching_information",
+       "prompt": [
+        "reference to the amount of time when a car is not in use"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 15,
-       "type": "short_answer",
-       "stem": {
-        "plain": "mention of several advantages of driverless vehicles for individual road-users",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. mention of several advantages of driverless vehicles for individual road-users",
-        "elementPath": "children[28]"
+       "type": "matching_information",
+       "prompt": [
+        "mention of several advantages of driverless vehicles for individual road-users"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 16,
-       "type": "short_answer",
-       "stem": {
-        "plain": "reference to the opportunity of choosing the most appropriate vehicle for each trip",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. reference to the opportunity of choosing the most appropriate vehicle for each trip",
-        "elementPath": "children[28]"
+       "type": "matching_information",
+       "prompt": [
+        "reference to the opportunity of choosing the most appropriate vehicle for each trip"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 17,
-       "type": "short_answer",
-       "stem": {
-        "plain": "an estimate of how long it will take to overcome a number of problems",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. an estimate of how long it will take to overcome a number of problems",
-        "elementPath": "children[28]"
+       "type": "matching_information",
+       "prompt": [
+        "an estimate of how long it will take to overcome a number of problems"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
        }
       },
       {
        "number": 18,
-       "type": "short_answer",
-       "stem": {
-        "plain": "a suggestion that the use of driverless cars may have no effect on the number of vehicles manufactured",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. a suggestion that the use of driverless cars may have no effect on the number of vehicles manufactured",
-        "elementPath": "children[28]"
+       "type": "matching_information",
+       "prompt": [
+        "a suggestion that the use of driverless cars may have no effect on the number of vehicles manufactured"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[27]",
-      "rawExcerpt": "Questions 14-18\nReading Passage 2 has seven sections, A-G. Which section contains the following information?\nWrite the correct letter, A-G, in boxes 14-18."
+      "headerLine": 38,
+      "lineRange": [
+       38,
+       45
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-18",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has seven sections, A-G. Which section contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter, A-G, in boxes 14-18.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. reference to the amount of time when a car is not in use",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. mention of several advantages of driverless vehicles for individual road-users",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. reference to the opportunity of choosing the most appropriate vehicle for each trip",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. an estimate of how long it will take to overcome a number of problems",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. a suggestion that the use of driverless cars may have no effect on the number of vehicles manufactured",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q19-22",
+     "startQ": 19,
+     "endQ": 22,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "The impact of driverless cars",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Figures from the Transport Research Laboratory indicate that most motor accidents are partly due to ",
+         {
+          "blank": 19
+         },
+         ", so the introduction of driverless vehicles will result in greater safety. In addition to the direct benefits of automation, it may bring other advantages. For example, schemes for ",
+         {
+          "blank": 20
+         },
+         "will be more workable, especially in towns and cities, resulting in fewer cars on the road. According to the University of Michigan Transportation Research Institute, there could be a 43 percent drop in ",
+         {
+          "blank": 21
+         },
+         "of cars. However, this would mean that the yearly ",
+         {
+          "blank": 22
+         },
+         "of each car would, on average, be twice as high as it currently is. This would lead to a higher turnover of vehicles, and therefore no reduction in automotive manufacturing."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 19,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Human error",
+        "value": "Human error",
+        "accepted": [
+         "Human error"
+        ]
+       }
+      },
+      {
+       "number": 20,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Car (-) sharing",
+        "value": "Car (-) sharing",
+        "accepted": [
+         "Car - sharing",
+         "Car sharing"
+        ]
+       }
+      },
+      {
+       "number": 21,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Ownership",
+        "value": "Ownership",
+        "accepted": [
+         "Ownership"
+        ]
+       }
+      },
+      {
+       "number": 22,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Mileage",
+        "value": "Mileage",
+        "accepted": [
+         "Mileage"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 46,
+      "lineRange": [
+       46,
+       49
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 19-22",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The impact of driverless cars",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Figures from the Transport Research Laboratory indicate that most motor accidents are partly due to (19) ……………., so the introduction of driverless vehicles will result in greater safety. In addition to the direct benefits of automation, it may bring other advantages. For example, schemes for (20) ………………… will be more workable, especially in towns and cities, resulting in fewer cars on the road. Ac",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q23-24",
+     "startQ": 23,
+     "endQ": 24,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 2,
+     "answerSet": [
+      "C",
+      "D"
+     ],
+     "answerSetNotation": "set_per_slot",
+     "instruction": "Choose TWO letters, A-E.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Car travellers could enjoy considerable cost savings."
+       },
+       {
+        "id": "B",
+        "text": "It would be easier to find parking spaces in urban areas."
+       },
+       {
+        "id": "C",
+        "text": "Travellers could spend journeys doing something other than driving."
+       },
+       {
+        "id": "D",
+        "text": "People who find driving physically difficult could travel independently."
+       },
+       {
+        "id": "E",
+        "text": "A reduction in the number of cars would mean a reduction in pollution."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 23,
+       "type": "mcq_multi",
+       "prompt": [
+        "Which TWO benefits of automated vehicles does the writer mention?"
+       ],
+       "slotOf": 23,
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 23,
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 50,
+      "lineRange": [
+       50,
+       57
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 23 and 24",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose TWO letters, A-E.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which TWO benefits of automated vehicles does the writer mention?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Car travellers could enjoy considerable cost savings.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B It would be easier to find parking spaces in urban areas.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Travellers could spend journeys doing something other than driving.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D People who find driving physically difficult could travel independently.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E A reduction in the number of cars would mean a reduction in pollution.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q25-26",
+     "startQ": 25,
+     "endQ": 26,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 2,
+     "answerSet": [
+      "A",
+      "E"
+     ],
+     "answerSetNotation": "set_per_slot",
+     "instruction": "Choose TWO letters, A~E.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "making sure the general public has confidence in automated vehicles"
+       },
+       {
+        "id": "B",
+        "text": "managing the pace of transition from conventional to automated vehicles"
+       },
+       {
+        "id": "C",
+        "text": "deciding how to compensate professional drivers who become redundant"
+       },
+       {
+        "id": "D",
+        "text": "setting up the infrastructure to make roads suitable for automated vehicles"
+       },
+       {
+        "id": "E",
+        "text": "getting automated vehicles to adapt to various different driving conditions"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 25,
+       "type": "mcq_multi",
+       "prompt": [
+        "Which TWO challenges to automated vehicle development does the writer mention?"
+       ],
+       "slotOf": 25,
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 25,
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 58,
+      "lineRange": [
+       58,
+       65
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 25 and 26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose TWO letters, A~E.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which TWO challenges to automated vehicle development does the writer mention?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A making sure the general public has confidence in automated vehicles",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B managing the pace of transition from conventional to automated vehicles",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C deciding how to compensate professional drivers who become redundant",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D setting up the infrastructure to make roads suitable for automated vehicles",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E getting automated vehicles to adapt to various different driving conditions",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "The writer’s own bias",
+   "title": "what is exploration?",
    "paragraphs": [
-    "We are all explorers. Our desire to discover, and then share that new-found knowledge, is part of what makes us human – indeed, this has played an important part in our success as a species. Long before the first caveman slumped down beside the fire and grunted news that there were plenty of wildebeest over yonder, our ancestors had learnt the value of sending out scouts to investigate the unknown. This questing nature of ours undoubtedly helped our species spread around the globe, just as it nowadays no doubt helps the last nomadic Penan maintain their existence in the depleted forests of Borneo, and a visitor negotiate the subways of New York.",
-    "Over the years, we’ve come to think of explorers as a peculiar breed – different from the rest of us, different from those of us who are merely ‘well travelled’, even; and perhaps there is a type of person more suited to seeking out the new, a type of caveman more inclined to risk venturing out. That, however, doesn’t take away from the fact that we all have this enquiring instinct, even today; and that in all sorts of professions – whether artist, marine biologist or astronomer – borders of the unknown are being tested each day.",
-    "Thomas Hardy set some of his novels in Egdon Heath, a fictional area of uncultivated land, and used the landscape to suggest the desires and fears of his characters. He is delving into matters we all recognise because they are common to humanity. This is surely an act of exploration, and into a world as remote as the author chooses. Explorer and travel writer Peter Fleming talks of the moment when the explorer returns to the existence he has left behind with his loved ones. The traveller ‘who has for weeks or months seen himself only as a puny and irrelevant alien crawling laboriously over a country in which he has no roots and no background, suddenly encounters his other self, a relatively solid figure, with a place in the minds of certain people’.",
-    "In this book about the exploration of the earth’s surface, I have confined myself to those whose travels were real and who also aimed at more than personal discovery. But that still left me with another problem: the word ‘explorer’ has become associated with a past era. We think back to a golden age, as if exploration peaked somehow in the 19th century – as if the process of discovery is now on the decline, though the truth is that we have named only one and a half million of this planet’s species, and there may be more than 10 million – and that’s not including bacteria. We have studied only 5 per cent of the species we know. We have scarcely mapped the ocean floors, and know even less about ourselves; we fully understand the workings of only 10 per cent of our brains.",
-    "Here is how some of today’s ‘explorers’ define the word. Ran Fiennes, dubbed the ‘greatest living explorer’, said, ‘An explorer is someone who has done something that no human has done before – and also done something scientifically useful.’ Chris Bonington, a leading mountaineer, felt exploration was to be found in the act of physically touching the unknown: ‘You have to have gone somewhere new.’ Then Robin Hanbury-Tenison, a campaigner on behalf of remote so-called ‘tribal’ peoples, said, ‘A traveller simply records information about some far-off world, and reports back; but an explorer changes the world.’ Wilfred Thesiger, who crossed Arabia’s Empty Quarter in 1946, and belongs to an era of unmechanised travel now lost to the rest of us, told me, ‘If I’d gone across by camel when I could have gone by car, it would have been a stunt.’ To him, exploration meant bringing back information from a remote place regardless of any great self-discovery.",
-    "Each definition is slightly different – and tends to reflect the field of endeavour of each pioneer. It was the same whoever I asked: the prominent historian would say exploration was a thing of the past, the cutting-edge scientist would say it was of the present. And so on. They each set their own particular criteria; the common factor in their approach being that they all had, unlike many of us who simply enjoy travel or discovering new things, both a very definite objective from the outset and also a desire to record their findings.",
-    "I’d best declare my own bias. As a writer, I’m interested in the exploration of ideas. I’ve done a great many expeditions and each one was unique. I’ve lived for months alone with isolated groups of people all around the world, even two ‘uncontacted tribes’. But none of these things is of the slightest interest to anyone unless, through my books, I’ve found a new slant, explored a new idea. Why? Because the world has moved on. The time has long passed for the great continental voyages – another walk to the poles, another crossing of the Empty Quarter. We know how the land surface of our planet lies; exploration of it is now down to the details – the habits of microbes, say, or the grazing behaviour of buffalo. Aside from the deep sea and deep underground, it’s the era of specialists. However, this is to disregard the role the human mind has in conveying remote places; and this is what interests me: how a fresh interpretation, even of a well-travelled route, can give its readers new insights.",
-    "The writer has experience of a large number of (38) …………………. , and was the first stranger that certain previously (39) …………………… people had encountered. He believes there is no need for further exploration of Earth’s (40) …………………, except to answer specific questions such as how buffalo eat.",
-    "1. Oval\n2. Husk\n3. Seed\n4. Mace\n5. False\n6. Not given\n7. True\n8. Arabs\n9. Plague\n10. Lime\n11. Run\n12. Mauritius\n13. Tsunami\n14. C\n15. B\n16. E\n17. G\n18. D\n19. Human error\n20. Car (-) sharing\n21. Ownership\n22. Mileage\n23. C, D\n24. C, D\n25. A, E\n26. A, E\n27. A\n28. C\n29. C\n30. D\n31. A\n32. B\n33. E\n34. A\n35. D\n36. E\n37. B\n38. (unique) expeditions\n39. Uncontacted/ isolated\n40. (land) surface"
+    {
+     "type": "text",
+     "text": "We are all explorers. Our desire to discover, and then share that new-found knowledge, is part of what makes us human – indeed, this has played an important part in our success as a species. Long before the first caveman slumped down beside the fire and grunted news that there were plenty of wildebeest over yonder, our ancestors had learnt the value of sending out scouts to investigate the unknown. This questing nature of ours undoubtedly helped our species spread around the globe, just as it nowadays no doubt helps the last nomadic Penan maintain their existence in the depleted forests of Borneo, and a visitor negotiate the subways of New York."
+    },
+    {
+     "type": "text",
+     "text": "Over the years, we’ve come to think of explorers as a peculiar breed – different from the rest of us, different from those of us who are merely ‘well travelled’, even; and perhaps there is a type of person more suited to seeking out the new, a type of caveman more inclined to risk venturing out. That, however, doesn’t take away from the fact that we all have this enquiring instinct, even today; and that in all sorts of professions – whether artist, marine biologist or astronomer – borders of the unknown are being tested each day."
+    },
+    {
+     "type": "text",
+     "text": "Thomas Hardy set some of his novels in Egdon Heath, a fictional area of uncultivated land, and used the landscape to suggest the desires and fears of his characters. He is delving into matters we all recognise because they are common to humanity. This is surely an act of exploration, and into a world as remote as the author chooses. Explorer and travel writer Peter Fleming talks of the moment when the explorer returns to the existence he has left behind with his loved ones. The traveller ‘who has for weeks or months seen himself only as a puny and irrelevant alien crawling laboriously over a country in which he has no roots and no background, suddenly encounters his other self, a relatively solid figure, with a place in the minds of certain people’."
+    },
+    {
+     "type": "text",
+     "text": "In this book about the exploration of the earth’s surface, I have confined myself to those whose travels were real and who also aimed at more than personal discovery. But that still left me with another problem: the word ‘explorer’ has become associated with a past era. We think back to a golden age, as if exploration peaked somehow in the 19th century – as if the process of discovery is now on the decline, though the truth is that we have named only one and a half million of this planet’s species, and there may be more than 10 million – and that’s not including bacteria. We have studied only 5 per cent of the species we know. We have scarcely mapped the ocean floors, and know even less about ourselves; we fully understand the workings of only 10 per cent of our brains."
+    },
+    {
+     "type": "text",
+     "text": "Here is how some of today’s ‘explorers’ define the word. Ran Fiennes, dubbed the ‘greatest living explorer’, said, ‘An explorer is someone who has done something that no human has done before – and also done something scientifically useful.’ Chris Bonington, a leading mountaineer, felt exploration was to be found in the act of physically touching the unknown: ‘You have to have gone somewhere new.’ Then Robin Hanbury-Tenison, a campaigner on behalf of remote so-called ‘tribal’ peoples, said, ‘A traveller simply records information about some far-off world, and reports back; but an explorer changes the world.’ Wilfred Thesiger, who crossed Arabia’s Empty Quarter in 1946, and belongs to an era of unmechanised travel now lost to the rest of us, told me, ‘If I’d gone across by camel when I could have gone by car, it would have been a stunt.’ To him, exploration meant bringing back information from a remote place regardless of any great self-discovery."
+    },
+    {
+     "type": "text",
+     "text": "Each definition is slightly different – and tends to reflect the field of endeavour of each pioneer. It was the same whoever I asked: the prominent historian would say exploration was a thing of the past, the cutting-edge scientist would say it was of the present. And so on. They each set their own particular criteria; the common factor in their approach being that they all had, unlike many of us who simply enjoy travel or discovering new things, both a very definite objective from the outset and also a desire to record their findings."
+    },
+    {
+     "type": "text",
+     "text": "I’d best declare my own bias. As a writer, I’m interested in the exploration of ideas. I’ve done a great many expeditions and each one was unique. I’ve lived for months alone with isolated groups of people all around the world, even two ‘uncontacted tribes’. But none of these things is of the slightest interest to anyone unless, through my books, I’ve found a new slant, explored a new idea. Why? Because the world has moved on. The time has long passed for the great continental voyages – another walk to the poles, another crossing of the Empty Quarter. We know how the land surface of our planet lies; exploration of it is now down to the details – the habits of microbes, say, or the grazing behaviour of buffalo. Aside from the deep sea and deep underground, it’s the era of specialists. However, this is to disregard the role the human mind has in conveying remote places; and this is what interests me: how a fresh interpretation, even of a well-travelled route, can give its readers new insights."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g08",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q27-32",
      "startQ": 27,
      "endQ": 32,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The writer refers to visitors to New York to illustrate the point that",
-        "segments": null
-       },
+       "prompt": [
+        "The writer refers to visitors to New York to illustrate the point that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "exploration is an intrinsic element of being human."
+        },
+        {
+         "id": "B",
+         "text": "most people are enthusiastic about exploring."
+        },
+        {
+         "id": "C",
+         "text": "exploration can lead to surprising results."
+        },
+        {
+         "id": "D",
+         "text": "most people find exploration daunting."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. The writer refers to visitors to New York to illustrate the point that",
-        "elementPath": "children[45]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 28,
        "type": "mcq_single",
-       "stem": {
-        "plain": "According to the second paragraph, what is the writer’s view of explorers?",
-        "segments": null
-       },
+       "prompt": [
+        "According to the second paragraph, what is the writer’s view of explorers?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Their discoveries have brought both benefits and disadvantages."
+        },
+        {
+         "id": "B",
+         "text": "Their main value is in teaching others."
+        },
+        {
+         "id": "C",
+         "text": "They act on an urge that is common to everyone."
+        },
+        {
+         "id": "D",
+         "text": "They tend to be more attracted to certain professions than to others."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. According to the second paragraph, what is the writer’s view of explorers?",
-        "elementPath": "children[46]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 29,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The writer refers to a description of Egdon Heath to suggest that",
-        "segments": null
-       },
+       "prompt": [
+        "The writer refers to a description of Egdon Heath to suggest that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Hardy was writing about his own experience of exploration."
+        },
+        {
+         "id": "B",
+         "text": "Hardy was mistaken about the nature of exploration."
+        },
+        {
+         "id": "C",
+         "text": "Hardy’s aim was to investigate people’s emotional states."
+        },
+        {
+         "id": "D",
+         "text": "Hardy’s aim was to show the attraction of isolation."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. The writer refers to a description of Egdon Heath to suggest that",
-        "elementPath": "children[47]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 30,
        "type": "mcq_single",
-       "stem": {
-        "plain": "In the fourth paragraph, the writer refers to ‘a golden age’ to suggest that",
-        "segments": null
-       },
+       "prompt": [
+        "In the fourth paragraph, the writer refers to ‘a golden age’ to suggest that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "the amount of useful information produced by exploration has decreased."
+        },
+        {
+         "id": "B",
+         "text": "fewer people are interested in exploring than in the 19th century."
+        },
+        {
+         "id": "C",
+         "text": "recent developments have made exploration less exciting."
+        },
+        {
+         "id": "D",
+         "text": "we are wrong to think that exploration is no longer necessary."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. In the fourth paragraph, the writer refers to ‘a golden age’ to suggest that",
-        "elementPath": "children[48]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 31,
        "type": "mcq_single",
-       "stem": {
-        "plain": "In the sixth paragraph, when discussing the definition of exploration, the writer argues that",
-        "segments": null
-       },
+       "prompt": [
+        "In the sixth paragraph, when discussing the definition of exploration, the writer argues that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "people tend to relate exploration to their own professional interests."
+        },
+        {
+         "id": "B",
+         "text": "certain people are likely to misunderstand the nature of exploration."
+        },
+        {
+         "id": "C",
+         "text": "the generally accepted definition has changed over time."
+        },
+        {
+         "id": "D",
+         "text": "historians and scientists have more valid definitions than the general public."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. In the sixth paragraph, when discussing the definition of exploration, the writer argues that",
-        "elementPath": "children[49]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 32,
        "type": "mcq_single",
-       "stem": {
-        "plain": "In the last paragraph, the writer explains that he is interested in",
-        "segments": null
-       },
+       "prompt": [
+        "In the last paragraph, the writer explains that he is interested in"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "how someone’s personality is reflected in their choice of places to visit."
+        },
+        {
+         "id": "B",
+         "text": "the human ability to cast new light on places that may be familiar."
+        },
+        {
+         "id": "C",
+         "text": "how travel writing has evolved to meet changing demands."
+        },
+        {
+         "id": "D",
+         "text": "the feelings that writers develop about the places that they explore."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. In the last paragraph, the writer explains that he is interested in",
-        "elementPath": "children[50]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[44]",
-      "rawExcerpt": "Questions 27-32\nChoose the correct letter, A, B, C or D."
+      "headerLine": 74,
+      "lineRange": [
+       74,
+       105
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-32",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. The writer refers to visitors to New York to illustrate the point that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A exploration is an intrinsic element of being human.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B most people are enthusiastic about exploring.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C exploration can lead to surprising results.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D most people find exploration daunting.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. According to the second paragraph, what is the writer’s view of explorers?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Their discoveries have brought both benefits and disadvantages.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Their main value is in teaching others.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C They act on an urge that is common to everyone.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D They tend to be more attracted to certain professions than to others.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. The writer refers to a description of Egdon Heath to suggest that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Hardy was writing about his own experience of exploration.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Hardy was mistaken about the nature of exploration.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Hardy’s aim was to investigate people’s emotional states.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Hardy’s aim was to show the attraction of isolation.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. In the fourth paragraph, the writer refers to ‘a golden age’ to suggest that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A the amount of useful information produced by exploration has decreased.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B fewer people are interested in exploring than in the 19th century.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C recent developments have made exploration less exciting.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D we are wrong to think that exploration is no longer necessary.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. In the sixth paragraph, when discussing the definition of exploration, the writer argues that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A people tend to relate exploration to their own professional interests.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B certain people are likely to misunderstand the nature of exploration.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C the generally accepted definition has changed over time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D historians and scientists have more valid definitions than the general public.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. In the last paragraph, the writer explains that he is interested in",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A how someone’s personality is reflected in their choice of places to visit.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the human ability to cast new light on places that may be familiar.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C how travel writing has evolved to meet changing demands.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the feelings that writers develop about the places that they explore.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q33-37",
+     "startQ": 33,
+     "endQ": 37,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Look at the following statements (Questions 33-37) and the list of explorers below. Match each statement with the correct explorer, A-E. Write the correct letter, A-E, in boxes 33-37. NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Explorers",
+      "options": [
+       {
+        "id": "A",
+        "text": "Peter Fleming"
+       },
+       {
+        "id": "B",
+        "text": "Ran Fiennes"
+       },
+       {
+        "id": "C",
+        "text": "Chris Bonington"
+       },
+       {
+        "id": "D",
+        "text": "Robin Hanbury-Tenison"
+       },
+       {
+        "id": "E",
+        "text": "Wilfred Thesiger"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "matching_features",
+       "prompt": [
+        "He referred to the relevance of the form of transport used."
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "matching_features",
+       "prompt": [
+        "He described feelings on coming back home after a long journey."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "matching_features",
+       "prompt": [
+        "He worked for the benefit of specific groups of people."
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "matching_features",
+       "prompt": [
+        "He did not consider learning about oneself an essential part of exploration."
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "matching_features",
+       "prompt": [
+        "He defined exploration as being both unique and of value to others."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 106,
+      "lineRange": [
+       106,
+       118
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 33-37",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Look at the following statements (Questions 33-37) and the list of explorers below. Match each statement with the correct explorer, A-E. Write the correct letter, A-E, in boxes 33-37. NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. He referred to the relevance of the form of transport used.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. He described feelings on coming back home after a long journey.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. He worked for the benefit of specific groups of people.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. He did not consider learning about oneself an essential part of exploration.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. He defined exploration as being both unique and of value to others.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Explorers",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "A Peter Fleming",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Ran Fiennes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Chris Bonington",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Robin Hanbury-Tenison",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Wilfred Thesiger",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q38-40",
+     "startQ": 38,
+     "endQ": 40,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "The writer’s own bias",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "The writer has experience of a large number of ",
+         {
+          "blank": 38
+         },
+         ", and was the first stranger that certain previously ",
+         {
+          "blank": 39
+         },
+         "people had encountered. He believes there is no need for further exploration of Earth’s ",
+         {
+          "blank": 40
+         },
+         ", except to answer specific questions such as how buffalo eat."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 38,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(unique) expeditions",
+        "value": "(unique) expeditions",
+        "accepted": [
+         "unique expeditions",
+         "expeditions"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Uncontacted/ isolated",
+        "value": "Uncontacted/ isolated",
+        "accepted": [
+         "Uncontacted",
+         "isolated"
+        ]
+       }
+      },
+      {
+       "number": 40,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(land) surface",
+        "value": "(land) surface",
+        "accepted": [
+         "land surface",
+         "surface"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 119,
+      "lineRange": [
+       119,
+       122
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 38-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The writer’s own bias",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The writer has experience of a large number of (38) …………………. , and was the first stranger that certain previously (39) …………………… people had encountered. He believes there is no need for further exploration of Earth’s (40) …………………, except to answer specific questions such as how buffalo eat.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "Oval"
-   },
-   {
-    "number": 2,
-    "value": "Husk"
-   },
-   {
-    "number": 3,
-    "value": "Seed"
-   },
-   {
-    "number": 4,
-    "value": "Mace"
-   },
-   {
-    "number": 5,
-    "value": "False"
-   },
-   {
-    "number": 6,
-    "value": "Not given"
-   },
-   {
-    "number": 7,
-    "value": "True"
-   },
-   {
-    "number": 8,
-    "value": "Arabs"
-   },
-   {
-    "number": 9,
-    "value": "Plague"
-   },
-   {
-    "number": 10,
-    "value": "Lime"
-   },
-   {
-    "number": 11,
-    "value": "Run"
-   },
-   {
-    "number": 12,
-    "value": "Mauritius"
-   },
-   {
-    "number": 13,
-    "value": "Tsunami"
-   },
-   {
-    "number": 14,
-    "value": "C"
-   },
-   {
-    "number": 15,
-    "value": "B"
-   },
-   {
-    "number": 16,
-    "value": "E"
-   },
-   {
-    "number": 17,
-    "value": "G"
-   },
-   {
-    "number": 18,
-    "value": "D"
-   },
-   {
-    "number": 19,
-    "value": "Human error"
-   },
-   {
-    "number": 20,
-    "value": "Car (-) sharing"
-   },
-   {
-    "number": 21,
-    "value": "Ownership"
-   },
-   {
-    "number": 22,
-    "value": "Mileage"
-   },
-   {
-    "number": 23,
-    "value": "C, D"
-   },
-   {
-    "number": 24,
-    "value": "C, D"
-   },
-   {
-    "number": 25,
-    "value": "A, E"
-   },
-   {
-    "number": 26,
-    "value": "A, E"
-   },
-   {
-    "number": 27,
-    "value": "A"
-   },
-   {
-    "number": 28,
-    "value": "C"
-   },
-   {
-    "number": 29,
-    "value": "C"
-   },
-   {
-    "number": 30,
-    "value": "D"
-   },
-   {
-    "number": 31,
-    "value": "A"
-   },
-   {
-    "number": 32,
-    "value": "B"
-   },
-   {
-    "number": 33,
-    "value": "E"
-   },
-   {
-    "number": 34,
-    "value": "A"
-   },
-   {
-    "number": 35,
-    "value": "D"
-   },
-   {
-    "number": 36,
-    "value": "E"
-   },
-   {
-    "number": 37,
-    "value": "B"
-   },
-   {
-    "number": 38,
-    "value": "(unique) expeditions"
-   },
-   {
-    "number": 39,
-    "value": "Uncontacted/ isolated"
-   },
-   {
-    "number": 40,
-    "value": "(land) surface"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     13
-    ],
-    "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     19,
-     22
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     23,
-     23
-    ],
-    "instruction": "and 24 Choose TWO letters, A-E."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 Choose TWO letters, A~E."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     33,
-     37
-    ],
-    "instruction": "Look at the following statements (Questions 33-37) and the list of explorers below. Match each statement with the correct explorer, A-E. Wri"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g10",
-    "range": [
-     38,
-     40
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 18,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 5,
- "contentFingerprint": "7db19ea7193a996b585e0abb456d6f097006e962388f76997cf07db3ce693bd0"
+ "metrics": {
+  "passages": 3,
+  "groups": 10,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "4789728243ed383f4cca936524bec5938be7da2d25c6ce673681f8c3379b2c28"
 }

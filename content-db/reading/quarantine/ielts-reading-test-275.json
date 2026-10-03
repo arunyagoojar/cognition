@@ -1,25 +1,46 @@
 {
  "slug": "ielts-reading-test-275",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     6,
-     9
-    ],
-    "instruction": "Use the information in the passage to match the companies (listed A-D) with opinions or deeds below. Write the appropriate letters A, B, C o"
-   }
+   "groupId": "p1.q10-13",
+   "range": [
+    10,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT"
+   ],
+   "instruction": "Complete the sentences below with ONE WORD ONLY from the passage."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q32-35",
+   "range": [
+    32,
+    35
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Do the following statements agree with the information given in reading passage? In boxes 32-35 on your answer sheet, write:"
   }
  ]
 }

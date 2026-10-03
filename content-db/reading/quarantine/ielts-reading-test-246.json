@@ -1,25 +1,65 @@
 {
  "slug": "ielts-reading-test-246",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     4
-    ],
-    "instruction": "Choose the correct letter, A-G? Write your answers in boxes 1-4 on your answer sheet. What four statements are correct c"
-   }
+   "groupId": "p1.q01-04",
+   "range": [
+    1,
+    4
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter, A-G? Write your answers in boxes 1-4 on your answer sheet. What four statements are correct concerning Nash’s story?"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q14-15",
+   "range": [
+    14,
+    15
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": ""
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q16-16",
+   "range": [
+    16,
+    16
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "MISSING_INSTRUCTION"
+   ],
+   "instruction": ""
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the Reading Passage for each answer. Write your answers in boxes 36-40 on your answer sheet."
   }
  ]
 }

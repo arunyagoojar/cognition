@@ -1,73 +1,21 @@
 {
  "slug": "ielts-reading-test-122",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     10,
-     13
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D and write in your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "Choose NO MORE THAN THREE WORDS from the reading paragraph for each answer. Write the answer on your answer sheet from 1"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     28
-    ],
-    "instruction": "Below is a summary of the passage. Using information from the passage, complete the summary. Choose NO MORE THAN FOUR WO"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     29,
-     37
-    ],
-    "instruction": "Complete the summary below. Choose your answers from the box at the bottom of the page and write them in boxes 29-37 on "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     38,
-     42
-    ],
-    "instruction": "Choose the heading which best sums up the primary cause of the problem described in paragraphs D, E, G, H and I of the t"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 14,
-    "answers": 42
-   }
+   "groupId": "p3.q29-37",
+   "range": [
+    29,
+    37
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary below. Choose your answers from the box at the bottom of the page and write them in boxes 29-37 on your answer sheet. NB There are more words than spaces so you will not use them "
   }
  ]
 }

@@ -1,79 +1,46 @@
 {
  "slug": "ielts-reading-test-123",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     12
-    ],
-    "instruction": "Classify the following characteristics as belonging to A academic intelligence (AO) tests\nB emotional intelligence (EO) tests\nC practical in"
-   }
+   "groupId": "p2.q19-25",
+   "range": [
+    19,
+    25
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the views of the writer in Reading Passage 123? In boxes 19-25 on your answer sheet write"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     13,
-     16
-    ],
-    "instruction": "Choose the appropriate letter A–D and write your answers in boxes 1–4 on your answer sheet."
-   }
+   "groupId": "p3.q26-28",
+   "range": [
+    26,
+    28
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Look at the diagram (Family Diagram of Augustus) and Fill in the missing names in this family tree."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     17,
-     17
-    ],
-    "instruction": "and 18 Complete the table below describing the causes and effects. Write your answers in boxes 5–6 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     26,
-     28
-    ],
-    "instruction": "Look at the diagram (Family Diagram of Augustus) and Fill in the missing names in this family tree."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 3,
-    "title": "Passage 3",
-    "groups": [
-     [
-      29,
-      36
-     ],
-     [
-      37,
-      41
-     ]
-    ]
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 41
-   }
+   "groupId": "p3.q29-36",
+   "range": [
+    29,
+    36
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "In boxes 29-36 on your answer sheet, write"
   }
  ]
 }

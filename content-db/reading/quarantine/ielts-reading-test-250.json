@@ -1,61 +1,23 @@
 {
  "slug": "ielts-reading-test-250",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Light pollution has affected many forms of life. Use the information in the passage to match the animals with the relevant information below"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     20
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     29,
-     34
-    ],
-    "instruction": "Label the diagrams on the following page. Write the correct letter, A-H, in boxes 29-34 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     35,
-     40
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. Write your a"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 16,
-    "answers": 40
-   }
+   "groupId": "p3.q29-34",
+   "range": [
+    29,
+    34
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagrams on the following page. Write the correct letter, A-H, in boxes 29-34 on your answer sheet."
   }
  ]
 }

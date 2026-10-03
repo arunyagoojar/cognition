@@ -1,49 +1,21 @@
 {
  "slug": "ielts-reading-test-193",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     8
-    ],
-    "instruction": "Choose FOUR letters A-H. Which FOUR of the following attributes describing diethyl zinc (DEZ) are mentioned in the passa"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Complete the flow chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     34,
-     37
-    ],
-    "instruction": "Look at the following artificial life programs (Questions 34 37) and the list of descriptions below. Match each artificial life program with"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
-   }
+   "groupId": "p3.q34-37",
+   "range": [
+    34,
+    37
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "Look at the following artificial life programs (Questions 34 37) and the list of descriptions below. Match each artificial life program with the appropriate: description, A-H."
   }
  ]
 }

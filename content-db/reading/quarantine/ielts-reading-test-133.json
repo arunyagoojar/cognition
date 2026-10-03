@@ -1,50 +1,21 @@
 {
  "slug": "ielts-reading-test-133",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     9
-    ],
-    "instruction": "Complete the notes below using NO MORE THAN ONE WORD OR NUMBER from the passage."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     32,
-     35
-    ],
-    "extracted": 1,
-    "expected": 4
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     36,
-     40
-    ],
-    "instruction": "Look at the following statements (Questions 36-40) and the list of people below. Match each statement with the correct person, A-E. Write th"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 26,
-    "answers": 40
-   }
+   "groupId": "p3.q32-35",
+   "range": [
+    32,
+    35
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Complete the sentences below using NO MORE THAN ONE WORD OR NUMBER from the passage. Write your answers in boxes 32-35 on your answer sheet."
   }
  ]
 }

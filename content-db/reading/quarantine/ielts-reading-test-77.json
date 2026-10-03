@@ -1,49 +1,21 @@
 {
  "slug": "ielts-reading-test-77",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     9
-    ],
-    "instruction": "Look at the following statements (Questions 5-9) and the list of researchers below. Match each statement with the correc"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 14-18 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "Reading Passage 3 has six paragraphs, A-F. Choose the correct heading for paragraphs A-F from the list of headings below"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 21,
-    "answers": 40
-   }
+   "groupId": "p1.q01-04",
+   "range": [
+    1,
+    4
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-4 on your answer sheet, write"
   }
  ]
 }

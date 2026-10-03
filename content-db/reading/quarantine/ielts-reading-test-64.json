@@ -1,37 +1,33 @@
 {
  "slug": "ielts-reading-test-64",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Using information contained in the text, complete the following sentences using NO MORE THAN THREE WORDS for each answer"
-   }
+   "groupId": "p1.q09-13",
+   "range": [
+    9,
+    13
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Using information contained in the text, complete the following sentences using NO MORE THAN THREE WORDS for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     34,
-     40
-    ],
-    "instruction": "Choose the appropriate answers A – D and write them in boxes 34 – 40 on your answer sheet. 34 The revolution in France\n\n"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 8,
-    "answers": 40
-   }
+   "groupId": "p2.q14-21",
+   "range": [
+    14,
+    21
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Do the following statements agree with the information in Reading Passage 2? In boxes 14 – 21 on your answer sheet write"
   }
  ]
 }

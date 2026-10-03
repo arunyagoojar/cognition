@@ -1,61 +1,20 @@
 {
  "slug": "ielts-reading-test-198",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Complete the summary below. Choose ONE OR TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Reading Passage 1 contains a number of opinions provided by four different scientists. Match each opinion (Questions 9-13) with the scientis"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Choose the appropriate letters A-D and write them in boxes 14-17 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     34,
-     36
-    ],
-    "instruction": "Complete the labels on the diagrams below using ONE OR TWO WORDS from the reading passage. Write your answers in boxes 3"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 13,
-    "answers": 40
-   }
+   "groupId": "p3.q34-36",
+   "range": [
+    34,
+    36
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the labels on the diagrams below using ONE OR TWO WORDS from the reading passage. Write your answers in boxes 34-36 on your answer sheet."
   }
  ]
 }

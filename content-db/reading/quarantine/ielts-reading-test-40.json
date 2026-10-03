@@ -1,61 +1,50 @@
 {
  "slug": "ielts-reading-test-40",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     14,
-     20
-    ],
-    "instruction": "Complete the summary using words from the box below."
-   }
+   "groupId": "p1.q01-05",
+   "range": [
+    1,
+    5
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": ""
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 For each question, choose the correct letter A-D and write it in boxes 25 and 26 on your Answer Sheet."
-   }
+   "groupId": "p2.q14-20",
+   "range": [
+    14,
+    20
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary using words from the box below."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Reading Passage 3 has four sections (A-D). Choose the most suitable heading for each section from the list of headings b"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     31,
-     32
-    ],
-    "instruction": "For each question, choose the appropriate letter A-D and write it in boxes 31 and 32 on your Answer Sheet. 31 Killer wha"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 20,
-    "answers": 40
-   }
+   "groupId": "p3.q33-40",
+   "range": [
+    33,
+    40
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the chart below. Write NO MORE THAN THREE WORDS."
   }
  ]
 }

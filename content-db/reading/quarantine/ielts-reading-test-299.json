@@ -1,25 +1,22 @@
 {
  "slug": "ielts-reading-test-299",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "Write the appropriate letter A-D."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 33,
-    "answers": 40
-   }
+   "groupId": "p1.q07-12",
+   "range": [
+    7,
+    12
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "The reading passage describes the opinions of Dr, Ken Aplin, Dr. Dale Roberts and Dr. Rick Speare in relation to strategies for frog conservation. Match one of the researchers A-C to each of the state"
   }
  ]
 }

@@ -1,39 +1,115 @@
 {
  "slug": "ielts-reading-test-220",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     32,
-     36
-    ],
-    "instruction": "Look at the following statements, 32-36, and the list of people, A-C. Match each statement to the correct person. A Dr. Mayalla\nB Anita Brow"
-   }
+   "groupId": "p1.q01-08",
+   "range": [
+    1,
+    8
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in the text? For questions 1-8, write"
   },
   {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 3,
-    "title": "Passage 3",
-    "groups": [
-     [
-      37,
-      40
-     ]
-    ]
-   }
+   "unit": "group",
+   "groupId": "p1.q09-10",
+   "range": [
+    9,
+    10
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 29,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p1.q11-13",
+   "range": [
+    11,
+    13
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q14-19",
+   "range": [
+    14,
+    19
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "The text has seven paragraphs, A-G. Which paragraph contains the following information?"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q20-25",
+   "range": [
+    20,
+    25
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in the text? For questions 20-25, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q26-31",
+   "range": [
+    26,
+    31
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q32-36",
+   "range": [
+    32,
+    36
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Look at the following statements, 32-36, and the list of people, A-C. Match each statement to the correct person."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in the text? For questions 37-40, write"
   }
  ]
 }

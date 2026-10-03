@@ -1,13 +1,20 @@
 {
  "slug": "ielts-reading-test-266",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the reading passage for each answer."
   }
  ]
 }

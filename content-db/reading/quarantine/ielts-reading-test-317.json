@@ -1,55 +1,137 @@
 {
  "slug": "ielts-reading-test-317",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "ANSWER_KEY_MISSING"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-5 on your"
-   }
+   "groupId": "p1.q01-05",
+   "range": [
+    1,
+    5
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 1-5 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     20,
-     20
-    ],
-    "instruction": "and 21 Choose TWO letters, A-E. Write the correct letters in boxes 20 and 21 on your answer sheet"
-   }
+   "groupId": "p1.q06-13",
+   "range": [
+    6,
+    13
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the information given in reading passage? In boxes 6-13 on your answer sheet, write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     22,
-     26
-    ],
-    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 22-26 on "
-   }
+   "groupId": "p2.q14-19",
+   "range": [
+    14,
+    19
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Reading passage has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 14-19 on your answer sheet."
   },
   {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 2,
-    "title": "Passage 2",
-    "groups": [
-     [
-      14,
-      19
-     ]
-    ]
-   }
+   "unit": "group",
+   "groupId": "p2.q20-21",
+   "range": [
+    20,
+    21
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "EMPTY_QUESTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose TWO letters, A-E. Write the correct letters in boxes 20 and 21 on your answer sheet"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 22-26 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q27-29",
+   "range": [
+    27,
+    29
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 27-29 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q30-35",
+   "range": [
+    30,
+    35
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words, A-l, below. Write the correct letter, A-l, in boxes 30-35 on your answer sheet. AS in government, medicine and the law"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q36-39",
+   "range": [
+    36,
+    39
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the claims of the writer in reading passage? In boxes 36-39 on your answer sheet, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter. A, B, C or D."
   }
  ]
 }

@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-189",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     19,
-     23
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     26
-    ],
-    "instruction": "Look at the following people and the list of opinions below. Match each person with the correct opinion A-E."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 21,
-    "answers": 40
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the notes below. Choose NO MORE THAN ONE WORD from the passage for each answer."
   }
  ]
 }

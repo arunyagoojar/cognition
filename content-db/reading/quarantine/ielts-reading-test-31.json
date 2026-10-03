@@ -1,97 +1,60 @@
 {
  "slug": "ielts-reading-test-31",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Reading Passage 1 has six paragraphs (A-F). Choose the most suitable heading/or each paragraph from the list of headings"
-   }
+   "groupId": "p1.q06-08",
+   "range": [
+    6,
+    8
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "The diagram below shows the principle of Corning’s ribbon machine. Label the diagram by selecting NO MORE THAN THREE WORDS from the Reading Passage to fill each numbered space. Write your answers in b"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     8
-    ],
-    "instruction": "The diagram below shows the principle of Corning’s ribbon machine. Label the diagram by selecting NO MORE THAN THREE WOR"
-   }
+   "groupId": "p2.q20-23",
+   "range": [
+    20,
+    23
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "The author makes reference to three consultants in the Reading Passage. Which of the list of points below do these consultants make? In boxes 20-23 write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Look at the list below of the uses of glass. According to the passage, state whether these uses exist today, will exist "
-   }
+   "groupId": "p2.q24-27",
+   "range": [
+    24,
+    27
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Using NO MORE THAN THREE WORDS answer the following questions. Write your answers in boxes 24-27 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Reading Passage 2 has 7 paragraphs (A-G). State which paragraph discusses each of the points below. Write the appropriat"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     27
-    ],
-    "instruction": "Using NO MORE THAN THREE WORDS answer the following questions. Write your answers in boxes 24-27 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     32,
-     35
-    ],
-    "instruction": "These questions are based on Part B of Reading Passage 3. In paragraphs A to D the author describes four processes which"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": "Choose the appropriate letter A-D and write it in box 39 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 8,
-    "answers": 40
-   }
+   "groupId": "p3.q36-39",
+   "range": [
+    36,
+    39
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Based on your reading of Part C, complete the sentences below with words taken from the passage. Use NO MORE THAN THREE WORDS for each answer. Write your answers in boxes 36-38 on your answer sheet."
   }
  ]
 }

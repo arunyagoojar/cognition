@@ -1,270 +1,712 @@
 {
  "id": "reading.test-0159.10554505",
  "module": "reading",
+ "slug": "ielts-reading-test-159",
  "sourceNumbers": [
   159
  ],
- "slug": "ielts-reading-test-159",
  "title": "IELTS Academic Reading Test 159",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-159/index.html",
-   "sha256": "2484d8eea9703f98063b0e746df32c12020e3c6a747cbc9dc50edad74d923ac8",
-   "manifestHashMatch": true,
+   "sha256": "c1c59ff73d0bccf8b494cdc4a36c71f284abb93ee611ffb43c0fdf9f17e78d14",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-159/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "x"
+   },
+   {
+    "number": 2,
+    "raw": "xi"
+   },
+   {
+    "number": 3,
+    "raw": "iii"
+   },
+   {
+    "number": 4,
+    "raw": "i"
+   },
+   {
+    "number": 5,
+    "raw": "vi"
+   },
+   {
+    "number": 6,
+    "raw": "ii"
+   },
+   {
+    "number": 7,
+    "raw": "ix"
+   },
+   {
+    "number": 8,
+    "raw": "vii"
+   },
+   {
+    "number": 9,
+    "raw": "False"
+   },
+   {
+    "number": 10,
+    "raw": "True"
+   },
+   {
+    "number": 11,
+    "raw": "True"
+   },
+   {
+    "number": 12,
+    "raw": "NG"
+   },
+   {
+    "number": 13,
+    "raw": "NG"
+   },
+   {
+    "number": 14,
+    "raw": "rules, guiding principles"
+   },
+   {
+    "number": 15,
+    "raw": "mentor"
+   },
+   {
+    "number": 16,
+    "raw": "patterns of behavior/patterns"
+   },
+   {
+    "number": 17,
+    "raw": "complex"
+   },
+   {
+    "number": 18,
+    "raw": "knowledge"
+   },
+   {
+    "number": 19,
+    "raw": "False"
+   },
+   {
+    "number": 20,
+    "raw": "NG"
+   },
+   {
+    "number": 21,
+    "raw": "True"
+   },
+   {
+    "number": 22,
+    "raw": "True"
+   },
+   {
+    "number": 23,
+    "raw": "True"
+   },
+   {
+    "number": 24,
+    "raw": "Accurate"
+   },
+   {
+    "number": 25,
+    "raw": "Human biases"
+   },
+   {
+    "number": 26,
+    "raw": "Consensus"
+   },
+   {
+    "number": 27,
+    "raw": "C"
+   },
+   {
+    "number": 28,
+    "raw": "A"
+   },
+   {
+    "number": 29,
+    "raw": "D"
+   },
+   {
+    "number": 30,
+    "raw": "B"
+   },
+   {
+    "number": 31,
+    "raw": "lapse/time interval"
+   },
+   {
+    "number": 32,
+    "raw": "continuous action"
+   },
+   {
+    "number": 33,
+    "raw": "time"
+   },
+   {
+    "number": 34,
+    "raw": "greater length"
+   },
+   {
+    "number": 35,
+    "raw": "slowed down proportionately"
+   },
+   {
+    "number": 36,
+    "raw": "A"
+   },
+   {
+    "number": 37,
+    "raw": "C"
+   },
+   {
+    "number": 38,
+    "raw": "G"
+   },
+   {
+    "number": 39,
+    "raw": "E"
+   },
+   {
+    "number": 40,
+    "raw": "F"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
-   "title": "Morse Code",
+   "title": null,
    "paragraphs": [
-    "Morse code is being replaced by a new satellite-based system for sending dis-tress calls at sea. Its dots and dashes have had a good run for their money.",
-    "A “Calling all. This is our last cry before our eternal silence.” Surprisingly this message, which flashed over the airwaves in the dots and dashes of Morse code on January 31st 1997, was not a desperate transmission by a radio operator on a sinking ship. Rather, it was a message signal-ling the end of the use of Morse code for distress calls in French waters. Since 1992 countries around the world have been decommissioning their Morse equipment with similar (if less poetic) sign-offs, as the world’s shipping switches over to a new satellite-based arrangement, the Global Maritime Distress and Safety System. The final deadline for the switch-over to GMDSS is February 1st, a date that is widely seen as the end of art era.",
-    "B The code has, however, had a good history. Appropriately for a technology commonly associated with radio operators on sinking ships, the idea of Morse code is said to have occurred to Samuel Morse while he was on board a ship crossing the Atlantic, At the time Morse Was a painter and occasional inventor, but when another of the ships passengers informed him of recent advances in electrical theory, Morse was suddenly taken with the idea of building an electric telegraph to send messages in codes. Other inventors had been trying to do just that for the best part of a century. Morse succeeded and is now remembered as “the father of the tele-graph” partly thanks to his single-mindedness—it was 12 years, for example, before he secured money from Congress to build his first telegraph line—but also for technical reasons.",
-    "C Compared with rival electric telegraph designs, such as the needle telegraph developed by William Cooke and Charles Wheatstone in Britain, Morses design was very simple: it required little more than a “key” (essentially, a spring-loaded switch) to send messages, a clicking “sounder” to receive them, and a wire to link the two. But although Morses hardware was simple, there was a catch: in order to use his equipment, operators had to learn the special code of dots and dashes that still bears his name. Originally, Morse had not intended to use combinations of dots and dashes to represent individual letters. His first code, sketched in his notebook during that transatlantic voyage, used dots and dashes to represent the digits 0 to 9. Morses idea was that messages would consist of strings of numbers corresponding to words and phrases in a special numbered dictionary. But Morse later abandoned this scheme and, with the help of an associate, Alfred Vail, devised the Morse alphabet, which could be used to spell out messages a letter at a time in dots and dashes.",
-    "D At first, the need to learn this complicated-looking code made Morses telegraph seem impossibly tricky compared with other, more user-friendly designs, Cookes and Wheatstones telegraph, for example, used five needles to pick out letters on a diamond-shaped grid. But although this meant that anyone could use it, it also required five wires between telegraph stations. Morses telegraph needed only one. And some people, it soon transpired, had a natural facility for Morse code.",
-    "E As electric telegraphy took off in the early 1850s, the Morse telegraph quickly became dominant. It was adopted as the European standard in 1851, allowing direct connections between the telegraph networks of different countries. (Britain chose not to participate, sticking with needle telegraphs for a few more years.) By this time Morse code had been revised to allow for accents and other foreign characters, resulting in a split between American and International Morse that continues to this day.",
-    "F On international submarine cables, left and right swings of a light-beam reflected from a tiny rotating mirror were used to represent dots and dashes. Meanwhile a distinct telegraphic sub-culture was emerging, with its own customs and vocabulary, and a hierarchy based on the speed at which operators could send and receive Morse code. First-class operators, who could send and receive at speeds of up to 45 words a minute, handled press traffic, securing the best-paid jobs in big cities. At the bottom of the pile were slow, inexperienced rural operators, many of whom worked the wires as part-timers. As their Morse code improved, however, rural opera-tors found that their new-found skill was a passport to better pay in a city job. Telegraphers soon, swelled the ranks of the emerging middle classes. Telegraphy was also deemed suitable work for women. By 1870, a third of the operators in the Western Union office in New York, the largest telegraph office in America, were female.",
-    "G In a dramatic ceremony in 1871, Morse himself said goodbye to the global community of telegraphers he had brought into being. After a lavish banquet and many adulatory speeches, Morse sat down behind an operators table and, placing his finger on a key connected to every telegraph wire in America, tapped out his final farewell to a standing ovation. By the time of his death in 1872, the world was well and truly wired: more than 650,000 miles of telegraph line and 30,000 miles of submarine cable were throbbing with Morse code; and 20,000 towns and villages were connected to the global network. Just as the Internet is today often called an “information superhighway”, the telegraph was described in its day as an “instantaneous highway of thought”,",
-    "H But by the 1890s the Morse telegraph’s heyday as a cutting-edge technology was coming to an end, with the invention of the telephone and the rise of automatic telegraphs, precursors of the teleprinter, neither of which required specialist skills to operate. Morse code, however, was about to be given a new lease of life thanks to another new technology: wireless. Following the invention of radiotelegraphy by Guglielmo Marconi in 1896, its potential for use at sea quickly became apparent. For the first time, ships could communicate with each other, and with the shore, whatever the weather and even when out of visual range. In 1897 Marconi successfully sent Morse code messages between a shore station and an Italian warship 19km (12 miles) away. By 1910, Morse radio equipment was commonplace on ships."
+    {
+     "type": "text",
+     "text": "Morse Code"
+    },
+    {
+     "type": "text",
+     "text": "Morse code is being replaced by a new satellite-based system for sending dis-tress calls at sea. Its dots and dashes have had a good run for their money."
+    },
+    {
+     "type": "text",
+     "label": "A",
+     "text": "“Calling all. This is our last cry before our eternal silence.” Surprisingly this message, which flashed over the airwaves in the dots and dashes of Morse code on January 31st 1997, was not a desperate transmission by a radio operator on a sinking ship. Rather, it was a message signal-ling the end of the use of Morse code for distress calls in French waters. Since 1992 countries around the world have been decommissioning their Morse equipment with similar (if less poetic) sign-offs, as the world’s shipping switches over to a new satellite-based arrangement, the Global Maritime Distress and Safety System. The final deadline for the switch-over to GMDSS is February 1st, a date that is widely seen as the end of art era."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The code has, however, had a good history. Appropriately for a technology commonly associated with radio operators on sinking ships, the idea of Morse code is said to have occurred to Samuel Morse while he was on board a ship crossing the Atlantic, At the time Morse Was a painter and occasional inventor, but when another of the ships passengers informed him of recent advances in electrical theory, Morse was suddenly taken with the idea of building an electric telegraph to send messages in codes. Other inventors had been trying to do just that for the best part of a century. Morse succeeded and is now remembered as “the father of the tele-graph” partly thanks to his single-mindedness—it was 12 years, for example, before he secured money from Congress to build his first telegraph line—but also for technical reasons."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Compared with rival electric telegraph designs, such as the needle telegraph developed by William Cooke and Charles Wheatstone in Britain, Morses design was very simple: it required little more than a “key” (essentially, a spring-loaded switch) to send messages, a clicking “sounder” to receive them, and a wire to link the two. But although Morses hardware was simple, there was a catch: in order to use his equipment, operators had to learn the special code of dots and dashes that still bears his name. Originally, Morse had not intended to use combinations of dots and dashes to represent individual letters. His first code, sketched in his notebook during that transatlantic voyage, used dots and dashes to represent the digits 0 to 9. Morses idea was that messages would consist of strings of numbers corresponding to words and phrases in a special numbered dictionary. But Morse later abandoned this scheme and, with the help of an associate, Alfred Vail, devised the Morse alphabet, which could be used to spell out messages a letter at a time in dots and dashes."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "At first, the need to learn this complicated-looking code made Morses telegraph seem impossibly tricky compared with other, more user-friendly designs, Cookes and Wheatstones telegraph, for example, used five needles to pick out letters on a diamond-shaped grid. But although this meant that anyone could use it, it also required five wires between telegraph stations. Morses telegraph needed only one. And some people, it soon transpired, had a natural facility for Morse code."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "As electric telegraphy took off in the early 1850s, the Morse telegraph quickly became dominant. It was adopted as the European standard in 1851, allowing direct connections between the telegraph networks of different countries. (Britain chose not to participate, sticking with needle telegraphs for a few more years.) By this time Morse code had been revised to allow for accents and other foreign characters, resulting in a split between American and International Morse that continues to this day."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "On international submarine cables, left and right swings of a light-beam reflected from a tiny rotating mirror were used to represent dots and dashes. Meanwhile a distinct telegraphic sub-culture was emerging, with its own customs and vocabulary, and a hierarchy based on the speed at which operators could send and receive Morse code. First-class operators, who could send and receive at speeds of up to 45 words a minute, handled press traffic, securing the best-paid jobs in big cities. At the bottom of the pile were slow, inexperienced rural operators, many of whom worked the wires as part-timers. As their Morse code improved, however, rural opera-tors found that their new-found skill was a passport to better pay in a city job. Telegraphers soon, swelled the ranks of the emerging middle classes. Telegraphy was also deemed suitable work for women. By 1870, a third of the operators in the Western Union office in New York, the largest telegraph office in America, were female."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "In a dramatic ceremony in 1871, Morse himself said goodbye to the global community of telegraphers he had brought into being. After a lavish banquet and many adulatory speeches, Morse sat down behind an operators table and, placing his finger on a key connected to every telegraph wire in America, tapped out his final farewell to a standing ovation. By the time of his death in 1872, the world was well and truly wired: more than 650,000 miles of telegraph line and 30,000 miles of submarine cable were throbbing with Morse code; and 20,000 towns and villages were connected to the global network. Just as the Internet is today often called an “information superhighway”, the telegraph was described in its day as an “instantaneous highway of thought”,"
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "But by the 1890s the Morse telegraph’s heyday as a cutting-edge technology was coming to an end, with the invention of the telephone and the rise of automatic telegraphs, precursors of the teleprinter, neither of which required specialist skills to operate. Morse code, however, was about to be given a new lease of life thanks to another new technology: wireless. Following the invention of radiotelegraphy by Guglielmo Marconi in 1896, its potential for use at sea quickly became apparent. For the first time, ships could communicate with each other, and with the shore, whatever the weather and even when out of visual range. In 1897 Marconi successfully sent Morse code messages between a shore station and an Italian warship 19km (12 miles) away. By 1910, Morse radio equipment was commonplace on ships."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Reading passage 1 has eight paragraphs, A-H. Choose the correct heading for paragraphs A-H from the list of headings below. Write the correct number, i-xi, in boxes 1-8 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "matching_headings",
+     "groupId": "p1.q01-08",
      "startQ": 1,
      "endQ": 8,
-     "stimulusSegments": [
-      "List of Headings\ni The advantage of Morse’s invention\nii A suitable job for women\niii Morse’s invention was developed\niv Sea rescue after the invention of radiotelegraphy\nv The emergence of many job opportunities\nvi Standard and variations\nvii Application of Morse code in a new technology\nviii The discovery of electricity\nix International expansion of Morse Code\nx The beginning of an end\nxi The move of using code to convey information"
-     ],
-     "sharedOptions": null,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading passage 1 has eight paragraphs, A-H. Choose the correct heading for paragraphs A-H from the list of headings below. Write the correct number, i-xi, in boxes 1-8 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "The advantage of Morse’s invention"
+       },
+       {
+        "id": "ii",
+        "text": "A suitable job for women"
+       },
+       {
+        "id": "iii",
+        "text": "Morse’s invention was developed"
+       },
+       {
+        "id": "iv",
+        "text": "Sea rescue after the invention of radiotelegraphy"
+       },
+       {
+        "id": "v",
+        "text": "The emergence of many job opportunities"
+       },
+       {
+        "id": "vi",
+        "text": "Standard and variations"
+       },
+       {
+        "id": "vii",
+        "text": "Application of Morse code in a new technology"
+       },
+       {
+        "id": "viii",
+        "text": "The discovery of electricity"
+       },
+       {
+        "id": "ix",
+        "text": "International expansion of Morse Code"
+       },
+       {
+        "id": "x",
+        "text": "The beginning of an end"
+       },
+       {
+        "id": "xi",
+        "text": "The move of using code to convey information"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph A",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "x",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. Paragraph A",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph A"
+       ],
+       "answer": {
+        "raw": "x",
+        "value": "x",
+        "accepted": [
+         "x"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph B",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "xi",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. Paragraph B",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "xi",
+        "value": "xi",
+        "accepted": [
+         "xi"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph C",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "iii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. Paragraph C",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "iii",
+        "value": "iii",
+        "accepted": [
+         "iii"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph D",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "i",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. Paragraph D",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
        }
       },
       {
        "number": 5,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph E",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "vi",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. Paragraph E",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "vi",
+        "value": "vi",
+        "accepted": [
+         "vi"
+        ]
        }
       },
       {
        "number": 6,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph F",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "ii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. Paragraph F",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
        }
       },
       {
        "number": 7,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph G",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "ix",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. Paragraph G",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph G"
+       ],
+       "answer": {
+        "raw": "ix",
+        "value": "ix",
+        "accepted": [
+         "ix"
+        ]
        }
       },
       {
        "number": 8,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph H",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "vii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. Paragraph H",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Paragraph H"
+       ],
+       "answer": {
+        "raw": "vii",
+        "value": "vii",
+        "accepted": [
+         "vii"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[10]",
-      "rawExcerpt": "Questions 1-8\nReading passage 1 has eight paragraphs, A-H. Choose the correct heading for paragraphs A-H from the list of headings below. Write the correct number, i-xi, in boxes 1-8 on your answer sheet."
+      "headerLine": 10,
+      "lineRange": [
+       10,
+       31
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading passage 1 has eight paragraphs, A-H. Choose the correct heading for paragraphs A-H from the list of headings below. Write the correct number, i-xi, in boxes 1-8 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i The advantage of Morse’s invention",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii A suitable job for women",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii Morse’s invention was developed",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv Sea rescue after the invention of radiotelegraphy",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v The emergence of many job opportunities",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi Standard and variations",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii Application of Morse code in a new technology",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii The discovery of electricity",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix International expansion of Morse Code",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "x The beginning of an end",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "xi The move of using code to convey information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. Paragraph A",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. Paragraph F",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. Paragraph G",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. Paragraph H",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q09-13",
      "startQ": 9,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN If there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 9,
        "type": "tfng",
-       "stem": {
-        "plain": "Morse had already been famous as an inventor before his invention of Morse code.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9. Morse had already been famous as an inventor before his invention of Morse code.",
-        "elementPath": "children[15]"
+       "prompt": [
+        "Morse had already been famous as an inventor before his invention of Morse code."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 10,
        "type": "tfng",
-       "stem": {
-        "plain": "Morse waited a long time before receiving support from the Congress.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "10. Morse waited a long time before receiving support from the Congress.",
-        "elementPath": "children[15]"
+       "prompt": [
+        "Morse waited a long time before receiving support from the Congress."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 11,
        "type": "tfng",
-       "stem": {
-        "plain": "Morse code is difficult to learn compared with other designs.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11. Morse code is difficult to learn compared with other designs.",
-        "elementPath": "children[15]"
+       "prompt": [
+        "Morse code is difficult to learn compared with other designs."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 12,
        "type": "tfng",
-       "stem": {
-        "plain": "Companies and firms prefer to employ telegraphy operators from rural areas.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12. Companies and firms prefer to employ telegraphy operators from rural areas.",
-        "elementPath": "children[15]"
+       "prompt": [
+        "Companies and firms prefer to employ telegraphy operators from rural areas."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 13,
        "type": "tfng",
-       "stem": {
-        "plain": "Morse died from overwork.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13. Morse died from overwork.",
-        "elementPath": "children[15]"
+       "prompt": [
+        "Morse died from overwork."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[13]",
-      "rawExcerpt": "Questions 9-13\nDo the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+      "headerLine": 32,
+      "lineRange": [
+       32,
+       41
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN If there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9. Morse had already been famous as an inventor before his invention of Morse code.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10. Morse waited a long time before receiving support from the Congress.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11. Morse code is difficult to learn compared with other designs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. Companies and firms prefer to employ telegraphy operators from rural areas.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. Morse died from overwork.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -273,214 +715,498 @@
    "passageNumber": 2,
    "title": "From A Novice to An Expert",
    "paragraphs": [
-    "Expertise is commitment coupled with creativity. Specifically, it is the commitment of time, energy, and resources to a relatively narrow field of study and the creative energy necessary to generate new knowledge in that field. It takes a considerable amount of time and regular exposure to a large number of cases to become an expert.",
-    "An individual enters a field of study as a novice. The novice needs to learn the guiding principles and rules of a given task in order to perform that task. Concurrently, the novice needs to be exposed to specific cases, or instances, that lest the boundaries of such principles. Generally, a novice will find a mentor to guide her through the process of acquiring new knowledge. A fairly simple example would he someone learning to play chess. The novice chess player seeks a mentor to leach her the object of the game, the number of spaces, the names of the pieces, the function of each piece, how each piece is moved, and the necessary conditions for winning, or losing the game.",
-    "In lime, and with much practice, the novice begins to recognise patterns of behavior within cases and, thus, becomes a journeyman. With more practice and exposure to increasingly complex cases. The journeyman finds patterns not only within cases but also between cases. More importantly, the journeyman learns that these patterns often repeat themselves over time. The journeyman still maintains regular contact with a mentor to solve specific problems and learn more complex strategies. Returning to the example of the chess player, the individual begins to learn patterns of opening moves, offensive and defensive game-playing, strategies, and patterns of victory and defeat.",
-    "When a journeyman starts to make and test hypotheses about future behavior based on past experiences, she begins the next transition. Once she creatively generates knowledge, rather than simply matching, superficial patterns, she becomes an expert. At this point, she is confident in her knowledge and no longer needs a mentor as a guide she becomes responsible for her own knowledge. In the chess example, once a journeyman begins competing against experts, makes predictions based on patterns, and tests those predictions against actual behavior, she is generating new knowledge and a deeper understanding of the game. She is creating her own case, rather than relying on the cases of others.",
-    "The Power of Expertise\nAn expert perceives meaningful patterns in her domain better than non-experts. Where a novice perceives random or disconnected data points, an expert connects regular patterns within and between cases. This ability to identify patterns is not an innate perceptual skill; rather it reflects the organisation of knowledge after exposure to and experience with thou-sands of cases.",
-    "Experts have a deeper understanding of their domains than novices do, and utilise higher-order principles to solve- problems. A novice, for example, might group objects together by color or size, whereas an expert would group the same objects according to their function or utility. Experts comprehend the meaning of data and weigh variables with different criteria within their domains belter than novices. Experts recognise variables that have the largest influence on a particular problem and focus their attention on those variables.",
-    "Experts have better domain-specific short-term and long-term memory than novices do. Moreover, experts perform tasks in their domains faster than novices and commit fewer errors while problem solving. Interestingly, experts go about solving problems differently than novices. Experts spend more time thinking, about a problem to fully understand it at the beginning of a task than do novices, who immediately seek to find a solution, Experts use their knowledge of previous cases as context tor creating mental models to solve given problems.",
-    "Better at self-monitoring than novices, experts are more aware of instances where they have committed errors or failed to understand a problem. Experts check their solution more often than novices and recognise when they are missing, information necessary for solving a problem. Experts are aware of the limits of their domain knowledge and apply their domain’s heuristics to solve problems that fall outside of their experience base.",
-    "The Paradox of Expertise\nThe strengths of expertise can also be weaknesses. Although one would expect experts to be good forecasters, they are not particularly good at making predictions about the future. Since the 1930s, researchers have been testing, the ability of experts to make forecasts. The performance of experts has been tested against actuarial tables to determine if they are better at making predictions than simple statistical models. Seventy years later, with more than two hundred experiments in different domains, it is clear that the answer is no. If sup-plied with an equal amount of data about a particular case, an actuarial table is as good, or better, than an expert at making, calls about the future. Even if an expert is given more specific case information than is available to the statistical model, the expert does not tend to outperform the actuarial table.",
-    "Theorists and researchers differ when trying, to explain why experts are less accurate fore-casters than statistical models. Some have argued that experts, like all humans, are inconsistent when using mental models to make predictions. That is, the model an expert uses for predicting X in one month is different from the model used for predicting X in a following, month, although precisely the same case and same data set are used in both instances.",
-    "A number of researchers point to human biases to explain unreliable expert predictions. During, the last 30 years, researchers have categorised, experimented, and theorised about the cognitive aspects of forecasting. Despite such efforts, the literature shows little consensus regarding the causes or manifestations of human bias."
+    {
+     "type": "text",
+     "text": "Expertise is commitment coupled with creativity. Specifically, it is the commitment of time, energy, and resources to a relatively narrow field of study and the creative energy necessary to generate new knowledge in that field. It takes a considerable amount of time and regular exposure to a large number of cases to become an expert."
+    },
+    {
+     "type": "text",
+     "text": "An individual enters a field of study as a novice. The novice needs to learn the guiding principles and rules of a given task in order to perform that task. Concurrently, the novice needs to be exposed to specific cases, or instances, that lest the boundaries of such principles. Generally, a novice will find a mentor to guide her through the process of acquiring new knowledge. A fairly simple example would he someone learning to play chess. The novice chess player seeks a mentor to leach her the object of the game, the number of spaces, the names of the pieces, the function of each piece, how each piece is moved, and the necessary conditions for winning, or losing the game."
+    },
+    {
+     "type": "text",
+     "text": "In lime, and with much practice, the novice begins to recognise patterns of behavior within cases and, thus, becomes a journeyman. With more practice and exposure to increasingly complex cases. The journeyman finds patterns not only within cases but also between cases. More importantly, the journeyman learns that these patterns often repeat themselves over time. The journeyman still maintains regular contact with a mentor to solve specific problems and learn more complex strategies. Returning to the example of the chess player, the individual begins to learn patterns of opening moves, offensive and defensive game-playing, strategies, and patterns of victory and defeat."
+    },
+    {
+     "type": "text",
+     "text": "When a journeyman starts to make and test hypotheses about future behavior based on past experiences, she begins the next transition. Once she creatively generates knowledge, rather than simply matching, superficial patterns, she becomes an expert. At this point, she is confident in her knowledge and no longer needs a mentor as a guide she becomes responsible for her own knowledge. In the chess example, once a journeyman begins competing against experts, makes predictions based on patterns, and tests those predictions against actual behavior, she is generating new knowledge and a deeper understanding of the game. She is creating her own case, rather than relying on the cases of others."
+    },
+    {
+     "type": "subheading",
+     "text": "The Power of Expertise"
+    },
+    {
+     "type": "text",
+     "text": "An expert perceives meaningful patterns in her domain better than non-experts. Where a novice perceives random or disconnected data points, an expert connects regular patterns within and between cases. This ability to identify patterns is not an innate perceptual skill; rather it reflects the organisation of knowledge after exposure to and experience with thou-sands of cases."
+    },
+    {
+     "type": "text",
+     "text": "Experts have a deeper understanding of their domains than novices do, and utilise higher-order principles to solve- problems. A novice, for example, might group objects together by color or size, whereas an expert would group the same objects according to their function or utility. Experts comprehend the meaning of data and weigh variables with different criteria within their domains belter than novices. Experts recognise variables that have the largest influence on a particular problem and focus their attention on those variables."
+    },
+    {
+     "type": "text",
+     "text": "Experts have better domain-specific short-term and long-term memory than novices do. Moreover, experts perform tasks in their domains faster than novices and commit fewer errors while problem solving. Interestingly, experts go about solving problems differently than novices. Experts spend more time thinking, about a problem to fully understand it at the beginning of a task than do novices, who immediately seek to find a solution, Experts use their knowledge of previous cases as context tor creating mental models to solve given problems."
+    },
+    {
+     "type": "text",
+     "text": "Better at self-monitoring than novices, experts are more aware of instances where they have committed errors or failed to understand a problem. Experts check their solution more often than novices and recognise when they are missing, information necessary for solving a problem. Experts are aware of the limits of their domain knowledge and apply their domain’s heuristics to solve problems that fall outside of their experience base."
+    },
+    {
+     "type": "subheading",
+     "text": "The Paradox of Expertise"
+    },
+    {
+     "type": "text",
+     "text": "The strengths of expertise can also be weaknesses. Although one would expect experts to be good forecasters, they are not particularly good at making predictions about the future. Since the 1930s, researchers have been testing, the ability of experts to make forecasts. The performance of experts has been tested against actuarial tables to determine if they are better at making predictions than simple statistical models. Seventy years later, with more than two hundred experiments in different domains, it is clear that the answer is no. If sup-plied with an equal amount of data about a particular case, an actuarial table is as good, or better, than an expert at making, calls about the future. Even if an expert is given more specific case information than is available to the statistical model, the expert does not tend to outperform the actuarial table."
+    },
+    {
+     "type": "text",
+     "text": "Theorists and researchers differ when trying, to explain why experts are less accurate fore-casters than statistical models. Some have argued that experts, like all humans, are inconsistent when using mental models to make predictions. That is, the model an expert uses for predicting X in one month is different from the model used for predicting X in a following, month, although precisely the same case and same data set are used in both instances."
+    },
+    {
+     "type": "text",
+     "text": "A number of researchers point to human biases to explain unreliable expert predictions. During, the last 30 years, researchers have categorised, experimented, and theorised about the cognitive aspects of forecasting. Despite such efforts, the literature shows little consensus regarding the causes or manifestations of human bias."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-18",
+     "startQ": 14,
+     "endQ": 18,
+     "type": "flow_chart_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the flow-chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 14-18 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "• Novice: needs ",
+         {
+          "blank": 14
+         },
+         "and to perform a given task; exposed to specific cases; guided by a ",
+         {
+          "blank": 15
+         },
+         "through learning"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Journeyman: starts to identify ",
+         {
+          "blank": 16
+         },
+         "within and between cases; often exposed to ",
+         {
+          "blank": 17
+         },
+         "cases; contacts a mentor when facing difficult problems"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Expert: creates predictions and new ",
+         {
+          "blank": 18
+         },
+         "; performs task independently without the help of a mentor"
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "rules, guiding principles",
+        "value": "rules, guiding principles",
+        "accepted": [
+         "rules, guiding principles"
+        ]
+       },
+       "answerNotInPassage": true
+      },
+      {
+       "number": 15,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "mentor",
+        "value": "mentor",
+        "accepted": [
+         "mentor"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "patterns of behavior/patterns",
+        "value": "patterns of behavior/patterns",
+        "accepted": [
+         "patterns of behavior",
+         "patterns"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "complex",
+        "value": "complex",
+        "accepted": [
+         "complex"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "knowledge",
+        "value": "knowledge",
+        "accepted": [
+         "knowledge"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_NOT_IN_PASSAGE"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 56,
+      "lineRange": [
+       56,
+       60
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-18",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the flow-chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 14-18 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Novice: needs (14)………………….and to perform a given task; exposed to specific cases; guided by a (15)………………….through learning",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Journeyman: starts to identify (16)…………………….within and between cases; often exposed to (17)……………………cases; contacts a mentor when facing difficult problems",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Expert: creates predictions and new (18)………………….; performs task independently without the help of a mentor",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q19-23",
      "startQ": 19,
      "endQ": 23,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN If there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 19,
        "type": "tfng",
-       "stem": {
-        "plain": "Novices and experts use the same system to classify objects.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. Novices and experts use the same system to classify objects.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Novices and experts use the same system to classify objects."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "A novice’s training is focused on memory skills.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. A novice’s training is focused on memory skills.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "A novice’s training is focused on memory skills."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "Experts have higher efficiency than novices when solving problems in their own field.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. Experts have higher efficiency than novices when solving problems in their own field.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Experts have higher efficiency than novices when solving problems in their own field."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "When facing a problem, a novices always tries to solve it straight away.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. When facing a problem, a novices always tries to solve it straight away.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "When facing a problem, a novices always tries to solve it straight away."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "Experts are better at recognising their own mistakes and limits.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. Experts are better at recognising their own mistakes and limits.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Experts are better at recognising their own mistakes and limits."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[30]",
-      "rawExcerpt": "Questions 19-23\nDo the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+      "headerLine": 61,
+      "lineRange": [
+       61,
+       70
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 19-23",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 2? In boxes 19-23 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN If there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Novices and experts use the same system to classify objects.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. A novice’s training is focused on memory skills.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. Experts have higher efficiency than novices when solving problems in their own field.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. When facing a problem, a novices always tries to solve it straight away.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. Experts are better at recognising their own mistakes and limits.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g05",
-     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q24-26",
      "startQ": 24,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less ",
+         {
+          "blank": 24
+         },
+         "at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to ",
+         {
+          "blank": 25
+         },
+         "but there isn’t a great deal of ",
+         {
+          "blank": 26
+         },
+         "as to its cause and manifestation."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24) ______ at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to (25) ______ but there isn’t a great deal of (26) ______ as to its cause and manifestation.",
-        "segments": [
-         "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less",
-         {
-          "blank": 24
-         },
-         "at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to",
-         {
-          "blank": 25
-         },
-         "but there isn’t a great deal of",
-         {
-          "blank": 26
-         },
-         "as to its cause and manifestation."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Accurate",
+        "value": "Accurate",
+        "accepted": [
+         "Accurate"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Accurate",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24)……………………at making predictions",
-        "elementPath": "children[34]"
        }
       },
       {
        "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24) ______ at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to (25) ______ but there isn’t a great deal of (26) ______ as to its cause and manifestation.",
-        "segments": [
-         "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less",
-         {
-          "blank": 24
-         },
-         "at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to",
-         {
-          "blank": 25
-         },
-         "but there isn’t a great deal of",
-         {
-          "blank": 26
-         },
-         "as to its cause and manifestation."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Human biases",
+        "value": "Human biases",
+        "accepted": [
+         "Human biases"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Human biases",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24)……………………at making predictions",
-        "elementPath": "children[34]"
        }
       },
       {
        "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24) ______ at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to (25) ______ but there isn’t a great deal of (26) ______ as to its cause and manifestation.",
-        "segments": [
-         "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less",
-         {
-          "blank": 24
-         },
-         "at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to",
-         {
-          "blank": 25
-         },
-         "but there isn’t a great deal of",
-         {
-          "blank": 26
-         },
-         "as to its cause and manifestation."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Consensus",
+        "value": "Consensus",
+        "accepted": [
+         "Consensus"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Consensus",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24)……………………at making predictions",
-        "elementPath": "children[34]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[33]",
-      "rawExcerpt": "Questions 24-26\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+      "headerLine": 71,
+      "lineRange": [
+       71,
+       73
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 24-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Though experts are quite effective at solving problems in their own domains, their strengths can also be turned against them. Studies have shown that experts are less (24)……………………at making predictions than statistical models. Some researchers theorise it is because experts can also be inconsistent like all others. Yet some believe it is due to (25)……………………..but there isn’t a great deal of (26)…………",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -489,532 +1215,581 @@
    "passageNumber": 3,
    "title": "High speed photography",
    "paragraphs": [
-    "A Photography gained the interest of many scientists and artists from its inception. Scientists have used photography to record and study movements, such as Eadweard Muybridge’s study of human and animal locomotion in 1887. Artists are equally interested by these aspects but also try to explore avenues other than the photo-mechanical representation of reality, such as the pictorialist movement. Military, police, and security forces use photography for surveillance, recognition and data storage. Photography is used by amateurs to preserve memories, to capture special moments, to tell stories, to send messages, and as a source of entertainment. Various technological improvements and techniques have even allowed for visualising events that are too fast or too slow for the human eye.",
-    "B One of such techniques is called fast motion or professionally known as time-lapse. Time-lapse photography is the perfect technique for capturing events and movements in the natural world that occur over a timescale too slow for human perception to follow. The life cycle of a mushroom, for example, is incredibly subtle to the human eye. To present its growth in front of audiences, the principle applied is a simple one: a series of photographs are taken and used in sequence to make a moving-image film, but since each frame is taken with a lapse at a time interval between each shot, when played back at normal speed, a continuous action is produced and it appears to speed up. Put simply: we are shrinking time. Objects and events that: would normally take several minutes, days or even months can be viewed to completion in seconds having been sped up by factors of tens to millions.",
-    "C Another commonly used technique is high-speed photography, the science of taking pictures of very fast phenomena. High-speed photography can be considered to be the opposite of time-lapse photography. One of the many applications is found in biology studies to study birds, bats and even spider silk. Imagine a hummingbird hovering almost completely still in the air, feeding on nectar. With every flap, its wings bend, flex and change shape. These subtle movements precisely control the lift its wings generate, making it an excellent hoverer. But a hummingbird flaps its wings up to 80 times every second. The only way to truly capture this motion is with cameras that will, in effect, slow down time. To do this, a greater length of film is taken at a high sampling frequency or frame rate, which is much faster than it will be projected on screen. When replayed at normal speed, time appears to be slowed down proportionately. That is why high-speed cameras have become such a mainstay of biology.",
-    "D In common usage, high-speed photography can also refer to the use of high-speed cameras that the photograph itself may be taken in a way as to appear to freeze the motion, especially to reduce motion blur. It requires a sensor with good sensitivity and either a very good shuttering system or a very fast strobe light. The recent National Geographic footage—captured last summer during an intensive three-day shoot at the Cincinnati Zoo—is unprecedented in its clarity and detail. “I’ve watched cheetahs run for 30 years,” said Cathryn Milker, founder of the zoo’s Cat Ambassador Program. “But I saw things in that super slow-motion video that I’ve never seen before.” The slow-motion video is entrancing. Every part of the sprinting cat’s anatomy—supple limbs, rippling muscles, hyperflexible spine—works together in a symphony of speed, revealing the fluid grace of the world’s fastest land animal.",
-    "E But things can’t get any more complicated in the case of filming a frog catching its prey. Frogs can snatch up prey in a few thousandths of a second—striking out with elastic tongues. Biologists would love to see how a frog’s tongue roll out, adhere to prey, and roll back into the frog’s mouth. But this all happened too fast, 50 times faster than an eye blink. So naturally people thought of using high-speed camera to capture this fantastic movement in slow motion. Yet one problem still remains—viewers would be bored if they watch the frog swim in slow motion for too long. So how to skip this? The solution is a simple one—adjust the playback speed, which is also called by some the film speed adjustment. The film will originally be shot at a high frame (often 300 frames per second, because it can be converted to much lower frame rates without major issues), but at later editing stage this high frame rate will only be preserved for the prey catching part, while the swimming part will be converted to the normal speed at 24 frames per second. Voila, the scientists can now sit back and enjoy watching without having to go through the pain of waiting.",
-    "F Sometimes taking a good picture or shooting a good film is not all about technology, but patience, like in the case of bat. Bats are small, dark-colored; they fly fast and are active only at night. To capture bats on film, one must use some type of camera-tripping device. Photographers or film-makers often place camera near the bat cave, on the path of the flying bats. The camera must be hard-wired with a tripping device so that every time a bat breaks the tripping beam the camera fires and it will keep doing so through the night until the camera’s battery runs out. Though highly-advanced tripping device can now allow for unmanned shooting, it still may take several nights to get a truly high quality film.",
-    "G Is it science? Is it art? Since the technique was first pioneered around two hundred years ago, photography has developed to a state where it is almost unrecognisable. Some people would even say the future of photography will be nothing like how we imagine it. No matter what future it may hold, photography will continue to develop as it has been repeatedly demonstrated in many aspects of our life that “a picture is worth a thousand words.”"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Photography gained the interest of many scientists and artists from its inception. Scientists have used photography to record and study movements, such as Eadweard Muybridge’s study of human and animal locomotion in 1887. Artists are equally interested by these aspects but also try to explore avenues other than the photo-mechanical representation of reality, such as the pictorialist movement. Military, police, and security forces use photography for surveillance, recognition and data storage. Photography is used by amateurs to preserve memories, to capture special moments, to tell stories, to send messages, and as a source of entertainment. Various technological improvements and techniques have even allowed for visualising events that are too fast or too slow for the human eye."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "One of such techniques is called fast motion or professionally known as time-lapse. Time-lapse photography is the perfect technique for capturing events and movements in the natural world that occur over a timescale too slow for human perception to follow. The life cycle of a mushroom, for example, is incredibly subtle to the human eye. To present its growth in front of audiences, the principle applied is a simple one: a series of photographs are taken and used in sequence to make a moving-image film, but since each frame is taken with a lapse at a time interval between each shot, when played back at normal speed, a continuous action is produced and it appears to speed up. Put simply: we are shrinking time. Objects and events that: would normally take several minutes, days or even months can be viewed to completion in seconds having been sped up by factors of tens to millions."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Another commonly used technique is high-speed photography, the science of taking pictures of very fast phenomena. High-speed photography can be considered to be the opposite of time-lapse photography. One of the many applications is found in biology studies to study birds, bats and even spider silk. Imagine a hummingbird hovering almost completely still in the air, feeding on nectar. With every flap, its wings bend, flex and change shape. These subtle movements precisely control the lift its wings generate, making it an excellent hoverer. But a hummingbird flaps its wings up to 80 times every second. The only way to truly capture this motion is with cameras that will, in effect, slow down time. To do this, a greater length of film is taken at a high sampling frequency or frame rate, which is much faster than it will be projected on screen. When replayed at normal speed, time appears to be slowed down proportionately. That is why high-speed cameras have become such a mainstay of biology."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "In common usage, high-speed photography can also refer to the use of high-speed cameras that the photograph itself may be taken in a way as to appear to freeze the motion, especially to reduce motion blur. It requires a sensor with good sensitivity and either a very good shuttering system or a very fast strobe light. The recent National Geographic footage—captured last summer during an intensive three-day shoot at the Cincinnati Zoo—is unprecedented in its clarity and detail. “I’ve watched cheetahs run for 30 years,” said Cathryn Milker, founder of the zoo’s Cat Ambassador Program. “But I saw things in that super slow-motion video that I’ve never seen before.” The slow-motion video is entrancing. Every part of the sprinting cat’s anatomy—supple limbs, rippling muscles, hyperflexible spine—works together in a symphony of speed, revealing the fluid grace of the world’s fastest land animal."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "But things can’t get any more complicated in the case of filming a frog catching its prey. Frogs can snatch up prey in a few thousandths of a second—striking out with elastic tongues. Biologists would love to see how a frog’s tongue roll out, adhere to prey, and roll back into the frog’s mouth. But this all happened too fast, 50 times faster than an eye blink. So naturally people thought of using high-speed camera to capture this fantastic movement in slow motion. Yet one problem still remains—viewers would be bored if they watch the frog swim in slow motion for too long. So how to skip this? The solution is a simple one—adjust the playback speed, which is also called by some the film speed adjustment. The film will originally be shot at a high frame (often 300 frames per second, because it can be converted to much lower frame rates without major issues), but at later editing stage this high frame rate will only be preserved for the prey catching part, while the swimming part will be converted to the normal speed at 24 frames per second. Voila, the scientists can now sit back and enjoy watching without having to go through the pain of waiting."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Sometimes taking a good picture or shooting a good film is not all about technology, but patience, like in the case of bat. Bats are small, dark-colored; they fly fast and are active only at night. To capture bats on film, one must use some type of camera-tripping device. Photographers or film-makers often place camera near the bat cave, on the path of the flying bats. The camera must be hard-wired with a tripping device so that every time a bat breaks the tripping beam the camera fires and it will keep doing so through the night until the camera’s battery runs out. Though highly-advanced tripping device can now allow for unmanned shooting, it still may take several nights to get a truly high quality film."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Is it science? Is it art? Since the technique was first pioneered around two hundred years ago, photography has developed to a state where it is almost unrecognisable. Some people would even say the future of photography will be nothing like how we imagine it. No matter what future it may hold, photography will continue to develop as it has been repeatedly demonstrated in many aspects of our life that “a picture is worth a thousand words.”"
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p3.q27-30",
+     "startQ": 27,
+     "endQ": 30,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Look at the following organisms (Questions 27-30) and the list of features below. Match each organism with the correct feature, A-D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "too fast to be perceived"
+       },
+       {
+        "id": "B",
+        "text": "film at the place where the animal will pass"
+       },
+       {
+        "id": "C",
+        "text": "too slow to be visible to human eyes"
+       },
+       {
+        "id": "D",
+        "text": "adjust the filming speed to make it interesting"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "matching_features",
+       "prompt": [
+        "Mushroom"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "matching_features",
+       "prompt": [
+        "Hummingbird"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_features",
+       "prompt": [
+        "Frog"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_features",
+       "prompt": [
+        "Bat"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 82,
+      "lineRange": [
+       82,
+       91
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-30",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Look at the following organisms (Questions 27-30) and the list of features below. Match each organism with the correct feature, A-D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. Mushroom",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Hummingbird",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Frog",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Bat",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A too fast to be perceived",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B film at the place where the animal will pass",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C too slow to be visible to human eyes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D adjust the filming speed to make it interesting",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q31-35",
      "startQ": 31,
      "endQ": 35,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a ",
+         {
+          "blank": 31
+         },
+         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a ",
+         {
+          "blank": 32
+         },
+         "that is faster than what it naturally is. This technique can make audiences feel as if ",
+         {
+          "blank": 33
+         },
+         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a ",
+         {
+          "blank": 34
+         },
+         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is ",
+         {
+          "blank": 35
+         }
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 31,
-       "type": "completion",
-       "stem": {
-        "plain": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31) ______ before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (32) ______ that is faster than what it naturally is. This technique can make audiences feel as if (33) ______ is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a (34) ______ of film, and then projected on screen at normal playback speed. This makes viewers feel time is (35) ______",
-        "segments": [
-         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a",
-         {
-          "blank": 31
-         },
-         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a",
-         {
-          "blank": 32
-         },
-         "that is faster than what it naturally is. This technique can make audiences feel as if",
-         {
-          "blank": 33
-         },
-         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a",
-         {
-          "blank": 34
-         },
-         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is",
-         {
-          "blank": 35
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "lapse/time interval",
+        "value": "lapse/time interval",
+        "accepted": [
+         "lapse",
+         "time interval"
         ]
-       },
-       "options": null,
-       "correctAnswer": "lapse/time interval",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs ",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 32,
-       "type": "completion",
-       "stem": {
-        "plain": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31) ______ before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (32) ______ that is faster than what it naturally is. This technique can make audiences feel as if (33) ______ is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a (34) ______ of film, and then projected on screen at normal playback speed. This makes viewers feel time is (35) ______",
-        "segments": [
-         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a",
-         {
-          "blank": 31
-         },
-         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a",
-         {
-          "blank": 32
-         },
-         "that is faster than what it naturally is. This technique can make audiences feel as if",
-         {
-          "blank": 33
-         },
-         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a",
-         {
-          "blank": 34
-         },
-         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is",
-         {
-          "blank": 35
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "continuous action",
+        "value": "continuous action",
+        "accepted": [
+         "continuous action"
         ]
-       },
-       "options": null,
-       "correctAnswer": "continuous action",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs ",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 33,
-       "type": "completion",
-       "stem": {
-        "plain": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31) ______ before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (32) ______ that is faster than what it naturally is. This technique can make audiences feel as if (33) ______ is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a (34) ______ of film, and then projected on screen at normal playback speed. This makes viewers feel time is (35) ______",
-        "segments": [
-         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a",
-         {
-          "blank": 31
-         },
-         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a",
-         {
-          "blank": 32
-         },
-         "that is faster than what it naturally is. This technique can make audiences feel as if",
-         {
-          "blank": 33
-         },
-         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a",
-         {
-          "blank": 34
-         },
-         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is",
-         {
-          "blank": 35
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "time",
+        "value": "time",
+        "accepted": [
+         "time"
         ]
-       },
-       "options": null,
-       "correctAnswer": "time",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs ",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 34,
-       "type": "completion",
-       "stem": {
-        "plain": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31) ______ before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (32) ______ that is faster than what it naturally is. This technique can make audiences feel as if (33) ______ is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a (34) ______ of film, and then projected on screen at normal playback speed. This makes viewers feel time is (35) ______",
-        "segments": [
-         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a",
-         {
-          "blank": 31
-         },
-         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a",
-         {
-          "blank": 32
-         },
-         "that is faster than what it naturally is. This technique can make audiences feel as if",
-         {
-          "blank": 33
-         },
-         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a",
-         {
-          "blank": 34
-         },
-         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is",
-         {
-          "blank": 35
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "greater length",
+        "value": "greater length",
+        "accepted": [
+         "greater length"
         ]
-       },
-       "options": null,
-       "correctAnswer": "greater length",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs ",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 35,
-       "type": "completion",
-       "stem": {
-        "plain": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31) ______ before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (32) ______ that is faster than what it naturally is. This technique can make audiences feel as if (33) ______ is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a (34) ______ of film, and then projected on screen at normal playback speed. This makes viewers feel time is (35) ______",
-        "segments": [
-         "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a",
-         {
-          "blank": 31
-         },
-         "before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a",
-         {
-          "blank": 32
-         },
-         "that is faster than what it naturally is. This technique can make audiences feel as if",
-         {
-          "blank": 33
-         },
-         "is shrunk. On the other hand, to demonstrate how fast things move, the movement is exposed on a",
-         {
-          "blank": 34
-         },
-         "of film, and then projected on screen at normal playback speed. This makes viewers feel time is",
-         {
-          "blank": 35
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "slowed down proportionately",
+        "value": "slowed down proportionately",
+        "accepted": [
+         "slowed down proportionately"
         ]
-       },
-       "options": null,
-       "correctAnswer": "slowed down proportionately",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs ",
-        "elementPath": "children[47]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[46]",
-      "rawExcerpt": "Questions 31-35\nComplete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+      "headerLine": 92,
+      "lineRange": [
+       92,
+       94
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 31-35",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Fast motion (professionally known as time-lapse photography) and slow motion (or high-speed photography) are two commonest techniques of photography. To present before audiences something that occurs naturally slow, photographers take each picture at a (31)………………..before another picture. When these pictures are finally shown on screen in sequence at a normal motion picture rate, audiences see a (3",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Reading Passage 3 has seven paragraphs, A-G. Which paragraph contains the following information?",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p3.q36-40",
      "startQ": 36,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 3 has seven paragraphs, A-G. Which paragraph contains the following information?",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 36,
        "type": "matching_information",
-       "stem": {
-        "plain": "a description of photography’s application in various fields",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. a description of photography’s application in various fields",
-        "elementPath": "children[49]"
+       "prompt": [
+        "a description of photography’s application in various fields"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 37,
        "type": "matching_information",
-       "stem": {
-        "plain": "a reference to why high-speed photography has a significant role in biology",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. a reference to why high-speed photography has a significant role in biology",
-        "elementPath": "children[49]"
+       "prompt": [
+        "a reference to why high-speed photography has a significant role in biology"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 38,
        "type": "matching_information",
-       "stem": {
-        "plain": "a traditional wisdom that assures readers of the prospects of photography",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. a traditional wisdom that assures readers of the prospects of photography",
-        "elementPath": "children[49]"
+       "prompt": [
+        "a traditional wisdom that assures readers of the prospects of photography"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
        }
       },
       {
        "number": 39,
        "type": "matching_information",
-       "stem": {
-        "plain": "a reference to how film is processed before final release",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. a reference to how film is processed before final release",
-        "elementPath": "children[49]"
+       "prompt": [
+        "a reference to how film is processed before final release"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 40,
        "type": "matching_information",
-       "stem": {
-        "plain": "a description of filming shooting without human effort",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. a description of filming shooting without human effort",
-        "elementPath": "children[49]"
+       "prompt": [
+        "a description of filming shooting without human effort"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[48]",
-      "rawExcerpt": "Questions 36-40\nReading Passage 3 has seven paragraphs, A-G. Which paragraph contains the following information?"
+      "headerLine": 95,
+      "lineRange": [
+       95,
+       101
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 36-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 3 has seven paragraphs, A-G. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. a description of photography’s application in various fields",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. a reference to why high-speed photography has a significant role in biology",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. a traditional wisdom that assures readers of the prospects of photography",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. a reference to how film is processed before final release",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. a description of filming shooting without human effort",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "x"
-   },
-   {
-    "number": 2,
-    "value": "xi"
-   },
-   {
-    "number": 3,
-    "value": "iii"
-   },
-   {
-    "number": 4,
-    "value": "i"
-   },
-   {
-    "number": 5,
-    "value": "vi"
-   },
-   {
-    "number": 6,
-    "value": "ii"
-   },
-   {
-    "number": 7,
-    "value": "ix"
-   },
-   {
-    "number": 8,
-    "value": "vii"
-   },
-   {
-    "number": 9,
-    "value": "False"
-   },
-   {
-    "number": 10,
-    "value": "True"
-   },
-   {
-    "number": 11,
-    "value": "True"
-   },
-   {
-    "number": 12,
-    "value": "NG"
-   },
-   {
-    "number": 13,
-    "value": "NG"
-   },
-   {
-    "number": 14,
-    "value": "rules, guiding principles"
-   },
-   {
-    "number": 15,
-    "value": "mentor"
-   },
-   {
-    "number": 16,
-    "value": "patterns of behavior/patterns"
-   },
-   {
-    "number": 17,
-    "value": "complex"
-   },
-   {
-    "number": 18,
-    "value": "knowledge"
-   },
-   {
-    "number": 19,
-    "value": "False"
-   },
-   {
-    "number": 20,
-    "value": "NG"
-   },
-   {
-    "number": 21,
-    "value": "True"
-   },
-   {
-    "number": 22,
-    "value": "True"
-   },
-   {
-    "number": 23,
-    "value": "True"
-   },
-   {
-    "number": 24,
-    "value": "Accurate"
-   },
-   {
-    "number": 25,
-    "value": "Human biases"
-   },
-   {
-    "number": 26,
-    "value": "Consensus"
-   },
-   {
-    "number": 27,
-    "value": "C"
-   },
-   {
-    "number": 28,
-    "value": "A"
-   },
-   {
-    "number": 29,
-    "value": "D"
-   },
-   {
-    "number": 30,
-    "value": "B"
-   },
-   {
-    "number": 31,
-    "value": "lapse/time interval"
-   },
-   {
-    "number": 32,
-    "value": "continuous action"
-   },
-   {
-    "number": 33,
-    "value": "time"
-   },
-   {
-    "number": 34,
-    "value": "greater length"
-   },
-   {
-    "number": 35,
-    "value": "slowed down proportionately"
-   },
-   {
-    "number": 36,
-    "value": "A"
-   },
-   {
-    "number": 37,
-    "value": "C"
-   },
-   {
-    "number": 38,
-    "value": "G"
-   },
-   {
-    "number": 39,
-    "value": "E"
-   },
-   {
-    "number": 40,
-    "value": "F"
+ "testReasonCodes": [],
+ "warnings": [
+  {
+   "code": "PASSAGE_TITLE_MISSING",
+   "detail": {
+    "passage": 1
    }
-  ]
+  }
+ ],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 8,
+  "questionsInSource": 40,
+  "productionQuestions": 35,
+  "answerKeyItems": 40
  },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "Complete the flow-chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 14-18 on your a"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     30
-    ],
-    "extracted": 3,
-    "expected": 4
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Look at the following organisms (Questions 27-30) and the list of features below. Match each organism with the correct feature, A-D. A too f"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 31,
-    "answers": 40
-   }
-  }
- ],
- "validationWarnings": [
-  {
-   "unit": "group",
-   "code": "DEGENERATE_STEMS_DROPPED",
-   "detail": "1 bare-letter questions dropped in g06"
-  }
- ],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "094654b5b0aa4d1493980f6684cb3774e04a882c3e2350017dfe00e704b1f1a8"
+ "contentFingerprint": "a0519df8602b081a261113005399e6026f8f589e5871dab5d6ef9fbf6ac9afdb"
 }

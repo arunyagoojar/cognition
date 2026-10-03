@@ -1,37 +1,48 @@
 {
  "slug": "ielts-reading-test-48",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Use the information in the text to match the statements (1 – 8) with the animals (A – D). Write the appropriate letter ("
-   }
+   "groupId": "p1.q09-13",
+   "range": [
+    9,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary below. Choose your answers from the box below the summary and write them in boxes 9- 12 on your answer sheet. NB There are more words than spaces, so you will not use them at all."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "The reading passage on Insomnia has 7 paragraphs (A – G). From the list of headings below choose the most suitable headi"
-   }
+   "groupId": "p3.q28-35",
+   "range": [
+    28,
+    35
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Match the views (28 – 35) with the people listed below."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 18,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Read the passage about alternative farming methods in Oregon again and look at the statements below. In boxes 36 – 40 on your answer sheet write:"
   }
  ]
 }

@@ -1,42 +1,20 @@
 {
  "slug": "ielts-reading-test-265",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     8,
-     9
-    ],
-    "instruction": "Choose TWO letters, A-E. Write the correct letters in your answer sheet. Which TWO of the following statements are true "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "Choose TWO letters, A-F Write your answers in boxes 25 and 26 on your answer sheet. Which TWO of the following statement"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 36,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "CONTAMINATION",
-   "evidence": "G Slice-of-life ads are another tried and tested method—they paint a picture of "
+   "groupId": "p1.q10-13",
+   "range": [
+    10,
+    13
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT"
+   ],
+   "instruction": "Complete the sentences below using NO MORE THAN ONE WORD OR NUMBER from the passage."
   }
  ]
 }

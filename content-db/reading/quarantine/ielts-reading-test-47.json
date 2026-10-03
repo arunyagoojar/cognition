@@ -1,73 +1,33 @@
 {
  "slug": "ielts-reading-test-47",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     8,
-     12
-    ],
-    "instruction": "Complete the flow chart below. Write NO MORE THAN TWO WORDS from the passage."
-   }
+   "groupId": "p2.q20-26",
+   "range": [
+    20,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. A Proposal for Regulating Multinational Corporations"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "Choose the correct letter; A, B, C or D. Write the correct letter in box 13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Choose the correct letter; A, B, C or D. Write the correct letter in boxes 14 – 19 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     20,
-     26
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS OR A NUMBER from the passage. Questions 31-35\nClassify the foll"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 5,
-    "answers": 40
-   }
+   "groupId": "p3.q27-30",
+   "range": [
+    27,
+    30
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS OR A NUMBER from the passage."
   }
  ]
 }

@@ -1,61 +1,35 @@
 {
  "slug": "ielts-reading-test-99",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "The text has 8 paragraphs (A – H). Which paragraph does each of the following headings best fit?"
-   }
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "According to the information given in the text, choose the correct answer or answers from the choices given."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     22
-    ],
-    "instruction": "According to the text, FIVE of the following statements are true. Write the corresponding letters in answer boxes 18 to "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     23,
-     26
-    ],
-    "instruction": "According to the information given in the text, choose the correct answer or answers from the choices given."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "For each question, only ONE of the choices is correct. Write the corresponding letter in the appropriate box on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p3.q31-35",
+   "range": [
+    31,
+    35
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following sentences using NO MORE THAN THREE WORDS from the text for each gap."
   }
  ]
 }

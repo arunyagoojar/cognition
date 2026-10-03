@@ -1,37 +1,47 @@
 {
  "slug": "ielts-reading-test-197",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     10
-    ],
-    "instruction": "Complete the table. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
+   "groupId": "p1.q05-10",
+   "range": [
+    5,
+    10
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the table. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     18,
-     23
-    ],
-    "instruction": "Complete the flow chart. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
+   "groupId": "p2.q18-23",
+   "range": [
+    18,
+    23
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the flow chart. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 19,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT",
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Give TWO examples of the following categories. Choose NO MORE THAN TWO WORDS from the passage for each example."
   }
  ]
 }

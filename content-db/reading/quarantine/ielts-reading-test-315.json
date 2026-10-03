@@ -1,62 +1,33 @@
 {
  "slug": "ielts-reading-test-315",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     10
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
+   "groupId": "p1.q05-10",
+   "range": [
+    5,
+    10
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the passage for each answer. • Developed with the aid of SECURE"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS/AND OR A NUMBER from the passage for each answer. Choose your answers in boxes "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     26
-    ],
-    "extracted": 2,
-    "expected": 3
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     26
-    ],
-    "instruction": "Choose the correct option. Flynn does not intend to patent his filter because he\n\nA charitable trust.\n\nB filtration experiment.\n\nC water fil"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
+   "groupId": "p2.q24-26",
+   "range": [
+    24,
+    26
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Choose the correct option. Flynn does not intend to patent his filter because he"
   }
  ]
 }

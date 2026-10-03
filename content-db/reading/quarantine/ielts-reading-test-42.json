@@ -1,61 +1,47 @@
 {
  "slug": "ielts-reading-test-42",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     15,
-     19
-    ],
-    "instruction": "Choose the correct letters, A-C, and write them in boxes 15-19 on your Answer Sheet"
-   }
+   "groupId": "p1.q08-14",
+   "range": [
+    8,
+    14
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary of the reading passage below. Choose your answers from the box below, and write them in boxes 8-14 on your Answer Sheet. There are more words than spaces so you will not use them "
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     20,
-     27
-    ],
-    "instruction": "Complete the flowchart about the pipe ceremony. Write NO MORE THAN THREE WORDS for each answer."
-   }
+   "groupId": "p2.q20-27",
+   "range": [
+    20,
+    27
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the flowchart about the pipe ceremony. Write NO MORE THAN THREE WORDS for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     28,
-     33
-    ],
-    "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS ."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     34,
-     37
-    ],
-    "instruction": "Match each description below with the ocean region that it describes. In boxes 34-37 on your Answer Sheet, write A if it"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 7,
-    "answers": 40
-   }
+   "groupId": "p3.q38-40",
+   "range": [
+    38,
+    40
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "The list below gives some possible reasons for mapping the ocean floor. Write the appropriate Roman numerals i-vi in boxes 38-40 on your Answer Sheet."
   }
  ]
 }

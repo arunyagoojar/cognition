@@ -1,66 +1,49 @@
 {
  "slug": "ielts-reading-test-62",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     23,
-     25
-    ],
-    "instruction": "Choose the appropriate letters A-D and write them in boxes 23-25 on your answer sheet. 25 What word best describes the w"
-   }
+   "groupId": "p2.q26-28",
+   "range": [
+    26,
+    28
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "The writer mentions a number of factors which lead him to doubt the value of the WZCS document. Write your answers (A-F) in boxes 26-28 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     26,
-     28
-    ],
-    "instruction": "The writer mentions a number of factors which lead him to doubt the value of the WZCS document. Which THREE of the follo"
-   }
+   "groupId": "p3.q29-35",
+   "range": [
+    29,
+    35
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the table below using information from Reading Passage 3. Write NO MORE THAN THREE WORDS for each answer. Write your answers in boxes 29-35 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     29,
-     35
-    ],
-    "instruction": "Complete the table below using information from Reading Passage 3. Write NO MORE THAN THREE WORDS for each answer. Write"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     36,
-     40
-    ],
-    "instruction": "Reading Passage 3 describes a number of cause and effect relationships. Match each Cause (36-40) in List A, with its Eff"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "CONTAMINATION",
-   "evidence": "One of London Zoo’s recent advertisements caused me some irritation, so patently"
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Reading Passage 3 describes a number of cause and effect relationships. Match each Cause (36-40) in List A, with its Effect (A-H) in List B. Write your answers (A-H) in boxes 36 40 on your answer shee"
   }
  ]
 }

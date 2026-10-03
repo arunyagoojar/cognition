@@ -1,49 +1,107 @@
 {
  "slug": "ielts-reading-test-49",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     12,
-     14
-    ],
-    "instruction": "According to the text which of the following are symptoms of diabetes? Choose THREE letters (A – G) and write them in bo"
-   }
+   "groupId": "p1.q08-11",
+   "range": [
+    8,
+    11
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the following statements with the best ending from the box below. Write the appropriate letters A – H in boxes 8 – 11 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     34,
-     36
-    ],
-    "instruction": "Complete the labels on the diagram of a coffee bean below. Choose your answers from the text and write them in boxes 34 "
-   }
+   "groupId": "p1.q12-14",
+   "range": [
+    12,
+    14
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "EMPTY_QUESTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose THREE letters (A – G) and write them in boxes 12 – 14 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     37,
-     40
-    ],
-    "instruction": "Using the information in the passage, complete the flow chart below. Write your answers in boxes 37 – 40 on your answer "
-   }
+   "groupId": "p2.q15-21",
+   "range": [
+    15,
+    21
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Read passage 2and look at the statements below. In boxes 15 – 21 on your answer sheet write:"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q22-27",
+   "range": [
+    22,
+    27
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary relating to Arctic Haze below. Choose your answers from the box below the summary and write them in boxes 22 – 27 on your answer sheet. NB There are more words than spaces, so you"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q28-33",
+   "range": [
+    28,
+    33
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "The reading passage on The Story of Coffee has 7 paragraphs A – G. From the list of headings below choose the most suitable headings for paragraphs B – G."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q34-36",
+   "range": [
+    34,
+    36
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2",
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the labels on the diagram of a coffee bean below. Choose your answers from the text and write them in boxes 34 – 36 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "MALFORMED_BLANK",
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Using the information in the passage, complete the flow chart below. Write your answers in boxes 37 – 40 on your answer sheet. Use NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

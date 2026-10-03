@@ -1,10 +1,20 @@
 {
  "slug": "ielts-reading-test-172",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p3.q32-36",
+   "range": [
+    32,
+    36
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the diagrams. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

@@ -1,37 +1,35 @@
 {
  "slug": "ielts-reading-test-28",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Choose the appropriate letters A-D and write them in boxes 14-17."
-   }
+   "groupId": "p1.q10-13",
+   "range": [
+    10,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary using words from the options given below. Write your answers in boxes 10-13 on your answer sheet. NB There are more answers than spaces, so you will not use them all."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     22,
-     25
-    ],
-    "instruction": "Reading Passage 2 has ten paragraphs, A-J. Which paragraphs state the following information? Question 26\n\nFrom the list "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 14,
-    "answers": 40
-   }
+   "groupId": "p2.q26-26",
+   "range": [
+    26,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "From the list below choose the most suitable title for the whole of Reading Passage 2."
   }
  ]
 }

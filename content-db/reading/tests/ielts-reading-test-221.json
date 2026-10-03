@@ -1,307 +1,745 @@
 {
  "id": "reading.test-0221.db6ec0c4",
  "module": "reading",
+ "slug": "ielts-reading-test-221",
  "sourceNumbers": [
   221
  ],
- "slug": "ielts-reading-test-221",
  "title": "IELTS Academic Reading Test 221",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-221/index.html",
-   "sha256": "c410ee334254db0c4e2a37e2f4d917c8f563ad738961bddf265085d00db366c4",
-   "manifestHashMatch": true,
+   "sha256": "b74321d1b340787ca596454c5cc9b05c967a4e2475b8893e5ba569c73edb2339",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-221/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "True"
+   },
+   {
+    "number": 2,
+    "raw": "True"
+   },
+   {
+    "number": 3,
+    "raw": "False"
+   },
+   {
+    "number": 4,
+    "raw": "False"
+   },
+   {
+    "number": 5,
+    "raw": "NG"
+   },
+   {
+    "number": 6,
+    "raw": "NG"
+   },
+   {
+    "number": 7,
+    "raw": "False"
+   },
+   {
+    "number": 8,
+    "raw": "NG"
+   },
+   {
+    "number": 9,
+    "raw": "Pointed north"
+   },
+   {
+    "number": 10,
+    "raw": "On his own"
+   },
+   {
+    "number": 11,
+    "raw": "B"
+   },
+   {
+    "number": 12,
+    "raw": "A"
+   },
+   {
+    "number": 13,
+    "raw": "B"
+   },
+   {
+    "number": 14,
+    "raw": "A"
+   },
+   {
+    "number": 15,
+    "raw": "F"
+   },
+   {
+    "number": 16,
+    "raw": "E"
+   },
+   {
+    "number": 17,
+    "raw": "G"
+   },
+   {
+    "number": 18,
+    "raw": "C"
+   },
+   {
+    "number": 19,
+    "raw": "D"
+   },
+   {
+    "number": 20,
+    "raw": "B"
+   },
+   {
+    "number": 21,
+    "raw": "True"
+   },
+   {
+    "number": 22,
+    "raw": "False"
+   },
+   {
+    "number": 23,
+    "raw": "True"
+   },
+   {
+    "number": 24,
+    "raw": "False"
+   },
+   {
+    "number": 25,
+    "raw": "NG"
+   },
+   {
+    "number": 26,
+    "raw": "NG"
+   },
+   {
+    "number": 27,
+    "raw": "True"
+   },
+   {
+    "number": 28,
+    "raw": "True"
+   },
+   {
+    "number": 29,
+    "raw": "False"
+   },
+   {
+    "number": 30,
+    "raw": "True"
+   },
+   {
+    "number": 31,
+    "raw": "NG"
+   },
+   {
+    "number": 32,
+    "raw": "False"
+   },
+   {
+    "number": 33,
+    "raw": "NG"
+   },
+   {
+    "number": 34,
+    "raw": "False"
+   },
+   {
+    "number": 35,
+    "raw": "D"
+   },
+   {
+    "number": 36,
+    "raw": "B"
+   },
+   {
+    "number": 37,
+    "raw": "B"
+   },
+   {
+    "number": 38,
+    "raw": "A"
+   },
+   {
+    "number": 39,
+    "raw": "D"
+   },
+   {
+    "number": 40,
+    "raw": "D"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "ALBERT EINSTEIN",
    "paragraphs": [
-    "Albert Einstein is perhaps the best-known scientist of the 20th century. He received the Nobel Prize in Physics in 1921 and his theories of special and general relativity are of great importance to many branches of physics and astronomy. He is well known for his theories about light, matter, gravity, space and time. His most famous idea is that energy and mass are different forms of the same thing.",
-    "Einstein was born in Wurttemberg, Germany on 14th March 1879. His family was Jewish but he had not been very religious in his youth although he became very interested in Judaism in later life.",
-    "It is well documented that Einstein did not begin speaking until after the age of three. In fact, he found speaking so difficult that his family were worried that he would never start to speak. When Einstein was four years old, his father gave him a magnetic compass. It was this compass that inspired him to explore the world of science. He wanted to understand why the needle always pointed north whichever way he turned the compass. It looked as if the needle was moving itself. But the needle was inside a closed case, so no other force (such as the wind) could have been moving it. And this is how Einstein became interested in studying science and mathematics.",
-    "In fact, he was so clever that at the age of 12 he taught himself Euclidean geometry. At fifteen, he went to school in Munich which he found very boring. he finished secondary school in Aarau, Switzerland and entered the Swiss Federal Institute of Technology in Zurich from which he graduated in 1900. But Einstein did not like the teaching there either. He often missed classes and used the time to study physics on his own or to play the violin instead. However, he was able to pass his examinations by studying the notes of a classmate. His teachers did not have a good opinion of him and refused to recommend him for a university position. So, he got a job in a patent office in Switzerland. While he was working there, he wrote the papers that first made him famous as a great scientist.",
-    "Einstein had two severely disabled children with his first wife, Mileva. His daughter (whose name we do not know) was born about a year before their marriage in January 1902. She was looked after by her Serbian grandparents until she died at the age of two. It is generally believed that she died from scarlet fever but there are those who believe that she may have suffered from a disorder known as Down Syndrome. But there is not enough evidence to know for sure. In fact, no one even knew that she had existed until Einstein’s granddaughter found 54 love letters that Einstein and Mileva had written to each other between 1897 and 1903. She found these letters inside a shoe box in their attic in California. Einstein and Mileva’s son, Eduard, was diagnosed with schizophrenia. He spent decades in hospitals and died in Zurich in 1965. Just before the start of World War I, Einstein moved back to Germany and became director of a school there. But in 1933, following death threats from the Nazis, he moved to the United States, where he died on 18th April 1955."
+    {
+     "type": "text",
+     "text": "Albert Einstein is perhaps the best-known scientist of the 20th century. He received the Nobel Prize in Physics in 1921 and his theories of special and general relativity are of great importance to many branches of physics and astronomy. He is well known for his theories about light, matter, gravity, space and time. His most famous idea is that energy and mass are different forms of the same thing."
+    },
+    {
+     "type": "text",
+     "text": "Einstein was born in Wurttemberg, Germany on 14th March 1879. His family was Jewish but he had not been very religious in his youth although he became very interested in Judaism in later life."
+    },
+    {
+     "type": "text",
+     "text": "It is well documented that Einstein did not begin speaking until after the age of three. In fact, he found speaking so difficult that his family were worried that he would never start to speak. When Einstein was four years old, his father gave him a magnetic compass. It was this compass that inspired him to explore the world of science. He wanted to understand why the needle always pointed north whichever way he turned the compass. It looked as if the needle was moving itself. But the needle was inside a closed case, so no other force (such as the wind) could have been moving it. And this is how Einstein became interested in studying science and mathematics."
+    },
+    {
+     "type": "text",
+     "text": "In fact, he was so clever that at the age of 12 he taught himself Euclidean geometry. At fifteen, he went to school in Munich which he found very boring. he finished secondary school in Aarau, Switzerland and entered the Swiss Federal Institute of Technology in Zurich from which he graduated in 1900. But Einstein did not like the teaching there either. He often missed classes and used the time to study physics on his own or to play the violin instead. However, he was able to pass his examinations by studying the notes of a classmate. His teachers did not have a good opinion of him and refused to recommend him for a university position. So, he got a job in a patent office in Switzerland. While he was working there, he wrote the papers that first made him famous as a great scientist."
+    },
+    {
+     "type": "text",
+     "text": "Einstein had two severely disabled children with his first wife, Mileva. His daughter (whose name we do not know) was born about a year before their marriage in January 1902. She was looked after by her Serbian grandparents until she died at the age of two. It is generally believed that she died from scarlet fever but there are those who believe that she may have suffered from a disorder known as Down Syndrome. But there is not enough evidence to know for sure. In fact, no one even knew that she had existed until Einstein’s granddaughter found 54 love letters that Einstein and Mileva had written to each other between 1897 and 1903. She found these letters inside a shoe box in their attic in California. Einstein and Mileva’s son, Eduard, was diagnosed with schizophrenia. He spent decades in hospitals and died in Zurich in 1965. Just before the start of World War I, Einstein moved back to Germany and became director of a school there. But in 1933, following death threats from the Nazis, he moved to the United States, where he died on 18th April 1955."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Do the following statements agree with the information given in the text? For questions 1-8, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q01-08",
      "startQ": 1,
      "endQ": 8,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in the text? For questions 1-8, write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "tfng",
-       "stem": {
-        "plain": "The general theory of relativity is a very important theory in modern physics.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. The general theory of relativity is a very important theory in modern physics.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "The general theory of relativity is a very important theory in modern physics."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 2,
        "type": "tfng",
-       "stem": {
-        "plain": "Einstein had such difficulty with language that those around him thought he would never learn how to speak.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. Einstein had such difficulty with language that those around him thought he would never learn how to speak.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "Einstein had such difficulty with language that those around him thought he would never learn how to speak."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 3,
        "type": "tfng",
-       "stem": {
-        "plain": "It seemed to Einstein that nothing could be pushing the needle of the compass around except the wind.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. It seemed to Einstein that nothing could be pushing the needle of the compass around except the wind.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "It seemed to Einstein that nothing could be pushing the needle of the compass around except the wind."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 4,
        "type": "tfng",
-       "stem": {
-        "plain": "Einstein enjoyed the teaching methods in Switzerland.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. Einstein enjoyed the teaching methods in Switzerland.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "Einstein enjoyed the teaching methods in Switzerland."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 5,
        "type": "tfng",
-       "stem": {
-        "plain": "Einstein taught himself how to play the violin.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. Einstein taught himself how to play the violin.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "Einstein taught himself how to play the violin."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 6,
        "type": "tfng",
-       "stem": {
-        "plain": "His daughter died of schizophrenia when she was two.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. His daughter died of schizophrenia when she was two.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "His daughter died of schizophrenia when she was two."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "The existence of a daughter only became known to the world between 1897 and 1903.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. The existence of a daughter only became known to the world between 1897 and 1903.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "The existence of a daughter only became known to the world between 1897 and 1903."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 8,
        "type": "tfng",
-       "stem": {
-        "plain": "In 1933 Einstein moved to the United States where he became an American citizen.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. In 1933 Einstein moved to the United States where he became an American citizen.",
-        "elementPath": "children[8]"
+       "prompt": [
+        "In 1933 Einstein moved to the United States where he became an American citizen."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[6]",
-      "rawExcerpt": "Questions 1-8\nDo the following statements agree with the information given in the text? For questions 1-8, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no "
+      "headerLine": 6,
+      "lineRange": [
+       6,
+       18
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in the text? For questions 1-8, write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. The general theory of relativity is a very important theory in modern physics.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. Einstein had such difficulty with language that those around him thought he would never learn how to speak.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. It seemed to Einstein that nothing could be pushing the needle of the compass around except the wind.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. Einstein enjoyed the teaching methods in Switzerland.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. Einstein taught himself how to play the violin.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. His daughter died of schizophrenia when she was two.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. The existence of a daughter only became known to the world between 1897 and 1903.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. In 1933 Einstein moved to the United States where he became an American citizen.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "sentence_completion",
+     "groupId": "p1.q09-10",
      "startQ": 9,
      "endQ": 10,
-     "stimulusSegments": null,
-     "sharedOptions": null,
-     "figures": null,
-     "questions": [
-      {
-       "number": 9,
-       "type": "completion",
-       "stem": {
-        "plain": "He tried hard to understand how the needle could seem to move itself so that it always (9) ______",
+     "type": "sentence_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
         "segments": [
-         "He tried hard to understand how the needle could seem to move itself so that it always",
+         "He tried hard to understand how the needle could seem to move itself so that it always ",
          {
           "blank": 9
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Pointed north",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "He tried hard to understand how the needle could seem to move itself so that it always (9)……………….",
-        "elementPath": "children[10]"
-       }
-      },
-      {
-       "number": 10,
-       "type": "completion",
-       "stem": {
-        "plain": "He often did not go to classes and used the time to study physics (10) ______ or to play music.",
+       {
+        "type": "text",
         "segments": [
-         "He often did not go to classes and used the time to study physics",
+         "He often did not go to classes and used the time to study physics ",
          {
           "blank": 10
          },
          "or to play music."
         ]
-       },
-       "options": null,
-       "correctAnswer": "On his own",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "He often did not go to classes and used the time to study physics (10)…………………..or to play music.",
-        "elementPath": "children[11]"
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Pointed north",
+        "value": "Pointed north",
+        "accepted": [
+         "Pointed north"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "On his own",
+        "value": "On his own",
+        "accepted": [
+         "On his own"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[9]",
-      "rawExcerpt": "Questions 9-10\nComplete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer."
+      "headerLine": 19,
+      "lineRange": [
+       19,
+       22
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-10",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "He tried hard to understand how the needle could seem to move itself so that it always (9)……………….",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "He often did not go to classes and used the time to study physics (10)…………………..or to play music.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q11-13",
      "startQ": 11,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 11,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The name of Einstein’s daughter",
-        "segments": null
-       },
+       "prompt": [
+        "The name of Einstein’s daughter"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "was not chosen by him."
+        },
+        {
+         "id": "B",
+         "text": "is a mystery."
+        },
+        {
+         "id": "C",
+         "text": "is shared by his granddaughter."
+        },
+        {
+         "id": "D",
+         "text": "was discovered in a shoe box."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11. The name of Einstein’s daughter",
-        "elementPath": "children[13]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 12,
        "type": "mcq_single",
-       "stem": {
-        "plain": "His teachers would not recommend him for a university position because",
-        "segments": null
-       },
+       "prompt": [
+        "His teachers would not recommend him for a university position because"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "they did not think highly of him."
+        },
+        {
+         "id": "B",
+         "text": "they thought he was a Nazi."
+        },
+        {
+         "id": "C",
+         "text": "his wife was Serbian."
+        },
+        {
+         "id": "D",
+         "text": "he seldom skipped classes."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12. His teachers would not recommend him for a university position because",
-        "elementPath": "children[14]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 13,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The famous physicist Albert Einstein was of",
-        "segments": null
-       },
+       "prompt": [
+        "The famous physicist Albert Einstein was of"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Swiss origin."
+        },
+        {
+         "id": "B",
+         "text": "Jewish origin."
+        },
+        {
+         "id": "C",
+         "text": "American origin."
+        },
+        {
+         "id": "D",
+         "text": "Austrian origin."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13. The famous physicist Albert Einstein was of",
-        "elementPath": "children[15]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[12]",
-      "rawExcerpt": "Questions 11-13\nChoose the correct letter, A, B, C or D."
+      "headerLine": 23,
+      "lineRange": [
+       23,
+       39
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 11-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11. The name of Einstein’s daughter",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A was not chosen by him.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B is a mystery.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C is shared by his granddaughter.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D was discovered in a shoe box.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. His teachers would not recommend him for a university position because",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A they did not think highly of him.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B they thought he was a Nazi.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C his wife was Serbian.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D he seldom skipped classes.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. The famous physicist Albert Einstein was of",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Swiss origin.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Jewish origin.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C American origin.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Austrian origin.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -310,124 +748,437 @@
    "passageNumber": 2,
    "title": "DRINKING FILTERED WATER",
    "paragraphs": [
-    "A The body is made up mainly of water. This means that the quality of water that we drink every day has an important effect on our health. Filtered water is healthier than tap water and some bottled water. This is because it is free of contaminants, that is, of substances that make it dirty or harmful. Substances that settle on the bottom of a glass of tap water and microorganisms that carry diseases (known as bacteria or germs) are examples of contaminants. Filtered water is also free of poisonous metals and chemicals that are common in tap water and even in some bottled water brands.",
-    "B The authorities know that normal tap water is full of contaminants and they use chemicals, such as chlorine and bromine in order to disinfect it. But such chemicals are hardly safe. Indeed, their use in water is associated with many different conditions and they are particularly dangerous for children and pregnant women. For example, consuming bromine for a long time may result in low blood pressure, which may then bring about poisoning of the brain, heart, kidneys and liver. Filtered water is typically free of such water disinfectant chemicals.",
-    "C Filtered water is also free of metals, such as mercury and lead. Mercury has ended up in our drinking water mainly because the dental mixtures used by dentists have not been disposed of safely for a long time. Scientists believe there is a connection between mercury in the water and many allergies and cancers as well as disorders, such as ADD, OCD, autism and depression.",
-    "D Lead, on the other hand, typically finds its way to our drinking water due to pipe leaks. Of course, modern pipes are not made of lead but pipes in old houses usually are. Lead is a well-known carcinogen and is associated with pregnancy problems and birth defects. This is another reason why children and pregnant women must drink filtered water.",
-    "E The benefits of water are well known. We all know, for example, that it helps to detoxify the body, So, the purer the water we drink, the easier it is for the body to rid itself of toxins. The result of drinking filtered water is that the body does not have to use as much of its energy on detoxification as it would when drinking unfiltered water. This means that drinking filtered water is good for our health in general. That is because the body can perform all of its functions much more easily and this results in improved metabolism, better weight management, improved joint lubrication as well as efficient skin hydration.",
-    "F There are many different ways to filter water and each type of filter targets different contaminants. For example, activated carbon water filters are very good at taking chlorine out. Ozone water filters, on the other hand, are particularly effective at removing germs.",
-    "G For this reason, it is very important to know exactly what is in the water that we drink so that we can decide what type of water filter to use. A Consumer Confidence Report (CCR) should be useful for this purpose. This is a certificate that is issued by public water suppliers every year, listing the contaminants present in the water. If you know what these contaminants are, then it is easier to decide which type of water filter to get.",
-    "Questions 14-20\nThe text has seven paragraphs, A-G.",
-    "Which paragraph contains the following information?",
-    "14. a short summary of the main points of the text\n15. a variety of methods used for water filtration\n16. making it easier for the body to get rid of dangerous chemicals\n17. finding out which contaminants your water filter should target\n18. allergies caused by dangerous metals\n19. a dangerous metal found in the plumbing of old buildings\n20. chemicals of cleaning products that destroy bacteria"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The body is made up mainly of water. This means that the quality of water that we drink every day has an important effect on our health. Filtered water is healthier than tap water and some bottled water. This is because it is free of contaminants, that is, of substances that make it dirty or harmful. Substances that settle on the bottom of a glass of tap water and microorganisms that carry diseases (known as bacteria or germs) are examples of contaminants. Filtered water is also free of poisonous metals and chemicals that are common in tap water and even in some bottled water brands."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The authorities know that normal tap water is full of contaminants and they use chemicals, such as chlorine and bromine in order to disinfect it. But such chemicals are hardly safe. Indeed, their use in water is associated with many different conditions and they are particularly dangerous for children and pregnant women. For example, consuming bromine for a long time may result in low blood pressure, which may then bring about poisoning of the brain, heart, kidneys and liver. Filtered water is typically free of such water disinfectant chemicals."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Filtered water is also free of metals, such as mercury and lead. Mercury has ended up in our drinking water mainly because the dental mixtures used by dentists have not been disposed of safely for a long time. Scientists believe there is a connection between mercury in the water and many allergies and cancers as well as disorders, such as ADD, OCD, autism and depression."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Lead, on the other hand, typically finds its way to our drinking water due to pipe leaks. Of course, modern pipes are not made of lead but pipes in old houses usually are. Lead is a well-known carcinogen and is associated with pregnancy problems and birth defects. This is another reason why children and pregnant women must drink filtered water."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "The benefits of water are well known. We all know, for example, that it helps to detoxify the body, So, the purer the water we drink, the easier it is for the body to rid itself of toxins. The result of drinking filtered water is that the body does not have to use as much of its energy on detoxification as it would when drinking unfiltered water. This means that drinking filtered water is good for our health in general. That is because the body can perform all of its functions much more easily and this results in improved metabolism, better weight management, improved joint lubrication as well as efficient skin hydration."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "There are many different ways to filter water and each type of filter targets different contaminants. For example, activated carbon water filters are very good at taking chlorine out. Ozone water filters, on the other hand, are particularly effective at removing germs."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "For this reason, it is very important to know exactly what is in the water that we drink so that we can decide what type of water filter to use. A Consumer Confidence Report (CCR) should be useful for this purpose. This is a certificate that is issued by public water suppliers every year, listing the contaminants present in the water. If you know what these contaminants are, then it is easier to decide which type of water filter to get."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the information given in the text? For questions 21-26, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-20",
+     "startQ": 14,
+     "endQ": 20,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The text has seven paragraphs, A-G. Which paragraph contains the following information?",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_information",
+       "prompt": [
+        "a short summary of the main points of the text"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_information",
+       "prompt": [
+        "a variety of methods used for water filtration"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_information",
+       "prompt": [
+        "making it easier for the body to get rid of dangerous chemicals"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_information",
+       "prompt": [
+        "finding out which contaminants your water filter should target"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_information",
+       "prompt": [
+        "allergies caused by dangerous metals"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_information",
+       "prompt": [
+        "a dangerous metal found in the plumbing of old buildings"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 20,
+       "type": "matching_information",
+       "prompt": [
+        "chemicals of cleaning products that destroy bacteria"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 48,
+      "lineRange": [
+       48,
+       57
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-20",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The text has seven paragraphs, A-G.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. a short summary of the main points of the text",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. a variety of methods used for water filtration",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. making it easier for the body to get rid of dangerous chemicals",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. finding out which contaminants your water filter should target",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. allergies caused by dangerous metals",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. a dangerous metal found in the plumbing of old buildings",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. chemicals of cleaning products that destroy bacteria",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q21-26",
      "startQ": 21,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in the text? For questions 21-26, write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "The type of water you consume on a regular basis has a great impact on your overall health and wellness.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. The type of water you consume on a regular basis has a great impact on your overall health and wellness.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "The type of water you consume on a regular basis has a great impact on your overall health and wellness."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "Filtered water typically contains water disinfectant chemicals.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. Filtered water typically contains water disinfectant chemicals.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "Filtered water typically contains water disinfectant chemicals."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "Exposure to disinfectant chemicals is linked with poisoning of the vital organs.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. Exposure to disinfectant chemicals is linked with poisoning of the vital organs.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "Exposure to disinfectant chemicals is linked with poisoning of the vital organs."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 24,
        "type": "tfng",
-       "stem": {
-        "plain": "Drinking tap water helps minimise your exposure to harmful elements.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "24. Drinking tap water helps minimise your exposure to harmful elements.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "Drinking tap water helps minimise your exposure to harmful elements."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 25,
        "type": "tfng",
-       "stem": {
-        "plain": "People wearing artificial teeth are more likely to be contaminated.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "25. People wearing artificial teeth are more likely to be contaminated.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "People wearing artificial teeth are more likely to be contaminated."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 26,
        "type": "tfng",
-       "stem": {
-        "plain": "People who are depressed often suffer from dehydration.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "26. People who are depressed often suffer from dehydration.",
-        "elementPath": "children[29]"
+       "prompt": [
+        "People who are depressed often suffer from dehydration."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[27]",
-      "rawExcerpt": "Questions 21-26\nDo the following statements agree with the information given in the text? For questions 21-26, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is"
+      "headerLine": 58,
+      "lineRange": [
+       58,
+       68
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 21-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in the text? For questions 21-26, write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. The type of water you consume on a regular basis has a great impact on your overall health and wellness.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. Filtered water typically contains water disinfectant chemicals.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. Exposure to disinfectant chemicals is linked with poisoning of the vital organs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24. Drinking tap water helps minimise your exposure to harmful elements.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25. People wearing artificial teeth are more likely to be contaminated.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26. People who are depressed often suffer from dehydration.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -436,476 +1187,696 @@
    "passageNumber": 3,
    "title": "SPEECH DYSFLUENCY AND POPULAR FILLERS",
    "paragraphs": [
-    "A speech dysfluency is any of various breaks, irregularities or sound-filled pauses that we make when we are speaking, which are commonly known as fillers. These include words and sentences that are not finished, repeated phrases or syllables, instances of speakers correcting their own mistakes as they speak and “words” such as ‘huh’, ‘uh’, ‘erm’, ‘urn’, ‘hmm’, ‘err’, ‘like’, ‘you know’ and ‘well’.",
-    "Fillers are parts of speech which are not generally recognised as meaningful and they include speech problems, such as stuttering (repeating the first consonant of some words). Fillers are normally avoided on television and films, but they occur quite regularly in everyday conversation, sometimes making up more than 20% of “words” in speech. But they can also be used as a pause for thought.",
-    "Research in linguistics has shown that fillers change across cultures and that even the different English speaking nations use different fillers. For example, Americans use pauses such as ‘um’ or ’em’ whereas the British say ‘uh’ or ‘eh’. Spanish speakers say ‘ehhh’ and in Latin America (where they also speak Spanish) but not Spain, ‘este’ is used (normally meaning ‘this’).",
-    "Recent linguistic research has suggested that the use of ‘uh’ and ‘um’ in English is connected to the speaker’s mental and emotional state. For example, while pausing to say ‘uh’ or ‘um’ the brain may be planning the use of future words. According to the University of Pennsylvania linguist Mark Liberman, ‘um’ generally comes before a longer or more important pause than ‘uh’. At least that’s what he used to think.",
-    "Liberman has discovered that as Americans get older, they use ‘uh’ more than ‘um’ and that men use ‘uh’ more than women no matter their age. But the opposite is true of ‘um’. The young say ‘um’ more often than the old. And women say ‘um’ more often than men at every age. This was an unexpected result because scientists used to think that fillers had to do more with the amount of time a speaker pauses for, rather than with who the speaker is.",
-    "Liberman mentioned his finding to fellow linguists in the Netherlands and this encouraged the group to look for a pattern outside American English. They studied British and Scottish English, German, Danish, Dutch and Norwegian and found that women and younger people said ‘um’ more than ‘uh’ in those languages as well.",
-    "Their conclusion is that it is simply a case of language change in progress and that women and younger people are leading the change. And there is nothing strange about this. Women and young people normally are the typical pioneers of most language change. What is strange, however, is that ‘um’ is replacing ‘uh’ across at least two continents and five Germanic languages. Now this really is a mystery.",
-    "The University of Edinburgh sociolinguist Josef Fruehwald may have an answer. In his view, ‘um’ and ‘uh’ are pretty much equivalent. The fact that young people and women prefer it is not significant. This often happens in language when there are two options. People start using one more often until the other is no longer an option. It’s just one of those things.",
-    "As to how such a trend might have gone from one language to another, there is a simple explanation, according to Fruehwald. English is probably influencing the other languages. We all know that in many countries languages are constantly borrowing words and expressions of English into their own language so why not borrow fillers, too? Of course, we don’t know for a fact whether that’s actually what’s happening with ‘um’ but it is a likely story."
+    {
+     "type": "text",
+     "text": "A speech dysfluency is any of various breaks, irregularities or sound-filled pauses that we make when we are speaking, which are commonly known as fillers. These include words and sentences that are not finished, repeated phrases or syllables, instances of speakers correcting their own mistakes as they speak and “words” such as ‘huh’, ‘uh’, ‘erm’, ‘urn’, ‘hmm’, ‘err’, ‘like’, ‘you know’ and ‘well’."
+    },
+    {
+     "type": "text",
+     "text": "Fillers are parts of speech which are not generally recognised as meaningful and they include speech problems, such as stuttering (repeating the first consonant of some words). Fillers are normally avoided on television and films, but they occur quite regularly in everyday conversation, sometimes making up more than 20% of “words” in speech. But they can also be used as a pause for thought."
+    },
+    {
+     "type": "text",
+     "text": "Research in linguistics has shown that fillers change across cultures and that even the different English speaking nations use different fillers. For example, Americans use pauses such as ‘um’ or ’em’ whereas the British say ‘uh’ or ‘eh’. Spanish speakers say ‘ehhh’ and in Latin America (where they also speak Spanish) but not Spain, ‘este’ is used (normally meaning ‘this’)."
+    },
+    {
+     "type": "text",
+     "text": "Recent linguistic research has suggested that the use of ‘uh’ and ‘um’ in English is connected to the speaker’s mental and emotional state. For example, while pausing to say ‘uh’ or ‘um’ the brain may be planning the use of future words. According to the University of Pennsylvania linguist Mark Liberman, ‘um’ generally comes before a longer or more important pause than ‘uh’. At least that’s what he used to think."
+    },
+    {
+     "type": "text",
+     "text": "Liberman has discovered that as Americans get older, they use ‘uh’ more than ‘um’ and that men use ‘uh’ more than women no matter their age. But the opposite is true of ‘um’. The young say ‘um’ more often than the old. And women say ‘um’ more often than men at every age. This was an unexpected result because scientists used to think that fillers had to do more with the amount of time a speaker pauses for, rather than with who the speaker is."
+    },
+    {
+     "type": "text",
+     "text": "Liberman mentioned his finding to fellow linguists in the Netherlands and this encouraged the group to look for a pattern outside American English. They studied British and Scottish English, German, Danish, Dutch and Norwegian and found that women and younger people said ‘um’ more than ‘uh’ in those languages as well."
+    },
+    {
+     "type": "text",
+     "text": "Their conclusion is that it is simply a case of language change in progress and that women and younger people are leading the change. And there is nothing strange about this. Women and young people normally are the typical pioneers of most language change. What is strange, however, is that ‘um’ is replacing ‘uh’ across at least two continents and five Germanic languages. Now this really is a mystery."
+    },
+    {
+     "type": "text",
+     "text": "The University of Edinburgh sociolinguist Josef Fruehwald may have an answer. In his view, ‘um’ and ‘uh’ are pretty much equivalent. The fact that young people and women prefer it is not significant. This often happens in language when there are two options. People start using one more often until the other is no longer an option. It’s just one of those things."
+    },
+    {
+     "type": "text",
+     "text": "As to how such a trend might have gone from one language to another, there is a simple explanation, according to Fruehwald. English is probably influencing the other languages. We all know that in many countries languages are constantly borrowing words and expressions of English into their own language so why not borrow fillers, too? Of course, we don’t know for a fact whether that’s actually what’s happening with ‘um’ but it is a likely story."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in the text? For questions 27-34, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q27-34",
      "startQ": 27,
      "endQ": 34,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in the text? For questions 27-34, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "tfng",
-       "stem": {
-        "plain": "Fillers are usually expressed as pauses and probably have no linguistic meaning although they may have a purpose.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. Fillers are usually expressed as pauses and probably have no linguistic meaning although they may have a purpose.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "Fillers are usually expressed as pauses and probably have no linguistic meaning although they may have a purpose."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 28,
        "type": "tfng",
-       "stem": {
-        "plain": "In general, fillers vary across cultures.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. In general, fillers vary across cultures.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "In general, fillers vary across cultures."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 29,
        "type": "tfng",
-       "stem": {
-        "plain": "Fillers are uncommon in everyday language.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. Fillers are uncommon in everyday language.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "Fillers are uncommon in everyday language."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 30,
        "type": "tfng",
-       "stem": {
-        "plain": "American men use ‘uh’ more than American women do.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. American men use ‘uh’ more than American women do.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "American men use ‘uh’ more than American women do."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 31,
        "type": "tfng",
-       "stem": {
-        "plain": "Younger Spaniards say ‘ehhh’ more often than older Spaniards.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. Younger Spaniards say ‘ehhh’ more often than older Spaniards.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "Younger Spaniards say ‘ehhh’ more often than older Spaniards."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 32,
        "type": "tfng",
-       "stem": {
-        "plain": "In the past linguists did not think that fillers are about the amount of time a speaker hesitates.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. In the past linguists did not think that fillers are about the amount of time a speaker hesitates.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "In the past linguists did not think that fillers are about the amount of time a speaker hesitates."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 33,
        "type": "tfng",
-       "stem": {
-        "plain": "During a coffee break Liberman was chatting with a small group of researchers.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33. During a coffee break Liberman was chatting with a small group of researchers.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "During a coffee break Liberman was chatting with a small group of researchers."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 34,
        "type": "tfng",
-       "stem": {
-        "plain": "Fruehwald does not believe that there are age and gender differences related to ‘um’ and ‘uh’.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "34. Fruehwald does not believe that there are age and gender differences related to ‘um’ and ‘uh’.",
-        "elementPath": "children[42]"
+       "prompt": [
+        "Fruehwald does not believe that there are age and gender differences related to ‘um’ and ‘uh’."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[40]",
-      "rawExcerpt": "Questions 27-34\nDo the following statements agree with the information given in the text? For questions 27-34, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is "
+      "headerLine": 79,
+      "lineRange": [
+       79,
+       91
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-34",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in the text? For questions 27-34, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. Fillers are usually expressed as pauses and probably have no linguistic meaning although they may have a purpose.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. In general, fillers vary across cultures.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Fillers are uncommon in everyday language.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. American men use ‘uh’ more than American women do.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. Younger Spaniards say ‘ehhh’ more often than older Spaniards.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. In the past linguists did not think that fillers are about the amount of time a speaker hesitates.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. During a coffee break Liberman was chatting with a small group of researchers.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. Fruehwald does not believe that there are age and gender differences related to ‘um’ and ‘uh’.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q35-40",
      "startQ": 35,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 35,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Fillers are not",
-        "segments": null
-       },
+       "prompt": [
+        "Fillers are not"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "used to give the speaker time to think."
+        },
+        {
+         "id": "B",
+         "text": "phrases that are restated."
+        },
+        {
+         "id": "C",
+         "text": "used across cultures."
+        },
+        {
+         "id": "D",
+         "text": "popular with the media."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "35. Fillers are not",
-        "elementPath": "children[44]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 36,
        "type": "mcq_single",
-       "stem": {
-        "plain": "It had originally seemed to Mark Liberman that",
-        "segments": null
-       },
+       "prompt": [
+        "It had originally seemed to Mark Liberman that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "‘um’ was followed by a less significant pause than ‘uh’."
+        },
+        {
+         "id": "B",
+         "text": "‘uh’ was followed by a shorter pause than ‘um’."
+        },
+        {
+         "id": "C",
+         "text": "‘uh’ was followed by a longer pause than ‘um’."
+        },
+        {
+         "id": "D",
+         "text": "the use of ‘um’ meant the speaker was sensitive."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. It had originally seemed to Mark Liberman that",
-        "elementPath": "children[45]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 37,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Contrary to what linguists used to think, it is now believed that the choice of filler",
-        "segments": null
-       },
+       "prompt": [
+        "Contrary to what linguists used to think, it is now believed that the choice of filler"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "may have led to disagreements."
+        },
+        {
+         "id": "B",
+         "text": "depends on the characteristics of the speaker."
+        },
+        {
+         "id": "C",
+         "text": "has nothing to do with sex."
+        },
+        {
+         "id": "D",
+         "text": "only matters to older people."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. Contrary to what linguists used to think, it is now believed that the choice of filler",
-        "elementPath": "children[46]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 38,
        "type": "mcq_single",
-       "stem": {
-        "plain": "According to Liberman, it’s still a puzzle why",
-        "segments": null
-       },
+       "prompt": [
+        "According to Liberman, it’s still a puzzle why"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "a specific language change is so widely spread."
+        },
+        {
+         "id": "B",
+         "text": "the two fillers are comparable."
+        },
+        {
+         "id": "C",
+         "text": "we have two options."
+        },
+        {
+         "id": "D",
+         "text": "‘um’ is preferred by women and young people."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. According to Liberman, it’s still a puzzle why",
-        "elementPath": "children[47]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 39,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Concerning the normal changes that all languages go through as time goes by,",
-        "segments": null
-       },
+       "prompt": [
+        "Concerning the normal changes that all languages go through as time goes by,"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "old men are impossible to teach."
+        },
+        {
+         "id": "B",
+         "text": "men in general are very conservative."
+        },
+        {
+         "id": "C",
+         "text": "young men simply copy the speech of young women."
+        },
+        {
+         "id": "D",
+         "text": "women play a more important role than men."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. Concerning the normal changes that all languages go through as time goes by,",
-        "elementPath": "children[48]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 40,
        "type": "mcq_single",
-       "stem": {
-        "plain": "According to Fruehwald, the fact that ‘um’ is used more than ‘uh’",
-        "segments": null
-       },
+       "prompt": [
+        "According to Fruehwald, the fact that ‘um’ is used more than ‘uh’"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "proves that ‘um’ is less important."
+        },
+        {
+         "id": "B",
+         "text": "shows that young people have low standards."
+        },
+        {
+         "id": "C",
+         "text": "shows that they have different meanings."
+        },
+        {
+         "id": "D",
+         "text": "is just a coincidence."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. According to Fruehwald, the fact that ‘um’ is used more than ‘uh’",
-        "elementPath": "children[49]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[43]",
-      "rawExcerpt": "Questions 35-40\nChoose the correct letter, A, B, C or D."
+      "headerLine": 92,
+      "lineRange": [
+       92,
+       123
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 35-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. Fillers are not",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A used to give the speaker time to think.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B phrases that are restated.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C used across cultures.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D popular with the media.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. It had originally seemed to Mark Liberman that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A ‘um’ was followed by a less significant pause than ‘uh’.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B ‘uh’ was followed by a shorter pause than ‘um’.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C ‘uh’ was followed by a longer pause than ‘um’.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the use of ‘um’ meant the speaker was sensitive.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. Contrary to what linguists used to think, it is now believed that the choice of filler",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A may have led to disagreements.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B depends on the characteristics of the speaker.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C has nothing to do with sex.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D only matters to older people.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. According to Liberman, it’s still a puzzle why",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A a specific language change is so widely spread.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the two fillers are comparable.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C we have two options.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D ‘um’ is preferred by women and young people.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. Concerning the normal changes that all languages go through as time goes by,",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A old men are impossible to teach.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B men in general are very conservative.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C young men simply copy the speech of young women.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D women play a more important role than men.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. According to Fruehwald, the fact that ‘um’ is used more than ‘uh’",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A proves that ‘um’ is less important.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B shows that young people have low standards.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C shows that they have different meanings.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D is just a coincidence.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "True"
-   },
-   {
-    "number": 2,
-    "value": "True"
-   },
-   {
-    "number": 3,
-    "value": "False"
-   },
-   {
-    "number": 4,
-    "value": "False"
-   },
-   {
-    "number": 5,
-    "value": "NG"
-   },
-   {
-    "number": 6,
-    "value": "NG"
-   },
-   {
-    "number": 7,
-    "value": "False"
-   },
-   {
-    "number": 8,
-    "value": "NG"
-   },
-   {
-    "number": 9,
-    "value": "Pointed north"
-   },
-   {
-    "number": 10,
-    "value": "On his own"
-   },
-   {
-    "number": 11,
-    "value": "B"
-   },
-   {
-    "number": 12,
-    "value": "A"
-   },
-   {
-    "number": 13,
-    "value": "B"
-   },
-   {
-    "number": 14,
-    "value": "A"
-   },
-   {
-    "number": 15,
-    "value": "F"
-   },
-   {
-    "number": 16,
-    "value": "E"
-   },
-   {
-    "number": 17,
-    "value": "G"
-   },
-   {
-    "number": 18,
-    "value": "C"
-   },
-   {
-    "number": 19,
-    "value": "D"
-   },
-   {
-    "number": 20,
-    "value": "B"
-   },
-   {
-    "number": 21,
-    "value": "True"
-   },
-   {
-    "number": 22,
-    "value": "False"
-   },
-   {
-    "number": 23,
-    "value": "True"
-   },
-   {
-    "number": 24,
-    "value": "False"
-   },
-   {
-    "number": 25,
-    "value": "NG"
-   },
-   {
-    "number": 26,
-    "value": "NG"
-   },
-   {
-    "number": 27,
-    "value": "True"
-   },
-   {
-    "number": 28,
-    "value": "True"
-   },
-   {
-    "number": 29,
-    "value": "False"
-   },
-   {
-    "number": 30,
-    "value": "True"
-   },
-   {
-    "number": 31,
-    "value": "NG"
-   },
-   {
-    "number": 32,
-    "value": "False"
-   },
-   {
-    "number": 33,
-    "value": "NG"
-   },
-   {
-    "number": 34,
-    "value": "False"
-   },
-   {
-    "number": 35,
-    "value": "D"
-   },
-   {
-    "number": 36,
-    "value": "B"
-   },
-   {
-    "number": 37,
-    "value": "B"
-   },
-   {
-    "number": 38,
-    "value": "A"
-   },
-   {
-    "number": 39,
-    "value": "D"
-   },
-   {
-    "number": 40,
-    "value": "D"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 33,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "f8150c797cc3003a992aa6fedc29182466051d73b8e2b0e8bd29f83d60038211"
+ "metrics": {
+  "passages": 3,
+  "groups": 7,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "5940650386cdeaa1d8255cc21e8fabf64a014090b0a9baf5cca409480edc84aa"
 }

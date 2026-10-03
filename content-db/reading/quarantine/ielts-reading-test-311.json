@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-311",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     23,
-     23
-    ],
-    "instruction": "and 24 Choose TWO letters, A-E.\n\nWhich TWO comparisons between employees who often procrastinate and those who do not ar"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 Choose TWO letters, A-E.\n\nWhich TWO recommendations for getting out of a cycle of procrastination does the writer"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     33,
-     37
-    ],
-    "instruction": "Complete the summary using the list of phrases, A-H, below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 31,
-    "answers": 40
-   }
+   "groupId": "p1.q01-06",
+   "range": [
+    1,
+    6
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the notes below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer."
   }
  ]
 }

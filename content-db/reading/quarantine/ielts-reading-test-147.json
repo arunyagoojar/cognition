@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-147",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Look at the following descriptions (Questions 14-19) and the list of automobile brands below. Match each description with the correct automo"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     28,
-     31
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p3.q28-31",
+   "range": [
+    28,
+    31
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

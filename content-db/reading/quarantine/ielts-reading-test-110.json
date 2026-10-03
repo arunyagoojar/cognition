@@ -1,50 +1,33 @@
 {
  "slug": "ielts-reading-test-110",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     8,
-     13
-    ],
-    "extracted": 2,
-    "expected": 6
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     17,
-     23
-    ],
-    "instruction": "Look at the following statements (Questions 17-23) and the list of people below. Match each statement with the correct p"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "The reading passage has seven paragraphs, A–G. Choose the correct heading for paragraphs A–G from the list below. Write "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 20,
-    "answers": 39
-   }
+   "groupId": "p3.q36-39",
+   "range": [
+    36,
+    39
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below, using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
   }
  ]
 }

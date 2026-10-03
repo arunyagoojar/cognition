@@ -1,25 +1,53 @@
 {
  "slug": "ielts-reading-test-201",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     36,
-     40
-    ],
-    "instruction": "Reading Passage 3 contains a number of opinions provided by five different scientists. Match each opinion (Questions 36-40) with one of the "
-   }
+   "groupId": "p2.q20-22",
+   "range": [
+    20,
+    22
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": ""
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 30,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q23-24",
+   "range": [
+    23,
+    24
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": ""
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q28-35",
+   "range": [
+    28,
+    35
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the notes below using words from the box. Write your answers in boxes 28-35 on your answer sheet."
   }
  ]
 }

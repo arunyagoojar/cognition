@@ -1,49 +1,115 @@
 {
  "slug": "ielts-reading-test-52",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     6
-    ],
-    "instruction": "Some of the actions taken to clean up the River Thames are listed below. The writer gives these actions as examples of t"
-   }
+   "groupId": "p1.q01-06",
+   "range": [
+    1,
+    6
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Some of the actions taken to clean up the River Thames are listed below. The writer gives these actions as examples of things that have been done by various agencies connected with the River Thames. M"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     22,
-     26
-    ],
-    "instruction": "Using NO MORE THAN THREE WORDS OR A NUMBER from Reading Passage 2, answer the following questions. Write your answers in"
-   }
+   "groupId": "p1.q07-14",
+   "range": [
+    7,
+    14
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with passage on Cleaning up the Thames? In Boxes 7 – 14 write:"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "The reading passage on Deer Farming in Australia has 5 paragraphs (A – E). From the list of headings below choose the mo"
-   }
+   "groupId": "p2.q15-21",
+   "range": [
+    15,
+    21
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the views of the writer of Reading Passage 2? In Boxes 15 – 21 write:"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Using NO MORE THAN THREE WORDS OR A NUMBER from Reading Passage 2, answer the following questions. Write your answers in boxes 22 – 26 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q27-27",
+   "range": [
+    27,
+    27
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "From the list below choose the most suitable title for Reading Passage 2."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q28-32",
+   "range": [
+    28,
+    32
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "The reading passage on Deer Farming in Australia has 5 paragraphs (A – E). From the list of headings below choose the most suitable headings for paragraphs A – E. Write the appropriate number (i – vii"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q33-37",
+   "range": [
+    33,
+    37
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Read the passage about Deer Farming in Australia again and look at the statements below. In boxes 33 – 37 on your answer sheet write:"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q38-40",
+   "range": [
+    38,
+    40
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete each of the following statements (Questions 38 – 40) with words taken from Reading Passage 3. Write NO MORE THAN THREE WORDS for each answer. Write your answers in boxes 38 – 40 on your answe"
   }
  ]
 }

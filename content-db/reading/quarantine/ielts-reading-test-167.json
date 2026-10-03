@@ -1,49 +1,21 @@
 {
  "slug": "ielts-reading-test-167",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     13
-    ],
-    "instruction": "Look at the statements (Questions 8-13) and the list of books below. Match each statement with the book it relates to. List of Books\n\nA Guid"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     23,
-     26
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS from the reading passage for each answer. Write your answers in"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     29
-    ],
-    "instruction": "Choose THREE letters A-F. Which THREE of the following are problems the writer encountered when conducting his study?"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS from the reading passage for each answer. Write your answers in boxes 23-26 on your answer sheet."
   }
  ]
 }

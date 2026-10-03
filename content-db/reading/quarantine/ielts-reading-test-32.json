@@ -1,99 +1,50 @@
 {
  "slug": "ielts-reading-test-32",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Use the information in the text to match the people (listed A-E) with the opinions (listed 1-7) below. Write the appropr"
-   }
+   "groupId": "p2.q13-19",
+   "range": [
+    13,
+    19
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2",
+    "NUMBERING_MISMATCH"
+   ],
+   "instruction": "The steps below outline the movements of the migratory beekeepers as described in the passage. Compete the steps. Choose your answers from the options given below."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     8,
-     10
-    ],
-    "instruction": "Using the information in the passage, complete the table below. Write your answers in boxes 8-10 on your answer sheet."
-   }
+   "groupId": "p3.q28-32",
+   "range": [
+    28,
+    32
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "DUPLICATE_QUESTION",
+    "INCOMPLETE_OPTIONS",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Raiding Passage 3 has 6 paragraphs (A-F) Choose the most suitable heading for each paragraph from the list of headings below Write the appropriate numbers (i-ix) in boxes 28 32 on your answer sheet Pa"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     11,
-     11
-    ],
-    "instruction": "and 12 Choose the appropriate letters A-D and write them in boxes 11 and 12 on your answer sheet. 11 A study of monkeys "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     13,
-     19
-    ],
-    "instruction": "The steps below outline the movements of the migratory beekeepers as described in the passage. Compete the steps. Choose your answers from t"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "Raiding Passage 3 has 6 paragraphs (A-F) Choose the most suitable heading for each paragraph from the list of headings b"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     38,
-     40
-    ],
-    "instruction": "Chose one phrase (A-H) from the list of phrases to complete each key point below. Write the appropriate letters (A-H) in boxes 38-41 on your"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 2,
-    "title": "Passage 2",
-    "groups": [
-     [
-      24,
-      27
-     ]
-    ]
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 9,
-    "answers": 40
-   }
+   "groupId": "p3.q38-40",
+   "range": [
+    38,
+    40
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Chose one phrase (A-H) from the list of phrases to complete each key point below. Write the appropriate letters (A-H) in boxes 38-41 on your answer sheet. The information in the completed sentences sh"
   }
  ]
 }

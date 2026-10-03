@@ -1,10 +1,20 @@
 {
  "slug": "ielts-reading-test-81",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p2.q19-22",
+   "range": [
+    19,
+    22
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the text for each answer. Write your answers in boxes 19-22 on your answer sheet."
   }
  ]
 }

@@ -1,37 +1,36 @@
 {
  "slug": "ielts-reading-test-243",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     9
-    ],
-    "instruction": "Complete each sentence with the correct ending, A-H, below. Write the correct letter, A-H, in boxes 6-9 on your answer sheet."
-   }
+   "groupId": "p1.q06-09",
+   "range": [
+    6,
+    9
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete each sentence with the correct ending, A-H, below. Write the correct letter, A-H, in boxes 6-9 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     34,
-     37
-    ],
-    "instruction": "Look at the following statements (Questions 7-10) and the list of researchers below. Match each statement with the correct researcher, A-D. "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 32,
-    "answers": 40
-   }
+   "groupId": "p2.q22-27",
+   "range": [
+    22,
+    27
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the flow chart below. Use NO MORE THAN THREE WORDS from Passage for each answer."
   }
  ]
 }

@@ -1,25 +1,33 @@
 {
  "slug": "ielts-reading-test-261",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "Use the information in the passage to match the category of each navigation method (listed A-C) with correct statement. Write the appropriat"
-   }
+   "groupId": "p1.q06-09",
+   "range": [
+    6,
+    9
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the Summary paragraph described below in boxes 6-9 on your answer sheet. Write the correct answer with ONE WORD."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q20-26",
+   "range": [
+    20,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
   }
  ]
 }

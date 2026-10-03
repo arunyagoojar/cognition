@@ -1,18 +1,35 @@
 {
  "slug": "ielts-reading-test-182",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p1.q05-08",
+   "range": [
+    5,
+    8
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following sentences using NO MORE THAN TWO WORDS from the text for each gap."
   },
   {
-   "unit": "test",
-   "reasonCode": "CONTAMINATION",
-   "evidence": "1. Most consumers have changed their eating habits over the last year.\n2. The su"
+   "unit": "group",
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "According to the information given in the text, choose the correct answer or answers from the choices given."
   }
  ]
 }

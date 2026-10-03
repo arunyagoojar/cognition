@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-44",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     8,
-     13
-    ],
-    "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage. Cambridge IELTS Test 1 to 17"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     26,
-     26
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     33
-    ],
-    "instruction": "Look at the following theories (Questions 27 – 33) and the list of experts below. Match each theory with the correct exp"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 19,
-    "answers": 40
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage."
   }
  ]
 }

@@ -1,449 +1,1251 @@
 {
  "id": "reading.test-0247.7742249d",
  "module": "reading",
+ "slug": "ielts-reading-test-247",
  "sourceNumbers": [
   247
  ],
- "slug": "ielts-reading-test-247",
  "title": "IELTS Academic Reading Test 247",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-247/index.html",
-   "sha256": "dbfad9de743fadaec97528b210bf0263585e14ddf837a9058a99a682cc7f77bd",
-   "manifestHashMatch": true,
+   "sha256": "02bfdd11aeb6a0c1c947f7a2e9770fac7f3d1a01b39572ce214931d94fab3744",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-247/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "C"
+   },
+   {
+    "number": 2,
+    "raw": "B"
+   },
+   {
+    "number": 3,
+    "raw": "C"
+   },
+   {
+    "number": 4,
+    "raw": "A"
+   },
+   {
+    "number": 5,
+    "raw": "D"
+   },
+   {
+    "number": 6,
+    "raw": "C"
+   },
+   {
+    "number": 7,
+    "raw": "True"
+   },
+   {
+    "number": 8,
+    "raw": "True"
+   },
+   {
+    "number": 9,
+    "raw": "False"
+   },
+   {
+    "number": 10,
+    "raw": "Not given"
+   },
+   {
+    "number": 11,
+    "raw": "plastic tubes/filter-fabric straws"
+   },
+   {
+    "number": 12,
+    "raw": "Membrane"
+   },
+   {
+    "number": 13,
+    "raw": "Extract"
+   },
+   {
+    "number": 14,
+    "raw": "ix"
+   },
+   {
+    "number": 15,
+    "raw": "vi"
+   },
+   {
+    "number": 16,
+    "raw": "x"
+   },
+   {
+    "number": 17,
+    "raw": "vii"
+   },
+   {
+    "number": 18,
+    "raw": "v"
+   },
+   {
+    "number": 19,
+    "raw": "i"
+   },
+   {
+    "number": 20,
+    "raw": "Not given"
+   },
+   {
+    "number": 21,
+    "raw": "True"
+   },
+   {
+    "number": 22,
+    "raw": "Not given"
+   },
+   {
+    "number": 23,
+    "raw": "Biological phenomena"
+   },
+   {
+    "number": 24,
+    "raw": "DNA microarrays"
+   },
+   {
+    "number": 25,
+    "raw": "(myriad) conditions"
+   },
+   {
+    "number": 26,
+    "raw": "Their expression levels"
+   },
+   {
+    "number": 27,
+    "raw": "P"
+   },
+   {
+    "number": 28,
+    "raw": "H"
+   },
+   {
+    "number": 29,
+    "raw": "F"
+   },
+   {
+    "number": 30,
+    "raw": "G"
+   },
+   {
+    "number": 31,
+    "raw": "N"
+   },
+   {
+    "number": 32,
+    "raw": "J"
+   },
+   {
+    "number": 33,
+    "raw": "C"
+   },
+   {
+    "number": 34,
+    "raw": "True"
+   },
+   {
+    "number": 35,
+    "raw": "False"
+   },
+   {
+    "number": 36,
+    "raw": "False"
+   },
+   {
+    "number": 37,
+    "raw": "Not given"
+   },
+   {
+    "number": 38,
+    "raw": "True"
+   },
+   {
+    "number": 39,
+    "raw": "False"
+   },
+   {
+    "number": 40,
+    "raw": "D"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "The success of cellulose",
    "paragraphs": [
-    "A Not too long ago many investors made the bet that renewable fuels from bio-mass would be the next big thing in energy. Converting corn, sugarcane, and soybeans into ethanol or diesel-type fuels lessens our nation’s dependence on oil imports while cutting carbon dioxide emissions. But already the nascent industry faces challenges. Escalating demand is hiking food prices while farmers clear rainforest habitats to grow fuel crops. And several recent studies say that certain biofuel-production processes either fail to yield net energy gains or release more carbon dioxide than they use.",
-    "B A successor tier of start-up ventures aims to avoid those problems. Rather than focusing on the starches, sugars, and fats of food crops, many of the prototype bioethanol processes work with lignocellulose, the “woody” tissue that strengthens the cell walls of plants, says University of Massachusetts Amherst chemical engineer George W. Huber. Although cellulose breaks down less easily than sugars and starches and thus requires a complex series of enzyme-driven chemical reactions, its use opens the industry to nonfood plant feedstocks such as agricultural wastes, wood chips, and switchgrass. But no company has yet demonstrated a cost-competitive industrial process for making cellulosic biofuels.",
-    "C So scientists and engineers are working on dozens of possible biofuel-processing routes, reports Charles Wyman, a chemical engineer at the University of California, Riverside, who is a founder of Mascoma Corporation in Cambridge, Mass., a leading developer of cellulosic ethanol processing.” There’s no miracle process out there,” he remarks. And fine-tuning a process involves considerable money and time. “The oil companies say that it takes 10 years to fully commercialize an industrial processing route,” warns Huber, who has contributed some thermochemical techniques to another biomass start-up, Virent Energy Systems in Madison, Wis.",
-    "D One promising biofuel procedure that avoids the complex enzymatic chemistry to break down cellulose is now being explored by Coskata in Warrenville, Ill., a firm launched in 2006 by high-profile investors and entrepreneurs (General Motors recently took a minority stake in it as well). In the Coskata operation, a conventional gasification system will use heat to turn various feedstocks into a mixture of carbon monoxide and hydrogen called syngas, says Richard Tobey, vice president of Engineering and R&D. The ability to handle multiple plant feedstocks would boost the flexibility of the overall process because each region in the country has access to certain feedstocks but not others.",
-    "E Instead of using thermochemical methods to convert the syngas to fuel- a process that can be significantly more costly because of the added expense of pressurizing gases, according to Tobey – the Coskata group chose a biochemical route. The group focused on five promising strains of ethanol-excreting bacteria that Ralph Tanner, a microbiologist at the University of Oklahoma, had discovered years before in the oxygen-free sediments of a swamp. These anaerobic bugs make ethanol by voraciously consuming syngas.",
-    "F The “heart and soul of the Coskata process,” as Tobey puts it, is the bioreactor in which the bacteria live. “Rather than searching for food in the fermentation mash in a large tank, our bacteria wait for the gas to be delivered to them,” he explains. The firm relies on plastic tubes, the filter-fabric straws as thin as human hair. The syngas flows through the straws, and water is pumped across their exteriors. The gases diffuse across the selective membrane to the bacteria embedded in the outer surface of the tubes, which permits no water inside. “We get an efficient mass transfer with the tubes, which is not easy,” Tobey says. “Our data suggest that in an optimal setting we could get 90 percent of the energy value of the gases into our fuel.” After the bugs eat the gases, they release ethanol into the surrounding water. Standard distillation or filtration techniques could extract the alcohol from the water.",
-    "G Coskata researchers estimate that their commercialized process could deliver ethanol at under $1 per gallon-less than half of today’s $2-per-gallon wholesale price, Tobey claims. Outside evaluators of Argonne National Laboratory measured the input-output “energy balance” of the Coskata process and found that, optimally, it can produce 7.7 times as much energy in the end product as it takes to make it.",
-    "H The company plans to construct a 40,000-gallon-a-year pilot plant near the GM test track in Milford, Mich., by the end of this year and hopes to build a full-scale, 100-million-gallon-a-year plant by 2011. Coskata may have some company by then; Bioengineering Resources in Fayetteville, Ark., is already developing what seems to be a similar three-step pathway in which syngas is consumed by bacteria isolated by James Gaddy, a retired chemical engineer at the University of Arkansas. Considering the advances in these and other methods, plant cellulose could provide the greener ethanol everyone wants."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Not too long ago many investors made the bet that renewable fuels from bio-mass would be the next big thing in energy. Converting corn, sugarcane, and soybeans into ethanol or diesel-type fuels lessens our nation’s dependence on oil imports while cutting carbon dioxide emissions. But already the nascent industry faces challenges. Escalating demand is hiking food prices while farmers clear rainforest habitats to grow fuel crops. And several recent studies say that certain biofuel-production processes either fail to yield net energy gains or release more carbon dioxide than they use."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "A successor tier of start-up ventures aims to avoid those problems. Rather than focusing on the starches, sugars, and fats of food crops, many of the prototype bioethanol processes work with lignocellulose, the “woody” tissue that strengthens the cell walls of plants, says University of Massachusetts Amherst chemical engineer George W. Huber. Although cellulose breaks down less easily than sugars and starches and thus requires a complex series of enzyme-driven chemical reactions, its use opens the industry to nonfood plant feedstocks such as agricultural wastes, wood chips, and switchgrass. But no company has yet demonstrated a cost-competitive industrial process for making cellulosic biofuels."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "So scientists and engineers are working on dozens of possible biofuel-processing routes, reports Charles Wyman, a chemical engineer at the University of California, Riverside, who is a founder of Mascoma Corporation in Cambridge, Mass., a leading developer of cellulosic ethanol processing.” There’s no miracle process out there,” he remarks. And fine-tuning a process involves considerable money and time. “The oil companies say that it takes 10 years to fully commercialize an industrial processing route,” warns Huber, who has contributed some thermochemical techniques to another biomass start-up, Virent Energy Systems in Madison, Wis."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "One promising biofuel procedure that avoids the complex enzymatic chemistry to break down cellulose is now being explored by Coskata in Warrenville, Ill., a firm launched in 2006 by high-profile investors and entrepreneurs (General Motors recently took a minority stake in it as well). In the Coskata operation, a conventional gasification system will use heat to turn various feedstocks into a mixture of carbon monoxide and hydrogen called syngas, says Richard Tobey, vice president of Engineering and R&D. The ability to handle multiple plant feedstocks would boost the flexibility of the overall process because each region in the country has access to certain feedstocks but not others."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Instead of using thermochemical methods to convert the syngas to fuel- a process that can be significantly more costly because of the added expense of pressurizing gases, according to Tobey – the Coskata group chose a biochemical route. The group focused on five promising strains of ethanol-excreting bacteria that Ralph Tanner, a microbiologist at the University of Oklahoma, had discovered years before in the oxygen-free sediments of a swamp. These anaerobic bugs make ethanol by voraciously consuming syngas."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The “heart and soul of the Coskata process,” as Tobey puts it, is the bioreactor in which the bacteria live. “Rather than searching for food in the fermentation mash in a large tank, our bacteria wait for the gas to be delivered to them,” he explains. The firm relies on plastic tubes, the filter-fabric straws as thin as human hair. The syngas flows through the straws, and water is pumped across their exteriors. The gases diffuse across the selective membrane to the bacteria embedded in the outer surface of the tubes, which permits no water inside. “We get an efficient mass transfer with the tubes, which is not easy,” Tobey says. “Our data suggest that in an optimal setting we could get 90 percent of the energy value of the gases into our fuel.” After the bugs eat the gases, they release ethanol into the surrounding water. Standard distillation or filtration techniques could extract the alcohol from the water."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Coskata researchers estimate that their commercialized process could deliver ethanol at under $1 per gallon-less than half of today’s $2-per-gallon wholesale price, Tobey claims. Outside evaluators of Argonne National Laboratory measured the input-output “energy balance” of the Coskata process and found that, optimally, it can produce 7.7 times as much energy in the end product as it takes to make it."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "The company plans to construct a 40,000-gallon-a-year pilot plant near the GM test track in Milford, Mich., by the end of this year and hopes to build a full-scale, 100-million-gallon-a-year plant by 2011. Coskata may have some company by then; Bioengineering Resources in Fayetteville, Ark., is already developing what seems to be a similar three-step pathway in which syngas is consumed by bacteria isolated by James Gaddy, a retired chemical engineer at the University of Arkansas. Considering the advances in these and other methods, plant cellulose could provide the greener ethanol everyone wants."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 7-10 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q01-06",
+     "startQ": 1,
+     "endQ": 6,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes 1-6 on your answer sheet. NB you may use any letter more than once",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "George W. Huber"
+       },
+       {
+        "id": "B",
+        "text": "James Gaddy"
+       },
+       {
+        "id": "C",
+        "text": "Richard Tobey"
+       },
+       {
+        "id": "D",
+        "text": "Charles Wyman"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "matching_features",
+       "prompt": [
+        "A key component to gain success lies in the place where the organisms survive."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "matching_features",
+       "prompt": [
+        "Engaged in separating fixed procedures to produce ethanol in the homologous biochemical way."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "matching_features",
+       "prompt": [
+        "Assists to develop certain skills."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 4,
+       "type": "matching_features",
+       "prompt": [
+        "It needs arduous efforts to achieve highly efficient transfer."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "matching_features",
+       "prompt": [
+        "There is no shortcut to expedite the production process."
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "matching_features",
+       "prompt": [
+        "A combination of chemistry and biology can considerably lower the cost needed for the production company."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 9,
+      "lineRange": [
+       9,
+       20
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-6",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes 1-6 on your answer sheet. NB you may use any letter more than once",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A George W. Huber",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B James Gaddy",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Richard Tobey",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Charles Wyman",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. A key component to gain success lies in the place where the organisms survive.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. Engaged in separating fixed procedures to produce ethanol in the homologous biochemical way.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. Assists to develop certain skills.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. It needs arduous efforts to achieve highly efficient transfer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. There is no shortcut to expedite the production process.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. A combination of chemistry and biology can considerably lower the cost needed for the production company.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q07-10",
      "startQ": 7,
      "endQ": 10,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 7-10 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "A shift from conventionally targeted areas of the vegetation to get ethanol takes place.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. A shift from conventionally targeted areas of the vegetation to get ethanol takes place.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "A shift from conventionally targeted areas of the vegetation to get ethanol takes place."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 8,
        "type": "tfng",
-       "stem": {
-        "plain": "It takes a considerably long way before a completely mature process is reached.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. It takes a considerably long way before a completely mature process is reached.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "It takes a considerably long way before a completely mature process is reached."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 9,
        "type": "tfng",
-       "stem": {
-        "plain": "The Coskata group sees no bright future for the cost advantage available in the production of greener ethanol.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9. The Coskata group sees no bright future for the cost advantage available in the production of greener ethanol.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "The Coskata group sees no bright future for the cost advantage available in the production of greener ethanol."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 10,
        "type": "tfng",
-       "stem": {
-        "plain": "Some enterprises are trying to buy the shares of Coskata group.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "10. Some enterprises are trying to buy the shares of Coskata group.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Some enterprises are trying to buy the shares of Coskata group."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[12]",
-      "rawExcerpt": "Questions 7-10\nDo the following statements agree with the information given in Reading Passage? In boxes 7-10 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nN"
+      "headerLine": 21,
+      "lineRange": [
+       21,
+       29
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 7-10",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage? In boxes 7-10 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. A shift from conventionally targeted areas of the vegetation to get ethanol takes place.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. It takes a considerably long way before a completely mature process is reached.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9. The Coskata group sees no bright future for the cost advantage available in the production of greener ethanol.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10. Some enterprises are trying to buy the shares of Coskata group.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 11-13 on your answer sheet.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p1.q11-13",
      "startQ": 11,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 11-13 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Tobey has noticed that the Coskata process can achieve huge success because it utilizes ",
+         {
+          "blank": 11
+         },
+         "as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated ",
+         {
+          "blank": 12
+         },
+         "To produce the ethanol into the water outside which researchers will later ",
+         {
+          "blank": 13
+         },
+         "by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 11,
-       "type": "completion",
-       "stem": {
-        "plain": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11) ______ as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (12) ______ To produce the ethanol into the water outside which researchers will later (13) ______ by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve.",
-        "segments": [
-         "Tobey has noticed that the Coskata process can achieve huge success because it utilizes",
-         {
-          "blank": 11
-         },
-         "as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated",
-         {
-          "blank": 12
-         },
-         "To produce the ethanol into the water outside which researchers will later",
-         {
-          "blank": 13
-         },
-         "by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "plastic tubes/filter-fabric straws",
+        "value": "plastic tubes/filter-fabric straws",
+        "accepted": [
+         "plastic tubes",
+         "filter-fabric straws"
         ]
-       },
-       "options": null,
-       "correctAnswer": "plastic tubes/filter-fabric straws",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11)………………. as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (1",
-        "elementPath": "children[16]"
        }
       },
       {
        "number": 12,
-       "type": "completion",
-       "stem": {
-        "plain": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11) ______ as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (12) ______ To produce the ethanol into the water outside which researchers will later (13) ______ by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve.",
-        "segments": [
-         "Tobey has noticed that the Coskata process can achieve huge success because it utilizes",
-         {
-          "blank": 11
-         },
-         "as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated",
-         {
-          "blank": 12
-         },
-         "To produce the ethanol into the water outside which researchers will later",
-         {
-          "blank": 13
-         },
-         "by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Membrane",
+        "value": "Membrane",
+        "accepted": [
+         "Membrane"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Membrane",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11)………………. as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (1",
-        "elementPath": "children[16]"
        }
       },
       {
        "number": 13,
-       "type": "completion",
-       "stem": {
-        "plain": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11) ______ as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (12) ______ To produce the ethanol into the water outside which researchers will later (13) ______ by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve.",
-        "segments": [
-         "Tobey has noticed that the Coskata process can achieve huge success because it utilizes",
-         {
-          "blank": 11
-         },
-         "as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated",
-         {
-          "blank": 12
-         },
-         "To produce the ethanol into the water outside which researchers will later",
-         {
-          "blank": 13
-         },
-         "by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel which is actually very difficult to achieve."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Extract",
+        "value": "Extract",
+        "accepted": [
+         "Extract"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Extract",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11)………………. as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (1",
-        "elementPath": "children[16]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[15]",
-      "rawExcerpt": "Questions 11-13\nComplete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 11-13 on your answer sheet."
+      "headerLine": 30,
+      "lineRange": [
+       30,
+       32
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 11-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 11-13 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Tobey has noticed that the Coskata process can achieve huge success because it utilizes (11)………………. as the bioreactor on whose exterior surface the bacteria take the syngas going through the coated (12)…………….. To produce the ethanol into the water outside which researchers will later (13)………………….by certain techniques. The figures show a pretty high percentage of energy can be transferred into fuel",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "List of Headings",
+   "title": "Life code: unlocked!",
    "paragraphs": [
-    "A On an airport shuttle bus to the Kavli Institute for Theoretical Physics in Santa Barbara, Calif., Chris Wiggins took a colleague’s advice and opened a Microsoft Excel spreadsheet. It had nothing to do with the talk on biopolymer physics he was invited to give. Rather the columns and rows of numbers that stared back at him referred to the genetic activity of budding yeast. Specifically, the numbers represented the amount of messenger RNA (MRNA) expressed by all 6,200 genes of the yeast over the course of its reproductive cycle. “It was the first time I ever saw anything like this,” Wiggins recalls of that spring day in 2002. “How to make sense of all this data?”",
-    "B Instead of shirking from this question, the 36-year-old applied mathematician and physicist at Columbia University embraced it-and now six years later he thinks he has an answer. By foraying into fields outside his own, Wiggins has drudged up tools from a branch of artificial intelligence called machine learning to model the collective protein-making activity of genes from real-world biological data. Engineers originally designed these tools in the late 1950s to predict output from input. Wiggins and his colleagues have now brought machine learning to the natural sciences and tweaked it so that it can also tell a story-one not only about input and output but also about what happens inside a model of gene regulation, the black box in between.",
-    "C The impetus for this work began in the late 1990s, when high-throughput techniques generated more mRNA expression profiles and DNA sequences than ever before, “opening up a completely different way of thinking about biological phenomena,” Wiggins says. Key among these techniques were DNA microarrays, chips that provide a panoramic view of the activity of genes and their expression levels in any cell type, simultaneously and under myriad conditions. As noisy and incomplete as the data were, biologists could now query which genes turn on or off in different cells and determine the collection of proteins that give rise to a cell’s characteristic features, healthy or diseased.",
-    "D Yet predicting such gene activity requires uncovering the fundamental rules that govern it. “Over time, these rules have been locked in by cells,” says theoretical physicist Harmen Bussemaker, now an associate professor of biology at Columbia. “Evolution has kept the good stuff.” To find these rules, scientists needed statistics to infer the interaction between genes and the proteins that regulate them and to then mathematically describe this network’s underlying structure-the dynamic pattern of gene and protein activity over time. But physicists who did not work with particles (or planets, for that matter) viewed statistics as nothing short of an anathema. “If your experiment requires statistics,” British physicist Ernest Rutherford once said, “you ought to have done a better experiment.”",
-    "E But in working with microarrays, “the experiment has been done without you,” Wiggins explains. “And biology doesn’t hand you a model to make sense of the data.” Even more challenging, the building blocks that makeup DNA, RNA, and proteins are assembled in myriad ways; moreover, subtly different rules of interaction govern their activity, making it difficult, if not impossible, to reduce their patterns of interaction to fundamental laws. Some genes and proteins are not even known. “You are trying to find something compelling about the natural world in a context where you don’t know very much,” says William Bialek, a biophysicist at Princeton University. “You’re forced to be agnostic.” Wiggins believes that many machine-learning algorithms perform well under precisely these conditions. When working with so many unknown variables, “machine learning lets the data decide what’s worth looking at,” he says.",
-    "F At the Kavli Institute, Wiggins began building a model of a gene regulatory network in a yeast-the set of rules by which genes selectively orchestrate how vigorously DNA is transcribed into mRNA. As he worked with different algorithms, he started to attend discussions on gene regulation led by Christina Leslie, who ran the computational biology group at Columbia at the time. Leslie suggested using a specific machine-learning tool called a classifier. Say the algorithm must discriminate between pictures that have bicycles in them and pictures that do not. A classifier sifts through labeled examples and measures everything it can about them, gradually learning the decision rules that govern the grouping. From these rules, the algorithm generates a model that can determine whether or not new pictures have bikes in them. In gene regulatory networks, the learning task becomes the problem of predicting whether genes increase or decrease their protein-making activity.",
-    "G The algorithm that Wiggins and Leslie began building in the fall of 2002 was trained on the DNA sequences and mRNA levels of regulators expressed during a range of conditions in yeast-when the yeast was cold, hot, starved, and so on. Specifically, this algorithm-MEDUSA (for motif element discrimination using sequence agglomeration) -scans every possible pairing between a set of DNA promoter sequences, called motifs, and regulators. Then, much like a child might match a list of words with their definitions by drawing a line between the two, MEDUSA finds the pairing that best improves the fit between the model and the data it tries to emulate. (Wiggins refers to these pairings as edges.) Each time MEDUSA finds a pairing, it updates the model by adding a new rule to guide its search for the next pairing. It then determines the strength of each pairing by how well the rule improves the existing model. The hierarchy of numbers enables Wiggins and his colleagues to determine which pairings are more important than others and how they can collectively influence the activity of each of the yeast’s 6,200 genes. By adding one pairing at a time, MEDUSA can predict which genes ratchet up their RNA production or clamp that production down, as well as reveal the collective mechanisms that orchestrate an organism’s transcriptional logic.",
-    "i The search for the better-fit matching between the model and the gained figures to foresee the activities of the genes\nii The definition of MEDUSA\niii A flashback of commencement for a far-reaching breakthrough\niv A drawing of the gene map\nv An algorithm used to construct a specific model to discern the appearance of something new by the joint effort of Wiggins and another scientist\nvi An introduction of a background tracing back to the availability of mature techniques for detailed research on genes\nvii A way out to face the challenge confronting the scientist on the deciding of researchable data.\nviii A failure to find out some specific genes controlling the production of certain proteins\nix The use of a means from another domain for reference\nx A tough hurdle on the way to find the law governing the activities of the genes",
-    "Example: Paragraph A iii",
-    "14. Paragraph B\n15. Paragraph C\n16. Paragraph D\n17. Paragraph E\n18. Paragraph F\n19. Paragraph G"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "On an airport shuttle bus to the Kavli Institute for Theoretical Physics in Santa Barbara, Calif., Chris Wiggins took a colleague’s advice and opened a Microsoft Excel spreadsheet. It had nothing to do with the talk on biopolymer physics he was invited to give. Rather the columns and rows of numbers that stared back at him referred to the genetic activity of budding yeast. Specifically, the numbers represented the amount of messenger RNA (MRNA) expressed by all 6,200 genes of the yeast over the course of its reproductive cycle. “It was the first time I ever saw anything like this,” Wiggins recalls of that spring day in 2002. “How to make sense of all this data?”"
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Instead of shirking from this question, the 36-year-old applied mathematician and physicist at Columbia University embraced it-and now six years later he thinks he has an answer. By foraying into fields outside his own, Wiggins has drudged up tools from a branch of artificial intelligence called machine learning to model the collective protein-making activity of genes from real-world biological data. Engineers originally designed these tools in the late 1950s to predict output from input. Wiggins and his colleagues have now brought machine learning to the natural sciences and tweaked it so that it can also tell a story-one not only about input and output but also about what happens inside a model of gene regulation, the black box in between."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "The impetus for this work began in the late 1990s, when high-throughput techniques generated more mRNA expression profiles and DNA sequences than ever before, “opening up a completely different way of thinking about biological phenomena,” Wiggins says. Key among these techniques were DNA microarrays, chips that provide a panoramic view of the activity of genes and their expression levels in any cell type, simultaneously and under myriad conditions. As noisy and incomplete as the data were, biologists could now query which genes turn on or off in different cells and determine the collection of proteins that give rise to a cell’s characteristic features, healthy or diseased."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Yet predicting such gene activity requires uncovering the fundamental rules that govern it. “Over time, these rules have been locked in by cells,” says theoretical physicist Harmen Bussemaker, now an associate professor of biology at Columbia. “Evolution has kept the good stuff.” To find these rules, scientists needed statistics to infer the interaction between genes and the proteins that regulate them and to then mathematically describe this network’s underlying structure-the dynamic pattern of gene and protein activity over time. But physicists who did not work with particles (or planets, for that matter) viewed statistics as nothing short of an anathema. “If your experiment requires statistics,” British physicist Ernest Rutherford once said, “you ought to have done a better experiment.”"
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "But in working with microarrays, “the experiment has been done without you,” Wiggins explains. “And biology doesn’t hand you a model to make sense of the data.” Even more challenging, the building blocks that makeup DNA, RNA, and proteins are assembled in myriad ways; moreover, subtly different rules of interaction govern their activity, making it difficult, if not impossible, to reduce their patterns of interaction to fundamental laws. Some genes and proteins are not even known. “You are trying to find something compelling about the natural world in a context where you don’t know very much,” says William Bialek, a biophysicist at Princeton University. “You’re forced to be agnostic.” Wiggins believes that many machine-learning algorithms perform well under precisely these conditions. When working with so many unknown variables, “machine learning lets the data decide what’s worth looking at,” he says."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "At the Kavli Institute, Wiggins began building a model of a gene regulatory network in a yeast-the set of rules by which genes selectively orchestrate how vigorously DNA is transcribed into mRNA. As he worked with different algorithms, he started to attend discussions on gene regulation led by Christina Leslie, who ran the computational biology group at Columbia at the time. Leslie suggested using a specific machine-learning tool called a classifier. Say the algorithm must discriminate between pictures that have bicycles in them and pictures that do not. A classifier sifts through labeled examples and measures everything it can about them, gradually learning the decision rules that govern the grouping. From these rules, the algorithm generates a model that can determine whether or not new pictures have bikes in them. In gene regulatory networks, the learning task becomes the problem of predicting whether genes increase or decrease their protein-making activity."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "The algorithm that Wiggins and Leslie began building in the fall of 2002 was trained on the DNA sequences and mRNA levels of regulators expressed during a range of conditions in yeast-when the yeast was cold, hot, starved, and so on. Specifically, this algorithm-MEDUSA (for motif element discrimination using sequence agglomeration) -scans every possible pairing between a set of DNA promoter sequences, called motifs, and regulators. Then, much like a child might match a list of words with their definitions by drawing a line between the two, MEDUSA finds the pairing that best improves the fit between the model and the data it tries to emulate. (Wiggins refers to these pairings as edges.) Each time MEDUSA finds a pairing, it updates the model by adding a new rule to guide its search for the next pairing. It then determines the strength of each pairing by how well the rule improves the existing model. The hierarchy of numbers enables Wiggins and his colleagues to determine which pairings are more important than others and how they can collectively influence the activity of each of the yeast’s 6,200 genes. By adding one pairing at a time, MEDUSA can predict which genes ratchet up their RNA production or clamp that production down, as well as reveal the collective mechanisms that orchestrate an organism’s transcriptional logic."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 20-22 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-19",
+     "startQ": 14,
+     "endQ": 19,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading passage has seven paragraphs, A-G. Choose the correct heading for paragraphs A-G from the list below. Write the correct number, i-x, in boxes 14-19 on your answer sheet.",
+     "legend": null,
+     "notes": [
+      "Example: Paragraph A iii"
+     ],
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "The search for the better-fit matching between the model and the gained figures to foresee the activities of the genes"
+       },
+       {
+        "id": "ii",
+        "text": "The definition of MEDUSA"
+       },
+       {
+        "id": "iii",
+        "text": "A flashback of commencement for a far-reaching breakthrough"
+       },
+       {
+        "id": "iv",
+        "text": "A drawing of the gene map"
+       },
+       {
+        "id": "v",
+        "text": "An algorithm used to construct a specific model to discern the appearance of something new by the joint effort of Wiggins and another scientist"
+       },
+       {
+        "id": "vi",
+        "text": "An introduction of a background tracing back to the availability of mature techniques for detailed research on genes"
+       },
+       {
+        "id": "vii",
+        "text": "A way out to face the challenge confronting the scientist on the deciding of researchable data."
+       },
+       {
+        "id": "viii",
+        "text": "A failure to find out some specific genes controlling the production of certain proteins"
+       },
+       {
+        "id": "ix",
+        "text": "The use of a means from another domain for reference"
+       },
+       {
+        "id": "x",
+        "text": "A tough hurdle on the way to find the law governing the activities of the genes"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "ix",
+        "value": "ix",
+        "accepted": [
+         "ix"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "vi",
+        "value": "vi",
+        "accepted": [
+         "vi"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "x",
+        "value": "x",
+        "accepted": [
+         "x"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "vii",
+        "value": "vii",
+        "accepted": [
+         "vii"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "v",
+        "value": "v",
+        "accepted": [
+         "v"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph G"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 41,
+      "lineRange": [
+       41,
+       60
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-19",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading passage has seven paragraphs, A-G. Choose the correct heading for paragraphs A-G from the list below. Write the correct number, i-x, in boxes 14-19 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i The search for the better-fit matching between the model and the gained figures to foresee the activities of the genes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii The definition of MEDUSA",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii A flashback of commencement for a far-reaching breakthrough",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv A drawing of the gene map",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v An algorithm used to construct a specific model to discern the appearance of something new by the joint effort of Wiggins and another scientist",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi An introduction of a background tracing back to the availability of mature techniques for detailed research on genes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii A way out to face the challenge confronting the scientist on the deciding of researchable data.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii A failure to find out some specific genes controlling the production of certain proteins",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix The use of a means from another domain for reference",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "x A tough hurdle on the way to find the law governing the activities of the genes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Example: Paragraph A iii",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. Paragraph F",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Paragraph G",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q20-22",
      "startQ": 20,
      "endQ": 22,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 20-22 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "Wiggins is the first man to use DNA microarrays for the research on genes.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. Wiggins is the first man to use DNA microarrays for the research on genes.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Wiggins is the first man to use DNA microarrays for the research on genes."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "There is almost no possibility for the effort to decrease the patterns of interaction between DNA, RNA, and proteins.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. There is almost no possibility for the effort to decrease the patterns of interaction between DNA, RNA, and proteins.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "There is almost no possibility for the effort to decrease the patterns of interaction between DNA, RNA, and proteins."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "Wiggins holds a very positive attitude on the future of genetic research.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. Wiggins holds a very positive attitude on the future of genetic research.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Wiggins holds a very positive attitude on the future of genetic research."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[30]",
-      "rawExcerpt": "Questions 20-22\nDo the following statements agree with the information given in Reading Passage? In boxes 20-22 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+      "headerLine": 61,
+      "lineRange": [
+       61,
+       68
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 20-22",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage? In boxes 20-22 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. Wiggins is the first man to use DNA microarrays for the research on genes.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. There is almost no possibility for the effort to decrease the patterns of interaction between DNA, RNA, and proteins.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. Wiggins holds a very positive attitude on the future of genetic research.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q23-26",
      "startQ": 23,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at ",
+         {
+          "blank": 23
+         },
+         "from a totally new way. ",
+         {
+          "blank": 24
+         },
+         "is the heart and soul of these techniques and no matter what the ",
+         {
+          "blank": 25
+         },
+         "were, at the same time they can offer a whole picture of the genes’ activities as well as ",
+         {
+          "blank": 26
+         },
+         "in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 23,
-       "type": "completion",
-       "stem": {
-        "plain": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23) ______ from a totally new way. (24) ______ is the heart and soul of these techniques and no matter what the (25) ______ were, at the same time they can offer a whole picture of the genes’ activities as well as (26) ______ in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins.",
-        "segments": [
-         "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at",
-         {
-          "blank": 23
-         },
-         "from a totally new way.",
-         {
-          "blank": 24
-         },
-         "is the heart and soul of these techniques and no matter what the",
-         {
-          "blank": 25
-         },
-         "were, at the same time they can offer a whole picture of the genes’ activities as well as",
-         {
-          "blank": 26
-         },
-         "in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Biological phenomena",
+        "value": "Biological phenomena",
+        "accepted": [
+         "Biological phenomena"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Biological phenomena",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23)…………………. from a totally new way. (24)……………….. is the hear",
-        "elementPath": "children[34]"
        }
       },
       {
        "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23) ______ from a totally new way. (24) ______ is the heart and soul of these techniques and no matter what the (25) ______ were, at the same time they can offer a whole picture of the genes’ activities as well as (26) ______ in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins.",
-        "segments": [
-         "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at",
-         {
-          "blank": 23
-         },
-         "from a totally new way.",
-         {
-          "blank": 24
-         },
-         "is the heart and soul of these techniques and no matter what the",
-         {
-          "blank": 25
-         },
-         "were, at the same time they can offer a whole picture of the genes’ activities as well as",
-         {
-          "blank": 26
-         },
-         "in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "DNA microarrays",
+        "value": "DNA microarrays",
+        "accepted": [
+         "DNA microarrays"
         ]
-       },
-       "options": null,
-       "correctAnswer": "DNA microarrays",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23)…………………. from a totally new way. (24)……………….. is the hear",
-        "elementPath": "children[34]"
        }
       },
       {
        "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23) ______ from a totally new way. (24) ______ is the heart and soul of these techniques and no matter what the (25) ______ were, at the same time they can offer a whole picture of the genes’ activities as well as (26) ______ in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins.",
-        "segments": [
-         "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at",
-         {
-          "blank": 23
-         },
-         "from a totally new way.",
-         {
-          "blank": 24
-         },
-         "is the heart and soul of these techniques and no matter what the",
-         {
-          "blank": 25
-         },
-         "were, at the same time they can offer a whole picture of the genes’ activities as well as",
-         {
-          "blank": 26
-         },
-         "in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(myriad) conditions",
+        "value": "(myriad) conditions",
+        "accepted": [
+         "myriad conditions",
+         "conditions"
         ]
-       },
-       "options": null,
-       "correctAnswer": "(myriad) conditions",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23)…………………. from a totally new way. (24)……………….. is the hear",
-        "elementPath": "children[34]"
        }
       },
       {
        "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23) ______ from a totally new way. (24) ______ is the heart and soul of these techniques and no matter what the (25) ______ were, at the same time they can offer a whole picture of the genes’ activities as well as (26) ______ in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins.",
-        "segments": [
-         "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at",
-         {
-          "blank": 23
-         },
-         "from a totally new way.",
-         {
-          "blank": 24
-         },
-         "is the heart and soul of these techniques and no matter what the",
-         {
-          "blank": 25
-         },
-         "were, at the same time they can offer a whole picture of the genes’ activities as well as",
-         {
-          "blank": 26
-         },
-         "in all types of cells. With these techniques, scientists could locate the exact gene which was on or off to manipulate the production of the proteins."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Their expression levels",
+        "value": "Their expression levels",
+        "accepted": [
+         "Their expression levels"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Their expression levels",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23)…………………. from a totally new way. (24)……………….. is the hear",
-        "elementPath": "children[34]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[33]",
-      "rawExcerpt": "Questions 23-26\nComplete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 23-26 on your answer sheet."
+      "headerLine": 69,
+      "lineRange": [
+       69,
+       71
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 23-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 23-26 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Wiggins states that the astoundingly rapid development of techniques concerning the components of genes aroused the researchers to look at (23)…………………. from a totally new way. (24)……………….. is the heart and soul of these techniques and no matter what the (25)………………. were, at the same time they can offer a whole picture of the genes’ activities as well as (26)………………. in all types of cells. With thes",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -452,600 +1254,725 @@
    "passageNumber": 3,
    "title": "THE MPEMBA EFFECT",
    "paragraphs": [
-    "In 300 BC, the famous philosopher Aristotle wrote about a strange phenomenon that he had observed: “Many people, when they want to cool water quickly, begin by putting it in the sun.” Other philosophers over the ages noted the same result, but were unable to explain it.",
-    "In 1963, a young Tanzanian student named Erasto Mpemba noticed that the ice cream he was making froze faster if the mix was placed in the freezer while warm than if it were at room temperature. He persisted in questioning why this occurred, and eventually physicist Denis Osborne began a serious investigation into what is now known as the Mpemba Effect. He and Mpemba co-authored a paper in New Scientist in 1969, which produced scientific descriptions of some of the many factors at work in freezing water.",
-    "It was initially hypothesised that the warm bowl melted itself a place in the ice on the freezer shelf, thus embedding its base in a ‘nest’ of ice, which would accelerate freezing. The hypothesis was tested by comparing the result when bowls of warm water were placed on ice and on a dry wire shelf; this demonstrated that the ice nest actually had little effect. A second suggestion was that the warmer water would be evaporating at its surface, thus reducing the volume needing to be frozen, but this idea was also shown to be insignificant.",
-    "Thermometers placed in the water showed that the cooler water dropped to freezing temperature well before the warmer bowlful, and yet the latter always froze solid first. Experiments at different temperatures showed that water at 50C took longest to freeze in a conventional freezer, while water initially at 350C was quickest. On further examination, an explanation for this paradox began to emerge. Losing heat from the water occurs at the points where it is in touch with the colder atmosphere of the freezer, namely the sides of the bowl and the water surface.",
-    "A warm surface will lose heat faster than a cold one because of the contrast between the temperatures; but of course there is more heat to be lost from one bowl than the other! If the surface can be kept at a higher temperature, the higher rate of heat loss will continue. As long as the water remains liquid, the cooling portion on top will sink to the bottom of the bowl as the warmer water below rises to take its place. The early freezing that may occur on the sides and base of the container will amplify the effect.",
-    "The bowl that is more uniformly cold will have far less temperature difference so the water flow will be minimal. Another inhibiting factor for this container is that ice will also form quite quickly on the surface. This not only acts as insulation, but will virtually stop the helpful effects of the water circulating inside the bowl.",
-    "Ultimately, the rate of cooling the core of this body of water becomes so slow that the other warmer one is always fully frozen first. While there are limitations to this comparison (for example, we would not see such a result if one quantity were at 10C and another at 990C) this counter-intuitive result does hold true within the 5–350C range of temperatures indicated previously.",
-    "Since this paper was published, the validity of the research findings has been questioned by a number of reviewers. They point out that the initial experimental question was not clearly defined; for example, the researchers needed to decide on exactly what constituted freezing the water. They also state that the rate at which water freezes depends on a large number of variables.",
-    "Container size is one of these; for the Mpemba Effect to be noticed, the container must be large enough to allow a free circulation of water to take place, yet small enough for the freezing areas of the side and base to be effective at extracting heat too. Secondly, research at a University in St Louis, Missouri, suggests that the Mpemba Effect may be affected by water purity, or by dissolved gas in the water.",
-    "Distilled water is totally free of the particles that are common in normal drinking water or mineral water. When suspended in water, these particles may have a small effect on the speed of cooling, especially as ice molecules tend to expel them into the surrounding water, where they become more concentrated. Just as salt dissolved in water will raise the boiling point and lower the temperature at which it freezes, the researchers found that the final portion of ordinary water needed extra cooling, below zero, before all was frozen solid.",
-    "One more factor that can distort the effect is observed if the bowls are not placed simultaneously into the same freezer. In this case, the freezer thermostat is more likely to register the presence of a hotter bowl than a colder one, and therefore the change in internal temperature causes a boost of freezing power as the motor is activated.",
-    "The Mpemba Effect is still not fully understood, and researchers continue to delve into its underlying physics. Physicists cannot reach consensus. Some suggest that supercooling1 is involved; others that the molecular bonds in the water molecules affect the rate of cooling and freezing of water. A 2013 competition to explain the phenomenon run by the Royal Society of Chemistry attracted more than 22,000 entries, with the winning one suggesting supercooling as an important factor so it seems the question and its underlying explanation continue to fascinate."
+    {
+     "type": "text",
+     "text": "In 300 BC, the famous philosopher Aristotle wrote about a strange phenomenon that he had observed: “Many people, when they want to cool water quickly, begin by putting it in the sun.” Other philosophers over the ages noted the same result, but were unable to explain it."
+    },
+    {
+     "type": "text",
+     "text": "In 1963, a young Tanzanian student named Erasto Mpemba noticed that the ice cream he was making froze faster if the mix was placed in the freezer while warm than if it were at room temperature. He persisted in questioning why this occurred, and eventually physicist Denis Osborne began a serious investigation into what is now known as the Mpemba Effect. He and Mpemba co-authored a paper in New Scientist in 1969, which produced scientific descriptions of some of the many factors at work in freezing water."
+    },
+    {
+     "type": "text",
+     "text": "It was initially hypothesised that the warm bowl melted itself a place in the ice on the freezer shelf, thus embedding its base in a ‘nest’ of ice, which would accelerate freezing. The hypothesis was tested by comparing the result when bowls of warm water were placed on ice and on a dry wire shelf; this demonstrated that the ice nest actually had little effect. A second suggestion was that the warmer water would be evaporating at its surface, thus reducing the volume needing to be frozen, but this idea was also shown to be insignificant."
+    },
+    {
+     "type": "text",
+     "text": "Thermometers placed in the water showed that the cooler water dropped to freezing temperature well before the warmer bowlful, and yet the latter always froze solid first. Experiments at different temperatures showed that water at 50C took longest to freeze in a conventional freezer, while water initially at 350C was quickest. On further examination, an explanation for this paradox began to emerge. Losing heat from the water occurs at the points where it is in touch with the colder atmosphere of the freezer, namely the sides of the bowl and the water surface."
+    },
+    {
+     "type": "text",
+     "text": "A warm surface will lose heat faster than a cold one because of the contrast between the temperatures; but of course there is more heat to be lost from one bowl than the other! If the surface can be kept at a higher temperature, the higher rate of heat loss will continue. As long as the water remains liquid, the cooling portion on top will sink to the bottom of the bowl as the warmer water below rises to take its place. The early freezing that may occur on the sides and base of the container will amplify the effect."
+    },
+    {
+     "type": "text",
+     "text": "The bowl that is more uniformly cold will have far less temperature difference so the water flow will be minimal. Another inhibiting factor for this container is that ice will also form quite quickly on the surface. This not only acts as insulation, but will virtually stop the helpful effects of the water circulating inside the bowl."
+    },
+    {
+     "type": "text",
+     "text": "Ultimately, the rate of cooling the core of this body of water becomes so slow that the other warmer one is always fully frozen first. While there are limitations to this comparison (for example, we would not see such a result if one quantity were at 10C and another at 990C) this counter-intuitive result does hold true within the 5–350C range of temperatures indicated previously."
+    },
+    {
+     "type": "text",
+     "text": "Since this paper was published, the validity of the research findings has been questioned by a number of reviewers. They point out that the initial experimental question was not clearly defined; for example, the researchers needed to decide on exactly what constituted freezing the water. They also state that the rate at which water freezes depends on a large number of variables."
+    },
+    {
+     "type": "text",
+     "text": "Container size is one of these; for the Mpemba Effect to be noticed, the container must be large enough to allow a free circulation of water to take place, yet small enough for the freezing areas of the side and base to be effective at extracting heat too. Secondly, research at a University in St Louis, Missouri, suggests that the Mpemba Effect may be affected by water purity, or by dissolved gas in the water."
+    },
+    {
+     "type": "text",
+     "text": "Distilled water is totally free of the particles that are common in normal drinking water or mineral water. When suspended in water, these particles may have a small effect on the speed of cooling, especially as ice molecules tend to expel them into the surrounding water, where they become more concentrated. Just as salt dissolved in water will raise the boiling point and lower the temperature at which it freezes, the researchers found that the final portion of ordinary water needed extra cooling, below zero, before all was frozen solid."
+    },
+    {
+     "type": "text",
+     "text": "One more factor that can distort the effect is observed if the bowls are not placed simultaneously into the same freezer. In this case, the freezer thermostat is more likely to register the presence of a hotter bowl than a colder one, and therefore the change in internal temperature causes a boost of freezing power as the motor is activated."
+    },
+    {
+     "type": "text",
+     "text": "The Mpemba Effect is still not fully understood, and researchers continue to delve into its underlying physics. Physicists cannot reach consensus. Some suggest that supercooling1 is involved; others that the molecular bonds in the water molecules affect the rate of cooling and freezing of water. A 2013 competition to explain the phenomenon run by the Royal Society of Chemistry attracted more than 22,000 entries, with the winning one suggesting supercooling as an important factor so it seems the question and its underlying explanation continue to fascinate."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Write the correct letter, A–P, in boxes 27-33 on your answer sheet. A melt\nB element\nC process\nD centre\nE acceleration\nF surface\nG factor\nH hollow\nI matter\nJ circulation\nK limit\nL significance\nM theory\nN difference\nO result\nP temperature",
-     "wordLimit": "",
-     "qtype": "short_answer",
+     "groupId": "p3.q27-33",
      "startQ": 27,
      "endQ": 33,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Write the correct letter, A–P, in boxes 27-33 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "melt"
+       },
+       {
+        "id": "B",
+        "text": "element"
+       },
+       {
+        "id": "C",
+        "text": "process"
+       },
+       {
+        "id": "D",
+        "text": "centre"
+       },
+       {
+        "id": "E",
+        "text": "acceleration"
+       },
+       {
+        "id": "F",
+        "text": "surface"
+       },
+       {
+        "id": "G",
+        "text": "factor"
+       },
+       {
+        "id": "H",
+        "text": "hollow"
+       },
+       {
+        "id": "I",
+        "text": "matter"
+       },
+       {
+        "id": "J",
+        "text": "circulation"
+       },
+       {
+        "id": "K",
+        "text": "limit"
+       },
+       {
+        "id": "L",
+        "text": "significance"
+       },
+       {
+        "id": "M",
+        "text": "theory"
+       },
+       {
+        "id": "N",
+        "text": "difference"
+       },
+       {
+        "id": "O",
+        "text": "result"
+       },
+       {
+        "id": "P",
+        "text": "temperature"
+       }
+      ]
+     },
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "For more than 2000 years people have wondered why raising the ",
+         {
+          "blank": 27
+         },
+         "of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy ",
+         {
+          "blank": 28
+         },
+         "which made the water freeze faster, but comparisons with containers resting on a dry ",
+         {
+          "blank": 29
+         },
+         "indicated that this was inaccurate. Evaporation of water proved not to be a ",
+         {
+          "blank": 30
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature ",
+         {
+          "blank": 31
+         },
+         ", the water will continue to circulate and to cool down. Cooler water will have less water ",
+         {
+          "blank": 32
+         },
+         "and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the ",
+         {
+          "blank": 33
+         },
+         "of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 27,
-       "type": "completion",
-       "stem": {
-        "plain": "For more than 2000 years people have wondered why raising the (27) ______ of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy (28) ______ which made the water freeze faster, but comparisons with containers resting on a dry (29) ______ indicated that this was inaccurate. Evaporation of water proved not to be a (30) ______",
-        "segments": [
-         "For more than 2000 years people have wondered why raising the",
-         {
-          "blank": 27
-         },
-         "of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy",
-         {
-          "blank": 28
-         },
-         "which made the water freeze faster, but comparisons with containers resting on a dry",
-         {
-          "blank": 29
-         },
-         "indicated that this was inaccurate. Evaporation of water proved not to be a",
-         {
-          "blank": 30
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "P",
+        "value": "P",
+        "accepted": [
+         "P"
         ]
-       },
-       "options": null,
-       "correctAnswer": "P",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "For more than 2000 years people have wondered why raising the (27)……………..of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its o",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 28,
-       "type": "completion",
-       "stem": {
-        "plain": "For more than 2000 years people have wondered why raising the (27) ______ of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy (28) ______ which made the water freeze faster, but comparisons with containers resting on a dry (29) ______ indicated that this was inaccurate. Evaporation of water proved not to be a (30) ______",
-        "segments": [
-         "For more than 2000 years people have wondered why raising the",
-         {
-          "blank": 27
-         },
-         "of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy",
-         {
-          "blank": 28
-         },
-         "which made the water freeze faster, but comparisons with containers resting on a dry",
-         {
-          "blank": 29
-         },
-         "indicated that this was inaccurate. Evaporation of water proved not to be a",
-         {
-          "blank": 30
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
         ]
-       },
-       "options": null,
-       "correctAnswer": "H",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "For more than 2000 years people have wondered why raising the (27)……………..of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its o",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 29,
-       "type": "completion",
-       "stem": {
-        "plain": "For more than 2000 years people have wondered why raising the (27) ______ of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy (28) ______ which made the water freeze faster, but comparisons with containers resting on a dry (29) ______ indicated that this was inaccurate. Evaporation of water proved not to be a (30) ______",
-        "segments": [
-         "For more than 2000 years people have wondered why raising the",
-         {
-          "blank": 27
-         },
-         "of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy",
-         {
-          "blank": 28
-         },
-         "which made the water freeze faster, but comparisons with containers resting on a dry",
-         {
-          "blank": 29
-         },
-         "indicated that this was inaccurate. Evaporation of water proved not to be a",
-         {
-          "blank": 30
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
         ]
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "For more than 2000 years people have wondered why raising the (27)……………..of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its o",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 30,
-       "type": "completion",
-       "stem": {
-        "plain": "For more than 2000 years people have wondered why raising the (27) ______ of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy (28) ______ which made the water freeze faster, but comparisons with containers resting on a dry (29) ______ indicated that this was inaccurate. Evaporation of water proved not to be a (30) ______",
-        "segments": [
-         "For more than 2000 years people have wondered why raising the",
-         {
-          "blank": 27
-         },
-         "of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy",
-         {
-          "blank": 28
-         },
-         "which made the water freeze faster, but comparisons with containers resting on a dry",
-         {
-          "blank": 29
-         },
-         "indicated that this was inaccurate. Evaporation of water proved not to be a",
-         {
-          "blank": 30
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
         ]
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "For more than 2000 years people have wondered why raising the (27)……………..of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its o",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 31,
-       "type": "completion",
-       "stem": {
-        "plain": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature (31) ______ , the water will continue to circulate and to cool down. Cooler water will have less water (32) ______ and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the (33) ______ of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling.",
-        "segments": [
-         "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature",
-         {
-          "blank": 31
-         },
-         ", the water will continue to circulate and to cool down. Cooler water will have less water",
-         {
-          "blank": 32
-         },
-         "and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the",
-         {
-          "blank": 33
-         },
-         "of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "N",
+        "value": "N",
+        "accepted": [
+         "N"
         ]
-       },
-       "options": null,
-       "correctAnswer": "N",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 32,
-       "type": "completion",
-       "stem": {
-        "plain": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature (31) ______ , the water will continue to circulate and to cool down. Cooler water will have less water (32) ______ and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the (33) ______ of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling.",
-        "segments": [
-         "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature",
-         {
-          "blank": 31
-         },
-         ", the water will continue to circulate and to cool down. Cooler water will have less water",
-         {
-          "blank": 32
-         },
-         "and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the",
-         {
-          "blank": 33
-         },
-         "of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "J",
+        "value": "J",
+        "accepted": [
+         "J"
         ]
-       },
-       "options": null,
-       "correctAnswer": "J",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top",
-        "elementPath": "children[49]"
        }
       },
       {
        "number": 33,
-       "type": "completion",
-       "stem": {
-        "plain": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature (31) ______ , the water will continue to circulate and to cool down. Cooler water will have less water (32) ______ and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the (33) ______ of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling.",
-        "segments": [
-         "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature",
-         {
-          "blank": 31
-         },
-         ", the water will continue to circulate and to cool down. Cooler water will have less water",
-         {
-          "blank": 32
-         },
-         "and thus a slower rate of freezing. If ice forms on the top of the water, this will further slow the",
-         {
-          "blank": 33
-         },
-         "of freezing, but if it forms on the bottom and the sides of the container, this will increase the rate of cooling."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
         ]
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top",
-        "elementPath": "children[49]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[48]",
-      "rawExcerpt": "Questions 27-33\nWrite the correct letter, A–P, in boxes 27-33 on your answer sheet. A melt\nB element\nC process\nD centre\nE acceleration\nF surface\nG factor\nH hollow\nI matter\nJ circulation\nK limit\nL significance\nM theory\nN difference\nO result\n"
+      "headerLine": 85,
+      "lineRange": [
+       85,
+       104
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-33",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Write the correct letter, A–P, in boxes 27-33 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "For more than 2000 years people have wondered why raising the (27)……………..of cold water before cooling it results in more rapid cooling. At first researchers thought that a warm container created its own icy (28)………………. which made the water freeze faster, but comparisons with containers resting on a dry (29)…………………indicated that this was inaccurate. Evaporation of water proved not to be a (30)……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Temperature measurements showed that, although the water in the cooler container reached 00C before the warmer one, it took longer to actually solidify. The water temperature drops the most at the top and sides of the container. Provided there is a temperature (31)…………………., the water will continue to circulate and to cool down. Cooler water will have less water (32)…………………. and thus a slower rate ",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A melt",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B element",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C process",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D centre",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E acceleration",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F surface",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G factor",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "H hollow",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "I matter",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "J circulation",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "K limit",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "L significance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "M theory",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "N difference",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "O result",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "P temperature",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 34-39 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q34-39",
      "startQ": 34,
      "endQ": 39,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 34-39 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 34,
        "type": "tfng",
-       "stem": {
-        "plain": "The Mpemba Effect cannot be seen when comparing liquids with an extreme temperature difference.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "34. The Mpemba Effect cannot be seen when comparing liquids with an extreme temperature difference.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "The Mpemba Effect cannot be seen when comparing liquids with an extreme temperature difference."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 35,
        "type": "tfng",
-       "stem": {
-        "plain": "Osborne and Mpemba’s results are still widely accepted today.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "35. Osborne and Mpemba’s results are still widely accepted today.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "Osborne and Mpemba’s results are still widely accepted today."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 36,
        "type": "tfng",
-       "stem": {
-        "plain": "The size of the container does not alter the Mpemba Effect.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. The size of the container does not alter the Mpemba Effect.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "The size of the container does not alter the Mpemba Effect."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 37,
        "type": "tfng",
-       "stem": {
-        "plain": "Osborne and Mpemba experimented on both pure and impure water.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. Osborne and Mpemba experimented on both pure and impure water.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "Osborne and Mpemba experimented on both pure and impure water."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 38,
        "type": "tfng",
-       "stem": {
-        "plain": "One variable is the timing of containers in a freezer.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. One variable is the timing of containers in a freezer.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "One variable is the timing of containers in a freezer."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 39,
        "type": "tfng",
-       "stem": {
-        "plain": "Physicists now agree that supercooling accounts for the Mpemba Effect.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. Physicists now agree that supercooling accounts for the Mpemba Effect.",
-        "elementPath": "children[53]"
+       "prompt": [
+        "Physicists now agree that supercooling accounts for the Mpemba Effect."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[51]",
-      "rawExcerpt": "Questions 34-39\nDo the following statements agree with the information given in Reading Passage? In boxes 34-39 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+      "headerLine": 105,
+      "lineRange": [
+       105,
+       115
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 34-39",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage? In boxes 34-39 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. The Mpemba Effect cannot be seen when comparing liquids with an extreme temperature difference.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. Osborne and Mpemba’s results are still widely accepted today.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. The size of the container does not alter the Mpemba Effect.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. Osborne and Mpemba experimented on both pure and impure water.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. One variable is the timing of containers in a freezer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. Physicists now agree that supercooling accounts for the Mpemba Effect.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g09",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q40-40",
      "startQ": 40,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 40,
-       "type": "tfng",
-       "stem": {
-        "plain": "The Mpemba Effect is best summed up as the observation that",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40.The Mpemba Effect is best summed up as the observation that",
-        "elementPath": "children[55]"
+       "type": "mcq_single",
+       "prompt": [
+        "The Mpemba Effect is best summed up as the observation that"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "ice cream freezes at different temperatures."
+        },
+        {
+         "id": "B",
+         "text": "different sources of heat result in water cooling at different rates."
+        },
+        {
+         "id": "C",
+         "text": "salt water freezes at a lower temperature than ordinary water."
+        },
+        {
+         "id": "D",
+         "text": "warmer water can freeze faster than colder water."
+        }
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[54]",
-      "rawExcerpt": "Question 40\nChoose the correct letter, A, B, C or D."
+      "headerLine": 116,
+      "lineRange": [
+       116,
+       122
+      ],
+      "sourceLines": [
+       {
+        "text": "Question 40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40.The Mpemba Effect is best summed up as the observation that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A ice cream freezes at different temperatures.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B different sources of heat result in water cooling at different rates.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C salt water freezes at a lower temperature than ordinary water.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D warmer water can freeze faster than colder water.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "C"
-   },
-   {
-    "number": 2,
-    "value": "B"
-   },
-   {
-    "number": 3,
-    "value": "C"
-   },
-   {
-    "number": 4,
-    "value": "A"
-   },
-   {
-    "number": 5,
-    "value": "D"
-   },
-   {
-    "number": 6,
-    "value": "C"
-   },
-   {
-    "number": 7,
-    "value": "True"
-   },
-   {
-    "number": 8,
-    "value": "True"
-   },
-   {
-    "number": 9,
-    "value": "False"
-   },
-   {
-    "number": 10,
-    "value": "Not given"
-   },
-   {
-    "number": 11,
-    "value": "plastic tubes/filter-fabric straws"
-   },
-   {
-    "number": 12,
-    "value": "Membrane"
-   },
-   {
-    "number": 13,
-    "value": "Extract"
-   },
-   {
-    "number": 14,
-    "value": "ix"
-   },
-   {
-    "number": 15,
-    "value": "vi"
-   },
-   {
-    "number": 16,
-    "value": "x"
-   },
-   {
-    "number": 17,
-    "value": "vii"
-   },
-   {
-    "number": 18,
-    "value": "v"
-   },
-   {
-    "number": 19,
-    "value": "i"
-   },
-   {
-    "number": 20,
-    "value": "Not given"
-   },
-   {
-    "number": 21,
-    "value": "True"
-   },
-   {
-    "number": 22,
-    "value": "Not given"
-   },
-   {
-    "number": 23,
-    "value": "Biological phenomena"
-   },
-   {
-    "number": 24,
-    "value": "DNA microarrays"
-   },
-   {
-    "number": 25,
-    "value": "(myriad) conditions"
-   },
-   {
-    "number": 26,
-    "value": "Their expression levels"
-   },
-   {
-    "number": 27,
-    "value": "P"
-   },
-   {
-    "number": 28,
-    "value": "H"
-   },
-   {
-    "number": 29,
-    "value": "F"
-   },
-   {
-    "number": 30,
-    "value": "G"
-   },
-   {
-    "number": 31,
-    "value": "N"
-   },
-   {
-    "number": 32,
-    "value": "J"
-   },
-   {
-    "number": 33,
-    "value": "C"
-   },
-   {
-    "number": 34,
-    "value": "True"
-   },
-   {
-    "number": 35,
-    "value": "False"
-   },
-   {
-    "number": 36,
-    "value": "False"
-   },
-   {
-    "number": 37,
-    "value": "Not given"
-   },
-   {
-    "number": 38,
-    "value": "True"
-   },
-   {
-    "number": 39,
-    "value": "False"
-   },
-   {
-    "number": 40,
-    "value": "D"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     6
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "The reading passage has seven paragraphs, A-G. Choose the correct heading for paragraphs A-G from the list below. Write "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 28,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 4,
- "contentFingerprint": "e365f661fd96a1aeb8aa89019a89ba2f73327302f4283eee1eb402a30198a2e8"
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "bbcb967c353589095ce711786db733b4d7638c7c42e2c3437e5d819056462fe6"
 }

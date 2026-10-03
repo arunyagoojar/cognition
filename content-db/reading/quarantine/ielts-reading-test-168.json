@@ -1,49 +1,37 @@
 {
  "slug": "ielts-reading-test-168",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     9
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
+   "groupId": "p1.q01-04",
+   "range": [
+    1,
+    4
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT",
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below using NO MORE THAN THREE WORDS for each answer. Write your answers in boxes 1-4 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     21,
-     21
-    ],
-    "instruction": "Choose THREE letters A-F. Which THREE of the following are stated about psychologists involved in personality assessment"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     35,
-     40
-    ],
-    "instruction": "Complete the summary below using words from the box. Write your answers in boxes 35-40 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
-   }
+   "groupId": "p2.q21-21",
+   "range": [
+    21,
+    21
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose THREE letters A-F."
   }
  ]
 }

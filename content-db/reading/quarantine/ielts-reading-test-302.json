@@ -1,49 +1,129 @@
 {
  "slug": "ielts-reading-test-302",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     10
-    ],
-    "instruction": "Complete the table below. Write10 answers from the box and write the correct letter, A-L, next to questions 1-10."
-   }
+   "groupId": "p1.q01-10",
+   "range": [
+    1,
+    10
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the table below. Write10 answers from the box and write the correct letter, A-L, next to questions 1-10."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     17,
-     18
-    ],
-    "instruction": "There are two correct answers. Choose two letters from A, B, C, D and E. What is Dali most likely to be remembered for?"
-   }
+   "groupId": "p2.q11-13",
+   "range": [
+    11,
+    13
+   ],
+   "type": "sentence_endings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete each sentence with the correct ending, A-E, below. Write the correct letter, A-E, next to questions 11-13."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     38,
-     40
-    ],
-    "instruction": "Complete the summary with the list of words, A-F. Write the correct letter, A-F, in spaces 38-40 below."
-   }
+   "groupId": "p2.q14-16",
+   "range": [
+    14,
+    16
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q17-18",
+   "range": [
+    17,
+    18
+   ],
+   "type": "mcq_multi",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "There are two correct answers. Choose two letters from A, B, C, D and E."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q19-21",
+   "range": [
+    19,
+    21
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary below. Use NO MORE THAN TWO WORDS from the passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q27-33",
+   "range": [
+    27,
+    33
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the information given in the text? For questions 27-33, write:"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q34-37",
+   "range": [
+    34,
+    37
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q38-40",
+   "range": [
+    38,
+    40
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary with the list of words, A-F. Write the correct letter, A-F, in spaces 38-40 below."
   }
  ]
 }

@@ -1,49 +1,34 @@
 {
  "slug": "ielts-reading-test-282",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     10
-    ],
-    "instruction": "The diagram below gives information about fish fins and their purposes. Complete the diagram with NO MORE THAN THREE WOR"
-   }
+   "groupId": "p1.q07-10",
+   "range": [
+    7,
+    10
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "The diagram below gives information about fish fins and their purposes. Complete the diagram with NO MORE THAN THREE WORDS from the passage for each blank."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Complete the table. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     33,
-     37
-    ],
-    "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
+   "groupId": "p1.q11-13",
+   "range": [
+    11,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below using NO MORE THAN THREE WORDS from the passage for each blank."
   }
  ]
 }

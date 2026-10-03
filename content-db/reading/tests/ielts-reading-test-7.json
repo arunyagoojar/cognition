@@ -1,520 +1,1787 @@
 {
  "id": "reading.test-0007.107c7b61",
  "module": "reading",
+ "slug": "ielts-reading-test-7",
  "sourceNumbers": [
   7
  ],
- "slug": "ielts-reading-test-7",
  "title": "IELTS Academic Reading Test 7",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-7/index.html",
-   "sha256": "8535c4148517fa38784ffc9585027bc3df2c5723443df4730da048e086dbe763",
-   "manifestHashMatch": true,
+   "sha256": "4e81644a9b94f39be8d2b16cea31130f23ee104480bed1a23f6b0f9b0f3cad7b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-7/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "D"
+   },
+   {
+    "number": 2,
+    "raw": "B"
+   },
+   {
+    "number": 3,
+    "raw": "F"
+   },
+   {
+    "number": 4,
+    "raw": "E"
+   },
+   {
+    "number": 5,
+    "raw": "B"
+   },
+   {
+    "number": 6,
+    "raw": "F"
+   },
+   {
+    "number": 7,
+    "raw": "D"
+   },
+   {
+    "number": 8,
+    "raw": "A"
+   },
+   {
+    "number": 9,
+    "raw": "(ships’s) anchor"
+   },
+   {
+    "number": 10,
+    "raw": "(escape) wheel"
+   },
+   {
+    "number": 11,
+    "raw": "tooth"
+   },
+   {
+    "number": 12,
+    "raw": "(long) pendulum"
+   },
+   {
+    "number": 13,
+    "raw": "second"
+   },
+   {
+    "number": 14,
+    "raw": "ii"
+   },
+   {
+    "number": 15,
+    "raw": "iii"
+   },
+   {
+    "number": 16,
+    "raw": "v"
+   },
+   {
+    "number": 17,
+    "raw": "iv"
+   },
+   {
+    "number": 18,
+    "raw": "viii"
+   },
+   {
+    "number": 19,
+    "raw": "vii"
+   },
+   {
+    "number": 20,
+    "raw": "false"
+   },
+   {
+    "number": 21,
+    "raw": "false"
+   },
+   {
+    "number": 22,
+    "raw": "not given"
+   },
+   {
+    "number": 23,
+    "raw": "true"
+   },
+   {
+    "number": 24,
+    "raw": "true"
+   },
+   {
+    "number": 25,
+    "raw": "false"
+   },
+   {
+    "number": 26,
+    "raw": "true"
+   },
+   {
+    "number": 27,
+    "raw": "E"
+   },
+   {
+    "number": 28,
+    "raw": "B"
+   },
+   {
+    "number": 29,
+    "raw": "A"
+   },
+   {
+    "number": 30,
+    "raw": "F"
+   },
+   {
+    "number": 31,
+    "raw": "sender"
+   },
+   {
+    "number": 32,
+    "raw": "picture/ image"
+   },
+   {
+    "number": 33,
+    "raw": "receiver"
+   },
+   {
+    "number": 34,
+    "raw": "sensory leakage"
+   },
+   {
+    "number": 35,
+    "raw": "fraud"
+   },
+   {
+    "number": 36,
+    "raw": "computers"
+   },
+   {
+    "number": 37,
+    "raw": "human involvement"
+   },
+   {
+    "number": 38,
+    "raw": "meta-analysis"
+   },
+   {
+    "number": 39,
+    "raw": "lack of consistency"
+   },
+   {
+    "number": 40,
+    "raw": "big/ large enough"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "A Chronicle of Timekeeping",
    "paragraphs": [
-    "A According to archaeological evidence, at least 5,000 years ago, and long before the advent of the Roman Empire, the Babylonians began to measure time, introducing calendars to co-ordinate communal activities, to plan the shipment of goods and, in particular, to regulate planting and harvesting. They based their calendars on three natural cycles: the solar day, marked by the successive periods of light and darkness as the earth rotates on its axis; the lunar month, following the phases of the moon as it orbits the earth; and the solar year, defined by the changing seasons that accompany our planet’s revolution around the sun.",
-    "B Before the invention of artificial light, the moon had greater social impact. And, for those living near the equator in particular, its waxing and waning was more conspicuous than the passing of the seasons. Hence, the calendars that were developed at the lower latitudes were influenced more by the lunar cycle than by the solar year. In more northern climes, however, where seasonal agriculture was practised, the solar year became more crucial. As the Roman Empire expanded northward, it organised its activity chart for the most part around the solar year.",
-    "C Centuries before the Roman Empire, the Egyptians had formulated a municipal calendar having 12 months of 30 days, with five days added to approximate the solar year. Each period of ten days was marked by the appearance of special groups of stars called decans. At the rise of the star Sirius just before sunrise, which occurred around the all-important annual flooding of the Nile, 12 decans could be seen spanning the heavens. The cosmic significance the Egyptians placed in the 12 decans led them to develop a system in which each interval of darkness (and later, each interval of daylight) was divided into a dozen equal parts. These periods became known as temporal hours because their duration varied according to the changing length of days and nights with the passing of the seasons. Summer hours were long, winter ones short; only at the spring and autumn equinoxes were the hours of daylight and darkness equal. Temporal hours, which were first adopted by the Greeks and then the Romans, who disseminated them through Europe, remained in use for more than 2,500 years.",
-    "D In order to track temporal hours during the day, inventors created sundials, which indicate time by the length or direction of the sun’s shadow. The sundial’s counterpart, the water clock, was designed to measure temporal hours at night. One of the first water clocks was a basin with a small hole near the bottom through which the water dripped out. The falling water level denoted the passing hour as it dipped below hour lines inscribed on the inner surface. Although these devices performed satisfactorily around the Mediterranean, they could not always be depended on in the cloudy and often freezing weather of northern Europe.",
-    "E The advent of the mechanical clock meant that although it could be adjusted to maintain temporal hours, it was naturally suited to keeping equal ones. With these, however, arose the question of when to begin counting, and so, in the early 14th century, a number of systems evolved. The schemes that divided the day into 24 equal parts varied according to the start of the count: Italian hours began at sunset, Babylonian hours at sunrise, astronomical hours at midday and ‘great clock’ hours, used for some large public clocks in Germany, at midnight. Eventually these were superseded by ‘small clock’, or French, hours, which split the day into two 12-hour periods commencing at midnight.",
-    "F The earliest recorded weight-driven mechanical clock was built in 1283 in Bedfordshire in England. The revolutionary aspect of this new timekeeper was neither the descending weight that provided its motive force nor the gear wheels (which had been around for at least 1,300 years) that transferred the power; it was the part called the escapement. In the early 1400s came the invention of the coiled spring or fusee which maintained constant force to the gear wheels of the timekeeper despite the changing tension of its mainspring. By the 16th century, a pendulum clock had been devised, but the pendulum swung in a large arc and thus was not very efficient.",
-    "G To address this, a variation on the original escapement was invented in 1670, in England. It was called the anchor escapement, which was a lever-based device shaped like a ship’s anchor. The motion of a pendulum rocks this device so that it catches and then releases each tooth of the escape wheel, in turn allowing it to turn a precise amount. Unlike the original form used in early pendulum clocks, the anchor escapement permitted the pendulum to travel in a very small arc. Moreover, this invention allowed the use of a long pendulum which could beat once a second and thus led to the development of a new floor standing case design, which became known as the grandfather clock.",
-    "H Today, highly accurate timekeeping instruments set the beat for most electronic devices. Nearly all computers contain a quartz-crystal clock to regulate their operation. Moreover, not only do time signals beamed down from Global Positioning System satellites calibrate the functions of precision navigation equipment, they do so as well for mobile phones, instant stock-trading systems and nationwide power-distribution grids. So integral have these time-based technologies become to day-to-day existence that our dependency on them is recognised only when they fail to work."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "According to archaeological evidence, at least 5,000 years ago, and long before the advent of the Roman Empire, the Babylonians began to measure time, introducing calendars to co-ordinate communal activities, to plan the shipment of goods and, in particular, to regulate planting and harvesting. They based their calendars on three natural cycles: the solar day, marked by the successive periods of light and darkness as the earth rotates on its axis; the lunar month, following the phases of the moon as it orbits the earth; and the solar year, defined by the changing seasons that accompany our planet’s revolution around the sun."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Before the invention of artificial light, the moon had greater social impact. And, for those living near the equator in particular, its waxing and waning was more conspicuous than the passing of the seasons. Hence, the calendars that were developed at the lower latitudes were influenced more by the lunar cycle than by the solar year. In more northern climes, however, where seasonal agriculture was practised, the solar year became more crucial. As the Roman Empire expanded northward, it organised its activity chart for the most part around the solar year."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Centuries before the Roman Empire, the Egyptians had formulated a municipal calendar having 12 months of 30 days, with five days added to approximate the solar year. Each period of ten days was marked by the appearance of special groups of stars called decans. At the rise of the star Sirius just before sunrise, which occurred around the all-important annual flooding of the Nile, 12 decans could be seen spanning the heavens. The cosmic significance the Egyptians placed in the 12 decans led them to develop a system in which each interval of darkness (and later, each interval of daylight) was divided into a dozen equal parts. These periods became known as temporal hours because their duration varied according to the changing length of days and nights with the passing of the seasons. Summer hours were long, winter ones short; only at the spring and autumn equinoxes were the hours of daylight and darkness equal. Temporal hours, which were first adopted by the Greeks and then the Romans, who disseminated them through Europe, remained in use for more than 2,500 years."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "In order to track temporal hours during the day, inventors created sundials, which indicate time by the length or direction of the sun’s shadow. The sundial’s counterpart, the water clock, was designed to measure temporal hours at night. One of the first water clocks was a basin with a small hole near the bottom through which the water dripped out. The falling water level denoted the passing hour as it dipped below hour lines inscribed on the inner surface. Although these devices performed satisfactorily around the Mediterranean, they could not always be depended on in the cloudy and often freezing weather of northern Europe."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "The advent of the mechanical clock meant that although it could be adjusted to maintain temporal hours, it was naturally suited to keeping equal ones. With these, however, arose the question of when to begin counting, and so, in the early 14th century, a number of systems evolved. The schemes that divided the day into 24 equal parts varied according to the start of the count: Italian hours began at sunset, Babylonian hours at sunrise, astronomical hours at midday and ‘great clock’ hours, used for some large public clocks in Germany, at midnight. Eventually these were superseded by ‘small clock’, or French, hours, which split the day into two 12-hour periods commencing at midnight."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The earliest recorded weight-driven mechanical clock was built in 1283 in Bedfordshire in England. The revolutionary aspect of this new timekeeper was neither the descending weight that provided its motive force nor the gear wheels (which had been around for at least 1,300 years) that transferred the power; it was the part called the escapement. In the early 1400s came the invention of the coiled spring or fusee which maintained constant force to the gear wheels of the timekeeper despite the changing tension of its mainspring. By the 16th century, a pendulum clock had been devised, but the pendulum swung in a large arc and thus was not very efficient."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "To address this, a variation on the original escapement was invented in 1670, in England. It was called the anchor escapement, which was a lever-based device shaped like a ship’s anchor. The motion of a pendulum rocks this device so that it catches and then releases each tooth of the escape wheel, in turn allowing it to turn a precise amount. Unlike the original form used in early pendulum clocks, the anchor escapement permitted the pendulum to travel in a very small arc. Moreover, this invention allowed the use of a long pendulum which could beat once a second and thus led to the development of a new floor standing case design, which became known as the grandfather clock."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "Today, highly accurate timekeeping instruments set the beat for most electronic devices. Nearly all computers contain a quartz-crystal clock to regulate their operation. Moreover, not only do time signals beamed down from Global Positioning System satellites calibrate the functions of precision navigation equipment, they do so as well for mobile phones, instant stock-trading systems and nationwide power-distribution grids. So integral have these time-based technologies become to day-to-day existence that our dependency on them is recognised only when they fail to work."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Reading Passage 1 has eight paragraphs, A-H. Which paragraph contains the following information? Write the correct letter, A-H, in boxes 1- 4 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-04",
      "startQ": 1,
      "endQ": 4,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 1 has eight paragraphs, A-H. Which paragraph contains the following information? Write the correct letter, A-H, in boxes 1- 4 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "a description of an early timekeeping invention affected by cold temperatures",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1 a description of an early timekeeping invention affected by cold temperatures",
-        "elementPath": "children[10]"
+       "prompt": [
+        "a description of an early timekeeping invention affected by cold temperatures"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "an explanation of the importance of geography in the development of the calendar in farming communities",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2 an explanation of the importance of geography in the development of the calendar in farming communities",
-        "elementPath": "children[10]"
+       "prompt": [
+        "an explanation of the importance of geography in the development of the calendar in farming communities"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "a description of the origins of the pendulum clock",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3 a description of the origins of the pendulum clock",
-        "elementPath": "children[10]"
+       "prompt": [
+        "a description of the origins of the pendulum clock"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "details of the simultaneous efforts of different societies to calculate time using uniform hours",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4 details of the simultaneous efforts of different societies to calculate time using uniform hours",
-        "elementPath": "children[10]"
+       "prompt": [
+        "details of the simultaneous efforts of different societies to calculate time using uniform hours"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[9]",
-      "rawExcerpt": "Questions 1-4\nReading Passage 1 has eight paragraphs, A-H. Which paragraph contains the following information? Write the correct letter, A-H, in boxes 1- 4 on your answer sheet."
+      "headerLine": 9,
+      "lineRange": [
+       9,
+       14
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-4",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 1 has eight paragraphs, A-H. Which paragraph contains the following information? Write the correct letter, A-H, in boxes 1- 4 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1 a description of an early timekeeping invention affected by cold temperatures",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2 an explanation of the importance of geography in the development of the calendar in farming communities",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3 a description of the origins of the pendulum clock",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4 details of the simultaneous efforts of different societies to calculate time using uniform hours",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q05-08",
+     "startQ": 5,
+     "endQ": 8,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Look at the following events (Questions 5-8) and the list of nationalities below. Match each event with the correct nationality, A-F. Write the correct letter, A-F, in boxes 5-8 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Babylonians"
+       },
+       {
+        "id": "B",
+        "text": "Egyptians"
+       },
+       {
+        "id": "C",
+        "text": "Greeks"
+       },
+       {
+        "id": "D",
+        "text": "English"
+       },
+       {
+        "id": "E",
+        "text": "Germans"
+       },
+       {
+        "id": "F",
+        "text": "French"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 5,
+       "type": "matching_features",
+       "prompt": [
+        "They devised a civil calendar in which the months were equal in length."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "matching_features",
+       "prompt": [
+        "They divided the day into two equal halves."
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 7,
+       "type": "matching_features",
+       "prompt": [
+        "They developed a new cabinet shape for a type of timekeeper."
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 8,
+       "type": "matching_features",
+       "prompt": [
+        "They created a calendar to organise public events and work schedules."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 15,
+      "lineRange": [
+       15,
+       26
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 5-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Look at the following events (Questions 5-8) and the list of nationalities below. Match each event with the correct nationality, A-F. Write the correct letter, A-F, in boxes 5-8 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5 They devised a civil calendar in which the months were equal in length.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6 They divided the day into two equal halves.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7 They developed a new cabinet shape for a type of timekeeper.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8 They created a calendar to organise public events and work schedules.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Babylonians",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Egyptians",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Greeks",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D English",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Germans",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F French",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q09-13",
+     "startQ": 9,
+     "endQ": 13,
+     "type": "diagram_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Label the diagram below. Write NO MORE THAN TWO WORDS from the passage.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "image",
+        "asset": "asset.5d089c4278ce"
+       }
+      ]
+     },
+     "figures": [
+      {
+       "assetId": "asset.5d089c4278ce",
+       "sourcePath": "wp-content/uploads/2024/09/test-7-min-1.png",
+       "sha256": "5d089c4278ce80017bc0132f7c848d3234606871a0bb7d114ab698e50d00a818",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 9,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(ships’s) anchor",
+        "value": "(ships’s) anchor",
+        "accepted": [
+         "ships’s anchor",
+         "anchor"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(escape) wheel",
+        "value": "(escape) wheel",
+        "accepted": [
+         "escape wheel",
+         "wheel"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "tooth",
+        "value": "tooth",
+        "accepted": [
+         "tooth"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(long) pendulum",
+        "value": "(long) pendulum",
+        "accepted": [
+         "long pendulum",
+         "pendulum"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "second",
+        "value": "second",
+        "accepted": [
+         "second"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 27,
+      "lineRange": [
+       27,
+       29
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Label the diagram below. Write NO MORE THAN TWO WORDS from the passage.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2024/09/test-7-min-1.png"
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "List of Headings",
+   "title": "AIR TRAFFIC CONTROL IN THE USA",
    "paragraphs": [
-    "AIR TRAFFIC CONTROL IN THE USA",
-    "A An accident that occurred in the skies over the Grand Canyon in 1956 resulted in the establishment of the Federal Aviation Administration (FAA) to regulate and oversee the operation of aircraft in the skies over the United States, which were becoming quite congested. The resulting structure of air traffic control has greatly increased the safety of flight in the United States, and similar air traffic control procedures are also in place over much of the rest of the world.",
-    "B Rudimentary air traffic control (АТС) existed well before the Grand Canyon disaster. As early as the 1920s, the earliest air traffic controllers manually guided aircraft in the vicinity of the airports, using lights and flags, while beacons and flashing lights were placed along cross-country routes to establish the earliest airways. However, this purely visual system was useless in bad weather, and, by the 1930s, radio communication was coming into use for АТС. The first region to have something approximating today’s АТС was New York City, with other major metropolitan areas following soon after.",
-    "C In the 1940s, АТС centres could and did take advantage of the newly developed radar and improved radio communication brought about by the Second World War, but the system remained rudimentary. It was only after the creation of the FAA that full-scale regulation of America’s airspace took place, and this was fortuitous, for the advent of the jet engine suddenly resulted in a large number of very fast planes, reducing pilots’ margin of error and practically demanding some set of rules to keep everyone well separated and operating safely in the air.",
-    "D Many people think that АТС consists of a row of controllers sitting in front of their radar screens at the nation’s airports, telling arriving and departing traffic what to do. This is a very incomplete part of the picture. The FAA realised that the airspace over the United States would at any time have many different kinds of planes, flying for many different purposes, in a variety of weather conditions, and the same kind of structure was needed to accommodate all of them.",
-    "E To meet this challenge, the following elements were put into effect. First, АТС extends over virtually the entire United States. In general, from 365m above the ground and higher, the entire country is blanketed by controlled airspace. In certain areas, mainly near airports, controlled airspace extends down to 215m above the ground, and, in the immediate vicinity of an airport, all the way down to the surface. Controlled airspace is that airspace in which FAA regulations apply. Elsewhere, in uncontrolled airspace, pilots are bound by fewer regulations. In this way, the recreational pilot who simply wishes to go flying for a while without all the restrictions imposed by the FAA has only to stay in uncontrolled airspace, below 365m, while the pilot who does want the protection afforded by АТС can easily enter the controlled airspace.",
-    "F The FAA then recognised two types of operating environments. In good meteorological conditions, flying would be permitted under Visual Flight Rules (VFR), which suggests a strong reliance on visual cues to maintain an acceptable level of safety. Poor visibility necessitated a set of Instrumental Flight Rules (IFR), under which the pilot relied on altitude and navigational information provided by the plane’s instrument panel to fly safely. On a clear day, a pilot in controlled airspace can choose a VFR or IFR flight plan, and the FAA regulations were devised in a way which accommodates both VFR and IFR operations in the same airspace. However, a pilot can only choose to fly IFR if they possess an instrument rating which is above and beyond the basic pilot’s license that must also be held.",
-    "G Controlled airspace is divided into several different types, designated by letters of the alphabet. Uncontrolled airspace is designated Class F, while controlled airspace below 5,490m above sea level and not in the vicinity of an airport is Class E. All airspace above 5,490m is designated Class A. The reason for the division of Class E and Class A airspace stems from the type of planes operating in them. Generally, Class E airspace is where one finds general aviation aircraft (few of which can climb above 5,490m anyway), and commercial turboprop aircraft. Above 5,490m is the realm of the heavy jets, since jet engines operate more efficiently at higher altitudes. The difference between Class E and A airspace is that in Class A, all operations are IFR, and pilots must be instrument-rated, that is, skilled and licensed in aircraft instrumentation. This is because АТС control of the entire space is essential. Three other types of airspace, Classes D, С and B, govern the vicinity of airports. These correspond roughly to small municipal, medium-sized metropolitan and major metropolitan airports respectively, and encompass an increasingly rigorous set of regulations. For example, all a VFR pilot has to do to enter Class С airspace is establish two-way radio contact with АТС. No explicit permission from АТС to enter is needed, although the pilot must continue to obey all regulations governing VFR flight. To enter Class В airspace, such as on approach to a major metropolitan airport, an explicit АТС clearance is required. The private pilot who cruises without permission into this airspace risks losing their license.",
-    "i Disobeying FAA Regulations\nii Aviation disaster prompts action\niii Two coincidental developments\niv Setting Altitude Zones\nv An oversimplified view\nvi Controlling pilots’ licence\nvii Defining airspace categories\nviii Setting rules to weather conditions\nix Taking of Safety\nx First step towards ATC",
-    "Example – Paragraph B x\n14 Paragraph A\n15 Paragraph C\n16 Paragraph D\n17 Paragraph E\n18 Paragraph F\n19 Paragraph G"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "An accident that occurred in the skies over the Grand Canyon in 1956 resulted in the establishment of the Federal Aviation Administration (FAA) to regulate and oversee the operation of aircraft in the skies over the United States, which were becoming quite congested. The resulting structure of air traffic control has greatly increased the safety of flight in the United States, and similar air traffic control procedures are also in place over much of the rest of the world."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Rudimentary air traffic control (АТС) existed well before the Grand Canyon disaster. As early as the 1920s, the earliest air traffic controllers manually guided aircraft in the vicinity of the airports, using lights and flags, while beacons and flashing lights were placed along cross-country routes to establish the earliest airways. However, this purely visual system was useless in bad weather, and, by the 1930s, radio communication was coming into use for АТС. The first region to have something approximating today’s АТС was New York City, with other major metropolitan areas following soon after."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "In the 1940s, АТС centres could and did take advantage of the newly developed radar and improved radio communication brought about by the Second World War, but the system remained rudimentary. It was only after the creation of the FAA that full-scale regulation of America’s airspace took place, and this was fortuitous, for the advent of the jet engine suddenly resulted in a large number of very fast planes, reducing pilots’ margin of error and practically demanding some set of rules to keep everyone well separated and operating safely in the air."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Many people think that АТС consists of a row of controllers sitting in front of their radar screens at the nation’s airports, telling arriving and departing traffic what to do. This is a very incomplete part of the picture. The FAA realised that the airspace over the United States would at any time have many different kinds of planes, flying for many different purposes, in a variety of weather conditions, and the same kind of structure was needed to accommodate all of them."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "To meet this challenge, the following elements were put into effect. First, АТС extends over virtually the entire United States. In general, from 365m above the ground and higher, the entire country is blanketed by controlled airspace. In certain areas, mainly near airports, controlled airspace extends down to 215m above the ground, and, in the immediate vicinity of an airport, all the way down to the surface. Controlled airspace is that airspace in which FAA regulations apply. Elsewhere, in uncontrolled airspace, pilots are bound by fewer regulations. In this way, the recreational pilot who simply wishes to go flying for a while without all the restrictions imposed by the FAA has only to stay in uncontrolled airspace, below 365m, while the pilot who does want the protection afforded by АТС can easily enter the controlled airspace."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The FAA then recognised two types of operating environments. In good meteorological conditions, flying would be permitted under Visual Flight Rules (VFR), which suggests a strong reliance on visual cues to maintain an acceptable level of safety. Poor visibility necessitated a set of Instrumental Flight Rules (IFR), under which the pilot relied on altitude and navigational information provided by the plane’s instrument panel to fly safely. On a clear day, a pilot in controlled airspace can choose a VFR or IFR flight plan, and the FAA regulations were devised in a way which accommodates both VFR and IFR operations in the same airspace. However, a pilot can only choose to fly IFR if they possess an instrument rating which is above and beyond the basic pilot’s license that must also be held."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Controlled airspace is divided into several different types, designated by letters of the alphabet. Uncontrolled airspace is designated Class F, while controlled airspace below 5,490m above sea level and not in the vicinity of an airport is Class E. All airspace above 5,490m is designated Class A. The reason for the division of Class E and Class A airspace stems from the type of planes operating in them. Generally, Class E airspace is where one finds general aviation aircraft (few of which can climb above 5,490m anyway), and commercial turboprop aircraft. Above 5,490m is the realm of the heavy jets, since jet engines operate more efficiently at higher altitudes. The difference between Class E and A airspace is that in Class A, all operations are IFR, and pilots must be instrument-rated, that is, skilled and licensed in aircraft instrumentation. This is because АТС control of the entire space is essential. Three other types of airspace, Classes D, С and B, govern the vicinity of airports. These correspond roughly to small municipal, medium-sized metropolitan and major metropolitan airports respectively, and encompass an increasingly rigorous set of regulations. For example, all a VFR pilot has to do to enter Class С airspace is establish two-way radio contact with АТС. No explicit permission from АТС to enter is needed, although the pilot must continue to obey all regulations governing VFR flight. To enter Class В airspace, such as on approach to a major metropolitan airport, an explicit АТС clearance is required. The private pilot who cruises without permission into this airspace risks losing their license."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the given information of the reading passage? In boxes 20-26 on your answer sheet, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-19",
+     "startQ": 14,
+     "endQ": 19,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading passage 2 has seven paragraphs A-G. Choose the correct heading for paragraphs A and C-G from the list below. Write the correct number i-x in boxes 14-19 on your answer sheet.",
+     "legend": null,
+     "notes": [
+      "Example – Paragraph B x"
+     ],
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "Disobeying FAA Regulations"
+       },
+       {
+        "id": "ii",
+        "text": "Aviation disaster prompts action"
+       },
+       {
+        "id": "iii",
+        "text": "Two coincidental developments"
+       },
+       {
+        "id": "iv",
+        "text": "Setting Altitude Zones"
+       },
+       {
+        "id": "v",
+        "text": "An oversimplified view"
+       },
+       {
+        "id": "vi",
+        "text": "Controlling pilots’ licence"
+       },
+       {
+        "id": "vii",
+        "text": "Defining airspace categories"
+       },
+       {
+        "id": "viii",
+        "text": "Setting rules to weather conditions"
+       },
+       {
+        "id": "ix",
+        "text": "Taking of Safety"
+       },
+       {
+        "id": "x",
+        "text": "First step towards ATC"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph A"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "iii",
+        "value": "iii",
+        "accepted": [
+         "iii"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "v",
+        "value": "v",
+        "accepted": [
+         "v"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "iv",
+        "value": "iv",
+        "accepted": [
+         "iv"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "viii",
+        "value": "viii",
+        "accepted": [
+         "viii"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph G"
+       ],
+       "answer": {
+        "raw": "vii",
+        "value": "vii",
+        "accepted": [
+         "vii"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 39,
+      "lineRange": [
+       39,
+       58
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-19",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading passage 2 has seven paragraphs A-G. Choose the correct heading for paragraphs A and C-G from the list below. Write the correct number i-x in boxes 14-19 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i Disobeying FAA Regulations",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii Aviation disaster prompts action",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii Two coincidental developments",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv Setting Altitude Zones",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v An oversimplified view",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi Controlling pilots’ licence",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii Defining airspace categories",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii Setting rules to weather conditions",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix Taking of Safety",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "x First step towards ATC",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Example – Paragraph B x",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14 Paragraph A",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15 Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16 Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17 Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18 Paragraph F",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19 Paragraph G",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q20-26",
      "startQ": 20,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the given information of the reading passage? In boxes 20-26 on your answer sheet, write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "The FAA was created as a result of the introduction of the jet engine.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20 The FAA was created as a result of the introduction of the jet engine.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "The FAA was created as a result of the introduction of the jet engine."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "Air traffic control started after the Grand Canyon crash in 1956.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21 Air traffic control started after the Grand Canyon crash in 1956.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Air traffic control started after the Grand Canyon crash in 1956."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "Beacons and flashing lights are still used by the ATC today.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22 Beacons and flashing lights are still used by the ATC today.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Beacons and flashing lights are still used by the ATC today."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "Some improvements were made in radio communication during World War II.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23 Some improvements were made in radio communication during World War II.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Some improvements were made in radio communication during World War II."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 24,
        "type": "tfng",
-       "stem": {
-        "plain": "Class F airspace is airspace which is below 365m and not near airports.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "24 Class F airspace is airspace which is below 365m and not near airports.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "Class F airspace is airspace which is below 365m and not near airports."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 25,
        "type": "tfng",
-       "stem": {
-        "plain": "All aircraft in class E airspace must use IFR.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "25 All aircraft in class E airspace must use IFR.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "All aircraft in class E airspace must use IFR."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 26,
        "type": "tfng",
-       "stem": {
-        "plain": "A pilot entering class C airspace is flying over an average-sized city.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "26 A pilot entering class C airspace is flying over an average-sized city.",
-        "elementPath": "children[32]"
+       "prompt": [
+        "A pilot entering class C airspace is flying over an average-sized city."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[30]",
-      "rawExcerpt": "Questions 20-26\nDo the following statements agree with the given information of the reading passage? In boxes 20-26 on your answer sheet, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the inform"
+      "headerLine": 59,
+      "lineRange": [
+       59,
+       70
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 20-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the given information of the reading passage? In boxes 20-26 on your answer sheet, write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20 The FAA was created as a result of the introduction of the jet engine.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21 Air traffic control started after the Grand Canyon crash in 1956.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22 Beacons and flashing lights are still used by the ATC today.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23 Some improvements were made in radio communication during World War II.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24 Class F airspace is airspace which is below 365m and not near airports.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25 All aircraft in class E airspace must use IFR.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26 A pilot entering class C airspace is flying over an average-sized city.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "Telepathy Experiments",
+   "title": "TELEPATHY",
    "paragraphs": [
-    "Since the 1970s, parapsychologists at leading universities and research institutes around the world have risked the derision of sceptical colleagues by putting the various claims for telepathy to the test in dozens of rigorous scientific studies. The results and their implications are dividing even the researchers who uncovered them.",
-    "Some researchers say the results constitute compelling evidence that telepathy is genuine. Other parapsychologists believe the field is on the brink of collapse, having tried to produce definitive scientific proof and failed. Sceptics and advocates alike do concur on one issue, however: that the most impressive evidence so far has come from the so-called ‘ganzfeld’ experiments, a German term that means ‘whole field’. Reports of telepathic experiences had by people during meditation led parapsychologists to suspect that telepathy might involve ‘signals’ passing between people that were so faint that they were usually swamped by normal brain activity. In this case, such signals might be more easily detected by those experiencing meditation-like tranquility in a relaxing ‘whole field’ of light, sound and warmth.",
-    "The ganzfeld experiment tries to recreate these conditions with participants sitting in soft reclining chairs in a sealed room, listening to relaxing sounds while their eyes are covered with special filters letting in only soft pink light. In early ganzfeld experiments, the telepathy test involved identification of a picture chosen from a random selection of four taken from a large image bank. The idea was that a person acting as a ‘sender’ would attempt to beam the image over to the ‘receiver’ relaxing in the sealed room. Once the session was over, this person was asked to identify which of the four images had been used. Random guessing would give a hit-rate of 25 per cent; if telepathy is real, however, the hit-rate would be higher. In 1982, the results from the first ganzfeld studies were analysed by one of its pioneers, the American parapsychologist Charles Honorton. They pointed to typical hit-rates of better than 30 per cent – a small effect, but one which statistical tests suggested could not be put down to chance.",
-    "The implication was that the ganzfeld method had revealed real evidence for telepathy. But there was a crucial flaw in this argument – one routinely overlooked in more conventional areas of science. Just because chance had been ruled out as an explanation did not prove telepathy must exist; there were many other ways of getting positive results. These ranged from ‘sensory leakage’ – where clues about the pictures accidentally reach the receiver – to outright fraud. In response, the researchers issued a review of all the ganzfeld studies done up to 1985 to show that 80 per cent had found statistically significant evidence. However, they also agreed that there were still too many problems in the experiments which could lead to positive results, and they drew up a list demanding new standards for future research.",
-    "After this, many researchers switched to autoganzfeld tests – an automated variant of the technique which used computers to perform many of the key tasks such as the random selection of images. By minimising human involvement, the idea was to minimise the risk of flawed results. In 1987, results from hundreds of autoganzfeld tests were studied by Honorton in a ‘meta-analysis’, a statistical technique for finding the overall results from a set of studies. Though less compelling than before, the outcome was still impressive.",
-    "Yet some parapsychologists remain disturbed by the lack of consistency between individual ganzfeld studies. Defenders of telepathy point out that demanding impressive evidence from every study ignores one basic statistical fact: it takes large samples to detect small effects. If, as current results suggest, telepathy produces hit-rates only marginally above the 25 per cent expected by chance, it’s unlikely to be detected by a typical ganzfeld study involving around 40 people: the group is just not big enough. Only when many studies are combined in a meta-analysis will the faint signal of telepathy really become apparent. And that is what researchers do seem to be finding.",
-    "What they are certainly not finding, however, is any change in attitude of mainstream scientists: most still totally reject the very idea of telepathy. The problem stems at least in part from the lack of any plausible mechanism for telepathy.",
-    "Various theories have been put forward, many focusing on esoteric ideas from theoretical physics. They include ‘quantum entanglement’, in which events affecting one group of atoms instantly affect another group, no matter how far apart they may be. While physicists have demonstrated entanglement with specially prepared atoms, no-one knows if it also exists between atoms making up human minds. Answering such questions would transform parapsychology. This has prompted some researchers to argue that the future lies not in collecting more evidence for telepathy, but in probing possible mechanisms. Some work has begun already, with researchers trying to identify people who are particularly successful in autoganzfeld trials. Early results show that creative and artistic people do much better than average: in one study at the University of Edinburgh, musicians achieved a hit-rate of 56 per cent. Perhaps more tests like these will eventually give the researchers the evidence they are seeking and strengthen the case for the existence of telepathy.",
-    "Name/ Date Description Result Flas Ganzfeld studies 1982 involved a person acting as a (31)……………….who picked out one (32)……………. from a random selection of four and a (33)………………. who then tried to identify it hit rates were higher than with random guessing positive results could be produced by factors such as (34)…………. or (35)………….. Autoganzfeld studies 1987 (36)…………….were used for key tasks to limit the amount of (37)…………. in carrying out the tests the results were then subjected to a (38)…………. the (39)………….. between different test results were put down to the fact that sample groups were not (40)…………. (as with most ganzfled studies)",
-    "1. D\n2. B\n3. F\n4. E\n5. B\n6. F\n7. D\n8. A\n9. (ships’s) anchor\n10. (escape) wheel\n11. tooth\n12. (long) pendulum\n13. second\n14. ii\n15. iii\n16. v\n17. iv\n18. viii\n19. vii\n20. false\n21. false\n22. not given\n23. true\n24. true\n25. false\n26. true\n27. E\n28. B\n29. A\n30. F\n31. sender\n32. picture/ image\n33. receiver\n34. sensory leakage\n35. fraud\n36. computers\n37. human involvement\n38. meta-analysis\n39. lack of consistency\n40. big/ large enough"
+    {
+     "type": "text",
+     "text": "Since the 1970s, parapsychologists at leading universities and research institutes around the world have risked the derision of sceptical colleagues by putting the various claims for telepathy to the test in dozens of rigorous scientific studies. The results and their implications are dividing even the researchers who uncovered them."
+    },
+    {
+     "type": "text",
+     "text": "Some researchers say the results constitute compelling evidence that telepathy is genuine. Other parapsychologists believe the field is on the brink of collapse, having tried to produce definitive scientific proof and failed. Sceptics and advocates alike do concur on one issue, however: that the most impressive evidence so far has come from the so-called ‘ganzfeld’ experiments, a German term that means ‘whole field’. Reports of telepathic experiences had by people during meditation led parapsychologists to suspect that telepathy might involve ‘signals’ passing between people that were so faint that they were usually swamped by normal brain activity. In this case, such signals might be more easily detected by those experiencing meditation-like tranquility in a relaxing ‘whole field’ of light, sound and warmth."
+    },
+    {
+     "type": "text",
+     "text": "The ganzfeld experiment tries to recreate these conditions with participants sitting in soft reclining chairs in a sealed room, listening to relaxing sounds while their eyes are covered with special filters letting in only soft pink light. In early ganzfeld experiments, the telepathy test involved identification of a picture chosen from a random selection of four taken from a large image bank. The idea was that a person acting as a ‘sender’ would attempt to beam the image over to the ‘receiver’ relaxing in the sealed room. Once the session was over, this person was asked to identify which of the four images had been used. Random guessing would give a hit-rate of 25 per cent; if telepathy is real, however, the hit-rate would be higher. In 1982, the results from the first ganzfeld studies were analysed by one of its pioneers, the American parapsychologist Charles Honorton. They pointed to typical hit-rates of better than 30 per cent – a small effect, but one which statistical tests suggested could not be put down to chance."
+    },
+    {
+     "type": "text",
+     "text": "The implication was that the ganzfeld method had revealed real evidence for telepathy. But there was a crucial flaw in this argument – one routinely overlooked in more conventional areas of science. Just because chance had been ruled out as an explanation did not prove telepathy must exist; there were many other ways of getting positive results. These ranged from ‘sensory leakage’ – where clues about the pictures accidentally reach the receiver – to outright fraud. In response, the researchers issued a review of all the ganzfeld studies done up to 1985 to show that 80 per cent had found statistically significant evidence. However, they also agreed that there were still too many problems in the experiments which could lead to positive results, and they drew up a list demanding new standards for future research."
+    },
+    {
+     "type": "text",
+     "text": "After this, many researchers switched to autoganzfeld tests – an automated variant of the technique which used computers to perform many of the key tasks such as the random selection of images. By minimising human involvement, the idea was to minimise the risk of flawed results. In 1987, results from hundreds of autoganzfeld tests were studied by Honorton in a ‘meta-analysis’, a statistical technique for finding the overall results from a set of studies. Though less compelling than before, the outcome was still impressive."
+    },
+    {
+     "type": "text",
+     "text": "Yet some parapsychologists remain disturbed by the lack of consistency between individual ganzfeld studies. Defenders of telepathy point out that demanding impressive evidence from every study ignores one basic statistical fact: it takes large samples to detect small effects. If, as current results suggest, telepathy produces hit-rates only marginally above the 25 per cent expected by chance, it’s unlikely to be detected by a typical ganzfeld study involving around 40 people: the group is just not big enough. Only when many studies are combined in a meta-analysis will the faint signal of telepathy really become apparent. And that is what researchers do seem to be finding."
+    },
+    {
+     "type": "text",
+     "text": "What they are certainly not finding, however, is any change in attitude of mainstream scientists: most still totally reject the very idea of telepathy. The problem stems at least in part from the lack of any plausible mechanism for telepathy."
+    },
+    {
+     "type": "text",
+     "text": "Various theories have been put forward, many focusing on esoteric ideas from theoretical physics. They include ‘quantum entanglement’, in which events affecting one group of atoms instantly affect another group, no matter how far apart they may be. While physicists have demonstrated entanglement with specially prepared atoms, no-one knows if it also exists between atoms making up human minds. Answering such questions would transform parapsychology. This has prompted some researchers to argue that the future lies not in collecting more evidence for telepathy, but in probing possible mechanisms. Some work has begun already, with researchers trying to identify people who are particularly successful in autoganzfeld trials. Early results show that creative and artistic people do much better than average: in one study at the University of Edinburgh, musicians achieved a hit-rate of 56 per cent. Perhaps more tests like these will eventually give the researchers the evidence they are seeking and strengthen the case for the existence of telepathy."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
-   "questionGroups": []
+   "passageReasonCodes": null,
+   "questionGroups": [
+    {
+     "groupId": "p3.q27-30",
+     "startQ": 27,
+     "endQ": 30,
+     "type": "sentence_endings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete each sentence with the correct ending, A —G, below. Write the correct letter, A—G, in boxes 27-30 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "the discovery of a mechanism for telepathy."
+       },
+       {
+        "id": "B",
+        "text": "the need to create a suitable environment for telepathy."
+       },
+       {
+        "id": "C",
+        "text": "their claims of a high success rate."
+       },
+       {
+        "id": "D",
+        "text": "a solution to the problem posed by random guessing."
+       },
+       {
+        "id": "E",
+        "text": "the significance of the ganzfeld experiments."
+       },
+       {
+        "id": "F",
+        "text": "a more careful selection of subjects."
+       },
+       {
+        "id": "G",
+        "text": "a need to keep altering conditions."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "sentence_endings",
+       "prompt": [
+        "Researchers with differing attitudes towards telepathy agree on"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "sentence_endings",
+       "prompt": [
+        "Reports of experiences during meditation indicated"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "sentence_endings",
+       "prompt": [
+        "Attitudes to parapsychology would alter drastically with"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "sentence_endings",
+       "prompt": [
+        "Recent autoganzfeld trials suggest that success rates will improve with"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 80,
+      "lineRange": [
+       80,
+       92
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-30",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete each sentence with the correct ending, A —G, below. Write the correct letter, A—G, in boxes 27-30 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27 Researchers with differing attitudes towards telepathy agree on",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28 Reports of experiences during meditation indicated",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29 Attitudes to parapsychology would alter drastically with",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30 Recent autoganzfeld trials suggest that success rates will improve with",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A the discovery of a mechanism for telepathy.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the need to create a suitable environment for telepathy.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C their claims of a high success rate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D a solution to the problem posed by random guessing.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E the significance of the ganzfeld experiments.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F a more careful selection of subjects.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G a need to keep altering conditions.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q31-40",
+     "startQ": 31,
+     "endQ": 40,
+     "type": "table_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 31-40 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Telepathy Experiments",
+      "blocks": [
+       {
+        "type": "table",
+        "rows": [
+         [
+          [
+           "Name/ Date"
+          ],
+          [
+           "Description"
+          ],
+          [
+           "Result"
+          ],
+          [
+           "Flas"
+          ]
+         ],
+         [
+          [
+           "Ganzfeld studies 1982"
+          ],
+          [
+           "involved a person acting as a ",
+           {
+            "blank": 31
+           },
+           "who picked out one ",
+           {
+            "blank": 32
+           },
+           "from a random selection of four and a ",
+           {
+            "blank": 33
+           },
+           "who then tried to identify it"
+          ],
+          [
+           "hit rates were higher than with random guessing"
+          ],
+          [
+           "positive results could be produced by factors such as ",
+           {
+            "blank": 34
+           },
+           "or ",
+           {
+            "blank": 35
+           }
+          ]
+         ],
+         [
+          [
+           "Autoganzfeld studies 1987"
+          ],
+          [
+           {
+            "blank": 36
+           },
+           "were used for key tasks to limit the amount of ",
+           {
+            "blank": 37
+           },
+           "in carrying out the tests"
+          ],
+          [
+           "the results were then subjected to a ",
+           {
+            "blank": 38
+           }
+          ],
+          [
+           "the ",
+           {
+            "blank": 39
+           },
+           "between different test results were put down to the fact that sample groups were not ",
+           {
+            "blank": 40
+           },
+           "(as with most ganzfled studies)"
+          ]
+         ]
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 31,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "sender",
+        "value": "sender",
+        "accepted": [
+         "sender"
+        ]
+       }
+      },
+      {
+       "number": 32,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "picture/ image",
+        "value": "picture/ image",
+        "accepted": [
+         "picture",
+         "image"
+        ]
+       }
+      },
+      {
+       "number": 33,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "receiver",
+        "value": "receiver",
+        "accepted": [
+         "receiver"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "sensory leakage",
+        "value": "sensory leakage",
+        "accepted": [
+         "sensory leakage"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "fraud",
+        "value": "fraud",
+        "accepted": [
+         "fraud"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "computers",
+        "value": "computers",
+        "accepted": [
+         "computers"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "human involvement",
+        "value": "human involvement",
+        "accepted": [
+         "human involvement"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "meta-analysis",
+        "value": "meta-analysis",
+        "accepted": [
+         "meta-analysis"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "lack of consistency",
+        "value": "lack of consistency",
+        "accepted": [
+         "lack of consistency"
+        ]
+       }
+      },
+      {
+       "number": 40,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "big/ large enough",
+        "value": "big/ large enough",
+        "accepted": [
+         "big",
+         "large enough"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 93,
+      "lineRange": [
+       93,
+       97
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 31-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the table below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in boxes 31-40 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Telepathy Experiments",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Name/ Date ; Description ; Result ; Flas | Ganzfeld studies 1982 ; involved a person acting as a (31)……………….who picked out one (32)……………. from a random selection of four and a (33)………………. who then tried to identify it ; hit rates were higher than with random guessing ; positive results could be produced by factors such as (34)…………. or (35)………….. | Autoganzfeld studies 1987 ; (36)…………….were used fo",
+        "kind": "table",
+        "bold": false
+       }
+      ]
+     }
+    }
+   ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "D"
-   },
-   {
-    "number": 2,
-    "value": "B"
-   },
-   {
-    "number": 3,
-    "value": "F"
-   },
-   {
-    "number": 4,
-    "value": "E"
-   },
-   {
-    "number": 5,
-    "value": "B"
-   },
-   {
-    "number": 6,
-    "value": "F"
-   },
-   {
-    "number": 7,
-    "value": "D"
-   },
-   {
-    "number": 8,
-    "value": "A"
-   },
-   {
-    "number": 9,
-    "value": "(ships’s) anchor"
-   },
-   {
-    "number": 10,
-    "value": "(escape) wheel"
-   },
-   {
-    "number": 11,
-    "value": "tooth"
-   },
-   {
-    "number": 12,
-    "value": "(long) pendulum"
-   },
-   {
-    "number": 13,
-    "value": "second"
-   },
-   {
-    "number": 14,
-    "value": "ii"
-   },
-   {
-    "number": 15,
-    "value": "iii"
-   },
-   {
-    "number": 16,
-    "value": "v"
-   },
-   {
-    "number": 17,
-    "value": "iv"
-   },
-   {
-    "number": 18,
-    "value": "viii"
-   },
-   {
-    "number": 19,
-    "value": "vii"
-   },
-   {
-    "number": 20,
-    "value": "false"
-   },
-   {
-    "number": 21,
-    "value": "false"
-   },
-   {
-    "number": 22,
-    "value": "not given"
-   },
-   {
-    "number": 23,
-    "value": "true"
-   },
-   {
-    "number": 24,
-    "value": "true"
-   },
-   {
-    "number": 25,
-    "value": "false"
-   },
-   {
-    "number": 26,
-    "value": "true"
-   },
-   {
-    "number": 27,
-    "value": "E"
-   },
-   {
-    "number": 28,
-    "value": "B"
-   },
-   {
-    "number": 29,
-    "value": "A"
-   },
-   {
-    "number": 30,
-    "value": "F"
-   },
-   {
-    "number": 31,
-    "value": "sender"
-   },
-   {
-    "number": 32,
-    "value": "picture/ image"
-   },
-   {
-    "number": 33,
-    "value": "receiver"
-   },
-   {
-    "number": 34,
-    "value": "sensory leakage"
-   },
-   {
-    "number": 35,
-    "value": "fraud"
-   },
-   {
-    "number": 36,
-    "value": "computers"
-   },
-   {
-    "number": 37,
-    "value": "human involvement"
-   },
-   {
-    "number": 38,
-    "value": "meta-analysis"
-   },
-   {
-    "number": 39,
-    "value": "lack of consistency"
-   },
-   {
-    "number": 40,
-    "value": "big/ large enough"
-   }
-  ]
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 1,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 7,
+  "questionsInSource": 40,
+  "productionQuestions": 35,
+  "answerKeyItems": 40
  },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     8
-    ],
-    "instruction": "Look at the following events (Questions 5-8) and the list of nationalities below. Match each event with the correct nati"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Label the diagram below. Write NO MORE THAN TWO WORDS from the passage."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Reading passage 2 has seven paragraphs A-G. Choose the correct heading for paragraphs A and C-G from the list below. Wri"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Complete each sentence with the correct ending, A —G, below. Write the correct letter, A—G, in boxes 27-30 on your answe"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     31,
-     40
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 11,
-    "answers": 40
-   }
-  }
- ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 5,
- "contentFingerprint": "67c89c84f56d0529c642c7f0ab5c3001f137aab05ae5959ebfc0a3bffbc380a8"
+ "contentFingerprint": "d3478c0c44493913697e0bc7dfb3d4775050cf40c91e78ad767fcea9a94ba0ae"
 }

@@ -1,49 +1,21 @@
 {
  "slug": "ielts-reading-test-163",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     19,
-     23
-    ],
-    "instruction": "Look at the following statements (Questions 19-23) and the list of people below. Match each statement to the correct person A-D. Write the c"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     26
-    ],
-    "instruction": "Complete the summary below. Write NO MORE THAN ONE WORD from the text for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 8-13 on your answer sheet, write"
   }
  ]
 }

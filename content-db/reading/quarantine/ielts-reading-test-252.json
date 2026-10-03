@@ -1,49 +1,61 @@
 {
  "slug": "ielts-reading-test-252",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Complete the following chart of the paragraphs of reading passage, using NO MORE THAN TWO WORDS from the reading passage"
-   }
+   "groupId": "p1.q01-07",
+   "range": [
+    1,
+    7
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the following chart of the paragraphs of reading passage, using NO MORE THAN TWO WORDS from the reading passage for each answer. Write your answers in boxes 1-7 on your answer sheet. The foll"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     36,
-     39
-    ],
-    "instruction": "Choose the letter A-D and write your answers in boxes 36-39 on your answer sheet. A Eurasia\n\nB Australia\n\nC Asia\n\nD Africa"
-   }
+   "groupId": "p2.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Reading passage has 5 chapters. Which chapter contains the following information? Write your answers in boxes 14-18 on your answer sheet"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": ""
-   }
+   "groupId": "p3.q33-35",
+   "range": [
+    33,
+    35
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "MISSING_INSTRUCTION"
+   ],
+   "instruction": ""
   }
  ]
 }

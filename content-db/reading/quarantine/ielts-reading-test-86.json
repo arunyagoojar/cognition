@@ -1,85 +1,65 @@
 {
  "slug": "ielts-reading-test-86",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     6
-    ],
-    "instruction": "Reading Passage 1 has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below"
-   }
+   "groupId": "p1.q07-13",
+   "range": [
+    7,
+    13
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     13
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
-   }
+   "groupId": "p3.q31-34",
+   "range": [
+    31,
+    34
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete each sentence with the correct ending, A-G, below. Write the correct letter, A-G, in boxes 31-34 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 Choose TWO letters A-E."
-   }
+   "groupId": "p3.q35-39",
+   "range": [
+    35,
+    39
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     31,
-     34
-    ],
-    "instruction": "Complete each sentence with the correct ending, A-G, below. Write the correct letter, A-G, in boxes 31-34 on your answer"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": "Choose the correct letter; A, B C or D"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 16,
-    "answers": 40
-   }
+   "groupId": "p3.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter; A, B C or D"
   }
  ]
 }

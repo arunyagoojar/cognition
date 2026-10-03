@@ -1,10 +1,34 @@
 {
  "slug": "ielts-reading-test-78",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 8-13 on your answer sheet, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q14-19",
+   "range": [
+    14,
+    19
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 14-19 on your answer sheet, write"
   }
  ]
 }

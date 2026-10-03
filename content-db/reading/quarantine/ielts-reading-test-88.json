@@ -1,37 +1,21 @@
 {
  "slug": "ielts-reading-test-88",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Reading Passage 2 has six paragraphs, A-F. Choose the correct heading for each paragraph from the list of headings below"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 17,
-    "answers": 40
-   }
+   "groupId": "p3.q31-35",
+   "range": [
+    31,
+    35
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT",
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer."
   }
  ]
 }

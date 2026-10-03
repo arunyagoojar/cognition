@@ -1,10 +1,20 @@
 {
  "slug": "ielts-reading-test-249",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p2.q25-27",
+   "range": [
+    25,
+    27
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Filling the blanks and answer the questions below with only ONE word."
   }
  ]
 }

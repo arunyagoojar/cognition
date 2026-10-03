@@ -1,31 +1,20 @@
 {
  "slug": "ielts-reading-test-160",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     14,
-     18
-    ],
-    "extracted": 7,
-    "expected": 5
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g02 range 14-18 got 7"
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
   }
  ]
 }

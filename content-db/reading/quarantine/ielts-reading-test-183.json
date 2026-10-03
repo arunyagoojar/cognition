@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-183",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     8
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Write the correct letter A-G in boxes 9-13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     22
-    ],
-    "instruction": "Label the diagram below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
+   "groupId": "p3.q31-36",
+   "range": [
+    31,
+    36
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MALFORMED_BLANK"
+   ],
+   "instruction": "Complete the summary below using words from the box. Write your answers in boxes 31-36 on your answer sheet."
   }
  ]
 }

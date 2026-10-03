@@ -1,37 +1,33 @@
 {
  "slug": "ielts-reading-test-303",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     24
-    ],
-    "instruction": "Complete the timeline diagram below. Write NO MORE THAN THREE WORDS from the passage for each answer. Today\n\nA purely biological basis to cr"
-   }
+   "groupId": "p2.q14-24",
+   "range": [
+    14,
+    24
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_MISSING"
+   ],
+   "instruction": "Complete the timeline diagram below. Write NO MORE THAN THREE WORDS from the passage for each answer. 1876"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "Choose two letters, A-E."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
+   "groupId": "p3.q27-32",
+   "range": [
+    27,
+    32
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the diagram below. Write NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

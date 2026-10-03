@@ -1,106 +1,34 @@
 {
  "slug": "ielts-reading-test-30",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     6
-    ],
-    "instruction": "Reading Passage 1 has seven paragraphs (A-G). Choose the most suitable heading for each paragraph from the list of headi"
-   }
+   "groupId": "p1.q07-11",
+   "range": [
+    7,
+    11
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "The diagram below illustrates the information provided in paragraphs B-F of Reading Passage 1 Complete the labels on the diagram with an appropriate word or words. Use NO MORE THAN THREE WORDS for eac"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     11
-    ],
-    "instruction": "The diagram below illustrates the information provided in paragraphs B-F of Reading Passage 1 Complete the labels on the"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     12,
-     12
-    ],
-    "instruction": "Choose the appropriate letter A-D and write it in box 12 on your answer sheet Cambridge IELTS Test 1 to 17"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     13,
-     20
-    ],
-    "instruction": "Reading Passage 2 has nine paragraphs (A-I). Choose the most suitable heading for each paragraph from the list of headin"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     21,
-     26
-    ],
-    "instruction": "Complete the sentences below after reading the passage. Use NO MORE THAN THREE WORDS for each answer. Write your answers"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     33,
-     33
-    ],
-    "instruction": "and 34 Choose the appropriate letters A-D and write them in boxes 33 and 34 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     35,
-     38
-    ],
-    "instruction": "The writer mentions a number of factors that have resulted, in employees working longer hours. Which FOUR of the followi"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 2,
-    "title": "Passage 2",
-    "groups": []
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 7,
-    "answers": 40
-   }
+   "groupId": "p2.q21-26",
+   "range": [
+    21,
+    26
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below after reading the passage. Use NO MORE THAN THREE WORDS for each answer. Write your answers in boxes 21-26 on your answer sheet."
   }
  ]
 }

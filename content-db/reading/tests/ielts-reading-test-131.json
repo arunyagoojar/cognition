@@ -1,317 +1,694 @@
 {
  "id": "reading.test-0131.d269ad2c",
  "module": "reading",
+ "slug": "ielts-reading-test-131",
  "sourceNumbers": [
   131
  ],
- "slug": "ielts-reading-test-131",
  "title": "IELTS Academic Reading Test 131",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-131/index.html",
-   "sha256": "c96d1e7e241029b37215b7ae4336fcbd1a4959f8ac550a68338802775abccab6",
-   "manifestHashMatch": true,
+   "sha256": "11f45404c9159fde3ef328e499d09437dbdfc356302f1aadfbac25177394ccd1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-131/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "4"
+   },
+   {
+    "number": 2,
+    "raw": "young"
+   },
+   {
+    "number": 3,
+    "raw": "food"
+   },
+   {
+    "number": 4,
+    "raw": "light"
+   },
+   {
+    "number": 5,
+    "raw": "aggressively"
+   },
+   {
+    "number": 6,
+    "raw": "location"
+   },
+   {
+    "number": 7,
+    "raw": "neurons"
+   },
+   {
+    "number": 8,
+    "raw": "chemicals"
+   },
+   {
+    "number": 9,
+    "raw": "False"
+   },
+   {
+    "number": 10,
+    "raw": "True"
+   },
+   {
+    "number": 11,
+    "raw": "False"
+   },
+   {
+    "number": 12,
+    "raw": "Not given"
+   },
+   {
+    "number": 13,
+    "raw": "True"
+   },
+   {
+    "number": 14,
+    "raw": "B"
+   },
+   {
+    "number": 15,
+    "raw": "E"
+   },
+   {
+    "number": 16,
+    "raw": "C"
+   },
+   {
+    "number": 17,
+    "raw": "A"
+   },
+   {
+    "number": 18,
+    "raw": "True"
+   },
+   {
+    "number": 19,
+    "raw": "True"
+   },
+   {
+    "number": 20,
+    "raw": "Not given"
+   },
+   {
+    "number": 21,
+    "raw": "False"
+   },
+   {
+    "number": 22,
+    "raw": "Not given"
+   },
+   {
+    "number": 23,
+    "raw": "B"
+   },
+   {
+    "number": 24,
+    "raw": "D"
+   },
+   {
+    "number": 25,
+    "raw": "B"
+   },
+   {
+    "number": 26,
+    "raw": "E"
+   },
+   {
+    "number": 27,
+    "raw": "False"
+   },
+   {
+    "number": 28,
+    "raw": "Not given"
+   },
+   {
+    "number": 29,
+    "raw": "False"
+   },
+   {
+    "number": 30,
+    "raw": "True"
+   },
+   {
+    "number": 31,
+    "raw": "False"
+   },
+   {
+    "number": 32,
+    "raw": "True"
+   },
+   {
+    "number": 33,
+    "raw": "Not given"
+   },
+   {
+    "number": 34,
+    "raw": "large"
+   },
+   {
+    "number": 35,
+    "raw": "microplastic"
+   },
+   {
+    "number": 36,
+    "raw": "populations"
+   },
+   {
+    "number": 37,
+    "raw": "concentrations"
+   },
+   {
+    "number": 38,
+    "raw": "predators"
+   },
+   {
+    "number": 39,
+    "raw": "disasters"
+   },
+   {
+    "number": 40,
+    "raw": "A"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "The secret of staying young",
    "paragraphs": [
-    "Pheidole dentata, a native ant of the south-eastern U.S., isn’t immortal. But scientists have found that it doesn’t seem to show any signs of aging. Old worker ants can do everything just as well as the youngsters, and their brains appear just as sharp. ‘We get a picture that these ants really don’t decline,’ says Ysabel Giraldo, who studied the ants for her doctoral thesis at Boston University.",
-    "Such age-defying feats are rare in the animal kingdom. Naked mole rats can live for almost 30 years and stay fit for nearly their entire lives. They can still reproduce even when old, and they never get cancer. But the vast majority of animals deteriorate with age just like people do. Like the naked mole rat, ants are social creatures that usually live in highly organised colonies. ‘It’s this social complexity that makes P. dentata useful for studying aging in people,’ says Giraldo, now at the California Institute of Technology. Humans are also highly social, a trait that has been connected to healthier aging. By contrast, most animal studies of aging use mice, worms or fruit flies, which all lead much more isolated lives.",
-    "In the lab, P. dentata worker ants typically live for around 140 days. Giraldo focused on ants at four age ranges: 20 to 22 days, 45 to 47 days, 95 to 97 days and 120 to 122 days. Unlike all previous studies, which only estimated how old the ants were, her work tracked the ants from the time the pupae became adults, so she knew their exact ages. Then she put them through a range of tests.",
-    "Giraldo watched how well the ants took care of the young of the colony, recording how often each ant attended to, carried and fed them. She compared how well 20-day-old and 95-day-old ants followed the telltale scent that the insects usually leave to mark a trail to food. She tested how ants responded to light and also measured how active they were by counting how often ants in a small dish walked across a line. And she experimented with how ants react to live prey: a tethered fruit fly. Giraldo expected the older ants to perform poorly in all these tasks. But the elderly insects were all good caretakers and trail-followers—the 95-day-old ants could track the scent even longer than their younger counterparts. They all responded to light well, and the older ants were more active. And when it came to reacting to prey, the older ants attacked the poor fruit fly just as aggressively as the young ones did, flaring their mandibles or pulling at the fly’s legs.",
-    "Then Giraldo compared the brains of 20-day-old and 95-day-old ants, identifying any cells that were close to death. She saw no major differences with age, nor was there any difference in the location of the dying cells, showing that age didn’t seem to affect specific brain functions. Ants and other insects have structures in their brains called mushroom bodies, which are important for processing information, learning and memory. She also wanted to see if aging affects the density of synaptic complexes within these structures—regions where neurons come together. Again, the answer was no. What was more, the old ants didn’t experience any drop in the levels of either serotonin or dopamine—brain chemicals whose decline often coincides with aging. In humans, for example, a decrease in serotonin has been linked to Alzheimer’s disease.",
-    "‘This is the first time anyone has looked at both behavioral and neural changes in these ants so thoroughly,’ says Giraldo, who recently published the findings in the Proceedings of the Royal Society B. Scientists have looked at some similar aspects in bees, but the results of recent bee studies were mixed—some studies showed age-related declines, which biologists call senescence, and others didn’t. ‘For now, the study raises more questions than it answers,’ Giraldo says, ‘including how P. dentata stays in such good shape.’",
-    "Also, if the ants don’t deteriorate with age, why do they die at all? Out in the wild, the ants probably don’t live for a full 140 days thanks to predators, disease and just being in an environment that’s much harsher than the comforts of the lab. ‘The lucky ants that do live into old age may suffer a steep decline just before dying,’ Giraldo says, but she can’t say for sure because her study wasn’t designed to follow an ant’s final moments.",
-    "‘It will be important to extend these findings to other species of social insects,’ says Gene E. Robinson, an entomologist at the University of Illinois at Urbana-Champaign. This ant might be unique, or it might represent a broader pattern among other social bugs with possible clues to the science of aging in larger animals. Either way, it seems that for these ants, age really doesn’t matter."
+    {
+     "type": "text",
+     "text": "Pheidole dentata, a native ant of the south-eastern U.S., isn’t immortal. But scientists have found that it doesn’t seem to show any signs of aging. Old worker ants can do everything just as well as the youngsters, and their brains appear just as sharp. ‘We get a picture that these ants really don’t decline,’ says Ysabel Giraldo, who studied the ants for her doctoral thesis at Boston University."
+    },
+    {
+     "type": "text",
+     "text": "Such age-defying feats are rare in the animal kingdom. Naked mole rats can live for almost 30 years and stay fit for nearly their entire lives. They can still reproduce even when old, and they never get cancer. But the vast majority of animals deteriorate with age just like people do. Like the naked mole rat, ants are social creatures that usually live in highly organised colonies. ‘It’s this social complexity that makes P. dentata useful for studying aging in people,’ says Giraldo, now at the California Institute of Technology. Humans are also highly social, a trait that has been connected to healthier aging. By contrast, most animal studies of aging use mice, worms or fruit flies, which all lead much more isolated lives."
+    },
+    {
+     "type": "text",
+     "text": "In the lab, P. dentata worker ants typically live for around 140 days. Giraldo focused on ants at four age ranges: 20 to 22 days, 45 to 47 days, 95 to 97 days and 120 to 122 days. Unlike all previous studies, which only estimated how old the ants were, her work tracked the ants from the time the pupae became adults, so she knew their exact ages. Then she put them through a range of tests."
+    },
+    {
+     "type": "text",
+     "text": "Giraldo watched how well the ants took care of the young of the colony, recording how often each ant attended to, carried and fed them. She compared how well 20-day-old and 95-day-old ants followed the telltale scent that the insects usually leave to mark a trail to food. She tested how ants responded to light and also measured how active they were by counting how often ants in a small dish walked across a line. And she experimented with how ants react to live prey: a tethered fruit fly. Giraldo expected the older ants to perform poorly in all these tasks. But the elderly insects were all good caretakers and trail-followers—the 95-day-old ants could track the scent even longer than their younger counterparts. They all responded to light well, and the older ants were more active. And when it came to reacting to prey, the older ants attacked the poor fruit fly just as aggressively as the young ones did, flaring their mandibles or pulling at the fly’s legs."
+    },
+    {
+     "type": "text",
+     "text": "Then Giraldo compared the brains of 20-day-old and 95-day-old ants, identifying any cells that were close to death. She saw no major differences with age, nor was there any difference in the location of the dying cells, showing that age didn’t seem to affect specific brain functions. Ants and other insects have structures in their brains called mushroom bodies, which are important for processing information, learning and memory. She also wanted to see if aging affects the density of synaptic complexes within these structures—regions where neurons come together. Again, the answer was no. What was more, the old ants didn’t experience any drop in the levels of either serotonin or dopamine—brain chemicals whose decline often coincides with aging. In humans, for example, a decrease in serotonin has been linked to Alzheimer’s disease."
+    },
+    {
+     "type": "text",
+     "text": "‘This is the first time anyone has looked at both behavioral and neural changes in these ants so thoroughly,’ says Giraldo, who recently published the findings in the Proceedings of the Royal Society B. Scientists have looked at some similar aspects in bees, but the results of recent bee studies were mixed—some studies showed age-related declines, which biologists call senescence, and others didn’t. ‘For now, the study raises more questions than it answers,’ Giraldo says, ‘including how P. dentata stays in such good shape.’"
+    },
+    {
+     "type": "text",
+     "text": "Also, if the ants don’t deteriorate with age, why do they die at all? Out in the wild, the ants probably don’t live for a full 140 days thanks to predators, disease and just being in an environment that’s much harsher than the comforts of the lab. ‘The lucky ants that do live into old age may suffer a steep decline just before dying,’ Giraldo says, but she can’t say for sure because her study wasn’t designed to follow an ant’s final moments."
+    },
+    {
+     "type": "text",
+     "text": "‘It will be important to extend these findings to other species of social insects,’ says Gene E. Robinson, an entomologist at the University of Illinois at Urbana-Champaign. This ant might be unique, or it might represent a broader pattern among other social bugs with possible clues to the science of aging in larger animals. Either way, it seems that for these ants, age really doesn’t matter."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answer in boxes 1-8 on your answer sheet. Ysabel Giraldo’s research",
-     "wordLimit": "",
-     "qtype": "note_completion",
+     "groupId": "p1.q01-08",
      "startQ": 1,
      "endQ": 8,
-     "stimulusSegments": [
-      "Behaviour:",
-      "Brains:"
-     ],
-     "sharedOptions": null,
-     "figures": null,
-     "questions": [
-      {
-       "number": 1,
-       "type": "completion",
-       "stem": {
-        "plain": "Focused on a total of (1) ______ different age groups of ants, analysing",
+     "type": "note_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answer in boxes 1-8 on your answer sheet. Ysabel Giraldo’s research",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
         "segments": [
-         "Focused on a total of",
+         "Focused on a total of ",
          {
           "blank": 1
          },
          "different age groups of ants, analysing"
         ]
        },
-       "options": null,
-       "correctAnswer": "4",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Focused on a total of (1)………………different age groups of ants, analysing",
-        "elementPath": "children[11]"
-       }
-      },
-      {
-       "number": 2,
-       "type": "completion",
-       "stem": {
-        "plain": "• how well ants looked after their (2) ______",
+       {
+        "type": "text",
         "segments": [
-         "• how well ants looked after their",
+         "Behaviour:"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• how well ants looked after their ",
          {
           "blank": 2
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "young",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• how well ants looked after their (2)………………",
-        "elementPath": "children[12]"
-       }
-      },
-      {
-       "number": 3,
-       "type": "completion",
-       "stem": {
-        "plain": "• their ability to locate (3) ______ using a scent trail",
+       {
+        "type": "text",
         "segments": [
-         "• their ability to locate",
+         "• their ability to locate ",
          {
           "blank": 3
          },
          "using a scent trail"
         ]
        },
-       "options": null,
-       "correctAnswer": "food",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• their ability to locate (3)……………..using a scent trail",
-        "elementPath": "children[12]"
-       }
-      },
-      {
-       "number": 4,
-       "type": "completion",
-       "stem": {
-        "plain": "• the effect that (4) ______ had on them",
+       {
+        "type": "text",
         "segments": [
-         "• the effect that",
+         "• the effect that ",
          {
           "blank": 4
          },
          "had on them"
         ]
        },
-       "options": null,
-       "correctAnswer": "light",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• the effect that (4)………….had on them",
-        "elementPath": "children[12]"
-       }
-      },
-      {
-       "number": 5,
-       "type": "completion",
-       "stem": {
-        "plain": "• how (5) ______ they attacked prey",
+       {
+        "type": "text",
         "segments": [
-         "• how",
+         "• how ",
          {
           "blank": 5
          },
          "they attacked prey"
         ]
        },
-       "options": null,
-       "correctAnswer": "aggressively",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• how (5)………………they attacked prey",
-        "elementPath": "children[12]"
-       }
-      },
-      {
-       "number": 6,
-       "type": "completion",
-       "stem": {
-        "plain": "• comparison between age and the (6) ______ of dying cells in the brains of ants",
+       {
+        "type": "text",
         "segments": [
-         "• comparison between age and the",
+         "Brains:"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• comparison between age and the ",
          {
           "blank": 6
          },
          "of dying cells in the brains of ants"
         ]
        },
-       "options": null,
-       "correctAnswer": "location",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• comparison between age and the (6)……………….of dying cells in the brains of ants",
-        "elementPath": "children[13]"
-       }
-      },
-      {
-       "number": 7,
-       "type": "completion",
-       "stem": {
-        "plain": "• condition of synaptic complexes (areas in which (7) ______ meet) in the brain’s ‘mushroom bodies’",
+       {
+        "type": "text",
         "segments": [
-         "• condition of synaptic complexes (areas in which",
+         "• condition of synaptic complexes (areas in which ",
          {
           "blank": 7
          },
          "meet) in the brain’s ‘mushroom bodies’"
         ]
        },
-       "options": null,
-       "correctAnswer": "neurons",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• condition of synaptic complexes (areas in which (7)……………….meet) in the brain’s ‘mushroom bodies’",
-        "elementPath": "children[13]"
-       }
-      },
-      {
-       "number": 8,
-       "type": "completion",
-       "stem": {
-        "plain": "• level of two (8) ______ in the brain associated with ageing",
+       {
+        "type": "text",
         "segments": [
-         "• level of two",
+         "• level of two ",
          {
           "blank": 8
          },
          "in the brain associated with ageing"
         ]
-       },
-       "options": null,
-       "correctAnswer": "chemicals",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• level of two (8)…………….in the brain associated with ageing",
-        "elementPath": "children[13]"
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "4",
+        "value": "4",
+        "accepted": [
+         "4"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "young",
+        "value": "young",
+        "accepted": [
+         "young"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "food",
+        "value": "food",
+        "accepted": [
+         "food"
+        ]
+       }
+      },
+      {
+       "number": 4,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "light",
+        "value": "light",
+        "accepted": [
+         "light"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "aggressively",
+        "value": "aggressively",
+        "accepted": [
+         "aggressively"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "location",
+        "value": "location",
+        "accepted": [
+         "location"
+        ]
+       }
+      },
+      {
+       "number": 7,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "neurons",
+        "value": "neurons",
+        "accepted": [
+         "neurons"
+        ]
+       }
+      },
+      {
+       "number": 8,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "chemicals",
+        "value": "chemicals",
+        "accepted": [
+         "chemicals"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[9]",
-      "rawExcerpt": "Questions 1 – 8\nComplete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answer in boxes 1-8 on your answer sheet. Ysabel Giraldo’s research"
+      "headerLine": 9,
+      "lineRange": [
+       9,
+       21
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1 – 8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answer in boxes 1-8 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Ysabel Giraldo’s research",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Focused on a total of (1)………………different age groups of ants, analysing",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Behaviour:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• how well ants looked after their (2)………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• their ability to locate (3)……………..using a scent trail",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• the effect that (4)………….had on them",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• how (5)………………they attacked prey",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Brains:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• comparison between age and the (6)……………….of dying cells in the brains of ants",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• condition of synaptic complexes (areas in which (7)……………….meet) in the brain’s ‘mushroom bodies’",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• level of two (8)…………….in the brain associated with ageing",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q09-13",
      "startQ": 9,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 9,
        "type": "tfng",
-       "stem": {
-        "plain": "Pheidole dentata ants are the only known animals which remain active for almost their whole lives.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9 Pheidole dentata ants are the only known animals which remain active for almost their whole lives.",
-        "elementPath": "children[16]"
+       "prompt": [
+        "Pheidole dentata ants are the only known animals which remain active for almost their whole lives."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 10,
        "type": "tfng",
-       "stem": {
-        "plain": "Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the insects’ ages.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "10 Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the insects’ ages.",
-        "elementPath": "children[16]"
+       "prompt": [
+        "Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the insects’ ages."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 11,
        "type": "tfng",
-       "stem": {
-        "plain": "The ants in Giraldo’s experiments behaved as she had predicted that they would.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11 The ants in Giraldo’s experiments behaved as she had predicted that they would.",
-        "elementPath": "children[16]"
+       "prompt": [
+        "The ants in Giraldo’s experiments behaved as she had predicted that they would."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 12,
        "type": "tfng",
-       "stem": {
-        "plain": "The recent studies of bees used different methods of measuring age- related decline.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12 The recent studies of bees used different methods of measuring age- related decline.",
-        "elementPath": "children[16]"
+       "prompt": [
+        "The recent studies of bees used different methods of measuring age- related decline."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 13,
        "type": "tfng",
-       "stem": {
-        "plain": "Pheidole dentata ants kept in laboratory conditions tend to live longer lives.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13 Pheidole dentata ants kept in laboratory conditions tend to live longer lives.",
-        "elementPath": "children[16]"
+       "prompt": [
+        "Pheidole dentata ants kept in laboratory conditions tend to live longer lives."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[14]",
-      "rawExcerpt": "Questions 9 – 13\nDo the following statements agree with the information given in Reading Passage 1?\nIn boxes 9-13 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+      "headerLine": 22,
+      "lineRange": [
+       22,
+       32
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9 – 13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "In boxes 9-13 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9 Pheidole dentata ants are the only known animals which remain active for almost their whole lives.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10 Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the insects’ ages.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11 The ants in Giraldo’s experiments behaved as she had predicted that they would.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12 The recent studies of bees used different methods of measuring age- related decline.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13 Pheidole dentata ants kept in laboratory conditions tend to live longer lives.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -320,717 +697,1296 @@
    "passageNumber": 2,
    "title": "Why zoos are good",
    "paragraphs": [
-    "A In my view, it is perfectly possible for many species of animals living in zoos or wildlife parks to have a quality of life as high as, or higher than, in the wild. Animals in good zoos get a varied and high-quality diet with all the supplements required, and any illnesses they might have will be treated. Their movement might be somewhat restricted, but they have a safe environment in which to live, and they are spared bullying and social ostracism by others of their kind. They do not suffer from the threat or stress of predators, or the irritation and pain of parasites or injuries. The average captive animal will have a greater life expectancy compared with its wild counterpart, and will not die of drought, of starvation or in the jaws of a predator. A lot of very nasty things happen to truly ‘wild’ animals that simply don’t happen in good zoos, and to view a life that is ‘free’ as one that is automatically ‘good’ is, I think, an error. Furthermore, zoos serve several key purposes.",
-    "B Firstly, zoos aid conservation. Colossal numbers of species are becoming extinct across the world, and many more are increasingly threatened and therefore risk extinction. Moreover, some of these collapses have been sudden, dramatic and unexpected, or were simply discovered very late in the day. A species protected in captivity can be bred up to provide a reservoir population against a population crash or extinction in the wild. A good number of species only exist in captivity, with many of these living in zoos. Still more only exist in the wild because they have been reintroduced from zoos, or have wild populations that have been boosted by captive bred animals. Without these efforts there would be fewer species alive today. Although reintroduction successes are few and far between, the numbers are increasing, and the very fact that species have been saved or reintroduced as a result of captive breeding proves the value of such initiatives.",
-    "C Zoos also provide education. Many children and adults, especially those in cities, will never see a wild animal beyond a fox or pigeon. While it is true that television documentaries are becoming ever more detailed and impressive, and many natural history specimens are on display in museums, there really is nothing to compare with seeing a living creature in the flesh, hearing it, smelling it, watching what it does and having the time to absorb details. That alone will bring a greater understanding and perspective to many, and hopefully give them a greater appreciation for wildlife, conservation efforts and how they can contribute.",
-    "D In addition to this, there is also the education that can take place in zoos through signs, talks and presentations which directly communicate information to visitors about the animals they are seeing and their place in the world. This was an area where zoos used to be lacking, but they are now increasingly sophisticated in their communication and outreach work. Many zoos also work directly to educate conservation workers in other countries, or send their animal keepers abroad to contribute their knowledge and skills to those working in zoos and reserves, thereby helping to improve conditions and reintroductions all over the world.",
-    "E Zoos also play a key role in research. If we are to save wild species and restore and repair ecosystems we need to know about how key species live, act and react. Being able to undertake research on animals in zoos where there is less risk and fewer variables means real changes can be effected on wild populations. Finding out about, for example, the oestrus cycle of an animal or its breeding rate helps us manage wild populations. Procedures such as capturing and moving at-risk or dangerous individuals are bolstered by knowledge gained in zoos about doses for anaesthetics, and by experience in handling and transporting animals. This can make a real difference to conservation efforts and to the reduction of human-animal conflicts, and can provide a knowledge base for helping with the increasing threats of habitat destruction and other problems.",
-    "F In conclusion, considering the many ongoing global threats to the environment, it is hard for me to see zoos as anything other than essential to the long-term survival of numerous species. They are vital not just in terms of protecting animals, but as a means of learning about them to aid those still in the wild, as well as educating and informing the general population about these animals and their world so that they can assist or at least accept the need to be more environmentally conscious. Without them, the world would be, and would increasingly become, a much poorer place."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "In my view, it is perfectly possible for many species of animals living in zoos or wildlife parks to have a quality of life as high as, or higher than, in the wild. Animals in good zoos get a varied and high-quality diet with all the supplements required, and any illnesses they might have will be treated. Their movement might be somewhat restricted, but they have a safe environment in which to live, and they are spared bullying and social ostracism by others of their kind. They do not suffer from the threat or stress of predators, or the irritation and pain of parasites or injuries. The average captive animal will have a greater life expectancy compared with its wild counterpart, and will not die of drought, of starvation or in the jaws of a predator. A lot of very nasty things happen to truly ‘wild’ animals that simply don’t happen in good zoos, and to view a life that is ‘free’ as one that is automatically ‘good’ is, I think, an error. Furthermore, zoos serve several key purposes."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Firstly, zoos aid conservation. Colossal numbers of species are becoming extinct across the world, and many more are increasingly threatened and therefore risk extinction. Moreover, some of these collapses have been sudden, dramatic and unexpected, or were simply discovered very late in the day. A species protected in captivity can be bred up to provide a reservoir population against a population crash or extinction in the wild. A good number of species only exist in captivity, with many of these living in zoos. Still more only exist in the wild because they have been reintroduced from zoos, or have wild populations that have been boosted by captive bred animals. Without these efforts there would be fewer species alive today. Although reintroduction successes are few and far between, the numbers are increasing, and the very fact that species have been saved or reintroduced as a result of captive breeding proves the value of such initiatives."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Zoos also provide education. Many children and adults, especially those in cities, will never see a wild animal beyond a fox or pigeon. While it is true that television documentaries are becoming ever more detailed and impressive, and many natural history specimens are on display in museums, there really is nothing to compare with seeing a living creature in the flesh, hearing it, smelling it, watching what it does and having the time to absorb details. That alone will bring a greater understanding and perspective to many, and hopefully give them a greater appreciation for wildlife, conservation efforts and how they can contribute."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "In addition to this, there is also the education that can take place in zoos through signs, talks and presentations which directly communicate information to visitors about the animals they are seeing and their place in the world. This was an area where zoos used to be lacking, but they are now increasingly sophisticated in their communication and outreach work. Many zoos also work directly to educate conservation workers in other countries, or send their animal keepers abroad to contribute their knowledge and skills to those working in zoos and reserves, thereby helping to improve conditions and reintroductions all over the world."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Zoos also play a key role in research. If we are to save wild species and restore and repair ecosystems we need to know about how key species live, act and react. Being able to undertake research on animals in zoos where there is less risk and fewer variables means real changes can be effected on wild populations. Finding out about, for example, the oestrus cycle of an animal or its breeding rate helps us manage wild populations. Procedures such as capturing and moving at-risk or dangerous individuals are bolstered by knowledge gained in zoos about doses for anaesthetics, and by experience in handling and transporting animals. This can make a real difference to conservation efforts and to the reduction of human-animal conflicts, and can provide a knowledge base for helping with the increasing threats of habitat destruction and other problems."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "In conclusion, considering the many ongoing global threats to the environment, it is hard for me to see zoos as anything other than essential to the long-term survival of numerous species. They are vital not just in terms of protecting animals, but as a means of learning about them to aid those still in the wild, as well as educating and informing the general population about these animals and their world so that they can assist or at least accept the need to be more environmentally conscious. Without them, the world would be, and would increasingly become, a much poorer place."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g03",
-     "instruction": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p2.q14-17",
      "startQ": 14,
      "endQ": 17,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "matching_information",
-       "stem": {
-        "plain": "a reference to how quickly animal species can die out",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14 a reference to how quickly animal species can die out",
-        "elementPath": "children[25]"
+       "prompt": [
+        "a reference to how quickly animal species can die out"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 15,
        "type": "matching_information",
-       "stem": {
-        "plain": "reasons why it is preferable to study animals in captivity rather than in the wild",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15 reasons why it is preferable to study animals in captivity rather than in the wild",
-        "elementPath": "children[25]"
+       "prompt": [
+        "reasons why it is preferable to study animals in captivity rather than in the wild"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 16,
        "type": "matching_information",
-       "stem": {
-        "plain": "mention of two ways of learning about animals other than visiting them in zoos",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16 mention of two ways of learning about animals other than visiting them in zoos",
-        "elementPath": "children[25]"
+       "prompt": [
+        "mention of two ways of learning about animals other than visiting them in zoos"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 17,
        "type": "matching_information",
-       "stem": {
-        "plain": "reasons why animals in zoos may be healthier than those in the wild",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17 reasons why animals in zoos may be healthier than those in the wild",
-        "elementPath": "children[25]"
+       "prompt": [
+        "reasons why animals in zoos may be healthier than those in the wild"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[24]",
-      "rawExcerpt": "Questions 14 – 17\nReading Passage 2 has six paragraphs, A-F.\nWhich paragraph contains the following information?\nWrite the correct letter, A-F, in boxes 14-17 on your answer sheet."
+      "headerLine": 40,
+      "lineRange": [
+       40,
+       47
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14 – 17",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has six paragraphs, A-F.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter, A-F, in boxes 14-17 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14 a reference to how quickly animal species can die out",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15 reasons why it is preferable to study animals in captivity rather than in the wild",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16 mention of two ways of learning about animals other than visiting them in zoos",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17 reasons why animals in zoos may be healthier than those in the wild",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 18-22 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q18-22",
      "startQ": 18,
      "endQ": 22,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? In boxes 18-22 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 18,
        "type": "tfng",
-       "stem": {
-        "plain": "An animal is likely to live longer in a zoo than in the wild.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18 An animal is likely to live longer in a zoo than in the wild.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "An animal is likely to live longer in a zoo than in the wild."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 19,
        "type": "tfng",
-       "stem": {
-        "plain": "There are some species in zoos which can no longer be found in the wild.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19 There are some species in zoos which can no longer be found in the wild.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "There are some species in zoos which can no longer be found in the wild."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20 Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "Zoos have always excelled at transmitting information about animals to the public.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21 Zoos have always excelled at transmitting information about animals to the public.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "Zoos have always excelled at transmitting information about animals to the public."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "Studying animals in zoos is less stressful for the animals than studying them in the wild.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22 Studying animals in zoos is less stressful for the animals than studying them in the wild.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "Studying animals in zoos is less stressful for the animals than studying them in the wild."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[26]",
-      "rawExcerpt": "Questions 18 – 22\nDo the following statements agree with the information given in Reading Passage 2?\nIn boxes 18-22 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informa"
+      "headerLine": 48,
+      "lineRange": [
+       48,
+       58
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 18 – 22",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 2?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "In boxes 18-22 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18 An animal is likely to live longer in a zoo than in the wild.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19 There are some species in zoos which can no longer be found in the wild.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20 Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21 Zoos have always excelled at transmitting information about animals to the public.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22 Studying animals in zoos is less stressful for the animals than studying them in the wild.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q23-24",
+     "startQ": 23,
+     "endQ": 24,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 2,
+     "answerSet": [
+      "B",
+      "D"
+     ],
+     "answerSetNotation": null,
+     "instruction": "Choose TWO letters, A-E. Write the correct letters in boxes 23 and 24 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Some take part in television documentaries about animals."
+       },
+       {
+        "id": "B",
+        "text": "Some travel to overseas locations to join teams in zoos."
+       },
+       {
+        "id": "C",
+        "text": "Some get experience with species in the wild before taking up zoo jobs."
+       },
+       {
+        "id": "D",
+        "text": "Some teach people who are involved with conservation projects."
+       },
+       {
+        "id": "E",
+        "text": "Some specialise in caring for species which are under threat."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 23,
+       "type": "mcq_multi",
+       "prompt": [
+        "Which TWO of the following are stated about zoo staff in the text?"
+       ],
+       "slotOf": 23,
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 23,
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 59,
+      "lineRange": [
+       59,
+       67
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 23 and 24",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose TWO letters, A-E.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letters in boxes 23 and 24 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which TWO of the following are stated about zoo staff in the text?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Some take part in television documentaries about animals.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Some travel to overseas locations to join teams in zoos.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Some get experience with species in the wild before taking up zoo jobs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Some teach people who are involved with conservation projects.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Some specialise in caring for species which are under threat.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q25-26",
+     "startQ": 25,
+     "endQ": 26,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 2,
+     "answerSet": [
+      "B",
+      "E"
+     ],
+     "answerSetNotation": null,
+     "instruction": "Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "They can help children overcome their fears of wild animals."
+       },
+       {
+        "id": "B",
+        "text": "They can increase public awareness of environmental issues."
+       },
+       {
+        "id": "C",
+        "text": "They can provide employment for a range of professional people."
+       },
+       {
+        "id": "D",
+        "text": "They can generate income to support wildlife conservation projects."
+       },
+       {
+        "id": "E",
+        "text": "They can raise animals which can later be released into the wild."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 25,
+       "type": "mcq_multi",
+       "prompt": [
+        "Which TWO of these beliefs about zoos does the writer mention in the text?"
+       ],
+       "slotOf": 25,
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 25,
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 68,
+      "lineRange": [
+       68,
+       76
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 25 and 26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose TWO letters, A-E.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letters in boxes 25 and 26 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which TWO of these beliefs about zoos does the writer mention in the text?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A They can help children overcome their fears of wild animals.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B They can increase public awareness of environmental issues.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C They can provide employment for a range of professional people.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D They can generate income to support wildlife conservation projects.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E They can raise animals which can later be released into the wild.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "READING PASSAGE 3",
+   "title": null,
    "paragraphs": [
-    "Chelsea Rochman, an ecologist at the University of California, Davis, has been trying to answer a dismal question: Is everything terrible, or are things just very, very bad?",
-    "Rochman is a member of the National Center for Ecological Analysis and Synthesis’s marine-debris working group, a collection of scientists who study, among other things, the growing problem of marine debris, also known as ocean trash. Plenty of studies have sounded alarm bells about the state of marine debris; in a recent paper published in the journal Ecology, Rochman and her colleagues set out to determine how many of those perceived risks are real.",
-    "Often, Rochman says, scientists will end a paper by speculating about the broader impacts of what they’ve found. For example, a study could show that certain seabirds eat plastic bags, and go on to warn that whole bird populations are at risk of dying out. ‘But the truth was that nobody had yet tested those perceived threats,’ Rochman says. ‘There wasn’t a lot of information.’",
-    "Rochman and her colleagues examined more than a hundred papers on the impacts of marine debris that were published through 2013. Within each paper, they asked what threats scientists had studied – 366 perceived threats in all – and what they’d actually found.",
-    "In 83 percent of cases, the perceived dangers of ocean trash were proven true. In the remaining cases, the working group found the studies had weaknesses in design and content which affected the validity of their conclusions – they lacked a control group, for example, or used faulty statistics.",
-    "Strikingly, Rochman says, only one well-designed study failed to find the effect it was looking for, an investigation of mussels ingesting microscopic plastic bits. The plastic moved from the mussels’ stomachs to their bloodstreams, scientists found, and stayed there for weeks – but didn’t seem to stress out the shellfish.",
-    "While mussels may be fine eating trash, though, the analysis also gave a clearer picture of the many ways that ocean debris is bothersome.",
-    "Within the studies they looked at, most of the proven threats came from plastic debris, rather than other materials like metal or wood. Most of the dangers also involved large pieces of debris – animals getting entangled in trash, for example, or eating it and severely injuring themselves.",
-    "But a lot of ocean debris is ‘microplastic’, or pieces smaller than five millimeters. These may be ingredients used in cosmetics and toiletries, fibers shed by synthetic clothing in the wash, or eroded remnants of larger debris. Compared to the number of studies investigating large-scale debris, Rochman’s group found little research on the effects of these tiny bits. ‘There are a lot of open questions still for microplastic,’ Rochman says, though she notes that more papers on the subject have been published since 2013, the cutoff point for the group’s analysis.",
-    "There are also, she adds, a lot of open questions about the ways that ocean debris can lead to sea-creature death. Many studies have looked at how plastic affects an individual animal, or that animal’s tissues or cells, rather than whole populations. And in the lab, scientists often use higher concentrations of plastic than what’s really in the ocean. None of that tells us how many birds or fish or sea turtles could die from plastic pollution – or how deaths in one species could affect that animal’s predators, or the rest of the ecosystem.",
-    "‘We need to be asking more ecologically relevant questions,’ Rochman says. Usually, scientists don’t know exactly how disasters such as a tanker accidentally spilling its whole cargo of oil and polluting huge areas of the ocean will affect the environment until after they’ve happened. ‘We don’t ask the right questions early enough,’ she says. But if ecologists can understand how the slow-moving effect of ocean trash is damaging ecosystems, they might be able to prevent things from getting worse.",
-    "Asking the right questions can help policy makers, and the public, figure out where to focus their attention. The problems that look or sound most dramatic may not be the best places to start. For example, the name of the ‘Great Pacific Garbage Patch’ – a collection of marine debris in the northern Pacific Ocean – might conjure up a vast, floating trash island. In reality though, much of the debris is tiny or below the surface; a person could sail through the area without seeing any trash at all. A Dutch group called ‘The Ocean Cleanup’ is currently working on plans to put mechanical devices in the Pacific Garbage Patch and similar areas to suck up plastic. But a recent paper used simulations to show that strategically positioning the cleanup devices closer to shore would more effectively reduce pollution over the long term.",
-    "‘I think clearing up some of these misperceptions is really important,’ Rochman says. Among scientists as well as in the media, she says, ‘A lot of the images about strandings and entanglement and all of that cause the perception that plastic debris is killing everything in the ocean.’ Interrogating the existing scientific literature can help ecologists figure out which problems really need addressing, and which ones they’d be better off- like the mussels – absorbing and ignoring."
+    {
+     "type": "text",
+     "text": "Chelsea Rochman, an ecologist at the University of California, Davis, has been trying to answer a dismal question: Is everything terrible, or are things just very, very bad?"
+    },
+    {
+     "type": "text",
+     "text": "Rochman is a member of the National Center for Ecological Analysis and Synthesis’s marine-debris working group, a collection of scientists who study, among other things, the growing problem of marine debris, also known as ocean trash. Plenty of studies have sounded alarm bells about the state of marine debris; in a recent paper published in the journal Ecology, Rochman and her colleagues set out to determine how many of those perceived risks are real."
+    },
+    {
+     "type": "text",
+     "text": "Often, Rochman says, scientists will end a paper by speculating about the broader impacts of what they’ve found. For example, a study could show that certain seabirds eat plastic bags, and go on to warn that whole bird populations are at risk of dying out. ‘But the truth was that nobody had yet tested those perceived threats,’ Rochman says. ‘There wasn’t a lot of information.’"
+    },
+    {
+     "type": "text",
+     "text": "Rochman and her colleagues examined more than a hundred papers on the impacts of marine debris that were published through 2013. Within each paper, they asked what threats scientists had studied – 366 perceived threats in all – and what they’d actually found."
+    },
+    {
+     "type": "text",
+     "text": "In 83 percent of cases, the perceived dangers of ocean trash were proven true. In the remaining cases, the working group found the studies had weaknesses in design and content which affected the validity of their conclusions – they lacked a control group, for example, or used faulty statistics."
+    },
+    {
+     "type": "text",
+     "text": "Strikingly, Rochman says, only one well-designed study failed to find the effect it was looking for, an investigation of mussels ingesting microscopic plastic bits. The plastic moved from the mussels’ stomachs to their bloodstreams, scientists found, and stayed there for weeks – but didn’t seem to stress out the shellfish."
+    },
+    {
+     "type": "text",
+     "text": "While mussels may be fine eating trash, though, the analysis also gave a clearer picture of the many ways that ocean debris is bothersome."
+    },
+    {
+     "type": "text",
+     "text": "Within the studies they looked at, most of the proven threats came from plastic debris, rather than other materials like metal or wood. Most of the dangers also involved large pieces of debris – animals getting entangled in trash, for example, or eating it and severely injuring themselves."
+    },
+    {
+     "type": "text",
+     "text": "But a lot of ocean debris is ‘microplastic’, or pieces smaller than five millimeters. These may be ingredients used in cosmetics and toiletries, fibers shed by synthetic clothing in the wash, or eroded remnants of larger debris. Compared to the number of studies investigating large-scale debris, Rochman’s group found little research on the effects of these tiny bits. ‘There are a lot of open questions still for microplastic,’ Rochman says, though she notes that more papers on the subject have been published since 2013, the cutoff point for the group’s analysis."
+    },
+    {
+     "type": "text",
+     "text": "There are also, she adds, a lot of open questions about the ways that ocean debris can lead to sea-creature death. Many studies have looked at how plastic affects an individual animal, or that animal’s tissues or cells, rather than whole populations. And in the lab, scientists often use higher concentrations of plastic than what’s really in the ocean. None of that tells us how many birds or fish or sea turtles could die from plastic pollution – or how deaths in one species could affect that animal’s predators, or the rest of the ecosystem."
+    },
+    {
+     "type": "text",
+     "text": "‘We need to be asking more ecologically relevant questions,’ Rochman says. Usually, scientists don’t know exactly how disasters such as a tanker accidentally spilling its whole cargo of oil and polluting huge areas of the ocean will affect the environment until after they’ve happened. ‘We don’t ask the right questions early enough,’ she says. But if ecologists can understand how the slow-moving effect of ocean trash is damaging ecosystems, they might be able to prevent things from getting worse."
+    },
+    {
+     "type": "text",
+     "text": "Asking the right questions can help policy makers, and the public, figure out where to focus their attention. The problems that look or sound most dramatic may not be the best places to start. For example, the name of the ‘Great Pacific Garbage Patch’ – a collection of marine debris in the northern Pacific Ocean – might conjure up a vast, floating trash island. In reality though, much of the debris is tiny or below the surface; a person could sail through the area without seeing any trash at all. A Dutch group called ‘The Ocean Cleanup’ is currently working on plans to put mechanical devices in the Pacific Garbage Patch and similar areas to suck up plastic. But a recent paper used simulations to show that strategically positioning the cleanup devices closer to shore would more effectively reduce pollution over the long term."
+    },
+    {
+     "type": "text",
+     "text": "‘I think clearing up some of these misperceptions is really important,’ Rochman says. Among scientists as well as in the media, she says, ‘A lot of the images about strandings and entanglement and all of that cause the perception that plastic debris is killing everything in the ocean.’ Interrogating the existing scientific literature can help ecologists figure out which problems really need addressing, and which ones they’d be better off- like the mussels – absorbing and ignoring."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 27-33 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q27-33",
      "startQ": 27,
      "endQ": 33,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 27-33 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "tfng",
-       "stem": {
-        "plain": "Rochman and her colleagues were the first people to research the problem of marine debris.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27 Rochman and her colleagues were the first people to research the problem of marine debris.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "Rochman and her colleagues were the first people to research the problem of marine debris."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 28,
        "type": "tfng",
-       "stem": {
-        "plain": "The creatures most in danger from ocean trash are certain seabirds.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28 The creatures most in danger from ocean trash are certain seabirds.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "The creatures most in danger from ocean trash are certain seabirds."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 29,
        "type": "tfng",
-       "stem": {
-        "plain": "The studies Rochman has reviewed have already proved that populations of some birds will soon become extinct.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29 The studies Rochman has reviewed have already proved that populations of some birds will soon become extinct.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "The studies Rochman has reviewed have already proved that populations of some birds will soon become extinct."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 30,
        "type": "tfng",
-       "stem": {
-        "plain": "Rochman analysed papers on the different kinds of danger caused by ocean trash.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30 Rochman analysed papers on the different kinds of danger caused by ocean trash.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "Rochman analysed papers on the different kinds of danger caused by ocean trash."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 31,
        "type": "tfng",
-       "stem": {
-        "plain": "Most of the research analysed by Rochman and her colleagues was badly designed.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31 Most of the research analysed by Rochman and her colleagues was badly designed.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "Most of the research analysed by Rochman and her colleagues was badly designed."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 32,
        "type": "tfng",
-       "stem": {
-        "plain": "One study examined by Rochman was expecting to find that mussels were harmed by eating plastic.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32 One study examined by Rochman was expecting to find that mussels were harmed by eating plastic.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "One study examined by Rochman was expecting to find that mussels were harmed by eating plastic."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 33,
        "type": "tfng",
-       "stem": {
-        "plain": "Some mussels choose to eat plastic in preference to their natural diet.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33 Some mussels choose to eat plastic in preference to their natural diet.",
-        "elementPath": "children[49]"
+       "prompt": [
+        "Some mussels choose to eat plastic in preference to their natural diet."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[47]",
-      "rawExcerpt": "Questions 27 – 33\nDo the following statements agree with the information given in Reading Passage 3? In boxes 27-33 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informa"
+      "headerLine": 91,
+      "lineRange": [
+       91,
+       102
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27 – 33",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 3? In boxes 27-33 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27 Rochman and her colleagues were the first people to research the problem of marine debris.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28 The creatures most in danger from ocean trash are certain seabirds.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29 The studies Rochman has reviewed have already proved that populations of some birds will soon become extinct.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30 Rochman analysed papers on the different kinds of danger caused by ocean trash.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31 Most of the research analysed by Rochman and her colleagues was badly designed.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32 One study examined by Rochman was expecting to find that mussels were harmed by eating plastic.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33 Some mussels choose to eat plastic in preference to their natural diet.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-39 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "note_completion",
+     "groupId": "p3.q34-39",
      "startQ": 34,
      "endQ": 39,
-     "stimulusSegments": [
-      "Findings related to marine debris",
-      "Studies of marine debris found the biggest threats were",
-      "• plastic (not metal or wood)",
-      "Drawbacks of the studies examined",
-      "• most of them focused on individual animals, not entire 36",
-      "• there was insufficient information on",
-      "– numbers of animals which could be affected",
-      "– the impact on the ecosystem"
-     ],
-     "sharedOptions": null,
-     "figures": null,
-     "questions": [
-      {
-       "number": 34,
-       "type": "completion",
-       "stem": {
-        "plain": "• bits of debris that were (34) ______ (harmful to animals)",
+     "type": "note_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-39 on your answer sheet. Studies of marine debris found the biggest threats were • plastic (not metal or wood)",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Findings related to marine debris",
+      "blocks": [
+       {
+        "type": "text",
         "segments": [
-         "• bits of debris that were",
+         "• bits of debris that were ",
          {
           "blank": 34
          },
          "(harmful to animals)"
         ]
        },
-       "options": null,
-       "correctAnswer": "large",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• bits of debris that were (34)……………..(harmful to animals)",
-        "elementPath": "children[52]"
-       }
-      },
-      {
-       "number": 35,
-       "type": "completion",
-       "stem": {
-        "plain": "There was little research into (35) ______ e.g. from synthetic fibres.",
+       {
+        "type": "text",
         "segments": [
-         "There was little research into",
+         "There was little research into ",
          {
           "blank": 35
          },
          "e.g. from synthetic fibres."
         ]
        },
-       "options": null,
-       "correctAnswer": "microplastic",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "There was little research into (35)……………….e.g. from synthetic fibres.",
-        "elementPath": "children[53]"
-       }
-      },
-      {
-       "number": 37,
-       "type": "completion",
-       "stem": {
-        "plain": "• the (37) ______ of plastic used in the lab did not always reflect those in the ocean",
+       {
+        "type": "text",
         "segments": [
-         "• the",
+         "Drawbacks of the studies examined"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• most of them focused on individual animals, not entire 36"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• the ",
          {
           "blank": 37
          },
          "of plastic used in the lab did not always reflect those in the ocean"
         ]
        },
-       "options": null,
-       "correctAnswer": "concentrations",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• the (37)…………………….of plastic used in the lab did not always reflect those in the ocean",
-        "elementPath": "children[54]"
-       }
-      },
-      {
-       "number": 38,
-       "type": "completion",
-       "stem": {
-        "plain": "– the impact of a reduction in numbers on the (38) ______ of that species",
+       {
+        "type": "text",
         "segments": [
-         "– the impact of a reduction in numbers on the",
+         "• there was insufficient information on"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "– numbers of animals which could be affected"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "– the impact of a reduction in numbers on the ",
          {
           "blank": 38
          },
          "of that species"
         ]
        },
-       "options": null,
-       "correctAnswer": "predators",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "– the impact of a reduction in numbers on the (38)……………….of that species",
-        "elementPath": "children[54]"
-       }
-      },
-      {
-       "number": 39,
-       "type": "completion",
-       "stem": {
-        "plain": "Rochman says more information is needed on the possible impact of future (39) ______ (e.g. involving oil).",
+       {
+        "type": "text",
         "segments": [
-         "Rochman says more information is needed on the possible impact of future",
+         "– the impact on the ecosystem"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Rochman says more information is needed on the possible impact of future ",
          {
           "blank": 39
          },
          "(e.g. involving oil)."
         ]
-       },
-       "options": null,
-       "correctAnswer": "disasters",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Rochman says more information is needed on the possible impact of future (39)………….(e.g. involving oil).",
-        "elementPath": "children[55]"
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 34,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "large",
+        "value": "large",
+        "accepted": [
+         "large"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "microplastic",
+        "value": "microplastic",
+        "accepted": [
+         "microplastic"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "concentrations",
+        "value": "concentrations",
+        "accepted": [
+         "concentrations"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "predators",
+        "value": "predators",
+        "accepted": [
+         "predators"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "disasters",
+        "value": "disasters",
+        "accepted": [
+         "disasters"
+        ]
        }
       }
      ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MISSING_QUESTION"
+     ],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[50]",
-      "rawExcerpt": "Questions 34 – 39\nComplete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-39 on your answer sheet."
+      "headerLine": 103,
+      "lineRange": [
+       103,
+       117
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 34 – 39",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-39 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Findings related to marine debris",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Studies of marine debris found the biggest threats were",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• plastic (not metal or wood)",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• bits of debris that were (34)……………..(harmful to animals)",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "There was little research into (35)……………….e.g. from synthetic fibres.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Drawbacks of the studies examined",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• most of them focused on individual animals, not entire 36",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• the (37)…………………….of plastic used in the lab did not always reflect those in the ocean",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• there was insufficient information on",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "– numbers of animals which could be affected",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "– the impact of a reduction in numbers on the (38)……………….of that species",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "– the impact on the ecosystem",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Rochman says more information is needed on the possible impact of future (39)………….(e.g. involving oil).",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g09",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q40-40",
      "startQ": 40,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 40,
-       "type": "tfng",
-       "stem": {
-        "plain": "What would be the best title for this passage?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40 What would be the best title for this passage?",
-        "elementPath": "children[57]"
+       "type": "mcq_single",
+       "prompt": [
+        "What would be the best title for this passage?"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "Assessing the threat of marine debris"
+        },
+        {
+         "id": "B",
+         "text": "Marine debris: who is to blame?"
+        },
+        {
+         "id": "C",
+         "text": "A new solution to the problem of marine debris"
+        },
+        {
+         "id": "D",
+         "text": "Marine debris: the need for international action"
+        }
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[56]",
-      "rawExcerpt": "Question 40\nChoose the correct letter, A, B, C or D."
+      "headerLine": 118,
+      "lineRange": [
+       118,
+       124
+      ],
+      "sourceLines": [
+       {
+        "text": "Question 40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40 What would be the best title for this passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Assessing the threat of marine debris",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Marine debris: who is to blame?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C A new solution to the problem of marine debris",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Marine debris: the need for international action",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "4"
-   },
-   {
-    "number": 2,
-    "value": "young"
-   },
-   {
-    "number": 3,
-    "value": "food"
-   },
-   {
-    "number": 4,
-    "value": "light"
-   },
-   {
-    "number": 5,
-    "value": "aggressively"
-   },
-   {
-    "number": 6,
-    "value": "location"
-   },
-   {
-    "number": 7,
-    "value": "neurons"
-   },
-   {
-    "number": 8,
-    "value": "chemicals"
-   },
-   {
-    "number": 9,
-    "value": "False"
-   },
-   {
-    "number": 10,
-    "value": "True"
-   },
-   {
-    "number": 11,
-    "value": "False"
-   },
-   {
-    "number": 12,
-    "value": "Not given"
-   },
-   {
-    "number": 13,
-    "value": "True"
-   },
-   {
-    "number": 14,
-    "value": "B"
-   },
-   {
-    "number": 15,
-    "value": "E"
-   },
-   {
-    "number": 16,
-    "value": "C"
-   },
-   {
-    "number": 17,
-    "value": "A"
-   },
-   {
-    "number": 18,
-    "value": "True"
-   },
-   {
-    "number": 19,
-    "value": "True"
-   },
-   {
-    "number": 20,
-    "value": "Not given"
-   },
-   {
-    "number": 21,
-    "value": "False"
-   },
-   {
-    "number": 22,
-    "value": "Not given"
-   },
-   {
-    "number": 23,
-    "value": "B"
-   },
-   {
-    "number": 24,
-    "value": "D"
-   },
-   {
-    "number": 25,
-    "value": "B"
-   },
-   {
-    "number": 26,
-    "value": "E"
-   },
-   {
-    "number": 27,
-    "value": "False"
-   },
-   {
-    "number": 28,
-    "value": "Not given"
-   },
-   {
-    "number": 29,
-    "value": "False"
-   },
-   {
-    "number": 30,
-    "value": "True"
-   },
-   {
-    "number": 31,
-    "value": "False"
-   },
-   {
-    "number": 32,
-    "value": "True"
-   },
-   {
-    "number": 33,
-    "value": "Not given"
-   },
-   {
-    "number": 34,
-    "value": "large"
-   },
-   {
-    "number": 35,
-    "value": "microplastic"
-   },
-   {
-    "number": 36,
-    "value": "populations"
-   },
-   {
-    "number": 37,
-    "value": "concentrations"
-   },
-   {
-    "number": 38,
-    "value": "predators"
-   },
-   {
-    "number": 39,
-    "value": "disasters"
-   },
-   {
-    "number": 40,
-    "value": "A"
-   }
-  ]
- },
- "quarantinedUnits": [
+ "testReasonCodes": [],
+ "warnings": [
   {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     23,
-     23
-    ],
-    "instruction": "and 24 Choose TWO letters, A-E. Write the correct letters in boxes 23 and 24 on your answer sheet."
+   "code": "PASSAGE_TITLE_MISSING",
+   "detail": {
+    "passage": 3
    }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     34,
-     39
-    ],
-    "extracted": 5,
-    "expected": 6
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 35,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g08 range 34-39 got 5"
   }
  ],
- "validationWarnings": [],
- "status": "quarantined",
- "segmentCount": 3,
- "contentFingerprint": "527117b84d744e3adc9dddc495fb27648031e00c93d8fab80a9152848197121d"
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 34,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "71e4739ebb38a0acaca11e923b8249be83314a9ca35eb444c86c9e7b359aa4d0"
 }

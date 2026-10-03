@@ -1,79 +1,21 @@
 {
  "slug": "ielts-reading-test-202",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Look at the following list of people A-E and the list of statements (Questions 1-7). Match each statement with one of the people listed. A W"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     11,
-     14
-    ],
-    "instruction": "Reading Passage 1 has ten paragraphs A-J. Which paragraph mentions the following (Questions 11-14)?"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     22,
-     26
-    ],
-    "extracted": 4,
-    "expected": 5
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     27
-    ],
-    "instruction": "Choose the appropriate letter A-D and write it in box 27 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     28,
-     30
-    ],
-    "instruction": "Choose the appropriate letters A-D and write them in boxes 28-30 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g05 range 22-26 got 4"
+   "groupId": "p2.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete each of the following statements (Questions 22-26) using words from the box. holiday time recreational activities income levels non-luxury spending computer technology cash incomes"
   }
  ]
 }

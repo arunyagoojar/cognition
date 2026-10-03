@@ -1,204 +1,817 @@
 {
  "id": "reading.test-0250.6a302efa",
  "module": "reading",
+ "slug": "ielts-reading-test-250",
  "sourceNumbers": [
   250
  ],
- "slug": "ielts-reading-test-250",
  "title": "IELTS Academic Reading Test 250",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-250/index.html",
-   "sha256": "3c1250c64654673956486e7660b3dbdab8c4931f40d16c92b5d8c84616b5e164",
-   "manifestHashMatch": true,
+   "sha256": "4f82013e963843a7b628fea5088e4098d0986408775d017f46b45f5e2243c7d1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-250/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "B"
+   },
+   {
+    "number": 2,
+    "raw": "I"
+   },
+   {
+    "number": 3,
+    "raw": "J"
+   },
+   {
+    "number": 4,
+    "raw": "C"
+   },
+   {
+    "number": 5,
+    "raw": "H"
+   },
+   {
+    "number": 6,
+    "raw": "A"
+   },
+   {
+    "number": 7,
+    "raw": "D"
+   },
+   {
+    "number": 8,
+    "raw": "C"
+   },
+   {
+    "number": 9,
+    "raw": "C"
+   },
+   {
+    "number": 10,
+    "raw": "D"
+   },
+   {
+    "number": 11,
+    "raw": "F"
+   },
+   {
+    "number": 12,
+    "raw": "A"
+   },
+   {
+    "number": 13,
+    "raw": "G"
+   },
+   {
+    "number": 14,
+    "raw": "D"
+   },
+   {
+    "number": 15,
+    "raw": "A"
+   },
+   {
+    "number": 16,
+    "raw": "C"
+   },
+   {
+    "number": 17,
+    "raw": "A"
+   },
+   {
+    "number": 18,
+    "raw": "B"
+   },
+   {
+    "number": 19,
+    "raw": "A"
+   },
+   {
+    "number": 20,
+    "raw": "A"
+   },
+   {
+    "number": 21,
+    "raw": "True"
+   },
+   {
+    "number": 22,
+    "raw": "True"
+   },
+   {
+    "number": 23,
+    "raw": "Not given"
+   },
+   {
+    "number": 24,
+    "raw": "Peripheral measures"
+   },
+   {
+    "number": 25,
+    "raw": "A polygraph"
+   },
+   {
+    "number": 26,
+    "raw": "Entrepreneurs"
+   },
+   {
+    "number": 27,
+    "raw": "A"
+   },
+   {
+    "number": 28,
+    "raw": "D"
+   },
+   {
+    "number": 29,
+    "raw": "A"
+   },
+   {
+    "number": 30,
+    "raw": "C"
+   },
+   {
+    "number": 31,
+    "raw": "E"
+   },
+   {
+    "number": 32,
+    "raw": "B"
+   },
+   {
+    "number": 33,
+    "raw": "G"
+   },
+   {
+    "number": 34,
+    "raw": "F"
+   },
+   {
+    "number": 35,
+    "raw": "Carbon emissions"
+   },
+   {
+    "number": 36,
+    "raw": "Powerful lobbies"
+   },
+   {
+    "number": 37,
+    "raw": "Solar"
+   },
+   {
+    "number": 38,
+    "raw": "Massive state subsidies"
+   },
+   {
+    "number": 39,
+    "raw": "Untried"
+   },
+   {
+    "number": 40,
+    "raw": "$0.0686/kWh"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Light pollution",
    "paragraphs": [
-    "A If humans were truly at home under the light of the moon and stars, we would go into darkness happily, the midnight world as visible to us as it is to the vast number of nocturnal species on this planet. Instead, we are diurnal creatures, with eyes adapted to living in the sun’s light. This is a basic evolutionary fact, even though most of us don’t think of ourselves as diurnal beings any more than we think of ourselves as primates or mammals, or Earthlings. Yet it’s the only way to explain what we’ve done to the night: We’ve engineered it to receive us by filling it with light.",
-    "B This kind of engineering is no different than damming a river. Its benefits come with consequences—called light pollution—whose effects scientists are only now beginning to study. Light pollution is largely the result of bad lighting design, which allows artificial light to shine outward and upward into the sky, where it’s not wanted, instead of focusing it downward, where it is. Ill-designed lighting washes out the darkness of night and radically alters the light levels and light rhythms—to which many forms of life, including ourselves, have adapted.",
-    "C Now most of humanity lives under intersecting domes of reflected, refracted light, of scattering rays from overlit cities and suburbs, from light-flooded highways and factories. Nearly all of nighttime Europe is a nebula of light, as is most of the United States and all of Japan. In the south Atlantic the glow from a single fishing fleet squid fishermen during their prey with metal halide lamps—can be seen from space, burning brighter, in fact, than Buenos Aires or Rio de Janeiro.",
-    "D We’ve lit up the night as if it were an unoccupied country when nothing could be further from the truth. Among mammals alone, the number of nocturnal species is astonishing. Light is a powerful biological force, and in many species, it acts as a magnet, a process being studied by researchers such as Travis Longcore and Catherine Rich, co-founders of the Los Angeles-based Urban Wildlands Group. The effect is so powerful that scientists speak of songbirds and seabirds being “captured” by searchlights on land or by the light from gas flares on marine oil platforms, circling and circling in the thousands until they drop. Migrating at night, birds are apt to collide with brightly lit tall buildings; immature birds on their first journey suffer disproportionately.",
-    "E Insects, of course, cluster around streetlights, and feeding at those insect clusters is now ingrained in the lives of many bat species. In some Swiss valleys, the European lesser horseshoe bat began to vanish after streetlights were installed, perhaps because those valleys were suddenly filled with light-feeding pipistrelle bats. Other nocturnal mammals—including desert rodents, fruit bats, opossums, and badgers-forage more cautiously under the permanent full moon of light pollution because they’ve become easier targets for predators.",
-    "F Some birds—blackbirds and nightingales, among others—sing at unnatural hours in the presence of artificial light. Scientists have determined that long artificial days— and artificially short nights induce early breeding in a wide range of birds. And because a longer day allows for longer feeding, it can also affect migration schedules. One population of Bewick’s swans wintering in England put on fat more rapidly than usual, priming them to begin their Siberian migration early. The problem, of course, is that migration, like most other aspects of bird behaviour, is a precisely timed biological behaviour. Leaving early may mean arriving too soon for nesting conditions to be right",
-    "G Nesting sea turtles, which show a natural predisposition for dark beaches, find fewer and fewer of them to nest on. Their hatchlings, which gravitate toward the brighter, more reflective sea horizon, find themselves confused by artificial lighting behind the beach. In Florida alone, hatchling losses number in the hundreds of thousands every year. Frogs and toads living near brightly lit highways suffer nocturnal light levels that are as much as a million times brighter than normal, throwing nearly every aspect of their behaviour out of joint, including their nighttime breeding choruses.",
-    "H Of all the pollution we face, light pollution is perhaps the most easily remedied. Simple changes in lighting design and installation yield immediate changes in the amount of light spilt into the atmosphere and, often, immediate energy savings.",
-    "I It was once thought that light pollution only affected astronomers, who need to see the night sky in all its glorious clarity. And, in fact, some of the earliest civic efforts to control light pollution—in Flagstaff, Arizona, half a century ago—were made to protect the view from Lowell Observatory, which sits high above that city. Flagstaff has tightened its regulations since then, and in 2001 it was declared the first International Dark Sky City. By now the effort to control light pollution has spread around the globe. More and more cities and even entire countries, such as the Czech Republic, have committed themselves to reducing unwanted glare.",
-    "J Unlike astronomers, most of us may not need an undiminished view of the night sky for our work, but like most other creatures we do need darkness. Darkness is as essential to our biological welfare, to our internal clockwork, as light itself. The regular oscillation of waking and sleep in our lives, one of our circadian rhythms—is nothing less than a biological expression of the regular oscillation of light on Earth. So fundamental are these rhythms to our being that altering them is like altering gravity."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "If humans were truly at home under the light of the moon and stars, we would go into darkness happily, the midnight world as visible to us as it is to the vast number of nocturnal species on this planet. Instead, we are diurnal creatures, with eyes adapted to living in the sun’s light. This is a basic evolutionary fact, even though most of us don’t think of ourselves as diurnal beings any more than we think of ourselves as primates or mammals, or Earthlings. Yet it’s the only way to explain what we’ve done to the night: We’ve engineered it to receive us by filling it with light."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "This kind of engineering is no different than damming a river. Its benefits come with consequences—called light pollution—whose effects scientists are only now beginning to study. Light pollution is largely the result of bad lighting design, which allows artificial light to shine outward and upward into the sky, where it’s not wanted, instead of focusing it downward, where it is. Ill-designed lighting washes out the darkness of night and radically alters the light levels and light rhythms—to which many forms of life, including ourselves, have adapted."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Now most of humanity lives under intersecting domes of reflected, refracted light, of scattering rays from overlit cities and suburbs, from light-flooded highways and factories. Nearly all of nighttime Europe is a nebula of light, as is most of the United States and all of Japan. In the south Atlantic the glow from a single fishing fleet squid fishermen during their prey with metal halide lamps—can be seen from space, burning brighter, in fact, than Buenos Aires or Rio de Janeiro."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "We’ve lit up the night as if it were an unoccupied country when nothing could be further from the truth. Among mammals alone, the number of nocturnal species is astonishing. Light is a powerful biological force, and in many species, it acts as a magnet, a process being studied by researchers such as Travis Longcore and Catherine Rich, co-founders of the Los Angeles-based Urban Wildlands Group. The effect is so powerful that scientists speak of songbirds and seabirds being “captured” by searchlights on land or by the light from gas flares on marine oil platforms, circling and circling in the thousands until they drop. Migrating at night, birds are apt to collide with brightly lit tall buildings; immature birds on their first journey suffer disproportionately."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Insects, of course, cluster around streetlights, and feeding at those insect clusters is now ingrained in the lives of many bat species. In some Swiss valleys, the European lesser horseshoe bat began to vanish after streetlights were installed, perhaps because those valleys were suddenly filled with light-feeding pipistrelle bats. Other nocturnal mammals—including desert rodents, fruit bats, opossums, and badgers-forage more cautiously under the permanent full moon of light pollution because they’ve become easier targets for predators."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Some birds—blackbirds and nightingales, among others—sing at unnatural hours in the presence of artificial light. Scientists have determined that long artificial days— and artificially short nights induce early breeding in a wide range of birds. And because a longer day allows for longer feeding, it can also affect migration schedules. One population of Bewick’s swans wintering in England put on fat more rapidly than usual, priming them to begin their Siberian migration early. The problem, of course, is that migration, like most other aspects of bird behaviour, is a precisely timed biological behaviour. Leaving early may mean arriving too soon for nesting conditions to be right"
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Nesting sea turtles, which show a natural predisposition for dark beaches, find fewer and fewer of them to nest on. Their hatchlings, which gravitate toward the brighter, more reflective sea horizon, find themselves confused by artificial lighting behind the beach. In Florida alone, hatchling losses number in the hundreds of thousands every year. Frogs and toads living near brightly lit highways suffer nocturnal light levels that are as much as a million times brighter than normal, throwing nearly every aspect of their behaviour out of joint, including their nighttime breeding choruses."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "Of all the pollution we face, light pollution is perhaps the most easily remedied. Simple changes in lighting design and installation yield immediate changes in the amount of light spilt into the atmosphere and, often, immediate energy savings."
+    },
+    {
+     "type": "text",
+     "label": "I",
+     "text": "It was once thought that light pollution only affected astronomers, who need to see the night sky in all its glorious clarity. And, in fact, some of the earliest civic efforts to control light pollution—in Flagstaff, Arizona, half a century ago—were made to protect the view from Lowell Observatory, which sits high above that city. Flagstaff has tightened its regulations since then, and in 2001 it was declared the first International Dark Sky City. By now the effort to control light pollution has spread around the globe. More and more cities and even entire countries, such as the Czech Republic, have committed themselves to reducing unwanted glare."
+    },
+    {
+     "type": "text",
+     "label": "J",
+     "text": "Unlike astronomers, most of us may not need an undiminished view of the night sky for our work, but like most other creatures we do need darkness. Darkness is as essential to our biological welfare, to our internal clockwork, as light itself. The regular oscillation of waking and sleep in our lives, one of our circadian rhythms—is nothing less than a biological expression of the regular oscillation of light on Earth. So fundamental are these rhythms to our being that altering them is like altering gravity."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "The reading Passage has ten paragraphs A-J. Which paragraph contains the following information? Write the correct letter A-J, in boxes 1-6 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-06",
      "startQ": 1,
      "endQ": 6,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading Passage has ten paragraphs A-J. Which paragraph contains the following information? Write the correct letter A-J, in boxes 1-6 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       },
+       {
+        "id": "I",
+        "text": "Paragraph I"
+       },
+       {
+        "id": "J",
+        "text": "Paragraph J"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "A reason that contributes to light pollution.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. A reason that contributes to light pollution.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "A reason that contributes to light pollution."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "A city’s effort to mitigate light pollution.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "I",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. A city’s effort to mitigate light pollution.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "A city’s effort to mitigate light pollution."
+       ],
+       "answer": {
+        "raw": "I",
+        "value": "I",
+        "accepted": [
+         "I"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "The importance of darkness.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "J",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. The importance of darkness.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "The importance of darkness."
+       ],
+       "answer": {
+        "raw": "J",
+        "value": "J",
+        "accepted": [
+         "J"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "The popularity of light pollution in the world.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. The popularity of light pollution in the world.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "The popularity of light pollution in the world."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 5,
        "type": "matching_information",
-       "stem": {
-        "plain": "Methods to reduce light pollution.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "H",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. Methods to reduce light pollution.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Methods to reduce light pollution."
+       ],
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
+        ]
        }
       },
       {
        "number": 6,
        "type": "matching_information",
-       "stem": {
-        "plain": "The reason why we have changed the night.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. The reason why we have changed the night.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "The reason why we have changed the night."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[11]",
-      "rawExcerpt": "Questions 1-6\nThe reading Passage has ten paragraphs A-J. Which paragraph contains the following information? Write the correct letter A-J, in boxes 1-6 on your answer sheet."
+      "headerLine": 11,
+      "lineRange": [
+       11,
+       18
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-6",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading Passage has ten paragraphs A-J. Which paragraph contains the following information? Write the correct letter A-J, in boxes 1-6 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. A reason that contributes to light pollution.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. A city’s effort to mitigate light pollution.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. The importance of darkness.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. The popularity of light pollution in the world.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. Methods to reduce light pollution.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. The reason why we have changed the night.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Choose the correct letter, A, B, C, or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q07-08",
      "startQ": 7,
      "endQ": 8,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C, or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 7,
        "type": "mcq_single",
-       "stem": {
-        "plain": "How does light pollution influence creatures?",
-        "segments": null
-       },
+       "prompt": [
+        "How does light pollution influence creatures?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "by bad lighting design"
+        },
+        {
+         "id": "B",
+         "text": "by changing the cities and suburbs creatures are used to"
+        },
+        {
+         "id": "C",
+         "text": "by changing the directions of light"
+        },
+        {
+         "id": "D",
+         "text": "by changing the light creatures are used to"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. How does light pollution influence creatures?",
-        "elementPath": "children[14]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 8,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Some aspects of animals’ lives are affected by unwanted light, EXCEPT:",
-        "segments": null
-       },
+       "prompt": [
+        "Some aspects of animals’ lives are affected by unwanted light, EXCEPT:"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Migration"
+        },
+        {
+         "id": "B",
+         "text": "Reproduction"
+        },
+        {
+         "id": "C",
+         "text": "Natural life span"
+        },
+        {
+         "id": "D",
+         "text": "Feeding"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. Some aspects of animals’ lives are affected by unwanted light, EXCEPT:",
-        "elementPath": "children[15]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[13]",
-      "rawExcerpt": "Questions 7-8\nChoose the correct letter, A, B, C, or D."
+      "headerLine": 19,
+      "lineRange": [
+       19,
+       30
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 7-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C, or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. How does light pollution influence creatures?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A by bad lighting design",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B by changing the cities and suburbs creatures are used to",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C by changing the directions of light",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D by changing the light creatures are used to",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. Some aspects of animals’ lives are affected by unwanted light, EXCEPT:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Migration",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Reproduction",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Natural life span",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Feeding",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q09-13",
+     "startQ": 9,
+     "endQ": 13,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Light pollution has affected many forms of life. Use the information in the passage to match the animals with the relevant information below. Write the appropriate letters A-G in boxes 9-13 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "eat too much and migrate in advance."
+       },
+       {
+        "id": "B",
+        "text": "would not like to sing songs at night."
+       },
+       {
+        "id": "C",
+        "text": "is attracted by the light and then a crash happens."
+       },
+       {
+        "id": "D",
+        "text": "suffers from food shortages because of competitors."
+       },
+       {
+        "id": "E",
+        "text": "have become easier targets for predators."
+       },
+       {
+        "id": "F",
+        "text": "be active at unusual times."
+       },
+       {
+        "id": "G",
+        "text": "have trouble inbreeding."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "matching_features",
+       "prompt": [
+        "Songbirds"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "matching_features",
+       "prompt": [
+        "Horseshoe bat"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "matching_features",
+       "prompt": [
+        "Nightingales"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "matching_features",
+       "prompt": [
+        "Bewick’s swans"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "matching_features",
+       "prompt": [
+        "Sea turtles"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 31,
+      "lineRange": [
+       31,
+       44
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Light pollution has affected many forms of life. Use the information in the passage to match the animals with the relevant information below. Write the appropriate letters A-G in boxes 9-13 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9. Songbirds",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10. Horseshoe bat",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11. Nightingales",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. Bewick’s swans",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. Sea turtles",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A eat too much and migrate in advance.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B would not like to sing songs at night.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C is attracted by the light and then a crash happens.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D suffers from food shortages because of competitors.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E have become easier targets for predators.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F be active at unusual times.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G have trouble inbreeding.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -207,509 +820,1241 @@
    "passageNumber": 2,
    "title": "Lighting up the lies",
    "paragraphs": [
-    "A Last year Sean A. Spence, a professor at the school of medicine at the University of Sheffield in England, performed brain scans that showed that a woman convicted of poisoning a child in her care appeared to be telling the truth when she denied committing the crime. This deception study, along with two others performed by the Sheffield group, was funded by Quickfire Media, a television production company working for the U.K.’s Channel 4, which broadcast videos of the researchers at work as part of a three-part series called “Lie Lab.” The brain study of the woman later appeared in the journal European Psychiatry.",
-    "B Functional magnetic resonance imaging (fMRI) purports to detect mendacity by seeing inside the brain instead of tracking peripheral measures of anxiety—such as changes in pulse, blood pressure or respiration —measured by a polygraph. Besides drawing hundreds of thousands of viewers, fMRI has pulled in entrepreneurs. Two companies—Cephos in Pepperell, Mass., and No Lie MRI in Tarzana, Calif.—claim to predict with 90 percent or greater certitude whether you are telling the truth. No Lie MRI, whose name evokes the casual familiarity of a walk-in dental clinic in a strip mall, suggests that the technique may even be used for “risk reduction in dating” .",
-    "C Many neuroscientists and legal scholars doubt such claims—and some even question whether brain scans for lie detection will ever be ready for anything but more research on the nature of deception and the brain. An fMRI machine tracks blood flow to activated brain areas. The assumption in lie detection is that the brain must exert extra effort when telling a lie and that the regions that do more work get more blood. Such areas light up in scans; during the lie studies, the illuminated regions are primarily involved in decision making.",
-    "D To assess how fMRI and other neurocience findings affect the law, the Mac- Arthur Foundation put up $10 million last year to pilot for three years the Law and Neuroscience Project. Part of the funding will attempt to set criteria for accurate and reliable lie detection using fMRI and other brain-scanning technology. “I think it’s not possible, given the current technology, to trust the results,” says Marcus Raichle, a neuroscientist at the Washington University School of Medicine in St. Louis who heads the project’s study group on lie detection. “But it’s not impossible to set up a research program to determine whether that’s possible.” A major review article last year in the American Journal of Law and Medicine by Henry T. Greely of Stanford University and Judy Illes, now at the University of British Columbia, explores the deficiencies of existing research and what may be needed to move the technology forward. The two scholars found that lie detection studies conducted so far (still less than 20 in all) failed to prove that fMRI is “effective as a lie detector in the real world at any accuracy level.”",
-    "E Most studies examined groups, not individuals.Subjects in these studies were healthy young adults—making it unclear how the results would apply to someone who takes a drug that affects blood pressure or has a blockage in an artery. And the two researchers questioned the specificity of the lit-up areas; they noted that the regions also correlate with a wide range of cognitive behaviors, including memory, self- monitoring and conscious self-awareness.",
-    "F The biggest challenge for which the Law and Neuroscience Project is already funding new research—is how to diminish the artificiality of the test protocol. Lying about whether a playing card is the seven of spades may not activate the same areas of the cortex as answering a question about whether you robbed the comer store. In fact, the most realistic studies to date may have come from the Lie Lab television programs. The two companies marketing the technology are not waiting for more data. Cephos is offering scans without charge to people who claim they were falsely accused if they meet certain criteria in an effort to get scans accepted by the courts. Allowing scans as legal evidence could open a potentially huge and lucrative market. “We may have to take many shots on goal before we actually see a courtroom,” says Cephos chief executive Steven",
-    "Laken. He asserts that the technology has achieved 97 percent accuracy and that the more than 100 people scanned using the Cephos protocol have provided data that have resolved many of the issues that Greely and Illes cited.",
-    "G But until formal clinical trials prove that the machines meet safety and effectiveness criteria, Greely and Illes have called for a ban on non-research uses. Trials envisaged for regulatory approval hint at the technical challenges. Actors, professional poker players and sociopaths would be compared against average Joes. The devout would go in the scanner after nonbelievers. Testing would take into account social setting. White lies—“no, dinner really was fantastic”—would have to be compared against untruths about sexual peccadilloes to ensure that the brain reacts identically.",
-    "H There potential for abuse prompts caution. “The danger is that people’s lives can be changed in bad ways because of mistakes in the technology,” Greely says. “The danger for the science is that it gets a black eye because of this very high profile use of neuroimaging that goes wrong.” Considering the long and controversial history of the polygraph, gradualism may be the wisest course to follow for a new diagnostic that probes an essential quality governing social interaction."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Last year Sean A. Spence, a professor at the school of medicine at the University of Sheffield in England, performed brain scans that showed that a woman convicted of poisoning a child in her care appeared to be telling the truth when she denied committing the crime. This deception study, along with two others performed by the Sheffield group, was funded by Quickfire Media, a television production company working for the U.K.’s Channel 4, which broadcast videos of the researchers at work as part of a three-part series called “Lie Lab.” The brain study of the woman later appeared in the journal European Psychiatry."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Functional magnetic resonance imaging (fMRI) purports to detect mendacity by seeing inside the brain instead of tracking peripheral measures of anxiety—such as changes in pulse, blood pressure or respiration —measured by a polygraph. Besides drawing hundreds of thousands of viewers, fMRI has pulled in entrepreneurs. Two companies—Cephos in Pepperell, Mass., and No Lie MRI in Tarzana, Calif.—claim to predict with 90 percent or greater certitude whether you are telling the truth. No Lie MRI, whose name evokes the casual familiarity of a walk-in dental clinic in a strip mall, suggests that the technique may even be used for “risk reduction in dating” ."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Many neuroscientists and legal scholars doubt such claims—and some even question whether brain scans for lie detection will ever be ready for anything but more research on the nature of deception and the brain. An fMRI machine tracks blood flow to activated brain areas. The assumption in lie detection is that the brain must exert extra effort when telling a lie and that the regions that do more work get more blood. Such areas light up in scans; during the lie studies, the illuminated regions are primarily involved in decision making."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "To assess how fMRI and other neurocience findings affect the law, the Mac- Arthur Foundation put up $10 million last year to pilot for three years the Law and Neuroscience Project. Part of the funding will attempt to set criteria for accurate and reliable lie detection using fMRI and other brain-scanning technology. “I think it’s not possible, given the current technology, to trust the results,” says Marcus Raichle, a neuroscientist at the Washington University School of Medicine in St. Louis who heads the project’s study group on lie detection. “But it’s not impossible to set up a research program to determine whether that’s possible.” A major review article last year in the American Journal of Law and Medicine by Henry T. Greely of Stanford University and Judy Illes, now at the University of British Columbia, explores the deficiencies of existing research and what may be needed to move the technology forward. The two scholars found that lie detection studies conducted so far (still less than 20 in all) failed to prove that fMRI is “effective as a lie detector in the real world at any accuracy level.”"
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Most studies examined groups, not individuals.Subjects in these studies were healthy young adults—making it unclear how the results would apply to someone who takes a drug that affects blood pressure or has a blockage in an artery. And the two researchers questioned the specificity of the lit-up areas; they noted that the regions also correlate with a wide range of cognitive behaviors, including memory, self- monitoring and conscious self-awareness."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The biggest challenge for which the Law and Neuroscience Project is already funding new research—is how to diminish the artificiality of the test protocol. Lying about whether a playing card is the seven of spades may not activate the same areas of the cortex as answering a question about whether you robbed the comer store. In fact, the most realistic studies to date may have come from the Lie Lab television programs. The two companies marketing the technology are not waiting for more data. Cephos is offering scans without charge to people who claim they were falsely accused if they meet certain criteria in an effort to get scans accepted by the courts. Allowing scans as legal evidence could open a potentially huge and lucrative market. “We may have to take many shots on goal before we actually see a courtroom,” says Cephos chief executive Steven"
+    },
+    {
+     "type": "text",
+     "text": "Laken. He asserts that the technology has achieved 97 percent accuracy and that the more than 100 people scanned using the Cephos protocol have provided data that have resolved many of the issues that Greely and Illes cited."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "But until formal clinical trials prove that the machines meet safety and effectiveness criteria, Greely and Illes have called for a ban on non-research uses. Trials envisaged for regulatory approval hint at the technical challenges. Actors, professional poker players and sociopaths would be compared against average Joes. The devout would go in the scanner after nonbelievers. Testing would take into account social setting. White lies—“no, dinner really was fantastic”—would have to be compared against untruths about sexual peccadilloes to ensure that the brain reacts identically."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "There potential for abuse prompts caution. “The danger is that people’s lives can be changed in bad ways because of mistakes in the technology,” Greely says. “The danger for the science is that it gets a black eye because of this very high profile use of neuroimaging that goes wrong.” Considering the long and controversial history of the polygraph, gradualism may be the wisest course to follow for a new diagnostic that probes an essential quality governing social interaction."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 21-23 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-20",
+     "startQ": 14,
+     "endQ": 20,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes 14-20 on your answer sheet. NB you may use any letter more than once",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Henry T. Greely &Judy Illes"
+       },
+       {
+        "id": "B",
+        "text": "Steven Laken"
+       },
+       {
+        "id": "C",
+        "text": "Henry T. Greely"
+       },
+       {
+        "id": "D",
+        "text": "Marcus Raichle"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 14,
+       "type": "matching_features",
+       "prompt": [
+        "The possibility hidden in a mission impossible"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_features",
+       "prompt": [
+        "The uncertain effectiveness of functional magnetic resonance imaging for detecting lies"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_features",
+       "prompt": [
+        "The hazard lying behind the technology as a lie detector"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_features",
+       "prompt": [
+        "The limited fields for the use of lie detection technology"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_features",
+       "prompt": [
+        "Several successful cases of applying the results from the lie detection technology"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_features",
+       "prompt": [
+        "Cons of the current research related to lie-detector tests"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 20,
+       "type": "matching_features",
+       "prompt": [
+        "There should be some requested work to improve the techniques regarding lie detection"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 55,
+      "lineRange": [
+       55,
+       67
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-20",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes 14-20 on your answer sheet. NB you may use any letter more than once",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Henry T. Greely &Judy Illes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Steven Laken",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Henry T. Greely",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Marcus Raichle",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. The possibility hidden in a mission impossible",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. The uncertain effectiveness of functional magnetic resonance imaging for detecting lies",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. The hazard lying behind the technology as a lie detector",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. The limited fields for the use of lie detection technology",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. Several successful cases of applying the results from the lie detection technology",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Cons of the current research related to lie-detector tests",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. There should be some requested work to improve the techniques regarding lie detection",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q21-23",
      "startQ": 21,
      "endQ": 23,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 21-23 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "The lie detection for a convicted woman was first conducted by researchers in Europe.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. The lie detection for a convicted woman was first conducted by researchers in Europe.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "The lie detection for a convicted woman was first conducted by researchers in Europe."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "The legitimization of using scans in the court might mean a promising and profitable business.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. The legitimization of using scans in the court might mean a promising and profitable business.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "The legitimization of using scans in the court might mean a promising and profitable business."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "There is always something wrong with neuroimaging.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. There is always something wrong with neuroimaging.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "There is always something wrong with neuroimaging."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[32]",
-      "rawExcerpt": "Questions 21-23\nDo the following statements agree with the information given in Reading Passage? In boxes 21-23 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+      "headerLine": 68,
+      "lineRange": [
+       68,
+       75
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 21-23",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage? In boxes 21-23 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. The lie detection for a convicted woman was first conducted by researchers in Europe.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. The legitimization of using scans in the court might mean a promising and profitable business.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. There is always something wrong with neuroimaging.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "Complete the following summary of the paragraphs of reading passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q24-26",
      "startQ": 24,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of reading passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up ",
+         {
+          "blank": 24
+         },
+         "to evaluate the anxiety as ",
+         {
+          "blank": 25
+         },
+         "does. Audiences as well as ",
+         {
+          "blank": 26
+         },
+         "are fascinated by this amazing lie-detection technology."
+        ]
+       },
+       {
+        "type": "heading",
+        "text": "Carbon Capture and Storage"
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24) ______ to evaluate the anxiety as (25) ______ does. Audiences as well as (26) ______ are fascinated by this amazing lie-detection technology.",
-        "segments": [
-         "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up",
-         {
-          "blank": 24
-         },
-         "to evaluate the anxiety as",
-         {
-          "blank": 25
-         },
-         "does. Audiences as well as",
-         {
-          "blank": 26
-         },
-         "are fascinated by this amazing lie-detection technology."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Peripheral measures",
+        "value": "Peripheral measures",
+        "accepted": [
+         "Peripheral measures"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Peripheral measures",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24)………………….. to evaluate the anxiety as (25)…………………. does.",
-        "elementPath": "children[36]"
        }
       },
       {
        "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24) ______ to evaluate the anxiety as (25) ______ does. Audiences as well as (26) ______ are fascinated by this amazing lie-detection technology.",
-        "segments": [
-         "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up",
-         {
-          "blank": 24
-         },
-         "to evaluate the anxiety as",
-         {
-          "blank": 25
-         },
-         "does. Audiences as well as",
-         {
-          "blank": 26
-         },
-         "are fascinated by this amazing lie-detection technology."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "A polygraph",
+        "value": "A polygraph",
+        "accepted": [
+         "A polygraph"
         ]
-       },
-       "options": null,
-       "correctAnswer": "A polygraph",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24)………………….. to evaluate the anxiety as (25)…………………. does.",
-        "elementPath": "children[36]"
        }
       },
       {
        "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24) ______ to evaluate the anxiety as (25) ______ does. Audiences as well as (26) ______ are fascinated by this amazing lie-detection technology.",
-        "segments": [
-         "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up",
-         {
-          "blank": 24
-         },
-         "to evaluate the anxiety as",
-         {
-          "blank": 25
-         },
-         "does. Audiences as well as",
-         {
-          "blank": 26
-         },
-         "are fascinated by this amazing lie-detection technology."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Entrepreneurs",
+        "value": "Entrepreneurs",
+        "accepted": [
+         "Entrepreneurs"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Entrepreneurs",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24)………………….. to evaluate the anxiety as (25)…………………. does.",
-        "elementPath": "children[36]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[35]",
-      "rawExcerpt": "Questions 24-26\nComplete the following summary of the paragraphs of reading passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer."
+      "headerLine": 76,
+      "lineRange": [
+       76,
+       79
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 24-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of reading passage, using NO MORE THAN THREE WORDS from the Reading Passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "It is claimed that functional magnetic resonance imaging can check lies by observing the internal part of the brain rather than following up (24)………………….. to evaluate the anxiety as (25)…………………. does. Audiences as well as (26)……………….. are fascinated by this amazing lie-detection technology.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Carbon Capture and Storage",
+        "kind": "text",
+        "bold": true
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "Advantages of CCS",
+   "title": "High coal dependence",
    "paragraphs": [
-    "High coal dependence",
-    "Renewable energy is much discussed, but coal still plays the greatest role in the generation of electricity, with recent figures from the International Energy Agency showing that China relies on it for 79% of its power, Australia for 78%, and the US for 45%. Germany has less reliance at 41%, which is also the global average. Furthermore, many countries have large, easily accessible deposits of coal, and numerous highly skilled miners, chemists, and engineers. Meanwhile, 70% of the world’s steel production requires coal, and plastic and rayon are usually coal derivatives.",
-    "Currently, coal-fired power plants fed voracious appetites, but they produce carbon dioxide (CO2) in staggering amounts. Urbanites may grumble about an average monthly electricity bill of $113, yet they steadfastly ignore the fact that they are not billed for the 6-7 million metric tons of CO2 their local plant belches out, which contribute to the 44% of global CO2 levels from fossil-fuel emissions. Yet, as skies fill with smog and temperatures soar, people crave clean air and cheap power.",
-    "The Intergovernmental Panel on Climate Change that advises the United Nations has testified that the threshold of serious harm to the Earth’s temperature is a mere 2° Celsius above current levels, so it is essential to reduce carbon emissions by 80% over the next 30 years, even as demand for energy will rise by 50%, and one proposal for this is the adoption of carbon capture and storage (CCS).",
-    "Underground carbon storage",
-    "Currently, CO2 storage, or sequestration as it is known, is practised by the oil and gas industry, where CO2 is pumped into oil fields to maintain pressure and ease extraction – one metric ton dissolves out about three barrels, or separated from natural gas and pumped out of exhausted coal fields or other deep seams. The CO2 remains underground or is channelled into disused sandstone reservoirs. However, the sale of oil and natural gas is profitable, so the $17-per-ton sequestration cost is easily borne. There is also a plan for the injection of CO2 into saline aquifers, 1,000 metres beneath the seabed, to prevent its release into the atmosphere.",
-    "Carbon capture",
-    "While CO2 storage has been accomplished, its capture from power plants remains largely hypothetical, although CCS plants throughout Western Europe and North America are on the drawing board.",
-    "There are three main forms of CCS: pre-combustion, post-combustion, and oxy-firing. In a 2012 paper from the US Congressional Budget Office (CBO), post-combustion capture was viewed most favourably since existing power plants can be retrofitted with it, whereas pre-combustion and oxy-firing mean the construction of entirely new plants. However, pre-combustion and oxy-firing remove more CO2 than post-combustion and generate more electricity.",
-    "Post-combustion capture means CO2 is separated from gas after coal is burnt but before electricity is generated, while in oxy-firing, coal is combusted in pure oxygen. In pre-combustion, as in an Integrated Gasification Combined Cycle system (IGCC), oxygen, coal, and water ae burnt together to produce a synthetic gas called Syngas – mainly hydrogen – which drives two sets of turbines, firstly gas-driven ones, then, as the cooling Syngas travel through water, steam-driven ones. Emissions from this process contain around ten percent of the CO2 that burning coal produces.",
-    "The pros and cons of CCS",
-    "Several countries are keen to scale up CCS as it may reduce carbon emissions quickly, and powerful lobby groups for CCS exist among professionals in mining and engineering. Foundries and refineries that produce steel and emit carbon may also benefit, and the oil and gas industry is interested because power-plant equipment consumes their products. In addition, recent clean energy acts in many countries mandate that a percentage of electricity be generated by renewables or by more energy-efficient systems, like CCS.",
-    "As with desalination, where powerful lobbies wield influence, states sometimes find it easier to engage in large projects involving a few players rather than change behaviours on a more scattered household scale. Furthermore, replacing coal with zero-emission photovoltaic (PV) cells to produce solar energy would require covering an area nearly 20,720 square kilometres, roughly twice the size of Lebanon or half of Denmark.",
-    "Still, there are many reservations about CCS. Principally, it is enormously expensive: conservative estimates put the electricity it generates at more than five times the current retail price. As consumers are unlikely to want to bear this price hike, massive state subsidies would be necessary for CCS to work.",
-    "The capital outlay of purchasing equipment for retrofitting existing power plants is high enough, but the energy needed to capture CO2 means one third more coal must be burnt, and building new CCS plants is at least 75% more expensive than retro-fitting.",
-    "Some CCS technology is untried, for example, the Syngas-driven turbines in an IGCC system have not been used on an industrial scale. Post capture, CO2 must be compressed into a supercritical liquid for transport and storage, which is also costly. The Qatar Carbonates and Carbon Storage Research Centre predicts 700 million barrels per day of this liquid would be produced if CCS were adopted modestly. It is worth noting that current oil production is around 85 million barrels per day, so CCS would produce eleven times more waste for burial than oil that was simultaneously being extracted.",
-    "Sequestration has been used successfully, but there are limited coal and oil fields where optimal conditions exist. In rock that is too brittle, earthquakes could release the CO2. Moreover, proposals to store CO2 in saline aquifers are just that – proposals: sequestration has never been attempted in aquifers.",
-    "Most problematic of all, CCS reduces carbon emissions but does not end them, rendering it a medium-term solution.",
-    "Alternatives",
-    "There are at least four reasonably-priced alternatives to CCS. Firstly, conventional pulverised coal power plants are undergoing redesign so more electricity can be produced from less coal. Before coal is phased out – as ultimately it will have to be – these plants could be more cost-eﬀective. Secondly, hybrid plants using natural gas and coal could be built. Thirdly, natural gas could be used on its own. Lastly, solar power is fast gaining credibility.",
-    "In all this, an agreed measure of cost for electricity generation must be used. This is called a levelized cost of energy (LCOE) – an average cost of producing electricity over the lifetime of a power plant, including construction, financing, and operation, although pollution is not counted. In 2012, the CBO demonstrated that a new CCS plant had an LCOE of about $0.09-0.15 per kilowatt-hour (kWh), but according to the US Energy Information Administration, the LCOE from a conventional natural gas power plant without CCS is $0.0686/kWh, making it the cheapest way to produce clean energy.",
-    "Solar power costs are falling rapidly. In 2013, the Los Angeles Department of Water and Power reported that energy via a purchase agreement from a large solar plant was $0.095/kWh, and Greentech Media, a company that reviews environmental projects, found a 2014 New Mexico solar project that generates power for $0.0849/kWh.",
-    "Still, while so much coal and so many coal-fired plants exist, decommissioning them all may not be realistic. Whatever happens, the conundrum of cheap power and clean air may remain unsolved for some time.",
-    "• Sequestration is already used in the oil and gas sector. CCS may cut (35)………….. in a short time.\n• (36)…………… in labour, industry, and states already support CCS.\n• Alternatives, like (37)………………….energy, take up vast amounts of space.",
-    "Disadvantage of CCS",
-    "• The construction of new and the conversion of existing power plants and the liquefaction and transport of CO2 are very costly. While sequestration is possible, the scale would be enormous. Therefore, CCS would need (38)……………..\n• Some CCS technology is (39)……………. Gas-driven turbines for IGCC have not been used on an industrial scale. Shallow underground storage may be limited; deep ocean storage is currently impossible. Geologists fear leaks in quake-prone regions.\n• Natural gas and solar PVs are cheaper. LCOE estimates for CCS = $0.09-15/kWh; for natural gas= (40)………….and, for solar PV = $0.0849/kWh.",
-    "1. B\n2. I\n3. J\n4. C\n5. H\n6. A\n7. D\n8. C\n9. C\n10. D\n11. F\n12. A\n13. G\n14. D\n15. A\n16. C\n17. A\n18. B\n19. A\n20. A\n21. True\n22. True\n23. Not given\n24. Peripheral measures\n25. A polygraph\n26. Entrepreneurs\n27. A\n28. D\n29. A\n30. C\n31. E\n32. B\n33. G\n34. F\n35. Carbon emissions\n36. Powerful lobbies\n37. Solar\n38. Massive state subsidies\n39. Untried\n40. $0.0686/kWh"
+    {
+     "type": "text",
+     "text": "Renewable energy is much discussed, but coal still plays the greatest role in the generation of electricity, with recent figures from the International Energy Agency showing that China relies on it for 79% of its power, Australia for 78%, and the US for 45%. Germany has less reliance at 41%, which is also the global average. Furthermore, many countries have large, easily accessible deposits of coal, and numerous highly skilled miners, chemists, and engineers. Meanwhile, 70% of the world’s steel production requires coal, and plastic and rayon are usually coal derivatives."
+    },
+    {
+     "type": "text",
+     "text": "Currently, coal-fired power plants fed voracious appetites, but they produce carbon dioxide (CO2) in staggering amounts. Urbanites may grumble about an average monthly electricity bill of $113, yet they steadfastly ignore the fact that they are not billed for the 6-7 million metric tons of CO2 their local plant belches out, which contribute to the 44% of global CO2 levels from fossil-fuel emissions. Yet, as skies fill with smog and temperatures soar, people crave clean air and cheap power."
+    },
+    {
+     "type": "text",
+     "text": "The Intergovernmental Panel on Climate Change that advises the United Nations has testified that the threshold of serious harm to the Earth’s temperature is a mere 2° Celsius above current levels, so it is essential to reduce carbon emissions by 80% over the next 30 years, even as demand for energy will rise by 50%, and one proposal for this is the adoption of carbon capture and storage (CCS)."
+    },
+    {
+     "type": "subheading",
+     "text": "Underground carbon storage"
+    },
+    {
+     "type": "text",
+     "text": "Currently, CO2 storage, or sequestration as it is known, is practised by the oil and gas industry, where CO2 is pumped into oil fields to maintain pressure and ease extraction – one metric ton dissolves out about three barrels, or separated from natural gas and pumped out of exhausted coal fields or other deep seams. The CO2 remains underground or is channelled into disused sandstone reservoirs. However, the sale of oil and natural gas is profitable, so the $17-per-ton sequestration cost is easily borne. There is also a plan for the injection of CO2 into saline aquifers, 1,000 metres beneath the seabed, to prevent its release into the atmosphere."
+    },
+    {
+     "type": "subheading",
+     "text": "Carbon capture"
+    },
+    {
+     "type": "text",
+     "text": "While CO2 storage has been accomplished, its capture from power plants remains largely hypothetical, although CCS plants throughout Western Europe and North America are on the drawing board."
+    },
+    {
+     "type": "text",
+     "text": "There are three main forms of CCS: pre-combustion, post-combustion, and oxy-firing. In a 2012 paper from the US Congressional Budget Office (CBO), post-combustion capture was viewed most favourably since existing power plants can be retrofitted with it, whereas pre-combustion and oxy-firing mean the construction of entirely new plants. However, pre-combustion and oxy-firing remove more CO2 than post-combustion and generate more electricity."
+    },
+    {
+     "type": "text",
+     "text": "Post-combustion capture means CO2 is separated from gas after coal is burnt but before electricity is generated, while in oxy-firing, coal is combusted in pure oxygen. In pre-combustion, as in an Integrated Gasification Combined Cycle system (IGCC), oxygen, coal, and water ae burnt together to produce a synthetic gas called Syngas – mainly hydrogen – which drives two sets of turbines, firstly gas-driven ones, then, as the cooling Syngas travel through water, steam-driven ones. Emissions from this process contain around ten percent of the CO2 that burning coal produces."
+    },
+    {
+     "type": "subheading",
+     "text": "The pros and cons of CCS"
+    },
+    {
+     "type": "text",
+     "text": "Several countries are keen to scale up CCS as it may reduce carbon emissions quickly, and powerful lobby groups for CCS exist among professionals in mining and engineering. Foundries and refineries that produce steel and emit carbon may also benefit, and the oil and gas industry is interested because power-plant equipment consumes their products. In addition, recent clean energy acts in many countries mandate that a percentage of electricity be generated by renewables or by more energy-efficient systems, like CCS."
+    },
+    {
+     "type": "text",
+     "text": "As with desalination, where powerful lobbies wield influence, states sometimes find it easier to engage in large projects involving a few players rather than change behaviours on a more scattered household scale. Furthermore, replacing coal with zero-emission photovoltaic (PV) cells to produce solar energy would require covering an area nearly 20,720 square kilometres, roughly twice the size of Lebanon or half of Denmark."
+    },
+    {
+     "type": "text",
+     "text": "Still, there are many reservations about CCS. Principally, it is enormously expensive: conservative estimates put the electricity it generates at more than five times the current retail price. As consumers are unlikely to want to bear this price hike, massive state subsidies would be necessary for CCS to work."
+    },
+    {
+     "type": "text",
+     "text": "The capital outlay of purchasing equipment for retrofitting existing power plants is high enough, but the energy needed to capture CO2 means one third more coal must be burnt, and building new CCS plants is at least 75% more expensive than retro-fitting."
+    },
+    {
+     "type": "text",
+     "text": "Some CCS technology is untried, for example, the Syngas-driven turbines in an IGCC system have not been used on an industrial scale. Post capture, CO2 must be compressed into a supercritical liquid for transport and storage, which is also costly. The Qatar Carbonates and Carbon Storage Research Centre predicts 700 million barrels per day of this liquid would be produced if CCS were adopted modestly. It is worth noting that current oil production is around 85 million barrels per day, so CCS would produce eleven times more waste for burial than oil that was simultaneously being extracted."
+    },
+    {
+     "type": "text",
+     "text": "Sequestration has been used successfully, but there are limited coal and oil fields where optimal conditions exist. In rock that is too brittle, earthquakes could release the CO2. Moreover, proposals to store CO2 in saline aquifers are just that – proposals: sequestration has never been attempted in aquifers."
+    },
+    {
+     "type": "text",
+     "text": "Most problematic of all, CCS reduces carbon emissions but does not end them, rendering it a medium-term solution."
+    },
+    {
+     "type": "subheading",
+     "text": "Alternatives"
+    },
+    {
+     "type": "text",
+     "text": "There are at least four reasonably-priced alternatives to CCS. Firstly, conventional pulverised coal power plants are undergoing redesign so more electricity can be produced from less coal. Before coal is phased out – as ultimately it will have to be – these plants could be more cost-eﬀective. Secondly, hybrid plants using natural gas and coal could be built. Thirdly, natural gas could be used on its own. Lastly, solar power is fast gaining credibility."
+    },
+    {
+     "type": "text",
+     "text": "In all this, an agreed measure of cost for electricity generation must be used. This is called a levelized cost of energy (LCOE) – an average cost of producing electricity over the lifetime of a power plant, including construction, financing, and operation, although pollution is not counted. In 2012, the CBO demonstrated that a new CCS plant had an LCOE of about $0.09-0.15 per kilowatt-hour (kWh), but according to the US Energy Information Administration, the LCOE from a conventional natural gas power plant without CCS is $0.0686/kWh, making it the cheapest way to produce clean energy."
+    },
+    {
+     "type": "text",
+     "text": "Solar power costs are falling rapidly. In 2013, the Los Angeles Department of Water and Power reported that energy via a purchase agreement from a large solar plant was $0.095/kWh, and Greentech Media, a company that reviews environmental projects, found a 2014 New Mexico solar project that generates power for $0.0849/kWh."
+    },
+    {
+     "type": "text",
+     "text": "Still, while so much coal and so many coal-fired plants exist, decommissioning them all may not be realistic. Whatever happens, the conundrum of cheap power and clean air may remain unsolved for some time."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Choose the correct letter A, B, C, or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q27-28",
      "startQ": 27,
      "endQ": 28,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C, or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is the global average for electricity generated from coal?",
-        "segments": null
-       },
+       "prompt": [
+        "What is the global average for electricity generated from coal?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "41%"
+        },
+        {
+         "id": "B",
+         "text": "44%"
+        },
+        {
+         "id": "C",
+         "text": "49%"
+        },
+        {
+         "id": "D",
+         "text": "70%"
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. What is the global average for electricity generated from coal?",
-        "elementPath": "children[62]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 28,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What does the average American pay each month for CO2 produced by a local power plant?",
-        "segments": null
-       },
+       "prompt": [
+        "What does the average American pay each month for CO2 produced by a local power plant?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "$17"
+        },
+        {
+         "id": "B",
+         "text": "$80"
+        },
+        {
+         "id": "C",
+         "text": "$113"
+        },
+        {
+         "id": "D",
+         "text": "Nothing"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. What does the average American pay each month for CO2 produced by a local power plant?",
-        "elementPath": "children[63]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[61]",
-      "rawExcerpt": "Questions 27-28\nChoose the correct letter A, B, C, or D."
+      "headerLine": 103,
+      "lineRange": [
+       103,
+       114
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-28",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C, or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. What is the global average for electricity generated from coal?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A 41%",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B 44%",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C 49%",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D 70%",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. What does the average American pay each month for CO2 produced by a local power plant?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A $17",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B $80",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C $113",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Nothing",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q29-34",
+     "startQ": 29,
+     "endQ": 34,
+     "type": "unknown",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Label the diagrams on the following page. Write the correct letter, A-H, in boxes 29-34 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": [
+      {
+       "assetId": "asset.32f7197bc909",
+       "sourcePath": "wp-content/uploads/2024/09/250-test-aca.png",
+       "sha256": "32f7197bc909d3f4681bfce474d5c8b67af1fea8f60f7c6b75c98d9363fcaae5",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 29,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 29
+        }
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 30
+        }
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 31,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 31
+        }
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 32,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 32
+        }
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 33,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 33
+        }
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "unknown",
+       "prompt": [
+        {
+         "blank": 34
+        }
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "AMBIGUOUS_STRUCTURE",
+      "ANSWER_INVALID_FOR_TYPE",
+      "ANSWER_TYPE_MISMATCH",
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 115,
+      "lineRange": [
+       115,
+       124
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 29-34",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Label the diagrams on the following page. Write the correct letter, A-H, in boxes 29-34 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Carbon dioxide sequestration",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2024/09/250-test-aca.png"
+       },
+       {
+        "text": "29. ……………..",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. ………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. ……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. ……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. ……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. ……………",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q35-40",
+     "startQ": 35,
+     "endQ": 40,
+     "type": "note_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the notes below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. Write your answer in boxes 35-40 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Advantages of CCS",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "• Sequestration is already used in the oil and gas sector. CCS may cut ",
+         {
+          "blank": 35
+         },
+         "in a short time."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• ",
+         {
+          "blank": 36
+         },
+         "in labour, industry, and states already support CCS."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Alternatives, like ",
+         {
+          "blank": 37
+         },
+         "energy, take up vast amounts of space."
+        ]
+       },
+       {
+        "type": "heading",
+        "text": "Disadvantage of CCS"
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• The construction of new and the conversion of existing power plants and the liquefaction and transport of CO2 are very costly. While sequestration is possible, the scale would be enormous. Therefore, CCS would need ",
+         {
+          "blank": 38
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Some CCS technology is ",
+         {
+          "blank": 39
+         },
+         "Gas-driven turbines for IGCC have not been used on an industrial scale. Shallow underground storage may be limited; deep ocean storage is currently impossible. Geologists fear leaks in quake-prone regions."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Natural gas and solar PVs are cheaper. LCOE estimates for CCS = $0.09-15/kWh; for natural gas= ",
+         {
+          "blank": 40
+         },
+         "and, for solar PV = $0.0849/kWh."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 35,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Carbon emissions",
+        "value": "Carbon emissions",
+        "accepted": [
+         "Carbon emissions"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Powerful lobbies",
+        "value": "Powerful lobbies",
+        "accepted": [
+         "Powerful lobbies"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Solar",
+        "value": "Solar",
+        "accepted": [
+         "Solar"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Massive state subsidies",
+        "value": "Massive state subsidies",
+        "accepted": [
+         "Massive state subsidies"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Untried",
+        "value": "Untried",
+        "accepted": [
+         "Untried"
+        ]
+       }
+      },
+      {
+       "number": 40,
+       "type": "note_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "$0.0686/kWh",
+        "value": "$0.0686/kWh",
+        "accepted": [
+         "$0.0686",
+         "kWh"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 125,
+      "lineRange": [
+       125,
+       134
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 35-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the notes below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. Write your answer in boxes 35-40 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Advantages of CCS",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "• Sequestration is already used in the oil and gas sector. CCS may cut (35)………….. in a short time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• (36)…………… in labour, industry, and states already support CCS.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Alternatives, like (37)………………….energy, take up vast amounts of space.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Disadvantage of CCS",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "• The construction of new and the conversion of existing power plants and the liquefaction and transport of CO2 are very costly. While sequestration is possible, the scale would be enormous. Therefore, CCS would need (38)……………..",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Some CCS technology is (39)……………. Gas-driven turbines for IGCC have not been used on an industrial scale. Shallow underground storage may be limited; deep ocean storage is currently impossible. Geologists fear leaks in quake-prone regions.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Natural gas and solar PVs are cheaper. LCOE estimates for CCS = $0.09-15/kWh; for natural gas= (40)………….and, for solar PV = $0.0849/kWh.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "B"
-   },
-   {
-    "number": 2,
-    "value": "I"
-   },
-   {
-    "number": 3,
-    "value": "J"
-   },
-   {
-    "number": 4,
-    "value": "C"
-   },
-   {
-    "number": 5,
-    "value": "H"
-   },
-   {
-    "number": 6,
-    "value": "A"
-   },
-   {
-    "number": 7,
-    "value": "D"
-   },
-   {
-    "number": 8,
-    "value": "C"
-   },
-   {
-    "number": 9,
-    "value": "C"
-   },
-   {
-    "number": 10,
-    "value": "D"
-   },
-   {
-    "number": 11,
-    "value": "F"
-   },
-   {
-    "number": 12,
-    "value": "A"
-   },
-   {
-    "number": 13,
-    "value": "G"
-   },
-   {
-    "number": 14,
-    "value": "D"
-   },
-   {
-    "number": 15,
-    "value": "A"
-   },
-   {
-    "number": 16,
-    "value": "C"
-   },
-   {
-    "number": 17,
-    "value": "A"
-   },
-   {
-    "number": 18,
-    "value": "B"
-   },
-   {
-    "number": 19,
-    "value": "A"
-   },
-   {
-    "number": 20,
-    "value": "A"
-   },
-   {
-    "number": 21,
-    "value": "True"
-   },
-   {
-    "number": 22,
-    "value": "True"
-   },
-   {
-    "number": 23,
-    "value": "Not given"
-   },
-   {
-    "number": 24,
-    "value": "Peripheral measures"
-   },
-   {
-    "number": 25,
-    "value": "A polygraph"
-   },
-   {
-    "number": 26,
-    "value": "Entrepreneurs"
-   },
-   {
-    "number": 27,
-    "value": "A"
-   },
-   {
-    "number": 28,
-    "value": "D"
-   },
-   {
-    "number": 29,
-    "value": "A"
-   },
-   {
-    "number": 30,
-    "value": "C"
-   },
-   {
-    "number": 31,
-    "value": "E"
-   },
-   {
-    "number": 32,
-    "value": "B"
-   },
-   {
-    "number": 33,
-    "value": "G"
-   },
-   {
-    "number": 34,
-    "value": "F"
-   },
-   {
-    "number": 35,
-    "value": "Carbon emissions"
-   },
-   {
-    "number": 36,
-    "value": "Powerful lobbies"
-   },
-   {
-    "number": 37,
-    "value": "Solar"
-   },
-   {
-    "number": 38,
-    "value": "Massive state subsidies"
-   },
-   {
-    "number": 39,
-    "value": "Untried"
-   },
-   {
-    "number": 40,
-    "value": "$0.0686/kWh"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Light pollution has affected many forms of life. Use the information in the passage to match the animals with the relevant information below"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     20
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     29,
-     34
-    ],
-    "instruction": "Label the diagrams on the following page. Write the correct letter, A-H, in boxes 29-34 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     35,
-     40
-    ],
-    "instruction": "Complete the notes below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. Write your a"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 16,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 4,
- "contentFingerprint": "309617cca32f6a0df00145d6756716a0e1b18d59426088c572f2a401e4732eb8"
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 34,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "0ff82b45a92b5ed2a28eb64c975f3640e9b5ec227343269b3b19178c55982020"
 }

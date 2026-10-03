@@ -1,97 +1,50 @@
 {
  "slug": "ielts-reading-test-55",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Do the following statements agree with the information given in Reading Passage 1. In boxes 1-8 on your answer sheet, wr"
-   }
+   "groupId": "p2.q15-21",
+   "range": [
+    15,
+    21
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MALFORMED_BLANK"
+   ],
+   "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from Reading Passage 2 for each answer. Write your answers in boxes 15–21 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "The box below gives a list of responses A–P to the questionnaire discussed in Reading Passage 1.\nAnswer the following qu"
-   }
+   "groupId": "p2.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below using NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes 22–26 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     15,
-     21
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from Reading Passage 2 for each answer. Write your answers in "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     22,
-     26
-    ],
-    "instruction": "Answer the questions below using NO MORE THAN THREE WORDS from the passage for each answer. Write your answers in boxes "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     29
-    ],
-    "instruction": ""
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     30,
-     32
-    ],
-    "instruction": "Look at the following diagrams (Questions 30–32), and the list of types of movement below.\nMatch each diagram to the typ"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write your answer in box 40 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 7,
-    "answers": 40
-   }
+   "groupId": "p3.q30-32",
+   "range": [
+    30,
+    32
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_TYPE_MISMATCH",
+    "MEDIA_NOT_IN_R2",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Look at the following diagrams (Questions 30–32), and the list of types of movement below. Match each diagram to the type of movement A–E generally assigned to it in the experiment. Choose the correct"
   }
  ]
 }

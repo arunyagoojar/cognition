@@ -1,149 +1,147 @@
 {
  "slug": "ielts-reading-test-296",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "ANSWER_KEY_MISSING"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     25,
-     27
-    ],
-    "instruction": "Using ONE WORD ONLY from the passage for each answer, complete the following."
-   }
+   "groupId": "p1.q01-03",
+   "range": [
+    1,
+    3
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Answer the following questions using NO MORE THAN ONE WORDS AND/OR A NUMBER from the passage."
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     37,
-     39
-    ],
-    "instruction": "Choose one drawing (A-D) to match each of the three projection types (37-39)."
-   }
+   "groupId": "p1.q04-10",
+   "range": [
+    4,
+    10
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter A-D."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q1 in g01"
+   "unit": "group",
+   "groupId": "p1.q11-14",
+   "range": [
+    11,
+    14
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the views of the writer in this passage? Write"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q2 in g01"
+   "unit": "group",
+   "groupId": "p2.q15-19",
+   "range": [
+    15,
+    19
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Classify the following as relating to:"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q3 in g01"
+   "unit": "group",
+   "groupId": "p2.q20-24",
+   "range": [
+    20,
+    24
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements reflect the claims of the writer in the passage? Write"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q4 in g02"
+   "unit": "group",
+   "groupId": "p2.q25-27",
+   "range": [
+    25,
+    27
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Using ONE WORD ONLY from the passage for each answer, complete the following. Comparison of Synthetic and Natural Fibres"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q5 in g02"
+   "unit": "group",
+   "groupId": "p3.q28-31",
+   "range": [
+    28,
+    31
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary. Choose your answers from the box below the summary."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q6 in g02"
+   "unit": "group",
+   "groupId": "p3.q32-36",
+   "range": [
+    32,
+    36
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Use the information in the text to match the map projections [M A P] with the characteristics listed below."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q7 in g02"
+   "unit": "group",
+   "groupId": "p3.q37-39",
+   "range": [
+    37,
+    39
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2",
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Choose one drawing (A-D) to match each of the three projection types (37-39)."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q8 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q9 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q10 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q11 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q12 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q13 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q14 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q20 in g04"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q21 in g04"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q22 in g04"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q23 in g04"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q24 in g04"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q28 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q29 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q30 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q31 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q40 in g08"
+   "unit": "group",
+   "groupId": "p3.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter A-D."
   }
  ]
 }

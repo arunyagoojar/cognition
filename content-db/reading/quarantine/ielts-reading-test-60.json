@@ -1,49 +1,36 @@
 {
  "slug": "ielts-reading-test-60",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     14
-    ],
-    "instruction": "and 15 Reading Passage 1 has seven paragraphs A – G. Which paragraphs state the following information? Write the appropr"
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the summary below. Choose your answers from the box below the summary and write them in boxes 8 -13 on the answer sheet. There are more words than spaces, so you will not use all the given wo"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     25,
-     27
-    ],
-    "instruction": "For questions 25 – 27, choose the best answers, A, B, C or D, according to the information in the text. Write your answe"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     28,
-     30
-    ],
-    "instruction": "Choose the two best answers according to the text, and write the letters A-E in boxes 28 – 30 on your answer sheet Quest"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 17,
-    "answers": 40
-   }
+   "groupId": "p3.q28-30",
+   "range": [
+    28,
+    30
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the two best answers according to the text, and write the letters A-E in boxes 28 – 30 on your answer sheet"
   }
  ]
 }

@@ -1,14 +1,1834 @@
 {
+ "id": "reading.test-0121.82cd5df0",
+ "module": "reading",
  "slug": "ielts-reading-test-121",
- "status": "quarantined",
- "kind": "empty",
- "quarantinedUnits": [
+ "sourceNumbers": [
+  121
+ ],
+ "title": "IELTS Academic Reading Test 121",
+ "pipelineVersion": "production-reading-2.0.0",
+ "provenance": {
+  "page": {
+   "path": "ielts-reading-test-121/index.html",
+   "sha256": "49bbcb36bb05855530a9a0918fab5a7706639cd4168c23511c43227a76088d98",
+   "manifestHashMatch": false,
+   "url": "https://practicepteonline.com/ielts-reading-test-121/"
+  },
+  "extractionMethod": "deterministic_wordpress_lines_v2"
+ },
+ "hubEnumerated": true,
+ "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "B"
+   },
+   {
+    "number": 2,
+    "raw": "D"
+   },
+   {
+    "number": 3,
+    "raw": "A"
+   },
+   {
+    "number": 4,
+    "raw": "E"
+   },
+   {
+    "number": 5,
+    "raw": "C"
+   },
+   {
+    "number": 6,
+    "raw": "B"
+   },
+   {
+    "number": 7,
+    "raw": "D"
+   },
+   {
+    "number": 8,
+    "raw": "minds"
+   },
+   {
+    "number": 9,
+    "raw": "memories"
+   },
+   {
+    "number": 10,
+    "raw": "knowledge"
+   },
+   {
+    "number": 11,
+    "raw": "experience"
+   },
+   {
+    "number": 12,
+    "raw": "speed"
+   },
+   {
+    "number": 13,
+    "raw": "heart disease"
+   },
+   {
+    "number": 14,
+    "raw": "drought"
+   },
+   {
+    "number": 15,
+    "raw": "transpiration"
+   },
+   {
+    "number": 16,
+    "raw": "wind"
+   },
+   {
+    "number": 17,
+    "raw": "H"
+   },
+   {
+    "number": 18,
+    "raw": "F"
+   },
+   {
+    "number": 19,
+    "raw": "C"
+   },
+   {
+    "number": 20,
+    "raw": "I"
+   },
+   {
+    "number": 21,
+    "raw": "G"
+   },
+   {
+    "number": 22,
+    "raw": "B"
+   },
+   {
+    "number": 23,
+    "raw": "H"
+   },
+   {
+    "number": 24,
+    "raw": "D"
+   },
+   {
+    "number": 25,
+    "raw": "True"
+   },
+   {
+    "number": 26,
+    "raw": "True"
+   },
+   {
+    "number": 27,
+    "raw": "False"
+   },
+   {
+    "number": 28,
+    "raw": "Not given"
+   },
+   {
+    "number": 29,
+    "raw": "True"
+   },
+   {
+    "number": 30,
+    "raw": "False"
+   },
+   {
+    "number": 31,
+    "raw": "D"
+   },
+   {
+    "number": 32,
+    "raw": "A"
+   },
+   {
+    "number": 33,
+    "raw": "advantages/ characteristics"
+   },
+   {
+    "number": 34,
+    "raw": "situation"
+   },
+   {
+    "number": 35,
+    "raw": "information"
+   },
+   {
+    "number": 36,
+    "raw": "ingredients"
+   },
+   {
+    "number": 37,
+    "raw": "simple"
+   }
+  ]
+ },
+ "passages": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "passageNumber": 1,
+   "title": "Experience versus speed",
+   "paragraphs": [
+    {
+     "type": "text",
+     "text": "Jake, aged 16, has a terrific relationship with his grandmother Rita, who is 70. They live close by, and they even take a Spanish class together twice a week at a local college. After class, they sometimes stop at a cafe for a snack. On one occasion, Rita tells Jake, ‘I think it’s great how fast you pick up new grammar. It takes me a lot longer.’ Jake replies, ‘Yeah, but you don’t seem to make as many silly mistakes on the quizzes as I do. How do you do that?’"
+    },
+    {
+     "type": "text",
+     "text": "In that moment, Rita and Jake stumbled across an interesting set of differences between older and younger minds. Popular psychology says that as people age their brains ‘slow down’. The implication, of course, is that elderly men and women are not as mentally agile as middle-aged adults or even teenagers. However, although certain brain functions such as perception and reaction time do indeed take longer, that slowing down does not necessarily undermine mental sharpness. Indeed, evidence shows that older people are just as mentally fit as younger people because their brains compensate for some kinds of declines in creative ways that young minds do not exploit."
+    },
+    {
+     "type": "text",
+     "text": "Just as people’s bodies age at different rates, so do their minds. As adults advance in age, the perception of sights, sounds and smells takes a bit longer, and laying down new information into memory becomes more difficult. The ability to retrieve memories also quickly slides and it is sometimes harder to concentrate and maintain attention."
+    },
+    {
+     "type": "text",
+     "text": "On the other hand, the ageing brain can create significant benefits by tapping into its extensive hoard of accumulated knowledge and experience. The biggest trick that older brains employ is to use both hemispheres simultaneously to handle tasks for which younger brains rely predominantly on one side. Electronic images taken by cognitive scientists at the University of Michigan, for example, have demonstrated that even when doing basic recognition or memorization exercises, seniors exploit the left and right side of the brain more extensively than men and women who are decades younger. Drawing on both sides of the brain gives them a tactical edge, even if the speed of each hemisphere’s process is slower."
+    },
+    {
+     "type": "text",
+     "text": "In another experiment, Michael Falkenstein of the University of Dortmund in Germany found that when elders were presented with new computer exercises they paused longer before reacting and took longer to complete the tasks, yet they made 50% fewer errors, probably because of their more deliberate pace."
+    },
+    {
+     "type": "text",
+     "text": "One analogy for these results might be the question of who can type a paragraph ‘better’: a 16-year-old who glides along at 60 words per minute but has to double back to correct a number of mistakes or a 70-year-old who strikes keys at only 40 words per minute but spends less time fixing errors? In the end, if ‘better’ is defined as completing a clean paragraph. both people may end up taking the same amount of time."
+    },
+    {
+     "type": "text",
+     "text": "Computerized tests support the notion that accuracy can offset speed. In one so-called distraction exercise, subjects were told to look at a screen, wait for an arrow that pointed in a certain direction to appear, and then use a mouse to click on the arrow as soon as it appeared on the screen. Just before the correct symbol appeared, however, the computer displayed numerous other arrows aimed in various other directions. Although younger subjects cut through the confusion faster when the correct arrow suddenly popped up, they more frequently clicked on incorrect arrows in their haste."
+    },
+    {
+     "type": "text",
+     "text": "Older test takers are equally capable of other tasks that do not depend on speed, such as language comprehension and processing. In these cases, however. the elders utilize the brain’s available resources in a different way. Neurologists at Northwest University came to this conclusion after analyzing 50 people ranging from age 23 to 78. The subjects had to lie down in a magnetic resonance imaging (MRI) machine and concentrate on two different lists of printed words posted side by side in front of them. By looking at the lists, they were to find pairs of words that were similar in either meaning or spelling."
+    },
+    {
+     "type": "text",
+     "text": "The eldest participants did just as well on the tests as the youngest did, and yet the MRI scans indicated that in the elders’ brains, the areas which are responsible for language recognition and interpretation were much less active. The researchers did find that the older people had more activity in brain regions responsible for attentiveness. Darren Gleitman, who headed the study, concluded that older brains solved the problems just as effectively but by different means."
+    }
+   ],
+   "paragraphLabels": [],
+   "assets": [],
+   "passageReasonCodes": null,
+   "questionGroups": [
+    {
+     "groupId": "p1.q01-03",
+     "startQ": 1,
+     "endQ": 3,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct answer A, B, C or D and write them on your answer sheet from 1-3",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "mcq_single",
+       "prompt": [
+        "The conversation between Jake and Rita is used to give an example of"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "the way we learn languages."
+        },
+        {
+         "id": "B",
+         "text": "the changes that occur in our brains over time."
+        },
+        {
+         "id": "C",
+         "text": "the fact that it is easier to learn a language at a young age."
+        },
+        {
+         "id": "D",
+         "text": "the importance of young and old people doing things together."
+        }
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "mcq_single",
+       "prompt": [
+        "In paragraph six, what point is the analogy used to illustrate?"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "Working faster is better than working slower."
+        },
+        {
+         "id": "B",
+         "text": "Accuracy is less important than speed."
+        },
+        {
+         "id": "C",
+         "text": "Accuracy can improve over time."
+        },
+        {
+         "id": "D",
+         "text": "Working faster does not always save time."
+        }
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "mcq_single",
+       "prompt": [
+        "In the computerized distraction exercises, the subjects had to"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "react to a particular symbol on the screen."
+        },
+        {
+         "id": "B",
+         "text": "type a text as quickly as possible."
+        },
+        {
+         "id": "C",
+         "text": "move an arrow in different directions around the screen."
+        },
+        {
+         "id": "D",
+         "text": "click on every arrow that appeared on the screen."
+        }
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 10,
+      "lineRange": [
+       10,
+       26
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-3",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct answer A, B, C or D and write them on your answer sheet from 1-3",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1 The conversation between Jake and Rita is used to give an example of",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. the way we learn languages.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. the changes that occur in our brains over time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. the fact that it is easier to learn a language at a young age.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. the importance of young and old people doing things together.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2 In paragraph six, what point is the analogy used to illustrate?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. Working faster is better than working slower.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. Accuracy is less important than speed.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. Accuracy can improve over time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. Working faster does not always save time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3 In the computerized distraction exercises, the subjects had to",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. react to a particular symbol on the screen.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. type a text as quickly as possible.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. move an arrow in different directions around the screen.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. click on every arrow that appeared on the screen.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q04-07",
+     "startQ": 4,
+     "endQ": 7,
+     "type": "sentence_endings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete each sentence with the correct ending A-F. Write the correct letter A-F in boxes 4-7 on your answer sheet",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "the older we get the harder it is to concentrate for any length of time."
+       },
+       {
+        "id": "B",
+        "text": "seniors take longer to complete tasks but with greater accuracy."
+       },
+       {
+        "id": "C",
+        "text": "old people use both parts of their brain more than young people."
+       },
+       {
+        "id": "D",
+        "text": "older people use their brains differently but achieve the same result."
+       },
+       {
+        "id": "E",
+        "text": "the speed of our brain decreases with age."
+       },
+       {
+        "id": "F",
+        "text": "older people do not cope well with new technology."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 4,
+       "type": "sentence_endings",
+       "prompt": [
+        "According to popular psychology"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "sentence_endings",
+       "prompt": [
+        "Researchers at the University of Michigan showed that"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "sentence_endings",
+       "prompt": [
+        "Michael Falkenstein discovered that"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 7,
+       "type": "sentence_endings",
+       "prompt": [
+        "Scientists at Northwest University concluded that"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 27,
+      "lineRange": [
+       27,
+       39
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 4-7",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete each sentence with the correct ending A-F.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter A-F in boxes 4-7 on your answer sheet",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4 According to popular psychology",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5 Researchers at the University of Michigan showed that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6 Michael Falkenstein discovered that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7 Scientists at Northwest University concluded that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. the older we get the harder it is to concentrate for any length of time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. seniors take longer to complete tasks but with greater accuracy.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. old people use both parts of their brain more than young people.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. older people use their brains differently but achieve the same result.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E. the speed of our brain decreases with age.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F. older people do not cope well with new technology.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q08-12",
+     "startQ": 8,
+     "endQ": 12,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN ONE WORD from the passage for each answer. Write your answers in spaces 8-12 of your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN ONE WORD",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "People’s bodies and ",
+         {
+          "blank": 8
+         },
+         "grow older at varying stages. As we age our senses take longer to process information and our aptitude for recalling ",
+         {
+          "blank": 9
+         },
+         "also decreases. However, older people’s brains do have several advantages. Firstly, they can call upon both the ",
+         {
+          "blank": 10
+         },
+         "and ",
+         {
+          "blank": 11
+         },
+         "which is already stored in their brain. Secondly, although the ",
+         {
+          "blank": 12
+         },
+         "of each side of their brain is reduced, they are able to use both sides at once."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "minds",
+        "value": "minds",
+        "accepted": [
+         "minds"
+        ]
+       }
+      },
+      {
+       "number": 9,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "memories",
+        "value": "memories",
+        "accepted": [
+         "memories"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "knowledge",
+        "value": "knowledge",
+        "accepted": [
+         "knowledge"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "experience",
+        "value": "experience",
+        "accepted": [
+         "experience"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "speed",
+        "value": "speed",
+        "accepted": [
+         "speed"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 40,
+      "lineRange": [
+       40,
+       44
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 8-12",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Choose NO MORE THAN ONE WORD from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in spaces 8-12 of your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "People’s bodies and 8 __________ grow older at varying stages. As we age our senses take longer to process information and our aptitude for recalling 9 __________ also decreases. However, older people’s brains do have several advantages. Firstly, they can call upon both the 10 __________ and 11 __________ which is already stored in their brain. Secondly, although the 12__________ of each side of t",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 2,
+   "title": "Robotic approach to crop breeding",
+   "paragraphs": [
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The Australian sunflower industry is the major source of polyunsaturated fatty acids found in margarines and spreads. Recognised as the type of fatty acid most able to protect against heart disease, it is in everybody’s best interest that Australia has a competitive and healthy sunflower industry, but in Australia, there is a constant struggle with the harsh climate. However, thanks to one special robot, farmers may be able to win the battle against drought."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Dr Chris Lambrides, a research fellow at the University of Queensland, is nearing the end of a project that aims to develop more drought tolerant sunflowers by selecting flowers that use water more efficiently. He’s done this with the help of a robot developed by the Australian National University’s Research School of Biological Sciences."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Plants undergo photosynthesis to produce energy in the form of sugar. This involves allowing carbon dioxide to enter the leaves through pores called stomata. Transpiration is the mechanism by which plants lose water through their leaves. This system is thought to facilitate the passage of minerals through the plant and is vital for healthy plants."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "However, in conditions of drought, the plants that can use the available water efficiently and lose less to the environment will be more likely to thrive and, in a commercial sense become more profitable. These plants are classified as having a high transpiration efficiency. When plants transpire, the leaves become cooler due to evaporation. Therefore, by measuring the temperature of the leaves, scientists can determine how much water is being lost through transpiration."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "When the project first began, the researchers used hand-held infrared thermometers to measure the temperature difference between leaves of different varieties of sunflowers in an experimental plot. Wind can affect leaf temperature, and the research team discovered that its initial approach did not cater for changes in wind speed, which could not be controlled as an experimental variable. The team, therefore, needed a technique to measure temperature continuously that would allow it to examine the effects of other variables such as humidity. They needed a robot."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "They designed a robot with two infrared thermometers set at 1800 to each other. The robot runs on an oblong track around the experimental plot and the thermometers operate on each side of the track. In order to minimize any variables from the two thermometers, they are rotated 1800 at the beginning of each run and the results are averaged. The infrared thermometers can be rotated on an angle to examine different parts of the foliage."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "The robot is also able to detect light intensity. It has a garage on the track, where it waits until the light intensity is high enough to give useful results. If the skies darken due to rain, heavy cloud cover or sunset, the robot makes its way back to the garage to wait."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "The main difficulty faced by the research group was to find an agronomist who could grow the perfect crop of sunflowers. The sunflower canopy had to be complete, with no visible soil, 50 that the thermometers would only measure the temperature of the plants and not the surrounding environment. Eight varieties of sunflower were examined. The data collected by the robot has been used by the research team to determine which variety has the highest transpiration efficiency."
+    },
+    {
+     "type": "text",
+     "label": "I",
+     "text": "This is not the first time such methods have been used to determine drought-resistance in plants. The team and their robot have already made a major breakthrough in the Australian wheat industry with Drysdale Wheat, which signalled the arrival of a new technique for selecting drought-resistant species."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I"
+   ],
+   "assets": [],
+   "passageReasonCodes": null,
+   "questionGroups": [
+    {
+     "groupId": "p2.q13-16",
+     "startQ": 13,
+     "endQ": 16,
+     "type": "sentence_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the sentences with words taken from the passage. Use NO MORE THAN TWO WORDS for each answer. Write your answers in boxes 1-4 on your answer sheet",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 13,
+       "type": "sentence_completion",
+       "prompt": [
+        "In terms of our health, sunflowers are important in defending humans against ",
+        {
+         "blank": 13
+        }
+       ],
+       "answer": {
+        "raw": "heart disease",
+        "value": "heart disease",
+        "accepted": [
+         "heart disease"
+        ]
+       }
+      },
+      {
+       "number": 14,
+       "type": "sentence_completion",
+       "prompt": [
+        "The research team wanted to find a sunflower that could cope well in conditions ",
+        {
+         "blank": 14
+        }
+       ],
+       "answer": {
+        "raw": "drought",
+        "value": "drought",
+        "accepted": [
+         "drought"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "sentence_completion",
+       "prompt": [
+        "The name of the process which is believed to help keep plants in good condition is ",
+        {
+         "blank": 15
+        }
+       ],
+       "answer": {
+        "raw": "transpiration",
+        "value": "transpiration",
+        "accepted": [
+         "transpiration"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "sentence_completion",
+       "prompt": [
+        "The research team had to rethink their initial approach when they realised they needed to measure the impact of external conditions such as",
+        {
+         "blank": 16
+        }
+       ],
+       "answer": {
+        "raw": "wind",
+        "value": "wind",
+        "accepted": [
+         "wind"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 55,
+      "lineRange": [
+       55,
+       61
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 13-16",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the sentences with words taken from the passage. Use NO MORE THAN TWO WORDS for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in boxes 1-4 on your answer sheet",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13 In terms of our health, sunflowers are important in defending humans against ……………………………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14 The research team wanted to find a sunflower that could cope well in conditions ……………………………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15 The name of the process which is believed to help keep plants in good condition is ……………………………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16 The research team had to rethink their initial approach when they realised they needed to measure the impact of external conditions such as……………………………………",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q17-24",
+     "startQ": 17,
+     "endQ": 24,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading passage has nine paragraphs labelled A-I. Which paragraph contains the following information? Write the correct letter A-I in boxes 5-12 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       },
+       {
+        "id": "I",
+        "text": "Paragraph I"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 17,
+       "type": "matching_information",
+       "prompt": [
+        "the precise growing conditions required to allow the experiment to work"
+       ],
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
+        ]
+       }
+      },
+      {
+       "number": 18,
+       "type": "matching_information",
+       "prompt": [
+        "a description of the how the robot operates"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "matching_information",
+       "prompt": [
+        "an explanation of two important processes used by plants"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 20,
+       "type": "matching_information",
+       "prompt": [
+        "a reference to a previous study using a different crop"
+       ],
+       "answer": {
+        "raw": "I",
+        "value": "I",
+        "accepted": [
+         "I"
+        ]
+       }
+      },
+      {
+       "number": 21,
+       "type": "matching_information",
+       "prompt": [
+        "details of what the robot does when conditions are poor"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      },
+      {
+       "number": 22,
+       "type": "matching_information",
+       "prompt": [
+        "the name of the group responsible for making the robot"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 23,
+       "type": "matching_information",
+       "prompt": [
+        "the number of different types of sunflower tested"
+       ],
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "matching_information",
+       "prompt": [
+        "the purpose of taking the temperature of the plants"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 62,
+      "lineRange": [
+       62,
+       74
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 17-24",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading passage has nine paragraphs labelled A-I.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter A-I in boxes 5-12 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17 the precise growing conditions required to allow the experiment to work",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18 a description of the how the robot operates",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19 an explanation of two important processes used by plants",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20 a reference to a previous study using a different crop",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21 details of what the robot does when conditions are poor",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22 the name of the group responsible for making the robot",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23 the number of different types of sunflower tested",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24 the purpose of taking the temperature of the plants",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "How consumers decide",
+        "kind": "text",
+        "bold": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "passageNumber": 3,
+   "title": "Understanding consumers",
+   "paragraphs": [
+    {
+     "type": "text",
+     "text": "Consumers are creatures of habit: they buy the same products time and time again, and such is their familiarity with big brands and the colours and logos that represent them, that they can register a brand they like with barely any conscious thought process. The packaging of consumer products is, therefore, a crucial vehicle for delivering the brand and the product into our shopping baskets."
+    },
+    {
+     "type": "text",
+     "text": "Having said this, understanding how consumers make decisions, and the crucial role of packaging in this process has been a neglected area of research so far. This is surprising given that organisations invest huge amounts of money in developing packaging that they believe is effective – especially at the retail level. Our Centre for Decision Research at Leeds University’s Business School, in collaboration with Faraday Packaging, is now undertaking work in this area. It has already led to some important findings that challenge the ways in which organisations think about consumer choice."
+    },
+    {
+     "type": "text",
+     "text": "The research has focused on two fundamental types of thinking. On the one hand, there’s ‘heuristic processing’, which involves very shallow thought and is based on very simple rules: 1) buy what you recognize, 2) choose what you did last time, or 3) choose what a trusted source suggests. This requires comparatively little effort, and involves looking at – and thinking about – only a small amount of the product information and packaging. One can do this with little or no conscious thought."
+    },
+    {
+     "type": "text",
+     "text": "On the other hand, ‘systematic processing’ involves much deeper levels of thought. When people choose goods in this way, they engage in quite detailed analytical thinking – taking account of the product information, including its price, its perceived quality and so on. This form of thinking, which is both analytical and conscious, involves much more mental effort."
+    },
+    {
+     "type": "text",
+     "text": "The role of packaging is likely to be very different for each of these types of decision making. Under heuristic processing, for example, consumers may simply need to be able to distinguish the pack from those of competitors since they are choosing on the basis of what they usually do. Under these circumstances, the simple perceptual features of the pack may be critical – so that we can quickly discriminate what we choose from the other products on offer. Under systematic processing, however, product-related information may be more important, so the pack has to provide this in an easily identifiable form."
+    },
+    {
+     "type": "subheading",
+     "text": "Comparing competition"
+    },
+    {
+     "type": "text",
+     "text": "Consumers will want to be able to compare the product with its competitors, so that they can determine which option is better for them. A crucial role of packaging in this situation is to communicate the characteristics of the product, highlighting its advantages over possible competitors."
+    },
+    {
+     "type": "text",
+     "text": "So, when are people likely to use a particular type of thinking? First, we know that people are cognitive misers; in other words, they are economical with their thinking because it requires some effort from them. Essentially, people only engage in effort-demanding systematic processing when the situation justifies it, for example when they are not tired or distracted and when the purchase is important to them."
+    },
+    {
+     "type": "text",
+     "text": "Second, people have an upper limit to the amount of information they can absorb. If we present too much, therefore, they will become confused. This, in turn, is likely to lead them to disengage and choose something else."
+    },
+    {
+     "type": "text",
+     "text": "Third, people often lack the knowledge or experience needed, so will not be able to deal with things they do not already understand, such as the ingredients of food products, for example."
+    },
+    {
+     "type": "text",
+     "text": "And fourth, people vary in the extent to which they enjoy thinking. Our research has differentiated between people with a high need for thinking – who routinely engage in analytical thinking – and those low in the need for cognition, who prefer to use very simple forms of thinking."
+    },
+    {
+     "type": "subheading",
+     "text": "Effectiveness varies"
+    },
+    {
+     "type": "text",
+     "text": "This work has an important impact on packaging in that what makes packaging effective is likely to vary according to the type of processing strategy that consumers use when choosing between products. You need to understand how consumers are selecting your products if you are to develop packaging that is relevant. Furthermore, testing the effectiveness of your packaging can be ineffective if the methods you are employing concern one form of thinking (e.g. a focus group involving analytical thinking) but your consumers are purchasing in the other mode (i.e. the heuristic, shallow form of thinking)."
+    },
+    {
+     "type": "text",
+     "text": "For the packaging industry, it is important that retailers identify their key goals. Sustaining a consumer’s commitment to a product may involve packaging that is distinctive at the heuristic level (if the consumers can recognize the product they will buy it) but without encouraging consumers to engage in systematic processing (prompting deeper level thinking that would include making comparisons with other products)."
+    },
+    {
+     "type": "text",
+     "text": "Conversely, getting consumers to change brands may involve developing packaging that includes information that does stimulate systematic processing and thus encourages consumers to challenge their usual choice of product. Our work is investigating these issues, and the implications they have for developing effective packaging."
+    }
+   ],
+   "paragraphLabels": [],
+   "assets": [],
+   "passageReasonCodes": null,
+   "questionGroups": [
+    {
+     "groupId": "p3.q25-30",
+     "startQ": 25,
+     "endQ": 30,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in the Reading Passage? Write answers in your answer sheet write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 25,
+       "type": "tfng",
+       "prompt": [
+        "Little research has been done on the link between packaging and consumers choosing a product."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "tfng",
+       "prompt": [
+        "A person who buys what another person recommends is using heuristic thinking."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
+       }
+      },
+      {
+       "number": 27,
+       "type": "tfng",
+       "prompt": [
+        "Heuristic processing requires more energy than systematic processing."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "tfng",
+       "prompt": [
+        "The concept of heuristic processing was thought up by Dr Maule’s team."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "tfng",
+       "prompt": [
+        "A consumer who considers how mucha product costs, is using systematic processing."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "tfng",
+       "prompt": [
+        "For heuristic processing, packaging must be similar to other products."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 91,
+      "lineRange": [
+       91,
+       102
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 25-30",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in the Reading Passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write answers in your answer sheet write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25 Little research has been done on the link between packaging and consumers choosing a product.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26 A person who buys what another person recommends is using heuristic thinking.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27 Heuristic processing requires more energy than systematic processing.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28 The concept of heuristic processing was thought up by Dr Maule’s team.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29 A consumer who considers how mucha product costs, is using systematic processing.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30 For heuristic processing, packaging must be similar to other products.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q31-32",
+     "startQ": 31,
+     "endQ": 32,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct answer A, B, C or D and write the answers in your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 31,
+       "type": "mcq_single",
+       "prompt": [
+        "When trying to determine how effective packaging is, testing can be made ‘ineffective’ if"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "you rely upon a very narrow focus group."
+        },
+        {
+         "id": "B",
+         "text": "your consumers use only heuristic thinking."
+        },
+        {
+         "id": "C",
+         "text": "the chosen consumers use only shallow thinking."
+        },
+        {
+         "id": "D",
+         "text": "your tests do not match the consumers’ thinking type."
+        }
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 32,
+       "type": "mcq_single",
+       "prompt": [
+        "If a retailer wants consumers to change brands their packaging needs to be"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "informative."
+        },
+        {
+         "id": "B",
+         "text": "distinctive."
+        },
+        {
+         "id": "C",
+         "text": "familiar."
+        },
+        {
+         "id": "D",
+         "text": "colourful."
+        }
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 103,
+      "lineRange": [
+       103,
+       114
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 31 and 32",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct answer A, B, C or D and write the answers in your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31 When trying to determine how effective packaging is, testing can be made ‘ineffective’ if",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. you rely upon a very narrow focus group.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. your consumers use only heuristic thinking.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. the chosen consumers use only shallow thinking.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. your tests do not match the consumers’ thinking type.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32 If a retailer wants consumers to change brands their packaging needs to be",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. informative.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. distinctive.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. familiar.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. colourful.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q33-37",
+     "startQ": 33,
+     "endQ": 37,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer. Write your answers in boxes 33-37 on your answer sheet",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Comparing competition",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "For consumers who want to compare products, it is important that your packaging stresses the ",
+         {
+          "blank": 33
+         },
+         "of your product. We know that people only use systematic processing if the ",
+         {
+          "blank": 34
+         },
+         "makes it necessary or desirable. We also know that too much ",
+         {
+          "blank": 35
+         },
+         "could make consumers choose another product. Furthermore, consumers may not fully understand details such as the ",
+         {
+          "blank": 36
+         },
+         "of a product. While some people like using systematic processing, others like to think in a ",
+         {
+          "blank": 37
+         },
+         "way."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "advantages/ characteristics",
+        "value": "advantages/ characteristics",
+        "accepted": [
+         "advantages",
+         "characteristics"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "situation",
+        "value": "situation",
+        "accepted": [
+         "situation"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "information",
+        "value": "information",
+        "accepted": [
+         "information"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "ingredients",
+        "value": "ingredients",
+        "accepted": [
+         "ingredients"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "simple",
+        "value": "simple",
+        "accepted": [
+         "simple"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 115,
+      "lineRange": [
+       115,
+       119
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 33-37",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in boxes 33-37 on your answer sheet",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Comparing competition",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "For consumers who want to compare products, it is important that your packaging stresses the 33 __________ of your product. We know that people only use systematic processing if the 34__________. makes it necessary or desirable. We also know that too much 35 __________ could make consumers choose another product. Furthermore, consumers may not fully understand details such as the 36__________ of a",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    }
+   ]
   }
  ],
- "error": "AttributeError(\"'NoneType' object has no attribute 'replace'\")",
- "contentFingerprint": null
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 8,
+  "questionsInSource": 37,
+  "productionQuestions": 37,
+  "answerKeyItems": 37
+ },
+ "contentFingerprint": "f581348a6630ef25239a5a792aa858e9bffa60f8082dfaba52ad9d4c9a16d447"
 }

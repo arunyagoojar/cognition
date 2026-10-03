@@ -1,200 +1,768 @@
 {
  "id": "reading.test-0242.c48ce514",
  "module": "reading",
+ "slug": "ielts-reading-test-242",
  "sourceNumbers": [
   242
  ],
- "slug": "ielts-reading-test-242",
  "title": "IELTS Academic Reading Test 242",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-242/index.html",
-   "sha256": "389a2979d833d0207cf9a6de7021369a357acf1c77b6acecf19661759097a3bf",
-   "manifestHashMatch": true,
+   "sha256": "859c8a1553662fa0e814c4eb16c2ecd662c736de6433ee4662247d02606d1f8a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-242/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "J"
+   },
+   {
+    "number": 2,
+    "raw": "D"
+   },
+   {
+    "number": 3,
+    "raw": "E"
+   },
+   {
+    "number": 4,
+    "raw": "B"
+   },
+   {
+    "number": 5,
+    "raw": "E"
+   },
+   {
+    "number": 6,
+    "raw": "Francis Galton"
+   },
+   {
+    "number": 7,
+    "raw": "1924"
+   },
+   {
+    "number": 8,
+    "raw": "A, E, F"
+   },
+   {
+    "number": 9,
+    "raw": "A, E, F"
+   },
+   {
+    "number": 10,
+    "raw": "A, E, F"
+   },
+   {
+    "number": 11,
+    "raw": "A, B, D"
+   },
+   {
+    "number": 12,
+    "raw": "A, B, D"
+   },
+   {
+    "number": 13,
+    "raw": "A, B, D"
+   },
+   {
+    "number": 14,
+    "raw": "Misidentified"
+   },
+   {
+    "number": 15,
+    "raw": "Emotions"
+   },
+   {
+    "number": 16,
+    "raw": "Cultural background"
+   },
+   {
+    "number": 17,
+    "raw": "Isolated"
+   },
+   {
+    "number": 18,
+    "raw": "Exposed"
+   },
+   {
+    "number": 19,
+    "raw": "C"
+   },
+   {
+    "number": 20,
+    "raw": "A"
+   },
+   {
+    "number": 21,
+    "raw": "D"
+   },
+   {
+    "number": 22,
+    "raw": "H"
+   },
+   {
+    "number": 23,
+    "raw": "D"
+   },
+   {
+    "number": 24,
+    "raw": "B"
+   },
+   {
+    "number": 25,
+    "raw": "B, D"
+   },
+   {
+    "number": 26,
+    "raw": "B, D"
+   },
+   {
+    "number": 27,
+    "raw": "viii"
+   },
+   {
+    "number": 28,
+    "raw": "ii"
+   },
+   {
+    "number": 29,
+    "raw": "x"
+   },
+   {
+    "number": 30,
+    "raw": "i"
+   },
+   {
+    "number": 31,
+    "raw": "xi"
+   },
+   {
+    "number": 32,
+    "raw": "vi"
+   },
+   {
+    "number": 33,
+    "raw": "A"
+   },
+   {
+    "number": 34,
+    "raw": "D"
+   },
+   {
+    "number": 35,
+    "raw": "B"
+   },
+   {
+    "number": 36,
+    "raw": "C"
+   },
+   {
+    "number": 37,
+    "raw": "G"
+   },
+   {
+    "number": 38,
+    "raw": "F"
+   },
+   {
+    "number": 39,
+    "raw": "True"
+   },
+   {
+    "number": 40,
+    "raw": "False"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Twin Study: Two of a kind",
    "paragraphs": [
-    "A . THE scientific study of twins goes back to the late 19th century, when Francis Galton, an early geneticist, realised that they came in two varieties: identical twins born from one egg and non-identical twins that had come from two. That insight turned out to be key, although it was not until 1924 that it was used to formulate what is known as the twin rule of pathology, and twin studies really got going.",
-    "B The twin rule of pathology states that any heritable disease will be more concordant (that is, more likely to be jointly present or absent) in identical twins than in non-identical twins – and, in turn, will be more concordant in non-identical twins than in non-siblings. Early work, for example, showed that the statistical correlation of skin-mole counts between identical twins was 0.4, while non-identical twins had a correlation of only 0.2. (A score of 1.0 implies a perfect correlation, while a score of zero implies no correlation.) This result suggests that moles are heritable, but it also implies that there is an environmental component to the development of moles, otherwise, the correlation in identical twins would be close to 1.0.",
-    "C Twin research has shown that whether or not someone takes up smoking is determined mainly by environmental factors, but once he does so, how much he smokes is largely down to his genes. And while a person’s religion is clearly a cultural attribute, there is a strong genetic component to religious fundamentalism. Twin studies are also unraveling the heritability of various aspects of human personality. Traits from neuroticism and anxiety to thrill – and novelty-seeking all have large genetic components. Parenting matters, but it does not determine personality in the way that some had thought.",
-    "D More importantly, perhaps, twin studies are helping the understanding of diseases such as cancer, asthma, osteoporosis, arthritis and immune disorders. And twins can be used, within ethical, for medical experiments. A study that administered vitamin C to one twin and a placebo to the other found that it had no effect on the common cold. The lesson from all of today’s twin studies is that most human traits are at least partially influenced by genes. However, for the most part, the age-old dichotomy between nature and nurture is not very useful. Many genetic programs are open to input from the environment, and genes are frequently switched on or off by environmental signals. It is also possible that genes themselves influence their environment. Some humans have an innate preference for participation in sports. Others are drawn to novelty. Might people also be drawn to certain kinds of friends and types of experience? In this way, a person’s genes might shape the environment they act in as much as the environment shapes the actions of the genes.",
-    "E In the past, such research has been controversial. Josef Mengele, a Nazi doctor working at the Auschwitz extermination camp during the second world war, was fascinated by twins. He sought them out among arrivals at the camp and preserved them from the gas-chambers for a series of brutal experiments. After the war, Cyril Burt, a British psychologist who worked on the heredity of intelligence, tainted twin research with results that appear, in retrospect, to have been rather too good. Some of his data on identical twins who had been reared apart were probably faked. In any case, the prevailing ideology in the social sciences after the war was Marxist and disliked suggestions that differences in human potential might have underlying genetic causes. Twin studies were thus viewed with suspicion.",
-    "F The ideological pendulum has swung back; however, as the human genome project and its aftermath have turned genes for abstract concepts to real pieces of DNA. The role of genes in sensitive areas such as intelligence is acknowledged by all but a few die-hards. The interesting questions now concern how nature and nurture interact to produce particular bits of biology, rather than which of the two is more important. Twin studies, which are a good way to ask these questions, are back in fashion, and many twins are enthusiastic participants in this research.",
-    "G Research at the Twinsburg festival began in a small way, with a single stand in 1979. Gradually, news spread and more scientists began turning up. This year, half a dozen groups of researchers were lodged in a specially pitched research tent. In one corner of this tent, Paul Breslin, who works at the Monell Institute in Philadelphia, watched over several tables where twins sat sipping clear liquids from cups and making notes. It was the team’s third year at Twinsburg. Dr Breslin and his colleagues want to find out how genes influence human perception, particularly the senses of smell and taste and those (warmth, cold, pain, tingle, itch and so on) that result from stimulation of the skin. Perception is an example of something that is probably influenced by both genes and experience. Even before birth, people are exposed to flavours such as chocolate, garlic, mint and vanilla that pass intact into the bloodstream, and thus to the fetus. Though it is not yet clear whether such pre-natal exposure shapes taste-perception, there is evidence that it shapes preferences for foods encountered later in life.",
-    "H However, there are clearly genetic influences at work, as well – for example in the ability to taste quinine. Some people experience this as intensely bitter, even when it is present at very low levels. Others, whose genetic endowment is different, are less bothered by it. Twin studies make this extremely clear. Within a pair of identical twins, either both, or neither, will find quinine hard to swallow. Non-identical twins will agree less frequently.",
-    "I On the other side of the tent Dennis Drayna, from the National Institute on Deafness and Other Communication Disorders, in Maryland, was studying hearing. He wants to know what happens to sounds after they reach the ear. It is not clear, he says, whether the sound is processed into sensation mostly in the ear or in the brain. Dr Drayna has already been involved in a twin study which revealed that the perception of musical pitch is highly heritable. At Twinsburg, he is playing different words, or parts of words, into the left and right ears of his twinned volunteers. The composite of the two sounds that an individual reports hearing depends on how he processes this diverse information and that, Dr Drayna believes, may well be influenced by genetics.",
-    "J Elsewhere in the marquee, Peter Miraldi, of Kent State University in Ohio, was trying to find out whether genes affect an individual’s motivation to communicate with others. A number of twin studies have shown that personality and sociability are heritable, so he thinks this is fertile ground. And next to Mr Miraldi was a team of dermatologists from Case Western Reserve University in Cleveland. They are looking at the development of skin disease and male-pattern baldness. The goal of the latter piece of research is to find the genes responsible for making men’s hair fall out.",
-    "K The busiest part of the tent, however, was the queue for forensic-science research into fingerprints. The origins of this study are shrouded in mystery. For many months, the festival’s organisers have been convinced that the Secret Service – the American government agency responsible for, among other things, the safety of the president – is behind it. When The Economist contacted the Secret Service for more information, we were referred to Steve Nash, who is chairman of the International Association for Identification (IAI) and is also a detective in the scientific investigations section of the Marin Country Sheriff’s Office in California. The IAI, based in Minnesota, is an organisation of forensic scientists from around the world. Among other things, it publishes the Journal of Forensic Identification."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "THE scientific study of twins goes back to the late 19th century, when Francis Galton, an early geneticist, realised that they came in two varieties: identical twins born from one egg and non-identical twins that had come from two. That insight turned out to be key, although it was not until 1924 that it was used to formulate what is known as the twin rule of pathology, and twin studies really got going."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The twin rule of pathology states that any heritable disease will be more concordant (that is, more likely to be jointly present or absent) in identical twins than in non-identical twins – and, in turn, will be more concordant in non-identical twins than in non-siblings. Early work, for example, showed that the statistical correlation of skin-mole counts between identical twins was 0.4, while non-identical twins had a correlation of only 0.2. (A score of 1.0 implies a perfect correlation, while a score of zero implies no correlation.) This result suggests that moles are heritable, but it also implies that there is an environmental component to the development of moles, otherwise, the correlation in identical twins would be close to 1.0."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Twin research has shown that whether or not someone takes up smoking is determined mainly by environmental factors, but once he does so, how much he smokes is largely down to his genes. And while a person’s religion is clearly a cultural attribute, there is a strong genetic component to religious fundamentalism. Twin studies are also unraveling the heritability of various aspects of human personality. Traits from neuroticism and anxiety to thrill – and novelty-seeking all have large genetic components. Parenting matters, but it does not determine personality in the way that some had thought."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "More importantly, perhaps, twin studies are helping the understanding of diseases such as cancer, asthma, osteoporosis, arthritis and immune disorders. And twins can be used, within ethical, for medical experiments. A study that administered vitamin C to one twin and a placebo to the other found that it had no effect on the common cold. The lesson from all of today’s twin studies is that most human traits are at least partially influenced by genes. However, for the most part, the age-old dichotomy between nature and nurture is not very useful. Many genetic programs are open to input from the environment, and genes are frequently switched on or off by environmental signals. It is also possible that genes themselves influence their environment. Some humans have an innate preference for participation in sports. Others are drawn to novelty. Might people also be drawn to certain kinds of friends and types of experience? In this way, a person’s genes might shape the environment they act in as much as the environment shapes the actions of the genes."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "In the past, such research has been controversial. Josef Mengele, a Nazi doctor working at the Auschwitz extermination camp during the second world war, was fascinated by twins. He sought them out among arrivals at the camp and preserved them from the gas-chambers for a series of brutal experiments. After the war, Cyril Burt, a British psychologist who worked on the heredity of intelligence, tainted twin research with results that appear, in retrospect, to have been rather too good. Some of his data on identical twins who had been reared apart were probably faked. In any case, the prevailing ideology in the social sciences after the war was Marxist and disliked suggestions that differences in human potential might have underlying genetic causes. Twin studies were thus viewed with suspicion."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The ideological pendulum has swung back; however, as the human genome project and its aftermath have turned genes for abstract concepts to real pieces of DNA. The role of genes in sensitive areas such as intelligence is acknowledged by all but a few die-hards. The interesting questions now concern how nature and nurture interact to produce particular bits of biology, rather than which of the two is more important. Twin studies, which are a good way to ask these questions, are back in fashion, and many twins are enthusiastic participants in this research."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Research at the Twinsburg festival began in a small way, with a single stand in 1979. Gradually, news spread and more scientists began turning up. This year, half a dozen groups of researchers were lodged in a specially pitched research tent. In one corner of this tent, Paul Breslin, who works at the Monell Institute in Philadelphia, watched over several tables where twins sat sipping clear liquids from cups and making notes. It was the team’s third year at Twinsburg. Dr Breslin and his colleagues want to find out how genes influence human perception, particularly the senses of smell and taste and those (warmth, cold, pain, tingle, itch and so on) that result from stimulation of the skin. Perception is an example of something that is probably influenced by both genes and experience. Even before birth, people are exposed to flavours such as chocolate, garlic, mint and vanilla that pass intact into the bloodstream, and thus to the fetus. Though it is not yet clear whether such pre-natal exposure shapes taste-perception, there is evidence that it shapes preferences for foods encountered later in life."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "However, there are clearly genetic influences at work, as well – for example in the ability to taste quinine. Some people experience this as intensely bitter, even when it is present at very low levels. Others, whose genetic endowment is different, are less bothered by it. Twin studies make this extremely clear. Within a pair of identical twins, either both, or neither, will find quinine hard to swallow. Non-identical twins will agree less frequently."
+    },
+    {
+     "type": "text",
+     "label": "I",
+     "text": "On the other side of the tent Dennis Drayna, from the National Institute on Deafness and Other Communication Disorders, in Maryland, was studying hearing. He wants to know what happens to sounds after they reach the ear. It is not clear, he says, whether the sound is processed into sensation mostly in the ear or in the brain. Dr Drayna has already been involved in a twin study which revealed that the perception of musical pitch is highly heritable. At Twinsburg, he is playing different words, or parts of words, into the left and right ears of his twinned volunteers. The composite of the two sounds that an individual reports hearing depends on how he processes this diverse information and that, Dr Drayna believes, may well be influenced by genetics."
+    },
+    {
+     "type": "text",
+     "label": "J",
+     "text": "Elsewhere in the marquee, Peter Miraldi, of Kent State University in Ohio, was trying to find out whether genes affect an individual’s motivation to communicate with others. A number of twin studies have shown that personality and sociability are heritable, so he thinks this is fertile ground. And next to Mr Miraldi was a team of dermatologists from Case Western Reserve University in Cleveland. They are looking at the development of skin disease and male-pattern baldness. The goal of the latter piece of research is to find the genes responsible for making men’s hair fall out."
+    },
+    {
+     "type": "text",
+     "label": "K",
+     "text": "The busiest part of the tent, however, was the queue for forensic-science research into fingerprints. The origins of this study are shrouded in mystery. For many months, the festival’s organisers have been convinced that the Secret Service – the American government agency responsible for, among other things, the safety of the president – is behind it. When The Economist contacted the Secret Service for more information, we were referred to Steve Nash, who is chairman of the International Association for Identification (IAI) and is also a detective in the scientific investigations section of the Marin Country Sheriff’s Office in California. The IAI, based in Minnesota, is an organisation of forensic scientists from around the world. Among other things, it publishes the Journal of Forensic Identification."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "The Reading Passage has seven paragraphs A-K. Which paragraph contains the following information? Write the correct letter A-K, in boxes 1-5 on your answer sheet. NB You may use any letter more than once.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-05",
      "startQ": 1,
      "endQ": 5,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The Reading Passage has seven paragraphs A-K. Which paragraph contains the following information? Write the correct letter A-K, in boxes 1-5 on your answer sheet. NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       },
+       {
+        "id": "I",
+        "text": "Paragraph I"
+       },
+       {
+        "id": "J",
+        "text": "Paragraph J"
+       },
+       {
+        "id": "K",
+        "text": "Paragraph K"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "Mentioned research conducted in Ohio",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "J",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. Mentioned research conducted in Ohio",
-        "elementPath": "children[13]"
+       "prompt": [
+        "Mentioned research conducted in Ohio"
+       ],
+       "answer": {
+        "raw": "J",
+        "value": "J",
+        "accepted": [
+         "J"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "Medical contribution to the researches for twins.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. Medical contribution to the researches for twins.",
-        "elementPath": "children[13]"
+       "prompt": [
+        "Medical contribution to the researches for twins."
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "Research situation under life-threatening conditions",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. Research situation under life-threatening conditions",
-        "elementPath": "children[13]"
+       "prompt": [
+        "Research situation under life-threatening conditions"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "Data of similarities of identical twins",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. Data of similarities of identical twins",
-        "elementPath": "children[13]"
+       "prompt": [
+        "Data of similarities of identical twins"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 5,
        "type": "matching_information",
-       "stem": {
-        "plain": "Reasons that make one study unconvincing",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. Reasons that make one study unconvincing",
-        "elementPath": "children[13]"
+       "prompt": [
+        "Reasons that make one study unconvincing"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[12]",
-      "rawExcerpt": "Questions 1-5\nThe Reading Passage has seven paragraphs A-K. Which paragraph contains the following information? Write the correct letter A-K, in boxes 1-5 on your answer sheet. NB You may use any letter more than once."
+      "headerLine": 12,
+      "lineRange": [
+       12,
+       18
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-5",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The Reading Passage has seven paragraphs A-K. Which paragraph contains the following information? Write the correct letter A-K, in boxes 1-5 on your answer sheet. NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. Mentioned research conducted in Ohio",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. Medical contribution to the researches for twins.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. Research situation under life-threatening conditions",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. Data of similarities of identical twins",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. Reasons that make one study unconvincing",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Complete the following summary of the paragraphs of Reading Passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "mcq_single",
+     "groupId": "p1.q06-07",
      "startQ": 6,
      "endQ": 7,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of Reading Passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "The first one that conducted research on twins is called ",
+         {
+          "blank": 6
+         },
+         "He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of ",
+         {
+          "blank": 7
+         }
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 6,
-       "type": "completion",
-       "stem": {
-        "plain": "The first one that conducted research on twins is called (6) ______ He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of (7) ______",
-        "segments": [
-         "The first one that conducted research on twins is called",
-         {
-          "blank": 6
-         },
-         "…………….. He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of",
-         {
-          "blank": 7
-         },
-         "…………………."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Francis Galton",
+        "value": "Francis Galton",
+        "accepted": [
+         "Francis Galton"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Francis Galton",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The first one that conducted research on twins is called (6) …………….. He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in a",
-        "elementPath": "children[15]"
        }
       },
       {
        "number": 7,
-       "type": "completion",
-       "stem": {
-        "plain": "The first one that conducted research on twins is called (6) ______ He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of (7) ______",
-        "segments": [
-         "The first one that conducted research on twins is called",
-         {
-          "blank": 6
-         },
-         "…………….. He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of",
-         {
-          "blank": 7
-         },
-         "…………………."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "1924",
+        "value": "1924",
+        "accepted": [
+         "1924"
         ]
-       },
-       "options": null,
-       "correctAnswer": "1924",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The first one that conducted research on twins is called (6) …………….. He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in a",
-        "elementPath": "children[15]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[14]",
-      "rawExcerpt": "Questions 6-7\nComplete the following summary of the paragraphs of Reading Passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
+      "headerLine": 19,
+      "lineRange": [
+       19,
+       21
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 6-7",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of Reading Passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The first one that conducted research on twins is called (6) …………….. He separated twins into two categories: non-identical and identical twins. The twin research was used in a medical application in as early as the year of (7) ………………….",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q08-10",
+     "startQ": 8,
+     "endQ": 10,
+     "type": "unknown",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": "set_per_slot",
+     "instruction": "Choose the correct letters in the following options. Write your answers in boxes 8-10 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [],
+     "status": "quarantined",
+     "reasonCodes": [
+      "AMBIGUOUS_STRUCTURE",
+      "ANSWER_TYPE_MISMATCH",
+      "MISSING_QUESTION",
+      "ORPHAN_OPTIONS"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 22,
+      "lineRange": [
+       22,
+       30
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 8-10",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letters in the following options. Write your answers in boxes 8-10 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Please choose THREE research fields that had been carried out in Ohio, Maryland and Twinburgh?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Sense",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Cancer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Be allergic to vitamin D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Mole heredity",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Sound",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F Boldness of men",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q11-13",
+     "startQ": 11,
+     "endQ": 13,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 3,
+     "answerSet": [
+      "A",
+      "B",
+      "D"
+     ],
+     "answerSetNotation": "set_per_slot",
+     "instruction": "Choose the correct letters in the following options. Write your answers in boxes 11-13 on your answer sheet. Please choose THREE results that had been verified in this passage.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Non-identical twins come from different eggs"
+       },
+       {
+        "id": "B",
+        "text": "Genetic relation between identical twins is closer than non-identical ones"
+       },
+       {
+        "id": "C",
+        "text": "Vitamin C has an evident effect on cold"
+       },
+       {
+        "id": "D",
+        "text": "Genetic influence of smoking is superior to the environment’s"
+       },
+       {
+        "id": "E",
+        "text": "If a pregnant woman eats too much sweet would lead to skin disease"
+       },
+       {
+        "id": "F",
+        "text": "Hair loss has been found to be connected with skin problem"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 11,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 11,
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 11,
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 11,
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 31,
+      "lineRange": [
+       31,
+       39
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 11-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letters in the following options. Write your answers in boxes 11-13 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Please choose THREE results that had been verified in this passage.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Non-identical twins come from different eggs",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Genetic relation between identical twins is closer than non-identical ones",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Vitamin C has an evident effect on cold",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Genetic influence of smoking is superior to the environment’s",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E If a pregnant woman eats too much sweet would lead to skin disease",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F Hair loss has been found to be connected with skin problem",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -203,324 +771,521 @@
    "passageNumber": 2,
    "title": "Facial Expression",
    "paragraphs": [
-    "A A facial expression is one or more motions or positions of the muscles in the skin. These movements convey the emotional state of the individual to observers. Facial expressions are a form of nonverbal communication. They are a primary means of conveying social information among aliens, but also occur in most other mammals and some other animal species. Facial expressions and their significance in the perceiver can, to some extent, vary between cultures with evidence from descriptions in the works of Charles Darwin.",
-    "B Humans can adopt a facial expression to read as a voluntary action. However, because expressions are closely tied to emotion, they are more often involuntary. It can be nearly impossible to avoid expressions for certain emotions, even when it would be strongly desirable to do so; a person who is trying to avoid insulting an individual he or she finds highly unattractive might, nevertheless, show a brief expression of disgust before being able to reassume a neutral expression. Microexpressions are one example of this phenomenon. The close link between emotion and expression can also work in the order direction; it has been observed that voluntarily assuming an expression can actually cause the associated emotion.",
-    "C Some expressions can be accurately interpreted even between members of different species – anger and extreme contentment being the primary examples. Others, however, are difficult to interpret even in familiar individuals. For instance, disgust and fear can be tough to tell apart. Because faces have only a limited range of movement, expressions rely upon fairly minuscule differences in the proportion and relative position of facial features, and reading them requires considerable sensitivity to the same. Some faces are often falsely read as expressing some emotion, even when they are neutral because their proportions naturally resemble those another face would temporarily assume when emoting.",
-    "D Also, a person’s eyes reveal much about hos they are feeling, or what they are thinking. Blink rate can reveal how nervous or at ease a person maybe. Research by Boston College professor Joe Tecce suggests that stress levels are revealed by blink rates. He supports his data with statistics on the relation between the blink rates of presidential candidates and their success in their races. Tecce claims that the faster blinker in the presidential debates has lost every election since 1980. Though Tecce’s data is interesting, it is important to recognize that non-verbal communication is multi-channelled, and focusing on only one aspect is reckless. Nervousness can also be measured by examining each candidates’ perspiration, eye contact and stiffness.",
-    "E As Charles Darwin noted in his book The Expression of the Emotions in Man and Animals: the young and the old of widely different races, both with man and animals, express the same state of mind by the same movements. Still, up to the mid-20th century, most anthropologists believed that facial expressions were entirely learned and could, therefore, differ among cultures. Studies conducted in the 1960s by Paul Ekman eventually supported Darwin’s belief to a large degree.",
-    "F Ekman’s work on facial expressions had its starting point in the work of psychologist Silvan Tomkins. Ekman showed that contrary to the belief of some anthropologists including Margaret Mead, facial expressions of emotion are not culturally determined, but universal across human cultures. The South Fore people of New Guinea were chosen as subjects for one such survey. The study consisted of 189 adults and 130 children from among a very isolated population, as well as twenty-three members of the culture who lived a less isolated lifestyle as a control group. Participants were told a story that described one particular emotion; they were then shown three pictures (two for children) of facial expressions and asked to match the picture which expressed the story’s emotion.",
-    "G While the isolated South Fore people could identify emotions with the same accuracy as the non-isolated control group, problems associated with the study include the fact that both fear and surprise were constantly misidentified. The study concluded that certain facial expressions correspond to particular emotions and can not be covered, regardless of cultural background, and regardless of whether or not the culture has been isolated or exposed to the mainstream.",
-    "H Expressions Ekman found to be universally included those indicating anger, disgust, fear, joy, sadness, and surprise (not that none of these emotions has a definitive social component, such as shame, pride, or schadenfreude). Findings on contempt (which is social) are less clear, though there is at least some preliminary evidence that this emotion and its expression are universally recognized. This may suggest that the facial expressions are largely related to the mind and each part on the face can express specific emotion."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "A facial expression is one or more motions or positions of the muscles in the skin. These movements convey the emotional state of the individual to observers. Facial expressions are a form of nonverbal communication. They are a primary means of conveying social information among aliens, but also occur in most other mammals and some other animal species. Facial expressions and their significance in the perceiver can, to some extent, vary between cultures with evidence from descriptions in the works of Charles Darwin."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Humans can adopt a facial expression to read as a voluntary action. However, because expressions are closely tied to emotion, they are more often involuntary. It can be nearly impossible to avoid expressions for certain emotions, even when it would be strongly desirable to do so; a person who is trying to avoid insulting an individual he or she finds highly unattractive might, nevertheless, show a brief expression of disgust before being able to reassume a neutral expression. Microexpressions are one example of this phenomenon. The close link between emotion and expression can also work in the order direction; it has been observed that voluntarily assuming an expression can actually cause the associated emotion."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Some expressions can be accurately interpreted even between members of different species – anger and extreme contentment being the primary examples. Others, however, are difficult to interpret even in familiar individuals. For instance, disgust and fear can be tough to tell apart. Because faces have only a limited range of movement, expressions rely upon fairly minuscule differences in the proportion and relative position of facial features, and reading them requires considerable sensitivity to the same. Some faces are often falsely read as expressing some emotion, even when they are neutral because their proportions naturally resemble those another face would temporarily assume when emoting."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Also, a person’s eyes reveal much about hos they are feeling, or what they are thinking. Blink rate can reveal how nervous or at ease a person maybe. Research by Boston College professor Joe Tecce suggests that stress levels are revealed by blink rates. He supports his data with statistics on the relation between the blink rates of presidential candidates and their success in their races. Tecce claims that the faster blinker in the presidential debates has lost every election since 1980. Though Tecce’s data is interesting, it is important to recognize that non-verbal communication is multi-channelled, and focusing on only one aspect is reckless. Nervousness can also be measured by examining each candidates’ perspiration, eye contact and stiffness."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "As Charles Darwin noted in his book The Expression of the Emotions in Man and Animals: the young and the old of widely different races, both with man and animals, express the same state of mind by the same movements. Still, up to the mid-20th century, most anthropologists believed that facial expressions were entirely learned and could, therefore, differ among cultures. Studies conducted in the 1960s by Paul Ekman eventually supported Darwin’s belief to a large degree."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Ekman’s work on facial expressions had its starting point in the work of psychologist Silvan Tomkins. Ekman showed that contrary to the belief of some anthropologists including Margaret Mead, facial expressions of emotion are not culturally determined, but universal across human cultures. The South Fore people of New Guinea were chosen as subjects for one such survey. The study consisted of 189 adults and 130 children from among a very isolated population, as well as twenty-three members of the culture who lived a less isolated lifestyle as a control group. Participants were told a story that described one particular emotion; they were then shown three pictures (two for children) of facial expressions and asked to match the picture which expressed the story’s emotion."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "While the isolated South Fore people could identify emotions with the same accuracy as the non-isolated control group, problems associated with the study include the fact that both fear and surprise were constantly misidentified. The study concluded that certain facial expressions correspond to particular emotions and can not be covered, regardless of cultural background, and regardless of whether or not the culture has been isolated or exposed to the mainstream."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "Expressions Ekman found to be universally included those indicating anger, disgust, fear, joy, sadness, and surprise (not that none of these emotions has a definitive social component, such as shame, pride, or schadenfreude). Findings on contempt (which is social) are less clear, though there is at least some preliminary evidence that this emotion and its expression are universally recognized. This may suggest that the facial expressions are largely related to the mind and each part on the face can express specific emotion."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Complete the Summary paragraph below. In boxes 14-18 on your answer sheet, write the correct answer with NO MORE THAN TWO WORDS .",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q14-18",
      "startQ": 14,
      "endQ": 18,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the Summary paragraph below. In boxes 14-18 on your answer sheet, write the correct answer with NO MORE THAN TWO WORDS.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "The result of Ekman’s study demonstrates that fear and surprise are persistently ",
+         {
+          "blank": 14
+         },
+         "and made a conclusion that some facial expressions have something to do with certain ",
+         {
+          "blank": 15
+         },
+         "Which is impossible covered, despite of ",
+         {
+          "blank": 16
+         },
+         "and whether the culture has been ",
+         {
+          "blank": 17
+         },
+         "or ",
+         {
+          "blank": 18
+         },
+         "to the mainstream."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 14,
-       "type": "completion",
-       "stem": {
-        "plain": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ______ and made a conclusion that some facial expressions have something to do with certain (15) ______ Which is impossible covered, despite of (16) ______ and whether the culture has been (17) ______ or (18) ______ to the mainstream.",
-        "segments": [
-         "The result of Ekman’s study demonstrates that fear and surprise are persistently",
-         {
-          "blank": 14
-         },
-         "……………. and made a conclusion that some facial expressions have something to do with certain",
-         {
-          "blank": 15
-         },
-         "……………….. Which is impossible covered, despite of",
-         {
-          "blank": 16
-         },
-         "…………………. and whether the culture has been",
-         {
-          "blank": 17
-         },
-         "………………….. or",
-         {
-          "blank": 18
-         },
-         "………………… to the mainstream."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Misidentified",
+        "value": "Misidentified",
+        "accepted": [
+         "Misidentified"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Misidentified",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 15,
-       "type": "completion",
-       "stem": {
-        "plain": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ______ and made a conclusion that some facial expressions have something to do with certain (15) ______ Which is impossible covered, despite of (16) ______ and whether the culture has been (17) ______ or (18) ______ to the mainstream.",
-        "segments": [
-         "The result of Ekman’s study demonstrates that fear and surprise are persistently",
-         {
-          "blank": 14
-         },
-         "……………. and made a conclusion that some facial expressions have something to do with certain",
-         {
-          "blank": 15
-         },
-         "……………….. Which is impossible covered, despite of",
-         {
-          "blank": 16
-         },
-         "…………………. and whether the culture has been",
-         {
-          "blank": 17
-         },
-         "………………….. or",
-         {
-          "blank": 18
-         },
-         "………………… to the mainstream."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Emotions",
+        "value": "Emotions",
+        "accepted": [
+         "Emotions"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Emotions",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 16,
-       "type": "completion",
-       "stem": {
-        "plain": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ______ and made a conclusion that some facial expressions have something to do with certain (15) ______ Which is impossible covered, despite of (16) ______ and whether the culture has been (17) ______ or (18) ______ to the mainstream.",
-        "segments": [
-         "The result of Ekman’s study demonstrates that fear and surprise are persistently",
-         {
-          "blank": 14
-         },
-         "……………. and made a conclusion that some facial expressions have something to do with certain",
-         {
-          "blank": 15
-         },
-         "……………….. Which is impossible covered, despite of",
-         {
-          "blank": 16
-         },
-         "…………………. and whether the culture has been",
-         {
-          "blank": 17
-         },
-         "………………….. or",
-         {
-          "blank": 18
-         },
-         "………………… to the mainstream."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Cultural background",
+        "value": "Cultural background",
+        "accepted": [
+         "Cultural background"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Cultural background",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 17,
-       "type": "completion",
-       "stem": {
-        "plain": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ______ and made a conclusion that some facial expressions have something to do with certain (15) ______ Which is impossible covered, despite of (16) ______ and whether the culture has been (17) ______ or (18) ______ to the mainstream.",
-        "segments": [
-         "The result of Ekman’s study demonstrates that fear and surprise are persistently",
-         {
-          "blank": 14
-         },
-         "……………. and made a conclusion that some facial expressions have something to do with certain",
-         {
-          "blank": 15
-         },
-         "……………….. Which is impossible covered, despite of",
-         {
-          "blank": 16
-         },
-         "…………………. and whether the culture has been",
-         {
-          "blank": 17
-         },
-         "………………….. or",
-         {
-          "blank": 18
-         },
-         "………………… to the mainstream."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Isolated",
+        "value": "Isolated",
+        "accepted": [
+         "Isolated"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Isolated",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 18,
-       "type": "completion",
-       "stem": {
-        "plain": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ______ and made a conclusion that some facial expressions have something to do with certain (15) ______ Which is impossible covered, despite of (16) ______ and whether the culture has been (17) ______ or (18) ______ to the mainstream.",
-        "segments": [
-         "The result of Ekman’s study demonstrates that fear and surprise are persistently",
-         {
-          "blank": 14
-         },
-         "……………. and made a conclusion that some facial expressions have something to do with certain",
-         {
-          "blank": 15
-         },
-         "……………….. Which is impossible covered, despite of",
-         {
-          "blank": 16
-         },
-         "…………………. and whether the culture has been",
-         {
-          "blank": 17
-         },
-         "………………….. or",
-         {
-          "blank": 18
-         },
-         "………………… to the mainstream."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Exposed",
+        "value": "Exposed",
+        "accepted": [
+         "Exposed"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Exposed",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is",
-        "elementPath": "children[32]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[31]",
-      "rawExcerpt": "Questions 14-18\nComplete the Summary paragraph below. In boxes 14-18 on your answer sheet, write the correct answer with NO MORE THAN TWO WORDS ."
+      "headerLine": 49,
+      "lineRange": [
+       49,
+       51
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-18",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the Summary paragraph below. In boxes 14-18 on your answer sheet, write the correct answer with NO MORE THAN TWO WORDS.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The result of Ekman’s study demonstrates that fear and surprise are persistently (14) ……………. and made a conclusion that some facial expressions have something to do with certain (15) ……………….. Which is impossible covered, despite of (16) …………………. and whether the culture has been (17) ………………….. or (18) ………………… to the mainstream.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "The reading Passage has seven paragraphs A-H. Which paragraph contains the following information? Write the correct letter A-H, in boxes 19-24 on your answer sheet. NB You may use any letter more than once.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p2.q19-24",
      "startQ": 19,
      "endQ": 24,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading Passage has seven paragraphs A-H. Which paragraph contains the following information? Write the correct letter A-H, in boxes 19-24 on your answer sheet. NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 19,
        "type": "matching_information",
-       "stem": {
-        "plain": "the difficulty identifying the actual meaning of facial expressions",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. the difficulty identifying the actual meaning of facial expressions",
-        "elementPath": "children[34]"
+       "prompt": [
+        "the difficulty identifying the actual meaning of facial expressions"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 20,
        "type": "matching_information",
-       "stem": {
-        "plain": "the importance of culture on facial expressions is initially described",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. the importance of culture on facial expressions is initially described",
-        "elementPath": "children[34]"
+       "prompt": [
+        "the importance of culture on facial expressions is initially described"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 21,
        "type": "matching_information",
-       "stem": {
-        "plain": "collected data for the research on the relation between blink and the success in elections",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. collected data for the research on the relation between blink and the success in elections",
-        "elementPath": "children[34]"
+       "prompt": [
+        "collected data for the research on the relation between blink and the success in elections"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 22,
        "type": "matching_information",
-       "stem": {
-        "plain": "the features on the sociality of several facial expressions",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "H",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. the features on the sociality of several facial expressions",
-        "elementPath": "children[34]"
+       "prompt": [
+        "the features on the sociality of several facial expressions"
+       ],
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
+        ]
        }
       },
       {
        "number": 23,
        "type": "matching_information",
-       "stem": {
-        "plain": "an indicator to reflect one’s extent of nervousness",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. an indicator to reflect one’s extent of nervousness",
-        "elementPath": "children[34]"
+       "prompt": [
+        "an indicator to reflect one’s extent of nervousness"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 24,
        "type": "matching_information",
-       "stem": {
-        "plain": "the relation between emotion and facial expressions",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "24. the relation between emotion and facial expressions",
-        "elementPath": "children[34]"
+       "prompt": [
+        "the relation between emotion and facial expressions"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[33]",
-      "rawExcerpt": "Questions 19-24\nThe reading Passage has seven paragraphs A-H. Which paragraph contains the following information? Write the correct letter A-H, in boxes 19-24 on your answer sheet. NB You may use any letter more than onc"
+      "headerLine": 52,
+      "lineRange": [
+       52,
+       59
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 19-24",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading Passage has seven paragraphs A-H. Which paragraph contains the following information? Write the correct letter A-H, in boxes 19-24 on your answer sheet. NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. the difficulty identifying the actual meaning of facial expressions",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. the importance of culture on facial expressions is initially described",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. collected data for the research on the relation between blink and the success in elections",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. the features on the sociality of several facial expressions",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. an indicator to reflect one’s extent of nervousness",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24. the relation between emotion and facial expressions",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q25-26",
+     "startQ": 25,
+     "endQ": 26,
+     "type": "mcq_multi",
+     "answerControl": "multi_choice",
+     "selectCount": 2,
+     "answerSet": [
+      "B",
+      "D"
+     ],
+     "answerSetNotation": "set_per_slot",
+     "instruction": "Choose two letters from the A-E. Write your answers in boxes 25-26 on your answer sheet",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "No evidence shows animals have their own facial expressions"
+       },
+       {
+        "id": "B",
+        "text": "The potential relationship between facial expression and state of mind exists"
+       },
+       {
+        "id": "C",
+        "text": "Facial expression are concerning different cultures"
+       },
+       {
+        "id": "D",
+        "text": "Different areas on face conveys a certain state of mind"
+       },
+       {
+        "id": "E",
+        "text": "Mind controls men’s facial expressions more obvious than women’s"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 25,
+       "type": "mcq_multi",
+       "prompt": [
+        "Which TWO of the following statements are true according to Ekman’s theory?"
+       ],
+       "slotOf": 25,
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "mcq_multi",
+       "prompt": null,
+       "slotOf": 25,
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 60,
+      "lineRange": [
+       60,
+       67
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 25-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose two letters from the A-E. Write your answers in boxes 25-26 on your answer sheet",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Which TWO of the following statements are true according to Ekman’s theory?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A No evidence shows animals have their own facial expressions",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B The potential relationship between facial expression and state of mind exists",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Facial expression are concerning different cultures",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Different areas on face conveys a certain state of mind",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Mind controls men’s facial expressions more obvious than women’s",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -529,423 +1294,698 @@
    "passageNumber": 3,
    "title": "The Can – A Brief History Lesson",
    "paragraphs": [
-    "A . The story of the can begins in 1795 when Nicholas Appert, a Parisian, had an idea: why not pack food in bottles like wine? Fifteen years later, after researching and testing his idea, he published his theory: if food is sufficiently heated and sealed in an airtight container, it will not spoil. In 1810 Peter Durand, an Englishman, wanted to surpass Appert’s invention, so he elected to try tin instead of glass. Like glass, tin could be sealed airtight but tin was not breakable and was much easier to handle. Durand himself did no canning, but two other Englishmen, Bryan Donkin and John Hall, used Durand’s patent. After experimenting for more than a year, they set up a commercial canning factory and by 1813 they were sending tins of food to British army and navy authorities for trial.",
-    "B . Perhaps the greatest encouragement to the newborn canning industry was the explosion in the number of new colonial territories. As people and goods were being transported to all parts of the world, the can industry itself was growing in new territories. Englishmen who emigrated to America brought their newfound knowledge with them. One of these was Thomas Kensett, who might fairly be called the father of the can manufacturing industry in the United States. In 1812 he set up a small plant on the New York waterfront to can the first hermetically sealed products in the United States.",
-    "C . Just before the Civil War, a technical advance by canners enabled them to speed up production. Adding calcium chloride to the water in which cans were cooked raised the water temperature, speeding up the canning process. Also for almost 100 years, tin cans were made by artisans by hand. It was a laborious process, requiring considerable skill and muscle. As the industrial revolution took hold in the United States, the demand for cans increased and machines began to replace the artisans’ handiwork. A good artisan could make only 10 cans a day. True production progress in can-making began in 1922, when American engineers perfected the body-making process. New methods soon increased production of cans to as many as 250 a minute.",
-    "D . As early as 1940, can manufacturers began to explore the possibility of adapting cans to package carbonated soft drinks. The can had to be strengthened to accommodate higher internal can pressures created by carbonation (especially during warm summer months), which meant increasing the thickness of the metal used in the can ends. Another concern for the new beverage can was its shelf life. Even small amounts of dissolved tin or iron from the can could impair the drinking quality of drinks. Also the food acids, including carbonic, citric and phosphoric, in soft drinks presented a risk for the rapid corrosion of exposed tin and iron in the can. At this point the can was upgraded by improving the organic coatings used to line the inside. The can manufacturers then embarked on a program of material and cost savings by reducing both the amount of steel and the amount of coating used in can making. These efforts were in part inspired by a new competitor – aluminum.",
-    "E . Beverage cans made from aluminum were first introduced in 1965. This was an exciting innovation for the packaging industry because the aluminum can was made with only two pieces – a body and an end. This made production easier. Some of the reasons for the aluminum can’s acceptance were its ductility, its support of carbonation pressure, its lighter weight and the fact that aluminum does not rust. Both steel and aluminum cans used an easy-open end tab but the aluminum tab was much easier to make. Perhaps the most critical element in the aluminum can’s market success was its recycling value. Aluminum can recycling excelled economically in the competition with steel because of the efficiencies aluminum cans realized in making new cans from recycled materials compared with 100 percent virgin aluminum. Steel did not realize similar economies in the recycling process.",
-    "F . Prior to 1970, can makers, customers and consumers alike were unaware of the impact that the mining and manufacturing of steel or aluminum had on the environment. The concept of natural resource preservation was not an issue of great importance and the low growth of population during these early years further de-emphasized concerns for resource depletion. Both industries, however, came to realize the importance of reducing their impact on the environment in the late 1960s and early 1970s as a new environmentally conscious generation emerged. Manufacturers began to recognize the economics of recycling, namely lower manufacturing costs from using less material and less energy. By the 1980s and 1990s, recycling had become a way of life. Aluminum can recycling has become a billion-dollar business and one of the world’s most successful environmental enterprises. Over the years, the aluminum can has come to be known as America’s most recyclable package, with over 60 percent of cans being recycled annually.",
-    "G . Advances in can manufacturing technology have also brought us lighter aluminum cans. In 1972, one pound of aluminum yielded only 21.75 cans. Today, by using less material to make each can, one pound of aluminum makes approximately 32 cans – a 47 percent improvement. Just the lightening of can ends makes a huge difference. When you multiply the savings by the 100 billion cans that are made each year, the weight and savings are phenomenal – over 200 million pounds of aluminum!"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The story of the can begins in 1795 when Nicholas Appert, a Parisian, had an idea: why not pack food in bottles like wine? Fifteen years later, after researching and testing his idea, he published his theory: if food is sufficiently heated and sealed in an airtight container, it will not spoil. In 1810 Peter Durand, an Englishman, wanted to surpass Appert’s invention, so he elected to try tin instead of glass. Like glass, tin could be sealed airtight but tin was not breakable and was much easier to handle. Durand himself did no canning, but two other Englishmen, Bryan Donkin and John Hall, used Durand’s patent. After experimenting for more than a year, they set up a commercial canning factory and by 1813 they were sending tins of food to British army and navy authorities for trial."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Perhaps the greatest encouragement to the newborn canning industry was the explosion in the number of new colonial territories. As people and goods were being transported to all parts of the world, the can industry itself was growing in new territories. Englishmen who emigrated to America brought their newfound knowledge with them. One of these was Thomas Kensett, who might fairly be called the father of the can manufacturing industry in the United States. In 1812 he set up a small plant on the New York waterfront to can the first hermetically sealed products in the United States."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Just before the Civil War, a technical advance by canners enabled them to speed up production. Adding calcium chloride to the water in which cans were cooked raised the water temperature, speeding up the canning process. Also for almost 100 years, tin cans were made by artisans by hand. It was a laborious process, requiring considerable skill and muscle. As the industrial revolution took hold in the United States, the demand for cans increased and machines began to replace the artisans’ handiwork. A good artisan could make only 10 cans a day. True production progress in can-making began in 1922, when American engineers perfected the body-making process. New methods soon increased production of cans to as many as 250 a minute."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "As early as 1940, can manufacturers began to explore the possibility of adapting cans to package carbonated soft drinks. The can had to be strengthened to accommodate higher internal can pressures created by carbonation (especially during warm summer months), which meant increasing the thickness of the metal used in the can ends. Another concern for the new beverage can was its shelf life. Even small amounts of dissolved tin or iron from the can could impair the drinking quality of drinks. Also the food acids, including carbonic, citric and phosphoric, in soft drinks presented a risk for the rapid corrosion of exposed tin and iron in the can. At this point the can was upgraded by improving the organic coatings used to line the inside. The can manufacturers then embarked on a program of material and cost savings by reducing both the amount of steel and the amount of coating used in can making. These efforts were in part inspired by a new competitor – aluminum."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Beverage cans made from aluminum were first introduced in 1965. This was an exciting innovation for the packaging industry because the aluminum can was made with only two pieces – a body and an end. This made production easier. Some of the reasons for the aluminum can’s acceptance were its ductility, its support of carbonation pressure, its lighter weight and the fact that aluminum does not rust. Both steel and aluminum cans used an easy-open end tab but the aluminum tab was much easier to make. Perhaps the most critical element in the aluminum can’s market success was its recycling value. Aluminum can recycling excelled economically in the competition with steel because of the efficiencies aluminum cans realized in making new cans from recycled materials compared with 100 percent virgin aluminum. Steel did not realize similar economies in the recycling process."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Prior to 1970, can makers, customers and consumers alike were unaware of the impact that the mining and manufacturing of steel or aluminum had on the environment. The concept of natural resource preservation was not an issue of great importance and the low growth of population during these early years further de-emphasized concerns for resource depletion. Both industries, however, came to realize the importance of reducing their impact on the environment in the late 1960s and early 1970s as a new environmentally conscious generation emerged. Manufacturers began to recognize the economics of recycling, namely lower manufacturing costs from using less material and less energy. By the 1980s and 1990s, recycling had become a way of life. Aluminum can recycling has become a billion-dollar business and one of the world’s most successful environmental enterprises. Over the years, the aluminum can has come to be known as America’s most recyclable package, with over 60 percent of cans being recycled annually."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Advances in can manufacturing technology have also brought us lighter aluminum cans. In 1972, one pound of aluminum yielded only 21.75 cans. Today, by using less material to make each can, one pound of aluminum makes approximately 32 cans – a 47 percent improvement. Just the lightening of can ends makes a huge difference. When you multiply the savings by the 100 billion cans that are made each year, the weight and savings are phenomenal – over 200 million pounds of aluminum!"
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g08",
-     "instruction": "Reading Passage has seven paragraphs A – G. From the list of headings below choose the most suitable headings for paragraphs B – G. Write the appropriate number (i – xi) in boxes 27-32 on your answer sheet. NB There are more headings than paragraphs, so you will not use them all. 33. 1922\n34. 1812\n35. 1813\n36. 1965\n37. 1813\n38. 1940",
-     "wordLimit": "",
-     "qtype": "matching_headings",
+     "groupId": "p3.q27-32",
      "startQ": 27,
      "endQ": 32,
-     "stimulusSegments": [
-      "List of headings\ni The Invention of the Aluminium Can\nii Technological Breakthroughs\niii Canning and the Beer Industry\niv The Invention\nv Canning and War\nvi Further Manufacturing Advances\nvii Problems with Spoiled Contents\nviii Expansion of the Industry\nix Today’s Uses for Canning\nx Drinks Canning\nxi Cans and The Environment",
-      "Questions 33-38\nThe first list (questions 33-38) is a list of dates of events in Reading Passage. The second list (A – G) is a list of the events. Match the year with the correct event in the history of the can.",
-      "List of dates"
-     ],
-     "sharedOptions": [
-      {
-       "letter": "A",
-       "text": "Mass production techniques revolutionized the canning process."
-      },
-      {
-       "letter": "B",
-       "text": "Tinned food was tested by military authorities."
-      },
-      {
-       "letter": "C",
-       "text": "Today’s canning material was first introduced."
-      },
-      {
-       "letter": "D",
-       "text": "The first American canning factory was opened."
-      },
-      {
-       "letter": "E",
-       "text": "Tin was used in the canning process for the first time."
-      },
-      {
-       "letter": "F",
-       "text": "The canning of fizzy drinks began."
-      },
-      {
-       "letter": "G",
-       "text": "The first business canning plant was opened."
-      }
-     ],
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage has seven paragraphs A – G. From the list of headings below choose the most suitable headings for paragraphs B – G. Write the appropriate number (i – xi) in boxes 27-32 on your answer sheet. NB There are more headings than paragraphs, so you will not use them all.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "The Invention of the Aluminium Can"
+       },
+       {
+        "id": "ii",
+        "text": "Technological Breakthroughs"
+       },
+       {
+        "id": "iii",
+        "text": "Canning and the Beer Industry"
+       },
+       {
+        "id": "iv",
+        "text": "The Invention"
+       },
+       {
+        "id": "v",
+        "text": "Canning and War"
+       },
+       {
+        "id": "vi",
+        "text": "Further Manufacturing Advances"
+       },
+       {
+        "id": "vii",
+        "text": "Problems with Spoiled Contents"
+       },
+       {
+        "id": "viii",
+        "text": "Expansion of the Industry"
+       },
+       {
+        "id": "ix",
+        "text": "Today’s Uses for Canning"
+       },
+       {
+        "id": "x",
+        "text": "Drinks Canning"
+       },
+       {
+        "id": "xi",
+        "text": "Cans and The Environment"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph B",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "viii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. Paragraph B",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "viii",
+        "value": "viii",
+        "accepted": [
+         "viii"
+        ]
        }
       },
       {
        "number": 28,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph C",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "ii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. Paragraph C",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
        }
       },
       {
        "number": 29,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph D",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "x",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. Paragraph D",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "x",
+        "value": "x",
+        "accepted": [
+         "x"
+        ]
        }
       },
       {
        "number": 30,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph E",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "i",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. Paragraph E",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
        }
       },
       {
        "number": 31,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph F",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "xi",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. Paragraph F",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "xi",
+        "value": "xi",
+        "accepted": [
+         "xi"
+        ]
        }
       },
       {
        "number": 32,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph G",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "vi",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. Paragraph G",
-        "elementPath": "children[48]"
+       "prompt": [
+        "Paragraph G"
+       ],
+       "answer": {
+        "raw": "vi",
+        "value": "vi",
+        "accepted": [
+         "vi"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[46]",
-      "rawExcerpt": "Questions 27-32\nReading Passage has seven paragraphs A – G. From the list of headings below choose the most suitable headings for paragraphs B – G. Write the appropriate number (i – xi) in boxes 27-32 on your answer shee 33. 1922\n34. 1812\n3"
+      "headerLine": 76,
+      "lineRange": [
+       76,
+       95
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-32",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage has seven paragraphs A – G. From the list of headings below choose the most suitable headings for paragraphs B – G. Write the appropriate number (i – xi) in boxes 27-32 on your answer sheet. NB There are more headings than paragraphs, so you will not use them all.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i The Invention of the Aluminium Can",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii Technological Breakthroughs",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii Canning and the Beer Industry",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv The Invention",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v Canning and War",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi Further Manufacturing Advances",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii Problems with Spoiled Contents",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii Expansion of the Industry",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix Today’s Uses for Canning",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "x Drinks Canning",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "xi Cans and The Environment",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. Paragraph F",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. Paragraph G",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g09",
-     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 39-40 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q33-38",
+     "startQ": 33,
+     "endQ": 38,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The first list (questions 33-38) is a list of dates of events in Reading Passage. The second list (A – G) is a list of the events. Match the year with the correct event in the history of the can.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of events",
+      "options": [
+       {
+        "id": "A",
+        "text": "Mass production techniques revolutionized the canning process."
+       },
+       {
+        "id": "B",
+        "text": "Tinned food was tested by military authorities."
+       },
+       {
+        "id": "C",
+        "text": "Today’s canning material was first introduced."
+       },
+       {
+        "id": "D",
+        "text": "The first American canning factory was opened."
+       },
+       {
+        "id": "E",
+        "text": "Tin was used in the canning process for the first time."
+       },
+       {
+        "id": "F",
+        "text": "The canning of fizzy drinks began."
+       },
+       {
+        "id": "G",
+        "text": "The first business canning plant was opened."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "matching_features",
+       "prompt": [
+        "1922"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "matching_features",
+       "prompt": [
+        "1812"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "matching_features",
+       "prompt": [
+        "1813"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "matching_features",
+       "prompt": [
+        "1965"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "matching_features",
+       "prompt": [
+        "1813"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "matching_features",
+       "prompt": [
+        "1940"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 96,
+      "lineRange": [
+       96,
+       112
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 33-38",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The first list (questions 33-38) is a list of dates of events in Reading Passage. The second list (A – G) is a list of the events. Match the year with the correct event in the history of the can.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of events",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "A Mass production techniques revolutionized the canning process.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Tinned food was tested by military authorities.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Today’s canning material was first introduced.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D The first American canning factory was opened.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Tin was used in the canning process for the first time.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F The canning of fizzy drinks began.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G The first business canning plant was opened.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of dates",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "33. 1922",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. 1812",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. 1813",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. 1965",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. 1813",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. 1940",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q39-40",
      "startQ": 39,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 39-40 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 39,
        "type": "tfng",
-       "stem": {
-        "plain": "Recycling has helped reduce manufacturing overheads.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. Recycling has helped reduce manufacturing overheads.",
-        "elementPath": "children[55]"
+       "prompt": [
+        "Recycling has helped reduce manufacturing overheads."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 40,
        "type": "tfng",
-       "stem": {
-        "plain": "Aluminium can production costs have fallen by nearly 50% since 1972.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. Aluminium can production costs have fallen by nearly 50% since 1972.",
-        "elementPath": "children[55]"
+       "prompt": [
+        "Aluminium can production costs have fallen by nearly 50% since 1972."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[53]",
-      "rawExcerpt": "Questions 39-40\nDo the following statements agree with the information given in Reading Passage? In boxes 39-40 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information"
+      "headerLine": 113,
+      "lineRange": [
+       113,
+       119
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 39-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage? In boxes 39-40 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. Recycling has helped reduce manufacturing overheads.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. Aluminium can production costs have fallen by nearly 50% since 1972.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "J"
-   },
-   {
-    "number": 2,
-    "value": "D"
-   },
-   {
-    "number": 3,
-    "value": "E"
-   },
-   {
-    "number": 4,
-    "value": "B"
-   },
-   {
-    "number": 5,
-    "value": "E"
-   },
-   {
-    "number": 6,
-    "value": "Francis Galton"
-   },
-   {
-    "number": 7,
-    "value": "1924"
-   },
-   {
-    "number": 8,
-    "value": "A, E, F"
-   },
-   {
-    "number": 9,
-    "value": "A, E, F"
-   },
-   {
-    "number": 10,
-    "value": "A, E, F"
-   },
-   {
-    "number": 11,
-    "value": "A, B, D"
-   },
-   {
-    "number": 12,
-    "value": "A, B, D"
-   },
-   {
-    "number": 13,
-    "value": "A, B, D"
-   },
-   {
-    "number": 14,
-    "value": "Misidentified"
-   },
-   {
-    "number": 15,
-    "value": "Emotions"
-   },
-   {
-    "number": 16,
-    "value": "Cultural background"
-   },
-   {
-    "number": 17,
-    "value": "Isolated"
-   },
-   {
-    "number": 18,
-    "value": "Exposed"
-   },
-   {
-    "number": 19,
-    "value": "C"
-   },
-   {
-    "number": 20,
-    "value": "A"
-   },
-   {
-    "number": 21,
-    "value": "D"
-   },
-   {
-    "number": 22,
-    "value": "H"
-   },
-   {
-    "number": 23,
-    "value": "D"
-   },
-   {
-    "number": 24,
-    "value": "B"
-   },
-   {
-    "number": 25,
-    "value": "B, D"
-   },
-   {
-    "number": 26,
-    "value": "B, D"
-   },
-   {
-    "number": 27,
-    "value": "viii"
-   },
-   {
-    "number": 28,
-    "value": "ii"
-   },
-   {
-    "number": 29,
-    "value": "x"
-   },
-   {
-    "number": 30,
-    "value": "i"
-   },
-   {
-    "number": 31,
-    "value": "xi"
-   },
-   {
-    "number": 32,
-    "value": "vi"
-   },
-   {
-    "number": 33,
-    "value": "A"
-   },
-   {
-    "number": 34,
-    "value": "D"
-   },
-   {
-    "number": 35,
-    "value": "B"
-   },
-   {
-    "number": 36,
-    "value": "C"
-   },
-   {
-    "number": 37,
-    "value": "G"
-   },
-   {
-    "number": 38,
-    "value": "F"
-   },
-   {
-    "number": 39,
-    "value": "True"
-   },
-   {
-    "number": 40,
-    "value": "False"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     10
-    ],
-    "instruction": "Choose the correct letters in the following options. Write your answers in boxes 8-10 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     11,
-     13
-    ],
-    "instruction": "Choose the correct letters in the following options. Write your answers in boxes 11-13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "Choose two letters from the A-E. Write your answers in boxes 25-26 on your answer sheet Which TWO of the following state"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 26,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "3ec7163607ea35eab5a61623d18737ff9e9a9503a3a3102ea2006853fbd56d46"
+ "metrics": {
+  "passages": 3,
+  "groups": 10,
+  "questionsInSource": 40,
+  "productionQuestions": 37,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "22e8db7fbc796d2ba79964d0eed865cbef8cee8a832950793de94524bec4772e"
 }

@@ -1,308 +1,853 @@
 {
  "id": "reading.test-0263.668c2f40",
  "module": "reading",
+ "slug": "ielts-reading-test-263",
  "sourceNumbers": [
   263
  ],
- "slug": "ielts-reading-test-263",
  "title": "IELTS Academic Reading Test 263",
- "kind": "full_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-263/index.html",
-   "sha256": "56b63857c99faa4a0c0fa3cc1e7659e4b80160292e3e7189db8bdd8affac3ffc",
-   "manifestHashMatch": true,
+   "sha256": "968dada829a7edef04d4987137d070673d4b257cacf853a81ee992380dbf9586",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-263/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "B"
+   },
+   {
+    "number": 2,
+    "raw": "A"
+   },
+   {
+    "number": 3,
+    "raw": "F"
+   },
+   {
+    "number": 4,
+    "raw": "C"
+   },
+   {
+    "number": 5,
+    "raw": "True"
+   },
+   {
+    "number": 6,
+    "raw": "Not given"
+   },
+   {
+    "number": 7,
+    "raw": "True"
+   },
+   {
+    "number": 8,
+    "raw": "False"
+   },
+   {
+    "number": 9,
+    "raw": "B"
+   },
+   {
+    "number": 10,
+    "raw": "B"
+   },
+   {
+    "number": 11,
+    "raw": "C"
+   },
+   {
+    "number": 12,
+    "raw": "D"
+   },
+   {
+    "number": 13,
+    "raw": "A"
+   },
+   {
+    "number": 14,
+    "raw": "F"
+   },
+   {
+    "number": 15,
+    "raw": "B"
+   },
+   {
+    "number": 16,
+    "raw": "G"
+   },
+   {
+    "number": 17,
+    "raw": "C"
+   },
+   {
+    "number": 18,
+    "raw": "Not given"
+   },
+   {
+    "number": 19,
+    "raw": "Yes"
+   },
+   {
+    "number": 20,
+    "raw": "No"
+   },
+   {
+    "number": 21,
+    "raw": "Yes"
+   },
+   {
+    "number": 22,
+    "raw": "(star-stock) analysts"
+   },
+   {
+    "number": 23,
+    "raw": "Star performer"
+   },
+   {
+    "number": 24,
+    "raw": "Working environment"
+   },
+   {
+    "number": 25,
+    "raw": "Salary"
+   },
+   {
+    "number": 26,
+    "raw": "Rivals"
+   },
+   {
+    "number": 27,
+    "raw": "D"
+   },
+   {
+    "number": 28,
+    "raw": "C"
+   },
+   {
+    "number": 29,
+    "raw": "B"
+   },
+   {
+    "number": 30,
+    "raw": "C"
+   },
+   {
+    "number": 31,
+    "raw": "C"
+   },
+   {
+    "number": 32,
+    "raw": "B"
+   },
+   {
+    "number": 33,
+    "raw": "E"
+   },
+   {
+    "number": 34,
+    "raw": "D"
+   },
+   {
+    "number": 35,
+    "raw": "F"
+   },
+   {
+    "number": 36,
+    "raw": "Not given"
+   },
+   {
+    "number": 37,
+    "raw": "Yes"
+   },
+   {
+    "number": 38,
+    "raw": "Yes"
+   },
+   {
+    "number": 39,
+    "raw": "No"
+   },
+   {
+    "number": 40,
+    "raw": "No"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Plant Scents",
    "paragraphs": [
-    "A Everyone is familiar with scented flowers, and many people have heard that floral Odors help the plant attract pollinators. This common notion is mostly correct, but it is surprising how little scientific proof of it exists. Of course, not all flowers are pollinated by biological agents – for example, many grasses are wind-pollinated – but the flowers of the grasses may still emit volatiles. In fact, plants emit organic molecules all the time, although they may not be obvious to the human nose. As for flower scents that we can detect with our noses, bouquets that attract moths and butterflies generally smell “sweet,” and those that attract certain flies seem “rotten” to us.",
-    "B The release of volatiles from vegetative parts of the plant is familiar, although until recently the physiological functions of these chemicals were less clear and had received much less attention from scientists. When the trunk of a pine tree is injured – for example, when a beetle tries to burrow into it – it exudes a very smelly resin. This resin consists mostly of terpenes – hydrocarbons with a backbone of 10, 15 or 20 carbons that may also contain atoms of oxygen. The heavier C20 terpenes, called diterpenes, are glue-like and can cover and immobilize insects as they plug the hole. This defense mechanism is as ancient as it is effective: Many samples of fossilized resin, or amber, contain the remains of insects trapped inside. Many other plants emit volatiles when injured, and in some cases the emitted signal helps defend the plant. For example, (Z)-3-hexenyl acetate, which is known as a “green leaf volatile” because it is emitted by many plants upon injury, deters females of the moth Heliothis virescens from laying eggs on injured tobacco plants. Interestingly, the profile of emitted tobacco volatiles is different at night than during the day, and it is the nocturnal blend, rich in several (Z)-3-hexen-1-olesters, that is most effective in repelling the night-active H. virescens moths.",
-    "C Herbivore induced volatiles often serve as indirect defenses. These bulwarks exist in a variety of plant species, including corn, beans, and the model plant species Arabidopsis thaliana. Plants not only emit volatiles acutely, at the site where caterpillars, mites, aphids or similar insects are eating them but also generally from non-damaged parts of the plant. These signals attract a variety of predatory insects that prey on the plant-eaters. For example, some parasitic wasps can detect the volatile signature of a damaged plant and will lay their eggs inside the offending caterpillar; eventually, the wasp eggs hatch, and the emerging larvae feed on the caterpillar from the inside hatch, and the emerging larvae feed on the caterpillar from the inside out. The growth of infected caterpillars is retarded considerably, to the benefit of the plant. Similarly, volatiles released by plants in response to herbivore egg laying can attract parasites of the eggs, thereby preventing them from hatching and avoiding the onslaught of hungry herbivores that would have emerged. Plant volatiles can also be used as a kind of currency in some very indirect defensive schemes. In the rainforest understory tree Leonardoxa Africana, ants of the species Petalomyrmex phylax patrol young leaves and attack any herbivorous insects that they encounter. The young leaves emit high levels of the volatile compound methyl salicylate, a compound that the ants use either as a pheromone or as an antiseptic in their nests. It appears that methyl salicylate is both an attractant and a reward offered by the tree to get the ants to perform this valuable deterrent role.",
-    "D Floral scent has a strong impact on the economic success of many agricultural crops that rely on insect pollinators, including fruit trees such as the bee-pollinated cherry, apple, apricot and peach, as well as vegetables and tropical plants such as papaya. Pollination not only affects crop yield, but also the quality and efficiency of crop production. Many crops require most, if not all, ovules to be fertilized for optimum fruit size and shape. A decrease in fragrance emission reduces the ability of flowers to attract pollinators and results in considerable losses for growers, particularly for introduced species that had a specialized pollinator in their place of origin. This problem has been exacerbated by recent disease epidemics that have killed many honeybees, the major insect pollinators in the United States.",
-    "E One means by which plant breeders circumvent the pollination problem is by breeding self-compatible, or apomictic, varieties that do not require fertilization. Although this solution is adequate, its drawbacks include near genetic uniformity and consequent susceptibility to pathogens. Some growers have attempted to enhance honeybee foraging by spraying scent compounds on orchard trees, but this approach was costly, had to be repeated, had potentially toxic effects on the soil or local biota, and, in the end, proved to be inefficient. The poor effectiveness of this strategy probably reflects inherent limitations of the artificial, topically applied compounds, which clearly fail to convey the appropriate message to the bees. For example, general spraying of the volatile mixture cannot tell the insects where exactly the blossoms are. Clearly, a more refined strategy is needed. The ability to enhance existing floral scent, which could all be accomplished by genetic engineering, would allow us to manipulate the types of insect pollinators and the frequency of their visits. Moreover, the metabolic engineering of fragrance could increase crop protection against pathogens and pests.",
-    "F Genetic manipulation of the scent will also benefit the floriculture industry. Ornamentals, including cut flowers, foliage and potted plants, play an important aesthetic role in human life. Unfortunately, traditional breeding has often produced cultivars with improved vase life, shipping characteristics, color and shape while sacrificing desirable perfumes. The loss of scent among ornamentals, which have a worldwide value of more than $30 billion, makes them important targets for the genetic manipulation of flower fragrance. Some work has already begun in this area, as several groups have created petunia and carnation plants that express the linalool synthase gene from C. Breweri. These experiments are still preliminary: For technical reasons, the gene was expressed everywhere in the plant, and although the transgenic plants did create small amounts of linalool, the level was below the threshold of detection for the human nose. Similar experiments in tobacco used genes for other monoterpene synthases, such as the one that produces limonene, but gave similar results.",
-    "G The next generation of experiments, already in progress, includes sophisticated schemes that target the expression of scent genes specifically to flowers or other organs – such as special glands that can store antimicrobial or herbivore-repellent compounds."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Everyone is familiar with scented flowers, and many people have heard that floral Odors help the plant attract pollinators. This common notion is mostly correct, but it is surprising how little scientific proof of it exists. Of course, not all flowers are pollinated by biological agents – for example, many grasses are wind-pollinated – but the flowers of the grasses may still emit volatiles. In fact, plants emit organic molecules all the time, although they may not be obvious to the human nose. As for flower scents that we can detect with our noses, bouquets that attract moths and butterflies generally smell “sweet,” and those that attract certain flies seem “rotten” to us."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The release of volatiles from vegetative parts of the plant is familiar, although until recently the physiological functions of these chemicals were less clear and had received much less attention from scientists. When the trunk of a pine tree is injured – for example, when a beetle tries to burrow into it – it exudes a very smelly resin. This resin consists mostly of terpenes – hydrocarbons with a backbone of 10, 15 or 20 carbons that may also contain atoms of oxygen. The heavier C20 terpenes, called diterpenes, are glue-like and can cover and immobilize insects as they plug the hole. This defense mechanism is as ancient as it is effective: Many samples of fossilized resin, or amber, contain the remains of insects trapped inside. Many other plants emit volatiles when injured, and in some cases the emitted signal helps defend the plant. For example, (Z)-3-hexenyl acetate, which is known as a “green leaf volatile” because it is emitted by many plants upon injury, deters females of the moth Heliothis virescens from laying eggs on injured tobacco plants. Interestingly, the profile of emitted tobacco volatiles is different at night than during the day, and it is the nocturnal blend, rich in several (Z)-3-hexen-1-olesters, that is most effective in repelling the night-active H. virescens moths."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Herbivore induced volatiles often serve as indirect defenses. These bulwarks exist in a variety of plant species, including corn, beans, and the model plant species Arabidopsis thaliana. Plants not only emit volatiles acutely, at the site where caterpillars, mites, aphids or similar insects are eating them but also generally from non-damaged parts of the plant. These signals attract a variety of predatory insects that prey on the plant-eaters. For example, some parasitic wasps can detect the volatile signature of a damaged plant and will lay their eggs inside the offending caterpillar; eventually, the wasp eggs hatch, and the emerging larvae feed on the caterpillar from the inside hatch, and the emerging larvae feed on the caterpillar from the inside out. The growth of infected caterpillars is retarded considerably, to the benefit of the plant. Similarly, volatiles released by plants in response to herbivore egg laying can attract parasites of the eggs, thereby preventing them from hatching and avoiding the onslaught of hungry herbivores that would have emerged. Plant volatiles can also be used as a kind of currency in some very indirect defensive schemes. In the rainforest understory tree Leonardoxa Africana, ants of the species Petalomyrmex phylax patrol young leaves and attack any herbivorous insects that they encounter. The young leaves emit high levels of the volatile compound methyl salicylate, a compound that the ants use either as a pheromone or as an antiseptic in their nests. It appears that methyl salicylate is both an attractant and a reward offered by the tree to get the ants to perform this valuable deterrent role."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Floral scent has a strong impact on the economic success of many agricultural crops that rely on insect pollinators, including fruit trees such as the bee-pollinated cherry, apple, apricot and peach, as well as vegetables and tropical plants such as papaya. Pollination not only affects crop yield, but also the quality and efficiency of crop production. Many crops require most, if not all, ovules to be fertilized for optimum fruit size and shape. A decrease in fragrance emission reduces the ability of flowers to attract pollinators and results in considerable losses for growers, particularly for introduced species that had a specialized pollinator in their place of origin. This problem has been exacerbated by recent disease epidemics that have killed many honeybees, the major insect pollinators in the United States."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "One means by which plant breeders circumvent the pollination problem is by breeding self-compatible, or apomictic, varieties that do not require fertilization. Although this solution is adequate, its drawbacks include near genetic uniformity and consequent susceptibility to pathogens. Some growers have attempted to enhance honeybee foraging by spraying scent compounds on orchard trees, but this approach was costly, had to be repeated, had potentially toxic effects on the soil or local biota, and, in the end, proved to be inefficient. The poor effectiveness of this strategy probably reflects inherent limitations of the artificial, topically applied compounds, which clearly fail to convey the appropriate message to the bees. For example, general spraying of the volatile mixture cannot tell the insects where exactly the blossoms are. Clearly, a more refined strategy is needed. The ability to enhance existing floral scent, which could all be accomplished by genetic engineering, would allow us to manipulate the types of insect pollinators and the frequency of their visits. Moreover, the metabolic engineering of fragrance could increase crop protection against pathogens and pests."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Genetic manipulation of the scent will also benefit the floriculture industry. Ornamentals, including cut flowers, foliage and potted plants, play an important aesthetic role in human life. Unfortunately, traditional breeding has often produced cultivars with improved vase life, shipping characteristics, color and shape while sacrificing desirable perfumes. The loss of scent among ornamentals, which have a worldwide value of more than $30 billion, makes them important targets for the genetic manipulation of flower fragrance. Some work has already begun in this area, as several groups have created petunia and carnation plants that express the linalool synthase gene from C. Breweri. These experiments are still preliminary: For technical reasons, the gene was expressed everywhere in the plant, and although the transgenic plants did create small amounts of linalool, the level was below the threshold of detection for the human nose. Similar experiments in tobacco used genes for other monoterpene synthases, such as the one that produces limonene, but gave similar results."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "The next generation of experiments, already in progress, includes sophisticated schemes that target the expression of scent genes specifically to flowers or other organs – such as special glands that can store antimicrobial or herbivore-repellent compounds."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-04",
      "startQ": 1,
      "endQ": 4,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "Substance released to help plants themselves.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. Substance released to help plants themselves.",
-        "elementPath": "children[9]"
+       "prompt": [
+        "Substance released to help plants themselves."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "Scent helps plant’s pollination.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. Scent helps plant’s pollination.",
-        "elementPath": "children[9]"
+       "prompt": [
+        "Scent helps plant’s pollination."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "Practice on genetic experiment of fragrance.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. Practice on genetic experiment of fragrance.",
-        "elementPath": "children[9]"
+       "prompt": [
+        "Practice on genetic experiment of fragrance."
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "Plant’s scent attracts herbivore’s enemy for protection.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. Plant’s scent attracts herbivore’s enemy for protection.",
-        "elementPath": "children[9]"
+       "prompt": [
+        "Plant’s scent attracts herbivore’s enemy for protection."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[8]",
-      "rawExcerpt": "Questions 1-4\nThe reading passage has seven paragraphs A-G. Which paragraph contains the following information?"
+      "headerLine": 8,
+      "lineRange": [
+       8,
+       13
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-4",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. Substance released to help plants themselves.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. Scent helps plant’s pollination.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. Practice on genetic experiment of fragrance.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. Plant’s scent attracts herbivore’s enemy for protection.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 5-8 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q05-08",
      "startQ": 5,
      "endQ": 8,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 5-8 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 5,
        "type": "tfng",
-       "stem": {
-        "plain": "We have few evidence to support the idea that scent attracts pollinators.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. We have few evidence to support the idea that scent attracts pollinators.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "We have few evidence to support the idea that scent attracts pollinators."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 6,
        "type": "tfng",
-       "stem": {
-        "plain": "Heliothis virescens won’t eat those tobacco leaves on which they laid eggs.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. Heliothis virescens won’t eat those tobacco leaves on which they laid eggs.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Heliothis virescens won’t eat those tobacco leaves on which they laid eggs."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "Certain ants are attracted by volatiles to guard plants in rainforest.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. Certain ants are attracted by volatiles to guard plants in rainforest.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Certain ants are attracted by volatiles to guard plants in rainforest."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 8,
        "type": "tfng",
-       "stem": {
-        "plain": "Pollination only affects fruit trees’ production rather than other crop trees.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. Pollination only affects fruit trees’ production rather than other crop trees.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Pollination only affects fruit trees’ production rather than other crop trees."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[10]",
-      "rawExcerpt": "Questions 5-8\nDo the following statements agree with the information given in reading passage? In boxes 5-8 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT"
+      "headerLine": 14,
+      "lineRange": [
+       14,
+       22
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 5-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in reading passage? In boxes 5-8 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. We have few evidence to support the idea that scent attracts pollinators.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. Heliothis virescens won’t eat those tobacco leaves on which they laid eggs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. Certain ants are attracted by volatiles to guard plants in rainforest.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. Pollination only affects fruit trees’ production rather than other crop trees.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q09-13",
      "startQ": 9,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 9,
        "type": "mcq_single",
-       "stem": {
-        "plain": "How do wasps protect plants when they are attracted by scents according to the passage?",
-        "segments": null
-       },
+       "prompt": [
+        "How do wasps protect plants when they are attracted by scents according to the passage?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "plants induce wasps to prey herbivore."
+        },
+        {
+         "id": "B",
+         "text": "wasps lay eggs into caterpillars."
+        },
+        {
+         "id": "C",
+         "text": "wasps laid eggs on plants to expel herbivore."
+        },
+        {
+         "id": "D",
+         "text": "offending caterpillars and wasp eggs coexist well."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9. How do wasps protect plants when they are attracted by scents according to the passage?",
-        "elementPath": "children[14]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 10,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What reason caused a number of honeybees decline in the United States.",
-        "segments": null
-       },
+       "prompt": [
+        "What reason caused a number of honeybees decline in the United States."
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "pollination process"
+        },
+        {
+         "id": "B",
+         "text": "spread illness"
+        },
+        {
+         "id": "C",
+         "text": "crop trees are poisonous"
+        },
+        {
+         "id": "D",
+         "text": "grower’s overlook"
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "10. What reason caused a number of honeybees decline in the United States.",
-        "elementPath": "children[15]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 11,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Which of the following drawbacks about artificial fragrance is NOT mentioned in the passage?",
-        "segments": null
-       },
+       "prompt": [
+        "Which of the following drawbacks about artificial fragrance is NOT mentioned in the passage?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "it’s very expensive"
+        },
+        {
+         "id": "B",
+         "text": "it can’t tell correct information to pollinators."
+        },
+        {
+         "id": "C",
+         "text": "it needs massive manual labour"
+        },
+        {
+         "id": "D",
+         "text": "it poisons local environment"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11. Which of the following drawbacks about artificial fragrance is NOT mentioned in the passage?",
-        "elementPath": "children[16]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 12,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The number of $30 billion quoted in the passage is to illustrate the fact that:",
-        "segments": null
-       },
+       "prompt": [
+        "The number of $30 billion quoted in the passage is to illustrate the fact that:"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "favorable perfumes are made from ornamental flowers."
+        },
+        {
+         "id": "B",
+         "text": "traditional floriculture industry needs reform."
+        },
+        {
+         "id": "C",
+         "text": "genetic operation on scent can make a vast profit."
+        },
+        {
+         "id": "D",
+         "text": "Scent plays a significant role in Ornamental industry."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12. The number of $30 billion quoted in the passage is to illustrate the fact that:",
-        "elementPath": "children[17]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 13,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is weakness of genetic experiments on fragrance?",
-        "segments": null
-       },
+       "prompt": [
+        "What is weakness of genetic experiments on fragrance?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Linalool level is too low to be smelt by nose"
+        },
+        {
+         "id": "B",
+         "text": "no progress made in linalool emission."
+        },
+        {
+         "id": "C",
+         "text": "experiment on tobacco has a better result"
+        },
+        {
+         "id": "D",
+         "text": "transgenic plants produce intense scent"
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13. What is weakness of genetic experiments on fragrance?",
-        "elementPath": "children[18]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[13]",
-      "rawExcerpt": "Questions 9-13\nChoose the correct letter, A, B, C or D."
+      "headerLine": 23,
+      "lineRange": [
+       23,
+       49
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9. How do wasps protect plants when they are attracted by scents according to the passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A plants induce wasps to prey herbivore.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B wasps lay eggs into caterpillars.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C wasps laid eggs on plants to expel herbivore.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D offending caterpillars and wasp eggs coexist well.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10. What reason caused a number of honeybees decline in the United States.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A pollination process",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B spread illness",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C crop trees are poisonous",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D grower’s overlook",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11. Which of the following drawbacks about artificial fragrance is NOT mentioned in the passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A it’s very expensive",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B it can’t tell correct information to pollinators.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C it needs massive manual labour",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D it poisons local environment",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. The number of $30 billion quoted in the passage is to illustrate the fact that:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A favorable perfumes are made from ornamental flowers.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B traditional floriculture industry needs reform.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C genetic operation on scent can make a vast profit.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Scent plays a significant role in Ornamental industry.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. What is weakness of genetic experiments on fragrance?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Linalool level is too low to be smelt by nose",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B no progress made in linalool emission.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C experiment on tobacco has a better result",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D transgenic plants produce intense scent",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -311,370 +856,484 @@
    "passageNumber": 2,
    "title": "We have Star performers!",
    "paragraphs": [
-    "A The difference between companies is people. With capital and technology in plentiful supply, the critical resource for companies in the knowledge era will be human talent. Companies full of achievers will, by definition, outperform organisations of plodders. Ergo, compete ferociously for the best people. Poach and pamper stars; ruthlessly weed out second-raters. This, in essence, has been the recruitment strategy of the ambitious company of the past decade. The ‘talent mindset’ was given definitive form in two reports by the consultancy McKinsey famously entitled The War for Talent. Although the intensity of the warfare subsequently subsided along with the air in the internet bubble, it has been warming up again as the economy tightens: labour shortages, for example, are the reason the government has laid out the welcome mat for immigrants from the new Europe.",
-    "B Yet while the diagnosis – people are important – is evident to the point of platitude, the apparently logical prescription – hire the best – like so much in management is not only not obvious: it is in fact profoundly wrong. The first suspicions dawned with the crash to earth of the dotcom meteors, which showed that dumb is dumb whatever the IQ of those who perpetrate it. The point was illuminated in brilliant relief by Enron, whose leaders, as a New Yorker article called ‘The Talent Myth’ entertainingly related, were so convinced of their own cleverness that they never twigged that collective intelligence is not the sum of a lot of individual intelligence. In fact, in a profound sense, the two are opposites. Enron believed in stars, noted author Malcolm Gladwell, because they didn’t believe in systems. But companies don’t just create: ‘they execute and compete and coordinate the efforts of many people, and the organisations that are most successful at that task are the ones where the system is the star’. The truth is that you can’t win the talent wars by hiring stars – only lose it. New light on why this should be so is thrown by an analysis of star behaviour in this months’ Harvard Business Review. In a study of the careers of 1,000 star-stock analysts in the 1990s, the researchers found that when a company recruited a star performer, three things happened.",
-    "C First, stardom doesn’t easily transfer from one organisation to another. In many cases, performance dropped sharply when high performers switched employers and in some instances never recovered. More of success than commonly supposed is due to the working environment – systems, processes, leadership, accumulated embedded learning that are absent in and can’t be transported to the new firm. Moreover, precisely because of their past stellar performance, stars were unwilling to learn new tricks and antagonised those (on whom they now unwittingly depended) who could teach them. So they moved, upping their salary as they did – 36 per cent moved on within three years, fast even for Wall Street. Second, group performance suffered as a result of tensions and resentment by rivals within the team. One respondent likened hiring a star to an organ transplant. The new organ can damage others by hogging the blood supply, other organs can start aching or threaten to stop working or the body can reject the transplants altogether, he said. ‘You should think about it very carefully before you do a transplant to a healthy body.’ Third, investors punished the offender by selling its stock. This is ironic since the motive for importing stars was often a suffering share price in the first place. Shareholders evidently believe that the company is overpaying, the hiree is cashing in on a glorious past rather than preparing for a glowing present, and a spending spree is in the offing.",
-    "D The result of mass star hirings as well as individual ones seems to confirm such doubts. Look at County NatWest and Barclays de Zoete Wedd, both of which hired teams of stars with loud fanfare to do great things in investment banking in the 1990s. Both failed dismally. Everyone accepts the cliche that people make the organisation – but much more does the organisation make the people. When researchers studied the performance of fund managers in the 1990s, they discovered that just 30 per cent of the variation in fund performance was due to the individual, compared to 70 per cent to the company-specific setting.",
-    "E That will be no surprise to those familiar with systems thinking. W Edwards Deming used to say that there was no point in beating up on people when 90 per cent of performance variation was down to the system within which they worked. Consistent improvement, he said, is a matter not of raising the level of individual intelligence, but of the learning of the organisation as a whole. The star system is glamorous – for the few. But it rarely benefits the company that thinks it is working it. And the knock-on consequences indirectly affect everyone else too. As one internet response to Gladwell’s New Yorker article put it: after Enron, ‘the rest of corporate America is stuck with overpaid, arrogant, underachieving, and relatively useless talent.’",
-    "F Football is another illustration of the star vs systems strategic choice. As with investment banks and stockbrokers, it seems obvious that success should ultimately be down to money. Great players are scarce and expensive. So the club that can afford more of them than anyone else will win. But the performance of Arsenal and Manchester United on one hand and Chelsea and Real Madrid on the other proves that it’s not as easy as that. While Chelsea and Real have the funds to be compulsive star collectors – as with Juan Sebastian Veron – they are less successful than Arsenal and United which, like Liverpool before them, have put much more emphasis on developing a setting within which stars-in-the-making can flourish. Significantly, Thierry Henry, Patrick Veira and Robert Pires are much bigger stars than when Arsenal bought them, their value (in all senses) enhanced by the Arsenal system. At Chelsea, by contrast, the only context is the stars themselves – managers with different outlooks come and go every couple of seasons. There is no settled system for the stars to blend into. The Chelsea context has not only not added value, but it has also subtracted it. The side is less than the sum of its exorbitantly expensive parts. Even Real Madrid’s galacticos, the most extravagantly gifted on the planet, are being outperformed by less talented but better-integrated Spanish sides. In football, too, stars are trumped by systems.",
-    "G So if not by hiring stars, how do you compete in the war for talent? You grow your own. This worked for investment analysts, where some companies were not only better at creating stars but also at retaining them. Because they had a much more sophisticated view of the interdependent relationship between star and system, they kept them longer without resorting to the exorbitant salaries that were so destructive to rivals."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The difference between companies is people. With capital and technology in plentiful supply, the critical resource for companies in the knowledge era will be human talent. Companies full of achievers will, by definition, outperform organisations of plodders. Ergo, compete ferociously for the best people. Poach and pamper stars; ruthlessly weed out second-raters. This, in essence, has been the recruitment strategy of the ambitious company of the past decade. The ‘talent mindset’ was given definitive form in two reports by the consultancy McKinsey famously entitled The War for Talent. Although the intensity of the warfare subsequently subsided along with the air in the internet bubble, it has been warming up again as the economy tightens: labour shortages, for example, are the reason the government has laid out the welcome mat for immigrants from the new Europe."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Yet while the diagnosis – people are important – is evident to the point of platitude, the apparently logical prescription – hire the best – like so much in management is not only not obvious: it is in fact profoundly wrong. The first suspicions dawned with the crash to earth of the dotcom meteors, which showed that dumb is dumb whatever the IQ of those who perpetrate it. The point was illuminated in brilliant relief by Enron, whose leaders, as a New Yorker article called ‘The Talent Myth’ entertainingly related, were so convinced of their own cleverness that they never twigged that collective intelligence is not the sum of a lot of individual intelligence. In fact, in a profound sense, the two are opposites. Enron believed in stars, noted author Malcolm Gladwell, because they didn’t believe in systems. But companies don’t just create: ‘they execute and compete and coordinate the efforts of many people, and the organisations that are most successful at that task are the ones where the system is the star’. The truth is that you can’t win the talent wars by hiring stars – only lose it. New light on why this should be so is thrown by an analysis of star behaviour in this months’ Harvard Business Review. In a study of the careers of 1,000 star-stock analysts in the 1990s, the researchers found that when a company recruited a star performer, three things happened."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "First, stardom doesn’t easily transfer from one organisation to another. In many cases, performance dropped sharply when high performers switched employers and in some instances never recovered. More of success than commonly supposed is due to the working environment – systems, processes, leadership, accumulated embedded learning that are absent in and can’t be transported to the new firm. Moreover, precisely because of their past stellar performance, stars were unwilling to learn new tricks and antagonised those (on whom they now unwittingly depended) who could teach them. So they moved, upping their salary as they did – 36 per cent moved on within three years, fast even for Wall Street. Second, group performance suffered as a result of tensions and resentment by rivals within the team. One respondent likened hiring a star to an organ transplant. The new organ can damage others by hogging the blood supply, other organs can start aching or threaten to stop working or the body can reject the transplants altogether, he said. ‘You should think about it very carefully before you do a transplant to a healthy body.’ Third, investors punished the offender by selling its stock. This is ironic since the motive for importing stars was often a suffering share price in the first place. Shareholders evidently believe that the company is overpaying, the hiree is cashing in on a glorious past rather than preparing for a glowing present, and a spending spree is in the offing."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "The result of mass star hirings as well as individual ones seems to confirm such doubts. Look at County NatWest and Barclays de Zoete Wedd, both of which hired teams of stars with loud fanfare to do great things in investment banking in the 1990s. Both failed dismally. Everyone accepts the cliche that people make the organisation – but much more does the organisation make the people. When researchers studied the performance of fund managers in the 1990s, they discovered that just 30 per cent of the variation in fund performance was due to the individual, compared to 70 per cent to the company-specific setting."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "That will be no surprise to those familiar with systems thinking. W Edwards Deming used to say that there was no point in beating up on people when 90 per cent of performance variation was down to the system within which they worked. Consistent improvement, he said, is a matter not of raising the level of individual intelligence, but of the learning of the organisation as a whole. The star system is glamorous – for the few. But it rarely benefits the company that thinks it is working it. And the knock-on consequences indirectly affect everyone else too. As one internet response to Gladwell’s New Yorker article put it: after Enron, ‘the rest of corporate America is stuck with overpaid, arrogant, underachieving, and relatively useless talent.’"
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Football is another illustration of the star vs systems strategic choice. As with investment banks and stockbrokers, it seems obvious that success should ultimately be down to money. Great players are scarce and expensive. So the club that can afford more of them than anyone else will win. But the performance of Arsenal and Manchester United on one hand and Chelsea and Real Madrid on the other proves that it’s not as easy as that. While Chelsea and Real have the funds to be compulsive star collectors – as with Juan Sebastian Veron – they are less successful than Arsenal and United which, like Liverpool before them, have put much more emphasis on developing a setting within which stars-in-the-making can flourish. Significantly, Thierry Henry, Patrick Veira and Robert Pires are much bigger stars than when Arsenal bought them, their value (in all senses) enhanced by the Arsenal system. At Chelsea, by contrast, the only context is the stars themselves – managers with different outlooks come and go every couple of seasons. There is no settled system for the stars to blend into. The Chelsea context has not only not added value, but it has also subtracted it. The side is less than the sum of its exorbitantly expensive parts. Even Real Madrid’s galacticos, the most extravagantly gifted on the planet, are being outperformed by less talented but better-integrated Spanish sides. In football, too, stars are trumped by systems."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "So if not by hiring stars, how do you compete in the war for talent? You grow your own. This worked for investment analysts, where some companies were not only better at creating stars but also at retaining them. Because they had a much more sophisticated view of the interdependent relationship between star and system, they kept them longer without resorting to the exorbitant salaries that were so destructive to rivals."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p2.q14-17",
      "startQ": 14,
      "endQ": 17,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "matching_information",
-       "stem": {
-        "plain": "One example from non-commerce/business settings that better system win bigger stars",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. One example from non-commerce/business settings that better system win bigger stars",
-        "elementPath": "children[28]"
+       "prompt": [
+        "One example from non-commerce/business settings that better system win bigger stars"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 15,
        "type": "matching_information",
-       "stem": {
-        "plain": "One failed company that believes stars rather than the system",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. One failed company that believes stars rather than the system",
-        "elementPath": "children[28]"
+       "prompt": [
+        "One failed company that believes stars rather than the system"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 16,
        "type": "matching_information",
-       "stem": {
-        "plain": "One suggestion that the author made to acquire employees than to win the competition nowadays",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. One suggestion that the author made to acquire employees than to win the competition nowadays",
-        "elementPath": "children[28]"
+       "prompt": [
+        "One suggestion that the author made to acquire employees than to win the competition nowadays"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
        }
       },
       {
        "number": 17,
        "type": "matching_information",
-       "stem": {
-        "plain": "One metaphor to human medical anatomy that illustrates the problems of hiring stars.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. One metaphor to human medical anatomy that illustrates the problems of hiring stars.",
-        "elementPath": "children[28]"
+       "prompt": [
+        "One metaphor to human medical anatomy that illustrates the problems of hiring stars."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[27]",
-      "rawExcerpt": "Questions 14-17\nThe reading passage has seven paragraphs A-G. Which paragraph contains the following information?"
+      "headerLine": 58,
+      "lineRange": [
+       58,
+       63
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-17",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The reading passage has seven paragraphs A-G. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. One example from non-commerce/business settings that better system win bigger stars",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. One failed company that believes stars rather than the system",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. One suggestion that the author made to acquire employees than to win the competition nowadays",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. One metaphor to human medical anatomy that illustrates the problems of hiring stars.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 18-21 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q18-21",
      "startQ": 18,
      "endQ": 21,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "ynng",
+     "answerControl": "ynng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 18-21 on your answer sheet, write",
+     "legend": [
+      "YES if the statement agrees with the views of the writer",
+      "NO if the statement contradicts the views of the writer",
+      "NOT GIVEN if it is impossible to say what the writer thinks about this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 18,
-       "type": "tfng",
-       "stem": {
-        "plain": "McKinsey who wrote The War for Talent had not expected the huge influence made by this book.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. McKinsey who wrote The War for Talent had not expected the huge influence made by this book.",
-        "elementPath": "children[31]"
+       "type": "ynng",
+       "prompt": [
+        "McKinsey who wrote The War for Talent had not expected the huge influence made by this book."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 19,
-       "type": "tfng",
-       "stem": {
-        "plain": "Economic condition becomes one of the factors which decide whether or not a country would prefer to hire foreign employees.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Yes",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. Economic condition becomes one of the factors which decide whether or not a country would prefer to hire foreign employees.",
-        "elementPath": "children[31]"
+       "type": "ynng",
+       "prompt": [
+        "Economic condition becomes one of the factors which decide whether or not a country would prefer to hire foreign employees."
+       ],
+       "answer": {
+        "raw": "Yes",
+        "value": "YES",
+        "accepted": [
+         "YES"
+        ]
        }
       },
       {
        "number": 20,
-       "type": "tfng",
-       "stem": {
-        "plain": "The collapse of Enron is caused totally by an unfortunate incident instead of company’s management mistake.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "No",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. The collapse of Enron is caused totally by an unfortunate incident instead of company’s management mistake.",
-        "elementPath": "children[31]"
+       "type": "ynng",
+       "prompt": [
+        "The collapse of Enron is caused totally by an unfortunate incident instead of company’s management mistake."
+       ],
+       "answer": {
+        "raw": "No",
+        "value": "NO",
+        "accepted": [
+         "NO"
+        ]
        }
       },
       {
        "number": 21,
-       "type": "tfng",
-       "stem": {
-        "plain": "Football clubs that focus making stars in the setting are better than simply collecting stars",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Yes",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. Football clubs that focus making stars in the setting are better than simply collecting stars",
-        "elementPath": "children[31]"
+       "type": "ynng",
+       "prompt": [
+        "Football clubs that focus making stars in the setting are better than simply collecting stars"
+       ],
+       "answer": {
+        "raw": "Yes",
+        "value": "YES",
+        "accepted": [
+         "YES"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[29]",
-      "rawExcerpt": "Questions 18-21\nDo the following statements agree with the information given in reading passage? In boxes 18-21 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views o"
+      "headerLine": 64,
+      "lineRange": [
+       64,
+       72
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 18-21",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in reading passage? In boxes 18-21 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "YES if the statement agrees with the views of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NO if the statement contradicts the views of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if it is impossible to say what the writer thinks about this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. McKinsey who wrote The War for Talent had not expected the huge influence made by this book.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Economic condition becomes one of the factors which decide whether or not a country would prefer to hire foreign employees.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. The collapse of Enron is caused totally by an unfortunate incident instead of company’s management mistake.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. Football clubs that focus making stars in the setting are better than simply collecting stars",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the reading passage for each answer.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q22-26",
      "startQ": 22,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the reading passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "An investigation carried out on 1000 ",
+         {
+          "blank": 22
+         },
+         "Participants of a survey by Harvard Business Review found a company hire a ",
+         {
+          "blank": 23
+         },
+         "has negative effects. For instance, they behave considerably worse in a new team than in the ",
+         {
+          "blank": 24
+         },
+         "that they used to be. They move faster than wall street and increase their ",
+         {
+          "blank": 25
+         },
+         "Secondly, they faced rejections or refuse from those ",
+         {
+          "blank": 26
+         },
+         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 22,
-       "type": "completion",
-       "stem": {
-        "plain": "An investigation carried out on 1000 (22) ______ Participants of a survey by Harvard Business Review found a company hire a (23) ______ has negative effects. For instance, they behave considerably worse in a new team than in the (24) ______ that they used to be. They move faster than wall street and increase their (25) ______ Secondly, they faced rejections or refuse from those (26) ______ within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share.",
-        "segments": [
-         "An investigation carried out on 1000",
-         {
-          "blank": 22
-         },
-         "Participants of a survey by Harvard Business Review found a company hire a",
-         {
-          "blank": 23
-         },
-         "has negative effects. For instance, they behave considerably worse in a new team than in the",
-         {
-          "blank": 24
-         },
-         "that they used to be. They move faster than wall street and increase their",
-         {
-          "blank": 25
-         },
-         "Secondly, they faced rejections or refuse from those",
-         {
-          "blank": 26
-         },
-         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(star-stock) analysts",
+        "value": "(star-stock) analysts",
+        "accepted": [
+         "star-stock analysts",
+         "analysts"
         ]
-       },
-       "options": null,
-       "correctAnswer": "(star-stock) analysts",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably wors",
-        "elementPath": "children[33]"
        }
       },
       {
        "number": 23,
-       "type": "completion",
-       "stem": {
-        "plain": "An investigation carried out on 1000 (22) ______ Participants of a survey by Harvard Business Review found a company hire a (23) ______ has negative effects. For instance, they behave considerably worse in a new team than in the (24) ______ that they used to be. They move faster than wall street and increase their (25) ______ Secondly, they faced rejections or refuse from those (26) ______ within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share.",
-        "segments": [
-         "An investigation carried out on 1000",
-         {
-          "blank": 22
-         },
-         "Participants of a survey by Harvard Business Review found a company hire a",
-         {
-          "blank": 23
-         },
-         "has negative effects. For instance, they behave considerably worse in a new team than in the",
-         {
-          "blank": 24
-         },
-         "that they used to be. They move faster than wall street and increase their",
-         {
-          "blank": 25
-         },
-         "Secondly, they faced rejections or refuse from those",
-         {
-          "blank": 26
-         },
-         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Star performer",
+        "value": "Star performer",
+        "accepted": [
+         "Star performer"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Star performer",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably wors",
-        "elementPath": "children[33]"
        }
       },
       {
        "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "An investigation carried out on 1000 (22) ______ Participants of a survey by Harvard Business Review found a company hire a (23) ______ has negative effects. For instance, they behave considerably worse in a new team than in the (24) ______ that they used to be. They move faster than wall street and increase their (25) ______ Secondly, they faced rejections or refuse from those (26) ______ within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share.",
-        "segments": [
-         "An investigation carried out on 1000",
-         {
-          "blank": 22
-         },
-         "Participants of a survey by Harvard Business Review found a company hire a",
-         {
-          "blank": 23
-         },
-         "has negative effects. For instance, they behave considerably worse in a new team than in the",
-         {
-          "blank": 24
-         },
-         "that they used to be. They move faster than wall street and increase their",
-         {
-          "blank": 25
-         },
-         "Secondly, they faced rejections or refuse from those",
-         {
-          "blank": 26
-         },
-         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Working environment",
+        "value": "Working environment",
+        "accepted": [
+         "Working environment"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Working environment",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably wors",
-        "elementPath": "children[33]"
        }
       },
       {
        "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "An investigation carried out on 1000 (22) ______ Participants of a survey by Harvard Business Review found a company hire a (23) ______ has negative effects. For instance, they behave considerably worse in a new team than in the (24) ______ that they used to be. They move faster than wall street and increase their (25) ______ Secondly, they faced rejections or refuse from those (26) ______ within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share.",
-        "segments": [
-         "An investigation carried out on 1000",
-         {
-          "blank": 22
-         },
-         "Participants of a survey by Harvard Business Review found a company hire a",
-         {
-          "blank": 23
-         },
-         "has negative effects. For instance, they behave considerably worse in a new team than in the",
-         {
-          "blank": 24
-         },
-         "that they used to be. They move faster than wall street and increase their",
-         {
-          "blank": 25
-         },
-         "Secondly, they faced rejections or refuse from those",
-         {
-          "blank": 26
-         },
-         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Salary",
+        "value": "Salary",
+        "accepted": [
+         "Salary"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Salary",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably wors",
-        "elementPath": "children[33]"
        }
       },
       {
        "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "An investigation carried out on 1000 (22) ______ Participants of a survey by Harvard Business Review found a company hire a (23) ______ has negative effects. For instance, they behave considerably worse in a new team than in the (24) ______ that they used to be. They move faster than wall street and increase their (25) ______ Secondly, they faced rejections or refuse from those (26) ______ within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share.",
-        "segments": [
-         "An investigation carried out on 1000",
-         {
-          "blank": 22
-         },
-         "Participants of a survey by Harvard Business Review found a company hire a",
-         {
-          "blank": 23
-         },
-         "has negative effects. For instance, they behave considerably worse in a new team than in the",
-         {
-          "blank": 24
-         },
-         "that they used to be. They move faster than wall street and increase their",
-         {
-          "blank": 25
-         },
-         "Secondly, they faced rejections or refuse from those",
-         {
-          "blank": 26
-         },
-         "within the team. Lastly, the one who made mistakes had been punished by selling his/her stock share."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Rivals",
+        "value": "Rivals",
+        "accepted": [
+         "Rivals"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Rivals",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably wors",
-        "elementPath": "children[33]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[32]",
-      "rawExcerpt": "Questions 22-26\nComplete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the reading passage for each answer."
+      "headerLine": 73,
+      "lineRange": [
+       73,
+       75
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 22-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN TWO WORDS from the reading passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "An investigation carried out on 1000 (22)………………. Participants of a survey by Harvard Business Review found a company hire a (23)……………… has negative effects. For instance, they behave considerably worse in a new team than in the (24)…………….. that they used to be. They move faster than wall street and increase their (25)…………………. Secondly, they faced rejections or refuse from those (26)…………….. within ",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -683,478 +1342,770 @@
    "passageNumber": 3,
    "title": "Compliance Or Noncompliance For Children",
    "paragraphs": [
-    "A Many Scientists believe that socialization takes a long process, while compliance is the outset of it. Accordingly, compliance for the education of children is the priority. Motivationally distinct forms of child compliance, mutually positive affect, and maternal control, observed in 3 control contexts in 103 dyads of mothers and their 26-41-month-old children, were examined as correlates of internalization, assessed using observations of children while alone with prohibited temptations and maternal ratings. One form of compliance (committed compliance), when the child appeared committed wholeheartedly to the maternal agenda and eager to endorse and accept it, was emphasized. Mother-child mutually positive affect was both a predictor and a concomitant of committed compliance. Children who shared positive effect with their mothers showed a high level of committed compliance and were also more internalized. Differences and similarities between children’s compliance with requests and prohibitions (“Do” vs. “Don’t” demand contexts) were also explored. Maternal “Dos” appeared more challenging to toddlers than the “Don’ts.” Some individual coherence of behavior was also found across both demand contexts. The implication of committed compliance for emerging internalized regulators of conduct is discussed.",
-    "B A number of parents were not easy to be aware of the compliance, some even overlooked their children’s noncompliance. Despite good education, these children did not follow the words from their parents on several occasion, especially boys in certain ages. Fortunately, this rate was acceptable, some parents could be patient with the noncompliance. Someone held that noncompliance is probably not a wrong thing. In order to determine the effects of different parental disciplinary techniques on young children’s compliance and noncompliance, mothers were trained to observe emotional incidents involving their own toddler-aged children. Reports of disciplinary encounters were analyzed in terms of the types of discipline used (reasoning, verbal prohibition, physical coercion, love withdrawal, and combinations thereof) and children’s responses to that discipline (compliance/ noncompliance and avoidance). The relation between compliance/ noncompliance and type of misdeed (harm to persons, harm to property, and lapses of self-control) was also analyzed. Results indicated that love withdrawal combined with other techniques was most effective in securing children’s compliance and that its effectiveness was not a function of the type of technique with which it was combined. Avoidant responses and affective reunification with the parent were more likely to follow love withdrawal than any other technique. Physical coercion was somewhat less effective than love withdrawal, while reasoning and verbal prohibition were not at all effective except when both were combined with physical coercion.",
-    "C “Noncompliant Children sometimes prefer to say to directly as they were younger, they are easy to deal with the relationship with contemporaries. When they are growing up. During the period that children are getting elder, who may learn to use more advanced approaches for their noncompliance. They are more skillful to negotiate or give reasons for refusal rather than show their opposite idea to parents directly.” Said Henry Porter, a scholar working in Psychology Institute of UK. He indicated that noncompliance means growth in some way, may have benefit for children. Many Experts held different viewpoints in recent years, they tried drilling compliance into children. His collaborator Wallace Friesen believed that Organizing a child’s daily activities so that they occur in the same order each day as much as possible. This first strategy for defiant children is ultimately the most important. Developing a routine helps a child to know what to expect and increases the chances that he or she will comply with things such as chores, homework, and hygiene requests. When undesirable activities occur in the same order at optimal times during the day, they become habits that are not questioned but done without thought.",
-    "Chances are that you have developed some type of routine for yourself in terms of showering, cleaning your house, or doing other types of work. You have an idea in your mind when you will do these things on a regular basis and this helps you to know what to expect. In fact, you have probably already been using most of these compliance strategies for yourself without realizing it. For children, without setting these expectations on a daily basis by making them part of a regular routine, they can become very upset. Just like adults, children think about what they plan to do that day and expect to be able to do what they want. So, when you come along and ask them to do something they weren’t already planning to do that day, this can result in automatic refusals and other undesirable defiant behaviors. However, by using this compliance strategy with defiant children, these activities are done almost every day in the same general order and the child expects to already do them.",
-    "D Doctor Steven Walson addressed that organizing fun activities to occur after frequently refused activities. This strategy also works as a positive reinforcer when the child complies with your requests. By arranging your day so that things often refused to occur right before highly preferred activities, you are able to eliminate defiant behavior and motivate your child’s behavior of doing the undesirable activity. This is not to be presented in a way that the preferred activity is only allowed if a defiant child does the non-preferred activity. However, you can word your request in a way so that your child assumes that you have to do the non-preferred activity before moving on to the next preferred activity. For example, you do not want to say something such as, “If you clean your room we can play a game.” Instead of the word your request like this, “As soon as you are done cleaning your room we will be able to play that really fun game you wanted to play.”",
-    "E Psychologist Paul Edith insisted praise is the best way to make children comply with. This is probably a common term you are used to hearing by now. If you praise your child’s behavior, he or she will be more likely to do that behavior. So, it is essential to use praise when working with defiant children. It also provides your child with positive attention. However, it is important to know how to praise children in a way that encourages future automatic reinforcement for your child when doing a similar behavior."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Many Scientists believe that socialization takes a long process, while compliance is the outset of it. Accordingly, compliance for the education of children is the priority. Motivationally distinct forms of child compliance, mutually positive affect, and maternal control, observed in 3 control contexts in 103 dyads of mothers and their 26-41-month-old children, were examined as correlates of internalization, assessed using observations of children while alone with prohibited temptations and maternal ratings. One form of compliance (committed compliance), when the child appeared committed wholeheartedly to the maternal agenda and eager to endorse and accept it, was emphasized. Mother-child mutually positive affect was both a predictor and a concomitant of committed compliance. Children who shared positive effect with their mothers showed a high level of committed compliance and were also more internalized. Differences and similarities between children’s compliance with requests and prohibitions (“Do” vs. “Don’t” demand contexts) were also explored. Maternal “Dos” appeared more challenging to toddlers than the “Don’ts.” Some individual coherence of behavior was also found across both demand contexts. The implication of committed compliance for emerging internalized regulators of conduct is discussed."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "A number of parents were not easy to be aware of the compliance, some even overlooked their children’s noncompliance. Despite good education, these children did not follow the words from their parents on several occasion, especially boys in certain ages. Fortunately, this rate was acceptable, some parents could be patient with the noncompliance. Someone held that noncompliance is probably not a wrong thing. In order to determine the effects of different parental disciplinary techniques on young children’s compliance and noncompliance, mothers were trained to observe emotional incidents involving their own toddler-aged children. Reports of disciplinary encounters were analyzed in terms of the types of discipline used (reasoning, verbal prohibition, physical coercion, love withdrawal, and combinations thereof) and children’s responses to that discipline (compliance/ noncompliance and avoidance). The relation between compliance/ noncompliance and type of misdeed (harm to persons, harm to property, and lapses of self-control) was also analyzed. Results indicated that love withdrawal combined with other techniques was most effective in securing children’s compliance and that its effectiveness was not a function of the type of technique with which it was combined. Avoidant responses and affective reunification with the parent were more likely to follow love withdrawal than any other technique. Physical coercion was somewhat less effective than love withdrawal, while reasoning and verbal prohibition were not at all effective except when both were combined with physical coercion."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "“Noncompliant Children sometimes prefer to say to directly as they were younger, they are easy to deal with the relationship with contemporaries. When they are growing up. During the period that children are getting elder, who may learn to use more advanced approaches for their noncompliance. They are more skillful to negotiate or give reasons for refusal rather than show their opposite idea to parents directly.” Said Henry Porter, a scholar working in Psychology Institute of UK. He indicated that noncompliance means growth in some way, may have benefit for children. Many Experts held different viewpoints in recent years, they tried drilling compliance into children. His collaborator Wallace Friesen believed that Organizing a child’s daily activities so that they occur in the same order each day as much as possible. This first strategy for defiant children is ultimately the most important. Developing a routine helps a child to know what to expect and increases the chances that he or she will comply with things such as chores, homework, and hygiene requests. When undesirable activities occur in the same order at optimal times during the day, they become habits that are not questioned but done without thought."
+    },
+    {
+     "type": "text",
+     "text": "Chances are that you have developed some type of routine for yourself in terms of showering, cleaning your house, or doing other types of work. You have an idea in your mind when you will do these things on a regular basis and this helps you to know what to expect. In fact, you have probably already been using most of these compliance strategies for yourself without realizing it. For children, without setting these expectations on a daily basis by making them part of a regular routine, they can become very upset. Just like adults, children think about what they plan to do that day and expect to be able to do what they want. So, when you come along and ask them to do something they weren’t already planning to do that day, this can result in automatic refusals and other undesirable defiant behaviors. However, by using this compliance strategy with defiant children, these activities are done almost every day in the same general order and the child expects to already do them."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Doctor Steven Walson addressed that organizing fun activities to occur after frequently refused activities. This strategy also works as a positive reinforcer when the child complies with your requests. By arranging your day so that things often refused to occur right before highly preferred activities, you are able to eliminate defiant behavior and motivate your child’s behavior of doing the undesirable activity. This is not to be presented in a way that the preferred activity is only allowed if a defiant child does the non-preferred activity. However, you can word your request in a way so that your child assumes that you have to do the non-preferred activity before moving on to the next preferred activity. For example, you do not want to say something such as, “If you clean your room we can play a game.” Instead of the word your request like this, “As soon as you are done cleaning your room we will be able to play that really fun game you wanted to play.”"
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Psychologist Paul Edith insisted praise is the best way to make children comply with. This is probably a common term you are used to hearing by now. If you praise your child’s behavior, he or she will be more likely to do that behavior. So, it is essential to use praise when working with defiant children. It also provides your child with positive attention. However, it is important to know how to praise children in a way that encourages future automatic reinforcement for your child when doing a similar behavior."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q27-31",
      "startQ": 27,
      "endQ": 31,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The children, especially boys received good education may",
-        "segments": null
-       },
+       "prompt": [
+        "The children, especially boys received good education may"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "always comply with their parents’ words"
+        },
+        {
+         "id": "B",
+         "text": "be good at math"
+        },
+        {
+         "id": "C",
+         "text": "have a high score at school"
+        },
+        {
+         "id": "D",
+         "text": "disobey their parents’ order sometimes"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. The children, especially boys received good education may",
-        "elementPath": "children[42]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 28,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Face to their children’s compliance and noncompliance, parents",
-        "segments": null
-       },
+       "prompt": [
+        "Face to their children’s compliance and noncompliance, parents"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "must be aware of the compliance"
+        },
+        {
+         "id": "B",
+         "text": "ask for help from their teachers"
+        },
+        {
+         "id": "C",
+         "text": "some of them may ignore their noncompliance"
+        },
+        {
+         "id": "D",
+         "text": "pretend not to see"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. Face to their children’s compliance and noncompliance, parents",
-        "elementPath": "children[43]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 29,
        "type": "mcq_single",
-       "stem": {
-        "plain": "According to Henry Porter, noncompliance for children",
-        "segments": null
-       },
+       "prompt": [
+        "According to Henry Porter, noncompliance for children"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "are entirely harmful"
+        },
+        {
+         "id": "B",
+         "text": "may have positive effects"
+        },
+        {
+         "id": "C",
+         "text": "needs medicine assistance"
+        },
+        {
+         "id": "D",
+         "text": "should be treated by an expert doctor"
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. According to Henry Porter, noncompliance for children",
-        "elementPath": "children[44]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 30,
        "type": "mcq_single",
-       "stem": {
-        "plain": "When children are growing up, they",
-        "segments": null
-       },
+       "prompt": [
+        "When children are growing up, they"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "always try to directly say no"
+        },
+        {
+         "id": "B",
+         "text": "are more skillful to negotiate"
+        },
+        {
+         "id": "C",
+         "text": "learn to cheat instead of noncompliance"
+        },
+        {
+         "id": "D",
+         "text": "tend to keep silent"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. When children are growing up, they",
-        "elementPath": "children[45]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 31,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Which is the possible reaction the passage mentioned for elder children and younger ones if they don’t want to comply with the order",
-        "segments": null
-       },
+       "prompt": [
+        "Which is the possible reaction the passage mentioned for elder children and younger ones if they don’t want to comply with the order"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "elder children prefer to refuse directly"
+        },
+        {
+         "id": "B",
+         "text": "elder ones refuse to answer"
+        },
+        {
+         "id": "C",
+         "text": "younger children may reject directly"
+        },
+        {
+         "id": "D",
+         "text": "younger ones may save any words"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. Which is the possible reaction the passage mentioned for elder children and younger ones if they don’t want to comply with the order",
-        "elementPath": "children[46]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[41]",
-      "rawExcerpt": "Questions 27-31\nChoose the correct letter, A, B, C or D."
+      "headerLine": 83,
+      "lineRange": [
+       83,
+       109
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-31",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. The children, especially boys received good education may",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A always comply with their parents’ words",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B be good at math",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C have a high score at school",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D disobey their parents’ order sometimes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Face to their children’s compliance and noncompliance, parents",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A must be aware of the compliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B ask for help from their teachers",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C some of them may ignore their noncompliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D pretend not to see",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. According to Henry Porter, noncompliance for children",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A are entirely harmful",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B may have positive effects",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C needs medicine assistance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D should be treated by an expert doctor",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. When children are growing up, they",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A always try to directly say no",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B are more skillful to negotiate",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C learn to cheat instead of noncompliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D tend to keep silent",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. Which is the possible reaction the passage mentioned for elder children and younger ones if they don’t want to comply with the order",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A elder children prefer to refuse directly",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B elder ones refuse to answer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C younger children may reject directly",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D younger ones may save any words",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Look at the following people and list of statements below. Match each person with the correct statement.",
-     "wordLimit": "",
-     "qtype": "short_answer",
+     "groupId": "p3.q32-35",
      "startQ": 32,
      "endQ": 35,
-     "stimulusSegments": [
-      "List of statements\nA children of all ages will indirectly show noncompliance\nB elder children tend to negotiate rather than show noncompliance\nC converse behavior means noncompliance\nD organizing fun activities to occur after frequently refused activities\nE organizing child’s daily activities in the same order as much as possible.\nF use praise in order to make children compliant\nG take the children to school at an early age"
-     ],
-     "sharedOptions": null,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Look at the following people and list of statements below. Match each person with the correct statement.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of statements",
+      "options": [
+       {
+        "id": "A",
+        "text": "children of all ages will indirectly show noncompliance"
+       },
+       {
+        "id": "B",
+        "text": "elder children tend to negotiate rather than show noncompliance"
+       },
+       {
+        "id": "C",
+        "text": "converse behavior means noncompliance"
+       },
+       {
+        "id": "D",
+        "text": "organizing fun activities to occur after frequently refused activities"
+       },
+       {
+        "id": "E",
+        "text": "organizing child’s daily activities in the same order as much as possible."
+       },
+       {
+        "id": "F",
+        "text": "use praise in order to make children compliant"
+       },
+       {
+        "id": "G",
+        "text": "take the children to school at an early age"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 32,
-       "type": "short_answer",
-       "stem": {
-        "plain": "Henry Porter",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. Henry Porter",
-        "elementPath": "children[48]"
+       "type": "matching_features",
+       "prompt": [
+        "Henry Porter"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 33,
-       "type": "short_answer",
-       "stem": {
-        "plain": "Wallace Friesen",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33. Wallace Friesen",
-        "elementPath": "children[48]"
+       "type": "matching_features",
+       "prompt": [
+        "Wallace Friesen"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 34,
-       "type": "short_answer",
-       "stem": {
-        "plain": "Steven Walson",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "34. Steven Walson",
-        "elementPath": "children[48]"
+       "type": "matching_features",
+       "prompt": [
+        "Steven Walson"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 35,
-       "type": "short_answer",
-       "stem": {
-        "plain": "Paul Edith",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "35. Paul Edith",
-        "elementPath": "children[48]"
+       "type": "matching_features",
+       "prompt": [
+        "Paul Edith"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[47]",
-      "rawExcerpt": "Questions 32-35\nLook at the following people and list of statements below. Match each person with the correct statement."
+      "headerLine": 110,
+      "lineRange": [
+       110,
+       123
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 32-35",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Look at the following people and list of statements below. Match each person with the correct statement.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. Henry Porter",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. Wallace Friesen",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. Steven Walson",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. Paul Edith",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of statements",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "A children of all ages will indirectly show noncompliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B elder children tend to negotiate rather than show noncompliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C converse behavior means noncompliance",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D organizing fun activities to occur after frequently refused activities",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E organizing child’s daily activities in the same order as much as possible.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F use praise in order to make children compliant",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G take the children to school at an early age",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g09",
-     "instruction": "Do the following statements agree with the claims of the writer in reading passage? In boxes 36-40 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the views of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q36-40",
      "startQ": 36,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "ynng",
+     "answerControl": "ynng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the claims of the writer in reading passage? In boxes 36-40 on your answer sheet, write",
+     "legend": [
+      "YES if the statement agrees with the views of the writer",
+      "NO if the statement contradicts the views of the writer",
+      "NOT GIVEN if it is impossible to say what the writer thinks about this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 36,
-       "type": "tfng",
-       "stem": {
-        "plain": "Socialization takes a long process, while compliance is the beginning of it.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. Socialization takes a long process, while compliance is the beginning of it.",
-        "elementPath": "children[52]"
+       "type": "ynng",
+       "prompt": [
+        "Socialization takes a long process, while compliance is the beginning of it."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 37,
-       "type": "tfng",
-       "stem": {
-        "plain": "Many parents were difficult to be aware of compliance or noncompliance.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Yes",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. Many parents were difficult to be aware of compliance or noncompliance.",
-        "elementPath": "children[52]"
+       "type": "ynng",
+       "prompt": [
+        "Many parents were difficult to be aware of compliance or noncompliance."
+       ],
+       "answer": {
+        "raw": "Yes",
+        "value": "YES",
+        "accepted": [
+         "YES"
+        ]
        }
       },
       {
        "number": 38,
-       "type": "tfng",
-       "stem": {
-        "plain": "Noncompliant Children are simple to deal with the relationship with the people at the same age when they are growing up.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Yes",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. Noncompliant Children are simple to deal with the relationship with the people at the same age when they are growing up.",
-        "elementPath": "children[52]"
+       "type": "ynng",
+       "prompt": [
+        "Noncompliant Children are simple to deal with the relationship with the people at the same age when they are growing up."
+       ],
+       "answer": {
+        "raw": "Yes",
+        "value": "YES",
+        "accepted": [
+         "YES"
+        ]
        }
       },
       {
        "number": 39,
-       "type": "tfng",
-       "stem": {
-        "plain": "Experts never tried drilling compliance into children.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "No",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. Experts never tried drilling compliance into children.",
-        "elementPath": "children[52]"
+       "type": "ynng",
+       "prompt": [
+        "Experts never tried drilling compliance into children."
+       ],
+       "answer": {
+        "raw": "No",
+        "value": "NO",
+        "accepted": [
+         "NO"
+        ]
        }
       },
       {
        "number": 40,
-       "type": "tfng",
-       "stem": {
-        "plain": "Psychologist Paul Edith negated the importance that knowing how to praise children in an encouraging way.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "No",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. Psychologist Paul Edith negated the importance that knowing how to praise children in an encouraging way.",
-        "elementPath": "children[52]"
+       "type": "ynng",
+       "prompt": [
+        "Psychologist Paul Edith negated the importance that knowing how to praise children in an encouraging way."
+       ],
+       "answer": {
+        "raw": "No",
+        "value": "NO",
+        "accepted": [
+         "NO"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[50]",
-      "rawExcerpt": "Questions 36-40\nDo the following statements agree with the claims of the writer in reading passage? In boxes 36-40 on your answer sheet, write YES if the statement agrees with the views of the writer\nNO if the statement contradicts the view"
+      "headerLine": 124,
+      "lineRange": [
+       124,
+       133
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 36-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the claims of the writer in reading passage? In boxes 36-40 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "YES if the statement agrees with the views of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NO if the statement contradicts the views of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if it is impossible to say what the writer thinks about this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. Socialization takes a long process, while compliance is the beginning of it.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. Many parents were difficult to be aware of compliance or noncompliance.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. Noncompliant Children are simple to deal with the relationship with the people at the same age when they are growing up.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. Experts never tried drilling compliance into children.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. Psychologist Paul Edith negated the importance that knowing how to praise children in an encouraging way.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "B"
-   },
-   {
-    "number": 2,
-    "value": "A"
-   },
-   {
-    "number": 3,
-    "value": "F"
-   },
-   {
-    "number": 4,
-    "value": "C"
-   },
-   {
-    "number": 5,
-    "value": "True"
-   },
-   {
-    "number": 6,
-    "value": "Not given"
-   },
-   {
-    "number": 7,
-    "value": "True"
-   },
-   {
-    "number": 8,
-    "value": "False"
-   },
-   {
-    "number": 9,
-    "value": "B"
-   },
-   {
-    "number": 10,
-    "value": "B"
-   },
-   {
-    "number": 11,
-    "value": "C"
-   },
-   {
-    "number": 12,
-    "value": "D"
-   },
-   {
-    "number": 13,
-    "value": "A"
-   },
-   {
-    "number": 14,
-    "value": "F"
-   },
-   {
-    "number": 15,
-    "value": "B"
-   },
-   {
-    "number": 16,
-    "value": "G"
-   },
-   {
-    "number": 17,
-    "value": "C"
-   },
-   {
-    "number": 18,
-    "value": "Not given"
-   },
-   {
-    "number": 19,
-    "value": "Yes"
-   },
-   {
-    "number": 20,
-    "value": "No"
-   },
-   {
-    "number": 21,
-    "value": "Yes"
-   },
-   {
-    "number": 22,
-    "value": "(star-stock) analysts"
-   },
-   {
-    "number": 23,
-    "value": "Star performer"
-   },
-   {
-    "number": 24,
-    "value": "Working environment"
-   },
-   {
-    "number": 25,
-    "value": "Salary"
-   },
-   {
-    "number": 26,
-    "value": "Rivals"
-   },
-   {
-    "number": 27,
-    "value": "D"
-   },
-   {
-    "number": 28,
-    "value": "C"
-   },
-   {
-    "number": 29,
-    "value": "B"
-   },
-   {
-    "number": 30,
-    "value": "C"
-   },
-   {
-    "number": 31,
-    "value": "C"
-   },
-   {
-    "number": 32,
-    "value": "B"
-   },
-   {
-    "number": 33,
-    "value": "E"
-   },
-   {
-    "number": 34,
-    "value": "D"
-   },
-   {
-    "number": 35,
-    "value": "F"
-   },
-   {
-    "number": 36,
-    "value": "Not given"
-   },
-   {
-    "number": 37,
-    "value": "Yes"
-   },
-   {
-    "number": 38,
-    "value": "Yes"
-   },
-   {
-    "number": 39,
-    "value": "No"
-   },
-   {
-    "number": 40,
-    "value": "No"
-   }
-  ]
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
  },
- "quarantinedUnits": [],
- "validationWarnings": [],
- "status": "verified",
- "segmentCount": 3,
- "contentFingerprint": "220da5fbb4ae62154fdca38b6d0a672bca1b5f2b5aad4794888bad2b92207656"
+ "contentFingerprint": "e9f2fc7e94bcd690eeab323128b3da4c9baacd80582ff55b2d9f3ac2745fd9ca"
 }

@@ -1,37 +1,22 @@
 {
  "slug": "ielts-reading-test-217",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     23,
-     24
-    ],
-    "instruction": "According to the information given in the text, choose the correct answer or answers from the choices given."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "According to the information given in the text, choose the correct answers from the choices given. Sarah Churchman says "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p2.q25-26",
+   "range": [
+    25,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "According to the information given in the text, choose the correct answers from the choices given. Sarah Churchman says PwC did well in the survey because it"
   }
  ]
 }

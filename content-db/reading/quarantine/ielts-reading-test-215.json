@@ -1,61 +1,128 @@
 {
  "slug": "ielts-reading-test-215",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "EXTRACTION_ARTIFACT"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     3
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
-   }
+   "groupId": "p1.q01-03",
+   "range": [
+    1,
+    3
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "EMPTY_QUESTION",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     13
-    ],
-    "instruction": "Complete the table below. Use ONE WORD ONLY from the passage for each answer."
-   }
+   "groupId": "p1.q04-07",
+   "range": [
+    4,
+    7
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "Look at the following characteristics (Questions 14-18) and the list of species below. Match each feature with the correct species, A, B or "
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the table below. Use ONE WORD ONLY from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     24,
-     26
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
+   "groupId": "p2.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Look at the following characteristics (Questions 14-18) and the list of species below. Match each feature with the correct species, A, B or C. NB You may use any letter more than once."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q19-23",
+   "range": [
+    19,
+    23
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 2 has seven paragraphs, A-G. Which paragraph contains the following information?"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q24-26",
+   "range": [
+    24,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "EMPTY_QUESTION",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q27-31",
+   "range": [
+    27,
+    31
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the views of the writer in Reading Passage 3? Write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q32-34",
+   "range": [
+    32,
+    34
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q35-40",
+   "range": [
+    35,
+    40
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary using the list of words/phrases, A-J, below. Up till the twentieth century the world’s supply of fish was sufficient for its needs."
   }
  ]
 }

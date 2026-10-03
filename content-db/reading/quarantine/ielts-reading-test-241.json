@@ -1,25 +1,115 @@
 {
  "slug": "ielts-reading-test-241",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "Looking at the following list of places (Questions 28–32) from the paragraphs A-E of reading passage 3 and their locations on the map. Match"
-   }
+   "groupId": "p1.q01-08",
+   "range": [
+    1,
+    8
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "The reading Passage has seven paragraphs A-I. Which paragraph contains the following information? Write the correct letter A-I, in boxes 1-8 on your answer sheet."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 35,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p1.q09-12",
+   "range": [
+    9,
+    12
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of Reading Passage, using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p1.q13-14",
+   "range": [
+    13,
+    14
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q15-20",
+   "range": [
+    15,
+    20
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage? In boxes 15-20 on your answer sheet, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q21-27",
+   "range": [
+    21,
+    27
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of Reading Passage. Using NO MORE THAN TWO WORDS from the Reading Passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q28-32",
+   "range": [
+    28,
+    32
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Looking at the following list of places (Questions 28–32) from the paragraphs A-E of reading passage 3 and their locations on the map. Match each place with its location on the map. Write your answers"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q33-38",
+   "range": [
+    33,
+    38
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements reflect the claims of the writer in Reading Passage? In boxes 33-38 on your answer sheet write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q39-40",
+   "range": [
+    39,
+    40
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
   }
  ]
 }

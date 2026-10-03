@@ -1,79 +1,46 @@
 {
  "slug": "ielts-reading-test-69",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     4,
-     12
-    ],
-    "instruction": "Reading Passage 1 has ten paragraphs, A – J. Choose the most suitable heading, i – xiii, for each paragraph from the lis"
-   }
+   "groupId": "p1.q01-03",
+   "range": [
+    1,
+    3
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "and 14 Complete each of the following statements with the best ending, A – H, from the list of endings below. Write the "
-   }
+   "groupId": "p1.q04-12",
+   "range": [
+    4,
+    12
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "Reading Passage 1 has ten paragraphs, A – J. Choose the most suitable heading, i – xiii, for each paragraph from the list of the headings below. Write the correct numbers, i – xiii, next to Questions "
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     15,
-     18
-    ],
-    "instruction": "Choose the correct letter A, B or C."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     25,
-     29
-    ],
-    "instruction": "Complete the sentences below with words taken from Reading Passage 2. Use NO MORE THAN THREE WORDS for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     35,
-     40
-    ],
-    "extracted": 5,
-    "expected": 6
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 19,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g08 range 35-40 got 5"
+   "groupId": "p2.q25-29",
+   "range": [
+    25,
+    29
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below with words taken from Reading Passage 2. Use NO MORE THAN THREE WORDS for each answer."
   }
  ]
 }

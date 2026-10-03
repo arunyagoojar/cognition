@@ -1,49 +1,33 @@
 {
  "slug": "ielts-reading-test-236",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     19,
-     23
-    ],
-    "instruction": "Look at the following researchers and the list of findings below. Match each researcher with the correct finding. Write the correct letter i"
-   }
+   "groupId": "p2.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     33,
-     34
-    ],
-    "instruction": "Choose TWO letters, A-E. Write your answers in boxes 33-34 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     35,
-     36
-    ],
-    "instruction": "Choose TWO letters, A-E. Write your answers in boxes 35-36 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 31,
-    "answers": 40
-   }
+   "groupId": "p3.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the Summary of the paragraphs of Reading Passage. Use NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

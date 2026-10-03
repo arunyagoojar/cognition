@@ -1,37 +1,35 @@
 {
  "slug": "ielts-reading-test-74",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     4
-    ],
-    "instruction": "Look at the following people (Questions 1-4) and the list of statements below. Match each person with the correct statem"
-   }
+   "groupId": "p2.q24-26",
+   "range": [
+    24,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "The list below gives possible factors that contributed to improvements in cartography."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     15,
-     19
-    ],
-    "instruction": "Reading Passage 2 has six paragraphs A-F. Choose the correct heading for sections B-F from the list of headings below. W"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 20,
-    "answers": 40
-   }
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below with words taken from Reading Passage 3. Use NO MORE THAN TWO WORDS."
   }
  ]
 }

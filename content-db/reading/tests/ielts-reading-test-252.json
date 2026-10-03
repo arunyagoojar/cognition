@@ -1,555 +1,1263 @@
 {
  "id": "reading.test-0252.62b8c705",
  "module": "reading",
+ "slug": "ielts-reading-test-252",
  "sourceNumbers": [
   252
  ],
- "slug": "ielts-reading-test-252",
  "title": "IELTS Academic Reading Test 252",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-252/index.html",
-   "sha256": "1df39201c714680fc043f136ba8e8e4d599db5e9ad803f9fe9e2b19ce61ccaad",
-   "manifestHashMatch": true,
+   "sha256": "6f3fda899d3aeecdb1b5e0fe5d53e313c4723d1ee4f57b2c3f679ede84b2149a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-252/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "Chip"
+   },
+   {
+    "number": 2,
+    "raw": "Grit"
+   },
+   {
+    "number": 3,
+    "raw": "Milten zinc"
+   },
+   {
+    "number": 4,
+    "raw": "Milling machine"
+   },
+   {
+    "number": 5,
+    "raw": "Sockets"
+   },
+   {
+    "number": 6,
+    "raw": "Loudspeakers"
+   },
+   {
+    "number": 7,
+    "raw": "Valves"
+   },
+   {
+    "number": 8,
+    "raw": "Cheaper"
+   },
+   {
+    "number": 9,
+    "raw": "Components"
+   },
+   {
+    "number": 10,
+    "raw": "Lighter"
+   },
+   {
+    "number": 11,
+    "raw": "Cost"
+   },
+   {
+    "number": 12,
+    "raw": "A"
+   },
+   {
+    "number": 13,
+    "raw": "D"
+   },
+   {
+    "number": 14,
+    "raw": "D"
+   },
+   {
+    "number": 15,
+    "raw": "E"
+   },
+   {
+    "number": 16,
+    "raw": "D"
+   },
+   {
+    "number": 17,
+    "raw": "C"
+   },
+   {
+    "number": 18,
+    "raw": "B"
+   },
+   {
+    "number": 19,
+    "raw": "False"
+   },
+   {
+    "number": 20,
+    "raw": "Not given"
+   },
+   {
+    "number": 21,
+    "raw": "Not given"
+   },
+   {
+    "number": 22,
+    "raw": "True"
+   },
+   {
+    "number": 23,
+    "raw": "True"
+   },
+   {
+    "number": 24,
+    "raw": "Covering"
+   },
+   {
+    "number": 25,
+    "raw": "Chocolate liquor"
+   },
+   {
+    "number": 26,
+    "raw": "Cocoa fat"
+   },
+   {
+    "number": 27,
+    "raw": "Mold (form)"
+   },
+   {
+    "number": 28,
+    "raw": "8000"
+   },
+   {
+    "number": 29,
+    "raw": "Extinction"
+   },
+   {
+    "number": 30,
+    "raw": "7000"
+   },
+   {
+    "number": 31,
+    "raw": "Neolithic"
+   },
+   {
+    "number": 32,
+    "raw": "Fluctuations"
+   },
+   {
+    "number": 33,
+    "raw": "Male’s huge anlers"
+   },
+   {
+    "number": 34,
+    "raw": "Minerals"
+   },
+   {
+    "number": 35,
+    "raw": "Habitat destruction"
+   },
+   {
+    "number": 36,
+    "raw": "B"
+   },
+   {
+    "number": 37,
+    "raw": "D"
+   },
+   {
+    "number": 38,
+    "raw": "A"
+   },
+   {
+    "number": 39,
+    "raw": "C"
+   },
+   {
+    "number": 40,
+    "raw": "C"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Radio Automation",
    "paragraphs": [
-    "Today they are everywhere. Production lines controlled by computers and operated by robots. There’s no chatter of assembly workers, just the whirr and click of machines. In the mid-1940s, the workerless factory was still the stuff of science fiction. There were no computers to speak of and electronics was primitive. Yet hidden away in the English countryside was a highly automated production line called ECME, which could turn out 1500 radio receivers a day with almost no help from human hands.",
-    "A John Sargrove, the visionary engineer who developed the technology, was way ahead of his time. For more than a decade, Sargrove had been trying to figure out how to make cheaper radios. Automating the manufacturing process would help. But radios didn’t lend themselves to such methods: there were too many parts to fit together and too many wires to solder. Even a simple receiver might have 30 separate components and 80 hand-soldered connections. At every stage, things had to be tested and inspected. Making radios required highly skilled labour—and lots of it.",
-    "B In 1944, Sargrove came up with the answer. His solution was to dispense with most of the fiddly bits by inventing a primitive chip—a slab of Bakelite with all the receiver’s electrical components and connections embedded in it. This was something that could be made by machines, and he designed those too. At the end of the war, Sargrove built an automatic production line, which he called ECME (electronic circuit-making equipment), in a small factory in Effingham, Surrey.",
-    "C An operator sat at one end of each ECME line, feeding in die plates. She didn’t need much skill, only quick hands. From now on, everything was controlled by electronic switches and relays. First stop was the sandblaster, which roughened the surface of the plastic BO that molten metal would stick to it The plates were then cleaned to remove any traces of grit The machine automatically checked that the surface was rough enough before sending the plate to the spraying section. There, eight nozzles rotated into position and sprayed molten zinc over both sides of the plate. Again, the nozzles only began to spray when a plate was in place. The plate whizzed on. The next stop was the milling machine, which ground away the surface layer of metal to leave the circuit and other components in the grooves and recesses. Now the plate was a composite of metal and plastic. It sped on to be lacquered and have its circuits tested. By the time it emerged from the end of the line, robot hands had fitted it with sockets to attach components such as valves and loudspeakers. When ECME was working flat out; the whole process took 20 seconds.",
-    "D ECME was astonishingly advanced. Electronic eyes, photocells that generated a small current when a panel arrived, triggered each step in the operation, BO avoiding excessive wear and tear on the machinery. The plates were automatically tested at each stage as they moved along the conveyor. And if more than two plates in succession were duds, the machines were automatically adjusted—or if necessary halted In a conventional factory, I workers would test faulty circuits and repair them. But Sargrove’s assembly line produced circuits so cheaply they just threw away the faulty ones. Sargrove’s circuit board was even more astonishing for the time. It predated the more familiar printed circuit, with wiring printed on aboard, yet was more sophisticated. Its built-in components made it more like a modem chip.",
-    "E When Sargrove unveiled his invention at a meeting of the British Institution of Radio Engineers in February 1947, the assembled engineers were impressed. So was the man from The Times. ECME, he reported the following day, “produces almost without human labour, a complete radio receiving set. This new method of production can be equally well applied to television and other forms of electronic apparatus.",
-    "F The receivers had many advantages over their predecessors, wit components they were more robust. Robots didn’t make the sorts of mistakes human assembly workers sometimes did. “Wiring mistakes just cannot happen,” wrote Sargrove. No w ừ es also meant the radios were lighter and cheaper to ship abroad. And with no soldered wires to come unstuck, the radios were more reliable. Sargrove pointed out that the drcuit boards didn’t have to be flat. They could be curved, opening up the prospect of building the electronics into the cabinet of Bakelite radios.",
-    "G Sargrove was all for introducing this type of automation to other products. It could be used to make more complex electronic equipment than radios, he argued. And even if only part of a manufacturing process were automated, the savings would be substantial. But while his invention was brilliant, his timing was bad. ECME was too advanced for its own good. It was only competitive on huge production runs because each new job meant retooling the machines. But disruption was frequent. Sophisticated as it was, ECME still depended on old- fashioned electromechanical relays and valves—which failed with monotonous regularity. The state of Britain’s economy added to Sargrove’s troubles. Production was dogged by power cuts and post-war shortages of materials. Sargrove’s financial backers began to get cold feet.",
-    "H There was another problem Sargrove hadn’t foreseen. One of ECME’s biggest advantages—the savings on the cost of labour—also accelerated its downfall. Sargrove’s factory had two ECME production lines to produce the two c ữ cuits needed for each radio. Between them these did what a thousand assembly workers would otherwise have done. Human hands were needed only to feed the raw material in at one end and plug the valves into then sockets and fit the loudspeakers at the other. After that, the only job left was to fit the pair of Bakelite panels into a radio cabinet and check that it worked.",
-    "I Sargrove saw automation as the way to solve post-war labour shortages. With somewhat Utopian idealism, he imagined his new technology would free people from boring, repetitive jobs on the production line and allow them to do more interesting work. “Don’t get the idea that we are out to rob people of then jobs,” he told the Daily Mnror. “Our task is to liberate men and women from being slaves of machines.”",
-    "J The workers saw things differently. They viewed automation in the same light as the everlasting light bulb or the suit that never wears out—as a threat to people’s livelihoods. If automation spread, they wouldn’t be released to do more exciting jobs. They’d be released to join the dole queue. Financial backing for ECME fizzled out. The money dried up. And Britain lost its lead in a technology that would transform industry just a few years later."
+    {
+     "type": "text",
+     "text": "Today they are everywhere. Production lines controlled by computers and operated by robots. There’s no chatter of assembly workers, just the whirr and click of machines. In the mid-1940s, the workerless factory was still the stuff of science fiction. There were no computers to speak of and electronics was primitive. Yet hidden away in the English countryside was a highly automated production line called ECME, which could turn out 1500 radio receivers a day with almost no help from human hands."
+    },
+    {
+     "type": "text",
+     "label": "A",
+     "text": "John Sargrove, the visionary engineer who developed the technology, was way ahead of his time. For more than a decade, Sargrove had been trying to figure out how to make cheaper radios. Automating the manufacturing process would help. But radios didn’t lend themselves to such methods: there were too many parts to fit together and too many wires to solder. Even a simple receiver might have 30 separate components and 80 hand-soldered connections. At every stage, things had to be tested and inspected. Making radios required highly skilled labour—and lots of it."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "In 1944, Sargrove came up with the answer. His solution was to dispense with most of the fiddly bits by inventing a primitive chip—a slab of Bakelite with all the receiver’s electrical components and connections embedded in it. This was something that could be made by machines, and he designed those too. At the end of the war, Sargrove built an automatic production line, which he called ECME (electronic circuit-making equipment), in a small factory in Effingham, Surrey."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "An operator sat at one end of each ECME line, feeding in die plates. She didn’t need much skill, only quick hands. From now on, everything was controlled by electronic switches and relays. First stop was the sandblaster, which roughened the surface of the plastic BO that molten metal would stick to it The plates were then cleaned to remove any traces of grit The machine automatically checked that the surface was rough enough before sending the plate to the spraying section. There, eight nozzles rotated into position and sprayed molten zinc over both sides of the plate. Again, the nozzles only began to spray when a plate was in place. The plate whizzed on. The next stop was the milling machine, which ground away the surface layer of metal to leave the circuit and other components in the grooves and recesses. Now the plate was a composite of metal and plastic. It sped on to be lacquered and have its circuits tested. By the time it emerged from the end of the line, robot hands had fitted it with sockets to attach components such as valves and loudspeakers. When ECME was working flat out; the whole process took 20 seconds."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "ECME was astonishingly advanced. Electronic eyes, photocells that generated a small current when a panel arrived, triggered each step in the operation, BO avoiding excessive wear and tear on the machinery. The plates were automatically tested at each stage as they moved along the conveyor. And if more than two plates in succession were duds, the machines were automatically adjusted—or if necessary halted In a conventional factory, I workers would test faulty circuits and repair them. But Sargrove’s assembly line produced circuits so cheaply they just threw away the faulty ones. Sargrove’s circuit board was even more astonishing for the time. It predated the more familiar printed circuit, with wiring printed on aboard, yet was more sophisticated. Its built-in components made it more like a modem chip."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "When Sargrove unveiled his invention at a meeting of the British Institution of Radio Engineers in February 1947, the assembled engineers were impressed. So was the man from The Times. ECME, he reported the following day, “produces almost without human labour, a complete radio receiving set. This new method of production can be equally well applied to television and other forms of electronic apparatus."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The receivers had many advantages over their predecessors, wit components they were more robust. Robots didn’t make the sorts of mistakes human assembly workers sometimes did. “Wiring mistakes just cannot happen,” wrote Sargrove. No w ừ es also meant the radios were lighter and cheaper to ship abroad. And with no soldered wires to come unstuck, the radios were more reliable. Sargrove pointed out that the drcuit boards didn’t have to be flat. They could be curved, opening up the prospect of building the electronics into the cabinet of Bakelite radios."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Sargrove was all for introducing this type of automation to other products. It could be used to make more complex electronic equipment than radios, he argued. And even if only part of a manufacturing process were automated, the savings would be substantial. But while his invention was brilliant, his timing was bad. ECME was too advanced for its own good. It was only competitive on huge production runs because each new job meant retooling the machines. But disruption was frequent. Sophisticated as it was, ECME still depended on old- fashioned electromechanical relays and valves—which failed with monotonous regularity. The state of Britain’s economy added to Sargrove’s troubles. Production was dogged by power cuts and post-war shortages of materials. Sargrove’s financial backers began to get cold feet."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "There was another problem Sargrove hadn’t foreseen. One of ECME’s biggest advantages—the savings on the cost of labour—also accelerated its downfall. Sargrove’s factory had two ECME production lines to produce the two c ữ cuits needed for each radio. Between them these did what a thousand assembly workers would otherwise have done. Human hands were needed only to feed the raw material in at one end and plug the valves into then sockets and fit the loudspeakers at the other. After that, the only job left was to fit the pair of Bakelite panels into a radio cabinet and check that it worked."
+    },
+    {
+     "type": "text",
+     "label": "I",
+     "text": "Sargrove saw automation as the way to solve post-war labour shortages. With somewhat Utopian idealism, he imagined his new technology would free people from boring, repetitive jobs on the production line and allow them to do more interesting work. “Don’t get the idea that we are out to rob people of then jobs,” he told the Daily Mnror. “Our task is to liberate men and women from being slaves of machines.”"
+    },
+    {
+     "type": "text",
+     "label": "J",
+     "text": "The workers saw things differently. They viewed automation in the same light as the everlasting light bulb or the suit that never wears out—as a threat to people’s livelihoods. If automation spread, they wouldn’t be released to do more exciting jobs. They’d be released to join the dole queue. Financial backing for ECME fizzled out. The money dried up. And Britain lost its lead in a technology that would transform industry just a few years later."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g02",
-     "instruction": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN TWO WORDS from the reading passage for each answer. Writes your answers inboxes 8-11 on your answer sheet.",
+     "groupId": "p1.q01-07",
+     "startQ": 1,
+     "endQ": 7,
+     "type": "diagram_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following chart of the paragraphs of reading passage, using NO MORE THAN TWO WORDS from the reading passage for each answer. Write your answers in boxes 1-7 on your answer sheet. The following diagram explains the process of ECME:",
+     "legend": null,
+     "notes": null,
      "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "summary_completion",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "image",
+        "asset": "asset.6275d9f703e3"
+       }
+      ]
+     },
+     "figures": [
+      {
+       "assetId": "asset.6275d9f703e3",
+       "sourcePath": "wp-content/uploads/2024/09/252-test-aca.png",
+       "sha256": "6275d9f703e32cc4cff992e2e53c998a8e4fbc71e465f783a9b8e4acbd23a9f3",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 1,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Chip",
+        "value": "Chip",
+        "accepted": [
+         "Chip"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Grit",
+        "value": "Grit",
+        "accepted": [
+         "Grit"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Milten zinc",
+        "value": "Milten zinc",
+        "accepted": [
+         "Milten zinc"
+        ]
+       },
+       "answerNotInPassage": true
+      },
+      {
+       "number": 4,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Milling machine",
+        "value": "Milling machine",
+        "accepted": [
+         "Milling machine"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Sockets",
+        "value": "Sockets",
+        "accepted": [
+         "Sockets"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Loudspeakers",
+        "value": "Loudspeakers",
+        "accepted": [
+         "Loudspeakers"
+        ]
+       }
+      },
+      {
+       "number": 7,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Valves",
+        "value": "Valves",
+        "accepted": [
+         "Valves"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_NOT_IN_PASSAGE",
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 12,
+      "lineRange": [
+       12,
+       15
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-7",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following chart of the paragraphs of reading passage, using NO MORE THAN TWO WORDS from the reading passage for each answer. Write your answers in boxes 1-7 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The following diagram explains the process of ECME:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2024/09/252-test-aca.png"
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q08-11",
      "startQ": 8,
      "endQ": 11,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN TWO WORDS from the reading passage for each answer. Writes your answers inboxes 8-11 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Sargrove had been dedicated to create a ",
+         {
+          "blank": 8
+         },
+         "radio by automation of manufacture. The old version of radio had a large number of independent ",
+         {
+          "blank": 9
+         },
+         "After this innovation made, wireless-style radios became ",
+         {
+          "blank": 10
+         },
+         "and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced ",
+         {
+          "blank": 11
+         },
+         "of manual work; which can be easily copied to other industries of manufacturing electronic devices."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 8,
-       "type": "completion",
-       "stem": {
-        "plain": "Sargrove had been dedicated to create a (8) ______ radio by automation of manufacture. The old version of radio had a large number of independent (9) ______ . After this innovation made, wireless-style radios became (10) ______ and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced (11) ______ of manual work; which can be easily copied to other industries of manufacturing electronic devices.",
-        "segments": [
-         "Sargrove had been dedicated to create a",
-         {
-          "blank": 8
-         },
-         "radio by automation of manufacture. The old version of radio had a large number of independent",
-         {
-          "blank": 9
-         },
-         ". After this innovation made, wireless-style radios became",
-         {
-          "blank": 10
-         },
-         "and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced",
-         {
-          "blank": 11
-         },
-         "of manual work; which can be easily copied to other industries of manufacturing electronic devices."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Cheaper",
+        "value": "Cheaper",
+        "accepted": [
+         "Cheaper"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Cheaper",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Sargrove had been dedicated to create a (8)………………… radio by automation of manufacture. The old version of radio had a large number of independent (9)…………………. . After this innovation made, wireless-sty",
-        "elementPath": "children[17]"
        }
       },
       {
        "number": 9,
-       "type": "completion",
-       "stem": {
-        "plain": "Sargrove had been dedicated to create a (8) ______ radio by automation of manufacture. The old version of radio had a large number of independent (9) ______ . After this innovation made, wireless-style radios became (10) ______ and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced (11) ______ of manual work; which can be easily copied to other industries of manufacturing electronic devices.",
-        "segments": [
-         "Sargrove had been dedicated to create a",
-         {
-          "blank": 8
-         },
-         "radio by automation of manufacture. The old version of radio had a large number of independent",
-         {
-          "blank": 9
-         },
-         ". After this innovation made, wireless-style radios became",
-         {
-          "blank": 10
-         },
-         "and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced",
-         {
-          "blank": 11
-         },
-         "of manual work; which can be easily copied to other industries of manufacturing electronic devices."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Components",
+        "value": "Components",
+        "accepted": [
+         "Components"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Components",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Sargrove had been dedicated to create a (8)………………… radio by automation of manufacture. The old version of radio had a large number of independent (9)…………………. . After this innovation made, wireless-sty",
-        "elementPath": "children[17]"
        }
       },
       {
        "number": 10,
-       "type": "completion",
-       "stem": {
-        "plain": "Sargrove had been dedicated to create a (8) ______ radio by automation of manufacture. The old version of radio had a large number of independent (9) ______ . After this innovation made, wireless-style radios became (10) ______ and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced (11) ______ of manual work; which can be easily copied to other industries of manufacturing electronic devices.",
-        "segments": [
-         "Sargrove had been dedicated to create a",
-         {
-          "blank": 8
-         },
-         "radio by automation of manufacture. The old version of radio had a large number of independent",
-         {
-          "blank": 9
-         },
-         ". After this innovation made, wireless-style radios became",
-         {
-          "blank": 10
-         },
-         "and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced",
-         {
-          "blank": 11
-         },
-         "of manual work; which can be easily copied to other industries of manufacturing electronic devices."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Lighter",
+        "value": "Lighter",
+        "accepted": [
+         "Lighter"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Lighter",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Sargrove had been dedicated to create a (8)………………… radio by automation of manufacture. The old version of radio had a large number of independent (9)…………………. . After this innovation made, wireless-sty",
-        "elementPath": "children[17]"
        }
       },
       {
        "number": 11,
-       "type": "completion",
-       "stem": {
-        "plain": "Sargrove had been dedicated to create a (8) ______ radio by automation of manufacture. The old version of radio had a large number of independent (9) ______ . After this innovation made, wireless-style radios became (10) ______ and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced (11) ______ of manual work; which can be easily copied to other industries of manufacturing electronic devices.",
-        "segments": [
-         "Sargrove had been dedicated to create a",
-         {
-          "blank": 8
-         },
-         "radio by automation of manufacture. The old version of radio had a large number of independent",
-         {
-          "blank": 9
-         },
-         ". After this innovation made, wireless-style radios became",
-         {
-          "blank": 10
-         },
-         "and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced",
-         {
-          "blank": 11
-         },
-         "of manual work; which can be easily copied to other industries of manufacturing electronic devices."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Cost",
+        "value": "Cost",
+        "accepted": [
+         "Cost"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Cost",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Sargrove had been dedicated to create a (8)………………… radio by automation of manufacture. The old version of radio had a large number of independent (9)…………………. . After this innovation made, wireless-sty",
-        "elementPath": "children[17]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[16]",
-      "rawExcerpt": "Questions 8-11\n\nComplete the following summary of the paragraphs of reading passage using NO MORE THAN TWO WORDS from the reading passage for each answer. Writes your answers inboxes 8-11 on your answer sheet."
+      "headerLine": 16,
+      "lineRange": [
+       16,
+       18
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 8-11",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN TWO WORDS from the reading passage for each answer. Writes your answers inboxes 8-11 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Sargrove had been dedicated to create a (8)………………… radio by automation of manufacture. The old version of radio had a large number of independent (9)…………………. . After this innovation made, wireless-style radios became (10)…………………and inexpensive to export oversea. As the Saigrove saw it, the real benefit of ECME’s radio was that it reduced (11)……………….. of manual work; which can be easily copied to o",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Choose the correct letter A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q12-13",
      "startQ": 12,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 12,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What were workers attitude towards ECME Model initialy",
-        "segments": null
-       },
+       "prompt": [
+        "What were workers attitude towards ECME Model initialy"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "anxious"
+        },
+        {
+         "id": "B",
+         "text": "welcoming"
+        },
+        {
+         "id": "C",
+         "text": "boring"
+        },
+        {
+         "id": "D",
+         "text": "inspiring"
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12. What were workers attitude towards ECME Model initialy",
-        "elementPath": "children[19]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 13,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is the main idea of this passage?",
-        "segments": null
-       },
+       "prompt": [
+        "What is the main idea of this passage?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "approach to reduce the price of radio"
+        },
+        {
+         "id": "B",
+         "text": "a new generation of fully popular products and successful business"
+        },
+        {
+         "id": "C",
+         "text": "in application of die automation in the early stage"
+        },
+        {
+         "id": "D",
+         "text": "ECME technology can be applied in many product fields"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13. What is the main idea of this passage?",
-        "elementPath": "children[20]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": [
+      "UNCONSUMED_TEXT"
+     ],
      "provenance": {
-      "elementPath": "children[18]",
-      "rawExcerpt": "Questions 12-13\n\nChoose the correct letter A, B, C or D."
+      "headerLine": 19,
+      "lineRange": [
+       19,
+       31
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 12-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. What were workers attitude towards ECME Model initialy",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A anxious",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B welcoming",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C boring",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D inspiring",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. What is the main idea of this passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A approach to reduce the price of radio",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B a new generation of fully popular products and successful business",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C in application of die automation in the early stage",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D ECME technology can be applied in many product fields",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The Cacao: A Sweet history",
+        "kind": "text",
+        "bold": true
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "The Cacao: A Sweet history",
+   "title": "A Chapter 1",
    "paragraphs": [
-    "A Chapter 1\n\nMost people today think of chocolate as something sweet to eat or drink that can be easily found in stores around the world. It might surprise you that chocolate was once highly treasured. The tasty secret of the cacao (Kah Kow) tree was discovered 2,000 years ago in the tropical rainforests of the Americas. The story of how chocolate grew from a local Mesoamerican beverage into a global sweet encompasses many cultures and continents.",
-    "B Chapter 2\n\nHistorians believe the Maya people of Central America first learned to farm cacao plants around two thousand years ago. The Maya took cacao trees from the rainforests and grew them in their gardens. They cooked cacao seeds, the crushed them into a soft paste. They mixed the paste with water and flavorful spices to make an unsweetened chocolate drink. The Maya poured the chocolate drink back and forth between two containers so that the liquid would have a layer of bubbles or foam.",
-    "Cacao and chocolate were an important part of Maya culture. There are often images of cacao plants on Maya buildings and art objects. Ruling families drank chocolate at special ceremonies. And, even poorer members of society could enjoy the drink once in a while. Historians believe that cacao seeds were also used in marriage ceremonies as a sign of the union between a husband and a wife.",
-    "The Aztec culture in current-day Mexico also prized chocolate. But, cacao plants could not grow in the area where the Aztecs lived. So, they traded to get cacao. They even used cacao seeds as a form of money to pay taxes. Chocolate also played a special role in both Maya and Aztec royal and religious events. Priests presented cacao seeds and offerings to the gods and served chocolate drinks during sacred ceremonies. Only the very wealthy in Aztec societies could afford to drink chocolate because cacao was so valuable. The Aztec ruler Montezuma was believed to drink fifty cups of chocolate every day. Some experts believe the word for chocolate came from the Aztec word “xocolatl” which in the Nahuatl language means “bitter water.” Others believe the word “chocolate” was created by combining Mayan and Nahuatl words.",
-    "C Chapter 3\n\nThe explorer Christopher Columbus brought cacao seeds to Spain after his trip to Central America in 1502. But it was the Spanish explorer Hernando Cortes who understood that chocolate could be a valuable investment. In 1519, Cortes arrived in current-day Mexico. He believed the chocolate drink would become popular with Spaniards. After the Spanish soldiers defeated the Aztec empire, they were able to seize the supplies of cacao and send them home. Spain later began planting cacao in its colonies in the Americans in order to satisfy the large demand for chocolate. The wealthy people of Spain first enjoyed a sweetened version of chocolate drink. Later, the popularity of the drink spread throughout Europe. The English, Dutch and French began to plant cacao trees in their own colonies. Chocolate remained a drink that only wealthy people could afford to drink until the eighteenth century. During the period known as the Industrial Revolution, new technologies helped make chocolate less costly to produce.",
-    "D Chapter 4\n\nFarmers grow cacao trees in many countries in Africa, Central and South America. The trees grow in the shady areas of the rainforests near the Earth’s equator. But these trees can be difficult to grow. They require an exact amount of water, warmth, soil and protection. After about five years, cacao trees start producing large fruits called pods, which grow near the trunk of the tree. The seeds inside the pods are harvested to make chocolate. There are several kinds of cacao trees. Most of the world’s chocolate is made from the seed of the forastero tree. But farmers can also grow criollo or trinitario cacao plants. Cacao trees grown on farms are much more easily threatened by diseases and insects than wild trees. Growing cacao is very hard work for farmers. They sell their harvest on a futures market. This means that economic conditions beyond their control can affect the amount of money they will earn. Today, chocolate industry officials, activists, and scientists are working with farmers. They are trying to make sure that cacao can be grown in a way that is fair to the timers and safe for the environment.",
-    "E Chapter 5\n\nTo become chocolate, cacao seeds go through a long production process in a factory. Workers must sort, clean and cook the seeds. Then they break off the covering of the seeds so that only the inside fruit, or nibs, remain. Workers crush the nibs into a soft substance called chocolate liquor. This gets separated into cocoa solids and fat called cocoa butter. Chocolate makers have their own special recipes in which they combine chocolate liquor with exact amounts of sugar, milk and cocoa fat. They finely crush this “crumb” mixture in order to make it smooth. The mixture then goes through two more processes before it is shaped into a mold form.",
-    "Chocolate making is big business. The market value of the yearly cacao crop around the world is more than five billion dollars. Chocolate is especially popular in Europe and the United States. For example, in 2005, the United States bought 1.4 billion dollars worth of cocoa products. Each year, Americans eat an average of more than five kilograms of chocolate per person. Speciality shops that sell costly chocolates are also very popular. Many offer chocolate lovers the chance to taste chocolates grown in different areas of the world."
+    {
+     "type": "text",
+     "text": "Most people today think of chocolate as something sweet to eat or drink that can be easily found in stores around the world. It might surprise you that chocolate was once highly treasured. The tasty secret of the cacao (Kah Kow) tree was discovered 2,000 years ago in the tropical rainforests of the Americas. The story of how chocolate grew from a local Mesoamerican beverage into a global sweet encompasses many cultures and continents."
+    },
+    {
+     "type": "subheading",
+     "text": "B Chapter 2"
+    },
+    {
+     "type": "text",
+     "text": "Historians believe the Maya people of Central America first learned to farm cacao plants around two thousand years ago. The Maya took cacao trees from the rainforests and grew them in their gardens. They cooked cacao seeds, the crushed them into a soft paste. They mixed the paste with water and flavorful spices to make an unsweetened chocolate drink. The Maya poured the chocolate drink back and forth between two containers so that the liquid would have a layer of bubbles or foam."
+    },
+    {
+     "type": "text",
+     "text": "Cacao and chocolate were an important part of Maya culture. There are often images of cacao plants on Maya buildings and art objects. Ruling families drank chocolate at special ceremonies. And, even poorer members of society could enjoy the drink once in a while. Historians believe that cacao seeds were also used in marriage ceremonies as a sign of the union between a husband and a wife."
+    },
+    {
+     "type": "text",
+     "text": "The Aztec culture in current-day Mexico also prized chocolate. But, cacao plants could not grow in the area where the Aztecs lived. So, they traded to get cacao. They even used cacao seeds as a form of money to pay taxes. Chocolate also played a special role in both Maya and Aztec royal and religious events. Priests presented cacao seeds and offerings to the gods and served chocolate drinks during sacred ceremonies. Only the very wealthy in Aztec societies could afford to drink chocolate because cacao was so valuable. The Aztec ruler Montezuma was believed to drink fifty cups of chocolate every day. Some experts believe the word for chocolate came from the Aztec word “xocolatl” which in the Nahuatl language means “bitter water.” Others believe the word “chocolate” was created by combining Mayan and Nahuatl words."
+    },
+    {
+     "type": "subheading",
+     "text": "C Chapter 3"
+    },
+    {
+     "type": "text",
+     "text": "The explorer Christopher Columbus brought cacao seeds to Spain after his trip to Central America in 1502. But it was the Spanish explorer Hernando Cortes who understood that chocolate could be a valuable investment. In 1519, Cortes arrived in current-day Mexico. He believed the chocolate drink would become popular with Spaniards. After the Spanish soldiers defeated the Aztec empire, they were able to seize the supplies of cacao and send them home. Spain later began planting cacao in its colonies in the Americans in order to satisfy the large demand for chocolate. The wealthy people of Spain first enjoyed a sweetened version of chocolate drink. Later, the popularity of the drink spread throughout Europe. The English, Dutch and French began to plant cacao trees in their own colonies. Chocolate remained a drink that only wealthy people could afford to drink until the eighteenth century. During the period known as the Industrial Revolution, new technologies helped make chocolate less costly to produce."
+    },
+    {
+     "type": "subheading",
+     "text": "D Chapter 4"
+    },
+    {
+     "type": "text",
+     "text": "Farmers grow cacao trees in many countries in Africa, Central and South America. The trees grow in the shady areas of the rainforests near the Earth’s equator. But these trees can be difficult to grow. They require an exact amount of water, warmth, soil and protection. After about five years, cacao trees start producing large fruits called pods, which grow near the trunk of the tree. The seeds inside the pods are harvested to make chocolate. There are several kinds of cacao trees. Most of the world’s chocolate is made from the seed of the forastero tree. But farmers can also grow criollo or trinitario cacao plants. Cacao trees grown on farms are much more easily threatened by diseases and insects than wild trees. Growing cacao is very hard work for farmers. They sell their harvest on a futures market. This means that economic conditions beyond their control can affect the amount of money they will earn. Today, chocolate industry officials, activists, and scientists are working with farmers. They are trying to make sure that cacao can be grown in a way that is fair to the timers and safe for the environment."
+    },
+    {
+     "type": "subheading",
+     "text": "E Chapter 5"
+    },
+    {
+     "type": "text",
+     "text": "To become chocolate, cacao seeds go through a long production process in a factory. Workers must sort, clean and cook the seeds. Then they break off the covering of the seeds so that only the inside fruit, or nibs, remain. Workers crush the nibs into a soft substance called chocolate liquor. This gets separated into cocoa solids and fat called cocoa butter. Chocolate makers have their own special recipes in which they combine chocolate liquor with exact amounts of sugar, milk and cocoa fat. They finely crush this “crumb” mixture in order to make it smooth. The mixture then goes through two more processes before it is shaped into a mold form."
+    },
+    {
+     "type": "text",
+     "text": "Chocolate making is big business. The market value of the yearly cacao crop around the world is more than five billion dollars. Chocolate is especially popular in Europe and the United States. For example, in 2005, the United States bought 1.4 billion dollars worth of cocoa products. Each year, Americans eat an average of more than five kilograms of chocolate per person. Speciality shops that sell costly chocolates are also very popular. Many offer chocolate lovers the chance to taste chocolates grown in different areas of the world."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Reading passage has 5 chapters. Which chapter contains the following information? Write your answers in boxes 14-18 on your answer sheet",
-     "wordLimit": "",
-     "qtype": "short_answer",
+     "groupId": "p2.q14-18",
      "startQ": 14,
      "endQ": 18,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "unknown",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading passage has 5 chapters. Which chapter contains the following information? Write your answers in boxes 14-18 on your answer sheet",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
-       "type": "short_answer",
-       "stem": {
-        "plain": "the part of cacao trees used to produce chocolate",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. the part of cacao trees used to produce chocolate",
-        "elementPath": "children[31]"
+       "type": "unknown",
+       "prompt": [
+        "the part of cacao trees used to produce chocolate"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 15,
-       "type": "short_answer",
-       "stem": {
-        "plain": "average chocolate consumption by people in the US per person per year",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. average chocolate consumption by people in the US per person per year",
-        "elementPath": "children[31]"
+       "type": "unknown",
+       "prompt": [
+        "average chocolate consumption by people in the US per person per year"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 16,
-       "type": "short_answer",
-       "stem": {
-        "plain": "risks faced by fanners in the cacao business",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. risks faced by fanners in the cacao business",
-        "elementPath": "children[31]"
+       "type": "unknown",
+       "prompt": [
+        "risks faced by fanners in the cacao business"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 17,
-       "type": "short_answer",
-       "stem": {
-        "plain": "where the first sweetened chocolate drink appeared",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. where the first sweetened chocolate drink appeared",
-        "elementPath": "children[31]"
+       "type": "unknown",
+       "prompt": [
+        "where the first sweetened chocolate drink appeared"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 18,
-       "type": "short_answer",
-       "stem": {
-        "plain": "how ancient American civilizations obtained cacao",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. how ancient American civilizations obtained cacao",
-        "elementPath": "children[31]"
+       "type": "unknown",
+       "prompt": [
+        "how ancient American civilizations obtained cacao"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       }
      ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "AMBIGUOUS_STRUCTURE",
+      "ANSWER_INVALID_FOR_TYPE"
+     ],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[30]",
-      "rawExcerpt": "Questions 14-18\n\nReading passage has 5 chapters. Which chapter contains the following information? Write your answers in boxes 14-18 on your answer sheet"
+      "headerLine": 45,
+      "lineRange": [
+       45,
+       51
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-18",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading passage has 5 chapters. Which chapter contains the following information? Write your answers in boxes 14-18 on your answer sheet",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. the part of cacao trees used to produce chocolate",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. average chocolate consumption by people in the US per person per year",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. risks faced by fanners in the cacao business",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. where the first sweetened chocolate drink appeared",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. how ancient American civilizations obtained cacao",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 19-23 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q19-23",
      "startQ": 19,
      "endQ": 23,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in reading passage? In boxes 19-23 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 19,
        "type": "tfng",
-       "stem": {
-        "plain": "use cacao and chocolate in ceremonies were restricted Maya royal families",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. use cacao and chocolate in ceremonies were restricted Maya royal families",
-        "elementPath": "children[34]"
+       "prompt": [
+        "use cacao and chocolate in ceremonies were restricted Maya royal families"
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "The Spanish explorer Hernando Cortes invested in chocolate and chocolate drinks.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. The Spanish explorer Hernando Cortes invested in chocolate and chocolate drinks.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "The Spanish explorer Hernando Cortes invested in chocolate and chocolate drinks."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "The forastero tree produces the best chocolate.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. The forastero tree produces the best chocolate.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "The forastero tree produces the best chocolate."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "some parts in cacao seed are get rid of during the chocolate process",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. some parts in cacao seed are get rid of during the chocolate process",
-        "elementPath": "children[34]"
+       "prompt": [
+        "some parts in cacao seed are get rid of during the chocolate process"
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "Chocolate is welcomed more in some countries or continents than other parts around the world.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. Chocolate is welcomed more in some countries or continents than other parts around the world.",
-        "elementPath": "children[34]"
+       "prompt": [
+        "Chocolate is welcomed more in some countries or continents than other parts around the world."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[32]",
-      "rawExcerpt": "Questions 19-23\n\nDo the following statements agree with the information given in reading passage? In boxes 19-23 on your answer sheet, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the informati"
+      "headerLine": 52,
+      "lineRange": [
+       52,
+       61
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 19-23",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in reading passage? In boxes 19-23 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. use cacao and chocolate in ceremonies were restricted Maya royal families",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. The Spanish explorer Hernando Cortes invested in chocolate and chocolate drinks.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. The forastero tree produces the best chocolate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. some parts in cacao seed are get rid of during the chocolate process",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. Chocolate is welcomed more in some countries or continents than other parts around the world.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "The flow chart below shows the steps in chocolate making. Complete the flow chart using NO MORE THAN THREE WORDS from the passage for each blank",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "flow_chart_completion",
+     "groupId": "p2.q24-27",
      "startQ": 24,
      "endQ": 27,
-     "stimulusSegments": [
-      "• Cacao seeds",
-      "",
-      "",
-      "• Nibs",
-      "",
-      "",
-      "",
-      "• Crumb mixture",
-      ""
-     ],
-     "sharedOptions": null,
-     "figures": null,
-     "questions": [
-      {
-       "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "• sorting, cleaning and cooking ridding seeds of their (24) ______",
+     "type": "flow_chart_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "The flow chart below shows the steps in chocolate making. Complete the flow chart using NO MORE THAN THREE WORDS from the passage for each blank • Cacao seeds",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
         "segments": [
-         "• sorting, cleaning and cooking ridding seeds of their",
+         "• sorting, cleaning and cooking ridding seeds of their ",
          {
           "blank": 24
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Covering",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• sorting, cleaning and cooking ridding seeds of their (24)………………",
-        "elementPath": "children[36]"
-       }
-      },
-      {
-       "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "• crushing (25) ______",
+       {
+        "type": "text",
         "segments": [
-         "• crushing",
+         "• Nibs"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• crushing ",
          {
           "blank": 25
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Chocolate liquor",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• crushing (25)………………",
-        "elementPath": "children[36]"
-       }
-      },
-      {
-       "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "• Add sugar, milk and (26) ______",
+       {
+        "type": "text",
         "segments": [
-         "• Add sugar, milk and",
+         "• Add sugar, milk and ",
          {
           "blank": 26
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Cocoa fat",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• Add sugar, milk and (26)……………",
-        "elementPath": "children[36]"
-       }
-      },
-      {
-       "number": 27,
-       "type": "completion",
-       "stem": {
-        "plain": "• Crush finely then come into a shape in a (27) ______",
+       {
+        "type": "text",
         "segments": [
-         "• Crush finely then come into a shape in a",
+         "• Crumb mixture"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "• Crush finely then come into a shape in a ",
          {
           "blank": 27
          }
         ]
-       },
-       "options": null,
-       "correctAnswer": "Mold (form)",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "• Crush finely then come into a shape in a (27)……………",
-        "elementPath": "children[36]"
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 24,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Covering",
+        "value": "Covering",
+        "accepted": [
+         "Covering"
+        ]
+       }
+      },
+      {
+       "number": 25,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Chocolate liquor",
+        "value": "Chocolate liquor",
+        "accepted": [
+         "Chocolate liquor"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Cocoa fat",
+        "value": "Cocoa fat",
+        "accepted": [
+         "Cocoa fat"
+        ]
+       }
+      },
+      {
+       "number": 27,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Mold (form)",
+        "value": "Mold (form)",
+        "accepted": [
+         "Mold form",
+         "Mold"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[35]",
-      "rawExcerpt": "Questions 24-27\n\nThe flow chart below shows the steps in chocolate making. Complete the flow chart using NO MORE THAN THREE WORDS from the passage for each blank"
+      "headerLine": 62,
+      "lineRange": [
+       62,
+       70
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 24-27",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "The flow chart below shows the steps in chocolate making. Complete the flow chart using NO MORE THAN THREE WORDS from the passage for each blank",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Cacao seeds",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• sorting, cleaning and cooking ridding seeds of their (24)………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Nibs",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• crushing (25)………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Add sugar, milk and (26)……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Crumb mixture",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "• Crush finely then come into a shape in a (27)……………",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -558,441 +1266,595 @@
    "passageNumber": 3,
    "title": "Extinct: the Giant Deer",
    "paragraphs": [
-    "Toothed cats, mastodons, giant sloths, woolly rhinos, and many other big, shaggy mammals are widely thought to have died out around the end of the last ice age, some 10,500 years ago.",
-    "A The Irish elk is also known as the giant deer (Megaloceros giganteus). Analysis of ancient bones and teeth by scientists based in Britain and Russia show the huge herbivore survived until about 5,000 B.C. – more than three millennia later than previously believed. The research team says this suggests additional factors, besides climate change, probably hastened the giant deer’s eventual extinction. The factors could include hunting or habitat destruction by humans.",
-    "B The Irish elk, so-called because its well-preserved remains are often found in lake sediments under peat bogs in Ireland, first appeared about 400,000 years ago in Europe and Central Asia. Through a combination of radiocarbon dating of skeletal remains and the mapping of locations where the remains were unearthed, the team shows the Irish elk was widespread across Europe before the last “big freeze.” The deer’s range later contracted to the Ural Mountains, in modern-day Russia, which separate Europe from Asia.",
-    "C The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about 8,000 years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said.",
-    "D Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s extinction hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting 7,000 years ago – this was also about the time the first Neolithic people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic fluctuations – periods it had survived in the past.",
-    "E Meanwhile, Lister cast doubt on another possible explanation for the deer’s demise – the male’s huge antlers. Some scientists have suggested this exaggerated feature – the result of females preferring stags with the largest antlers, possibly because they advertised a male’s fitness – contributed to the mammal’s downfall. They say such antlers would have been a serious inconvenience in the dense forests that spread northward after the last ice age. But, Lister said, “That’s a hard argument to make because the deer previously survived perfectly well through wooded interglacials [warmer periods between ice ages].” Some research has suggested that a lack of sufficient high-quality forage caused the extinction of the elk. High amounts of calcium and phosphate compounds are required to form antlers, and therefore large quantities of these minerals are required for the massive structures of the Irish Elk. The males (and male deer in general) met this requirement partly from their bones, replenishing them from food plants after the antlers were grown or reclaiming the nutrients from discarded antlers (as has been observed in extant deer). Thus, in the antler growth phase, Giant Deer was suffering from a condition similar to osteoporosis. When the climate changed at the end of the last glacial period, the vegetation in the animal’s habitat also changed towards species that presumably could not deliver sufficient amounts of the required minerals, at least in the western part of its range.",
-    "F The extinction of megafauna around the world was almost completed by the end of the last ice age. It is believed that megafauna initially came into existence in response to glacial conditions and became extinct with the onset of warmer climates. Tropical and subtropical areas have experienced less radical climatic change. The most dramatic of these changes was the transformation of a vast area of North Africa into the world’s largest desert. Significantly, Africa escaped major faunal extinction as did tropical and sub-tropical Asia. The human exodus from Africa and our entrance into the Americas and Australia were also accompanied by climate change. Australia’s climate changed from cold-dry to warm-dry. As a result, surface water became scarce. Most inland lakes became completely dry or dry in the warmer seasons. Most large, predominantly browsing animals lost their habitat and retreated to a narrow band in eastern Australia, where there were permanent water and better vegetation. Some animals may have survived until about 7000 years ago. If people have been in Australia for up to 60 000 years, then megafauna must have co-existed with humans for at least 30 000 years. Regularly hunted modern kangaroos survived not only 10 000 years of Aboriginal hunting, but also an onslaught of commercial shooters.",
-    "G The group of scientists led by A.J. Stuart focused on northern Eurasia, which he was taking as Europe, plus Siberia, essentially, where they’ve got the best data that animals became extinct in Europe during the Late Pleistocene. Some cold-adapted animals, go through into the last part of the cold stage and then become extinct up there. So you’ve actually got two phases of extinction. Now, neither of these coincide – these are Neanderthals here being replaced by modern humans. There’s no obvious coincidence between the arrival of humans or climatic change alone and these extinctions. There’s a climatic change here, so there’s a double effect here. Again, as animals come through to the last part of the cold stage, here there’s a fundamental change in the climate, reorganization of vegetation, and the combination of the climatic change and the presence of humans – of advanced Paleolithic humans – causes this wave of extinction. There’s a profound difference between the North American data and that of Europe, which summarize that the extinctions in northern Eurasia, in Europe, are moderate and staggered, and in North America severe and sudden. And these things relate to the differences in the timing of human arrival. The extinction follows from human predation, but only at times of fundamental changes in the environment."
+    {
+     "type": "text",
+     "text": "Toothed cats, mastodons, giant sloths, woolly rhinos, and many other big, shaggy mammals are widely thought to have died out around the end of the last ice age, some 10,500 years ago."
+    },
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The Irish elk is also known as the giant deer (Megaloceros giganteus). Analysis of ancient bones and teeth by scientists based in Britain and Russia show the huge herbivore survived until about 5,000 B.C. – more than three millennia later than previously believed. The research team says this suggests additional factors, besides climate change, probably hastened the giant deer’s eventual extinction. The factors could include hunting or habitat destruction by humans."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The Irish elk, so-called because its well-preserved remains are often found in lake sediments under peat bogs in Ireland, first appeared about 400,000 years ago in Europe and Central Asia. Through a combination of radiocarbon dating of skeletal remains and the mapping of locations where the remains were unearthed, the team shows the Irish elk was widespread across Europe before the last “big freeze.” The deer’s range later contracted to the Ural Mountains, in modern-day Russia, which separate Europe from Asia."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about 8,000 years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s extinction hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting 7,000 years ago – this was also about the time the first Neolithic people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic fluctuations – periods it had survived in the past."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Meanwhile, Lister cast doubt on another possible explanation for the deer’s demise – the male’s huge antlers. Some scientists have suggested this exaggerated feature – the result of females preferring stags with the largest antlers, possibly because they advertised a male’s fitness – contributed to the mammal’s downfall. They say such antlers would have been a serious inconvenience in the dense forests that spread northward after the last ice age. But, Lister said, “That’s a hard argument to make because the deer previously survived perfectly well through wooded interglacials [warmer periods between ice ages].” Some research has suggested that a lack of sufficient high-quality forage caused the extinction of the elk. High amounts of calcium and phosphate compounds are required to form antlers, and therefore large quantities of these minerals are required for the massive structures of the Irish Elk. The males (and male deer in general) met this requirement partly from their bones, replenishing them from food plants after the antlers were grown or reclaiming the nutrients from discarded antlers (as has been observed in extant deer). Thus, in the antler growth phase, Giant Deer was suffering from a condition similar to osteoporosis. When the climate changed at the end of the last glacial period, the vegetation in the animal’s habitat also changed towards species that presumably could not deliver sufficient amounts of the required minerals, at least in the western part of its range."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The extinction of megafauna around the world was almost completed by the end of the last ice age. It is believed that megafauna initially came into existence in response to glacial conditions and became extinct with the onset of warmer climates. Tropical and subtropical areas have experienced less radical climatic change. The most dramatic of these changes was the transformation of a vast area of North Africa into the world’s largest desert. Significantly, Africa escaped major faunal extinction as did tropical and sub-tropical Asia. The human exodus from Africa and our entrance into the Americas and Australia were also accompanied by climate change. Australia’s climate changed from cold-dry to warm-dry. As a result, surface water became scarce. Most inland lakes became completely dry or dry in the warmer seasons. Most large, predominantly browsing animals lost their habitat and retreated to a narrow band in eastern Australia, where there were permanent water and better vegetation. Some animals may have survived until about 7000 years ago. If people have been in Australia for up to 60 000 years, then megafauna must have co-existed with humans for at least 30 000 years. Regularly hunted modern kangaroos survived not only 10 000 years of Aboriginal hunting, but also an onslaught of commercial shooters."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "The group of scientists led by A.J. Stuart focused on northern Eurasia, which he was taking as Europe, plus Siberia, essentially, where they’ve got the best data that animals became extinct in Europe during the Late Pleistocene. Some cold-adapted animals, go through into the last part of the cold stage and then become extinct up there. So you’ve actually got two phases of extinction. Now, neither of these coincide – these are Neanderthals here being replaced by modern humans. There’s no obvious coincidence between the arrival of humans or climatic change alone and these extinctions. There’s a climatic change here, so there’s a double effect here. Again, as animals come through to the last part of the cold stage, here there’s a fundamental change in the climate, reorganization of vegetation, and the combination of the climatic change and the presence of humans – of advanced Paleolithic humans – causes this wave of extinction. There’s a profound difference between the North American data and that of Europe, which summarize that the extinctions in northern Eurasia, in Europe, are moderate and staggered, and in North America severe and sudden. And these things relate to the differences in the timing of human arrival. The extinction follows from human predation, but only at times of fundamental changes in the environment."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Questions 33-35\n\nAnswer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p3.q28-32",
      "startQ": 28,
      "endQ": 32,
-     "stimulusSegments": [
-      "33. What kind of physical characteristics eventually contributed to the extinction of Irish elk?\n\n34. What kind of nutrient substance needed in maintaining the huge size of Irish elk?\n\n35. What geographical evidence suggested the advent of human resulted in the extinction of Irish elk?"
-     ],
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN THREE WORDS from the Reading Passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about ",
+         {
+          "blank": 28
+         },
+         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s ",
+         {
+          "blank": 29
+         },
+         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting ",
+         {
+          "blank": 30
+         },
+         "years ago – this was also about the time the first ",
+         {
+          "blank": 31
+         },
+         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic ",
+         {
+          "blank": 32
+         },
+         "– periods it had survived in the past."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 28,
-       "type": "completion",
-       "stem": {
-        "plain": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28) ______ years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s (29) ______ hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting (30) ______ years ago – this was also about the time the first (31) ______ people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic (32) ______ – periods it had survived in the past.",
-        "segments": [
-         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about",
-         {
-          "blank": 28
-         },
-         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s",
-         {
-          "blank": 29
-         },
-         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting",
-         {
-          "blank": 30
-         },
-         "years ago – this was also about the time the first",
-         {
-          "blank": 31
-         },
-         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic",
-         {
-          "blank": 32
-         },
-         "– periods it had survived in the past."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "8000",
+        "value": "8000",
+        "accepted": [
+         "8000"
         ]
-       },
-       "options": null,
-       "correctAnswer": "8000",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 29,
-       "type": "completion",
-       "stem": {
-        "plain": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28) ______ years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s (29) ______ hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting (30) ______ years ago – this was also about the time the first (31) ______ people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic (32) ______ – periods it had survived in the past.",
-        "segments": [
-         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about",
-         {
-          "blank": 28
-         },
-         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s",
-         {
-          "blank": 29
-         },
-         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting",
-         {
-          "blank": 30
-         },
-         "years ago – this was also about the time the first",
-         {
-          "blank": 31
-         },
-         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic",
-         {
-          "blank": 32
-         },
-         "– periods it had survived in the past."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Extinction",
+        "value": "Extinction",
+        "accepted": [
+         "Extinction"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Extinction",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 30,
-       "type": "completion",
-       "stem": {
-        "plain": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28) ______ years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s (29) ______ hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting (30) ______ years ago – this was also about the time the first (31) ______ people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic (32) ______ – periods it had survived in the past.",
-        "segments": [
-         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about",
-         {
-          "blank": 28
-         },
-         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s",
-         {
-          "blank": 29
-         },
-         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting",
-         {
-          "blank": 30
-         },
-         "years ago – this was also about the time the first",
-         {
-          "blank": 31
-         },
-         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic",
-         {
-          "blank": 32
-         },
-         "– periods it had survived in the past."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "7000",
+        "value": "7000",
+        "accepted": [
+         "7000"
         ]
-       },
-       "options": null,
-       "correctAnswer": "7000",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 31,
-       "type": "completion",
-       "stem": {
-        "plain": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28) ______ years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s (29) ______ hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting (30) ______ years ago – this was also about the time the first (31) ______ people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic (32) ______ – periods it had survived in the past.",
-        "segments": [
-         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about",
-         {
-          "blank": 28
-         },
-         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s",
-         {
-          "blank": 29
-         },
-         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting",
-         {
-          "blank": 30
-         },
-         "years ago – this was also about the time the first",
-         {
-          "blank": 31
-         },
-         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic",
-         {
-          "blank": 32
-         },
-         "– periods it had survived in the past."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Neolithic",
+        "value": "Neolithic",
+        "accepted": [
+         "Neolithic"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Neolithic",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London",
-        "elementPath": "children[47]"
        }
       },
       {
        "number": 32,
-       "type": "completion",
-       "stem": {
-        "plain": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28) ______ years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s (29) ______ hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting (30) ______ years ago – this was also about the time the first (31) ______ people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic (32) ______ – periods it had survived in the past.",
-        "segments": [
-         "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about",
-         {
-          "blank": 28
-         },
-         "years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates the region then became very dry in response to further climatic change, leading to the loss of important food plants. “In combination with human pressures, this could have finally snuffed them out,” Lister said. Hunting by humans has often been put forward as a contributory cause of extinction of the Pleistocene megafauna. The team, though, said their new date for the Irish elk’s",
-         {
-          "blank": 29
-         },
-         "hints at an additional human-made problem – habitat destruction. Lister said, “We haven’t got just hunting",
-         {
-          "blank": 30
-         },
-         "years ago – this was also about the time the first",
-         {
-          "blank": 31
-         },
-         "people settled in the region. They were farmers who would have cleared the land.” The presence of humans may help explain why the Irish elk was unable to tough out the latest of many climatic",
-         {
-          "blank": 32
-         },
-         "– periods it had survived in the past."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Fluctuations",
+        "value": "Fluctuations",
+        "accepted": [
+         "Fluctuations"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Fluctuations",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London",
-        "elementPath": "children[47]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[46]",
-      "rawExcerpt": "Questions 28-32\n\nComplete the following summary of the paragraphs of reading passage using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Questions 33-35\n\nAnswer the questions below. Choose NO MORE THAN THREE WORDS AND/O"
+      "headerLine": 80,
+      "lineRange": [
+       80,
+       82
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 28-32",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the following summary of the paragraphs of reading passage using NO MORE THAN THREE WORDS from the Reading Passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The giant deer made its last stand in western Siberia, some 3,000 years after the ice sheets receded, said the study’s co-author, Adrian Lister, professor of palaeobiology at University College London, England. “The eastern foothills of the Urals became very densely forested about (28)…………….years ago, which could have pushed them on to the plain,” he said. He added that pollen analysis indicates t",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q33-35",
+     "startQ": 33,
+     "endQ": 35,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "short_answer",
+       "prompt": [
+        "What kind of physical characteristics eventually contributed to the extinction of Irish elk?"
+       ],
+       "answer": {
+        "raw": "Male’s huge anlers",
+        "value": "Male’s huge anlers",
+        "accepted": [
+         "Male’s huge anlers"
+        ]
+       },
+       "answerNotInPassage": true
+      },
+      {
+       "number": 34,
+       "type": "short_answer",
+       "prompt": [
+        "What kind of nutrient substance needed in maintaining the huge size of Irish elk?"
+       ],
+       "answer": {
+        "raw": "Minerals",
+        "value": "Minerals",
+        "accepted": [
+         "Minerals"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "short_answer",
+       "prompt": [
+        "What geographical evidence suggested the advent of human resulted in the extinction of Irish elk?"
+       ],
+       "answer": {
+        "raw": "Habitat destruction",
+        "value": "Habitat destruction",
+        "accepted": [
+         "Habitat destruction"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_NOT_IN_PASSAGE"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 83,
+      "lineRange": [
+       83,
+       87
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 33-35",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. What kind of physical characteristics eventually contributed to the extinction of Irish elk?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. What kind of nutrient substance needed in maintaining the huge size of Irish elk?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. What geographical evidence suggested the advent of human resulted in the extinction of Irish elk?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q36-39",
+     "startQ": 36,
+     "endQ": 39,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the letter A-D and write your answers in boxes 36-39 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Eurasia"
+       },
+       {
+        "id": "B",
+        "text": "Australia"
+       },
+       {
+        "id": "C",
+        "text": "Asia"
+       },
+       {
+        "id": "D",
+        "text": "Africa"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 36,
+       "type": "matching_features",
+       "prompt": [
+        "the continents where humans imposed a little impact on large mammals extinction"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "matching_features",
+       "prompt": [
+        "the continents where the climatic change was mild and fauna remains"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "matching_features",
+       "prompt": [
+        "the continents where both humans and climatic change are the causes"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "matching_features",
+       "prompt": [
+        "the continents where the climatic change along caused a massive extinction"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 88,
+      "lineRange": [
+       88,
+       97
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 36-39",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the letter A-D and write your answers in boxes 36-39 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Eurasia",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Australia",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Asia",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Africa",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. the continents where humans imposed a little impact on large mammals extinction",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. the continents where the climatic change was mild and fauna remains",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. the continents where both humans and climatic change are the causes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. the continents where the climatic change along caused a massive extinction",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q40-40",
+     "startQ": 40,
+     "endQ": 40,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": null,
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 40,
+       "type": "mcq_single",
+       "prompt": [
+        "Which statement is true according to the Stuart team’s finding?"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "Neanderthals rather than modern humans caused the extinction in Europe"
+        },
+        {
+         "id": "B",
+         "text": "Paleolithic humans in Europe along kill the big animals such as Giant deer"
+        },
+        {
+         "id": "C",
+         "text": "climatic change was not solely responsible for the megafauna extinction in Europe"
+        },
+        {
+         "id": "D",
+         "text": "moderate and staggered extinction was mainly the result of fundamental climatic change"
+        }
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MISSING_INSTRUCTION"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 98,
+      "lineRange": [
+       98,
+       103
+      ],
+      "sourceLines": [
+       {
+        "text": "Question 40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "40. Which statement is true according to the Stuart team’s finding?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Neanderthals rather than modern humans caused the extinction in Europe",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Paleolithic humans in Europe along kill the big animals such as Giant deer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C climatic change was not solely responsible for the megafauna extinction in Europe",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D moderate and staggered extinction was mainly the result of fundamental climatic change",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "Chip"
-   },
-   {
-    "number": 2,
-    "value": "Grit"
-   },
-   {
-    "number": 3,
-    "value": "Milten zinc"
-   },
-   {
-    "number": 4,
-    "value": "Milling machine"
-   },
-   {
-    "number": 5,
-    "value": "Sockets"
-   },
-   {
-    "number": 6,
-    "value": "Loudspeakers"
-   },
-   {
-    "number": 7,
-    "value": "Valves"
-   },
-   {
-    "number": 8,
-    "value": "Cheaper"
-   },
-   {
-    "number": 9,
-    "value": "Components"
-   },
-   {
-    "number": 10,
-    "value": "Lighter"
-   },
-   {
-    "number": 11,
-    "value": "Cost"
-   },
-   {
-    "number": 12,
-    "value": "A"
-   },
-   {
-    "number": 13,
-    "value": "D"
-   },
-   {
-    "number": 14,
-    "value": "D"
-   },
-   {
-    "number": 15,
-    "value": "E"
-   },
-   {
-    "number": 16,
-    "value": "D"
-   },
-   {
-    "number": 17,
-    "value": "C"
-   },
-   {
-    "number": 18,
-    "value": "B"
-   },
-   {
-    "number": 19,
-    "value": "False"
-   },
-   {
-    "number": 20,
-    "value": "Not given"
-   },
-   {
-    "number": 21,
-    "value": "Not given"
-   },
-   {
-    "number": 22,
-    "value": "True"
-   },
-   {
-    "number": 23,
-    "value": "True"
-   },
-   {
-    "number": 24,
-    "value": "Covering"
-   },
-   {
-    "number": 25,
-    "value": "Chocolate liquor"
-   },
-   {
-    "number": 26,
-    "value": "Cocoa fat"
-   },
-   {
-    "number": 27,
-    "value": "Mold (form)"
-   },
-   {
-    "number": 28,
-    "value": "8000"
-   },
-   {
-    "number": 29,
-    "value": "Extinction"
-   },
-   {
-    "number": 30,
-    "value": "7000"
-   },
-   {
-    "number": 31,
-    "value": "Neolithic"
-   },
-   {
-    "number": 32,
-    "value": "Fluctuations"
-   },
-   {
-    "number": 33,
-    "value": "Male’s huge anlers"
-   },
-   {
-    "number": 34,
-    "value": "Minerals"
-   },
-   {
-    "number": 35,
-    "value": "Habitat destruction"
-   },
-   {
-    "number": 36,
-    "value": "B"
-   },
-   {
-    "number": 37,
-    "value": "D"
-   },
-   {
-    "number": 38,
-    "value": "A"
-   },
-   {
-    "number": 39,
-    "value": "C"
-   },
-   {
-    "number": 40,
-    "value": "C"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Complete the following chart of the paragraphs of reading passage, using NO MORE THAN TWO WORDS from the reading passage"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     36,
-     39
-    ],
-    "instruction": "Choose the letter A-D and write your answers in boxes 36-39 on your answer sheet. A Eurasia\n\nB Australia\n\nC Asia\n\nD Africa"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": ""
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  36,
+  37,
+  38,
+  39
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "8ecb061c56bea1b13af5d3756003aceb3ebdaee52018bad434d969329c70d313"
+ "metrics": {
+  "passages": 3,
+  "groups": 10,
+  "questionsInSource": 40,
+  "productionQuestions": 24,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "ef66e69e2f39dcbf14839af6115ddd6da3a2b4d2e3842078c4f0892041af49ba"
 }

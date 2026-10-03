@@ -1,222 +1,723 @@
 {
  "id": "reading.test-0164.29351d73",
  "module": "reading",
+ "slug": "ielts-reading-test-164",
  "sourceNumbers": [
   164
  ],
- "slug": "ielts-reading-test-164",
  "title": "IELTS Academic Reading Test 164",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-164/index.html",
-   "sha256": "75284fc597394a92ba4dd0b2de29c3690792173ac09daa09a2894984ac726706",
-   "manifestHashMatch": true,
+   "sha256": "64b4cd76e58041098f979ef04fde852d402692f0564388d0d0080e1b6b74142a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-164/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "(existing) phone networks"
+   },
+   {
+    "number": 2,
+    "raw": "press a button"
+   },
+   {
+    "number": 3,
+    "raw": "(in) cars"
+   },
+   {
+    "number": 4,
+    "raw": "2G / the second generation"
+   },
+   {
+    "number": 5,
+    "raw": "battery design"
+   },
+   {
+    "number": 6,
+    "raw": "machine-generated"
+   },
+   {
+    "number": 7,
+    "raw": "wirelessly"
+   },
+   {
+    "number": 8,
+    "raw": "paired spectrum"
+   },
+   {
+    "number": 9,
+    "raw": "uplink"
+   },
+   {
+    "number": 10,
+    "raw": "downlink"
+   },
+   {
+    "number": 11,
+    "raw": "B"
+   },
+   {
+    "number": 12,
+    "raw": "D"
+   },
+   {
+    "number": 13,
+    "raw": "A"
+   },
+   {
+    "number": 14,
+    "raw": "False"
+   },
+   {
+    "number": 15,
+    "raw": "NG"
+   },
+   {
+    "number": 16,
+    "raw": "True"
+   },
+   {
+    "number": 17,
+    "raw": "True"
+   },
+   {
+    "number": 18,
+    "raw": "NG"
+   },
+   {
+    "number": 19,
+    "raw": "False"
+   },
+   {
+    "number": 20,
+    "raw": "True"
+   },
+   {
+    "number": 21,
+    "raw": "C"
+   },
+   {
+    "number": 22,
+    "raw": "B"
+   },
+   {
+    "number": 23,
+    "raw": "C"
+   },
+   {
+    "number": 24,
+    "raw": "A"
+   },
+   {
+    "number": 25,
+    "raw": "(the) respiratory tract"
+   },
+   {
+    "number": 26,
+    "raw": "human to human"
+   },
+   {
+    "number": 27,
+    "raw": "C"
+   },
+   {
+    "number": 28,
+    "raw": "B"
+   },
+   {
+    "number": 29,
+    "raw": "B"
+   },
+   {
+    "number": 30,
+    "raw": "C"
+   },
+   {
+    "number": 31,
+    "raw": "A"
+   },
+   {
+    "number": 32,
+    "raw": "(market) research"
+   },
+   {
+    "number": 33,
+    "raw": "(local) government controls"
+   },
+   {
+    "number": 34,
+    "raw": "price list"
+   },
+   {
+    "number": 35,
+    "raw": "maximum number"
+   },
+   {
+    "number": 36,
+    "raw": "limited market"
+   },
+   {
+    "number": 37,
+    "raw": "A"
+   },
+   {
+    "number": 38,
+    "raw": "B"
+   },
+   {
+    "number": 39,
+    "raw": "C"
+   },
+   {
+    "number": 40,
+    "raw": "D"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "How Mobile Telephony Turned into a Health Scare",
    "paragraphs": [
-    "The technology which enabled mobile phones was previously used in the kind of two- way radio which could be found in taxis and emergency vehicles. Although this was a great development, it was not really considered mobile telephony because it could not be used to dial into existing phone networks. It was known as simplex technology, operating on the same principles as a walkie-talkie, which required that a user press a button, meaning that only one person at a time could talk. Simplex meant that there was only one communication frequency in use at any one time.",
-    "The first mobile phones to connect to telephone networks were often installed in cars before the hand-held version came on the market and the revolution in mobile technology began. The first generation of mobile phones (called 1G) were large, heavy and analogue and it was not until the invention of the second generation (2G) in the 1990s that digital networks could be used. The digital element enabled faster signalling. At the same time, developments in battery design and energy-saving electronics allowed the phones themselves to become smaller and therefore more truly mobile. The second generation allowed for text messaging too, and this began with the first person-to-person text message in Finland in 1993, although a machine-generated text message had been successfully sent two years earlier.",
-    "None of this would have been possible without the development of duplex technology to replace the relatively primitive simplex technology of the first phase of mobile communication. In duplex technology, there are two frequencies available simultaneously. These two frequencies can be obtained by the principle of Frequency Division Duplex (FDD). To send two signals wirelessly, it is necessary to create a paired spectrum, where one band carries the uplink (from phone to antenna) and the other carries the downlink (from antenna to phone).Time Division Duplex (TDD) can achieve the same thing, but instead of splitting the frequency, the uplink and downlink are switched very rapidly, giving the impression that one frequency is used.",
-    "For mobile telephony to work to its fullest potential, it needs to have a network through which it can relay signals.This network depends on base stations which send and receive the signals. The base stations tend to be simple constructions, or masts, on top of which are mounted the antennas. With the rapid increase in demand for mobile services, the infrastructure of antennas in the United Kingdom is now huge.",
-    "Many thousands of reports have appeared claiming that the signals relayed by these antennas are harmful to human and animal health. The claims focus on the fact that the antennas are transmitting radio waves in microwave form. In some ways, public demand is responsible for the increase in the alleged threat to health. Until quite recently, voice and text messages were transmitted using 2G technology. A 2G mast can send a low-frequency microwave signal approximately 35 kilometres. Third generation (3G) technology allows users to wirelessly download information from the internet and is extremely popular. The difference is that 3G technology uses a higher frequency to carry the signals, allowing masts to emit more radiation. This problem Is intensified by the need to have masts in closer proximity to each other and to the handsets themselves. Whatever danger there was in 2G signals is greatly multiplied by the fact that the 3G masts are physically much closer to people.",
-    "Government authorities have so far refused to accept that there is a danger to public health, and tests carried out by governments and telecommunications companies have been restricted to testing to see if heat is being produced from these microwaves. According to many, however, the problem is not heat, but electromagnetic waves which are found near the masts.",
-    "It is believed that some people, though not all, have a condition known as electro- sensitivity or electro-hypersensitivity (EHS), meaning that the electromagnetism makes them ill in some way. The actual health threat from these pulsed microwave signals is an area which greatly needs more research. It has been claimed that the signals affect all living organisms, including plants, at a cellular level and cause symptoms in people ranging from tiredness and headaches to cancer. Of particular concern is the effect that increased electromagnetic fields may have on children and the fear is that the negative effects on their health may not manifest themselves until they have had many years of continued exposure to high levels. Tests carried out on animals living close to this form of radiation are particularly useful because scientists can rule out the psychological effect that humans might be exhibiting due to their fear of possible contamination.",
-    "Of course, the danger of exposure exists when using a mobile phone but since we do this for limited periods, between which it is believed our bodies can recover, it is not considered as serious as the effect of living or working near a mast (sometimes mounted on the very building we occupy) which is transmitting electromagnetic waves 24 hours a day."
+    {
+     "type": "text",
+     "text": "The technology which enabled mobile phones was previously used in the kind of two- way radio which could be found in taxis and emergency vehicles. Although this was a great development, it was not really considered mobile telephony because it could not be used to dial into existing phone networks. It was known as simplex technology, operating on the same principles as a walkie-talkie, which required that a user press a button, meaning that only one person at a time could talk. Simplex meant that there was only one communication frequency in use at any one time."
+    },
+    {
+     "type": "text",
+     "text": "The first mobile phones to connect to telephone networks were often installed in cars before the hand-held version came on the market and the revolution in mobile technology began. The first generation of mobile phones (called 1G) were large, heavy and analogue and it was not until the invention of the second generation (2G) in the 1990s that digital networks could be used. The digital element enabled faster signalling. At the same time, developments in battery design and energy-saving electronics allowed the phones themselves to become smaller and therefore more truly mobile. The second generation allowed for text messaging too, and this began with the first person-to-person text message in Finland in 1993, although a machine-generated text message had been successfully sent two years earlier."
+    },
+    {
+     "type": "text",
+     "text": "None of this would have been possible without the development of duplex technology to replace the relatively primitive simplex technology of the first phase of mobile communication. In duplex technology, there are two frequencies available simultaneously. These two frequencies can be obtained by the principle of Frequency Division Duplex (FDD). To send two signals wirelessly, it is necessary to create a paired spectrum, where one band carries the uplink (from phone to antenna) and the other carries the downlink (from antenna to phone).Time Division Duplex (TDD) can achieve the same thing, but instead of splitting the frequency, the uplink and downlink are switched very rapidly, giving the impression that one frequency is used."
+    },
+    {
+     "type": "text",
+     "text": "For mobile telephony to work to its fullest potential, it needs to have a network through which it can relay signals.This network depends on base stations which send and receive the signals. The base stations tend to be simple constructions, or masts, on top of which are mounted the antennas. With the rapid increase in demand for mobile services, the infrastructure of antennas in the United Kingdom is now huge."
+    },
+    {
+     "type": "text",
+     "text": "Many thousands of reports have appeared claiming that the signals relayed by these antennas are harmful to human and animal health. The claims focus on the fact that the antennas are transmitting radio waves in microwave form. In some ways, public demand is responsible for the increase in the alleged threat to health. Until quite recently, voice and text messages were transmitted using 2G technology. A 2G mast can send a low-frequency microwave signal approximately 35 kilometres. Third generation (3G) technology allows users to wirelessly download information from the internet and is extremely popular. The difference is that 3G technology uses a higher frequency to carry the signals, allowing masts to emit more radiation. This problem Is intensified by the need to have masts in closer proximity to each other and to the handsets themselves. Whatever danger there was in 2G signals is greatly multiplied by the fact that the 3G masts are physically much closer to people."
+    },
+    {
+     "type": "text",
+     "text": "Government authorities have so far refused to accept that there is a danger to public health, and tests carried out by governments and telecommunications companies have been restricted to testing to see if heat is being produced from these microwaves. According to many, however, the problem is not heat, but electromagnetic waves which are found near the masts."
+    },
+    {
+     "type": "text",
+     "text": "It is believed that some people, though not all, have a condition known as electro- sensitivity or electro-hypersensitivity (EHS), meaning that the electromagnetism makes them ill in some way. The actual health threat from these pulsed microwave signals is an area which greatly needs more research. It has been claimed that the signals affect all living organisms, including plants, at a cellular level and cause symptoms in people ranging from tiredness and headaches to cancer. Of particular concern is the effect that increased electromagnetic fields may have on children and the fear is that the negative effects on their health may not manifest themselves until they have had many years of continued exposure to high levels. Tests carried out on animals living close to this form of radiation are particularly useful because scientists can rule out the psychological effect that humans might be exhibiting due to their fear of possible contamination."
+    },
+    {
+     "type": "text",
+     "text": "Of course, the danger of exposure exists when using a mobile phone but since we do this for limited periods, between which it is believed our bodies can recover, it is not considered as serious as the effect of living or working near a mast (sometimes mounted on the very building we occupy) which is transmitting electromagnetic waves 24 hours a day."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "short_answer",
+     "groupId": "p1.q01-06",
      "startQ": 1,
      "endQ": 6,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "short_answer",
-       "stem": {
-        "plain": "What were early two-way radios unable to use?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "(existing) phone networks",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. What were early two-way radios unable to use?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "What were early two-way radios unable to use?"
+       ],
+       "answer": {
+        "raw": "(existing) phone networks",
+        "value": "(existing) phone networks",
+        "accepted": [
+         "existing phone networks",
+         "phone networks"
+        ]
        }
       },
       {
        "number": 2,
        "type": "short_answer",
-       "stem": {
-        "plain": "What do you have to do in order to talk on a radio using simplex tech?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "press a button",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. What do you have to do in order to talk on a radio using simplex tech?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "What do you have to do in order to talk on a radio using simplex tech?"
+       ],
+       "answer": {
+        "raw": "press a button",
+        "value": "press a button",
+        "accepted": [
+         "press a button"
+        ]
        }
       },
       {
        "number": 3,
        "type": "short_answer",
-       "stem": {
-        "plain": "Where were early mobile phones generally used?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "(in) cars",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. Where were early mobile phones generally used?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "Where were early mobile phones generally used?"
+       ],
+       "answer": {
+        "raw": "(in) cars",
+        "value": "(in) cars",
+        "accepted": [
+         "in cars",
+         "cars"
+        ]
        }
       },
       {
        "number": 4,
        "type": "short_answer",
-       "stem": {
-        "plain": "What development introduced digital technology into mobile telephony?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "2G / the second generation",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. What development introduced digital technology into mobile telephony?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "What development introduced digital technology into mobile telephony?"
+       ],
+       "answer": {
+        "raw": "2G / the second generation",
+        "value": "2G / the second generation",
+        "accepted": [
+         "2G",
+         "the second generation"
+        ]
        }
       },
       {
        "number": 5,
        "type": "short_answer",
-       "stem": {
-        "plain": "Apart from the area of electronics, in which area did developments help make phones more mobile?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "battery design",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. Apart from the area of electronics, in which area did developments help make phones more mobile?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "Apart from the area of electronics, in which area did developments help make phones more mobile?"
+       ],
+       "answer": {
+        "raw": "battery design",
+        "value": "battery design",
+        "accepted": [
+         "battery design"
+        ]
        }
       },
       {
        "number": 6,
        "type": "short_answer",
-       "stem": {
-        "plain": "What type of text message was the first one ever sent?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "machine-generated",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. What type of text message was the first one ever sent?",
-        "elementPath": "children[10]"
+       "prompt": [
+        "What type of text message was the first one ever sent?"
+       ],
+       "answer": {
+        "raw": "machine-generated",
+        "value": "machine-generated",
+        "accepted": [
+         "machine-generated"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[9]",
-      "rawExcerpt": "Questions 1-6\n\nAnswer the questions below. Write NO MORE THAN THREE WORDS for each answer."
+      "headerLine": 9,
+      "lineRange": [
+       9,
+       16
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-6",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. What were early two-way radios unable to use?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. What do you have to do in order to talk on a radio using simplex tech?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. Where were early mobile phones generally used?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. What development introduced digital technology into mobile telephony?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. Apart from the area of electronics, in which area did developments help make phones more mobile?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. What type of text message was the first one ever sent?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q07-10",
+     "startQ": 7,
+     "endQ": 10,
+     "type": "diagram_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "image",
+        "asset": "asset.19d3b3a2144d"
+       }
+      ]
+     },
+     "figures": [
+      {
+       "assetId": "asset.19d3b3a2144d",
+       "sourcePath": "wp-content/uploads/2024/09/test-164.png",
+       "sha256": "19d3b3a2144d1aeb530429cfa520445bbfc28ffbb03faa759a4de6d3d0fb5026",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 7,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "wirelessly",
+        "value": "wirelessly",
+        "accepted": [
+         "wirelessly"
+        ]
+       }
+      },
+      {
+       "number": 8,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "paired spectrum",
+        "value": "paired spectrum",
+        "accepted": [
+         "paired spectrum"
+        ]
+       }
+      },
+      {
+       "number": 9,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "uplink",
+        "value": "uplink",
+        "accepted": [
+         "uplink"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "downlink",
+        "value": "downlink",
+        "accepted": [
+         "downlink"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 17,
+      "lineRange": [
+       17,
+       19
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 7-10",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2024/09/test-164.png"
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q11-13",
      "startQ": 11,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 11,
        "type": "mcq_single",
-       "stem": {
-        "plain": "3G technology is believed to be more of a threat to health because",
-        "segments": null
-       },
+       "prompt": [
+        "3G technology is believed to be more of a threat to health because"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "the signals are transmitted over much greater distances than before."
+        },
+        {
+         "id": "B",
+         "text": "the masts are closer together and emit higher frequencies."
+        },
+        {
+         "id": "C",
+         "text": "the signals are carrying both voice and text messages."
+        },
+        {
+         "id": "D",
+         "text": "the modern handsets needed emit more radiation."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11. 3G technology is believed to be more of a threat to health because",
-        "elementPath": "children[15]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 12,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Why might the testing of animals give us more reliable results?",
-        "segments": null
-       },
+       "prompt": [
+        "Why might the testing of animals give us more reliable results?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "because most of them live closer to the masts"
+        },
+        {
+         "id": "B",
+         "text": "because they are continually exposed to higher levels of radiation"
+        },
+        {
+         "id": "C",
+         "text": "because they are not affected at a cellular level"
+        },
+        {
+         "id": "D",
+         "text": "because they are not afraid of the effects of radiation"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12. Why might the testing of animals give us more reliable results?",
-        "elementPath": "children[16]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 13,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is believed to limit the danger from mobile phones?",
-        "segments": null
-       },
+       "prompt": [
+        "What is believed to limit the danger from mobile phones?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "not using them continuously"
+        },
+        {
+         "id": "B",
+         "text": "turning them off when not in use"
+        },
+        {
+         "id": "C",
+         "text": "mounting a mast on the building where you live or work"
+        },
+        {
+         "id": "D",
+         "text": "keeping healthy and getting enough sleep"
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13. What is believed to limit the danger from mobile phones?",
-        "elementPath": "children[17]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[14]",
-      "rawExcerpt": "Questions 11-13\n\nChoose the correct letter, A, B, C or D."
+      "headerLine": 20,
+      "lineRange": [
+       20,
+       36
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 11-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11. 3G technology is believed to be more of a threat to health because",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A the signals are transmitted over much greater distances than before.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the masts are closer together and emit higher frequencies.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C the signals are carrying both voice and text messages.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the modern handsets needed emit more radiation.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12. Why might the testing of animals give us more reliable results?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A because most of them live closer to the masts",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B because they are continually exposed to higher levels of radiation",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C because they are not affected at a cellular level",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D because they are not afraid of the effects of radiation",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13. What is believed to limit the danger from mobile phones?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A not using them continuously",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B turning them off when not in use",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C mounting a mast on the building where you live or work",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D keeping healthy and getting enough sleep",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -225,182 +726,454 @@
    "passageNumber": 2,
    "title": "Some Facts and Theories about Flu",
    "paragraphs": [
-    "The flu, more properly known as influenza, takes its name from the fact that it is so easily transmitted from person to person (influenza is the Italian word for ’influence’). Usually, contamination occurs through direct contact with secretions from an infected person. Its spread is also possible from contaminated airborne particles, such as those that occur when someone coughs or sneezes. However, it should be made clear that the risk is not great from simply being in the same room as an infected person, since the flu virus, unlike other respiratory viruses, does not dissolve in the air. Within 4-6 hours of someone catching the flu, the virus multiplies in infected cells and the cells burst, spreading the virus to other cells nearby.",
-    "The spread continues for up to 72 hours, the exact length of time depending on the body’s immune system response and the strength of the particular strain of flu. The range of human responses to the flu virus has been of interest to scientists for many years. This is because the effect can vary from no infection to a rapid and deadly spread of the virus to many people. One area of study that has received particular attention is the immune system response of the individual. Where a person’s immune system is healthy, the virus is attacked as it enters the body, usually in the respiratory tract. This lessens the severity of the illness. In contrast, people with compromised immune systems (typical in the young, where it is not fully developed, or in the old and the sick, where it is not working efficiently), often suffer the worst effects.",
-    "One of the body’s responses to flu is the creation of antibodies which recognise and destroy that particular strain of flu virus. What fascinates most researchers in the field is that the human body seems capable of storing these antibodies over a whole lifetime in case of future attack from the same or similar strains of flu. It was while researching these antibodies that scientists turned their attention back to what was possibly the worst ever flu pandemic in the world. The actual number of deaths is disputed, but the outbreak in 1918 killed between 20 and 50 million people. It is also estimated that one fifth of the population of the world may have been infected.",
-    "Through tests done on some of the survivors of the 1918 outbreak, it was discovered that, 90 years later, they still possessed the antibodies to that strain of flu, and some of them were actually still producing the antibodies. Work is now focused on why these people survived in the first place, with one theory being that they had actually been exposed to an earlier, similar strain, therefore developing immunity to the 1918 strain. It is hoped that, in the near future, we might be able to isolate the antibodies and use them to vaccinate people against further outbreaks.",
-    "Yet vaccination against the flu is an imprecise measure. At best, the vaccine protects us from the variations of flu that doctors expect that year. If their predictions are wrong in any particular year, being vaccinated will not prevent us from becoming infected. This is further complicated by the fact that there are two main types of flu, known as influenza A and influenza B. Influenza B causes less concern as its effects are usually less serious. Influenza A, however, has the power to change its genetic make-up. Although these genetic changes are rare, they create entirely new strains of flu against which we have no protection. It has been suggested that this is what had happened immediately prior to the 1918 outbreak, with research indicating that a genetic shift had taken place in China.",
-    "In 2005, another genetic shift in an influenza A virus was recorded, giving rise to the H5N1 strain, otherwise known as avian flu, or bird flu. Typical of such new strains, we have no way of fighting it and many people who are infected with it die. Perhaps more worrying is that it is a strain only previously found in birds but which changed its genetic make-up in a way that allowed it to be transmitted to humans. Most of the fear surrounding this virus is that it will change again, developing the ability to pass from human to human. If that change does happen, scientists and doctors can reasonably expect a death rate comparable to that which occurred in 1918 and, given that we can now travel more quickly and more easily between countries, infecting many more people than was previously possible, it could be several times worse."
+    {
+     "type": "text",
+     "text": "The flu, more properly known as influenza, takes its name from the fact that it is so easily transmitted from person to person (influenza is the Italian word for ’influence’). Usually, contamination occurs through direct contact with secretions from an infected person. Its spread is also possible from contaminated airborne particles, such as those that occur when someone coughs or sneezes. However, it should be made clear that the risk is not great from simply being in the same room as an infected person, since the flu virus, unlike other respiratory viruses, does not dissolve in the air. Within 4-6 hours of someone catching the flu, the virus multiplies in infected cells and the cells burst, spreading the virus to other cells nearby."
+    },
+    {
+     "type": "text",
+     "text": "The spread continues for up to 72 hours, the exact length of time depending on the body’s immune system response and the strength of the particular strain of flu. The range of human responses to the flu virus has been of interest to scientists for many years. This is because the effect can vary from no infection to a rapid and deadly spread of the virus to many people. One area of study that has received particular attention is the immune system response of the individual. Where a person’s immune system is healthy, the virus is attacked as it enters the body, usually in the respiratory tract. This lessens the severity of the illness. In contrast, people with compromised immune systems (typical in the young, where it is not fully developed, or in the old and the sick, where it is not working efficiently), often suffer the worst effects."
+    },
+    {
+     "type": "text",
+     "text": "One of the body’s responses to flu is the creation of antibodies which recognise and destroy that particular strain of flu virus. What fascinates most researchers in the field is that the human body seems capable of storing these antibodies over a whole lifetime in case of future attack from the same or similar strains of flu. It was while researching these antibodies that scientists turned their attention back to what was possibly the worst ever flu pandemic in the world. The actual number of deaths is disputed, but the outbreak in 1918 killed between 20 and 50 million people. It is also estimated that one fifth of the population of the world may have been infected."
+    },
+    {
+     "type": "text",
+     "text": "Through tests done on some of the survivors of the 1918 outbreak, it was discovered that, 90 years later, they still possessed the antibodies to that strain of flu, and some of them were actually still producing the antibodies. Work is now focused on why these people survived in the first place, with one theory being that they had actually been exposed to an earlier, similar strain, therefore developing immunity to the 1918 strain. It is hoped that, in the near future, we might be able to isolate the antibodies and use them to vaccinate people against further outbreaks."
+    },
+    {
+     "type": "text",
+     "text": "Yet vaccination against the flu is an imprecise measure. At best, the vaccine protects us from the variations of flu that doctors expect that year. If their predictions are wrong in any particular year, being vaccinated will not prevent us from becoming infected. This is further complicated by the fact that there are two main types of flu, known as influenza A and influenza B. Influenza B causes less concern as its effects are usually less serious. Influenza A, however, has the power to change its genetic make-up. Although these genetic changes are rare, they create entirely new strains of flu against which we have no protection. It has been suggested that this is what had happened immediately prior to the 1918 outbreak, with research indicating that a genetic shift had taken place in China."
+    },
+    {
+     "type": "text",
+     "text": "In 2005, another genetic shift in an influenza A virus was recorded, giving rise to the H5N1 strain, otherwise known as avian flu, or bird flu. Typical of such new strains, we have no way of fighting it and many people who are infected with it die. Perhaps more worrying is that it is a strain only previously found in birds but which changed its genetic make-up in a way that allowed it to be transmitted to humans. Most of the fear surrounding this virus is that it will change again, developing the ability to pass from human to human. If that change does happen, scientists and doctors can reasonably expect a death rate comparable to that which occurred in 1918 and, given that we can now travel more quickly and more easily between countries, infecting many more people than was previously possible, it could be several times worse."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 2? TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN If there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-20",
      "startQ": 14,
      "endQ": 20,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2?",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN If there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "tfng",
-       "stem": {
-        "plain": "The only way to catch flu is if someone coughs or sneezes near you.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. The only way to catch flu is if someone coughs or sneezes near you.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "The only way to catch flu is if someone coughs or sneezes near you."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 15,
        "type": "tfng",
-       "stem": {
-        "plain": "You become aware of the symptoms of flu within 4-6 hours of infection.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. You become aware of the symptoms of flu within 4-6 hours of infection.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "You become aware of the symptoms of flu within 4-6 hours of infection."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 16,
        "type": "tfng",
-       "stem": {
-        "plain": "The effect of a flu infection can depend on how strong the strain is.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. The effect of a flu infection can depend on how strong the strain is.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "The effect of a flu infection can depend on how strong the strain is."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 17,
        "type": "tfng",
-       "stem": {
-        "plain": "Those who are more likely to suffer badly with the flu include very young or very old people",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. Those who are more likely to suffer badly with the flu include very young or very old people",
-        "elementPath": "children[27]"
+       "prompt": [
+        "Those who are more likely to suffer badly with the flu include very young or very old people"
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 18,
        "type": "tfng",
-       "stem": {
-        "plain": "Although antibodies last a lifetime, scientists have found they get weaker with age.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. Although antibodies last a lifetime, scientists have found they get weaker with age.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "Although antibodies last a lifetime, scientists have found they get weaker with age."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 19,
        "type": "tfng",
-       "stem": {
-        "plain": "Vaccination is largely ineffective against flu.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. Vaccination is largely ineffective against flu.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "Vaccination is largely ineffective against flu."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "Another change in the genetic make-up of the H5N1 strain could kill more people than the 1918 epidemic.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. Another change in the genetic make-up of the H5N1 strain could kill more people than the 1918 epidemic.",
-        "elementPath": "children[27]"
+       "prompt": [
+        "Another change in the genetic make-up of the H5N1 strain could kill more people than the 1918 epidemic."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[25]",
-      "rawExcerpt": "Questions 14-20\n\nDo the following statements agree with the information given in Reading Passage 2? TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN If there is no information "
+      "headerLine": 44,
+      "lineRange": [
+       44,
+       55
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-20",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 2?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN If there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. The only way to catch flu is if someone coughs or sneezes near you.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. You become aware of the symptoms of flu within 4-6 hours of infection.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. The effect of a flu infection can depend on how strong the strain is.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. Those who are more likely to suffer badly with the flu include very young or very old people",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. Although antibodies last a lifetime, scientists have found they get weaker with age.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Vaccination is largely ineffective against flu.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. Another change in the genetic make-up of the H5N1 strain could kill more people than the 1918 epidemic.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g06",
-     "instruction": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "short_answer",
+     "groupId": "p2.q21-24",
+     "startQ": 21,
+     "endQ": 24,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Classify the following statements as characterising",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "something known by scientists to be true"
+       },
+       {
+        "id": "B",
+        "text": "something believed by scientists to be true"
+       },
+       {
+        "id": "C",
+        "text": "something known by scientists to be false"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 21,
+       "type": "matching_features",
+       "prompt": [
+        "Sharing a room with a flu sufferer presents a very high risk to your health."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 22,
+       "type": "matching_features",
+       "prompt": [
+        "One fifth of the people in the world caught the flu in 1918."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 23,
+       "type": "matching_features",
+       "prompt": [
+        "Influenza A viruses do not change their genetic make-up frequently."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "matching_features",
+       "prompt": [
+        "The H5N1 strain evolved in or before 2005."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 56,
+      "lineRange": [
+       56,
+       64
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 21 -24",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Classify the following statements as characterising",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A something known by scientists to be true",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B something believed by scientists to be true",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C something known by scientists to be false",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. Sharing a room with a flu sufferer presents a very high risk to your health.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. One fifth of the people in the world caught the flu in 1918.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. Influenza A viruses do not change their genetic make-up frequently.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24. The H5N1 strain evolved in or before 2005.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q25-26",
      "startQ": 25,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 25,
        "type": "short_answer",
-       "stem": {
-        "plain": "In which part of the body do antibodies normally attack the flu virus?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "(the) respiratory tract",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "25. In which part of the body do antibodies normally attack the flu virus?",
-        "elementPath": "children[32]"
+       "prompt": [
+        "In which part of the body do antibodies normally attack the flu virus?"
+       ],
+       "answer": {
+        "raw": "(the) respiratory tract",
+        "value": "(the) respiratory tract",
+        "accepted": [
+         "the respiratory tract",
+         "respiratory tract"
+        ]
        }
       },
       {
        "number": 26,
        "type": "short_answer",
-       "stem": {
-        "plain": "What kind of transmission of the H5N1 strain are people afraid might become reality?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "human to human",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "26. What kind of transmission of the H5N1 strain are people afraid might become reality?",
-        "elementPath": "children[32]"
+       "prompt": [
+        "What kind of transmission of the H5N1 strain are people afraid might become reality?"
+       ],
+       "answer": {
+        "raw": "human to human",
+        "value": "human to human",
+        "accepted": [
+         "human to human"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[31]",
-      "rawExcerpt": "Questions 25-26\n\nAnswer the questions below. Write NO MORE THAN THREE WORDS for each answer."
+      "headerLine": 65,
+      "lineRange": [
+       65,
+       68
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 25-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the questions below. Write NO MORE THAN THREE WORDS for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25. In which part of the body do antibodies normally attack the flu virus?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26. What kind of transmission of the H5N1 strain are people afraid might become reality?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -409,521 +1182,672 @@
    "passageNumber": 3,
    "title": "Changes in International Commerce How ethics and fair trade can make a difference",
    "paragraphs": [
-    "The purpose of international commerce is to buy things from and sell things to people in other countries. Hundreds, and indeed thousands, of years ago, this actually worked quite well. People who travelled to foreign lands, often by ship, would take with them items for trade. Agricultural countries would, for example, trade olive oil or wine for weapons or other worked items. All that needed to be negotiated was a fair ’price’ for the items. (How many axes is a barrel of oil worth, for example?) Currency did not enter into the first deals but, even when it did, few problems existed to complicate matters barring disagreements over the value of goods.",
-    "Today, fixing a fair price remains at the centre of international commerce. When we look at the deal from the point of view of the seller, market research must determine the price at which the goods will be sold. This may vary greatly from country to country and people are often surprised to see exactly the same item for sale at two or three times the price it sells for in another country. Taxation and local government controls are sometimes behind this, but often it comes down to the fact that people in poor countries simply cannot afford to pay the same amount of money as those in rich countries. These are the things a seller has to bear in mind when preparing a price list for goods in each country.",
-    "In most cases, the purpose of setting a suitable price is to sell the maximum number of units. Usually, this is the way to guarantee the biggest profit. One exception is in the selling of luxury or specialist goods. These are often goods for which there is a limited market Here, slightly different rules apply because the profit margin (the amount of money a producer makes on each item) is much higher. For instance, nearly everyone wants to own a television or a mobile phone, and there is a lot of competition in the area of production, forcing the prices to be competitive too. The producers have to sell a large number of items to make a profit because their profit margin is small. But not everyone wants to buy hand-made jewellery, or a machine for sticking labels onto bottles. This enables the producer to charge a price much higher than the cost of making the item, increasing the profit margin. But at the heart of any sale, whether they sell many items for a small profit, or a few items for a large profit the prime motivation for the producer is to make as much profit as possible.",
-    "At least, that was the case until relatively recently when, to the great surprise of many, companies started trading without profit as their main objective. Ethical trade began as an attempt to cause as little damage as possible to the producers of raw materials and manufactured goods in poor countries. This movement put pressure on the industry to see to it that working conditions and human rights were not damaged by the need for poorer people to produce goods. In short, it drew to the world’s attention the fact that many poor people were being exploited by big businesses in their drive to make more profit.",
-    "There have been many examples throughout the developing world where local producers were forced by economic pressure to supply cash crops such as tea, coffee and cotton to major industries. These people are frequently not in a position to fix their prices, and are often forced by market conditions to sell for a price too low to support the producers and their community. Worse still, while the agricultural land is given over to cash crops, it robs the local people of the ability to grow their own food. In time, through over-production, the land becomes spent and infertile, leading to poverty, starvation, and sometimes the destruction of the whole community.",
-    "Fair trade policies differ from ethical trade policies in that they take the process a stage further. Where ethical policies are designed to keep the damage to a minimum, fair trade organisations actually work to improve conditions among producers and their communities. Fair trade organisations view sustainability as a key aim. This involves implementing policies where producers are given a fair price for the goods they sell, so that they and their communities can continue to operate.",
-    "Although many big businesses are cynical about an operation that does not regard profit as a main driving force, the paradox is that it will help them too. With sustainability as their main aim, fair trade organisations not only help the poorer producers obtain a reasonable standard of living, but they also help guarantee a constant supply of raw materials. This form of sustainability benefits everyone, whether their motive is making a profit or improving the lives of the world’s poorer people.",
-    "Questions 27-31\n\nClassify the following as being a result of",
-    "A fair trade policies\n\nB ethical trade policies\n\nC a country being poor",
-    "27. Manufactured goods are obtainable at a lower price than elsewhere.\n\n28. Harm to producers of raw materials is minimised.\n\n29. Human rights are respected.\n\n30. Land is not used to produce food for the local population.\n\n31. The local community has more chance of survival."
+    {
+     "type": "text",
+     "text": "The purpose of international commerce is to buy things from and sell things to people in other countries. Hundreds, and indeed thousands, of years ago, this actually worked quite well. People who travelled to foreign lands, often by ship, would take with them items for trade. Agricultural countries would, for example, trade olive oil or wine for weapons or other worked items. All that needed to be negotiated was a fair ’price’ for the items. (How many axes is a barrel of oil worth, for example?) Currency did not enter into the first deals but, even when it did, few problems existed to complicate matters barring disagreements over the value of goods."
+    },
+    {
+     "type": "text",
+     "text": "Today, fixing a fair price remains at the centre of international commerce. When we look at the deal from the point of view of the seller, market research must determine the price at which the goods will be sold. This may vary greatly from country to country and people are often surprised to see exactly the same item for sale at two or three times the price it sells for in another country. Taxation and local government controls are sometimes behind this, but often it comes down to the fact that people in poor countries simply cannot afford to pay the same amount of money as those in rich countries. These are the things a seller has to bear in mind when preparing a price list for goods in each country."
+    },
+    {
+     "type": "text",
+     "text": "In most cases, the purpose of setting a suitable price is to sell the maximum number of units. Usually, this is the way to guarantee the biggest profit. One exception is in the selling of luxury or specialist goods. These are often goods for which there is a limited market Here, slightly different rules apply because the profit margin (the amount of money a producer makes on each item) is much higher. For instance, nearly everyone wants to own a television or a mobile phone, and there is a lot of competition in the area of production, forcing the prices to be competitive too. The producers have to sell a large number of items to make a profit because their profit margin is small. But not everyone wants to buy hand-made jewellery, or a machine for sticking labels onto bottles. This enables the producer to charge a price much higher than the cost of making the item, increasing the profit margin. But at the heart of any sale, whether they sell many items for a small profit, or a few items for a large profit the prime motivation for the producer is to make as much profit as possible."
+    },
+    {
+     "type": "text",
+     "text": "At least, that was the case until relatively recently when, to the great surprise of many, companies started trading without profit as their main objective. Ethical trade began as an attempt to cause as little damage as possible to the producers of raw materials and manufactured goods in poor countries. This movement put pressure on the industry to see to it that working conditions and human rights were not damaged by the need for poorer people to produce goods. In short, it drew to the world’s attention the fact that many poor people were being exploited by big businesses in their drive to make more profit."
+    },
+    {
+     "type": "text",
+     "text": "There have been many examples throughout the developing world where local producers were forced by economic pressure to supply cash crops such as tea, coffee and cotton to major industries. These people are frequently not in a position to fix their prices, and are often forced by market conditions to sell for a price too low to support the producers and their community. Worse still, while the agricultural land is given over to cash crops, it robs the local people of the ability to grow their own food. In time, through over-production, the land becomes spent and infertile, leading to poverty, starvation, and sometimes the destruction of the whole community."
+    },
+    {
+     "type": "text",
+     "text": "Fair trade policies differ from ethical trade policies in that they take the process a stage further. Where ethical policies are designed to keep the damage to a minimum, fair trade organisations actually work to improve conditions among producers and their communities. Fair trade organisations view sustainability as a key aim. This involves implementing policies where producers are given a fair price for the goods they sell, so that they and their communities can continue to operate."
+    },
+    {
+     "type": "text",
+     "text": "Although many big businesses are cynical about an operation that does not regard profit as a main driving force, the paradox is that it will help them too. With sustainability as their main aim, fair trade organisations not only help the poorer producers obtain a reasonable standard of living, but they also help guarantee a constant supply of raw materials. This form of sustainability benefits everyone, whether their motive is making a profit or improving the lives of the world’s poorer people."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Complete the summary below. Use NO MORE THAN THREE WORDS from the passage for each answer.",
-     "wordLimit": "NO MORE THAN THREE WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p3.q27-31",
+     "startQ": 27,
+     "endQ": 31,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Classify the following as being a result of",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "fair trade policies"
+       },
+       {
+        "id": "B",
+        "text": "ethical trade policies"
+       },
+       {
+        "id": "C",
+        "text": "a country being poor"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "matching_features",
+       "prompt": [
+        "Manufactured goods are obtainable at a lower price than elsewhere."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "matching_features",
+       "prompt": [
+        "Harm to producers of raw materials is minimised."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_features",
+       "prompt": [
+        "Human rights are respected."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_features",
+       "prompt": [
+        "Land is not used to produce food for the local population."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 31,
+       "type": "matching_features",
+       "prompt": [
+        "The local community has more chance of survival."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 77,
+      "lineRange": [
+       77,
+       86
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-31",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Classify the following as being a result of",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A fair trade policies",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B ethical trade policies",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C a country being poor",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. Manufactured goods are obtainable at a lower price than elsewhere.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Harm to producers of raw materials is minimised.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Human rights are respected.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Land is not used to produce food for the local population.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. The local community has more chance of survival.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q32-36",
      "startQ": 32,
      "endQ": 36,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Use NO MORE THAN THREE WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Companies carry out ",
+         {
+          "blank": 32
+         },
+         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of ",
+         {
+          "blank": 33
+         },
+         "or taxes. The ",
+         {
+          "blank": 34
+         },
+         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the ",
+         {
+          "blank": 35
+         },
+         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a ",
+         {
+          "blank": 36
+         }
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 32,
-       "type": "completion",
-       "stem": {
-        "plain": "Companies carry out (32) ______ to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33) ______ or taxes. The (34) ______ is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35) ______ of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a (36) ______",
-        "segments": [
-         "Companies carry out",
-         {
-          "blank": 32
-         },
-         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of",
-         {
-          "blank": 33
-         },
-         "or taxes. The",
-         {
-          "blank": 34
-         },
-         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the",
-         {
-          "blank": 35
-         },
-         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a",
-         {
-          "blank": 36
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(market) research",
+        "value": "(market) research",
+        "accepted": [
+         "market research",
+         "research"
         ]
-       },
-       "options": null,
-       "correctAnswer": "(market) research",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (3",
-        "elementPath": "children[45]"
        }
       },
       {
        "number": 33,
-       "type": "completion",
-       "stem": {
-        "plain": "Companies carry out (32) ______ to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33) ______ or taxes. The (34) ______ is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35) ______ of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a (36) ______",
-        "segments": [
-         "Companies carry out",
-         {
-          "blank": 32
-         },
-         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of",
-         {
-          "blank": 33
-         },
-         "or taxes. The",
-         {
-          "blank": 34
-         },
-         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the",
-         {
-          "blank": 35
-         },
-         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a",
-         {
-          "blank": 36
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(local) government controls",
+        "value": "(local) government controls",
+        "accepted": [
+         "local government controls",
+         "government controls"
         ]
-       },
-       "options": null,
-       "correctAnswer": "(local) government controls",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (3",
-        "elementPath": "children[45]"
        }
       },
       {
        "number": 34,
-       "type": "completion",
-       "stem": {
-        "plain": "Companies carry out (32) ______ to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33) ______ or taxes. The (34) ______ is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35) ______ of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a (36) ______",
-        "segments": [
-         "Companies carry out",
-         {
-          "blank": 32
-         },
-         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of",
-         {
-          "blank": 33
-         },
-         "or taxes. The",
-         {
-          "blank": 34
-         },
-         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the",
-         {
-          "blank": 35
-         },
-         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a",
-         {
-          "blank": 36
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "price list",
+        "value": "price list",
+        "accepted": [
+         "price list"
         ]
-       },
-       "options": null,
-       "correctAnswer": "price list",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (3",
-        "elementPath": "children[45]"
        }
       },
       {
        "number": 35,
-       "type": "completion",
-       "stem": {
-        "plain": "Companies carry out (32) ______ to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33) ______ or taxes. The (34) ______ is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35) ______ of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a (36) ______",
-        "segments": [
-         "Companies carry out",
-         {
-          "blank": 32
-         },
-         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of",
-         {
-          "blank": 33
-         },
-         "or taxes. The",
-         {
-          "blank": 34
-         },
-         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the",
-         {
-          "blank": 35
-         },
-         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a",
-         {
-          "blank": 36
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "maximum number",
+        "value": "maximum number",
+        "accepted": [
+         "maximum number"
         ]
-       },
-       "options": null,
-       "correctAnswer": "maximum number",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (3",
-        "elementPath": "children[45]"
        }
       },
       {
        "number": 36,
-       "type": "completion",
-       "stem": {
-        "plain": "Companies carry out (32) ______ to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33) ______ or taxes. The (34) ______ is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35) ______ of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a (36) ______",
-        "segments": [
-         "Companies carry out",
-         {
-          "blank": 32
-         },
-         "to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of",
-         {
-          "blank": 33
-         },
-         "or taxes. The",
-         {
-          "blank": 34
-         },
-         "is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the",
-         {
-          "blank": 35
-         },
-         "of a particular item. Manufacturers can have a higher profit margin on luxury or specialist goods which often have a",
-         {
-          "blank": 36
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "limited market",
+        "value": "limited market",
+        "accepted": [
+         "limited market"
         ]
-       },
-       "options": null,
-       "correctAnswer": "limited market",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (3",
-        "elementPath": "children[45]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[44]",
-      "rawExcerpt": "Questions 32-36\n\nComplete the summary below. Use NO MORE THAN THREE WORDS from the passage for each answer."
+      "headerLine": 87,
+      "lineRange": [
+       87,
+       89
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 32-36",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Use NO MORE THAN THREE WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Companies carry out (32)…………………….to decide the price that their goods are sold at in each country. The prices of the same goods can vary in different countries because of (33)…………………..or taxes. The (34)…………………is finalised, depending on how much customers in a particular market can afford. To ensure a profit, manufacturers aim to sell the (35)………………..of a particular item. Manufacturers can have a h",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q37-40",
      "startQ": 37,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 37,
        "type": "mcq_single",
-       "stem": {
-        "plain": "According to the writer, what might early traders have disagreed about?",
-        "segments": null
-       },
+       "prompt": [
+        "According to the writer, what might early traders have disagreed about?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "the comparative values of the goods"
+        },
+        {
+         "id": "B",
+         "text": "which currency to use for their deal"
+        },
+        {
+         "id": "C",
+         "text": "which items they wanted as exchange"
+        },
+        {
+         "id": "D",
+         "text": "the quality of the goods being traded"
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. According to the writer, what might early traders have disagreed about?",
-        "elementPath": "children[47]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 38,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is the main consequence of a product being in demand?",
-        "segments": null
-       },
+       "prompt": [
+        "What is the main consequence of a product being in demand?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "higher prices"
+        },
+        {
+         "id": "B",
+         "text": "smaller profit margins"
+        },
+        {
+         "id": "C",
+         "text": "fewer items being produced"
+        },
+        {
+         "id": "D",
+         "text": "less market competition"
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. What is the main consequence of a product being in demand?",
-        "elementPath": "children[48]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 39,
        "type": "mcq_single",
-       "stem": {
-        "plain": "How might an agricultural community be destroyed?",
-        "segments": null
-       },
+       "prompt": [
+        "How might an agricultural community be destroyed?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "because companies in richer countries steal from them"
+        },
+        {
+         "id": "B",
+         "text": "because they ask an unrealistically high price for their produce"
+        },
+        {
+         "id": "C",
+         "text": "because they over-use the land in order to grow cash crops"
+        },
+        {
+         "id": "D",
+         "text": "because the crops take much too long to grow"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. How might an agricultural community be destroyed?",
-        "elementPath": "children[49]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 40,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The word paradox in the final paragraph refers to the fact that",
-        "segments": null
-       },
+       "prompt": [
+        "The word paradox in the final paragraph refers to the fact that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "poorer people will become richer than the people who run big businesses."
+        },
+        {
+         "id": "B",
+         "text": "by being cynical, the big businesses have helped produce a result they do not want."
+        },
+        {
+         "id": "C",
+         "text": "the suppliers of raw materials will sell them to big businesses for a huge profit."
+        },
+        {
+         "id": "D",
+         "text": "big businesses will gain from these policies although they don’t support them."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. The word paradox in the final paragraph refers to the fact that",
-        "elementPath": "children[50]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[46]",
-      "rawExcerpt": "Questions 37-40\n\nChoose the correct letter, A, B, C or D."
+      "headerLine": 90,
+      "lineRange": [
+       90,
+       111
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 37-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. According to the writer, what might early traders have disagreed about?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A the comparative values of the goods",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B which currency to use for their deal",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C which items they wanted as exchange",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the quality of the goods being traded",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. What is the main consequence of a product being in demand?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A higher prices",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B smaller profit margins",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C fewer items being produced",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D less market competition",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. How might an agricultural community be destroyed?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A because companies in richer countries steal from them",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B because they ask an unrealistically high price for their produce",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C because they over-use the land in order to grow cash crops",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D because the crops take much too long to grow",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. The word paradox in the final paragraph refers to the fact that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A poorer people will become richer than the people who run big businesses.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B by being cynical, the big businesses have helped produce a result they do not want.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C the suppliers of raw materials will sell them to big businesses for a huge profit.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D big businesses will gain from these policies although they don’t support them.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "(existing) phone networks"
-   },
-   {
-    "number": 2,
-    "value": "press a button"
-   },
-   {
-    "number": 3,
-    "value": "(in) cars"
-   },
-   {
-    "number": 4,
-    "value": "2G / the second generation"
-   },
-   {
-    "number": 5,
-    "value": "battery design"
-   },
-   {
-    "number": 6,
-    "value": "machine-generated"
-   },
-   {
-    "number": 7,
-    "value": "wirelessly"
-   },
-   {
-    "number": 8,
-    "value": "paired spectrum"
-   },
-   {
-    "number": 9,
-    "value": "uplink"
-   },
-   {
-    "number": 10,
-    "value": "downlink"
-   },
-   {
-    "number": 11,
-    "value": "B"
-   },
-   {
-    "number": 12,
-    "value": "D"
-   },
-   {
-    "number": 13,
-    "value": "A"
-   },
-   {
-    "number": 14,
-    "value": "False"
-   },
-   {
-    "number": 15,
-    "value": "NG"
-   },
-   {
-    "number": 16,
-    "value": "True"
-   },
-   {
-    "number": 17,
-    "value": "True"
-   },
-   {
-    "number": 18,
-    "value": "NG"
-   },
-   {
-    "number": 19,
-    "value": "False"
-   },
-   {
-    "number": 20,
-    "value": "True"
-   },
-   {
-    "number": 21,
-    "value": "C"
-   },
-   {
-    "number": 22,
-    "value": "B"
-   },
-   {
-    "number": 23,
-    "value": "C"
-   },
-   {
-    "number": 24,
-    "value": "A"
-   },
-   {
-    "number": 25,
-    "value": "(the) respiratory tract"
-   },
-   {
-    "number": 26,
-    "value": "human to human"
-   },
-   {
-    "number": 27,
-    "value": "C"
-   },
-   {
-    "number": 28,
-    "value": "B"
-   },
-   {
-    "number": 29,
-    "value": "B"
-   },
-   {
-    "number": 30,
-    "value": "C"
-   },
-   {
-    "number": 31,
-    "value": "A"
-   },
-   {
-    "number": 32,
-    "value": "(market) research"
-   },
-   {
-    "number": 33,
-    "value": "(local) government controls"
-   },
-   {
-    "number": 34,
-    "value": "price list"
-   },
-   {
-    "number": 35,
-    "value": "maximum number"
-   },
-   {
-    "number": 36,
-    "value": "limited market"
-   },
-   {
-    "number": 37,
-    "value": "A"
-   },
-   {
-    "number": 38,
-    "value": "B"
-   },
-   {
-    "number": 39,
-    "value": "C"
-   },
-   {
-    "number": 40,
-    "value": "D"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     10
-    ],
-    "instruction": "Complete the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     21,
-     24
-    ],
-    "instruction": "Classify the following statements as characterising A something known by scientists to be true\n\nB something believed by scientists to be tru"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "57c482135f8c47478a3890fc1245f2ef1e339364d5b885bb03619ead957fe620"
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 36,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "3a0783870c27f610145f70c73438d064a0e924cf319f6d58fab11de5e8d1707c"
 }

@@ -1,37 +1,33 @@
 {
  "slug": "ielts-reading-test-184",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Look at the following views (Questions 14—19) and the list of people below them. Match each view with the person expressing it in the passag"
-   }
+   "groupId": "p1.q01-05",
+   "range": [
+    1,
+    5
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the flow chart below. Use NO MORE THAN THREE WORDS from the passage for each answer. Stage 1: Translate and adapt the script"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     33,
-     36
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 26,
-    "answers": 40
-   }
+   "groupId": "p3.q33-36",
+   "range": [
+    33,
+    36
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
   }
  ]
 }

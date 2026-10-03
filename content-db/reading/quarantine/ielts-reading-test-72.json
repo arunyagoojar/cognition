@@ -1,124 +1,49 @@
 {
  "slug": "ielts-reading-test-72",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     8,
-     10
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D."
-   }
+   "groupId": "p1.q11-14",
+   "range": [
+    11,
+    14
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete each of the following statements (questions 11-14) with the best ending A-G from the box below."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     20,
-     23
-    ],
-    "instruction": "Look at the following people (questions 20-23) and the list of statements below. Match each person to the correct statem"
-   }
+   "groupId": "p2.q20-23",
+   "range": [
+    20,
+    23
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Look at the following people (questions 20-23) and the list of statements below. Match each person to the correct statement. Write the correct letter A-G in boxes 1-4 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     33,
-     36
-    ],
-    "instruction": "Complete the sentences below with words taken from Reading Passage 3. Use NO MORE THAN TWO WORDS for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 18,
-    "answers": 13
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q14 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q15 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q16 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q17 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q18 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q19 in g03"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q28 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q29 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q30 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q31 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q32 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q37 in g07"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q38 in g07"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q39 in g07"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q40 in g07"
+   "groupId": "p3.q33-36",
+   "range": [
+    33,
+    36
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below with words taken from Reading Passage 3. Use NO MORE THAN TWO WORDS for each answer."
   }
  ]
 }

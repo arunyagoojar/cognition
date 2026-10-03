@@ -1,37 +1,73 @@
 {
  "slug": "ielts-reading-test-170",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     9
-    ],
-    "instruction": "Complete the sentence. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
+   "groupId": "p2.q18-24",
+   "range": [
+    18,
+    24
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     24
-    ],
-    "instruction": "Complete the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
+   "groupId": "p2.q25-26",
+   "range": [
+    25,
+    26
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 25,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q27-30",
+   "range": [
+    27,
+    30
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Choose the correct letter, A, B, C, or D."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q31-35",
+   "range": [
+    31,
+    35
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the flow chart. Choose NO MORE THAN THREE WORDS from the passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

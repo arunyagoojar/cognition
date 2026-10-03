@@ -1,73 +1,132 @@
 {
  "slug": "ielts-reading-test-17",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     4
-    ],
-    "instruction": "Reading Passage 1 has six sections, A-F. Which paragraph contains the following information? Write the correct letter A-"
-   }
+   "groupId": "p1.q01-04",
+   "range": [
+    1,
+    4
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 1 has six sections, A-F. Which paragraph contains the following information? Write the correct letter A-F in boxes 1-4 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     10
-    ],
-    "instruction": "Classify the following features as characterising A the ‘Headstart’ programme\n\nВ the ‘Missouri’ programme\n\nС both the ‘H"
-   }
+   "groupId": "p1.q05-10",
+   "range": [
+    5,
+    10
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "Classify the following features as characterising Write the correct letter A, B, C or D in boxes 5-10 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 on the following pages. Readi"
-   }
+   "groupId": "p1.q11-13",
+   "range": [
+    11,
+    13
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 11-13 on your answer sheet, write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     23
-    ],
-    "instruction": "Do the following statements reflect the claims of the writer in Reading Passage 2? In boxes 18-23 on your answer sheet, "
-   }
+   "groupId": "p2.q14-17",
+   "range": [
+    14,
+    17
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "MISSING_INSTRUCTION",
+    "MISSING_OPTION_POOL",
+    "MISSING_QUESTION"
+   ],
+   "instruction": ""
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     38,
-     40
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D.\n\nWrite your answers in boxes 38-40 on your answer sheet."
-   }
+   "groupId": "p3.q18-23",
+   "range": [
+    18,
+    23
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements reflect the claims of the writer in Reading Passage 2? In boxes 18-23 on your answer sheet, write"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 17,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q24-26",
+   "range": [
+    24,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary of paragraphs E and F with the list of words A-H below. Write the correct letter A-H in boxes 24-26 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q27-31",
+   "range": [
+    27,
+    31
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 3 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter A-G in boxes 27-31 on your answer sheet. NB You may use any letter more than o"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q32-37",
+   "range": [
+    32,
+    37
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 32-37 on your answer sheet, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q38-40",
+   "range": [
+    38,
+    40
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D. Write your answers in boxes 38-40 on your answer sheet."
   }
  ]
 }

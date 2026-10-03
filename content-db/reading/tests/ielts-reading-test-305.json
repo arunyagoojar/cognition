@@ -1,136 +1,843 @@
 {
  "id": "reading.test-0305.f816a285",
  "module": "reading",
+ "slug": "ielts-reading-test-305",
  "sourceNumbers": [
   305
  ],
- "slug": "ielts-reading-test-305",
  "title": "IELTS Academic Reading Test 305",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-305/index.html",
-   "sha256": "25cd6b4d96afc7840741b54c18438f16dab1dc14766ab9645768a4ba39e969c9",
-   "manifestHashMatch": true,
+   "sha256": "a49edbe5bff6df49409c22957e4593ec74097378147a93552a8e9d9265e43934",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-305/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "E"
+   },
+   {
+    "number": 2,
+    "raw": "B"
+   },
+   {
+    "number": 3,
+    "raw": "G"
+   },
+   {
+    "number": 4,
+    "raw": "C"
+   },
+   {
+    "number": 5,
+    "raw": "A"
+   },
+   {
+    "number": 6,
+    "raw": "C"
+   },
+   {
+    "number": 7,
+    "raw": "C"
+   },
+   {
+    "number": 8,
+    "raw": "A"
+   },
+   {
+    "number": 9,
+    "raw": "C"
+   },
+   {
+    "number": 10,
+    "raw": "(discrete) external area"
+   },
+   {
+    "number": 11,
+    "raw": "Bed"
+   },
+   {
+    "number": 12,
+    "raw": "Storage"
+   },
+   {
+    "number": 13,
+    "raw": "Sliding doors"
+   },
+   {
+    "number": 14,
+    "raw": "True"
+   },
+   {
+    "number": 15,
+    "raw": "False"
+   },
+   {
+    "number": 16,
+    "raw": "Not given"
+   },
+   {
+    "number": 17,
+    "raw": "True"
+   },
+   {
+    "number": 18,
+    "raw": "False"
+   },
+   {
+    "number": 19,
+    "raw": "False"
+   },
+   {
+    "number": 20,
+    "raw": "Not given"
+   },
+   {
+    "number": 21,
+    "raw": "B"
+   },
+   {
+    "number": 22,
+    "raw": "D"
+   },
+   {
+    "number": 23,
+    "raw": "C"
+   },
+   {
+    "number": 24,
+    "raw": "A, C, F"
+   },
+   {
+    "number": 25,
+    "raw": "A, C, F"
+   },
+   {
+    "number": 26,
+    "raw": "A, C, F"
+   },
+   {
+    "number": 27,
+    "raw": "D"
+   },
+   {
+    "number": 28,
+    "raw": "A"
+   },
+   {
+    "number": 29,
+    "raw": "F"
+   },
+   {
+    "number": 30,
+    "raw": "C"
+   },
+   {
+    "number": 31,
+    "raw": "D"
+   },
+   {
+    "number": 32,
+    "raw": "B"
+   },
+   {
+    "number": 33,
+    "raw": "A"
+   },
+   {
+    "number": 34,
+    "raw": "C"
+   },
+   {
+    "number": 35,
+    "raw": "Not given"
+   },
+   {
+    "number": 36,
+    "raw": "True"
+   },
+   {
+    "number": 37,
+    "raw": "True"
+   },
+   {
+    "number": 38,
+    "raw": "Not given"
+   },
+   {
+    "number": 39,
+    "raw": "Not given"
+   },
+   {
+    "number": 40,
+    "raw": "False"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
-   "title": "PROJECT: Reform Of The Prison System In The UK",
+   "title": null,
    "paragraphs": [
-    "Penal progress:",
-    "The UK’s large prison population is fuelled by a high level of recidivism – when criminals repeatedly relapse into crime. This project for a model prison tackles issues of architecture, management and funding in an enlightened attempt to achieve lasting rehabilitation.",
-    "Project:",
-    "The penal system is one of the most direct manifestations of the power of the state, but is often also a revealing reflection of the national psyche and the public’s attitude to punishment and rehabilitation. Surprisingly, for a prosperous, progressive Western democracy, the UK has a lamentable penal record. Britain’s prison population is currently in excess of 60,000 (up 50 per cent from a decade ago) making it the second largest in Europe. The average cost of keeping an individual prisoner incarcerated for a year is £27,000 (ten times the average expenditure on a secondary school pupil in the state sector). Despite such substantial investment, over half of British prisoners re-offend within two years of release.",
-    "Such high rates of recidivism is a serious problem. It means that the prison population is continuing to grow at an alarming rate (recently by as many as 700 a week), so overcrowding is endemic, hampering opportunities for education and rehabilitation and lowering staff and prisoner morale. To ease this pressure, the UK government is investing in the prison estate at historic levels, with 12,000 new prison places proposed within the next few years. Yet, like their nineteenth-century predecessors, Britain’s ‘new Victorian’ prisons are designed for security and control rather than for the rehabilitation and education which is increasingly recognised as what prisoners need. Most are poorly educated young men under 30 (at least 60 per cent of whom are functionally illiterate and innumerate), so without education and skills few will be able to build meaningful lives away from crime, no matter how often they go to prison, or how long they spend there.",
-    "Any transformation of the penal system must start with the redesign of prison buildings. Prison architecture has a clearly discernible effect on behaviour, operational efficiency, interaction and morale. Last year, architects Buschow Henley were commissioned by a think tank organisation working with the Home Office Prison Service to research and develop an alternative prison model that focuses more intensely on rehabilitation through a concentrated programme of intellectual, physical and social education. The model is not intended as a blueprint but rather a series of principles that might be adapted to support the wider concept of the ‘Learning Prison’ in which other aspects such as organisation, management and funding would obviously play a part. Key to this is the introduction of a system that groups together prisoners in small communities or ‘houses’ of between 30 and 40 inmates. This has two important consequences. First, the more compact spatial organisation of the house reduces staff time spent on supervising and escorting prisoners. Second, the system places educational and other facilities at the heart of the building, within easy reach at all times of day, reinforced by a supportive social environment. This model also enables resources to be dramatically redeployed, from a current estimated ratio of 80:20 (costs of security versus rehabilitation) to a predicted reversed figure of 20:80, freeing up much-needed funds to invest in educational programmes, thereby helping to promote rehabilitation, reduce recidivism and initiate a virtuous cycle.",
-    "In Buschow Henley’s scheme, the proposed group size of 30-40 has the potential for social accountability – each prisoner being known within the community and personally accountable for his behaviour. Houses are semi-autonomous, not just dormitories, with communal, as opposed to centralised, facilities. Circulation is simplified and reduced. Buildings are arranged in a chess-board formation, as opposed to pavilions marooned in space, each with a discrete external area that can be productively used for sport, games or gardening with a minimum of supervision.",
-    "Individual cells are replanned to make them less like domestic lavatories and more conducive to learning. In an inversion of the conventional layout, the bed is placed lengthways along the external wall at a higher level, freeing up space below. Storage is built next to where they sleep and each inmate is provided with a moveable table equipped with electronic tools for study. Washing facilities are contained in a small adjoining space (included in the basic 8 sqm allowance) so reducing pressure on prison staff to manage inmate hygiene and ablution. Each cell is paired with a neighbouring ‘buddy’ cell linked by sliding doors controlled by individual prisoners to mitigate the risk of self-harm.",
-    "While this new type of prison appears to be somewhat liberal, the arrangement of spaces and functions both inside and out is actually tightly controlled. Paradoxically, however, this proscription enables a greater range of activities to take place, and makes general supervision easier. In this environment the prisoners are judged not by their degree of conformity, but by the scope of their activities and achievements, so laying the foundations for genuine rehabilitation. As Martin Narey, Director General of the UK Prison Services observes, ‘We have got to accept that prison must be a humane and constructive place, not least because all but 23 of my population are going home some day."
+    {
+     "type": "text",
+     "text": "PROJECT: Reform Of The Prison System In The UK"
+    },
+    {
+     "type": "text",
+     "text": "Penal progress:"
+    },
+    {
+     "type": "text",
+     "text": "The UK’s large prison population is fuelled by a high level of recidivism – when criminals repeatedly relapse into crime. This project for a model prison tackles issues of architecture, management and funding in an enlightened attempt to achieve lasting rehabilitation."
+    },
+    {
+     "type": "text",
+     "text": "Project:"
+    },
+    {
+     "type": "text",
+     "text": "The penal system is one of the most direct manifestations of the power of the state, but is often also a revealing reflection of the national psyche and the public’s attitude to punishment and rehabilitation. Surprisingly, for a prosperous, progressive Western democracy, the UK has a lamentable penal record. Britain’s prison population is currently in excess of 60,000 (up 50 per cent from a decade ago) making it the second largest in Europe. The average cost of keeping an individual prisoner incarcerated for a year is £27,000 (ten times the average expenditure on a secondary school pupil in the state sector). Despite such substantial investment, over half of British prisoners re-offend within two years of release."
+    },
+    {
+     "type": "text",
+     "text": "Such high rates of recidivism is a serious problem. It means that the prison population is continuing to grow at an alarming rate (recently by as many as 700 a week), so overcrowding is endemic, hampering opportunities for education and rehabilitation and lowering staff and prisoner morale. To ease this pressure, the UK government is investing in the prison estate at historic levels, with 12,000 new prison places proposed within the next few years. Yet, like their nineteenth-century predecessors, Britain’s ‘new Victorian’ prisons are designed for security and control rather than for the rehabilitation and education which is increasingly recognised as what prisoners need. Most are poorly educated young men under 30 (at least 60 per cent of whom are functionally illiterate and innumerate), so without education and skills few will be able to build meaningful lives away from crime, no matter how often they go to prison, or how long they spend there."
+    },
+    {
+     "type": "text",
+     "text": "Any transformation of the penal system must start with the redesign of prison buildings. Prison architecture has a clearly discernible effect on behaviour, operational efficiency, interaction and morale. Last year, architects Buschow Henley were commissioned by a think tank organisation working with the Home Office Prison Service to research and develop an alternative prison model that focuses more intensely on rehabilitation through a concentrated programme of intellectual, physical and social education. The model is not intended as a blueprint but rather a series of principles that might be adapted to support the wider concept of the ‘Learning Prison’ in which other aspects such as organisation, management and funding would obviously play a part. Key to this is the introduction of a system that groups together prisoners in small communities or ‘houses’ of between 30 and 40 inmates. This has two important consequences. First, the more compact spatial organisation of the house reduces staff time spent on supervising and escorting prisoners. Second, the system places educational and other facilities at the heart of the building, within easy reach at all times of day, reinforced by a supportive social environment. This model also enables resources to be dramatically redeployed, from a current estimated ratio of 80:20 (costs of security versus rehabilitation) to a predicted reversed figure of 20:80, freeing up much-needed funds to invest in educational programmes, thereby helping to promote rehabilitation, reduce recidivism and initiate a virtuous cycle."
+    },
+    {
+     "type": "text",
+     "text": "In Buschow Henley’s scheme, the proposed group size of 30-40 has the potential for social accountability – each prisoner being known within the community and personally accountable for his behaviour. Houses are semi-autonomous, not just dormitories, with communal, as opposed to centralised, facilities. Circulation is simplified and reduced. Buildings are arranged in a chess-board formation, as opposed to pavilions marooned in space, each with a discrete external area that can be productively used for sport, games or gardening with a minimum of supervision."
+    },
+    {
+     "type": "text",
+     "text": "Individual cells are replanned to make them less like domestic lavatories and more conducive to learning. In an inversion of the conventional layout, the bed is placed lengthways along the external wall at a higher level, freeing up space below. Storage is built next to where they sleep and each inmate is provided with a moveable table equipped with electronic tools for study. Washing facilities are contained in a small adjoining space (included in the basic 8 sqm allowance) so reducing pressure on prison staff to manage inmate hygiene and ablution. Each cell is paired with a neighbouring ‘buddy’ cell linked by sliding doors controlled by individual prisoners to mitigate the risk of self-harm."
+    },
+    {
+     "type": "text",
+     "text": "While this new type of prison appears to be somewhat liberal, the arrangement of spaces and functions both inside and out is actually tightly controlled. Paradoxically, however, this proscription enables a greater range of activities to take place, and makes general supervision easier. In this environment the prisoners are judged not by their degree of conformity, but by the scope of their activities and achievements, so laying the foundations for genuine rehabilitation. As Martin Narey, Director General of the UK Prison Services observes, ‘We have got to accept that prison must be a humane and constructive place, not least because all but 23 of my population are going home some day."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g02",
-     "instruction": "Choose the correct letter A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p1.q01-05",
+     "startQ": 1,
+     "endQ": 5,
+     "type": "sentence_endings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete each sentence with the correct ending, A – H, below. Write the correct letter A – H in spaces 1-5 below.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "improved security, supervision and education."
+       },
+       {
+        "id": "B",
+        "text": "rehabilitation and education."
+       },
+       {
+        "id": "C",
+        "text": "reduced educational opportunities and morale"
+       },
+       {
+        "id": "D",
+        "text": "reduced risk of self harm."
+       },
+       {
+        "id": "E",
+        "text": "security and control."
+       },
+       {
+        "id": "F",
+        "text": "an alternative prison model"
+       },
+       {
+        "id": "G",
+        "text": "a learning environment rather than a punitive compound"
+       },
+       {
+        "id": "H",
+        "text": "organisation, management and funding."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 1,
+       "type": "sentence_endings",
+       "prompt": [
+        "The agenda of current British prison systems is primarily"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "sentence_endings",
+       "prompt": [
+        "The primary role of prisons should he"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "sentence_endings",
+       "prompt": [
+        "The new prison scheme will focus on"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
+       }
+      },
+      {
+       "number": 4,
+       "type": "sentence_endings",
+       "prompt": [
+        "Existing prison architecture causes"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "sentence_endings",
+       "prompt": [
+        "The positive results of reducing the number of prisoners in one space include"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 10,
+      "lineRange": [
+       10,
+       24
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-5",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete each sentence with the correct ending, A – H, below. Write the correct letter A – H in spaces 1-5 below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. The agenda of current British prison systems is primarily",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. The primary role of prisons should he",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. The new prison scheme will focus on",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. Existing prison architecture causes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. The positive results of reducing the number of prisoners in one space include",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. improved security, supervision and education.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. rehabilitation and education.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. reduced educational opportunities and morale",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. reduced risk of self harm.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E. security and control.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F. an alternative prison model",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G. a learning environment rather than a punitive compound",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "H. organisation, management and funding.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q06-09",
      "startQ": 6,
      "endQ": 9,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 6,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The proposal to create 12,000 new prison places, within the next few years, indicates that",
-        "segments": null
-       },
+       "prompt": [
+        "The proposal to create 12,000 new prison places, within the next few years, indicates that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "prison cells are too small."
+        },
+        {
+         "id": "B",
+         "text": "a lot of money is invested into educating offenders."
+        },
+        {
+         "id": "C",
+         "text": "there is an increasing population of offenders in the UK."
+        },
+        {
+         "id": "D",
+         "text": "the government is getting tougher on offenders."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. The proposal to create 12,000 new prison places, within the next few years, indicates that",
-        "elementPath": "children[14]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 7,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The proposed changes to prison architecture are designed primarily to",
-        "segments": null
-       },
+       "prompt": [
+        "The proposed changes to prison architecture are designed primarily to"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "improve the aesthetic value of the building."
+        },
+        {
+         "id": "B",
+         "text": "boost self-esteem and social behaviour."
+        },
+        {
+         "id": "C",
+         "text": "allow prisoners more living space."
+        },
+        {
+         "id": "D",
+         "text": "increase running costs within prisons."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. The proposed changes to prison architecture are designed primarily to",
-        "elementPath": "children[15]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 8,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The project to reform the penal system in the UK",
-        "segments": null
-       },
+       "prompt": [
+        "The project to reform the penal system in the UK"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "must begin by altering the prisons’ designs."
+        },
+        {
+         "id": "B",
+         "text": "is inexpensive."
+        },
+        {
+         "id": "C",
+         "text": "will eliminate the need for supervision."
+        },
+        {
+         "id": "D",
+         "text": "is, primarily, to make prisoners more comfortable."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. The project to reform the penal system in the UK",
-        "elementPath": "children[16]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 9,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Why is the bed placed lengthways along the external wall at high level?",
-        "segments": null
-       },
+       "prompt": [
+        "Why is the bed placed lengthways along the external wall at high level?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "to make room below for washing facilities"
+        },
+        {
+         "id": "B",
+         "text": "for the improvement of the inmates’ hygiene"
+        },
+        {
+         "id": "C",
+         "text": "to allow room below for storage and shelves"
+        },
+        {
+         "id": "D",
+         "text": "to make room for sliding doors"
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9. Why is the bed placed lengthways along the external wall at high level?",
-        "elementPath": "children[17]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[13]",
-      "rawExcerpt": "Question 6-9\n\nChoose the correct letter A, B, C or D."
+      "headerLine": 25,
+      "lineRange": [
+       25,
+       46
+      ],
+      "sourceLines": [
+       {
+        "text": "Question 6-9",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. The proposal to create 12,000 new prison places, within the next few years, indicates that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A prison cells are too small.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B a lot of money is invested into educating offenders.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C there is an increasing population of offenders in the UK.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the government is getting tougher on offenders.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. The proposed changes to prison architecture are designed primarily to",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A improve the aesthetic value of the building.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B boost self-esteem and social behaviour.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C allow prisoners more living space.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D increase running costs within prisons.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. The project to reform the penal system in the UK",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A must begin by altering the prisons’ designs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B is inexpensive.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C will eliminate the need for supervision.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D is, primarily, to make prisoners more comfortable.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9. Why is the bed placed lengthways along the external wall at high level?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A to make room below for washing facilities",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B for the improvement of the inmates’ hygiene",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C to allow room below for storage and shelves",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D to make room for sliding doors",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q10-13",
+     "startQ": 10,
+     "endQ": 13,
+     "type": "diagram_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Label the diagram, below. Write NO MORE THAN THREE WORDS from, the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "image",
+        "asset": "asset.f6bf4d968c6f"
+       }
+      ]
+     },
+     "figures": [
+      {
+       "assetId": "asset.f6bf4d968c6f",
+       "sourcePath": "wp-content/uploads/2025/06/301.webp",
+       "sha256": "f6bf4d968c6f8b7a9c753e4b2892388345ab3bb01d7b7d103a679822f9f8055b",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 10,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(discrete) external area",
+        "value": "(discrete) external area",
+        "accepted": [
+         "discrete external area",
+         "external area"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Bed",
+        "value": "Bed",
+        "accepted": [
+         "Bed"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Storage",
+        "value": "Storage",
+        "accepted": [
+         "Storage"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "diagram_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "Sliding doors",
+        "value": "Sliding doors",
+        "accepted": [
+         "Sliding doors"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 47,
+      "lineRange": [
+       47,
+       49
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 10-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Label the diagram, below. Write NO MORE THAN THREE WORDS from, the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2025/06/301.webp"
+       }
+      ]
      }
     }
    ]
@@ -139,221 +846,554 @@
    "passageNumber": 2,
    "title": "Special Olympics Conditions of Participation",
    "paragraphs": [
-    "To be eligible for participation in the Special Olympics an individual with an intellectual disability must agree to observe and abide by the SOC Sports Rules. ‘Mental Retardation’ refers to substantial limitations in present functioning. It is characterised by significantly sub-average intellectual functioning, existing concurrently with related limitations in two or more of the following applicable adaptive skill areas: communication, self-care, home living, social skills, community use, self-direction, health and safety, functional academics, leisure and work. Mental retardation manifests itself before the age of 18. The following four assumptions are essential to the application of the definition:",
-    "1. Valid assessment considers cultural and linguistic diversity as well as differences in communication and behavioural factors.",
-    "2. The existence of limitations in adaptive skills occurs within the context of community environments typical of the individual’s age-peers and is indexed to the person’s individualised needs for support.",
-    "3. Specific adaptive limitations often co-exist with strengths in other adaptive skills or other personal capabilities.",
-    "4. With appropriate support over a sustained period, the life functioning of the person with mental retardation will generally improve.",
-    "The term ‘mental retardation’ is a diagnostic term used to describe the condition defined above. In keeping with the current language practised within the field, the term ‘mental retardation’ is no longer commonly used. In its place, if it is absolutely necessary to use a label, i.e. in an educational setting or in a SOC/NCCP Technical Programme, then the term that is in keeping with the current practices is a person with an intellectual disability. Special Olympics was created and developed to give individuals with an intellectual disability the opportunity to train and compete in sport activities. No person shall, on the grounds of gender, race, religion, colour, national origin or financial constraint be excluded from participation in, or be denied the benefits of, or otherwise be subjected to discrimination under any programme or activity of Special Olympics. Flexibility is left to the Local, Region/Zone, Chapter and National Special Olympics organisations for determining the eligibility of the participants because of the variety of situations and needs that exist in the many localities where Special Olympics programmes have been and will be instituted. Inclusion is preferred to exclusion when eligibility is in question. Individuals who have both an intellectual disability and multiple disabilities may participate in Special Olympics programmes and competitions.",
-    "A. Participation by individuals with Down Syndrome who have Atlantoaxial Instability.",
-    "There is evidence from medical research that up to 15 percent of individuals with Down Syndrome have a defect in the cervical vertebrae C-1 and C-2 in the neck. There is evidence from medical research that up to 15 percent of individuals with Down Syndrome have a defect in the cervical vertebrae C-1 and C-2 in the neck (or Atlantoaxial Instability). This condition exposes Down Syndrome individuals to the heightened possibility of a neck injury if they participate in activities that hyperextend or radically flex the neck or upper spine.",
-    "B. SOC requires temporary restriction of individuals with Down Syndrome from participation in certain activities.",
-    "1) Accredited Programmes may allow all individuals with Down Syndrome to continue in most Special Olympics sports training and competition activities. However, such individuals shall not be permitted to participate in sport training and competitions which, by their nature, result in hyperextension, radical flexion or direct pressure on the neck or upper spine. Such sports training and competition activities include: the butterfly stroke and diving starts in swimming, diving, pentathlon, high jump, equestrian sports, artistic gymnastics, soccer, alpine skiing and any warm-up exercise placing undue stress on the head and neck.",
-    "2) Restriction from participation in the above-listed activities shall continue until an individual with Down Syndrome has been examined (including X-ray views of full extension and flexion of the neck) by a physician who has been briefed on the nature of the Atlantoaxial Instability condition, and the results of such an examination demonstrate that the individual does not have the Atlantoaxial Instability condition.",
-    "3) For any individual diagnosed as having Atlantoaxial Instability condition, the examining physician shall notify the athlete’s parents or guardians of the nature and extent of the individual’s condition and such athlete shall be allowed to participate in the activities listed in 1) above only if the athlete submits written certification from two physicians combined with an acknowledgment of the risks signed by the adult athlete or his/her parent or guardian if the athlete is a minor.",
-    "4) It is the responsibility of parents/guardians to monitor the individual and take appropriate action if neurological symptoms appear.",
-    "Terminology note: the term intellectual disability is used to replace the clinical term of Mental Retardation. Intellectual disability is not a disease, nor should it be confused with mental illness. People with mental disabilities have both a slower rate of learning and a limited capacity to learn. They may also have difficulty managing the ordinary activities of daily living, understanding the behaviour of others, and determining their own appropriate social responses (adaptive behaviour). Children with intellectual disabilities grow into adults with intellectual disabilities; they do not remain ‘eternal children’.",
-    "People with intellectual disabilities constitute one of the largest groups of citizens with disabilities. There are an estimated 156 million individuals in the world who have intellectual disabilities. Intellectual disability cuts across lines of race, education, and social and economic background. It can occur in anyone. Hereditary components are known to account for only a fraction of the cases of intellectual disability. There are well over 350 causes of intellectual disability and in three-quarters of the cases the specific cause is unknown. About 87 percent of all people with intellectual disabilities are mildly afflicted and in many respects are indistinguishable from people who do not have intellectual disabilities."
+    {
+     "type": "text",
+     "text": "To be eligible for participation in the Special Olympics an individual with an intellectual disability must agree to observe and abide by the SOC Sports Rules. ‘Mental Retardation’ refers to substantial limitations in present functioning. It is characterised by significantly sub-average intellectual functioning, existing concurrently with related limitations in two or more of the following applicable adaptive skill areas: communication, self-care, home living, social skills, community use, self-direction, health and safety, functional academics, leisure and work. Mental retardation manifests itself before the age of 18. The following four assumptions are essential to the application of the definition:"
+    },
+    {
+     "type": "text",
+     "text": "1. Valid assessment considers cultural and linguistic diversity as well as differences in communication and behavioural factors."
+    },
+    {
+     "type": "text",
+     "text": "2. The existence of limitations in adaptive skills occurs within the context of community environments typical of the individual’s age-peers and is indexed to the person’s individualised needs for support."
+    },
+    {
+     "type": "text",
+     "text": "3. Specific adaptive limitations often co-exist with strengths in other adaptive skills or other personal capabilities."
+    },
+    {
+     "type": "text",
+     "text": "4. With appropriate support over a sustained period, the life functioning of the person with mental retardation will generally improve."
+    },
+    {
+     "type": "text",
+     "text": "The term ‘mental retardation’ is a diagnostic term used to describe the condition defined above. In keeping with the current language practised within the field, the term ‘mental retardation’ is no longer commonly used. In its place, if it is absolutely necessary to use a label, i.e. in an educational setting or in a SOC/NCCP Technical Programme, then the term that is in keeping with the current practices is a person with an intellectual disability. Special Olympics was created and developed to give individuals with an intellectual disability the opportunity to train and compete in sport activities. No person shall, on the grounds of gender, race, religion, colour, national origin or financial constraint be excluded from participation in, or be denied the benefits of, or otherwise be subjected to discrimination under any programme or activity of Special Olympics. Flexibility is left to the Local, Region/Zone, Chapter and National Special Olympics organisations for determining the eligibility of the participants because of the variety of situations and needs that exist in the many localities where Special Olympics programmes have been and will be instituted. Inclusion is preferred to exclusion when eligibility is in question. Individuals who have both an intellectual disability and multiple disabilities may participate in Special Olympics programmes and competitions."
+    },
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Participation by individuals with Down Syndrome who have Atlantoaxial Instability."
+    },
+    {
+     "type": "text",
+     "text": "There is evidence from medical research that up to 15 percent of individuals with Down Syndrome have a defect in the cervical vertebrae C-1 and C-2 in the neck. There is evidence from medical research that up to 15 percent of individuals with Down Syndrome have a defect in the cervical vertebrae C-1 and C-2 in the neck (or Atlantoaxial Instability). This condition exposes Down Syndrome individuals to the heightened possibility of a neck injury if they participate in activities that hyperextend or radically flex the neck or upper spine."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "SOC requires temporary restriction of individuals with Down Syndrome from participation in certain activities."
+    },
+    {
+     "type": "text",
+     "text": "1) Accredited Programmes may allow all individuals with Down Syndrome to continue in most Special Olympics sports training and competition activities. However, such individuals shall not be permitted to participate in sport training and competitions which, by their nature, result in hyperextension, radical flexion or direct pressure on the neck or upper spine. Such sports training and competition activities include: the butterfly stroke and diving starts in swimming, diving, pentathlon, high jump, equestrian sports, artistic gymnastics, soccer, alpine skiing and any warm-up exercise placing undue stress on the head and neck."
+    },
+    {
+     "type": "text",
+     "text": "2) Restriction from participation in the above-listed activities shall continue until an individual with Down Syndrome has been examined (including X-ray views of full extension and flexion of the neck) by a physician who has been briefed on the nature of the Atlantoaxial Instability condition, and the results of such an examination demonstrate that the individual does not have the Atlantoaxial Instability condition."
+    },
+    {
+     "type": "text",
+     "text": "3) For any individual diagnosed as having Atlantoaxial Instability condition, the examining physician shall notify the athlete’s parents or guardians of the nature and extent of the individual’s condition and such athlete shall be allowed to participate in the activities listed in 1) above only if the athlete submits written certification from two physicians combined with an acknowledgment of the risks signed by the adult athlete or his/her parent or guardian if the athlete is a minor."
+    },
+    {
+     "type": "text",
+     "text": "4) It is the responsibility of parents/guardians to monitor the individual and take appropriate action if neurological symptoms appear."
+    },
+    {
+     "type": "text",
+     "text": "Terminology note: the term intellectual disability is used to replace the clinical term of Mental Retardation. Intellectual disability is not a disease, nor should it be confused with mental illness. People with mental disabilities have both a slower rate of learning and a limited capacity to learn. They may also have difficulty managing the ordinary activities of daily living, understanding the behaviour of others, and determining their own appropriate social responses (adaptive behaviour). Children with intellectual disabilities grow into adults with intellectual disabilities; they do not remain ‘eternal children’."
+    },
+    {
+     "type": "text",
+     "text": "People with intellectual disabilities constitute one of the largest groups of citizens with disabilities. There are an estimated 156 million individuals in the world who have intellectual disabilities. Intellectual disability cuts across lines of race, education, and social and economic background. It can occur in anyone. Hereditary components are known to account for only a fraction of the cases of intellectual disability. There are well over 350 causes of intellectual disability and in three-quarters of the cases the specific cause is unknown. About 87 percent of all people with intellectual disabilities are mildly afflicted and in many respects are indistinguishable from people who do not have intellectual disabilities."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the information given in reading passage? In spaces 14-20 below, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q14-20",
      "startQ": 14,
      "endQ": 20,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in reading passage? In spaces 14-20 below, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "tfng",
-       "stem": {
-        "plain": "To be eligible to take part in the Special Olympics, the athlete has to be not only less than intellectually capable, but must also be lacking in a number of other functions.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. To be eligible to take part in the Special Olympics, the athlete has to be not only less than intellectually capable, but must also be lacking in a number of other functions.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "To be eligible to take part in the Special Olympics, the athlete has to be not only less than intellectually capable, but must also be lacking in a number of other functions."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 15,
        "type": "tfng",
-       "stem": {
-        "plain": "People with intellectual disabilities never improve their lives.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. People with intellectual disabilities never improve their lives.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "People with intellectual disabilities never improve their lives."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 16,
        "type": "tfng",
-       "stem": {
-        "plain": "Down Syndrome participants often excel in their chosen field of athletic activity.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. Down Syndrome participants often excel in their chosen field of athletic activity.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "Down Syndrome participants often excel in their chosen field of athletic activity."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 17,
        "type": "tfng",
-       "stem": {
-        "plain": "If you have Down Syndrome, your neck may be at risk of damage in certain spoils.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. If you have Down Syndrome, your neck may be at risk of damage in certain spoils.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "If you have Down Syndrome, your neck may be at risk of damage in certain spoils."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 18,
        "type": "tfng",
-       "stem": {
-        "plain": "People with Down Syndrome cannot participate in any swimming events.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. People with Down Syndrome cannot participate in any swimming events.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "People with Down Syndrome cannot participate in any swimming events."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 19,
        "type": "tfng",
-       "stem": {
-        "plain": "All people with intellectual disabilities need the written permission of a parent or guardian in order to participate.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. All people with intellectual disabilities need the written permission of a parent or guardian in order to participate.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "All people with intellectual disabilities need the written permission of a parent or guardian in order to participate."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 20,
        "type": "tfng",
-       "stem": {
-        "plain": "Participation in sports helps people with intellectual disabilities lo improve their communication and social skills.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. Participation in sports helps people with intellectual disabilities lo improve their communication and social skills.",
-        "elementPath": "children[39]"
+       "prompt": [
+        "Participation in sports helps people with intellectual disabilities lo improve their communication and social skills."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[37]",
-      "rawExcerpt": "Questions 14-20\n\nDo the following statements agree with the information given in reading passage? In spaces 14-20 below, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN "
+      "headerLine": 66,
+      "lineRange": [
+       66,
+       77
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-20",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in reading passage? In spaces 14-20 below, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. To be eligible to take part in the Special Olympics, the athlete has to be not only less than intellectually capable, but must also be lacking in a number of other functions.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. People with intellectual disabilities never improve their lives.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. Down Syndrome participants often excel in their chosen field of athletic activity.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. If you have Down Syndrome, your neck may be at risk of damage in certain spoils.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. People with Down Syndrome cannot participate in any swimming events.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. All people with intellectual disabilities need the written permission of a parent or guardian in order to participate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. Participation in sports helps people with intellectual disabilities lo improve their communication and social skills.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g05",
-     "instruction": "Choose the correct letter A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p2.q21-23",
      "startQ": 21,
      "endQ": 23,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 21,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What were the objectives of the Special Olympics document?",
-        "segments": null
-       },
+       "prompt": [
+        "What were the objectives of the Special Olympics document?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "to inform the public about what they are to expect from the Special Olympics"
+        },
+        {
+         "id": "B",
+         "text": "to provide information for future candidates"
+        },
+        {
+         "id": "C",
+         "text": "to promote awareness in the general population of the plight of disabled people"
+        },
+        {
+         "id": "D",
+         "text": "to list the problems intellectually disabled people have"
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. What were the objectives of the Special Olympics document?",
-        "elementPath": "children[41]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 22,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What word best describes the Special Olympics participation policy?",
-        "segments": null
-       },
+       "prompt": [
+        "What word best describes the Special Olympics participation policy?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "inconsistent"
+        },
+        {
+         "id": "B",
+         "text": "ambiguous"
+        },
+        {
+         "id": "C",
+         "text": "controversial"
+        },
+        {
+         "id": "D",
+         "text": "non-discriminatory"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. What word best describes the Special Olympics participation policy?",
-        "elementPath": "children[42]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 23,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What does the passage say about intellectual disability in the last paragraph?",
-        "segments": null
-       },
+       "prompt": [
+        "What does the passage say about intellectual disability in the last paragraph?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "The majority of cases are inherited."
+        },
+        {
+         "id": "B",
+         "text": "Sufferers of the condition outnumber those with physical disabilities."
+        },
+        {
+         "id": "C",
+         "text": "In most cases, the cause of the condition cannot be determined."
+        },
+        {
+         "id": "D",
+         "text": "It may be determined by race, education, or social and economic background."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. What does the passage say about intellectual disability in the last paragraph?",
-        "elementPath": "children[43]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[40]",
-      "rawExcerpt": "Questions 21-23\n\nChoose the correct letter A, B, C or D."
+      "headerLine": 78,
+      "lineRange": [
+       78,
+       94
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 21-23",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. What were the objectives of the Special Olympics document?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A to inform the public about what they are to expect from the Special Olympics",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B to provide information for future candidates",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C to promote awareness in the general population of the plight of disabled people",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D to list the problems intellectually disabled people have",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. What word best describes the Special Olympics participation policy?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A inconsistent",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B ambiguous",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C controversial",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D non-discriminatory",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. What does the passage say about intellectual disability in the last paragraph?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A The majority of cases are inherited.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Sufferers of the condition outnumber those with physical disabilities.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C In most cases, the cause of the condition cannot be determined.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D It may be determined by race, education, or social and economic background.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q24-26",
+     "startQ": 24,
+     "endQ": 26,
+     "type": "unknown",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": "set_per_slot",
+     "instruction": null,
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [],
+     "status": "quarantined",
+     "reasonCodes": [
+      "AMBIGUOUS_STRUCTURE",
+      "MISSING_INSTRUCTION",
+      "MISSING_QUESTION",
+      "ORPHAN_OPTIONS"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 95,
+      "lineRange": [
+       95,
+       102
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 24-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Which THREE of the following facts relating to Down Syndrome are mentioned? Choose THREE letters A – F.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A It is thought that about one Down Syndrome person in every seven has Atlantoaxial Instability",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B A person with Down Syndrome cannot participate in any winter competitions.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Down Syndrome sufferers with Atlantoaxial Instability who are minors need permission from a guardian to play soccer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Down Syndrome sufferers are unable to flex the upper spine.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E Down Syndrome athletes need to wear a neck brace to participate in the Special Olympics.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F Down Syndrome athletes can take part in sports that do not directly affect the neck or spine without any preconditions being fulfilled.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -362,454 +1402,719 @@
    "passageNumber": 3,
    "title": "Migrants and Refugees: Racial Discrimination and Xenophobia",
    "paragraphs": [
-    "Today, one in every 50 human beings is a migrant worker, a refugee or asylum seeker, or an immigrant living in a foreign country. Current estimates by the United Nations and the International Organisation for Migration indicate that some 150 million people live temporarily or permanently outside their countries of origin (2.5% of the world population). Many of these, 80-97 million, are estimated to be migrant workers with members of their families. Another 12 million are refugees outside their country of origin. These figures do not include the estimated 20 million Internally Displaced Persons forcibly displaced within their own country, nor the tens of millions more of internal migrants, mainly rural to urban, in countries around the world.",
-    "Increasing ethnic and racial diversity of societies is the inevitable consequence of migration. Increasing migration means that a growing number of states have become or are becoming more multi-ethnic, and are confronted with the challenge of accommodating peoples of different cultures, races, religions and languages. Addressing the reality of increased diversity means finding political, legal, social and economic mechanisms to ensure mutual respect and to mediate relations across differences. But xenophobia and racism have become manifest in some societies which have received substantial numbers of immigrants, as workers or as asylum-seekers. In those countries the migrants have become the targets in internal disputes about national identity. In the last few decades, the emergence of new nation states has often been accompanied by ethnic exclusion.",
-    "As governments grapple with the new realities of their multi-ethnic societies, there has been a marked increase in discrimination and violence directed against migrants, refugees and other non-nationals by extremist groups in many parts of the world. The lack of any systematic documentation or research over time makes it unclear whether there is a real increase in the level of abuse or in the level of exposure and reporting. Unfortunately, there is more than enough anecdotal evidence to show that violations of the human rights of migrants, refugees and other non-nationals are so generalised, widespread and commonplace that they are a defining feature of international migration today.",
-    "The extent of racial discrimination and xenophobia is often played down and sometimes denied by authorities. Racial discrimination is defined in international law as being: any distinction, exclusion, restriction or preference based on race, colour, descent or national or ethnic origin which has the purpose or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life.",
-    "Racism and xenophobia are distinct phenomena, although they often overlap. While racism generally implies distinction based on difference in physical characteristics, such as skin colour, hair type, facial features, etc, xenophobia denotes behaviour specifically based on the perception that ‘the other’ is foreign to or originates from outside the community or nation. By the standard dictionary definition, xenophobia is the intense dislike or fear of strangers or people from other countries. As a sociologist puts it, ‘xenophobia is an attitudinal orientation of hostility against non-natives in a given population.’",
-    "The definition of xenophobia, and its differentiation from racism and racial discrimination, is a still-evolving concept. One of the regional Preparatory Meetings for a recent World Conference suggested that:",
-    "– Racism is an ideological construct that assigns a certain race and/or ethnic group, to a position of power over others on the basis of physical and cultural attributes, as well as economic wealth, involving hierarchical relations where the superior race exercises domination and control over others.",
-    "– Xenophobia describes attitudes, prejudices and behaviour that reject, exclude and often vilify persons, based on the perception that they are outsiders or foreigners in the community, society or with respect to national identity.",
-    "In many cases, it is difficult to distinguish between racism and xenophobia as motivations for behaviour, since differences in physical characteristics are often assumed to distinguish a person from the common identity. However, manifestations of xenophobia occur against people of identical physical characteristics, even of shared ancestry, when such people arrive, return or migrate to states or areas where occupants consider them outsiders."
+    {
+     "type": "text",
+     "text": "Today, one in every 50 human beings is a migrant worker, a refugee or asylum seeker, or an immigrant living in a foreign country. Current estimates by the United Nations and the International Organisation for Migration indicate that some 150 million people live temporarily or permanently outside their countries of origin (2.5% of the world population). Many of these, 80-97 million, are estimated to be migrant workers with members of their families. Another 12 million are refugees outside their country of origin. These figures do not include the estimated 20 million Internally Displaced Persons forcibly displaced within their own country, nor the tens of millions more of internal migrants, mainly rural to urban, in countries around the world."
+    },
+    {
+     "type": "text",
+     "text": "Increasing ethnic and racial diversity of societies is the inevitable consequence of migration. Increasing migration means that a growing number of states have become or are becoming more multi-ethnic, and are confronted with the challenge of accommodating peoples of different cultures, races, religions and languages. Addressing the reality of increased diversity means finding political, legal, social and economic mechanisms to ensure mutual respect and to mediate relations across differences. But xenophobia and racism have become manifest in some societies which have received substantial numbers of immigrants, as workers or as asylum-seekers. In those countries the migrants have become the targets in internal disputes about national identity. In the last few decades, the emergence of new nation states has often been accompanied by ethnic exclusion."
+    },
+    {
+     "type": "text",
+     "text": "As governments grapple with the new realities of their multi-ethnic societies, there has been a marked increase in discrimination and violence directed against migrants, refugees and other non-nationals by extremist groups in many parts of the world. The lack of any systematic documentation or research over time makes it unclear whether there is a real increase in the level of abuse or in the level of exposure and reporting. Unfortunately, there is more than enough anecdotal evidence to show that violations of the human rights of migrants, refugees and other non-nationals are so generalised, widespread and commonplace that they are a defining feature of international migration today."
+    },
+    {
+     "type": "text",
+     "text": "The extent of racial discrimination and xenophobia is often played down and sometimes denied by authorities. Racial discrimination is defined in international law as being: any distinction, exclusion, restriction or preference based on race, colour, descent or national or ethnic origin which has the purpose or effect of nullifying or impairing the recognition, enjoyment or exercise, on an equal footing, of human rights and fundamental freedoms in the political, economic, social, cultural or any other field of public life."
+    },
+    {
+     "type": "text",
+     "text": "Racism and xenophobia are distinct phenomena, although they often overlap. While racism generally implies distinction based on difference in physical characteristics, such as skin colour, hair type, facial features, etc, xenophobia denotes behaviour specifically based on the perception that ‘the other’ is foreign to or originates from outside the community or nation. By the standard dictionary definition, xenophobia is the intense dislike or fear of strangers or people from other countries. As a sociologist puts it, ‘xenophobia is an attitudinal orientation of hostility against non-natives in a given population.’"
+    },
+    {
+     "type": "text",
+     "text": "The definition of xenophobia, and its differentiation from racism and racial discrimination, is a still-evolving concept. One of the regional Preparatory Meetings for a recent World Conference suggested that:"
+    },
+    {
+     "type": "text",
+     "text": "– Racism is an ideological construct that assigns a certain race and/or ethnic group, to a position of power over others on the basis of physical and cultural attributes, as well as economic wealth, involving hierarchical relations where the superior race exercises domination and control over others."
+    },
+    {
+     "type": "text",
+     "text": "– Xenophobia describes attitudes, prejudices and behaviour that reject, exclude and often vilify persons, based on the perception that they are outsiders or foreigners in the community, society or with respect to national identity."
+    },
+    {
+     "type": "text",
+     "text": "In many cases, it is difficult to distinguish between racism and xenophobia as motivations for behaviour, since differences in physical characteristics are often assumed to distinguish a person from the common identity. However, manifestations of xenophobia occur against people of identical physical characteristics, even of shared ancestry, when such people arrive, return or migrate to states or areas where occupants consider them outsiders."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g08",
-     "instruction": "Choose the correct letter A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q27-30",
+     "startQ": 27,
+     "endQ": 30,
+     "type": "sentence_endings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete each sentence with the correct ending, A – F, below. Write the correct letter, A – F, in the spaces below.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "are always culturally or physically distinct from the perpetrators of the acts of wrongdoing."
+       },
+       {
+        "id": "B",
+        "text": "tend to share a likeness with the perpetrators of the crime"
+       },
+       {
+        "id": "C",
+        "text": "may still find themselves the victims of xenophobic behaviour."
+       },
+       {
+        "id": "D",
+        "text": "has been observed in many different parts of the world."
+       },
+       {
+        "id": "E",
+        "text": "will eventually reach a position of total submission."
+       },
+       {
+        "id": "F",
+        "text": "has a controlling hand in the affairs of one or more of the other sections of society."
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "sentence_endings",
+       "prompt": [
+        "An upward trend in violence perpetrated against non-national minority groups by radical nationals"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "sentence_endings",
+       "prompt": [
+        "Racism differs from xenophobia in that victims of the former"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "sentence_endings",
+       "prompt": [
+        "Where racism occurs, the dominant group promotes a hierarchical system in which it"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "sentence_endings",
+       "prompt": [
+        "Persons not considered to be culturally or physically distinct from the majority"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 113,
+      "lineRange": [
+       113,
+       124
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-30",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete each sentence with the correct ending, A – F, below. Write the correct letter, A – F, in the spaces below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. An upward trend in violence perpetrated against non-national minority groups by radical nationals",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Racism differs from xenophobia in that victims of the former",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Where racism occurs, the dominant group promotes a hierarchical system in which it",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Persons not considered to be culturally or physically distinct from the majority",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A. are always culturally or physically distinct from the perpetrators of the acts of wrongdoing.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B. tend to share a likeness with the perpetrators of the crime",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C. may still find themselves the victims of xenophobic behaviour.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D. has been observed in many different parts of the world.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E. will eventually reach a position of total submission.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F. has a controlling hand in the affairs of one or more of the other sections of society.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q31-34",
      "startQ": 31,
      "endQ": 34,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 31,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Which of the following migrants are there more of?",
-        "segments": null
-       },
+       "prompt": [
+        "Which of the following migrants are there more of?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "internally displaced persons"
+        },
+        {
+         "id": "B",
+         "text": "refugees"
+        },
+        {
+         "id": "C",
+         "text": "internal migrants"
+        },
+        {
+         "id": "D",
+         "text": "immigrant workers"
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. Which of the following migrants are there more of?",
-        "elementPath": "children[60]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 32,
        "type": "mcq_single",
-       "stem": {
-        "plain": "The author of the text believes that",
-        "segments": null
-       },
+       "prompt": [
+        "The author of the text believes that"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "racism is inevitable when people emigrate."
+        },
+        {
+         "id": "B",
+         "text": "governments are finding it difficult to stop racism and xenophobia."
+        },
+        {
+         "id": "C",
+         "text": "the exploitation of minority groups deters others from migrating."
+        },
+        {
+         "id": "D",
+         "text": "xenophobia does not exist within minority groups."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. The author of the text believes that",
-        "elementPath": "children[61]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 33,
        "type": "mcq_single",
-       "stem": {
-        "plain": "There is no real way of knowing how many migrants are discriminated against because",
-        "segments": null
-       },
+       "prompt": [
+        "There is no real way of knowing how many migrants are discriminated against because"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "not all racial abuse cases are documented or looked into."
+        },
+        {
+         "id": "B",
+         "text": "the number of migrants is increasing at an alarming rate."
+        },
+        {
+         "id": "C",
+         "text": "migrants don’t complain about being abused."
+        },
+        {
+         "id": "D",
+         "text": "only serious cases are documented."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33. There is no real way of knowing how many migrants are discriminated against because",
-        "elementPath": "children[62]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 34,
        "type": "mcq_single",
-       "stem": {
-        "plain": "People in authority sometimes",
-        "segments": null
-       },
+       "prompt": [
+        "People in authority sometimes"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "exaggerate the seriousness of the problem."
+        },
+        {
+         "id": "B",
+         "text": "create the problem."
+        },
+        {
+         "id": "C",
+         "text": "deny there is a problem."
+        },
+        {
+         "id": "D",
+         "text": "are eager to solve the problem."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "34. People in authority sometimes",
-        "elementPath": "children[63]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[59]",
-      "rawExcerpt": "Questions 31-34\n\nChoose the correct letter A, B, C or D."
+      "headerLine": 125,
+      "lineRange": [
+       125,
+       146
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 31-34",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. Which of the following migrants are there more of?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A internally displaced persons",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B refugees",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C internal migrants",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D immigrant workers",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. The author of the text believes that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A racism is inevitable when people emigrate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B governments are finding it difficult to stop racism and xenophobia.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C the exploitation of minority groups deters others from migrating.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D xenophobia does not exist within minority groups.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. There is no real way of knowing how many migrants are discriminated against because",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A not all racial abuse cases are documented or looked into.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the number of migrants is increasing at an alarming rate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C migrants don’t complain about being abused.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D only serious cases are documented.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. People in authority sometimes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A exaggerate the seriousness of the problem.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B create the problem.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C deny there is a problem.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D are eager to solve the problem.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g09",
-     "instruction": "Do the following statements agree with the information given in reading passage? In spaces 35 – 40 below, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q35-40",
      "startQ": 35,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in reading passage? In spaces 35 – 40 below, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 35,
        "type": "tfng",
-       "stem": {
-        "plain": "Most migrants flee their country of origin because of political or social disorder.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "35. Most migrants flee their country of origin because of political or social disorder.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "Most migrants flee their country of origin because of political or social disorder."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 36,
        "type": "tfng",
-       "stem": {
-        "plain": "Most internal migrants leave the countryside for the cities.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. Most internal migrants leave the countryside for the cities.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "Most internal migrants leave the countryside for the cities."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 37,
        "type": "tfng",
-       "stem": {
-        "plain": "Governments are often reluctant to acknowledge that racial discrimination and xenophobia exist.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. Governments are often reluctant to acknowledge that racial discrimination and xenophobia exist.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "Governments are often reluctant to acknowledge that racial discrimination and xenophobia exist."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 38,
        "type": "tfng",
-       "stem": {
-        "plain": "Migrants are exploited and abused because they create a sense of insecurity for extremist groups.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. Migrants are exploited and abused because they create a sense of insecurity for extremist groups.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "Migrants are exploited and abused because they create a sense of insecurity for extremist groups."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 39,
        "type": "tfng",
-       "stem": {
-        "plain": "People who are racist or xenophobic are uneducated and hostile.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. People who are racist or xenophobic are uneducated and hostile.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "People who are racist or xenophobic are uneducated and hostile."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 40,
        "type": "tfng",
-       "stem": {
-        "plain": "People returning to their country of ancestry do not face xenophobia.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. People returning to their country of ancestry do not face xenophobia.",
-        "elementPath": "children[66]"
+       "prompt": [
+        "People returning to their country of ancestry do not face xenophobia."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[64]",
-      "rawExcerpt": "Questions 35-40\n\nDo the following statements agree with the information given in reading passage? In spaces 35 – 40 below, write TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVE"
+      "headerLine": 147,
+      "lineRange": [
+       147,
+       157
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 35-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in reading passage? In spaces 35 – 40 below, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. Most migrants flee their country of origin because of political or social disorder.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. Most internal migrants leave the countryside for the cities.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. Governments are often reluctant to acknowledge that racial discrimination and xenophobia exist.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. Migrants are exploited and abused because they create a sense of insecurity for extremist groups.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. People who are racist or xenophobic are uneducated and hostile.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. People returning to their country of ancestry do not face xenophobia.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "E"
-   },
-   {
-    "number": 2,
-    "value": "B"
-   },
-   {
-    "number": 3,
-    "value": "G"
-   },
-   {
-    "number": 4,
-    "value": "C"
-   },
-   {
-    "number": 5,
-    "value": "A"
-   },
-   {
-    "number": 6,
-    "value": "C"
-   },
-   {
-    "number": 7,
-    "value": "C"
-   },
-   {
-    "number": 8,
-    "value": "A"
-   },
-   {
-    "number": 9,
-    "value": "C"
-   },
-   {
-    "number": 10,
-    "value": "(discrete) external area"
-   },
-   {
-    "number": 11,
-    "value": "Bed"
-   },
-   {
-    "number": 12,
-    "value": "Storage"
-   },
-   {
-    "number": 13,
-    "value": "Sliding doors"
-   },
-   {
-    "number": 14,
-    "value": "True"
-   },
-   {
-    "number": 15,
-    "value": "False"
-   },
-   {
-    "number": 16,
-    "value": "Not given"
-   },
-   {
-    "number": 17,
-    "value": "True"
-   },
-   {
-    "number": 18,
-    "value": "False"
-   },
-   {
-    "number": 19,
-    "value": "False"
-   },
-   {
-    "number": 20,
-    "value": "Not given"
-   },
-   {
-    "number": 21,
-    "value": "B"
-   },
-   {
-    "number": 22,
-    "value": "D"
-   },
-   {
-    "number": 23,
-    "value": "C"
-   },
-   {
-    "number": 24,
-    "value": "A, C, F"
-   },
-   {
-    "number": 25,
-    "value": "A, C, F"
-   },
-   {
-    "number": 26,
-    "value": "A, C, F"
-   },
-   {
-    "number": 27,
-    "value": "D"
-   },
-   {
-    "number": 28,
-    "value": "A"
-   },
-   {
-    "number": 29,
-    "value": "F"
-   },
-   {
-    "number": 30,
-    "value": "C"
-   },
-   {
-    "number": 31,
-    "value": "D"
-   },
-   {
-    "number": 32,
-    "value": "B"
-   },
-   {
-    "number": 33,
-    "value": "A"
-   },
-   {
-    "number": 34,
-    "value": "C"
-   },
-   {
-    "number": 35,
-    "value": "Not given"
-   },
-   {
-    "number": 36,
-    "value": "True"
-   },
-   {
-    "number": 37,
-    "value": "True"
-   },
-   {
-    "number": 38,
-    "value": "Not given"
-   },
-   {
-    "number": 39,
-    "value": "Not given"
-   },
-   {
-    "number": 40,
-    "value": "False"
-   }
-  ]
- },
- "quarantinedUnits": [
+ "testReasonCodes": [],
+ "warnings": [
   {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Complete each sentence with the correct ending, A – H, below. Write the correct letter A – H in spaces 1-5 below."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     10,
-     13
-    ],
-    "instruction": "Label the diagram, below. Write NO MORE THAN THREE WORDS from, the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     24,
-     26
-    ],
-    "instruction": "Which THREE of the following facts relating to Down Syndrome are mentioned? Choose THREE letters A – F."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Complete each sentence with the correct ending, A – F, below. Write the correct letter, A – F, in the spaces below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 40
+   "code": "PASSAGE_TITLE_MISSING",
+   "detail": {
+    "passage": 1
    }
   }
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 3,
- "contentFingerprint": "fd09b4f493217ac9520eedc74cd04cde585588d7c9bbef4df12cc5c11880456f"
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 33,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "730a0df8c219538812cb85c4bb8c6d64cf44418f60e0c3bee40690959517ae9b"
 }

@@ -1,10 +1,47 @@
 {
  "slug": "ielts-reading-test-308",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p1.q01-07",
+   "range": [
+    1,
+    7
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH"
+   ],
+   "instruction": "Do the following statements agree with the information given in reading passage? In boxes 1-7 on your answer sheet, write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q19-22",
+   "range": [
+    19,
+    22
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 19-22 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 36-40 on your answer sheet."
   }
  ]
 }

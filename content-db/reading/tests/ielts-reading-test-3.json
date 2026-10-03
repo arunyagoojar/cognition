@@ -1,679 +1,1775 @@
 {
  "id": "reading.test-0003.f8f2d508",
  "module": "reading",
+ "slug": "ielts-reading-test-3",
  "sourceNumbers": [
   3
  ],
- "slug": "ielts-reading-test-3",
  "title": "IELTS Academic Reading Test 3",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-3/index.html",
-   "sha256": "567d2f08f199c15199471170fd101fabd44bc3eec57282b2f8b5518c9693c1a4",
-   "manifestHashMatch": true,
+   "sha256": "41fa123fb94b1f834e1b25301e9dc575fd679afac3d08bf387ab62920498432b",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-3/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "false"
+   },
+   {
+    "number": 2,
+    "raw": "not given"
+   },
+   {
+    "number": 3,
+    "raw": "false"
+   },
+   {
+    "number": 4,
+    "raw": "true"
+   },
+   {
+    "number": 5,
+    "raw": "not given"
+   },
+   {
+    "number": 6,
+    "raw": "true"
+   },
+   {
+    "number": 7,
+    "raw": "not given"
+   },
+   {
+    "number": 8,
+    "raw": "rich"
+   },
+   {
+    "number": 9,
+    "raw": "commercial"
+   },
+   {
+    "number": 10,
+    "raw": "mauve"
+   },
+   {
+    "number": 11,
+    "raw": "Robert Pullar"
+   },
+   {
+    "number": 12,
+    "raw": "France"
+   },
+   {
+    "number": 13,
+    "raw": "malaria"
+   },
+   {
+    "number": 14,
+    "raw": "iv"
+   },
+   {
+    "number": 15,
+    "raw": "vii"
+   },
+   {
+    "number": 16,
+    "raw": "i"
+   },
+   {
+    "number": 17,
+    "raw": "ii"
+   },
+   {
+    "number": 18,
+    "raw": "several billion years"
+   },
+   {
+    "number": 19,
+    "raw": "radio (waves)"
+   },
+   {
+    "number": 20,
+    "raw": "1000 (stars)"
+   },
+   {
+    "number": 21,
+    "raw": "true"
+   },
+   {
+    "number": 22,
+    "raw": "true"
+   },
+   {
+    "number": 23,
+    "raw": "not given"
+   },
+   {
+    "number": 24,
+    "raw": "false"
+   },
+   {
+    "number": 25,
+    "raw": "not given"
+   },
+   {
+    "number": 26,
+    "raw": "false"
+   },
+   {
+    "number": 27,
+    "raw": "plants"
+   },
+   {
+    "number": 28,
+    "raw": "breathing and reproduction"
+   },
+   {
+    "number": 29,
+    "raw": "gills"
+   },
+   {
+    "number": 30,
+    "raw": "dolphins"
+   },
+   {
+    "number": 31,
+    "raw": "not given"
+   },
+   {
+    "number": 32,
+    "raw": "false"
+   },
+   {
+    "number": 33,
+    "raw": "true"
+   },
+   {
+    "number": 34,
+    "raw": "3 measurements"
+   },
+   {
+    "number": 35,
+    "raw": "(triangular) graph"
+   },
+   {
+    "number": 36,
+    "raw": "cluster"
+   },
+   {
+    "number": 37,
+    "raw": "amphibious"
+   },
+   {
+    "number": 38,
+    "raw": "half way"
+   },
+   {
+    "number": 39,
+    "raw": "dry land tortoises"
+   },
+   {
+    "number": 40,
+    "raw": "D"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "William Henry Perkin",
    "paragraphs": [
-    "William Henry Perkin was born on March 12, 1838, in London, England. As a boy, Perkin’s curiosity prompted early interests in the arts, sciences, photography, and engineering. But it was a chance stumbling upon a run-down, yet functional, laboratory in his late grandfather’s home that solidified the young man’s enthusiasm for chemistry.",
-    "As a student at the City of London School, Perkin became immersed in the study of chemistry. His talent and devotion to the subject were perceived by his teacher, Thomas Hall, who encouraged him to attend a series of lectures given by the eminent scientist Michael Faraday at the Royal Institution. Those speeches fired the young chemist’s enthusiasm further, and he later went on to attend the Royal College of Chemistry, which he succeeded in entering in 1853, at the age of 15.",
-    "At the time of Perkin’s enrolment, the Royal College of Chemistry was headed by the noted German chemist August Wilhelm Hofmann. Perkin’s scientific gifts soon caught Hofmann’s attention and, within two years, he became Hofmann’s youngest assistant. Not long after that, Perkin made the scientific breakthrough that would bring him both fame and fortune.",
-    "At the time, quinine was the only viable medical treatment for malaria. The drug is derived from the bark of the cinchona tree, native to South America, and by 1856 demand for the drug was surpassing the available supply. Thus, when Hofmann made some passing comments about the desirability of a synthetic substitute for quinine, it was unsurprising that his star pupil was moved to take up the challenge.",
-    "During his vacation in 1856, Perkin spent his time in the laboratory on the top floor of his family’s house. He was attempting to manufacture quinine from aniline, an inexpensive and readily available coal tar waste product. Despite his best efforts, however, he did not end up with quinine. Instead, he produced a mysterious dark sludge. Luckily, Perkin’s scientific training and nature prompted him to investigate the substance further. Incorporating potassium dichromate and alcohol into the aniline at various stages of the experimental process, he finally produced a deep purple solution. And, proving the truth of the famous scientist Louis Pasteur’s words ‘chance favours only the prepared mind’, Perkin saw the potential of his unexpected find.",
-    "Historically, textile dyes were made from such natural sources as plants and animal excretions. Some of these, such as the glandular mucus of snails, were difficult to obtain and outrageously expensive. Indeed, the purple colour extracted from a snail was once so costly that in society at the time only the rich could afford it. Further, natural dyes tended to be muddy in hue and fade quickly. It was against this backdrop that Perkin’s discovery was made.",
-    "Perkin quickly grasped that his purple solution could be used to colour fabric, thus making it the world’s first synthetic dye. Realising the importance of this breakthrough, he lost no time in patenting it. But perhaps the most fascinating of all Perkin’s reactions to his find was his nearly instant recognition that the new dye had commercial possibilities.",
-    "Perkin originally named his dye Tyrian Purple, but it later became commonly known as mauve (from the French for the plant used to make the colour violet). He asked advice of Scottish dye works owner Robert Pullar, who assured him that manufacturing the dye would be well worth it if the colour remained fast (i.e. would not fade) and the cost was relatively low. So, over the fierce objections of his mentor Hofmann, he left college to give birth to the modern chemical industry.",
-    "With the help of his father and brother, Perkin set up a factory not far from London. Utilising the cheap and plentiful coal tar that was an almost unlimited byproduct of London’s gas street lighting, the dye works began producing the world’s first synthetically dyed material in 1857. The company received a commercial boost from the Empress Eugenie of France, when she decided the new colour flattered her. Very soon, mauve was the necessary shade for all the fashionable ladies in that country.",
-    "Not to be outdone, England’s Queen Victoria also appeared in public wearing a mauve gown, thus making it all the rage in England as well. The dye was bold and fast, and the public clamoured for more. Perkin went back to the drawing board.",
-    "Although Perkin’s fame was achieved and fortune assured by his first discovery, the chemist continued his research. Among other dyes he developed and introduced were aniline red (1859) and aniline black (1863) and, in the late 1860s, Perkin’s green. It is important to note that Perkin’s synthetic dye discoveries had outcomes far beyond the merely decorative. The dyes also became vital to medical research in many ways. For instance, they were used to stain previously invisible microbes and bacteria, allowing researchers to identify such bacilli as tuberculosis, cholera, and anthrax. Artificial dyes continue to play a crucial role today. And, in what would have been particularly pleasing to Perkin, their current use is in the search for a vaccine against malaria."
+    {
+     "type": "text",
+     "text": "William Henry Perkin was born on March 12, 1838, in London, England. As a boy, Perkin’s curiosity prompted early interests in the arts, sciences, photography, and engineering. But it was a chance stumbling upon a run-down, yet functional, laboratory in his late grandfather’s home that solidified the young man’s enthusiasm for chemistry."
+    },
+    {
+     "type": "text",
+     "text": "As a student at the City of London School, Perkin became immersed in the study of chemistry. His talent and devotion to the subject were perceived by his teacher, Thomas Hall, who encouraged him to attend a series of lectures given by the eminent scientist Michael Faraday at the Royal Institution. Those speeches fired the young chemist’s enthusiasm further, and he later went on to attend the Royal College of Chemistry, which he succeeded in entering in 1853, at the age of 15."
+    },
+    {
+     "type": "text",
+     "text": "At the time of Perkin’s enrolment, the Royal College of Chemistry was headed by the noted German chemist August Wilhelm Hofmann. Perkin’s scientific gifts soon caught Hofmann’s attention and, within two years, he became Hofmann’s youngest assistant. Not long after that, Perkin made the scientific breakthrough that would bring him both fame and fortune."
+    },
+    {
+     "type": "text",
+     "text": "At the time, quinine was the only viable medical treatment for malaria. The drug is derived from the bark of the cinchona tree, native to South America, and by 1856 demand for the drug was surpassing the available supply. Thus, when Hofmann made some passing comments about the desirability of a synthetic substitute for quinine, it was unsurprising that his star pupil was moved to take up the challenge."
+    },
+    {
+     "type": "text",
+     "text": "During his vacation in 1856, Perkin spent his time in the laboratory on the top floor of his family’s house. He was attempting to manufacture quinine from aniline, an inexpensive and readily available coal tar waste product. Despite his best efforts, however, he did not end up with quinine. Instead, he produced a mysterious dark sludge. Luckily, Perkin’s scientific training and nature prompted him to investigate the substance further. Incorporating potassium dichromate and alcohol into the aniline at various stages of the experimental process, he finally produced a deep purple solution. And, proving the truth of the famous scientist Louis Pasteur’s words ‘chance favours only the prepared mind’, Perkin saw the potential of his unexpected find."
+    },
+    {
+     "type": "text",
+     "text": "Historically, textile dyes were made from such natural sources as plants and animal excretions. Some of these, such as the glandular mucus of snails, were difficult to obtain and outrageously expensive. Indeed, the purple colour extracted from a snail was once so costly that in society at the time only the rich could afford it. Further, natural dyes tended to be muddy in hue and fade quickly. It was against this backdrop that Perkin’s discovery was made."
+    },
+    {
+     "type": "text",
+     "text": "Perkin quickly grasped that his purple solution could be used to colour fabric, thus making it the world’s first synthetic dye. Realising the importance of this breakthrough, he lost no time in patenting it. But perhaps the most fascinating of all Perkin’s reactions to his find was his nearly instant recognition that the new dye had commercial possibilities."
+    },
+    {
+     "type": "text",
+     "text": "Perkin originally named his dye Tyrian Purple, but it later became commonly known as mauve (from the French for the plant used to make the colour violet). He asked advice of Scottish dye works owner Robert Pullar, who assured him that manufacturing the dye would be well worth it if the colour remained fast (i.e. would not fade) and the cost was relatively low. So, over the fierce objections of his mentor Hofmann, he left college to give birth to the modern chemical industry."
+    },
+    {
+     "type": "text",
+     "text": "With the help of his father and brother, Perkin set up a factory not far from London. Utilising the cheap and plentiful coal tar that was an almost unlimited byproduct of London’s gas street lighting, the dye works began producing the world’s first synthetically dyed material in 1857. The company received a commercial boost from the Empress Eugenie of France, when she decided the new colour flattered her. Very soon, mauve was the necessary shade for all the fashionable ladies in that country."
+    },
+    {
+     "type": "text",
+     "text": "Not to be outdone, England’s Queen Victoria also appeared in public wearing a mauve gown, thus making it all the rage in England as well. The dye was bold and fast, and the public clamoured for more. Perkin went back to the drawing board."
+    },
+    {
+     "type": "text",
+     "text": "Although Perkin’s fame was achieved and fortune assured by his first discovery, the chemist continued his research. Among other dyes he developed and introduced were aniline red (1859) and aniline black (1863) and, in the late 1860s, Perkin’s green. It is important to note that Perkin’s synthetic dye discoveries had outcomes far beyond the merely decorative. The dyes also became vital to medical research in many ways. For instance, they were used to stain previously invisible microbes and bacteria, allowing researchers to identify such bacilli as tuberculosis, cholera, and anthrax. Artificial dyes continue to play a crucial role today. And, in what would have been particularly pleasing to Perkin, their current use is in the search for a vaccine against malaria."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this more than once. Questions 8-13\nAnswer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer Write your answers in boxes 8-13 on your answer sheet.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "tfng",
+     "groupId": "p1.q01-07",
      "startQ": 1,
      "endQ": 7,
-     "stimulusSegments": [
-      "8 Before Perkin’s discovery, with what group in society was the colour purple associated?\n9 What potential did Perkin immediately understand that his new dye had?\n10 What was the name finally used to refer to the first color Perkin invented?\n11 What was the name of the person Perkin consulted before setting up his own dye works?\n12 In what country did Perkins newly invented colour first become fashionable?\n13 According to the passage, which disease is now being targeted by researchers using synthetic dyes?"
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this more than once."
      ],
-     "sharedOptions": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "tfng",
-       "stem": {
-        "plain": "Michael Faraday was the first person to recognize Perkin’s ability as a student of chemistry.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1 Michael Faraday was the first person to recognize Perkin’s ability as a student of chemistry.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Michael Faraday was the first person to recognize Perkin’s ability as a student of chemistry."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 2,
        "type": "tfng",
-       "stem": {
-        "plain": "Michael Faraday suggested Perkin should enroll in the Royal College of Chemistry.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2 Michael Faraday suggested Perkin should enroll in the Royal College of Chemistry.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Michael Faraday suggested Perkin should enroll in the Royal College of Chemistry."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 3,
        "type": "tfng",
-       "stem": {
-        "plain": "Perkin employed August Wilhelm Hofmann as his assistant.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3 Perkin employed August Wilhelm Hofmann as his assistant.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Perkin employed August Wilhelm Hofmann as his assistant."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 4,
        "type": "tfng",
-       "stem": {
-        "plain": "Perkin was still young when he made the discovery that made him rich and famous.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4 Perkin was still young when he made the discovery that made him rich and famous.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Perkin was still young when he made the discovery that made him rich and famous."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 5,
        "type": "tfng",
-       "stem": {
-        "plain": "The trees from which quinine is derived grow only in South America.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5 The trees from which quinine is derived grow only in South America.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "The trees from which quinine is derived grow only in South America."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 6,
        "type": "tfng",
-       "stem": {
-        "plain": "Perkin hoped to manufacture a drug from a coal tar waste product.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6 Perkin hoped to manufacture a drug from a coal tar waste product.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Perkin hoped to manufacture a drug from a coal tar waste product."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "Perkin was inspired by the discoveries of the famous scientist Louis Pasteur.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7 Perkin was inspired by the discoveries of the famous scientist Louis Pasteur.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Perkin was inspired by the discoveries of the famous scientist Louis Pasteur."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[12]",
-      "rawExcerpt": "Questions 1-7\nDo the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write: TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\n"
+      "headerLine": 12,
+      "lineRange": [
+       12,
+       23
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-7",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1? In boxes 1-7 on your answer sheet, write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1 Michael Faraday was the first person to recognize Perkin’s ability as a student of chemistry.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2 Michael Faraday suggested Perkin should enroll in the Royal College of Chemistry.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3 Perkin employed August Wilhelm Hofmann as his assistant.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4 Perkin was still young when he made the discovery that made him rich and famous.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5 The trees from which quinine is derived grow only in South America.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6 Perkin hoped to manufacture a drug from a coal tar waste product.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7 Perkin was inspired by the discoveries of the famous scientist Louis Pasteur.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q08-13",
+     "startQ": 8,
+     "endQ": 13,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer Write your answers in boxes 8-13 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 8,
+       "type": "short_answer",
+       "prompt": [
+        "Before Perkin’s discovery, with what group in society was the colour purple associated?"
+       ],
+       "answer": {
+        "raw": "rich",
+        "value": "rich",
+        "accepted": [
+         "rich"
+        ]
+       }
+      },
+      {
+       "number": 9,
+       "type": "short_answer",
+       "prompt": [
+        "What potential did Perkin immediately understand that his new dye had?"
+       ],
+       "answer": {
+        "raw": "commercial",
+        "value": "commercial",
+        "accepted": [
+         "commercial"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "short_answer",
+       "prompt": [
+        "What was the name finally used to refer to the first color Perkin invented?"
+       ],
+       "answer": {
+        "raw": "mauve",
+        "value": "mauve",
+        "accepted": [
+         "mauve"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "short_answer",
+       "prompt": [
+        "What was the name of the person Perkin consulted before setting up his own dye works?"
+       ],
+       "answer": {
+        "raw": "Robert Pullar",
+        "value": "Robert Pullar",
+        "accepted": [
+         "Robert Pullar"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "short_answer",
+       "prompt": [
+        "In what country did Perkins newly invented colour first become fashionable?"
+       ],
+       "answer": {
+        "raw": "France",
+        "value": "France",
+        "accepted": [
+         "France"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "short_answer",
+       "prompt": [
+        "According to the passage, which disease is now being targeted by researchers using synthetic dyes?"
+       ],
+       "answer": {
+        "raw": "malaria",
+        "value": "malaria",
+        "accepted": [
+         "malaria"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 24,
+      "lineRange": [
+       24,
+       32
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 8-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in boxes 8-13 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8 Before Perkin’s discovery, with what group in society was the colour purple associated?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9 What potential did Perkin immediately understand that his new dye had?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10 What was the name finally used to refer to the first color Perkin invented?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11 What was the name of the person Perkin consulted before setting up his own dye works?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12 In what country did Perkins newly invented colour first become fashionable?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13 According to the passage, which disease is now being targeted by researchers using synthetic dyes?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "Cambridge IELTS Test 1 to 17",
+   "title": "Is There Anybody Out There?",
    "paragraphs": [
-    "Is There Anybody Out There?",
-    "A The primary reason for the search is basic curiosity – the same curiosity about the natural world that drives all pure science. We want to know whether we are alone in the Universe. We want to know whether life evolves naturally if given the right conditions, or whether there is something very special about the Earth to have fostered the variety of life forms that we see around us on the planet. The simple detection of a radio signal will be sufficient to answer this most basic of all questions. In this sense, SETI is another cog in the machinery of pure science which is continually pushing out the horizon of our knowledge. However, there are other reasons for being interested in whether life exists elsewhere. For example, we have had civilisation on Earth for perhaps only a few thousand years, and the threats of nuclear war and pollution over the last few decades have told us that our survival may be tenuous. Will we last another two thousand years or will we wipe ourselves out? Since the lifetime of a planet like ours is several billion years, we can expect that, if other civilisations do survive in our galaxy, their ages will range from zero to several billion years. Thus any other civilisation that we hear from is likely to be far older, on average, than ourselves. The mere existence of such a civilisation will tell us that long-term survival is possible, and gives us some cause for optimism. It is even possible that the older civilisation may pass on the benefits of their experience in dealing with threats to survival such as nuclear war and global pollution, and other threats that we haven’t yet discovered.",
-    "B In discussing whether we are alone, most SETI scientists adopt two ground rules. First, UFOs (Unidentified Flying Objects] are generally ignored since most scientists don’t consider the evidence for them to be strong enough to bear serious consideration (although it is also important to keep an open mind in case any really convincing evidence emerges in the future). Second, we make a very conservative assumption that we are looking for a life form that is pretty well like us, since if it differs radically from us we may well not recognise it as a life form, quite apart from whether we are able to communicate with it. In other words, the life form we are looking for may well have two green heads and seven fingers, but it will nevertheless resemble us in that it should communicate with its fellows, be interested in the Universe, live on a planet orbiting a star like our Sun, and perhaps most restrictively, have a chemistry, like us, based on carbon and water.",
-    "C Even when we make these assumptions, our understanding of other life forms is still severely limited. We do not even know, for example, how many stars have planets, and we certainly do not know how likely it is that life will arise naturally, given the right conditions. However, when we look at the 100 billion stars in our galaxy (the Milky Way), and 100 billion galaxies in the observable Universe, it seems inconceivable that at least one of these planets does not have a life form on it; in fact, the best educated guess we can make, using the little that we do know about the conditions for carbon-based life, leads us to estimate that perhaps one in 100,000 stars might have a life-bearing planet orbiting it. That means that our nearest neighbours are perhaps 100 light years away, which is almost next door in astronomical terms.",
-    "D An alien civilisation could choose many different ways of sending information across the galaxy, but many of these either require too much energy, or else are severely attenuated while traversing the vast distances across the galaxy. It turns out that, for a given amount of transmitted power, radio waves in the frequency range 1000 to 3000 MHz travel the greatest distance, and so all searches to date have concentrated on looking for radio waves in this frequency range. So far there have been a number of searches by various groups around the world, including Australian searches using the radio telescope at Parkes, New South Wales. Until now there have not been any detections from the few hundred stars which have been searched. The scale of the searches has been increased dramatically since 1992, when the US Congress voted NASA $10 million per year for ten years to conduct a thorough search for extra-terrestrial life. Much of the money in this project is being spent on developing the special hardware needed to search many frequencies at once. The project has two parts. One part is a targeted search using the world’s largest radio telescopes, the American-operated telescope in Arecibo, Puerto Rico and the French telescope in Nancy in France. This part of the project is searching the nearest 1000 likely stars with high sensitivity for signals in the frequency range 1000 to 3000 MHz. The other part of the project is an undirected search which is monitoring all of space with a lower sensitivity, using the smaller antennas of NASA’s Deep Space Network.",
-    "E There is considerable debate over how we should react if we detect a signal from an alien civilisation. Everybody agrees that we should not reply immediately. Quite apart from the impracticality of sending a reply over such large distances at short notice, it raises a host of ethical questions that would have to be addressed by the global community before any reply could be sent. Would the human race face the culture shock if faced with a superior and much older civilisation? Luckily, there is no urgency about this. The stars being searched are hundreds of light years away, so it takes hundreds of years for their signal to reach us, and a further few hundred years for our reply to reach them. It’s not important, then, if there’s a delay of a few years, or decades, while the human race debates the question of whether to reply, and perhaps carefully drafts a reply."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The primary reason for the search is basic curiosity – the same curiosity about the natural world that drives all pure science. We want to know whether we are alone in the Universe. We want to know whether life evolves naturally if given the right conditions, or whether there is something very special about the Earth to have fostered the variety of life forms that we see around us on the planet. The simple detection of a radio signal will be sufficient to answer this most basic of all questions. In this sense, SETI is another cog in the machinery of pure science which is continually pushing out the horizon of our knowledge. However, there are other reasons for being interested in whether life exists elsewhere. For example, we have had civilisation on Earth for perhaps only a few thousand years, and the threats of nuclear war and pollution over the last few decades have told us that our survival may be tenuous. Will we last another two thousand years or will we wipe ourselves out? Since the lifetime of a planet like ours is several billion years, we can expect that, if other civilisations do survive in our galaxy, their ages will range from zero to several billion years. Thus any other civilisation that we hear from is likely to be far older, on average, than ourselves. The mere existence of such a civilisation will tell us that long-term survival is possible, and gives us some cause for optimism. It is even possible that the older civilisation may pass on the benefits of their experience in dealing with threats to survival such as nuclear war and global pollution, and other threats that we haven’t yet discovered."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "In discussing whether we are alone, most SETI scientists adopt two ground rules. First, UFOs (Unidentified Flying Objects] are generally ignored since most scientists don’t consider the evidence for them to be strong enough to bear serious consideration (although it is also important to keep an open mind in case any really convincing evidence emerges in the future). Second, we make a very conservative assumption that we are looking for a life form that is pretty well like us, since if it differs radically from us we may well not recognise it as a life form, quite apart from whether we are able to communicate with it. In other words, the life form we are looking for may well have two green heads and seven fingers, but it will nevertheless resemble us in that it should communicate with its fellows, be interested in the Universe, live on a planet orbiting a star like our Sun, and perhaps most restrictively, have a chemistry, like us, based on carbon and water."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Even when we make these assumptions, our understanding of other life forms is still severely limited. We do not even know, for example, how many stars have planets, and we certainly do not know how likely it is that life will arise naturally, given the right conditions. However, when we look at the 100 billion stars in our galaxy (the Milky Way), and 100 billion galaxies in the observable Universe, it seems inconceivable that at least one of these planets does not have a life form on it; in fact, the best educated guess we can make, using the little that we do know about the conditions for carbon-based life, leads us to estimate that perhaps one in 100,000 stars might have a life-bearing planet orbiting it. That means that our nearest neighbours are perhaps 100 light years away, which is almost next door in astronomical terms."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "An alien civilisation could choose many different ways of sending information across the galaxy, but many of these either require too much energy, or else are severely attenuated while traversing the vast distances across the galaxy. It turns out that, for a given amount of transmitted power, radio waves in the frequency range 1000 to 3000 MHz travel the greatest distance, and so all searches to date have concentrated on looking for radio waves in this frequency range. So far there have been a number of searches by various groups around the world, including Australian searches using the radio telescope at Parkes, New South Wales. Until now there have not been any detections from the few hundred stars which have been searched. The scale of the searches has been increased dramatically since 1992, when the US Congress voted NASA $10 million per year for ten years to conduct a thorough search for extra-terrestrial life. Much of the money in this project is being spent on developing the special hardware needed to search many frequencies at once. The project has two parts. One part is a targeted search using the world’s largest radio telescopes, the American-operated telescope in Arecibo, Puerto Rico and the French telescope in Nancy in France. This part of the project is searching the nearest 1000 likely stars with high sensitivity for signals in the frequency range 1000 to 3000 MHz. The other part of the project is an undirected search which is monitoring all of space with a lower sensitivity, using the smaller antennas of NASA’s Deep Space Network."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "There is considerable debate over how we should react if we detect a signal from an alien civilisation. Everybody agrees that we should not reply immediately. Quite apart from the impracticality of sending a reply over such large distances at short notice, it raises a host of ethical questions that would have to be addressed by the global community before any reply could be sent. Would the human race face the culture shock if faced with a superior and much older civilisation? Luckily, there is no urgency about this. The stars being searched are hundreds of light years away, so it takes hundreds of years for their signal to reach us, and a further few hundred years for our reply to reach them. It’s not important, then, if there’s a delay of a few years, or decades, while the human race debates the question of whether to reply, and perhaps carefully drafts a reply."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g02",
-     "instruction": "—17 Reading Passage 2 has ﬁve paragraphs, A-E. Choose the correct heading for paragraphs B-E from the headings below. Write the correct number: i-vii, in boxes 14—17 on your answer sheet. Example Answer\nParagraph A v",
-     "wordLimit": "",
-     "qtype": "matching_headings",
+     "groupId": "p2.q14-17",
      "startQ": 14,
-     "endQ": 14,
-     "stimulusSegments": [
-      "List of Headings\ni. Seeking the transmission of radio signals from planets\nii. Appropriate responses to signals from other civilizations\niii. Vast distances to Earth’s closest neighbors\niv. Assumptions underlying the search for extra-terrestrial intelligence\nv. Reasons for the search for extra-terrestrial intelligence\nvi. Knowledge of extra-terrestrial life forms\nvii. Likelihood of life on other planets"
+     "endQ": 17,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has ﬁve paragraphs, A-E. Choose the correct heading for paragraphs B-E from the headings below. Write the correct number: i-vii, in boxes 14—17 on your answer sheet.",
+     "legend": null,
+     "notes": [
+      "Example Answer"
      ],
-     "sharedOptions": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "Seeking the transmission of radio signals from planets"
+       },
+       {
+        "id": "ii",
+        "text": "Appropriate responses to signals from other civilizations"
+       },
+       {
+        "id": "iii",
+        "text": "Vast distances to Earth’s closest neighbors"
+       },
+       {
+        "id": "iv",
+        "text": "Assumptions underlying the search for extra-terrestrial intelligence"
+       },
+       {
+        "id": "v",
+        "text": "Reasons for the search for extra-terrestrial intelligence"
+       },
+       {
+        "id": "vi",
+        "text": "Knowledge of extra-terrestrial life forms"
+       },
+       {
+        "id": "vii",
+        "text": "Likelihood of life on other planets"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph B",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "iv",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. Paragraph B",
-        "elementPath": "children[28]"
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "iv",
+        "value": "iv",
+        "accepted": [
+         "iv"
+        ]
+       }
+      },
+      {
+       "number": 15,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "vii",
+        "value": "vii",
+        "accepted": [
+         "vii"
+        ]
+       }
+      },
+      {
+       "number": 16,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
+       }
+      },
+      {
+       "number": 17,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": [
+      "UNCONSUMED_TEXT"
+     ],
      "provenance": {
-      "elementPath": "children[25]",
-      "rawExcerpt": "Questions 14—17\nReading Passage 2 has ﬁve paragraphs, A-E. Choose the correct heading for paragraphs B-E from the headings below.\nWrite the correct number: i-vii, in boxes 14—17 on your answer sheet. Example Answer\nParagraph A v"
+      "headerLine": 40,
+      "lineRange": [
+       40,
+       56
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14—17",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has ﬁve paragraphs, A-E. Choose the correct heading for paragraphs B-E from the headings below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct number: i-vii, in boxes 14—17 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i. Seeking the transmission of radio signals from planets",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii. Appropriate responses to signals from other civilizations",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii. Vast distances to Earth’s closest neighbors",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv. Assumptions underlying the search for extra-terrestrial intelligence",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v. Reasons for the search for extra-terrestrial intelligence",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi. Knowledge of extra-terrestrial life forms",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii. Likelihood of life on other planets",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Example Answer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Paragraph A v",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. Paragraph E",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Answer the Questions Below. Choose NO MORE THAN TWO WORDS from the passage for each answer Write your answers in boxes 18-20 on your answer sheet.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "short_answer",
+     "groupId": "p2.q18-20",
      "startQ": 18,
      "endQ": 20,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the Questions Below. Choose NO MORE THAN TWO WORDS from the passage for each answer Write your answers in boxes 18-20 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 18,
        "type": "short_answer",
-       "stem": {
-        "plain": "What is the life expectancy of Earth?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "several billion years",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. What is the life expectancy of Earth?",
-        "elementPath": "children[30]"
+       "prompt": [
+        "What is the life expectancy of Earth?"
+       ],
+       "answer": {
+        "raw": "several billion years",
+        "value": "several billion years",
+        "accepted": [
+         "several billion years"
+        ]
        }
       },
       {
        "number": 19,
        "type": "short_answer",
-       "stem": {
-        "plain": "What kind of signals from other intelligent civilizations are SETI scientists searching for?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "radio (waves)",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. What kind of signals from other intelligent civilizations are SETI scientists searching for?",
-        "elementPath": "children[30]"
+       "prompt": [
+        "What kind of signals from other intelligent civilizations are SETI scientists searching for?"
+       ],
+       "answer": {
+        "raw": "radio (waves)",
+        "value": "radio (waves)",
+        "accepted": [
+         "radio waves",
+         "radio"
+        ]
        }
       },
       {
        "number": 20,
        "type": "short_answer",
-       "stem": {
-        "plain": "How many stars are the world’s most powerful radio telescopes searching?",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "1000 (stars)",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. How many stars are the world’s most powerful radio telescopes searching?",
-        "elementPath": "children[30]"
+       "prompt": [
+        "How many stars are the world’s most powerful radio telescopes searching?"
+       ],
+       "answer": {
+        "raw": "1000 (stars)",
+        "value": "1000 (stars)",
+        "accepted": [
+         "1000 stars",
+         "1000"
+        ]
        }
       }
      ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_EXCEEDS_WORD_LIMIT"
+     ],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[29]",
-      "rawExcerpt": "Questions 18-20\nAnswer the Questions Below. Choose NO MORE THAN TWO WORDS from the passage for each answer\nWrite your answers in boxes 18-20 on your answer sheet."
+      "headerLine": 57,
+      "lineRange": [
+       57,
+       62
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 18-20",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the Questions Below. Choose NO MORE THAN TWO WORDS from the passage for each answer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write your answers in boxes 18-20 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. What is the life expectancy of Earth?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. What kind of signals from other intelligent civilizations are SETI scientists searching for?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. How many stars are the world’s most powerful radio telescopes searching?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g04",
-     "instruction": "Do the following statements agree with the views of the writer in Reading Passage 2? In boxes 21-26 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this more than once.",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p2.q21-26",
      "startQ": 21,
      "endQ": 26,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the views of the writer in Reading Passage 2? In boxes 21-26 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this more than once."
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 21,
        "type": "tfng",
-       "stem": {
-        "plain": "Alien civilizations may be able to help the human race to overcome serious problems.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. Alien civilizations may be able to help the human race to overcome serious problems.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "Alien civilizations may be able to help the human race to overcome serious problems."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 22,
        "type": "tfng",
-       "stem": {
-        "plain": "SETI scientists are trying to find a life form that resembles humans in many ways.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "22. SETI scientists are trying to find a life form that resembles humans in many ways.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "SETI scientists are trying to find a life form that resembles humans in many ways."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 23,
        "type": "tfng",
-       "stem": {
-        "plain": "The Americans and Australians have co-operated on joint research projects.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "23. The Americans and Australians have co-operated on joint research projects.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "The Americans and Australians have co-operated on joint research projects."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 24,
        "type": "tfng",
-       "stem": {
-        "plain": "So far SETI scientists have picked up radio signals from several stars.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "24. So far SETI scientists have picked up radio signals from several stars.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "So far SETI scientists have picked up radio signals from several stars."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 25,
        "type": "tfng",
-       "stem": {
-        "plain": "The NASA project attracted criticism from some members of Congress.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "25. The NASA project attracted criticism from some members of Congress.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "The NASA project attracted criticism from some members of Congress."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 26,
        "type": "tfng",
-       "stem": {
-        "plain": "If a signal from outer space is received, it will be important to respond promptly.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "26. If a signal from outer space is received, it will be important to respond promptly.",
-        "elementPath": "children[33]"
+       "prompt": [
+        "If a signal from outer space is received, it will be important to respond promptly."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[31]",
-      "rawExcerpt": "Questions 21-26\nDo the following statements agree with the views of the writer in Reading Passage 2?\nIn boxes 21-26 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informa"
+      "headerLine": 63,
+      "lineRange": [
+       63,
+       74
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 21-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the views of the writer in Reading Passage 2?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "In boxes 21-26 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. Alien civilizations may be able to help the human race to overcome serious problems.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "22. SETI scientists are trying to find a life form that resembles humans in many ways.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. The Americans and Australians have co-operated on joint research projects.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24. So far SETI scientists have picked up radio signals from several stars.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25. The NASA project attracted criticism from some members of Congress.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26. If a signal from outer space is received, it will be important to respond promptly.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "Method of determining where the ancestors of turtles and tortoises come from",
+   "title": "The History of the Tortoise",
    "paragraphs": [
-    "If you go back far enough, everything lived in the sea. At various points in evolutionary history, enterprising individuals within many different animal groups moved out onto the land, sometimes even to the most parched deserts, taking their own private seawater with them in blood and cellular fluids. In addition to the reptiles, birds, mammals and insects which we see all around us, other groups that have succeeded out of water include scorpions, snails, crustaceans such as woodlice and land crabs, millipedes and centipedes, spiders and various worms. And we mustn’t forget the plants, without whose prior invasion of the land none of the other migrations could have happened.",
-    "Moving from water to land involved a major redesign of every aspect of life, including breathing and reproduction. Nevertheless, a good number of thoroughgoing land animals later turned around, abandoned their hard-earned terrestrial re-tooling, and returned to the water again. Seals have only gone part way back. They show us what the intermediates might have been like, on the way to extreme cases such as whales and dugongs. Whales (including the small whales we call dolphins) and dugongs, with their close cousins the manatees, ceased to be land creatures altogether and reverted to the full marine habits of their remote ancestors. They don’t even come ashore to breed. They do, however, still breathe air, having never developed anything equivalent to the gills of their earlier marine incarnation. Turtles went back to the sea a very long time ago and, like all vertebrate returnees to the water, they breathe air. However, they are, in one respect, less fully given back to the water than whales or dugongs, for turtles still lay their eggs on beaches.",
-    "There is evidence that all modem turtles are descended from a terrestrial ancestor which lived before most of the dinosaurs. There are two key fossils called Proganochelys quenstedti and Palaeochersis talampayensis dating from early dinosaur times, which appear to be close to the ancestry of all modem turtles and tortoises. You might wonder how we can tell whether fossil animals lived on land or in water, especially if only fragments are found. Sometimes it’s obvious. Ichthyosaurs were reptilian contemporaries of the dinosaurs, with fins and streamlined bodies. The fossils look like dolphins and they surely lived like dolphins, in the water. With turtles it is a little less obvious. One way to tell is by measuring the bones of their forelimbs.",
-    "Walter Joyce and Jacques Gauthier, at Yale University, obtained three measurements in these particular bones of 71 species of living turtles and tortoises. They used a kind of triangular graph paper to plot the three measurements against one another. All the land tortoise species formed a tight cluster of points in the upper part of the triangle; all the water turtles cluster in the lower part of the triangular graph. There was no overlap, except when they added some species that spend time both in water and on land. Sure enough, these amphibious species show up on the triangular graph approximately half way between the ‘wet cluster’ of sea turtles and the ‘dry cluster’ of land tortoises. The next step was to determine where the fossils fell. The bones of P. quenstedti and P. talampayensis leave us in no doubt. Their points on the graph are right in the thick of the dry cluster. Both these fossils were dry-land tortoises. They come from the era before our turtles returned to the water.",
-    "You might think, therefore, that modem land tortoises have probably stayed on land ever since those early terrestrial times, as most mammals did after a few of them went back to the sea. But apparently not. If you draw out the family tree of all modem turtles and tortoises, nearly all the branches are aquatic. Today’s land tortoises constitute a single branch, deeply nested among branches consisting of aquatic turtles. This suggests that modem land tortoises have not stayed on land continuously since the time of P. quenstedti and P. talampayensis. Rather, their ancestors were among those who went back to the water, and they then re- emerged back onto the land in (relatively) more recent times.",
-    "Tortoises therefore represent a remarkable double return. In common with all mammals, reptiles and birds, their remote ancestors were marine fish and before that various more or less worm-like creatures stretching back, still in the sea, to the primeval bacteria. Later ancestors lived on land and stayed there for a very large number of generations. Later ancestors still evolved back into the water and became sea turtles. And finally they returned yet again to the land as tortoises, some of which now live in the driest of deserts.",
-    "Questions 27-30\nAnswer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer",
-    "27. What had to transfer from sea to land before any animals could migrate?\n28. Which TWO processes are mentioned as those in which animals had to make big changes as they moved onto land?\n29. Which physical feature. possessed by their ancestors, do whales lack?\n30. Which animals might ichthyosaurs have resembled?",
-    "Step 1: 71 species of living turtles and tortoises were examined and a total of (34) …………….were taken from the bones of their forelimbs.\nStep 2: The data was recorded on a (35) ………………. (necessary for comparing the information).\nOutcome: Land tortoises were represented by a dense (36) ……………… of points towards the top. Sea turtles were grouped together in the bottom part.\nStep 3: The same data was collected from some living (37) ……………… species and added to the other results. Outcome: The points for these species turned out to be positioned about (38) ……………… up the triangle between the land tortoises and the sea turtles.\nStep 4: Bones of R quenstedti and P talampayensis were examined in a similar way and the results added.\nOutcome: The position of the points indicated that both these ancient creatures were (39)…………………."
+    {
+     "type": "text",
+     "text": "If you go back far enough, everything lived in the sea. At various points in evolutionary history, enterprising individuals within many different animal groups moved out onto the land, sometimes even to the most parched deserts, taking their own private seawater with them in blood and cellular fluids. In addition to the reptiles, birds, mammals and insects which we see all around us, other groups that have succeeded out of water include scorpions, snails, crustaceans such as woodlice and land crabs, millipedes and centipedes, spiders and various worms. And we mustn’t forget the plants, without whose prior invasion of the land none of the other migrations could have happened."
+    },
+    {
+     "type": "text",
+     "text": "Moving from water to land involved a major redesign of every aspect of life, including breathing and reproduction. Nevertheless, a good number of thoroughgoing land animals later turned around, abandoned their hard-earned terrestrial re-tooling, and returned to the water again. Seals have only gone part way back. They show us what the intermediates might have been like, on the way to extreme cases such as whales and dugongs. Whales (including the small whales we call dolphins) and dugongs, with their close cousins the manatees, ceased to be land creatures altogether and reverted to the full marine habits of their remote ancestors. They don’t even come ashore to breed. They do, however, still breathe air, having never developed anything equivalent to the gills of their earlier marine incarnation. Turtles went back to the sea a very long time ago and, like all vertebrate returnees to the water, they breathe air. However, they are, in one respect, less fully given back to the water than whales or dugongs, for turtles still lay their eggs on beaches."
+    },
+    {
+     "type": "text",
+     "text": "There is evidence that all modem turtles are descended from a terrestrial ancestor which lived before most of the dinosaurs. There are two key fossils called Proganochelys quenstedti and Palaeochersis talampayensis dating from early dinosaur times, which appear to be close to the ancestry of all modem turtles and tortoises. You might wonder how we can tell whether fossil animals lived on land or in water, especially if only fragments are found. Sometimes it’s obvious. Ichthyosaurs were reptilian contemporaries of the dinosaurs, with fins and streamlined bodies. The fossils look like dolphins and they surely lived like dolphins, in the water. With turtles it is a little less obvious. One way to tell is by measuring the bones of their forelimbs."
+    },
+    {
+     "type": "text",
+     "text": "Walter Joyce and Jacques Gauthier, at Yale University, obtained three measurements in these particular bones of 71 species of living turtles and tortoises. They used a kind of triangular graph paper to plot the three measurements against one another. All the land tortoise species formed a tight cluster of points in the upper part of the triangle; all the water turtles cluster in the lower part of the triangular graph. There was no overlap, except when they added some species that spend time both in water and on land. Sure enough, these amphibious species show up on the triangular graph approximately half way between the ‘wet cluster’ of sea turtles and the ‘dry cluster’ of land tortoises. The next step was to determine where the fossils fell. The bones of P. quenstedti and P. talampayensis leave us in no doubt. Their points on the graph are right in the thick of the dry cluster. Both these fossils were dry-land tortoises. They come from the era before our turtles returned to the water."
+    },
+    {
+     "type": "text",
+     "text": "You might think, therefore, that modem land tortoises have probably stayed on land ever since those early terrestrial times, as most mammals did after a few of them went back to the sea. But apparently not. If you draw out the family tree of all modem turtles and tortoises, nearly all the branches are aquatic. Today’s land tortoises constitute a single branch, deeply nested among branches consisting of aquatic turtles. This suggests that modem land tortoises have not stayed on land continuously since the time of P. quenstedti and P. talampayensis. Rather, their ancestors were among those who went back to the water, and they then re- emerged back onto the land in (relatively) more recent times."
+    },
+    {
+     "type": "text",
+     "text": "Tortoises therefore represent a remarkable double return. In common with all mammals, reptiles and birds, their remote ancestors were marine fish and before that various more or less worm-like creatures stretching back, still in the sea, to the primeval bacteria. Later ancestors lived on land and stayed there for a very large number of generations. Later ancestors still evolved back into the water and became sea turtles. And finally they returned yet again to the land as tortoises, some of which now live in the driest of deserts."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g05",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 31-33 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this more than once.",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q27-30",
+     "startQ": 27,
+     "endQ": 30,
+     "type": "short_answer",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "short_answer",
+       "prompt": [
+        "What had to transfer from sea to land before any animals could migrate?"
+       ],
+       "answer": {
+        "raw": "plants",
+        "value": "plants",
+        "accepted": [
+         "plants"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "short_answer",
+       "prompt": [
+        "Which TWO processes are mentioned as those in which animals had to make big changes as they moved onto land?"
+       ],
+       "answer": {
+        "raw": "breathing and reproduction",
+        "value": "breathing and reproduction",
+        "accepted": [
+         "breathing and reproduction"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "short_answer",
+       "prompt": [
+        "Which physical feature. possessed by their ancestors, do whales lack?"
+       ],
+       "answer": {
+        "raw": "gills",
+        "value": "gills",
+        "accepted": [
+         "gills"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "short_answer",
+       "prompt": [
+        "Which animals might ichthyosaurs have resembled?"
+       ],
+       "answer": {
+        "raw": "dolphins",
+        "value": "dolphins",
+        "accepted": [
+         "dolphins"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_EXCEEDS_WORD_LIMIT"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 82,
+      "lineRange": [
+       82,
+       87
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-30",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage for each answer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. What had to transfer from sea to land before any animals could migrate?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. Which TWO processes are mentioned as those in which animals had to make big changes as they moved onto land?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. Which physical feature. possessed by their ancestors, do whales lack?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Which animals might ichthyosaurs have resembled?",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q31-33",
      "startQ": 31,
      "endQ": 33,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 31-33 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this more than once."
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 31,
        "type": "tfng",
-       "stem": {
-        "plain": "Turtles were among the first group of animals to migrate back to the sea.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31 Turtles were among the first group of animals to migrate back to the sea.",
-        "elementPath": "children[45]"
+       "prompt": [
+        "Turtles were among the first group of animals to migrate back to the sea."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 32,
        "type": "tfng",
-       "stem": {
-        "plain": "It is always difficult to determine where an animal lived when its fossilized remains are incomplete.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32 It is always difficult to determine where an animal lived when its fossilized remains are incomplete.",
-        "elementPath": "children[45]"
+       "prompt": [
+        "It is always difficult to determine where an animal lived when its fossilized remains are incomplete."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 33,
        "type": "tfng",
-       "stem": {
-        "plain": "The habitat of ichthyosaurs can be determined by the appearance of their fossilized remains.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33 The habitat of ichthyosaurs can be determined by the appearance of their fossilized remains.",
-        "elementPath": "children[45]"
+       "prompt": [
+        "The habitat of ichthyosaurs can be determined by the appearance of their fossilized remains."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[43]",
-      "rawExcerpt": "Questions 31-33\nDo the following statements agree with the information given in Reading Passage 3?\nIn boxes 31-33 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+      "headerLine": 88,
+      "lineRange": [
+       88,
+       96
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 31-33",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 3?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "In boxes 31-33 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31 Turtles were among the first group of animals to migrate back to the sea.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32 It is always difficult to determine where an animal lived when its fossilized remains are incomplete.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33 The habitat of ichthyosaurs can be determined by the appearance of their fossilized remains.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q34-39",
+     "startQ": 34,
+     "endQ": 39,
+     "type": "flow_chart_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Write your answers in boxes 34-39 on your answer sheet. Method of determining where the ancestors of turtles and tortoises come from",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Step 1: 71 species of living turtles and tortoises were examined and a total of ",
+         {
+          "blank": 34
+         },
+         "were taken from the bones of their forelimbs."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Step 2: The data was recorded on a ",
+         {
+          "blank": 35
+         },
+         "(necessary for comparing the information)."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Outcome: Land tortoises were represented by a dense ",
+         {
+          "blank": 36
+         },
+         "of points towards the top. Sea turtles were grouped together in the bottom part."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Step 3: The same data was collected from some living ",
+         {
+          "blank": 37
+         },
+         "species and added to the other results. Outcome: The points for these species turned out to be positioned about ",
+         {
+          "blank": 38
+         },
+         "up the triangle between the land tortoises and the sea turtles."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Step 4: Bones of R quenstedti and P talampayensis were examined in a similar way and the results added."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "Outcome: The position of the points indicated that both these ancient creatures were ",
+         {
+          "blank": 39
+         }
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 34,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "3 measurements",
+        "value": "3 measurements",
+        "accepted": [
+         "3 measurements"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(triangular) graph",
+        "value": "(triangular) graph",
+        "accepted": [
+         "triangular graph",
+         "graph"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "cluster",
+        "value": "cluster",
+        "accepted": [
+         "cluster"
+        ]
+       }
+      },
+      {
+       "number": 37,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "amphibious",
+        "value": "amphibious",
+        "accepted": [
+         "amphibious"
+        ]
+       }
+      },
+      {
+       "number": 38,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "half way",
+        "value": "half way",
+        "accepted": [
+         "half way"
+        ]
+       }
+      },
+      {
+       "number": 39,
+       "type": "flow_chart_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "dry land tortoises",
+        "value": "dry land tortoises",
+        "accepted": [
+         "dry land tortoises"
+        ]
+       }
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_EXCEEDS_WORD_LIMIT"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 97,
+      "lineRange": [
+       97,
+       105
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 34-39",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Write your answers in boxes 34-39 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Method of determining where the ancestors of turtles and tortoises come from",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Step 1: 71 species of living turtles and tortoises were examined and a total of (34) …………….were taken from the bones of their forelimbs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Step 2: The data was recorded on a (35) ………………. (necessary for comparing the information).",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Outcome: Land tortoises were represented by a dense (36) ……………… of points towards the top. Sea turtles were grouped together in the bottom part.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Step 3: The same data was collected from some living (37) ……………… species and added to the other results. Outcome: The points for these species turned out to be positioned about (38) ……………… up the triangle between the land tortoises and the sea turtles.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Step 4: Bones of R quenstedti and P talampayensis were examined in a similar way and the results added.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Outcome: The position of the points indicated that both these ancient creatures were (39)………………….",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q40-40",
+     "startQ": 40,
+     "endQ": 40,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in box 40 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 40,
+       "type": "mcq_single",
+       "prompt": [
+        "According to the writer, the most significant thing about tortoises is that"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "they are able to adapt to life in extremely dry environments."
+        },
+        {
+         "id": "B",
+         "text": "their original life form was a kind of primeval bacteria,"
+        },
+        {
+         "id": "C",
+         "text": "they have so much in common with sea turtles."
+        },
+        {
+         "id": "D",
+         "text": "they have made the transition from sea to land more than once."
+        }
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 106,
+      "lineRange": [
+       106,
+       112
+      ],
+      "sourceLines": [
+       {
+        "text": "Question 40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter A, B, C or D. Write the correct letter in box 40 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "According to the writer, the most significant thing about tortoises is that",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A they are able to adapt to life in extremely dry environments.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B their original life form was a kind of primeval bacteria,",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C they have so much in common with sea turtles.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D they have made the transition from sea to land more than once.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "false"
-   },
-   {
-    "number": 2,
-    "value": "not given"
-   },
-   {
-    "number": 3,
-    "value": "false"
-   },
-   {
-    "number": 4,
-    "value": "true"
-   },
-   {
-    "number": 5,
-    "value": "not given"
-   },
-   {
-    "number": 6,
-    "value": "true"
-   },
-   {
-    "number": 7,
-    "value": "not given"
-   },
-   {
-    "number": 8,
-    "value": "rich"
-   },
-   {
-    "number": 9,
-    "value": "commercial"
-   },
-   {
-    "number": 10,
-    "value": "mauve"
-   },
-   {
-    "number": 11,
-    "value": "Robert Pullar"
-   },
-   {
-    "number": 12,
-    "value": "France"
-   },
-   {
-    "number": 13,
-    "value": "malaria"
-   },
-   {
-    "number": 14,
-    "value": "iv"
-   },
-   {
-    "number": 15,
-    "value": "vii"
-   },
-   {
-    "number": 16,
-    "value": "i"
-   },
-   {
-    "number": 17,
-    "value": "ii"
-   },
-   {
-    "number": 18,
-    "value": "several billion years"
-   },
-   {
-    "number": 19,
-    "value": "radio (waves)"
-   },
-   {
-    "number": 20,
-    "value": "1000 (stars)"
-   },
-   {
-    "number": 21,
-    "value": "true"
-   },
-   {
-    "number": 22,
-    "value": "true"
-   },
-   {
-    "number": 23,
-    "value": "not given"
-   },
-   {
-    "number": 24,
-    "value": "false"
-   },
-   {
-    "number": 25,
-    "value": "not given"
-   },
-   {
-    "number": 26,
-    "value": "false"
-   },
-   {
-    "number": 27,
-    "value": "plants"
-   },
-   {
-    "number": 28,
-    "value": "breathing and reproduction"
-   },
-   {
-    "number": 29,
-    "value": "gills"
-   },
-   {
-    "number": 30,
-    "value": "dolphins"
-   },
-   {
-    "number": 31,
-    "value": "not given"
-   },
-   {
-    "number": 32,
-    "value": "false"
-   },
-   {
-    "number": 33,
-    "value": "true"
-   },
-   {
-    "number": 34,
-    "value": "3 measurements"
-   },
-   {
-    "number": 35,
-    "value": "(triangular) graph"
-   },
-   {
-    "number": 36,
-    "value": "cluster"
-   },
-   {
-    "number": 37,
-    "value": "amphibious"
-   },
-   {
-    "number": 38,
-    "value": "half way"
-   },
-   {
-    "number": 39,
-    "value": "dry land tortoises"
-   },
-   {
-    "number": 40,
-    "value": "D"
-   }
-  ]
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 1,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  31,
+  32,
+  33,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 9,
+  "questionsInSource": 40,
+  "productionQuestions": 27,
+  "answerKeyItems": 40
  },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     34,
-     39
-    ],
-    "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Write your answers in box"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in box 40 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 20,
-    "answers": 40
-   }
-  }
- ],
- "validationWarnings": [
-  {
-   "unit": "group",
-   "code": "DEGENERATE_STEMS_DROPPED",
-   "detail": "1 bare-letter questions dropped in g07"
-  }
- ],
- "status": "flagged",
- "segmentCount": 4,
- "contentFingerprint": "f45b88449290784bd049464dba2f639cd64f2c3b2b5aa1a14c450df773ca6930"
+ "contentFingerprint": "becc880eccf503b43f465a035439251768c89974312a72d8e53c2d37506ae9af"
 }

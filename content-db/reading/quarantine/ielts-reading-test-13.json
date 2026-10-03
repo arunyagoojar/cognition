@@ -1,85 +1,34 @@
 {
  "slug": "ielts-reading-test-13",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     4
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write your answers in boxes 1-4 on your answer sheet."
-   }
+   "groupId": "p1.q05-08",
+   "range": [
+    5,
+    8
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MALFORMED_BLANK"
+   ],
+   "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from Reading Passage 1 for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     8
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAN THREE WORDS from Reading Passage 1 for each answer. Questions 9-12\nIn boxe"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write your answer in box 13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Reading Passage 2 has four sections A-D. Choose the correct heading for the each section from the list of headings below"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     21
-    ],
-    "instruction": "Answer the questions below using NO MORE THAN THREE WORDS AND/ OR A NUMBER from the passage for each answer. Write your "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     32,
-     36
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAT THREE WORDS from the passage for each answer. Write your answers in boxes "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 14,
-    "answers": 40
-   }
+   "groupId": "p3.q32-36",
+   "range": [
+    32,
+    36
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the table below. Choose NO MORE THAT THREE WORDS from the passage for each answer. Write your answers in boxes 32-36 on your answer sheet."
   }
  ]
 }

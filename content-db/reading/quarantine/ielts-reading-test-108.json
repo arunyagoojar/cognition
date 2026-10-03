@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-108",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     18,
-     21
-    ],
-    "instruction": "Complete each sentence with the correct ending, A-F below. Write the correct letter. A-F. in boxes 18-21 on your answer "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     29
-    ],
-    "instruction": "Choose the correct letter, A. B, C or D"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p3.q30-34",
+   "range": [
+    30,
+    34
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words A-G below."
   }
  ]
 }

@@ -1,49 +1,20 @@
 {
  "slug": "ielts-reading-test-190",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     3
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     12
-    ],
-    "instruction": "Write the correct letter, A, B or C in boxes 8-12 on your answer sheet. Classify the following wind patterns according to whether the writer"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     22
-    ],
-    "instruction": "Look at the following causes and the list of results below. Match each cause with the appropriate result. Questions 23-27\n\nClassify the foll"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 21,
-    "answers": 40
-   }
+   "groupId": "p1.q01-03",
+   "range": [
+    1,
+    3
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
   }
  ]
 }

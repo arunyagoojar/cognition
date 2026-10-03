@@ -1,27 +1,21 @@
 {
  "slug": "ielts-reading-test-187",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "PASSAGE_BOUNDARY_AMBIGUOUS",
-   "evidence": {
-    "passage": 2,
-    "title": "Passage 2",
-    "groups": [
-     [
-      21,
-      28
-     ]
-    ]
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 32,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p1.q01-08",
+   "range": [
+    1,
+    8
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Reading Passage 1 has eight paragraphs, A-H. What paragraph has the following information?"
   }
  ]
 }

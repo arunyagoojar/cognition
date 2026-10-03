@@ -1,43 +1,33 @@
 {
  "slug": "ielts-reading-test-207",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     20,
-     22
-    ],
-    "instruction": "Look at the following people (Questions 20-22) and the list of opinions below. Match each person with the opinion credited to him."
-   }
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below using words from the passage. Choose ONE WORD ONLY from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_COUNT_MISMATCH",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     32
-    ],
-    "extracted": 5,
-    "expected": 6
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 28,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "QUESTION_RANGE_MISMATCH",
-   "evidence": "g06 range 27-32 got 5"
+   "groupId": "p3.q27-32",
+   "range": [
+    27,
+    32
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 27-32 on your answer sheet write"
   }
  ]
 }

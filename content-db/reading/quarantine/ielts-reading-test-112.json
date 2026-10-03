@@ -1,61 +1,34 @@
 {
  "slug": "ielts-reading-test-112",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     10
-    ],
-    "instruction": "Filling the blanks in diagram of treadle pump’s each parts. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the pas"
-   }
+   "groupId": "p1.q07-10",
+   "range": [
+    7,
+    10
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Filling the blanks in diagram of treadle pump’s each parts. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     11,
-     13
-    ],
-    "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer. 11 How lar"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     31
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     37,
-     39
-    ],
-    "instruction": "Choose THREE correct letters among, A-E."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 24,
-    "answers": 39
-   }
+   "groupId": "p2.q22-26",
+   "range": [
+    22,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary below using words from the box."
   }
  ]
 }

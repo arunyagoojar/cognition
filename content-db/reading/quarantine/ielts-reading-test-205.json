@@ -1,37 +1,21 @@
 {
  "slug": "ielts-reading-test-205",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     4,
-     7
-    ],
-    "instruction": "Look at the following theories (Questions 4-7) and the list of people below. Match each theory with the person it is credited to. A Roger Ch"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     26,
-     27
-    ],
-    "instruction": "Choose the correct answer, A. B, C or D"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 34,
-    "answers": 40
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Reading Passage 1 has nine paragraphs labelled A-l. Which paragraph contains the following information? NB You may use any letter more than once."
   }
  ]
 }

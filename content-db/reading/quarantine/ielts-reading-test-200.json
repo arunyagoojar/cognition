@@ -1,37 +1,22 @@
 {
  "slug": "ielts-reading-test-200",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     6
-    ],
-    "instruction": "Choose the appropriate letters A-D and write them in boxes 1-6 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     13
-    ],
-    "instruction": "Reading Passage 1 describes a number of cause and effect relationships. Match each Cause (Questions 7-13) in List A with"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 13,
-    "answers": 40
-   }
+   "groupId": "p3.q33-35",
+   "range": [
+    33,
+    35
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "The list below gives some of the factors that are necessary to assist the revitalisation of a language within a community."
   }
  ]
 }

@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-240",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     10
-    ],
-    "instruction": "Look at the following researchers (Questions 6-10) and the list of statements below. Match each researcher with the correct statements. Writ"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-D) with opinions or deeds below. Write the appropriate letters A-D in boxes"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p3.q33-40",
+   "range": [
+    33,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Answer the questions below. Choose NO MORE THAN TWO WORDS AND/ OR A NUMBER from the passage for each answer."
   }
  ]
 }

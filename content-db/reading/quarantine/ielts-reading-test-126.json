@@ -1,85 +1,37 @@
 {
  "slug": "ielts-reading-test-126",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     2
-    ],
-    "instruction": "Choose the best answer to the questions below."
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Match the country or countries below to the statements taken from the passage."
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     13
-    ],
-    "instruction": "Match the country or countries below to the statements taken from the passage. BR______ Britain\nG_______ Germany\nD_______ Denmark\nUS______ T"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     21
-    ],
-    "instruction": "The reading passage has nine paragraphs A – I. From the list below choose the most suitable headings for B – I. Write th"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "Classify the following facts as applying to: A Antarctic penguins\nB Temperature-area penguins Write the appropriate lett"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     33,
-     36
-    ],
-    "instruction": "Complete each of the following sentences with information from the reading passage. Write your answers in boxes 6-9 on your Answer Sheet. Wr"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     37,
-     40
-    ],
-    "instruction": "The article mentions many facts about penguins. Which four of the following features are things that enable them to surv"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 11,
-    "answers": 40
-   }
+   "groupId": "p3.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "The article mentions many facts about penguins. Write the appropriate letters A-H in boxes 37 – 40 on your Answer Sheet."
   }
  ]
 }

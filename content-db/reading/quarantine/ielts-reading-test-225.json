@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-225",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     8
-    ],
-    "instruction": "Complete the table below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     31
-    ],
-    "instruction": "Complete the summary using the list of words, A-I, below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 32,
-    "answers": 40
-   }
+   "groupId": "p1.q06-08",
+   "range": [
+    6,
+    8
+   ],
+   "type": "table_completion",
+   "reasonCodes": [
+    "MALFORMED_BLANK"
+   ],
+   "instruction": "Complete the table below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

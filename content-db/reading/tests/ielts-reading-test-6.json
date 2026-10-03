@@ -1,733 +1,1939 @@
 {
  "id": "reading.test-0006.3aed7980",
  "module": "reading",
+ "slug": "ielts-reading-test-6",
  "sourceNumbers": [
   6
  ],
- "slug": "ielts-reading-test-6",
  "title": "IELTS Academic Reading Test 6",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-6/index.html",
-   "sha256": "8c8491d27cb632496cbec5af4035b5963c69890ba339eb133a042288b4d49c66",
-   "manifestHashMatch": true,
+   "sha256": "09aa06b4151f71245ca3673a088a5534b8172c958276b41c16d90958e43078ef",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-6/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "practice_only",
+ "fullMockEligible": false,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "spinning"
+   },
+   {
+    "number": 2,
+    "raw": "(perfectly) unblemished"
+   },
+   {
+    "number": 3,
+    "raw": "labour intensive"
+   },
+   {
+    "number": 4,
+    "raw": "thickness"
+   },
+   {
+    "number": 5,
+    "raw": "marked"
+   },
+   {
+    "number": 6,
+    "raw": "(molten) glass"
+   },
+   {
+    "number": 7,
+    "raw": "(molten) tin/ metal"
+   },
+   {
+    "number": 8,
+    "raw": "rolles"
+   },
+   {
+    "number": 9,
+    "raw": "true"
+   },
+   {
+    "number": 10,
+    "raw": "not given"
+   },
+   {
+    "number": 11,
+    "raw": "false"
+   },
+   {
+    "number": 12,
+    "raw": "true"
+   },
+   {
+    "number": 13,
+    "raw": "true"
+   },
+   {
+    "number": 14,
+    "raw": "ii"
+   },
+   {
+    "number": 15,
+    "raw": "vii"
+   },
+   {
+    "number": 16,
+    "raw": "ix"
+   },
+   {
+    "number": 17,
+    "raw": "iv"
+   },
+   {
+    "number": 18,
+    "raw": "C"
+   },
+   {
+    "number": 19,
+    "raw": "B"
+   },
+   {
+    "number": 20,
+    "raw": "A"
+   },
+   {
+    "number": 21,
+    "raw": "H"
+   },
+   {
+    "number": 22,
+    "raw": "G"
+   },
+   {
+    "number": 23,
+    "raw": "C"
+   },
+   {
+    "number": 24,
+    "raw": "C"
+   },
+   {
+    "number": 25,
+    "raw": "A"
+   },
+   {
+    "number": 26,
+    "raw": "B"
+   },
+   {
+    "number": 27,
+    "raw": "viii"
+   },
+   {
+    "number": 28,
+    "raw": "ii"
+   },
+   {
+    "number": 29,
+    "raw": "vi"
+   },
+   {
+    "number": 30,
+    "raw": "i"
+   },
+   {
+    "number": 31,
+    "raw": "iii"
+   },
+   {
+    "number": 32,
+    "raw": "v"
+   },
+   {
+    "number": 33,
+    "raw": "C"
+   },
+   {
+    "number": 34,
+    "raw": "A"
+   },
+   {
+    "number": 35,
+    "raw": "C"
+   },
+   {
+    "number": 36,
+    "raw": "D"
+   },
+   {
+    "number": 37,
+    "raw": "clothing"
+   },
+   {
+    "number": 38,
+    "raw": "vocabulary"
+   },
+   {
+    "number": 39,
+    "raw": "chemicals"
+   },
+   {
+    "number": 40,
+    "raw": "cultures"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Sheet Glass Manufacture: the Float Process",
    "paragraphs": [
-    "Glass, which has been made since the time of the Mesopotamians and Egyptians, is little more than a mixture of sand, soda ash and lime. When heated to about 1500 degrees Celsius (°C) this becomes a molten mass that hardens when slowly cooled. The first successful method for making clear, flat glass involved spinning. This method was very effective as the glass had not touched any surfaces between being soft and becoming hard, so it stayed perfectly unblemished, with a ‘fire finish’. However, the process took a long time and was labour intensive.",
-    "Nevertheless, demand for flat glass was very high and glassmakers across the world were looking for a method of making it continuously. The first continuous ribbon process involved squeezing molten glass through two hot rollers, similar to an old mangle. This allowed glass of virtually any thickness to be made non-stop, but the rollers would leave both sides of the glass marked, and these would then need to be ground and polished. This part of the process rubbed away around 20 per cent of the glass, and the machines were very expensive.",
-    "The float process for making flat glass was invented by Alistair Pilkington. This process allows the manufacture of clear, tinted and coated glass for buildings, and clear and tinted glass for vehicles. Pilkington had been experimenting with improving the melting process, and in 1952 he had the idea of using a bed of molten metal to form the flat glass, eliminating altogether the need for rollers within the float bath. The metal had to melt at a temperature less than the hardening point of glass (about 600°C), but could net boil at a temperature below the temperature of the molten glass (about 1500°C). The best metal for the job was tin.",
-    "The rest of the concept relied on gravity, which guaranteed that the surface of the molten metal was perfectly flat and horizontal. Consequently, when pouring molten glass onto the molten tin, the underside of the glass would also be perfectly flat. If the glass were kept hot enough, it would flow over the molten tin until the top surface was also flat, horizontal and perfectly parallel to the bottom surface. Once the glass cooled to 604°C or less it was too hard to mark and could be transported out of the cooling zone by rollers. The glass settled to a thickness of six millimetres because of surface tension interactions between the glass and the tin. By fortunate coincidence, 60 per cent of the flat glass market at that time was for six- millimetre glass.",
-    "Pilkington built a pilot plant in 1953 and by 1955 he had convinced his company to build a full-scale plant. However, it took 14 months of non-stop production, costing the company £100,000 a month, before the plant produced any usable glass. Furthermore, once they succeeded in making marketable flat glass, the machine was turned off for a service to prepare it for years of continuous production. When it started up again it took another four months to get the process right again. They finally succeeded in 1959 and there are now float plants all over the world, with each able to produce around 1000 tons of glass every day, non-stop for around 15 years.",
-    "Float plants today make glass of near optical quality. Several processes – melting, refining, homogenising – take place simultaneously in the 2000 tonnes of molten glass in the furnace. They occur in separate zones in a complex glass flow driven by high temperatures. It adds up to a continuous melting process, lasting as long as 50 hours, that delivers glass smoothly and continuously to the float bath, and from there to a coating zone and finally a heat treatment zone, where stresses formed during cooling are relieved.",
-    "The principle of float glass is unchanged since the 1950s. However, the product has changed dramatically, from a single thickness of 6.8 mm to a range from sub-millimetre to 25 mm, from a ribbon frequently marred by inclusions and bubbles to almost optical perfection. To ensure the highest quality, inspection takes place at every stage. Occasionally, a bubble is not removed during refining, a sand grain refuses to melt, a tremor in the tin puts ripples into the glass ribbon. Automated on-line inspection does two things. Firstly, it reveals process faults upstream that can be corrected. Inspection technology allows more than 100 million measurements a second to be made across the ribbon, locating flaws the unaided eye would be unable to see. Secondly, it enables computers downstream to steer cutters around flaws.",
-    "Float glass is sold by the square metre, and at the final stage computers translate customer requirements into patterns of cuts designed to minimise waste."
+    {
+     "type": "text",
+     "text": "Glass, which has been made since the time of the Mesopotamians and Egyptians, is little more than a mixture of sand, soda ash and lime. When heated to about 1500 degrees Celsius (°C) this becomes a molten mass that hardens when slowly cooled. The first successful method for making clear, flat glass involved spinning. This method was very effective as the glass had not touched any surfaces between being soft and becoming hard, so it stayed perfectly unblemished, with a ‘fire finish’. However, the process took a long time and was labour intensive."
+    },
+    {
+     "type": "text",
+     "text": "Nevertheless, demand for flat glass was very high and glassmakers across the world were looking for a method of making it continuously. The first continuous ribbon process involved squeezing molten glass through two hot rollers, similar to an old mangle. This allowed glass of virtually any thickness to be made non-stop, but the rollers would leave both sides of the glass marked, and these would then need to be ground and polished. This part of the process rubbed away around 20 per cent of the glass, and the machines were very expensive."
+    },
+    {
+     "type": "text",
+     "text": "The float process for making flat glass was invented by Alistair Pilkington. This process allows the manufacture of clear, tinted and coated glass for buildings, and clear and tinted glass for vehicles. Pilkington had been experimenting with improving the melting process, and in 1952 he had the idea of using a bed of molten metal to form the flat glass, eliminating altogether the need for rollers within the float bath. The metal had to melt at a temperature less than the hardening point of glass (about 600°C), but could net boil at a temperature below the temperature of the molten glass (about 1500°C). The best metal for the job was tin."
+    },
+    {
+     "type": "text",
+     "text": "The rest of the concept relied on gravity, which guaranteed that the surface of the molten metal was perfectly flat and horizontal. Consequently, when pouring molten glass onto the molten tin, the underside of the glass would also be perfectly flat. If the glass were kept hot enough, it would flow over the molten tin until the top surface was also flat, horizontal and perfectly parallel to the bottom surface. Once the glass cooled to 604°C or less it was too hard to mark and could be transported out of the cooling zone by rollers. The glass settled to a thickness of six millimetres because of surface tension interactions between the glass and the tin. By fortunate coincidence, 60 per cent of the flat glass market at that time was for six- millimetre glass."
+    },
+    {
+     "type": "text",
+     "text": "Pilkington built a pilot plant in 1953 and by 1955 he had convinced his company to build a full-scale plant. However, it took 14 months of non-stop production, costing the company £100,000 a month, before the plant produced any usable glass. Furthermore, once they succeeded in making marketable flat glass, the machine was turned off for a service to prepare it for years of continuous production. When it started up again it took another four months to get the process right again. They finally succeeded in 1959 and there are now float plants all over the world, with each able to produce around 1000 tons of glass every day, non-stop for around 15 years."
+    },
+    {
+     "type": "text",
+     "text": "Float plants today make glass of near optical quality. Several processes – melting, refining, homogenising – take place simultaneously in the 2000 tonnes of molten glass in the furnace. They occur in separate zones in a complex glass flow driven by high temperatures. It adds up to a continuous melting process, lasting as long as 50 hours, that delivers glass smoothly and continuously to the float bath, and from there to a coating zone and finally a heat treatment zone, where stresses formed during cooling are relieved."
+    },
+    {
+     "type": "text",
+     "text": "The principle of float glass is unchanged since the 1950s. However, the product has changed dramatically, from a single thickness of 6.8 mm to a range from sub-millimetre to 25 mm, from a ribbon frequently marred by inclusions and bubbles to almost optical perfection. To ensure the highest quality, inspection takes place at every stage. Occasionally, a bubble is not removed during refining, a sand grain refuses to melt, a tremor in the tin puts ripples into the glass ribbon. Automated on-line inspection does two things. Firstly, it reveals process faults upstream that can be corrected. Inspection technology allows more than 100 million measurements a second to be made across the ribbon, locating flaws the unaided eye would be unable to see. Secondly, it enables computers downstream to steer cutters around flaws."
+    },
+    {
+     "type": "text",
+     "text": "Float glass is sold by the square metre, and at the final stage computers translate customer requirements into patterns of cuts designed to minimise waste."
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write: TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the information\n\nNOT GIVEN if there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q01-08",
+     "startQ": 1,
+     "endQ": 8,
+     "type": "table_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the table and diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "image",
+        "asset": "asset.e803c7f9c33d"
+       }
+      ]
+     },
+     "figures": [
+      {
+       "assetId": "asset.e803c7f9c33d",
+       "sourcePath": "wp-content/uploads/2024/09/test-6-min-2.png",
+       "sha256": "e803c7f9c33db4ff5623892a7bb0e22775eaaa0a63417c18329c37c30b8ff3ff",
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
+      }
+     ],
+     "questions": [
+      {
+       "number": 1,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "spinning",
+        "value": "spinning",
+        "accepted": [
+         "spinning"
+        ]
+       }
+      },
+      {
+       "number": 2,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(perfectly) unblemished",
+        "value": "(perfectly) unblemished",
+        "accepted": [
+         "perfectly unblemished",
+         "unblemished"
+        ]
+       }
+      },
+      {
+       "number": 3,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "labour intensive",
+        "value": "labour intensive",
+        "accepted": [
+         "labour intensive"
+        ]
+       }
+      },
+      {
+       "number": 4,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "thickness",
+        "value": "thickness",
+        "accepted": [
+         "thickness"
+        ]
+       }
+      },
+      {
+       "number": 5,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "marked",
+        "value": "marked",
+        "accepted": [
+         "marked"
+        ]
+       }
+      },
+      {
+       "number": 6,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(molten) glass",
+        "value": "(molten) glass",
+        "accepted": [
+         "molten glass",
+         "glass"
+        ]
+       }
+      },
+      {
+       "number": 7,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "(molten) tin/ metal",
+        "value": "(molten) tin/ metal",
+        "accepted": [
+         "molten tin",
+         "tin",
+         "metal"
+        ]
+       }
+      },
+      {
+       "number": 8,
+       "type": "table_completion",
+       "prompt": null,
+       "blankInStimulus": false,
+       "labelInFigure": true,
+       "answer": {
+        "raw": "rolles",
+        "value": "rolles",
+        "accepted": [
+         "rolles"
+        ]
+       },
+       "answerNotInPassage": true
+      }
+     ],
+     "status": "quarantined",
+     "reasonCodes": [
+      "ANSWER_NOT_IN_PASSAGE",
+      "MEDIA_NOT_IN_R2"
+     ],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 9,
+      "lineRange": [
+       9,
+       11
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the table and diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 1-8 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "",
+        "kind": "img",
+        "bold": false,
+        "img": "../wp-content/uploads/2024/09/test-6-min-2.png"
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q09-13",
      "startQ": 9,
      "endQ": 13,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write:",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN if there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 9,
        "type": "tfng",
-       "stem": {
-        "plain": "The metal used in the float process had to have specific properties.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "9 The metal used in the float process had to have specific properties.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "The metal used in the float process had to have specific properties."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 10,
        "type": "tfng",
-       "stem": {
-        "plain": "Pilkington invested some of his own money in his float plant.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "10 Pilkington invested some of his own money in his float plant.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Pilkington invested some of his own money in his float plant."
+       ],
+       "answer": {
+        "raw": "not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 11,
        "type": "tfng",
-       "stem": {
-        "plain": "Pilkington’s first full-scale plant was an instant commercial success.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "false",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "11 Pilkington’s first full-scale plant was an instant commercial success.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Pilkington’s first full-scale plant was an instant commercial success."
+       ],
+       "answer": {
+        "raw": "false",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 12,
        "type": "tfng",
-       "stem": {
-        "plain": "The process invented by Pilkington has now been improved.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "12 The process invented by Pilkington has now been improved.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "The process invented by Pilkington has now been improved."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 13,
        "type": "tfng",
-       "stem": {
-        "plain": "Computers are better than humans at detecting faults in glass.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "true",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "13 Computers are better than humans at detecting faults in glass.",
-        "elementPath": "children[14]"
+       "prompt": [
+        "Computers are better than humans at detecting faults in glass."
+       ],
+       "answer": {
+        "raw": "true",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[12]",
-      "rawExcerpt": "Questions 9-13\n\nDo the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write: TRUE if the statement agrees with the information\n\nFALSE if the statement contradicts the informat"
+      "headerLine": 12,
+      "lineRange": [
+       12,
+       21
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1? In boxes 9-13 on your answer sheet, write:",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "9 The metal used in the float process had to have specific properties.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "10 Pilkington invested some of his own money in his float plant.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "11 Pilkington’s first full-scale plant was an instant commercial success.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "12 The process invented by Pilkington has now been improved.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "13 Computers are better than humans at detecting faults in glass.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "List of Headings",
+   "title": "The Little Ice Age",
    "paragraphs": [
-    "The Little Ice Age",
-    "A This book will provide a detailed examination of the Little Ice Age and other climatic shifts, but, before I embark on that, let me provide a historical context. We tend to think of climate – as opposed to weather – as something unchanging, yet humanity has been at the mercy of climate change for its entire existence, with at least eight glacial episodes in the past 730,000 years. Our ancestors adapted to the universal but irregular global warming since the end of the last great Ice Age, around 10,000 years ago, with dazzling opportunism. They developed strategies for surviving harsh drought cycles, decades of heavy rainfall or unaccustomed cold; adopted agriculture and stock-raising, which revolutionised human life; and founded the world’s first pre-industrial civilisations in Egypt, Mesopotamia and the Americas. But the price of sudden climate change, in famine, disease and suffering, was often high.",
-    "B The Little Ice Age lasted from roughly 1300 until the middle of the nineteenth century. Only two centuries ago, Europe experienced a cycle of bitterly cold winters; mountain glaciers in the Swiss Alps were the lowest in recorded memory, and pack ice surrounded Iceland for much of the year. The climatic events of the Little Ice Age did more than help shape the modern world. They are the deeply important context for the current unprecedented global warming. The Little Ice Age was far from a deep freeze, however; rather an irregular seesaw of rapid climatic shifts, few lasting more than a quarter-century, driven by complex and still little understood interactions between the atmosphere and the ocean. The seesaw brought cycles of intensely cold winters and easterly winds, then switched abruptly to years of heavy spring and early summer rains, mild winters, and frequent Atlantic storms, or to periods of droughts, light northeasterly winds, and summer heat waves.",
-    "C Reconstructing the climate changes of the past is extremely difficult, because systematic weather observations began only a few centuries ago, in Europe and North America. Records from India and tropical Africa are even more recent.",
-    "For the time before records began, we have only ‘proxy records’ reconstructed largely from tree rings and ice cores, supplemented by a few incomplete written accounts. We now have hundreds of tree-ring records from throughout the northern hemisphere, and many from south of the equator, too, amplified with a growing body of temperature data from ice cores drilled in Antarctica, Greenland, the Peruvian Andes, and other locations. We are close to a knowledge of annual summer and winter temperature variations over much of the northern hemisphere going back 600 years.",
-    "D This book is a narrative history of climatic shifts during the past ten centuries, and some of the ways in which people in Europe adapted to them. Part One describes the Medieval Warm Period, roughly 900 to 1200. During these three centuries, Norse voyagers from Northern Europe explored northern seas, settled Greenland, and visited North America. It was not a time of uniform warmth, for then, as always since the Great Ice Age, there were constant shifts in rainfall and temperature. Mean European temperatures were about the same as today, perhaps slightly cooler.",
-    "E It is known that the Little Ice Age cooling began in Greenland and the Arctic in about 1200. As the Arctic ice pack spread southward, Norse voyages to the west were rerouted into the open Atlantic, then ended altogether. Storminess increased in the North Atlantic and North Sea. Colder, much wetter weather descended on Europe between 1315 and 1319, when thousands perished in a continent-wide famine. By 1400, the weather had become decidedly more unpredictable and stormier, with sudden shifts and lower temperatures that culminated in the cold decades of the late sixteenth century. Fish were a vital commodity in growing towns and cities, where food supplies were a constant concern. Dried cod and herring were already the staples of the European fish trade, but changes in water temperatures forced fishing fleets to work further offshore. The Basques, Dutch, and English developed the first offshore fishing boats adapted to a colder and stormier Atlantic. A gradual agricultural revolution in northern Europe stemmed from concerns over food supplies at a time of rising populations. The revolution involved intensive commercial farming and the growing of animal fodder on land not previously used for crops. The increased productivity from farmland made some countries self-sufficient in grain and livestock and offered effective protection against famine.",
-    "F Global temperatures began to rise slowly after 1850, with the beginning of the Modern Warm Period. There was a vast migration from Europe by land-hungry farmers and others, to which the famine caused by the Irish potato blight contributed, to North America, Australia, New Zealand, and southern Africa. Millions of hectares of forest and woodland fell before the newcomers’ axes between 1850 and 1890, as intensive European farming methods expanded across the world. The unprecedented land clearance released vast quantities of carbon dioxide into the atmosphere, triggering for the first time humanly caused global warming. Temperatures climbed more rapidly in the twentieth century as the use of fossil fuels proliferated and greenhouse gas levels continued to soar. The rise has been even steeper since the early 1980s. The Little Ice Age has given way to a new climatic regime, marked by prolonged and steady warming. At the same time, extreme weather events like Category 5 hurricanes are becoming more frequent.",
-    "i Predicting climatic changes\n\nii The relevance of the Little Ice Age today\n\niii How cities contribute to climate change\n\niv Human impact on the climate\n\nv How past climatic conditions can be determined\n\nvi A growing need for weather records\n\nvii A study covering a thousand years\n\nviii People have always responded to climate change\n\nix Enough food at last",
-    "Example Answer Paragraph A viii\n\n14. Paragraph B\n\nExample Answer Paragraph C v\n\n15 Paragraph D\n\n16 Paragraph E\n\n17 Paragraph F"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "This book will provide a detailed examination of the Little Ice Age and other climatic shifts, but, before I embark on that, let me provide a historical context. We tend to think of climate – as opposed to weather – as something unchanging, yet humanity has been at the mercy of climate change for its entire existence, with at least eight glacial episodes in the past 730,000 years. Our ancestors adapted to the universal but irregular global warming since the end of the last great Ice Age, around 10,000 years ago, with dazzling opportunism. They developed strategies for surviving harsh drought cycles, decades of heavy rainfall or unaccustomed cold; adopted agriculture and stock-raising, which revolutionised human life; and founded the world’s first pre-industrial civilisations in Egypt, Mesopotamia and the Americas. But the price of sudden climate change, in famine, disease and suffering, was often high."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The Little Ice Age lasted from roughly 1300 until the middle of the nineteenth century. Only two centuries ago, Europe experienced a cycle of bitterly cold winters; mountain glaciers in the Swiss Alps were the lowest in recorded memory, and pack ice surrounded Iceland for much of the year. The climatic events of the Little Ice Age did more than help shape the modern world. They are the deeply important context for the current unprecedented global warming. The Little Ice Age was far from a deep freeze, however; rather an irregular seesaw of rapid climatic shifts, few lasting more than a quarter-century, driven by complex and still little understood interactions between the atmosphere and the ocean. The seesaw brought cycles of intensely cold winters and easterly winds, then switched abruptly to years of heavy spring and early summer rains, mild winters, and frequent Atlantic storms, or to periods of droughts, light northeasterly winds, and summer heat waves."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Reconstructing the climate changes of the past is extremely difficult, because systematic weather observations began only a few centuries ago, in Europe and North America. Records from India and tropical Africa are even more recent."
+    },
+    {
+     "type": "text",
+     "text": "For the time before records began, we have only ‘proxy records’ reconstructed largely from tree rings and ice cores, supplemented by a few incomplete written accounts. We now have hundreds of tree-ring records from throughout the northern hemisphere, and many from south of the equator, too, amplified with a growing body of temperature data from ice cores drilled in Antarctica, Greenland, the Peruvian Andes, and other locations. We are close to a knowledge of annual summer and winter temperature variations over much of the northern hemisphere going back 600 years."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "This book is a narrative history of climatic shifts during the past ten centuries, and some of the ways in which people in Europe adapted to them. Part One describes the Medieval Warm Period, roughly 900 to 1200. During these three centuries, Norse voyagers from Northern Europe explored northern seas, settled Greenland, and visited North America. It was not a time of uniform warmth, for then, as always since the Great Ice Age, there were constant shifts in rainfall and temperature. Mean European temperatures were about the same as today, perhaps slightly cooler."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "It is known that the Little Ice Age cooling began in Greenland and the Arctic in about 1200. As the Arctic ice pack spread southward, Norse voyages to the west were rerouted into the open Atlantic, then ended altogether. Storminess increased in the North Atlantic and North Sea. Colder, much wetter weather descended on Europe between 1315 and 1319, when thousands perished in a continent-wide famine. By 1400, the weather had become decidedly more unpredictable and stormier, with sudden shifts and lower temperatures that culminated in the cold decades of the late sixteenth century. Fish were a vital commodity in growing towns and cities, where food supplies were a constant concern. Dried cod and herring were already the staples of the European fish trade, but changes in water temperatures forced fishing fleets to work further offshore. The Basques, Dutch, and English developed the first offshore fishing boats adapted to a colder and stormier Atlantic. A gradual agricultural revolution in northern Europe stemmed from concerns over food supplies at a time of rising populations. The revolution involved intensive commercial farming and the growing of animal fodder on land not previously used for crops. The increased productivity from farmland made some countries self-sufficient in grain and livestock and offered effective protection against famine."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Global temperatures began to rise slowly after 1850, with the beginning of the Modern Warm Period. There was a vast migration from Europe by land-hungry farmers and others, to which the famine caused by the Irish potato blight contributed, to North America, Australia, New Zealand, and southern Africa. Millions of hectares of forest and woodland fell before the newcomers’ axes between 1850 and 1890, as intensive European farming methods expanded across the world. The unprecedented land clearance released vast quantities of carbon dioxide into the atmosphere, triggering for the first time humanly caused global warming. Temperatures climbed more rapidly in the twentieth century as the use of fossil fuels proliferated and greenhouse gas levels continued to soar. The rise has been even steeper since the early 1980s. The Little Ice Age has given way to a new climatic regime, marked by prolonged and steady warming. At the same time, extreme weather events like Category 5 hurricanes are becoming more frequent."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Complete the summary using the list of words, A—I, below. Write the correct letter, A—I, in boxes 18-22 on your answer sheet. Questions 23-26\n\nClassify the following events as occurring during the Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet. 23 Many Europeans started farming abroad.\n\n24 The cutting down of trees began to affect the climate.\n\n25 Europeans discovered other lands.\n\n26 Changes took place in fishing patterns.",
-     "wordLimit": "",
-     "qtype": "summary_completion",
-     "startQ": 18,
-     "endQ": 22,
-     "stimulusSegments": [
-      "Weather during the Little Ice Age",
-      ""
+     "groupId": "p2.q14-17",
+     "startQ": 14,
+     "endQ": 17,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has six paragraphs, A—F. Choose the correct heading for paragraphs B and D—F from the list of headings below. Write the correct number, i—ix, in boxes 14-17 on your answer sheet.",
+     "legend": null,
+     "notes": [
+      "Example Answer Paragraph A viii",
+      "Example Answer Paragraph C v"
      ],
-     "sharedOptions": [
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "Predicting climatic changes"
+       },
+       {
+        "id": "ii",
+        "text": "The relevance of the Little Ice Age today"
+       },
+       {
+        "id": "iii",
+        "text": "How cities contribute to climate change"
+       },
+       {
+        "id": "iv",
+        "text": "Human impact on the climate"
+       },
+       {
+        "id": "v",
+        "text": "How past climatic conditions can be determined"
+       },
+       {
+        "id": "vi",
+        "text": "A growing need for weather records"
+       },
+       {
+        "id": "vii",
+        "text": "A study covering a thousand years"
+       },
+       {
+        "id": "viii",
+        "text": "People have always responded to climate change"
+       },
+       {
+        "id": "ix",
+        "text": "Enough food at last"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
       {
-       "letter": "A",
-       "text": "climatic shifts"
+       "number": 14,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
+       }
       },
       {
-       "letter": "B",
-       "text": "ice cores"
+       "number": 15,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "vii",
+        "value": "vii",
+        "accepted": [
+         "vii"
+        ]
+       }
       },
       {
-       "letter": "C",
-       "text": "tree rings"
+       "number": 16,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "ix",
+        "value": "ix",
+        "accepted": [
+         "ix"
+        ]
+       }
       },
       {
-       "letter": "D",
-       "text": "glaciers"
-      },
-      {
-       "letter": "E",
-       "text": "interactions"
-      },
-      {
-       "letter": "F",
-       "text": "weather observations"
-      },
-      {
-       "letter": "G",
-       "text": "heat waves"
-      },
-      {
-       "letter": "H",
-       "text": "storms"
-      },
-      {
-       "letter": "I",
-       "text": "written accounts"
-      },
-      {
-       "letter": "A",
-       "text": "Medieval Warm Period"
-      },
-      {
-       "letter": "B",
-       "text": "Little Ice Age"
-      },
-      {
-       "letter": "C",
-       "text": "Modem Warm Period"
+       "number": 17,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "iv",
+        "value": "iv",
+        "accepted": [
+         "iv"
+        ]
+       }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 31,
+      "lineRange": [
+       31,
+       48
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-17",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has six paragraphs, A—F. Choose the correct heading for paragraphs B and D—F from the list of headings below. Write the correct number, i—ix, in boxes 14-17 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i Predicting climatic changes",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii The relevance of the Little Ice Age today",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii How cities contribute to climate change",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv Human impact on the climate",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v How past climatic conditions can be determined",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi A growing need for weather records",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii A study covering a thousand years",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii People have always responded to climate change",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix Enough food at last",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Example Answer Paragraph A viii",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Example Answer Paragraph C v",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15 Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16 Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17 Paragraph F",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q18-22",
+     "startQ": 18,
+     "endQ": 22,
+     "type": "summary_completion",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary using the list of words, A—I, below. Write the correct letter, A—I, in boxes 18-22 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "climatic shifts"
+       },
+       {
+        "id": "B",
+        "text": "ice cores"
+       },
+       {
+        "id": "C",
+        "text": "tree rings"
+       },
+       {
+        "id": "D",
+        "text": "glaciers"
+       },
+       {
+        "id": "E",
+        "text": "interactions"
+       },
+       {
+        "id": "F",
+        "text": "weather observations"
+       },
+       {
+        "id": "G",
+        "text": "heat waves"
+       },
+       {
+        "id": "H",
+        "text": "storms"
+       },
+       {
+        "id": "I",
+        "text": "written accounts"
+       }
+      ]
+     },
+     "stimulus": {
+      "title": "Weather during the Little Ice Age",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are ",
+         {
+          "blank": 18
+         },
+         "and ",
+         {
+          "blank": 19
+         },
+         "We can deduce that the Little Ice Age was a time of ",
+         {
+          "blank": 20
+         },
+         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of ",
+         {
+          "blank": 21
+         },
+         "and heavy rain, and yet others that saw ",
+         {
+          "blank": 22
+         },
+         "with no rain at all."
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 18,
-       "type": "completion",
-       "stem": {
-        "plain": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18) ______ and (19) ______ . We can deduce that the Little Ice Age was a time of (20) ______ , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21) ______ and heavy rain, and yet others that saw (22) ______ with no rain at all.",
-        "segments": [
-         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are",
-         {
-          "blank": 18
-         },
-         "and",
-         {
-          "blank": 19
-         },
-         ". We can deduce that the Little Ice Age was a time of",
-         {
-          "blank": 20
-         },
-         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of",
-         {
-          "blank": 21
-         },
-         "and heavy rain, and yet others that saw",
-         {
-          "blank": 22
-         },
-         "with no rain at all."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
         ]
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time o",
-        "elementPath": "children[29]"
        }
       },
       {
        "number": 19,
-       "type": "completion",
-       "stem": {
-        "plain": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18) ______ and (19) ______ . We can deduce that the Little Ice Age was a time of (20) ______ , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21) ______ and heavy rain, and yet others that saw (22) ______ with no rain at all.",
-        "segments": [
-         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are",
-         {
-          "blank": 18
-         },
-         "and",
-         {
-          "blank": 19
-         },
-         ". We can deduce that the Little Ice Age was a time of",
-         {
-          "blank": 20
-         },
-         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of",
-         {
-          "blank": 21
-         },
-         "and heavy rain, and yet others that saw",
-         {
-          "blank": 22
-         },
-         "with no rain at all."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
         ]
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time o",
-        "elementPath": "children[29]"
        }
       },
       {
        "number": 20,
-       "type": "completion",
-       "stem": {
-        "plain": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18) ______ and (19) ______ . We can deduce that the Little Ice Age was a time of (20) ______ , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21) ______ and heavy rain, and yet others that saw (22) ______ with no rain at all.",
-        "segments": [
-         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are",
-         {
-          "blank": 18
-         },
-         "and",
-         {
-          "blank": 19
-         },
-         ". We can deduce that the Little Ice Age was a time of",
-         {
-          "blank": 20
-         },
-         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of",
-         {
-          "blank": 21
-         },
-         "and heavy rain, and yet others that saw",
-         {
-          "blank": 22
-         },
-         "with no rain at all."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
         ]
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time o",
-        "elementPath": "children[29]"
        }
       },
       {
        "number": 21,
-       "type": "completion",
-       "stem": {
-        "plain": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18) ______ and (19) ______ . We can deduce that the Little Ice Age was a time of (20) ______ , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21) ______ and heavy rain, and yet others that saw (22) ______ with no rain at all.",
-        "segments": [
-         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are",
-         {
-          "blank": 18
-         },
-         "and",
-         {
-          "blank": 19
-         },
-         ". We can deduce that the Little Ice Age was a time of",
-         {
-          "blank": 20
-         },
-         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of",
-         {
-          "blank": 21
-         },
-         "and heavy rain, and yet others that saw",
-         {
-          "blank": 22
-         },
-         "with no rain at all."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
         ]
-       },
-       "options": null,
-       "correctAnswer": "H",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time o",
-        "elementPath": "children[29]"
        }
       },
       {
        "number": 22,
-       "type": "completion",
-       "stem": {
-        "plain": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18) ______ and (19) ______ . We can deduce that the Little Ice Age was a time of (20) ______ , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21) ______ and heavy rain, and yet others that saw (22) ______ with no rain at all.",
-        "segments": [
-         "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are",
-         {
-          "blank": 18
-         },
-         "and",
-         {
-          "blank": 19
-         },
-         ". We can deduce that the Little Ice Age was a time of",
-         {
-          "blank": 20
-         },
-         ", rather than of consistent freezing. Within it there were some periods of very cold winters, others of",
-         {
-          "blank": 21
-         },
-         "and heavy rain, and yet others that saw",
-         {
-          "blank": 22
-         },
-         "with no rain at all."
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
         ]
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time o",
-        "elementPath": "children[29]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[28]",
-      "rawExcerpt": "Questions 18-22\n\nComplete the summary using the list of words, A—I, below. Write the correct letter, A—I, in boxes 18-22 on your answer sheet. Questions 23-26\n\nClassify the following events as occurring during the Write the correct letter, "
+      "headerLine": 49,
+      "lineRange": [
+       49,
+       55
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 18-22",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary using the list of words, A—I, below. Write the correct letter, A—I, in boxes 18-22 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Weather during the Little Ice Age",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Documentation of past weather condition is limited: our main sources of knowledge of conditions in the distant past are (18)………………. and (19)………………… . We can deduce that the Little Ice Age was a time of (20)…………… , rather than of consistent freezing. Within it there were some periods of very cold winters, others of (21)…………. and heavy rain, and yet others that saw (22)…………. with no rain at all.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A climatic shifts B ice cores C tree rings",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D glaciers E interactions F weather observations",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G heat waves H storms I written accounts",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q23-26",
+     "startQ": 23,
+     "endQ": 26,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Classify the following events as occurring during the Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Medieval Warm Period"
+       },
+       {
+        "id": "B",
+        "text": "Little Ice Age"
+       },
+       {
+        "id": "C",
+        "text": "Modem Warm Period"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 23,
+       "type": "matching_features",
+       "prompt": [
+        "Many Europeans started farming abroad."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "matching_features",
+       "prompt": [
+        "The cutting down of trees began to affect the climate."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 25,
+       "type": "matching_features",
+       "prompt": [
+        "Europeans discovered other lands."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "matching_features",
+       "prompt": [
+        "Changes took place in fishing patterns."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 56,
+      "lineRange": [
+       56,
+       65
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 23-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Classify the following events as occurring during the",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Medieval Warm Period",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Little Ice Age",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Modem Warm Period",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23 Many Europeans started farming abroad.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24 The cutting down of trees began to affect the climate.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25 Europeans discovered other lands.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26 Changes took place in fishing patterns.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "List of Headings",
+   "title": "The meaning and power of smell",
    "paragraphs": [
-    "A A survey conducted by Anthony Synott at Montreal’s Concordia University asked participants to comment on how important smell was to them in their lives. It became apparent that smell can evoke strong emotional responses. A scent associated with a good experience can bring a rush of joy, while a foul odour or one associated with a bad memory may make us grimace with disgust. Respondents to the survey noted that many of their olfactory likes and dislikes were based on emotional associations. Such associations can be powerful enough so that odours that we would generally label unpleasant become agreeable, and those that we would generally consider fragrant become disagreeable for particular individuals. The perception of smell, therefore, consists not only of the sensation of the odours themselves, but of the experiences and emotions associated with them.",
-    "B Odours are also essential cues in social bonding. One respondent to the survey believed that there is no true emotional bonding without touching and smelling a loved one. In fact, infants recognise the odours of their mothers soon after birth and adults can often identify their children or spouses by scent. In one well-known test, women and men were able to distinguish by smell alone clothing worn by their marriage partners from similar clothing worn by other people. Most of the subjects would probably never have given much thought to odour as a cue for identifying family members before being involved in the test, but as the experiment revealed, even when not consciously considered, smells register.",
-    "C In spite of its importance to our emotional and sensory lives, smell is probably the most undervalued sense in many cultures. The reason often given for the low regard in which smell is held is that, in comparison with its importance among animals, the human sense of smell is feeble and undeveloped. While it is true that the olfactory powers of humans are nothing like as fine as those possessed by certain animals, they are still remarkably acute. Our noses are able to recognise thousands of smells, and to perceive odours which are present only in extremely small quantities.",
-    "D Smell, however, is a highly elusive phenomenon. Odours, unlike colours, for instance, cannot be named in many languages because the specific vocabulary simply doesn’t exist. ‘It smells like . . .,’ we have to say when describing an odour, struggling to express our olfactory experience. Nor can odours be recorded: there is no effective way to either capture or store them over time. In the realm of olfaction, we must make do with descriptions and recollections. This has implications for olfactory research.",
-    "E Most of the research on smell undertaken to date has been of a physical scientific nature. Significant advances have been made in the understanding of the biological and chemical nature of olfaction, but many fundamental questions have yet to be answered. Researchers have still to decide whether smell is one sense or two – one responding to odours proper and the other registering odourless chemicals in the air. Other unanswered questions are whether the nose is the only part of the body affected by odours, and how smells can be measured objectively given the nonphysical components. Questions like these mean that interest in the psychology of smell is inevitably set to play an increasingly important role for researchers.",
-    "F However, smell is not simply a biological and psychological phenomenon. Smell is cultural, hence it is a social and historical phenomenon. Odours are invested with cultural values: smells that are considered to be offensive in some cultures may be perfectly acceptable in others. Therefore, our sense of smell is a means of, and model for, interacting with the world. Different smells can provide us with intimate and emotionally charged experiences and the value that we attach to these experiences is interiorised by the members of society in a deeply personal way. Importantly, our commonly held feelings about smells can help distinguish us from other cultures. The study of the cultural history of smell is, therefore, in a very real sense, an investigation into the essence of human culture.",
-    "i The difficulties of talking about smells\n\nii The role of smell in personal relationships\n\niii Future studies into smell\n\niv The relationship between the brain and the nose\n\nv The interpretation of smells as a factor in defining groups\n\nvi Why our sense of smell is not appreciated\n\nvii Smell is our superior sense\n\nviii The relationship between smell and feelings",
-    "27 Paragraph A\n\n28 Paragraph B\n\n29 Paragraph C\n\n30 Paragraph D\n\n31 Paragraph E\n\n32 Paragraph F"
+    {
+     "type": "text",
+     "label": "A",
+     "text": "A survey conducted by Anthony Synott at Montreal’s Concordia University asked participants to comment on how important smell was to them in their lives. It became apparent that smell can evoke strong emotional responses. A scent associated with a good experience can bring a rush of joy, while a foul odour or one associated with a bad memory may make us grimace with disgust. Respondents to the survey noted that many of their olfactory likes and dislikes were based on emotional associations. Such associations can be powerful enough so that odours that we would generally label unpleasant become agreeable, and those that we would generally consider fragrant become disagreeable for particular individuals. The perception of smell, therefore, consists not only of the sensation of the odours themselves, but of the experiences and emotions associated with them."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Odours are also essential cues in social bonding. One respondent to the survey believed that there is no true emotional bonding without touching and smelling a loved one. In fact, infants recognise the odours of their mothers soon after birth and adults can often identify their children or spouses by scent. In one well-known test, women and men were able to distinguish by smell alone clothing worn by their marriage partners from similar clothing worn by other people. Most of the subjects would probably never have given much thought to odour as a cue for identifying family members before being involved in the test, but as the experiment revealed, even when not consciously considered, smells register."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "In spite of its importance to our emotional and sensory lives, smell is probably the most undervalued sense in many cultures. The reason often given for the low regard in which smell is held is that, in comparison with its importance among animals, the human sense of smell is feeble and undeveloped. While it is true that the olfactory powers of humans are nothing like as fine as those possessed by certain animals, they are still remarkably acute. Our noses are able to recognise thousands of smells, and to perceive odours which are present only in extremely small quantities."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Smell, however, is a highly elusive phenomenon. Odours, unlike colours, for instance, cannot be named in many languages because the specific vocabulary simply doesn’t exist. ‘It smells like . . .,’ we have to say when describing an odour, struggling to express our olfactory experience. Nor can odours be recorded: there is no effective way to either capture or store them over time. In the realm of olfaction, we must make do with descriptions and recollections. This has implications for olfactory research."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Most of the research on smell undertaken to date has been of a physical scientific nature. Significant advances have been made in the understanding of the biological and chemical nature of olfaction, but many fundamental questions have yet to be answered. Researchers have still to decide whether smell is one sense or two – one responding to odours proper and the other registering odourless chemicals in the air. Other unanswered questions are whether the nose is the only part of the body affected by odours, and how smells can be measured objectively given the nonphysical components. Questions like these mean that interest in the psychology of smell is inevitably set to play an increasingly important role for researchers."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "However, smell is not simply a biological and psychological phenomenon. Smell is cultural, hence it is a social and historical phenomenon. Odours are invested with cultural values: smells that are considered to be offensive in some cultures may be perfectly acceptable in others. Therefore, our sense of smell is a means of, and model for, interacting with the world. Different smells can provide us with intimate and emotionally charged experiences and the value that we attach to these experiences is interiorised by the members of society in a deeply personal way. Importantly, our commonly held feelings about smells can help distinguish us from other cultures. The study of the cultural history of smell is, therefore, in a very real sense, an investigation into the essence of human culture."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g07",
-     "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
-     "wordLimit": "",
-     "qtype": "sentence_completion",
+     "groupId": "p3.q27-32",
+     "startQ": 27,
+     "endQ": 32,
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 3 has six paragraphs, A—F. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i—viii, in boxes 27-32 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "The difficulties of talking about smells"
+       },
+       {
+        "id": "ii",
+        "text": "The role of smell in personal relationships"
+       },
+       {
+        "id": "iii",
+        "text": "Future studies into smell"
+       },
+       {
+        "id": "iv",
+        "text": "The relationship between the brain and the nose"
+       },
+       {
+        "id": "v",
+        "text": "The interpretation of smells as a factor in defining groups"
+       },
+       {
+        "id": "vi",
+        "text": "Why our sense of smell is not appreciated"
+       },
+       {
+        "id": "vii",
+        "text": "Smell is our superior sense"
+       },
+       {
+        "id": "viii",
+        "text": "The relationship between smell and feelings"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 27,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph A"
+       ],
+       "answer": {
+        "raw": "viii",
+        "value": "viii",
+        "accepted": [
+         "viii"
+        ]
+       }
+      },
+      {
+       "number": 28,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
+       }
+      },
+      {
+       "number": 29,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "vi",
+        "value": "vi",
+        "accepted": [
+         "vi"
+        ]
+       }
+      },
+      {
+       "number": 30,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
+       }
+      },
+      {
+       "number": 31,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "iii",
+        "value": "iii",
+        "accepted": [
+         "iii"
+        ]
+       }
+      },
+      {
+       "number": 32,
+       "type": "matching_headings",
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "v",
+        "value": "v",
+        "accepted": [
+         "v"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 73,
+      "lineRange": [
+       73,
+       90
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-32",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 3 has six paragraphs, A—F. Choose the correct heading for each paragraph from the list of headings below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct number, i—viii, in boxes 27-32 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i The difficulties of talking about smells",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii The role of smell in personal relationships",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii Future studies into smell",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv The relationship between the brain and the nose",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v The interpretation of smells as a factor in defining groups",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi Why our sense of smell is not appreciated",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii Smell is our superior sense",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii The relationship between smell and feelings",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27 Paragraph A",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28 Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29 Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30 Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31 Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32 Paragraph F",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q33-36",
+     "startQ": 33,
+     "endQ": 36,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 33-36 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 33,
+       "type": "mcq_single",
+       "prompt": [
+        "According to the introduction, we become aware of the importance of smell when"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "we discover a new smell"
+        },
+        {
+         "id": "B",
+         "text": "we experience a powerful smell"
+        },
+        {
+         "id": "C",
+         "text": "our ability to smell is damaged"
+        },
+        {
+         "id": "D",
+         "text": "we are surrounded by odours"
+        }
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "mcq_single",
+       "prompt": [
+        "The experiment described in paragraph B"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "shows how we make use of smell without realising it"
+        },
+        {
+         "id": "B",
+         "text": "demonstrates that family members have a similar smell"
+        },
+        {
+         "id": "C",
+         "text": "proves that a sense of smell is learnt"
+        },
+        {
+         "id": "D",
+         "text": "compares the sense of smell in males and females"
+        }
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "mcq_single",
+       "prompt": [
+        "What is the writer doing in paragraph C?"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "supporting other research"
+        },
+        {
+         "id": "B",
+         "text": "making a proposal"
+        },
+        {
+         "id": "C",
+         "text": "rejecting a common belief"
+        },
+        {
+         "id": "D",
+         "text": "describing limitations"
+        }
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "mcq_single",
+       "prompt": [
+        "What does the writer suggest about the study of smell in the atmosphere in paragraph E?"
+       ],
+       "options": [
+        {
+         "id": "A",
+         "text": "The measurement of smell is becoming more accurate"
+        },
+        {
+         "id": "B",
+         "text": "Researchers believe smell is a purely physical reaction"
+        },
+        {
+         "id": "C",
+         "text": "Most smells are inoffensive"
+        },
+        {
+         "id": "D",
+         "text": "Smell is yet to be defined"
+        }
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 91,
+      "lineRange": [
+       91,
+       112
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 33-36",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 33-36 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33 According to the introduction, we become aware of the importance of smell when",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A we discover a new smell",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B we experience a powerful smell",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C our ability to smell is damaged",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D we are surrounded by odours",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34 The experiment described in paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A shows how we make use of smell without realising it",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B demonstrates that family members have a similar smell",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C proves that a sense of smell is learnt",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D compares the sense of smell in males and females",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35 What is the writer doing in paragraph C?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A supporting other research",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B making a proposal",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C rejecting a common belief",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D describing limitations",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36 What does the writer suggest about the study of smell in the atmosphere in paragraph E?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A The measurement of smell is becoming more accurate",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Researchers believe smell is a purely physical reaction",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Most smells are inoffensive",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Smell is yet to be defined",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q37-40",
      "startQ": 37,
      "endQ": 40,
-     "stimulusSegments": [
-      "37 Tests have shown that odours can help people recognise the………………..belonging to their husbands and wives.\n\n38 Certain linguistic groups may have difficulty describing smell because they lack the appropriate……………\n\n39 The sense of smell may involve response to…………………which do not smell, in addition to obvious odours.\n\n40 Odours regarded as unpleasant in certain……………………….are not regarded as unpleasant in others."
-     ],
-     "sharedOptions": null,
+     "type": "sentence_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 37,
-       "type": "short_answer",
-       "stem": {
-        "plain": "clothing",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "clothing",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. clothing",
-        "elementPath": "children[54]"
+       "type": "sentence_completion",
+       "prompt": [
+        "Tests have shown that odours can help people recognise the",
+        {
+         "blank": 37
+        },
+        "belonging to their husbands and wives."
+       ],
+       "answer": {
+        "raw": "clothing",
+        "value": "clothing",
+        "accepted": [
+         "clothing"
+        ]
        }
       },
       {
        "number": 38,
-       "type": "short_answer",
-       "stem": {
-        "plain": "vocabulary",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "vocabulary",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. vocabulary",
-        "elementPath": "children[54]"
+       "type": "sentence_completion",
+       "prompt": [
+        "Certain linguistic groups may have difficulty describing smell because they lack the appropriate",
+        {
+         "blank": 38
+        }
+       ],
+       "answer": {
+        "raw": "vocabulary",
+        "value": "vocabulary",
+        "accepted": [
+         "vocabulary"
+        ]
        }
       },
       {
        "number": 39,
-       "type": "short_answer",
-       "stem": {
-        "plain": "chemicals",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "chemicals",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. chemicals",
-        "elementPath": "children[54]"
+       "type": "sentence_completion",
+       "prompt": [
+        "The sense of smell may involve response to",
+        {
+         "blank": 39
+        },
+        "which do not smell, in addition to obvious odours."
+       ],
+       "answer": {
+        "raw": "chemicals",
+        "value": "chemicals",
+        "accepted": [
+         "chemicals"
+        ]
        }
       },
       {
        "number": 40,
-       "type": "short_answer",
-       "stem": {
-        "plain": "cultures",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "cultures",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. cultures",
-        "elementPath": "children[54]"
+       "type": "sentence_completion",
+       "prompt": [
+        "Odours regarded as unpleasant in certain",
+        {
+         "blank": 40
+        },
+        "are not regarded as unpleasant in others."
+       ],
+       "answer": {
+        "raw": "cultures",
+        "value": "cultures",
+        "accepted": [
+         "cultures"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[52]",
-      "rawExcerpt": "Questions 37-40\n\nComplete the sentences below. Choose ONE WORD ONLY from the passage for each answer."
+      "headerLine": 113,
+      "lineRange": [
+       113,
+       118
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 37-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37 Tests have shown that odours can help people recognise the………………..belonging to their husbands and wives.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38 Certain linguistic groups may have difficulty describing smell because they lack the appropriate……………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39 The sense of smell may involve response to…………………which do not smell, in addition to obvious odours.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40 Odours regarded as unpleasant in certain……………………….are not regarded as unpleasant in others.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "spinning"
-   },
-   {
-    "number": 2,
-    "value": "(perfectly) unblemished"
-   },
-   {
-    "number": 3,
-    "value": "labour intensive"
-   },
-   {
-    "number": 4,
-    "value": "thickness"
-   },
-   {
-    "number": 5,
-    "value": "marked"
-   },
-   {
-    "number": 6,
-    "value": "(molten) glass"
-   },
-   {
-    "number": 7,
-    "value": "(molten) tin/ metal"
-   },
-   {
-    "number": 8,
-    "value": "rolles"
-   },
-   {
-    "number": 9,
-    "value": "true"
-   },
-   {
-    "number": 10,
-    "value": "not given"
-   },
-   {
-    "number": 11,
-    "value": "false"
-   },
-   {
-    "number": 12,
-    "value": "true"
-   },
-   {
-    "number": 13,
-    "value": "true"
-   },
-   {
-    "number": 14,
-    "value": "ii"
-   },
-   {
-    "number": 15,
-    "value": "vii"
-   },
-   {
-    "number": 16,
-    "value": "ix"
-   },
-   {
-    "number": 17,
-    "value": "iv"
-   },
-   {
-    "number": 18,
-    "value": "C"
-   },
-   {
-    "number": 19,
-    "value": "B"
-   },
-   {
-    "number": 20,
-    "value": "A"
-   },
-   {
-    "number": 21,
-    "value": "H"
-   },
-   {
-    "number": 22,
-    "value": "G"
-   },
-   {
-    "number": 23,
-    "value": "C"
-   },
-   {
-    "number": 24,
-    "value": "C"
-   },
-   {
-    "number": 25,
-    "value": "A"
-   },
-   {
-    "number": 26,
-    "value": "B"
-   },
-   {
-    "number": 27,
-    "value": "viii"
-   },
-   {
-    "number": 28,
-    "value": "ii"
-   },
-   {
-    "number": 29,
-    "value": "vi"
-   },
-   {
-    "number": 30,
-    "value": "i"
-   },
-   {
-    "number": 31,
-    "value": "iii"
-   },
-   {
-    "number": 32,
-    "value": "v"
-   },
-   {
-    "number": 33,
-    "value": "C"
-   },
-   {
-    "number": 34,
-    "value": "A"
-   },
-   {
-    "number": 35,
-    "value": "C"
-   },
-   {
-    "number": 36,
-    "value": "D"
-   },
-   {
-    "number": 37,
-    "value": "clothing"
-   },
-   {
-    "number": 38,
-    "value": "vocabulary"
-   },
-   {
-    "number": 39,
-    "value": "chemicals"
-   },
-   {
-    "number": 40,
-    "value": "cultures"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Complete the table and diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Reading Passage 2 has six paragraphs, A—F. Choose the correct heading for paragraphs B and D—F from the list of headings"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "Reading Passage 3 has six paragraphs, A—F. Choose the correct heading for each paragraph from the list of headings below"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     33,
-     36
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 33-36 on your answer sheet."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 14,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 1,
+ "productionQuestionNumbers": [
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 5,
- "contentFingerprint": "f0e097b32d19732618b6c44403ac0b1e9ab5938fd7dea05829d47fcf40c6ec48"
+ "metrics": {
+  "passages": 3,
+  "groups": 8,
+  "questionsInSource": 40,
+  "productionQuestions": 32,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "8f145ced0a532c230fc60949e132407ea1f021b4500520cd8e51b3642859e1c0"
 }

@@ -1,37 +1,46 @@
 {
  "slug": "ielts-reading-test-260",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     18,
-     22
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from reading passage for each answer."
-   }
+   "groupId": "p1.q08-12",
+   "range": [
+    8,
+    12
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN FOUR WORDS from the reading passage for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     32,
-     35
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-C) with opinions or deeds below. Write the appropriate letters A-C in boxes"
-   }
+   "groupId": "p2.q18-22",
+   "range": [
+    18,
+    22
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from reading passage for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 31,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q23-27",
+   "range": [
+    23,
+    27
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Location on the body: Significance"
   }
  ]
 }

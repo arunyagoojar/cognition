@@ -1,61 +1,46 @@
 {
  "slug": "ielts-reading-test-309",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     13
-    ],
-    "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 7-13."
-   }
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_EXCEEDS_WORD_LIMIT"
+   ],
+   "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26"
   },
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     20,
-     22
-    ],
-    "instruction": "Look at the following statements (Questions 20-22) and the list of organisations below. Match each statement with the correct organisation, "
-   }
+   "groupId": "p3.q27-33",
+   "range": [
+    27,
+    33
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Reading passage has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 27-33 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     23,
-     26
-    ],
-    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 23-26"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     34,
-     36
-    ],
-    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-36 on "
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 23,
-    "answers": 40
-   }
+   "groupId": "p3.q34-36",
+   "range": [
+    34,
+    36
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 34-36 on your answer sheet."
   }
  ]
 }

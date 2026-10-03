@@ -1,73 +1,126 @@
 {
  "slug": "ielts-reading-test-22",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     7
-    ],
-    "instruction": "Reading Passage I has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings bel"
-   }
+   "groupId": "p1.q01-07",
+   "range": [
+    1,
+    7
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage I has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below. Write the correct number, i-x, in boxes 1-7 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     25,
-     25
-    ],
-    "instruction": "and 26 Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet"
-   }
+   "groupId": "p1.q08-13",
+   "range": [
+    8,
+    13
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the views of the writer in Reading Passage 1? In boxes 8-13 on your answer sheet, write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     27,
-     30
-    ],
-    "instruction": "Reading Passage 3 has six sections. Choose the correct heading for sections A-D from the list of headings below. Write t"
-   }
+   "groupId": "p2.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary using the list of words, A-J, below. Write the correct letters, A-J, in boxes 14-18 on your answer sheet. NB You may use any letter more than once."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     31,
-     34
-    ],
-    "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in boxes 31-34 on your answer sheet."
-   }
+   "groupId": "p2.q19-24",
+   "range": [
+    19,
+    24
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 2? In boxes 19-24 on your answer sheet, write:"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     40,
-     40
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in box 40 on your answer sheet."
-   }
+   "groupId": "p3.q25-26",
+   "range": [
+    25,
+    26
+   ],
+   "type": "mcq_multi",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose TWO letters, A-E. Write the correct letters in boxes 25 and 26 on your answer sheet"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 22,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p4.q27-30",
+   "range": [
+    27,
+    30
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 3 has six sections. Choose the correct heading for sections A-D from the list of headings below. Write the correct number, i-vii, in boxes 27-30 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q31-34",
+   "range": [
+    31,
+    34
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in boxes 31-34 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q35-39",
+   "range": [
+    35,
+    39
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer. What steps should schools take to reduce bullying?"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in box 40 on your answer sheet."
   }
  ]
 }

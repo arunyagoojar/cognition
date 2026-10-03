@@ -1,49 +1,131 @@
 {
  "slug": "ielts-reading-test-136",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "Choose THREE letters, A-G. Which THREE of the following are advantages of the new transport system?"
-   }
+   "groupId": "p1.q01-06",
+   "range": [
+    1,
+    6
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "DO the following statements agree with the information given in Reading Passage"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "Choose the correct letter, A-E."
-   }
+   "groupId": "p1.q07-12",
+   "range": [
+    7,
+    12
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Classify the following descriptions as referring to Write the correct letter, A, B, or C in boxes 7-12 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     33,
-     39
-    ],
-    "instruction": "Complete the following summary of the paragraphs of Reading Passage using NO MORE THAN THREE WORDS from the Reading Pass"
-   }
+   "groupId": "p1.q13-13",
+   "range": [
+    13,
+    13
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose THREE letters, A-G."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 19,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p2.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Use NO MORE THAN THREE WORDS from the Reading Passage."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q19-24",
+   "range": [
+    19,
+    24
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 2? Write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q25-26",
+   "range": [
+    25,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter, A-E."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q27-32",
+   "range": [
+    27,
+    32
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in Reading Passage 3?"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q33-39",
+   "range": [
+    33,
+    39
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "MALFORMED_BLANK"
+   ],
+   "instruction": "Complete the following summary of the paragraphs of Reading Passage using NO MORE THAN THREE WORDS from the Reading Passage for each answer. Write your answers in boxes 33-39 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q40-40",
+   "range": [
+    40,
+    40
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter, A，B，C or D."
   }
  ]
 }

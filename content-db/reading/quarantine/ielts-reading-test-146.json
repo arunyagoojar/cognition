@@ -1,61 +1,21 @@
 {
  "slug": "ielts-reading-test-146",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     5,
-     8
-    ],
-    "instruction": "Look at the following events (Questions 5-8) and the list of dates below. Match each event with the correct date, A, B or C. NB You may use "
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Look at the following opinions or deeds (Questions 9-13) and the list of people below. Match each opinion or deed with the correct person, A"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     30,
-     35
-    ],
-    "instruction": "Look at the following statements (Questions 30-35) and the list of Olympic torches below. Match each statement with the correct Olympic torc"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     36,
-     40
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 20,
-    "answers": 40
-   }
+   "groupId": "p3.q36-40",
+   "range": [
+    36,
+    40
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

@@ -1,73 +1,119 @@
 {
  "slug": "ielts-reading-test-76",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Reading Passage 1 has nine paragraphs A-I. From the list of headings below choose the most suitable heading for each par"
-   }
+   "groupId": "p1.q01-08",
+   "range": [
+    1,
+    8
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 1 has nine paragraphs A-I. From the list of headings below choose the most suitable heading for each paragraph. Write the appropriate numbers i-xiii in boxes 1-8 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     9,
-     13
-    ],
-    "instruction": "Complete the sentences below with words taken from Reading Passage 1. Use NO MORE THAN THREE WORDS for each answer."
-   }
+   "groupId": "p1.q09-13",
+   "range": [
+    9,
+    13
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below with words taken from Reading Passage 1. Use NO MORE THAN THREE WORDS for each answer."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     22,
-     22
-    ],
-    "instruction": "and 23 Choose the correct letter A, B, C or D."
-   }
+   "groupId": "p2.q14-21",
+   "range": [
+    14,
+    21
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary below using words from the box."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     24,
-     27
-    ],
-    "instruction": "Complete the sentences below with words taken from Reading Passage 2. Use NO MORE THAN THREE WORDS for each answer."
-   }
+   "groupId": "p2.q22-23",
+   "range": [
+    22,
+    23
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter A, B, C or D."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     28,
-     30
-    ],
-    "instruction": "Look at the following people (Questions 28-30) and the list of statements below. Match each person with the correct stat"
-   }
+   "groupId": "p2.q24-27",
+   "range": [
+    24,
+    27
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences below with words taken from Reading Passage 2. Use NO MORE THAN THREE WORDS for each answer."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 18,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p3.q28-30",
+   "range": [
+    28,
+    30
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_NOT_IN_PASSAGE",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Look at the following people (Questions 28-30) and the list of statements below. Match each person with the correct statement."
+  },
+  {
+   "unit": "group",
+   "groupId": "p3.q31-36",
+   "range": [
+    31,
+    36
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Do the following statements reflect the claims of the writer in Reading Passage 3? In boxes 31-36 on your answer sheet write"
+  },
+  {
+   "unit": "group",
+   "groupId": "p4.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete each of the following statements (Questions 37-40) with the best ending A-I from the box below. Write the appropriate letters A-I in boxes 37-40 on your answer sheet."
   }
  ]
 }

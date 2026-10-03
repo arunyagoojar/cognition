@@ -1,37 +1,20 @@
 {
  "slug": "ielts-reading-test-279",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     8
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-F) with opinions or deeds below. Write the appropriate letters A-F in boxes"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     36,
-     39
-    ],
-    "instruction": "Complete each sentence with the correct ending, A-F, below. Write the correct letter, A-F, in box 36-39 on your answer sheet. Question 40\nCh"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 27,
-    "answers": 40
-   }
+   "groupId": "p3.q28-35",
+   "range": [
+    28,
+    35
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "INCOMPLETE_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words, A-N below. Write the correct letter, A-N, in boxes 28-35 on your answer sheet."
   }
  ]
 }

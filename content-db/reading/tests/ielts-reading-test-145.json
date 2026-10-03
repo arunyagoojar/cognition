@@ -1,330 +1,747 @@
 {
  "id": "reading.test-0145.aa2dd656",
  "module": "reading",
+ "slug": "ielts-reading-test-145",
  "sourceNumbers": [
   145
  ],
- "slug": "ielts-reading-test-145",
  "title": "IELTS Academic Reading Test 145",
- "kind": "full_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-145/index.html",
-   "sha256": "f6c4eb3b72dc1c285e248c5a46b5fb0ac136f2c6d4e8b335e5e50c1f94c1b59b",
-   "manifestHashMatch": true,
+   "sha256": "2578e0824ded63076bb64d83f024796a62021714471120c4615cb4b400534add",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-145/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "E"
+   },
+   {
+    "number": 2,
+    "raw": "A"
+   },
+   {
+    "number": 3,
+    "raw": "E"
+   },
+   {
+    "number": 4,
+    "raw": "G"
+   },
+   {
+    "number": 5,
+    "raw": "B"
+   },
+   {
+    "number": 6,
+    "raw": "True"
+   },
+   {
+    "number": 7,
+    "raw": "True"
+   },
+   {
+    "number": 8,
+    "raw": "NG"
+   },
+   {
+    "number": 9,
+    "raw": "Local time"
+   },
+   {
+    "number": 10,
+    "raw": "2.8 seconds"
+   },
+   {
+    "number": 11,
+    "raw": "Lubrication"
+   },
+   {
+    "number": 12,
+    "raw": "Sextant"
+   },
+   {
+    "number": 13,
+    "raw": "Angles"
+   },
+   {
+    "number": 14,
+    "raw": "Marine chronometer"
+   },
+   {
+    "number": 15,
+    "raw": "ix"
+   },
+   {
+    "number": 16,
+    "raw": "iv"
+   },
+   {
+    "number": 17,
+    "raw": "iii"
+   },
+   {
+    "number": 18,
+    "raw": "v"
+   },
+   {
+    "number": 19,
+    "raw": "i"
+   },
+   {
+    "number": 20,
+    "raw": "vi"
+   },
+   {
+    "number": 21,
+    "raw": "ii"
+   },
+   {
+    "number": 22,
+    "raw": "Hot season/ dry season"
+   },
+   {
+    "number": 23,
+    "raw": "Four months"
+   },
+   {
+    "number": 24,
+    "raw": "Water resources"
+   },
+   {
+    "number": 25,
+    "raw": "Body weight"
+   },
+   {
+    "number": 26,
+    "raw": "Dehydration"
+   },
+   {
+    "number": 27,
+    "raw": "Growth"
+   },
+   {
+    "number": 28,
+    "raw": "F"
+   },
+   {
+    "number": 29,
+    "raw": "C"
+   },
+   {
+    "number": 30,
+    "raw": "G"
+   },
+   {
+    "number": 31,
+    "raw": "B"
+   },
+   {
+    "number": 32,
+    "raw": "F"
+   },
+   {
+    "number": 33,
+    "raw": "E"
+   },
+   {
+    "number": 34,
+    "raw": "False"
+   },
+   {
+    "number": 35,
+    "raw": "NG"
+   },
+   {
+    "number": 36,
+    "raw": "False"
+   },
+   {
+    "number": 37,
+    "raw": "NG"
+   },
+   {
+    "number": 38,
+    "raw": "C"
+   },
+   {
+    "number": 39,
+    "raw": "A"
+   },
+   {
+    "number": 40,
+    "raw": "D"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Timekeeper: Invention of Marine Chronometer",
    "paragraphs": [
-    "A Up to the middle of the 18th century, the navigators were still unable to exactly identify the position at sea, so they might face a great number of risks such as the shipwreck or running out of supplies before arriving at the destination. Knowing one’s position on the earth requires two simple but essential coordinates, one of which is the longitude.",
-    "B The longitude is a term that can be used to measure the distance that one has covered from one’s home to another place around the world without the limitations of naturally occurring baseline like the equator. To determine longitude, navigators had no choice but to measure the angle with the naval sextant between Moon centre and a specific star— lunar distance—along with the height of both heavenly bodies. Together with the nautical almanac, Greenwich Mean Time (GMT) was determined, which could be adopted to calculate longitude because one hour in GMT means 15-degree longitude. Unfortunately, this approach laid great reliance on the weather conditions, which brought great inconvenience to the crew members. Therefore, another method was proposed, that is, the time difference between the home time and the local time served for the measurement. Theoretically, knowing the longitude position was quite simple, even for the people in the middle of the sea with no land in sight. The key element for calculating the distance travelled was to know, at the very moment, the accurate home time. But the greatest problem is: how can a sailor know the home time at sea?",
-    "C The simple and again obvious answer is that one takes an accurate clock with him, which he sets to the home time before leaving. A comparison with the local time (easily identified by checking the position of the Sun) would indicate the time difference between the home time and the local time, and thus the distance from home was obtained. The truth was that nobody in the 18th century had ever managed to create a clock that could endure the violent shaking of a ship and the fluctuating temperature while still maintaining the accuracy of time for navigation.",
-    "D After 1714, as an attempt to find a solution to the problem, the British government offered a tremendous amount of £20,000, which were to be managed by the magnificently named ‘Board of Longitude’. If timekeeper was the answer (and there could be other proposed solutions, since the money wasn’t only offered for timekeeper), then the error of the required timekeeping for achieving this goal needed to be within 2.8 seconds a day, which was considered impossible for any clock or watch at sea, even when they were in their finest conditions.",
-    "E This award, worth about £2 million today, inspired the self-taught Yorkshire carpenter John Harrison to attempt a design for a practical marine clock. In the later stage of his early career, he worked alongside his younger brother James. The first big project of theirs was to build a turret clock for the stables at Brockelsby Park, which was revolutionary because it required no lubrication. Harrison designed a marine clock in 1730, and he travelled to London in seek of financial aid. He explained his ideas to Edmond Halley, the Astronomer Royal, who then introduced him to George Graham, Britain’s first-class clockmaker. Graham provided him with financial aid for his early-stage work on sea clocks. It took Harrison five years to build Harrison Number One or HI. Later, he sought the improvement from alternate design and produced H4 with the giant clock appearance. Remarkable as it was, the Board of Longitude wouldn’t grant him the prize for some time until it was adequately satisfied.",
-    "F Harrison had a principal contestant for the tempting prize at that time, an English mathematician called John Hadley, who developed the sextant. The sextant is the tool that people adopt to measure angles, such as the one between the Sun and the horizon, for a calculation of the location of ships or planes. In addition, his invention is significant since it can help determine longitude.",
-    "G Most chronometer forerunners of that particular generation were English, but that doesn’t mean every achievement was made by them. One wonderful figure in the history is the Lancastrian Thomas Earnshaw, who created the ultimate form of chronometer escapement—the spring detent escapement—and made the final decision on format and productions system for the marine chronometer, which turns it into a genuine modem commercial product, as well as a safe and pragmatic way of navigation at sea over the next century and half."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Up to the middle of the 18th century, the navigators were still unable to exactly identify the position at sea, so they might face a great number of risks such as the shipwreck or running out of supplies before arriving at the destination. Knowing one’s position on the earth requires two simple but essential coordinates, one of which is the longitude."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The longitude is a term that can be used to measure the distance that one has covered from one’s home to another place around the world without the limitations of naturally occurring baseline like the equator. To determine longitude, navigators had no choice but to measure the angle with the naval sextant between Moon centre and a specific star— lunar distance—along with the height of both heavenly bodies. Together with the nautical almanac, Greenwich Mean Time (GMT) was determined, which could be adopted to calculate longitude because one hour in GMT means 15-degree longitude. Unfortunately, this approach laid great reliance on the weather conditions, which brought great inconvenience to the crew members. Therefore, another method was proposed, that is, the time difference between the home time and the local time served for the measurement. Theoretically, knowing the longitude position was quite simple, even for the people in the middle of the sea with no land in sight. The key element for calculating the distance travelled was to know, at the very moment, the accurate home time. But the greatest problem is: how can a sailor know the home time at sea?"
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "The simple and again obvious answer is that one takes an accurate clock with him, which he sets to the home time before leaving. A comparison with the local time (easily identified by checking the position of the Sun) would indicate the time difference between the home time and the local time, and thus the distance from home was obtained. The truth was that nobody in the 18th century had ever managed to create a clock that could endure the violent shaking of a ship and the fluctuating temperature while still maintaining the accuracy of time for navigation."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "After 1714, as an attempt to find a solution to the problem, the British government offered a tremendous amount of £20,000, which were to be managed by the magnificently named ‘Board of Longitude’. If timekeeper was the answer (and there could be other proposed solutions, since the money wasn’t only offered for timekeeper), then the error of the required timekeeping for achieving this goal needed to be within 2.8 seconds a day, which was considered impossible for any clock or watch at sea, even when they were in their finest conditions."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "This award, worth about £2 million today, inspired the self-taught Yorkshire carpenter John Harrison to attempt a design for a practical marine clock. In the later stage of his early career, he worked alongside his younger brother James. The first big project of theirs was to build a turret clock for the stables at Brockelsby Park, which was revolutionary because it required no lubrication. Harrison designed a marine clock in 1730, and he travelled to London in seek of financial aid. He explained his ideas to Edmond Halley, the Astronomer Royal, who then introduced him to George Graham, Britain’s first-class clockmaker. Graham provided him with financial aid for his early-stage work on sea clocks. It took Harrison five years to build Harrison Number One or HI. Later, he sought the improvement from alternate design and produced H4 with the giant clock appearance. Remarkable as it was, the Board of Longitude wouldn’t grant him the prize for some time until it was adequately satisfied."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Harrison had a principal contestant for the tempting prize at that time, an English mathematician called John Hadley, who developed the sextant. The sextant is the tool that people adopt to measure angles, such as the one between the Sun and the horizon, for a calculation of the location of ships or planes. In addition, his invention is significant since it can help determine longitude."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Most chronometer forerunners of that particular generation were English, but that doesn’t mean every achievement was made by them. One wonderful figure in the history is the Lancastrian Thomas Earnshaw, who created the ultimate form of chronometer escapement—the spring detent escapement—and made the final decision on format and productions system for the marine chronometer, which turns it into a genuine modem commercial product, as well as a safe and pragmatic way of navigation at sea over the next century and half."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information? NB You may use any letter more than once.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-05",
      "startQ": 1,
      "endQ": 5,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "a description of Harrison’s background",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. a description of Harrison’s background",
-        "elementPath": "children[9]"
+       "prompt": [
+        "a description of Harrison’s background"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "problems caused by poor ocean navigation",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. problems caused by poor ocean navigation",
-        "elementPath": "children[9]"
+       "prompt": [
+        "problems caused by poor ocean navigation"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "the person who gave financial support to Harrison",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. the person who gave financial support to Harrison",
-        "elementPath": "children[9]"
+       "prompt": [
+        "the person who gave financial support to Harrison"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "an analysis of the long-term importance of sea clock invention",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. an analysis of the long-term importance of sea clock invention",
-        "elementPath": "children[9]"
+       "prompt": [
+        "an analysis of the long-term importance of sea clock invention"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
        }
       },
       {
        "number": 5,
        "type": "matching_information",
-       "stem": {
-        "plain": "the practical usage of longitude",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. the practical usage of longitude",
-        "elementPath": "children[9]"
+       "prompt": [
+        "the practical usage of longitude"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[8]",
-      "rawExcerpt": "Questions 1-5\nReading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information?\nNB You may use any letter more than once."
+      "headerLine": 8,
+      "lineRange": [
+       8,
+       15
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-5",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. a description of Harrison’s background",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. problems caused by poor ocean navigation",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. the person who gave financial support to Harrison",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. an analysis of the long-term importance of sea clock invention",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. the practical usage of longitude",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g02",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 6-8 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p1.q06-08",
      "startQ": 6,
      "endQ": 8,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? In boxes 6-8 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN If there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 6,
        "type": "tfng",
-       "stem": {
-        "plain": "In theory, sailors can easily calculate their longitude position at sea.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. In theory, sailors can easily calculate their longitude position at sea.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "In theory, sailors can easily calculate their longitude position at sea."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 7,
        "type": "tfng",
-       "stem": {
-        "plain": "To determine longitude, the measurement of the distance from the Moon to a given star is essential.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "True",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "7. To determine longitude, the measurement of the distance from the Moon to a given star is essential.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "To determine longitude, the measurement of the distance from the Moon to a given star is essential."
+       ],
+       "answer": {
+        "raw": "True",
+        "value": "TRUE",
+        "accepted": [
+         "TRUE"
+        ]
        }
       },
       {
        "number": 8,
        "type": "tfng",
-       "stem": {
-        "plain": "Greenwich Mean Time was set up by the English navigators.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "8. Greenwich Mean Time was set up by the English navigators.",
-        "elementPath": "children[12]"
+       "prompt": [
+        "Greenwich Mean Time was set up by the English navigators."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[10]",
-      "rawExcerpt": "Questions 6-8\nDo the following statements agree with the information given in Reading Passage 1? In boxes 6-8 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nN"
+      "headerLine": 16,
+      "lineRange": [
+       16,
+       23
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 6-8",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 1? In boxes 6-8 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN If there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. In theory, sailors can easily calculate their longitude position at sea.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "7. To determine longitude, the measurement of the distance from the Moon to a given star is essential.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "8. Greenwich Mean Time was set up by the English navigators.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g03",
-     "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
-     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
-     "qtype": "sentence_completion",
+     "groupId": "p1.q09-14",
      "startQ": 9,
      "endQ": 14,
-     "stimulusSegments": null,
-     "sharedOptions": null,
-     "figures": null,
-     "questions": [
-      {
-       "number": 9,
-       "type": "completion",
-       "stem": {
-        "plain": "Sailors were able to use the position of the Sun to calculate (9) ______",
+     "type": "sentence_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "optionPool": null,
+     "stimulus": {
+      "title": null,
+      "blocks": [
+       {
+        "type": "text",
         "segments": [
-         "Sailors were able to use the position of the Sun to calculate",
+         "Sailors were able to use the position of the Sun to calculate ",
          {
           "blank": 9
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Local time",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Sailors were able to use the position of the Sun to calculate (9)……………………..",
-        "elementPath": "children[14]"
-       }
-      },
-      {
-       "number": 10,
-       "type": "completion",
-       "stem": {
-        "plain": "An invention that could win the competition would lose no more than (10) ______ every day.",
+       {
+        "type": "text",
         "segments": [
-         "An invention that could win the competition would lose no more than",
+         "An invention that could win the competition would lose no more than ",
          {
           "blank": 10
          },
          "every day."
         ]
        },
-       "options": null,
-       "correctAnswer": "2.8 seconds",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "An invention that could win the competition would lose no more than (10)………………………..every day.",
-        "elementPath": "children[15]"
-       }
-      },
-      {
-       "number": 11,
-       "type": "completion",
-       "stem": {
-        "plain": "John and James Harrison’s clock worked accurately without (11) ______",
+       {
+        "type": "text",
         "segments": [
-         "John and James Harrison’s clock worked accurately without",
+         "John and James Harrison’s clock worked accurately without ",
          {
           "blank": 11
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Lubrication",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "John and James Harrison’s clock worked accurately without (11)……………………",
-        "elementPath": "children[16]"
-       }
-      },
-      {
-       "number": 12,
-       "type": "completion",
-       "stem": {
-        "plain": "Harrison’s main competitor’s invention was known as (12) ______",
+       {
+        "type": "text",
         "segments": [
-         "Harrison’s main competitor’s invention was known as",
+         "Harrison’s main competitor’s invention was known as ",
          {
           "blank": 12
          }
         ]
        },
-       "options": null,
-       "correctAnswer": "Sextant",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Harrison’s main competitor’s invention was known as (12)………………………",
-        "elementPath": "children[17]"
-       }
-      },
-      {
-       "number": 13,
-       "type": "completion",
-       "stem": {
-        "plain": "Hadley’s instrument can use (13) ______ to make a calculation of location of ships or planes.",
+       {
+        "type": "text",
         "segments": [
-         "Hadley’s instrument can use",
+         "Hadley’s instrument can use ",
          {
           "blank": 13
          },
          "to make a calculation of location of ships or planes."
         ]
        },
-       "options": null,
-       "correctAnswer": "Angles",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "Hadley’s instrument can use (13)……………………………to make a calculation of location of ships or planes.",
-        "elementPath": "children[18]"
-       }
-      },
-      {
-       "number": 14,
-       "type": "completion",
-       "stem": {
-        "plain": "The modem version of Harrison’s invention is called the (14) ______",
+       {
+        "type": "text",
         "segments": [
-         "The modem version of Harrison’s invention is called the",
+         "The modem version of Harrison’s invention is called the ",
          {
           "blank": 14
          }
         ]
-       },
-       "options": null,
-       "correctAnswer": "Marine chronometer",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "The modem version of Harrison’s invention is called the (14)……………………….",
-        "elementPath": "children[19]"
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 9,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Local time",
+        "value": "Local time",
+        "accepted": [
+         "Local time"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "2.8 seconds",
+        "value": "2.8 seconds",
+        "accepted": [
+         "2.8 seconds"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Lubrication",
+        "value": "Lubrication",
+        "accepted": [
+         "Lubrication"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Sextant",
+        "value": "Sextant",
+        "accepted": [
+         "Sextant"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Angles",
+        "value": "Angles",
+        "accepted": [
+         "Angles"
+        ]
+       }
+      },
+      {
+       "number": 14,
+       "type": "sentence_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Marine chronometer",
+        "value": "Marine chronometer",
+        "accepted": [
+         "Marine chronometer"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[13]",
-      "rawExcerpt": "Questions 9-14\nComplete the sentences below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer."
+      "headerLine": 24,
+      "lineRange": [
+       24,
+       31
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 9-14",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the sentences below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Sailors were able to use the position of the Sun to calculate (9)……………………..",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "An invention that could win the competition would lose no more than (10)………………………..every day.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "John and James Harrison’s clock worked accurately without (11)……………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Harrison’s main competitor’s invention was known as (12)………………………",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Hadley’s instrument can use (13)……………………………to make a calculation of location of ships or planes.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The modem version of Harrison’s invention is called the (14)……………………….",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -333,404 +750,503 @@
    "passageNumber": 2,
    "title": "The Evolutionary Mystery: Crocodile Survives",
    "paragraphs": [
-    "A Even though crocodiles have existed for 200 million years, they’re anything but primitive. As crocodiles’ ancestors, crocodilia came to adapt to an aquatic lifestyle. When most of the other contemporary reptiles went extinct, crocodiles were able to make it because their bodies changed and they adapted better to the climate. They witnessed the rise and fall of the dinosaurs, which once ruled the planet, and even the 65 million years of alleged mammalian dominance didn’t wipe them off. Nowadays, the crocodiles and alligators are not that different from their prehistoric ancestors, which proves that they were (and still are) incredibly adaptive.",
-    "B The first crocodile-like ancestors came into existence approximately 230 million years ago, and they had many of the features which make crocodiles natural and perfect stealth hunters: streamlined body, long tail, protective armour and long jaws. They are born with four short, webbed legs, but this does not mean that their capacity to move on the ground should ever be underestimated. When they move, they are so fast that you won’t even have any chance to try making the same mistake again by getting too close, especially when they’re hunting.",
-    "C Like other reptiles, crocodiles are poikilothermal animals (commonly known as coldblooded, whose body temperature changes with that of the surroundings) and consequently, require exposure to sunlight regularly to raise body temperature. When it is too hot, they would rather stay in water or shade. Compared with mammals and birds, crocodiles have a slower metabolism, which makes them less vulnerable to food shortage. In the most extreme case, a crocodile can slow its metabolism down even further, to the point that it would survive without food for a whole year, enabling them to outlive mammals in relatively volatile environments.",
-    "D Crocodiles have a highly efficient way to catch prey. The prey rarely realises there might be a crocodile under the water because the crocodile makes a move without any noise or great vibration when spotting its prey. It only keeps its eyes above the water level. As soon as it feels close enough to the victim, it jerks out of the water with its wide open jaws. Crocodiles are successful because they are capable of switching feeding methods. It chases after fish and snatches birds at the water surface, hides in the waterside bushes in anticipation of a gazelle, and when the chance to ambush presents itself, the crocodile dashes forward, knocks the animal out with its powerful tail and then drags the prey into the water to drown.",
-    "E In many crocodilian habitats, the hot season brings drought that dries up their hunting grounds, leaving it harder for them to regulate body temperatures. This actually allowed reptiles to rule. For instance, many crocodiles can protect themselves by digging holes and covering themselves in mud, waiting for months without consuming any food or water until the rains finally return. They transform into a quiescent state called aestivation.",
-    "F The majority of crocodilia are thought to go into aestivation during the dry season. In a six-year study by Kennett and Christian, the King Crocodiles, a species of Australian freshwater crocodiles, spent nearly four months a year underground without access to water resources. Doubly labelled water was applied to detect field metabolic rates and water flux, and during some years, plasma fluid samples were taken once a month to keep track of the effects of aestivation regarding the accumulation of nitrogenous wastes and electrolyte concentrations.",
-    "G The study discovered that the crocodiles’ metabolic engines function slowly, creating waste and exhausting water and fat reserves. Waste is stored in the urine, becoming more and more concentrated. Nevertheless, the concentration of waste products in blood doesn’t fluctuate much, allowing the crocodiles to carry on their normal functions. Besides, even though the crocodiles lost water reserves and body weight when underground, the losses were proportional; upon emerging, the aestivating animals had no dehydration and displayed no other harmful effects such as a slowed-down growth rate. The two researchers reckon that this capacity of crocodiles to get themselves through the harsh times and the long starvation periods is sure to be the answer to the crocodilian line’s survival throughout history."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "Even though crocodiles have existed for 200 million years, they’re anything but primitive. As crocodiles’ ancestors, crocodilia came to adapt to an aquatic lifestyle. When most of the other contemporary reptiles went extinct, crocodiles were able to make it because their bodies changed and they adapted better to the climate. They witnessed the rise and fall of the dinosaurs, which once ruled the planet, and even the 65 million years of alleged mammalian dominance didn’t wipe them off. Nowadays, the crocodiles and alligators are not that different from their prehistoric ancestors, which proves that they were (and still are) incredibly adaptive."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "The first crocodile-like ancestors came into existence approximately 230 million years ago, and they had many of the features which make crocodiles natural and perfect stealth hunters: streamlined body, long tail, protective armour and long jaws. They are born with four short, webbed legs, but this does not mean that their capacity to move on the ground should ever be underestimated. When they move, they are so fast that you won’t even have any chance to try making the same mistake again by getting too close, especially when they’re hunting."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Like other reptiles, crocodiles are poikilothermal animals (commonly known as coldblooded, whose body temperature changes with that of the surroundings) and consequently, require exposure to sunlight regularly to raise body temperature. When it is too hot, they would rather stay in water or shade. Compared with mammals and birds, crocodiles have a slower metabolism, which makes them less vulnerable to food shortage. In the most extreme case, a crocodile can slow its metabolism down even further, to the point that it would survive without food for a whole year, enabling them to outlive mammals in relatively volatile environments."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "Crocodiles have a highly efficient way to catch prey. The prey rarely realises there might be a crocodile under the water because the crocodile makes a move without any noise or great vibration when spotting its prey. It only keeps its eyes above the water level. As soon as it feels close enough to the victim, it jerks out of the water with its wide open jaws. Crocodiles are successful because they are capable of switching feeding methods. It chases after fish and snatches birds at the water surface, hides in the waterside bushes in anticipation of a gazelle, and when the chance to ambush presents itself, the crocodile dashes forward, knocks the animal out with its powerful tail and then drags the prey into the water to drown."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "In many crocodilian habitats, the hot season brings drought that dries up their hunting grounds, leaving it harder for them to regulate body temperatures. This actually allowed reptiles to rule. For instance, many crocodiles can protect themselves by digging holes and covering themselves in mud, waiting for months without consuming any food or water until the rains finally return. They transform into a quiescent state called aestivation."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "The majority of crocodilia are thought to go into aestivation during the dry season. In a six-year study by Kennett and Christian, the King Crocodiles, a species of Australian freshwater crocodiles, spent nearly four months a year underground without access to water resources. Doubly labelled water was applied to detect field metabolic rates and water flux, and during some years, plasma fluid samples were taken once a month to keep track of the effects of aestivation regarding the accumulation of nitrogenous wastes and electrolyte concentrations."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "The study discovered that the crocodiles’ metabolic engines function slowly, creating waste and exhausting water and fat reserves. Waste is stored in the urine, becoming more and more concentrated. Nevertheless, the concentration of waste products in blood doesn’t fluctuate much, allowing the crocodiles to carry on their normal functions. Besides, even though the crocodiles lost water reserves and body weight when underground, the losses were proportional; upon emerging, the aestivating animals had no dehydration and displayed no other harmful effects such as a slowed-down growth rate. The two researchers reckon that this capacity of crocodiles to get themselves through the harsh times and the long starvation periods is sure to be the answer to the crocodilian line’s survival throughout history."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g04",
-     "instruction": "Reading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below.",
-     "wordLimit": "",
-     "qtype": "matching_headings",
+     "groupId": "p2.q15-21",
      "startQ": 15,
      "endQ": 21,
-     "stimulusSegments": null,
-     "sharedOptions": [
-      {
-       "letter": "A",
-       "text": "project on a special mechanism vii Regulating body temperature by the surrounding environment viii Body structure offers underwater aid to a successful predator ix"
-      },
-      {
-       "letter": "A",
-       "text": "history of the supreme survivors x What makes the crocodile the fastest running animal on land xi Competition between crocodiles and other animals"
-      }
-     ],
+     "type": "matching_headings",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of Headings",
+      "options": [
+       {
+        "id": "i",
+        "text": "The positive impact of drought"
+       },
+       {
+        "id": "ii",
+        "text": "Research findings into crocodile survival"
+       },
+       {
+        "id": "iii",
+        "text": "The slow metabolism which makes the crocodile a unique animal"
+       },
+       {
+        "id": "iv",
+        "text": "The perfectly designed body for a great land roamer"
+       },
+       {
+        "id": "v",
+        "text": "Shifting eating habits and food intake"
+       },
+       {
+        "id": "vi",
+        "text": "A project on a special mechanism"
+       },
+       {
+        "id": "vii",
+        "text": "Regulating body temperature by the surrounding environment"
+       },
+       {
+        "id": "viii",
+        "text": "Body structure offers underwater aid to a successful predator"
+       },
+       {
+        "id": "ix",
+        "text": "A history of the supreme survivors"
+       },
+       {
+        "id": "x",
+        "text": "What makes the crocodile the fastest running animal on land"
+       },
+       {
+        "id": "xi",
+        "text": "Competition between crocodiles and other animals"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 15,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph A",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "ix",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. Paragraph A",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph A"
+       ],
+       "answer": {
+        "raw": "ix",
+        "value": "ix",
+        "accepted": [
+         "ix"
+        ]
        }
       },
       {
        "number": 16,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph B",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "iv",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. Paragraph B",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph B"
+       ],
+       "answer": {
+        "raw": "iv",
+        "value": "iv",
+        "accepted": [
+         "iv"
+        ]
        }
       },
       {
        "number": 17,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph C",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "iii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. Paragraph C",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph C"
+       ],
+       "answer": {
+        "raw": "iii",
+        "value": "iii",
+        "accepted": [
+         "iii"
+        ]
        }
       },
       {
        "number": 18,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph D",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "v",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "18. Paragraph D",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph D"
+       ],
+       "answer": {
+        "raw": "v",
+        "value": "v",
+        "accepted": [
+         "v"
+        ]
        }
       },
       {
        "number": 19,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph E",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "i",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "19. Paragraph E",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph E"
+       ],
+       "answer": {
+        "raw": "i",
+        "value": "i",
+        "accepted": [
+         "i"
+        ]
        }
       },
       {
        "number": 20,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph F",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "vi",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "20. Paragraph F",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph F"
+       ],
+       "answer": {
+        "raw": "vi",
+        "value": "vi",
+        "accepted": [
+         "vi"
+        ]
        }
       },
       {
        "number": 21,
        "type": "matching_headings",
-       "stem": {
-        "plain": "Paragraph G",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "ii",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "21. Paragraph G",
-        "elementPath": "children[30]"
+       "prompt": [
+        "Paragraph G"
+       ],
+       "answer": {
+        "raw": "ii",
+        "value": "ii",
+        "accepted": [
+         "ii"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[28]",
-      "rawExcerpt": "Questions 15-21\nReading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below."
+      "headerLine": 40,
+      "lineRange": [
+       40,
+       60
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 15-21",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has seven paragraphs, A-G. Choose the correct heading for each paragraph from the list of headings below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of Headings",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "i The positive impact of drought",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ii Research findings into crocodile survival",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iii The slow metabolism which makes the crocodile a unique animal",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "iv The perfectly designed body for a great land roamer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "v Shifting eating habits and food intake",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vi A project on a special mechanism",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "vii Regulating body temperature by the surrounding environment",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "viii Body structure offers underwater aid to a successful predator",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "ix A history of the supreme survivors",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "x What makes the crocodile the fastest running animal on land",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "xi Competition between crocodiles and other animals",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. Paragraph A",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. Paragraph B",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. Paragraph C",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "18. Paragraph D",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "19. Paragraph E",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "20. Paragraph F",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "21. Paragraph G",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g05",
-     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
-     "wordLimit": "NO MORE THAN TWO WORDS",
-     "qtype": "summary_completion",
+     "groupId": "p2.q22-27",
      "startQ": 22,
      "endQ": 27,
-     "stimulusSegments": [
-      "Aestivation"
-     ],
-     "sharedOptions": null,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Aestivation",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a ",
+         {
+          "blank": 22
+         },
+         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around ",
+         {
+          "blank": 23
+         },
+         "of the year underground and had no access to ",
+         {
+          "blank": 24
+         },
+         "The amount of water in the body declined proportionately with ",
+         {
+          "blank": 25
+         },
+         "; thus there is no sign of ",
+         {
+          "blank": 26
+         },
+         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of ",
+         {
+          "blank": 27
+         }
+        ]
+       }
+      ]
+     },
      "figures": null,
      "questions": [
       {
        "number": 22,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Hot season/ dry season",
+        "value": "Hot season/ dry season",
+        "accepted": [
+         "Hot season",
+         "dry season"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Hot season/ dry season",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 23,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Four months",
+        "value": "Four months",
+        "accepted": [
+         "Four months"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Four months",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 24,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Water resources",
+        "value": "Water resources",
+        "accepted": [
+         "Water resources"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Water resources",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 25,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Body weight",
+        "value": "Body weight",
+        "accepted": [
+         "Body weight"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Body weight",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 26,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Dehydration",
+        "value": "Dehydration",
+        "accepted": [
+         "Dehydration"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Dehydration",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       },
       {
        "number": 27,
-       "type": "completion",
-       "stem": {
-        "plain": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22) ______ According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23) ______ of the year underground and had no access to (24) ______ The amount of water in the body declined proportionately with (25) ______ ; thus there is no sign of (26) ______ and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of (27) ______",
-        "segments": [
-         "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a",
-         {
-          "blank": 22
-         },
-         "According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around",
-         {
-          "blank": 23
-         },
-         "of the year underground and had no access to",
-         {
-          "blank": 24
-         },
-         "The amount of water in the body declined proportionately with",
-         {
-          "blank": 25
-         },
-         "; thus there is no sign of",
-         {
-          "blank": 26
-         },
-         "and other health-damaging impact on the crocodiles even after an aestivation period. This super capacity helps crocodiles endure the tough drought without slowing their speed of",
-         {
-          "blank": 27
-         }
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Growth",
+        "value": "Growth",
+        "accepted": [
+         "Growth"
         ]
-       },
-       "options": null,
-       "correctAnswer": "Growth",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-yea",
-        "elementPath": "children[32]"
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[31]",
-      "rawExcerpt": "Questions 22-27\nComplete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+      "headerLine": 61,
+      "lineRange": [
+       61,
+       64
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 22-27",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Aestivation",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "In many places inhabited by crocodilians, most types of crocodiles have evolved a successful scheme to survive in the drought brought by a (22)……………………………. According to Kennett and Christian’s six-year study of Australian freshwater crocodiles’ aestivation, they found aestivating crocodiles spent around (23)……………………… of the year underground and had no access to (24)………………………..The amount of water i",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
@@ -739,453 +1255,664 @@
    "passageNumber": 3,
    "title": "Company Innovation",
    "paragraphs": [
-    "A In a shabby office in downtown Manhattan, a group of 30 AI (artificial intelligence) programmers from Umagic are attempting to mimic the brains of a famous sexologist, a celebrated dietitian, a popular fitness coach and a bunch of other specialists, Umagic Systems is an up-and-coming firm, which sets up websites that enable their clients to seek advice from the virtual versions of those figures. The users put in all the information regarding themselves and their objectives; then it’s Umagic’s job to give advice, that a star expert would give. Even though the neuroses of American consumers have always been a marketing focus, the future of Umagic is difficult to predict (who knows what it’ll be like in ten years? Asking a computer about your sex life might be either normal or crazy). However, companies such as Umagic are starting to intimidate major American firms, because these young companies regard the half-crazy ‘creative’ ideas as the portal to their triumph in the future.",
-    "B Innovation has established itself as the catchword of American business management. Enterprises have realised that they are running out of things that can be outsourced or re-engineered (worryingly, by their competitors too). Winners of today’s American business tend to be companies with innovative powers such as Dell, Amazon and Wal-Mart, which have come up with concepts or goods that have reshaped their industries.",
-    "C According to a new book by two consultants from Arthur D. Little, during the last 15 years, the top 20% of firms in Fortune magazine’s annual innovation survey have attained twice as much the shareholder returns as their peers. The desperate search for new ideas is the stimulus for a large part of today’s merger boom. The same goes for the money spent on licensing and purchasing others’ intellectual property. Based on the statistics from Pasadena-based Patent & Licence Exchange, trade volume in intangible assets in America has gone up from $15 billion in 1990 to $100 billion in 1998, with small firms and individuals taking up an increasing share of the rewards.",
-    "D And that terrifies big companies: it appears that innovative work is incompatible with them. Some major famous companies that are always known for ‘innovative ideas’, such as 3M, Procter & Gamble, and Rubbermaid, have recently had dry spells. Peter Chernin, who runs the Fox TV and film empire for News Corporation, points out that ‘In the management of creativity, size is your enemy.’ It’s impossible for someone who’s managing 20 movies to be as involved as someone doing 5. Therefore, he has tried to divide the studio into smaller parts, disregarding the risk of higher expenses.",
-    "E Nowadays, ideas are more likely to prosper outside big companies. In the old days, when a brilliant scientist came up with an idea and wanted to make money out of it, he would take it to a big company first. But now, with all this cheap venture capital around, he would probably want to commercialise it by himself. So far, Umagic has already raised $5m and is on its way to another $25m. Even in the case of capital-intensive businesses like pharmaceuticals, entrepreneurs have the option to conduct early-stage research and sell out to the big firms when they’re faced with costly, risky clinical trials. Approximately 1/3 of drug firms’ total revenue is now from licensed-in technology.",
-    "F Some of the major enterprises such as General Electric and Cisco have been impressively triumphant when it comes to snatching and incorporating small companies’ scores. However, other grants are concerned about the money they have to spend and the way to keep those geniuses who generated the idea. It is the dream of everyone to develop more ideas within their organisations. Proctor & Gamble is currently switching their entire business focus from countries to products; one of the goals is to get the whole company to accept the innovations. In other places, the craving for innovation has caused ‘a frenzy for entrepreneurship’, transferring power by establishing internal idea-workshops and tracking inventory so that the talent will stay.",
-    "G Some people don’t believe that this kind of restructuring is sufficient. Clayton Christensen argues in their new book that big firms’ many advantages, such as taking care of their existing customers, can get in the way of the innovative behaviour that is necessary for handling disruptive technologies. That’s why there’s been the trend of cannibalisation, which brings about businesses that will confront and jeopardise the existing ones. For example, Bank One has set up Wingspan, which is an online bank that in fact competes with its actual branches.",
-    "H There’s no denying that innovation is a big deal. However, do major firms have to be this pessimistic? According to a recent survey of the top 50 innovations in America by Industry Week, ideas are equally likely to come from both big and small companies. Big companies can adopt new ideas when they are mature enough and the risks and rewards have become more quantifiable."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "In a shabby office in downtown Manhattan, a group of 30 AI (artificial intelligence) programmers from Umagic are attempting to mimic the brains of a famous sexologist, a celebrated dietitian, a popular fitness coach and a bunch of other specialists, Umagic Systems is an up-and-coming firm, which sets up websites that enable their clients to seek advice from the virtual versions of those figures. The users put in all the information regarding themselves and their objectives; then it’s Umagic’s job to give advice, that a star expert would give. Even though the neuroses of American consumers have always been a marketing focus, the future of Umagic is difficult to predict (who knows what it’ll be like in ten years? Asking a computer about your sex life might be either normal or crazy). However, companies such as Umagic are starting to intimidate major American firms, because these young companies regard the half-crazy ‘creative’ ideas as the portal to their triumph in the future."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Innovation has established itself as the catchword of American business management. Enterprises have realised that they are running out of things that can be outsourced or re-engineered (worryingly, by their competitors too). Winners of today’s American business tend to be companies with innovative powers such as Dell, Amazon and Wal-Mart, which have come up with concepts or goods that have reshaped their industries."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "According to a new book by two consultants from Arthur D. Little, during the last 15 years, the top 20% of firms in Fortune magazine’s annual innovation survey have attained twice as much the shareholder returns as their peers. The desperate search for new ideas is the stimulus for a large part of today’s merger boom. The same goes for the money spent on licensing and purchasing others’ intellectual property. Based on the statistics from Pasadena-based Patent & Licence Exchange, trade volume in intangible assets in America has gone up from $15 billion in 1990 to $100 billion in 1998, with small firms and individuals taking up an increasing share of the rewards."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "And that terrifies big companies: it appears that innovative work is incompatible with them. Some major famous companies that are always known for ‘innovative ideas’, such as 3M, Procter & Gamble, and Rubbermaid, have recently had dry spells. Peter Chernin, who runs the Fox TV and film empire for News Corporation, points out that ‘In the management of creativity, size is your enemy.’ It’s impossible for someone who’s managing 20 movies to be as involved as someone doing 5. Therefore, he has tried to divide the studio into smaller parts, disregarding the risk of higher expenses."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Nowadays, ideas are more likely to prosper outside big companies. In the old days, when a brilliant scientist came up with an idea and wanted to make money out of it, he would take it to a big company first. But now, with all this cheap venture capital around, he would probably want to commercialise it by himself. So far, Umagic has already raised $5m and is on its way to another $25m. Even in the case of capital-intensive businesses like pharmaceuticals, entrepreneurs have the option to conduct early-stage research and sell out to the big firms when they’re faced with costly, risky clinical trials. Approximately 1/3 of drug firms’ total revenue is now from licensed-in technology."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "Some of the major enterprises such as General Electric and Cisco have been impressively triumphant when it comes to snatching and incorporating small companies’ scores. However, other grants are concerned about the money they have to spend and the way to keep those geniuses who generated the idea. It is the dream of everyone to develop more ideas within their organisations. Proctor & Gamble is currently switching their entire business focus from countries to products; one of the goals is to get the whole company to accept the innovations. In other places, the craving for innovation has caused ‘a frenzy for entrepreneurship’, transferring power by establishing internal idea-workshops and tracking inventory so that the talent will stay."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Some people don’t believe that this kind of restructuring is sufficient. Clayton Christensen argues in their new book that big firms’ many advantages, such as taking care of their existing customers, can get in the way of the innovative behaviour that is necessary for handling disruptive technologies. That’s why there’s been the trend of cannibalisation, which brings about businesses that will confront and jeopardise the existing ones. For example, Bank One has set up Wingspan, which is an online bank that in fact competes with its actual branches."
+    },
+    {
+     "type": "text",
+     "label": "H",
+     "text": "There’s no denying that innovation is a big deal. However, do major firms have to be this pessimistic? According to a recent survey of the top 50 innovations in America by Industry Week, ideas are equally likely to come from both big and small companies. Big companies can adopt new ideas when they are mature enough and the risks and rewards have become more quantifiable."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g06",
-     "instruction": "Reading Passage 3 has nine paragraphs, A-I. Which paragraph contains the following information? NB You may use any letter more than once.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p3.q28-33",
      "startQ": 28,
      "endQ": 33,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 3 has nine paragraphs, A-I. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       },
+       {
+        "id": "H",
+        "text": "Paragraph H"
+       },
+       {
+        "id": "I",
+        "text": "Paragraph I"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 28,
        "type": "matching_information",
-       "stem": {
-        "plain": "an approach to retaining the best employees",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. an approach to retaining the best employees",
-        "elementPath": "children[43]"
+       "prompt": [
+        "an approach to retaining the best employees"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 29,
        "type": "matching_information",
-       "stem": {
-        "plain": "increasing spending on attaining innovative ideas",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. increasing spending on attaining innovative ideas",
-        "elementPath": "children[43]"
+       "prompt": [
+        "increasing spending on attaining innovative ideas"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 30,
        "type": "matching_information",
-       "stem": {
-        "plain": "a certain counter-effect produced by integrating outside firms",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "G",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. a certain counter-effect produced by integrating outside firms",
-        "elementPath": "children[43]"
+       "prompt": [
+        "a certain counter-effect produced by integrating outside firms"
+       ],
+       "answer": {
+        "raw": "G",
+        "value": "G",
+        "accepted": [
+         "G"
+        ]
        }
       },
       {
        "number": 31,
        "type": "matching_information",
-       "stem": {
-        "plain": "an example of three famous innovative American companies",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. an example of three famous innovative American companies",
-        "elementPath": "children[43]"
+       "prompt": [
+        "an example of three famous innovative American companies"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 32,
        "type": "matching_information",
-       "stem": {
-        "plain": "an example of a company changing its focus",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "32. an example of a company changing its focus",
-        "elementPath": "children[43]"
+       "prompt": [
+        "an example of a company changing its focus"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 33,
        "type": "matching_information",
-       "stem": {
-        "plain": "an example of a company resolving financial difficulties itself",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "33. an example of a company resolving financial difficulties itself",
-        "elementPath": "children[43]"
+       "prompt": [
+        "an example of a company resolving financial difficulties itself"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": [
+      "PARAGRAPH_LABELS_DIFFER"
+     ],
      "provenance": {
-      "elementPath": "children[42]",
-      "rawExcerpt": "Questions 28-33\nReading Passage 3 has nine paragraphs, A-I. Which paragraph contains the following information?\nNB You may use any letter more than once."
+      "headerLine": 74,
+      "lineRange": [
+       74,
+       82
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 28-33",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 3 has nine paragraphs, A-I. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. an approach to retaining the best employees",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. increasing spending on attaining innovative ideas",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. a certain counter-effect produced by integrating outside firms",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. an example of three famous innovative American companies",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "32. an example of a company changing its focus",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "33. an example of a company resolving financial difficulties itself",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g07",
-     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 34-37 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN If there is no information on this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q34-37",
      "startQ": 34,
      "endQ": 37,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "tfng",
+     "answerControl": "tfng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? In boxes 34-37 on your answer sheet, write",
+     "legend": [
+      "TRUE if the statement agrees with the information",
+      "FALSE if the statement contradicts the information",
+      "NOT GIVEN If there is no information on this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 34,
        "type": "tfng",
-       "stem": {
-        "plain": "Umagic is the most successful innovative company in this new field.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "34. Umagic is the most successful innovative company in this new field.",
-        "elementPath": "children[46]"
+       "prompt": [
+        "Umagic is the most successful innovative company in this new field."
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 35,
        "type": "tfng",
-       "stem": {
-        "plain": "Amazon and Wal-Mart exchanged their innovation experience.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "35. Amazon and Wal-Mart exchanged their innovation experience.",
-        "elementPath": "children[46]"
+       "prompt": [
+        "Amazon and Wal-Mart exchanged their innovation experience."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 36,
        "type": "tfng",
-       "stem": {
-        "plain": "In the past, the originators of new ideas took them to small companies",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "False",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "36. In the past, the originators of new ideas took them to small companies",
-        "elementPath": "children[46]"
+       "prompt": [
+        "In the past, the originators of new ideas took them to small companies"
+       ],
+       "answer": {
+        "raw": "False",
+        "value": "FALSE",
+        "accepted": [
+         "FALSE"
+        ]
        }
       },
       {
        "number": 37,
        "type": "tfng",
-       "stem": {
-        "plain": "IBM failed to understand Umagic’s proposal of a new idea.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "NG",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. IBM failed to understand Umagic’s proposal of a new idea.",
-        "elementPath": "children[46]"
+       "prompt": [
+        "IBM failed to understand Umagic’s proposal of a new idea."
+       ],
+       "answer": {
+        "raw": "NG",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[44]",
-      "rawExcerpt": "Questions 34-37\nDo the following statements agree with the information given in Reading Passage 3? In boxes 34-37 on your answer sheet, write TRUE if the statement agrees with the information\nFALSE if the statement contradicts the informati"
+      "headerLine": 83,
+      "lineRange": [
+       83,
+       91
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 34-37",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the information given in Reading Passage 3? In boxes 34-37 on your answer sheet, write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "TRUE if the statement agrees with the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "FALSE if the statement contradicts the information",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN If there is no information on this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "34. Umagic is the most successful innovative company in this new field.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "35. Amazon and Wal-Mart exchanged their innovation experience.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "36. In the past, the originators of new ideas took them to small companies",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. IBM failed to understand Umagic’s proposal of a new idea.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 38-40 on your answer sheet.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q38-40",
      "startQ": 38,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 38-40 on your answer sheet.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 38,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is the author’s opinion on innovation in paragraph C?",
-        "segments": null
-       },
+       "prompt": [
+        "What is the author’s opinion on innovation in paragraph C?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "It only works for big companies."
+        },
+        {
+         "id": "B",
+         "text": "Fortune magazine has a globally huge influence."
+        },
+        {
+         "id": "C",
+         "text": "It is becoming increasingly important."
+        },
+        {
+         "id": "D",
+         "text": "Its effects on American companies are more evident."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. What is the author’s opinion on innovation in paragraph C?",
-        "elementPath": "children[48]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 39,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is Peter Chemin’s point of view on innovation?",
-        "segments": null
-       },
+       "prompt": [
+        "What is Peter Chemin’s point of view on innovation?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Small companies are more innovative than big ones."
+        },
+        {
+         "id": "B",
+         "text": "Film industry needs more innovation than other industries."
+        },
+        {
+         "id": "C",
+         "text": "We need to cut the cost when risks occur."
+        },
+        {
+         "id": "D",
+         "text": "New ideas are more likely to go to big companies."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. What is Peter Chemin’s point of view on innovation?",
-        "elementPath": "children[49]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 40,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What is the author’s opinion on innovation at the end of this passage?",
-        "segments": null
-       },
+       "prompt": [
+        "What is the author’s opinion on innovation at the end of this passage?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Umagic’s success lies in the accidental ‘virtual expert’."
+        },
+        {
+         "id": "B",
+         "text": "Innovation is easy and straightforward."
+        },
+        {
+         "id": "C",
+         "text": "IBM sets a good example on innovation."
+        },
+        {
+         "id": "D",
+         "text": "The author’s attitude is uncertain on innovation."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. What is the author’s opinion on innovation at the end of this passage?",
-        "elementPath": "children[50]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[47]",
-      "rawExcerpt": "Questions 38-40\nChoose the correct letter, A, B, C or D. Write the correct letter in boxes 38-40 on your answer sheet."
+      "headerLine": 92,
+      "lineRange": [
+       92,
+       108
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 38-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 38-40 on your answer sheet.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. What is the author’s opinion on innovation in paragraph C?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A It only works for big companies.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Fortune magazine has a globally huge influence.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C It is becoming increasingly important.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Its effects on American companies are more evident.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. What is Peter Chemin’s point of view on innovation?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Small companies are more innovative than big ones.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Film industry needs more innovation than other industries.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C We need to cut the cost when risks occur.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D New ideas are more likely to go to big companies.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. What is the author’s opinion on innovation at the end of this passage?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Umagic’s success lies in the accidental ‘virtual expert’.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Innovation is easy and straightforward.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C IBM sets a good example on innovation.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D The author’s attitude is uncertain on innovation.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "E"
-   },
-   {
-    "number": 2,
-    "value": "A"
-   },
-   {
-    "number": 3,
-    "value": "E"
-   },
-   {
-    "number": 4,
-    "value": "G"
-   },
-   {
-    "number": 5,
-    "value": "B"
-   },
-   {
-    "number": 6,
-    "value": "True"
-   },
-   {
-    "number": 7,
-    "value": "True"
-   },
-   {
-    "number": 8,
-    "value": "NG"
-   },
-   {
-    "number": 9,
-    "value": "Local time"
-   },
-   {
-    "number": 10,
-    "value": "2.8 seconds"
-   },
-   {
-    "number": 11,
-    "value": "Lubrication"
-   },
-   {
-    "number": 12,
-    "value": "Sextant"
-   },
-   {
-    "number": 13,
-    "value": "Angles"
-   },
-   {
-    "number": 14,
-    "value": "Marine chronometer"
-   },
-   {
-    "number": 15,
-    "value": "ix"
-   },
-   {
-    "number": 16,
-    "value": "iv"
-   },
-   {
-    "number": 17,
-    "value": "iii"
-   },
-   {
-    "number": 18,
-    "value": "v"
-   },
-   {
-    "number": 19,
-    "value": "i"
-   },
-   {
-    "number": 20,
-    "value": "vi"
-   },
-   {
-    "number": 21,
-    "value": "ii"
-   },
-   {
-    "number": 22,
-    "value": "Hot season/ dry season"
-   },
-   {
-    "number": 23,
-    "value": "Four months"
-   },
-   {
-    "number": 24,
-    "value": "Water resources"
-   },
-   {
-    "number": 25,
-    "value": "Body weight"
-   },
-   {
-    "number": 26,
-    "value": "Dehydration"
-   },
-   {
-    "number": 27,
-    "value": "Growth"
-   },
-   {
-    "number": 28,
-    "value": "F"
-   },
-   {
-    "number": 29,
-    "value": "C"
-   },
-   {
-    "number": 30,
-    "value": "G"
-   },
-   {
-    "number": 31,
-    "value": "B"
-   },
-   {
-    "number": 32,
-    "value": "F"
-   },
-   {
-    "number": 33,
-    "value": "E"
-   },
-   {
-    "number": 34,
-    "value": "False"
-   },
-   {
-    "number": 35,
-    "value": "NG"
-   },
-   {
-    "number": 36,
-    "value": "False"
-   },
-   {
-    "number": 37,
-    "value": "NG"
-   },
-   {
-    "number": 38,
-    "value": "C"
-   },
-   {
-    "number": 39,
-    "value": "A"
-   },
-   {
-    "number": 40,
-    "value": "D"
-   }
-  ]
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
+ ],
+ "metrics": {
+  "passages": 3,
+  "groups": 8,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
  },
- "quarantinedUnits": [],
- "validationWarnings": [],
- "status": "verified",
- "segmentCount": 3,
- "contentFingerprint": "6cbb968cbc5c3da8f58fd15475d33f76fd7ce3486d2f52d930cadbbed5b8fa91"
+ "contentFingerprint": "c765f3eef11e17a116ba8ea590837de400d95b46fc730aae7bd53e5cfe6fc5fa"
 }

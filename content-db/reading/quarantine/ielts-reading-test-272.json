@@ -1,37 +1,36 @@
 {
  "slug": "ielts-reading-test-272",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     32,
-     36
-    ],
-    "instruction": "Use the information in the passage to match the people (listed A-F) with opinions or deeds below. Write the appropriate letters A-F in boxes"
-   }
+   "groupId": "p2.q14-20",
+   "range": [
+    14,
+    20
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "ANSWER_INVALID_FOR_TYPE"
+   ],
+   "instruction": "Reading passage 1 has ten paragraphs A-J. Choose the correct headings for paragraphs D-J from the list of headings below. Write the correct number i-x in boxes 14-20 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g08",
-    "range": [
-     37,
-     40
-    ],
-    "instruction": "Complete the following summary of the paragraphs of reading passage. Using NO MORE THAN THREE WORDS from the Reading Pas"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 31,
-    "answers": 40
-   }
+   "groupId": "p2.q21-26",
+   "range": [
+    21,
+    26
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete each sentence with the correct ending A-I from the box below. Write the correct letter A-I in boxes 21-26 on your answer sheet."
   }
  ]
 }

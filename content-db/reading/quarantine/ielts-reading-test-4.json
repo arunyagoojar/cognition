@@ -1,61 +1,33 @@
 {
  "slug": "ielts-reading-test-4",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     5
-    ],
-    "instruction": "Reading Passage 1 has six sections, A—F. Choose the correct heading for sections B—F from the list of headings below."
-   }
+   "groupId": "p1.q01-05",
+   "range": [
+    1,
+    5
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Reading Passage 1 has six sections, A—F. Choose the correct heading for sections B—F from the list of headings below."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     10,
-     13
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D. Write the correct letter in boxes 10-13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     17
-    ],
-    "instruction": "Choose the correct letter, A, B, C, or D. Write the correct letter in boxes 14-17 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     37,
-     40
-    ],
-    "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 12,
-    "answers": 40
-   }
+   "groupId": "p3.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

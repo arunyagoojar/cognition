@@ -1,687 +1,1915 @@
 {
  "id": "reading.test-0223.01f75bb9",
  "module": "reading",
+ "slug": "ielts-reading-test-223",
  "sourceNumbers": [
   223
  ],
- "slug": "ielts-reading-test-223",
  "title": "IELTS Academic Reading Test 223",
- "kind": "practice_test",
- "pipelineVersion": "production-reading-1.0.0",
+ "pipelineVersion": "production-reading-2.0.0",
  "provenance": {
   "page": {
    "path": "ielts-reading-test-223/index.html",
-   "sha256": "ea8f8bf95403281f649569e2f611eaac8deaf67856af0c45ec56c54155cdc14c",
-   "manifestHashMatch": true,
+   "sha256": "c5c6e2f35bd633c997509567f5272a2fdba963974f79c670741b78733fce3a31",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-223/"
   },
-  "extractionMethod": "deterministic_dom_v1.reading"
+  "extractionMethod": "deterministic_wordpress_lines_v2"
  },
  "hubEnumerated": true,
  "duplicateOf": null,
+ "status": "production",
+ "fullMockEligible": true,
+ "answerKey": {
+  "format": "numbered",
+  "error": null,
+  "items": [
+   {
+    "number": 1,
+    "raw": "B"
+   },
+   {
+    "number": 2,
+    "raw": "C"
+   },
+   {
+    "number": 3,
+    "raw": "F"
+   },
+   {
+    "number": 4,
+    "raw": "D"
+   },
+   {
+    "number": 5,
+    "raw": "E"
+   },
+   {
+    "number": 6,
+    "raw": "A"
+   },
+   {
+    "number": 7,
+    "raw": "Safety"
+   },
+   {
+    "number": 8,
+    "raw": "Traffic"
+   },
+   {
+    "number": 9,
+    "raw": "Carriageway"
+   },
+   {
+    "number": 10,
+    "raw": "Mobile"
+   },
+   {
+    "number": 11,
+    "raw": "Dangerous"
+   },
+   {
+    "number": 12,
+    "raw": "Communities"
+   },
+   {
+    "number": 13,
+    "raw": "Healthy"
+   },
+   {
+    "number": 14,
+    "raw": "F"
+   },
+   {
+    "number": 15,
+    "raw": "A"
+   },
+   {
+    "number": 16,
+    "raw": "D"
+   },
+   {
+    "number": 17,
+    "raw": "A"
+   },
+   {
+    "number": 18,
+    "raw": "Genetic traits"
+   },
+   {
+    "number": 19,
+    "raw": "Heat loss"
+   },
+   {
+    "number": 20,
+    "raw": "Ears"
+   },
+   {
+    "number": 21,
+    "raw": "(insulating) fat"
+   },
+   {
+    "number": 22,
+    "raw": "(carbon) emissions"
+   },
+   {
+    "number": 23,
+    "raw": "B"
+   },
+   {
+    "number": 24,
+    "raw": "C"
+   },
+   {
+    "number": 25,
+    "raw": "A"
+   },
+   {
+    "number": 26,
+    "raw": "C"
+   },
+   {
+    "number": 27,
+    "raw": "C"
+   },
+   {
+    "number": 28,
+    "raw": "A"
+   },
+   {
+    "number": 29,
+    "raw": "B"
+   },
+   {
+    "number": 30,
+    "raw": "B"
+   },
+   {
+    "number": 31,
+    "raw": "D"
+   },
+   {
+    "number": 32,
+    "raw": "F"
+   },
+   {
+    "number": 33,
+    "raw": "H"
+   },
+   {
+    "number": 34,
+    "raw": "C"
+   },
+   {
+    "number": 35,
+    "raw": "D"
+   },
+   {
+    "number": 36,
+    "raw": "E"
+   },
+   {
+    "number": 37,
+    "raw": "Not given"
+   },
+   {
+    "number": 38,
+    "raw": "Yes"
+   },
+   {
+    "number": 39,
+    "raw": "No"
+   },
+   {
+    "number": 40,
+    "raw": "No"
+   }
+  ]
+ },
  "passages": [
   {
    "passageNumber": 1,
    "title": "Could urban engineers learn from dance?",
    "paragraphs": [
-    "A The way we travel around cities has a major impact on whether they are sustainable. Transportation is estimated to account for 30% of energy consumption in most of the world’s most developed nations, so lowering the need for energy-using vehicles is essential for decreasing the environmental impact of mobility. But as more and more people move to cities, it is important to think about other kinds of sustainable travel too. The ways we travel affect our physical and mental health, our social lives, our access to work and culture, and the air we breathe. Engineers are tasked with changing how we travel round cities through urban design, but the engineering industry still works on the assumptions that led to the creation of the energy-consuming transport systems we have now: the emphasis placed solely on efficiency, speed, and quantitative data. We need radical changes, to make it healthier, more enjoyable, and less environmentally damaging to travel around cities.",
-    "B Dance might hold some of the answers. That is not to suggest everyone should dance their way to work, however healthy and happy it might make us, but rather that the techniques used by choreographers to experiment with and design movement in dance could provide engineers with tools to stimulate new ideas in city-making. Richard Sennett, an influential urbanist and sociologist who has transformed ideas about the way cities are made, argues that urban design has suffered from a separation between mind and body since the introduction of the architectural blueprint.",
-    "C Whereas medieval builders improvised and adapted construction through their intimate knowledge of materials and personal experience of the conditions on a site, building designs are now conceived and stored in media technologies that detach the designer from the physical and social realities they are creating. While the design practices created by these new technologies are essential for managing the technical complexity of the modern city, they have the drawback of simplifying reality in the process.",
-    "D To illustrate, Sennett discusses the Peachtree Center in Atlanta, USA, a development typical of the modernist approach to urban planning prevalent in the 1970s. Peachtree created a grid of streets and towers intended as a new pedestrian-friendly downtown for Atlanta. According to Sennett, this failed because its designers had invested too much faith in computer-aided design to tell them how it would operate. They failed to take into account that purpose-built street cafes could not operate in the hot sun without the protective awnings common in older buildings, and would need energy-consuming air conditioning instead, or that its giant car park would feel so unwelcoming that it would put people off getting out of their cars. What seems entirely predictable and controllable on screen has unexpected results when translated into reality.",
-    "E The same is true in transport engineering, which uses models to predict and shape the way people move through the city. Again, these models are necessary, but they are built on specific world views in which certain forms of efficiency and safety are considered and other experiences of the city ignored. Designs that seem logical in models appear counter-intuitive in the actual experience of their users. The guard rails that will be familiar to anyone who has attempted to cross a British road, for example, were an engineering solution to pedestrian safety based on models that prioritise the smooth flow of traffic. On wide major roads, they often guide pedestrians to specific crossing points and slow down their progress across the road by using staggered access points to divide the crossing into two – one for each carriageway. In doing so they make crossings feel longer, introducing psychological barriers greatly impacting those that are the least mobile, and encouraging others to make dangerous crossings to get around the guard rails. These barriers don’t just make it harder to cross the road: they divide communities and decrease opportunities for healthy transport. As a result, many are now being removed, causing disruption, cost, and waste.",
-    "F If their designers had had the tools to think with their bodies – like dancers – and imagine how these barriers would feel, there might have been a better solution. In order to bring about fundamental changes to the ways we use our cities, engineering will need to develop a richer understanding of why people move in certain ways, and how this movement affects them. Choreography may not seem an obvious choice for tackling this problem. Yet it shares with engineering the aim of designing patterns of movement within limitations of space. It is an art form developed almost entirely by trying out ideas with the body, and gaining instant feedback on how the results feel. Choreographers have deep understanding of the psychological, aesthetic, and physical implications of different ways of moving.",
-    "G Observing the choreographer Wayne McGregor, cognitive scientist David Kirsh described how he ‘thinks with the body’. Kirsh argues that by using the body to simulate outcomes, McGregor is able to imagine solutions that would not be possible using purely abstract thought. This land of physical knowledge is valued in many areas of expertise, but currently has no place in formal engineering design processes. A suggested method for transport engineers is to improvise design solutions and get instant feedback about how they would work from their own experience of them, or model designs at full scale in the way choreographers experiment with groups of dancers. Above all, perhaps, they might learn to design for emotional as well as functional effects."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The way we travel around cities has a major impact on whether they are sustainable. Transportation is estimated to account for 30% of energy consumption in most of the world’s most developed nations, so lowering the need for energy-using vehicles is essential for decreasing the environmental impact of mobility. But as more and more people move to cities, it is important to think about other kinds of sustainable travel too. The ways we travel affect our physical and mental health, our social lives, our access to work and culture, and the air we breathe. Engineers are tasked with changing how we travel round cities through urban design, but the engineering industry still works on the assumptions that led to the creation of the energy-consuming transport systems we have now: the emphasis placed solely on efficiency, speed, and quantitative data. We need radical changes, to make it healthier, more enjoyable, and less environmentally damaging to travel around cities."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "Dance might hold some of the answers. That is not to suggest everyone should dance their way to work, however healthy and happy it might make us, but rather that the techniques used by choreographers to experiment with and design movement in dance could provide engineers with tools to stimulate new ideas in city-making. Richard Sennett, an influential urbanist and sociologist who has transformed ideas about the way cities are made, argues that urban design has suffered from a separation between mind and body since the introduction of the architectural blueprint."
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "Whereas medieval builders improvised and adapted construction through their intimate knowledge of materials and personal experience of the conditions on a site, building designs are now conceived and stored in media technologies that detach the designer from the physical and social realities they are creating. While the design practices created by these new technologies are essential for managing the technical complexity of the modern city, they have the drawback of simplifying reality in the process."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "To illustrate, Sennett discusses the Peachtree Center in Atlanta, USA, a development typical of the modernist approach to urban planning prevalent in the 1970s. Peachtree created a grid of streets and towers intended as a new pedestrian-friendly downtown for Atlanta. According to Sennett, this failed because its designers had invested too much faith in computer-aided design to tell them how it would operate. They failed to take into account that purpose-built street cafes could not operate in the hot sun without the protective awnings common in older buildings, and would need energy-consuming air conditioning instead, or that its giant car park would feel so unwelcoming that it would put people off getting out of their cars. What seems entirely predictable and controllable on screen has unexpected results when translated into reality."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "The same is true in transport engineering, which uses models to predict and shape the way people move through the city. Again, these models are necessary, but they are built on specific world views in which certain forms of efficiency and safety are considered and other experiences of the city ignored. Designs that seem logical in models appear counter-intuitive in the actual experience of their users. The guard rails that will be familiar to anyone who has attempted to cross a British road, for example, were an engineering solution to pedestrian safety based on models that prioritise the smooth flow of traffic. On wide major roads, they often guide pedestrians to specific crossing points and slow down their progress across the road by using staggered access points to divide the crossing into two – one for each carriageway. In doing so they make crossings feel longer, introducing psychological barriers greatly impacting those that are the least mobile, and encouraging others to make dangerous crossings to get around the guard rails. These barriers don’t just make it harder to cross the road: they divide communities and decrease opportunities for healthy transport. As a result, many are now being removed, causing disruption, cost, and waste."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "If their designers had had the tools to think with their bodies – like dancers – and imagine how these barriers would feel, there might have been a better solution. In order to bring about fundamental changes to the ways we use our cities, engineering will need to develop a richer understanding of why people move in certain ways, and how this movement affects them. Choreography may not seem an obvious choice for tackling this problem. Yet it shares with engineering the aim of designing patterns of movement within limitations of space. It is an art form developed almost entirely by trying out ideas with the body, and gaining instant feedback on how the results feel. Choreographers have deep understanding of the psychological, aesthetic, and physical implications of different ways of moving."
+    },
+    {
+     "type": "text",
+     "label": "G",
+     "text": "Observing the choreographer Wayne McGregor, cognitive scientist David Kirsh described how he ‘thinks with the body’. Kirsh argues that by using the body to simulate outcomes, McGregor is able to imagine solutions that would not be possible using purely abstract thought. This land of physical knowledge is valued in many areas of expertise, but currently has no place in formal engineering design processes. A suggested method for transport engineers is to improvise design solutions and get instant feedback about how they would work from their own experience of them, or model designs at full scale in the way choreographers experiment with groups of dancers. Above all, perhaps, they might learn to design for emotional as well as functional effects."
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g01",
-     "instruction": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 1-6.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p1.q01-06",
      "startQ": 1,
      "endQ": 6,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information? Write the correct letter, A-G, in boxes 1-6.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       },
+       {
+        "id": "G",
+        "text": "Paragraph G"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 1,
        "type": "matching_information",
-       "stem": {
-        "plain": "reference to an appealing way of using dance that the writer is not proposing",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "1. reference to an appealing way of using dance that the writer is not proposing",
-        "elementPath": "children[9]"
+       "prompt": [
+        "reference to an appealing way of using dance that the writer is not proposing"
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 2,
        "type": "matching_information",
-       "stem": {
-        "plain": "an example of a contrast between past and present approaches to building",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "2. an example of a contrast between past and present approaches to building",
-        "elementPath": "children[9]"
+       "prompt": [
+        "an example of a contrast between past and present approaches to building"
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 3,
        "type": "matching_information",
-       "stem": {
-        "plain": "mention of an objective of both dance and engineering",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "3. mention of an objective of both dance and engineering",
-        "elementPath": "children[9]"
+       "prompt": [
+        "mention of an objective of both dance and engineering"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 4,
        "type": "matching_information",
-       "stem": {
-        "plain": "reference to an unforeseen problem arising from ignoring the climate",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "4. reference to an unforeseen problem arising from ignoring the climate",
-        "elementPath": "children[9]"
+       "prompt": [
+        "reference to an unforeseen problem arising from ignoring the climate"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 5,
        "type": "matching_information",
-       "stem": {
-        "plain": "why some measures intended to help people are being reversed",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "E",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "5. why some measures intended to help people are being reversed",
-        "elementPath": "children[9]"
+       "prompt": [
+        "why some measures intended to help people are being reversed"
+       ],
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
        }
       },
       {
        "number": 6,
        "type": "matching_information",
-       "stem": {
-        "plain": "reference to how transport has an impact on human lives",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "6. reference to how transport has an impact on human lives",
-        "elementPath": "children[9]"
+       "prompt": [
+        "reference to how transport has an impact on human lives"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[8]",
-      "rawExcerpt": "Questions 1-6\nReading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information?\nWrite the correct letter, A-G, in boxes 1-6."
+      "headerLine": 8,
+      "lineRange": [
+       8,
+       16
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 1-6",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 1 has seven paragraphs, A-G. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter, A-G, in boxes 1-6.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "1. reference to an appealing way of using dance that the writer is not proposing",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "2. an example of a contrast between past and present approaches to building",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "3. mention of an objective of both dance and engineering",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "4. reference to an unforeseen problem arising from ignoring the climate",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "5. why some measures intended to help people are being reversed",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "6. reference to how transport has an impact on human lives",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p1.q07-13",
+     "startQ": 7,
+     "endQ": 13,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "ONE WORD ONLY",
+     "optionPool": null,
+     "stimulus": {
+      "title": "Guard rails",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Guard rails were introduced on British roads to improve the ",
+         {
+          "blank": 7
+         },
+         "of pedestrians, while ensuring that the movement of ",
+         {
+          "blank": 8
+         },
+         "Is not disrupted. Pedestrians are led to access points, and encouraged to cross one ",
+         {
+          "blank": 9
+         },
+         "at a time. An unintended effect is to create psychological difficulties in crossing the road, particularly for less ",
+         {
+          "blank": 10
+         },
+         "people. Another result is that some people cross the road in a ",
+         {
+          "blank": 11
+         },
+         "way. The guard rails separate ",
+         {
+          "blank": 12
+         },
+         ", and make it more difficult to introduce forms of transport that are ",
+         {
+          "blank": 13
+         }
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 7,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Safety",
+        "value": "Safety",
+        "accepted": [
+         "Safety"
+        ]
+       }
+      },
+      {
+       "number": 8,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Traffic",
+        "value": "Traffic",
+        "accepted": [
+         "Traffic"
+        ]
+       }
+      },
+      {
+       "number": 9,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Carriageway",
+        "value": "Carriageway",
+        "accepted": [
+         "Carriageway"
+        ]
+       }
+      },
+      {
+       "number": 10,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Mobile",
+        "value": "Mobile",
+        "accepted": [
+         "Mobile"
+        ]
+       }
+      },
+      {
+       "number": 11,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Dangerous",
+        "value": "Dangerous",
+        "accepted": [
+         "Dangerous"
+        ]
+       }
+      },
+      {
+       "number": 12,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Communities",
+        "value": "Communities",
+        "accepted": [
+         "Communities"
+        ]
+       }
+      },
+      {
+       "number": 13,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Healthy",
+        "value": "Healthy",
+        "accepted": [
+         "Healthy"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 17,
+      "lineRange": [
+       17,
+       20
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 7-13",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Guard rails",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Guard rails were introduced on British roads to improve the (7) ………………… of pedestrians, while ensuring that the movement of (8) …………………. Is not disrupted. Pedestrians are led to access points, and encouraged to cross one (9) ……………… at a time. An unintended effect is to create psychological difficulties in crossing the road, particularly for less (10) …………………….. people. Another result is that some ",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 2,
-   "title": "The woolly mammoth revival project",
+   "title": "Should we try to bring extinct species back to life?",
    "paragraphs": [
-    "Guard rails were introduced on British roads to improve the (7) ………………… of pedestrians, while ensuring that the movement of (8) …………………. Is not disrupted. Pedestrians are led to access points, and encouraged to cross one (9) ……………… at a time. An unintended effect is to create psychological difficulties in crossing the road, particularly for less (10) …………………….. people. Another result is that some people cross the road in a (11) …………………. way. The guard rails separate (12) ………………., and make it more difficult to introduce forms of transport that are (13) …………………",
-    "Should we try to bring extinct species back to life?",
-    "A The passenger pigeon was a legendary species. Flying in vast numbers across North America, with potentially many millions within a single flock, their migration was once one of nature’s great spectacles. Sadly, the passenger pigeon’s existence came to an end on 1 September 1914, when the last living specimen died at Cincinnati Zoo. Geneticist Ben Novak is lead researcher on an ambitious project which now aims to bring the bird back to life through a process known as ‘de-extinction’. The basic premise involves using cloning technology to turn the DNA of extinct animals into a fertilised embryo, which is carried by the nearest relative still in existence – in this case, the abundant band-tailed pigeon – before being born as a living, breathing animal. Passenger pigeons are one of the pioneering species in this field, but they are far from the only ones on which this cutting-edge technology is being trialled.",
-    "B In Australia, the thylacine, more commonly known as the Tasmanian tiger, is another extinct creature which genetic scientists are striving to bring back to life. There is no carnivore now in Tasmania that fills the niche which thylacines once occupied,’ explains Michael Archer of the University of New South Wales. He points out that in the decades since the thylacine went extinct, there has been a spread in a ‘dangerously debilitating’ facial tumour syndrome which threatens the existence of the Tasmanian devils, the island’s other notorious resident. Thylacines would have prevented this spread because they would have killed significant numbers of Tasmanian devils. ‘If that contagious cancer had popped up previously, it would have burned out in whatever region it started. The return of thylacines to Tasmania could help to ensure that devils are never again subjected to risks of this kind.’",
-    "C If extinct species can be brought back to life, can humanity begin to correct the damage it has caused to the natural world over the past few millennia? The idea of de-extinction is that we can reverse this process, bringing species that no longer exist back to life,’ says Beth Shapiro of University of California Santa Cruz’s Genomics Institute. ‘I don’t think that we can do this. There is no way to bring back something that is 100 per cent identical to a species that went extinct a long time ago.’ A more practical approach for long-extinct species is to take the DNA of existing species as a template, ready for the insertion of strands of extinct animal DNA to create something new; a hybrid, based on the living species, but which looks and/or acts like the animal which died out.",
-    "D This complicated process and questionable outcome begs the question: what is the actual point of this technology? ‘For us, the goal has always been replacing the extinct species with a suitable replacement,’ explains Novak. ‘When it comes to breeding, band-tailed pigeons scatter and make maybe one or two nests per hectare, whereas passenger pigeons were very social and would make 10,000 or more nests in one hectare.’ Since the disappearance of this key species, ecosystems in the eastern US have suffered, as the lack of disturbance caused by thousands of passenger pigeons wrecking trees and branches means there has been minimal need for regrowth. This has left forests stagnant and therefore unwelcoming to the plants and animals which evolved to help regenerate the forest after a disturbance. According to Novak, a hybridised band-tailed pigeon, with the added nesting habits of a passenger pigeon, could, in theory, re-establish that forest disturbance, thereby creating a habitat necessary for a great many other native species to thrive.",
-    "E Another popular candidate for this technology is the woolly mammoth. George Church, professor at Harvard Medical School and leader of the Woolly Mammoth Revival Project, has been focusing on cold resistance, the main way in which the extinct woolly mammoth and its nearest living relative, the Asian elephant, differ. By pinpointing which genetic traits made it possible for mammoths to survive the icy climate of the tundra, the project’s goal is to return mammoths, or a mammoth- like species, to the area. ‘My highest priority would be preserving the endangered Asian elephant,’ says Church, ‘expanding their range to the huge ecosystem of the tundra. Necessary adaptations would include smaller ears, thicker hair, and extra insulating fat, all for the purpose of reducing heat loss in the tundra, and all traits found in the now extinct woolly mammoth.’ This repopulation of the tundra and boreal forests of Eurasia and North America with large mammals could also be a useful factor in reducing carbon emissions – elephants punch holes through snow and knock down trees, which encourages grass growth. This grass growth would reduce temperatures, and mitigate emissions from melting permafrost.",
-    "F While the prospect of bringing extinct animals back to life might capture imaginations, it is, of course, far easier to try to save an existing species which is merely threatened with extinction. ‘Many of the technologies that people have in mind when they think about de-extinction can be used as a form of ‘‘genetic rescue”,’ explains Shapiro. She prefers to focus the debate on how this emerging technology could be used to fully understand why various species went extinct in the first place, and therefore how we could use it to make genetic modifications which could prevent mass extinctions in the future. ‘I would also say there’s an incredible moral hazard to not do anything at all,’ she continues. ‘We know that what we are doing today is not enough, and we have to be willing to take some calculated and measured risks.’",
-    "Professor George Church and his team are trying to identify the (18) …………………..which enabled mammoths to live in the tundra. The findings could help preserve the mammoth’s close relative, the endangered Asian elephant. According to Church, introducing Asian elephants to the tundra would involve certain physical adaptations to minimise (19) ……………….. To survive in the tundra, the species would need to have the mammoth-like features of thicker hair, (20) …………………. of a reduced size and more (21) ………………. Repopulating the tundra with mammoths or Asian elephant/mammoth hybrids would also have an impact on the environment, which could help to reduce temperatures and decrease (22) ………………."
+    {
+     "type": "text",
+     "label": "A",
+     "text": "The passenger pigeon was a legendary species. Flying in vast numbers across North America, with potentially many millions within a single flock, their migration was once one of nature’s great spectacles. Sadly, the passenger pigeon’s existence came to an end on 1 September 1914, when the last living specimen died at Cincinnati Zoo. Geneticist Ben Novak is lead researcher on an ambitious project which now aims to bring the bird back to life through a process known as ‘de-extinction’. The basic premise involves using cloning technology to turn the DNA of extinct animals into a fertilised embryo, which is carried by the nearest relative still in existence – in this case, the abundant band-tailed pigeon – before being born as a living, breathing animal. Passenger pigeons are one of the pioneering species in this field, but they are far from the only ones on which this cutting-edge technology is being trialled."
+    },
+    {
+     "type": "text",
+     "label": "B",
+     "text": "In Australia, the thylacine, more commonly known as the Tasmanian tiger, is another extinct creature which genetic scientists are striving to bring back to life. There is no carnivore now in Tasmania that fills the niche which thylacines once occupied,’ explains Michael Archer of the University of New South Wales. He points out that in the decades since the thylacine went extinct, there has been a spread in a ‘dangerously debilitating’ facial tumour syndrome which threatens the existence of the Tasmanian devils, the island’s other notorious resident. Thylacines would have prevented this spread because they would have killed significant numbers of Tasmanian devils. ‘If that contagious cancer had popped up previously, it would have burned out in whatever region it started. The return of thylacines to Tasmania could help to ensure that devils are never again subjected to risks of this kind.’"
+    },
+    {
+     "type": "text",
+     "label": "C",
+     "text": "If extinct species can be brought back to life, can humanity begin to correct the damage it has caused to the natural world over the past few millennia? The idea of de-extinction is that we can reverse this process, bringing species that no longer exist back to life,’ says Beth Shapiro of University of California Santa Cruz’s Genomics Institute. ‘I don’t think that we can do this. There is no way to bring back something that is 100 per cent identical to a species that went extinct a long time ago.’ A more practical approach for long-extinct species is to take the DNA of existing species as a template, ready for the insertion of strands of extinct animal DNA to create something new; a hybrid, based on the living species, but which looks and/or acts like the animal which died out."
+    },
+    {
+     "type": "text",
+     "label": "D",
+     "text": "This complicated process and questionable outcome begs the question: what is the actual point of this technology? ‘For us, the goal has always been replacing the extinct species with a suitable replacement,’ explains Novak. ‘When it comes to breeding, band-tailed pigeons scatter and make maybe one or two nests per hectare, whereas passenger pigeons were very social and would make 10,000 or more nests in one hectare.’ Since the disappearance of this key species, ecosystems in the eastern US have suffered, as the lack of disturbance caused by thousands of passenger pigeons wrecking trees and branches means there has been minimal need for regrowth. This has left forests stagnant and therefore unwelcoming to the plants and animals which evolved to help regenerate the forest after a disturbance. According to Novak, a hybridised band-tailed pigeon, with the added nesting habits of a passenger pigeon, could, in theory, re-establish that forest disturbance, thereby creating a habitat necessary for a great many other native species to thrive."
+    },
+    {
+     "type": "text",
+     "label": "E",
+     "text": "Another popular candidate for this technology is the woolly mammoth. George Church, professor at Harvard Medical School and leader of the Woolly Mammoth Revival Project, has been focusing on cold resistance, the main way in which the extinct woolly mammoth and its nearest living relative, the Asian elephant, differ. By pinpointing which genetic traits made it possible for mammoths to survive the icy climate of the tundra, the project’s goal is to return mammoths, or a mammoth- like species, to the area. ‘My highest priority would be preserving the endangered Asian elephant,’ says Church, ‘expanding their range to the huge ecosystem of the tundra. Necessary adaptations would include smaller ears, thicker hair, and extra insulating fat, all for the purpose of reducing heat loss in the tundra, and all traits found in the now extinct woolly mammoth.’ This repopulation of the tundra and boreal forests of Eurasia and North America with large mammals could also be a useful factor in reducing carbon emissions – elephants punch holes through snow and knock down trees, which encourages grass growth. This grass growth would reduce temperatures, and mitigate emissions from melting permafrost."
+    },
+    {
+     "type": "text",
+     "label": "F",
+     "text": "While the prospect of bringing extinct animals back to life might capture imaginations, it is, of course, far easier to try to save an existing species which is merely threatened with extinction. ‘Many of the technologies that people have in mind when they think about de-extinction can be used as a form of ‘‘genetic rescue”,’ explains Shapiro. She prefers to focus the debate on how this emerging technology could be used to fully understand why various species went extinct in the first place, and therefore how we could use it to make genetic modifications which could prevent mass extinctions in the future. ‘I would also say there’s an incredible moral hazard to not do anything at all,’ she continues. ‘We know that what we are doing today is not enough, and we have to be willing to take some calculated and measured risks.’"
+    }
+   ],
+   "paragraphLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
    ],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g03",
-     "instruction": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17. NB You may use any letter more than once.",
-     "wordLimit": "",
-     "qtype": "matching_information",
+     "groupId": "p2.q14-17",
      "startQ": 14,
      "endQ": 17,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "matching_information",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information? Write the correct letter, A-F, in boxes 14-17. NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "Paragraph A"
+       },
+       {
+        "id": "B",
+        "text": "Paragraph B"
+       },
+       {
+        "id": "C",
+        "text": "Paragraph C"
+       },
+       {
+        "id": "D",
+        "text": "Paragraph D"
+       },
+       {
+        "id": "E",
+        "text": "Paragraph E"
+       },
+       {
+        "id": "F",
+        "text": "Paragraph F"
+       }
+      ]
+     },
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 14,
        "type": "matching_information",
-       "stem": {
-        "plain": "a reference to how further disappearance of multiple species could be avoided",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "F",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "14. a reference to how further disappearance of multiple species could be avoided",
-        "elementPath": "children[21]"
+       "prompt": [
+        "a reference to how further disappearance of multiple species could be avoided"
+       ],
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
        }
       },
       {
        "number": 15,
        "type": "matching_information",
-       "stem": {
-        "plain": "explanation of a way of reproducing an extinct animal using the DNA of only that species",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "15. explanation of a way of reproducing an extinct animal using the DNA of only that species",
-        "elementPath": "children[21]"
+       "prompt": [
+        "explanation of a way of reproducing an extinct animal using the DNA of only that species"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 16,
        "type": "matching_information",
-       "stem": {
-        "plain": "reference to a habitat which has suffered following the extinction of a species",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "16. reference to a habitat which has suffered following the extinction of a species",
-        "elementPath": "children[21]"
+       "prompt": [
+        "reference to a habitat which has suffered following the extinction of a species"
+       ],
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       },
       {
        "number": 17,
        "type": "matching_information",
-       "stem": {
-        "plain": "mention of the exact point at which a particular species became extinct",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "17. mention of the exact point at which a particular species became extinct",
-        "elementPath": "children[21]"
+       "prompt": [
+        "mention of the exact point at which a particular species became extinct"
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[20]",
-      "rawExcerpt": "Questions 14-17\nReading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information?\nWrite the correct letter, A-F, in boxes 14-17. NB You may use any letter more than once."
+      "headerLine": 28,
+      "lineRange": [
+       28,
+       34
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 14-17",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Reading Passage 2 has six paragraphs, A-F. Which paragraph contains the following information?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "Write the correct letter, A-F, in boxes 14-17. NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "14. a reference to how further disappearance of multiple species could be avoided",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "15. explanation of a way of reproducing an extinct animal using the DNA of only that species",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "16. reference to a habitat which has suffered following the extinction of a species",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "17. mention of the exact point at which a particular species became extinct",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q18-22",
+     "startQ": 18,
+     "endQ": 22,
+     "type": "summary_completion",
+     "answerControl": "text",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "optionPool": null,
+     "stimulus": {
+      "title": "The woolly mammoth revival project",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "Professor George Church and his team are trying to identify the ",
+         {
+          "blank": 18
+         },
+         "which enabled mammoths to live in the tundra. The findings could help preserve the mammoth’s close relative, the endangered Asian elephant. According to Church, introducing Asian elephants to the tundra would involve certain physical adaptations to minimise ",
+         {
+          "blank": 19
+         },
+         "To survive in the tundra, the species would need to have the mammoth-like features of thicker hair, ",
+         {
+          "blank": 20
+         },
+         "of a reduced size and more ",
+         {
+          "blank": 21
+         },
+         "Repopulating the tundra with mammoths or Asian elephant/mammoth hybrids would also have an impact on the environment, which could help to reduce temperatures and decrease ",
+         {
+          "blank": 22
+         }
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 18,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Genetic traits",
+        "value": "Genetic traits",
+        "accepted": [
+         "Genetic traits"
+        ]
+       }
+      },
+      {
+       "number": 19,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Heat loss",
+        "value": "Heat loss",
+        "accepted": [
+         "Heat loss"
+        ]
+       }
+      },
+      {
+       "number": 20,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "Ears",
+        "value": "Ears",
+        "accepted": [
+         "Ears"
+        ]
+       }
+      },
+      {
+       "number": 21,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(insulating) fat",
+        "value": "(insulating) fat",
+        "accepted": [
+         "insulating fat",
+         "fat"
+        ]
+       }
+      },
+      {
+       "number": 22,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "(carbon) emissions",
+        "value": "(carbon) emissions",
+        "accepted": [
+         "carbon emissions",
+         "emissions"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 35,
+      "lineRange": [
+       35,
+       38
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 18-22",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The woolly mammoth revival project",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Professor George Church and his team are trying to identify the (18) …………………..which enabled mammoths to live in the tundra. The findings could help preserve the mammoth’s close relative, the endangered Asian elephant. According to Church, introducing Asian elephants to the tundra would involve certain physical adaptations to minimise (19) ……………….. To survive in the tundra, the species would need t",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p2.q23-26",
+     "startQ": 23,
+     "endQ": 26,
+     "type": "matching_features",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Match each statement with the correct person, A, B or C. Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet. NB You may use any letter more than once.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": "List of People",
+      "options": [
+       {
+        "id": "A",
+        "text": "Ben Novak"
+       },
+       {
+        "id": "B",
+        "text": "Michael Archer"
+       },
+       {
+        "id": "C",
+        "text": "Beth Shapiro"
+       }
+      ]
+     },
+     "stimulus": null,
+     "figures": null,
+     "questions": [
+      {
+       "number": 23,
+       "type": "matching_features",
+       "prompt": [
+        "Reintroducing an extinct species to its original habitat could improve the health of a particular species living there."
+       ],
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
+       }
+      },
+      {
+       "number": 24,
+       "type": "matching_features",
+       "prompt": [
+        "It is important to concentrate on the causes of an animal’s extinction."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 25,
+       "type": "matching_features",
+       "prompt": [
+        "A species brought back from extinction could have an important beneficial impact on the vegetation of its habitat."
+       ],
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
+       }
+      },
+      {
+       "number": 26,
+       "type": "matching_features",
+       "prompt": [
+        "Our current efforts at preserving biodiversity are insufficient."
+       ],
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 39,
+      "lineRange": [
+       39,
+       48
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 23-26",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Match each statement with the correct person, A, B or C. Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet. NB You may use any letter more than once.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "23. Reintroducing an extinct species to its original habitat could improve the health of a particular species living there.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "24. It is important to concentrate on the causes of an animal’s extinction.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "25. A species brought back from extinction could have an important beneficial impact on the vegetation of its habitat.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "26. Our current efforts at preserving biodiversity are insufficient.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "List of People",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "A Ben Novak",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Michael Archer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Beth Shapiro",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   },
   {
    "passageNumber": 3,
-   "title": "The benefits of humour",
+   "title": "Having a laugh",
    "paragraphs": [
-    "Humans start developing a sense of humour as early as six weeks old, when babies begin to laugh and smile in response to stimuli. Laughter is universal across all human cultures and even exists in some form in rats, chimps, and bonobos. Like other human emotions and expressions, laughter and humour provide psychological scientists with rich resources for studying human psychology, ranging from the development of language to the neuroscience of social perception.",
-    "Theories focusing on the evolution of laughter point to it as an important adaptation for social communication. Take, for example, the recorded laughter in TV comedy shows. Back in 1950, US sound engineer Charley Douglass hated dealing with the unpredictable laughter of live audiences, so started recording his own ‘laugh tracks’. These were intended to help people at home feel like they were in a social situation, such as a crowded theatre. Douglass even recorded various types of laughter, as well as mixtures of laughter from men, women, and children. In doing so, he picked up on a quality of laughter that is now interesting researchers: a simple ‘haha’ communicates a remarkable amount of socially relevant information.",
-    "In one study conducted in 2016, samples of laughter from pairs of English-speaking students were recorded at the University of California, Santa Cruz. A team made up of more than 30 psychological scientists, anthropologists, and biologists then played these recordings to listeners from 24 diverse societies, from indigenous tribes in New Guinea to city-dwellers in India and Europe. Participants were asked whether they thought the people laughing were friends or strangers. On average, the results were remarkably consistent: worldwide, people’s guesses were correct approximately 60% of the time.",
-    "Researchers have also found that different types of laughter serve as codes to complex human social hierarchies. A team led by Christopher Oveis from the University of California, San Diego, found that high-status individuals had different laughs from low-status individuals, and that strangers’ judgements of an individual’s social status were influenced by the dominant or submissive quality of their laughter. In their study, 48 male college students were randomly assigned to groups of four, with each group composed of two low-status members, who had just joined their college fraternity group, and two high-status members, older students who had been active in the fraternity for at least two years. Laughter was recorded as each student took a turn at being teased by the others, involving the use of mildly insulting nicknames. Analysis revealed that, as expected, high-status individuals produced more dominant laughs and fewer submissive laughs relative to the low-status individuals. Meanwhile, low-status individuals were more likely to change their laughter based on their position of power; that is, the newcomers produced more dominant laughs when they were in the ‘powerful’ role of teasers. Dominant laughter was higher in pitch, louder, and more variable in tone than submissive laughter.",
-    "A random group of volunteers then listened to an equal number of dominant and submissive laughs from both the high- and low-status individuals, and were asked to estimate the social status of the laugher. In line with predictions, laughers producing dominant laughs were perceived to be significantly higher in status than laughers producing submissive laughs. ‘This was particularly true for low-status individuals, who were rated as significantly higher in status when displaying a dominant versus submissive laugh,’ Oveis and colleagues note. ‘Thus, by strategically displaying more dominant laughter when the context allows, low-status individuals may achieve higher status in the eyes of others.’ However, high-status individuals were rated as high-status whether they produced their natural dominant laugh or tried to do a submissive one.",
-    "Another study, conducted by David Cheng and Lu Wang of Australian National University, was based on the hypothesis that humour might provide a respite from tedious situations in the workplace. This ‘mental break’ might facilitate the replenishment of mental resources. To test this theory, the researchers recruited 74 business students, ostensibly for an experiment on perception. First, the students performed a tedious task in which they had to cross out every instance of the letter ‘e’ over two pages of text. The students then were randomly assigned to watch a video clip eliciting either humour, contentment, or neutral feelings. Some watched a clip of the BBC comedy Mr. Bean, others a relaxing scene with dolphins swimming in the ocean, and others a factual video about the management profession.",
-    "The students then completed a task requiring persistence in which they were asked to guess the potential performance of employees based on provided profiles, and were told that making 10 correct assessments in a row would lead to a win. However, the software was programmed such that it was nearly impossible to achieve 10 consecutive correct answers. Participants were allowed to quit the task at any point. Students who had watched the Mr. Bean video ended up spending significantly more time working on the task, making twice as many predictions as the other two groups.",
-    "Cheng and Wang then replicated these results in a second study, during which they had participants complete long multiplication questions by hand. Again, participants who watched the humorous video spent significantly more time working on this tedious task and completed more questions correctly than did the students in either of the other groups.",
-    "‘Although humour has been found to help relieve stress and facilitate social relationships, the traditional view of task performance implies that individuals should avoid things such as humour that may distract them from the accomplishment of task goals,’ Cheng and Wang conclude. ‘We suggest that humour is not only enjoyable but more importantly, energising.’",
-    "In one study at Australian National University, randomly chosen groups of participants were shown one of three videos, each designed to generate a different kind of (32) ……………….. When all participants were then given a deliberately frustrating task to do, it was found that those who had watched the (33) …………………video persisted with the task for longer and tried harder to accomplish the task than either of the other two groups. A second study in which participants were asked to perform a particularly (34) ……………….. task produced similar results. According to researchers David Cheng and Lu Wang, these findings suggest that humour not only reduces (35) ………………………. and helps build social connections but it may also have a (36) …………….. effect on the body and mind.",
-    "A laughter\nB relaxing\nC boring\nD anxiety\nE stimulating\nF emotion\nG enjoyment\nH amusing"
+    {
+     "type": "text",
+     "text": "Humans start developing a sense of humour as early as six weeks old, when babies begin to laugh and smile in response to stimuli. Laughter is universal across all human cultures and even exists in some form in rats, chimps, and bonobos. Like other human emotions and expressions, laughter and humour provide psychological scientists with rich resources for studying human psychology, ranging from the development of language to the neuroscience of social perception."
+    },
+    {
+     "type": "text",
+     "text": "Theories focusing on the evolution of laughter point to it as an important adaptation for social communication. Take, for example, the recorded laughter in TV comedy shows. Back in 1950, US sound engineer Charley Douglass hated dealing with the unpredictable laughter of live audiences, so started recording his own ‘laugh tracks’. These were intended to help people at home feel like they were in a social situation, such as a crowded theatre. Douglass even recorded various types of laughter, as well as mixtures of laughter from men, women, and children. In doing so, he picked up on a quality of laughter that is now interesting researchers: a simple ‘haha’ communicates a remarkable amount of socially relevant information."
+    },
+    {
+     "type": "text",
+     "text": "In one study conducted in 2016, samples of laughter from pairs of English-speaking students were recorded at the University of California, Santa Cruz. A team made up of more than 30 psychological scientists, anthropologists, and biologists then played these recordings to listeners from 24 diverse societies, from indigenous tribes in New Guinea to city-dwellers in India and Europe. Participants were asked whether they thought the people laughing were friends or strangers. On average, the results were remarkably consistent: worldwide, people’s guesses were correct approximately 60% of the time."
+    },
+    {
+     "type": "text",
+     "text": "Researchers have also found that different types of laughter serve as codes to complex human social hierarchies. A team led by Christopher Oveis from the University of California, San Diego, found that high-status individuals had different laughs from low-status individuals, and that strangers’ judgements of an individual’s social status were influenced by the dominant or submissive quality of their laughter. In their study, 48 male college students were randomly assigned to groups of four, with each group composed of two low-status members, who had just joined their college fraternity group, and two high-status members, older students who had been active in the fraternity for at least two years. Laughter was recorded as each student took a turn at being teased by the others, involving the use of mildly insulting nicknames. Analysis revealed that, as expected, high-status individuals produced more dominant laughs and fewer submissive laughs relative to the low-status individuals. Meanwhile, low-status individuals were more likely to change their laughter based on their position of power; that is, the newcomers produced more dominant laughs when they were in the ‘powerful’ role of teasers. Dominant laughter was higher in pitch, louder, and more variable in tone than submissive laughter."
+    },
+    {
+     "type": "text",
+     "text": "A random group of volunteers then listened to an equal number of dominant and submissive laughs from both the high- and low-status individuals, and were asked to estimate the social status of the laugher. In line with predictions, laughers producing dominant laughs were perceived to be significantly higher in status than laughers producing submissive laughs. ‘This was particularly true for low-status individuals, who were rated as significantly higher in status when displaying a dominant versus submissive laugh,’ Oveis and colleagues note. ‘Thus, by strategically displaying more dominant laughter when the context allows, low-status individuals may achieve higher status in the eyes of others.’ However, high-status individuals were rated as high-status whether they produced their natural dominant laugh or tried to do a submissive one."
+    },
+    {
+     "type": "text",
+     "text": "Another study, conducted by David Cheng and Lu Wang of Australian National University, was based on the hypothesis that humour might provide a respite from tedious situations in the workplace. This ‘mental break’ might facilitate the replenishment of mental resources. To test this theory, the researchers recruited 74 business students, ostensibly for an experiment on perception. First, the students performed a tedious task in which they had to cross out every instance of the letter ‘e’ over two pages of text. The students then were randomly assigned to watch a video clip eliciting either humour, contentment, or neutral feelings. Some watched a clip of the BBC comedy Mr. Bean, others a relaxing scene with dolphins swimming in the ocean, and others a factual video about the management profession."
+    },
+    {
+     "type": "text",
+     "text": "The students then completed a task requiring persistence in which they were asked to guess the potential performance of employees based on provided profiles, and were told that making 10 correct assessments in a row would lead to a win. However, the software was programmed such that it was nearly impossible to achieve 10 consecutive correct answers. Participants were allowed to quit the task at any point. Students who had watched the Mr. Bean video ended up spending significantly more time working on the task, making twice as many predictions as the other two groups."
+    },
+    {
+     "type": "text",
+     "text": "Cheng and Wang then replicated these results in a second study, during which they had participants complete long multiplication questions by hand. Again, participants who watched the humorous video spent significantly more time working on this tedious task and completed more questions correctly than did the students in either of the other groups."
+    },
+    {
+     "type": "text",
+     "text": "‘Although humour has been found to help relieve stress and facilitate social relationships, the traditional view of task performance implies that individuals should avoid things such as humour that may distract them from the accomplishment of task goals,’ Cheng and Wang conclude. ‘We suggest that humour is not only enjoyable but more importantly, energising.’"
+    }
    ],
+   "paragraphLabels": [],
    "assets": [],
+   "passageReasonCodes": null,
    "questionGroups": [
     {
-     "groupId": "g06",
-     "instruction": "Choose the correct letter, A, B, C or D.",
-     "wordLimit": "",
-     "qtype": "mcq_single",
+     "groupId": "p3.q27-31",
      "startQ": 27,
      "endQ": 31,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "mcq_single",
+     "answerControl": "single_choice",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 27,
        "type": "mcq_single",
-       "stem": {
-        "plain": "When referring to laughter in the first paragraph, the writer emphasises",
-        "segments": null
-       },
+       "prompt": [
+        "When referring to laughter in the first paragraph, the writer emphasises"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "its impact on language."
+        },
+        {
+         "id": "B",
+         "text": "its function in human culture."
+        },
+        {
+         "id": "C",
+         "text": "its value to scientific research."
+        },
+        {
+         "id": "D",
+         "text": "its universality in animal societies."
         }
        ],
-       "correctAnswer": "C",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "27. When referring to laughter in the first paragraph, the writer emphasises",
-        "elementPath": "children[39]"
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
        }
       },
       {
        "number": 28,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What does the writer suggest about Charley Douglass?",
-        "segments": null
-       },
+       "prompt": [
+        "What does the writer suggest about Charley Douglass?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "He understood the importance of enjoying humour in a group setting."
+        },
+        {
+         "id": "B",
+         "text": "He believed that TV viewers at home needed to be told when to laugh."
+        },
+        {
+         "id": "C",
+         "text": "He wanted his shows to appeal to audiences across the social spectrum."
+        },
+        {
+         "id": "D",
+         "text": "He preferred shows where audiences were present in the recording studio."
         }
        ],
-       "correctAnswer": "A",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "28. What does the writer suggest about Charley Douglass?",
-        "elementPath": "children[40]"
+       "answer": {
+        "raw": "A",
+        "value": "A",
+        "accepted": [
+         "A"
+        ]
        }
       },
       {
        "number": 29,
        "type": "mcq_single",
-       "stem": {
-        "plain": "What makes the Santa Cruz study particularly significant?",
-        "segments": null
-       },
+       "prompt": [
+        "What makes the Santa Cruz study particularly significant?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "the various different types of laughter that were studied"
+        },
+        {
+         "id": "B",
+         "text": "the similar results produced by a wide range of cultures"
+        },
+        {
+         "id": "C",
+         "text": "the number of different academic disciplines involved"
+        },
+        {
+         "id": "D",
+         "text": "the many kinds of people whose laughter was recorded"
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "29. What makes the Santa Cruz study particularly significant?",
-        "elementPath": "children[41]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 30,
        "type": "mcq_single",
-       "stem": {
-        "plain": "Which of the following happened in the San Diego study?",
-        "segments": null
-       },
+       "prompt": [
+        "Which of the following happened in the San Diego study?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "Some participants became very upset."
+        },
+        {
+         "id": "B",
+         "text": "Participants exchanged roles."
+        },
+        {
+         "id": "C",
+         "text": "Participants who had not met before became friends."
+        },
+        {
+         "id": "D",
+         "text": "Some participants were unable to laugh."
         }
        ],
-       "correctAnswer": "B",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "30. Which of the following happened in the San Diego study?",
-        "elementPath": "children[42]"
+       "answer": {
+        "raw": "B",
+        "value": "B",
+        "accepted": [
+         "B"
+        ]
        }
       },
       {
        "number": 31,
        "type": "mcq_single",
-       "stem": {
-        "plain": "In the fifth paragraph, what did the results of the San Diego study suggest?",
-        "segments": null
-       },
+       "prompt": [
+        "In the fifth paragraph, what did the results of the San Diego study suggest?"
+       ],
        "options": [
         {
-         "letter": "A",
+         "id": "A",
          "text": "It is clear whether a dominant laugh is produced by a high- or low-status person."
+        },
+        {
+         "id": "B",
+         "text": "Low-status individuals in a position of power will still produce submissive laughs."
+        },
+        {
+         "id": "C",
+         "text": "The submissive laughs of low- and high-status individuals are surprisingly similar."
+        },
+        {
+         "id": "D",
+         "text": "High-status individuals can always be identified by their way of laughing."
         }
        ],
-       "correctAnswer": "D",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "31. In the fifth paragraph, what did the results of the San Diego study suggest?",
-        "elementPath": "children[43]"
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[38]",
-      "rawExcerpt": "Questions 27-31\nChoose the correct letter, A, B, C or D."
+      "headerLine": 59,
+      "lineRange": [
+       59,
+       85
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 27-31",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Choose the correct letter, A, B, C or D.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "27. When referring to laughter in the first paragraph, the writer emphasises",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A its impact on language.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B its function in human culture.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C its value to scientific research.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D its universality in animal societies.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "28. What does the writer suggest about Charley Douglass?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A He understood the importance of enjoying humour in a group setting.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B He believed that TV viewers at home needed to be told when to laugh.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C He wanted his shows to appeal to audiences across the social spectrum.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D He preferred shows where audiences were present in the recording studio.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "29. What makes the Santa Cruz study particularly significant?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A the various different types of laughter that were studied",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B the similar results produced by a wide range of cultures",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C the number of different academic disciplines involved",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D the many kinds of people whose laughter was recorded",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "30. Which of the following happened in the San Diego study?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A Some participants became very upset.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Participants exchanged roles.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C Participants who had not met before became friends.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D Some participants were unable to laugh.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "31. In the fifth paragraph, what did the results of the San Diego study suggest?",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A It is clear whether a dominant laugh is produced by a high- or low-status person.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B Low-status individuals in a position of power will still produce submissive laughs.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C The submissive laughs of low- and high-status individuals are surprisingly similar.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D High-status individuals can always be identified by their way of laughing.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     },
     {
-     "groupId": "g08",
-     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 37-40 write YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the claims of the writer\nNOT GIVEN if it is impossible to say what the writer thinks about this",
-     "wordLimit": "",
-     "qtype": "tfng",
+     "groupId": "p3.q32-36",
+     "startQ": 32,
+     "endQ": 36,
+     "type": "summary_completion",
+     "answerControl": "pool_select",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Complete the summary using the list of words, A-H, below.",
+     "legend": null,
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": {
+      "title": null,
+      "options": [
+       {
+        "id": "A",
+        "text": "laughter"
+       },
+       {
+        "id": "B",
+        "text": "relaxing"
+       },
+       {
+        "id": "C",
+        "text": "boring"
+       },
+       {
+        "id": "D",
+        "text": "anxiety"
+       },
+       {
+        "id": "E",
+        "text": "stimulating"
+       },
+       {
+        "id": "F",
+        "text": "emotion"
+       },
+       {
+        "id": "G",
+        "text": "enjoyment"
+       },
+       {
+        "id": "H",
+        "text": "amusing"
+       }
+      ]
+     },
+     "stimulus": {
+      "title": "The benefits of humour",
+      "blocks": [
+       {
+        "type": "text",
+        "segments": [
+         "In one study at Australian National University, randomly chosen groups of participants were shown one of three videos, each designed to generate a different kind of ",
+         {
+          "blank": 32
+         },
+         "When all participants were then given a deliberately frustrating task to do, it was found that those who had watched the ",
+         {
+          "blank": 33
+         },
+         "video persisted with the task for longer and tried harder to accomplish the task than either of the other two groups. A second study in which participants were asked to perform a particularly ",
+         {
+          "blank": 34
+         },
+         "task produced similar results. According to researchers David Cheng and Lu Wang, these findings suggest that humour not only reduces ",
+         {
+          "blank": 35
+         },
+         "and helps build social connections but it may also have a ",
+         {
+          "blank": 36
+         },
+         "effect on the body and mind."
+        ]
+       }
+      ]
+     },
+     "figures": null,
+     "questions": [
+      {
+       "number": 32,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "F",
+        "value": "F",
+        "accepted": [
+         "F"
+        ]
+       }
+      },
+      {
+       "number": 33,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "H",
+        "value": "H",
+        "accepted": [
+         "H"
+        ]
+       }
+      },
+      {
+       "number": 34,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "C",
+        "value": "C",
+        "accepted": [
+         "C"
+        ]
+       }
+      },
+      {
+       "number": 35,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "D",
+        "value": "D",
+        "accepted": [
+         "D"
+        ]
+       }
+      },
+      {
+       "number": 36,
+       "type": "summary_completion",
+       "prompt": null,
+       "blankInStimulus": true,
+       "labelInFigure": false,
+       "answer": {
+        "raw": "E",
+        "value": "E",
+        "accepted": [
+         "E"
+        ]
+       }
+      }
+     ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
+     "provenance": {
+      "headerLine": 86,
+      "lineRange": [
+       86,
+       97
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 32-36",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Complete the summary using the list of words, A-H, below.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "The benefits of humour",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "In one study at Australian National University, randomly chosen groups of participants were shown one of three videos, each designed to generate a different kind of (32) ……………….. When all participants were then given a deliberately frustrating task to do, it was found that those who had watched the (33) …………………video persisted with the task for longer and tried harder to accomplish the task than ei",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "A laughter",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "B relaxing",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "C boring",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "D anxiety",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "E stimulating",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "F emotion",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "G enjoyment",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "H amusing",
+        "kind": "text",
+        "bold": false
+       }
+      ]
+     }
+    },
+    {
+     "groupId": "p3.q37-40",
      "startQ": 37,
      "endQ": 40,
-     "stimulusSegments": null,
-     "sharedOptions": null,
+     "type": "ynng",
+     "answerControl": "ynng",
+     "selectCount": null,
+     "answerSet": null,
+     "answerSetNotation": null,
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 37-40 write",
+     "legend": [
+      "YES if the statement agrees with the claims of the writer",
+      "NO if the statement contradicts the claims of the writer",
+      "NOT GIVEN if it is impossible to say what the writer thinks about this"
+     ],
+     "notes": null,
+     "wordLimit": null,
+     "optionPool": null,
+     "stimulus": null,
      "figures": null,
      "questions": [
       {
        "number": 37,
-       "type": "tfng",
-       "stem": {
-        "plain": "Participants in the Santa Cruz study were more accurate at identifying the laughs of friends than those of strangers.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Not given",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "37. Participants in the Santa Cruz study were more accurate at identifying the laughs of friends than those of strangers.",
-        "elementPath": "children[50]"
+       "type": "ynng",
+       "prompt": [
+        "Participants in the Santa Cruz study were more accurate at identifying the laughs of friends than those of strangers."
+       ],
+       "answer": {
+        "raw": "Not given",
+        "value": "NOT GIVEN",
+        "accepted": [
+         "NOT GIVEN"
+        ]
        }
       },
       {
        "number": 38,
-       "type": "tfng",
-       "stem": {
-        "plain": "The researchers in the San Diego study were correct in their predictions regarding the behaviour of the high-status individuals.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "Yes",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "38. The researchers in the San Diego study were correct in their predictions regarding the behaviour of the high-status individuals.",
-        "elementPath": "children[50]"
+       "type": "ynng",
+       "prompt": [
+        "The researchers in the San Diego study were correct in their predictions regarding the behaviour of the high-status individuals."
+       ],
+       "answer": {
+        "raw": "Yes",
+        "value": "YES",
+        "accepted": [
+         "YES"
+        ]
        }
       },
       {
        "number": 39,
-       "type": "tfng",
-       "stem": {
-        "plain": "The participants in the Australian National University study were given a fixed amount of time to complete the task focusing on employee profiles.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "No",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "39. The participants in the Australian National University study were given a fixed amount of time to complete the task focusing on employee profiles.",
-        "elementPath": "children[50]"
+       "type": "ynng",
+       "prompt": [
+        "The participants in the Australian National University study were given a fixed amount of time to complete the task focusing on employee profiles."
+       ],
+       "answer": {
+        "raw": "No",
+        "value": "NO",
+        "accepted": [
+         "NO"
+        ]
        }
       },
       {
        "number": 40,
-       "type": "tfng",
-       "stem": {
-        "plain": "Cheng and Wang’s conclusions were in line with established notions regarding task performance.",
-        "segments": null
-       },
-       "options": null,
-       "correctAnswer": "No",
-       "answerFound": true,
-       "provenance": {
-        "rawExcerpt": "40. Cheng and Wang’s conclusions were in line with established notions regarding task performance.",
-        "elementPath": "children[50]"
+       "type": "ynng",
+       "prompt": [
+        "Cheng and Wang’s conclusions were in line with established notions regarding task performance."
+       ],
+       "answer": {
+        "raw": "No",
+        "value": "NO",
+        "accepted": [
+         "NO"
+        ]
        }
       }
      ],
+     "status": "production",
+     "reasonCodes": [],
+     "warnings": null,
      "provenance": {
-      "elementPath": "children[48]",
-      "rawExcerpt": "Questions 37-40\nDo the following statements agree with the claims of the writer in Reading Passage 3? In boxes 37-40 write YES if the statement agrees with the claims of the writer\nNO if the statement contradicts the claims of the writer\nNO"
+      "headerLine": 98,
+      "lineRange": [
+       98,
+       106
+      ],
+      "sourceLines": [
+       {
+        "text": "Questions 37-40",
+        "kind": "text",
+        "bold": true
+       },
+       {
+        "text": "Do the following statements agree with the claims of the writer in Reading Passage 3? In boxes 37-40 write",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "YES if the statement agrees with the claims of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NO if the statement contradicts the claims of the writer",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "NOT GIVEN if it is impossible to say what the writer thinks about this",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "37. Participants in the Santa Cruz study were more accurate at identifying the laughs of friends than those of strangers.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "38. The researchers in the San Diego study were correct in their predictions regarding the behaviour of the high-status individuals.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "39. The participants in the Australian National University study were given a fixed amount of time to complete the task focusing on employee profiles.",
+        "kind": "text",
+        "bold": false
+       },
+       {
+        "text": "40. Cheng and Wang’s conclusions were in line with established notions regarding task performance.",
+        "kind": "text",
+        "bold": false
+       }
+      ]
      }
     }
    ]
   }
  ],
- "answerKey": {
-  "keyStart": 1,
-  "keyEnd": 40,
-  "trailingEmpty": false,
-  "error": null,
-  "keyFormat": "numbered",
-  "items": [
-   {
-    "number": 1,
-    "value": "B"
-   },
-   {
-    "number": 2,
-    "value": "C"
-   },
-   {
-    "number": 3,
-    "value": "F"
-   },
-   {
-    "number": 4,
-    "value": "D"
-   },
-   {
-    "number": 5,
-    "value": "E"
-   },
-   {
-    "number": 6,
-    "value": "A"
-   },
-   {
-    "number": 7,
-    "value": "Safety"
-   },
-   {
-    "number": 8,
-    "value": "Traffic"
-   },
-   {
-    "number": 9,
-    "value": "Carriageway"
-   },
-   {
-    "number": 10,
-    "value": "Mobile"
-   },
-   {
-    "number": 11,
-    "value": "Dangerous"
-   },
-   {
-    "number": 12,
-    "value": "Communities"
-   },
-   {
-    "number": 13,
-    "value": "Healthy"
-   },
-   {
-    "number": 14,
-    "value": "F"
-   },
-   {
-    "number": 15,
-    "value": "A"
-   },
-   {
-    "number": 16,
-    "value": "D"
-   },
-   {
-    "number": 17,
-    "value": "A"
-   },
-   {
-    "number": 18,
-    "value": "Genetic traits"
-   },
-   {
-    "number": 19,
-    "value": "Heat loss"
-   },
-   {
-    "number": 20,
-    "value": "Ears"
-   },
-   {
-    "number": 21,
-    "value": "(insulating) fat"
-   },
-   {
-    "number": 22,
-    "value": "(carbon) emissions"
-   },
-   {
-    "number": 23,
-    "value": "B"
-   },
-   {
-    "number": 24,
-    "value": "C"
-   },
-   {
-    "number": 25,
-    "value": "A"
-   },
-   {
-    "number": 26,
-    "value": "C"
-   },
-   {
-    "number": 27,
-    "value": "C"
-   },
-   {
-    "number": 28,
-    "value": "A"
-   },
-   {
-    "number": 29,
-    "value": "B"
-   },
-   {
-    "number": 30,
-    "value": "B"
-   },
-   {
-    "number": 31,
-    "value": "D"
-   },
-   {
-    "number": 32,
-    "value": "F"
-   },
-   {
-    "number": 33,
-    "value": "H"
-   },
-   {
-    "number": 34,
-    "value": "C"
-   },
-   {
-    "number": 35,
-    "value": "D"
-   },
-   {
-    "number": 36,
-    "value": "E"
-   },
-   {
-    "number": 37,
-    "value": "Not given"
-   },
-   {
-    "number": 38,
-    "value": "Yes"
-   },
-   {
-    "number": 39,
-    "value": "No"
-   },
-   {
-    "number": 40,
-    "value": "No"
-   }
-  ]
- },
- "quarantinedUnits": [
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     7,
-     13
-    ],
-    "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     18,
-     22
-    ],
-    "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "QUESTION_GROUP_AMBIGUOUS",
-   "evidence": {
-    "group": "g05",
-    "range": [
-     23,
-     26
-    ],
-    "instruction": "Match each statement with the correct person, A, B or C. Write the correct letter, A, B or C, in boxes 23-26 on your answer sheet. NB You ma"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     32,
-     36
-    ],
-    "instruction": "Complete the summary using the list of words, A-H, below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 19,
-    "answers": 40
-   }
-  }
+ "testReasonCodes": [],
+ "warnings": [],
+ "junkLinesDropped": 0,
+ "productionQuestionNumbers": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40
  ],
- "validationWarnings": [],
- "status": "flagged",
- "segmentCount": 5,
- "contentFingerprint": "9b4495b6f5a57dc75b663038cba6b66307d5e7c12a268f37f7ac7be226bed698"
+ "metrics": {
+  "passages": 3,
+  "groups": 8,
+  "questionsInSource": 40,
+  "productionQuestions": 40,
+  "answerKeyItems": 40
+ },
+ "contentFingerprint": "b2fc8f79abe04d6df68fe28f3720de5fa1bcbd64c83e3e6246f6a9eae635e29b"
 }

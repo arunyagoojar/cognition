@@ -1,73 +1,23 @@
 {
  "slug": "ielts-reading-test-51",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     6,
-     10
-    ],
-    "instruction": "Choose the correct letter, A, B, C or D."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     15,
-     18
-    ],
-    "instruction": "Choose the correct letter A, B, C or D."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     25,
-     27
-    ],
-    "instruction": "Complete the sentences below with words taken from Reading Passage 2. Use NO MORE THAN THREE WORDS for each answer. 25 T"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     28,
-     32
-    ],
-    "instruction": "Look at the following list of places (Questions 28-32) from paragraphs A-E of reading passage 3 and their locations on t"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     39,
-     39
-    ],
-    "instruction": "and 40 Choose the correct letter, A, B, C or D."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 21,
-    "answers": 40
-   }
+   "groupId": "p3.q28-32",
+   "range": [
+    28,
+    32
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_INVALID_FOR_TYPE",
+    "MEDIA_NOT_IN_R2",
+    "MISSING_QUESTION"
+   ],
+   "instruction": "Look at the following list of places (Questions 28-32) from paragraphs A-E of reading passage 3 and their locations on the map. Match each place with its location on the map."
   }
  ]
 }

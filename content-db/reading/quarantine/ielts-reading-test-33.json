@@ -1,49 +1,48 @@
 {
  "slug": "ielts-reading-test-33",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     6,
-     9
-    ],
-    "instruction": "Complete the labels on Diagram below. Choose your answers from the box below the diagram and write them in boxes 6-9 on "
-   }
+   "groupId": "p1.q06-09",
+   "range": [
+    6,
+    9
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "MEDIA_NOT_IN_R2",
+    "MISSING_OPTION_POOL"
+   ],
+   "instruction": "Complete the labels on Diagram below. Choose your answers from the box below the diagram and write them in boxes 6-9 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "Reading passage 2 has six paragraphs A-F. Choose the most suitable headings for paragraphs B-F from the list of headings"
-   }
+   "groupId": "p1.q10-13",
+   "range": [
+    10,
+    13
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the summary below. Choose your answers from the options given below. NB there are more words than spares so you will not use them all."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     19,
-     22
-    ],
-    "instruction": "Using NO MORE THAN THREE WORDS from the passage answer the following questions."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 14,
-    "answers": 40
-   }
+   "groupId": "p2.q19-22",
+   "range": [
+    19,
+    22
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Using NO MORE THAN THREE WORDS from the passage answer the following questions."
   }
  ]
 }

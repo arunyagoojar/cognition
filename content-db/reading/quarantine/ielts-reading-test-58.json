@@ -1,85 +1,131 @@
 {
  "slug": "ielts-reading-test-58",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "EXTRACTION_ARTIFACT",
+  "PASSAGE_BOUNDARY_AMBIGUOUS"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g01",
-    "range": [
-     1,
-     3
-    ],
-    "instruction": "You should spend about 20 minutes on questions 1-13, which are based on Reading Passage 1.\n\nComplete the sentences below"
-   }
+   "groupId": "p1.q01-03",
+   "range": [
+    1,
+    3
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "EMPTY_QUESTION",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION"
+   ],
+   "instruction": ""
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     13,
-     13
-    ],
-    "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in box 13 on your answer sheet."
-   }
+   "groupId": "p2.q08-12",
+   "range": [
+    8,
+    12
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Do the following statements agree with the information given in the Reading Passage 1. In boxes 8-12 on your answer sheet, write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     18
-    ],
-    "instruction": "You should spend about 20 minutes on questions 14-26, which are based on Reading Passage 2.\n\nLook at the following state"
-   }
+   "groupId": "p2.q13-13",
+   "range": [
+    13,
+    13
+   ],
+   "type": "mcq_single",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Choose the correct letter A, B, C or D. Write the correct letter in box 13 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g06",
-    "range": [
-     23,
-     26
-    ],
-    "instruction": "Complete each sentence with the correct ending A-G below.\n\nWrite the correct letter A-G in boxes 23-26 on your answer sh"
-   }
+   "groupId": "p3.q14-18",
+   "range": [
+    14,
+    18
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_INSTRUCTION",
+    "MISSING_QUESTION"
+   ],
+   "instruction": ""
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "Reading Passage 3 has seven paragraphs A-G. Choose the correct heading for paragraphs B-G from the list of headings belo"
-   }
+   "groupId": "p4.q19-22",
+   "range": [
+    19,
+    22
+   ],
+   "type": "matching_information",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 2 has ten paragraphs A-J. Which paragraph contains the following information? Write the correct letter A-J in boxes 19-22 on your answer sheet."
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g09",
-    "range": [
-     37,
-     40
-    ],
-    "instruction": "Classify the following characteristics as relating to A Social Science\n\nB Medical Science\n\nC Both Social Science and Med"
-   }
+   "groupId": "p4.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "sentence_endings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete each sentence with the correct ending A-G below. Write the correct letter A-G in boxes 23-26 on your answer sheet."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 13,
-    "answers": 40
-   }
+   "unit": "group",
+   "groupId": "p5.q27-32",
+   "range": [
+    27,
+    32
+   ],
+   "type": "matching_headings",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Reading Passage 3 has seven paragraphs A-G. Choose the correct heading for paragraphs B-G from the list of headings below. Write the correct number i-x in boxes 27-32 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p5.q33-36",
+   "range": [
+    33,
+    36
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer."
+  },
+  {
+   "unit": "group",
+   "groupId": "p5.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "matching_features",
+   "reasonCodes": [
+    "TEST_QUARANTINED"
+   ],
+   "instruction": "Classify the following characteristics as relating to Write the correct letter A, B, C or D in boxes 37-40 on your answer sheet."
   }
  ]
 }

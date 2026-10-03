@@ -1,10 +1,48 @@
 {
  "slug": "ielts-reading-test-16",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p1.q04-08",
+   "range": [
+    4,
+    8
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "Complete the flow-chart. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 4-8 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p1.q09-10",
+   "range": [
+    9,
+    10
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Write your answers in boxes 9 and 10 on your answer sheet."
+  },
+  {
+   "unit": "group",
+   "groupId": "p2.q21-23",
+   "range": [
+    21,
+    23
+   ],
+   "type": "diagram_completion",
+   "reasonCodes": [
+    "MEDIA_NOT_IN_R2"
+   ],
+   "instruction": "The diagram below shows the areas of the brain activated by jokes. Label the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer."
   }
  ]
 }

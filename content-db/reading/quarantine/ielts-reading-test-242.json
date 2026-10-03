@@ -1,49 +1,23 @@
 {
  "slug": "ielts-reading-test-242",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     8,
-     10
-    ],
-    "instruction": "Choose the correct letters in the following options. Write your answers in boxes 8-10 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     11,
-     13
-    ],
-    "instruction": "Choose the correct letters in the following options. Write your answers in boxes 11-13 on your answer sheet."
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     25,
-     26
-    ],
-    "instruction": "Choose two letters from the A-E. Write your answers in boxes 25-26 on your answer sheet Which TWO of the following state"
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 26,
-    "answers": 40
-   }
+   "groupId": "p1.q08-10",
+   "range": [
+    8,
+    10
+   ],
+   "type": "unknown",
+   "reasonCodes": [
+    "AMBIGUOUS_STRUCTURE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_QUESTION",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letters in the following options. Write your answers in boxes 8-10 on your answer sheet."
   }
  ]
 }

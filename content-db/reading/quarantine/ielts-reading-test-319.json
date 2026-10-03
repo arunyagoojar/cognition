@@ -1,166 +1,136 @@
 {
  "slug": "ielts-reading-test-319",
+ "status": "quarantined",
+ "testReasonCodes": [
+  "ANSWER_KEY_MISSING"
+ ],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     11,
-     13
-    ],
-    "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 11-13 on yo"
-   }
+   "groupId": "p1.q01-07",
+   "range": [
+    1,
+    7
+   ],
+   "type": "tfng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the information given in reading passage? In boxes 1-7 on your answer sheet, write"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g04",
-    "range": [
-     14,
-     19
-    ],
-    "instruction": "Complete the summary using the list of words, A-J, below. Write the correct letter, A-J, in boxes 14-19 on your answer s"
-   }
+   "groupId": "p1.q08-10",
+   "range": [
+    8,
+    10
+   ],
+   "type": "flow_chart_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer. Write your answers in boxes 8-10 on your answer sheet. Generating biogas for domestic use in Dunga"
   },
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "Complete the summary using the list of words, A-J, below. Write the correct letter, A-J, in boxes 27-32 on your answer s"
-   }
+   "groupId": "p1.q11-13",
+   "range": [
+    11,
+    13
+   ],
+   "type": "note_completion",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer. Write your answers in boxes 11-13 on your answer sheet. Benefits for the women in the village of cooking with biogas"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q1 in g01"
+   "unit": "group",
+   "groupId": "p2.q14-19",
+   "range": [
+    14,
+    19
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words, A-J, below. Write the correct letter, A-J, in boxes 14-19 on your answer sheet."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q2 in g01"
+   "unit": "group",
+   "groupId": "p2.q20-23",
+   "range": [
+    20,
+    23
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the claims of the writer in reading passage? In boxes 20-23 on your answer sheet, write"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q3 in g01"
+   "unit": "group",
+   "groupId": "p2.q24-26",
+   "range": [
+    24,
+    26
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D."
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q4 in g01"
+   "unit": "group",
+   "groupId": "p3.q27-32",
+   "range": [
+    27,
+    32
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words, A-J, below. Write the correct letter, A-J, in boxes 27-32 on your answer sheet"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q5 in g01"
+   "unit": "group",
+   "groupId": "p3.q33-36",
+   "range": [
+    33,
+    36
+   ],
+   "type": "ynng",
+   "reasonCodes": [
+    "MISSING_ANSWER"
+   ],
+   "instruction": "Do the following statements agree with the claims of the writer in reading passage? In boxes 33-36 on your answer sheet, write"
   },
   {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q6 in g01"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q7 in g01"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q8 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q9 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q10 in g02"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q20 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q21 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q22 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q23 in g05"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q24 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q25 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q26 in g06"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q33 in g08"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q34 in g08"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q35 in g08"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q36 in g08"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q37 in g09"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q38 in g09"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q39 in g09"
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_MISSING",
-   "evidence": "q40 in g09"
+   "unit": "group",
+   "groupId": "p3.q37-40",
+   "range": [
+    37,
+    40
+   ],
+   "type": "short_answer",
+   "reasonCodes": [
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_ANSWER",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Choose the correct letter, A, B, C or D,"
   }
  ]
 }

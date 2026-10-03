@@ -1,2562 +1,2985 @@
 {
- "pipelineVersion": "production-reading-1.0.0 (post-validation)",
- "tests": [
+ "pipelineVersion": "production-reading-2.0.0",
+ "sourcePages": 319,
+ "tests": {
+  "practice_only": 195,
+  "production": 109,
+  "quarantined": 15
+ },
+ "fullMockEligible": 109,
+ "groups": {
+  "production": 2273,
+  "quarantined": 459
+ },
+ "questions": {
+  "production": 10556,
+  "quarantined": 2119
+ },
+ "productionQuestionsByType": {
+  "tfng": 1759,
+  "summary_completion": 1291,
+  "matching_features": 1261,
+  "matching_information": 1168,
+  "mcq_single": 1155,
+  "ynng": 934,
+  "matching_headings": 900,
+  "sentence_completion": 535,
+  "note_completion": 340,
+  "mcq_multi": 319,
+  "sentence_endings": 263,
+  "short_answer": 262,
+  "table_completion": 260,
+  "flow_chart_completion": 100,
+  "diagram_completion": 9
+ },
+ "quarantinedQuestionsByReason": {
+  "ANSWER_NOT_IN_PASSAGE": 833,
+  "MEDIA_NOT_IN_R2": 363,
+  "TEST_QUARANTINED": 298,
+  "ORPHAN_OPTIONS": 270,
+  "ANSWER_INVALID_FOR_TYPE": 242,
+  "MISSING_QUESTION": 222,
+  "MISSING_ANSWER": 214,
+  "ANSWER_TYPE_MISMATCH": 208,
+  "MISSING_OPTION_POOL": 151,
+  "AMBIGUOUS_STRUCTURE": 140,
+  "MALFORMED_BLANK": 73,
+  "INCOMPLETE_OPTIONS": 64,
+  "MISSING_INSTRUCTION": 54,
+  "ANSWER_EXCEEDS_WORD_LIMIT": 53,
+  "EMPTY_QUESTION": 30,
+  "NUMBERING_MISMATCH": 17,
+  "MEDIA_MISSING": 15,
+  "DUPLICATE_QUESTION": 13
+ },
+ "quarantinedGroupsByReason": {
+  "ANSWER_NOT_IN_PASSAGE": 171,
+  "MEDIA_NOT_IN_R2": 81,
+  "ORPHAN_OPTIONS": 76,
+  "TEST_QUARANTINED": 65,
+  "MISSING_QUESTION": 61,
+  "ANSWER_INVALID_FOR_TYPE": 52,
+  "ANSWER_TYPE_MISMATCH": 51,
+  "MISSING_ANSWER": 46,
+  "AMBIGUOUS_STRUCTURE": 39,
+  "MISSING_OPTION_POOL": 27,
+  "MISSING_INSTRUCTION": 20,
+  "MALFORMED_BLANK": 14,
+  "ANSWER_EXCEEDS_WORD_LIMIT": 13,
+  "EMPTY_QUESTION": 12,
+  "INCOMPLETE_OPTIONS": 11,
+  "NUMBERING_MISMATCH": 4,
+  "DUPLICATE_QUESTION": 4,
+  "MEDIA_MISSING": 2
+ },
+ "testReasonCodes": {
+  "PASSAGE_BOUNDARY_AMBIGUOUS": 10,
+  "ANSWER_KEY_MISSING": 4,
+  "EXTRACTION_ARTIFACT": 2
+ },
+ "mediaPending": 88,
+ "tests_index": [
   {
    "slug": "ielts-reading-test-1",
    "id": "reading.test-0001.560d18ae",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-10",
    "id": "reading.test-0010.04d66cb2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-100",
    "id": "reading.test-0100.ed32072f",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-101",
    "id": "reading.test-0101.29c49a0a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-102",
    "id": "reading.test-0102.2328d845",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-103",
    "id": "reading.test-0103.7b13437a",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-104",
    "id": "reading.test-0104.afd168e8",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-106",
    "id": "reading.test-0106.929e0599",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-107",
    "id": "reading.test-0107.69239e6d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-108",
    "id": "reading.test-0108.0cc83e73",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-109",
    "id": "reading.test-0109.937655c0",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-11",
    "id": "reading.test-0011.34691ddd",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-110",
    "id": "reading.test-0110.1c48e631",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
-  },
-  {
-   "slug": "ielts-reading-test-111.html",
-   "id": "reading.test-0111.304de285",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 29,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-112",
    "id": "reading.test-0112.55ee32f5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-113",
    "id": "reading.test-0113.f38e1948",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-114",
    "id": "reading.test-0114.35622e05",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-115",
    "id": "reading.test-0115.4cd3e869",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-116",
    "id": "reading.test-0116.eca34241",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-117",
    "id": "reading.test-0117.fbc18a39",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-118",
    "id": "reading.test-0118.6a0965ad",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-119",
    "id": "reading.test-0119.027f40d7",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-12",
    "id": "reading.test-0012.9b6dd3a3",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-120",
    "id": "reading.test-0120.efffb2de",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-121",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0121.82cd5df0",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-122",
    "id": "reading.test-0122.16449fb4",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-123",
    "id": "reading.test-0123.06f32df8",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 23,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-124",
    "id": "reading.test-0124.05d4b09d",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 26,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-125",
    "id": "reading.test-0125.f7ee8459",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-126",
    "id": "reading.test-0126.eb28a53e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-127",
    "id": "reading.test-0127.96735c8c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 18,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-128",
    "id": "reading.test-0128.410a600c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-129",
    "id": "reading.test-0129.f7b47f2c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-13",
    "id": "reading.test-0013.75dc6c83",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-130",
    "id": "reading.test-0130.877d35c1",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-131",
    "id": "reading.test-0131.d269ad2c",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-132",
    "id": "reading.test-0132.0835aaf7",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-133",
    "id": "reading.test-0133.1d6e9887",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-134",
    "id": "reading.test-0134.c49ad875",
-   "status": "verified",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 39,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-135",
    "id": "reading.test-0135.73faacec",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-136",
    "id": "reading.test-0136.4bafe7d0",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-137",
    "id": "reading.test-0137.975c26fb",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-138",
    "id": "reading.test-0138.88fdab81",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-139",
    "id": "reading.test-0139.723648c5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-14",
    "id": "reading.test-0014.d321c44a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-140",
    "id": "reading.test-0140.249ce224",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-141",
    "id": "reading.test-0141.8f0d84ac",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-142",
    "id": "reading.test-0142.9b50d6b5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-143",
    "id": "reading.test-0143.32b30626",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-144",
    "id": "reading.test-0144.89732622",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-145",
    "id": "reading.test-0145.aa2dd656",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-146",
    "id": "reading.test-0146.7f90d5a2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-147",
    "id": "reading.test-0147.3882604a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-148",
    "id": "reading.test-0148.dcf5e1fb",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-149",
    "id": "reading.test-0149.b0118477",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-15",
    "id": "reading.test-0015.d87c2a21",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-150",
    "id": "reading.test-0150.4284ebca",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-151",
    "id": "reading.test-0151.b2df6ee8",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-152",
    "id": "reading.test-0152.a58941e4",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-153",
    "id": "reading.test-0153.14e4481c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-154",
    "id": "reading.test-0154.567fc374",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-155",
    "id": "reading.test-0155.2b189a4a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-156",
    "id": "reading.test-0156.6ba3a431",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-157",
    "id": "reading.test-0157.04711d7e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-158",
    "id": "reading.test-0158.cfdd3992",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-159",
    "id": "reading.test-0159.10554505",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-16",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0016.ee146b95",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-160",
    "id": "reading.test-0160.94f8d19b",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 26,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-161",
    "id": "reading.test-0161.036d186a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-162",
    "id": "reading.test-0162.96d24377",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-163",
    "id": "reading.test-0163.325a7772",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-164",
    "id": "reading.test-0164.29351d73",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-165",
    "id": "reading.test-0165.8ca51a0f",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-166",
    "id": "reading.test-0166.54956d08",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-167",
    "id": "reading.test-0167.bc5f6d9a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-168",
    "id": "reading.test-0168.67e26671",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-169",
    "id": "reading.test-0169.71015bfd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-17",
    "id": "reading.test-0017.0f68286e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-170",
    "id": "reading.test-0170.33eb7c41",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 17,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-171",
    "id": "reading.test-0171.2c354ab9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-172",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0172.56cd69c7",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-173",
    "id": "reading.test-0173.18e40be2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 21,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-174",
    "id": "reading.test-0174.74610760",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-175",
    "id": "reading.test-0175.c912b7f3",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 15,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-176",
    "id": "reading.test-0176.253a82b3",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-177",
    "id": "reading.test-0177.0b26fdce",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-178",
    "id": "reading.test-0178.14a5167c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-179",
    "id": "reading.test-0179.3f9e6d59",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-18",
    "id": "reading.test-0018.18046d30",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-180",
    "id": "reading.test-0180.41f639bc",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-181",
    "id": "reading.test-0181.740fd46b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-182",
    "id": "reading.test-0182.c7fe53a8",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-183",
    "id": "reading.test-0183.ed0051e7",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-184",
    "id": "reading.test-0184.97533c9b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-185",
    "id": "reading.test-0185.3c06409c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-186",
    "id": "reading.test-0186.256c621e",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 26,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-187",
    "id": "reading.test-0187.262fc580",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-188",
    "id": "reading.test-0188.40da56ca",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-189",
    "id": "reading.test-0189.3a2b419a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-19",
    "id": "reading.test-0019.3258833e",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-190",
    "id": "reading.test-0190.36ce3e23",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-191",
    "id": "reading.test-0191.7f22ec6f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-192",
    "id": "reading.test-0192.3c9c7f0a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-193",
    "id": "reading.test-0193.2c635080",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-194",
    "id": "reading.test-0194.ddef6fdd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-195",
    "id": "reading.test-0195.e24311f8",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-196",
    "id": "reading.test-0196.4e4c2c7d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-197",
    "id": "reading.test-0197.96e1f211",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 23,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-198",
    "id": "reading.test-0198.872c4c12",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-199",
    "id": "reading.test-0199.3bd5c3b6",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-2",
    "id": "reading.test-0002.7629ef23",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-20",
    "id": "reading.test-0020.7e4be7be",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-200",
    "id": "reading.test-0200.c7e2b63b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-201",
    "id": "reading.test-0201.1a1e3770",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 27,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-202",
    "id": "reading.test-0202.c722a284",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-203",
    "id": "reading.test-0203.84bca5b6",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-204",
    "id": "reading.test-0204.26cde570",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-205",
    "id": "reading.test-0205.33dc79d9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-206",
    "id": "reading.test-0206.eb2b00e7",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-207",
    "id": "reading.test-0207.962e9af4",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-208",
    "id": "reading.test-0208.56a3e5a6",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-209",
    "id": "reading.test-0209.85b5137c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-21",
    "id": "reading.test-0021.6a8d2e69",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-210",
    "id": "reading.test-0210.a9d87d32",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-211",
    "id": "reading.test-0211.a18f90ca",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-212",
    "id": "reading.test-0212.1b4356f9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-213",
    "id": "reading.test-0213.bf9c0224",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-214",
    "id": "reading.test-0214.829293ce",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-215",
    "id": "reading.test-0215.3f87d445",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "EXTRACTION_ARTIFACT"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-216",
    "id": "reading.test-0216.e16d7249",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-217",
    "id": "reading.test-0217.0a74cb31",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 38,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-218",
    "id": "reading.test-0218.a99afedd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-219",
    "id": "reading.test-0219.75646bbe",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-22",
    "id": "reading.test-0022.ad71d52f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-220",
    "id": "reading.test-0220.b895975c",
    "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-221",
    "id": "reading.test-0221.db6ec0c4",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-222",
    "id": "reading.test-0222.2f4c286a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-223",
    "id": "reading.test-0223.01f75bb9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-224",
    "id": "reading.test-0224.2dbb06ca",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-225",
    "id": "reading.test-0225.d2faa9cc",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-226",
    "id": "reading.test-0226.d5bb7546",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-227",
    "id": "reading.test-0227.724dd9dc",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-228",
    "id": "reading.test-0228.58e4c014",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-229",
    "id": "reading.test-0229.8d1d0f77",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-23",
    "id": "reading.test-0023.04bc3f4c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-230",
    "id": "reading.test-0230.6abab9c3",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-231",
    "id": "reading.test-0231.59c550e4",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-232",
    "id": "reading.test-0232.fecfb8b6",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 38,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-233",
    "id": "reading.test-0233.6c193ff0",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-234",
    "id": "reading.test-0234.d3cad8ed",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 29,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-235",
    "id": "reading.test-0235.159db072",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-236",
    "id": "reading.test-0236.14a4d68f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-237",
    "id": "reading.test-0237.0dca8ffc",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-238",
    "id": "reading.test-0238.6f804c69",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-239",
    "id": "reading.test-0239.981a0b37",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-24",
    "id": "reading.test-0024.6d660a45",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-240",
    "id": "reading.test-0240.94779c12",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-241",
    "id": "reading.test-0241.313ed0e9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-242",
    "id": "reading.test-0242.c48ce514",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-243",
    "id": "reading.test-0243.3334de0a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-244",
    "id": "reading.test-0244.0f30da39",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-245",
    "id": "reading.test-0245.0b081aa6",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-246",
    "id": "reading.test-0246.73cfaecd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-247",
    "id": "reading.test-0247.7742249d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-248",
    "id": "reading.test-0248.e162e48f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-249",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0249.fbe5e29c",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-25",
    "id": "reading.test-0025.a6a19a25",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-250",
    "id": "reading.test-0250.6a302efa",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-251",
    "id": "reading.test-0251.8e70c73d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-252",
    "id": "reading.test-0252.62b8c705",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 24,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-253",
    "id": "reading.test-0253.e8d23d67",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-254",
    "id": "reading.test-0254.65fcf4d5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-255",
    "id": "reading.test-0255.c7b59398",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-256",
    "id": "reading.test-0256.1fe5871a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-257",
    "id": "reading.test-0257.36d10305",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-258",
    "id": "reading.test-0258.ecc9d40f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-259",
    "id": "reading.test-0259.a469fa2b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-26",
    "id": "reading.test-0026.27e938d8",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-260",
    "id": "reading.test-0260.59ea3026",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-261",
    "id": "reading.test-0261.197ba7f4",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 29,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-262",
    "id": "reading.test-0262.7f3a0ead",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-263",
    "id": "reading.test-0263.668c2f40",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-264",
    "id": "reading.test-0264.a10ca627",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-265",
    "id": "reading.test-0265.256fa16e",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-266",
    "id": "reading.test-0266.4c0efa96",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-267",
    "id": "reading.test-0267.56416dd4",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-268",
    "id": "reading.test-0268.be6ac6ff",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-269",
    "id": "reading.test-0269.588ba208",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-27",
    "id": "reading.test-0027.e5f52f98",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-270",
    "id": "reading.test-0270.71a43a94",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-271",
    "id": "reading.test-0271.e7f07e00",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-272",
    "id": "reading.test-0272.bb592182",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 27,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-273",
    "id": "reading.test-0273.26a2bdcd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-274",
    "id": "reading.test-0274.6c3002d0",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-275",
    "id": "reading.test-0275.3339146c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-276",
    "id": "reading.test-0276.a412cd30",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-277",
    "id": "reading.test-0277.4ad1695e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-278",
    "id": "reading.test-0278.9caba39b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-279",
    "id": "reading.test-0279.48394375",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-28",
    "id": "reading.test-0028.dca580ef",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-280",
    "id": "reading.test-0280.f8acd69d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-281",
    "id": "reading.test-0281.cc45b1a1",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-282",
    "id": "reading.test-0282.688a1784",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-283",
    "id": "reading.test-0283.a2fcffc0",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 26,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-284",
    "id": "reading.test-0284.7c9dd85b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-285",
    "id": "reading.test-0285.b9c64092",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-286",
    "id": "reading.test-0286.41c8c783",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-287",
    "id": "reading.test-0287.7608da38",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-288",
    "id": "reading.test-0288.d614c6fa",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 38,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-289",
    "id": "reading.test-0289.5d7987b5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-29",
    "id": "reading.test-0029.f2759689",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-290",
    "id": "reading.test-0290.c39f44c1",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-291",
    "id": "reading.test-0291.a7b94a4d",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-292",
    "id": "reading.test-0292.612e7a7b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-293",
    "id": "reading.test-0293.57c1304d",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-294",
    "id": "reading.test-0294.3f7fbabd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-295",
    "id": "reading.test-0295.9ae93628",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-296",
    "id": "reading.test-0296.bd64f587",
    "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 3
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "ANSWER_KEY_MISSING"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-297",
    "id": "reading.test-0297.d81ff6c2",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-298",
    "id": "reading.test-0298.83a6f525",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-299",
    "id": "reading.test-0299.eba4fa43",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-3",
    "id": "reading.test-0003.f8f2d508",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 27,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-30",
    "id": "reading.test-0030.e354b6b0",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 29,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-300",
    "id": "reading.test-0300.082c2616",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-301",
    "id": "reading.test-0301.bbbe2b27",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-302",
    "id": "reading.test-0302.c71e8d4c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-303",
    "id": "reading.test-0303.072cf202",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 23,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-304",
    "id": "reading.test-0304.d90131d1",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-305",
    "id": "reading.test-0305.f816a285",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-306",
    "id": "reading.test-0306.977c6a5c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-307",
    "id": "reading.test-0307.fdf0633d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-308",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0308.c0d97331",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 24,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-309",
    "id": "reading.test-0309.e42f1d20",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 26,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-31",
    "id": "reading.test-0031.cf6f38f3",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-310",
    "id": "reading.test-0310.f4b18f3e",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-311",
    "id": "reading.test-0311.d595ceeb",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-312",
    "id": "reading.test-0312.4f3be41a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-313",
    "id": "reading.test-0313.f131f079",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-314",
    "id": "reading.test-0314.d9a8de99",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-315",
    "id": "reading.test-0315.031b7605",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-316",
    "id": "reading.test-0316.508531db",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-317",
    "id": "reading.test-0317.aebbed25",
    "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 3
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "ANSWER_KEY_MISSING"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-318",
    "id": "reading.test-0318.d3139300",
    "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 3
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "ANSWER_KEY_MISSING"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-319",
    "id": "reading.test-0319.e13bcbf8",
    "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 3
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "ANSWER_KEY_MISSING"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-32",
    "id": "reading.test-0032.11469967",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 21,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-33",
    "id": "reading.test-0033.3da08e2f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 28,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-34",
    "id": "reading.test-0034.3980ff22",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-35",
    "id": "reading.test-0035.fce27d87",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-36",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0036.c4b6c90d",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-37",
    "id": "reading.test-0037.8dd06603",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-38",
    "id": "reading.test-0038.181c0530",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-39",
    "id": "reading.test-0039.89b71d7e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-4",
    "id": "reading.test-0004.d6b3d07e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-40",
    "id": "reading.test-0040.aec826e9",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 20,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-41",
    "id": "reading.test-0041.433cd671",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-42",
    "id": "reading.test-0042.d4763b30",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 22,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-43",
    "id": "reading.test-0043.f7176def",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-44",
    "id": "reading.test-0044.c6f055a2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-45",
    "id": "reading.test-0045.c7fbd6ad",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-46",
    "id": "reading.test-0046.31a9a708",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-47",
    "id": "reading.test-0047.a9377dac",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 29,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-48",
    "id": "reading.test-0048.6f96c321",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 22,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-49",
    "id": "reading.test-0049.341bd57a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 7,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-5",
    "id": "reading.test-0005.350c45ba",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-50",
    "id": "reading.test-0050.29571dff",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 34,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-51",
    "id": "reading.test-0051.1214b90d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-52",
    "id": "reading.test-0052.db179f55",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-53",
    "id": "reading.test-0053.6e5699b7",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-54",
    "id": "reading.test-0054.2e99aabf",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-55",
    "id": "reading.test-0055.24cdd77d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-56",
    "id": "reading.test-0056.5fdac494",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 18,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-57",
    "id": "reading.test-0057.e554de5b",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-58",
    "id": "reading.test-0058.fa89edba",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "EXTRACTION_ARTIFACT",
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-59",
    "id": "reading.test-0059.3ec780ab",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-6",
    "id": "reading.test-0006.3aed7980",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-60",
    "id": "reading.test-0060.70052d3a",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-61",
    "id": "reading.test-0061.acfe478d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-62",
    "id": "reading.test-0062.2da1b073",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 25,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-63",
    "id": "reading.test-0063.695399f7",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 21,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-64",
    "id": "reading.test-0064.f664511d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 21,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-65",
    "id": "reading.test-0065.26fe6ff2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-66",
    "id": "reading.test-0066.ee33a200",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-67",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0067.33cdda1e",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-68",
    "id": "reading.test-0068.d20e2fe2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-69",
    "id": "reading.test-0069.2f63a9cb",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 23,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-7",
    "id": "reading.test-0007.107c7b61",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-70",
    "id": "reading.test-0070.31705cdb",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-71",
    "id": "reading.test-0071.7322570f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-72",
    "id": "reading.test-0072.1f49bb07",
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 24,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-73",
    "id": "reading.test-0073.932980c1",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 30,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-74",
    "id": "reading.test-0074.28bb288d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-75",
    "id": "reading.test-0075.27d482a2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-76",
    "id": "reading.test-0076.5b0f188e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "quarantined",
+   "fullMockEligible": false,
+   "productionQuestions": 0,
+   "testReasonCodes": [
+    "PASSAGE_BOUNDARY_AMBIGUOUS"
+   ],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-77",
    "id": "reading.test-0077.e1a8c88c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-78",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0078.96c1ca87",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 21,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-79",
    "id": "reading.test-0079.438737df",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-8",
    "id": "reading.test-0008.81effc34",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-80",
    "id": "reading.test-0080.f5da6ee2",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-81",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0081.aa50e002",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-82",
    "id": "reading.test-0082.c12dd8bd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 37,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-83",
-   "id": null,
-   "status": "quarantined",
-   "kind": "empty",
-   "duplicateOf": null,
-   "passages": 0
+   "id": "reading.test-0083.f631441b",
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-84",
    "id": "reading.test-0084.a5b02ae5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-85",
    "id": "reading.test-0085.910cef47",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-86",
    "id": "reading.test-0086.92777169",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 23,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-87",
    "id": "reading.test-0087.46aaba1c",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 36,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-88",
    "id": "reading.test-0088.c32f6c4f",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-89",
    "id": "reading.test-0089.16fb37d9",
-   "status": "verified",
-   "kind": "full_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-9",
    "id": "reading.test-0009.6be5f6cf",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 38,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-90",
    "id": "reading.test-0090.d9ec85ca",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-91",
    "id": "reading.test-0091.d8a0a977",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 33,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-92",
    "id": "reading.test-0092.0e5c7c61",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-93",
    "id": "reading.test-0093.ec225f6e",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-94",
    "id": "reading.test-0094.8d7d3df5",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-95",
    "id": "reading.test-0095.d6ed6fa0",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-96",
    "id": "reading.test-0096.a3718dcd",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 38,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-97",
    "id": "reading.test-0097.bb28296d",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 35,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-98",
    "id": "reading.test-0098.72df7524",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 32,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "ielts-reading-test-99",
    "id": "reading.test-0099.0b726f45",
-   "status": "flagged",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "practice_only",
+   "fullMockEligible": false,
+   "productionQuestions": 31,
+   "testReasonCodes": [],
+   "duplicateOf": null
   },
   {
    "slug": "reading-test-105-2",
    "id": "reading.test-0105.8d4bcbd8",
-   "status": "quarantined",
-   "kind": "practice_test",
-   "duplicateOf": null,
-   "passages": 3
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
+  },
+  {
+   "slug": "ielts-reading-test-111.html",
+   "id": "reading.test-0111.304de285",
+   "status": "production",
+   "fullMockEligible": true,
+   "productionQuestions": 40,
+   "testReasonCodes": [],
+   "duplicateOf": null
   }
- ],
- "tally": {
-  "flagged": 243,
-  "quarantined": 66,
-  "verified": 10
- }
+ ]
 }

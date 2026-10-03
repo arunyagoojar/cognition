@@ -1,10 +1,20 @@
 {
  "slug": "ielts-reading-test-67",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "EXTRACTION_CRASH",
-   "evidence": "AttributeError(\"'NoneType' object has no attribute 'replace'\")"
+   "unit": "group",
+   "groupId": "p3.q33-37",
+   "range": [
+    33,
+    37
+   ],
+   "type": "sentence_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE"
+   ],
+   "instruction": "Complete the sentences. Choose NO MORE THAN THREE WORDS from the passage for each answer."
   }
  ]
 }

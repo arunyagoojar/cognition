@@ -1,54 +1,23 @@
 {
  "slug": "ielts-reading-test-19",
+ "status": "practice_only",
+ "testReasonCodes": [],
  "units": [
   {
    "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g02",
-    "range": [
-     8,
-     11
-    ],
-    "instruction": "Classify the following techniques according to whether the writer states they A are currently exclusively used by Austra"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g03",
-    "range": [
-     12,
-     12
-    ],
-    "instruction": "and 13 Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the Reading Passage 1 for each answer. Write your answers in"
-   }
-  },
-  {
-   "unit": "group",
-   "reasonCode": "EMPTY_QUESTION",
-   "evidence": {
-    "group": "g07",
-    "range": [
-     27,
-     32
-    ],
-    "instruction": "Choose the correct heading for paragraphs B-G from the list of headings below."
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "ANSWER_COUNT_MISMATCH",
-   "evidence": {
-    "questions": 28,
-    "answers": 40
-   }
-  },
-  {
-   "unit": "test",
-   "reasonCode": "GROUP_INSTRUCTION_MISSING",
-   "evidence": "g08"
+   "groupId": "p2.q23-26",
+   "range": [
+    23,
+    26
+   ],
+   "type": "summary_completion",
+   "reasonCodes": [
+    "ANSWER_NOT_IN_PASSAGE",
+    "ANSWER_TYPE_MISMATCH",
+    "MISSING_OPTION_POOL",
+    "ORPHAN_OPTIONS"
+   ],
+   "instruction": "Complete the summary using the list of words, A-K, below. Write the correct letter, A-K, in boxes 23-26 on your answer sheet."
   }
  ]
 }
