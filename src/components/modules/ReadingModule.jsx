@@ -7,6 +7,7 @@ import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import ReadingPassage from '../reading/ReadingPassage';
 import ReadingQuestionGroup from '../reading/ReadingQuestionGroup';
+import TextSizeControl, { useExamTextScale } from '../common/TextSizeControl';
 import AnswerReviewList from '../common/AnswerReviewList';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 
@@ -24,6 +25,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   // Compact widths show one pane at a time; regular widths show both side by side.
   const [mobilePane, setMobilePane] = useState('passage');
+  const [textScale, setTextScale] = useExamTextScale();
   const passagePaneRef = useRef(null);
   const questionPaneRef = useRef(null);
 
@@ -353,6 +355,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         </div>
 
         <div className="exam-focus-header-right">
+          <TextSizeControl scale={textScale} onChange={setTextScale} />
           <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} role="timer" aria-label={`Time remaining ${FMT(timeLeft)}`}>
             <Icon name="clock" size={16} />
             <span>{FMT(timeLeft)}</span>
@@ -383,7 +386,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       </div>
 
       {/* ── 2. READING WORKSPACE — passage | questions ── */}
-      <div className={`reading-split-panes rd-show-${mobilePane}`}>
+      <div className={`reading-split-panes rd-show-${mobilePane}`} style={{ '--exam-text-scale': textScale }}>
         <div className="reading-pane rd-pane-passage" ref={passagePaneRef}>
           <div className="rd-sheet">
             <ReadingPassage passage={passage} />

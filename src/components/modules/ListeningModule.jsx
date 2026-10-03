@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
-import { calculateListeningBand } from '../../utils/bandCalculator';
 import { evaluateListeningResponses } from '../../utils/evaluation/evaluationEngine';
 import AnswerReviewList from '../common/AnswerReviewList';
 import { MultiChoice } from '../reading/ReadingQuestionGroup';
@@ -104,7 +103,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers });
     const computedResult = {
       ...evalResult,
-      band: evalResult.band ?? (evalResult.status === 'not_attempted' ? calculateListeningBand(0) : null),
+      band: evalResult.status === 'not_attempted' ? null : evalResult.band,
       raw: evalResult.raw || 0,
       total: evalResult.total || 40,
       percentage: evalResult.percentage || 0,

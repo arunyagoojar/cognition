@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>QA · Tips</title></head>
+<body><div id="root"></div>
+<script type="module">
+  // Dev-only QA harness (not part of the production build).
+  import React from 'react'; import { createRoot } from 'react-dom/client';
+  import '/src/index.css'; import TipsPage from '/src/components/views/TipsPage.jsx';
+  const qs = new URLSearchParams(location.search);
+  document.documentElement.dataset.theme = qs.get('theme') || 'light';
+  createRoot(document.getElementById('root')).render(React.createElement('div', { style: { padding: '24px 16px' } }, React.createElement(TipsPage, { initialSkill: qs.get('skill') })));
+</script></body></html>

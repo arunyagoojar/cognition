@@ -16,6 +16,27 @@ import SpeakingModule from './SpeakingModule';
 
 const STEPS = ['listening', 'reading', 'writing', 'speaking'];
 
+/** What the band on each skill card is based on — so a score is never unexplained. */
+function skillEvidence(key, r) {
+  if (!r) return '';
+  if (key === 'listening' || key === 'reading') {
+    const items = Object.values(r.itemResults || {});
+    const answered = items.filter(x => x.candidateAnswer !== null && String(x.candidateAnswer ?? '').trim() !== '').length;
+    if (r.status === 'not_attempted' || answered === 0) return 'No answers submitted';
+    return `${r.raw ?? 0} of ${r.total || 40} correct · ${answered} answered`;
+  }
+  if (key === 'writing') {
+    if (r.status === 'not_attempted') return 'No essays submitted';
+    const w1 = r.task1Words, w2 = r.task2Words;
+    return typeof w1 === 'number' && typeof w2 === 'number' ? `Task 1: ${w1} words · Task 2: ${w2} words` : '';
+  }
+  if (key === 'speaking') {
+    if (r.status === 'not_attempted') return 'No spoken answers recorded';
+    return r.provisional ? 'Pronunciation needs audio, so this band is provisional' : '';
+  }
+  return '';
+}
+
 export default function MockExamFlow({ onComplete, onBack }) {
   // Restore existing in-progress session if user refreshed or navigated back.
   // Sessions carrying legacy V2 manifests (generationId) are discarded — the
@@ -354,15 +375,15 @@ export default function MockExamFlow({ onComplete, onBack }) {
               color: '#FFFFFF',
               marginBottom: 12
             }}>
-              AUTHENTIC IELTS EXAMINATION COMPLETE
+              FULL MOCK EXAM · RESULTS
             </div>
             <h1 style={{ fontSize: 'clamp(28px, 4vw, 38px)', fontWeight: 800, margin: '0 0 10px', color: 'var(--text-primary)' }}>
               {examData.title || 'IELTS Academic Full Simulation'}
             </h1>
             <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
               {overall !== null
-                ? 'Official 4-skill evaluation calculated using standard rounding rules.'
-                : 'Partial test completed. Official overall band requires all 4 skills to be attempted and evaluated.'}
+                ? 'Overall band = the average of your four skill bands, rounded the IELTS way.'
+                : 'No overall band yet: it needs all four skills answered and scored. Each skill below shows exactly what was scored.'}
             </p>
           </div>
 
@@ -400,8 +421,8 @@ export default function MockExamFlow({ onComplete, onBack }) {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 36 }}>
           {[
-            { label: 'Reading', band: R, skillKey: 'reading', status: skills.reading?.status, icon: 'book', color: 'var(--c-lavender)' },
             { label: 'Listening', band: L, skillKey: 'listening', status: skills.listening?.status, icon: 'headphones', color: 'var(--c-yellow)' },
+            { label: 'Reading', band: R, skillKey: 'reading', status: skills.reading?.status, icon: 'book', color: 'var(--c-lavender)' },
             { label: 'Writing', band: W, skillKey: 'writing', status: skills.writing?.status, icon: 'pen', color: 'var(--c-coral)' },
             { label: 'Speaking', band: S, skillKey: 'speaking', status: skills.speaking?.status, icon: 'mic', color: 'var(--c-near-black)' },
           ].map((item, i) => (
@@ -445,6 +466,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
                 {item.status === 'failed' && (
                   <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--c-coral)' }}>Evaluation Failed</span>
                 )}
+                <div className="mock-skill-evidence">{skillEvidence(item.skillKey, skills[item.skillKey])}</div>
               </div>
             </div>
           ))}

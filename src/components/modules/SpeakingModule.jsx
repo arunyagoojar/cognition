@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import AiWaitNote from '../common/AiWaitNote';
 import { motion } from 'motion/react';
 import { Icon } from '../common/Icon';
 import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
@@ -239,6 +240,13 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       audioRecordings[k] = rec.blob || null;
     });
 
+    // Full mock: the combined report evaluates all four skills together, so the
+    // Speaking module hands over its answers instead of showing its own results
+    if (isMockMode) {
+      if (onComplete) onComplete({ transcripts, recordings, durations, recordedCount: Object.keys(recordings).length });
+      return;
+    }
+
     const expectedQuestions = (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0);
     const evalResult = await evaluateSpeakingResponses({
       transcripts,
@@ -361,6 +369,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             );
           })}
         </div>
+        <AiWaitNote what="your interview" />
       </div>
     );
   }
