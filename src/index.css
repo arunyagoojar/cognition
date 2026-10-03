@@ -5731,3 +5731,255 @@ p.reading-section-label {
 .ob-word {
   padding-bottom: 0.12em;
 }
+
+/* ─── Reading workspace v2 (contract v2 renderer) ─────────────────────────
+   One control per answer type; 44px targets on touch, visible focus, theme
+   tokens only (no hard-coded white surfaces). Passage | Questions are side by
+   side at regular widths and switch with a segmented control when compact. */
+.rd-sheet {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: var(--r-card);
+  padding: 28px 32px 36px;
+  box-shadow: 0 3px 0 var(--border-color);
+}
+.rd-passage { font-family: var(--font-exam); color: var(--text-primary); }
+.rd-eyebrow {
+  font-family: var(--font-family);
+  font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-secondary); margin-bottom: 6px;
+}
+.rd-passage-title {
+  font-family: var(--font-family);
+  font-size: clamp(22px, 2.2vw, 27px); font-weight: 800; line-height: 1.2;
+  margin: 0 0 18px; color: var(--text-primary);
+}
+.rd-subheading {
+  font-family: var(--font-family); font-size: 16px; font-weight: 800;
+  margin: 22px 0 8px; color: var(--text-primary);
+}
+.rd-para { font-size: 17px; line-height: 1.7; margin: 0 0 14px; position: relative; }
+.rd-para.has-label { padding-left: 42px; }
+.rd-para-label {
+  position: absolute; left: 0; top: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 8px;
+  font-family: var(--font-family); font-size: 14px; font-weight: 800;
+  background: var(--surface-sunken); border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+.rd-figure { margin: 14px 0; }
+.rd-figure img {
+  max-width: 100%; height: auto; display: block; border-radius: 10px;
+  border: 1px solid var(--border-light); background: #fff;
+}
+.rd-table-wrap { overflow-x: auto; margin: 12px 0; }
+.rd-table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.5; }
+.rd-table td { border: 1px solid var(--border-color); padding: 8px 10px; vertical-align: top; }
+.rd-table tr:first-child td { font-family: var(--font-family); font-weight: 700; background: var(--surface-sunken); }
+
+/* question groups */
+.rd-pane-questions { display: flex; flex-direction: column; gap: 16px; }
+.rd-group {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: var(--r-card);
+  padding: 22px 24px 18px;
+  box-shadow: 0 3px 0 var(--border-color);
+  color: var(--text-primary);
+}
+.rd-group-head { border-bottom: 1px solid var(--border-light); padding-bottom: 12px; margin-bottom: 6px; }
+.rd-group-range { font-size: 16px; font-weight: 800; margin: 0 0 4px; }
+.rd-group-instr { font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+.rd-group-note { font-size: 13.5px; color: var(--text-secondary); margin: 6px 0 0; font-style: italic; }
+.rd-limit {
+  display: inline-block; margin-top: 8px;
+  font-size: 11.5px; font-weight: 800; letter-spacing: 0.04em;
+  padding: 3px 10px; border-radius: var(--r-pill);
+  background: var(--c-peach); color: var(--text-primary); border: 1px solid var(--border-light);
+}
+.rd-pool {
+  background: var(--surface-sunken); border: 1px solid var(--border-light);
+  border-radius: 14px; padding: 12px 14px; margin: 12px 0 4px;
+}
+.rd-pool-title { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 8px; }
+.rd-pool ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.rd-pool li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.45; }
+.rd-pool-key { flex: 0 0 auto; min-width: 30px; font-weight: 800; }
+.rd-pool-words { font-size: 14.5px; line-height: 1.8; margin: 0; }
+
+/* stimulus (summary / notes / table / flow chart) */
+.rd-stimulus {
+  font-family: var(--font-exam); font-size: 16px; line-height: 2.1;
+  margin: 12px 0 4px; padding: 14px 16px; border-radius: 14px;
+  background: var(--surface); border: 1px solid var(--border-light);
+}
+.rd-stim-title { font-family: var(--font-family); font-weight: 800; font-size: 15.5px; margin: 0 0 6px; line-height: 1.4; }
+.rd-stim-heading { font-family: var(--font-family); font-weight: 700; font-size: 14.5px; margin: 10px 0 2px; line-height: 1.4; }
+.rd-stim-line { margin: 0 0 6px; }
+.rd-stimulus .rd-table { font-size: 14.5px; line-height: 2; }
+
+/* number badge — rendered once per question, attached to its control */
+.rd-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 28px; height: 26px; padding: 0 7px; border-radius: 8px;
+  font-family: var(--font-family); font-size: 13px; font-weight: 800; line-height: 1;
+  background: var(--surface-sunken); color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  flex: 0 0 auto; vertical-align: middle;
+}
+.rd-badge.is-answered { background: var(--text-primary); color: var(--bg-card); }
+.rd-badge-range { min-width: 44px; }
+
+.rd-q { padding: 14px 0; border-bottom: 1px solid var(--border-light); }
+.rd-q:last-child { border-bottom: none; padding-bottom: 4px; }
+.rd-q-stem { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; line-height: 1.55; }
+.rd-q-stem .rd-badge { margin-top: 1px; }
+.rd-prompt { flex: 1 1 auto; min-width: 0; }
+.rd-q-inline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.rd-q-inline .rd-q-stem { flex: 1 1 260px; }
+.rd-sentence { font-size: 15.5px; line-height: 2.2; margin: 0; }
+
+/* text fields */
+.rd-blank { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; margin: 2px 2px; }
+.rd-blank-block { display: flex; }
+.rd-input, .rd-select {
+  font-family: var(--font-family); font-size: 15px; font-weight: 600;
+  color: var(--text-primary); background: var(--bg-card);
+  border: 1.5px solid var(--border-color); border-radius: 10px;
+  min-height: 36px; padding: 4px 10px;
+  transition: border-color var(--dur-micro) var(--ease-smooth), box-shadow var(--dur-micro) var(--ease-smooth);
+}
+.rd-input { width: 11em; max-width: 100%; }
+.rd-input-wide { width: 100%; max-width: 420px; margin: 10px 0 0 38px; display: block; }
+.rd-select { max-width: 100%; cursor: pointer; padding-right: 8px; }
+.rd-picker .rd-select { min-width: 180px; max-width: 320px; }
+.rd-input:focus, .rd-select:focus {
+  outline: none; border-color: var(--c-coral);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-coral) 22%, transparent);
+}
+.rd-gap { font-weight: 700; }
+
+/* TRUE / FALSE / NOT GIVEN — a three-way segmented control */
+.rd-segmented {
+  display: inline-grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 10px 0 0 38px; border: 1.5px solid var(--border-color); border-radius: 12px;
+  overflow: hidden; background: var(--surface-sunken); min-width: min(100%, 340px);
+}
+.rd-segment, .rd-letter, .rd-choice { position: relative; cursor: pointer; }
+.rd-segment input, .rd-letter input, .rd-choice input {
+  position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none;
+}
+.rd-segment span {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 14px; font-size: 14px; font-weight: 700;
+  color: var(--text-secondary); white-space: nowrap;
+}
+.rd-segment + .rd-segment { border-left: 1px solid var(--border-light); }
+.rd-segment:hover span { color: var(--text-primary); }
+.rd-segment.is-selected span { background: var(--text-primary); color: var(--bg-card); }
+
+/* letter buttons for short matching lists */
+.rd-letters { display: flex; flex-wrap: wrap; gap: 6px; }
+.rd-letter span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; height: 40px; padding: 0 10px; border-radius: 10px;
+  font-family: var(--font-family); font-size: 14.5px; font-weight: 800;
+  border: 1.5px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);
+}
+.rd-letter:hover span { border-color: var(--c-coral); }
+.rd-letter.is-selected span { background: var(--c-coral); border-color: var(--c-coral); color: #151313; }
+
+/* option cards (MCQ single / multi) */
+.rd-choices { display: grid; gap: 8px; margin: 10px 0 0 38px; }
+.rd-choice {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; min-height: 44px; border-radius: 12px;
+  border: 1.5px solid var(--border-light); background: var(--surface-interactive);
+  font-size: 15px; line-height: 1.45; color: var(--text-primary);
+  transition: border-color var(--dur-micro) var(--ease-smooth), background var(--dur-micro) var(--ease-smooth);
+}
+.rd-choice:hover { border-color: var(--c-coral); }
+.rd-choice-key {
+  flex: 0 0 auto; width: 26px; height: 26px; border-radius: 7px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-family); font-weight: 800; font-size: 13px;
+  border: 1.5px solid var(--border-color); background: var(--bg-card);
+}
+.rd-choice-text { flex: 1 1 auto; min-width: 0; padding-top: 2px; }
+.rd-choice.is-selected { border-color: var(--c-coral); background: var(--c-peach); }
+.rd-choice.is-selected .rd-choice-key { background: var(--c-coral); border-color: var(--c-coral); color: #151313; }
+.rd-choice.is-locked { opacity: 0.55; cursor: not-allowed; }
+.rd-multi-count { margin: 8px 0 0 38px; font-size: 13px; font-weight: 700; color: var(--text-secondary); }
+
+/* keyboard focus is always visible */
+.rd-segment:focus-within span,
+.rd-letter:focus-within span,
+.rd-choice:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--c-coral) 55%, transparent);
+  outline-offset: 2px;
+}
+
+/* compact widths: Passage | Questions segmented switch */
+.rd-pane-switch {
+  display: none;
+  margin: 0 0 12px; padding: 4px; border-radius: 14px;
+  background: var(--surface-sunken); border: 1px solid var(--border-light);
+}
+.rd-pane-switch button {
+  flex: 1 1 0; min-height: 44px; border: none; border-radius: 10px; cursor: pointer;
+  font-family: var(--font-family); font-size: 14.5px; font-weight: 800;
+  background: transparent; color: var(--text-secondary);
+}
+.rd-pane-switch button.is-active { background: var(--bg-card); color: var(--text-primary); box-shadow: 0 1px 0 var(--border-color); }
+.rd-pane-count { font-weight: 700; color: var(--text-secondary); margin-left: 4px; }
+@media (max-width: 1099px) {
+  .reading-split-active .rd-pane-switch { display: flex; }
+  .reading-split-active .rd-show-passage .rd-pane-questions,
+  .reading-split-active .rd-show-questions .rd-pane-passage { display: none; }
+  .reading-split-active { height: auto; min-height: 100vh; overflow: visible; }
+}
+@media (max-width: 640px) {
+  .rd-sheet, .rd-group { padding: 18px 16px; border-radius: 20px; }
+  .rd-para { font-size: 16.5px; }
+  .rd-para.has-label { padding-left: 36px; }
+  .rd-segmented, .rd-choices, .rd-multi-count { margin-left: 0; width: 100%; }
+  .rd-input-wide { margin-left: 0; }
+  .rd-segment span { min-height: 44px; padding: 0 8px; }
+  .rd-letter span { min-width: 44px; height: 44px; }
+  .rd-input, .rd-select { min-height: 44px; font-size: 16px; }
+  .rd-picker, .rd-picker .rd-select { width: 100%; max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rd-choice, .rd-input, .rd-select { transition: none; }
+}
+.rd-gap-mark { display: inline-block; min-width: 2.2em; border-bottom: 1.5px solid var(--text-secondary); text-align: center; color: var(--text-secondary); margin: 0 2px; }
+/* bottom-nav section pills: optional compact label below 900px */
+.exam-nav-label-short { display: none; }
+@media (max-width: 899px) {
+  .exam-nav-section-pill .exam-nav-label-long { display: none; }
+  .exam-nav-section-pill .exam-nav-label-short { display: inline; min-width: 1.4em; text-align: center; }
+}
+/* answer review: neutral state for unanswered items; two columns when wide */
+.answer-review-item.unanswered { opacity: 0.78; }
+.answer-review-item.unanswered .review-verdict { color: var(--text-tertiary); font-weight: 800; }
+@media (min-width: 900px) {
+  .answer-review-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+}
+/* Writing results: per-task criterion bands + how the band was computed */
+.writing-criterion-split { display: flex; gap: 14px; font-size: 13px; color: var(--text-secondary); }
+.writing-criterion-split strong { color: var(--text-primary); font-weight: 800; }
+.writing-scoring-method {
+  margin: -16px 0 32px; padding: 12px 16px; border-radius: 14px;
+  background: var(--surface-sunken); border: 1px solid var(--border-light);
+  font-size: 13px; line-height: 1.5; color: var(--text-secondary);
+}
+.writing-scoring-method p { margin: 0; }
+.writing-scoring-method .writing-scoring-note { color: var(--text-primary); font-weight: 700; margin-bottom: 4px; }
+.speaking-provenance-note { margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--text-tertiary); font-family: var(--font-family); }
+.review-answer-chip {
+  display: inline-block; padding: 1px 8px; border-radius: 7px; margin: 0 2px;
+  font-weight: 800; color: var(--text-primary);
+  background: var(--surface-sunken); border: 1px solid var(--border-light);
+}
+.review-answer-chip.is-key { border-color: color-mix(in srgb, var(--success-icon) 45%, transparent); }

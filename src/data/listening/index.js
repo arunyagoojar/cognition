@@ -11,9 +11,10 @@ export function getListeningTest(testId, includeAnswers = false) {
   if (!testId) return getRandomizedListeningTest(null, includeAnswers);
   const test = getProductionListeningTest(testId, includeAnswers);
   if (test) return test;
-  // Unknown id → deterministic fallback to the first production test
+  // Unknown id → deterministic fallback to the first production test, through
+  // the adapter so answers stay gated and media resolves to R2
   const all = getAllProductionListeningTests();
-  return all.length ? all[0] : null;
+  return all.length ? getProductionListeningTest(all[0].testId, includeAnswers) : null;
 }
 
 export function getRandomizedListeningTest(seed = null, includeAnswers = false) {

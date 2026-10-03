@@ -3,30 +3,61 @@
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
 
 import { AIProvider } from '../ai/aiProvider.js';
-import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC } from '../bandCalculator.js';
+import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants } from '../bandCalculator.js';
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
 import { isAiConfigured } from '../storage.js';
 
 /**
- * Checks whether candidate answer matches official answer using deterministic normalizer.
+ * Checks whether candidate answer matches official answer using deterministic
+ * normalizer. Accepted variants follow the key's own notation ("/" alternatives,
+ * parenthesised optional words) — see officialAnswerVariants.
  */
 export function isCandidateAnswerCorrect(candidateAns, officialAns) {
   if (candidateAns === undefined || candidateAns === null || candidateAns === '') return false;
-  if (!officialAns) return false;
-
+  if (!officialAns || (Array.isArray(officialAns) && officialAns.length === 0)) return false;
   const normCandidate = normalizeAnswer(String(candidateAns));
-  
-  if (Array.isArray(officialAns)) {
-    return officialAns.some(accepted => normalizeAnswer(String(accepted)) === normCandidate);
-  }
-
-  // Handle slash / alternate options e.g. "center / centre"
-  const acceptedOptions = String(officialAns).split(/\s*\/\s*/).map(s => normalizeAnswer(s));
-  return acceptedOptions.includes(normCandidate);
+  return officialAnswerVariants(officialAns).some(v => normalizeAnswer(v) === normCandidate);
 }
 
+/** The answer a question is matched against: the structured accepted list when present. */
+function officialFor(q) {
+  return Array.isArray(q.acceptedAnswers) && q.acceptedAnswers.length ? q.acceptedAnswers : q.answer;
+}
+
+/**
+ * "Choose TWO/THREE letters" groups are marked order-independently in IELTS:
+ * each correct letter earns one mark, whichever answer box it was written in.
+ * The candidate's letters for an unordered group are re-seated onto the slots
+ * whose official letter they match before per-question scoring. Deterministic.
+ */
+export function alignUnorderedAnswers(questions, answers) {
+  const groups = new Map();
+  for (const q of questions) {
+    if (!q.unorderedGroup) continue;
+    if (!groups.has(q.unorderedGroup)) groups.set(q.unorderedGroup, []);
+    groups.get(q.unorderedGroup).push(q);
+  }
+  if (!groups.size) return answers;
+  const out = { ...answers };
+  for (const slots of groups.values()) {
+    const picked = [...new Set(slots.map(q => answers[q.id]).filter(v => v !== undefined && v !== null && String(v).trim() !== '')
+      .map(v => String(v).trim().toUpperCase()))];
+    const free = new Set(picked);
+    const seat = {};
+    for (const q of slots) {
+      const key = String(q.answer ?? '').trim().toUpperCase();
+      if (key && free.has(key)) { seat[q.id] = key; free.delete(key); }
+    }
+    const rest = [...free];
+    for (const q of slots) {
+      if (!seat[q.id] && rest.length) seat[q.id] = rest.shift();
+      out[q.id] = seat[q.id] ?? '';
+    }
+  }
+  return out;
+}
 
 /**
  * Hybrid objective-answer pipeline (Phase 5).
@@ -42,11 +73,12 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
   for (const q of allQuestions) {
     const student = answers[q.id];
     if (student === undefined || student === null || String(student).trim() === '') continue;
-    const official = q.answer;
-    if (!official) continue;
+    const official = officialFor(q);
+    if (!official || (Array.isArray(official) && !official.length)) continue;
     // MCQ/matching/TFNG selections are unambiguously comparable — deterministic only.
-    const selectionTypes = ['mcq_single', 'single_select', 'matching_headings', 'matching_information',
-      'matching_features', 'matching_box', 'true_false_not_given', 'yes_no_not_given'];
+    const selectionTypes = ['mcq_single', 'mcq_multi', 'single_select', 'multi_select', 'pool_select',
+      'matching_headings', 'matching_information', 'matching_features', 'matching_box', 'sentence_endings',
+      'tfng', 'ynng', 'true_false_not_given', 'yes_no_not_given'];
     const det = evaluateDeterministic(student, official);
     const rec = itemResults[q.id];
     if (det.result === DETERMINISTIC.MATCH) {
@@ -68,7 +100,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
           questionText: q.questionText || q.question || '',
           questionType: q.questionType || q.inputType || '',
           instruction: q.instruction || q.groupInstruction || '',
-          officialAnswer: String(official),
+          officialAnswer: Array.isArray(official) ? official.join(' / ') : String(official),
           studentAnswer: String(student),
           wordLimit: q.wordLimit || null,
         });
@@ -82,7 +114,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
         questionText: q.questionText || q.question || '',
         questionType: q.questionType || q.inputType || '',
         instruction: q.instruction || '',
-        officialAnswer: String(official),
+        officialAnswer: Array.isArray(official) ? official.join(' / ') : String(official),
         studentAnswer: String(student),
         wordLimit: q.wordLimit || null,
       });
@@ -119,9 +151,10 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
  * 2. Independent AI evaluation & verification.
  * 3. Reconciliation with disagreement recording.
  */
-export async function evaluateReadingResponses({ passages = [], answers = {}, attemptId = 'anon' }) {
-  const answeredCount = Object.values(answers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
+export async function evaluateReadingResponses({ passages = [], answers: rawAnswers = {}, attemptId = 'anon' }) {
+  const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = passages.flatMap(p => p.questions || []);
+  const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
 
   if (answeredCount === 0) {
     return {
@@ -156,13 +189,14 @@ export async function evaluateReadingResponses({ passages = [], answers = {}, at
 
   for (const q of allQuestions) {
     const candidate = answers[q.id];
-    const isCorrect = isCandidateAnswerCorrect(candidate, q.answer);
+    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q));
     if (isCorrect) correct++;
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
       officialAnswer: q.answer,
       candidateAnswer: candidate || null,
-      questionType: q.questionType || null
+      questionType: q.questionType || null,
+      questionNumber: q.questionNumber ?? null,
     };
   }
 
@@ -182,7 +216,7 @@ export async function evaluateReadingResponses({ passages = [], answers = {}, at
     try {
       const aiBatch = await AIProvider.evaluateReadingBatch({
         passageTitle: passage.title || 'Academic Reading Passage',
-        passageText: passage.text || passage.passageText || '',
+        passageText: passage.text || passage.passageText || (passage.htmlContent ? passage.htmlContent.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : ''),
         questions: passageQuestions,
         answers,
         attemptId
@@ -227,9 +261,10 @@ export async function evaluateReadingResponses({ passages = [], answers = {}, at
  * 2. Independent AI evaluation & verification.
  * 3. Reconciliation with disagreement recording.
  */
-export async function evaluateListeningResponses({ sections = [], answers = {}, attemptId = 'anon' }) {
-  const answeredCount = Object.values(answers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
+export async function evaluateListeningResponses({ sections = [], answers: rawAnswers = {}, attemptId = 'anon' }) {
+  const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = sections.flatMap(s => s.questions || []);
+  const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
 
   if (answeredCount === 0) {
     return {
@@ -249,13 +284,14 @@ export async function evaluateListeningResponses({ sections = [], answers = {}, 
 
   for (const q of allQuestions) {
     const candidate = answers[q.id];
-    const isCorrect = isCandidateAnswerCorrect(candidate, q.answer);
+    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q));
     if (isCorrect) correct++;
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
       officialAnswer: q.answer,
       candidateAnswer: candidate || null,
-      questionType: q.type || q.questionType || null
+      questionType: q.type || q.questionType || null,
+      questionNumber: q.questionNumber ?? null,
     };
   }
 

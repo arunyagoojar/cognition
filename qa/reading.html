@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA · Reading</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    // Dev-only QA harness (not part of the production build): mounts the real
+    // ReadingModule on a chosen production test without the auth gate.
+    import React from 'react';
+    import { createRoot } from 'react-dom/client';
+    import '/src/index.css';
+    import ReadingModule from '/src/components/modules/ReadingModule.jsx';
+    const qs = new URLSearchParams(location.search);
+    document.documentElement.dataset.theme = qs.get('theme') || 'light';
+    createRoot(document.getElementById('root')).render(
+      React.createElement(ReadingModule, {
+        testId: qs.get('test') || undefined,
+        initialPhase: qs.get('phase') || 'exam',
+        onBack: () => {}, onComplete: (r) => { window.__result = r; },
+      }));
+  </script>
+</body>
+</html>

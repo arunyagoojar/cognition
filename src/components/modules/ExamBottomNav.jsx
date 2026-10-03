@@ -64,7 +64,12 @@ export default function ExamBottomNav({
                   {isCompleted && !isActive && (
                     <span className="exam-section-check-dot">✓</span>
                   )}
-                  <span>{label}</span>
+                  {typeof sec === 'object' && sec.shortLabel ? (
+                    <>
+                      <span className="exam-nav-label-long">{label}</span>
+                      <span className="exam-nav-label-short" aria-hidden="true">{sec.shortLabel}</span>
+                    </>
+                  ) : <span>{label}</span>}
                 </button>
               );
             })}

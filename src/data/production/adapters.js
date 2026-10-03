@@ -55,7 +55,9 @@ export function adaptProductionListening(rec, includeAnswers = false) {
         instructions: g.instructions,
         wordLimit: g.wordLimit,
         options: g.options,
-        visualHtml: g.visualHtml || null,
+        visualHtml: g.visualHtml ? resolvePromptHtml(g.visualHtml) : null,
+        selection: g.selection || null,
+        optionPool: g.optionPool || null,
         htmlContent: g.htmlContent,
         questions: g.questions.map(q => ({
           ...q,
@@ -67,28 +69,35 @@ export function adaptProductionListening(rec, includeAnswers = false) {
 }
 
 /**
- * Speaking production adapter.
- * The source corpus only provides Part 2 cue cards (Makkar-style), so coverage is
- * explicitly partial: part1/part3 are unavailable and no full Speaking band is
- * derived from a single cue-card response (evaluation engine marks such attempts
- * as 'partial' and withholds the overall band).
+ * Speaking production adapter. Packages follow the IELTS format:
+ *   Part 1 — 3 familiar topics × 4 questions (flattened; each question keeps its topic)
+ *   Part 2 — cue card: topic, "You should say:" prompts, "and explain …"
+ *   Part 3 — 2 discussion themes × 3 questions (flattened; each keeps its theme)
+ * Provenance is carried per part: the Part 2 topic comes from the source
+ * practice site; prompts, Part 1 and Part 3 are written for Cognition in the
+ * IELTS format. Neither is presented as official IELTS material.
  */
+export const SPEAKING_PROVENANCE_LABEL = {
+  SOURCE_PRACTICE_TOPIC: 'Practice topic',
+  COGNITION_AUTHORED_PRACTICE: 'Practice questions in the IELTS format',
+};
+
 export function adaptProductionSpeaking(pkg) {
-  // Full 3-part interview shape. Per-part provenance travels with each part:
-  // Part 1/Part 3 are generated practice; the Part 2 topic is authentic Makkar.
   const p1 = pkg.part1 || { available: false };
   const p3 = pkg.part3 || { available: false };
   const parts = [];
   if (p1.available) {
+    const topics = p1.topics || [];
     parts.push({
       partNumber: 1,
       part: 1,
       title: 'Part 1 · Introduction & Interview',
       instructions: 'Answer the questions in full sentences. Approx. 4–5 minutes for this part in a real test.',
-      questions: p1.topicSet?.questions || [],
-      followUps: p1.topicSet?.followUps || [],
+      questions: topics.flatMap(t => t.questions),
+      questionTopics: topics.flatMap(t => t.questions.map(() => t.topic)),
+      topicSetTopic: topics[0]?.topic || null,
+      followUps: [],
       provenanceType: p1.provenanceType,
-      topicSetTopic: p1.topicSet?.topic,
     });
   }
   parts.push({
@@ -103,17 +112,19 @@ export function adaptProductionSpeaking(pkg) {
       finalInstruction: pkg.cueCard.finalInstruction || '',
     },
     questions: [pkg.cueCard.topic],
-    topicProvenance: pkg.part2?.topic?.provenanceType || 'SOURCE_PRACTICE',
-    topicSource: pkg.part2?.topic?.source || null,
+    topicProvenance: pkg.provenance?.part2Topic || 'SOURCE_PRACTICE_TOPIC',
+    promptsProvenance: pkg.provenance?.part2Prompts || 'COGNITION_AUTHORED_PRACTICE',
     sampleAnswer: pkg.sampleAnswer,
   });
   if (p3.available) {
+    const themes = p3.themes || [];
     parts.push({
       partNumber: 3,
       part: 3,
       title: 'Part 3 · Discussion',
       instructions: 'Discuss the questions with the examiner. Give extended, developed answers.',
-      questions: (p3.questions || []).map(q => q.question),
+      questions: themes.flatMap(t => t.questions),
+      questionTopics: themes.flatMap(t => t.questions.map(() => t.theme)),
       provenanceType: p3.provenanceType,
     });
   }
@@ -124,7 +135,7 @@ export function adaptProductionSpeaking(pkg) {
     title: `IELTS Speaking — ${pkg.cueCard.topic || 'Cue Card'}`,
     isRandomized: false,
     coverage: pkg.coverage,
-    category: pkg.category,
+    provenance: pkg.provenance || null,
     hubNumber: pkg.hubNumber,
     sampleAnswer: pkg.sampleAnswer,
     source: pkg.source,
@@ -206,46 +217,35 @@ export function getRandomProductionWritingTask(kind) {
 
 
 /**
- * Reading production adapter (Phase 6).
- * Academic Reading tests: 3 passages, question groups, answers from the verified
- * production database. includeAnswers gates the answer key like Listening.
+ * Reading production adapter (Phase 6 · contract v2).
+ * The runtime bundle already carries the normalized structure (passage
+ * paragraphs, question groups, option pools, stimulus segments with blank
+ * tokens, one answer control per question). This adapter only maps shapes:
+ * it gates answers behind includeAnswers and resolves media to R2. It never
+ * parses HTML and never repairs content — broken content is quarantined in
+ * content-db and never reaches the bundle.
  */
 function resolvePromptHtml(html) {
-    return html.replace(/src="(\/wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p)}"`);
+  if (!html) return html;
+  return html.replace(/src="(?:\.\.\/)*(\/?wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p.startsWith('/') ? p : `/${p}`)}"`);
 }
 
-/**
- * Reading extraction left most question groups as plain text (structured
- * records exist only for a subset of groups). Inject answerable blanks into
- * numbered question lines so every question is enterable; qid qN matches the
- * global answer-key numbering used by structured records.
- */
-function injectReadingBlanks(html) {
-  if (!html) return html;
-  // The extracted leading number is REPLACED — the number badge renders in
-  // the UI layer (QuestionNumber), so it can never appear twice per blank.
-  const blank = (n) => `<span class="inline-blank"><input type="text" data-qid="q${n}" class="cognition-exam-input" style="display:inline-block;width:130px;margin:0 4px" autocomplete="off" /></span> `;
-  // Numbered question lines appear either as their own <p> or as newline-
-  // separated lines inside a paragraph: "12. text" / "12 text" / "12) text".
-  let out = html
-    .replace(/<p>(\s*)(\d{1,2})([\.\)]?)\s/g, (m, sp, num) => {
-      const n = parseInt(num, 10);
-      if (!Number.isInteger(n) || n < 1 || n > 40) return m;
-      return `<p>${sp}${blank(n)}`;
-    })
-    .replace(/\n(\d{1,2})([\.\)]?)\s(?=[^\n])/g, (m, num, dot) => {
-      const n = parseInt(num, 10);
-      if (!Number.isInteger(n) || n < 1 || n > 40) return m;
-      return `\n${blank(n)}`;
-    });
-  // Group headers ("Questions 18–24. …") render in the question-group header;
-  // drop the duplicated range sentence from the stimulus HTML (own <p>,
-  // stim-line class, or inline leading range).
-  out = out
-    .replace(/<p>\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}[^<]{0,140}?<\/p>/g, '')
-    .replace(/<p class="stim-line">\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}[^<]{0,140}(<\/p>)?/g, '')
-    .replace(/Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}\s*\.?\s*(Do the following|Complete the|Answer the|Choose|Write|Label)/g, '$1');
-  return out;
+const READING_FULL_TESTS = PRODUCTION_READING.filter(r => r.fullMockEligible && r.questionCount === 40);
+
+function adaptReadingQuestion(q, includeAnswers) {
+  return {
+    ...q,
+    answer: includeAnswers ? q.answer : null,
+    acceptedAnswers: includeAnswers ? q.acceptedAnswers : null,
+  };
+}
+
+function adaptReadingStimulus(stimulus) {
+  if (!stimulus) return null;
+  return {
+    ...stimulus,
+    blocks: stimulus.blocks.map(b => (b.type === 'image' ? { ...b, src: resolveMediaUrl(b.src) } : b)),
+  };
 }
 
 export function adaptProductionReading(rec, includeAnswers = false) {
@@ -254,41 +254,39 @@ export function adaptProductionReading(rec, includeAnswers = false) {
     id: rec.id,
     slug: rec.slug,
     title: rec.title,
-    kind: rec.kind,
+    fullMockEligible: rec.fullMockEligible,
+    questionCount: rec.questionCount,
     isRandomized: false,
     durationMinutes: 60,
     passages: rec.passages.map(p => ({
       passageNumber: p.passageNumber,
       title: p.title,
-      htmlContent: injectReadingBlanks(p.htmlContent),
-      questions: p.questions.map(q => ({
-        ...q,
-        answer: includeAnswers ? q.answer : null,
-      })),
+      paragraphs: p.paragraphs.map(x => (x.type === 'image' ? { ...x, src: resolveMediaUrl(x.src) } : x)),
+      passageText: p.passageText,
+      questions: p.questions.map(q => adaptReadingQuestion(q, includeAnswers)),
       questionGroups: p.questionGroups.map(g => ({
-        groupId: g.groupId,
-        groupType: g.groupType,
-        instructions: g.instructions,
-        options: g.options,
-        htmlContent: injectReadingBlanks(g.htmlContent),
-        questions: g.questions.map(q => ({
-          ...q,
-          answer: includeAnswers ? q.answer : null,
-        })),
+        ...g,
+        stimulus: adaptReadingStimulus(g.stimulus),
+        questions: g.questions.map(q => adaptReadingQuestion(q, includeAnswers)),
       })),
     })),
     source: rec.source || null,
   };
 }
 
+export function getAllProductionReadingTests() {
+  return READING_FULL_TESTS;
+}
+
 export function getProductionReadingTest(testId, includeAnswers = false) {
-  const rec = PRODUCTION_READING.find(r =>
+  const rec = READING_FULL_TESTS.find(r =>
     String(r.testId) === String(testId) || r.id === testId || r.slug === testId);
   return rec ? adaptProductionReading(rec, includeAnswers) : null;
 }
 
+/** Full Reading tests only: complete 1–40 numbering, every question keyed. */
 export function getRandomProductionReadingTest(includeAnswers = false) {
-  if (!PRODUCTION_READING.length) return null;
-  const rec = PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
+  if (!READING_FULL_TESTS.length) return null;
+  const rec = READING_FULL_TESTS[Math.floor(Math.random() * READING_FULL_TESTS.length)];
   return adaptProductionReading(rec, includeAnswers);
 }

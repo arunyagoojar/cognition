@@ -569,7 +569,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', color: 'var(--text-secondary)' }}>PART 2</div>
                   <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.06em' }}>LONG TURN</div>
                 </div>
-                <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 600 }}>Authentic practice topic</div>
+                <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 600 }}>Practice topic · prompts in the IELTS format</div>
               </div>
               <div style={{ fontSize: 20, fontWeight: 700, lineHeight: 1.35, fontFamily: 'var(--font-family)', marginBottom: 16 }}>
                 {currentPart?.cueCard?.topic}
@@ -704,12 +704,12 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
           <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '30px 36px', boxShadow: '0 3px 0 #151313' }}>
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', color: 'var(--text-secondary)', marginBottom: 12, fontFamily: 'var(--font-family)' }}>
-              PART {currentPart?.partNumber} · {currentPart?.partNumber === 1 ? currentPart?.topicSetTopic?.toUpperCase() : 'DISCUSSION'}
+              PART {currentPart?.partNumber} · {(currentPart?.questionTopics?.[questionIdx] || (currentPart?.partNumber === 1 ? currentPart?.topicSetTopic : 'Discussion') || '').toUpperCase()}
             </div>
             <div style={{ fontSize: 19, fontWeight: 700, lineHeight: 1.4, fontFamily: 'var(--font-family)' }}>
               {currentQuestion}
             </div>
-            {currentPart?.followUps?.length === 0 && null}
+            <div className="speaking-provenance-note">Practice question written in the IELTS format</div>
           </div>
 
           {/* recording control */}

@@ -105,21 +105,30 @@ function canonicalizeNumbers(s) {
 }
 
 /**
- * Splits an official answer into accepted variants. The source key format
- * "11 / eleven (am)" means "11" and "eleven (am)" are both officially
- * acceptable; parenthetical tails are optional extras.
+ * Expands an official answer into its accepted variants, following the key's
+ * own notation only:
+ *   "11 / eleven (am)" → "11", "eleven am", "eleven"   (slash = alternatives)
+ *   "ratio (of fuel)"  → "ratio of fuel", "ratio"      (parentheses = optional words)
+ * An array is a pre-expanded list of accepted answers (Reading contract v2).
  */
 export function officialAnswerVariants(expectedAnswer) {
-  const expected = String(expectedAnswer ?? '').trim();
-  if (!expected) return [];
   const expanded = [];
-  const push = (v) => { if (v && !expanded.includes(v)) expanded.push(v); };
-  push(expected);
-  if (expected.includes('/')) {
-    for (const v of expected.split('/').map(x => x.trim()).filter(Boolean)) {
+  const push = (v) => {
+    const t = String(v ?? '').replace(/\s+/g, ' ').trim();
+    if (t && !expanded.includes(t)) expanded.push(t);
+  };
+  const sources = Array.isArray(expectedAnswer) ? expectedAnswer : [expectedAnswer];
+  for (const src of sources) {
+    const expected = String(src ?? '').trim();
+    if (!expected) continue;
+    push(expected);
+    const parts = expected.includes('/') ? expected.split('/').map(x => x.trim()).filter(Boolean) : [expected];
+    for (const v of parts) {
       push(v);
-      // Parenthetical extras are optional — also accept the variant without.
-      push(v.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim());
+      if (v.includes('(')) {
+        push(v.replace(/[()]/g, ' '));                     // optional words included
+        push(v.replace(/\s*\([^)]*\)\s*/g, ' '));            // optional words omitted
+      }
     }
   }
   return expanded;

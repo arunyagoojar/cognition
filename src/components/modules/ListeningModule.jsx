@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
-import { calculateListeningBand, isAnswerCorrect } from '../../utils/bandCalculator';
+import { calculateListeningBand } from '../../utils/bandCalculator';
+import { evaluateListeningResponses } from '../../utils/evaluation/evaluationEngine';
+import AnswerReviewList from '../common/AnswerReviewList';
+import { MultiChoice } from '../reading/ReadingQuestionGroup';
 import { recordAttemptedQuestionSet } from '../../utils/storage';
 import ExamStartScreen from './ExamStartScreen';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
@@ -90,24 +93,21 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     audioRef.current.currentTime = pos * audioDuration;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     clearInterval(timerRef.current);
     if (audioRef.current) audioRef.current.pause();
 
-    // Fetch the test again WITH answers for grading to prevent client-side cheat vectors
+    // Fetch the test again WITH answers for grading; scoring is the shared
+    // deterministic engine (official key notation, order-free "choose N").
     const gradedTest = getListeningTest(test.testId, true);
-    const allQ = gradedTest.parts.flatMap(p => p.questions);
-    let correct = 0;
-    allQ.forEach(q => {
-      if (isAnswerCorrect(answers[q.id], q.answer)) correct++;
-    });
-    const band = calculateListeningBand(correct);
     recordAttemptedQuestionSet('listening', test.testId);
+    const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers });
     const computedResult = {
-      band,
-      raw: correct,
-      total: allQ.length,
-      percentage: Math.round((correct / allQ.length) * 100),
+      ...evalResult,
+      band: evalResult.band ?? (evalResult.status === 'not_attempted' ? calculateListeningBand(0) : null),
+      raw: evalResult.raw || 0,
+      total: evalResult.total || 40,
+      percentage: evalResult.percentage || 0,
       answers
     };
 
@@ -321,117 +321,15 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           </div>
         )}
 
-{/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
-          {/* What went well (3 cards max) */}
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--success-icon)', marginBottom: 16 }}>
-              <Icon name="check" size={16} /> What Went Well
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Part 1 & 2 Accuracy:</strong> Successfully retrieved basic concrete details and contact information.
-              </div>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Pacing:</strong> Kept pace with the recording through transitional discourse markers.
-              </div>
-              {isBandHigh && (
-                <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                  <strong>Academic Lectures:</strong> Identified core theoretical points during sustained monologues.
-                </div>
-              )}
-            </div>
+
+
+        {/* Answer review — every question, from the evaluated item results */}
+        {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
+          <div style={{ marginBottom: 36 }}>
+            <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>Answer Review</h3>
+            <AnswerReviewList itemResults={result.itemResults} showUnanswered />
           </div>
-
-          {/* Needs attention (3 cards max) */}
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--c-coral)', marginBottom: 16 }}>
-              <Icon name="zap" size={16} /> Needs Attention
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Signpost Paraphrases:</strong> Watch for speakers altering vocabulary just prior to delivering the target noun.
-              </div>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Distractor Negations:</strong> Speakers often mention an initial proposal, then correct themselves with "actually" or "however".
-              </div>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Word Count Restrictions:</strong> Strictly respect "NO MORE THAN ONE WORD AND/OR A NUMBER".
-              </div>
-            </div>
-          </div>
-
-          {/* Recommended next practice (2-3 actions) */}
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 16 }}>
-              <Icon name="arrowRight" size={16} /> Recommended Practice
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 14, background: 'rgba(252, 204, 66, 0.15)', border: '1px solid #151313', borderRadius: 12, fontSize: 13 }}>
-                <strong style={{ color: 'var(--text-primary)' }}>Part 4 Monologues</strong>
-                <div style={{ color: 'var(--text-secondary)', marginTop: 4 }}>Practice 10 consecutive note-completion items without pauses.</div>
-              </div>
-              <div style={{ padding: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313', borderRadius: 12, fontSize: 13 }}>
-                <strong style={{ color: 'var(--text-primary)' }}>Learning Hub Masterclass</strong>
-                <div style={{ color: 'var(--text-secondary)', marginTop: 4 }}>Watch "Identifying Paraphrases & Trap Distractors" video lesson.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Answer Breakdown / Review Table */}
-        <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 28, marginBottom: 36, boxShadow: '0 3px 0 #151313' }}>
-          <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
-            Answer Review
-          </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 400, overflowY: 'auto' }}>
-            {test.parts.flatMap(p => p.questions).map(q => {
-              const userAns = (answers[q.id] || '').trim();
-              const isCorrect = isAnswerCorrect(userAns, q.answer);
-              const correctStr = Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer;
-
-              return (
-                <div key={q.id} style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '12px 16px',
-                  borderRadius: 12,
-                  background: isCorrect ? 'rgba(16,185,129,0.08)' : 'rgba(255,87,52,0.08)',
-                  border: isCorrect ? '1px solid rgba(16,185,129,0.3)' : '1px solid rgba(255,87,52,0.3)',
-                  fontSize: 13,
-                  gap: 12
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1 }}>
-                    <span style={{
-                      fontWeight: 800,
-                      width: 28,
-                      height: 28,
-                      borderRadius: 8,
-                      background: isCorrect ? 'var(--success-icon)' : '#FF5734',
-                      color: isCorrect ? '#fff' : '#151313',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 12
-                    }}>
-                      {q.id}
-                    </span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
-                      {q.prompt} <span style={{ textDecoration: 'underline', fontWeight: 700 }}>{userAns || '(no answer)'}</span> {q.suffix}
-                    </span>
-                  </div>
-
-                  {!isCorrect && (
-                    <div style={{ fontSize: 12, color: 'var(--c-coral)', fontWeight: 700 }}>
-                      Correct: {correctStr}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        )}
 
         {/* PROMINENT CORAL CTA SAVE BUTTON */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 16, borderTop: '1.5px solid #151313' }}>
@@ -565,7 +463,16 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           const inlineIds = new Set(
             [...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1])
           );
-          const standalone = (g.questions || []).filter(q => !inlineIds.has(q.id));
+          const standalone = g.selection ? [] : (g.questions || []).filter(q => !inlineIds.has(q.id));
+          const multi = g.selection ? (
+            <MultiChoice
+              group={{ startQ: g.questions[0]?.questionNumber, endQ: g.questions[g.questions.length - 1]?.questionNumber,
+                questions: g.questions, selectCount: g.selection.selectCount, optionPool: { options: g.selection.options } }}
+              prompt={g.selection.prompt}
+              answers={answers}
+              onAnswer={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))}
+            />
+          ) : null;
           const hasVisual = Boolean(g.visualHtml);
           // Visual-aware layout: map/diagram-style stimuli leave meaningful space
           // beside them; table/notes groups keep the visual full-width.
@@ -581,6 +488,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
                 answers={answers}
                 setAnswers={setAnswers}
               />
+              {multi}
               {standalone.map(q => (
                 <QuestionRenderer
                   key={q.id}
@@ -625,6 +533,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
                     answers={answers}
                     setAnswers={setAnswers}
                   />
+                  {multi}
                   {standalone.map(q => (
                     <QuestionRenderer
                       key={q.id}
@@ -647,7 +556,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         previousLabel="Previous Part"
         sections={test.parts.map((p, i) => ({
           label: `Part ${i + 1}`,
-          isCompleted: test.parts[i].questions?.every(q => Boolean(answers[q.id]?.trim()))
+          isCompleted: test.parts[i].questions?.every(q => String(answers[q.id] ?? '').trim() !== '')
         }))}
         activeSectionIndex={partIdx}
         onSelectSection={(idx) => setPartIdx(idx)}

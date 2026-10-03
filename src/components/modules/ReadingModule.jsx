@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedReadingTest, getReadingTest } from '../../data/reading/index';
-import { calculateReadingBand, isAnswerCorrect } from '../../utils/bandCalculator';
 import { recordAttemptedQuestionSet, createAttemptId } from '../../utils/storage';
 import { evaluateReadingResponses } from '../../utils/evaluation/evaluationEngine';
 import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
-import HtmlContentRenderer from '../common/HtmlContentRenderer';
-import QuestionRenderer from '../common/QuestionRenderer';
+import ReadingPassage from '../reading/ReadingPassage';
+import ReadingQuestionGroup from '../reading/ReadingQuestionGroup';
 import AnswerReviewList from '../common/AnswerReviewList';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 
@@ -23,8 +22,20 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const [result, setResult] = useState(null);
   const [processingStep, setProcessingStep] = useState(0);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+  // Compact widths show one pane at a time; regular widths show both side by side.
+  const [mobilePane, setMobilePane] = useState('passage');
+  const passagePaneRef = useRef(null);
+  const questionPaneRef = useRef(null);
 
   const timerRef = useRef(null);
+
+  const setAnswer = (id, value) => setAnswers(prev => ({ ...prev, [id]: value }));
+  const goToPassage = (idx) => {
+    setActiveSectionIndex(idx);
+    setMobilePane('passage');
+    passagePaneRef.current?.scrollTo({ top: 0 });
+    questionPaneRef.current?.scrollTo({ top: 0 });
+  };
 
   const startTimer = () => {
     timerRef.current = setInterval(() => {
@@ -280,7 +291,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 12 }}>
               <Icon name="pen" size={15} /> Answer Review
             </div>
-            <AnswerReviewList itemResults={result.itemResults} />
+            <AnswerReviewList itemResults={result.itemResults} showUnanswered />
           </div>
         )}
 
@@ -291,102 +302,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           </div>
         )}
 
-        {/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--success-icon)', marginBottom: 16 }}>
-              <Icon name="check" size={16} /> What Went Well
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Passage 1 Accuracy:</strong> High rate of factual precision on introductory narrative sections.
-              </div>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Scanning Speed:</strong> Found technical terms and historical dates promptly.
-              </div>
-            </div>
-          </div>
 
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--c-coral)', marginBottom: 16 }}>
-              <Icon name="zap" size={16} /> Needs Attention
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>True / False / Not Given:</strong> Differentiate between contradictory statements and unverified information.
-              </div>
-              <div style={{ padding: 12, background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)', fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong>Passage 3 Timing:</strong> Allow at least 22 minutes for the final, most complex passage.
-              </div>
-            </div>
-          </div>
-
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 16 }}>
-              <Icon name="arrowRight" size={16} /> Recommended Practice
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ padding: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313', borderRadius: 12, fontSize: 13 }}>
-                <strong style={{ color: 'var(--text-primary)' }}>Matching Headings Drill</strong>
-                <div style={{ color: 'var(--text-secondary)', marginTop: 4 }}>Practice reading topic sentences and identifying paragraph thesis.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Answer Breakdown */}
-        <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 28, marginBottom: 36, boxShadow: '0 3px 0 #151313' }}>
-          <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
-            Answer Review
-          </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxHeight: 400, overflowY: 'auto' }}>
-            {test.passages.flatMap(p => p.questions).map(q => {
-              const userAns = (answers[q.id] || '').trim();
-              const isCorrect = isAnswerCorrect(userAns, q.answer);
-              const correctStr = Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer;
-
-              return (
-                <div key={q.id} style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '12px 16px',
-                  borderRadius: 12,
-                  background: isCorrect ? 'rgba(16,185,129,0.08)' : 'rgba(255,87,52,0.08)',
-                  border: isCorrect ? '1px solid rgba(16,185,129,0.3)' : '1px solid rgba(255,87,52,0.3)',
-                  fontSize: 13,
-                  gap: 12
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1 }}>
-                    <span style={{
-                      fontWeight: 800,
-                      width: 28,
-                      height: 28,
-                      borderRadius: 8,
-                      background: isCorrect ? 'var(--success-icon)' : '#FF5734',
-                      color: isCorrect ? '#fff' : '#151313',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 12
-                    }}>
-                      {q.id}
-                    </span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
-                      {q.prompt} <span style={{ textDecoration: 'underline', fontWeight: 700 }}>{userAns || '(no answer)'}</span> {q.suffix}
-                    </span>
-                  </div>
-
-                  {!isCorrect && (
-                    <div style={{ fontSize: 12, color: 'var(--c-coral)', fontWeight: 700 }}>
-                      Correct: {correctStr}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
 
         {/* PROMINENT CORAL CTA SAVE BUTTON */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 16, borderTop: '1.5px solid #151313' }}>
@@ -418,6 +334,11 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
     );
   }
 
+  const passage = test?.passages?.[activeSectionIndex];
+  const passageCount = test?.passages?.length || 1;
+  const isLast = activeSectionIndex === passageCount - 1;
+  const answeredIn = (p) => (p?.questions || []).filter(q => String(answers[q.id] ?? '').trim()).length;
+
   return (
     <div className="exam-focus-layout reading-split-active">
       {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
@@ -432,7 +353,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         </div>
 
         <div className="exam-focus-header-right">
-          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} title="Time remaining">
+          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} role="timer" aria-label={`Time remaining ${FMT(timeLeft)}`}>
             <Icon name="clock" size={16} />
             <span>{FMT(timeLeft)}</span>
           </div>
@@ -441,109 +362,59 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             type="button"
             className="exam-focus-exit-btn"
             onClick={() => {
-              if (window.confirm('Exit reading exam? Your progress will be lost.')) onBack();
+              if (window.confirm('Exit the Reading test? Your answers will not be saved.')) onBack();
             }}
-            title="Exit test and return to Dashboard"
           >
-            <span>Exit Exam</span>
+            <span>Exit Test</span>
           </button>
         </div>
       </div>
 
-      {/* ── 2. READING WORKSPACE — split-screen (passage | questions) ── */}
-      <div className="reading-split-panes">
-        {/* LEFT: passage, independently scrollable on desktop */}
-        <div className="reading-pane">
-          <div className="exam-doc" style={{
-            background: 'var(--bg-card)',
-            border: 'var(--border-dark)',
-            borderRadius: 'var(--r-card)',
-            padding: '24px 30px',
-            boxShadow: '0 3px 0 #151313'
-          }}>
-            {test?.passages?.[activeSectionIndex] && (
-              <HtmlContentRenderer
-                htmlContent={test.passages[activeSectionIndex].htmlContent}
-                answers={answers}
-                setAnswers={setAnswers}
-              />
-            )}
+      {/* Compact widths: one pane at a time */}
+      <div className="rd-pane-switch" role="tablist" aria-label="Reading workspace">
+        <button type="button" role="tab" aria-selected={mobilePane === 'passage'}
+          className={mobilePane === 'passage' ? 'is-active' : ''} onClick={() => setMobilePane('passage')}>
+          Passage
+        </button>
+        <button type="button" role="tab" aria-selected={mobilePane === 'questions'}
+          className={mobilePane === 'questions' ? 'is-active' : ''} onClick={() => setMobilePane('questions')}>
+          Questions <span className="rd-pane-count">{answeredIn(passage)}/{passage?.questions?.length || 0}</span>
+        </button>
+      </div>
+
+      {/* ── 2. READING WORKSPACE — passage | questions ── */}
+      <div className={`reading-split-panes rd-show-${mobilePane}`}>
+        <div className="reading-pane rd-pane-passage" ref={passagePaneRef}>
+          <div className="rd-sheet">
+            <ReadingPassage passage={passage} />
           </div>
         </div>
 
-        {/* RIGHT: questions, independently scrollable on desktop */}
-        <div className="reading-pane">
-        {/* Question groups — full-width, same pattern as Listening */}
-        {(test?.passages?.[activeSectionIndex]?.questionGroups || []).map((g, idx) => {
-          const inlineIds = new Set(
-            [...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m => m[1])
-          );
-          const standalone = (g.questions || []).filter(q => !inlineIds.has(q.id));
-          const qRange = g.questions?.length
-            ? `${g.questions[0].questionNumber}${g.questions.length > 1 ? `–${g.questions[g.questions.length - 1].questionNumber}` : ''}`
-            : '';
-          return (
-            <div key={g.groupId || idx} className="exam-doc" style={{
-              background: 'var(--bg-card)',
-              border: 'var(--border-dark)',
-              borderRadius: 'var(--r-card)',
-              padding: '20px 26px',
-              boxShadow: '0 3px 0 #151313',
-              display: 'flex', flexDirection: 'column', gap: 8
-            }}>
-              {g.instructions && (
-                <div style={{
-                  fontWeight: 600, fontSize: 13, color: 'var(--text-primary)',
-                  borderBottom: '1px solid var(--border-subtle)', paddingBottom: 8, marginBottom: 4
-                }}>
-                  <span style={{ fontWeight: 800 }}>Questions {qRange}</span>
-                  {g.instructions && <span>. {g.instructions}</span>}
-                  {g.wordLimit && <span style={{ color: 'var(--text-secondary)' }}> — {g.wordLimit}</span>}
-                </div>
-              )}
-              {g.options && g.options.length > 0 && (
-                <div className="stimulus-options" style={{ margin: '0 0 8px' }}>
-                  {g.options.map((opt, i) => (
-                    <div key={opt.id || i} style={{ display: 'flex', gap: 8, fontSize: 14, marginBottom: 3 }}>
-                      <strong style={{ minWidth: 20 }}>{opt.id}</strong>
-                      <span>{opt.label}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {g.htmlContent && (
-                <HtmlContentRenderer htmlContent={g.htmlContent} answers={answers} setAnswers={setAnswers} />
-              )}
-              {standalone.map(q => (
-                <QuestionRenderer key={q.id} question={q} value={answers[q.id]}
-                  onChange={(id, val) => setAnswers(prev => ({ ...prev, [id]: val }))} />
-              ))}
-            </div>
-          );
-        })}
-      </div>
+        <div className="reading-pane rd-pane-questions" ref={questionPaneRef}>
+          {(passage?.questionGroups || []).map(g => (
+            <ReadingQuestionGroup key={g.groupId} group={g} answers={answers} onAnswer={setAnswer} />
+          ))}
+        </div>
       </div>
 
       {/* ── 3. UNIVERSAL EXAM BOTTOM NAVIGATION ── */}
       <ExamBottomNav
-        onPrevious={() => setActiveSectionIndex(Math.max(0, activeSectionIndex - 1))}
+        onPrevious={() => goToPassage(Math.max(0, activeSectionIndex - 1))}
         isPreviousDisabled={activeSectionIndex === 0}
         previousLabel="Previous Passage"
-        sections={(test?.passages || []).map((p, i) => ({
-          label: `Passage ${p.passageNumber}`,
-          isCompleted: p.questions?.every(q => answers[q.id]?.trim()) || false
+        sections={(test?.passages || []).map(p => ({
+          label: `Passage ${p.passageNumber} · ${answeredIn(p)}/${p.questions?.length || 0}`,
+          shortLabel: String(p.passageNumber),
+          isCompleted: (p.questions?.length || 0) > 0 && answeredIn(p) === p.questions.length,
         }))}
         activeSectionIndex={activeSectionIndex}
-        onSelectSection={setActiveSectionIndex}
+        onSelectSection={goToPassage}
         onNext={() => {
-          if (activeSectionIndex < (test?.passages?.length || 1) - 1) {
-            setActiveSectionIndex(activeSectionIndex + 1);
-          } else {
-            handleSubmit();
-          }
+          if (!isLast) goToPassage(activeSectionIndex + 1);
+          else handleSubmit();
         }}
-        nextLabel={activeSectionIndex < (test?.passages?.length || 1) - 1 ? 'Next Passage' : (isMockMode ? 'Next Section: Writing' : 'Finish & Grade Exam')}
-        isSubmit={activeSectionIndex === (test?.passages?.length || 1) - 1 && !isMockMode}
+        nextLabel={!isLast ? 'Next Passage' : (isMockMode ? 'Next Section: Writing' : 'Finish & Grade Test')}
+        isSubmit={isLast && !isMockMode}
         nextActionId={isMockMode ? 'next-mock-writing' : 'submit-reading-exam'}
       />
     </div>
