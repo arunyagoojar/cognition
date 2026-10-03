@@ -3,7 +3,8 @@
 Cognition — Speaking package assembly (v5).
 
 Every package follows the IELTS Speaking format:
-  Part 1  introduction + interview: 3 familiar topics × 4 short questions
+  Part 1  introduction + interview (4–5 min): 3 familiar topics × 3 short
+          questions, each topic's questions in natural examiner order
   Part 2  long turn: the cue-card topic, "You should say:" + 3–4 prompts,
           and an "and explain …" line
   Part 3  discussion: 2 abstract themes linked to the Part 2 topic × 3 questions
@@ -31,6 +32,8 @@ OUT = os.path.join(REPO, "content-db", "speaking")
 AUTHORED = os.path.join(OUT, "authored")
 PROV_TOPIC = "SOURCE_PRACTICE_TOPIC"
 PROV_AUTHORED = "COGNITION_AUTHORED_PRACTICE"
+# IELTS Part 1 runs 4–5 minutes: about three topics of three short questions
+PART1_PER_TOPIC = 3
 
 
 def fail(msg):
@@ -83,9 +86,10 @@ def pick_part1(pkg_id, topic, frames):
             families.add(f.get("family"))
         if len(chosen) == 3:
             break
-    if len(chosen) != 3 or any(len(f["questions"]) != 4 for f in chosen):
-        fail(f"{pkg_id}: could not assemble 3 Part 1 topics × 4 questions")
-    return [{"topic": f["topic"], "key": f["key"], "questions": list(f["questions"])} for f in chosen]
+    if len(chosen) != 3 or any(len(f["questions"]) < PART1_PER_TOPIC for f in chosen):
+        fail(f"{pkg_id}: could not assemble 3 Part 1 topics × {PART1_PER_TOPIC} questions")
+    # frames list questions in examiner order (opening question first)
+    return [{"topic": f["topic"], "key": f["key"], "questions": list(f["questions"][:PART1_PER_TOPIC])} for f in chosen]
 
 
 def main():

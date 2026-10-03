@@ -301,9 +301,9 @@
        "assetId": "asset.241a0450693e",
        "sourcePath": "wp-content/uploads/2024/09/test-68-min-1.png",
        "sha256": "241a0450693e4628dc9aea147426b77d092efec4b443ced46044d5cf3f25391a",
-       "status": "in_r2",
-       "projectPath": "/reading-assets/241a0450693e4628dc9aea147426b77d092efec4b443ced46044d5cf3f25391a.png",
-       "r2Key": "cognition/images/reading/241a0450693e4628dc9aea147426b77d092efec4b443ced46044d5cf3f25391a.png"
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
       }
      ],
      "questions": [
@@ -392,8 +392,10 @@
        }
       }
      ],
-     "status": "production",
-     "reasonCodes": [],
+     "status": "quarantined",
+     "reasonCodes": [
+      "MEDIA_NOT_IN_R2"
+     ],
      "warnings": null,
      "provenance": {
       "headerLine": 9,
@@ -2006,12 +2008,6 @@
  ],
  "junkLinesDropped": 1,
  "productionQuestionNumbers": [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
   11,
   12,
   13,
@@ -2043,7 +2039,7 @@
   "passages": 3,
   "groups": 9,
   "questionsInSource": 36,
-  "productionQuestions": 32,
+  "productionQuestions": 26,
   "answerKeyItems": 40
  },
  "contentFingerprint": "c4412df9759a0606b69b2854e10107a14e428c4f9b845338453a9cf59ce9fb1b"

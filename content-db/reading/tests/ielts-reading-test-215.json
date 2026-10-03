@@ -250,9 +250,9 @@
      "assetId": "asset.b58d821e05f9",
      "sourcePath": "wp-content/uploads/2024/09/215-test-aca.png",
      "sha256": "b58d821e05f94a4db25727106ed545f4e381224cb7be6c8671aa4e04c3deeac7",
-     "status": "in_r2",
-     "projectPath": "/reading-assets/b58d821e05f94a4db25727106ed545f4e381224cb7be6c8671aa4e04c3deeac7.png",
-     "r2Key": "cognition/images/reading/b58d821e05f94a4db25727106ed545f4e381224cb7be6c8671aa4e04c3deeac7.png"
+     "status": "not_in_r2",
+     "projectPath": null,
+     "r2Key": null
     }
    ],
    "passageReasonCodes": null,
@@ -277,6 +277,7 @@
      "status": "quarantined",
      "reasonCodes": [
       "EMPTY_QUESTION",
+      "MEDIA_NOT_IN_R2",
       "MISSING_QUESTION"
      ],
      "warnings": null,

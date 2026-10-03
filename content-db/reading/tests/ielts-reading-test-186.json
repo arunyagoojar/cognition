@@ -1561,9 +1561,9 @@
        "assetId": "asset.2ba6085a9035",
        "sourcePath": "wp-content/uploads/2024/09/186-test-aca-1.png",
        "sha256": "2ba6085a9035c7c0490e0ab5e07c8164b1471fd6fb656f1c44c0333421ddd3ab",
-       "status": "in_r2",
-       "projectPath": "/reading-assets/2ba6085a9035c7c0490e0ab5e07c8164b1471fd6fb656f1c44c0333421ddd3ab.png",
-       "r2Key": "cognition/images/reading/2ba6085a9035c7c0490e0ab5e07c8164b1471fd6fb656f1c44c0333421ddd3ab.png"
+       "status": "not_in_r2",
+       "projectPath": null,
+       "r2Key": null
       }
      ],
      "questions": [
@@ -1628,7 +1628,8 @@
      ],
      "status": "quarantined",
      "reasonCodes": [
-      "ANSWER_NOT_IN_PASSAGE"
+      "ANSWER_NOT_IN_PASSAGE",
+      "MEDIA_NOT_IN_R2"
      ],
      "warnings": null,
      "provenance": {

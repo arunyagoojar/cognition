@@ -1638,9 +1638,9 @@
      "assetId": "asset.236a2ef972a3",
      "sourcePath": "wp-content/uploads/2024/09/test-25-min-1.png",
      "sha256": "236a2ef972a3d8e512aa1aa001077cd8e06132593f6ba73ab5f9297b2444abba",
-     "status": "in_r2",
-     "projectPath": "/reading-assets/236a2ef972a3d8e512aa1aa001077cd8e06132593f6ba73ab5f9297b2444abba.png",
-     "r2Key": "cognition/images/reading/236a2ef972a3d8e512aa1aa001077cd8e06132593f6ba73ab5f9297b2444abba.png"
+     "status": "not_in_r2",
+     "projectPath": null,
+     "r2Key": null
     }
    ],
    "passageReasonCodes": null,
@@ -2244,7 +2244,8 @@
      ],
      "status": "quarantined",
      "reasonCodes": [
-      "MEDIA_MISSING"
+      "MEDIA_MISSING",
+      "MEDIA_NOT_IN_R2"
      ],
      "warnings": null,
      "provenance": {

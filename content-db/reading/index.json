@@ -8,18 +8,18 @@
  },
  "fullMockEligible": 109,
  "groups": {
-  "production": 2273,
-  "quarantined": 459
+  "production": 2269,
+  "quarantined": 463
  },
  "questions": {
-  "production": 10556,
-  "quarantined": 2119
+  "production": 10537,
+  "quarantined": 2138
  },
  "productionQuestionsByType": {
   "tfng": 1759,
   "summary_completion": 1291,
   "matching_features": 1261,
-  "matching_information": 1168,
+  "matching_information": 1162,
   "mcq_single": 1155,
   "ynng": 934,
   "matching_headings": 900,
@@ -27,14 +27,13 @@
   "note_completion": 340,
   "mcq_multi": 319,
   "sentence_endings": 263,
-  "short_answer": 262,
   "table_completion": 260,
-  "flow_chart_completion": 100,
-  "diagram_completion": 9
+  "short_answer": 258,
+  "flow_chart_completion": 100
  },
  "quarantinedQuestionsByReason": {
   "ANSWER_NOT_IN_PASSAGE": 833,
-  "MEDIA_NOT_IN_R2": 363,
+  "MEDIA_NOT_IN_R2": 393,
   "TEST_QUARANTINED": 298,
   "ORPHAN_OPTIONS": 270,
   "ANSWER_INVALID_FOR_TYPE": 242,
@@ -54,7 +53,7 @@
  },
  "quarantinedGroupsByReason": {
   "ANSWER_NOT_IN_PASSAGE": 171,
-  "MEDIA_NOT_IN_R2": 81,
+  "MEDIA_NOT_IN_R2": 88,
   "ORPHAN_OPTIONS": 76,
   "TEST_QUARANTINED": 65,
   "MISSING_QUESTION": 61,
@@ -77,14 +76,14 @@
   "ANSWER_KEY_MISSING": 4,
   "EXTRACTION_ARTIFACT": 2
  },
- "mediaPending": 88,
+ "mediaPending": 93,
  "tests_index": [
   {
    "slug": "ielts-reading-test-1",
    "id": "reading.test-0001.560d18ae",
    "status": "practice_only",
    "fullMockEligible": false,
-   "productionQuestions": 35,
+   "productionQuestions": 31,
    "testReasonCodes": [],
    "duplicateOf": null
   },
@@ -907,7 +906,7 @@
    "id": "reading.test-0183.ed0051e7",
    "status": "practice_only",
    "fullMockEligible": false,
-   "productionQuestions": 34,
+   "productionQuestions": 29,
    "testReasonCodes": [],
    "duplicateOf": null
   },
@@ -2651,7 +2650,7 @@
    "id": "reading.test-0068.d20e2fe2",
    "status": "practice_only",
    "fullMockEligible": false,
-   "productionQuestions": 32,
+   "productionQuestions": 26,
    "testReasonCodes": [],
    "duplicateOf": null
   },
@@ -2824,7 +2823,7 @@
    "id": "reading.test-0085.910cef47",
    "status": "practice_only",
    "fullMockEligible": false,
-   "productionQuestions": 36,
+   "productionQuestions": 32,
    "testReasonCodes": [],
    "duplicateOf": null
   },
