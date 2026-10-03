@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { prepareLocalStt } from '../../utils/speech/localStt';
 import { Icon } from '../common/Icon';
 import { getRandomizedFullExam } from '../../data/exams/examAssembler';
 import { getProductionWritingTest } from '../../data/production/adapters';
@@ -91,6 +92,9 @@ export default function MockExamFlow({ onComplete, onBack }) {
       status: 'in_progress'
     });
     setStep(0);
+    // the Speaking section needs the on-device speech model; fetch it in the
+    // background now so it is ready long before Speaking begins
+    prepareLocalStt().catch(() => {});
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 

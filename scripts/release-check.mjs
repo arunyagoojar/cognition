@@ -39,6 +39,7 @@ function checkBundle(where, js, css) {
     ['Reading workspace', 'rd-segmented'], ['Tips coach feed', 'Your IELTS coach'], ['text size control', 'text-size-control'],
     ['mock report', 'FULL MOCK EXAM'], ['AI wait note', 'AI examiner is still assessing'],
     ['session-aware AI errors', 'could not confirm your sign-in session'],
+    ['on-device speech model notice', 'Preparing speech recognition'],
   ]) check(`${where}: feature ${label}`, js.includes(needle));
   for (const [label, needle] of [['inline blank fix', '.inline-blank *'], ['verification code boxes', 'cl-otpCodeFieldInput']]) {
     check(`${where}: style ${label}`, css.includes(needle));

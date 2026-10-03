@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
+import SpeechModelStatus from '../speaking/SpeechModelStatus';
+import { needsLocalStt, prepareLocalStt, transcribeRecording } from '../../utils/speech/localStt';
 import { motion } from 'motion/react';
 import { Icon } from '../common/Icon';
 import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
@@ -33,6 +35,21 @@ const PART2_PREP_SECONDS = 60; // official: 1 minute preparation
 const PART2_SPEAK_SECONDS = 120; // official: up to 2 minutes
 const PART3_SECONDS = 45;
 
+/** Transcription progress for one saved answer (on-device model). */
+function TranscriptState({ rec }) {
+  if (!rec) return null;
+  if (rec.transcriptStatus === 'pending') {
+    return <div className="speaking-transcribing" role="status"><span className="stt-dot" aria-hidden="true" />Transcribing on this device…</div>;
+  }
+  if (rec.transcriptStatus === 'failed') {
+    return <div className="speaking-transcribing" role="status">Transcription failed for this answer. Re-record to try again — your audio is saved.</div>;
+  }
+  if (rec.transcriptStatus === 'done' && !rec.transcript) {
+    return <div className="speaking-transcribing" role="status">No speech was detected in this answer.</div>;
+  }
+  return null;
+}
+
 export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
   const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
@@ -65,6 +82,15 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const speakIntervalRef = useRef(null);
   const notesRef = useRef('');
   notesRef.current = notes;
+  // On-device transcription (default in every browser): one job per recording,
+  // keyed by question; a re-recording supersedes an older job.
+  const useLocalStt = React.useMemo(() => needsLocalStt(), []);
+  const transcriptJobsRef = useRef({});   // qKey → { recordingId, promise }
+  const transcriptsRef = useRef({});      // qKey → { recordingId, text }
+
+  useEffect(() => {
+    if (useLocalStt) prepareLocalStt().catch(() => { /* status component reports it */ });
+  }, [useLocalStt]);
 
   const currentPart = test?.parts?.[partIdx];
   const isPart2 = currentPart?.partNumber === 2;
@@ -115,7 +141,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       const mimeType = detectSupportedAudioMimeType();
       const mr = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
 
-      const SpeechRecognition = typeof window !== 'undefined'
+      // native recognition is only the fallback when the on-device model can't run
+      const SpeechRecognition = !useLocalStt && typeof window !== 'undefined'
         ? (window.SpeechRecognition || window.webkitSpeechRecognition)
         : null;
       if (SpeechRecognition) {
@@ -147,10 +174,26 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
         saveAudioRecording({ recordingId, attemptId: 'temp_attempt', questionId: qId, blob, mimeType, duration: dur })
           .catch(() => {});
+        if (useLocalStt) {
+          const promise = transcribeRecording(blob).then((text) => {
+            if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
+            transcriptsRef.current[qId] = { recordingId, text };
+            setRecordings(prev => (prev[qId]?.recordingId === recordingId
+              ? { ...prev, [qId]: { ...prev[qId], transcript: text, transcriptStatus: 'done' } } : prev));
+          }).catch(() => {
+            if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
+            setRecordings(prev => (prev[qId]?.recordingId === recordingId
+              ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
+          });
+          transcriptJobsRef.current[qId] = { recordingId, promise };
+        } else {
+          transcriptsRef.current[qId] = { recordingId, text: transcriptText };
+        }
         setRecordings(prev => ({
           ...prev,
           [qId]: {
-            recordingId, blob, url, duration: dur, transcript: transcriptText,
+            recordingId, blob, url, duration: dur, transcript: useLocalStt ? '' : transcriptText,
+            transcriptStatus: useLocalStt ? 'pending' : 'done',
             qText: isPart2 ? currentPart?.cueCard?.topic : currentQuestion,
             // notes are planning material — stored with the response, never evaluated
             notes: isPart2 ? notesRef.current : undefined,
@@ -231,11 +274,14 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     setTimeout(() => setEvalStages(s => ({ ...s, transcript: 'done', fluency: 'working' })), 1100);
     setTimeout(() => setEvalStages(s => ({ ...s, fluency: 'analysing', lexical: 'analysing', grammar: 'analysing' })), 1800);
 
+    // every answer's on-device transcript must be finished before scoring
+    await Promise.allSettled(Object.values(transcriptJobsRef.current).map(j => j.promise));
     const transcripts = {};
     const durations = {};
     const audioRecordings = {};
     Object.entries(recordings).forEach(([k, rec]) => {
-      transcripts[k] = rec.transcript || '';
+      const t = transcriptsRef.current[k];
+      transcripts[k] = (t && t.recordingId === rec.recordingId ? t.text : rec.transcript) || '';
       durations[k] = rec.duration || 30;
       audioRecordings[k] = rec.blob || null;
     });
@@ -295,6 +341,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         scoringInfo="Assessed across Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy from your transcript. Pronunciation requires audio analysis and is reported as Not assessed."
         ctaText="START SPEAKING TEST"
         onStart={() => { setPhase('exam'); setPartIdx(0); setQuestionIdx(0); }}
+        notice={<SpeechModelStatus variant="card" />}
         onBack={onBack}
       />
     );
@@ -537,6 +584,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           <h2 className="exam-focus-title">Part {currentPart?.partNumber} of {test.parts.length} · {currentPart?.title}</h2>
         </div>
         <div className="exam-focus-header-right">
+          <SpeechModelStatus variant="pill" />
           <div className="exam-focus-timer-pill" title="Recording status">
             <Icon name="mic" size={16} />
             <span>{isPart2 ? (recState === REC_STATE.PREPARING ? `Prep ${FMT(prepSecondsLeft ?? 0)}` : recState === REC_STATE.RECORDING ? FMT(recordSeconds) : 'Part 2') : `Question ${questionIdx + 1} of ${totalQuestionsInPart}`}</span>
@@ -672,6 +720,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 <button type="button" onClick={() => { setRecState(REC_STATE.READY_TO_SPEAK); setRecordings(prev => { const n = { ...prev }; delete n[currentKey]; return n; }); }} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
               </div>
               {activePlaybackUrl && <audio src={activePlaybackUrl} controls style={{ width: '100%' }} />}
+              <TranscriptState rec={currentRecording} />
               {currentRecording.transcript && (
                 <div>
                   <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
@@ -744,6 +793,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             )}
             {currentRecording && !isRecording && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%' }}>
+                <TranscriptState rec={currentRecording} />
                 {currentRecording.transcript && (
                   <div>
                     <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>

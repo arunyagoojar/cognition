@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /><title>QA · On-device STT</title></head>
+<body><pre id="log">loading…</pre>
+<script type="module">
+  // Dev-only QA harness (not part of the production build): exercises the real
+  // on-device speech pipeline used by the Speaking module.
+  import * as stt from '/src/utils/speech/localStt.js';
+  window.stt = stt;
+  const log = (m) => { document.getElementById('log').textContent += '\n' + m; };
+  stt.subscribeLocalStt(s => { window.__sttState = s; });
+  // Re-record a clip through MediaRecorder exactly like the Speaking screen does
+  window.recordLikeBrowser = async (url) => {
+    const buf = await (await fetch(url)).arrayBuffer();
+    const ctx = new AudioContext();
+    const decoded = await ctx.decodeAudioData(buf);
+    const dest = ctx.createMediaStreamDestination();
+    const src = ctx.createBufferSource(); src.buffer = decoded; src.connect(dest);
+    const mime = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find(m => MediaRecorder.isTypeSupported(m)) || '';
+    const mr = new MediaRecorder(dest.stream, mime ? { mimeType: mime } : undefined);
+    const chunks = [];
+    mr.ondataavailable = e => e.data.size && chunks.push(e.data);
+    const done = new Promise(r => { mr.onstop = r; });
+    mr.start(); src.start();
+    await new Promise(r => { src.onended = r; });
+    mr.stop(); await done; ctx.close();
+    return new Blob(chunks, { type: mr.mimeType });
+  };
+  log('ready · needsLocalStt=' + stt.needsLocalStt());
+</script></body></html>

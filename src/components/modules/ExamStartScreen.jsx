@@ -22,6 +22,7 @@ export default function ExamStartScreen({
   ctaText,
   onStart,
   onBack,
+  notice = null,
 }) {
   // Fix start screen scroll position immediately on mount
   useEffect(() => {
@@ -128,6 +129,8 @@ export default function ExamStartScreen({
             )}
           </div>
         </div>
+
+        {notice}
 
         {/* Bottom: Primary Obvious High-Contrast CTA Button */}
         <div className="exam-start-cta-wrap">
