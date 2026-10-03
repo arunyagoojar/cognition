@@ -7,6 +7,7 @@ import {
   getLastWatchedLesson,
   saveLastWatchedLesson
 } from '../../utils/storage';
+import { syncLessonComplete } from '../../utils/api';
 
 const CATEGORY_ORDER = ['reading', 'listening', 'writing', 'speaking'];
 
@@ -61,6 +62,7 @@ export default function LearningHubPage({ onBack, onContextChange }) {
 
   const handleMarkComplete = (lessonId) => {
     saveCompletedLesson(lessonId);
+    syncLessonComplete(lessonId);
     setCompletedLessons(getCompletedLessons());
   };
 
