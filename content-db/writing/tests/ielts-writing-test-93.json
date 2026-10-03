@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-93",
  "title": "IELTS Academic Writing Test 93",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-93/index.html",
-   "sha256": "0814f0d3b7f8271b37d17676fc280a86ce40ab24a5d8686eb2512e6ba6e6291b",
-   "manifestHashMatch": true,
+   "sha256": "65c4524928b69a4388f27438baf8f09d810b07b31deff0dfa332a011cb28d60c",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-93/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -51,13 +51,22 @@
    "regionBlocks": 3
   }
  },
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "task2",
+   "reasonCode": "MULTIPLE_PROMPTS_FUSED",
+   "evidence": {
+    "at": 199,
+    "excerpt": "hey want to study. Discuss both views and give your opinion. 18. Fewer and fewer young people are choosing to become teachers. Why do young people not want to b"
+   }
+  }
+ ],
  "validationWarnings": [],
- "status": "verified",
+ "status": "quarantined",
  "completeness": {
   "task1": true,
-  "task2": true
+  "task2": false
  },
- "kind": "complete_test",
+ "kind": "task1_only",
  "contentFingerprint": "20e218a9f6a984f7ed2a886d72ce8790e27ae6727f881c7e358c8826a1b6ce30"
 }

@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-85",
  "title": "IELTS Academic Writing Test 85",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-85/index.html",
-   "sha256": "c3b340bb6dc32b0244a38792e0dff86c56fb2a7c9eab269ed3fe22d0c67c71ee",
-   "manifestHashMatch": true,
+   "sha256": "4d1772c0b1c800544ffabcc00f0fd402c4956582a38d1b231b70928437ab5e54",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-85/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,10 +21,10 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The table below shows the hours of leisure time spent by people in different age groups in Someland. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. hours of leisure time per year in someland",
+  "prompt": "The table below shows the hours of leisure time spent by people in different age groups in Someland. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
-   "rawExcerpt": "The table below shows the hours of leisure time spent by people in different age groups in Someland. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. hour",
+   "rawExcerpt": "The table below shows the hours of leisure time spent by people in different age groups in Someland. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
    "regionBlocks": 4
   },
   "table": {
@@ -100,7 +100,8 @@
      "100"
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "hours of leisure time per year in someland"
   }
  },
  "task2": {
@@ -120,5 +121,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "dcf095559ed0a5327c6fa4a68142968bbc5a6ccbf4787280abba12a885d5301c"
+ "contentFingerprint": "098b9ff77010f42821238010762c00af006086a32eaead068a65ddb68b717a64"
 }

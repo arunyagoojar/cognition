@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-43",
  "title": "IELTS Academic Writing Test 43",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-43/index.html",
-   "sha256": "34f5d84017ee9e5711e1f58f026a2099e9aab18aba0c038da6be67dc3a37bc16",
-   "manifestHashMatch": true,
+   "sha256": "ac78ab315e83c007dca8fd15317d905b067f94132825e66052d81db65b2c4999",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-43/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,10 +21,10 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. cinema viewing figures for films by country in millions",
+  "prompt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
-   "rawExcerpt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. cinema viewing figure",
+   "rawExcerpt": "The table below shows the cinema viewing figures for films by country, in millions. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
    "regionBlocks": 4
   },
   "table": {
@@ -78,7 +78,8 @@
      ""
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "cinema viewing figures for films by country in millions"
   }
  },
  "task2": {
@@ -98,5 +99,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "69a7a5b4c5f229c9bf455c3b8eb70247b9f15982659295bbdb5b5fbe1a57c5f3"
+ "contentFingerprint": "dfb66d0594f36c5985de248f705fdd92de6ec8d9f834372815b9105a4e3f4452"
 }

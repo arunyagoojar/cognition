@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-10",
  "title": "IELTS Academic Writing Test 10",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-10/index.html",
-   "sha256": "4f311e47211ddbe418df1591befb0d89c2cf1024ca3752d78c8936984d2c6b36",
-   "manifestHashMatch": true,
+   "sha256": "16900af41a29963bc42505c8f083e7b338301adc3cb157e54e583c28f8136d04",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-10/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,10 +21,10 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. underground railway systems",
+  "prompt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
-   "rawExcerpt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. underground railway",
+   "rawExcerpt": "The take below gives information about the underground railway systems in six cities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
    "regionBlocks": 4
   },
   "table": {
@@ -72,7 +72,8 @@
      "50"
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "underground railway systems"
   }
  },
  "task2": {
@@ -92,5 +93,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "27956b46ae97ab80772ed10c147adf2240c02d23d55dd2595fdb1e8667bc1059"
+ "contentFingerprint": "9ad08e63bec94a89bf642710345f783397981cd952252eccaafc14ac2fa74454"
 }

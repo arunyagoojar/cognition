@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-132",
  "title": "IELTS Academic Writing Test 132",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-132/index.html",
-   "sha256": "15984a3ba3378a526dc3093e05a89ba01853c05eb8da0307915379c9ded8497e",
-   "manifestHashMatch": true,
+   "sha256": "0d8e2ce918660c54e46a7fc8c9045ba5e0a5244c757f1f1a07f53452465f6fa1",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-132/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -44,7 +44,7 @@
  },
  "task2": {
   "taskNumber": 2,
-  "prompt": "Some people argue that primary schools focus too much on formal learning. To what extent do you agree with this opinion? How important do you think it is for children to play as well as learn in the primary school classroom? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words. TASK 2 BAND 7.5 ANSWER: Nowadays individuals are arguing that primary schools pay a lot of attention to the formal methods of learning. I partially agree with this point of view, however I think play is extremely crucial in the classroom full of primary students. To begin with, formal learning plays an important role, since it teaches the student about being disciplined and respectful to everyone. Discipline and respect are two most important skills we need in our life that schools teaches us in a way of formal learning. Getting into details, these skills make people succeed in their lives. If we look at the example of successful( people today they all have these two qualities in common. Moreover formal learning helps us to test the ability of a student by conducting an exam in a formal way, which shows us how much has a student learnt and how much is the student capable of doing. On the other hand, I believe that too formal education is not the best way of learning. Considering the stage of the life in which primary students belong, we need to realize that fun is a crucial part of it. Being extremely formal blocks that fun from a student’s life. So instead of schools being strict about formal ways of learning they should promote fun methods of teaching. For example, mind games other other video games, colours, paints and other activities will also teach student but in a enjoyable way. These activities will also promote the important skills such as social skills, creative skills and other beneficial skills we need in our daily lives. Furthermore, if we consider it deeply it will also prevent boredom and will motivate the student to have a passion for lifelong learning. last but not the least, play in the primary classroom has a huge importance on it’s own. which gives the student this freedom to enjoy learning. In conclusion, formal learning has it’s importance till some extent but sometimes it is a necessity to be informal. And schools should be focused at both of the methods of learning.",
+  "prompt": "Some people argue that primary schools focus too much on formal learning. To what extent do you agree with this opinion? How important do you think it is for children to play as well as learn in the primary school classroom? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
   "wordLimitMin": 250,
   "provenance": {
    "rawExcerpt": "Some people argue that primary schools focus too much on formal learning. To what extent do you agree with this opinion? How important do you think it is for children to play as well as learn in the primary school classroom? Give reasons fo",
@@ -52,12 +52,18 @@
   }
  },
  "quarantinedUnits": [],
- "validationWarnings": [],
+ "validationWarnings": [
+  {
+   "unit": "task2",
+   "code": "SAMPLE_ANSWER_EXCLUDED",
+   "detail": "A sample answer after the prompt was detected and excluded; the prompt itself is unaffected."
+  }
+ ],
  "status": "verified",
  "completeness": {
   "task1": true,
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "e4026b666b943383d696a43536c886314dd206515a27349d9a977b34bc347622"
+ "contentFingerprint": "c62b05033bc3ee05da5653f715449bc4ac711b96ea21a803b7b711a89456aa81"
 }

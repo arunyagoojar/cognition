@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-71",
  "title": "IELTS Academic Writing Test 71",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-71/index.html",
-   "sha256": "97b904d45004483dd179d5c2a50408b4a0216e5ccc637552869b235f5411969d",
-   "manifestHashMatch": true,
+   "sha256": "9b86114d682af9a3d905dc01156df7bbe26a93b33ba9352823f440ce541a4435",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-71/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,7 +21,7 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The Table below shows the results of a survey that asked 6800 Scottish adults (aged 16 years and over) whether they had taken part in different cultural activities in the past 12 months. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. participation in cultural activities, by age * Dancing, singing, playing musical instruments and acting",
+  "prompt": "The Table below shows the results of a survey that asked 6800 Scottish adults (aged 16 years and over) whether they had taken part in different cultural activities in the past 12 months. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
    "rawExcerpt": "The Table below shows the results of a survey that asked 6800 Scottish adults (aged 16 years and over) whether they had taken part in different cultural activities in the past 12 months. Summarise the information by selecting and reporting ",
@@ -79,7 +79,11 @@
      "6"
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "participation in cultural activities, by age",
+   "notes": [
+    "* Dancing, singing, playing musical instruments and acting"
+   ]
   }
  },
  "task2": {
@@ -99,5 +103,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "37ee45a9c019f31966dca8fedaed25dba4d3cfc73d428c72067cd063d069c9ad"
+ "contentFingerprint": "01d521236390ed670e83d4b348db354d7ca246c482d976e94ce97552a8a95abc"
 }

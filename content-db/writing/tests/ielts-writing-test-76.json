@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-76",
  "title": "IELTS Academic Writing Test 76",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-76/index.html",
-   "sha256": "3113b397bf020dd2270d581004f9a521fd343e4ba7240e365c5c0983a6255f3c",
-   "manifestHashMatch": true,
+   "sha256": "fa2788b575ef82dfe220a7e741f14049b0044f345a9d95762accb3758cf6bcb8",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-76/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,10 +21,10 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. sales: Week of October 7-13",
+  "prompt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
-   "rawExcerpt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. sales: Week of Oct",
+   "rawExcerpt": "The table below shows the sales at a small restaurant in a downtown business district. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
    "regionBlocks": 4
   },
   "table": {
@@ -60,7 +60,8 @@
      "$2,450"
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "sales: Week of October 7-13"
   }
  },
  "task2": {
@@ -80,5 +81,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "a18112a4d029dd4f17c29733aec7c37904170588e234929e09e7f5c162db4d06"
+ "contentFingerprint": "25948adad3f407b1d7f6d957f02ff5743381f29bc90b8621101881e3b87a1b2f"
 }

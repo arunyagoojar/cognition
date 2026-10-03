@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-54",
  "title": "IELTS Academic Writing Test 54",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-54/index.html",
-   "sha256": "fb2ba039e841ae75d99f692f4ada4c4628a0c447fbe96912b5c4d171c9476d1b",
-   "manifestHashMatch": true,
+   "sha256": "05cb5da58a2b93931a54156a764104f7f13f4051e3fe10b9968ebf6dcb344c18",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-54/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -21,10 +21,10 @@
  "duplicateOf": null,
  "task1": {
   "taskNumber": 1,
-  "prompt": "The table below gives information about Favorite Pastimes in different countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. from 30-50 years old",
+  "prompt": "The table below gives information about Favorite Pastimes in different countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
   "wordLimitMin": 150,
   "provenance": {
-   "rawExcerpt": "The table below gives information about Favorite Pastimes in different countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. from 30-50 years old",
+   "rawExcerpt": "The table below gives information about Favorite Pastimes in different countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
    "regionBlocks": 4
   },
   "table": {
@@ -120,7 +120,8 @@
      "/"
     ]
    ],
-   "visualType": "table"
+   "visualType": "table",
+   "caption": "from 30-50 years old"
   }
  },
  "task2": {
@@ -140,5 +141,5 @@
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "2f1c2505076bf0fb371462913129ffcf63b1a620bf56f3f064c34c98bf760d6f"
+ "contentFingerprint": "7adfc40d75e738f916f9005edbac578ffc6f86d14ca86c44f1ca21ae3d83806c"
 }

@@ -1,22 +1,113 @@
 {
- "validator": "pipeline/validate_writing.py",
+ "validator": "pipeline/validate_writing.py (independent re-derivation)",
  "records": 132,
+ "shipped": 128,
  "task1Records": 132,
  "task2Records": 132,
  "images": {
-  "resolved": 120,
-  "hash_match": 120,
-  "html_table": 12
+  "shippedImages": 116,
+  "inMediaManifest": 116,
+  "htmlTables": 12,
+  "tableCaptions": 6
+ },
+ "quarantine": {
+  "ielts-writing-test-126": [
+   "TASK1_VISUAL_INCOMPLETE"
+  ],
+  "ielts-writing-test-44": [
+   "TASK1_VISUAL_INCOMPLETE"
+  ],
+  "ielts-writing-test-93": [
+   "MULTIPLE_PROMPTS_FUSED"
+  ],
+  "ielts-writing-test-95": [
+   "TASK1_VISUAL_INCOMPLETE"
+  ]
  },
  "errors": [],
- "warnings": [],
+ "warnings": [
+  {
+   "slug": "ielts-writing-test-109",
+   "code": "TASK2_NO_WORD_LIMIT_IN_SOURCE",
+   "detail": "What are the reasons for this? How can people research this?"
+  },
+  {
+   "slug": "ielts-writing-test-46",
+   "code": "TASK1_NO_WORD_LIMIT_IN_SOURCE",
+   "detail": " university lecturer describing the information shown below."
+  },
+  {
+   "slug": "ielts-writing-test-88",
+   "code": "TASK1_NO_WORD_LIMIT_IN_SOURCE",
+   "detail": " university lecturer describing the information shown below."
+  },
+  {
+   "slug": "ielts-writing-test-9",
+   "code": "TASK1_NO_WORD_LIMIT_IN_SOURCE",
+   "detail": "ting the main features, and make comparisons where relevant."
+  }
+ ],
  "reconciliation": {
-  "discovered": 132,
-  "production": 132,
-  "quarantined": 0,
-  "duplicates": 0,
-  "irrelevant": 0,
-  "sum": 132,
-  "reconciles": true
+  "testPages": {
+   "discovered": 132,
+   "production": 128,
+   "quarantined": 4,
+   "duplicates": 0,
+   "irrelevant": 0,
+   "reconciles": true
+  },
+  "corpus": {
+   "writingRelatedSourcePages": 172,
+   "production": 128,
+   "quarantined": 4,
+   "duplicates": 2,
+   "irrelevant": 38,
+   "duplicatePages": [
+    "ielts-writing-test-129/index-q63eb8cc4e6.html",
+    "ielts-writing-test-129/index-q9a5aa063f1.html"
+   ],
+   "irrelevantPages": [
+    "ielts-academic-writing-tests",
+    "ielts-general-writing-tasks-1-letters",
+    "ielts-writing-tutorials",
+    "sample-essay-1",
+    "sample-essay-10",
+    "sample-essay-11",
+    "sample-essay-12",
+    "sample-essay-13",
+    "sample-essay-14",
+    "sample-essay-15",
+    "sample-essay-16",
+    "sample-essay-17",
+    "sample-essay-18",
+    "sample-essay-2",
+    "sample-essay-20",
+    "sample-essay-22",
+    "sample-essay-23",
+    "sample-essay-24",
+    "sample-essay-26",
+    "sample-essay-29",
+    "sample-essay-3",
+    "sample-essay-30",
+    "sample-essay-33",
+    "sample-essay-4",
+    "sample-essay-44",
+    "sample-essay-47",
+    "sample-essay-48",
+    "sample-essay-49",
+    "sample-essay-5",
+    "sample-essay-50",
+    "sample-essay-51",
+    "sample-essay-52",
+    "sample-essay-6",
+    "sample-essay-7",
+    "sample-essay-8",
+    "sample-essay-9",
+    "sample-essays-with-feedback",
+    "writing-evaluation"
+   ],
+   "hubEnumerated": 132,
+   "reconciles": true
+  }
  }
 }

@@ -1,5 +1,5 @@
 {
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "tests": [
   {
    "slug": "ielts-writing-test-1",
@@ -214,8 +214,8 @@
   {
    "slug": "ielts-writing-test-126",
    "id": "writing.test-0126.0faee88d",
-   "status": "verified",
-   "kind": "complete_test",
+   "status": "quarantined",
+   "kind": "task2_only",
    "duplicateOf": null
   },
   {
@@ -501,8 +501,8 @@
   {
    "slug": "ielts-writing-test-44",
    "id": "writing.test-0044.493c6856",
-   "status": "verified",
-   "kind": "complete_test",
+   "status": "quarantined",
+   "kind": "task2_only",
    "duplicateOf": null
   },
   {
@@ -879,8 +879,8 @@
   {
    "slug": "ielts-writing-test-93",
    "id": "writing.test-0093.ef616684",
-   "status": "verified",
-   "kind": "complete_test",
+   "status": "quarantined",
+   "kind": "task1_only",
    "duplicateOf": null
   },
   {
@@ -893,8 +893,8 @@
   {
    "slug": "ielts-writing-test-95",
    "id": "writing.test-0095.b0a6b4f7",
-   "status": "verified",
-   "kind": "complete_test",
+   "status": "quarantined",
+   "kind": "task2_only",
    "duplicateOf": null
   },
   {
@@ -927,10 +927,13 @@
   }
  ],
  "tally": {
-  "verified": 132
+  "verified": 128,
+  "quarantined": 4
  },
  "kinds": {
-  "complete_test": 132
+  "complete_test": 128,
+  "task2_only": 3,
+  "task1_only": 1
  },
  "gtInventory": {
   "promptCount": 29,

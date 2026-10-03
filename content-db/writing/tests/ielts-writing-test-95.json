@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-95",
  "title": "IELTS Academic Writing Test 95",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-95/index.html",
-   "sha256": "5918ebe47a136a67ce405c35561a4c85992103eca8174f566f210d791115cac1",
-   "manifestHashMatch": true,
+   "sha256": "d982c9b8012669221e1dc510a687564a45380f9f2b719b0692674a3a4e7ec1a9",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-95/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -51,19 +51,24 @@
    "regionBlocks": 3
   }
  },
- "quarantinedUnits": [],
- "validationWarnings": [
+ "quarantinedUnits": [
   {
    "unit": "task1",
-   "code": "EXTRA_IMGS_IGNORED",
-   "detail": "additional distinct images after the first were recorded, not used: ['../wp-content/uploads/2024/09/test-95-min.png']"
+   "reasonCode": "TASK1_VISUAL_INCOMPLETE",
+   "evidence": {
+    "renderedImage": "../wp-content/uploads/2024/09/test-95-1-min.png",
+    "unrenderedImages": [
+     "../wp-content/uploads/2024/09/test-95-min.png"
+    ]
+   }
   }
  ],
- "status": "verified",
+ "validationWarnings": [],
+ "status": "quarantined",
  "completeness": {
-  "task1": true,
+  "task1": false,
   "task2": true
  },
- "kind": "complete_test",
+ "kind": "task2_only",
  "contentFingerprint": "546179cf555c913092588be9c33d484eb834475dff927b7175713040910a67f8"
 }

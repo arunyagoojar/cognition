@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-44",
  "title": "IELTS Academic Writing Test 44",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-44/index.html",
-   "sha256": "cad01b926cf874585ff8a5ecee94db1279e968a724e611f5164cfa52464678c3",
-   "manifestHashMatch": true,
+   "sha256": "d898fdfd705d245946f85f1a7b61dd4a23ee501b9a617c3c2b35181eb7d28e79",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-44/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -51,19 +51,24 @@
    "regionBlocks": 4
   }
  },
- "quarantinedUnits": [],
- "validationWarnings": [
+ "quarantinedUnits": [
   {
    "unit": "task1",
-   "code": "EXTRA_IMGS_IGNORED",
-   "detail": "additional distinct images after the first were recorded, not used: ['../wp-content/uploads/2024/09/im-44.png']"
+   "reasonCode": "TASK1_VISUAL_INCOMPLETE",
+   "evidence": {
+    "renderedImage": "../wp-content/uploads/2024/09/test-44-1-min.png",
+    "unrenderedImages": [
+     "../wp-content/uploads/2024/09/im-44.png"
+    ]
+   }
   }
  ],
- "status": "verified",
+ "validationWarnings": [],
+ "status": "quarantined",
  "completeness": {
-  "task1": true,
+  "task1": false,
   "task2": true
  },
- "kind": "complete_test",
+ "kind": "task2_only",
  "contentFingerprint": "8884ac33dd2da1048ad6fc93fe64bdde7bb450b866179321e82795c3f332c20c"
 }

@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-131",
  "title": "IELTS Academic Writing Test 131",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-131/index.html",
-   "sha256": "8016b1676fd297ae69df5908b5880f88d44e7cd061121899c11ba7e6f570f1a7",
-   "manifestHashMatch": true,
+   "sha256": "1cfb56b5bfe34d5dcca3628194a9cde5b9461467b9f2655ae4a7e78428fe457a",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-131/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -44,7 +44,7 @@
  },
  "task2": {
   "taskNumber": 2,
-  "prompt": "All university undergraduate courses should include a period of time spent studying abroad or doing a work placement. Do you think the advantages of this would outweigh the disadvantages? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words. TASK 2 BAND 7.5 ANSWER: As the number of educated people is continually growing, universities attempt to make the process of studying (and it1s result) as efficient as possible. Among the ideas to improve the conditions of students are the thoughts that all undergraduate courses should include a period of time spent studying abroad or doing a work placement. A number of higher education establishments have already implemented these ideas into life. However, this is the advantage of developed countries, whose economy allows them spent money on this aspect. Unfortunately, Ukraine is not among their number. Yet. Weighing up the pluses and minuses of such strategies one can1t but mention that advantages prevail. Firstly, going abroad, a student gets the opportunity to compare the approaches and levels of education. Moreover, undergraduates, who are still polishing their skills, have the chance to practice them in the completely new environment and probably see new horizons of their future career. In addition to the above mentioned reasons, let us consider the fact of cultural enrichment. What concerns doing a work placement most of us will agree with the opinion, that theory and practice are two polar sides of any job. The possibility to try yourself in several work positions or even fields gives mostly advantages, allowing students to fit themselves into the real profession, opposing to those which are so wonderfully depicted in films and books. Moreover, a lot of people spend their whole life doing a job they do not really enjoy. So, why spend time on something you are not that good at? There are definitely the drawbacks of such ideas, one of them being economical inability of education system to provide such courses for undergraduates in ALL universities. However, the fact that developed countries are already moving forward in that direction gives us hope that in short or long time this strategy will become wide spread and even will be taken by us as granted. After all, what to invest money in if not in young people, the future of humanity.",
+  "prompt": "All university undergraduate courses should include a period of time spent studying abroad or doing a work placement. Do you think the advantages of this would outweigh the disadvantages? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.",
   "wordLimitMin": 250,
   "provenance": {
    "rawExcerpt": "All university undergraduate courses should include a period of time spent studying abroad or doing a work placement. Do you think the advantages of this would outweigh the disadvantages? Give reasons for your answer and include any relevan",
@@ -52,12 +52,18 @@
   }
  },
  "quarantinedUnits": [],
- "validationWarnings": [],
+ "validationWarnings": [
+  {
+   "unit": "task2",
+   "code": "SAMPLE_ANSWER_EXCLUDED",
+   "detail": "A sample answer after the prompt was detected and excluded; the prompt itself is unaffected."
+  }
+ ],
  "status": "verified",
  "completeness": {
   "task1": true,
   "task2": true
  },
  "kind": "complete_test",
- "contentFingerprint": "f4d6e45b8b2a85d4a32c04a3cd0f070855b7bc6d36c3c48226a44755f94fe2fd"
+ "contentFingerprint": "e894ec5f9465446ed0ad66406560584f31a000b3b5b80fbacf378d06435004c0"
 }

@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-125",
  "title": "IELTS Academic Writing Test 125",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-125/index.html",
-   "sha256": "7ae56541e74fd6dff936834309de1e145f26933b55e0ef2270a7b2f46a2dc108",
-   "manifestHashMatch": true,
+   "sha256": "c78d5ff74fe3b3fef1627bedfee3889b15cd38b0644c2675e837ac58256bc569",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-125/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -22,7 +22,7 @@
  "task1": {
   "taskNumber": 1,
   "prompt": "The first table below shows changes in the total population of New York City from 1800 to 2000. The second and third tables show changes in the population of the five districts of the city (Manhattan, Brooklyn, Bronx, Queens, Staten Island) over the same period. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at lease 150 words.",
-  "wordLimitMin": null,
+  "wordLimitMin": 150,
   "provenance": {
    "rawExcerpt": "The first table below shows changes in the total population of New York City from 1800 to 2000. The second and third tables show changes in the population of the five districts of the city (Manhattan, Brooklyn, Bronx, Queens, Staten Island)",
    "regionBlocks": 4
@@ -45,7 +45,7 @@
  "task2": {
   "taskNumber": 2,
   "prompt": "Access to clean water is a basic human right. Therefore, every home should have a water supply that is provided free of charge. Do you agree or disagree? Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at lease 250 words.",
-  "wordLimitMin": null,
+  "wordLimitMin": 250,
   "provenance": {
    "rawExcerpt": "Access to clean water is a basic human right. Therefore, every home should have a water supply that is provided free of charge. Do you agree or disagree? Give reasons for your answer and include any relevant examples from your own knowledge",
    "regionBlocks": 2

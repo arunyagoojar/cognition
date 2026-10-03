@@ -6,12 +6,12 @@
  ],
  "slug": "ielts-writing-test-126",
  "title": "IELTS Academic Writing Test 126",
- "pipelineVersion": "production-writing-1.0.0",
+ "pipelineVersion": "production-writing-1.1.0",
  "provenance": {
   "page": {
    "path": "ielts-writing-test-126/index.html",
-   "sha256": "5631695e7497c99df11be15dc32f084ed3b674fc27390f710f52ab78d02c5225",
-   "manifestHashMatch": true,
+   "sha256": "9dd8227ee4d15c7efbfb964ff906b8ef7be898c39513925eb76031abc174a9cd",
+   "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-writing-test-126/"
   },
   "extractionMethod": "deterministic_dom_v1.writing",
@@ -22,7 +22,7 @@
  "task1": {
   "taskNumber": 1,
   "prompt": "The plans below show the site of a farm in 1950 and the same site today. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at lease 150 words.",
-  "wordLimitMin": null,
+  "wordLimitMin": 150,
   "provenance": {
    "rawExcerpt": "The plans below show the site of a farm in 1950 and the same site today. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at lease 150 words.",
    "regionBlocks": 4
@@ -51,19 +51,24 @@
    "regionBlocks": 7
   }
  },
- "quarantinedUnits": [],
- "validationWarnings": [
+ "quarantinedUnits": [
   {
    "unit": "task1",
-   "code": "EXTRA_IMGS_IGNORED",
-   "detail": "additional distinct images after the first were recorded, not used: ['../wp-content/uploads/2025/10/w_125-2.webp']"
+   "reasonCode": "TASK1_VISUAL_INCOMPLETE",
+   "evidence": {
+    "renderedImage": "../wp-content/uploads/2025/10/w_125-1.webp",
+    "unrenderedImages": [
+     "../wp-content/uploads/2025/10/w_125-2.webp"
+    ]
+   }
   }
  ],
- "status": "verified",
+ "validationWarnings": [],
+ "status": "quarantined",
  "completeness": {
-  "task1": true,
+  "task1": false,
   "task2": true
  },
- "kind": "complete_test",
+ "kind": "task2_only",
  "contentFingerprint": "c4414451404023775307df08572f66c0ffa8dff38cdf7548b1f01af03828eed7"
 }
