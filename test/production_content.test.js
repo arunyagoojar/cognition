@@ -12,7 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTION_LISTENING, PRODUCTION_SPEAKING } from '../src/data/production/productionContent.js';
+import { PRODUCTION_LISTENING } from '../src/data/production/productionContent.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -44,7 +44,8 @@ function check(cond, label) {
 
 // ── Listening ────────────────────────────────────────────────
 console.log('== Production Listening ==');
-check(PRODUCTION_LISTENING.length >= 190, `corpus size (${PRODUCTION_LISTENING.length} tests)`);
+// Polish bar: only complete, fully verified 40-question tests ship.
+check(PRODUCTION_LISTENING.length >= 80, `corpus size (${PRODUCTION_LISTENING.length} tests)`);
 let qTotal = 0, qWithAnswer = 0, audioOk = 0, imgOk = 0, imgTotal = 0;
 for (const t of PRODUCTION_LISTENING) {
   check(Number.isInteger(t.testId) && t.testId >= 1, `testId sane (${t.slug})`);
@@ -131,27 +132,7 @@ for (const t of PRODUCTION_LISTENING) {
   }
 }
 
-// ── Speaking ─────────────────────────────────────────────────
-console.log('== Production Speaking ==');
-check(PRODUCTION_SPEAKING.length >= 175, `speaking corpus size (${PRODUCTION_SPEAKING.length})`);
-for (const s of PRODUCTION_SPEAKING) {
-  // 3-part interview: Part 2 topic authentic; Part 1/3 provenance-tagged practice
-  check(s.cueCard.topic?.length > 3, `topic present (${s.slug})`);
-  check((s.cueCard.bulletPrompts || []).length >= 3, `cue-card bullets 3+ (${s.slug})`);
-  check(Boolean(s.cueCard.finalInstruction), `final explain instruction (${s.slug})`);
-  check(s.part1?.available === true && s.part1?.provenanceType === 'GENERATED_PRACTICE',
-    `part1 provenance-tagged practice (${s.slug})`);
-  check(s.part3?.available === true && s.part3?.provenanceType === 'GENERATED_PRACTICE',
-    `part3 provenance-tagged practice (${s.slug})`);
-  check(s.coverage.part2 === 'available' && s.coverage.part1 === 'generated_practice'
-    && s.coverage.part3 === 'generated_practice', `coverage states honest (${s.slug})`);
-  check(Array.isArray(s.sampleAnswer?.sentences), `sample answer stored separately (${s.slug})`);
-  // Part 3 must connect to the Part 2 topic (at least the anchored opening question)
-  check((s.part3?.questions || []).length >= 3, `part3 has discussion questions (${s.slug})`);
-  for (const q of s.part3?.questions || []) {
-    check(q.generated === true && q.generator && q.generatedAt, `part3 provenance per item (${s.slug})`);
-  }
-}
+// Speaking has its own contract test: test/speaking_content.test.js
 
 if (failures > 0) {
   console.error(`\n✗ ${failures} production content contract failures`);

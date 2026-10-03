@@ -61,7 +61,13 @@ t('obviously different words are MISMATCH', () => {
 console.log('== officialAnswerVariants parsing ==');
 t('slash split + parenthetical expansion', () => {
   const v = officialAnswerVariants('11 / eleven (am)');
-  assert.deepEqual(v, ['11 / eleven (am)', '11', 'eleven (am)', 'eleven']);
+  assert.deepEqual(v, ['11 / eleven (am)', '11', 'eleven (am)', 'eleven am', 'eleven']);
+});
+t('parenthesised words are optional even without a slash', () => {
+  assert.deepEqual(officialAnswerVariants('ratio (of fuel)'), ['ratio (of fuel)', 'ratio of fuel', 'ratio']);
+});
+t('an accepted-answer list is expanded element by element', () => {
+  assert.deepEqual(officialAnswerVariants(['slow turning', 'slow']), ['slow turning', 'slow']);
 });
 t('no slash → single variant', () => {
   assert.deepEqual(officialAnswerVariants('Beginners'), ['Beginners']);
