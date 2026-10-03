@@ -2,18 +2,18 @@
  "database": "Cognition production content (Phase 3)",
  "listening": {
   "tests": {
-   "flagged": 117,
-   "verified": 90,
-   "duplicate": 1
+   "verified": 87,
+   "quarantined": 111,
+   "duplicate": 10
   },
   "questionsByTestStatus": {
-   "flagged": 4509,
-   "verified": 3579,
-   "duplicate": 40
+   "verified": 3480,
+   "quarantined": 4282,
+   "duplicate": 393
   },
-  "questions_total": 8128,
-  "questions_verified": 8088,
-  "emitted_to_runtime": 207
+  "questions_total": 8155,
+  "questions_verified": 3480,
+  "emitted_to_runtime": 87
  },
  "speaking": {
   "packages": {
@@ -24,108 +24,837 @@
  },
  "excluded_from_runtime": [
   {
+   "slug": "ielts-listening-186",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-1",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-100",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-102",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-103",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-105",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-107",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-108",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-109",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-11",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-111.html",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-113",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-114",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-116",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-118",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-119",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-120",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-121",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-122",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-124",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-125",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-126",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-127",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-128",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-129",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-13",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-130",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-132",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-133",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-6"
+  },
+  {
+   "slug": "ielts-listening-test-139",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-140",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-141",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-142",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-146",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-2"
+  },
+  {
+   "slug": "ielts-listening-test-147",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-1"
+  },
+  {
+   "slug": "ielts-listening-test-148",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-149",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-7"
+  },
+  {
+   "slug": "ielts-listening-test-151",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-5"
+  },
+  {
+   "slug": "ielts-listening-test-152",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-4"
+  },
+  {
+   "slug": "ielts-listening-test-154",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-155",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-9"
+  },
+  {
+   "slug": "ielts-listening-test-156",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-8"
+  },
+  {
+   "slug": "ielts-listening-test-157",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-158",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-159",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-16",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-161",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-162",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-165",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-167",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-168",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-169",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-17",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-170",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-171",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-172",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-173",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-174",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-176",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-178",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-18",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-181",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-182",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-188",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-194",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-195",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-197",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-2",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-20",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-201",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-203",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-204",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-207",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-22",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-24",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-25",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-27",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-29",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-3",
+   "reason": "duplicate",
+   "duplicateOf": "ielts-listening-test-145"
+  },
+  {
+   "slug": "ielts-listening-test-30",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-31",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-32",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-33",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-34",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-35",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-36",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-37",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-38",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-39",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-40",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-41",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-42",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-43",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-48",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-49",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-51",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-52",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-53",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-54",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-56",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-57",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-58",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-59",
+   "reason": "quarantined"
+  },
+  {
    "slug": "ielts-listening-test-61",
    "reason": "duplicate",
    "duplicateOf": "ielts-listening-test-100"
   },
   {
-   "slug": "ielts-reading-test-100",
+   "slug": "ielts-listening-test-62",
    "reason": "quarantined"
   },
   {
-   "slug": "ielts-reading-test-103",
+   "slug": "ielts-listening-test-65",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-68",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-69",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-7",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-72",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-75",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-81",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-89",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-9",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-91",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-94",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-95",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-97",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-listening-test-99",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "listening-15",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "listening-150",
+   "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-1",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-10",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-101",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-104",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-115",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-108",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-110",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-112",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-114",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-116",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-118",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-12",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-121",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-122",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-123",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-124",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-125",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-126",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-127",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-13",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-131",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-132",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-133",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-134",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-136",
    "reason": "quarantined"
   },
   {
-   "slug": "ielts-reading-test-137",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-143",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-146",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-147",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-148",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-153",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-154",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-159",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-16",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-160",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-161",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-163",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-164",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-165",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-167",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-168",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-169",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-17",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-170",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-171",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-172",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-173",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-174",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-175",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-176",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-177",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-178",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-179",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-18",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-180",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-181",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-182",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-183",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-184",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-185",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-186",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-187",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-189",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-19",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-190",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-191",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-193",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-196",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-197",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-198",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-199",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-20",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-200",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-201",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-202",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-203",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-204",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-205",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-207",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-208",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-21",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-215",
    "reason": "quarantined"
   },
   {
-   "slug": "ielts-reading-test-210",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-216",
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-214",
+   "slug": "ielts-reading-test-217",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-218",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-219",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-22",
    "reason": "quarantined"
   },
   {
@@ -133,80 +862,244 @@
    "reason": "quarantined"
   },
   {
-   "slug": "ielts-reading-test-230",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-225",
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-231",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-229",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-230",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-232",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-233",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-234",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-236",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-24",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-240",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-241",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-242",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-243",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-245",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-246",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-248",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-249",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-25",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-250",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-251",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-252",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-253",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-255",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-26",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-260",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-261",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-265",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-267",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-266",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-269",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-27",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-274",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-272",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-275",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-276",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-279",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-28",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-281",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-287",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-282",
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-293",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-283",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-286",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-288",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-289",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-29",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-292",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-296",
    "reason": "quarantined"
   },
   {
-   "slug": "ielts-reading-test-297",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-298",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-299",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-3",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-30",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-300",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-301",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-302",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-303",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-304",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-305",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-308",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-309",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-31",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-310",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-314",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-311",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-315",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-316",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-317",
@@ -222,75 +1115,275 @@
   },
   {
    "slug": "ielts-reading-test-32",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-33",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-34",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-36",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "ielts-reading-test-38",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-37",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-4",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-40",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-41",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-42",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-44",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-46",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-47",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-48",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-49",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-5",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-50",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-51",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-52",
    "reason": "quarantined"
   },
   {
    "slug": "ielts-reading-test-53",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-54",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-55",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-56",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-57",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-58",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-59",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-6",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-60",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-61",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-62",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-63",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-64",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-67",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-68",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-69",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-7",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-70",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-71",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-72",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-73",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-74",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-75",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-76",
    "reason": "quarantined"
+  },
+  {
+   "slug": "ielts-reading-test-77",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-78",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-79",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-81",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-82",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-83",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-85",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-86",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-87",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-88",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-89",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-9",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-90",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-91",
-   "reason": "quarantined"
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-95",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-96",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-reading-test-97",
+   "reason": "practice_only"
   },
   {
    "slug": "ielts-reading-test-98",
-   "reason": "quarantined"
+   "reason": "practice_only"
   },
   {
-   "slug": "reading-test-105-2",
-   "reason": "quarantined"
+   "slug": "ielts-reading-test-99",
+   "reason": "practice_only"
+  },
+  {
+   "slug": "ielts-writing-test-126",
+   "reason": "quarantined",
+   "reasonCodes": [
+    "TASK1_VISUAL_INCOMPLETE"
+   ]
+  },
+  {
+   "slug": "ielts-writing-test-44",
+   "reason": "quarantined",
+   "reasonCodes": [
+    "TASK1_VISUAL_INCOMPLETE"
+   ]
+  },
+  {
+   "slug": "ielts-writing-test-93",
+   "reason": "quarantined",
+   "reasonCodes": [
+    "MULTIPLE_PROMPTS_FUSED"
+   ]
+  },
+  {
+   "slug": "ielts-writing-test-95",
+   "reason": "quarantined",
+   "reasonCodes": [
+    "TASK1_VISUAL_INCOMPLETE"
+   ]
   }
  ]
 }

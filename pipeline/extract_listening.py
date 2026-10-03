@@ -194,6 +194,12 @@ class Group:
     stimulus_table: object = None
     stimulus_segments: list = field(default_factory=list)
     figure_srcs: list = field(default_factory=list)
+    # repeated option blocks with no stem between them (a stem is missing in the
+    # source); recorded as evidence, never rendered
+    orphan_blocks: list = field(default_factory=list)
+    # prose that precedes an option pool in the same block (e.g. the "Which TWO
+    # …?" question of a multi-select group, or a box title)
+    option_preface: list = field(default_factory=list)
     shared_options: list = field(default_factory=list)
     questions: list = field(default_factory=list)
     raw_excerpt: str = ""
@@ -287,20 +293,72 @@ def parse_inline_mcq(text):
         options.append({"letter": lm.group(1), "text": norm(rest[lm.end():end])})
     return number, stem, options
 
-def parse_letter_pairs(text, allowed=None):
+LETTER_RANGE = re.compile(r"\b([A-Z])\s*[-–‑]\s*([A-Z])\b")
+
+def instruction_letters(instr):
+    """Letters an instruction names, with ranges expanded ('A-H' → A..H).
+    Standalone capitals only (so 'letter, A, B or C' → {A,B,C})."""
+    out = set()
+    for a, b in LETTER_RANGE.findall(instr):
+        if ord(a) <= ord(b) <= ord(a) + 19:
+            out.update(chr(c) for c in range(ord(a), ord(b) + 1))
+    out.update(re.findall(r"(?<![A-Za-z’'])([A-T])(?![A-Za-z’'])", LETTER_RANGE.sub(" ", instr)))
+    return out
+
+def split_marker_blocks(blocks):
+    """A group/part marker sometimes shares one <p> with the group's content
+    (instruction + blank rows / numbered items). Split such blocks so the
+    content lines are parsed as content instead of being swallowed into the
+    instruction."""
+    out = []
+    for el, text in blocks:
+        if "\n" in text and (PART_RE.match(text) or GROUP_INLINE.match(text)):
+            lines = text.split("\n")
+            # first line that is unambiguously question content
+            cut = next((i for i, l in enumerate(lines[1:], start=1)
+                        if BLANK_TOK.search(l) or "␦" in l or QITEM.match(l.strip())
+                        or re.match(r"^\s*[A-J]\s+\S", l)), None)
+            # keep an unpunctuated stimulus title directly above the content with the content
+            while cut is not None and cut - 1 >= 2 and lines[cut - 1].strip() and \
+                    not re.search(r"[.?:]", lines[cut - 1]) and not looks_like_instruction(lines[cut - 1]):
+                cut -= 1
+            if cut is not None and cut >= 1 and any(l.strip() for l in lines[cut:]):
+                out.append((el, "\n".join(lines[:cut]).strip()))
+                out.append((el, "\n".join(lines[cut:]).strip()))
+                continue
+        out.append((el, text))
+    return out
+
+def letter_pool_preface(text, allowed=None):
+    """Prose before the first letter of the option pool parse_letter_pairs finds."""
+    pairs = parse_letter_pairs(text, allowed, _with_start=True)
+    if not pairs: return ""
+    return norm(text[:pairs[0]["_start"]])
+
+def parse_letter_pairs(text, allowed=None, _with_start=False):
     letter_cls = "A-J" if not allowed else "".join(sorted(allowed)).replace("-", "")
     letters = list(re.finditer(r"(?:^|\s)([" + letter_cls + r"])\s+(?=\S)", text))
     if len(letters) < 2: return None
     pairs = []
     for i, lm in enumerate(letters):
         end = letters[i+1].start() if i + 1 < len(letters) else len(text)
-        pairs.append({"letter": lm.group(1), "text": norm(text[lm.end():end])})
-    return pairs
+        pair = {"letter": lm.group(1), "text": norm(text[lm.end():end])}
+        if _with_start: pair["_start"] = lm.start(1)
+        pairs.append(pair)
+    # an option pool lists its letters in strictly ascending order; anything else
+    # (articles, initials, letters inside prose) is not a pool
+    seq = [p["letter"] for p in pairs]
+    for i in range(len(seq)):
+        tail = seq[i:]
+        if len(tail) >= 2 and all(ord(b) > ord(a) for a, b in zip(tail, tail[1:])) \
+           and (not allowed or tail[0] == min(allowed)):
+            return pairs[i:]
+    return None
 
 def extract(slug, page, key):
     soup = BeautifulSoup(page["raw"].decode("utf-8", "replace"), "html.parser")
     ec = decontaminate(soup, keep_key_boundary=True)
-    blocks = block_texts(ec)
+    blocks = split_marker_blocks(block_texts(ec))
     groups, unparsed = [], []
     cur_part = 0
     g = None
@@ -421,8 +479,8 @@ def extract(slug, page, key):
         # ---- inside a group ----
         letters_ctx = re.search(r"choose the correct letter|circle the correct letter", g.instruction_raw, re.I)
         # non-standard letter sets (e.g. "letter G, N or E") are matching-style groups
-        instr_letters = sorted(set(re.findall(r"(?:letter[s]?|\b) ([A-Z])(?=[,\s.)]|$)", g.instruction_raw)))
-        nonstandard_letters = bool(instr_letters) and instr_letters[0] != "A"
+        instr_letters = sorted(instruction_letters(g.instruction_raw))
+        nonstandard_letters = bool(instr_letters) and "A" not in instr_letters
         if letters_ctx and nonstandard_letters:
             if not QITEM.match(text):
                 pairs = parse_letter_pairs(text, set(instr_letters))
@@ -457,19 +515,19 @@ def extract(slug, page, key):
                         pending["mcq"].options.append({"letter": lm.group(1), "text": norm(lm.group(2))})
                     elif pending["mcq"] is not None:
                         # repeated option block with no stem between → stem missing in source
-                        if not any(s.startswith("[orphan option block") for s in g.stimulus_segments):
-                            g.stimulus_segments.append("[orphan option block: " + text[:80] + "]")
-                    elif not any(s.startswith("[orphan option block") for s in g.stimulus_segments):
-                        g.stimulus_segments.append("[orphan option block: " + text[:80] + "]")
+                        if text[:80] not in g.orphan_blocks:
+                            g.orphan_blocks.append(text[:80])
+                    elif text[:80] not in g.orphan_blocks:
+                        g.orphan_blocks.append(text[:80])
                     consumed = True
             if consumed: continue
         if re.search(r"from the box|Choose (?:FIVE|FOUR|SIX|SEVEN|TWO|THREE)|the correct letter [A-Z](,|\s|or)", g.instruction_raw, re.I):
-            if not QITEM.match(text):
-                allowed = set(re.findall(r"(?:^|[,\s(]) ([A-Z])(?=[,\s.)]|$)", g.instruction_raw)) or \
-                          set(re.findall(r"\b([A-Z])\b", g.instruction_raw)) & set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-                allowed = {c for c in allowed if c in "ABCDEFGHIJKLMNOPQRST"}
+            if not QITEM.match(text) and not BLANK_TOK.search(text) and "\u2426" not in text:
+                allowed = {c for c in instruction_letters(g.instruction_raw) if c in "ABCDEFGHIJKLMNOPQRST"}
                 pairs = parse_letter_pairs(text, allowed or None)
                 if pairs:
+                    pre = letter_pool_preface(text, allowed or None)
+                    if pre: g.option_preface.append(pre)
                     g.shared_options.extend(pairs)
                     g.stimulus_kind = "box_match"
                     continue
@@ -499,6 +557,8 @@ def extract(slug, page, key):
         if re.search(r"Decide which|write the appropriate letters|Circle the (?:TWO|THREE) correct|Choose (?:TWO|THREE) (?:letters|answers)", g.instruction_raw, re.I):
             pairs = parse_letter_pairs(text)
             if pairs:
+                pre = letter_pool_preface(text)
+                if pre: g.option_preface.append(pre)
                 g.shared_options.extend(pairs)
                 g.stimulus_kind = "box_match"
                 continue

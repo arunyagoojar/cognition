@@ -165,13 +165,26 @@ def build_listening_runtime(rec):
         group_objs, flat_qs, html_parts = [], [], []
         owned_by_group = {id(g): {q["number"] for q in gqs} for g, gqs in p["groups"]}
         for g, gqs in p["groups"]:
-            gh = stimulus_to_html(g, qids_seen, owned=owned_by_group[id(g)])
+            pool = g.get("optionPool") or None
+            selection = g.get("selection") or None
+            render_g = g
+            if pool and pool.get("source") == "stimulus_lines":
+                # the option list is shown once as the group's pool, not again as text
+                render_g = json.loads(json.dumps(g))
+                segs = list(render_g["stimulus"].get("segments") or [])
+                if 0 <= pool.get("segmentIndex", -1) < len(segs):
+                    segs.pop(pool["segmentIndex"])
+                render_g["stimulus"]["segments"] = segs or None
+            gh = stimulus_to_html(render_g, qids_seen, owned=owned_by_group[id(g)])
             html_parts.append(gh)
             q_objs = []
             for q in gqs:
                 qtype, input_type = QUESTION_TYPE_MAP.get(q["type"], ("fill_in_blank", "text"))
                 opts = None
-                if q.get("options"):
+                if pool and (selection or q["type"] in ("matching_box", "map_labeling", "diagram_labeling")) \
+                        and not q.get("options"):
+                    opts = [{"id": o["letter"], "label": o.get("text") or ""} for o in pool["options"]]
+                elif q.get("options"):
                     opts = [{"id": o["letter"], "label": o["text"] or ""} for o in q["options"]]
                 elif g["stimulus"].get("sharedOptions") and q["type"] in ("matching_box", "map_labeling", "diagram_labeling", "mcq_multi"):
                     opts = [{"id": o["letter"], "label": o["text"] or ""} for o in g["stimulus"]["sharedOptions"]]
@@ -201,6 +214,7 @@ def build_listening_runtime(rec):
                     "options": opts,
                     "answer": ans if ans not in ("", None) else None,
                     "type": q["type"],
+                    **({"unorderedGroup": selection["unorderedGroup"]} if selection else {}),
                 })
             flat_qs.extend(q_objs)
             visual_html = None
@@ -209,9 +223,21 @@ def build_listening_runtime(rec):
                     rel = f[len("wp-content/"):] if f.startswith("wp-content/") else f
                     return f'<img src="/wp-content/{esc(rel)}" style="max-width:100%" alt="test stimulus" />'
                 visual_html = "\n".join(_fig_url(f) for f in g["stimulus"]["figures"])
+            instr_text = g["instruction"]["text"] or None
+            if selection and selection.get("instructionText"):
+                instr_text = selection["instructionText"]
+            elif pool and pool.get("source") == "instruction":
+                instr_text = pool.get("instructionText") or instr_text
             group_objs.append({
                 "groupId": g["groupId"],
-                "instructions": g["instruction"]["text"] or None,
+                "instructions": instr_text,
+                "selection": ({"selectCount": selection["selectCount"], "prompt": selection.get("prompt"),
+                               "unorderedGroup": selection["unorderedGroup"],
+                               "options": [{"id": o["letter"], "label": o.get("text") or ""} for o in pool["options"]]}
+                              if selection and pool else None),
+                "optionPool": ({"title": pool.get("title"),
+                                "options": [{"id": o["letter"], "label": o.get("text") or ""} for o in pool["options"]]}
+                               if pool and not selection and pool.get("source") != "box" else None),
                 "wordLimit": g["instruction"].get("wordLimit") or None,
                 "groupType": g["stimulus"]["kind"],
                 "visualHtml": visual_html,
@@ -254,189 +280,211 @@ def build_listening_runtime(rec):
         "verifiedQuestionCount": rec.get("verifiedQuestionCount"),
     }
 
+LISTENING_ARTIFACT = re.compile(r"\[orphan|Show Answers?|\u2426|_{4,}|(?:[.…·]\s?){5,}|\(answer in the stimulus\)")
+
+
+def listening_runtime_defects(rt):
+    """Render gate for a full Listening test: everything a candidate needs to
+    answer each of questions 1–40 exactly once, with a key the control can produce."""
+    d = []
+    if not (rt.get("audio") or {}).get("appPath"):
+        d.append("audio: missing")
+    seen = []
+    for p in rt["parts"]:
+        lo, hi = (p["part"] - 1) * 10 + 1, p["part"] * 10
+        html_all = " ".join(g["htmlContent"] or "" for g in p["questionGroups"])
+        for m in re.finditer(r'data-qid="q(\d+)"', html_all):
+            n = int(m.group(1))
+            if not any(q["questionNumber"] == n for q in p["questions"]):
+                d.append(f"q{n}: inline input without a question")
+        inline = [int(n) for n in re.findall(r'data-qid="q(\d+)"', html_all)]
+        if len(inline) != len(set(inline)):
+            d.append(f"part {p['part']}: an inline blank renders twice")
+        if LISTENING_ARTIFACT.search(html_all):
+            d.append(f"part {p['part']}: artifact in stimulus ({LISTENING_ARTIFACT.search(html_all).group(0)!r})")
+        for g in p["questionGroups"]:
+            if not (g.get("instructions") or "").strip():
+                d.append(f"{g['groupId']}: no instruction")
+            sel = g.get("selection")
+            if sel:
+                vals = [q["answer"] for q in g["questions"]]
+                ids = [o["id"] for o in sel["options"]]
+                if sel["selectCount"] != len(g["questions"]) or len(set(vals)) != len(vals) or any(v not in ids for v in vals):
+                    d.append(f"{g['groupId']}: multi-select set invalid")
+                if any(not o["label"].strip() for o in sel["options"]):
+                    d.append(f"{g['groupId']}: multi-select option without text")
+            for q in g["questions"]:
+                n = q["questionNumber"]
+                seen.append(n)
+                if not (lo <= n <= hi):
+                    d.append(f"q{n}: outside part {p['part']}")
+                a = q.get("answer")
+                if a in (None, ""):
+                    d.append(f"q{n}: no answer")
+                # what the candidate sees: an inline blank lives in the stimulus; a
+                # "choose N" slot is shown by its group prompt; anything else stands alone
+                standalone = n not in inline and not sel
+                qtext = q.get("questionText") or ""
+                if standalone:
+                    words = re.sub(r"_{3,}|\(answer in the stimulus\)", " ", qtext)
+                    if not re.search(r"[A-Za-z]{2,}", words):
+                        d.append(f"q{n}: standalone question without text")
+                    if re.search(r"\[orphan|Show Answers?|\u2426|\(answer in the stimulus\)", qtext):
+                        d.append(f"q{n}: artifact in question text")
+                if any(LISTENING_ARTIFACT.search(o.get("label") or "") for o in q.get("options") or []):
+                    d.append(f"q{n}: artifact in options")
+                if q["inputType"] in ("single_select", "multi_select"):
+                    ids = [o["id"] for o in q.get("options") or []]
+                    if len(ids) < 2 or len(set(ids)) != len(ids):
+                        d.append(f"q{n}: selection without a usable option list")
+                    elif str(a).strip() not in ids:
+                        d.append(f"q{n}: answer {a!r} not among options")
+                    if q["inputType"] == "multi_select" and not sel:
+                        d.append(f"q{n}: multi-select outside a selection group")
+                    if q["type"] == "mcq_single" and not (q.get("prompt") or "").strip():
+                        d.append(f"q{n}: multiple choice without a question")
+                else:
+                    if re.fullmatch(r"[A-Z]", str(a).strip()):
+                        d.append(f"q{n}: letter key on a typed answer")
+                    if standalone and not re.search(r"[A-Za-z]{2,}", re.sub(r"_{3,}", " ", q.get("prompt") or "")):
+                        d.append(f"q{n}: typed answer with no blank and no question")
+    if sorted(seen) != list(range(1, 41)):
+        d.append(f"numbering: {len(seen)} questions, missing {sorted(set(range(1, 41)) - set(seen))[:8]}")
+    return d
+
+
 def build_speaking_runtime(rec):
-    """Phase 4: full 3-part packages. Part 2 topic = authentic Makkar (SOURCE_PRACTICE);
-    bullets + Part 1/3 = generated practice, provenance-tagged per item."""
-    assembled = ASSEMBLED_BY_SLUG.get(rec["slug"], {})
+    """IELTS-format package: Part 1 (3 topics × 4), Part 2 cue card, Part 3
+    (2 themes × 3). Provenance travels per part so the UI can label it honestly:
+    the Part 2 topic comes from the source practice site; prompts, Part 1 and
+    Part 3 were written for Cognition in the IELTS format."""
+    a = ASSEMBLED_BY_SLUG[rec["slug"]]
+    p2 = a["part2"]
     return {
         "id": rec["id"],
         "slug": rec["slug"],
-        "title": rec["cueCard"]["topic"] or rec["title"],
+        "title": p2["topic"]["text"],
         "hubNumber": rec.get("hubNumber"),
         "status": rec["status"],
-        "category": assembled.get("category"),
-        "cueCard": {"topic": rec["cueCard"]["topic"],
-                     "leadIn": assembled.get("part2", {}).get("cueCard", {}).get("leadIn", "You should say:"),
-                     "bulletPrompts": assembled.get("part2", {}).get("cueCard", {}).get("bullets", []),
-                     "finalInstruction": assembled.get("part2", {}).get("cueCard", {}).get("final", ""),
-                     "bulletsNote": rec["cueCard"]["bulletsNote"]},
-        "part1": assembled.get("part1", {"available": False}),
-        "part3": assembled.get("part3", {"available": False}),
-        "coverage": {"part1": assembled.get("part1", {}).get("available") and "generated_practice" or "unavailable",
-                      "part2": "available",
-                      "part3": assembled.get("part3", {}).get("available") and "generated_practice" or "unavailable"},
-        "sampleAnswer": {"sentences": rec["sampleAnswer"]["sentences"],
-                          "usage": rec["sampleAnswer"]["usage"]},
+        "cueCard": {"topic": p2["topic"]["text"], "leadIn": p2["cueCard"]["leadIn"],
+                    "bulletPrompts": p2["cueCard"]["bullets"], "finalInstruction": p2["cueCard"]["final"]},
+        "part1": a["part1"],
+        "part3": a["part3"],
+        "provenance": {"part1": a["part1"]["provenanceType"], "part2Topic": p2["topic"]["provenanceType"],
+                       "part2Prompts": p2["cueCard"]["provenanceType"], "part3": a["part3"]["provenanceType"]},
+        "coverage": a["coverage"],
+        "sampleAnswer": {"sentences": rec["sampleAnswer"]["sentences"], "usage": rec["sampleAnswer"]["usage"]},
         "source": {"slug": rec["slug"], "sha256": rec["provenance"]["page"]["sha256"][:16]},
     }
 
 ASSEMBLED = json.load(open(os.path.join(OUT, "speaking/generated/assembled_packages.json")))
 
 # ---------- production Reading ----------
-def reading_section_label(paragraph):
-    """Returns the letter if the paragraph IS a bare section label (A–H)."""
-    m = re.match(r"^\s*([A-H])\s*[\.:]?\s*$", paragraph)
-    return m.group(1) if m else None
+# Runtime contract (v2): the renderer receives structured data only — passage
+# paragraphs, group instructions, option pools, stimulus segments with blank
+# tokens, and one answer control per question. No HTML is parsed at runtime.
+READING_INPUT = {"tfng": "tfng", "ynng": "ynng", "single_choice": "single_select",
+                 "pool_select": "pool_select", "multi_choice": "multi_select", "text": "text"}
 
 
-def reading_passage_html(p):
-    """Renderer contract: real passage paragraphs; asset markers → project images.
-    A given asset image is emitted at most ONCE per passage — extractions
-    occasionally repeat an asset marker (e.g. consecutive marker paragraphs),
-    which used to render the same diagram twice.
-    Sections labelled with ascending bare letters (A, B, C, …) become visual
-    anchors via .reading-section-label paragraphs."""
-    html = []
-    emitted_assets = set()
-    if p.get("title"):
-        html.append(f'<h3 class="reading-passage-title">{esc(p["title"])}</h3>')
-    # Detect ascending letter-labelled sections, either bare ("A") or inline
-    # ("<p>A Operating on …</p>" — letter, space, Capitalized word). Requiring
-    # an ascending run (A→B→C…) keeps "A lot of people…" articles out.
-    paras = p.get("paragraphs", [])
-    inline_label = re.compile(r"^\s*([A-H])\s+([A-Z][^\s].*)$", re.S)
-    # Two-pass: collect candidate label paragraphs (bare letter, or inline
-    # "A Capitalized-sentence"); accept only if the letters are strictly
-    # increasing in document order and there are at least two of them —
-    # that keeps "A lot of people…" article paragraphs out.
-    candidates = []
-    for para in paras:
-        bare = reading_section_label(para)
-        if bare is not None:
-            candidates.append((id(para), ord(bare), bare, None))
-            continue
-        im = inline_label.match(para) if isinstance(para, str) else None
-        if im:
-            candidates.append((id(para), ord(im.group(1)), im.group(1), im.group(2)))
-    label_paras = {}
-    last = -1
-    taken = 0
-    for pid, code, letter, rest in candidates:
-        if code > last:
-            label_paras[pid] = (letter, rest)
-            last = code
-            taken += 1
-    if taken < 2:
-        label_paras = {}
-    for para in paras:
-        if id(para) in label_paras:
-            letter, rest = label_paras[id(para)]
-            if rest is None:
-                html.append(f'<p class="reading-section-label">{letter}</p>')
-            else:
-                html.append(f'<p class="reading-section-label">{letter}</p><p>{esc(rest)}</p>')
-            continue
-        m = re.match(r"\[asset:(asset\.[0-9a-f]+)\]", para)
-        if m:
-            aid = m.group(1)
-            asset = next((a for a in p.get("assets", []) if a["assetId"] == aid), None)
-            if asset and asset["projectPath"] not in emitted_assets:
-                emitted_assets.add(asset["projectPath"])
-                html.append(f'<img src="{esc(asset["projectPath"])}" alt="reading passage visual" style="max-width:100%;height:auto;margin:10px 0;border:1px solid var(--border);border-radius:8px;" />')
-            continue
-        m2 = re.match(r"\[asset-missing:(.+?)\]", para)
-        if m2: continue
-        html.append(f'<p>{esc(para)}</p>')
-    return "\n".join(html)
+_SMALL_WORDS = {"a", "an", "the", "and", "but", "or", "nor", "of", "in", "on", "at", "to", "for", "by", "with", "from", "as", "vs"}
 
-def reading_group_html(g):
-    html = []
-    for seg in (g.get("stimulusSegments") or []):
-        # The question-group header renders "Questions N–M"; the stimulus must
-        # not repeat the range.
-        if re.match(r"^\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}\b", seg):
-            continue
-        m = re.match(r"^__TABLE__(.*)$", seg, re.S)
-        if m:
-            rows = json.loads(m.group(1))
-            if rows:
-                html.append('<table class="writing-table">')
-                for i, row in enumerate(rows):
-                    html += ["<tr>" + "".join(
-                        f'<{"th" if i == 0 else "td"}>{esc(c)}</{"th" if i == 0 else "td"}>'
-                        for c in row) + "</tr>"]
-                html.append("</table>")
-            continue
-        if seg.strip():
-            html.append(f'<p class="stim-line">{esc(seg)}</p>')
-    if g.get("sharedOptions"):
-        opts = " ".join(f'<strong>{esc(o["letter"])}</strong> {esc(o["text"] or "—")}' for o in g["sharedOptions"])
-        html.append(f'<p class="stimulus-options">{opts}</p>')
-    return "\n".join(html)
 
-def reading_question_html(g, q):
-    st = q["stem"] or {}
-    segs = st.get("segments") or []
-    if segs:
-        parts = []
-        for s in segs:
-            parts.append("______" if isinstance(s, dict) else esc(s))
-        return " ".join(parts)
-    return esc(st.get("plain") or "")
+def display_title(title):
+    """Some source titles are typed entirely in lower case ("reiki"). Title-case
+    those for display only; any title with capitals is left exactly as written."""
+    if not title or title != title.lower():
+        return title
+    words = title.split()
+    return " ".join(w if (0 < i < len(words) - 1 and w in _SMALL_WORDS) else w[:1].upper() + w[1:]
+                    for i, w in enumerate(words))
+
+
+def reading_asset_src(assets_by_id, asset_id):
+    a = assets_by_id.get(asset_id)
+    return a["projectPath"] if a and a.get("status") == "in_r2" else None
+
 
 def build_reading_runtime(rec):
+    assets_by_id = {}
+    for p in rec["passages"]:
+        for a in p.get("assets") or []:
+            assets_by_id[a["assetId"]] = a
+        for g in p["questionGroups"]:
+            for a in g.get("figures") or []:
+                assets_by_id[a["assetId"]] = a
     passages = []
-    for p in rec.get("passages", []):
-        groups, flat, html_parts = [], [], []
-        for g in p.get("questionGroups", []):
-            gh = reading_group_html(g)
-            html_parts.append(gh)
+    for p in rec["passages"]:
+        paragraphs = []
+        for x in p["paragraphs"]:
+            if x["type"] == "image":
+                src = reading_asset_src(assets_by_id, x["asset"])
+                if src:
+                    paragraphs.append({"type": "image", "src": src})
+            elif x["type"] == "table":
+                paragraphs.append({"type": "table", "rows": x["rows"]})
+            elif x["type"] == "subheading":
+                paragraphs.append({"type": "subheading", "text": x["text"]})
+            else:
+                paragraphs.append({"type": "text", "text": x["text"], **({"label": x["label"]} if x.get("label") else {})})
+        groups, flat = [], []
+        for g in p["questionGroups"]:
+            if g["status"] != "production":
+                continue
+            control = g["answerControl"]
+            stimulus = None
+            if g.get("stimulus"):
+                blocks = []
+                for b in g["stimulus"]["blocks"]:
+                    if b["type"] == "image":
+                        src = reading_asset_src(assets_by_id, b.get("asset"))
+                        if not src:
+                            raise SystemExit(f"{rec['slug']} {g['groupId']}: production stimulus image not in R2")
+                        blocks.append({"type": "image", "src": src})
+                    else:
+                        blocks.append(b)
+                stimulus = {"title": g["stimulus"].get("title"), "blocks": blocks}
+            pool = None
+            if g.get("optionPool"):
+                pool = {"title": g["optionPool"].get("title"),
+                        "options": [{"id": o["id"], "label": o["text"]} for o in g["optionPool"]["options"]]}
             q_objs = []
             for q in g["questions"]:
-                qtype = q["type"]
-                input_type = "text"
-                options = None
-                if qtype == "mcq_single":
-                    options = q.get("options") or None
-                    # A usable choice list needs at least two real options;
-                    # degraded extractions degrade to typed answers.
-                    input_type = "single_select" if options and len(options) >= 2 else "text"
-                elif qtype in ("matching_headings", "matching_information", "matching_features", "matching_box"):
-                    options = g.get("sharedOptions") or None
-                    if options and len(options) >= 2:
-                        input_type = "single_select"
-                    else:
-                        options = None
-                        input_type = "text"
-                elif qtype == "tfng":
-                    input_type = "text"
-                elif qtype == "ynng":
-                    input_type = "text"
+                a = q["answer"]
                 q_objs.append({
                     "id": f"q{q['number']}", "questionNumber": q["number"],
-                    "questionType": qtype, "inputType": input_type,
-                    "questionText": reading_question_html(g, q),
-                    "prompt": q["stem"].get("plain") or "",
-                    "options": [{"id": o["letter"], "label": o["text"] or ""} for o in options] if options else None,
-                    "answer": q.get("correctAnswer"),
+                    "groupId": g["groupId"], "questionType": g["type"],
+                    "inputType": READING_INPUT[control],
+                    "prompt": q.get("prompt"),
+                    "questionText": "".join(s if isinstance(s, str) else "____" for s in (q.get("prompt") or [])).strip(),
+                    "options": ([{"id": o["id"], "label": o["text"]} for o in q["options"]]
+                                if q.get("options") else None),
+                    "blankInStimulus": bool(q.get("blankInStimulus")),
+                    "labelInFigure": bool(q.get("labelInFigure")),
+                    "answer": a["value"],
+                    "acceptedAnswers": a["accepted"],
+                    "wordLimit": g.get("wordLimit"),
+                    **({"unorderedGroup": g["groupId"]} if g["type"] == "mcq_multi" else {}),
                 })
             flat.extend(q_objs)
             groups.append({
-                "groupId": g["groupId"], "groupType": g["qtype"],
-                "instructions": g["instruction"] or None, "wordLimit": g.get("wordLimit") or None,
-                "options": ([{"id": o["letter"], "label": o["text"] or ""} for o in g["sharedOptions"]]
-                             if g.get("sharedOptions") else None),
-                "htmlContent": gh, "questions": q_objs,
+                "groupId": g["groupId"], "groupType": g["type"], "answerControl": control,
+                "startQ": g["startQ"], "endQ": g["endQ"],
+                "instructions": g.get("instruction"), "notes": g.get("notes"),
+                "wordLimit": g.get("wordLimit"), "selectCount": g.get("selectCount"),
+                "optionPool": pool, "stimulus": stimulus, "questions": q_objs,
             })
         passages.append({
-            "passageNumber": p["passageNumber"], "title": p.get("title") or f"Passage {p['passageNumber']}",
-            "htmlContent": reading_passage_html(p),
-            "assets": [{"projectPath": a["projectPath"]} for a in p.get("assets", [])],
+            "passageNumber": p["passageNumber"],
+            "title": display_title(p.get("title")) or f"Reading Passage {p['passageNumber']}",
+            "paragraphs": paragraphs,
+            "passageText": " ".join(x.get("text", "") for x in paragraphs if x["type"] in ("text", "subheading")),
             "questions": flat, "questionGroups": groups,
         })
     return {
         "id": rec["id"], "testId": rec["sourceNumbers"][0], "slug": rec["slug"],
-        "title": rec["title"], "kind": rec["kind"], "status": rec["status"],
+        "title": rec["title"], "status": rec["status"], "fullMockEligible": rec["fullMockEligible"],
+        "questionCount": sum(len(p["questions"]) for p in passages),
         "passages": passages,
         "source": {"slug": rec["slug"], "sha256": rec["provenance"]["page"]["sha256"][:16]},
     }
@@ -445,15 +493,21 @@ def build_reading_runtime(rec):
 def writing_task_html(task):
     """Renderer contract: plain escaped prompt. Images are handled via the
     separate image.file slot (rendered by WritingModule); HTML tables are
-    embedded here. Never both image + table, never a flattening."""
+    embedded here with their source heading as a real <caption> (and any
+    footnote headings after the table). Never both image + table, never a
+    flattening."""
     html = esc(task["prompt"])
     if not task.get("visual") and task.get("table") and task["table"].get("rows"):
         rows = task["table"]["rows"]
         html += '<table class="writing-table">'
+        if task["table"].get("caption"):
+            html += f'<caption>{esc(task["table"]["caption"])}</caption>'
         for i, row in enumerate(rows):
             html += "<tr>" + "".join(
                 f'<{"th" if i == 0 else "td"}>{esc(c)}</{"th" if i == 0 else "td"}>' for c in row) + "</tr>"
         html += "</table>"
+        for note in task["table"].get("notes") or []:
+            html += f'<p class="writing-table-note">{esc(note)}</p>'
     return html
 
 def build_writing_runtime(rec):
@@ -525,10 +579,15 @@ def main():
         if rec["status"] == "quarantined" or rec.get("schemaErrors"):
             excluded.append({"slug": rec["slug"], "reason": "quarantined"})
             continue
-        if rec.get("verifiedQuestionCount", 0) == 0:
-            excluded.append({"slug": rec["slug"], "reason": "no verified questions"})
+        if not rec.get("fullTestEligible"):
+            excluded.append({"slug": rec["slug"], "reason": "not a fully verified 40-question test"})
             continue
-        listen_runtime.append(build_listening_runtime(rec))
+        rt = build_listening_runtime(rec)
+        defects = listening_runtime_defects(rt)
+        if defects:  # the extractor gates on this too; never ship a test that fails it
+            excluded.append({"slug": rec["slug"], "reason": "render check failed", "defects": defects[:5]})
+            continue
+        listen_runtime.append(rt)
     for f in sorted(glob.glob(os.path.join(OUT, "speaking", "tests", "*.json"))):
         rec = json.load(open(f))
         if rec["status"] == "quarantined":
@@ -537,18 +596,20 @@ def main():
         speak_runtime.append(build_speaking_runtime(rec))
     for f in sorted(glob.glob(os.path.join(OUT, "reading", "tests", "*.json"))):
         rec = json.load(open(f))
-        if rec["status"] in ("quarantined", "duplicate") or rec.get("kind") not in ("full_test", "practice_test"):
+        # Only complete, fully validated 40-question tests ship: every Reading
+        # session in the app is a timed 3-passage test scored on the 40-mark band
+        # scale. practice_only tests keep their validated groups in content-db.
+        if rec["status"] != "production" or not rec.get("fullMockEligible"):
             excluded.append({"slug": rec["slug"], "reason": rec["status"] or "incomplete"})
-            continue
-        total_q = sum(len(g.get("questions", [])) for p in rec.get("passages", []) for g in p.get("questionGroups", []))
-        if total_q == 0:
-            excluded.append({"slug": rec["slug"], "reason": "no_structured_questions"})
             continue
         read_runtime.append(build_reading_runtime(rec))
     for f in sorted(glob.glob(os.path.join(OUT, "writing", "tests", "*.json"))):
         rec = json.load(open(f))
-        if rec["status"] in ("quarantined", "duplicate") or rec.get("kind") not in ("complete_test", "task1_only", "task2_only"):
-            excluded.append({"slug": rec["slug"], "reason": rec["status"] or "incomplete"})
+        # Only verified, complete packages ship: Task 1 + Task 2 always come from
+        # the same source page. Quarantined packages stay in content-db with reasons.
+        if rec["status"] != "verified" or rec.get("kind") != "complete_test":
+            excluded.append({"slug": rec["slug"], "reason": rec["status"] or "incomplete",
+                              "reasonCodes": sorted({u["reasonCode"] for u in rec.get("quarantinedUnits", [])})})
             continue
         write_runtime.append(build_writing_runtime(rec))
 

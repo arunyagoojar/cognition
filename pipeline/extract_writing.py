@@ -13,7 +13,10 @@ Rules (Phase 5 spec):
   LiteSpeed cache variants canonicalized), sha256 + MIME + dimensions recorded
 - genuine HTML tables preserved as structured data (never images, never flattened)
 - sample answers / comments / site shell excluded; ambiguous boundary → quarantine
-- deterministic IDs; per-record provenance; no generated content
+- a heading next to an HTML table is its caption/footnote, never prompt text
+- multi-image Task 1, fused second question, over-long prompt, missing visual
+  → the whole package is quarantined (never repaired or guessed)
+- IDs frozen in content-db/writing/id-map.json; per-record provenance; no generated content
 """
 import json, os, re, hashlib, sys
 from dataclasses import dataclass, field
@@ -24,16 +27,27 @@ from bs4 import BeautifulSoup, NavigableString, Tag  # noqa: E402
 from PIL import Image  # noqa: E402
 
 OUT = os.path.join(REPO, "content-db")
-PIPELINE_VERSION = "production-writing-1.0.0"
+PIPELINE_VERSION = "production-writing-1.1.0"
 HUB_WRITING = MANIFEST["hub_enumerations"]["academic_writing"]
 HUB_SLUGS = {e["slug"] for e in HUB_WRITING}
 BOOK_MAPS = MANIFEST["cambridge_book_mappings"]
+_ID_MAP_PATH = os.path.join(OUT, "writing", "id-map.json")
+# Record ids are frozen: task ids (<id>.task1/.task2) and practice sourcePackageId
+# derive from them, and a re-download of the source mirror changes page bytes
+# (LiteSpeed cache stamps) without changing content. New pages fall back to the
+# page-hash id.
+FROZEN_IDS = json.load(open(_ID_MAP_PATH))["ids"] if os.path.exists(_ID_MAP_PATH) else {}
 
 SAMPLE_MARKERS = re.compile(
-    r"(sample answer|model answer|band [6-9]\s*(answer|essay)|suggested answer|candidate response|answer analysis)", re.I)
+    r"(?:\b(?:task|test)\s*[12]\s+)?"            # swallow a "TASK 2 " heading prefix of the sample block
+    r"(sample answer|model answer|band\s*[0-9](?:\.[05])?\s*(answer|essay|sample|response)|"
+    r"suggested answer|candidate response|answer analysis)", re.I)
+# a second numbered prompt fused into the same task ("...your opinion. 18. Fewer and fewer...")
+FUSED_PROMPT = re.compile(r"(?<=[.?!])\s+\d{1,3}\.\s+[A-Z]")
+MAX_PROMPT_WORDS = {"1": 100, "2": 120}   # corpus max today: T1 67, T2 70
 NAV_LINE = re.compile(r"^(Cambridge IELTS Tests 1 to 1[37]|IELTS MASTER|Recent posts)$", re.I)
 TASK_MARKER_SCAN = re.compile(r"\b(Task|Test)\s*([12])\s*:\s*", re.I)
-WORD_LIMIT = re.compile(r"(?:at least|minimum(?: of)?)\s*(\d{3})\s*words?", re.I)
+WORD_LIMIT = re.compile(r"(?:(?:at lea(?:st|se)|minimum(?: of)?)\s*(\d{3})\s*words?|\b(\d{3})-word\b)", re.I)
 LITESPEED = re.compile(r"-q7b50db1914(?=\.\w+$)")
 
 # visual type classification from PROMPT evidence (never filename-only)
@@ -82,6 +96,10 @@ def block_sequence(el):
                 if name in SKIP_TAGS: continue
                 if name == "table":
                     out.append(("table", child)); continue
+                if name in ("h1", "h2", "h3", "h4", "h5", "h6", "figcaption", "caption"):
+                    txt = norm(child.get_text(" "))
+                    if txt: out.append(("heading", txt))
+                    continue
                 if name == "img":
                     url = child.get("data-src") or child.get("src")
                     if url and not url.startswith("data:") and "wp-content" in url:
@@ -177,7 +195,7 @@ def extract_prompt_and_visual(region_blocks):
     visual = None
     table = None
     extra_imgs = []
-    text_pieces = []
+    pieces = []          # (is_heading, text) in document order
     for kind, payload in region_blocks:
         if kind == "img":
             if visual is None:
@@ -191,7 +209,12 @@ def extract_prompt_and_visual(region_blocks):
             continue
         if NAV_LINE.match(payload):
             continue
-        text_pieces.append(payload)
+        pieces.append((kind == "heading", payload))
+    # A heading inside a region that holds an HTML table is that table's caption
+    # (first heading) / footnotes (any further headings) — never prompt text.
+    # Without a table a heading is ordinary prompt text, kept in document order.
+    headings = [t for h, t in pieces if h] if table is not None else []
+    text_pieces = [t for h, t in pieces if not h] if table is not None else [t for _, t in pieces]
     joined = norm(" ".join(text_pieces))
     sample_excluded = False
     truncated = False
@@ -204,6 +227,8 @@ def extract_prompt_and_visual(region_blocks):
         else:
             joined = pre
             truncated = True
+    if table is not None and headings:
+        table = {"rows": table, "caption": headings[0], "notes": headings[1:]}
     return [{"text": joined}], visual, table, extra_imgs, sample_excluded, truncated
 
 
@@ -254,7 +279,7 @@ def process(item):
     soup = BeautifulSoup(raw_html, "html.parser")
     ec = soup.find("div", class_="entry-content")
     rec = {
-        "id": f"writing.test-{test_number:04d}.{content_hash(slug, page['sha256'])}",
+        "id": FROZEN_IDS.get(slug) or f"writing.test-{test_number:04d}.{content_hash(slug, page['sha256'])}",
         "module": "writing",
         "sourceNumbers": [test_number],
         "slug": slug,
@@ -299,9 +324,10 @@ def process(item):
             continue
         lines, img_url, table, extra_imgs, sample_excluded, truncated = \
             extract_prompt_and_visual(regions[task_num])
-        if extra_imgs:
-            rec["validationWarnings"].append({"unit": f"task{task_num}", "code": "EXTRA_IMGS_IGNORED",
-                                               "detail": f"additional distinct images after the first were recorded, not used: {extra_imgs}"})
+        if extra_imgs and task_num == "1":
+            # the runtime renders exactly one image: a multi-part visual would ship incomplete
+            rec["quarantinedUnits"].append({"unit": "task1", "reasonCode": "TASK1_VISUAL_INCOMPLETE",
+                                             "evidence": {"renderedImage": img_url, "unrenderedImages": extra_imgs}})
         prompt_text = norm(lines[0]["text"])
         if truncated and len(prompt_text) < 60:
             # the marker destroyed the prompt — ambiguous boundary
@@ -310,8 +336,17 @@ def process(item):
         elif sample_excluded or truncated:
             rec["validationWarnings"].append({"unit": f"task{task_num}", "code": "SAMPLE_ANSWER_EXCLUDED",
                                                "detail": "A sample answer after the prompt was detected and excluded; the prompt itself is unaffected."})
+        if len(prompt_text.split()) > MAX_PROMPT_WORDS[task_num]:
+            rec["quarantinedUnits"].append({"unit": f"task{task_num}", "reasonCode": "PROMPT_LENGTH_ANOMALY",
+                                             "evidence": {"words": len(prompt_text.split()), "tail": prompt_text[-160:]}})
+        fused = FUSED_PROMPT.search(prompt_text)
+        if fused:
+            # a source defect (two essay questions in one <p>): never auto-split
+            rec["quarantinedUnits"].append({"unit": f"task{task_num}", "reasonCode": "MULTIPLE_PROMPTS_FUSED",
+                                             "evidence": {"at": fused.start(),
+                                                          "excerpt": prompt_text[max(0, fused.start() - 60):][:160]}})
         wl = WORD_LIMIT.search(prompt_text)
-        word_limit = int(wl.group(1)) if wl else None
+        word_limit = int(wl.group(1) or wl.group(2)) if wl else None
         task = {
             "taskNumber": int(task_num),
             "prompt": prompt_text,
@@ -338,16 +373,21 @@ def process(item):
                     "visualType": classify_visual(prompt_text),
                 }
             elif table:
-                task["table"] = {"rows": table,
-                                  "visualType": "table"}
-            # neither image nor table → missing visual (quarantine this task)
+                rows = table["rows"] if isinstance(table, dict) else table
+                task["table"] = {"rows": rows, "visualType": "table"}
+                if isinstance(table, dict):
+                    task["table"]["caption"] = table["caption"]
+                    if table["notes"]: task["table"]["notes"] = table["notes"]
+            else:
+                rec["quarantinedUnits"].append({"unit": "task1", "reasonCode": "TASK1_VISUAL_MISSING",
+                                                 "evidence": "no img and no HTML table in the Task 1 region"})
         rec[f"task{task_num}"] = task
 
-    # status rollup
-    if any(u["reasonCode"] in ("SAMPLE_ANSWER_CONTAMINATION", "MALFORMED_HTML") for u in rec["quarantinedUnits"]):
+    # status rollup: a package ships only as a complete Task 1 + Task 2 pair from
+    # this one page (full mocks pair them), so ANY quarantined unit quarantines the
+    # whole package. Reason codes stay on the record and in writing/quarantine/.
+    if rec["quarantinedUnits"]:
         rec["status"] = "quarantined"
-    elif rec["quarantinedUnits"]:
-        rec["status"] = "flagged"
     # completeness
     rec["completeness"] = {
         "task1": bool(rec.get("task1")) and not any(u["unit"] == "task1" for u in rec["quarantinedUnits"]),
@@ -361,7 +401,8 @@ def process(item):
 
 def main():
     import shutil
-    for sub in ("writing/tests", "writing/quarantine", "reports"):
+    # only this module's outputs are reset (content-db/reports belongs to build_reports.py)
+    for sub in ("writing/tests", "writing/quarantine"):
         p = os.path.join(OUT, sub)
         if os.path.exists(p): shutil.rmtree(p)
         os.makedirs(p, exist_ok=True)
