@@ -7,6 +7,12 @@ Cognition has its own media storage and an owner review workflow. Do not salvage
 guessing: a unit is released only when the resource below makes it pass the same validator
 and contract tests as everything already in production.
 
+Media note (2026-10-04): R2 was pruned to the media the served content uses
+(265 objects incl. the 20 learning videos). The audio and images of quarantined or
+duplicate tests were deleted from R2; their originals remain in the source corpus
+(`ielts-website/wp-content/uploads/`). Recovering such a test means re-uploading its
+media and adding it back to `media_manifest.json`.
+
 Counts are from the locked database. A unit can carry several reason codes, so the
 per-reason counts overlap and do not sum to the total.
 
