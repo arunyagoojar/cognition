@@ -1,6 +1,16 @@
 import React from 'react';
 import { resolveMediaUrl } from '../../utils/media.js';
+import QuestionNumber from './QuestionNumber.jsx';
 
+/**
+ * Shared HTML content renderer for exam stimulus/question-group HTML.
+ * Phase 5 rules:
+ *  - inline blanks render [badge] then input — the number appears exactly once
+ *    (the injected markup replaced the extracted leading number)
+ *  - passage section labels (<p class="reading-section-label">A</p>) render
+ *    as visual anchors via the same badge language
+ *  - duplicate media is prevented at build time; images render as-is
+ */
 export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }) {
   // Hooks must run unconditionally on every render (rules-of-hooks).
   const doc = React.useMemo(() => {
@@ -21,7 +31,15 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
     if (node.nodeType === Node.ELEMENT_NODE) {
       const tagName = node.tagName.toLowerCase();
-      
+
+      // Passage section labels emitted by the build (lone A–H letter paragraphs)
+      if (node.classList && node.classList.contains('reading-section-label')) {
+        const label = node.textContent.trim();
+        return (
+          <span key={index} className="section-label-badge">[{label}]</span>
+        );
+      }
+
       // Handle inputs
       if (tagName === 'input') {
         const type = node.getAttribute('type');
@@ -31,7 +49,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
         // fall back to positional ids for legacy content.
         const qId = node.getAttribute('data-qid') || `q${inputIndex++}`;
         const val = answers[qId] || '';
-        
+
         if (type === 'radio' || type === 'checkbox') {
           return (
             <input
@@ -48,6 +66,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
         return (
           <span key={index} className="inline-blank">
+            <QuestionNumber n={/^q\d+$/.test(qId) ? qId.replace('q', '') : null} />
             <input
               type="text"
               data-qid={qId}
@@ -56,9 +75,6 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
               className="cognition-exam-input"
               style={{ display: 'inline-block', width: '150px', margin: '0 4px' }}
             />
-            {qId && /^q\d+$/.test(qId) && (
-              <b className="blank-num">{qId.replace('q', '')}</b>
-            )}
           </span>
         );
       }
@@ -67,7 +83,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
       if (tagName === 'select') {
         const qId = `q${inputIndex++}`;
         const val = answers[qId] || '';
-        
+
         return (
           <select
             key={index}
@@ -88,7 +104,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
       // Handle standard elements
       const props = { key: index };
-      
+
       // Map basic attributes
       if (node.id) props.id = node.id;
       if (node.className) props.className = node.className;
@@ -103,7 +119,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
       // Recursively render children
       const children = Array.from(node.childNodes).map((child, i) => renderNode(child, i));
-      
+
       if (tagName === 'audio' || tagName === 'script' || tagName === 'style') {
         return null; // We handle audio separately, strip scripts/styles
       }
@@ -111,7 +127,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
       // React complains about rendering certain tags without proper mapping, so we safely create elements
       return React.createElement(tagName, props, children.length > 0 ? children : null);
     }
-    
+
     return null;
   };
 

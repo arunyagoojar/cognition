@@ -213,6 +213,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           <TopNavigation
             onOpenSettings={() => setSettingsOpen(true)}
             onGoHome={() => setView('home')}
+            onGoBack={view !== 'home' ? () => setView('home') : undefined}
             view={view}
           />
         </header>

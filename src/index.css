@@ -4267,3 +4267,188 @@ p.cl-internal-1v2te0e {
 }
 .account-menu-item:hover { background: var(--surface-hover); }
 .account-menu-item svg { color: var(--text-secondary); }
+
+/* ─── Phase 5: Reading exam UX — badges, option cards, split pane ────────── */
+
+/* Canonical question-number badge (single source: QuestionNumber component) */
+.q-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  padding: 2px 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-right: 8px;
+  vertical-align: middle;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* Passage section labels (A/B/C/D visual anchors) */
+.section-label-badge,
+.reading-section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 3px 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+p.reading-section-label {
+  margin: 18px 0 8px 0;
+}
+.section-label-badge { margin: 0 8px 0 0; }
+
+/* Question block hierarchy (badge → stem → choices) */
+.exam-question-block {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.exam-question-block:last-child { border-bottom: none; }
+.exam-question-stem {
+  font-size: 15.5px;
+  color: var(--text-primary);
+  line-height: 1.55;
+  padding-left: 4px;
+}
+.exam-question-input { margin-top: 10px; padding-left: 4px; }
+
+/* Option cards — visible choices, never hidden in dropdowns when substantial */
+.q-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.q-option-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.q-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--surface-interactive);
+  cursor: pointer;
+  transition: border-color var(--dur-micro) var(--ease-smooth), background var(--dur-micro) var(--ease-smooth);
+  font-size: 14.5px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+.q-option-card:hover {
+  border-color: var(--c-coral);
+}
+.q-option-card.selected {
+  border-color: var(--c-coral);
+  background: var(--c-peach);
+}
+[data-theme="dark"] .q-option-card.selected {
+  background: rgba(255, 107, 74, 0.12);
+}
+.q-option-card.compact {
+  padding: 7px 12px;
+  align-items: center;
+  width: auto;
+}
+.q-option-label { flex: 1 1 auto; min-width: 0; }
+
+/* Reading split-screen exam workspace: no whole-page scroll on desktop */
+.reading-split-active {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.reading-split-panes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.reading-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+}
+@media (min-width: 1100px) {
+  .reading-split-active .reading-split-panes {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .reading-split-active .reading-pane {
+    overflow-y: auto;
+    min-height: 0;
+    max-height: 100%;
+    padding-right: 4px;
+  }
+  .reading-split-active .reading-pane::-webkit-scrollbar { width: 8px; }
+  .reading-split-active .reading-pane::-webkit-scrollbar-thumb {
+    background: var(--surface-hover);
+    border-radius: 4px;
+  }
+}
+
+/* Go-back integrated into the global header */
+.nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--surface-interactive);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color var(--dur-micro) var(--ease-smooth), background var(--dur-micro) var(--ease-smooth);
+}
+.nav-back-btn:hover { border-color: var(--c-coral); }
+
+/* Answer review list (results screens) */
+.answer-review-list { display: flex; flex-direction: column; gap: 8px; }
+.answer-review-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--surface-interactive);
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+.answer-review-item .review-verdict { font-weight: 800; flex-shrink: 0; }
+.answer-review-item.correct .review-verdict { color: var(--success-icon); }
+.answer-review-item.incorrect .review-verdict { color: var(--coral); }
+.answer-review-meta { color: var(--text-secondary); font-size: 12.5px; }
+.accepted-variant-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: var(--success-icon);
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 8px;
+}

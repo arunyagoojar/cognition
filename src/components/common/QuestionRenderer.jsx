@@ -1,5 +1,17 @@
 import React from 'react';
+import QuestionNumber, { stripLeadingNumber } from './QuestionNumber';
 
+/**
+ * Unified Reading/Listening question renderer (Phase 5).
+ *
+ * Interaction component is derived from the normalized question record:
+ *  - single_select with options → radio option cards (compact pills when all
+ *    options are short, full cards when any option carries substantial text)
+ *  - multi_select with options → checkbox option cards (multi-select visible)
+ *  - tfng / ynng → three visible radio pills (dropdowns are the exception)
+ *  - everything else → text input
+ * The number badge renders exactly once, here, from the canonical component.
+ */
 export default function QuestionRenderer({ question, value, onChange }) {
   const { questionNumber, questionType, inputType, questionText, options } = question;
 
@@ -17,59 +29,73 @@ export default function QuestionRenderer({ question, value, onChange }) {
     onChange(question.id, current);
   };
 
+  const stem = stripLeadingNumber(questionText);
+
   const renderInput = () => {
     switch (inputType || 'text') {
       case 'single_select':
-      case 'map_select':
+      case 'map_select': {
         if (options && options.length > 0) {
-          // Radio list — the exam convention (visible choices beat dropdowns).
+          const long = options.some(o => (o.label || '').length > 28);
           return (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
-              {options.map(o => (
-                <label key={o.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name={question.id}
-                    value={o.id}
-                    checked={value === o.id}
-                    onChange={handleChange}
-                    style={{ accentColor: 'var(--c-yellow)', width: 16, height: 16, marginTop: 2, flexShrink: 0 }}
-                  />
-                  <span>
-                    <strong>{o.id}</strong>
-                    {o.label && o.id !== o.label ? ` — ${o.label}` : ''}
-                  </span>
-                </label>
-              ))}
+            <div className={long ? 'q-option-list' : 'q-option-chips'} role="radiogroup" aria-label={`Question ${questionNumber}`}>
+              {options.map(o => {
+                const selected = value === o.id;
+                return (
+                  <label key={o.id} className={`q-option-card${selected ? ' selected' : ''}${long ? '' : ' compact'}`}>
+                    <input
+                      type="radio"
+                      name={question.id}
+                      value={o.id}
+                      checked={selected}
+                      onChange={handleChange}
+                      style={{ accentColor: 'var(--c-coral)', width: 16, height: 16, marginTop: 2, flexShrink: 0 }}
+                    />
+                    <span className="q-option-label">
+                      <strong>{o.id}.</strong>
+                      {o.label && o.id !== o.label ? ` ${o.label}` : ''}
+                    </span>
+                  </label>
+                );
+              })}
             </div>
           );
         }
-        // Fallback to text if options are missing for some reason
+        // No usable options in the data — typed answer fallback.
         return (
           <input
             type="text"
             value={value || ''}
             onChange={handleChange}
             placeholder="Type your answer here..."
+            className="cognition-exam-input"
             style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
           />
         );
-      
-      case 'multi_select':
+      }
+
+      case 'multi_select': {
         if (options && options.length > 0) {
           const currentVals = Array.isArray(value) ? value : [];
           return (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
-              {options.map(o => (
-                <label key={o.id} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14 }}>
-                  <input 
-                    type="checkbox"
-                    checked={currentVals.includes(o.id)}
-                    onChange={() => handleCheckbox(o.id)}
-                  />
-                  <strong>{o.id}</strong> {o.label}
-                </label>
-              ))}
+            <div className="q-option-list" role="group" aria-label={`Question ${questionNumber} — choose all that apply`}>
+              {options.map(o => {
+                const selected = currentVals.includes(o.id);
+                return (
+                  <label key={o.id} className={`q-option-card${selected ? ' selected' : ''}`}>
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={() => handleCheckbox(o.id)}
+                      style={{ accentColor: 'var(--c-coral)', width: 16, height: 16, marginTop: 2, flexShrink: 0 }}
+                    />
+                    <span className="q-option-label">
+                      <strong>{o.id}.</strong>
+                      {o.label && o.id !== o.label ? ` ${o.label}` : ''}
+                    </span>
+                  </label>
+                );
+              })}
             </div>
           );
         }
@@ -79,40 +105,37 @@ export default function QuestionRenderer({ question, value, onChange }) {
             value={value || ''}
             onChange={handleChange}
             placeholder="Multiple answers (comma separated)"
+            className="cognition-exam-input"
             style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
           />
         );
+      }
 
       case 'text':
-      default:
-        if (questionType === 'true_false_not_given') {
+      default: {
+        if (questionType === 'true_false_not_given' || questionType === 'yes_no_not_given') {
+          const opts = questionType === 'true_false_not_given'
+            ? [['TRUE', 'True'], ['FALSE', 'False'], ['NOT GIVEN', 'Not Given']]
+            : [['YES', 'Yes'], ['NO', 'No'], ['NOT GIVEN', 'Not Given']];
           return (
-            <select
-              className="cognition-exam-select"
-              value={value || ''}
-              onChange={handleChange}
-              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
-            >
-              <option value="">Select…</option>
-              <option value="TRUE">TRUE</option>
-              <option value="FALSE">FALSE</option>
-              <option value="NOT GIVEN">NOT GIVEN</option>
-            </select>
-          );
-        }
-        if (questionType === 'yes_no_not_given') {
-          return (
-            <select
-              className="cognition-exam-select"
-              value={value || ''}
-              onChange={handleChange}
-              style={{ padding: '5px 10px', borderRadius: 8, border: '1.5px solid var(--border)' }}
-            >
-              <option value="">Select…</option>
-              <option value="YES">YES</option>
-              <option value="NO">NO</option>
-              <option value="NOT GIVEN">NOT GIVEN</option>
-            </select>
+            <div className="q-option-chips" role="radiogroup" aria-label={`Question ${questionNumber}`}>
+              {opts.map(([val, label]) => {
+                const selected = (value || '').toUpperCase() === val;
+                return (
+                  <label key={val} className={`q-option-card compact${selected ? ' selected' : ''}`}>
+                    <input
+                      type="radio"
+                      name={question.id}
+                      value={val}
+                      checked={selected}
+                      onChange={handleChange}
+                      style={{ accentColor: 'var(--c-coral)', width: 16, height: 16, flexShrink: 0 }}
+                    />
+                    <span className="q-option-label">{label}</span>
+                  </label>
+                );
+              })}
+            </div>
           );
         }
         return (
@@ -121,25 +144,21 @@ export default function QuestionRenderer({ question, value, onChange }) {
             value={value || ''}
             onChange={handleChange}
             placeholder="Type your answer here..."
+            className="cognition-exam-input"
             style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border-subtle)', marginTop: 8 }}
           />
         );
+      }
     }
   };
 
   return (
-    <div className="exam-doc" style={{
-      padding: '10px 0',
-      borderBottom: '1px solid var(--border-subtle)',
-      marginBottom: '2px'
-    }}>
-      <div style={{ fontSize: 15.5, color: 'var(--text-primary)', lineHeight: 1.5 }}>
-        <span className="exam-q-num">{questionNumber}.</span>
-        {questionText && (
-          <span dangerouslySetInnerHTML={{ __html: questionText.replace(/wp-content/g, '/wp-content') }} />
-        )}
+    <div className="exam-question-block">
+      <div className="exam-question-stem">
+        <QuestionNumber n={questionNumber} />
+        {stem && <span dangerouslySetInnerHTML={{ __html: stem }} />}
       </div>
-      <div style={{ marginTop: 6 }}>
+      <div className="exam-question-input">
         {renderInput()}
       </div>
     </div>

@@ -9,7 +9,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test:evaluation": "node test/evaluation.test.js",
-    "test": "node test/evaluation.test.js && node test/production_content.test.js && node test/writing_content.test.js && node test/reading_content.test.js",
+    "test": "node test/evaluation.test.js && node test/production_content.test.js && node test/writing_content.test.js && node test/reading_content.test.js && node test/hybrid_evaluation.test.js && node test/reading_render.test.js",
     "test:production": "node test/production_content.test.js",
     "validate:production:writing": "python3 pipeline/validate_writing.py",
     "test:writing": "node test/writing_content.test.js",

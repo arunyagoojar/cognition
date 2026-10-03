@@ -287,3 +287,56 @@ export async function validateGeminiKeyServer(apiKey) {
     return { valid: false, message: 'Could not reach Google to verify the key. Please try again shortly.' };
   }
 }
+
+export const ANSWER_VERIFIER_SYSTEM_PROMPT = `You are an IELTS answer-key verifier.
+
+For each item you receive, decide whether the student's answer is an acceptable representation of the OFFICIAL answer for that exact question, under the supplied constraints (word limits, singular/plural, numbers, dates, times, units, names, spelling requirements).
+
+Rules:
+- The official answer is the authority. Never invent or substitute an answer.
+- Accept obvious representations: case differences, number format ("11" vs "eleven"), optional parenthetical parts, minor spelling that preserves the word, singular/plural when the question context makes it acceptable.
+- Reject answers that change meaning: am/pm swaps, different quantities, related-but-different words ("university" is not "college"), wrong concepts.
+- If you cannot confidently establish equivalence, decide UNCERTAIN.
+
+Respond with structured JSON ONLY (no markdown, no commentary):
+{
+  "results": [
+    { "id": "<echo the item id>",
+      "decision": "CORRECT" | "INCORRECT" | "UNCERTAIN",
+      "matchedAnswer": "<the official/accepted answer it corresponds to>",
+      "reason": "<short factual explanation>" }
+  ]
+}
+Include exactly one result per input item, echoing ids verbatim.`;
+
+/**
+ * Batched answer verification: one Gemini request for all uncertain items.
+ * Returns { results: [{id, decision, matchedAnswer, reason}] } or { results: [] }.
+ */
+export async function runAnswerVerification(items, apiKey) {
+  const userPrompt = `Verify the following ${items.length} student answer(s) against the official IELTS answer key.
+
+${JSON.stringify(items.map(it => ({
+  id: it.id,
+  question: it.questionText || '',
+  questionType: it.questionType || '',
+  instruction: it.instruction || '',
+  officialAnswer: it.officialAnswer || '',
+  studentAnswer: it.studentAnswer || '',
+  wordLimit: it.wordLimit || null,
+})), null, 2)}`;
+
+  try {
+    const text = await callGemini(AI_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
+    const parsed = extractJsonFromText(text);
+    if (parsed && Array.isArray(parsed.results)) {
+      const valid = parsed.results.filter(r => r && r.id && ['CORRECT', 'INCORRECT', 'UNCERTAIN'].includes(r.decision));
+      return { results: valid };
+    }
+  } catch (e) {
+    if (e.status === 429) {
+      return { results: [], rateLimited: true };
+    }
+  }
+  return { results: [] };
+}

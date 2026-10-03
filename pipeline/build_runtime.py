@@ -283,17 +283,65 @@ def build_speaking_runtime(rec):
 ASSEMBLED = json.load(open(os.path.join(OUT, "speaking/generated/assembled_packages.json")))
 
 # ---------- production Reading ----------
+def reading_section_label(paragraph):
+    """Returns the letter if the paragraph IS a bare section label (A–H)."""
+    m = re.match(r"^\s*([A-H])\s*[\.:]?\s*$", paragraph)
+    return m.group(1) if m else None
+
+
 def reading_passage_html(p):
-    """Renderer contract: real passage paragraphs; asset markers → project images."""
+    """Renderer contract: real passage paragraphs; asset markers → project images.
+    A given asset image is emitted at most ONCE per passage — extractions
+    occasionally repeat an asset marker (e.g. consecutive marker paragraphs),
+    which used to render the same diagram twice.
+    Sections labelled with ascending bare letters (A, B, C, …) become visual
+    anchors via .reading-section-label paragraphs."""
     html = []
+    emitted_assets = set()
     if p.get("title"):
         html.append(f'<h3 class="reading-passage-title">{esc(p["title"])}</h3>')
-    for para in p.get("paragraphs", []):
+    # Detect ascending letter-labelled sections, either bare ("A") or inline
+    # ("<p>A Operating on …</p>" — letter, space, Capitalized word). Requiring
+    # an ascending run (A→B→C…) keeps "A lot of people…" articles out.
+    paras = p.get("paragraphs", [])
+    inline_label = re.compile(r"^\s*([A-H])\s+([A-Z][^\s].*)$", re.S)
+    # Two-pass: collect candidate label paragraphs (bare letter, or inline
+    # "A Capitalized-sentence"); accept only if the letters are strictly
+    # increasing in document order and there are at least two of them —
+    # that keeps "A lot of people…" article paragraphs out.
+    candidates = []
+    for para in paras:
+        bare = reading_section_label(para)
+        if bare is not None:
+            candidates.append((id(para), ord(bare), bare, None))
+            continue
+        im = inline_label.match(para) if isinstance(para, str) else None
+        if im:
+            candidates.append((id(para), ord(im.group(1)), im.group(1), im.group(2)))
+    label_paras = {}
+    last = -1
+    taken = 0
+    for pid, code, letter, rest in candidates:
+        if code > last:
+            label_paras[pid] = (letter, rest)
+            last = code
+            taken += 1
+    if taken < 2:
+        label_paras = {}
+    for para in paras:
+        if id(para) in label_paras:
+            letter, rest = label_paras[id(para)]
+            if rest is None:
+                html.append(f'<p class="reading-section-label">{letter}</p>')
+            else:
+                html.append(f'<p class="reading-section-label">{letter}</p><p>{esc(rest)}</p>')
+            continue
         m = re.match(r"\[asset:(asset\.[0-9a-f]+)\]", para)
         if m:
             aid = m.group(1)
             asset = next((a for a in p.get("assets", []) if a["assetId"] == aid), None)
-            if asset:
+            if asset and asset["projectPath"] not in emitted_assets:
+                emitted_assets.add(asset["projectPath"])
                 html.append(f'<img src="{esc(asset["projectPath"])}" alt="reading passage visual" style="max-width:100%;height:auto;margin:10px 0;border:1px solid var(--border);border-radius:8px;" />')
             continue
         m2 = re.match(r"\[asset-missing:(.+?)\]", para)
@@ -304,6 +352,10 @@ def reading_passage_html(p):
 def reading_group_html(g):
     html = []
     for seg in (g.get("stimulusSegments") or []):
+        # The question-group header renders "Questions N–M"; the stimulus must
+        # not repeat the range.
+        if re.match(r"^\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}\b", seg):
+            continue
         m = re.match(r"^__TABLE__(.*)$", seg, re.S)
         if m:
             rows = json.loads(m.group(1))

@@ -166,3 +166,18 @@ export async function evaluateSpeakingServer({ transcripts, testMeta }) {
   }
   return res.data;
 }
+
+// ── Hybrid objective-answer verification (Phase 5) ──────────────────────────
+// One batched request per completed test: only deterministic-UNCERTAIN items
+// go to the Worker, which verifies them against Gemini using the user's
+// encrypted credential. The official answer key remains authoritative.
+
+export async function verifyAnswersViaWorker(items) {
+  if (!items || items.length === 0) return { results: [] };
+  const res = await apiFetchDetail('/api/ai/verify-answers', {
+    method: 'POST',
+    body: JSON.stringify({ items }),
+  });
+  if (!res.ok) return { results: [] };
+  return res.data;
+}

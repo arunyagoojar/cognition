@@ -84,3 +84,90 @@ export function isAnswerCorrect(userAnswer, expectedAnswer) {
   
   return normalizeAnswer(expectedAnswer) === normalizedUser;
 }
+
+/**
+ * Word↔digit equivalence table for safe numeric normalization (Phase 5).
+ * Only unambiguous units 0–20 + tens are mapped; everything else stays.
+ */
+const NUMBER_WORDS = {
+  zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7,
+  eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13,
+  fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18,
+  nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60,
+  seventy: 70, eighty: 80, ninety: 90, hundred: 100,
+};
+
+function canonicalizeNumbers(s) {
+  return s
+    .split(' ')
+    .map(w => (Object.prototype.hasOwnProperty.call(NUMBER_WORDS, w) ? String(NUMBER_WORDS[w]) : w))
+    .join(' ');
+}
+
+/**
+ * Splits an official answer into accepted variants. The source key format
+ * "11 / eleven (am)" means "11" and "eleven (am)" are both officially
+ * acceptable; parenthetical tails are optional extras.
+ */
+export function officialAnswerVariants(expectedAnswer) {
+  const expected = String(expectedAnswer ?? '').trim();
+  if (!expected) return [];
+  const expanded = [];
+  const push = (v) => { if (v && !expanded.includes(v)) expanded.push(v); };
+  push(expected);
+  if (expected.includes('/')) {
+    for (const v of expected.split('/').map(x => x.trim()).filter(Boolean)) {
+      push(v);
+      // Parenthetical extras are optional — also accept the variant without.
+      push(v.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim());
+    }
+  }
+  return expanded;
+}
+
+/**
+ * Singular/plural morphology distance: true when two normalized words differ
+ * only by a trailing plural marker. Used only to route to AI verification —
+ * never to auto-accept.
+ */
+function differByPlural(a, b) {
+  if (a === b) return false;
+  const [short, long] = a.length < b.length ? [a, b] : [b, a];
+  if (/\s/.test(short)) return false; // multi-word handled by AI
+  return long === short + 's' || long === short + 'es' ||
+    (short.endsWith('y') && long === short.slice(0, -1) + 'ies');
+}
+
+export const DETERMINISTIC = { MATCH: 'MATCH', MISMATCH: 'MISMATCH', UNCERTAIN: 'UNCERTAIN' };
+
+/**
+ * Deterministic evaluation tier (Phase 5 hybrid architecture).
+ * Returns { result: MATCH|MISMATCH|UNCERTAIN, matchedAnswer? }.
+ * UNCERTAIN routes the item to batched AI verification — never auto-accept.
+ */
+export function evaluateDeterministic(userAnswer, expectedAnswer) {
+  if (userAnswer === undefined || userAnswer === null || String(userAnswer).trim() === '') {
+    return { result: DETERMINISTIC.MISMATCH };
+  }
+  const variants = officialAnswerVariants(expectedAnswer);
+  if (!variants.length) return { result: DETERMINISTIC.MISMATCH };
+  const user = normalizeAnswer(userAnswer);
+  if (!user) return { result: DETERMINISTIC.MISMATCH };
+
+  for (const variant of variants) {
+    const norm = normalizeAnswer(variant);
+    if (!norm) continue;
+    if (norm === user) {
+      return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
+    }
+    // Safe numeric equivalence: "11" vs "11" (already equal) — word forms
+    // only create UNCERTAIN, never a silent MATCH.
+    if (canonicalizeNumbers(norm) === canonicalizeNumbers(user) && norm !== user) {
+      return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: variant };
+    }
+    if (differByPlural(user, norm)) {
+      return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: variant };
+    }
+  }
+  return { result: DETERMINISTIC.MISMATCH };
+}

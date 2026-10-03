@@ -8,6 +8,7 @@ import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
+import AnswerReviewList from '../common/AnswerReviewList';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -272,6 +273,16 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           </div>
         </div>
 
+        {/* Answer review — correct/incorrect, accepted variants tagged subtly */}
+        {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
+          <div style={{ marginBottom: 36 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 12 }}>
+              <Icon name="pen" size={15} /> Answer Review
+            </div>
+            <AnswerReviewList itemResults={result.itemResults} />
+          </div>
+        )}
+
         {/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
           <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
@@ -400,7 +411,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   }
 
   return (
-    <div className="exam-focus-layout">
+    <div className="exam-focus-layout reading-split-active">
       {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
@@ -431,25 +442,29 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         </div>
       </div>
 
-      {/* ── 2. READING WORKSPACE (full-width exam form) ── */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%' }}>
-        {/* Passage */}
-        <div className="exam-doc" style={{
-          background: 'var(--bg-card)',
-          border: 'var(--border-dark)',
-          borderRadius: 'var(--r-card)',
-          padding: '24px 30px',
-          boxShadow: '0 3px 0 #151313'
-        }}>
-          {test?.passages?.[activeSectionIndex] && (
-            <HtmlContentRenderer
-              htmlContent={test.passages[activeSectionIndex].htmlContent}
-              answers={answers}
-              setAnswers={setAnswers}
-            />
-          )}
+      {/* ── 2. READING WORKSPACE — split-screen (passage | questions) ── */}
+      <div className="reading-split-panes">
+        {/* LEFT: passage, independently scrollable on desktop */}
+        <div className="reading-pane">
+          <div className="exam-doc" style={{
+            background: 'var(--bg-card)',
+            border: 'var(--border-dark)',
+            borderRadius: 'var(--r-card)',
+            padding: '24px 30px',
+            boxShadow: '0 3px 0 #151313'
+          }}>
+            {test?.passages?.[activeSectionIndex] && (
+              <HtmlContentRenderer
+                htmlContent={test.passages[activeSectionIndex].htmlContent}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
+            )}
+          </div>
         </div>
 
+        {/* RIGHT: questions, independently scrollable on desktop */}
+        <div className="reading-pane">
         {/* Question groups — full-width, same pattern as Listening */}
         {(test?.passages?.[activeSectionIndex]?.questionGroups || []).map((g, idx) => {
           const inlineIds = new Set(
@@ -498,6 +513,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             </div>
           );
         })}
+      </div>
       </div>
 
       {/* ── 3. UNIVERSAL EXAM BOTTOM NAVIGATION ── */}

@@ -3,7 +3,8 @@
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
 
 import { AIProvider } from '../ai/aiProvider.js';
-import { calculateReadingBand, calculateListeningBand, calculateOverallBand } from '../bandCalculator.js';
+import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC } from '../bandCalculator.js';
+import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
 import { isAiConfigured } from '../storage.js';
@@ -24,6 +25,92 @@ export function isCandidateAnswerCorrect(candidateAns, officialAns) {
   // Handle slash / alternate options e.g. "center / centre"
   const acceptedOptions = String(officialAns).split(/\s*\/\s*/).map(s => normalizeAnswer(s));
   return acceptedOptions.includes(normCandidate);
+}
+
+
+/**
+ * Hybrid objective-answer pipeline (Phase 5).
+ * 1. Deterministic tier: normalization + official variants (slash alternatives,
+ *    optional parentheticals). MATCH/MISMATCH are final.
+ * 2. UNCERTAIN items (plural morphology, word-vs-digit numbers, key formatting)
+ *    are batched into ONE AI verification request. The official key stays
+ *    authoritative — AI only judges representational equivalence.
+ * UNCERTAIN that AI cannot confidently accept scores as INCORRECT.
+ */
+async function resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId) {
+  const uncertain = [];
+  for (const q of allQuestions) {
+    const student = answers[q.id];
+    if (student === undefined || student === null || String(student).trim() === '') continue;
+    const official = q.answer;
+    if (!official) continue;
+    // MCQ/matching/TFNG selections are unambiguously comparable — deterministic only.
+    const selectionTypes = ['mcq_single', 'single_select', 'matching_headings', 'matching_information',
+      'matching_features', 'matching_box', 'true_false_not_given', 'yes_no_not_given'];
+    const det = evaluateDeterministic(student, official);
+    const rec = itemResults[q.id];
+    if (det.result === DETERMINISTIC.MATCH) {
+      rec.deterministicResult = 'MATCH';
+      rec.finalResult = 'CORRECT';
+      rec.evaluationMethod = 'DETERMINISTIC';
+      rec.matchedAnswer = det.matchedAnswer || official;
+    } else if (det.result === DETERMINISTIC.MISMATCH) {
+      rec.deterministicResult = 'MISMATCH';
+      rec.finalResult = 'INCORRECT';
+      rec.evaluationMethod = 'DETERMINISTIC';
+      if (selectionTypes.includes(q.questionType) || selectionTypes.includes(q.inputType)) {
+        // wrong option identity is never sent to AI
+      } else {
+        // free-text mismatch may still be an accepted representation the
+        // deterministic tier cannot see — verify, but only when a key exists
+        uncertain.push({
+          id: q.id,
+          questionText: q.questionText || q.question || '',
+          questionType: q.questionType || q.inputType || '',
+          instruction: q.instruction || q.groupInstruction || '',
+          officialAnswer: String(official),
+          studentAnswer: String(student),
+          wordLimit: q.wordLimit || null,
+        });
+      }
+    } else {
+      rec.deterministicResult = 'UNCERTAIN';
+      rec.finalResult = 'INCORRECT';
+      rec.evaluationMethod = 'DETERMINISTIC';
+      uncertain.push({
+        id: q.id,
+        questionText: q.questionText || q.question || '',
+        questionType: q.questionType || q.inputType || '',
+        instruction: q.instruction || '',
+        officialAnswer: String(official),
+        studentAnswer: String(student),
+        wordLimit: q.wordLimit || null,
+      });
+    }
+  }
+
+  if (uncertain.length === 0) return;
+  try {
+    const res = await verifyAnswersViaWorker(uncertain);
+    const byId = new Map((res.results || []).map(r => [r.id, r]));
+    for (const item of uncertain) {
+      const rec = itemResults[item.id];
+      const decision = byId.get(item.id);
+      if (decision && decision.decision === 'CORRECT') {
+        rec.finalResult = 'CORRECT';
+        rec.evaluationMethod = 'AI_VERIFIED';
+        rec.aiReason = decision.reason || '';
+        rec.matchedAnswer = decision.matchedAnswer || item.officialAnswer;
+        rec.acceptedVariant = true;
+      } else if (decision && decision.decision === 'INCORRECT') {
+        rec.evaluationMethod = 'AI_VERIFIED';
+        rec.aiReason = decision.reason || '';
+      }
+      // UNCERTAIN / missing decision → stays INCORRECT (never silently correct)
+    }
+  } catch {
+    // Offline / unauthenticated / no credential: deterministic results stand.
+  }
 }
 
 /**
@@ -77,6 +164,11 @@ export async function evaluateReadingResponses({ passages = [], answers = {}, at
       candidateAnswer: candidate || null
     };
   }
+
+  // Hybrid tier: deterministic-UNCERTAIN free-text goes to one batched AI
+  // verification; final tallies use the resolved results.
+  await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
+  correct = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
 
   const band = calculateReadingBand(correct);
 
@@ -164,6 +256,11 @@ export async function evaluateListeningResponses({ sections = [], answers = {}, 
       candidateAnswer: candidate || null
     };
   }
+
+  // Hybrid tier (Phase 5): plural/number/format variants verified in ONE
+  // batched AI request; official key remains authoritative.
+  await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
+  correct = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
 
   const band = calculateListeningBand(correct);
 

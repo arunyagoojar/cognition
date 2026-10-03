@@ -221,11 +221,13 @@ function resolvePromptHtml(html) {
  * global answer-key numbering used by structured records.
  */
 function injectReadingBlanks(html) {
-  if (!html || html.includes('data-qid=')) return html;
-  const blank = (n) => `<span class="inline-blank"><input type="text" data-qid="q${n}" class="cognition-exam-input" style="display:inline-block;width:130px;margin:0 4px" autocomplete="off" /><b class="blank-num">${n}</b></span> `;
+  if (!html) return html;
+  // The extracted leading number is REPLACED — the number badge renders in
+  // the UI layer (QuestionNumber), so it can never appear twice per blank.
+  const blank = (n) => `<span class="inline-blank"><input type="text" data-qid="q${n}" class="cognition-exam-input" style="display:inline-block;width:130px;margin:0 4px" autocomplete="off" /></span> `;
   // Numbered question lines appear either as their own <p> or as newline-
   // separated lines inside a paragraph: "12. text" / "12 text" / "12) text".
-  return html
+  let out = html
     .replace(/<p>(\s*)(\d{1,2})([\.\)]?)\s/g, (m, sp, num) => {
       const n = parseInt(num, 10);
       if (!Number.isInteger(n) || n < 1 || n > 40) return m;
@@ -236,6 +238,14 @@ function injectReadingBlanks(html) {
       if (!Number.isInteger(n) || n < 1 || n > 40) return m;
       return `\n${blank(n)}`;
     });
+  // Group headers ("Questions 18–24. …") render in the question-group header;
+  // drop the duplicated range sentence from the stimulus HTML (own <p>,
+  // stim-line class, or inline leading range).
+  out = out
+    .replace(/<p>\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}[^<]{0,140}?<\/p>/g, '')
+    .replace(/<p class="stim-line">\s*Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}[^<]{0,140}(<\/p>)?/g, '')
+    .replace(/Questions?\s+\d{1,2}\s*[–-]\s*\d{1,2}\s*\.?\s*(Do the following|Complete the|Answer the|Choose|Write|Label)/g, '$1');
+  return out;
 }
 
 export function adaptProductionReading(rec, includeAnswers = false) {

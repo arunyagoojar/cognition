@@ -3,7 +3,7 @@ import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 import AccountModal from './AccountModal';
 
-export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
+export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view }) {
   const { isSignedIn, isLoaded, user } = useUser();
   const { openSignIn, signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,17 +22,31 @@ export default function TopNavigation({ onOpenSettings, onGoHome, view }) {
 
   return (
     <header className="top-nav">
-      <div
-        className="nav-brand"
-        onClick={onGoHome}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && onGoHome()}
-      >
-        <div className="nav-logo-mark" aria-hidden="true">
-          <img src="/favicon.svg" alt="Cognition" className="nav-logo-img" />
+      <div className="nav-left-group" style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+        {onGoBack && (
+          <button
+            type="button"
+            className="nav-back-btn"
+            onClick={onGoBack}
+            aria-label="Go back"
+            title="Go back"
+          >
+            <Icon name="arrowLeft" size={14} />
+            <span>Back</span>
+          </button>
+        )}
+        <div
+          className="nav-brand"
+          onClick={onGoHome}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && onGoHome()}
+        >
+          <div className="nav-logo-mark" aria-hidden="true">
+            <img src="/favicon.svg" alt="Cognition" className="nav-logo-img" />
+          </div>
+          <span className="nav-title">Cognition</span>
         </div>
-        <span className="nav-title">Cognition</span>
       </div>
 
       <div className="nav-actions">

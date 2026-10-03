@@ -81,34 +81,6 @@ export default function LearningHubPage({ onBack, onContextChange }) {
 
   return (
     <div className="learning-hub-page">
-      {/* ── Page Level Back Button ── */}
-      <div style={{ marginBottom: '4px' }}>
-        <button
-          onClick={onBack}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            background: 'var(--bg-card)',
-            border: '1.5px solid #151313',
-            color: 'var(--text-primary)',
-            fontSize: '14px',
-            fontWeight: '800',
-            cursor: 'pointer',
-            padding: '10px 16px',
-            borderRadius: '12px',
-            boxShadow: '0 2px 0 #151313',
-            transition: 'transform 0.1s ease',
-            fontFamily: 'inherit'
-          }}
-          onMouseDown={(e) => e.currentTarget.style.transform = 'translateY(2px)'}
-          onMouseUp={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-        >
-          <Icon name="arrowLeft" size={16} />
-          Go back
-        </button>
-      </div>
 
       {/* Main Two-Area Layout */}
       <div className="hub-video-full-wrapper">

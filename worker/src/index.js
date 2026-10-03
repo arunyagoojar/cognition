@@ -13,6 +13,7 @@ import {
   validateSpeakingEvaluationJson,
   runEvaluationChain,
   validateGeminiKeyServer,
+  runAnswerVerification,
 } from './ai.js';
 
 const CLERK_JWKS_URL = 'https://api.clerk.com/v1/jwks';
@@ -433,6 +434,26 @@ Test Topic Context: ${testMeta.title || 'IELTS Speaking Academic Interview'}`;
             userPrompt,
             validator: validateSpeakingEvaluationJson,
           });
+          return json(result, 200, corsHeaders);
+        }
+
+        // ── POST /api/ai/verify-answers — batched objective-answer verification ──
+        if (path === '/api/ai/verify-answers' && request.method === 'POST') {
+          const cred = await loadCredential(env, userId, 'gemini');
+          if (!cred) {
+            // Without a configured credential the deterministic result stands
+            // (UNCERTAIN is treated as INCORRECT by the engine).
+            return json({ results: [] }, 200, corsHeaders);
+          }
+          const body = await request.json();
+          const items = Array.isArray(body.items) ? body.items.slice(0, 60) : [];
+          if (items.length === 0) return json({ results: [] }, 200, corsHeaders);
+
+          const plaintextKey = await decryptCredential(
+            cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
+          );
+          const result = await runAnswerVerification(items, plaintextKey);
+          // plaintextKey goes out of scope — never stored, logged, or returned.
           return json(result, 200, corsHeaders);
         }
 
