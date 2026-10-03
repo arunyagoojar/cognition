@@ -8,6 +8,10 @@ import { PRODUCTION_READING } from '../src/data/production/productionContent.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
+
+// Media lives in Cloudflare R2 — asset contract is manifest membership.
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'content-db', 'media_manifest.json'), 'utf8'));
+const manifestKeys = new Set(manifest.media.map(f => f.r2Key));
 let failures = 0;
 function check(cond, label) {
   if (!cond) { failures++; console.error('  ✗ FAIL:', label); }
@@ -28,8 +32,8 @@ for (const r of PRODUCTION_READING) {
     check(!p.htmlContent.includes('/Users/arunyagoojar'), `no external paths (${r.slug})`);
     for (const a of p.assets) {
       assetTotal++;
-      const fp = path.join(ROOT, 'public', a.projectPath.replace(/^\//, ''));
-      check(fs.existsSync(fp), `asset exists ${a.projectPath} (${r.slug})`);
+      const key = `cognition/images/reading/${a.projectPath.split('/').pop()}`;
+      check(manifestKeys.has(key), `asset in media manifest ${a.projectPath} (${r.slug})`);
     }
     for (const g of p.questionGroups) {
       check(Boolean(g.instructions), `group instruction (${r.slug} ${g.groupId})`);

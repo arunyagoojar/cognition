@@ -10,6 +10,10 @@ import { PRODUCTION_WRITING } from '../src/data/production/productionContent.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
+
+// Media lives in Cloudflare R2 — visual contract is manifest membership.
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'content-db', 'media_manifest.json'), 'utf8'));
+const manifestKeys = new Set(manifest.media.map(f => f.r2Key));
 let failures = 0;
 function check(cond, label) {
   if (!cond) { failures++; console.error('  ✗ FAIL:', label); }
@@ -28,8 +32,8 @@ for (const w of PRODUCTION_WRITING) {
   check(!w.task1.promptHtml.includes('wp-content//'), `no double-slash in ${w.slug}`);
   if (w.task1.image) {
     imgChecks++;
-    const p = path.join(ROOT, 'public', w.task1.image.file.replace(/^\//, ''));
-    check(fs.existsSync(p), `task1 visual exists ${w.task1.image.file} (${w.slug})`);
+    const key = `cognition/images/writing/${w.task1.image.file.split('/').pop()}`;
+    check(manifestKeys.has(key), `task1 visual in media manifest ${w.task1.image.file} (${w.slug})`);
     check(typeof w.task1.visualType === 'string' && w.task1.visualType !== 'image', `visualType semantic (${w.slug})`);
   } else if (w.task1.table) {
     tableChecks++;

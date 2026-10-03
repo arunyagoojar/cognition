@@ -153,6 +153,16 @@ export function getRandomProductionSpeakingPackage() {
  * practice mode may serve a single task via getProductionWritingTask.
  */
 export function adaptProductionWriting(rec) {
+  const resolveImage = (task) => {
+    if (!task) return null;
+    return {
+      ...task,
+      instructions: task.instructions || (task.wordLimitMin ? `Write at least ${task.wordLimitMin} words.` : ''),
+      image: task.image && task.image.file
+        ? { ...task.image, file: resolveMediaUrl(task.image.file) }
+        : task.image,
+    };
+  };
   return {
     testId: rec.testId,
     id: rec.id,
@@ -161,14 +171,8 @@ export function adaptProductionWriting(rec) {
     kind: rec.kind,
     isRandomized: false,
     durationMinutes: 60,
-    task1: rec.task1 ? {
-      ...rec.task1,
-      instructions: rec.task1.instructions || (rec.task1.wordLimitMin ? `Write at least ${rec.task1.wordLimitMin} words.` : ''),
-    } : null,
-    task2: rec.task2 ? {
-      ...rec.task2,
-      instructions: rec.task2.wordLimitMin ? `Write at least ${rec.task2.wordLimitMin} words.` : '',
-    } : null,
+    task1: resolveImage(rec.task1),
+    task2: resolveImage(rec.task2),
     source: rec.provenance || null,
   };
 }

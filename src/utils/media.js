@@ -6,7 +6,9 @@
  * The R2 public base URL is configured via VITE_MEDIA_BASE_URL.
  */
 
-const MEDIA_BASE = import.meta.env.VITE_MEDIA_BASE_URL || 'https://pub-b158c0b753f14ee386f9d3217c48d007.r2.dev';
+// import.meta.env only exists under Vite — fall back to process.env in Node tests.
+const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
+const MEDIA_BASE = viteEnv.VITE_MEDIA_BASE_URL || 'https://pub-b158c0b753f14ee386f9d3217c48d007.r2.dev';
 
 // Consecutive dots in R2 object keys trip Cloudflare's path-traversal WAF rules
 // and block uploads; keys are stored with dot runs collapsed (mirrored by the

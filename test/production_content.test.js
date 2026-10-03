@@ -17,6 +17,22 @@ import { PRODUCTION_LISTENING, PRODUCTION_SPEAKING } from '../src/data/productio
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
+// Media lives in Cloudflare R2 — the contract is membership in the media
+// manifest (which is live-verified against R2 by scripts/verify_r2.py),
+// not the optional local dev archive.
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'content-db', 'media_manifest.json'), 'utf8'));
+const manifestKeys = new Set(manifest.media.map(f => f.r2Key));
+
+function audioKey(appPath) {
+  const base = appPath.split('/').pop();
+  return `cognition/audio/listening/${base}`;
+}
+function imageKey(appPath) {
+  const base = appPath.split('/').pop();
+  const kind = base.startsWith('lis-test') ? 'listening' : 'writing';
+  return `cognition/images/${kind}/${base}`;
+}
+
 let failures = 0;
 function check(cond, label) {
   if (!cond) {
@@ -46,15 +62,14 @@ for (const t of PRODUCTION_LISTENING) {
   }
   if (t.audio.appPath) {
     audioOk++;
-    const p = path.join(ROOT, 'public', t.audio.appPath.replace(/^\//, ''));
-    check(fs.existsSync(p), `audio exists ${t.audio.appPath} (${t.slug})`);
+    check(manifestKeys.has(audioKey(t.audio.appPath)), `audio in media manifest ${t.audio.appPath} (${t.slug})`);
   } else {
     check(t.audio.flags.includes('AUDIO_MISSING') || t.audio.status !== 'resolved',
       `no audio only when flagged (${t.slug})`);
   }
   for (const img of t.images) {
     imgTotal++;
-    if (fs.existsSync(path.join(ROOT, 'public', img.appPath.replace(/^\//, '')))) imgOk++;
+    if (manifestKeys.has(imageKey(img.appPath))) imgOk++;
   }
 }
 console.log(`  tests: ${PRODUCTION_LISTENING.length}, questions: ${qTotal}, answers: ${qWithAnswer}, audio resolved: ${audioOk}, images: ${imgOk}/${imgTotal}`);
