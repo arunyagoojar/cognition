@@ -336,7 +336,6 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onBack={() => setView('home')}
               onContextChange={(ctx) => setLearningContext(ctx)}
               onOpenPractice={startSkillProtected}
-              onOpenTips={openTips}
             />
           </motion.div>
         )}

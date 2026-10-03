@@ -12,7 +12,7 @@ import { syncLessonComplete } from '../../utils/api';
 
 const CATEGORY_ORDER = ['reading', 'listening', 'writing', 'speaking'];
 
-export default function LearningHubPage({ initialLessonId = null, onBack, onContextChange, onOpenTips }) {
+export default function LearningHubPage({ initialLessonId = null, onBack, onContextChange, onOpenPractice }) {
   const [completedLessons, setCompletedLessons] = useState(() => getCompletedLessons() || []);
 
   // Determine initial video & category based on viewing history
@@ -82,25 +82,6 @@ export default function LearningHubPage({ initialLessonId = null, onBack, onCont
 
   return (
     <div className="learning-hub-page">
-
-      {/* ── Tips & Tricks destination (interactive study toolkit) ── */}
-      {onOpenTips && (
-        <button type="button" className="tips-entry-banner" onClick={() => onOpenTips()}>
-          <span className="tips-entry-icon" aria-hidden="true">
-            <Icon name="sparkles" size={22} />
-          </span>
-          <span className="tips-entry-text">
-            <span className="tips-entry-title">Tips &amp; Tricks</span>
-            <span className="tips-entry-sub">Quick strategies, vocabulary and examples for every IELTS skill.</span>
-          </span>
-          <span className="tips-entry-chips" aria-hidden="true">
-            {['Listening', 'Reading', 'Writing', 'Speaking'].map(s => (
-              <span key={s} className="tips-entry-chip">{s}</span>
-            ))}
-          </span>
-          <Icon name="arrowRight" size={17} className="tips-entry-arrow" />
-        </button>
-      )}
 
       {/* Main Two-Area Layout */}
       <div className="hub-video-full-wrapper">

@@ -5685,3 +5685,49 @@ p.reading-section-label {
   justify-content: center;
   background: var(--bg-canvas);
 }
+
+/* ── Learning Hub card action row (homepage) ── */
+.hub-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-tips-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1.5px solid var(--text-primary);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background var(--dur-button) ease, color var(--dur-button) ease, transform var(--dur-button) var(--ease-smooth);
+}
+.btn-tips-outline:hover {
+  background: var(--text-primary);
+  color: var(--bg-canvas);
+  transform: translateY(-1px);
+}
+.btn-tips-outline:active {
+  transform: translateY(0);
+}
+.btn-tips-outline svg {
+  color: var(--c-yellow);
+  transition: color var(--dur-button) ease;
+}
+.btn-tips-outline:hover svg {
+  color: var(--c-yellow);
+}
+[data-theme="dark"] .btn-tips-outline svg {
+  color: var(--c-coral);
+}
+
+/* ── Fix: animated word layers clip descenders (g, y, p) ── */
+.ob-word {
+  padding-bottom: 0.12em;
+}

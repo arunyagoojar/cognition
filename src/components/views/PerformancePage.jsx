@@ -37,6 +37,20 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
   const strongestSkill = sortedByBand[0] || null;
   const weakestSkill = sortedByBand.length > 1 ? sortedByBand[sortedByBand.length - 1] : null;
 
+  // ── Real, deterministic per-skill analyses from stored attempts ──
+  const store = getPerformanceStore();
+  const attempts = store.attempts || [];
+  const latestAttemptBySkill = {};
+  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
+    latestAttemptBySkill[skill] = attempts.find(a => a[skill] && a[skill].band !== null && a[skill].band !== undefined) || null;
+  }
+  const analyses = {};
+  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
+    analyses[skill] = latestAttemptBySkill[skill] ? deriveResultAnalysis(skill, latestAttemptBySkill[skill]) : null;
+  }
+  const { focusAreas, sufficientData } = deriveWeaknesses(attempts, targetBand);
+  const summary = derivePerformanceSummary();
+
   // Official IELTS Assessment Criteria & Concise Coaching Cards
   const skillSections = [
     {
@@ -164,19 +178,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
     ? Math.min(100, Math.max(10, ((currentOverallNum - 4.0) / (targetNum - 4.0)) * 100))
     : 0;
 
-  // ── Real, deterministic per-skill analyses from stored attempts ──
-  const store = getPerformanceStore();
-  const attempts = store.attempts || [];
-  const latestAttemptBySkill = {};
-  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
-    latestAttemptBySkill[skill] = attempts.find(a => a[skill] && a[skill].band !== null && a[skill].band !== undefined) || null;
-  }
-  const analyses = {};
-  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
-    analyses[skill] = latestAttemptBySkill[skill] ? deriveResultAnalysis(skill, latestAttemptBySkill[skill]) : null;
-  }
-  const { focusAreas, sufficientData } = deriveWeaknesses(attempts, targetBand);
-  const summary = derivePerformanceSummary();
+
 
   return (
     <div className="performance-page-container">
