@@ -293,18 +293,27 @@ export function invalidateCredentialStatusCache() {
   credentialStatusCache = null;
 }
 
-export async function isAiConfigured() {
-  if (hasLocalGeminiKey()) return true; // device-stored key (privacy mode)
-  if (credentialStatusCache !== null) {
-    return Boolean(credentialStatusCache.configured);
-  }
+/**
+ * 'configured' | 'not_configured' | 'unknown'. Only a definite answer from the
+ * server is cached; a failed check (session still loading, expired token,
+ * network) stays unknown and is retried next time.
+ */
+export async function getAiConfigState() {
+  if (hasLocalGeminiKey()) return 'configured'; // device-stored key (privacy mode)
+  if (credentialStatusCache !== null) return credentialStatusCache.configured ? 'configured' : 'not_configured';
   try {
     const { fetchCredentialStatus } = await import('./api.js');
-    credentialStatusCache = await fetchCredentialStatus('gemini');
-    return Boolean(credentialStatusCache?.configured);
+    const status = await fetchCredentialStatus('gemini');
+    if (status?.unknown) return 'unknown';
+    credentialStatusCache = status;
+    return status?.configured ? 'configured' : 'not_configured';
   } catch {
-    return hasLocalGeminiKey();
+    return 'unknown';
   }
+}
+
+export async function isAiConfigured() {
+  return (await getAiConfigState()) === 'configured';
 }
 
 // ── Local Gemini key fallback (privacy mode) ───────────────────────────────

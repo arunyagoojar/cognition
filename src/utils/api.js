@@ -3,6 +3,7 @@
  * Sends Clerk session tokens for authentication; falls back to localStorage when offline.
  */
 
+import { CLERK_PUBLISHABLE_KEY } from '../config.js';
 import { setLocalKeyScope, saveLocalGeminiKey, getLocalGeminiKey, removeLocalGeminiKey, hasLocalGeminiKey } from './storage.js';
 
 // import.meta.env only exists under Vite — fall back to process.env in Node tests.
@@ -10,7 +11,10 @@ const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
 // Callers pass paths that already start with /api — the base is a prefix only.
 // Same-origin builds leave this empty; dev .env sets the absolute Worker URL.
 const API_BASE = viteEnv.VITE_API_BASE_URL ?? '';
-const PUBLISHABLE_KEY = viteEnv.VITE_CLERK_PUBLISHABLE_KEY;
+// Same source as the sign-in UI (src/config.js bakes the publishable key as the
+// default), so a build without .env can never ship a signed-in UI whose API
+// client thinks nobody is signed in.
+const PUBLISHABLE_KEY = CLERK_PUBLISHABLE_KEY;
 
 
 
@@ -228,13 +232,16 @@ export async function saveCredential(provider, key) {
 
 export async function fetchCredentialStatus(provider) {
   const res = await apiFetchDetail(`/api/credentials/${provider}/status`, { method: 'GET' });
-  const cloud = res.ok ? res.data : { configured: false, provider };
+  // A failed check (no session token yet, expired token, network) is UNKNOWN,
+  // never "not configured" — callers must not tell a user with a stored key to add one.
+  const cloud = res.ok ? res.data
+    : { configured: false, provider, unknown: true, reason: res.unauthenticated ? 'unauthenticated' : res.networkError ? 'network' : `http_${res.status}` };
   if (cloud.configured) return cloud;
   // Local fallback: a device-stored key (privacy mode) counts as configured.
   if (provider === 'gemini' && hasLocalGeminiKey()) {
     return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGeminiKey().slice(-4)}` };
   }
-  return { configured: false, provider };
+  return cloud.unknown ? cloud : { configured: false, provider };
 }
 
 export async function deleteCredential(provider) {
@@ -246,14 +253,26 @@ export async function deleteCredential(provider) {
 // The Worker decrypts the credential in memory, calls Gemini, and returns the
 // validated evaluation JSON. The key never reaches the browser.
 
+// One clear message per failure kind for AI evaluation requests. The candidate's
+// answers stay on the results screen, so every message ends in "retry".
+function aiFailure(res) {
+  if (res.unauthenticated || res.status === 401) {
+    return { status: 'failed', reason: 'session',
+      message: 'We could not confirm your sign-in session. Refresh the page (you stay signed in), then press Retry evaluation.' };
+  }
+  if (res.networkError) {
+    return { status: 'failed', reason: 'network', message: 'Could not reach the AI examiner. Check your connection and press Retry evaluation.' };
+  }
+  return { status: 'failed', reason: `http_${res.status || 'error'}`,
+    message: (res.data && (res.data.message || res.data.error)) || 'The AI examiner returned an error. Press Retry evaluation.' };
+}
+
 export async function evaluateWritingServer({ task1Text, task2Text, prompts }) {
   const res = await apiFetchDetail('/api/ai/evaluate-writing', {
     method: 'POST',
     body: JSON.stringify({ task1Text, task2Text, prompts }),
   });
-  if (!res.ok) {
-    return { status: 'failed', message: 'AI evaluation service error. Please try again.' };
-  }
+  if (!res.ok) return aiFailure(res);
   return res.data;
 }
 
@@ -262,9 +281,7 @@ export async function evaluateSpeakingServer({ transcripts, testMeta }) {
     method: 'POST',
     body: JSON.stringify({ transcripts, testMeta }),
   });
-  if (!res.ok) {
-    return { status: 'failed', message: 'AI evaluation service error. Please try again.' };
-  }
+  if (!res.ok) return aiFailure(res);
   return res.data;
 }
 

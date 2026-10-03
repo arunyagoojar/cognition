@@ -420,7 +420,7 @@ def segment(lines):
             ahead = [a for a in ahead if a.kind != "img"][:2]
             if ahead and is_prose(ahead[0]):
                 p = cur()
-                if p.paragraphs and not p.groups:
+                if (p.paragraphs or p.title) and not p.groups:
                     # a bold line between prose paragraphs of the same passage
                     # ("Section A", "Introduction", "KEY POINT ONE") is a subheading
                     ln.role = "subheading"
@@ -431,6 +431,11 @@ def segment(lines):
                 group = None  # (questions printed before their passage text keep their passage)
                 cur().title = ln.text
                 continue
+        # a short bold line opening a passage (before any prose) is its title,
+        # even when a subheading rather than prose follows it
+        if group is None and is_title_candidate(ln) and not cur().title and not cur().paragraphs:
+            cur().title = ln.text
+            continue
         if group is not None:
             if is_prose(ln) and _group_has_content(group):
                 p = cur()

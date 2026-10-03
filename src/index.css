@@ -6210,3 +6210,8 @@ p.reading-section-label {
   .tips-thread { padding-left: 0; }
   .coach-avatar { width: 28px; height: 28px; font-size: 12px; }
 }
+/* text-size buttons: the three "A"s share one centre line (mixed font sizes
+   on a baseline made A−/A/A+ sit at different heights) */
+.text-size-control button { align-items: center; line-height: 1; }
+.text-size-control button span { line-height: 1; display: inline-block; }
+.text-size-control button span[aria-hidden="true"] { font-size: 11px; margin-left: 1px; transform: translateY(-1px); }

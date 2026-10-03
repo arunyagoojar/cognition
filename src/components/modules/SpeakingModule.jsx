@@ -450,11 +450,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
               </div>
               {state === 'NOT_CONFIGURED' && (
-                <button onClick={onBack} style={{ marginTop: 16, padding: '10px 18px', borderRadius: 12, fontWeight: 800, border: '1.5px solid #151313', background: 'var(--c-yellow)', cursor: 'pointer' }}>
-                  Open Settings to configure evaluation
-                </button>
+                <p style={{ marginTop: 12, fontSize: 13.5, color: 'var(--text-secondary)' }}>
+                  Your recordings are kept on this page. Add your Gemini key in Settings (profile menu), then press Retry evaluation.
+                </p>
               )}
-              {state === 'FAILED' && (
+              {(state === 'FAILED' || state === 'NOT_CONFIGURED') && (
                 <button onClick={handleFinish} style={{ marginTop: 16, padding: '10px 18px', borderRadius: 12, fontWeight: 800, border: '1.5px solid #151313', background: 'var(--c-yellow)', cursor: 'pointer' }}>
                   Retry evaluation
                 </button>

@@ -7,7 +7,7 @@ import { calculateReadingBand, calculateListeningBand, calculateOverallBand, eva
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
-import { isAiConfigured } from '../storage.js';
+import { getAiConfigState } from '../storage.js';
 
 /**
  * Checks whether candidate answer matches official answer using deterministic
@@ -448,8 +448,10 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
   }
 
   // Evaluation configuration must gate the display of criterion scores.
-  const hasEvaluator = await isAiConfigured();
-  if (!hasEvaluator) {
+  // Only a definite "no key" skips the evaluator. If the check could not be
+  // completed, the server decides (it reports a missing key itself).
+  const aiState = await getAiConfigState();
+  if (aiState === 'not_configured') {
     return {
       evaluationState: 'NOT_CONFIGURED',
       status: isCoverageComplete ? 'completed' : 'partial',
