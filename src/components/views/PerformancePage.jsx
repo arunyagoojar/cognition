@@ -2,6 +2,10 @@ import React from 'react';
 import Icon from '../common/Icon';
 import { calculateOverallBand } from '../../utils/bandCalculator';
 import { getCompletedResults } from '../../utils/storage';
+import { getPerformanceStore, derivePerformanceSummary } from '../../utils/performanceStore.js';
+import { deriveWeaknesses, deriveResultAnalysis } from '../../utils/insights.js';
+import { resolveRecommendations } from '../../data/recommendations.js';
+import ProgressTimeline from '../dashboard/ProgressTimeline.jsx';
 
 export default function PerformancePage({ scores, targetBand, onBack, onStartSkill }) {
   const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
@@ -44,25 +48,19 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
       accent: 'var(--c-lavender)',
       badgeText: R === null ? 'Unattempted' : R >= 7.5 ? 'Your strongest area' : 'On track',
       badgeClass: 'pill-lavender',
-      subskills: R !== null ? [
-        { name: 'Accuracy', score: scores?.reading?.raw !== undefined ? `${scores.reading.raw}/40` : (R ? `${R.toFixed(1)}` : '--'), status: scores?.reading?.percentage !== undefined ? `${scores.reading.percentage}% accuracy rate` : 'Assessed on IELTS Academic scale' },
-        { name: 'Inference', score: R ? R.toFixed(1) : '--', status: 'Watch True/False/Not Given' },
-        { name: 'Information Retrieval', score: R ? R.toFixed(1) : '--', status: 'Fast skimming & scanning' },
-        { name: 'Vocabulary & Synonyms', score: R ? R.toFixed(1) : '--', status: 'Accurate paraphrase match' },
-      ] : [
-        { name: 'Accuracy', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Inference', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Information Retrieval', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Vocabulary & Synonyms', score: '--', status: 'Awaiting first test attempt' },
-      ],
+      subskills: (analyses.reading?.perType || []).slice(0, 4).map(t => ({
+        name: t.label, score: `${t.correct}/${t.total}`, status: `${Math.round(t.accuracy * 100)}% accuracy`,
+      })),
       aiInsight: {
-        title: R !== null ? 'INFERENCE & NOT GIVEN TRAPS' : 'DIAGNOSTIC INSIGHT PENDING',
+        title: R !== null ? 'QUESTION-TYPE PERFORMANCE' : 'DIAGNOSTIC INSIGHT PENDING',
         score: R !== null ? R.toFixed(1) : '--',
         status: R !== null ? (R >= 7.5 ? 'Strong proficiency' : 'Needs attention') : 'Awaiting attempt',
         issue: R !== null
-          ? 'Difficulty distinguishing between contradictory statements (FALSE) and unmentioned claims (NOT GIVEN).'
-          : 'Complete an authentic Reading passage to receive AI examiner diagnostic analysis.',
-        focusItems: ['Synonym mapping in stems', 'True / False / Not Given boundary rules', 'Time discipline on Passage 3'],
+          ? (analyses.reading?.focus?.length
+              ? `Recent attempts suggest lower accuracy on: ${analyses.reading.focus.join(', ')}.`
+              : 'Recent attempts show balanced accuracy across reading question types.')
+          : 'Complete an authentic Reading passage to receive a data-driven breakdown.',
+        focusItems: analyses.reading?.focus?.map(f => f.replace(/ \(.*\)$/, '')) || ['Complete a reading test for analysis'],
       }
     },
     {
@@ -74,25 +72,19 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
       accent: 'var(--c-yellow)',
       badgeText: L === null ? 'Unattempted' : L >= 7.5 ? 'Your strongest area' : 'On track',
       badgeClass: 'pill-yellow',
-      subskills: L !== null ? [
-        { name: 'Accuracy', score: scores?.listening?.raw !== undefined ? `${scores.listening.raw}/40` : (L ? `${L.toFixed(1)}` : '--'), status: scores?.listening?.percentage !== undefined ? `${scores.listening.percentage}% accuracy rate` : 'Assessed on IELTS Academic scale' },
-        { name: 'Detail Recognition', score: L ? L.toFixed(1) : '--', status: 'High Part 1 & 2 precision' },
-        { name: 'Main Idea & Flow', score: L ? L.toFixed(1) : '--', status: 'Follows discourse signposts' },
-        { name: 'Distractor Rejection', score: L ? L.toFixed(1) : '--', status: 'Catches speaker self-corrections' },
-      ] : [
-        { name: 'Accuracy', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Detail Recognition', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Main Idea & Flow', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Distractor Rejection', score: '--', status: 'Awaiting first test attempt' },
-      ],
+      subskills: (analyses.listening?.perType || []).slice(0, 4).map(t => ({
+        name: t.label, score: `${t.correct}/${t.total}`, status: `${Math.round(t.accuracy * 100)}% accuracy`,
+      })),
       aiInsight: {
-        title: L !== null ? 'PART 4 MONOLOGUE RETENTION' : 'DIAGNOSTIC INSIGHT PENDING',
+        title: L !== null ? 'QUESTION-TYPE PERFORMANCE' : 'DIAGNOSTIC INSIGHT PENDING',
         score: L !== null ? L.toFixed(1) : '--',
         status: L !== null ? (L >= 7.5 ? 'Good consistency' : 'Needs attention') : 'Awaiting attempt',
         issue: L !== null
-          ? 'Concentration drops slightly during dense 10-item academic monologues with no mid-audio pause.'
-          : 'Complete an authentic 4-part Listening test to receive AI examiner diagnostic analysis.',
-        focusItems: ['Predicting noun/number word types', 'Following discourse signposts', 'Eliminating conversational traps'],
+          ? (analyses.listening?.focus?.length
+              ? `Recent attempts suggest lower accuracy on: ${analyses.listening.focus.join(', ')}.`
+              : 'Recent attempts show balanced accuracy across listening question types.')
+          : 'Complete an authentic 4-part Listening test to receive a data-driven breakdown.',
+        focusItems: analyses.listening?.focus?.map(f => f.replace(/ \(.*\)$/, '')) || ['Complete a listening test for analysis'],
       }
     },
     {
@@ -116,18 +108,19 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
         { name: 'Grammatical Range & Accuracy', score: '--', status: 'Awaiting first test attempt' },
       ],
       aiInsight: {
-        title: W !== null ? (scores?.writing?.criteria?.taskAchievement?.improvementFocus ? 'WRITING TASK FOCUS' : 'WRITING INSIGHT') : 'DIAGNOSTIC INSIGHT PENDING',
+        title: W !== null ? (analyses.writing?.criteria?.length ? 'CRITERION PERFORMANCE' : 'WRITING INSIGHT') : 'DIAGNOSTIC INSIGHT PENDING',
         score: W !== null ? W.toFixed(1) : '--',
         status: W !== null ? (W >= 7.0 ? 'Strong proficiency' : 'Needs attention') : 'Awaiting attempt',
         issue: W !== null
           ? (scores?.writing?.areasForImprovement || 'Complete writing tasks carefully following rubric guidelines.')
           : 'Complete an authentic Writing test to receive AI examiner diagnostic analysis.',
-        focusItems: W !== null 
-          ? [
-              scores?.writing?.criteria?.taskAchievement?.improvementFocus || 'Task Response',
-              scores?.writing?.criteria?.lexicalResource?.improvementFocus || 'Vocabulary Range'
-            ].filter(Boolean).slice(0, 3)
-          : ['Topic vocabulary', 'Collocations', 'Idiomatic phrasing'],
+        focusItems: W !== null
+          ? (analyses.writing?.criteria || [])
+              .slice()
+              .sort((a, b) => a.band - b.band)
+              .slice(0, 2)
+              .map(c => `${c.label}: ${c.band.toFixed(1)}`)
+          : ['Complete a writing test for analysis'],
       }
     },
     {
@@ -170,6 +163,20 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
   const overallProgressPct = currentOverallNum !== null
     ? Math.min(100, Math.max(10, ((currentOverallNum - 4.0) / (targetNum - 4.0)) * 100))
     : 0;
+
+  // ── Real, deterministic per-skill analyses from stored attempts ──
+  const store = getPerformanceStore();
+  const attempts = store.attempts || [];
+  const latestAttemptBySkill = {};
+  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
+    latestAttemptBySkill[skill] = attempts.find(a => a[skill] && a[skill].band !== null && a[skill].band !== undefined) || null;
+  }
+  const analyses = {};
+  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
+    analyses[skill] = latestAttemptBySkill[skill] ? deriveResultAnalysis(skill, latestAttemptBySkill[skill]) : null;
+  }
+  const { focusAreas, sufficientData } = deriveWeaknesses(attempts, targetBand);
+  const summary = derivePerformanceSummary();
 
   return (
     <div className="performance-page-container">
@@ -248,6 +255,24 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
           </div>
         </div>
       </div>
+
+      {/* ── PROGRESS TIMELINE + FOCUS AREAS ─────────────────────────── */}
+      <ProgressTimeline skillHistory={summary.skillHistory} completedCount={summary.completedCount} />
+      {focusAreas.length > 0 && (
+        <div className="perf-overall-card" style={{ padding: '18px 22px' }}>
+          <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 10 }}>
+            Focus areas <span style={{ color: 'var(--text-secondary)', fontWeight: 700, fontSize: 11.5 }}>(from your recent attempts)</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {focusAreas.map(a => (
+              <div key={a.key} style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
+                <strong style={{ color: 'var(--text-primary)' }}>{a.skill.charAt(0).toUpperCase() + a.skill.slice(1)} — {a.label}.</strong>{' '}
+                {a.detail}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* ── FOUR LARGE SKILL SECTIONS ─────────────────────────────────── */}
       <div className="perf-skills-column">

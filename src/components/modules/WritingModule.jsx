@@ -11,7 +11,7 @@ import { createAttemptId, getTargetBand } from '../../utils/storage';
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 const wordCount = (text) => text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
 
-export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
   const [test] = useState(() => initialTest || (testId ? getWritingTest(testId) : getRandomizedWritingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [task, setTask] = useState(1);
@@ -299,7 +299,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
           <Icon name="arrowLeft" size={16} /> Back to Dashboard
         </button>
 
-        {/* ── 1. WRITING PRACTICE COMPLETE HERO CARD ── */}
+        {/* ── 1. {isMockMode ? "WRITING TEST COMPLETE" : "WRITING PRACTICE COMPLETE"} HERO CARD ── */}
         <div style={{
           background: 'var(--bg-card)',
           border: '1.5px solid #151313',
@@ -326,7 +326,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
               color: '#FFFFFF',
               marginBottom: 12
             }}>
-              WRITING PRACTICE COMPLETE
+              {isMockMode ? "WRITING TEST COMPLETE" : "WRITING PRACTICE COMPLETE"}
             </div>
             <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
               Writing Assessment
@@ -374,7 +374,13 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
           </div>
         </div>
 
-        {/* ── 2. AI NOTICE IF KEY MISSING OR FAILED ── */}
+                {!isMockMode && result?.criteria && (
+          <div style={{ marginBottom: 36 }}>
+            <ResultAnalysis skill="writing" resultRecord={{ writing: { ...result, criteria: result.criteria } }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+          </div>
+        )}
+
+{/* ── 2. AI NOTICE IF KEY MISSING OR FAILED ── */}
         {!isPartial && isFailed && (
           <div style={{
             background: 'rgba(255, 87, 52, 0.08)',
@@ -610,7 +616,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
           <span className="exam-focus-tag" style={{ background: 'var(--c-coral)', color: '#FFFFFF', borderColor: '#151313' }}>
-            IELTS WRITING PRACTICE
+            {isMockMode ? 'IELTS ACADEMIC WRITING' : 'IELTS WRITING PRACTICE'}
           </span>
           <h2 className="exam-focus-title">
             {test?.title || 'Academic Writing Test'}

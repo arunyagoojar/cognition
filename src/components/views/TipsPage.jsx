@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import Icon from '../common/Icon';
 import TipCard from '../common/TipCard';
@@ -28,17 +28,11 @@ function BackChip({ onClick, label }) {
 }
 
 export default function TipsPage({ initialSkill = null, initialCategory = null }) {
+  // The page remounts on every view switch, so props seed the initial state;
+  // internal navigation below is plain state (no URL router in this app).
   const [skillId, setSkillId] = useState(initialSkill);
   const [categoryId, setCategoryId] = useState(initialCategory && initialSkill ? initialCategory : null);
   const reduceMotion = useReducedMotion();
-
-  // Allow deep links from elsewhere in the app (e.g. Learning Hub skill chips)
-  useEffect(() => {
-    if (initialSkill) {
-      setSkillId(initialSkill);
-      setCategoryId(initialCategory || null);
-    }
-  }, [initialSkill, initialCategory]);
 
   const skill = skillId ? getTipsSkill(skillId) : null;
   const category = skillId && categoryId ? getTipsCategory(skillId, categoryId) : null;

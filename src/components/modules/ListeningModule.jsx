@@ -4,13 +4,14 @@ import { getRandomizedListeningTest, getListeningTest } from '../../data/listeni
 import { calculateListeningBand, isAnswerCorrect } from '../../utils/bandCalculator';
 import { recordAttemptedQuestionSet } from '../../utils/storage';
 import ExamStartScreen from './ExamStartScreen';
+import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
-export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
   const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
@@ -276,7 +277,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
               color: '#FCCC42',
               marginBottom: 12
             }}>
-              LISTENING PRACTICE COMPLETE
+              {isMockMode ? "LISTENING TEST COMPLETE" : "LISTENING PRACTICE COMPLETE"}
             </div>
             <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
               Listening Assessment
@@ -314,7 +315,13 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           </div>
         </div>
 
-        {/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
+                {!isMockMode && result?.itemResults && (
+          <div style={{ marginBottom: 36 }}>
+            <ResultAnalysis skill="listening" resultRecord={{ listening: result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+          </div>
+        )}
+
+{/* 3 Columns: What Went Well, Needs Attention, Recommended Practice */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginBottom: 36 }}>
           {/* What went well (3 cards max) */}
           <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 20, padding: 24, boxShadow: '0 3px 0 #151313' }}>
@@ -467,7 +474,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
           <span className="exam-focus-tag" style={{ background: 'var(--c-yellow)', color: '#151313' }}>
-            IELTS LISTENING PRACTICE
+            {isMockMode ? 'IELTS ACADEMIC LISTENING' : 'IELTS LISTENING PRACTICE'}
           </span>
           <h2 className="exam-focus-title">
             Part {partIdx + 1} of {test.parts.length} · {currentPart?.title}

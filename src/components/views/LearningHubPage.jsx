@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Icon from '../common/Icon';
+import Loader from '../common/Loader';
 import { LEARNING_SKILLS } from '../../data/learningCatalog';
 import {
   getCompletedLessons,
@@ -11,7 +12,7 @@ import { syncLessonComplete } from '../../utils/api';
 
 const CATEGORY_ORDER = ['reading', 'listening', 'writing', 'speaking'];
 
-export default function LearningHubPage({ onBack, onContextChange }) {
+export default function LearningHubPage({ initialLessonId = null, onBack, onContextChange, onOpenTips }) {
   const [completedLessons, setCompletedLessons] = useState(() => getCompletedLessons() || []);
 
   // Determine initial video & category based on viewing history
@@ -21,7 +22,7 @@ export default function LearningHubPage({ onBack, onContextChange }) {
 
   // If no history, find first lesson of Reading (or first available)
   const defaultSkill = LEARNING_SKILLS.find(s => s.id === 'reading') || LEARNING_SKILLS[0];
-  const initialLesson = lastWatchedLesson || defaultSkill.lessons[0];
+  const initialLesson = (initialLessonId && allLessons.find(l => l.id === initialLessonId)) || lastWatchedLesson || defaultSkill.lessons[0];
   const initialCategory = initialLesson?.skill || 'reading';
 
   const [activeLesson, setActiveLesson] = useState(initialLesson);
@@ -82,6 +83,25 @@ export default function LearningHubPage({ onBack, onContextChange }) {
   return (
     <div className="learning-hub-page">
 
+      {/* ── Tips & Tricks destination (interactive study toolkit) ── */}
+      {onOpenTips && (
+        <button type="button" className="tips-entry-banner" onClick={() => onOpenTips()}>
+          <span className="tips-entry-icon" aria-hidden="true">
+            <Icon name="sparkles" size={22} />
+          </span>
+          <span className="tips-entry-text">
+            <span className="tips-entry-title">Tips &amp; Tricks</span>
+            <span className="tips-entry-sub">Quick strategies, vocabulary and examples for every IELTS skill.</span>
+          </span>
+          <span className="tips-entry-chips" aria-hidden="true">
+            {['Listening', 'Reading', 'Writing', 'Speaking'].map(s => (
+              <span key={s} className="tips-entry-chip">{s}</span>
+            ))}
+          </span>
+          <Icon name="arrowRight" size={17} className="tips-entry-arrow" />
+        </button>
+      )}
+
       {/* Main Two-Area Layout */}
       <div className="hub-video-full-wrapper">
         {/* ── TOP: Full-width Visually Dominant Video Player ── */}
@@ -110,8 +130,7 @@ export default function LearningHubPage({ onBack, onContextChange }) {
                 />
               ) : (
                 <div className="hub-video-placeholder">
-                  <Icon name="play" size={48} />
-                  <span>Video loading...</span>
+                  <Loader label="Loading video" size="sm" />
                 </div>
               )}
             </div>

@@ -235,6 +235,12 @@ export function validateSpeakingEvaluationJson(data) {
     overallSummary: data.overallSummary || '',
     strengths: data.strengths || '',
     areasForImprovement: data.areasForImprovement || '',
+    sentenceImprovements: Array.isArray(data.sentenceImprovements)
+      ? data.sentenceImprovements
+          .filter(si => si && typeof si.original === 'string' && typeof si.suggestion === 'string')
+          .slice(0, 4)
+          .map(si => ({ original: si.original, suggestion: si.suggestion, reason: si.reason || '' }))
+      : [],
   };
 }
 
@@ -294,6 +300,12 @@ export function validateWritingEvaluationJson(data) {
     task2Feedback: data.task2Feedback || '',
     strengths: data.strengths || '',
     areasForImprovement: data.areasForImprovement || '',
+    sentenceImprovements: Array.isArray(data.sentenceImprovements)
+      ? data.sentenceImprovements
+          .filter(si => si && typeof si.original === 'string' && typeof si.suggestion === 'string')
+          .slice(0, 4)
+          .map(si => ({ original: si.original, suggestion: si.suggestion, reason: si.reason || '' }))
+      : [],
   };
 }
 

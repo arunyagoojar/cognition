@@ -11,7 +11,8 @@ export default function SettingsModal({
   onToggleTheme,
   targetBand,
   onChangeTargetBand,
-  onResetScores
+  onResetScores,
+  onReplayOnboarding
 }) {
   const [credentialStatus, setCredentialStatus] = useState(null); // { configured, maskedSuffix }
   const [keyInput, setKeyInput] = useState('');
@@ -217,6 +218,36 @@ export default function SettingsModal({
                 ))}
               </select>
             </div>
+
+            {/* 2b. Replay the introduction (onboarding) */}
+            {onReplayOnboarding && (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>Introduction</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Revisit the welcome tour</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => { onClose(); onReplayOnboarding(); }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    padding: '8px 14px',
+                    fontSize: 13,
+                    fontWeight: 600,
+                    background: 'var(--surface-alt)',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border)',
+                    borderRadius: 'var(--r-btn)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Icon name="play" size={13} />
+                  <span>Replay intro</span>
+                </button>
+              </div>
+            )}
 
             {/* 3. AI Configuration (Gemini — encrypted server-side credential) */}
             <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>

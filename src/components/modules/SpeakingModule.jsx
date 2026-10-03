@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Icon } from '../common/Icon';
 import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
 import ExamStartScreen from './ExamStartScreen';
+import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
 import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob } from '../../utils/audio/audioStore';
@@ -31,7 +32,7 @@ const PART2_PREP_SECONDS = 60; // official: 1 minute preparation
 const PART2_SPEAK_SECONDS = 120; // official: up to 2 minutes
 const PART3_SECONDS = 45;
 
-export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
   const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
@@ -453,7 +454,13 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           )}
         </div>
 
-        {/* criteria: scores exist ONLY when evaluation produced them */}
+                {!isMockMode && (
+          <div style={{ marginBottom: 36 }}>
+            <ResultAnalysis skill="speaking" resultRecord={{ speaking: result?.canonical || result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+          </div>
+        )}
+
+{/* criteria: scores exist ONLY when evaluation produced them */}
         <h2 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 14px' }}>Assessment Criteria</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14, marginBottom: 32 }}>
           {criteriaList.map(c => {
@@ -517,7 +524,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       {/* header */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
-          <span className="exam-focus-tag" style={{ background: '#151313', color: '#fff' }}>IELTS SPEAKING PRACTICE</span>
+          <span className="exam-focus-tag" style={{ background: '#151313', color: '#fff' }}>{isMockMode ? 'IELTS ACADEMIC SPEAKING' : 'IELTS SPEAKING PRACTICE'}</span>
           <h2 className="exam-focus-title">Part {currentPart?.partNumber} of {test.parts.length} · {currentPart?.title}</h2>
         </div>
         <div className="exam-focus-header-right">

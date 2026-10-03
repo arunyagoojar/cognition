@@ -40,16 +40,27 @@ async function apiFetch(path, options = {}) {
 // Variant that surfaces server error messages (for credential/AI endpoints).
 async function apiFetchDetail(path, options = {}) {
   if (!PUBLISHABLE_KEY || !clerkAuth) return { ok: false, unauthenticated: true };
-  const token = await clerkAuth.getToken();
+  let token;
+  try {
+    token = await clerkAuth.getToken();
+  } catch {
+    return { ok: false, networkError: true };
+  }
   if (!token) return { ok: false, unauthenticated: true };
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-      ...options.headers,
-    },
-  });
+  let res;
+  try {
+    res = await fetch(`${API_BASE}${path}`, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        ...options.headers,
+      },
+    });
+  } catch {
+    // Reachability/CORS failure — surfaced as networkError, never a raw browser message.
+    return { ok: false, networkError: true };
+  }
   let data = null;
   try { data = await res.json(); } catch { /* non-JSON error body */ }
   return { ok: res.ok, status: res.status, data };
@@ -67,6 +78,20 @@ export async function syncPreferences(data) {
 
 export async function fetchPreferences() {
   return apiFetch('/api/me', { method: 'GET' });
+}
+
+// Permanently purges every Cloudflare-stored record for the signed-in user
+// (profile, preferences, attempts, completed lessons, AI credentials).
+export async function deleteAccountData() {
+  const res = await apiFetchDetail('/api/me', { method: 'DELETE' });
+  if (!res.ok) {
+    return {
+      ok: false,
+      networkError: Boolean(res.networkError),
+      message: res.data?.error || 'Could not delete your saved data. Please try again.',
+    };
+  }
+  return { ok: true };
 }
 
 // ── Attempts ──

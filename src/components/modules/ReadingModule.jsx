@@ -9,11 +9,12 @@ import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
 import AnswerReviewList from '../common/AnswerReviewList';
+import ResultAnalysis from '../common/ResultAnalysis.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 
-export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false }) {
+export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
   const [test] = useState(() => initialTest || (testId ? getReadingTest(testId) : getRandomizedReadingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [answers, setAnswers] = useState({});
@@ -235,7 +236,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
               color: '#BE94F5',
               marginBottom: 12
             }}>
-              READING PRACTICE COMPLETE
+              {isMockMode ? "READING TEST COMPLETE" : "READING PRACTICE COMPLETE"}
             </div>
             <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
               Reading Assessment
@@ -280,6 +281,13 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
               <Icon name="pen" size={15} /> Answer Review
             </div>
             <AnswerReviewList itemResults={result.itemResults} />
+          </div>
+        )}
+
+        {/* Detailed analysis — question-type performance + recommendations */}
+        {!isMockMode && (
+          <div style={{ marginBottom: 36 }}>
+            <ResultAnalysis skill="reading" resultRecord={{ reading: result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
           </div>
         )}
 
@@ -416,7 +424,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
           <span className="exam-focus-tag" style={{ background: 'var(--c-lavender)', color: '#151313' }}>
-            IELTS READING PRACTICE
+            {isMockMode ? 'IELTS ACADEMIC READING' : 'IELTS READING PRACTICE'}
           </span>
           <h2 className="exam-focus-title">
             Reading Assessment

@@ -7,8 +7,11 @@ import ScoreSummary from './components/dashboard/ScoreSummary';
 import PerformanceOverview from './components/dashboard/PerformanceOverview';
 import PracticeSection from './components/dashboard/PracticeSection';
 import MockHeroCard from './components/dashboard/MockHeroCard';
+import Loader from './components/common/Loader';
 import PerformancePage from './components/views/PerformancePage';
 import LearningHubPage from './components/views/LearningHubPage';
+import TipsPage from './components/views/TipsPage';
+import Onboarding from './components/onboarding/Onboarding';
 import ListeningModule from './components/modules/ListeningModule';
 import ReadingModule from './components/modules/ReadingModule';
 import WritingModule from './components/modules/WritingModule';
@@ -28,6 +31,7 @@ import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING } from './data/production/productionContent.js';
 import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete } from './utils/api';
 import { createAttemptId } from './utils/storage';
+import { shouldShowOnboarding, markOnboardingComplete } from './utils/onboarding';
 
 import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js';
 
@@ -37,32 +41,45 @@ export default function App() {
 }
 
 function AppWithAuth() {
-  const { isLoaded: authLoaded, isSignedIn } = useUser();
+  const { isLoaded: authLoaded, isSignedIn, user } = useUser();
   const { openSignIn } = useClerk();
   const auth = useAuth();
   setClerkAuth(auth);
   // Prevent flash: don't render the app until Clerk session is resolved
   if (!authLoaded) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-canvas)' }}>
-        <div style={{ width: 28, height: 28, borderRadius: '50%', border: '3px solid var(--border-subtle)', borderTopColor: 'var(--c-coral)', animation: 'spin 0.8s linear infinite' }} />
+      <div className="app-boot-screen">
+        <Loader label="Loading Cognition" size="lg" />
       </div>
     );
   }
-  return <AppContent isSignedIn={isSignedIn} openSignIn={openSignIn} />;
+  return <AppContent isSignedIn={isSignedIn} openSignIn={openSignIn} userId={user?.id || 'anon'} />;
 }
 
-function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {} }) {
+function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {}, userId = 'anon' }) {
   const [view, setView] = useState(() => {
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.status === 'in_progress') {
       return 'mock';
     }
     return 'home';
-  }); // home | performance | learning | listening | reading | writing | speaking | mock
+  }); // home | performance | learning | tips | listening | reading | writing | speaking | mock
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('omniprep_theme') || 'light');
   const [targetBand, setTargetBand] = useState(() => getTargetBand() || '8.0');
+
+  // Tips & Tricks deep entry (null = landing with the four skill cards)
+  const [tipsSkill, setTipsSkill] = useState(null);
+  const [tipsCategory, setTipsCategory] = useState(null);
+  const [learningLessonId, setLearningLessonId] = useState(null);
+
+  // First-run onboarding: shown once per user, skippable, persisted per device.
+  // Derived during render — no effect churn; `replay` lets Settings re-open it.
+  const [onboardingDismissed, setOnboardingDismissed] = useState(false);
+  const [onboardingReplay, setOnboardingReplay] = useState(false);
+  const showOnboarding = Boolean(
+    isSignedIn && authLoaded && (onboardingReplay || (shouldShowOnboarding(userId) && !onboardingDismissed))
+  );
 
   // Sync preferences from D1 on auth change
   useEffect(() => {
@@ -103,9 +120,30 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
+    changeTheme(newTheme);
+  };
+
+  // Used by onboarding (and settings) — persists through the existing theme system
+  const changeTheme = (newTheme) => {
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     syncPreferences({ theme: newTheme });
+  };
+
+  const openTips = (skillId = null, categoryId = null) => {
+    setTipsSkill(skillId || null);
+    setTipsCategory(categoryId || null);
+    setView('tips');
+  };
+  const openLesson = (lessonId = null) => {
+    setLearningLessonId(lessonId);
+    setView('learning');
+  };
+
+  const handleOnboardingComplete = () => {
+    markOnboardingComplete(userId);
+    setOnboardingDismissed(true);
+    setOnboardingReplay(false);
   };
 
   const refreshScores = () => {
@@ -244,6 +282,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               completedLessons={completedLessons}
               onOpenLearningHub={() => setView('learning')}
               onOpenPerformance={() => setView('performance')}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
+              onStartPractice={startSkillProtected}
             />
 
             {/* 3. Practice Section (Writing, Listening, Speaking, Reading) */}
@@ -291,10 +332,25 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <LearningHubPage
+              initialLessonId={learningLessonId}
               onBack={() => setView('home')}
               onContextChange={(ctx) => setLearningContext(ctx)}
               onOpenPractice={startSkillProtected}
+              onOpenTips={openTips}
             />
+          </motion.div>
+        )}
+
+        {view === 'tips' && (
+          <motion.div
+            key="tips"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <TipsPage initialSkill={tipsSkill} initialCategory={tipsCategory} />
           </motion.div>
         )}
 
@@ -425,7 +481,22 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           syncPreferences({ target_band: b });
         }}
         onResetScores={handleResetScores}
+        onReplayOnboarding={() => {
+          setOnboardingDismissed(false);
+          setOnboardingReplay(true);
+        }}
       />
+
+      {/* ── FIRST-RUN ONBOARDING (skippable; overlays everything) ───── */}
+      <AnimatePresence>
+        {showOnboarding && (
+          <Onboarding
+            theme={theme}
+            onChangeTheme={changeTheme}
+            onComplete={handleOnboardingComplete}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

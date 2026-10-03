@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useUser, useClerk } from '@clerk/react';
+import { useUser, useReverification } from '@clerk/react';
+import { isReverificationCancelledError } from '@clerk/react/errors';
 import Icon from '../common/Icon';
+import { deleteAccountData } from '../../utils/api';
 
 export default function AccountModal({ isOpen, onClose }) {
   const { user, isLoaded } = useUser();
-  const { signOut } = useClerk();
+  // Wraps destructive Clerk calls: when the session is stale, Clerk opens its
+  // re-verification modal (password / email code) and retries on success.
+  const deleteWithVerification = useReverification();
 
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -15,17 +19,40 @@ export default function AccountModal({ isOpen, onClose }) {
 
   const email = user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress || '';
 
+  const clearLocalData = () => {
+    try {
+      Object.keys(localStorage)
+        .filter(k => k.startsWith('omniprep_'))
+        .forEach(k => localStorage.removeItem(k));
+    } catch { /* private mode — nothing to clean */ }
+  };
+
   const handleDeleteAccount = async () => {
     if (!user) return;
     try {
       setIsDeleting(true);
       setDeleteError(null);
-      await user.delete();
-      // Clerk handles session cleanup automatically on user.delete()
+      // 1. Purge Cloudflare-stored data while the session token is still valid.
+      //    Never delete the Clerk account first — the session powers this call,
+      //    and orphaned server data is worse than a retryable step.
+      const purge = await deleteAccountData();
+      if (!purge.ok) {
+        throw new Error(purge.networkError
+          ? 'Couldn’t reach the server to erase your saved data. Check your connection and try again — your account has not been deleted.'
+          : (purge.message || 'Could not delete your saved data. Please try again.'));
+      }
+      // 2. Delete the Clerk account — may require identity re-verification.
+      await deleteWithVerification(() => user.delete());
+      clearLocalData();
+      // Clerk cleans up the session automatically after account deletion.
       onClose();
     } catch (err) {
-      console.error('Failed to delete account:', err);
-      setDeleteError(err?.message || 'Failed to delete account. Please try again.');
+      if (isReverificationCancelledError(err)) {
+        setDeleteError('Verification cancelled — your account was not deleted.');
+      } else {
+        console.error('Failed to delete account:', err);
+        setDeleteError(err?.message || 'Failed to delete account. Please try again.');
+      }
       setIsDeleting(false);
     }
   };
@@ -119,6 +146,7 @@ export default function AccountModal({ isOpen, onClose }) {
                   </div>
                   <p className="account-confirm-desc">
                     This will permanently delete your account, saved test scores, and learning progress. This cannot be undone.
+                    For security, you&apos;ll be asked to verify your identity first.
                   </p>
                   <div className="account-confirm-actions">
                     <button

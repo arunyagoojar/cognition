@@ -189,6 +189,19 @@ export default {
           return json(user, 200, corsHeaders);
         }
 
+        // ── DELETE /api/me — purge every stored record for this user ──
+        // Runs before Clerk account deletion (session must still be valid).
+        // Idempotent: safe to re-run if the Clerk step later fails.
+        if (path === '/api/me' && request.method === 'DELETE') {
+          await env.DB.batch([
+            env.DB.prepare('DELETE FROM attempts WHERE clerk_user_id = ?').bind(userId),
+            env.DB.prepare('DELETE FROM completed_lessons WHERE clerk_user_id = ?').bind(userId),
+            env.DB.prepare('DELETE FROM user_ai_credentials WHERE clerk_user_id = ?').bind(userId),
+            env.DB.prepare('DELETE FROM users WHERE clerk_user_id = ?').bind(userId),
+          ]);
+          return json({ deleted: true }, 200, corsHeaders);
+        }
+
         // ── PUT /api/me/preferences — update preferences ──
         if (path === '/api/me/preferences' && request.method === 'PUT') {
           const body = await request.json();

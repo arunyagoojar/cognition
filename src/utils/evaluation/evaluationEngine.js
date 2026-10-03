@@ -161,7 +161,8 @@ export async function evaluateReadingResponses({ passages = [], answers = {}, at
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
       officialAnswer: q.answer,
-      candidateAnswer: candidate || null
+      candidateAnswer: candidate || null,
+      questionType: q.questionType || null
     };
   }
 
@@ -253,7 +254,8 @@ export async function evaluateListeningResponses({ sections = [], answers = {}, 
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
       officialAnswer: q.answer,
-      candidateAnswer: candidate || null
+      candidateAnswer: candidate || null,
+      questionType: q.type || q.questionType || null
     };
   }
 
