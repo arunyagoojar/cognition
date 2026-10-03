@@ -1,6 +1,11 @@
-name = "cognition-api"
+name = "cognition"
 main = "worker/src/index.js"
 compatibility_date = "2024-12-01"
+
+# User-facing custom domain (zone: cognition.eu.cc)
+routes = [
+  { pattern = "cognition.eu.cc", custom_domain = true }
+]
 
 # Cognition deploys as a single Worker: static frontend (dist/) + /api routes.
 # Build first with the slim public dir: PUBLIC_DIR_OVERRIDE=public-static VITE_API_BASE_URL= npm run build

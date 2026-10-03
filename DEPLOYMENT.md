@@ -19,9 +19,11 @@ Cognition is a Vite + React IELTS Academic preparation app deployed entirely on 
                          media bucket)  credential)
 ```
 
-- **Frontend + API**: a single Worker (`cognition-api.arunyagoojar.workers.dev`). Static
-  assets are served from the `[assets]` binding (`dist/`); `/api/*` routes execute the
-  Worker (`run_worker_first`).
+- **Frontend + API**: a single Worker named `cognition` — production URL
+  **https://cognition.eu.cc** (custom domain declared in `wrangler.toml` routes).
+  `cognition.arunyagoojar.workers.dev` serves the same Worker. Static assets are
+  served from the `[assets]` binding (`dist/`); `/api/*` routes execute the Worker
+  (`run_worker_first`).
 - **Auth**: Clerk session tokens are verified in the Worker (RSASSA-PKCS1-v1_5 via
   WebCrypto against the instance JWKS on the Frontend API domain).
 - **User data**: D1 `cognition-db` (id `edd1e971-91b6-4f37-bd9d-b49b763e7b7c`).
@@ -97,7 +99,7 @@ PUBLIC_DIR_OVERRIDE=public-static VITE_API_BASE_URL= npm run build
 npx wrangler deploy
 ```
 
-The production URL: https://cognition-api.arunyagoojar.workers.dev
+The production URL: https://cognition.eu.cc
 (SPA fallback enabled; `/api/*` routes run the Worker first.)
 
 ## AI credential security model
