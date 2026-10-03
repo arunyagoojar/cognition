@@ -7,14 +7,18 @@
 
 import { encryptCredential, decryptCredential, maskedSuffix } from './crypto.js';
 import {
-  IELTS_WRITING_SYSTEM_PROMPT_V1,
-  IELTS_SPEAKING_SYSTEM_PROMPT_V1,
-  validateWritingEvaluationJson,
-  validateSpeakingEvaluationJson,
+  IELTS_WRITING_SYSTEM_PROMPT,
+  IELTS_SPEAKING_SYSTEM_PROMPT,
+  buildWritingUserPrompt,
+  buildSpeakingUserPrompt,
+  normalizeWritingEvaluation,
+  normalizeSpeakingEvaluation,
+  countWords,
   runEvaluationChain,
   validateGeminiKeyServer,
   runAnswerVerification,
 } from './ai.js';
+import { isReverificationSatisfied, reverificationErrorBody } from './reverification.js';
 
 const CLERK_JWKS_URL = 'https://api.clerk.com/v1/jwks';
 
@@ -95,7 +99,8 @@ async function verifyClerkToken(request, env) {
     // Verify expiry
     if (payload.exp && payload.exp < Date.now() / 1000) return null;
 
-    return { userId: payload.sub, email: payload.email || null };
+    if (!payload.sub) return null;
+    return { userId: payload.sub, email: payload.email || null, fva: payload.fva };
   } catch (e) {
     // Safe diagnostic only — never logs the token or provider internals.
     console.error('JWT verification failed:', e.constructor?.name || 'Error', e.message);
@@ -156,6 +161,37 @@ function base64KeyOrThrow(env) {
   return key;
 }
 
+/**
+ * Fail-fast check that the encryption secret is present AND usable
+ * (valid base64, exactly 32 bytes). Runs a throw-away round trip, so a
+ * misconfigured Worker is reported precisely instead of surfacing as an
+ * opaque 500 after the user's key has already been validated.
+ */
+async function encryptionReady(env) {
+  try {
+    const probe = await encryptCredential('probe', base64KeyOrThrow(env));
+    const back = await decryptCredential(probe.ciphertext, probe.iv, base64KeyOrThrow(env));
+    return back === 'probe';
+  } catch {
+    return false;
+  }
+}
+
+/** Verifies the Clerk account for `userId` exists. 'unknown' = could not tell. */
+async function clerkUserState(env, userId) {
+  if (!env.CLERK_SECRET_KEY) return 'unknown';
+  try {
+    const res = await fetch(`https://api.clerk.com/v1/users/${encodeURIComponent(userId)}`, {
+      headers: { Authorization: `Bearer ${env.CLERK_SECRET_KEY}` },
+    });
+    if (res.status === 200) return 'exists';
+    if (res.status === 404) return 'gone';
+    return 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -178,7 +214,11 @@ export default {
           ).bind(userId).first();
 
           if (!user) {
-            // First login — provision user
+            // First login — provision user. A still-valid token belonging to an
+            // account that was just deleted must not resurrect its D1 row.
+            if (await clerkUserState(env, userId) === 'gone') {
+              return error('This account no longer exists.', 401, corsHeaders);
+            }
             await env.DB.prepare(
               'INSERT INTO users (clerk_user_id, email, full_name) VALUES (?, ?, ?)'
             ).bind(userId, auth.email || '', '').run();
@@ -189,17 +229,69 @@ export default {
           return json(user, 200, corsHeaders);
         }
 
-        // ── DELETE /api/me — purge every stored record for this user ──
-        // Runs before Clerk account deletion (session must still be valid).
-        // Idempotent: safe to re-run if the Clerk step later fails.
+        // ── DELETE /api/me — full account deletion ──
+        // Order (never a half-deleted account):
+        //   0. The Clerk session must be freshly verified (reverification).
+        //      The identity comes ONLY from the verified JWT `sub`.
+        //   1. Pre-flight: confirm we can actually reach/administer the Clerk
+        //      account BEFORE destroying anything.
+        //   2. Purge every D1 row for the user in ONE atomic batch (idempotent).
+        //   3. Only after the purge succeeds, delete the Clerk account.
         if (path === '/api/me' && request.method === 'DELETE') {
-          await env.DB.batch([
-            env.DB.prepare('DELETE FROM attempts WHERE clerk_user_id = ?').bind(userId),
-            env.DB.prepare('DELETE FROM completed_lessons WHERE clerk_user_id = ?').bind(userId),
-            env.DB.prepare('DELETE FROM user_ai_credentials WHERE clerk_user_id = ?').bind(userId),
-            env.DB.prepare('DELETE FROM users WHERE clerk_user_id = ?').bind(userId),
-          ]);
-          return json({ deleted: true }, 200, corsHeaders);
+          if (!isReverificationSatisfied(auth.fva, 'strict')) {
+            return json(reverificationErrorBody('strict'), 403, corsHeaders);
+          }
+          if (!env.CLERK_SECRET_KEY) {
+            return json({ error: 'Account deletion is not configured on the server. Nothing was deleted.', stage: 'config' }, 500, corsHeaders);
+          }
+          const preflight = await clerkUserState(env, userId);
+          if (preflight === 'unknown') {
+            return json({ error: 'Could not reach the identity provider. Nothing was deleted — please try again.', stage: 'preflight' }, 502, corsHeaders);
+          }
+
+          try {
+            await env.DB.batch([
+              env.DB.prepare('DELETE FROM attempts WHERE clerk_user_id = ?').bind(userId),
+              env.DB.prepare('DELETE FROM completed_lessons WHERE clerk_user_id = ?').bind(userId),
+              env.DB.prepare('DELETE FROM user_ai_credentials WHERE clerk_user_id = ?').bind(userId),
+              env.DB.prepare('DELETE FROM users WHERE clerk_user_id = ?').bind(userId),
+            ]);
+          } catch (e) {
+            console.error('Account purge failed:', e.constructor?.name || 'Error', e.message);
+            return json({ error: 'Failed to erase your saved data. Your account was not deleted — please retry.', stage: 'd1' }, 500, corsHeaders);
+          }
+
+          if (preflight === 'gone') {
+            return json({ deleted: true, clerkDeleted: 'already_gone' }, 200, corsHeaders);
+          }
+          let clerkRes;
+          try {
+            clerkRes = await fetch(`https://api.clerk.com/v1/users/${encodeURIComponent(userId)}`, {
+              method: 'DELETE',
+              headers: { Authorization: `Bearer ${env.CLERK_SECRET_KEY}` },
+            });
+          } catch {
+            return json({ error: 'Your saved data was erased but the account itself could not be removed yet. Please retry — it is safe to repeat.', stage: 'clerk' }, 502, corsHeaders);
+          }
+          if (!clerkRes.ok && clerkRes.status !== 404) {
+            const detail = clerkRes.status === 429
+              ? 'Your saved data was erased; the identity provider is rate-limiting. Please retry shortly — it is safe to repeat.'
+              : 'Your saved data was erased but the account itself could not be removed yet. Please retry — it is safe to repeat.';
+            return json({ error: detail, stage: 'clerk' }, 502, corsHeaders);
+          }
+          return json({ deleted: true, clerkDeleted: true }, 200, corsHeaders);
+        }
+
+        // ── PUT /api/me/onboarding — mark onboarding completed/skipped (once) ──
+        if (path === '/api/me/onboarding' && request.method === 'PUT') {
+          await env.DB.prepare(
+            `UPDATE users SET onboarding_completed_at = COALESCE(onboarding_completed_at, datetime('now'))
+             WHERE clerk_user_id = ?`
+          ).bind(userId).run();
+          const row = await env.DB.prepare(
+            'SELECT onboarding_completed_at FROM users WHERE clerk_user_id = ?'
+          ).bind(userId).first();
+          return json({ onboardingCompleted: Boolean(row?.onboarding_completed_at) }, 200, corsHeaders);
         }
 
         // ── PUT /api/me/preferences — update preferences ──
@@ -308,36 +400,52 @@ export default {
           const provider = credMatch[1];
           if (!ALLOWED_PROVIDERS.has(provider)) return error('Unknown provider', 400, corsHeaders);
 
-          const body = await request.json();
-          const key = (body.key || '').trim();
-          if (!key || key.length < 20 || key.length > 512 || /\s/.test(key)) {
-            return error('Invalid API key format', 400, corsHeaders);
+          let body;
+          try { body = await request.json(); } catch { body = null; }
+          const key = (body?.key || '').trim();
+          if (!key) return json({ error: 'Paste your API key first.', code: 'empty_key' }, 400, corsHeaders);
+          if (key.length < 20 || key.length > 512 || /\s/.test(key)) {
+            return json({ error: 'That does not look like a valid API key (wrong length or contains spaces).', code: 'invalid_key' }, 400, corsHeaders);
+          }
+
+          // Fail fast when server-side encryption is unusable — before the key
+          // is sent anywhere else and before any misleading "rejected" message.
+          if (!(await encryptionReady(env))) {
+            console.error('Credential save blocked: CREDENTIAL_ENCRYPTION_KEY missing or invalid');
+            return json({ error: 'Secure key storage is not available on the server right now.', code: 'storage_unavailable' }, 503, corsHeaders);
           }
 
           // Server-side validation against the provider before storing (Part K)
           if (provider === 'gemini') {
             const check = await validateGeminiKeyServer(key);
             if (!check.valid) {
-              return json({ error: check.message || 'Key validation failed', validated: false }, 400, corsHeaders);
+              return json({ error: check.message || 'Key validation failed', code: check.code || 'invalid_key', validated: false }, 400, corsHeaders);
             }
           }
 
-          const encrypted = await encryptCredential(key, base64KeyOrThrow(env));
-          await env.DB.prepare(
-            `INSERT INTO user_ai_credentials
-               (id, clerk_user_id, provider, encrypted_value, iv, encryption_version, masked_suffix)
-             VALUES (?, ?, ?, ?, ?, ?, ?)
-             ON CONFLICT (clerk_user_id, provider) DO UPDATE SET
-               encrypted_value = excluded.encrypted_value,
-               iv = excluded.iv,
-               encryption_version = excluded.encryption_version,
-               masked_suffix = excluded.masked_suffix,
-               updated_at = datetime('now')`
-          ).bind(
-            crypto.randomUUID(), userId, provider,
-            encrypted.ciphertext, encrypted.iv, encrypted.version,
-            maskedSuffix(key)
-          ).run();
+          let encrypted;
+          try {
+            encrypted = await encryptCredential(key, base64KeyOrThrow(env));
+            await env.DB.prepare(
+              `INSERT INTO user_ai_credentials
+                 (id, clerk_user_id, provider, encrypted_value, iv, encryption_version, masked_suffix)
+               VALUES (?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT (clerk_user_id, provider) DO UPDATE SET
+                 encrypted_value = excluded.encrypted_value,
+                 iv = excluded.iv,
+                 encryption_version = excluded.encryption_version,
+                 masked_suffix = excluded.masked_suffix,
+                 updated_at = datetime('now')`
+            ).bind(
+              crypto.randomUUID(), userId, provider,
+              encrypted.ciphertext, encrypted.iv, encrypted.version,
+              maskedSuffix(key)
+            ).run();
+          } catch (e) {
+            // Type + message only — the key itself is never part of these.
+            console.error('Credential write failed:', e.constructor?.name || 'Error', e.message);
+            return json({ error: 'Could not store the key securely right now.', code: 'storage_failed' }, 503, corsHeaders);
+          }
 
           return json({
             configured: true,
@@ -387,26 +495,19 @@ export default {
             return json({ status: 'failed', message: 'No essay content submitted for evaluation.' }, 200, corsHeaders);
           }
 
-          const t1Words = t1Clean ? t1Clean.split(/\s+/).length : 0;
-          const t2Words = t2Clean ? t2Clean.split(/\s+/).length : 0;
-          const prompts = body.prompts || {};
-          const userPrompt = `Evaluate the candidate's IELTS Academic Writing submission:
-Task 1 Prompt: ${prompts.task1 || 'Academic visual/data report (150 words minimum)'}
-Task 1 Candidate Response (${t1Words} words):
-${t1Clean || '(No response submitted)'}
-
-Task 2 Prompt: ${prompts.task2 || 'Academic discursive essay (250 words minimum)'}
-Task 2 Candidate Response (${t2Words} words):
-${t2Clean || '(No response submitted)'}`;
+          const t1Words = countWords(t1Clean);
+          const t2Words = countWords(t2Clean);
+          const userPrompt = buildWritingUserPrompt({ prompts: body.prompts || {}, task1Text: t1Clean, task2Text: t2Clean });
 
           const plaintextKey = await decryptCredential(
             cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
           );
           const result = await runEvaluationChain({
             apiKey: plaintextKey,
-            systemPrompt: IELTS_WRITING_SYSTEM_PROMPT_V1,
+            systemPrompt: IELTS_WRITING_SYSTEM_PROMPT,
             userPrompt,
-            validator: validateWritingEvaluationJson,
+            // bands are computed in code from the whole-band criteria
+            validator: (data) => normalizeWritingEvaluation(data, { task1Words: t1Words, task2Words: t2Words }),
           });
           // plaintextKey goes out of scope here — never stored or returned.
           return json(result, 200, corsHeaders);
@@ -432,20 +533,19 @@ ${t2Clean || '(No response submitted)'}`;
             }, 200, corsHeaders);
           }
 
-          const testMeta = body.testMeta || {};
-          const userPrompt = `Candidate Responses by Part:
-${JSON.stringify(transcripts, null, 2)}
-
-Test Topic Context: ${testMeta.title || 'IELTS Speaking Academic Interview'}`;
+          const userPrompt = buildSpeakingUserPrompt({
+            transcripts, testMeta: body.testMeta || {}, durations: body.durations || {},
+          });
 
           const plaintextKey = await decryptCredential(
             cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
           );
           const result = await runEvaluationChain({
             apiKey: plaintextKey,
-            systemPrompt: IELTS_SPEAKING_SYSTEM_PROMPT_V1,
+            systemPrompt: IELTS_SPEAKING_SYSTEM_PROMPT,
             userPrompt,
-            validator: validateSpeakingEvaluationJson,
+            // transcript only: pronunciation is never inferred
+            validator: (data) => normalizeSpeakingEvaluation(data, { audioAssessed: false }),
           });
           return json(result, 200, corsHeaders);
         }

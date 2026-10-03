@@ -29,15 +29,20 @@ import {
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING } from './data/production/productionContent.js';
-import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete } from './utils/api';
+import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete, syncOnboardingComplete } from './utils/api';
 import { createAttemptId } from './utils/storage';
-import { shouldShowOnboarding, markOnboardingComplete } from './utils/onboarding';
+import { shouldShowOnboarding, markOnboardingComplete, hasCompletedOnboardingLocally } from './utils/onboarding';
 
 import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js';
+import ErrorBoundary from './components/common/ErrorBoundary.jsx';
 
 export default function App() {
   const hasClerk = Boolean(PUBLISHABLE_KEY);
-  return hasClerk ? <AppWithAuth /> : <AppContent signedIn={true} openSignIn={() => {}} />;
+  return (
+    <ErrorBoundary>
+      {hasClerk ? <AppWithAuth /> : <AppContent signedIn={true} openSignIn={() => {}} />}
+    </ErrorBoundary>
+  );
 }
 
 function AppWithAuth() {
@@ -73,12 +78,13 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const [tipsCategory, setTipsCategory] = useState(null);
   const [learningLessonId, setLearningLessonId] = useState(null);
 
-  // First-run onboarding: shown once per user, skippable, persisted per device.
-  // Derived during render — no effect churn; `replay` lets Settings re-open it.
+  // First-run onboarding: shown exactly once per account — right after the
+  // first successful sign-in — then never again (no replay anywhere). The
+  // server record decides; unknown state (offline / API error) never shows it.
+  const [onboardingUser, setOnboardingUser] = useState(null);
   const [onboardingDismissed, setOnboardingDismissed] = useState(false);
-  const [onboardingReplay, setOnboardingReplay] = useState(false);
   const showOnboarding = Boolean(
-    isSignedIn && authLoaded && (onboardingReplay || (shouldShowOnboarding(userId) && !onboardingDismissed))
+    isSignedIn && authLoaded && !onboardingDismissed && shouldShowOnboarding(onboardingUser, userId)
   );
 
   // Sync preferences from D1 on auth change
@@ -93,8 +99,14 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
         setTheme(user.theme);
         document.documentElement.setAttribute('data-theme', user.theme);
       }
+      if (user && 'onboarding_completed_at' in user && !user.onboarding_completed_at
+          && hasCompletedOnboardingLocally(userId)) {
+        // Completed here earlier but the server write was missed — heal it.
+        syncOnboardingComplete();
+      }
+      setOnboardingUser(user || null);
     });
-  }, [isSignedIn, authLoaded]);
+  }, [isSignedIn, authLoaded, userId]);
   const [scores, setScores] = useState(getSkillScores());
   const [completedLessons, setCompletedLessons] = useState(getCompletedLessons());
 
@@ -143,7 +155,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const handleOnboardingComplete = () => {
     markOnboardingComplete(userId);
     setOnboardingDismissed(true);
-    setOnboardingReplay(false);
+    syncOnboardingComplete(); // best-effort; the local mark covers a missed write
   };
 
   const refreshScores = () => {
@@ -400,13 +412,15 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             exit="exit"
             transition={pageTransition}
           >
-            <WritingModule
-              testId={selectedExamId}
-              onComplete={(d) => {
-                handleCompleteSkill('writing', d);
-              }}
-              onBack={() => setView('home')}
-            />
+            <ErrorBoundary onReset={() => setView('home')}>
+              <WritingModule
+                testId={selectedExamId}
+                onComplete={(d) => {
+                  handleCompleteSkill('writing', d);
+                }}
+                onBack={() => setView('home')}
+              />
+            </ErrorBoundary>
           </motion.div>
         )}
 
@@ -480,10 +494,6 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           syncPreferences({ target_band: b });
         }}
         onResetScores={handleResetScores}
-        onReplayOnboarding={() => {
-          setOnboardingDismissed(false);
-          setOnboardingReplay(true);
-        }}
       />
 
       {/* ── FIRST-RUN ONBOARDING (skippable; overlays everything) ───── */}
@@ -492,6 +502,12 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           <Onboarding
             theme={theme}
             onChangeTheme={changeTheme}
+            targetBand={targetBand}
+            onChangeTargetBand={(b) => {
+              setTargetBand(b);
+              saveTargetBand(b);
+              syncPreferences({ target_band: b });
+            }}
             onComplete={handleOnboardingComplete}
           />
         )}

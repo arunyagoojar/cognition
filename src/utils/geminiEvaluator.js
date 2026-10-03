@@ -3,147 +3,28 @@
 // Phase 4: Gemini requests run SERVER-SIDE (Cloudflare Worker) with the user's
 // encrypted credential — the browser never holds a raw API key.
 import { getAiCacheItem, setAiCacheItem } from './storage.js';
+import {
+  RUBRIC_VERSION, WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2, buildWritingUserPrompt,
+  buildSpeakingUserPrompt, normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
+} from './ieltsRubric.js';
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
-  primaryModel: 'gemini-flash-latest',
-  fallbackModel: 'gemini-2.5-flash',
+  primaryModel: 'gemini-2.5-flash',
+  fallbackModel: 'gemini-2.0-flash',
   temperature: 0.2,
-  maxOutputTokens: 2048,
-  rateLimitCooldownMs: 60000,
+  maxOutputTokens: 8192,
+  rateLimitCooldownMs: 30000,
 };
 
 let lastRateLimitTime = 0;
 
-export const IELTS_SPEAKING_SYSTEM_PROMPT_V1 = `You are an IELTS Academic Speaking examiner and assessment assistant.
+// Rubric v2 (prompts, validation, band arithmetic) is shared with the Worker.
+export {
+  WRITING_SYSTEM_PROMPT_V2 as IELTS_WRITING_SYSTEM_PROMPT,
+  SPEAKING_SYSTEM_PROMPT_V2 as IELTS_SPEAKING_SYSTEM_PROMPT,
+} from './ieltsRubric.js';
 
-Evaluate the candidate's Speaking performance using the official IELTS Speaking assessment criteria:
-1. Fluency and Coherence
-2. Lexical Resource
-3. Grammatical Range and Accuracy
-4. Pronunciation
-
-Apply the official IELTS-style band descriptors consistently (scale 0.0 to 9.0 in 0.5 increments).
-
-Do not reward or penalize the candidate based on:
-- the opinion they express
-- their personal background
-- accent identity
-- topic preference
-- sophistication of ideas alone
-
-Evaluate the language performance demonstrated by the response.
-
-For Fluency and Coherence, consider:
-- continuity of speech, hesitation, repetition, self-correction, linking, organization of ideas, ability to develop responses.
-
-For Lexical Resource, consider:
-- vocabulary range, precision, appropriacy, collocation, repetition, ability to paraphrase.
-
-For Grammatical Range and Accuracy, consider:
-- sentence variety, grammatical control, errors, complexity, whether errors impede communication.
-
-For Pronunciation:
-- CRITICAL PRONUNCIATION RULE: Do not infer pronunciation quality from transcript text alone.
-- If only a transcript is available, mark pronunciation as requiring audio evidence rather than fabricating an assessment.
-- In that case, set pronunciation.status to "insufficient_audio_evidence", pronunciation.band to null, and calculate overallBand based on the three language criteria.
-
-Return structured JSON ONLY (no markdown fences, no explanatory text):
-{
-  "overallBand": 7.0,
-  "confidence": "high",
-  "criteria": {
-    "fluencyAndCoherence": {
-      "band": 7.0,
-      "evidence": "Direct quote or observed pattern",
-      "rationale": "Justification against band descriptors",
-      "improvementFocus": "Targeted advice"
-    },
-    "lexicalResource": {
-      "band": 7.0,
-      "evidence": "Direct quote or observed pattern",
-      "rationale": "Justification against band descriptors",
-      "improvementFocus": "Targeted advice"
-    },
-    "grammaticalRangeAndAccuracy": {
-      "band": 7.0,
-      "evidence": "Direct quote or observed pattern",
-      "rationale": "Justification against band descriptors",
-      "improvementFocus": "Targeted advice"
-    },
-    "pronunciation": {
-      "status": "insufficient_audio_evidence",
-      "band": null,
-      "evidence": "Text transcripts alone cannot substantiate acoustic phonological features.",
-      "rationale": "Pronunciation assessment strictly requires direct audio frequency examination.",
-      "improvementFocus": "Focus on word stress and connected speech cadence during live recording."
-    }
-  },
-  "overallSummary": "Comprehensive diagnostic overview",
-  "strengths": "Main language assets observed",
-  "areasForImprovement": "Top priorities for band improvement"
-}`;
-
-export const IELTS_WRITING_SYSTEM_PROMPT_V1 = `You are an IELTS Academic Writing examiner and assessment assistant.
-
-Evaluate the candidate's response using the official IELTS Academic Writing assessment criteria:
-For Task 1: Task Achievement, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy.
-For Task 2: Task Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy.
-
-Evaluate the response against the actual task prompt.
-Do not award points merely because the response is long.
-Do not penalize a candidate for expressing an opinion you disagree with.
-
-Evaluate:
-- task fulfillment, relevance, organization, development of ideas, vocabulary, grammar, cohesion, accuracy.
-
-For Task 1 specifically, assess whether the candidate accurately identifies and summarizes the important features of the visual/data prompt where applicable.
-For Task 2 specifically, assess whether the candidate addresses all parts of the question and develops a relevant position.
-
-Base the evaluation on the submitted text only. Do not invent content.
-
-Return structured JSON ONLY (no markdown fences, no explanatory text):
-{
-  "overallBand": 7.0,
-  "task1Band": 7.0,
-  "task2Band": 7.0,
-  "confidence": "high",
-  "criteria": {
-    "taskAchievement": {
-      "band": 7.0,
-      "evidence": "Specific evidence from Task 1 and Task 2",
-      "rationale": "Fulfillment of prompt requirements",
-      "improvementFocus": "Targeted advice"
-    },
-    "coherenceAndCohesion": {
-      "band": 7.0,
-      "evidence": "Paragraphing and cohesive device usage",
-      "rationale": "Logical progression of ideas",
-      "improvementFocus": "Targeted advice"
-    },
-    "lexicalResource": {
-      "band": 7.0,
-      "evidence": "Collocations and academic terms used",
-      "rationale": "Precision and lexical range",
-      "improvementFocus": "Targeted advice"
-    },
-    "grammaticalRangeAndAccuracy": {
-      "band": 7.0,
-      "evidence": "Complex sentences and grammatical control",
-      "rationale": "Error frequency and syntactic variety",
-      "improvementFocus": "Targeted advice"
-    }
-  },
-  "overallSummary": "Comprehensive assessment of the writing submission",
-  "task1Feedback": "Detailed feedback on Task 1 report",
-  "task2Feedback": "Detailed feedback on Task 2 essay",
-  "strengths": "Observed strengths in writing",
-  "areasForImprovement": "Key steps to raise score"
-}`;
-
-/**
- * Fast deterministic string hashing (DJB2) for request deduplication and caching.
- */
 export function hashContent(str) {
   let hash = 5381;
   for (let i = 0; i < str.length; i++) {
@@ -183,130 +64,55 @@ function extractJsonFromText(text) {
 }
 
 /**
- * Validates Speaking evaluation JSON schema.
+ * Direct browser→Gemini call — ONLY used in local-key privacy mode, where the
+ * key lives on this device and never reaches any server.
  */
-export function validateSpeakingEvaluationJson(data) {
-  if (!data || typeof data !== 'object') return null;
-
-  const band = Number(data.overallBand);
-  if (isNaN(band) || band < 0 || band > 9.0) return null;
-
-  if (!data.criteria || typeof data.criteria !== 'object') return null;
-
-  const fc = data.criteria.fluencyAndCoherence?.band;
-  const lr = data.criteria.lexicalResource?.band;
-  const gr = (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange)?.band;
-
-  if (typeof fc !== 'number' || typeof lr !== 'number' || typeof gr !== 'number') {
-    return null;
+async function directGeminiCall(systemPrompt, userPrompt, localKey) {
+  for (const mdl of [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel].filter(Boolean)) {
+    try {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': localKey },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemPrompt }] },
+          contents: [{ parts: [{ text: userPrompt }] }],
+          generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
+        }),
+      });
+      if (r.status === 429) { lastRateLimitTime = Date.now(); break; }
+      if (r.ok) {
+        const data = await r.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        const parsed = extractJsonFromText(text);
+        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl };
+      }
+    } catch { /* try fallback model */ }
   }
-
-  // Normalize structure
-  return {
-    overallBand: Math.round(band * 2) / 2,
-    confidence: data.confidence || 'high',
-    criteria: {
-      fluencyAndCoherence: {
-        band: Math.round(fc * 2) / 2,
-        evidence: data.criteria.fluencyAndCoherence.evidence || '',
-        rationale: data.criteria.fluencyAndCoherence.rationale || '',
-        improvementFocus: data.criteria.fluencyAndCoherence.improvementFocus || '',
-      },
-      lexicalResource: {
-        band: Math.round(lr * 2) / 2,
-        evidence: data.criteria.lexicalResource.evidence || '',
-        rationale: data.criteria.lexicalResource.rationale || '',
-        improvementFocus: data.criteria.lexicalResource.improvementFocus || '',
-      },
-      grammaticalRangeAndAccuracy: {
-        band: Math.round(gr * 2) / 2,
-        evidence: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).evidence || '',
-        rationale: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).rationale || '',
-        improvementFocus: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).improvementFocus || '',
-      },
-      pronunciation: {
-        status: data.criteria.pronunciation?.status || 'insufficient_audio_evidence',
-        band: typeof data.criteria.pronunciation?.band === 'number' ? Math.round(data.criteria.pronunciation.band * 2) / 2 : null,
-        evidence: data.criteria.pronunciation?.evidence || 'Audio waveform examination required.',
-        rationale: data.criteria.pronunciation?.rationale || 'Transcript text alone cannot verify pronunciation.',
-        improvementFocus: data.criteria.pronunciation?.improvementFocus || 'Practice stress and intonation during speech recording.',
-      },
-    },
-    overallSummary: data.overallSummary || '',
-    strengths: data.strengths || '',
-    areasForImprovement: data.areasForImprovement || '',
-    sentenceImprovements: Array.isArray(data.sentenceImprovements)
-      ? data.sentenceImprovements
-          .filter(si => si && typeof si.original === 'string' && typeof si.suggestion === 'string')
-          .slice(0, 4)
-          .map(si => ({ original: si.original, suggestion: si.suggestion, reason: si.reason || '' }))
-      : [],
-  };
+  return { status: 'failed', message: 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.' };
 }
 
 /**
- * Validates Writing evaluation JSON schema.
+ * Speaking evaluation: accepts a server result already normalized by the
+ * shared rubric, or raw model JSON (local-key mode) which is normalized here.
  */
-export function validateWritingEvaluationJson(data) {
-  if (!data || typeof data !== 'object') return null;
-
-  const band = Number(data.overallBand);
-  if (isNaN(band) || band < 0 || band > 9.0) return null;
-
-  if (!data.criteria || typeof data.criteria !== 'object') return null;
-
-  const ta = (data.criteria.taskAchievement || data.criteria.taskResponse)?.band;
-  const cc = data.criteria.coherenceAndCohesion?.band;
-  const lr = data.criteria.lexicalResource?.band;
-  const gr = (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange)?.band;
-
-  if (typeof ta !== 'number' || typeof cc !== 'number' || typeof lr !== 'number' || typeof gr !== 'number') {
-    return null;
+export function validateSpeakingEvaluationJson(data) {
+  if (data && data.rubricVersion === RUBRIC_VERSION) {
+    const b = Number(data.overallBand);
+    return Number.isFinite(b) && b >= 0 && b <= 9 && data.criteria ? data : null;
   }
+  return normalizeSpeakingEvaluation(data, { audioAssessed: false });
+}
 
-  return {
-    overallBand: Math.round(band * 2) / 2,
-    task1Band: typeof data.task1Band === 'number' ? Math.round(data.task1Band * 2) / 2 : Math.round(band * 2) / 2,
-    task2Band: typeof data.task2Band === 'number' ? Math.round(data.task2Band * 2) / 2 : Math.round(band * 2) / 2,
-    confidence: data.confidence || 'high',
-    criteria: {
-      taskAchievement: {
-        band: Math.round(ta * 2) / 2,
-        evidence: (data.criteria.taskAchievement || data.criteria.taskResponse).evidence || '',
-        rationale: (data.criteria.taskAchievement || data.criteria.taskResponse).rationale || '',
-        improvementFocus: (data.criteria.taskAchievement || data.criteria.taskResponse).improvementFocus || '',
-      },
-      coherenceAndCohesion: {
-        band: Math.round(cc * 2) / 2,
-        evidence: data.criteria.coherenceAndCohesion.evidence || '',
-        rationale: data.criteria.coherenceAndCohesion.rationale || '',
-        improvementFocus: data.criteria.coherenceAndCohesion.improvementFocus || '',
-      },
-      lexicalResource: {
-        band: Math.round(lr * 2) / 2,
-        evidence: data.criteria.lexicalResource.evidence || '',
-        rationale: data.criteria.lexicalResource.rationale || '',
-        improvementFocus: data.criteria.lexicalResource.improvementFocus || '',
-      },
-      grammaticalRangeAndAccuracy: {
-        band: Math.round(gr * 2) / 2,
-        evidence: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).evidence || '',
-        rationale: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).rationale || '',
-        improvementFocus: (data.criteria.grammaticalRangeAndAccuracy || data.criteria.grammaticalRange).improvementFocus || '',
-      },
-    },
-    overallSummary: data.overallSummary || '',
-    task1Feedback: data.task1Feedback || '',
-    task2Feedback: data.task2Feedback || '',
-    strengths: data.strengths || '',
-    areasForImprovement: data.areasForImprovement || '',
-    sentenceImprovements: Array.isArray(data.sentenceImprovements)
-      ? data.sentenceImprovements
-          .filter(si => si && typeof si.original === 'string' && typeof si.suggestion === 'string')
-          .slice(0, 4)
-          .map(si => ({ original: si.original, suggestion: si.suggestion, reason: si.reason || '' }))
-      : [],
-  };
+/**
+ * Writing evaluation: same contract as Speaking. Raw JSON needs the word
+ * counts (≤20 words → Band 1; absent task → Band 0).
+ */
+export function validateWritingEvaluationJson(data, { task1Words = 0, task2Words = 0 } = {}) {
+  if (data && data.rubricVersion === RUBRIC_VERSION) {
+    const b = Number(data.overallBand);
+    return Number.isFinite(b) && b >= 0 && b <= 9 && data.criteria ? data : null;
+  }
+  return normalizeWritingEvaluation(data, { task1Words, task2Words });
 }
 
 /**
@@ -351,17 +157,33 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     };
   }
 
-  const t1Words = t1Clean ? t1Clean.split(/\s+/).length : 0;
-  const t2Words = t2Clean ? t2Clean.split(/\s+/).length : 0;
+  const t1Words = countWords(t1Clean);
+  const t2Words = countWords(t2Clean);
 
-  const res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
+  let res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();
   }
 
-  const validated = res?.status === 'completed' ? validateWritingEvaluationJson(res.evaluation) : null;
-  const model = res?.model || 'gemini';
+  let model = res?.model || 'gemini';
+  // Local-key privacy mode or server fallback: if the server couldn't evaluate
+  // and a local key exists on this device, run evaluation directly from the browser.
+  if (res?.status === 'failed') {
+    const { getLocalGeminiKey } = await import('./storage.js');
+    const localKey = getLocalGeminiKey();
+    if (localKey) {
+      const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean });
+      const direct = await directGeminiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt, localKey);
+      if (direct.status === 'completed') {
+        res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+        model = direct.model || 'gemini';
+      }
+    }
+  }
+
+  const validated = res?.status === 'completed'
+    ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words }) : null;
 
   if (validated) {
     // Coverage honesty: a meaningful attempt is defined by word floors.
@@ -484,14 +306,27 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     };
   }
 
-  const res = await evaluateSpeakingServer({ transcripts, testMeta });
+  let res = await evaluateSpeakingServer({ transcripts, testMeta });
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();
   }
 
+  let model = res?.model || 'gemini';
+  if (res?.status === 'failed') {
+    const { getLocalGeminiKey } = await import('./storage.js');
+    const localKey = getLocalGeminiKey();
+    if (localKey) {
+      const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
+      const direct = await directGeminiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt, localKey);
+      if (direct.status === 'completed') {
+        res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+        model = direct.model || 'gemini';
+      }
+    }
+  }
+
   const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation) : null;
-  const model = res?.model || 'gemini';
 
   if (validated) {
     const finalResult = {

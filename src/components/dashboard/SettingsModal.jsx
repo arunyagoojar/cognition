@@ -12,7 +12,6 @@ export default function SettingsModal({
   targetBand,
   onChangeTargetBand,
   onResetScores,
-  onReplayOnboarding
 }) {
   const [credentialStatus, setCredentialStatus] = useState(null); // { configured, maskedSuffix }
   const [keyInput, setKeyInput] = useState('');
@@ -59,8 +58,13 @@ export default function SettingsModal({
     invalidateCredentialStatusCache();
 
     if (res.ok) {
-      setCredentialStatus({ configured: true, maskedSuffix: res.maskedSuffix });
-      setValidationStatus({ success: true, message: '✓ Gemini key saved — encrypted on the server' });
+      setCredentialStatus({ configured: true, maskedSuffix: res.maskedSuffix, local: res.local });
+      setValidationStatus({
+        success: true,
+        message: res.local
+          ? `✓ ${res.message}`
+          : '✓ Gemini key saved — encrypted on the server',
+      });
       // A locally stored duplicate would now be redundant.
       setLegacyKeys((prev) => {
         if (prev?.gemini || prev?.groq) {
@@ -75,12 +79,18 @@ export default function SettingsModal({
 
   const handleDeleteKey = async () => {
     setIsValidating(true);
+    const wasLocal = Boolean(credentialStatus?.local);
+    const { removeLocalGeminiKey } = await import('../../utils/storage');
+    removeLocalGeminiKey();
     const res = await deleteCredential('gemini');
     setIsValidating(false);
     invalidateCredentialStatusCache();
-    if (res.ok) {
+    if (res.ok || wasLocal) {
       setCredentialStatus({ configured: false });
-      setValidationStatus({ success: true, message: 'Gemini key removed from the server.' });
+      setValidationStatus({
+        success: true,
+        message: wasLocal ? 'Gemini key removed from this device.' : 'Gemini key removed from the server.',
+      });
     } else {
       setValidationStatus({ success: false, message: 'Could not remove the key. Please try again.' });
     }
@@ -219,43 +229,13 @@ export default function SettingsModal({
               </select>
             </div>
 
-            {/* 2b. Replay the introduction (onboarding) */}
-            {onReplayOnboarding && (
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>Introduction</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Revisit the welcome tour</div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => { onClose(); onReplayOnboarding(); }}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    padding: '8px 14px',
-                    fontSize: 13,
-                    fontWeight: 600,
-                    background: 'var(--surface-alt)',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border)',
-                    borderRadius: 'var(--r-btn)',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <Icon name="play" size={13} />
-                  <span>Replay intro</span>
-                </button>
-              </div>
-            )}
-
             {/* 3. AI Configuration (Gemini — encrypted server-side credential) */}
             <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 8 }}>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>AI Configuration</div>
                   <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-                    Gemini key for Writing &amp; Speaking evaluation — encrypted (AES-256-GCM) on the server
+                    Gemini key for Writing &amp; Speaking evaluation — encrypted (AES-256-GCM) on the server. If secure cloud storage is ever unavailable, it is kept only in this browser instead.
                   </div>
                   <a
                     href="https://aistudio.google.com/app/apikey"
@@ -271,15 +251,13 @@ export default function SettingsModal({
                       gap: 4,
                       marginTop: 4
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.textDecoration = 'underline'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.textDecoration = 'none'; }}
                   >
                     Get free Gemini API key ↗
                   </a>
                 </div>
                 {credentialStatus?.configured && (
                   <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
-                    <Icon name="check" size={12} /> Configured
+                    <Icon name="check" size={12} /> {credentialStatus.local ? 'Configured (on this device)' : 'Configured'}
                   </span>
                 )}
               </div>
@@ -300,7 +278,7 @@ export default function SettingsModal({
                     color: 'var(--text-primary)', background: 'var(--surface-sunken)',
                     border: '1px solid var(--border)', borderRadius: 'var(--r-btn)'
                   }}>
-                    Gemini API · {credentialStatus.maskedSuffix || '••••'}
+                    Gemini API · {credentialStatus.maskedSuffix || '••••'}{credentialStatus.local ? ' (on this device)' : ''}
                   </span>
                   <button
                     type="button"
@@ -370,6 +348,12 @@ export default function SettingsModal({
                       Cancel
                     </button>
                   )}
+                </div>
+              )}
+
+              {credentialStatus?.configured && credentialStatus.local && !isReplacing && (
+                <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-secondary)' }}>
+                  Stored locally on this device only — never sent to Cognition&apos;s servers. AI evaluation runs directly from this browser.
                 </div>
               )}
 

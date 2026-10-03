@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useUser, useReverification } from '@clerk/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useUser, useClerk, useReverification } from '@clerk/react';
 import { isReverificationCancelledError } from '@clerk/react/errors';
 import Icon from '../common/Icon';
-import { deleteAccountData } from '../../utils/api';
+import { requestAccountDeletion } from '../../utils/api';
 
 export default function AccountModal({ isOpen, onClose }) {
   const { user, isLoaded } = useUser();
-  // Wraps destructive Clerk calls: when the session is stale, Clerk opens its
-  // re-verification modal (password / email code) and retries on success.
-  const deleteWithVerification = useReverification();
+  const { signOut } = useClerk();
+  // Wraps the deletion request: when the Worker answers 403 "reverification
+  // required" (session not recently verified), Clerk opens its verification
+  // modal (password / email code) and automatically retries on success.
+  const deleteWithVerification = useReverification(requestAccountDeletion);
 
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -28,29 +30,32 @@ export default function AccountModal({ isOpen, onClose }) {
   };
 
   const handleDeleteAccount = async () => {
-    if (!user) return;
+    if (!user || isDeleting) return;
     try {
       setIsDeleting(true);
       setDeleteError(null);
-      // 1. Purge Cloudflare-stored data while the session token is still valid.
-      //    Never delete the Clerk account first — the session powers this call,
-      //    and orphaned server data is worse than a retryable step.
-      const purge = await deleteAccountData();
-      if (!purge.ok) {
-        throw new Error(purge.networkError
-          ? 'Couldn’t reach the server to erase your saved data. Check your connection and try again — your account has not been deleted.'
-          : (purge.message || 'Could not delete your saved data. Please try again.'));
+      // The Worker (a) requires a freshly verified session, (b) erases every
+      // stored record atomically, then (c) deletes the Clerk account server-
+      // side. A failure at any step is reported — never shown as success.
+      const result = await deleteWithVerification();
+      if (!result?.deleted) {
+        throw new Error(result?.error || 'Could not delete your account. Please try again.');
       }
-      // 2. Delete the Clerk account — may require identity re-verification.
-      await deleteWithVerification(() => user.delete());
       clearLocalData();
-      // Clerk cleans up the session automatically after account deletion.
       onClose();
+      try {
+        await signOut({ redirectUrl: '/' });
+      } catch { /* the session is already gone with the account */ }
+      window.location.replace('/');
     } catch (err) {
       if (isReverificationCancelledError(err)) {
         setDeleteError('Verification cancelled — your account was not deleted.');
+      } else if (err instanceof TypeError) {
+        setDeleteError('Couldn’t reach the server. Check your connection and try again — your account has not been deleted.');
+      } else if (err instanceof SyntaxError) {
+        setDeleteError('Unexpected response from the server. Please try again — it is safe to repeat.');
       } else {
-        console.error('Failed to delete account:', err);
+        console.error('Failed to delete account:', err?.message || err);
         setDeleteError(err?.message || 'Failed to delete account. Please try again.');
       }
       setIsDeleting(false);
@@ -146,7 +151,7 @@ export default function AccountModal({ isOpen, onClose }) {
                   </div>
                   <p className="account-confirm-desc">
                     This will permanently delete your account, saved test scores, and learning progress. This cannot be undone.
-                    For security, you&apos;ll be asked to verify your identity first.
+                    For security, if your sign-in isn&apos;t recent you&apos;ll be asked to verify your identity first.
                   </p>
                   <div className="account-confirm-actions">
                     <button

@@ -5,11 +5,11 @@ import { saveCredential, fetchCredentialStatus, hasApiAuth } from '../../utils/a
 import { invalidateCredentialStatusCache } from '../../utils/storage';
 
 // ─── First-run onboarding ────────────────────────────────────────────────────
-// Six concise screens after login: welcome → what you get → how AI works →
-// Gemini API key → theme → final. Typographic motion, minimal chrome.
+// Seven concise screens after login: welcome → what you get → target band →
+// how AI works → Gemini API key → theme → final. Typographic motion, minimal chrome.
 // Completion/skip is persisted per user by the caller via onComplete.
 
-const STEPS = ['welcome', 'features', 'ai', 'apikey', 'theme', 'final'];
+const STEPS = ['welcome', 'features', 'target', 'ai', 'apikey', 'theme', 'final'];
 
 // Word-by-word typographic entrance (the primary onboarding motion)
 function AnimatedWords({ text, className, delayBase = 0.1, as: Tag = 'span' }) {
@@ -94,7 +94,63 @@ function FeaturesStep() {
   );
 }
 
-// ── Step 3: How AI works ──
+// ── Step 3: Target Band ──
+const TARGET_OPTIONS = [
+  { band: '6.0', label: 'Band 6.0', desc: 'Competent User' },
+  { band: '6.5', label: 'Band 6.5', desc: 'Good Foundation' },
+  { band: '7.0', label: 'Band 7.0', desc: 'Good User · Most University Targets' },
+  { band: '7.5', label: 'Band 7.5', desc: 'Advanced Academic' },
+  { band: '8.0', label: 'Band 8.0', desc: 'Very Good User · High Proficiency' },
+  { band: '8.5', label: 'Band 8.5+', desc: 'Expert User' },
+];
+
+function TargetStep({ targetBand, onChangeTargetBand }) {
+  const reduceMotion = useReducedMotion();
+  const currentBand = String(targetBand || '8.0');
+
+  return (
+    <div className="ob-step ob-step-target">
+      <h1 className="ob-heading" tabIndex={-1}>What band score are you aiming for?</h1>
+      <p className="ob-step-lede">
+        Cognition personalizes your evaluation criteria, benchmark gaps, and study recommendations to your target score.
+      </p>
+
+      <motion.div
+        className="ob-target-grid"
+        initial="hidden"
+        animate="show"
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.04 } } }}
+      >
+        {TARGET_OPTIONS.map(opt => {
+          const isSelected = currentBand === opt.band || (opt.band === '8.5' && parseFloat(currentBand) >= 8.5);
+          return (
+            <motion.button
+              key={opt.band}
+              type="button"
+              className={`ob-target-card ${isSelected ? 'selected' : ''}`}
+              onClick={() => onChangeTargetBand?.(opt.band)}
+              variants={reduceMotion ? {} : { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.3 } } }}
+            >
+              <div className="ob-target-score">{opt.band}</div>
+              <div className="ob-target-meta">
+                <div className="ob-target-label">{opt.label}</div>
+                <div className="ob-target-desc">{opt.desc}</div>
+              </div>
+              {isSelected && (
+                <span className="ob-target-check" aria-hidden="true">
+                  <Icon name="check" size={14} />
+                </span>
+              )}
+            </motion.button>
+          );
+        })}
+      </motion.div>
+      <p className="ob-support">You can adjust your target band score anytime in Settings.</p>
+    </div>
+  );
+}
+
+// ── Step 4: How AI works ──
 const SPEAKING_PIPELINE = [
   { label: 'You speak', text: 'Answer the examiner’s questions out loud.' },
   { label: 'Recorded', text: 'Cognition records your response locally.' },
@@ -144,14 +200,13 @@ function AiStep() {
 // ── Step 4: API key ──
 function ApiKeyStep() {
   const reduceMotion = useReducedMotion();
-  const [phase, setPhase] = useState('checking'); // checking | missing | configured | saving | saved | noauth
+  const [phase, setPhase] = useState(() => (hasApiAuth() ? 'checking' : 'noauth')); // checking | missing | configured | saving | saved | noauth
   const [keyInput, setKeyInput] = useState('');
   const [message, setMessage] = useState(null); // { success, text }
 
   useEffect(() => {
     let alive = true;
     if (!hasApiAuth()) {
-      setPhase('noauth');
       return undefined;
     }
     fetchCredentialStatus('gemini')
@@ -173,14 +228,17 @@ function ApiKeyStep() {
     invalidateCredentialStatusCache();
     if (res.ok) {
       setPhase('configured');
-      setMessage({ success: true, text: 'Your key is connected.' });
+      setMessage({
+        success: true,
+        text: res.local
+          ? res.message
+          : 'Your key is connected.',
+      });
     } else {
       setPhase('missing');
       setMessage({
         success: false,
-        text: res.unauthenticated
-          ? 'Sign-in isn’t available right now — you can add your key later from Settings.'
-          : (res.message || 'Could not save the key. Please try again.'),
+        text: res.message || 'Could not save the key. Please try again.',
       });
     }
   };
@@ -245,7 +303,7 @@ function ApiKeyStep() {
 
       <motion.p className="ob-security-note" {...fadeItem(reduceMotion, 0.35)}>
         <Icon name="eyeOff" size={13} />
-        Your key is securely stored and is not placed in your browser or included in your public app data.
+        Your key is stored encrypted on the server, never in your public app data. If secure cloud storage is unavailable, it stays only in this browser.
         {(phase === 'missing' || phase === 'noauth') && ' You can skip for now — add it later from Settings. Nothing is blocked.'}
       </motion.p>
     </div>
@@ -332,7 +390,7 @@ function FinalStep() {
 
 // ─── Shell ───────────────────────────────────────────────────────────────────
 
-export default function Onboarding({ theme, onChangeTheme, onComplete }) {
+export default function Onboarding({ theme, onChangeTheme, targetBand = '8.0', onChangeTargetBand, onComplete }) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const reduceMotion = useReducedMotion();
@@ -408,10 +466,11 @@ export default function Onboarding({ theme, onChangeTheme, onComplete }) {
           >
             {index === 0 && <WelcomeStep />}
             {index === 1 && <FeaturesStep />}
-            {index === 2 && <AiStep />}
-            {index === 3 && <ApiKeyStep />}
-            {index === 4 && <ThemeStep theme={theme} onChangeTheme={onChangeTheme} />}
-            {index === 5 && <FinalStep />}
+            {index === 2 && <TargetStep targetBand={targetBand} onChangeTargetBand={onChangeTargetBand} />}
+            {index === 3 && <AiStep />}
+            {index === 4 && <ApiKeyStep />}
+            {index === 5 && <ThemeStep theme={theme} onChangeTheme={onChangeTheme} />}
+            {index === 6 && <FinalStep />}
           </motion.div>
         </AnimatePresence>
       </div>

@@ -1,9 +1,6 @@
 import React from 'react';
 import Icon from '../common/Icon';
 import { LEARNING_SKILLS } from '../../data/learningCatalog';
-import FocusAreas from './FocusAreas.jsx';
-import { deriveWeaknesses } from '../../utils/insights.js';
-import { getPerformanceStore } from '../../utils/performanceStore.js';
 
 export default function PerformanceOverview({
   scores,
@@ -11,12 +8,8 @@ export default function PerformanceOverview({
   completedLessons,
   onOpenLearningHub,
   onOpenPerformance,
-  onOpenLesson,
   onOpenTips,
-  onStartPractice
 }) {
-  const targetNum = parseFloat(targetBand) || 8.0;
-  const { focusAreas, sufficientData } = deriveWeaknesses(getPerformanceStore().attempts || [], targetBand);
 
   // Calculate total lessons and completed count
   const allLessons = LEARNING_SKILLS.flatMap(s => s.lessons || []);
@@ -162,24 +155,6 @@ export default function PerformanceOverview({
               );
             })}
           </div>
-        </div>
-
-        {/* Target journey + focus areas (deterministic — no AI, no fabrication) */}
-        <div className="perf-journey" style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid var(--border-subtle)' }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 6 }}>
-            Your target: <strong style={{ color: 'var(--text-primary)' }}>{targetBand}</strong>
-          </div>
-          <FocusAreas
-            focusAreas={focusAreas}
-            onOpenLesson={(id) => { onOpenLesson?.(id); }}
-            onOpenTips={(skill, cat) => { onOpenTips?.(skill, cat); }}
-            onStartPractice={onStartPractice}
-          />
-          {!sufficientData && focusAreas.length === 0 && (
-            <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-              Complete a few tests — personalised focus areas appear here.
-            </div>
-          )}
         </div>
 
         <div className="perf-card-footer">

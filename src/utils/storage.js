@@ -294,6 +294,7 @@ export function invalidateCredentialStatusCache() {
 }
 
 export async function isAiConfigured() {
+  if (hasLocalGeminiKey()) return true; // device-stored key (privacy mode)
   if (credentialStatusCache !== null) {
     return Boolean(credentialStatusCache.configured);
   }
@@ -302,8 +303,60 @@ export async function isAiConfigured() {
     credentialStatusCache = await fetchCredentialStatus('gemini');
     return Boolean(credentialStatusCache?.configured);
   } catch {
-    return false;
+    return hasLocalGeminiKey();
   }
+}
+
+// ── Local Gemini key fallback (privacy mode) ───────────────────────────────
+// When Cognition's secure cloud storage cannot be used, the key can be kept
+// ONLY on this device. It is never sent to Cognition's servers, and AI
+// evaluation runs directly from the browser. It is bound to the signed-in
+// account, so another user on the same browser never sees or uses it.
+
+const LOCAL_GEMINI_KEY = `${STORAGE_KEY_PREFIX}local_gemini_key`;
+let localKeyScope = '';
+
+// Called by the API layer whenever the Clerk session (user id) is known.
+export function setLocalKeyScope(userId) {
+  localKeyScope = userId || '';
+}
+
+function readLocalKeyRecord() {
+  try {
+    const raw = localStorage.getItem(LOCAL_GEMINI_KEY);
+    if (!raw) return null;
+    const rec = JSON.parse(raw);
+    return rec && typeof rec.key === 'string' ? rec : null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveLocalGeminiKey(key) {
+  if (!localKeyScope) return false;
+  try {
+    localStorage.setItem(LOCAL_GEMINI_KEY, JSON.stringify({ uid: localKeyScope, key: (key || '').trim() }));
+    return true;
+  } catch {
+    return false; // storage unavailable (private mode / quota)
+  }
+}
+
+export function getLocalGeminiKey() {
+  const rec = readLocalKeyRecord();
+  return rec && localKeyScope && rec.uid === localKeyScope ? rec.key : '';
+}
+
+export function removeLocalGeminiKey() {
+  try {
+    const rec = readLocalKeyRecord();
+    // Only ever remove the current user's own key.
+    if (!rec || rec.uid === localKeyScope) localStorage.removeItem(LOCAL_GEMINI_KEY);
+  } catch { /* best-effort */ }
+}
+
+export function hasLocalGeminiKey() {
+  return Boolean(getLocalGeminiKey());
 }
 
 export function getTargetBand() {

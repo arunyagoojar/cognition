@@ -33,9 +33,41 @@ export default function QuestionRenderer({ question, value, onChange }) {
 
   const renderInput = () => {
     switch (inputType || 'text') {
+      case 'dropdown':
       case 'single_select':
       case 'map_select': {
         if (options && options.length > 0) {
+          if (options.length > 5) {
+            return (
+              <div style={{ marginTop: 6 }}>
+                <select
+                  value={value || ''}
+                  onChange={handleChange}
+                  className="cognition-exam-select"
+                  style={{
+                    padding: '9px 14px',
+                    borderRadius: 8,
+                    border: '1.5px solid var(--border-subtle)',
+                    background: 'var(--bg-card)',
+                    color: 'var(--text-primary)',
+                    fontSize: 13,
+                    fontWeight: 600,
+                    width: '100%',
+                    maxWidth: 420,
+                    cursor: 'pointer'
+                  }}
+                  aria-label={`Question ${questionNumber}`}
+                >
+                  <option value="">Select option / heading...</option>
+                  {options.map(o => (
+                    <option key={o.id} value={o.id}>
+                      {o.id}. {o.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            );
+          }
           const long = options.some(o => (o.label || '').length > 28);
           return (
             <div className={long ? 'q-option-list' : 'q-option-chips'} role="radiogroup" aria-label={`Question ${questionNumber}`}>

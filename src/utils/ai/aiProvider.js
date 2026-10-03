@@ -8,6 +8,7 @@
 
 import { evaluateWritingServer, evaluateSpeakingServer } from '../api.js';
 import { validateWritingEvaluationJson, validateSpeakingEvaluationJson } from '../geminiEvaluator.js';
+import { countWords } from '../ieltsRubric.js';
 
 export { logDiagnostic } from './diagnostics.js';
 
@@ -31,11 +32,12 @@ export class AIProvider {
       };
     }
 
-    const t1Words = t1Clean ? t1Clean.split(/\s+/).length : 0;
-    const t2Words = t2Clean ? t2Clean.split(/\s+/).length : 0;
+    const t1Words = countWords(t1Clean);
+    const t2Words = countWords(t2Clean);
 
     const res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
-    const validated = res?.status === 'completed' ? validateWritingEvaluationJson(res.evaluation) : null;
+    const validated = res?.status === 'completed'
+      ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words }) : null;
 
     if (validated) {
       return {
@@ -47,6 +49,10 @@ export class AIProvider {
         task1Words: t1Words,
         task2Words: t2Words,
         criteria: validated.criteria,
+        taskCriteria: validated.taskCriteria || null,
+        scoringNotes: validated.scoringNotes || [],
+        scoringMethod: validated.scoringMethod || null,
+        rubricVersion: validated.rubricVersion || null,
         task1Feedback: validated.task1Feedback,
         task2Feedback: validated.task2Feedback,
         overallSummary: validated.overallSummary,
@@ -93,6 +99,10 @@ export class AIProvider {
         band: validated.overallBand,
         overallBand: validated.overallBand,
         criteria: validated.criteria,
+        provisional: Boolean(validated.provisional),
+        scoringMethod: validated.scoringMethod || null,
+        partFeedback: validated.partFeedback || {},
+        rubricVersion: validated.rubricVersion || null,
         overallSummary: validated.overallSummary,
         strengths: validated.strengths,
         areasForImprovement: validated.areasForImprovement,

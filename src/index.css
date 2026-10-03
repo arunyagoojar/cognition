@@ -3325,10 +3325,27 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .audio-player-cognition {
   background: var(--surface-elevated);
 }
-[data-theme="dark"] textarea,
+/* Writing response textarea: authentic exam paper ensures crisp dark text on white sheet */
+textarea {
+  color: #151313;
+  caret-color: #151313;
+}
+textarea::placeholder {
+  color: #737373;
+}
+
+[data-theme="dark"] textarea {
+  color: #151313 !important;
+  caret-color: #151313 !important;
+}
+
 [data-theme="dark"] .speaking-notes-area {
   background: var(--surface-interactive);
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
+  caret-color: var(--text-primary) !important;
+}
+[data-theme="dark"] .speaking-notes-area::placeholder {
+  color: var(--text-muted) !important;
 }
 
 /* ─── Dark mode: check icons + success states visible on dark surfaces ── */
@@ -5298,6 +5315,77 @@ p.reading-section-label {
   border-radius: 8px;
 }
 
+/* Step: Target Band */
+.ob-target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 18px 0;
+}
+@media (max-width: 520px) {
+  .ob-target-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ob-target-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all var(--dur-hover) ease;
+}
+.ob-target-card:hover {
+  transform: translateY(-2px);
+  border-color: #151313;
+}
+.ob-target-card.selected {
+  border-color: var(--c-coral);
+  background: rgba(255, 87, 52, 0.06);
+  box-shadow: 0 2px 0 var(--c-coral);
+}
+.ob-target-score {
+  font-family: 'Kodchasan', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  min-width: 46px;
+}
+.ob-target-card.selected .ob-target-score {
+  color: var(--c-coral);
+}
+.ob-target-meta {
+  flex: 1;
+}
+.ob-target-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ob-target-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.ob-target-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--c-coral);
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
 /* Step 3: AI pipeline */
 .ob-pipeline {
   list-style: none;
@@ -5983,3 +6071,142 @@ p.reading-section-label {
   background: var(--surface-sunken); border: 1px solid var(--border-light);
 }
 .review-answer-chip.is-key { border-color: color-mix(in srgb, var(--success-icon) 45%, transparent); }
+.mock-skill-evidence { margin-top: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-secondary); }
+/* Inline answer blanks inside hanging-indent lines (bullets): the inline-block
+   inherited text-indent:-12px, which pulled the number badge over the previous
+   word and pushed the digit off-centre. Blanks never inherit the indent. */
+.inline-blank, .inline-blank * { text-indent: 0; }
+.inline-blank { margin: 2px 4px 2px 6px; vertical-align: middle; }
+.inline-blank .q-num-badge { justify-content: center; text-align: center; margin-right: 6px; font-family: var(--font-family); }
+
+/* ─── Exam text size + Writing split view ─────────────────────────────── */
+.text-size-control {
+  display: inline-flex; align-items: center; border: 1.5px solid var(--border-color);
+  border-radius: var(--r-pill); overflow: hidden; background: var(--bg-card);
+}
+.text-size-control button {
+  display: inline-flex; align-items: baseline; gap: 1px; min-width: 38px; min-height: 36px;
+  justify-content: center; padding: 0 8px; border: none; background: transparent; cursor: pointer;
+  font-family: var(--font-family); font-weight: 800; color: var(--text-primary);
+}
+.text-size-control button + button { border-left: 1px solid var(--border-light); }
+.text-size-control button:disabled { color: var(--text-tertiary); cursor: default; }
+.text-size-control button:hover:not(:disabled) { background: var(--surface-hover); }
+.text-size-control button:focus-visible { outline: 3px solid color-mix(in srgb, var(--c-coral) 55%, transparent); outline-offset: -3px; }
+@media (max-width: 640px) { .text-size-control button { min-width: 44px; min-height: 44px; } }
+
+/* passage, stimulus and question text follow the chosen size */
+.reading-split-panes { --exam-text-scale: 1; }
+.reading-split-panes .rd-para { font-size: calc(17px * var(--exam-text-scale)); }
+.reading-split-panes .rd-subheading { font-size: calc(16px * var(--exam-text-scale)); }
+.reading-split-panes .rd-stimulus { font-size: calc(16px * var(--exam-text-scale)); }
+.reading-split-panes .rd-q-stem,
+.reading-split-panes .rd-sentence { font-size: calc(15.5px * var(--exam-text-scale)); }
+.reading-split-panes .rd-choice,
+.reading-split-panes .rd-pool li { font-size: calc(15px * var(--exam-text-scale)); }
+.reading-split-panes .rd-group-instr { font-size: calc(14.5px * var(--exam-text-scale)); }
+
+.writing-split .wr-prompt { font-size: calc(16px * var(--exam-text-scale)); line-height: 1.65; color: var(--text-primary); }
+.writing-split .wr-prompt table { margin-top: 12px; }
+.writing-split .wr-visual { width: 100%; max-width: 620px; display: block; margin: 18px auto 0; border-radius: 10px; border: 1px solid var(--border-light); background: #fff; }
+.writing-split .wr-answer { display: flex; flex-direction: column; gap: 12px; min-height: 100%; }
+.writing-split .wr-count {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  font-size: 13px; font-weight: 600; color: var(--text-secondary);
+}
+.writing-split .wr-count strong { color: var(--text-primary); }
+.writing-split .wr-count span:last-child { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: var(--c-coral); }
+.writing-split .wr-count span.is-met { color: var(--success-icon); }
+.writing-split .wr-editor {
+  flex: 1; width: 100%; min-height: 360px; resize: none; padding: 16px 18px;
+  font-family: var(--font-exam); font-size: calc(16px * var(--exam-text-scale)); line-height: 1.7;
+  border-radius: 14px; border: 1.5px solid var(--border-color); background: #fff; color: #151313;
+}
+.writing-split .wr-editor:focus { outline: none; border-color: var(--c-coral); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-coral) 20%, transparent); }
+@media (min-width: 1100px) {
+  .writing-split .wr-pane-answer .rd-sheet { height: 100%; }
+}
+@media (max-width: 1099px) {
+  .writing-split .wr-show-task .wr-pane-answer,
+  .writing-split .wr-show-answer .wr-pane-task { display: none; }
+}
+
+/* Clerk verification code (sign-in, re-verification before account deletion):
+   each digit box must be visible — the global input reset removed its border. */
+.cl-otpCodeFieldInputs { gap: 10px !important; justify-content: center; }
+.cl-otpCodeFieldInput {
+  width: 44px !important; height: 52px !important; min-width: 44px;
+  border: 1.5px solid #151313 !important; border-radius: 12px !important;
+  background: #F0EEE9 !important; color: #151313 !important;
+  font-family: var(--font-family) !important; font-size: 22px !important; font-weight: 800 !important;
+  text-align: center; caret-color: var(--c-coral);
+  box-shadow: none !important; opacity: 1 !important;
+}
+.cl-otpCodeFieldInput:focus, .cl-otpCodeFieldInput[data-focus-visible] {
+  outline: none !important; border-color: var(--c-coral) !important; background: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(255, 87, 52, 0.22) !important;
+}
+@media (max-width: 400px) { .cl-otpCodeFieldInput { width: 40px !important; min-width: 40px; height: 48px !important; } }
+.ai-wait-note {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin: 26px auto 0; max-width: 420px; font-size: 13.5px; line-height: 1.5;
+  color: var(--text-secondary); font-weight: 600;
+}
+.ai-wait-dot {
+  flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: var(--c-coral);
+  animation: ai-wait-pulse 1.4s ease-in-out infinite;
+}
+@keyframes ai-wait-pulse { 0%, 100% { opacity: .35; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { .ai-wait-dot { animation: none; } }
+
+/* ─── Tips & Tricks: single-page coach feed ─────────────────────────────── */
+.tips-feed { max-width: 880px; margin: 0 auto; padding-bottom: 80px; }
+.tips-feed-header { padding-top: 8px; margin-bottom: 18px; scroll-margin-top: 90px; }
+.tips-skill-switch {
+  position: sticky; top: 12px; z-index: 5;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px;
+  padding: 4px; margin-bottom: 26px; border-radius: 16px;
+  background: color-mix(in srgb, var(--bg-canvas) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid var(--border-color);
+}
+.tips-skill-switch button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  min-height: 44px; border: none; border-radius: 12px; cursor: pointer;
+  font-family: var(--font-family); font-size: 14px; font-weight: 800;
+  background: transparent; color: var(--text-secondary);
+}
+.tips-skill-switch button.is-active { background: var(--text-primary); color: var(--bg-card); }
+.tips-skill-switch button:focus-visible { outline: 3px solid color-mix(in srgb, var(--c-coral) 55%, transparent); outline-offset: 1px; }
+.tips-feed-body { display: flex; flex-direction: column; gap: 22px; }
+.tips-topic { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 90px; }
+.coach-line { display: flex; gap: 12px; align-items: flex-start; }
+.coach-avatar {
+  flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-family); font-weight: 800; font-size: 14px;
+  background: var(--skill-accent, var(--c-coral)); color: #151313; border: 1.5px solid var(--border-color);
+}
+.coach-bubble {
+  flex: 1 1 auto; min-width: 0; padding: 14px 18px; border-radius: 4px 18px 18px 18px;
+  background: var(--bg-card); border: 1.5px solid var(--border-color);
+  font-size: 15.5px; line-height: 1.6; color: var(--text-primary);
+}
+.coach-bubble p { margin: 0 0 6px; }
+.coach-bubble p:last-child { margin-bottom: 0; }
+.coach-title { font-family: var(--font-family); font-weight: 800; font-size: 16.5px; }
+.coach-meta { font-size: 13px; color: var(--text-secondary); font-weight: 600; }
+.tips-topic-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tips-topic-chips button {
+  padding: 6px 12px; min-height: 34px; border-radius: var(--r-pill); cursor: pointer;
+  border: 1px solid var(--border-subtle); background: var(--surface-interactive);
+  font-family: var(--font-family); font-size: 13px; font-weight: 700; color: var(--text-primary);
+}
+.tips-topic-chips button:hover { border-color: var(--c-coral); }
+.tips-thread { padding-left: 46px; }
+@media (max-width: 640px) {
+  .tips-skill-switch button span { font-size: 13px; }
+  .tips-skill-switch button svg { display: none; }
+  .tips-thread { padding-left: 0; }
+  .coach-avatar { width: 28px; height: 28px; font-size: 12px; }
+}

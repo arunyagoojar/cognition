@@ -3,6 +3,8 @@
  * Sends Clerk session tokens for authentication; falls back to localStorage when offline.
  */
 
+import { setLocalKeyScope, saveLocalGeminiKey, getLocalGeminiKey, removeLocalGeminiKey, hasLocalGeminiKey } from './storage.js';
+
 // import.meta.env only exists under Vite — fall back to process.env in Node tests.
 const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
 // Callers pass paths that already start with /api — the base is a prefix only.
@@ -10,10 +12,14 @@ const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
 const API_BASE = viteEnv.VITE_API_BASE_URL ?? '';
 const PUBLISHABLE_KEY = viteEnv.VITE_CLERK_PUBLISHABLE_KEY;
 
+
+
 let clerkAuth = null;
 
 export function setClerkAuth(auth) {
   clerkAuth = auth;
+  // Bind any on-device Gemini key to the signed-in account.
+  setLocalKeyScope(auth?.isSignedIn ? auth.userId : '');
 }
 
 // True when a Clerk session can issue tokens for API calls.
@@ -80,18 +86,25 @@ export async function fetchPreferences() {
   return apiFetch('/api/me', { method: 'GET' });
 }
 
-// Permanently purges every Cloudflare-stored record for the signed-in user
-// (profile, preferences, attempts, completed lessons, AI credentials).
-export async function deleteAccountData() {
-  const res = await apiFetchDetail('/api/me', { method: 'DELETE' });
-  if (!res.ok) {
-    return {
-      ok: false,
-      networkError: Boolean(res.networkError),
-      message: res.data?.error || 'Could not delete your saved data. Please try again.',
-    };
-  }
-  return { ok: true };
+// Marks onboarding as completed/skipped for this account (server-persisted, so
+// it never reappears on another browser/device). Returns true on success.
+export async function syncOnboardingComplete() {
+  const res = await apiFetch('/api/me/onboarding', { method: 'PUT' });
+  return Boolean(res?.onboardingCompleted);
+}
+
+// Issues the account-deletion request. Returns the raw Response so Clerk's
+// useReverification() can detect a reverification challenge (403) and open its
+// modal, then retry. A fresh token is always fetched so the retry carries the
+// re-verified session. The Worker purges D1 first, then deletes the Clerk user.
+export async function requestAccountDeletion() {
+  if (!PUBLISHABLE_KEY || !clerkAuth) throw new Error('You need to be signed in to delete your account.');
+  const token = await clerkAuth.getToken({ skipCache: true });
+  if (!token) throw new Error('Your session has expired. Please sign in again.');
+  return fetch(`${API_BASE}/api/me`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+  });
 }
 
 // ── Attempts ──
@@ -144,21 +157,84 @@ export async function fetchCompletedLessons() {
 // Raw keys travel once to the Worker and are encrypted (AES-256-GCM) before
 // D1 storage. No endpoint ever returns the stored credential.
 
+// Server codes meaning "Cognition's cloud storage can't be used right now, but
+// the key itself may be fine" — these (and network/5xx failures) allow the
+// on-device fallback. Anything else (bad key, expired session) is surfaced as-is.
+const CLOUD_UNUSABLE_CODES = new Set([
+  'storage_unavailable', 'storage_failed', 'provider_region', 'key_restricted', 'provider_unreachable',
+]);
+
+/**
+ * Validates a Gemini key directly from the browser (models-list ping). The key
+ * goes only to Google, in a header — never to Cognition.
+ */
+export async function validateGeminiKeyDirect(key) {
+  try {
+    const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
+      headers: { 'x-goog-api-key': key },
+    });
+    if (res.ok || res.status === 429) return { valid: true };
+    if (res.status === 400 || res.status === 403) {
+      return { valid: false, message: 'Gemini rejected this API key. Check that you copied the whole key and try again.' };
+    }
+    return { valid: false, message: 'Could not verify the key with Google right now. Please try again shortly.' };
+  } catch {
+    return { valid: false, message: 'Could not reach Google to verify the key. Check your connection and try again.' };
+  }
+}
+
 export async function saveCredential(provider, key) {
   const res = await apiFetchDetail(`/api/credentials/${provider}`, {
     method: 'PUT',
     body: JSON.stringify({ key }),
   });
-  if (!res.ok) {
-    return { ok: false, message: res.data?.error || 'Could not save the key. Please try again.' };
+
+  if (res.ok) {
+    // A successful cloud save supersedes any stale local copy.
+    removeLocalGeminiKey();
+    return { ok: true, ...res.data };
   }
-  return { ok: true, ...res.data };
+
+  const serverMessage = res.data?.error;
+  if (provider !== 'gemini') {
+    return { ok: false, message: serverMessage || 'Could not save the key. Please try again.' };
+  }
+  if (res.unauthenticated || res.status === 401) {
+    return { ok: false, message: 'Your session has expired. Please sign in again, then retry.' };
+  }
+
+  const cloudUnusable = Boolean(res.networkError)
+    || res.status >= 500
+    || CLOUD_UNUSABLE_CODES.has(res.data?.code);
+  if (!cloudUnusable) {
+    return { ok: false, message: serverMessage || 'Could not save the key. Please try again.' };
+  }
+
+  // Privacy fallback: Cognition's secure storage can't take the key right now.
+  // Verify it directly with Google first (so we never claim a bad key works),
+  // then keep it on THIS DEVICE only.
+  const direct = await validateGeminiKeyDirect(key);
+  if (!direct.valid) return { ok: false, message: direct.message };
+  if (!saveLocalGeminiKey(key)) {
+    return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
+  }
+  return {
+    ok: true,
+    local: true,
+    maskedSuffix: `\u2022\u2022\u2022\u2022${key.slice(-4)}`,
+    message: 'Secure cloud storage is unavailable right now, so your key was saved on this device only. It never leaves this browser.',
+  };
 }
 
 export async function fetchCredentialStatus(provider) {
   const res = await apiFetchDetail(`/api/credentials/${provider}/status`, { method: 'GET' });
-  if (!res.ok) return { configured: false, provider };
-  return res.data;
+  const cloud = res.ok ? res.data : { configured: false, provider };
+  if (cloud.configured) return cloud;
+  // Local fallback: a device-stored key (privacy mode) counts as configured.
+  if (provider === 'gemini' && hasLocalGeminiKey()) {
+    return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGeminiKey().slice(-4)}` };
+  }
+  return { configured: false, provider };
 }
 
 export async function deleteCredential(provider) {
