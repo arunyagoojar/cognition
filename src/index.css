@@ -6215,3 +6215,15 @@ p.reading-section-label {
 .text-size-control button { align-items: center; line-height: 1; }
 .text-size-control button span { line-height: 1; display: inline-block; }
 .text-size-control button span[aria-hidden="true"] { font-size: 11px; margin-left: 1px; transform: translateY(-1px); }
+
+/* Clerk verification-code step: even rhythm between code boxes, resend link
+   and Continue; no empty footer band under the card. */
+.cl-otpCodeField { margin-bottom: 6px; }
+.cl-formResendCodeLink { margin-top: 10px !important; display: block; text-align: center; }
+.cl-formButtonPrimary { margin-top: 14px; }
+/* Clerk's development-instance badge lives in .cl-footerItem (the sign-up link
+   is .cl-footerAction and stays). A footer with no action left — e.g. the
+   re-verification step — is removed, closing the empty band under the card. */
+.cl-footerItem { display: none !important; }
+.cl-footer:not(:has(.cl-footerAction)) { display: none !important; }
+.cl-footer:has(.cl-footerAction) { padding-bottom: 18px !important; }

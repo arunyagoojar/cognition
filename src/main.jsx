@@ -20,6 +20,9 @@ function Root() {
           socialButtonsVariant: 'blockButton',
           showOptionalFields: false,
           logoPlacement: 'none',
+          // Production currently runs on Clerk's development instance; hide its
+          // "Development mode" badge until a live (pk_live_) key is configured.
+          unsafe_disableDevelopmentModeWarnings: true,
         },
         variables: {
           fontFamily: "'Kodchasan', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
