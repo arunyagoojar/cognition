@@ -40,6 +40,8 @@ function checkBundle(where, js, css) {
     ['mock report', 'FULL MOCK EXAM'], ['AI wait note', 'AI examiner is still assessing'],
     ['session-aware AI errors', 'could not confirm your sign-in session'],
     ['on-device speech model notice', 'Preparing speech recognition'],
+    ['speaking review before submit', 'Check your answers'],
+    ['recording waits for the model', 'Recording unlocks as soon as speech recognition is ready'],
   ]) check(`${where}: feature ${label}`, js.includes(needle));
   for (const [label, needle] of [['inline blank fix', '.inline-blank *'], ['verification code boxes', 'cl-otpCodeFieldInput']]) {
     check(`${where}: style ${label}`, css.includes(needle));

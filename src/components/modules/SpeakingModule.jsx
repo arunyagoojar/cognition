@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
 import SpeechModelStatus from '../speaking/SpeechModelStatus';
-import { needsLocalStt, prepareLocalStt, transcribeRecording } from '../../utils/speech/localStt';
+import { needsLocalStt, prepareLocalStt, transcribeRecording, subscribeLocalStt, unloadLocalStt } from '../../utils/speech/localStt';
 import { motion } from 'motion/react';
 import { Icon } from '../common/Icon';
 import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
@@ -88,9 +88,33 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const transcriptJobsRef = useRef({});   // qKey → { recordingId, promise }
   const transcriptsRef = useRef({});      // qKey → { recordingId, text }
 
+  const [sttStatus, setSttStatus] = useState(useLocalStt ? 'idle' : 'ready');
   useEffect(() => {
-    if (useLocalStt) prepareLocalStt().catch(() => { /* status component reports it */ });
+    if (!useLocalStt) return undefined;
+    const unsub = subscribeLocalStt(st => setSttStatus(st.status));
+    prepareLocalStt().catch(() => { /* status component reports it */ });
+    return unsub;
   }, [useLocalStt]);
+  // recording only starts once the on-device model can transcribe it
+  const recordLocked = useLocalStt && sttStatus !== 'ready';
+
+  /** Transcribes one saved answer on the device (also used to retry). */
+  const runTranscription = (qId, recordingId, blob) => {
+    setRecordings(prev => (prev[qId]?.recordingId === recordingId
+      ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'pending' } } : prev));
+    const promise = transcribeRecording(blob).then((text) => {
+      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
+      transcriptsRef.current[qId] = { recordingId, text };
+      setRecordings(prev => (prev[qId]?.recordingId === recordingId
+        ? { ...prev, [qId]: { ...prev[qId], transcript: text, transcriptStatus: 'done' } } : prev));
+    }).catch(() => {
+      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
+      setRecordings(prev => (prev[qId]?.recordingId === recordingId
+        ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
+    });
+    transcriptJobsRef.current[qId] = { recordingId, promise };
+    return promise;
+  };
 
   const currentPart = test?.parts?.[partIdx];
   const isPart2 = currentPart?.partNumber === 2;
@@ -114,6 +138,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
   /* ── Part 2: preparation → speaking, official timings ── */
   const startPreparation = () => {
+    if (recordLocked) return;
     setRecState(REC_STATE.PREPARING);
     setPrepSecondsLeft(PART2_PREP_SECONDS);
     prepIntervalRef.current = setInterval(() => {
@@ -135,6 +160,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   };
 
   const startRecording = async () => {
+    if (recordLocked) return;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const chunks = [];
@@ -174,21 +200,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
         saveAudioRecording({ recordingId, attemptId: 'temp_attempt', questionId: qId, blob, mimeType, duration: dur })
           .catch(() => {});
-        if (useLocalStt) {
-          const promise = transcribeRecording(blob).then((text) => {
-            if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
-            transcriptsRef.current[qId] = { recordingId, text };
-            setRecordings(prev => (prev[qId]?.recordingId === recordingId
-              ? { ...prev, [qId]: { ...prev[qId], transcript: text, transcriptStatus: 'done' } } : prev));
-          }).catch(() => {
-            if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
-            setRecordings(prev => (prev[qId]?.recordingId === recordingId
-              ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
-          });
-          transcriptJobsRef.current[qId] = { recordingId, promise };
-        } else {
-          transcriptsRef.current[qId] = { recordingId, text: transcriptText };
-        }
+        if (!useLocalStt) transcriptsRef.current[qId] = { recordingId, text: transcriptText };
         setRecordings(prev => ({
           ...prev,
           [qId]: {
@@ -199,6 +211,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             notes: isPart2 ? notesRef.current : undefined,
           }
         }));
+        if (useLocalStt) runTranscription(qId, recordingId, blob);
         setActivePlaybackUrl(url);
         setRecState(REC_STATE.SAVED);
         setRecState(prev => prev === REC_STATE.SAVED ? REC_STATE.TRANSCRIBING : prev);
@@ -259,6 +272,9 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     } else if (hasNextPart()) {
       setPartIdx(p => p + 1);
       setQuestionIdx(0);
+    } else if (useLocalStt) {
+      setPhase('review');
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     } else {
       handleFinish();
     }
@@ -276,6 +292,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
     // every answer's on-device transcript must be finished before scoring
     await Promise.allSettled(Object.values(transcriptJobsRef.current).map(j => j.promise));
+    if (useLocalStt) unloadLocalStt(); // free memory; the model stays cached for next time
     const transcripts = {};
     const durations = {};
     const audioRecordings = {};
@@ -575,6 +592,54 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     ? Boolean(currentRecording)
     : questions.length > 0 && questions.every((_, qI) => Boolean(recordings[`${partIdx}_${qI}`]));
 
+  /* ──────────────────────────────────────────────────────────
+     REVIEW — every recorded answer transcribed before submitting
+     ────────────────────────────────────────────────────────── */
+  if (phase === 'review') {
+    const items = test.parts.flatMap((p, pi) => (p.questions || []).map((q, qi) => {
+      const key = `${pi}_${qi}`;
+      return { key, part: p.partNumber, label: p.partNumber === 2 ? (p.cueCard?.topic || q) : q, rec: recordings[key] };
+    }));
+    const recorded = items.filter(i => i.rec);
+    const pendingCount = recorded.filter(i => i.rec.transcriptStatus === 'pending').length;
+    const failedCount = recorded.filter(i => i.rec.transcriptStatus === 'failed').length;
+    const canSubmit = recorded.length > 0 && pendingCount === 0 && failedCount === 0;
+    return (
+      <div className="speaking-review">
+        <p className="rd-eyebrow">Before you submit</p>
+        <h1 className="speaking-review-title">Check your answers</h1>
+        <p className="speaking-review-sub">
+          Each recorded answer has been turned into text on this device. This text is what the examiner scores.
+          {pendingCount > 0 && ` Transcribing ${pendingCount} answer${pendingCount > 1 ? 's' : ''}…`}
+        </p>
+        <ol className="speaking-review-list">
+          {items.map((i, idx) => (
+            <li key={i.key} className={`speaking-review-item${i.rec ? '' : ' is-empty'}`}>
+              <div className="speaking-review-q"><span className="rd-badge">{idx + 1}</span><span>Part {i.part} · {i.label}</span></div>
+              {!i.rec && <p className="speaking-review-note">Not answered</p>}
+              {i.rec?.transcriptStatus === 'pending' && <p className="speaking-transcribing"><span className="stt-dot" aria-hidden="true" />Transcribing on this device…</p>}
+              {i.rec?.transcriptStatus === 'failed' && (
+                <p className="speaking-review-note">
+                  Transcription failed.{' '}
+                  <button type="button" className="speaking-review-retry" onClick={() => runTranscription(i.key, i.rec.recordingId, i.rec.blob)}>Retry</button>
+                </p>
+              )}
+              {i.rec?.transcriptStatus === 'done' && (
+                <p className="speaking-review-text">{i.rec.transcript || 'No speech was detected in this answer.'}</p>
+              )}
+            </li>
+          ))}
+        </ol>
+        <div className="speaking-review-actions">
+          <button type="button" className="speaking-review-back" onClick={() => setPhase('exam')}>Back to questions</button>
+          <button type="button" className="speaking-review-submit" disabled={!canSubmit} onClick={handleFinish}>
+            {pendingCount > 0 ? 'Waiting for transcripts…' : failedCount > 0 ? 'Retry failed transcripts first' : 'Submit for scoring'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="exam-focus-layout" style={{ maxWidth: 1080 }}>
       {/* header */}
@@ -583,17 +648,23 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           <span className="exam-focus-tag" style={{ background: '#151313', color: '#fff' }}>{isMockMode ? 'IELTS ACADEMIC SPEAKING' : 'IELTS SPEAKING PRACTICE'}</span>
           <h2 className="exam-focus-title">Part {currentPart?.partNumber} of {test.parts.length} · {currentPart?.title}</h2>
         </div>
-        <div className="exam-focus-header-right">
-          <SpeechModelStatus variant="pill" />
+        <div className="exam-focus-header-right speaking-header-bar">
           <div className="exam-focus-timer-pill" title="Recording status">
             <Icon name="mic" size={16} />
             <span>{isPart2 ? (recState === REC_STATE.PREPARING ? `Prep ${FMT(prepSecondsLeft ?? 0)}` : recState === REC_STATE.RECORDING ? FMT(recordSeconds) : 'Part 2') : `Question ${questionIdx + 1} of ${totalQuestionsInPart}`}</span>
           </div>
+          <SpeechModelStatus variant="pill" />
           <button type="button" className="exam-focus-exit-btn" onClick={() => { if (window.confirm('Exit speaking practice? Your audio for this session will be discarded.')) onBack(); }}>
             <span>Exit Exam</span>
           </button>
         </div>
       </div>
+
+      {recordLocked && (
+        <div className="speaking-record-lock" role="status">
+          Recording unlocks as soon as speech recognition is ready — your answers are transcribed on this device.
+        </div>
+      )}
 
       {/* Part selector chips */}
       <div style={{ display: 'flex', gap: 8 }}>
@@ -675,7 +746,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
           {recState === REC_STATE.IDLE && (
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
-              <button type="button" onClick={startPreparation} style={{ padding: '14px 28px', borderRadius: 14, background: 'var(--c-yellow)', border: '1.5px solid #151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313', fontFamily: 'var(--font-family)' }}>
+              <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startPreparation} style={{ opacity: recordLocked ? 0.5 : 1,  padding: '14px 28px', borderRadius: 14, background: 'var(--c-yellow)', border: '1.5px solid #151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313', fontFamily: 'var(--font-family)' }}>
                 Begin 1-minute preparation
               </button>
             </div>
@@ -690,7 +761,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {isRecording ? `${FMT(Math.max(PART2_SPEAK_SECONDS - recordSeconds, 0))}` : '02:00'}
               </div>
               {recState === REC_STATE.READY_TO_SPEAK && (
-                <button type="button" onClick={startRecording} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
+                <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
                   <Icon name="mic" size={17} /> Start speaking
                 </button>
               )}
@@ -776,7 +847,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               {isRecording ? '● RECORDING' : recState === REC_STATE.COMPLETED && currentRecording ? 'RESPONSE SAVED' : 'READY'}
             </div>
             {!isRecording && !currentRecording && (
-              <button type="button" onClick={startRecording} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 14.5, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
+              <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 14.5, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
                 <Icon name="mic" size={16} /> Record answer
               </button>
             )}
@@ -804,7 +875,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 )}
                 <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
                   <button type="button" onClick={replayRecording} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>▶ Replay</button>
-                  <button type="button" onClick={() => startRecording()} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
+                  <button type="button" disabled={recordLocked} onClick={() => startRecording()} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
                 </div>
                 {activePlaybackUrl && <audio src={activePlaybackUrl} controls style={{ width: '100%' }} />}
               </div>

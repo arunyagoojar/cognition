@@ -174,3 +174,19 @@ export function transcribeRecording(blob) {
   queue = job.catch(() => {});
   return job;
 }
+
+/**
+ * Frees the model from memory after a test is submitted. The files stay in
+ * the browser cache, so the next session loads in seconds without a download.
+ */
+export function unloadLocalStt() {
+  if (worker) {
+    try { worker.terminate(); } catch { /* already gone */ }
+    worker = null;
+  }
+  for (const p of pending.values()) p.reject(new Error('Speech model unloaded'));
+  pending.clear();
+  loadPromise = null;
+  queue = Promise.resolve();
+  setState({ status: 'idle', progress: 0, device: null, error: null, cached: true });
+}
