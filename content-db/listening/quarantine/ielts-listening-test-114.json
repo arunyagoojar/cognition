@@ -4,43 +4,78 @@
  "sourceSha256": "398c173fabc41a3f97f2cfa09144b3a173ebbb61c00e251e6955af25ed8abde2",
  "units": [
   {
-   "unit": "question",
-   "groupId": "g07",
-   "questionNumber": 30,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "unit": "group",
+   "groupId": "g02",
+   "questionNumbers": [
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Where does Carlos write summing up points on his notes?",
-    "answer": "B",
-    "rawExcerpt": "30. Where does Carlos write summing up points on his notes?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     },
-     {
-      "letter": "D",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Questions 8-10\nLabel the map below. Write the appropriate letter A-E on the map.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
+   "groupId": "g05",
+   "questionNumbers": [
+    21,
+    22,
+    23,
+    24,
+    25
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 3: Questions 21-25\nLabel the flow chart. Write NO MORE THAN THREE WORDS for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
+   "groupId": "g07",
+   "questionNumbers": [
+    30
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Question 30\nChoose the correct letter A, B, C or D.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/114_we.mp3",
+    "r2Key": "cognition/audio/listening/114_we.mp3"
    }
   },
   {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 31,
     "missingOrQuarantined": [
+     8,
+     9,
+     10,
+     21,
+     22,
+     23,
+     24,
+     25,
      30
     ],
     "outOfRange": []

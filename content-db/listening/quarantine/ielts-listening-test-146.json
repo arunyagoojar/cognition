@@ -4,12 +4,43 @@
  "sourceSha256": "c553ff4d22f683b4c49d2f2249da53c3cc04bc2cb7534978b2fb83b88ad5ca7c",
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "RENDER_CHECK_FAILED",
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
    "evidence": {
-    "defects": [
-     "part 2: artifact in stimulus ('………………')"
-    ]
+    "instructionRaw": "Questions 17-20\nLabel the map below. Write the correct letter A-I next to questions 17-20.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/146_we.mp3",
+    "r2Key": "cognition/audio/listening/146_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 36,
+    "missingOrQuarantined": [
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
    }
   }
  ]

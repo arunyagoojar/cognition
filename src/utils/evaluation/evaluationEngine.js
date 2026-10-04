@@ -97,7 +97,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
         // deterministic tier cannot see — verify, but only when a key exists
         uncertain.push({
           id: q.id,
-          questionText: q.questionText || q.question || '',
+          questionText: q.context || q.questionText || q.question || '',
           questionType: q.questionType || q.inputType || '',
           instruction: q.instruction || q.groupInstruction || '',
           officialAnswer: Array.isArray(official) ? official.join(' / ') : String(official),
@@ -111,9 +111,9 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
       rec.evaluationMethod = 'DETERMINISTIC';
       uncertain.push({
         id: q.id,
-        questionText: q.questionText || q.question || '',
+        questionText: q.context || q.questionText || q.question || '',
         questionType: q.questionType || q.inputType || '',
-        instruction: q.instruction || '',
+        instruction: q.instruction || q.groupInstruction || '',
         officialAnswer: Array.isArray(official) ? official.join(' / ') : String(official),
         studentAnswer: String(student),
         wordLimit: q.wordLimit || null,

@@ -203,6 +203,27 @@ def build_listening_runtime(rec):
                     pre = [s for s in stem["segments"] if isinstance(s, str)]
                     prompt = text_plain
                 ans = q.get("correctAnswer")
+                ctx = None
+                for seg in (g["stimulus"].get("segments") or []):
+                    for line in seg.split("\n"):
+                        if f"({q['number']})" in line:
+                            ctx = line
+                            break
+                    if ctx:
+                        break
+                if not ctx and g["stimulus"].get("table"):
+                    rows = g["stimulus"]["table"].get("rows", [])
+                    for row in rows:
+                        if any(f"({q['number']})" in c for c in row):
+                            header = " | ".join(rows[0]) if rows and rows[0] is not row else ""
+                            ctx = (f"[{header}] " if header else "") + " | ".join(row)
+                            break
+                if ctx:
+                    ctx = re.sub(r"\s+", " ", re.sub(r"\(\d{1,2}\)\s*[.…·_\u2426]*", "____", ctx)).strip()
+                # prefer exactly what the candidate sees: the rendered row/line holding this input
+                seen = rendered_context(gh, q["number"])
+                if seen and (not ctx or not re.search(r"[A-Za-z]{3}", ctx.replace("____", ""))):
+                    ctx = seen
                 q_objs.append({
                     "id": f"q{q['number']}",
                     "questionNumber": q["number"],
@@ -214,6 +235,8 @@ def build_listening_runtime(rec):
                     "options": opts,
                     "answer": ans if ans not in ("", None) else None,
                     "type": q["type"],
+                    "context": ctx or (text_plain or None),
+                    "instruction": _with_limit(g["instruction"]["text"], g["instruction"].get("wordLimit")),
                     **({"unorderedGroup": selection["unorderedGroup"]} if selection else {}),
                 })
             flat_qs.extend(q_objs)
@@ -283,6 +306,49 @@ def build_listening_runtime(rec):
 LISTENING_ARTIFACT = re.compile(r"\[orphan|Show Answers?|\u2426|_{4,}|(?:[.…·]\s?){5,}|\(answer in the stimulus\)")
 
 
+def _with_limit(instruction, word_limit):
+    """Group instruction plus its word limit, without repeating the limit."""
+    text = (instruction or "").strip()
+    if word_limit and word_limit.lower() not in text.lower():
+        text = f"{text} ({word_limit})".strip()
+    return text or None
+
+
+def rendered_context(group_html, n):
+    """The table row (with its header row) or paragraph that holds input qN in
+    the rendered stimulus, as plain text with inputs shown as ____."""
+    if not group_html:
+        return None
+    marker = f'data-qid="q{n}"'
+
+    def plain(fragment):
+        t = re.sub(r"<input[^>]*>", " ____ ", fragment)
+        t = re.sub(r"</t[dh]>", " | ", t)
+        t = html.unescape(re.sub(r"<[^>]+>", " ", t))
+        return re.sub(r"\s+", " ", t).strip(" |")
+
+    for table in re.findall(r"<table.*?</table>", group_html, flags=re.S):
+        rows = re.findall(r"<tr>.*?</tr>", table, flags=re.S)
+        for k, row in enumerate(rows):
+            if marker in row:
+                head = plain(rows[0]) if k > 0 and rows else ""
+                return (f"[{head}] " if head else "") + plain(row)
+    paras = re.findall(r"<p[^>]*>.*?</p>", group_html, flags=re.S)
+    for k, para in enumerate(paras):
+        if marker in para:
+            own = plain(para)
+            # a bare line ("• ____") is read with the lines above it, like a candidate does
+            j = k
+            lines = [own]
+            while not re.search(r"[A-Za-z]{3}", " ".join(lines).replace("____", "")) and j > 0 and len(lines) < 4:
+                j -= 1
+                lines.insert(0, plain(paras[j]))
+            if len(lines) == 1 and k > 0:
+                lines.insert(0, plain(paras[k - 1]))  # one line of lead-in context
+            return " / ".join(x for x in lines if x)
+    return None
+
+
 def listening_runtime_defects(rt):
     """Render gate for a full Listening test: everything a candidate needs to
     answer each of questions 1–40 exactly once, with a key the control can produce."""
@@ -305,6 +371,19 @@ def listening_runtime_defects(rt):
         for g in p["questionGroups"]:
             if not (g.get("instructions") or "").strip():
                 d.append(f"{g['groupId']}: no instruction")
+            # a list of empty answer lines (no words, no figure) is ambiguous:
+            # the candidate cannot tell which line asks for what
+            if not g.get("visualHtml"):
+                run = longest = 0
+                for para in re.findall(r"<p[^>]*>.*?</p>", g.get("htmlContent") or "", flags=re.S):
+                    words = html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"<input[^>]*>", " ", para)))
+                    if "data-qid=" in para and not re.search(r"[A-Za-z0-9]{2}", words):
+                        run += 1
+                        longest = max(longest, run)
+                    else:
+                        run = 0  # a line with words (e.g. "What TWO images…?") resets the run
+                if longest >= 3:
+                    d.append(f"{g['groupId']}: {longest} answer lines in a row carry no text")
             sel = g.get("selection")
             if sel:
                 vals = [q["answer"] for q in g["questions"]]
@@ -448,15 +527,38 @@ def build_reading_runtime(rec):
             if g.get("optionPool"):
                 pool = {"title": g["optionPool"].get("title"),
                         "options": [{"id": o["id"], "label": o["text"]} for o in g["optionPool"]["options"]]}
+            # the sentence / table row each stimulus blank sits in (examiner context
+            # for the AI answer check; the blank itself shown as ____)
+            blank_context = {}
+            for b in (g.get("stimulus") or {}).get("blocks", []):
+                cells = [b.get("segments")] if b["type"] == "text" else (
+                    [c for row in b["rows"] for c in row] if b["type"] == "table" else [])
+                row_texts = []
+                if b["type"] == "table":
+                    head = " | ".join("".join(x if isinstance(x, str) else "____" for x in c) for c in b["rows"][0])
+                    for ri, row in enumerate(b["rows"]):
+                        t_ = " | ".join("".join(x if isinstance(x, str) else "____" for x in c) for c in row)
+                        row_texts.append(t_ if ri == 0 else f"[{head}] {t_}")
+                for k, segs in enumerate(cells):
+                    for x in segs or []:
+                        if isinstance(x, dict):
+                            line = "".join(y if isinstance(y, str) else "____" for y in segs)
+                            if b["type"] == "table":
+                                line = next((r for r in row_texts if line in r), line)
+                            blank_context[x["blank"]] = re.sub(r"\s+", " ", line).strip()
+            instruction = _with_limit(g.get("instruction"), g.get("wordLimit")) or ""
             q_objs = []
             for q in g["questions"]:
                 a = q["answer"]
+                own_text = "".join(s_ if isinstance(s_, str) else "____" for s_ in (q.get("prompt") or [])).strip()
                 q_objs.append({
                     "id": f"q{q['number']}", "questionNumber": q["number"],
                     "groupId": g["groupId"], "questionType": g["type"],
                     "inputType": READING_INPUT[control],
                     "prompt": q.get("prompt"),
-                    "questionText": "".join(s if isinstance(s, str) else "____" for s in (q.get("prompt") or [])).strip(),
+                    "questionText": own_text,
+                    "context": blank_context.get(q["number"]) or own_text or None,
+                    "instruction": instruction or None,
                     "options": ([{"id": o["id"], "label": o["text"]} for o in q["options"]]
                                 if q.get("options") else None),
                     "blankInStimulus": bool(q.get("blankInStimulus")),

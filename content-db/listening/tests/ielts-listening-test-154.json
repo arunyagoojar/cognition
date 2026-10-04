@@ -220,6 +220,7 @@
     "value": "balance"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -706,7 +707,7 @@
      "blankContext": "line: (11) ␦",
      "correctAnswer": "city bridge",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(11) ␦"
@@ -728,7 +729,7 @@
      "blankContext": "line: (12) ␦",
      "correctAnswer": "newton",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "(12) ␦"
@@ -740,7 +741,10 @@
     "elementPath": "entry-content.children[2]",
     "rawExcerpt": "Part 2: Questions 11 and 12\nLabel the map below. Write NO MORE THAN TWO WORDS."
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test154.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -1885,18 +1889,45 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "test",
-   "reasonCode": "RENDER_CHECK_FAILED",
+   "unit": "group",
+   "groupId": "g02",
+   "questionNumbers": [
+    11,
+    12
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
    "evidence": {
-    "defects": [
-     "part 3: artifact in stimulus ('………….')"
-    ]
+    "instructionRaw": "Part 2: Questions 11 and 12\nLabel the map below. Write NO MORE THAN TWO WORDS.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/154_we.mp3",
+    "r2Key": "cognition/audio/listening/154_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 38,
+    "missingOrQuarantined": [
+     11,
+     12
+    ],
+    "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 1,
+ "verifiedQuestionCount": 38,
+ "quarantinedCount": 3,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

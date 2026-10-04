@@ -4,93 +4,31 @@
  "sourceSha256": "dcd34ca3ba09e4886fdede5921d3cc62aa04d66ddaa3b966fe1360e401d5718f",
  "units": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g03",
-   "questionNumber": 15,
-   "reasonCode": "OPTIONS_MISSING",
+   "questionNumbers": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTIONS_MISSING"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "New car park",
-    "answer": "C",
-    "rawExcerpt": "15. New car park ␦",
-    "options": null
+    "instructionRaw": "Questions 15-20\nLabel the map below. Write the correct letter, A-l, next to Questions 15-20.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 16,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "New cricket pitch",
-    "answer": "F",
-    "rawExcerpt": "16. New cricket pitch ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 17,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Children’s playground",
-    "answer": "A",
-    "rawExcerpt": "17. Children’s playground ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 18,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Skateboard ramp",
-    "answer": "I",
-    "rawExcerpt": "18. Skateboard ramp ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 19,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Pavilion",
-    "answer": "E",
-    "rawExcerpt": "19. Pavilion ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 20,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Notice board",
-    "answer": "H",
-    "rawExcerpt": "20. Notice board ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/188_we.mp3",
+    "r2Key": "cognition/audio/listening/188_we.mp3"
    }
   },
   {

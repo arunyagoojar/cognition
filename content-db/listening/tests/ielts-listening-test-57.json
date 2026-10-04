@@ -213,6 +213,7 @@
     "value": "B"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1359,7 +1360,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "31. The total number of lectures mentioned by the lecturer is"
@@ -1394,7 +1395,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "32. The lunch break of the average British worker is"
@@ -1464,7 +1465,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[30]",
       "rawExcerpt": "34. There will be another lecture on stress in work and study"
@@ -1499,7 +1500,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "35. Which of the following is mentioned?"
@@ -1511,7 +1512,10 @@
     "elementPath": "entry-content.children[24]",
     "rawExcerpt": "Part 4: Questions 31-35\nCircle the correct letters A-D."
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test57.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g10",
@@ -1803,35 +1807,22 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g09",
-   "questionNumber": 33,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which graph shows the change as regards sick leave?",
-    "answer": "A",
-    "rawExcerpt": "33. Which graph shows the change as regards sick leave?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     },
-     {
-      "letter": "D",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 4: Questions 31-35\nCircle the correct letters A-D.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1884,9 +1875,17 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/57_deep.mp3",
+    "r2Key": "cognition/audio/listening/57_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 31,
+    "verifiedQuestions": 27,
     "missingOrQuarantined": [
      11,
      12,
@@ -1896,15 +1895,19 @@
      16,
      17,
      18,
-     33
+     31,
+     32,
+     33,
+     34,
+     35
     ],
     "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 31,
- "quarantinedCount": 11,
+ "verifiedQuestionCount": 27,
+ "quarantinedCount": 12,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

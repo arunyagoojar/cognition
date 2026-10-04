@@ -4,6 +4,22 @@
  "sourceSha256": "05d086f7119ae4219c68bc3dfd28c54cc9c4eb308203919ef0ad8d39db7cc2ae",
  "units": [
   {
+   "unit": "group",
+   "groupId": "g05",
+   "questionNumbers": [
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 19 and 20\nBelow is a basic map used to show where the Read for All charity’s offices are. The map has 12 locations marked A-L. Match the locations in questions 19-20 with the correct locatio",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g07",
    "questionNumber": 29,
@@ -26,10 +42,20 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/15_we.mp3",
+    "r2Key": "cognition/audio/listening/15_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 37,
     "missingOrQuarantined": [
+     19,
+     20,
      29
     ],
     "outOfRange": []

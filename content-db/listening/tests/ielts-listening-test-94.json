@@ -213,6 +213,7 @@
     "value": "A"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -412,7 +413,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "1. children’s play centre ␦"
@@ -430,7 +431,7 @@
      "blankContext": null,
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "2. hairdresser ␦"
@@ -448,7 +449,7 @@
      "blankContext": null,
      "correctAnswer": "I",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "3. toy store ␦"
@@ -466,7 +467,7 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "4. toilets ␦"
@@ -484,7 +485,7 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "5. phone kiosk ␦"
@@ -502,7 +503,7 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "6. elevator ␦"
@@ -556,7 +557,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test94.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g02",
@@ -1714,6 +1718,26 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
+   "unit": "group",
+   "groupId": "g01",
+   "questionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 1: Questions 1-6\nLabel the floor plan below. Choose FIVE answers from the floor plan and write the correct letters A-I next to questions 1-6.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g03",
    "questionNumber": 18,
@@ -1775,10 +1799,24 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/94_deep.mp3",
+    "r2Key": "cognition/audio/listening/94_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 36,
+    "verifiedQuestions": 30,
     "missingOrQuarantined": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
      18,
      38,
      39,
@@ -1789,8 +1827,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 5,
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 7,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

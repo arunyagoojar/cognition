@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "b9140e2b7afeb780fa90dc1c45c22a8ef4d4634b439dbcccc1db78d95af6618a",
+ "contentFingerprint": "07de49757db1a835573c580d6ccbfccc35f6ceeb838eedd5ddac44e579ce2e4e",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -102,7 +102,7 @@
    },
    {
     "number": 9,
-    "value": "kitched"
+    "value": "kitchen"
    },
    {
     "number": 10,
@@ -229,6 +229,15 @@
     "value": "consumers/ people"
    }
   ],
+  "corrections": [
+   {
+    "number": 9,
+    "source": "kitched",
+    "corrected": "kitchen",
+    "reason": "Source key misspelling (non-word).",
+    "approvedBy": "owner request to fix source key typos, 2026-10-04"
+   }
+  ],
   "answers": [
    {
     "number": 1,
@@ -264,7 +273,7 @@
    },
    {
     "number": 9,
-    "value": "kitched"
+    "value": "kitchen"
    },
    {
     "number": 10,
@@ -666,14 +675,14 @@
      },
      "options": null,
      "blankContext": "line: (8) ␦ (9) ␦",
-     "correctAnswer": "kitched",
+     "correctAnswer": "kitchen",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[7]",
       "rawExcerpt": "(8) ␦ (9) ␦"
      },
-     "keyRaw": "kitched"
+     "keyRaw": "kitchen"
     },
     {
      "number": 10,

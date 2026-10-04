@@ -220,6 +220,7 @@
     "value": "creation"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -835,7 +836,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "14. Trees ␦"
@@ -853,7 +854,7 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "15. Wider footpaths ␦"
@@ -871,7 +872,7 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "16. Coloured road surface ␦"
@@ -889,7 +890,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "17. New sign ␦"
@@ -907,7 +908,7 @@
      "blankContext": null,
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "18. Traffic lights ␦"
@@ -925,7 +926,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "19. Artwork ␦"
@@ -943,7 +944,7 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[8]",
       "rawExcerpt": "20. Children’s playground ␦"
@@ -994,7 +995,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test152.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1828,10 +1832,57 @@
   "fnameInputs": 31
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 14-20\nLabel the map below. Write the correct letter A-H next to questions 14-20.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/152_we.mp3",
+    "r2Key": "cognition/audio/listening/152_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 33,
+    "missingOrQuarantined": [
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
+   }
+  }
+ ],
  "validationWarnings": [],
- "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
+ "verifiedQuestionCount": 33,
+ "quarantinedCount": 3,
  "status": "duplicate",
  "fullTestEligible": false,
  "schemaErrors": [],

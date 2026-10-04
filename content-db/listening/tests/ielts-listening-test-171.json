@@ -229,6 +229,7 @@
     "value": "D"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -370,7 +371,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "1. A B C D"
@@ -389,7 +390,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[4]",
       "rawExcerpt": "2. A B C D"
@@ -430,7 +431,11 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test171.png",
+    "wp-content/uploads/2024/10/im-70.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g02",
@@ -1231,6 +1236,22 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g01",
+   "questionNumbers": [
+    1,
+    2
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Part 1: Questions 1-5\nCircle the appropriate letter.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": null,
    "questionNumber": 3,
@@ -1431,6 +1452,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/171_we.mp3",
+    "r2Key": "cognition/audio/listening/171_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "NON_STANDARD_SECTION_LAYOUT",
    "evidence": {
     "questionsOutsideTheirSection": [
@@ -1443,8 +1472,10 @@
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 24,
+    "verifiedQuestions": 22,
     "missingOrQuarantined": [
+     1,
+     2,
      3,
      4,
      5,
@@ -1473,8 +1504,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 24,
- "quarantinedCount": 23,
+ "verifiedQuestionCount": 22,
+ "quarantinedCount": 25,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

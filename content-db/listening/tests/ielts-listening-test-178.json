@@ -214,6 +214,7 @@
     "value": "wine"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1727,6 +1728,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/178_we.mp3",
+    "r2Key": "cognition/audio/listening/178_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
     "verifiedQuestions": 35,
@@ -1749,7 +1758,7 @@
   }
  ],
  "verifiedQuestionCount": 35,
- "quarantinedCount": 7,
+ "quarantinedCount": 8,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

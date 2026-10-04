@@ -55,63 +55,21 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g11",
-   "questionNumber": 37,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    37,
+    38,
+    39,
+    40
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______",
-    "answer": "F",
-    "rawExcerpt": "(37) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g11",
-   "questionNumber": 38,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "B",
-    "rawExcerpt": "(38) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g11",
-   "questionNumber": 39,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "G",
-    "rawExcerpt": "(39) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g11",
-   "questionNumber": 40,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "D",
-    "rawExcerpt": "(40) ␦",
-    "options": null
+    "instructionRaw": "Questions 36-40\nComplete the table below. Write the appropriate letters A-G against question 36-40.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -208,6 +166,14 @@
    ],
    "evidence": {
     "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/33_we.mp3",
+    "r2Key": "cognition/audio/listening/33_we.mp3"
    }
   },
   {

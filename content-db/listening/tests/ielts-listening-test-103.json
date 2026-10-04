@@ -205,6 +205,7 @@
     "value": "maths"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1649,6 +1650,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/103_we.mp3",
+    "r2Key": "cognition/audio/listening/103_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
     "verifiedQuestions": 36,
@@ -1664,7 +1673,7 @@
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 36,
- "quarantinedCount": 6,
+ "quarantinedCount": 7,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

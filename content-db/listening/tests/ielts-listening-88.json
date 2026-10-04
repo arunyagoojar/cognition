@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "5d0735c6143737b00a49909d4d3cc5229b2d0653ea9206204d943cff73b6c60e",
+ "contentFingerprint": "ad4d43367c7c82579bf61c2a8824619685ead223c34c472251645c97de3e8323",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -54,7 +54,7 @@
   "items": [
    {
     "number": 1,
-    "value": "douments"
+    "value": "documents"
    },
    {
     "number": 2,
@@ -213,10 +213,19 @@
     "value": "diet"
    }
   ],
+  "corrections": [
+   {
+    "number": 1,
+    "source": "douments",
+    "corrected": "documents",
+    "reason": "Source key misspelling (non-word): 'Training needed in how to produce ___'.",
+    "approvedBy": "owner request to fix source key typos, 2026-10-04"
+   }
+  ],
   "answers": [
    {
     "number": 1,
-    "value": "douments"
+    "value": "documents"
    },
    {
     "number": 2,
@@ -431,14 +440,14 @@
      },
      "options": null,
      "blankContext": "line: • Training needed in how to produce (1) ␦",
-     "correctAnswer": "douments",
+     "correctAnswer": "documents",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "• Training needed in how to produce (1) ␦"
      },
-     "keyRaw": "douments"
+     "keyRaw": "documents"
     },
     {
      "number": 2,

@@ -101,6 +101,8 @@ for (const r of PRODUCTION_READING) {
         }
         if (['pool_select', 'multi_choice'].includes(g.answerControl)) check(poolIds.includes(q.answer), `answer in pool (${r.slug} ${q.id} ${q.answer})`);
         if (g.answerControl === 'text') {
+          check(Boolean(q.context) && /[A-Za-z]{3}/.test(q.context.replace(/____/g, '')), `AI check context (${r.slug} ${q.id})`);
+          check(Boolean(q.instruction), `AI check instruction (${r.slug} ${q.id})`);
           check(Array.isArray(q.acceptedAnswers) && q.acceptedAnswers.length > 0, `accepted answers (${r.slug} ${q.id})`);
           check(!/^([A-Za-z]|[ivx]{1,4}|true|false|not given|yes|no)$/i.test(String(q.answer).trim()), `typed answer is not an option code (${r.slug} ${q.id})`);
         }

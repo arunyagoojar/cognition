@@ -229,6 +229,7 @@
     "value": "boarding platform"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -836,7 +837,10 @@
     "elementPath": "entry-content.children[3]",
     "rawExcerpt": "Part 2: Questions 11-15\nComplete the table below. Choose your answers from the box."
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test39-1.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -1316,7 +1320,10 @@
     "rawExcerpt": "Questions 27-30\nComplete the timetable below. Choose your answers for the box."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test39-2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g06",
@@ -1595,7 +1602,7 @@
      "blankContext": "line: (36) ␦ (37) ␦",
      "correctAnswer": "tension",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(36) ␦ (37) ␦"
@@ -1620,7 +1627,7 @@
      "blankContext": "line: (36) ␦ (37) ␦",
      "correctAnswer": "base cap",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(36) ␦ (37) ␦"
@@ -1645,7 +1652,7 @@
      "blankContext": "line: (38) ␦ (39) ␦",
      "correctAnswer": "A-frame",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(38) ␦ (39) ␦"
@@ -1670,7 +1677,7 @@
      "blankContext": "line: (38) ␦ (39) ␦",
      "correctAnswer": "rings",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(38) ␦ (39) ␦"
@@ -1692,7 +1699,7 @@
      "blankContext": "line: (40) ␦",
      "correctAnswer": "boarding platform",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "(40) ␦"
@@ -1705,7 +1712,10 @@
     "rawExcerpt": "Questions 36-40\nLabel the diagram below. Write NO MORE THAN TWO WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test39-3.png"
+   ],
+   "status": "quarantined"
   }
  ],
  "counts": {
@@ -1751,145 +1761,74 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g02",
-   "questionNumber": 11,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "D",
-    "rawExcerpt": "(11) ␦ (12) ␦",
-    "options": null
+    "instructionRaw": "Part 2: Questions 11-15\nComplete the table below. Choose your answers from the box.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 12,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "A",
-    "rawExcerpt": "(11) ␦ (12) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 13,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "C",
-    "rawExcerpt": "(13) ␦ (14) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 14,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "F",
-    "rawExcerpt": "(13) ␦ (14) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 15,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "E",
-    "rawExcerpt": "(15) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g05",
-   "questionNumber": 27,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    27,
+    28,
+    29,
+    30
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "H",
-    "rawExcerpt": "(27) ␦ (28) ␦",
-    "options": null
+    "instructionRaw": "Questions 27-30\nComplete the timetable below. Choose your answers for the box.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 28,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "unit": "group",
+   "groupId": "g07",
+   "questionNumbers": [
+    36,
+    37,
+    38,
+    39,
+    40
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "B",
-    "rawExcerpt": "(27) ␦ (28) ␦",
-    "options": null
+    "instructionRaw": "Questions 36-40\nLabel the diagram below. Write NO MORE THAN TWO WORDS for each answer.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 29,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "______ ______",
-    "answer": "G",
-    "rawExcerpt": "(29) ␦ (30) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 30,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "E",
-    "rawExcerpt": "(29) ␦ (30) ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/39_we.mp3",
+    "r2Key": "cognition/audio/listening/39_we.mp3"
    }
   },
   {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 31,
+    "verifiedQuestions": 26,
     "missingOrQuarantined": [
      11,
      12,
@@ -1899,7 +1838,12 @@
      27,
      28,
      29,
-     30
+     30,
+     36,
+     37,
+     38,
+     39,
+     40
     ],
     "outOfRange": []
    }
@@ -1912,8 +1856,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 31,
- "quarantinedCount": 10,
+ "verifiedQuestionCount": 26,
+ "quarantinedCount": 5,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

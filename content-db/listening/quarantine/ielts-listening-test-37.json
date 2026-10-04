@@ -16,6 +16,25 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 16-20\nLabel the plan below. Write NO MORE THAN THREE WORDS for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": null,
    "questionNumber": 36,
@@ -77,10 +96,23 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/37_deep.mp3",
+    "r2Key": "cognition/audio/listening/37_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 35,
+    "verifiedQuestions": 30,
     "missingOrQuarantined": [
+     16,
+     17,
+     18,
+     19,
+     20,
      36,
      37,
      38,

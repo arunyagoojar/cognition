@@ -4,6 +4,25 @@
  "sourceSha256": "2f77b1ada34d3444dc6901a50c046627db7b27fcb0cc4dd9831ee14845f8b394",
  "units": [
   {
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 16-20\nLabel the plan below. Write NO MORE THAN TWO WORDS for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g05",
    "questionNumber": 30,
@@ -19,12 +38,41 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g08",
+   "questionNumbers": [
+    40
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Question 40\nComplete the diagram below. Write ONE WORD ONLY for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/81_we.mp3",
+    "r2Key": "cognition/audio/listening/81_we.mp3"
+   }
+  },
+  {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 33,
     "missingOrQuarantined": [
-     30
+     16,
+     17,
+     18,
+     19,
+     20,
+     30,
+     40
     ],
     "outOfRange": []
    }

@@ -207,6 +207,7 @@
     "value": "hibernations"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1918,7 +1919,16 @@
   "fnameInputs": 29
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/133_we.mp3",
+    "r2Key": "cognition/audio/listening/133_we.mp3"
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1927,7 +1937,7 @@
   }
  ],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
+ "quarantinedCount": 1,
  "status": "duplicate",
  "fullTestEligible": false,
  "schemaErrors": [],

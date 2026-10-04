@@ -220,6 +220,7 @@
     "value": "research"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -440,7 +441,11 @@
     "elementPath": "entry-content.children[0]",
     "rawExcerpt": "Part 1: Questions 1 and 2\nChoose the correct letter A, B or C."
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test127-1.png",
+    "wp-content/uploads/2024/09/lis-test127-2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g02",
@@ -1626,59 +1631,19 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g01",
-   "questionNumber": 1,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    1,
+    2
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "What does the applicant work on for a living?",
-    "answer": "B",
-    "rawExcerpt": "1. What does the applicant work on for a living?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g01",
-   "questionNumber": 2,
-   "reasonCode": "OPTION_TEXT_EMPTY",
-   "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
-   ],
-   "evidence": {
-    "stem": "What kind of pet does the applicant have?",
-    "answer": "A",
-    "rawExcerpt": "2. What kind of pet does the applicant have?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 1: Questions 1 and 2\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1787,6 +1752,14 @@
    ],
    "evidence": {
     "keyValue": "D"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/127_deep.mp3",
+    "r2Key": "cognition/audio/listening/127_deep.mp3"
    }
   },
   {

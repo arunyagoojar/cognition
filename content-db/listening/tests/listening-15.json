@@ -213,6 +213,7 @@
     "value": "(legal) verification"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1021,7 +1022,7 @@
      "blankContext": "line: 19. Cinema ␦ (input box in source)",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "19. Cinema ␦"
@@ -1040,7 +1041,7 @@
      "blankContext": "line: 20. Main town post office ␦ (input box in source)",
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[20]",
       "rawExcerpt": "20. Main town post office ␦"
@@ -1108,7 +1109,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test15.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g06",
@@ -1885,6 +1889,22 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
+   "unit": "group",
+   "groupId": "g05",
+   "questionNumbers": [
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 19 and 20\nBelow is a basic map used to show where the Read for All charity’s offices are. The map has 12 locations marked A-L. Match the locations in questions 19-20 with the correct locatio",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g07",
    "questionNumber": 29,
@@ -1907,10 +1927,20 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/15_we.mp3",
+    "r2Key": "cognition/audio/listening/15_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 37,
     "missingOrQuarantined": [
+     19,
+     20,
      29
     ],
     "outOfRange": []
@@ -1918,8 +1948,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 37,
+ "quarantinedCount": 4,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

@@ -4,6 +4,47 @@
  "sourceSha256": "0a5fa9db3e5ee100c11f700a3d3928a7c677cb3204f545324788f8dd11379d14",
  "units": [
   {
+   "unit": "group",
+   "groupId": "g02",
+   "questionNumbers": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 5-10\nComplete the table given below.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 14-20\nComplete the plan below using NO MORE THAN TWO WORDS for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g06",
    "questionNumber": 23,
@@ -224,16 +265,57 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g07",
+   "questionNumbers": [
+    28,
+    29,
+    30
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 28-30\nLabel the chart below. Choose your answers from the box below and write the letters A–H next to questions 28–30.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/165_deep.mp3",
+    "r2Key": "cognition/audio/listening/165_deep.mp3"
+   }
+  },
+  {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 35,
+    "verifiedQuestions": 19,
     "missingOrQuarantined": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
      23,
      24,
      25,
      26,
-     27
+     27,
+     28,
+     29,
+     30
     ],
     "outOfRange": []
    }

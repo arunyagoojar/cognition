@@ -213,6 +213,7 @@
     "value": "C"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1680,7 +1681,10 @@
     "rawExcerpt": "Questions 38-40\nComplete the diagram below. Choose your answers from the box below and write the letters A-F next to questions 38-40."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test24.png"
+   ],
+   "status": "quarantined"
   }
  ],
  "counts": {
@@ -1728,48 +1732,28 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g07",
-   "questionNumber": 38,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    38,
+    39,
+    40
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______",
-    "answer": "F",
-    "rawExcerpt": "(38) ␦",
-    "options": null
+    "instructionRaw": "Questions 38-40\nComplete the diagram below. Choose your answers from the box below and write the letters A-F next to questions 38-40.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g07",
-   "questionNumber": 39,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "______",
-    "answer": "A",
-    "rawExcerpt": "(39) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g07",
-   "questionNumber": 40,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "C",
-    "rawExcerpt": "(40) ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/24_we.mp3",
+    "r2Key": "cognition/audio/listening/24_we.mp3"
    }
   },
   {
@@ -1788,7 +1772,7 @@
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 37,
- "quarantinedCount": 4,
+ "quarantinedCount": 3,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

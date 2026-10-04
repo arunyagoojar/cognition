@@ -76,35 +76,22 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g09",
-   "questionNumber": 33,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which graph shows the change as regards sick leave?",
-    "answer": "A",
-    "rawExcerpt": "33. Which graph shows the change as regards sick leave?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     },
-     {
-      "letter": "D",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 4: Questions 31-35\nCircle the correct letters A-D.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -157,9 +144,17 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/57_deep.mp3",
+    "r2Key": "cognition/audio/listening/57_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 31,
+    "verifiedQuestions": 27,
     "missingOrQuarantined": [
      11,
      12,
@@ -169,7 +164,11 @@
      16,
      17,
      18,
-     33
+     31,
+     32,
+     33,
+     34,
+     35
     ],
     "outOfRange": []
    }

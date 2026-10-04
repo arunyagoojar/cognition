@@ -621,6 +621,31 @@ LISTENING_SCHEMA = {
 SCHEMA_VALIDATOR = Draft202012Validator(LISTENING_SCHEMA)
 
 # ---------------------------------------------------------------- per-test pipeline
+
+# ---------------------------------------------------------------- owner-reviewed key corrections
+_CORR_PATH = os.path.join(REPO, "content-db", "listening", "key-corrections.json")
+KEY_CORRECTIONS = json.load(open(_CORR_PATH))["corrections"] if os.path.exists(_CORR_PATH) else []
+
+
+def apply_key_corrections(slug, key):
+    """Fixes recorded source-key misspellings. A correction applies only when
+    the source still says exactly what was reviewed; the original is kept."""
+    applied = []
+    if not key:
+        return applied
+    for field in ("items", "items_so_far"):
+        items = key.get(field)
+        if not items:
+            continue
+        for i, (n, v) in enumerate(items):
+            for c in KEY_CORRECTIONS:
+                if c["slug"] == slug and c["number"] == n and norm(v).lower() == c["source"].lower():
+                    items[i] = (n, c["corrected"])
+                    applied.append({"number": n, "source": v, "corrected": c["corrected"],
+                                    "reason": c["reason"], "approvedBy": c["approvedBy"]})
+    return applied
+
+
 def process(slug, page_loader):
     from bs4 import BeautifulSoup as BS
     page = page_loader(slug)
@@ -628,6 +653,7 @@ def process(slug, page_loader):
     test_number = int(test_number_m.group(1)) if test_number_m else 0
     raw_text = page["raw"].decode("utf-8", "replace")
     key = parse_answer_key(BS(raw_text, "html.parser"))
+    applied_corrections = apply_key_corrections(slug, key)
     audio = resolve_audio(decontaminate(BS(raw_text, "html.parser")), test_number)
     images = resolve_images(decontaminate(BS(raw_text, "html.parser")))
     groups, unparsed, ec = extract(slug, page, key)
@@ -640,6 +666,8 @@ def process(slug, page_loader):
     key2_items = []
     if key and key.get("raw"):
         key2_items = parse_key_independent(key["raw"])
+        fixes = {c["number"]: c["corrected"] for c in applied_corrections}
+        key2_items = [(n, fixes.get(n, v)) for n, v in key2_items]
 
     groups_json = []
     quar_pre = []
@@ -685,6 +713,7 @@ def process(slug, page_loader):
                        "trailingEmpty": (key or {}).get("trailing_empty"), "error": (key or {}).get("error"),
                        "independentParseCount": len(key2_items),
                        "items": [{"number": n, "value": v} for n, v in key_items],
+                       "corrections": applied_corrections or None,
                        "answers": [{"number": n, "value": key_map.get(n)} for n in
                                    sorted({q["number"] for g in groups_json for q in g["questions"]})]},
         "questionGroups": groups_json,

@@ -1,0 +1,13 @@
+{
+  "note": "Owner-reviewed corrections to misspellings in the SOURCE answer keys. Applied by pipeline/extract_production.py on every rebuild; the original source value is kept in each record's answerKey.corrections. Only clear source typos belong here — never a change of meaning.",
+  "corrections": [
+    { "slug": "ielts-listening-test-164", "number": 19, "source": "end newsletter", "corrected": "send newsletter",
+      "reason": "Source key drops the first letter; the Secretary's duty is to send the newsletter.", "approvedBy": "owner (Arunya), 2026-10-04" },
+    { "slug": "ielts-listening-88", "number": 1, "source": "douments", "corrected": "documents",
+      "reason": "Source key misspelling (non-word): 'Training needed in how to produce ___'.", "approvedBy": "owner request to fix source key typos, 2026-10-04" },
+    { "slug": "ielts-listening-test-67", "number": 9, "source": "kitched", "corrected": "kitchen",
+      "reason": "Source key misspelling (non-word).", "approvedBy": "owner request to fix source key typos, 2026-10-04" },
+    { "slug": "ielts-listening-test-46", "number": 6, "source": "dinning", "corrected": "dining",
+      "reason": "Source key misspelling in the property features table.", "approvedBy": "owner request to fix source key typos, 2026-10-04" }
+  ]
+}

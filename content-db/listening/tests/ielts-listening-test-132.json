@@ -220,6 +220,7 @@
     "value": "airboat"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -706,7 +707,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "8. Eastern Towers ␦"
@@ -724,7 +725,7 @@
      "blankContext": null,
      "correctAnswer": "H",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "9. Granby Mansions ␦"
@@ -742,7 +743,7 @@
      "blankContext": null,
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "10. Busby Garden ␦"
@@ -793,7 +794,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test132-1.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1011,7 +1015,7 @@
      "blankContext": "line: (17) ␦ (18) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(17) ␦ (18) ␦"
@@ -1030,7 +1034,7 @@
      "blankContext": "line: (17) ␦ (18) ␦",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(17) ␦ (18) ␦"
@@ -1049,7 +1053,7 @@
      "blankContext": "line: (19) ␦ (20) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(19) ␦ (20) ␦"
@@ -1068,7 +1072,7 @@
      "blankContext": "line: (19) ␦ (20) ␦",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "(19) ␦ (20) ␦"
@@ -1124,7 +1128,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test132-2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g06",
@@ -2019,6 +2026,41 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 8-10\nLabel the map below. Write the correct letter A-H next to questions 8-10.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
+   "groupId": "g05",
+   "questionNumbers": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 17-20\nLabel the map below. Write the correct letter A-I next to questions 17-20.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g08",
    "questionNumber": 34,
@@ -2035,13 +2077,28 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/132_we.mp3",
+    "r2Key": "cognition/audio/listening/132_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 36,
+    "verifiedQuestions": 29,
     "missingOrQuarantined": [
      5,
      6,
      7,
+     8,
+     9,
+     10,
+     17,
+     18,
+     19,
+     20,
      34
     ],
     "outOfRange": []
@@ -2049,8 +2106,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 36,
- "quarantinedCount": 5,
+ "verifiedQuestionCount": 29,
+ "quarantinedCount": 8,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

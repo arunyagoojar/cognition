@@ -222,6 +222,7 @@
     "value": "Rain"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -890,7 +891,7 @@
      "blankContext": null,
      "correctAnswer": "G",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. Farm shop ␦"
@@ -908,7 +909,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "17. Disabled entry ␦"
@@ -926,7 +927,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "18. Adventure playground ␦"
@@ -944,7 +945,7 @@
      "blankContext": null,
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "19. Kitchen gardens ␦"
@@ -962,7 +963,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "20. The Temple of the Four Winds ␦"
@@ -1013,7 +1014,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test197.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1760,6 +1764,25 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 16-20\nLabel the map below. Write the correct letter, A-H, next to Questions 16-20.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": null,
    "questionNumber": 38,
@@ -1773,10 +1796,23 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/197_we.mp3",
+    "r2Key": "cognition/audio/listening/197_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 34,
     "missingOrQuarantined": [
+     16,
+     17,
+     18,
+     19,
+     20,
      38
     ],
     "outOfRange": []
@@ -1790,8 +1826,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 4,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

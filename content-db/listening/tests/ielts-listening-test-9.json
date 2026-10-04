@@ -220,6 +220,7 @@
     "value": "chocolate"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -818,7 +819,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "11. On the holiday, you will be walking for"
@@ -880,7 +881,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[14]",
       "rawExcerpt": "13. Each walker’s sponsorship money goes to one"
@@ -911,7 +912,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[15]",
       "rawExcerpt": "14. When you start the trek you must be"
@@ -942,7 +943,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[16]",
       "rawExcerpt": "15. As you walk you will carry"
@@ -973,7 +974,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[17]",
       "rawExcerpt": "16. The Semira Region has a long tradition of"
@@ -985,7 +986,10 @@
     "elementPath": "entry-content.children[9]",
     "rawExcerpt": "Part 2: Questions 11-16\nChoose the correct letter A, B or C."
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test9.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g05",
@@ -1281,7 +1285,7 @@
      "blankContext": "line: (23) ␦",
      "correctAnswer": "activated",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(23) ␦"
@@ -1303,7 +1307,7 @@
      "blankContext": "line: (24) ␦",
      "correctAnswer": "50km",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(24) ␦"
@@ -1325,7 +1329,7 @@
      "blankContext": "line: (25) ␦",
      "correctAnswer": "temperature",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(25) ␦"
@@ -1338,7 +1342,10 @@
     "rawExcerpt": "Questions 23-25\nComplete the diagram below. Write ONE WORD OR A NUMBER."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/10/L9.2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g08",
@@ -1860,48 +1867,73 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g04",
-   "questionNumber": 12,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "What proportion of the sponsorship money goes to charity?",
-    "answer": "C",
-    "rawExcerpt": "12. What proportion of the sponsorship money goes to charity?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 2: Questions 11-16\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
+   "groupId": "g07",
+   "questionNumbers": [
+    23,
+    24,
+    25
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 23-25\nComplete the diagram below. Write ONE WORD OR A NUMBER.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/9_we.mp3",
+    "r2Key": "cognition/audio/listening/9_we.mp3"
    }
   },
   {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 39,
+    "verifiedQuestions": 31,
     "missingOrQuarantined": [
-     12
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     23,
+     24,
+     25
     ],
     "outOfRange": []
    }
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 39,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 31,
+ "quarantinedCount": 4,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

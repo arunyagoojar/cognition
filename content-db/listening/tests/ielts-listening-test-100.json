@@ -207,6 +207,7 @@
     "value": "species"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1957,6 +1958,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/100_deep.mp3",
+    "r2Key": "cognition/audio/listening/100_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
     "verifiedQuestions": 37,
@@ -1977,7 +1986,7 @@
   }
  ],
  "verifiedQuestionCount": 37,
- "quarantinedCount": 4,
+ "quarantinedCount": 5,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

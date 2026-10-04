@@ -213,6 +213,7 @@
     "value": "A"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -917,7 +918,7 @@
      "blankContext": "line: (16) ␦ (17) ␦",
      "correctAnswer": "conference centre",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(16) ␦ (17) ␦"
@@ -942,7 +943,7 @@
      "blankContext": "line: (16) ␦ (17) ␦",
      "correctAnswer": "information desk",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(16) ␦ (17) ␦"
@@ -967,7 +968,7 @@
      "blankContext": "line: (18) ␦ (19) ␦",
      "correctAnswer": "bookshop",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(18) ␦ (19) ␦"
@@ -992,7 +993,7 @@
      "blankContext": "line: (18) ␦ (19) ␦",
      "correctAnswer": "king’s library",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(18) ␦ (19) ␦"
@@ -1014,7 +1015,7 @@
      "blankContext": "line: (20) ␦",
      "correctAnswer": "stamp display",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "(20) ␦"
@@ -1027,7 +1028,10 @@
     "rawExcerpt": "Questions 16-20\nLabel the plan below. Write NO MORE THAN THREE WORDS for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test37.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g05",
@@ -1551,6 +1555,25 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 16-20\nLabel the plan below. Write NO MORE THAN THREE WORDS for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": null,
    "questionNumber": 36,
@@ -1612,10 +1635,23 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/37_deep.mp3",
+    "r2Key": "cognition/audio/listening/37_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 35,
+    "verifiedQuestions": 30,
     "missingOrQuarantined": [
+     16,
+     17,
+     18,
+     19,
+     20,
      36,
      37,
      38,
@@ -1627,8 +1663,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 7,
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 9,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

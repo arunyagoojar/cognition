@@ -220,6 +220,7 @@
     "value": "minerals"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -904,7 +905,7 @@
      "blankContext": "line: (15) ␦ (16) ␦",
      "correctAnswer": "car park",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(15) ␦ (16) ␦"
@@ -929,7 +930,7 @@
      "blankContext": "line: (15) ␦ (16) ␦",
      "correctAnswer": "rose garden",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(15) ␦ (16) ␦"
@@ -951,7 +952,7 @@
      "blankContext": "line: (17) ␦",
      "correctAnswer": "cafe",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[11]",
       "rawExcerpt": "(17) ␦"
@@ -969,7 +970,10 @@
     17
    ],
    "rangeReconciled": true,
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test156.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g05",
@@ -1822,6 +1826,23 @@
  "quarantinedUnits": [
   {
    "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    15,
+    16,
+    17
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 13-17\nLabel the plan below. Write NO MORE THAN TWO WORDS.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
    "groupId": "g09",
    "questionNumbers": [
     31,
@@ -1839,10 +1860,21 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/156_we.mp3",
+    "r2Key": "cognition/audio/listening/156_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 37,
+    "verifiedQuestions": 34,
     "missingOrQuarantined": [
+     15,
+     16,
+     17,
      31,
      32,
      33
@@ -1852,8 +1884,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 37,
- "quarantinedCount": 2,
+ "verifiedQuestionCount": 34,
+ "quarantinedCount": 4,
  "status": "duplicate",
  "fullTestEligible": false,
  "schemaErrors": [],

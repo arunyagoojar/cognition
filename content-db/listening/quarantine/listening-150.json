@@ -4,6 +4,23 @@
  "sourceSha256": "3c190a42f8a43123beb5dbb02fe03aee68ef91fec570b1f4512895dc863ca0f6",
  "units": [
   {
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    12,
+    13,
+    14
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 12-14\nLabel the plan below. Write NO MORE THAN WORDS.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
    "unit": "question",
    "groupId": "g09",
    "questionNumber": 37,
@@ -65,10 +82,21 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/150_we.mp3",
+    "r2Key": "cognition/audio/listening/150_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 36,
+    "verifiedQuestions": 33,
     "missingOrQuarantined": [
+     12,
+     13,
+     14,
      37,
      38,
      39,

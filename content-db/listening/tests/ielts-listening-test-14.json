@@ -207,6 +207,7 @@
     "value": "loans"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1664,7 +1665,17 @@
   "fnameInputs": 35
  },
  "unparsed": [],
- "quarantinedUnits": [],
+ "quarantinedUnits": [
+  {
+   "unit": "test",
+   "reasonCode": "RENDER_CHECK_FAILED",
+   "evidence": {
+    "defects": [
+     "g05: 5 answer lines in a row carry no text"
+    ]
+   }
+  }
+ ],
  "validationWarnings": [
   {
    "layer": "V7_asset",
@@ -1673,8 +1684,8 @@
   }
  ],
  "verifiedQuestionCount": 40,
- "quarantinedCount": 0,
- "status": "verified",
- "fullTestEligible": true,
+ "quarantinedCount": 1,
+ "status": "quarantined",
+ "fullTestEligible": false,
  "schemaErrors": []
 }

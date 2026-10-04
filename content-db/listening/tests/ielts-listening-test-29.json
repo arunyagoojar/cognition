@@ -227,6 +227,7 @@
     "value": "B"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -722,7 +723,10 @@
     "rawExcerpt": "Questions 6-10\nLabel the places on the map below."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test29-1.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -772,7 +776,7 @@
      "blankContext": "line: (11) ␦ (12) ␦",
      "correctAnswer": "sunday",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(11) ␦ (12) ␦"
@@ -797,7 +801,7 @@
      "blankContext": "line: (11) ␦ (12) ␦",
      "correctAnswer": "7.30",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(11) ␦ (12) ␦"
@@ -822,7 +826,7 @@
      "blankContext": "line: (13) ␦ (14) ␦",
      "correctAnswer": "classical",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(13) ␦ (14) ␦"
@@ -847,7 +851,7 @@
      "blankContext": "line: (13) ␦ (14) ␦",
      "correctAnswer": "12 am",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(13) ␦ (14) ␦"
@@ -872,7 +876,7 @@
      "blankContext": "line: (15) ␦ (16) ␦",
      "correctAnswer": "served all day",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(15) ␦ (16) ␦"
@@ -897,7 +901,7 @@
      "blankContext": "line: (15) ␦ (16) ␦",
      "correctAnswer": "(monthly) newsletter",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(15) ␦ (16) ␦"
@@ -922,7 +926,7 @@
      "blankContext": "line: (17) ␦ (18) ␦",
      "correctAnswer": "£15",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(17) ␦ (18) ␦"
@@ -947,7 +951,7 @@
      "blankContext": "line: (17) ␦ (18) ␦",
      "correctAnswer": "year",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(17) ␦ (18) ␦"
@@ -972,7 +976,7 @@
      "blankContext": "line: (19) ␦ (20) ␦",
      "correctAnswer": "(membership) card",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(19) ␦ (20) ␦"
@@ -997,7 +1001,7 @@
      "blankContext": "line: (19) ␦ (20) ␦",
      "correctAnswer": "(membership) number",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[10]",
       "rawExcerpt": "(19) ␦ (20) ␦"
@@ -1009,7 +1013,10 @@
     "elementPath": "entry-content.children[7]",
     "rawExcerpt": "Part 2: Questions 11-20"
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test29-2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1724,78 +1731,46 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g02",
-   "questionNumber": 6,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "P",
-    "rawExcerpt": "(6) ␦ (7) ␦",
-    "options": null
+    "instructionRaw": "Questions 6-10\nLabel the places on the map below.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 7,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "S",
-    "rawExcerpt": "(6) ␦ (7) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 8,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "R",
-    "rawExcerpt": "(8) ␦ (9) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 9,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "B",
-    "rawExcerpt": "(8) ␦ (9) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g02",
-   "questionNumber": 10,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "C",
-    "rawExcerpt": "(10) ␦",
-    "options": null
+    "instructionRaw": "Part 2: Questions 11-20",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1812,15 +1787,33 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/29_we.mp3",
+    "r2Key": "cognition/audio/listening/29_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 34,
+    "verifiedQuestions": 24,
     "missingOrQuarantined": [
      6,
      7,
      8,
      9,
      10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
      31
     ],
     "outOfRange": []
@@ -1828,8 +1821,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 8,
+ "verifiedQuestionCount": 24,
+ "quarantinedCount": 6,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

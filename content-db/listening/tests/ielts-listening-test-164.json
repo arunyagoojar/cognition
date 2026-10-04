@@ -27,7 +27,7 @@
  ],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "ad1d008ce167f9ba9eec3380022dafeb6bd2dc0e808371d5fcf72d75cc6bb659",
+ "contentFingerprint": "fe3fde206d2c204a89b9e04e90e21719b0cb79a2add8644d98de14ade4e84bd6",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -125,7 +125,7 @@
    },
    {
     "number": 19,
-    "value": "end newsletter"
+    "value": "send newsletter"
    },
    {
     "number": 20,
@@ -212,6 +212,15 @@
     "value": "C"
    }
   ],
+  "corrections": [
+   {
+    "number": 19,
+    "source": "end newsletter",
+    "corrected": "send newsletter",
+    "reason": "Source key drops the first letter; the Secretary's duty is to send the newsletter.",
+    "approvedBy": "owner (Arunya), 2026-10-04"
+   }
+  ],
   "answers": [
    {
     "number": 1,
@@ -287,7 +296,7 @@
    },
    {
     "number": 19,
-    "value": "end newsletter"
+    "value": "send newsletter"
    },
    {
     "number": 20,
@@ -991,14 +1000,14 @@
      },
      "options": null,
      "blankContext": "table row 4 col 2",
-     "correctAnswer": "end newsletter",
+     "correctAnswer": "send newsletter",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[12]",
       "rawExcerpt": "to (19)…………………."
      },
-     "keyRaw": "end newsletter"
+     "keyRaw": "send newsletter"
     },
     {
      "number": 20,

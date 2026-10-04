@@ -213,6 +213,7 @@
     "value": "C"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1478,7 +1479,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[31]",
       "rawExcerpt": "31. Jim was first interested in the subject because of something"
@@ -1509,7 +1510,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[32]",
       "rawExcerpt": "32. The main research method was"
@@ -1558,7 +1559,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[36]",
       "rawExcerpt": "34. How many respondents were there?"
@@ -1589,7 +1590,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[37]",
       "rawExcerpt": "35. The most common type of problem involved"
@@ -1601,7 +1602,10 @@
     "elementPath": "entry-content.children[30]",
     "rawExcerpt": "Part 4: Questions 31-35\nChoose the correct letter A, B or C."
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test52.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g09",
@@ -1823,18 +1827,22 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g08",
-   "questionNumber": 33,
-   "reasonCode": "OPTIONS_MISSING",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTIONS_MISSING"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which pie chart shows the proportion of men and women respondents?",
-    "answer": "C",
-    "rawExcerpt": "33. Which pie chart shows the proportion of men and women respondents?",
-    "options": null
+    "instructionRaw": "Part 4: Questions 31-35\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1914,11 +1922,23 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/52_we.mp3",
+    "r2Key": "cognition/audio/listening/52_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 34,
+    "verifiedQuestions": 30,
     "missingOrQuarantined": [
+     31,
+     32,
      33,
+     34,
+     35,
      36,
      37,
      38,
@@ -1930,8 +1950,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 7,
+ "verifiedQuestionCount": 30,
+ "quarantinedCount": 8,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

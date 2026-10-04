@@ -4,78 +4,22 @@
  "sourceSha256": "20b12965733024af0d1e475359ea74e9331cd4384052d93d89b09ec47e5b7dbd",
  "units": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g03",
-   "questionNumber": 11,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______ ______",
-    "answer": "A",
-    "rawExcerpt": "(11) ␦ (12) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 12,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "D",
-    "rawExcerpt": "(11) ␦ (12) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 13,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "C",
-    "rawExcerpt": "(13) ␦ (14) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 14,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______ ______",
-    "answer": "E",
-    "rawExcerpt": "(13) ␦ (14) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g03",
-   "questionNumber": 15,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "B",
-    "rawExcerpt": "(15) ␦",
-    "options": null
+    "instructionRaw": "Part 2: Questions 11-15\nFill in the timeline.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -136,6 +80,14 @@
     "answer": "N",
     "rawExcerpt": "30. Peter ␦",
     "options": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/69_we.mp3",
+    "r2Key": "cognition/audio/listening/69_we.mp3"
    }
   },
   {

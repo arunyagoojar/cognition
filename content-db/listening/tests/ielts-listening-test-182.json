@@ -220,6 +220,7 @@
     "value": "design"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1005,7 +1006,10 @@
     "rawExcerpt": "Questions 15-20\nLabel the map below."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test-182.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g05",
@@ -1673,93 +1677,23 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g04",
-   "questionNumber": 15,
-   "reasonCode": "OPTIONS_MISSING",
+   "questionNumbers": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTIONS_MISSING"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "statue of Diane Gosforth",
-    "answer": "E",
-    "rawExcerpt": "15. statue of Diane Gosforth ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 16,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "wooden sculptures",
-    "answer": "C",
-    "rawExcerpt": "16. wooden sculptures ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 17,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "playground",
-    "answer": "B",
-    "rawExcerpt": "17. playground ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 18,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "maze",
-    "answer": "A",
-    "rawExcerpt": "18. maze ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 19,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "tennis courts",
-    "answer": "G",
-    "rawExcerpt": "19. tennis courts ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 20,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "fitness area",
-    "answer": "D",
-    "rawExcerpt": "20. fitness area ␦",
-    "options": null
+    "instructionRaw": "Questions 15-20\nLabel the map below.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1788,6 +1722,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/182_we.mp3",
+    "r2Key": "cognition/audio/listening/182_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
     "verifiedQuestions": 32,
@@ -1807,7 +1749,7 @@
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 32,
- "quarantinedCount": 10,
+ "quarantinedCount": 6,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

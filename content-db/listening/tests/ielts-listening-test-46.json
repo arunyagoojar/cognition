@@ -20,7 +20,7 @@
  "cambridgeIdentity": [],
  "hubEnumerated": true,
  "duplicateOf": null,
- "contentFingerprint": "23973fef09b1b7d3f5a0f17b8a5bb3498c33d24a2da2aadb3e4c2b5ca0411243",
+ "contentFingerprint": "d059ac63a87195e4c7eb9b25b7e7427f73656c7d24ca4eba9531d545889ac2af",
  "audio": {
   "status": "resolved",
   "asset": {
@@ -66,7 +66,7 @@
    },
    {
     "number": 6,
-    "value": "dinning"
+    "value": "dining"
    },
    {
     "number": 7,
@@ -205,6 +205,15 @@
     "value": "trade routes"
    }
   ],
+  "corrections": [
+   {
+    "number": 6,
+    "source": "dinning",
+    "corrected": "dining",
+    "reason": "Source key misspelling in the property features table.",
+    "approvedBy": "owner request to fix source key typos, 2026-10-04"
+   }
+  ],
   "answers": [
    {
     "number": 1,
@@ -228,7 +237,7 @@
    },
    {
     "number": 6,
-    "value": "dinning"
+    "value": "dining"
    },
    {
     "number": 7,
@@ -560,14 +569,14 @@
      },
      "options": null,
      "blankContext": "table row 3 col 3",
-     "correctAnswer": "dinning",
+     "correctAnswer": "dining",
      "answerFound": true,
      "status": "verified",
      "provenance": {
       "elementPath": "entry-content.children[2]",
       "rawExcerpt": "– House – Three bedrooms – (6)…………rooms – Living room – Kitchen"
      },
-     "keyRaw": "dinning"
+     "keyRaw": "dining"
     },
     {
      "number": 7,

@@ -16,31 +16,22 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g01",
-   "questionNumber": 2,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which of the items below does Harry want to sell?",
-    "answer": "C",
-    "rawExcerpt": "2. Which of the items below does Harry want to sell?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 1: Questions 1-5\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -69,11 +60,23 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/49_we.mp3",
+    "r2Key": "cognition/audio/listening/49_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 37,
+    "verifiedQuestions": 33,
     "missingOrQuarantined": [
+     1,
      2,
+     3,
+     4,
+     5,
      32,
      33
     ],

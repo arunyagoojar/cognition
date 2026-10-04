@@ -213,6 +213,7 @@
     "value": "locations"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -700,7 +701,10 @@
     "rawExcerpt": "Question 10\nChoose the correct letter A, B or C."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test121.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g03",
@@ -1715,31 +1719,26 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g02",
-   "questionNumber": 10,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which map shows the correct location of the seller’s house?",
-    "answer": "B",
-    "rawExcerpt": "10. Which map shows the correct location of the seller’s house?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Question 10\nChoose the correct letter A, B or C.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/121_we.mp3",
+    "r2Key": "cognition/audio/listening/121_we.mp3"
    }
   },
   {
@@ -1756,7 +1755,7 @@
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 39,
- "quarantinedCount": 2,
+ "quarantinedCount": 3,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

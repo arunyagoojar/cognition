@@ -236,6 +236,7 @@
     "value": "control"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -814,7 +815,7 @@
      "blankContext": "line: 11. Quiet reading ␦ (input box in source)",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "11. Quiet reading ␦"
@@ -833,7 +834,7 @@
      "blankContext": "line: 12. Computers ␦ (input box in source)",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "12. Computers ␦"
@@ -852,7 +853,7 @@
      "blankContext": "line: 13. Newspapers and magazines ␦ (input box in source)",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "13. Newspapers and magazines ␦"
@@ -871,7 +872,7 @@
      "blankContext": "line: 14. Reference books ␦ (input box in source)",
      "correctAnswer": "F",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "14. Reference books ␦"
@@ -890,7 +891,7 @@
      "blankContext": "line: 15. Audio section ␦ (input box in source)",
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "15. Audio section ␦"
@@ -909,7 +910,7 @@
      "blankContext": "line: 16. Main library ␦ (input box in source)",
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "16. Main library ␦"
@@ -952,7 +953,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test62-1.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1090,7 +1094,10 @@
     "rawExcerpt": "Questions 17-20\nComplete the timetable. Write the correct letter A-J for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test62-2.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g05",
@@ -1517,7 +1524,7 @@
      "blankContext": "line: (31) ␦ (32) ␦",
      "correctAnswer": "billion",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(31) ␦ (32) ␦"
@@ -1542,7 +1549,7 @@
      "blankContext": "line: (31) ␦ (32) ␦",
      "correctAnswer": "cleanroom",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(31) ␦ (32) ␦"
@@ -1567,7 +1574,7 @@
      "blankContext": "line: (33) ␦ (34) ␦",
      "correctAnswer": "radiation",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(33) ␦ (34) ␦"
@@ -1592,7 +1599,7 @@
      "blankContext": "line: (33) ␦ (34) ␦",
      "correctAnswer": "underground",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(33) ␦ (34) ␦"
@@ -1614,7 +1621,7 @@
      "blankContext": "line: (35) ␦",
      "correctAnswer": "complex",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "(35) ␦"
@@ -1626,7 +1633,10 @@
     "elementPath": "entry-content.children[19]",
     "rawExcerpt": "Part 4: Questions 31-35\nComplete the notes. Write NO MORE THAN TWO WORDS for each answer."
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test62-3.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g08",
@@ -1674,7 +1684,7 @@
      "blankContext": "line: (36) ␦ (37) ␦",
      "correctAnswer": "heavy water",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36) ␦ (37) ␦"
@@ -1699,7 +1709,7 @@
      "blankContext": "line: (36) ␦ (37) ␦",
      "correctAnswer": "electronic",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(36) ␦ (37) ␦"
@@ -1724,7 +1734,7 @@
      "blankContext": "line: (38) ␦ (39) ␦",
      "correctAnswer": "1000 tons",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(38) ␦ (39) ␦"
@@ -1749,7 +1759,7 @@
      "blankContext": "line: (38) ␦ (39) ␦",
      "correctAnswer": "electric current",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(38) ␦ (39) ␦"
@@ -1771,7 +1781,7 @@
      "blankContext": "line: (40) ␦",
      "correctAnswer": "control",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "(40) ␦"
@@ -1784,7 +1794,10 @@
     "rawExcerpt": "Questions 36-40\nComplete the diagram. Write NO MORE THAN TWO WORDS AND/ OR A NUMBER for each answer."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test62-4.png"
+   ],
+   "status": "quarantined"
   }
  ],
  "counts": {
@@ -1841,76 +1854,116 @@
    }
   },
   {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 17,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Teacher-led discussion ______",
-    "answer": "E",
-    "rawExcerpt": "17. Teacher-led discussion ␦",
-    "options": null
+    "instructionRaw": "Part 2: Questions 11-16\nLabel the floor plan. Write correct letter A-F for each answer.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g04",
-   "questionNumber": 18,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Writing skills ______",
-    "answer": "C",
-    "rawExcerpt": "18. Writing skills ␦",
-    "options": null
+    "instructionRaw": "Questions 17-20\nComplete the timetable. Write the correct letter A-J for each answer.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 19,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "unit": "group",
+   "groupId": "g07",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "On-call teacher ______",
-    "answer": "I",
-    "rawExcerpt": "19. On-call teacher ␦",
-    "options": null
+    "instructionRaw": "Part 4: Questions 31-35\nComplete the notes. Write NO MORE THAN TWO WORDS for each answer.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 20,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "unit": "group",
+   "groupId": "g08",
+   "questionNumbers": [
+    36,
+    37,
+    38,
+    39,
+    40
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Language exchange ______",
-    "answer": "F",
-    "rawExcerpt": "20. Language exchange ␦",
-    "options": null
+    "instructionRaw": "Questions 36-40\nComplete the diagram. Write NO MORE THAN TWO WORDS AND/ OR A NUMBER for each answer.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/62_we.mp3",
+    "r2Key": "cognition/audio/listening/62_we.mp3"
    }
   },
   {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 35,
+    "verifiedQuestions": 19,
     "missingOrQuarantined": [
      5,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
      17,
      18,
      19,
-     20
+     20,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
     ],
     "outOfRange": []
    }
@@ -1923,8 +1976,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 35,
- "quarantinedCount": 6,
+ "verifiedQuestionCount": 19,
+ "quarantinedCount": 7,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

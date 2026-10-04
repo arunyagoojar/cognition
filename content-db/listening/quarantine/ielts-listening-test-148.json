@@ -4,48 +4,28 @@
  "sourceSha256": "8e4f02dc609e049d7c08a6d78eb9fdbabfc7d141613de46c3ae923202a5a80c0",
  "units": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g04",
-   "questionNumber": 11,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    11,
+    12,
+    13
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______",
-    "answer": "B",
-    "rawExcerpt": "(11) ␦",
-    "options": null
+    "instructionRaw": "Part 2: Questions 11-13\nLabel the diagram below. Choose THREE answers from the box and write the correct letters A-E.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 12,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "______",
-    "answer": "C",
-    "rawExcerpt": "(12) ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g04",
-   "questionNumber": 13,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
-   "evidence": {
-    "stem": "______",
-    "answer": "E",
-    "rawExcerpt": "(13) ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/148_we.mp3",
+    "r2Key": "cognition/audio/listening/148_we.mp3"
    }
   },
   {

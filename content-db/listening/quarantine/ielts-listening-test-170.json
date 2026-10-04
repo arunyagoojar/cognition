@@ -14,7 +14,8 @@
    ],
    "reasonCode": "ORPHAN_OPTION_BLOCK",
    "reasonCodes": [
-    "ORPHAN_OPTION_BLOCK"
+    "ORPHAN_OPTION_BLOCK",
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
     "instructionRaw": "Part 4: Questions 31-35\nCircle the correct letters A-C",
@@ -108,6 +109,14 @@
    ],
    "evidence": {
     "keyValue": "A"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/170_we.mp3",
+    "r2Key": "cognition/audio/listening/170_we.mp3"
    }
   },
   {

@@ -222,6 +222,7 @@
     "value": "Handbag"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1104,7 +1105,10 @@
     "rawExcerpt": "Questions 15-20\nLabel the map below. Write the correct letter, A-l, next to Questions 15-20."
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/test-194.jpg"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g06",
@@ -1857,93 +1861,31 @@
  "unparsed": [],
  "quarantinedUnits": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g05",
-   "questionNumber": 15,
-   "reasonCode": "OPTIONS_MISSING",
+   "questionNumbers": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTIONS_MISSING"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "School",
-    "answer": "G",
-    "rawExcerpt": "15. School ␦",
-    "options": null
+    "instructionRaw": "Questions 15-20\nLabel the map below. Write the correct letter, A-l, next to Questions 15-20.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 16,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "Sports centre",
-    "answer": "C",
-    "rawExcerpt": "16. Sports centre ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 17,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Clinic",
-    "answer": "D",
-    "rawExcerpt": "17. Clinic ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 18,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Community centre",
-    "answer": "B",
-    "rawExcerpt": "18. Community centre ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 19,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Supermarket",
-    "answer": "H",
-    "rawExcerpt": "19. Supermarket ␦",
-    "options": null
-   }
-  },
-  {
-   "unit": "question",
-   "groupId": "g05",
-   "questionNumber": 20,
-   "reasonCode": "OPTIONS_MISSING",
-   "reasonCodes": [
-    "OPTIONS_MISSING"
-   ],
-   "evidence": {
-    "stem": "Playground",
-    "answer": "A",
-    "rawExcerpt": "20. Playground ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/194_we.mp3",
+    "r2Key": "cognition/audio/listening/194_we.mp3"
    }
   },
   {
@@ -1971,7 +1913,7 @@
   }
  ],
  "verifiedQuestionCount": 34,
- "quarantinedCount": 7,
+ "quarantinedCount": 3,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

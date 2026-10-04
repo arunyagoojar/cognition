@@ -205,6 +205,7 @@
     "value": "B"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1769,6 +1770,14 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/18_we.mp3",
+    "r2Key": "cognition/audio/listening/18_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
     "verifiedQuestions": 39,
@@ -1781,7 +1790,7 @@
  ],
  "validationWarnings": [],
  "verifiedQuestionCount": 39,
- "quarantinedCount": 2,
+ "quarantinedCount": 3,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

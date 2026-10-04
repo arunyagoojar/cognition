@@ -130,5 +130,25 @@ await t('"choose N" letters score in any order', async () => {
   assert.equal(res.raw, g.questions.length);
 });
 
+await t('owner-reviewed key corrections are applied (source value kept)', () => {
+  const t164 = PRODUCTION_LISTENING.find(r => r.slug === 'ielts-listening-test-164');
+  assert.equal(t164.parts.flatMap(p => p.questions).find(q => q.questionNumber === 19).answer, 'send newsletter');
+  const rec = JSON.parse(fs.readFileSync(path.join(ROOT, 'content-db/listening/tests/ielts-listening-test-164.json'), 'utf8'));
+  assert.equal(rec.answerKey.corrections[0].source, 'end newsletter');
+});
+
+await t('typed answers carry their sentence/row for the AI answer check', () => {
+  const missing = [];
+  for (const r of PRODUCTION_LISTENING) for (const p of r.parts) for (const g of p.questionGroups) {
+    if (g.visualHtml) continue; // the figure carries the context
+    for (const q of g.questions) {
+      if (q.inputType !== 'text') continue;
+      if (!q.context || !/[A-Za-z0-9]{2}/.test(q.context.replace(/____/g, ''))) missing.push(`${r.slug} q${q.questionNumber}`);
+      assert.ok(q.instruction, `${r.slug} q${q.questionNumber} instruction`);
+    }
+  }
+  assert.equal(missing.length, 0, missing.slice(0, 5).join(', '));
+});
+
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);

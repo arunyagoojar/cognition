@@ -220,6 +220,7 @@
     "value": "C"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1436,7 +1437,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[22]",
       "rawExcerpt": "32. According to the speaker, the main cause of back pain in women is"
@@ -1467,7 +1468,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[23]",
       "rawExcerpt": "33. As treatment for back pain the Clinic mainly recommends"
@@ -1498,7 +1499,7 @@
      "blankContext": null,
      "correctAnswer": "C",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[24]",
       "rawExcerpt": "34. The back is different from other parts of the body because"
@@ -1529,7 +1530,7 @@
      "blankContext": null,
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[25]",
       "rawExcerpt": "35. Bed rest is advised"
@@ -1560,7 +1561,7 @@
      "blankContext": null,
      "correctAnswer": "B",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[26]",
       "rawExcerpt": "36. Being overweight"
@@ -1572,7 +1573,10 @@
     "elementPath": "entry-content.children[17]",
     "rawExcerpt": "Part 4: Questions 31-36"
    },
-   "status": "flagged"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test59.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g09",
@@ -1791,31 +1795,23 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g08",
-   "questionNumber": 31,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which column of the bar chart represents the figures quoted?",
-    "answer": "A",
-    "rawExcerpt": "31. Which column of the bar chart represents the figures quoted?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 4: Questions 31-36",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -1880,12 +1876,25 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/59_deep.mp3",
+    "r2Key": "cognition/audio/listening/59_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 34,
+    "verifiedQuestions": 29,
     "missingOrQuarantined": [
      19,
      31,
+     32,
+     33,
+     34,
+     35,
+     36,
      37,
      38,
      39,
@@ -1896,8 +1905,8 @@
   }
  ],
  "validationWarnings": [],
- "verifiedQuestionCount": 34,
- "quarantinedCount": 7,
+ "verifiedQuestionCount": 29,
+ "quarantinedCount": 8,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

@@ -20,31 +20,23 @@
    }
   },
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g08",
-   "questionNumber": 31,
-   "reasonCode": "OPTION_TEXT_EMPTY",
+   "questionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "OPTION_TEXT_EMPTY"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "Which column of the bar chart represents the figures quoted?",
-    "answer": "A",
-    "rawExcerpt": "31. Which column of the bar chart represents the figures quoted?",
-    "options": [
-     {
-      "letter": "A",
-      "text": ""
-     },
-     {
-      "letter": "B",
-      "text": ""
-     },
-     {
-      "letter": "C",
-      "text": ""
-     }
-    ]
+    "instructionRaw": "Part 4: Questions 31-36",
+    "orphanOptionBlocks": null
    }
   },
   {
@@ -109,12 +101,25 @@
   },
   {
    "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/59_deep.mp3",
+    "r2Key": "cognition/audio/listening/59_deep.mp3"
+   }
+  },
+  {
+   "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 34,
+    "verifiedQuestions": 29,
     "missingOrQuarantined": [
      19,
      31,
+     32,
+     33,
+     34,
+     35,
+     36,
      37,
      38,
      39,

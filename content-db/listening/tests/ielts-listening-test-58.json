@@ -236,6 +236,7 @@
     "value": "better than expected"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -683,7 +684,7 @@
      "blankContext": "line: (8) ␦",
      "correctAnswer": "A",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(8) ␦"
@@ -702,7 +703,7 @@
      "blankContext": "line: (9) ␦",
      "correctAnswer": "E",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(9) ␦"
@@ -721,7 +722,7 @@
      "blankContext": "line: (10) ␦",
      "correctAnswer": "D",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[9]",
       "rawExcerpt": "(10) ␦"
@@ -769,7 +770,10 @@
      }
     ]
    },
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test58-1.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g04",
@@ -1347,6 +1351,10 @@
     21
    ],
    "rangeReconciled": true,
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test58-2.png",
+    "wp-content/uploads/2024/09/lis-test58-3.png"
+   ],
    "status": "quarantined"
   },
   {
@@ -1596,7 +1604,7 @@
      "blankContext": "line: (33) ␦",
      "correctAnswer": "warmth and safety",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "(33) ␦"
@@ -1618,7 +1626,7 @@
      "blankContext": "line: (34) ␦",
      "correctAnswer": "individual",
      "answerFound": true,
-     "status": "verified",
+     "status": "quarantined",
      "provenance": {
       "elementPath": "entry-content.children[38]",
       "rawExcerpt": "(34) ␦"
@@ -1631,7 +1639,10 @@
     "rawExcerpt": "Questions 33-34"
    },
    "partAssignedBy": "inherited_no_marker",
-   "status": "verified"
+   "figuresNotInR2": [
+    "wp-content/uploads/2024/09/lis-test58-4.png"
+   ],
+   "status": "quarantined"
   },
   {
    "groupId": "g11",
@@ -1928,6 +1939,23 @@
   },
   {
    "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 8-10\nLabel the map below. Write the correct letter A-G next to questions 8-10.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
    "groupId": "g07",
    "questionNumbers": [
     21,
@@ -1940,7 +1968,8 @@
    ],
    "reasonCode": "INSTRUCTION_MISSING",
    "reasonCodes": [
-    "INSTRUCTION_MISSING"
+    "INSTRUCTION_MISSING",
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
     "instructionRaw": "Part 3 : Question 21",
@@ -1948,21 +1977,50 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g10",
+   "questionNumbers": [
+    33,
+    34
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 33-34",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/58_deep.mp3",
+    "r2Key": "cognition/audio/listening/58_deep.mp3"
+   }
+  },
+  {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 30,
+    "verifiedQuestions": 25,
     "missingOrQuarantined": [
      1,
      2,
      3,
+     8,
+     9,
+     10,
      21,
      22,
      23,
      24,
      25,
      26,
-     27
+     27,
+     33,
+     34
     ],
     "outOfRange": []
    }
@@ -1975,8 +2033,8 @@
    "detail": "audio relationship flag"
   }
  ],
- "verifiedQuestionCount": 30,
- "quarantinedCount": 5,
+ "verifiedQuestionCount": 25,
+ "quarantinedCount": 8,
  "status": "quarantined",
  "fullTestEligible": false,
  "schemaErrors": []

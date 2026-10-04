@@ -50,6 +50,23 @@
   },
   {
    "unit": "group",
+   "groupId": "g03",
+   "questionNumbers": [
+    8,
+    9,
+    10
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 8-10\nLabel the map below. Write the correct letter A-G next to questions 8-10.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "group",
    "groupId": "g07",
    "questionNumbers": [
     21,
@@ -62,7 +79,8 @@
    ],
    "reasonCode": "INSTRUCTION_MISSING",
    "reasonCodes": [
-    "INSTRUCTION_MISSING"
+    "INSTRUCTION_MISSING",
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
     "instructionRaw": "Part 3 : Question 21",
@@ -70,21 +88,50 @@
    }
   },
   {
+   "unit": "group",
+   "groupId": "g10",
+   "questionNumbers": [
+    33,
+    34
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
+   "evidence": {
+    "instructionRaw": "Questions 33-34",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/58_deep.mp3",
+    "r2Key": "cognition/audio/listening/58_deep.mp3"
+   }
+  },
+  {
    "unit": "test",
    "reasonCode": "INCOMPLETE_TEST",
    "evidence": {
-    "verifiedQuestions": 30,
+    "verifiedQuestions": 25,
     "missingOrQuarantined": [
      1,
      2,
      3,
+     8,
+     9,
+     10,
      21,
      22,
      23,
      24,
      25,
      26,
-     27
+     27,
+     33,
+     34
     ],
     "outOfRange": []
    }

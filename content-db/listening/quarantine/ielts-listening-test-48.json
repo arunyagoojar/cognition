@@ -4,14 +4,45 @@
  "sourceSha256": "9df233b25a1c2c9d80b8d60e1b9d85f33eafd87b6ff4a5a65d01d451a6fbb21d",
  "units": [
   {
-   "unit": "test",
-   "reasonCode": "RENDER_CHECK_FAILED",
+   "unit": "group",
+   "groupId": "g04",
+   "questionNumbers": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
+   "reasonCodes": [
+    "IMAGE_NOT_IN_R2"
+   ],
    "evidence": {
-    "defects": [
-     "part 1: artifact in stimulus ('…………………')",
-     "q9: standalone question without text",
-     "q9: typed answer with no blank and no question"
-    ]
+    "instructionRaw": "Questions 16-20\nLabel the plan below. Write the correct letter A-I next to questions 16-20.",
+    "orphanOptionBlocks": null
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
+   "evidence": {
+    "resolvedPath": "wp-content/uploads/audio/48_we.mp3",
+    "r2Key": "cognition/audio/listening/48_we.mp3"
+   }
+  },
+  {
+   "unit": "test",
+   "reasonCode": "INCOMPLETE_TEST",
+   "evidence": {
+    "verifiedQuestions": 35,
+    "missingOrQuarantined": [
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "outOfRange": []
    }
   }
  ]

@@ -4,33 +4,27 @@
  "sourceSha256": "f5c17b7c820866cf7dce4501add37da4c41fb18e906ff250601878b33f2670ef",
  "units": [
   {
-   "unit": "question",
+   "unit": "group",
    "groupId": "g07",
-   "questionNumber": 29,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
+   "questionNumbers": [
+    29,
+    30
+   ],
+   "reasonCode": "IMAGE_NOT_IN_R2",
    "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
+    "IMAGE_NOT_IN_R2"
    ],
    "evidence": {
-    "stem": "______",
-    "answer": "A",
-    "rawExcerpt": "(29) ␦",
-    "options": null
+    "instructionRaw": "Questions 29 and 30\nLabel the diagram below. Choose your answers from the box and write the letters A-H next to questions 29-30.",
+    "orphanOptionBlocks": null
    }
   },
   {
-   "unit": "question",
-   "groupId": "g07",
-   "questionNumber": 30,
-   "reasonCode": "LETTER_KEY_ON_TEXT_QUESTION",
-   "reasonCodes": [
-    "LETTER_KEY_ON_TEXT_QUESTION"
-   ],
+   "unit": "test",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "stem": "______",
-    "answer": "D",
-    "rawExcerpt": "(30) ␦",
-    "options": null
+    "resolvedPath": "wp-content/uploads/audio/17_we.mp3",
+    "r2Key": "cognition/audio/listening/17_we.mp3"
    }
   },
   {

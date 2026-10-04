@@ -205,6 +205,7 @@
     "value": "editing"
    }
   ],
+  "corrections": null,
   "answers": [
    {
     "number": 1,
@@ -1686,11 +1687,10 @@
  "quarantinedUnits": [
   {
    "unit": "test",
-   "reasonCode": "RENDER_CHECK_FAILED",
+   "reasonCode": "AUDIO_NOT_IN_R2",
    "evidence": {
-    "defects": [
-     "part 2: artifact in stimulus ('……………..')"
-    ]
+    "resolvedPath": "wp-content/uploads/audio/102_deep.mp3",
+    "r2Key": "cognition/audio/listening/102_deep.mp3"
    }
   }
  ],
