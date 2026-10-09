@@ -6,6 +6,7 @@ import { getAiCacheItem, setAiCacheItem } from './storage.js';
 import {
   RUBRIC_VERSION, WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2, buildWritingUserPrompt,
   buildSpeakingUserPrompt, normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
+  ANSWER_VERIFIER_SYSTEM_PROMPT, buildAnswerVerifierUserPrompt,
 } from './ieltsRubric.js';
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
@@ -23,6 +24,7 @@ let lastRateLimitTime = 0;
 export {
   WRITING_SYSTEM_PROMPT_V2 as IELTS_WRITING_SYSTEM_PROMPT,
   SPEAKING_SYSTEM_PROMPT_V2 as IELTS_SPEAKING_SYSTEM_PROMPT,
+  ANSWER_VERIFIER_SYSTEM_PROMPT,
 } from './ieltsRubric.js';
 
 export function hashContent(str) {
@@ -97,7 +99,7 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey) {
         const data = await r.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
         const parsed = extractJsonFromText(text);
-        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl };
+        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'gemini' };
       }
     } catch { /* try fallback model */ }
   }
@@ -144,7 +146,7 @@ async function directGroqCall(systemPrompt, userPrompt, localKey) {
         const data = await r.json();
         const text = data.choices?.[0]?.message?.content;
         const parsed = extractJsonFromText(text);
-        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl };
+        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'groq' };
       }
     } catch { /* try fallback model */ }
   }
@@ -170,43 +172,7 @@ async function directAiCall(systemPrompt, userPrompt) {
 
 export async function directVerifyAnswers(items) {
   if (!items || items.length === 0) return { results: [] };
-  const userPrompt = `Verify the following ${items.length} student answer(s) against the official IELTS answer key.\n\n${JSON.stringify(items.map(it => ({
-    id: it.id,
-    question: it.questionText || '',
-    questionType: it.questionType || '',
-    instruction: it.instruction || '',
-    officialAnswer: it.officialAnswer || '',
-    studentAnswer: it.studentAnswer || '',
-    wordLimit: it.wordLimit || null,
-  })), null, 2)}`;
-
-  const ANSWER_VERIFIER_SYSTEM_PROMPT = `You are an IELTS answer-key verifier.
-
-For each item you receive, decide whether the student's answer is an acceptable representation of the OFFICIAL answer for that exact question, under the supplied constraints (word limits, singular/plural, numbers, dates, times, units, names, spelling requirements).
-
-Each item includes the sentence, note line or table row the blank sits in ("question", with the blank shown as ____) and the task instruction with its word limit. Read the candidate's answer IN that sentence, as an IELTS examiner marks the answer sheet.
-
-Rules:
-- The official answer is the authority. Never invent or substitute an answer.
-- Accept the same answer written differently: hyphenation or spacing ("north west" / "north-west", "club house" / "clubhouse"), digits vs number words, date formats ("23rd March" / "23 March"), a leading article that keeps the answer within the word limit ("the only guest" / "only guest").
-- Singular vs plural: accept the candidate's form only if it fits the sentence grammatically and does not change what is being referred to (e.g. "on ____ afternoons" needs the plural).
-- Spelling must be correct, as in IELTS: a misspelled word is INCORRECT ("prises" for "prizes", "compitition" for "competition").
-- Answers exceeding the word limit are INCORRECT.
-- Case differences and the optional parts shown in brackets in the official answer never matter.
-- Reject answers that change meaning: am/pm swaps, different quantities, related-but-different words ("university" is not "college"), wrong concepts.
-- If you cannot confidently establish equivalence, decide UNCERTAIN.
-
-Respond with structured JSON ONLY (no markdown, no commentary):
-{
-  "results": [
-    { "id": "<echo the item id>",
-      "decision": "CORRECT" | "INCORRECT" | "UNCERTAIN",
-      "matchedAnswer": "<the official/accepted answer it corresponds to>",
-      "reason": "<short factual explanation>" }
-  ]
-}
-Include exactly one result per input item, echoing ids verbatim.`;
-
+  const userPrompt = buildAnswerVerifierUserPrompt(items);
   const res = await directAiCall(ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
   if (res.status === 'completed' && Array.isArray(res.evaluation?.results)) {
     return res.evaluation;
@@ -290,28 +256,36 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   }
 
   let model = res?.model || 'gemini';
+  let provider = res?.provider || 'gemini';
+  let tier = res?.status === 'completed' ? 'server' : 'unknown';
+
   // Local-key privacy mode or server fallback: if the server couldn't evaluate
   // and a local key exists on this device, run evaluation directly from the browser.
   if (res?.status === 'failed') {
     const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words });
     const direct = await directAiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt);
     if (direct.status === 'completed') {
-      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model, provider: direct.provider };
       model = direct.model || 'ai';
+      provider = direct.provider || 'gemini';
+      tier = 'client_local_key';
     }
+  }
+
+  if (res?.status === 'completed') {
+    console.info(`[AI Evaluation] Writing evaluated via ${provider} (${model}) [mode: ${tier}]`);
   }
 
   const validated = res?.status === 'completed'
     ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words }) : null;
 
   if (validated) {
-    // Coverage honesty: a meaningful attempt is defined by word floors.
-    // Task 1 <20 or Task 2 <40 words = not attempted (no evidence to score).
-    // An overall band is issued ONLY when BOTH tasks have real attempts;
-    // a single task yields response-level qualitative feedback with all
-    // band numbers withheld (same rule as Speaking).
-    const t1Attempted = t1Words >= 20;
-    const t2Attempted = t2Words >= 40;
+    // Official IELTS attempt rules:
+    // - Unattempted: 0 words (Band 0)
+    // - Attempted <= 20 words: awarded Band 1 on all criteria
+    // - Attempted > 20 words: assessed against descriptors
+    const t1Attempted = t1Words > 0;
+    const t2Attempted = t2Words > 0;
     const bothAttempted = t1Attempted && t2Attempted;
 
     if (bothAttempted) {
@@ -320,12 +294,14 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
         band: validated.overallBand,
         evaluationStatus: 'completed',
         coverage: {
-          task1: t1Attempted ? 'attempted' : 'not_attempted',
-          task2: t2Attempted ? 'attempted' : 'not_attempted',
+          task1: 'attempted',
+          task2: 'attempted',
           complete: true,
           statement: `Task 1: ${t1Words} words · Task 2: ${t2Words} words.`,
         },
         modelUsed: model,
+        providerUsed: provider,
+        evaluationTier: tier,
         task1Words: t1Words,
         task2Words: t2Words,
         evaluatedAt: new Date().toISOString()
@@ -334,26 +310,15 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
       return finalResult;
     }
 
-    const stripTaskBands = (criteria) => {
-      if (!criteria) return null;
-      const out = {};
-      for (const [k, v] of Object.entries(criteria)) {
-        out[k] = {
-          assessed: true,
-          band: null,
-          feedback: [v.evidence, v.rationale, v.improvementFocus].filter(Boolean).join(' ') || '',
-        };
-      }
-      return out;
-    };
     const missing = [!t1Attempted && 'Task 1', !t2Attempted && 'Task 2'].filter(Boolean);
     const finalPartial = {
       evaluationStatus: 'partial',
       band: null,
       overallBand: null,
-      task1Band: null,
-      task2Band: null,
-      criteria: stripTaskBands(validated.criteria),
+      task1Band: t1Attempted ? validated.task1Band : null,
+      task2Band: t2Attempted ? validated.task2Band : null,
+      criteria: validated.criteria,
+      taskCriteria: validated.taskCriteria,
       overallSummary: validated.overallSummary || '',
       task1Feedback: t1Attempted ? validated.task1Feedback : '',
       task2Feedback: t2Attempted ? validated.task2Feedback : '',
@@ -363,10 +328,12 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
         task1: t1Attempted ? 'attempted' : 'not_attempted',
         task2: t2Attempted ? 'attempted' : 'not_attempted',
         complete: false,
-        statement: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted. Overall band withheld — response-level feedback only.`,
+        statement: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted. Overall band withheld — task-level assessment provided.`,
       },
-      message: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted, so no overall IELTS Writing band can be issued. Feedback covers only what you wrote.`,
+      message: `${missing.join(' and ')} ${missing.length > 1 ? 'were' : 'was'} not attempted, so no overall IELTS Writing band can be issued. Feedback and scores cover only what you wrote.`,
       modelUsed: model,
+      providerUsed: provider,
+      evaluationTier: tier,
       task1Words: t1Words,
       task2Words: t2Words,
       evaluatedAt: new Date().toISOString()
@@ -432,13 +399,22 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
   }
 
   let model = res?.model || 'gemini';
+  let provider = res?.provider || 'gemini';
+  let tier = res?.status === 'completed' ? 'server' : 'unknown';
+
   if (res?.status === 'failed') {
     const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
     const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt);
     if (direct.status === 'completed') {
-      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model, provider: direct.provider };
       model = direct.model || 'ai';
+      provider = direct.provider || 'gemini';
+      tier = 'client_local_key';
     }
+  }
+
+  if (res?.status === 'completed') {
+    console.info(`[AI Evaluation] Speaking evaluated via ${provider} (${model}) [mode: ${tier}]`);
   }
 
   const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation) : null;
@@ -449,6 +425,8 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
       band: validated.overallBand,
       evaluationStatus: 'completed',
       modelUsed: model,
+      providerUsed: provider,
+      evaluationTier: tier,
       evaluatedAt: new Date().toISOString()
     };
     setAiCacheItem(contentHash, finalResult);

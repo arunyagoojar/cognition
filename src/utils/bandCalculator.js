@@ -108,14 +108,42 @@ function canonicalizeNumbers(s) {
  * Strips leading grammatical articles ('a', 'an', 'the') from text.
  * In IELTS Listening & Reading, leading articles are generally optional in note/table completion.
  */
-export function stripLeadingArticle(s) {
+export function stripLeadingArticle(s, wordLimit = null) {
   if (s === null || s === undefined) return '';
-  return String(s).trim().replace(/^(?:the|a|an)\s+/i, '').trim();
+  const str = String(s).trim();
+  const maxWords = parseWordLimit(wordLimit);
+  if (maxWords !== null) {
+    const wordCount = str.split(/\s+/).filter(Boolean).length;
+    if (wordCount > maxWords) {
+      return str;
+    }
+  }
+  return str.replace(/^(?:the|a|an)\s+/i, '').trim();
 }
 
-export function differByArticle(a, b) {
+/**
+ * Parses word limit instructions (e.g. 1, "ONE WORD ONLY", "NO MORE THAN TWO WORDS").
+ */
+export function parseWordLimit(limit) {
+  if (typeof limit === 'number' && Number.isFinite(limit)) return limit;
+  if (!limit || typeof limit !== 'string') return null;
+  const s = limit.toLowerCase();
+  if (s.includes('one word') || s.includes('1 word')) return 1;
+  if (s.includes('two words') || s.includes('2 words')) return 2;
+  if (s.includes('three words') || s.includes('3 words')) return 3;
+  const m = s.match(/(?:no more than|maximum of|up to)\s+(\d+)/i);
+  if (m) return parseInt(m[1], 10);
+  return null;
+}
+
+export function differByArticle(a, b, wordLimit = null) {
   if (!a || !b) return false;
-  const sa = stripLeadingArticle(a);
+  const maxWords = parseWordLimit(wordLimit);
+  if (maxWords !== null) {
+    const aWords = String(a).trim().split(/\s+/).filter(Boolean).length;
+    if (aWords > maxWords) return false;
+  }
+  const sa = stripLeadingArticle(a, wordLimit);
   const sb = stripLeadingArticle(b);
   return sa !== '' && sa === sb;
 }
@@ -174,14 +202,14 @@ export const DETERMINISTIC = { MATCH: 'MATCH', MISMATCH: 'MISMATCH', UNCERTAIN: 
  * Returns { result: MATCH|MISMATCH|UNCERTAIN, matchedAnswer? }.
  * UNCERTAIN routes the item to batched AI verification — never auto-accept.
  */
-export function evaluateDeterministic(userAnswer, expectedAnswer) {
+export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = null } = {}) {
   if (userAnswer === undefined || userAnswer === null || String(userAnswer).trim() === '') {
     return { result: DETERMINISTIC.MISMATCH };
   }
-  const variants = officialAnswerVariants(expectedAnswer);
-  if (!variants.length) return { result: DETERMINISTIC.MISMATCH };
   const user = normalizeAnswer(userAnswer);
   if (!user) return { result: DETERMINISTIC.MISMATCH };
+  const variants = officialAnswerVariants(expectedAnswer);
+  if (!variants.length) return { result: DETERMINISTIC.MISMATCH };
 
   for (const variant of variants) {
     const norm = normalizeAnswer(variant);
@@ -189,8 +217,8 @@ export function evaluateDeterministic(userAnswer, expectedAnswer) {
     if (norm === user) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
-    // Article equivalence (e.g. user writes "bicycle" for "(a) bicycle" or key has "the garden" and user wrote "garden")
-    if (differByArticle(user, norm)) {
+    // Article equivalence respecting word limit (e.g. user writes "bicycle" for "(a) bicycle" or key has "the garden" and user wrote "garden")
+    if (differByArticle(user, norm, wordLimit)) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
     // Safe numeric equivalence: "11" vs "11" (already equal) — word forms

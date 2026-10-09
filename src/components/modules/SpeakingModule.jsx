@@ -102,11 +102,23 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const runTranscription = (qId, recordingId, blob) => {
     setRecordings(prev => (prev[qId]?.recordingId === recordingId
       ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'pending' } } : prev));
-    const promise = transcribeRecording(blob).then((text) => {
+    const promise = transcribeRecording(blob).then((res) => {
       if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
-      transcriptsRef.current[qId] = { recordingId, text };
+      const text = typeof res === 'string' ? res : (res?.text || '');
+      const words = res?.words || [];
+      const engine = res?.engine || 'whistle';
+      const version = res?.version || '16.9mb';
+      transcriptsRef.current[qId] = { recordingId, text, words, engine, version };
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
-        ? { ...prev, [qId]: { ...prev[qId], transcript: text, transcriptStatus: 'done' } } : prev));
+        ? {
+            ...prev[qId],
+            transcript: text,
+            words,
+            sttEngine: engine,
+            sttModelVersion: version,
+            transcriptStatus: 'done'
+          }
+        : prev));
     }).catch(() => {
       if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
@@ -303,10 +315,20 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       audioRecordings[k] = rec.blob || null;
     });
 
+    const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'whistle';
+    const activeVersion = Object.values(transcriptsRef.current)[0]?.version || '16.9mb';
+
     // Full mock: the combined report evaluates all four skills together, so the
     // Speaking module hands over its answers instead of showing its own results
     if (isMockMode) {
-      if (onComplete) onComplete({ transcripts, recordings, durations, recordedCount: Object.keys(recordings).length });
+      if (onComplete) onComplete({
+        transcripts,
+        recordings,
+        durations,
+        sttEngine: activeEngine,
+        sttModelVersion: activeVersion,
+        recordedCount: Object.keys(recordings).length
+      });
       return;
     }
 
@@ -325,6 +347,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         band: evalResult.overallSpeakingBand,
         recordings,
         transcripts,
+        sttEngine: activeEngine,
+        sttModelVersion: activeVersion,
         recordedCount: Object.keys(recordings).length,
         totalParts: test.parts.length,
         ...evalResult
@@ -474,6 +498,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           recordedCount: Object.keys(recordings).length,
           recordings,
           transcripts: result?.transcripts || {},
+          sttEngine: result?.sttEngine || 'whistle',
+          sttModelVersion: result?.sttModelVersion || '16.9mb',
         }
       };
       if (onComplete) onComplete(canonicalAttempt.speaking);
@@ -488,13 +514,40 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         {/* header card: PARTIAL vs FULL, never both */}
         <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 24, padding: '34px 40px', marginBottom: 28, boxShadow: '0 4px 0 #151313' }}>
           {isFull ? (
-            <>
-              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: 'var(--text-secondary)' }}>FULL SPEAKING ASSESSMENT</div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 10 }}>
-                <span style={{ fontSize: 52, fontWeight: 800 }}>{typeof result.overallSpeakingBand === 'number' ? result.overallSpeakingBand.toFixed(1) : '—'}</span>
-                <span style={{ color: 'var(--text-secondary)', fontWeight: 700 }}>Overall Speaking Band</span>
-              </div>
-            </>
+            (() => {
+              const isProvisional = Boolean(result.provisional || result.criteria?.pronunciation?.band === null);
+              return (
+                <>
+                  <div style={{
+                    fontSize: 12,
+                    fontWeight: 800,
+                    letterSpacing: '0.1em',
+                    color: isProvisional ? 'var(--c-yellow-dark, #D97706)' : 'var(--text-secondary)'
+                  }}>
+                    {isProvisional ? 'PROVISIONAL SPEAKING ESTIMATE (TRANSCRIPT-ONLY)' : 'FULL SPEAKING ASSESSMENT (4 CRITERIA)'}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 10 }}>
+                    <span style={{ fontSize: 52, fontWeight: 800 }}>{typeof result.overallSpeakingBand === 'number' ? result.overallSpeakingBand.toFixed(1) : '—'}</span>
+                    <span style={{ color: 'var(--text-secondary)', fontWeight: 700 }}>
+                      {isProvisional ? 'Provisional Speaking Band (3 of 4 Criteria)' : 'Overall Speaking Band'}
+                    </span>
+                  </div>
+                  <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)', fontWeight: 600, maxWidth: 640 }}>
+                    {isProvisional
+                      ? 'Official IELTS Speaking requires all four criteria including Pronunciation assessed from live audio. Because pronunciation cannot be assessed from transcripts, this score is a provisional 3-criterion estimate, not an official 4-criterion IELTS Speaking band.'
+                      : 'Assessed across all four criteria: Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.'}
+                  </div>
+                  {result?.modelUsed && (
+                    <div style={{ marginTop: 10, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
+                        Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
+                        {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
+                      </span>
+                    </div>
+                  )}
+                </>
+              );
+            })()
           ) : (
             <>
               <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: 'var(--text-secondary)' }}>PARTIAL SPEAKING ASSESSMENT</div>
@@ -513,9 +566,17 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {state === 'FAILED' && (result?.message || 'You can retry the evaluation.')}
                 {isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
               </div>
+              {result?.modelUsed && (
+                <div style={{ marginTop: 10, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
+                    Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
+                    {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
+                  </span>
+                </div>
+              )}
               {state === 'NOT_CONFIGURED' && (
                 <p style={{ marginTop: 12, fontSize: 13.5, color: 'var(--text-secondary)' }}>
-                  Your recordings are kept on this page. Add your Gemini key in Settings (profile menu), then press Retry evaluation.
+                  Your recordings are kept on this page. Add your Gemini or Groq key in Settings (profile menu), then press Retry evaluation.
                 </p>
               )}
               {(state === 'FAILED' || state === 'NOT_CONFIGURED') && (

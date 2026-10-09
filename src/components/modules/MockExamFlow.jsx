@@ -24,6 +24,9 @@ function skillEvidence(key, r) {
     const items = Object.values(r.itemResults || {});
     const answered = items.filter(x => x.candidateAnswer !== null && String(x.candidateAnswer ?? '').trim() !== '').length;
     if (r.status === 'not_attempted' || answered === 0) return 'No answers submitted';
+    if (r.unresolvedCount > 0) {
+      return `${r.raw ?? 0} of ${r.total || 40} correct (${r.unresolvedCount} unresolved · possible ${r.rawMin}–${r.rawMax})`;
+    }
     return `${r.raw ?? 0} of ${r.total || 40} correct · ${answered} answered`;
   }
   if (key === 'writing') {
@@ -33,7 +36,7 @@ function skillEvidence(key, r) {
   }
   if (key === 'speaking') {
     if (r.status === 'not_attempted') return 'No spoken answers recorded';
-    return r.provisional ? 'Pronunciation needs audio, so this band is provisional' : '';
+    return r.provisional ? 'Provisional: Pronunciation unassessed (needs audio)' : '';
   }
   return '';
 }
@@ -386,7 +389,9 @@ export default function MockExamFlow({ onComplete, onBack }) {
             </h1>
             <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
               {overall !== null
-                ? 'Overall band = the average of your four skill bands, rounded the IELTS way.'
+                ? (canonicalEvaluation?.isProvisional
+                    ? 'Overall band includes a provisional component: Speaking is a transcript-based estimate (without live audio pronunciation) or answers are pending review.'
+                    : 'Overall band = the average of your four skill bands, rounded the IELTS way.')
                 : 'No overall band yet: it needs all four skills answered and scored. Each skill below shows exactly what was scored.'}
             </p>
           </div>
@@ -401,7 +406,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
             minWidth: 180
           }}>
             <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              OVERALL BAND
+              {canonicalEvaluation?.isProvisional ? 'PROVISIONAL OVERALL' : 'OVERALL BAND'}
             </div>
             <div style={{
               fontSize: 60,
@@ -429,51 +434,63 @@ export default function MockExamFlow({ onComplete, onBack }) {
             { label: 'Reading', band: R, skillKey: 'reading', status: skills.reading?.status, icon: 'book', color: 'var(--c-lavender)' },
             { label: 'Writing', band: W, skillKey: 'writing', status: skills.writing?.status, icon: 'pen', color: 'var(--c-coral)' },
             { label: 'Speaking', band: S, skillKey: 'speaking', status: skills.speaking?.status, icon: 'mic', color: 'var(--c-near-black)' },
-          ].map((item, i) => (
-            <div key={i} style={{
-              background: 'var(--bg-card)',
-              border: '1.5px solid #151313',
-              borderRadius: 20,
-              padding: 24,
-              boxShadow: '0 3px 0 #151313',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: 14, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{item.label}</span>
-                <div style={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: 10,
-                  background: 'var(--bg-canvas)',
-                  border: '1px solid #151313',
-                  color: item.color,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <Icon name={item.icon} size={16} />
+          ].map((item, i) => {
+            const sk = skills[item.skillKey] || {};
+            const isUnresolvedRange = sk.unresolvedCount > 0 && typeof sk.bandMin === 'number' && typeof sk.bandMax === 'number' && sk.bandMin !== sk.bandMax;
+            return (
+              <div key={i} style={{
+                background: 'var(--bg-card)',
+                border: '1.5px solid #151313',
+                borderRadius: 20,
+                padding: 24,
+                boxShadow: '0 3px 0 #151313',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: 14, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{item.label}</span>
+                  <div style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: 10,
+                    background: 'var(--bg-canvas)',
+                    border: '1px solid #151313',
+                    color: item.color,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Icon name={item.icon} size={16} />
+                  </div>
+                </div>
+                <div style={{ fontSize: isUnresolvedRange ? 30 : 36, fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
+                  {isUnresolvedRange
+                    ? `${sk.bandMin.toFixed(1)}–${sk.bandMax.toFixed(1)}`
+                    : (item.band !== null ? item.band.toFixed(1) : '--')}{' '}
+                  <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>
+                </div>
+                <div>
+                  {item.status === 'completed' && item.band !== null && (
+                    sk.unresolvedCount > 0 ? (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: '#8A6D00' }}>⚠ Provisional ({sk.unresolvedCount} unresolved)</span>
+                    ) : item.skillKey === 'speaking' && sk.provisional ? (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: '#8A6D00' }}>Provisional (Transcript-only)</span>
+                    ) : (
+                      <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--success-icon)' }}>✓ Evaluated</span>
+                    )
+                  )}
+                  {item.status === 'not_attempted' && (
+                    <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-muted)' }}>Unattempted</span>
+                  )}
+                  {item.status === 'failed' && (
+                    <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--c-coral)' }}>Evaluation Failed</span>
+                  )}
+                  <div className="mock-skill-evidence">{skillEvidence(item.skillKey, sk)}</div>
                 </div>
               </div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
-                {item.band !== null ? item.band.toFixed(1) : '--'}{' '}
-                <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>
-              </div>
-              <div>
-                {item.status === 'completed' && item.band !== null && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--success-icon)' }}>✓ Evaluated</span>
-                )}
-                {item.status === 'not_attempted' && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-muted)' }}>Unattempted</span>
-                )}
-                {item.status === 'failed' && (
-                  <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--c-coral)' }}>Evaluation Failed</span>
-                )}
-                <div className="mock-skill-evidence">{skillEvidence(item.skillKey, skills[item.skillKey])}</div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* 3 ANALYSIS SECTIONS: STRENGTHS, PRIORITY AREAS, RECOMMENDED PRACTICE */}

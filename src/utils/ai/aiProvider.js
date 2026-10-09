@@ -58,7 +58,7 @@ export class AIProvider {
         overallSummary: validated.overallSummary,
         strengths: validated.strengths,
         areasForImprovement: validated.areasForImprovement,
-        provider: { name: 'gemini', model: res.model, tier: 'server' }
+        provider: { name: res?.provider || 'gemini', model: res?.model, tier: 'server' }
       };
     }
 
@@ -106,7 +106,7 @@ export class AIProvider {
         overallSummary: validated.overallSummary,
         strengths: validated.strengths,
         areasForImprovement: validated.areasForImprovement,
-        provider: { name: 'gemini', model: res.model, tier: 'server' }
+        provider: { name: res?.provider || 'gemini', model: res?.model, tier: 'server' }
       };
     }
 

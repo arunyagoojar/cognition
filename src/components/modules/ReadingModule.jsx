@@ -274,6 +274,11 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             </h1>
             <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
               Score: <strong style={{ color: 'var(--text-primary)' }}>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
+              {result?.unresolvedCount > 0 && (
+                <span style={{ display: 'block', marginTop: 4, fontSize: 13.5, color: '#8A6D00', fontWeight: 600 }}>
+                  ⚠ Provisional range: {result.rawMin}–{result.rawMax} correct ({result.unresolvedCount} answer{result.unresolvedCount > 1 ? 's' : ''} pending review)
+                </span>
+              )}
             </p>
           </div>
 
@@ -287,23 +292,49 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             minWidth: 180
           }}>
             <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              ESTIMATED BAND
+              {result?.unresolvedCount > 0 ? 'PROVISIONAL BAND' : 'ESTIMATED BAND'}
             </div>
             <div style={{
-              fontSize: 54,
+              fontSize: result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax ? 42 : 54,
               fontWeight: 800,
               color: 'var(--c-coral)',
               lineHeight: 1.1,
               marginTop: 6,
               fontFamily: 'Kodchasan, sans-serif'
             }}>
-              {result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--'}
+              {result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax
+                ? `${result.bandMin.toFixed(1)}–${result.bandMax.toFixed(1)}`
+                : (result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--')}
             </div>
             <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
-              Target: 8.0
+              {result?.unresolvedCount > 0 ? 'Range pending review' : 'Target: 8.0'}
             </div>
           </div>
         </div>
+
+        {result?.unresolvedCount > 0 && (
+          <div style={{
+            background: 'rgba(252, 204, 66, 0.12)',
+            border: '1.5px solid #FCCC42',
+            borderRadius: 16,
+            padding: '16px 20px',
+            marginBottom: 28,
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: 12
+          }}>
+            <Icon name="alertCircle" size={20} style={{ color: '#8A6D00', flexShrink: 0, marginTop: 2 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 14, color: '#8A6D00' }}>
+                Unresolved Answers Pending Review
+              </div>
+              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 4, lineHeight: 1.5 }}>
+                {result.unresolvedCount} free-text answer{result.unresolvedCount > 1 ? 's' : ''} could not be automatically confirmed against the official answer key.
+                Per official IELTS marking principles, credit is not awarded automatically without verified equivalence. Your confirmed score is {result.raw} (Band {result.bandMin.toFixed(1)}), with a potential score of up to {result.rawMax} (Band {result.bandMax.toFixed(1)}) if resolved.
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Answer review — correct/incorrect, accepted variants tagged subtly */}
         {result?.itemResults && Object.keys(result.itemResults).length > 0 && (

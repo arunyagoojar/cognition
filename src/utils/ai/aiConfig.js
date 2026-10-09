@@ -48,35 +48,34 @@ Evaluate the candidate's Speaking performance using the official IELTS Speaking 
 
 CRITICAL PRONUNCIATION INSTRUCTION:
 - Pronunciation MUST be assessed based on audio evidence or phonological markers.
-- If audio evidence is unavailable or only transcript is provided, set criteria.pronunciation.status to "insufficient_audio_evidence", criteria.pronunciation.band to null, and calculate overallBand based on the remaining three criteria.
 - Never penalize a candidate merely for having a non-native accent; assess intelligibility and phonological features.
 
 Return structured JSON ONLY (no markdown code blocks, no backticks, no explanatory intro):
 {
-  "overallBand": 7.0,
+  "overallBand": "<number 0.0-9.0>",
   "confidence": "high",
   "criteria": {
     "fluencyAndCoherence": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Observed speech tempo and linking phrases",
       "rationale": "Justification against Cambridge band descriptors",
       "improvementFocus": "Concrete guidance for next band"
     },
     "lexicalResource": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Key vocabulary and collocations used",
       "rationale": "Justification against Cambridge band descriptors",
       "improvementFocus": "Concrete guidance for next band"
     },
     "grammaticalRangeAndAccuracy": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Sentence structures observed",
       "rationale": "Justification against Cambridge band descriptors",
       "improvementFocus": "Concrete guidance for next band"
     },
     "pronunciation": {
       "status": "evaluated",
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Acoustic / phonological features observed",
       "rationale": "Intelligibility and stress patterns",
       "improvementFocus": "Concrete guidance for next band"
@@ -85,7 +84,8 @@ Return structured JSON ONLY (no markdown code blocks, no backticks, no explanato
   "overallSummary": "Concise diagnostic summary",
   "strengths": "Main demonstrated language strengths",
   "areasForImprovement": "Top priorities to raise band score"
-}`;
+}
+`;
 
 export const IELTS_WRITING_EVALUATOR_V1 = `You are an official IELTS Academic Writing examiner.
 Evaluate the candidate's response using the official IELTS Academic Writing assessment criteria:
@@ -100,31 +100,31 @@ Assessment Rules:
 
 Return structured JSON ONLY (no markdown code blocks, no backticks, no explanatory intro):
 {
-  "overallBand": 7.0,
-  "task1Band": 7.0,
-  "task2Band": 7.0,
+  "overallBand": "<number 0.0-9.0>",
+  "task1Band": "<number 0.0-9.0>",
+  "task2Band": "<number 0.0-9.0>",
   "confidence": "high",
   "criteria": {
     "taskAchievement": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Specific evidence from Task 1 and Task 2",
       "rationale": "Fulfillment of prompt requirements",
       "improvementFocus": "Targeted advice"
     },
     "coherenceAndCohesion": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Paragraph structure and cohesive devices",
       "rationale": "Logical progression of ideas",
       "improvementFocus": "Targeted advice"
     },
     "lexicalResource": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Academic vocabulary and collocations",
       "rationale": "Lexical range and precision",
       "improvementFocus": "Targeted advice"
     },
     "grammaticalRangeAndAccuracy": {
-      "band": 7.0,
+      "band": "<number 0.0-9.0>",
       "evidence": "Complex sentences and syntactic control",
       "rationale": "Grammatical variety and error density",
       "improvementFocus": "Targeted advice"

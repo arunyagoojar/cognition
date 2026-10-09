@@ -3,7 +3,7 @@
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
 
 import { AIProvider } from '../ai/aiProvider.js';
-import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, stripLeadingArticle } from '../bandCalculator.js';
+import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, stripLeadingArticle, differByArticle, parseWordLimit } from '../bandCalculator.js';
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
@@ -13,16 +13,19 @@ import { getAiConfigState } from '../storage.js';
  * Checks whether candidate answer matches official answer using deterministic
  * normalizer. Accepted variants follow the key's own notation ("/" alternatives,
  * parenthesised optional words) — see officialAnswerVariants.
- * Also accounts for optional leading articles in IELTS answers.
+ * Also accounts for optional leading articles in IELTS answers, strictly respecting word limits.
  */
-export function isCandidateAnswerCorrect(candidateAns, officialAns) {
+export function isCandidateAnswerCorrect(candidateAns, officialAns, { wordLimit = null } = {}) {
   if (candidateAns === undefined || candidateAns === null || candidateAns === '') return false;
   if (!officialAns || (Array.isArray(officialAns) && officialAns.length === 0)) return false;
   const normCandidate = normalizeAnswer(String(candidateAns));
-  const candidateNoArt = stripLeadingArticle(normCandidate);
+  if (!normCandidate) return false;
+
   return officialAnswerVariants(officialAns).some(v => {
     const normV = normalizeAnswer(v);
-    return normV === normCandidate || (candidateNoArt !== '' && candidateNoArt === stripLeadingArticle(normV));
+    if (normV === normCandidate) return true;
+    if (differByArticle(normCandidate, normV, wordLimit)) return true;
+    return false;
   });
 }
 
@@ -84,7 +87,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
     const selectionTypes = ['mcq_single', 'mcq_multi', 'single_select', 'multi_select', 'pool_select',
       'matching_headings', 'matching_information', 'matching_features', 'matching_box', 'sentence_endings',
       'tfng', 'ynng', 'true_false_not_given', 'yes_no_not_given'];
-    const det = evaluateDeterministic(student, official);
+    const det = evaluateDeterministic(student, official, { wordLimit: q.wordLimit || q.instruction || q.groupInstruction });
     const rec = itemResults[q.id];
     if (det.result === DETERMINISTIC.MATCH) {
       rec.deterministicResult = 'MATCH';
@@ -145,13 +148,34 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
         rec.matchedAnswer = decision.matchedAnswer || item.officialAnswer;
         rec.acceptedVariant = true;
       } else if (decision && decision.decision === 'INCORRECT') {
+        rec.finalResult = 'INCORRECT';
         rec.evaluationMethod = 'AI_VERIFIED';
         rec.aiReason = decision.reason || '';
+      } else if (decision && decision.decision === 'UNCERTAIN') {
+        rec.finalResult = 'UNCERTAIN';
+        rec.evaluationMethod = 'AI_VERIFIED';
+        rec.aiDecision = 'UNCERTAIN';
+        rec.unresolved = true;
+        rec.aiReason = decision.reason || 'Equivalence to official answer could not be confidently established.';
+      } else {
+        // Missing decision or unresolved: stays UNCERTAIN for unresolved calculation
+        if (rec.deterministicResult === 'UNCERTAIN') {
+          rec.finalResult = 'UNCERTAIN';
+          rec.unresolved = true;
+          rec.aiReason = 'Equivalence could not be verified automatically.';
+        }
       }
-      // UNCERTAIN / missing decision → stays INCORRECT (never silently correct)
     }
   } catch {
     // Offline / unauthenticated / no credential: deterministic results stand.
+    for (const item of uncertain) {
+      const rec = itemResults[item.id];
+      if (rec && rec.deterministicResult === 'UNCERTAIN') {
+        rec.finalResult = 'UNCERTAIN';
+        rec.unresolved = true;
+        rec.aiReason = 'Verifier unavailable; answer remains unresolved.';
+      }
+    }
   }
 }
 
@@ -199,7 +223,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
 
   for (const q of allQuestions) {
     const candidate = answers[q.id];
-    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q));
+    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q), { wordLimit: q.wordLimit || q.instruction || q.groupInstruction });
     if (isCorrect) correct++;
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
@@ -213,9 +237,16 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
   // Hybrid tier: deterministic-UNCERTAIN free-text goes to one batched AI
   // verification; final tallies use the resolved results.
   await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
-  correct = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
+  const confirmedCorrect = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
+  const unresolvedCount = Object.values(itemResults).filter(r => r.unresolved || r.finalResult === 'UNCERTAIN').length;
 
-  const band = calculateReadingBand(correct);
+  const rawMin = confirmedCorrect;
+  const rawMax = confirmedCorrect + unresolvedCount;
+  const bandMin = calculateReadingBand(rawMin);
+  const bandMax = calculateReadingBand(rawMax);
+  const band = bandMin; // Authoritative confirmed band: do not invent final credit
+  const hasUnresolved = unresolvedCount > 0;
+  const scoreRange = hasUnresolved ? { rawMin, rawMax, bandMin, bandMax, unresolvedCount } : null;
 
   // 2. AI Evaluation & Verification (Batch per passage)
   const aiVerification = {};
@@ -255,9 +286,17 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
   return {
     status: 'completed',
     band,
-    raw: correct,
+    raw: confirmedCorrect,
+    rawMin,
+    rawMax,
+    bandMin,
+    bandMax,
+    hasUnresolved,
+    unresolvedCount,
+    scoreRange,
+    isProvisional: hasUnresolved,
     total: allQuestions.length,
-    percentage: allQuestions.length > 0 ? Math.round((correct / allQuestions.length) * 100) : 0,
+    percentage: allQuestions.length > 0 ? Math.round((confirmedCorrect / allQuestions.length) * 100) : 0,
     answers,
     itemResults,
     aiVerification,
@@ -294,7 +333,7 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
 
   for (const q of allQuestions) {
     const candidate = answers[q.id];
-    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q));
+    const isCorrect = isCandidateAnswerCorrect(candidate, officialFor(q), { wordLimit: q.wordLimit || q.instruction || q.groupInstruction });
     if (isCorrect) correct++;
     itemResults[q.id] = {
       deterministicCorrect: isCorrect,
@@ -308,9 +347,16 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
   // Hybrid tier (Phase 5): plural/number/format variants verified in ONE
   // batched AI request; official key remains authoritative.
   await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
-  correct = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
+  const confirmedCorrect = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
+  const unresolvedCount = Object.values(itemResults).filter(r => r.unresolved || r.finalResult === 'UNCERTAIN').length;
 
-  const band = calculateListeningBand(correct);
+  const rawMin = confirmedCorrect;
+  const rawMax = confirmedCorrect + unresolvedCount;
+  const bandMin = calculateListeningBand(rawMin);
+  const bandMax = calculateListeningBand(rawMax);
+  const band = bandMin; // Authoritative confirmed band: do not invent final credit
+  const hasUnresolved = unresolvedCount > 0;
+  const scoreRange = hasUnresolved ? { rawMin, rawMax, bandMin, bandMax, unresolvedCount } : null;
 
   // 2. AI Evaluation & Verification (Batch per section)
   const aiVerification = {};
@@ -350,9 +396,17 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
   return {
     status: 'completed',
     band,
-    raw: correct,
+    raw: confirmedCorrect,
+    rawMin,
+    rawMax,
+    bandMin,
+    bandMax,
+    hasUnresolved,
+    unresolvedCount,
+    scoreRange,
+    isProvisional: hasUnresolved,
     total: allQuestions.length,
-    percentage: allQuestions.length > 0 ? Math.round((correct / allQuestions.length) * 100) : 0,
+    percentage: allQuestions.length > 0 ? Math.round((confirmedCorrect / allQuestions.length) * 100) : 0,
     answers,
     itemResults,
     aiVerification,
@@ -517,6 +571,8 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     status: 'completed',
     band: res.band ?? null,
     overallSpeakingBand: res.overallBand ?? null,
+    provisional: res.provisional ?? true,
+    scoringMethod: res.scoringMethod || 'Provisional transcript-based estimate: Mean of 3 criteria (Pronunciation unassessed).',
     criteria: { ...res.criteria, pronunciation: pronunciationNotAssessed },
     overallSummary: res.overallSummary || '',
     strengths: res.strengths || '',
@@ -661,7 +717,12 @@ export async function evaluateFullMockExam({
     task2Text: writingData.t2 || writingData.task2Text || '',
     prompts: {
       task1: rawExamPackage?.writing?.task1?.prompt || '',
-      task2: rawExamPackage?.writing?.task2?.prompt || ''
+      task2: rawExamPackage?.writing?.task2?.prompt || '',
+      task1Data: rawExamPackage?.writing?.task1 ? {
+        visualType: rawExamPackage.writing.task1.visualType,
+        table: rawExamPackage.writing.task1.table,
+        image: rawExamPackage.writing.task1.image?.file,
+      } : null,
     },
     attemptId
   });
@@ -695,6 +756,10 @@ export async function evaluateFullMockExam({
     overallStatus = hasFailedAny ? 'failed' : 'not_attempted';
   }
 
+  const isProvisional = Boolean(
+    speaking?.provisional || listening?.isProvisional || reading?.isProvisional
+  );
+
   const { strengths, priorityAreas, recommendations } = deriveInsightsFromEvaluation(skills);
 
   const canonicalRecord = {
@@ -705,6 +770,7 @@ export async function evaluateFullMockExam({
     type: 'full_mock',
     status: overallStatus,
     overallBand,
+    isProvisional,
     skills,
     strengths,
     priorityAreas,

@@ -39,7 +39,7 @@ t('Writing: no overview caps Task Achievement at 5', () => {
   assert.equal(r.taskCriteria.task1.taskAchievement.band, 5);
   assert.equal(r.task1Band, 6.5);
 });
-t('Writing: ≤20 words is Band 1; a missing task is Band 0', () => {
+t('Writing: ≤20 words is Band 1 per official descriptors; a missing task is Band 0', () => {
   const r = normalizeWritingEvaluation(writing([6, 6, 6, 6], [7, 7, 7, 7]), { task1Words: 18, task2Words: 0 });
   assert.equal(r.task1Band, 1); assert.equal(r.task2Band, 0); assert.equal(r.overallBand, 0.5);
 });
@@ -69,6 +69,32 @@ t('Speaking: four criteria when audio is assessed', () => {
 t('prompt carries both prompts and real word counts', () => {
   const p = buildWritingUserPrompt({ prompts: { task1: 'P1', task2: 'P2' }, task1Text: 'a b c', task2Text: '' });
   assert.ok(p.includes('P1') && p.includes('(3 words; minimum 150)') && p.includes('(0 words; minimum 250)'));
+});
+t('Writing: calculation applies rounding once at final stage without intermediate rounding', () => {
+  // Task 1: [6, 6, 6, 7] -> mean = 6.25 (would round to 6.5 if intermediate rounded)
+  // Task 2: [6, 7, 7, 7] -> mean = 6.75 (would round to 7.0 if intermediate rounded)
+  // Pre-rounded formula: (6.5 + 2 * 7.0) / 3 = 6.833 -> 7.0
+  // Official single-stage formula: (6.25 + 2 * 6.75) / 3 = 19.75 / 3 = 6.5833 -> 6.5!
+  const r = normalizeWritingEvaluation(writing([6, 6, 6, 7], [6, 7, 7, 7]), { task1Words: 170, task2Words: 280 });
+  assert.equal(r.task1Band, 6.5);
+  assert.equal(r.task2Band, 7.0);
+  assert.equal(r.overallBand, 6.5);
+});
+t('Writing: overviewStatus uncertain does NOT trigger an automatic cap at Band 5', () => {
+  const r = normalizeWritingEvaluation(writing([7, 7, 7, 7], [7, 7, 7, 7], { t1: { overviewStatus: 'uncertain', hasOverview: true } }), { task1Words: 170, task2Words: 280 });
+  assert.equal(r.taskCriteria.task1.taskAchievement.band, 7);
+});
+t('prompt carries structured Task 1 visual data when provided', () => {
+  const table = {
+    caption: 'passenger numbers',
+    rows: [['City', 'Passengers'], ['London', '775']]
+  };
+  const p = buildWritingUserPrompt({
+    prompts: { task1: 'Summarize', task2: 'Discuss', task1Data: { visualType: 'table', table } },
+    task1Text: 'Words', task2Text: 'Words'
+  });
+  assert.ok(p.includes('TASK 1 VERIFIED STRUCTURED DATA'));
+  assert.ok(p.includes('London | 775'));
 });
 
 console.log(`\n${passed} passed, ${failed} failed`);

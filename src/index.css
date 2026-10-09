@@ -4456,6 +4456,7 @@ p.reading-section-label {
 .answer-review-item .review-verdict { font-weight: 800; flex-shrink: 0; }
 .answer-review-item.correct .review-verdict { color: var(--success-icon); }
 .answer-review-item.incorrect .review-verdict { color: var(--coral); }
+.answer-review-item.unresolved .review-verdict { color: #D97706; }
 .answer-review-meta { color: var(--text-secondary); font-size: 12.5px; }
 .accepted-variant-tag {
   display: inline-flex;

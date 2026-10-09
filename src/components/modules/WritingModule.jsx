@@ -121,8 +121,13 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         task1Text: t1,
         task2Text: t2,
         prompts: {
-          task1: test.task1?.prompt || '',
-          task2: test.task2?.prompt || ''
+          task1: test?.task1?.prompt || '',
+          task2: test?.task2?.prompt || '',
+          task1Data: test?.task1 ? {
+            visualType: test.task1.visualType,
+            table: test.task1.table,
+            image: test.task1.image?.file,
+          } : null,
         }
       });
 
@@ -176,7 +181,12 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         task2Text: essayT2,
         prompts: {
           task1: test?.task1?.prompt || '',
-          task2: test?.task2?.prompt || ''
+          task2: test?.task2?.prompt || '',
+          task1Data: test?.task1 ? {
+            visualType: test.task1.visualType,
+            table: test.task1.table,
+            image: test.task1.image?.file,
+          } : null,
         }
       });
 
@@ -439,6 +449,14 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
             <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
               Task 1: <strong style={{ color: 'var(--text-primary)' }}>{result?.task1Words || 0} words</strong> (min 150) · Task 2: <strong style={{ color: 'var(--text-primary)' }}>{result?.task2Words || 0} words</strong> (min 250)
             </p>
+            {result?.modelUsed && (
+              <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
+                  Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
+                  {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
+                </span>
+              </div>
+            )}
           </div>
 
           <div style={{

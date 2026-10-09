@@ -27,8 +27,13 @@ export const GROQ_MODELS = {
 export {
   WRITING_SYSTEM_PROMPT_V2 as IELTS_WRITING_SYSTEM_PROMPT,
   SPEAKING_SYSTEM_PROMPT_V2 as IELTS_SPEAKING_SYSTEM_PROMPT,
-  buildWritingUserPrompt, buildSpeakingUserPrompt,
+  ANSWER_VERIFIER_SYSTEM_PROMPT,
+  buildWritingUserPrompt, buildSpeakingUserPrompt, buildAnswerVerifierUserPrompt,
   normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
+} from '../../src/utils/ieltsRubric.js';
+import {
+  ANSWER_VERIFIER_SYSTEM_PROMPT,
+  buildAnswerVerifierUserPrompt,
 } from '../../src/utils/ieltsRubric.js';
 
 function extractJsonFromText(text) {
@@ -221,49 +226,12 @@ export async function validateGeminiKeyServer(apiKey) {
   }
 }
 
-export const ANSWER_VERIFIER_SYSTEM_PROMPT = `You are an IELTS answer-key verifier.
-
-For each item you receive, decide whether the student's answer is an acceptable representation of the OFFICIAL answer for that exact question, under the supplied constraints (word limits, singular/plural, numbers, dates, times, units, names, spelling requirements).
-
-Each item includes the sentence, note line or table row the blank sits in ("question", with the blank shown as ____) and the task instruction with its word limit. Read the candidate's answer IN that sentence, as an IELTS examiner marks the answer sheet.
-
-Rules:
-- The official answer is the authority. Never invent or substitute an answer.
-- Accept the same answer written differently: hyphenation or spacing ("north west" / "north-west", "club house" / "clubhouse"), digits vs number words, date formats ("23rd March" / "23 March"), a leading article that keeps the answer within the word limit ("the only guest" / "only guest").
-- Singular vs plural: accept the candidate's form only if it fits the sentence grammatically and does not change what is being referred to (e.g. "on ____ afternoons" needs the plural).
-- Spelling must be correct, as in IELTS: a misspelled word is INCORRECT ("prises" for "prizes", "compitition" for "competition").
-- Answers exceeding the word limit are INCORRECT.
-- Case differences and the optional parts shown in brackets in the official answer never matter.
-- Reject answers that change meaning: am/pm swaps, different quantities, related-but-different words ("university" is not "college"), wrong concepts.
-- If you cannot confidently establish equivalence, decide UNCERTAIN.
-
-Respond with structured JSON ONLY (no markdown, no commentary):
-{
-  "results": [
-    { "id": "<echo the item id>",
-      "decision": "CORRECT" | "INCORRECT" | "UNCERTAIN",
-      "matchedAnswer": "<the official/accepted answer it corresponds to>",
-      "reason": "<short factual explanation>" }
-  ]
-}
-Include exactly one result per input item, echoing ids verbatim.`;
-
 /**
- * Batched answer verification: one Gemini request for all uncertain items.
+ * Batched answer verification: one Gemini/Groq request for all uncertain items.
  * Returns { results: [{id, decision, matchedAnswer, reason}] } or { results: [] }.
  */
 export async function runAnswerVerification(items, apiKey, provider = 'gemini') {
-  const userPrompt = `Verify the following ${items.length} student answer(s) against the official IELTS answer key.
-
-${JSON.stringify(items.map(it => ({
-  id: it.id,
-  question: it.questionText || '',
-  questionType: it.questionType || '',
-  instruction: it.instruction || '',
-  officialAnswer: it.officialAnswer || '',
-  studentAnswer: it.studentAnswer || '',
-  wordLimit: it.wordLimit || null,
-})), null, 2)}`;
+  const userPrompt = buildAnswerVerifierUserPrompt(items);
 
   try {
     const text = provider === 'groq'
