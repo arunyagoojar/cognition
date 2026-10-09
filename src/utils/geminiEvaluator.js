@@ -68,17 +68,30 @@ function extractJsonFromText(text) {
  * key lives on this device and never reaches any server.
  */
 async function directGeminiCall(systemPrompt, userPrompt, localKey) {
-  for (const mdl of [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel].filter(Boolean)) {
+  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-3.5-flash', 'gemini-3.5-flash-lite'].filter(Boolean);
+  let lastStatus = null;
+  for (const mdl of models) {
     try {
-      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': localKey },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemPrompt }] },
-          contents: [{ parts: [{ text: userPrompt }] }],
-          generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
-        }),
-      });
+      let attempts = 0;
+      let r;
+      while (attempts < 2) {
+        attempts++;
+        r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-goog-api-key': localKey },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ parts: [{ text: userPrompt }] }],
+            generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
+          }),
+        });
+        if (r.status === 503 && attempts < 2) {
+          await new Promise(res => setTimeout(res, 1500));
+          continue;
+        }
+        break;
+      }
+      lastStatus = r.status;
       if (r.status === 429) { lastRateLimitTime = Date.now(); break; }
       if (r.ok) {
         const data = await r.json();
@@ -88,7 +101,10 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey) {
       }
     } catch { /* try fallback model */ }
   }
-  return { status: 'failed', message: 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.' };
+  const msg = lastStatus === 503
+    ? 'Google Gemini servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
+    : 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.';
+  return { status: 'failed', message: msg };
 }
 
 /**

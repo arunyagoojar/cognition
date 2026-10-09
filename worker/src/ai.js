@@ -10,6 +10,7 @@
 export const AI_MODELS = {
   primary: 'gemini-3.8-flash',
   fallback: 'gemini-flash-latest',
+  chain: ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.5-flash', 'gemini-3.5-flash-lite'],
 };
 
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
@@ -46,33 +47,45 @@ function extractJsonFromText(text) {
 }
 
 async function callGemini(model, apiKey, systemPrompt, userPrompt) {
-  const res = await fetch(`${GEMINI_BASE}/${model}:generateContent`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: systemPrompt }] },
-      contents: [{ parts: [{ text: userPrompt }] }],
-      generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
-    }),
-    signal: AbortSignal.timeout(45000),
-  });
-  // Never include the key or raw headers in errors.
-  if (!res.ok) {
-    const err = new Error(`Gemini request failed (${res.status})`);
-    err.status = res.status;
-    throw err;
+  let attempts = 0;
+  while (attempts < 2) {
+    attempts++;
+    const res = await fetch(`${GEMINI_BASE}/${model}:generateContent`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: systemPrompt }] },
+        contents: [{ parts: [{ text: userPrompt }] }],
+        generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
+      }),
+      signal: AbortSignal.timeout(45000),
+    });
+
+    if (res.status === 503 && attempts < 2) {
+      // Model overloaded upstream — short backoff before retry
+      await new Promise(r => setTimeout(r, 1500));
+      continue;
+    }
+
+    // Never include the key or raw headers in errors.
+    if (!res.ok) {
+      const err = new Error(`Gemini request failed (${res.status})`);
+      err.status = res.status;
+      throw err;
+    }
+    const data = await res.json();
+    return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
   }
-  const data = await res.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
 }
 
 /**
- * Runs the evaluation chain: primary model → fallback model.
+ * Runs the evaluation chain: primary model → fallback models.
  * Returns { status, evaluation, model } or { status, message }.
  */
 export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, validator }) {
   let lastError = null;
-  for (const model of [AI_MODELS.primary, AI_MODELS.fallback]) {
+  const models = AI_MODELS.chain || [AI_MODELS.primary, AI_MODELS.fallback];
+  for (const model of models) {
     try {
       const text = await callGemini(model, apiKey, systemPrompt, userPrompt);
       const parsed = extractJsonFromText(text);
@@ -90,6 +103,8 @@ export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, val
   }
   const detail = lastError?.status === 400 || lastError?.status === 403
     ? 'Gemini rejected the evaluation request. Check your API key permissions and quota in Google AI Studio.'
+    : lastError?.status === 503
+    ? 'Google Gemini servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
     : 'AI evaluation failed to produce a valid IELTS rubric response. Check your API key configuration and try again.';
   return {
     status: 'failed',
