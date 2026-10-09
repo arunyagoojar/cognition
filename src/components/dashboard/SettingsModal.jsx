@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Icon from '../common/Icon';
-import { getLegacyLocalKeys, removeLegacyLocalKeys, invalidateCredentialStatusCache } from '../../utils/storage';
+import {
+  getLegacyLocalKeys,
+  removeLegacyLocalKeys,
+  invalidateCredentialStatusCache,
+  getActiveAiProvider,
+  setActiveAiProvider,
+  removeLocalGeminiKey,
+  removeLocalGroqKey
+} from '../../utils/storage';
 import { saveCredential, fetchCredentialStatus, deleteCredential, hasApiAuth } from '../../utils/api';
 
 export default function SettingsModal({
@@ -13,6 +21,7 @@ export default function SettingsModal({
   onChangeTargetBand,
   onResetScores,
 }) {
+  const [selectedProvider, setSelectedProvider] = useState(() => getActiveAiProvider());
   const [credentialStatus, setCredentialStatus] = useState(null); // { configured, maskedSuffix }
   const [keyInput, setKeyInput] = useState('');
   const [isReplacing, setIsReplacing] = useState(false); // reveal input to replace a stored key
@@ -32,27 +41,42 @@ export default function SettingsModal({
       return (legacy.gemini || legacy.groq) ? legacy : null;
     });
     let alive = true;
-    fetchCredentialStatus('gemini').then((status) => {
+    fetchCredentialStatus(selectedProvider).then((status) => {
       if (alive) setCredentialStatus(status);
     }).catch(() => {
       if (alive) setCredentialStatus({ configured: false });
     });
     return () => { alive = false; };
-  }, [isOpen]);
+  }, [isOpen, selectedProvider]);
+
+  const handleSelectProvider = (prov) => {
+    setActiveAiProvider(prov);
+    setSelectedProvider(prov);
+    setValidationStatus(null);
+    setKeyInput('');
+    setIsReplacing(false);
+    fetchCredentialStatus(prov).then((status) => {
+      setCredentialStatus(status);
+    }).catch(() => {
+      setCredentialStatus({ configured: false });
+    });
+  };
 
   const handleSaveKey = async () => {
     const key = keyInput.trim();
     if (!key) {
-      setValidationStatus({ success: false, message: 'Paste your Gemini API key first.' });
+      setValidationStatus({
+        success: false,
+        message: `Paste your ${selectedProvider === 'groq' ? 'Groq' : 'Gemini'} API key first.`
+      });
       return;
     }
 
     setIsValidating(true);
     setValidationStatus(null);
 
-    const res = await saveCredential('gemini', key);
+    const res = await saveCredential(selectedProvider, key);
     setIsValidating(false);
-    // The raw key is never kept in React state beyond this submit.
     setKeyInput('');
     setIsReplacing(false);
     invalidateCredentialStatusCache();
@@ -63,9 +87,8 @@ export default function SettingsModal({
         success: true,
         message: res.local
           ? `✓ ${res.message}`
-          : '✓ Gemini key saved — encrypted on the server',
+          : `✓ ${selectedProvider === 'groq' ? 'Groq' : 'Gemini'} key saved — encrypted on the server`,
       });
-      // A locally stored duplicate would now be redundant.
       setLegacyKeys((prev) => {
         if (prev?.gemini || prev?.groq) {
           removeLegacyLocalKeys();
@@ -80,16 +103,17 @@ export default function SettingsModal({
   const handleDeleteKey = async () => {
     setIsValidating(true);
     const wasLocal = Boolean(credentialStatus?.local);
-    const { removeLocalGeminiKey } = await import('../../utils/storage');
-    removeLocalGeminiKey();
-    const res = await deleteCredential('gemini');
+    if (selectedProvider === 'gemini') removeLocalGeminiKey();
+    if (selectedProvider === 'groq') removeLocalGroqKey();
+    const res = await deleteCredential(selectedProvider);
     setIsValidating(false);
     invalidateCredentialStatusCache();
     if (res.ok || wasLocal) {
       setCredentialStatus({ configured: false });
+      const provLabel = selectedProvider === 'groq' ? 'Groq' : 'Gemini';
       setValidationStatus({
         success: true,
-        message: wasLocal ? 'Gemini key removed from this device.' : 'Gemini key removed from the server.',
+        message: wasLocal ? `${provLabel} key removed from this device.` : `${provLabel} key removed from the server.`,
       });
     } else {
       setValidationStatus({ success: false, message: 'Could not remove the key. Please try again.' });
@@ -229,37 +253,104 @@ export default function SettingsModal({
               </select>
             </div>
 
-            {/* 3. AI Configuration (Gemini — encrypted server-side credential) */}
+            {/* 3. AI Configuration (Provider Choice: Gemini vs Groq) */}
             <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 8 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 6 }}>
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>AI Configuration</div>
+                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>AI Provider &amp; Model</div>
                   <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-                    Gemini key for Writing &amp; Speaking evaluation — encrypted (AES-256-GCM) on the server. If secure cloud storage is ever unavailable, it is kept only in this browser instead.
+                    Select your preferred AI engine for Writing &amp; Speaking evaluation and hybrid answer verification.
                   </div>
-                  <a
-                    href="https://aistudio.google.com/app/apikey"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: 'var(--c-coral, #D97757)',
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 4,
-                      marginTop: 4
-                    }}
-                  >
-                    Get free Gemini API key ↗
-                  </a>
                 </div>
                 {credentialStatus?.configured && (
                   <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
-                    <Icon name="check" size={12} /> {credentialStatus.local ? 'Configured (on this device)' : 'Configured'}
+                    <Icon name="check" size={12} /> {credentialStatus.local ? 'Configured (device)' : 'Configured'}
                   </span>
                 )}
+              </div>
+
+              {/* Provider Selection Tabs */}
+              <div style={{ display: 'flex', gap: 8, marginTop: 8, marginBottom: 10 }}>
+                <button
+                  type="button"
+                  onClick={() => handleSelectProvider('gemini')}
+                  style={{
+                    flex: 1,
+                    padding: '8px 10px',
+                    fontSize: 12,
+                    fontWeight: 600,
+                    borderRadius: 'var(--r-btn)',
+                    cursor: 'pointer',
+                    border: selectedProvider === 'gemini' ? '2px solid var(--c-coral, #D97757)' : '1px solid var(--border)',
+                    background: selectedProvider === 'gemini' ? 'var(--surface-sunken)' : 'var(--surface-alt)',
+                    color: selectedProvider === 'gemini' ? 'var(--text-primary)' : 'var(--text-secondary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 6,
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  <span>Google Gemini</span>
+                  {selectedProvider === 'gemini' && (
+                    <span style={{ fontSize: 9, padding: '1px 5px', background: 'var(--c-coral, #D97757)', color: '#fff', borderRadius: 3, fontWeight: 700 }}>
+                      ACTIVE
+                    </span>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleSelectProvider('groq')}
+                  style={{
+                    flex: 1,
+                    padding: '8px 10px',
+                    fontSize: 12,
+                    fontWeight: 600,
+                    borderRadius: 'var(--r-btn)',
+                    cursor: 'pointer',
+                    border: selectedProvider === 'groq' ? '2px solid var(--c-coral, #D97757)' : '1px solid var(--border)',
+                    background: selectedProvider === 'groq' ? 'var(--surface-sunken)' : 'var(--surface-alt)',
+                    color: selectedProvider === 'groq' ? 'var(--text-primary)' : 'var(--text-secondary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 6,
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  <span>Groq (GPT-OSS 120B)</span>
+                  {selectedProvider === 'groq' && (
+                    <span style={{ fontSize: 9, padding: '1px 5px', background: 'var(--c-coral, #D97757)', color: '#fff', borderRadius: 3, fontWeight: 700 }}>
+                      ACTIVE
+                    </span>
+                  )}
+                </button>
+              </div>
+
+              {/* Provider details & free key link */}
+              <div style={{ marginBottom: 8 }}>
+                <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+                  {selectedProvider === 'groq'
+                    ? 'Groq AI with GPT-OSS 120B / Qwen 27B provides ultra-fast evaluation with a generous free tier (30 requests/min, 14,400 requests/day). No credit card required.'
+                    : 'Google Gemini 2.5 Flash / 2.0 Flash provides high reasoning fidelity. Keys are encrypted (AES-256-GCM) on the server or stored securely on this device.'}
+                </div>
+                <a
+                  href={selectedProvider === 'groq' ? 'https://console.groq.com/keys' : 'https://aistudio.google.com/app/apikey'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    color: 'var(--c-coral, #D97757)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    marginTop: 4
+                  }}
+                >
+                  {selectedProvider === 'groq' ? 'Get free Groq API key (14,400 free reqs/day) ↗' : 'Get free Gemini API key ↗'}
+                </a>
               </div>
 
               {!signedIn ? (
@@ -278,7 +369,7 @@ export default function SettingsModal({
                     color: 'var(--text-primary)', background: 'var(--surface-sunken)',
                     border: '1px solid var(--border)', borderRadius: 'var(--r-btn)'
                   }}>
-                    Gemini API · {credentialStatus.maskedSuffix || '••••'}{credentialStatus.local ? ' (on this device)' : ''}
+                    {selectedProvider === 'groq' ? 'Groq GPT-OSS 120B' : 'Gemini 2.5 Flash'} · {credentialStatus.maskedSuffix || '••••'}{credentialStatus.local ? ' (on this device)' : ''}
                   </span>
                   <button
                     type="button"
@@ -311,7 +402,7 @@ export default function SettingsModal({
                     type="password"
                     value={keyInput}
                     onChange={(e) => setKeyInput(e.target.value)}
-                    placeholder="Paste Google Gemini API key…"
+                    placeholder={selectedProvider === 'groq' ? 'Paste Groq API key (starts with gsk_)…' : 'Paste Google Gemini API key…'}
                     autoComplete="off"
                     spellCheck="false"
                     onKeyDown={(e) => { if (e.key === 'Enter') handleSaveKey(); }}

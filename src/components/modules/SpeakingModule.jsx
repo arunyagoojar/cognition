@@ -408,7 +408,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           Analysing your interview…
         </h2>
         <p style={{ fontSize: 14.5, color: 'var(--text-secondary)', marginBottom: 30 }}>
-          Processing each recorded turn against the official IELTS criteria.
+          giving the final answers to AI to get a final report.
         </p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, textAlign: 'left', maxWidth: 380, margin: '0 auto' }}>

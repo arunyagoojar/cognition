@@ -16,6 +16,7 @@ import {
   countWords,
   runEvaluationChain,
   validateGeminiKeyServer,
+  validateGroqKeyServer,
   runAnswerVerification,
 } from './ai.js';
 import { isReverificationSatisfied, reverificationErrorBody } from './reverification.js';
@@ -146,7 +147,7 @@ function error(message, status = 400, extraHeaders = {}) {
 
 // ── Credential helpers ──────────────────────────────────────────────────────
 
-const ALLOWED_PROVIDERS = new Set(['gemini']);
+const ALLOWED_PROVIDERS = new Set(['gemini', 'groq']);
 
 async function loadCredential(env, userId, provider) {
   return env.DB.prepare(
@@ -421,6 +422,11 @@ export default {
             if (!check.valid) {
               return json({ error: check.message || 'Key validation failed', code: check.code || 'invalid_key', validated: false }, 400, corsHeaders);
             }
+          } else if (provider === 'groq') {
+            const check = await validateGroqKeyServer(key);
+            if (!check.valid) {
+              return json({ error: check.message || 'Key validation failed', code: check.code || 'invalid_key', validated: false }, 400, corsHeaders);
+            }
           }
 
           let encrypted;
@@ -479,33 +485,57 @@ export default {
           return json({ configured: false, provider }, 200, corsHeaders);
         }
 
-        // ── POST /api/ai/evaluate-writing — session-level, server-side Gemini ──
+        // ── Helper to load configured credential for requested or fallback provider ──
+        async function resolveCredential(requestedProvider, explicitKey = null) {
+          if (explicitKey && typeof explicitKey === 'string' && explicitKey.trim()) {
+            const prov = (requestedProvider && ALLOWED_PROVIDERS.has(requestedProvider)) ? requestedProvider : 'gemini';
+            return { cred: { explicit: true, plaintext: explicitKey.trim() }, provider: prov };
+          }
+          if (requestedProvider && ALLOWED_PROVIDERS.has(requestedProvider)) {
+            const cred = await loadCredential(env, userId, requestedProvider);
+            if (cred) return { cred, provider: requestedProvider };
+          }
+          const geminiCred = await loadCredential(env, userId, 'gemini');
+          if (geminiCred) return { cred: geminiCred, provider: 'gemini' };
+          const groqCred = await loadCredential(env, userId, 'groq');
+          if (groqCred) return { cred: groqCred, provider: 'groq' };
+          return { cred: null, provider: null };
+        }
+
+        // ── POST /api/ai/evaluate-writing — session-level, server-side evaluation (Gemini / Groq) ──
         if (path === '/api/ai/evaluate-writing' && request.method === 'POST') {
-          const cred = await loadCredential(env, userId, 'gemini');
+          const body = await request.json();
+          const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             return json({
               status: 'failed',
-              message: 'AI evaluation is not configured. Add your Gemini API key in Settings.',
+              message: 'AI evaluation is not configured. Add your Gemini or Groq API key in Settings.',
             }, 200, corsHeaders);
           }
-          const body = await request.json();
           const t1Clean = (body.task1Text || '').trim();
           const t2Clean = (body.task2Text || '').trim();
           if (!t1Clean && !t2Clean) {
             return json({ status: 'failed', message: 'No essay content submitted for evaluation.' }, 200, corsHeaders);
           }
 
-          const t1Words = countWords(t1Clean);
-          const t2Words = countWords(t2Clean);
-          const userPrompt = buildWritingUserPrompt({ prompts: body.prompts || {}, task1Text: t1Clean, task2Text: t2Clean });
+          const t1Words = typeof body.task1Words === 'number' ? body.task1Words : countWords(t1Clean);
+          const t2Words = typeof body.task2Words === 'number' ? body.task2Words : countWords(t2Clean);
+          const userPrompt = buildWritingUserPrompt({
+            prompts: body.prompts || {},
+            task1Text: t1Clean,
+            task2Text: t2Clean,
+            task1Words: t1Words,
+            task2Words: t2Words,
+          });
 
-          const plaintextKey = await decryptCredential(
-            cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
-          );
+          const plaintextKey = cred.explicit
+            ? cred.plaintext
+            : await decryptCredential(cred.encrypted_value, cred.iv, base64KeyOrThrow(env));
           const result = await runEvaluationChain({
             apiKey: plaintextKey,
             systemPrompt: IELTS_WRITING_SYSTEM_PROMPT,
             userPrompt,
+            provider: providerToUse,
             // bands are computed in code from the whole-band criteria
             validator: (data) => normalizeWritingEvaluation(data, { task1Words: t1Words, task2Words: t2Words }),
           });
@@ -513,16 +543,16 @@ export default {
           return json(result, 200, corsHeaders);
         }
 
-        // ── POST /api/ai/evaluate-speaking — session-level, server-side Gemini ──
+        // ── POST /api/ai/evaluate-speaking — session-level, server-side evaluation (Gemini / Groq) ──
         if (path === '/api/ai/evaluate-speaking' && request.method === 'POST') {
-          const cred = await loadCredential(env, userId, 'gemini');
+          const body = await request.json();
+          const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             return json({
               status: 'failed',
-              message: 'AI evaluation is not configured. Add your Gemini API key in Settings.',
+              message: 'AI evaluation is not configured. Add your Gemini or Groq API key in Settings.',
             }, 200, corsHeaders);
           }
-          const body = await request.json();
           const transcripts = body.transcripts || {};
           const combinedSpeech = Object.values(transcripts).filter(Boolean).join(' ').trim();
           const wordCount = combinedSpeech ? combinedSpeech.split(/\s+/).length : 0;
@@ -537,35 +567,36 @@ export default {
             transcripts, testMeta: body.testMeta || {}, durations: body.durations || {},
           });
 
-          const plaintextKey = await decryptCredential(
-            cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
-          );
+          const plaintextKey = cred.explicit
+            ? cred.plaintext
+            : await decryptCredential(cred.encrypted_value, cred.iv, base64KeyOrThrow(env));
           const result = await runEvaluationChain({
             apiKey: plaintextKey,
             systemPrompt: IELTS_SPEAKING_SYSTEM_PROMPT,
             userPrompt,
+            provider: providerToUse,
             // transcript only: pronunciation is never inferred
             validator: (data) => normalizeSpeakingEvaluation(data, { audioAssessed: false }),
           });
           return json(result, 200, corsHeaders);
         }
 
-        // ── POST /api/ai/verify-answers — batched objective-answer verification ──
+        // ── POST /api/ai/verify-answers — batched objective-answer verification (Gemini / Groq) ──
         if (path === '/api/ai/verify-answers' && request.method === 'POST') {
-          const cred = await loadCredential(env, userId, 'gemini');
+          const body = await request.json();
+          const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             // Without a configured credential the deterministic result stands
             // (UNCERTAIN is treated as INCORRECT by the engine).
             return json({ results: [] }, 200, corsHeaders);
           }
-          const body = await request.json();
           const items = Array.isArray(body.items) ? body.items.slice(0, 60) : [];
           if (items.length === 0) return json({ results: [] }, 200, corsHeaders);
 
-          const plaintextKey = await decryptCredential(
-            cred.encrypted_value, cred.iv, base64KeyOrThrow(env)
-          );
-          const result = await runAnswerVerification(items, plaintextKey);
+          const plaintextKey = cred.explicit
+            ? cred.plaintext
+            : await decryptCredential(cred.encrypted_value, cred.iv, base64KeyOrThrow(env));
+          const result = await runAnswerVerification(items, plaintextKey, providerToUse);
           // plaintextKey goes out of scope — never stored, logged, or returned.
           return json(result, 200, corsHeaders);
         }

@@ -21,6 +21,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   const [timeLeft, setTimeLeft] = useState(32 * 60);
   const [result, setResult] = useState(null);
   const [processingStep, setProcessingStep] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Audio player state
   const [isPlaying, setIsPlaying] = useState(false);
@@ -93,39 +94,56 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     clearInterval(timerRef.current);
     if (audioRef.current) audioRef.current.pause();
 
-    // Fetch the test again WITH answers for grading; scoring is the shared
-    // deterministic engine (official key notation, order-free "choose N").
-    const gradedTest = getListeningTest(test.testId, true);
-    recordAttemptedQuestionSet('listening', test.testId);
-    const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers });
-    const computedResult = {
-      ...evalResult,
-      band: evalResult.status === 'not_attempted' ? null : evalResult.band,
-      raw: evalResult.raw || 0,
-      total: evalResult.total || 40,
-      percentage: evalResult.percentage || 0,
-      answers
-    };
-
-    setTest(gradedTest);
-
-    if (isMockMode) {
-      // In Full Mock Mode, transition directly to the next section without intermediate results screen
-      if (onComplete) onComplete(computedResult);
-      return;
-    }
-
+    // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
-    setTimeout(() => setProcessingStep(1), 600);
-    setTimeout(() => setProcessingStep(2), 1200);
-    setTimeout(() => setProcessingStep(3), 1800);
-    setTimeout(() => {
+    setProcessingStep(0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
+    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
+    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+    try {
+      // Fetch the test again WITH answers for grading; scoring is the shared
+      // deterministic engine (official key notation, order-free "choose N").
+      const gradedTest = getListeningTest(test.testId, true);
+      recordAttemptedQuestionSet('listening', test.testId);
+      const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers });
+      const computedResult = {
+        ...evalResult,
+        band: evalResult.status === 'not_attempted' ? null : evalResult.band,
+        raw: evalResult.raw || 0,
+        total: evalResult.total || 40,
+        percentage: evalResult.percentage || 0,
+        answers
+      };
+
+      setTest(gradedTest);
+
+      // Ensure user sees the processing steps before advancing
+      await new Promise(r => setTimeout(r, 2200));
+
+      if (isMockMode) {
+        // In Full Mock Mode, transition directly to the next section without intermediate results screen
+        if (onComplete) onComplete(computedResult);
+        return;
+      }
+
       setResult(computedResult);
       setPhase('results');
-    }, 2400);
+    } catch (err) {
+      console.error('Listening submission evaluation error:', err);
+      clearTimeout(stepTimer1);
+      clearTimeout(stepTimer2);
+      clearTimeout(stepTimer3);
+      setIsSubmitting(false);
+      setPhase('exam');
+    }
   };
 
   /* ──────────────────────────────────────────────────────────
@@ -179,10 +197,10 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           }} />
 
           <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
-            Analysing your performance...
+            The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            Reviewing your responses against verified IELTS answer keys.
+            giving the final answers to AI to get a final report.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
@@ -560,6 +578,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         activeSectionIndex={partIdx}
         onSelectSection={(idx) => setPartIdx(idx)}
         onNext={partIdx < test.parts.length - 1 ? () => setPartIdx(p => p + 1) : handleSubmit}
+        isNextDisabled={isSubmitting}
         nextLabel={partIdx < test.parts.length - 1 ? 'Next Part' : isMockMode ? 'Next Section: Reading' : 'Finish & Grade Exam'}
         isSubmit={partIdx === test.parts.length - 1 && !isMockMode}
         nextActionId={isMockMode ? 'next-mock-reading' : 'submit-listening-exam'}

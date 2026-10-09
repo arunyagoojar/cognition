@@ -8,12 +8,19 @@
  */
 
 export const AI_MODELS = {
-  primary: 'gemini-3.8-flash',
-  fallback: 'gemini-flash-latest',
-  chain: ['gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.5-flash', 'gemini-3.5-flash-lite'],
+  primary: 'gemini-2.5-flash',
+  fallback: 'gemini-2.0-flash',
+  chain: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-8b', 'gemini-flash-latest'],
 };
 
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
+const GROQ_BASE = 'https://api.groq.com/openai/v1';
+
+export const GROQ_MODELS = {
+  primary: 'openai/gpt-oss-120b',
+  fallback: 'openai/gpt-oss-20b',
+  chain: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'],
+};
 
 // Writing/Speaking rubric v2 lives in one module shared with the browser so
 // server-side and local-key scoring can never drift apart.
@@ -78,38 +85,96 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
   }
 }
 
+async function callGroq(model, apiKey, systemPrompt, userPrompt) {
+  let attempts = 0;
+  while (attempts < 2) {
+    attempts++;
+    const res = await fetch(`${GROQ_BASE}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
+        ],
+        temperature: 0.2,
+        response_format: { type: 'json_object' },
+      }),
+      signal: AbortSignal.timeout(45000),
+    });
+
+    if (res.status === 503 && attempts < 2) {
+      await new Promise(r => setTimeout(r, 1500));
+      continue;
+    }
+
+    if (!res.ok) {
+      const err = new Error(`Groq request failed (${res.status})`);
+      err.status = res.status;
+      throw err;
+    }
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || null;
+  }
+}
+
 /**
  * Runs the evaluation chain: primary model → fallback models.
- * Returns { status, evaluation, model } or { status, message }.
+ * Supports both Google Gemini and Groq providers.
+ * Returns { status, evaluation, model, provider } or { status, message }.
  */
-export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, validator }) {
+export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, validator, provider = 'gemini' }) {
   let lastError = null;
-  const models = AI_MODELS.chain || [AI_MODELS.primary, AI_MODELS.fallback];
+  const isGroq = provider === 'groq';
+  const models = isGroq ? GROQ_MODELS.chain : (AI_MODELS.chain || [AI_MODELS.primary, AI_MODELS.fallback]);
+
   for (const model of models) {
     try {
-      const text = await callGemini(model, apiKey, systemPrompt, userPrompt);
+      const text = isGroq
+        ? await callGroq(model, apiKey, systemPrompt, userPrompt)
+        : await callGemini(model, apiKey, systemPrompt, userPrompt);
       const parsed = extractJsonFromText(text);
       const validated = validator(parsed);
       if (validated) {
-        return { status: 'completed', evaluation: validated, model };
+        return { status: 'completed', evaluation: validated, model, provider: isGroq ? 'groq' : 'gemini' };
       }
     } catch (e) {
       lastError = e;
       if (e.status === 429) {
-        return { status: 'failed', message: 'AI rate limit reached (429). Please wait a minute and retry.' };
+        return { status: 'failed', message: `AI rate limit reached (429) on ${isGroq ? 'Groq' : 'Gemini'}. Please wait a minute and retry.` };
       }
       console.error(`Model ${model} evaluation attempt failed:`, e.constructor?.name, e.message);
     }
   }
   const detail = lastError?.status === 400 || lastError?.status === 403
-    ? 'Gemini rejected the evaluation request. Check your API key permissions and quota in Google AI Studio.'
+    ? `${isGroq ? 'Groq' : 'Gemini'} rejected the evaluation request. Check your API key permissions and quota.`
     : lastError?.status === 503
-    ? 'Google Gemini servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
+    ? `${isGroq ? 'Groq' : 'Gemini'} servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.`
     : 'AI evaluation failed to produce a valid IELTS rubric response. Check your API key configuration and try again.';
   return {
     status: 'failed',
     message: detail,
   };
+}
+
+export async function validateGroqKeyServer(apiKey) {
+  try {
+    const res = await fetch(`${GROQ_BASE}/models`, {
+      headers: { Authorization: `Bearer ${apiKey}` },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (res.ok || res.status === 429) return { valid: true };
+    if (res.status === 401 || res.status === 403) {
+      return { valid: false, code: 'invalid_key', message: 'Groq rejected this API key. Verify that you copied the complete key from console.groq.com and try again.' };
+    }
+    return { valid: false, code: 'provider_unreachable', message: 'Could not reach Groq to verify the key. Please try again shortly.' };
+  } catch {
+    return { valid: false, code: 'provider_unreachable', message: 'Could not reach Groq to verify the key. Please try again shortly.' };
+  }
 }
 
 /**
@@ -187,7 +252,7 @@ Include exactly one result per input item, echoing ids verbatim.`;
  * Batched answer verification: one Gemini request for all uncertain items.
  * Returns { results: [{id, decision, matchedAnswer, reason}] } or { results: [] }.
  */
-export async function runAnswerVerification(items, apiKey) {
+export async function runAnswerVerification(items, apiKey, provider = 'gemini') {
   const userPrompt = `Verify the following ${items.length} student answer(s) against the official IELTS answer key.
 
 ${JSON.stringify(items.map(it => ({
@@ -201,7 +266,9 @@ ${JSON.stringify(items.map(it => ({
 })), null, 2)}`;
 
   try {
-    const text = await callGemini(AI_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
+    const text = provider === 'groq'
+      ? await callGroq(GROQ_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt)
+      : await callGemini(AI_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
     const parsed = extractJsonFromText(text);
     if (parsed && Array.isArray(parsed.results)) {
       const valid = parsed.results.filter(r => r && r.id && ['CORRECT', 'INCORRECT', 'UNCERTAIN'].includes(r.decision));

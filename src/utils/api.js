@@ -4,7 +4,18 @@
  */
 
 import { CLERK_PUBLISHABLE_KEY } from '../config.js';
-import { setLocalKeyScope, saveLocalGeminiKey, getLocalGeminiKey, removeLocalGeminiKey, hasLocalGeminiKey } from './storage.js';
+import {
+  setLocalKeyScope,
+  saveLocalGeminiKey,
+  getLocalGeminiKey,
+  removeLocalGeminiKey,
+  hasLocalGeminiKey,
+  getActiveAiProvider,
+  saveLocalGroqKey,
+  getLocalGroqKey,
+  removeLocalGroqKey,
+  hasLocalGroqKey
+} from './storage.js';
 
 // import.meta.env only exists under Vite — fall back to process.env in Node tests.
 const viteEnv = (typeof import.meta !== 'undefined' && import.meta.env) || {};
@@ -187,6 +198,24 @@ export async function validateGeminiKeyDirect(key) {
   }
 }
 
+/**
+ * Validates a Groq key directly from the browser (models-list ping).
+ */
+export async function validateGroqKeyDirect(key) {
+  try {
+    const res = await fetch('https://api.groq.com/openai/v1/models', {
+      headers: { Authorization: `Bearer ${key}` },
+    });
+    if (res.ok || res.status === 429) return { valid: true };
+    if (res.status === 401 || res.status === 403) {
+      return { valid: false, message: 'Groq rejected this API key. Check that you copied the complete key from console.groq.com and try again.' };
+    }
+    return { valid: false, message: 'Could not verify the key with Groq right now. Please try again shortly.' };
+  } catch {
+    return { valid: false, message: 'Could not reach Groq to verify the key. Check your connection and try again.' };
+  }
+}
+
 export async function saveCredential(provider, key) {
   const res = await apiFetchDetail(`/api/credentials/${provider}`, {
     method: 'PUT',
@@ -195,12 +224,13 @@ export async function saveCredential(provider, key) {
 
   if (res.ok) {
     // A successful cloud save supersedes any stale local copy.
-    removeLocalGeminiKey();
+    if (provider === 'gemini') removeLocalGeminiKey();
+    if (provider === 'groq') removeLocalGroqKey();
     return { ok: true, ...res.data };
   }
 
   const serverMessage = res.data?.error;
-  if (provider !== 'gemini') {
+  if (provider !== 'gemini' && provider !== 'groq') {
     return { ok: false, message: serverMessage || 'Could not save the key. Please try again.' };
   }
   if (res.unauthenticated || res.status === 401) {
@@ -215,13 +245,21 @@ export async function saveCredential(provider, key) {
   }
 
   // Privacy fallback: Cognition's secure storage can't take the key right now.
-  // Verify it directly with Google first (so we never claim a bad key works),
-  // then keep it on THIS DEVICE only.
-  const direct = await validateGeminiKeyDirect(key);
-  if (!direct.valid) return { ok: false, message: direct.message };
-  if (!saveLocalGeminiKey(key)) {
-    return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
+  // Verify it directly with provider first, then keep it on THIS DEVICE only.
+  if (provider === 'gemini') {
+    const direct = await validateGeminiKeyDirect(key);
+    if (!direct.valid) return { ok: false, message: direct.message };
+    if (!saveLocalGeminiKey(key)) {
+      return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
+    }
+  } else if (provider === 'groq') {
+    const direct = await validateGroqKeyDirect(key);
+    if (!direct.valid) return { ok: false, message: direct.message };
+    if (!saveLocalGroqKey(key)) {
+      return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
+    }
   }
+
   return {
     ok: true,
     local: true,
@@ -241,16 +279,21 @@ export async function fetchCredentialStatus(provider) {
   if (provider === 'gemini' && hasLocalGeminiKey()) {
     return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGeminiKey().slice(-4)}` };
   }
+  if (provider === 'groq' && hasLocalGroqKey()) {
+    return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGroqKey().slice(-4)}` };
+  }
   return cloud.unknown ? cloud : { configured: false, provider };
 }
 
 export async function deleteCredential(provider) {
+  if (provider === 'gemini') removeLocalGeminiKey();
+  if (provider === 'groq') removeLocalGroqKey();
   const res = await apiFetchDetail(`/api/credentials/${provider}`, { method: 'DELETE' });
   return { ok: res.ok, ...(res.data || {}) };
 }
 
 // ── Server-side AI evaluation (Phase 4) ─────────────────────────────────────
-// The Worker decrypts the credential in memory, calls Gemini, and returns the
+// The Worker decrypts the credential in memory, calls Gemini/Groq, and returns the
 // validated evaluation JSON. The key never reaches the browser.
 
 // One clear message per failure kind for AI evaluation requests. The candidate's
@@ -267,19 +310,23 @@ function aiFailure(res) {
     message: (res.data && (res.data.message || res.data.error)) || 'The AI examiner returned an error. Press Retry evaluation.' };
 }
 
-export async function evaluateWritingServer({ task1Text, task2Text, prompts }) {
+export async function evaluateWritingServer({ task1Text, task2Text, prompts, task1Words, task2Words }) {
+  const provider = getActiveAiProvider();
+  const localKey = provider === 'groq' ? getLocalGroqKey() : getLocalGeminiKey();
   const res = await apiFetchDetail('/api/ai/evaluate-writing', {
     method: 'POST',
-    body: JSON.stringify({ task1Text, task2Text, prompts }),
+    body: JSON.stringify({ task1Text, task2Text, prompts, task1Words, task2Words, provider, key: localKey || undefined }),
   });
   if (!res.ok) return aiFailure(res);
   return res.data;
 }
 
 export async function evaluateSpeakingServer({ transcripts, testMeta }) {
+  const provider = getActiveAiProvider();
+  const localKey = provider === 'groq' ? getLocalGroqKey() : getLocalGeminiKey();
   const res = await apiFetchDetail('/api/ai/evaluate-speaking', {
     method: 'POST',
-    body: JSON.stringify({ transcripts, testMeta }),
+    body: JSON.stringify({ transcripts, testMeta, provider, key: localKey || undefined }),
   });
   if (!res.ok) return aiFailure(res);
   return res.data;
@@ -287,14 +334,16 @@ export async function evaluateSpeakingServer({ transcripts, testMeta }) {
 
 // ── Hybrid objective-answer verification (Phase 5) ──────────────────────────
 // One batched request per completed test: only deterministic-UNCERTAIN items
-// go to the Worker, which verifies them against Gemini using the user's
+// go to the Worker, which verifies them against Gemini/Groq using the user's
 // encrypted credential. The official answer key remains authoritative.
 
 export async function verifyAnswersViaWorker(items) {
   if (!items || items.length === 0) return { results: [] };
+  const provider = getActiveAiProvider();
+  const localKey = provider === 'groq' ? getLocalGroqKey() : getLocalGeminiKey();
   const res = await apiFetchDetail('/api/ai/verify-answers', {
     method: 'POST',
-    body: JSON.stringify({ items }),
+    body: JSON.stringify({ items, provider, key: localKey || undefined }),
   });
   if (!res.ok) return { results: [] };
   return res.data;

@@ -10,8 +10,8 @@ import {
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
-  primaryModel: 'gemini-3.8-flash',
-  fallbackModel: 'gemini-flash-latest',
+  primaryModel: 'gemini-2.5-flash',
+  fallbackModel: 'gemini-2.0-flash',
   temperature: 0.2,
   maxOutputTokens: 8192,
   rateLimitCooldownMs: 30000,
@@ -68,7 +68,7 @@ function extractJsonFromText(text) {
  * key lives on this device and never reaches any server.
  */
 async function directGeminiCall(systemPrompt, userPrompt, localKey) {
-  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-3.5-flash', 'gemini-3.5-flash-lite'].filter(Boolean);
+  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-1.5-flash', 'gemini-1.5-flash-8b', 'gemini-flash-latest'].filter(Boolean);
   let lastStatus = null;
   for (const mdl of models) {
     try {
@@ -105,6 +105,113 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey) {
     ? 'Google Gemini servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
     : 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.';
   return { status: 'failed', message: msg };
+}
+
+async function directGroqCall(systemPrompt, userPrompt, localKey) {
+  const models = ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'];
+  let lastStatus = null;
+  for (const mdl of models) {
+    try {
+      let attempts = 0;
+      let r;
+      while (attempts < 2) {
+        attempts++;
+        r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${localKey}`,
+          },
+          body: JSON.stringify({
+            model: mdl,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userPrompt },
+            ],
+            temperature: 0.2,
+            response_format: { type: 'json_object' },
+          }),
+        });
+        if (r.status === 503 && attempts < 2) {
+          await new Promise(res => setTimeout(res, 1500));
+          continue;
+        }
+        break;
+      }
+      lastStatus = r.status;
+      if (r.status === 429) { lastRateLimitTime = Date.now(); break; }
+      if (r.ok) {
+        const data = await r.json();
+        const text = data.choices?.[0]?.message?.content;
+        const parsed = extractJsonFromText(text);
+        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl };
+      }
+    } catch { /* try fallback model */ }
+  }
+  const msg = lastStatus === 503
+    ? 'Groq servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
+    : 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.';
+  return { status: 'failed', message: msg };
+}
+
+async function directAiCall(systemPrompt, userPrompt) {
+  const { getActiveAiProvider, getLocalGroqKey, getLocalGeminiKey } = await import('./storage.js');
+  const provider = getActiveAiProvider();
+  if (provider === 'groq') {
+    const groqKey = getLocalGroqKey();
+    if (groqKey) return directGroqCall(systemPrompt, userPrompt, groqKey);
+  }
+  const geminiKey = getLocalGeminiKey();
+  if (geminiKey) return directGeminiCall(systemPrompt, userPrompt, geminiKey);
+  const groqKeyFallback = getLocalGroqKey();
+  if (groqKeyFallback) return directGroqCall(systemPrompt, userPrompt, groqKeyFallback);
+  return { status: 'failed', message: 'No local API key configured.' };
+}
+
+export async function directVerifyAnswers(items) {
+  if (!items || items.length === 0) return { results: [] };
+  const userPrompt = `Verify the following ${items.length} student answer(s) against the official IELTS answer key.\n\n${JSON.stringify(items.map(it => ({
+    id: it.id,
+    question: it.questionText || '',
+    questionType: it.questionType || '',
+    instruction: it.instruction || '',
+    officialAnswer: it.officialAnswer || '',
+    studentAnswer: it.studentAnswer || '',
+    wordLimit: it.wordLimit || null,
+  })), null, 2)}`;
+
+  const ANSWER_VERIFIER_SYSTEM_PROMPT = `You are an IELTS answer-key verifier.
+
+For each item you receive, decide whether the student's answer is an acceptable representation of the OFFICIAL answer for that exact question, under the supplied constraints (word limits, singular/plural, numbers, dates, times, units, names, spelling requirements).
+
+Each item includes the sentence, note line or table row the blank sits in ("question", with the blank shown as ____) and the task instruction with its word limit. Read the candidate's answer IN that sentence, as an IELTS examiner marks the answer sheet.
+
+Rules:
+- The official answer is the authority. Never invent or substitute an answer.
+- Accept the same answer written differently: hyphenation or spacing ("north west" / "north-west", "club house" / "clubhouse"), digits vs number words, date formats ("23rd March" / "23 March"), a leading article that keeps the answer within the word limit ("the only guest" / "only guest").
+- Singular vs plural: accept the candidate's form only if it fits the sentence grammatically and does not change what is being referred to (e.g. "on ____ afternoons" needs the plural).
+- Spelling must be correct, as in IELTS: a misspelled word is INCORRECT ("prises" for "prizes", "compitition" for "competition").
+- Answers exceeding the word limit are INCORRECT.
+- Case differences and the optional parts shown in brackets in the official answer never matter.
+- Reject answers that change meaning: am/pm swaps, different quantities, related-but-different words ("university" is not "college"), wrong concepts.
+- If you cannot confidently establish equivalence, decide UNCERTAIN.
+
+Respond with structured JSON ONLY (no markdown, no commentary):
+{
+  "results": [
+    { "id": "<echo the item id>",
+      "decision": "CORRECT" | "INCORRECT" | "UNCERTAIN",
+      "matchedAnswer": "<the official/accepted answer it corresponds to>",
+      "reason": "<short factual explanation>" }
+  ]
+}
+Include exactly one result per input item, echoing ids verbatim.`;
+
+  const res = await directAiCall(ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
+  if (res.status === 'completed' && Array.isArray(res.evaluation?.results)) {
+    return res.evaluation;
+  }
+  return { results: [] };
 }
 
 /**
@@ -176,7 +283,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   const t1Words = countWords(t1Clean);
   const t2Words = countWords(t2Clean);
 
-  let res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
+  let res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words });
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();
@@ -186,15 +293,11 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   // Local-key privacy mode or server fallback: if the server couldn't evaluate
   // and a local key exists on this device, run evaluation directly from the browser.
   if (res?.status === 'failed') {
-    const { getLocalGeminiKey } = await import('./storage.js');
-    const localKey = getLocalGeminiKey();
-    if (localKey) {
-      const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean });
-      const direct = await directGeminiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt, localKey);
-      if (direct.status === 'completed') {
-        res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
-        model = direct.model || 'gemini';
-      }
+    const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words });
+    const direct = await directAiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt);
+    if (direct.status === 'completed') {
+      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+      model = direct.model || 'ai';
     }
   }
 
@@ -330,15 +433,11 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
 
   let model = res?.model || 'gemini';
   if (res?.status === 'failed') {
-    const { getLocalGeminiKey } = await import('./storage.js');
-    const localKey = getLocalGeminiKey();
-    if (localKey) {
-      const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
-      const direct = await directGeminiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt, localKey);
-      if (direct.status === 'completed') {
-        res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
-        model = direct.model || 'gemini';
-      }
+    const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
+    const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt);
+    if (direct.status === 'completed') {
+      res = { status: 'completed', evaluation: direct.evaluation, model: direct.model };
+      model = direct.model || 'ai';
     }
   }
 

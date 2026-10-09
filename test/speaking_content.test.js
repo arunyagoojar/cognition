@@ -17,13 +17,13 @@ const clean = (s) => typeof s === 'string' && s.trim().length > 2 && !ARTIFACT.t
 console.log('== Production Speaking ==');
 t(`${PRODUCTION_SPEAKING.length} packages (≥175)`, () => assert.ok(PRODUCTION_SPEAKING.length >= 175));
 
-t('Part 1: 3 familiar topics × 3 questions (IELTS 4–5 min), never the Part 2 topic', () => {
+t('Part 1: 3 familiar topics × 4 questions (IELTS 4–5 min, 12 questions total), never the Part 2 topic', () => {
   for (const p of PRODUCTION_SPEAKING) {
     const topics = p.part1.topics;
     assert.equal(topics.length, 3, p.slug);
     assert.equal(new Set(topics.map(x => x.topic)).size, 3, `${p.slug} distinct topics`);
     for (const x of topics) {
-      assert.equal(x.questions.length, 3, `${p.slug} ${x.topic}`);
+      assert.equal(x.questions.length, 4, `${p.slug} ${x.topic}`);
       for (const q of x.questions) assert.ok(clean(q) && q.trim().endsWith('?'), `${p.slug} part1 "${q}"`);
     }
   }
@@ -71,7 +71,7 @@ t('the adapter serves a 3-part interview with a topic label per question', () =>
     const a = adaptProductionSpeaking(pkg);
     assert.deepEqual(a.parts.map(x => x.partNumber), [1, 2, 3], pkg.slug);
     const [p1, , p3] = a.parts;
-    assert.equal(p1.questions.length, 9); assert.equal(p1.questionTopics.length, 9);
+    assert.equal(p1.questions.length, 12); assert.equal(p1.questionTopics.length, 12);
     assert.equal(p3.questions.length, 6); assert.equal(p3.questionTopics.length, 6);
   }
 });

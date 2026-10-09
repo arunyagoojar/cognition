@@ -3,7 +3,7 @@
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
 
 import { AIProvider } from '../ai/aiProvider.js';
-import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants } from '../bandCalculator.js';
+import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, stripLeadingArticle } from '../bandCalculator.js';
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
@@ -13,12 +13,17 @@ import { getAiConfigState } from '../storage.js';
  * Checks whether candidate answer matches official answer using deterministic
  * normalizer. Accepted variants follow the key's own notation ("/" alternatives,
  * parenthesised optional words) — see officialAnswerVariants.
+ * Also accounts for optional leading articles in IELTS answers.
  */
 export function isCandidateAnswerCorrect(candidateAns, officialAns) {
   if (candidateAns === undefined || candidateAns === null || candidateAns === '') return false;
   if (!officialAns || (Array.isArray(officialAns) && officialAns.length === 0)) return false;
   const normCandidate = normalizeAnswer(String(candidateAns));
-  return officialAnswerVariants(officialAns).some(v => normalizeAnswer(v) === normCandidate);
+  const candidateNoArt = stripLeadingArticle(normCandidate);
+  return officialAnswerVariants(officialAns).some(v => {
+    const normV = normalizeAnswer(v);
+    return normV === normCandidate || (candidateNoArt !== '' && candidateNoArt === stripLeadingArticle(normV));
+  });
 }
 
 /** The answer a question is matched against: the structured accepted list when present. */
@@ -123,7 +128,12 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
 
   if (uncertain.length === 0) return;
   try {
-    const res = await verifyAnswersViaWorker(uncertain);
+    let res = await verifyAnswersViaWorker(uncertain);
+    if (!res || !res.results || res.results.length === 0) {
+      // Local fallback if worker couldn't verify (e.g. unauthenticated, offline, or local key mode)
+      const { directVerifyAnswers } = await import('../geminiEvaluator.js');
+      res = await directVerifyAnswers(uncertain);
+    }
     const byId = new Map((res.results || []).map(r => [r.id, r]));
     for (const item of uncertain) {
       const rec = itemResults[item.id];

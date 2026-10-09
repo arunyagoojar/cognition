@@ -11,8 +11,8 @@ Cognition — Phase 3: production runtime bundle + DB manifests.
 """
 import json, os, re, hashlib, glob, html
 
-REPO = "/Users/arunyagoojar/Documents/cognition"
-SRC_ROOT = "/Users/arunyagoojar/Downloads/ielts-website"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC_ROOT = os.path.join(REPO, "public-static")
 OUT = os.path.join(REPO, "content-db")
 RUNTIME = os.path.join(REPO, "src/data/production")
 

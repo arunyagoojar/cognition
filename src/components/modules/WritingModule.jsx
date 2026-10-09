@@ -44,6 +44,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   const [processingStep, setProcessingStep] = useState(0);
   const [showModelAnswer, setShowModelAnswer] = useState(false);
   const [isRechecking, setIsRechecking] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [textScale, setTextScale] = useExamTextScale();
   const [mobilePane, setMobilePane] = useState('task');
 
@@ -100,12 +101,22 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     clearInterval(timerRef.current);
     const wc1 = wordCount(t1);
     const wc2 = wordCount(t2);
 
-    if (isMockMode) {
-      // In Full Mock Mode: evaluate responses and transition directly to Speaking
+    // Immediately show processing screen to prevent UI freeze and multiple clicks
+    setPhase('processing');
+    setProcessingStep(0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
+    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
+    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+    try {
       const evalResult = await evaluateWritingWithAI({
         task1Text: t1,
         task2Text: t2,
@@ -114,6 +125,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
           task2: test.task2?.prompt || ''
         }
       });
+
       const computedResult = {
         band: evalResult.overallBand,
         task1Band: evalResult.task1Band,
@@ -124,37 +136,24 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         t2,
         ...evalResult
       };
-      if (onComplete) onComplete(computedResult);
-      return;
-    }
 
-    setPhase('processing');
-    setTimeout(() => setProcessingStep(1), 600);
-    setTimeout(() => setProcessingStep(2), 1200);
-    setTimeout(() => setProcessingStep(3), 1800);
+      await new Promise(r => setTimeout(r, 2200));
 
-    const evalResult = await evaluateWritingWithAI({
-      task1Text: t1,
-      task2Text: t2,
-      prompts: {
-        task1: test.task1?.prompt || '',
-        task2: test.task2?.prompt || ''
+      if (isMockMode) {
+        if (onComplete) onComplete(computedResult);
+        return;
       }
-    });
 
-    setTimeout(() => {
-      setResult({
-        band: evalResult.overallBand,
-        task1Band: evalResult.task1Band,
-        task2Band: evalResult.task2Band,
-        task1Words: wc1,
-        task2Words: wc2,
-        t1,
-        t2,
-        ...evalResult
-      });
+      setResult(computedResult);
       setPhase('results');
-    }, 2400);
+    } catch (err) {
+      console.error('Writing evaluation error:', err);
+      clearTimeout(stepTimer1);
+      clearTimeout(stepTimer2);
+      clearTimeout(stepTimer3);
+      setIsSubmitting(false);
+      setPhase('exam');
+    }
   };
 
   const handleRecheck = async () => {
@@ -258,10 +257,10 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
           }} />
 
           <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
-            Analysing your writing...
+            The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            Evaluating word count thresholds, paragraph coherence, and official criteria.
+            giving the final answers to AI to get a final report.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
@@ -910,6 +909,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
             handleSubmit();
           }
         }}
+        isNextDisabled={isSubmitting}
         nextLabel={task === 1 ? 'Next Task' : (isMockMode ? 'Next Section: Speaking' : 'Submit & Evaluate Writing')}
         isSubmit={task === 2 && !isMockMode}
         nextActionId={isMockMode ? 'next-mock-speaking' : 'submit-writing-exam'}

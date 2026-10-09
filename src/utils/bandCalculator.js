@@ -105,6 +105,22 @@ function canonicalizeNumbers(s) {
 }
 
 /**
+ * Strips leading grammatical articles ('a', 'an', 'the') from text.
+ * In IELTS Listening & Reading, leading articles are generally optional in note/table completion.
+ */
+export function stripLeadingArticle(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).trim().replace(/^(?:the|a|an)\s+/i, '').trim();
+}
+
+export function differByArticle(a, b) {
+  if (!a || !b) return false;
+  const sa = stripLeadingArticle(a);
+  const sb = stripLeadingArticle(b);
+  return sa !== '' && sa === sb;
+}
+
+/**
  * Expands an official answer into its accepted variants, following the key's
  * own notation only:
  *   "11 / eleven (am)" → "11", "eleven am", "eleven"   (slash = alternatives)
@@ -125,9 +141,13 @@ export function officialAnswerVariants(expectedAnswer) {
     const parts = expected.includes('/') ? expected.split('/').map(x => x.trim()).filter(Boolean) : [expected];
     for (const v of parts) {
       push(v);
+      const noArt = stripLeadingArticle(v);
+      if (noArt && noArt !== v) push(noArt);
       if (v.includes('(')) {
         push(v.replace(/[()]/g, ' '));                     // optional words included
         push(v.replace(/\s*\([^)]*\)\s*/g, ' '));            // optional words omitted
+        const noArtOmitted = stripLeadingArticle(v.replace(/\s*\([^)]*\)\s*/g, ' '));
+        if (noArtOmitted) push(noArtOmitted);
       }
     }
   }
@@ -167,6 +187,10 @@ export function evaluateDeterministic(userAnswer, expectedAnswer) {
     const norm = normalizeAnswer(variant);
     if (!norm) continue;
     if (norm === user) {
+      return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
+    }
+    // Article equivalence (e.g. user writes "bicycle" for "(a) bicycle" or key has "the garden" and user wrote "garden")
+    if (differByArticle(user, norm)) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
     // Safe numeric equivalence: "11" vs "11" (already equal) — word forms

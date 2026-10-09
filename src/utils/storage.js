@@ -299,33 +299,58 @@ export function removeLegacyLocalKeys() {
 }
 
 // Cached "is AI configured" probe backed by the Worker credential status.
-let credentialStatusCache = null;
+let credentialStatusCache = {};
 
 export function invalidateCredentialStatusCache() {
-  credentialStatusCache = null;
+  credentialStatusCache = {};
+}
+
+const ACTIVE_PROVIDER_KEY = `${STORAGE_KEY_PREFIX}active_ai_provider`;
+
+export function getActiveAiProvider() {
+  try {
+    const val = localStorage.getItem(ACTIVE_PROVIDER_KEY);
+    return val === 'groq' ? 'groq' : 'gemini';
+  } catch {
+    return 'gemini';
+  }
+}
+
+export function setActiveAiProvider(provider) {
+  try {
+    const p = provider === 'groq' ? 'groq' : 'gemini';
+    localStorage.setItem(ACTIVE_PROVIDER_KEY, p);
+    invalidateCredentialStatusCache();
+    return p;
+  } catch {
+    return 'gemini';
+  }
 }
 
 /**
- * 'configured' | 'not_configured' | 'unknown'. Only a definite answer from the
- * server is cached; a failed check (session still loading, expired token,
- * network) stays unknown and is retried next time.
+ * 'configured' | 'not_configured' | 'unknown'. Checks active provider first,
+ * or either provider if none specified.
  */
-export async function getAiConfigState() {
-  if (hasLocalGeminiKey()) return 'configured'; // device-stored key (privacy mode)
-  if (credentialStatusCache !== null) return credentialStatusCache.configured ? 'configured' : 'not_configured';
+export async function getAiConfigState(checkProvider = null) {
+  const provider = checkProvider || getActiveAiProvider();
+  if (provider === 'gemini' && hasLocalGeminiKey()) return 'configured';
+  if (provider === 'groq' && hasLocalGroqKey()) return 'configured';
+  if (credentialStatusCache[provider] !== undefined) {
+    return credentialStatusCache[provider]?.configured ? 'configured' : 'not_configured';
+  }
   try {
     const { fetchCredentialStatus } = await import('./api.js');
-    const status = await fetchCredentialStatus('gemini');
+    const status = await fetchCredentialStatus(provider);
     if (status?.unknown) return 'unknown';
-    credentialStatusCache = status;
+    credentialStatusCache[provider] = status;
     return status?.configured ? 'configured' : 'not_configured';
   } catch {
     return 'unknown';
   }
 }
 
-export async function isAiConfigured() {
-  return (await getAiConfigState()) === 'configured';
+export async function isAiConfigured(provider = null) {
+  return (await getAiConfigState(provider)) === 'configured';
 }
 
 // ── Local Gemini key fallback (privacy mode) ───────────────────────────────
@@ -335,6 +360,7 @@ export async function isAiConfigured() {
 // account, so another user on the same browser never sees or uses it.
 
 const LOCAL_GEMINI_KEY = `${STORAGE_KEY_PREFIX}local_gemini_key`;
+const LOCAL_GROQ_KEY = `${STORAGE_KEY_PREFIX}local_groq_key`;
 let localKeyScope = '';
 
 // Called by the API layer whenever the Clerk session (user id) is known.
@@ -342,9 +368,9 @@ export function setLocalKeyScope(userId) {
   localKeyScope = userId || '';
 }
 
-function readLocalKeyRecord() {
+function readLocalKeyRecord(storageKey = LOCAL_GEMINI_KEY) {
   try {
-    const raw = localStorage.getItem(LOCAL_GEMINI_KEY);
+    const raw = localStorage.getItem(storageKey);
     if (!raw) return null;
     const rec = JSON.parse(raw);
     return rec && typeof rec.key === 'string' ? rec : null;
@@ -354,9 +380,9 @@ function readLocalKeyRecord() {
 }
 
 export function saveLocalGeminiKey(key) {
-  if (!localKeyScope) return false;
   try {
-    localStorage.setItem(LOCAL_GEMINI_KEY, JSON.stringify({ uid: localKeyScope, key: (key || '').trim() }));
+    const scope = localKeyScope || 'device';
+    localStorage.setItem(LOCAL_GEMINI_KEY, JSON.stringify({ uid: scope, key: (key || '').trim() }));
     return true;
   } catch {
     return false; // storage unavailable (private mode / quota)
@@ -364,20 +390,49 @@ export function saveLocalGeminiKey(key) {
 }
 
 export function getLocalGeminiKey() {
-  const rec = readLocalKeyRecord();
-  return rec && localKeyScope && rec.uid === localKeyScope ? rec.key : '';
+  const rec = readLocalKeyRecord(LOCAL_GEMINI_KEY);
+  if (!rec) return '';
+  if (!localKeyScope || rec.uid === localKeyScope || rec.uid === 'device') return rec.key;
+  return '';
 }
 
 export function removeLocalGeminiKey() {
   try {
-    const rec = readLocalKeyRecord();
-    // Only ever remove the current user's own key.
-    if (!rec || rec.uid === localKeyScope) localStorage.removeItem(LOCAL_GEMINI_KEY);
+    const rec = readLocalKeyRecord(LOCAL_GEMINI_KEY);
+    if (!rec || !localKeyScope || rec.uid === localKeyScope || rec.uid === 'device') localStorage.removeItem(LOCAL_GEMINI_KEY);
   } catch { /* best-effort */ }
 }
 
 export function hasLocalGeminiKey() {
   return Boolean(getLocalGeminiKey());
+}
+
+export function saveLocalGroqKey(key) {
+  try {
+    const scope = localKeyScope || 'device';
+    localStorage.setItem(LOCAL_GROQ_KEY, JSON.stringify({ uid: scope, key: (key || '').trim() }));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function getLocalGroqKey() {
+  const rec = readLocalKeyRecord(LOCAL_GROQ_KEY);
+  if (!rec) return '';
+  if (!localKeyScope || rec.uid === localKeyScope || rec.uid === 'device') return rec.key;
+  return '';
+}
+
+export function removeLocalGroqKey() {
+  try {
+    const rec = readLocalKeyRecord(LOCAL_GROQ_KEY);
+    if (!rec || !localKeyScope || rec.uid === localKeyScope || rec.uid === 'device') localStorage.removeItem(LOCAL_GROQ_KEY);
+  } catch { /* best-effort */ }
+}
+
+export function hasLocalGroqKey() {
+  return Boolean(getLocalGroqKey());
 }
 
 export function getTargetBand() {

@@ -35,7 +35,7 @@ export class AIProvider {
     const t1Words = countWords(t1Clean);
     const t2Words = countWords(t2Clean);
 
-    const res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts });
+    const res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words });
     const validated = res?.status === 'completed'
       ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words }) : null;
 

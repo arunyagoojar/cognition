@@ -32,8 +32,8 @@ OUT = os.path.join(REPO, "content-db", "speaking")
 AUTHORED = os.path.join(OUT, "authored")
 PROV_TOPIC = "SOURCE_PRACTICE_TOPIC"
 PROV_AUTHORED = "COGNITION_AUTHORED_PRACTICE"
-# IELTS Part 1 runs 4–5 minutes: about three topics of three short questions
-PART1_PER_TOPIC = 3
+# IELTS Part 1 runs 4–5 minutes: about three topics of four short questions (10–12 questions total)
+PART1_PER_TOPIC = 4
 
 
 def fail(msg):

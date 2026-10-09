@@ -22,6 +22,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const [timeLeft, setTimeLeft] = useState(60 * 60);
   const [result, setResult] = useState(null);
   const [processingStep, setProcessingStep] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   // Compact widths show one pane at a time; regular widths show both side by side.
   const [mobilePane, setMobilePane] = useState('passage');
@@ -69,38 +70,55 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     clearInterval(timerRef.current);
 
-    // Deterministic scoring against the official answer key (zero AI).
-    const graded = getReadingTest(test?.testId || testId, true) || test;
-    const evalResult = await evaluateReadingResponses({
-      passages: graded?.passages || [],
-      answers,
-      attemptId: attemptIdRef.current
-    });
-
-    const computedResult = {
-      ...evalResult,
-      band: evalResult.band,
-      raw: evalResult.raw,
-      total: evalResult.total || 40,
-      percentage: evalResult.percentage || 0,
-      answers
-    };
-
-    if (isMockMode) {
-      if (onComplete) onComplete(computedResult);
-      return;
-    }
-
+    // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
-    setTimeout(() => setProcessingStep(1), 600);
-    setTimeout(() => setProcessingStep(2), 1200);
-    setTimeout(() => setProcessingStep(3), 1800);
-    setTimeout(() => {
+    setProcessingStep(0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
+    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
+    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+    try {
+      // Deterministic scoring against the official answer key (zero AI).
+      const graded = getReadingTest(test?.testId || testId, true) || test;
+      const evalResult = await evaluateReadingResponses({
+        passages: graded?.passages || [],
+        answers,
+        attemptId: attemptIdRef.current
+      });
+
+      const computedResult = {
+        ...evalResult,
+        band: evalResult.band,
+        raw: evalResult.raw,
+        total: evalResult.total || 40,
+        percentage: evalResult.percentage || 0,
+        answers
+      };
+
+      // Ensure user sees the processing steps before advancing
+      await new Promise(r => setTimeout(r, 2200));
+
+      if (isMockMode) {
+        if (onComplete) onComplete(computedResult);
+        return;
+      }
+
       setResult(computedResult);
       setPhase('results');
-    }, 2400);
+    } catch (err) {
+      console.error('Reading submission evaluation error:', err);
+      clearTimeout(stepTimer1);
+      clearTimeout(stepTimer2);
+      clearTimeout(stepTimer3);
+      setIsSubmitting(false);
+      setPhase('exam');
+    }
   };
 
   /* ──────────────────────────────────────────────────────────
@@ -154,10 +172,10 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           }} />
 
           <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 10px' }}>
-            Analysing your performance...
+            The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            Verifying your responses against official IELTS academic answer keys.
+            giving the final answers to AI to get a final report.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
@@ -416,6 +434,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           if (!isLast) goToPassage(activeSectionIndex + 1);
           else handleSubmit();
         }}
+        isNextDisabled={isSubmitting}
         nextLabel={!isLast ? 'Next Passage' : (isMockMode ? 'Next Section: Writing' : 'Finish & Grade Test')}
         isSubmit={isLast && !isMockMode}
         nextActionId={isMockMode ? 'next-mock-writing' : 'submit-reading-exam'}

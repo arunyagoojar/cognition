@@ -4,8 +4,9 @@
 export const AI_CONFIG = {
   // Provider: Google Gemini
   gemini: {
-    primaryModel: 'gemini-3.8-flash', // Google's latest recommended active model
-    secondaryModel: 'gemini-flash-latest', // Auto-updating alias (survives model retirements)
+    primaryModel: 'gemini-2.5-flash',
+    secondaryModel: 'gemini-2.0-flash',
+    fallbackModel: 'gemini-1.5-flash',
     temperature: 0.2,
     maxOutputTokens: 2048,
     rateLimitCooldownMs: 60000,
@@ -13,9 +14,10 @@ export const AI_CONFIG = {
 
   // Provider: Groq
   groq: {
-    fallbackModel1: 'llama-3.3-70b-versatile', // Primary open fallback
-    fallbackModel2: 'qwen/qwen3.8-27b',        // Secondary open fallback
-    whisperModel: 'whisper-large-v3',          // Speech-to-text model
+    primaryModel: 'openai/gpt-oss-120b',
+    fallbackModel1: 'openai/gpt-oss-20b',
+    fallbackModel2: 'qwen/qwen3.8-27b',
+    whisperModel: 'whisper-large-v3',
     temperature: 0.2,
     maxOutputTokens: 2048,
     rateLimitCooldownMs: 60000,

@@ -20,6 +20,12 @@ t('exact match is MATCH', () => {
 t('case + punctuation differences are MATCH', () => {
   assert.equal(evaluateDeterministic('Queen Street', 'queen street').result, DETERMINISTIC.MATCH);
 });
+t('omitted or included leading articles are MATCH in IELTS', () => {
+  assert.equal(evaluateDeterministic('bicycle', 'a bicycle').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('a bicycle', 'bicycle').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('the library', 'library').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('appointment', 'an appointment').result, DETERMINISTIC.MATCH);
+});
 t('slash alternatives: "11" matches "11 / eleven (am)"', () => {
   const r = evaluateDeterministic('11', '11 / eleven (am)');
   assert.equal(r.result, DETERMINISTIC.MATCH);

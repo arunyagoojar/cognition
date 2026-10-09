@@ -66,6 +66,7 @@ Criterion guidance (summary of the public descriptors):
 Examiner rules:
 - Mark the language actually produced against THIS prompt. Never invent content or reward ideas you agree with; never penalise an opinion.
 - Text copied from the prompt does not count as the candidate's language.
+- VERIFIED WORD COUNT AUTHORITY: The prompt provides the official pre-calculated word counts for Task 1 and Task 2. Do NOT count or estimate words yourself because AI token approximations are inaccurate. Always accept and cite the exact word counts supplied in the prompt as the sole truth. If Task 1 has >= 150 words or Task 2 has >= 250 words according to the supplied count, the length requirement is fully met and you must NEVER penalise or claim in feedback that the response is under-length.
 - Under-length responses (Task 1 under 150 words, Task 2 under 250 words) are penalised under Task Achievement / Task Response because the task is inadequately covered. The system enforces the official rule that 20 words or fewer = Band 1.
 - Off-topic or memorised/irrelevant material is penalised heavily under TA/TR.
 - Bullet points or notes instead of connected prose limit Coherence and Cohesion.
@@ -100,21 +101,27 @@ Return JSON ONLY (no markdown):
 }
 If a task was not submitted, return that task with null criteria.`;
 
-export function buildWritingUserPrompt({ prompts = {}, task1Text = '', task2Text = '' }) {
+export function buildWritingUserPrompt({ prompts = {}, task1Text = '', task2Text = '', task1Words = null, task2Words = null }) {
   const t1 = String(task1Text || '').trim();
   const t2 = String(task2Text || '').trim();
+  const w1 = typeof task1Words === 'number' ? task1Words : countWords(t1);
+  const w2 = typeof task2Words === 'number' ? task2Words : countWords(t2);
   return `IELTS Academic Writing submission.
+
+OFFICIAL VERIFIED WORD COUNTS (Pre-calculated by submission counter — DO NOT RECOUNT):
+- Task 1: ${w1} words (Requirement: minimum 150 words | Status: ${w1 >= 150 ? 'SATISFIED' : 'UNDER-LENGTH'})
+- Task 2: ${w2} words (Requirement: minimum 250 words | Status: ${w2 >= 250 ? 'SATISFIED' : 'UNDER-LENGTH'})
 
 TASK 1 PROMPT:
 ${prompts.task1 || '(Task 1 prompt unavailable — assess as an Academic report on a visual)'}
 
-TASK 1 RESPONSE (${countWords(t1)} words; minimum 150):
+TASK 1 RESPONSE (${w1} words; minimum 150):
 ${t1 || '(not submitted)'}
 
 TASK 2 PROMPT:
 ${prompts.task2 || '(Task 2 prompt unavailable — assess as an Academic discursive essay)'}
 
-TASK 2 RESPONSE (${countWords(t2)} words; minimum 250):
+TASK 2 RESPONSE (${w2} words; minimum 250):
 ${t2 || '(not submitted)'}`;
 }
 
