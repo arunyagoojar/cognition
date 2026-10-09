@@ -29,7 +29,7 @@
 | Custom domain | `cognition.eu.cc` — declared in `wrangler.toml` routes, secret `CREDENTIAL_ENCRYPTION_KEY` set |
 | D1 | `cognition-db` (`edd1e971-…`) — migrations `0001` (users/attempts/lessons) + `0002` (user_ai_credentials) applied remotely |
 | R2 | `cognition-media` — public r2.dev delivery; manifest `content-db/media_manifest.json` |
-| AI | Server-side chain `gemini-flash-latest` → `gemini-2.5-flash` (auto-updating alias survives upstream model retirement) |
+| AI | Server-side chain `gemini-3.8-flash` → `gemini-flash-latest` (auto-updating alias survives upstream model retirement) |
 | Media resolver | `src/utils/media.js` — runtime path → R2 URL; contract-checked against the manifest (353/353, plus listening images) |
 
 **Rollback copies:** the `cognition-api` worker still holds the Phase 4 code (harmless, redundant).

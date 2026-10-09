@@ -10,8 +10,8 @@ import {
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
-  primaryModel: 'gemini-2.5-flash',
-  fallbackModel: 'gemini-2.0-flash',
+  primaryModel: 'gemini-3.8-flash',
+  fallbackModel: 'gemini-flash-latest',
   temperature: 0.2,
   maxOutputTokens: 8192,
   rateLimitCooldownMs: 30000,

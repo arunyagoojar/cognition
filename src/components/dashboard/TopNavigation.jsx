@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useUser, useClerk } from '@clerk/react';
 import Icon from '../common/Icon';
 import AccountModal from './AccountModal';
+import { clearUserScoresOnSignOut } from '../../utils/storage';
 
 export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view }) {
   const { isSignedIn, isLoaded, user } = useUser();
@@ -79,7 +80,14 @@ export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view
                   <span>Account</span>
                 </button>
                 <div className="account-menu-sep" />
-                <button className="account-menu-item account-menu-signout" onClick={() => { setMenuOpen(false); signOut(); }}>
+                <button
+                  className="account-menu-item account-menu-signout"
+                  onClick={async () => {
+                    setMenuOpen(false);
+                    clearUserScoresOnSignOut();
+                    await signOut();
+                  }}
+                >
                   <Icon name="back" size={14} />
                   <span>Sign out</span>
                 </button>

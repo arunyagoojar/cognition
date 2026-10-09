@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useUser, useClerk, useAuth } from '@clerk/react';
 import { motion, AnimatePresence } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
@@ -21,6 +21,7 @@ import {
   getSkillScores,
   saveSkillScore,
   resetSkillScores,
+  clearUserScoresOnSignOut,
   getTargetBand,
   saveTargetBand,
   getCompletedLessons,
@@ -169,6 +170,17 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     });
     return unsubscribe;
   }, []);
+
+  // Wipe scores and test attempts from localStorage when a user signs out or switches accounts
+  const prevUserRef = useRef({ isSignedIn, userId });
+  useEffect(() => {
+    const prev = prevUserRef.current;
+    if (prev.isSignedIn && (!isSignedIn || (userId !== 'anon' && prev.userId !== userId))) {
+      clearUserScoresOnSignOut();
+      refreshScores();
+    }
+    prevUserRef.current = { isSignedIn, userId };
+  }, [isSignedIn, userId]);
 
   // Every practice start serves a fresh random test (avoiding recent repeats)
   const startSkill = (skillId) => {

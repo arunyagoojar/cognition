@@ -101,6 +101,18 @@ export function resetSkillScores() {
   return resetPerformanceData();
 }
 
+/**
+ * Removes user scores, attempts, and active exam sessions from localStorage
+ * and sessionStorage on sign-out or account switch.
+ */
+export function clearUserScoresOnSignOut() {
+  resetPerformanceData();
+  try {
+    sessionStorage.removeItem('cognition_writing_active_session');
+    sessionStorage.removeItem('cognition_speaking_active_session');
+  } catch (_) {}
+}
+
 // ── Persistent Full Mock Exam Session State ────────────────────────────────
 export function saveActiveMockSession(sessionData) {
   try {

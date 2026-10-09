@@ -8,8 +8,8 @@
  */
 
 export const AI_MODELS = {
-  primary: 'gemini-2.5-flash',
-  fallback: 'gemini-2.0-flash',
+  primary: 'gemini-3.8-flash',
+  fallback: 'gemini-flash-latest',
 };
 
 const GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
