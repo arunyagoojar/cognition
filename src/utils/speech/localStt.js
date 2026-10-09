@@ -214,12 +214,44 @@ export function prepareLocalStt() {
 
 /** Decodes any recorded blob to 16 kHz mono Float32Array PCM. */
 async function decodeTo16kMono(blob) {
+  if (!blob || blob.size === 0) {
+    throw new Error('Recorded audio blob is empty (0 bytes)');
+  }
   const buf = await blob.arrayBuffer();
+  if (!buf || buf.byteLength === 0) {
+    throw new Error('Recorded audio buffer is empty (0 bytes)');
+  }
+
   const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) {
+    throw new Error('Web Audio API (AudioContext) is not supported in this browser');
+  }
   const ctx = new Ctx();
   let decoded;
   try {
-    decoded = await ctx.decodeAudioData(buf.slice(0));
+    decoded = await new Promise((resolve, reject) => {
+      let isDone = false;
+      const onSuccess = (b) => {
+        if (!isDone) {
+          isDone = true;
+          resolve(b);
+        }
+      };
+      const onError = (e) => {
+        if (!isDone) {
+          isDone = true;
+          reject(e || new Error('AudioContext.decodeAudioData failed'));
+        }
+      };
+      try {
+        const promise = ctx.decodeAudioData(buf.slice(0), onSuccess, onError);
+        if (promise && typeof promise.then === 'function') {
+          promise.then(onSuccess).catch(onError);
+        }
+      } catch (err) {
+        onError(err);
+      }
+    });
   } finally {
     try {
       ctx.close();
@@ -227,6 +259,11 @@ async function decodeTo16kMono(blob) {
       /* already closed */
     }
   }
+
+  if (!decoded || !decoded.duration) {
+    return new Float32Array(0);
+  }
+
   const length = Math.max(1, Math.ceil(decoded.duration * SAMPLE_RATE));
   const Offline = window.OfflineAudioContext || window.webkitOfflineAudioContext;
   const offline = new Offline(1, length, SAMPLE_RATE);
@@ -275,6 +312,15 @@ export function transcribeRecording(blob) {
   const run = async () => {
     await prepareLocalStt();
     const pcm = await decodeTo16kMono(blob);
+    if (!pcm || pcm.length < 1600) {
+      return formatTranscriptResult({
+        text: '',
+        words: [],
+        engine: STT_ENGINES.WHISTLE,
+        version: ENGINE_METADATA.whistle.version,
+      });
+    }
+
     const rawSegments = splitAtPauses(pcm);
 
     let currentOffset = 0;

@@ -31,8 +31,13 @@ async function fetchBinaryWithCache(url, engine = STT_ENGINES.WHISTLE, expectedB
       const cached = await cache.match(url);
       if (cached) {
         const ab = await cached.arrayBuffer();
-        self.postMessage({ type: 'progress', loaded: ab.byteLength, total: ab.byteLength, engine });
-        return new Uint8Array(ab);
+        if (ab.byteLength >= expectedBytes * 0.7) {
+          self.postMessage({ type: 'progress', loaded: ab.byteLength, total: ab.byteLength, engine });
+          return new Uint8Array(ab);
+        } else {
+          // Corrupted or truncated cached file — remove and refetch
+          try { await cache.delete(url); } catch {}
+        }
       }
     } catch {
       /* Cache API access failed, fall back to fetch */
@@ -41,15 +46,6 @@ async function fetchBinaryWithCache(url, engine = STT_ENGINES.WHISTLE, expectedB
 
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} when fetching ${url}`);
-
-  let resToCache = null;
-  if (typeof caches !== 'undefined') {
-    try {
-      resToCache = res.clone();
-    } catch {
-      /* ignore cloning error */
-    }
-  }
 
   const contentLength = Number(res.headers?.get('Content-Length') || 0);
   const total = contentLength || expectedBytes;
@@ -81,10 +77,18 @@ async function fetchBinaryWithCache(url, engine = STT_ENGINES.WHISTLE, expectedB
     offset += c.length;
   }
 
-  if (resToCache && typeof caches !== 'undefined') {
+  if (typeof caches !== 'undefined' && loaded >= expectedBytes * 0.7) {
     try {
       const cache = await caches.open(cacheName);
-      await cache.put(url, resToCache);
+      await cache.put(
+        url,
+        new Response(full.buffer.slice(0), {
+          headers: {
+            'Content-Type': 'application/octet-stream',
+            'Content-Length': String(full.byteLength),
+          },
+        })
+      );
     } catch {
       /* ignore cache write failure */
     }

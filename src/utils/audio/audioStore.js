@@ -32,12 +32,12 @@ function getDB() {
  * Safari uses audio/mp4. Chrome/Firefox use audio/webm.
  */
 export function detectSupportedAudioMimeType() {
-  if (typeof MediaRecorder === 'undefined') return 'audio/mp4';
+  if (typeof MediaRecorder === 'undefined') return 'audio/webm';
 
   const types = [
-    'audio/mp4',
     'audio/webm;codecs=opus',
     'audio/webm',
+    'audio/mp4',
     'audio/ogg;codecs=opus'
   ];
 

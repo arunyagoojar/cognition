@@ -36,16 +36,30 @@ const PART2_SPEAK_SECONDS = 120; // official: up to 2 minutes
 const PART3_SECONDS = 45;
 
 /** Transcription progress for one saved answer (on-device model). */
-function TranscriptState({ rec }) {
+function TranscriptState({ rec, onRetry }) {
   if (!rec) return null;
   if (rec.transcriptStatus === 'pending') {
-    return <div className="speaking-transcribing" role="status"><span className="stt-dot" aria-hidden="true" />Transcribing on this device…</div>;
+    return (
+      <div className="speaking-transcribing" role="status">
+        <span className="stt-dot" aria-hidden="true" />
+        Transcribing on this device…
+      </div>
+    );
   }
   if (rec.transcriptStatus === 'failed') {
-    return <div className="speaking-transcribing" role="status">Transcription failed for this answer. Re-record to try again — your audio is saved.</div>;
+    return (
+      <div className="speaking-transcribing" role="status" style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+        <span>Transcription failed for this answer. Your audio is saved.</span>
+        {onRetry && (
+          <button type="button" onClick={onRetry} style={{ padding: '4px 10px', borderRadius: 8, border: '1.5px solid #151313', background: 'var(--c-yellow, #fccc42)', fontWeight: 700, cursor: 'pointer', fontSize: 12 }}>
+            Retry transcription
+          </button>
+        )}
+      </div>
+    );
   }
   if (rec.transcriptStatus === 'done' && !rec.transcript) {
-    return <div className="speaking-transcribing" role="status">No speech was detected in this answer.</div>;
+    return <div className="speaking-transcribing" role="status">No audible speech recognized in this answer.</div>;
   }
   return null;
 }
@@ -98,8 +112,12 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   // recording only starts once the on-device model can transcribe it
   const recordLocked = useLocalStt && sttStatus !== 'ready';
 
+  const recordingsRef = useRef(recordings);
+  recordingsRef.current = recordings;
+
   /** Transcribes one saved answer on the device (also used to retry). */
-  const runTranscription = (qId, recordingId, blob) => {
+  const runTranscription = (qId, recordingId, blob, fallbackText = '') => {
+    setRecState(REC_STATE.TRANSCRIBING);
     setRecordings(prev => (prev[qId]?.recordingId === recordingId
       ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'pending' } } : prev));
     const promise = transcribeRecording(blob).then((res) => {
@@ -108,21 +126,47 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       const words = res?.words || [];
       const engine = res?.engine || 'whistle';
       const version = res?.version || '16.9mb';
-      transcriptsRef.current[qId] = { recordingId, text, words, engine, version };
+      const finalText = text.trim() || (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
+      transcriptsRef.current[qId] = { recordingId, text: finalText, words, engine, version };
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
         ? {
-            ...prev[qId],
-            transcript: text,
-            words,
-            sttEngine: engine,
-            sttModelVersion: version,
-            transcriptStatus: 'done'
+            ...prev,
+            [qId]: {
+              ...prev[qId],
+              transcript: finalText,
+              words,
+              sttEngine: text.trim() ? engine : (finalText ? 'native_fallback' : engine),
+              sttModelVersion: version,
+              transcriptStatus: 'done'
+            }
           }
         : prev));
-    }).catch(() => {
+      setRecState(REC_STATE.COMPLETED);
+    }).catch((err) => {
+      console.error('Transcription error on device:', err);
       if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
-      setRecordings(prev => (prev[qId]?.recordingId === recordingId
-        ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
+      const finalText = (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
+      if (finalText) {
+        transcriptsRef.current[qId] = { recordingId, text: finalText, words: [], engine: 'native_fallback', version: 'browser' };
+        setRecordings(prev => (prev[qId]?.recordingId === recordingId
+          ? {
+              ...prev,
+              [qId]: {
+                ...prev[qId],
+                transcript: finalText,
+                words: [],
+                sttEngine: 'native_fallback',
+                sttModelVersion: 'browser',
+                transcriptStatus: 'done'
+              }
+            }
+          : prev));
+        setRecState(REC_STATE.COMPLETED);
+      } else {
+        setRecordings(prev => (prev[qId]?.recordingId === recordingId
+          ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
+        setRecState(REC_STATE.COMPLETED);
+      }
     });
     transcriptJobsRef.current[qId] = { recordingId, promise };
     return promise;
@@ -142,11 +186,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       clearInterval(recordIntervalRef.current);
       clearInterval(prepIntervalRef.current);
       clearInterval(speakIntervalRef.current);
-      Object.values(recordings).forEach(rec => {
+      Object.values(recordingsRef.current).forEach(rec => {
         if (rec?.url) URL.revokeObjectURL(rec.url);
       });
     };
-  }, [recordings]);
+  }, []);
 
   /* ── Part 2: preparation → speaking, official timings ── */
   const startPreparation = () => {
@@ -179,8 +223,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       const mimeType = detectSupportedAudioMimeType();
       const mr = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
 
-      // native recognition is only the fallback when the on-device model can't run
-      const SpeechRecognition = !useLocalStt && typeof window !== 'undefined'
+      // native recognition runs simultaneously for live display and instant fallback
+      const SpeechRecognition = typeof window !== 'undefined'
         ? (window.SpeechRecognition || window.webkitSpeechRecognition)
         : null;
       if (SpeechRecognition) {
@@ -204,35 +248,41 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
       mr.ondataavailable = (e) => { if (e.data && e.data.size > 0) chunks.push(e.data); };
       mr.onstop = () => {
-        const blob = createAudioBlob(chunks, detectSupportedAudioMimeType());
+        const blob = createAudioBlob(chunks, mimeType);
         const url = URL.createObjectURL(blob);
-        const transcriptText = liveTranscriptRef.current || '';
+        const fallbackText = liveTranscriptRef.current || '';
         const dur = recordSecondsRef.current || 0;
         const qId = currentKey;
         const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
         saveAudioRecording({ recordingId, attemptId: 'temp_attempt', questionId: qId, blob, mimeType, duration: dur })
           .catch(() => {});
-        if (!useLocalStt) transcriptsRef.current[qId] = { recordingId, text: transcriptText };
+        if (!useLocalStt) transcriptsRef.current[qId] = { recordingId, text: fallbackText };
         setRecordings(prev => ({
           ...prev,
           [qId]: {
-            recordingId, blob, url, duration: dur, transcript: useLocalStt ? '' : transcriptText,
+            recordingId, blob, url, duration: dur, transcript: fallbackText,
             transcriptStatus: useLocalStt ? 'pending' : 'done',
             qText: isPart2 ? currentPart?.cueCard?.topic : currentQuestion,
             // notes are planning material — stored with the response, never evaluated
             notes: isPart2 ? notesRef.current : undefined,
           }
         }));
-        if (useLocalStt) runTranscription(qId, recordingId, blob);
         setActivePlaybackUrl(url);
-        setRecState(REC_STATE.SAVED);
-        setRecState(prev => prev === REC_STATE.SAVED ? REC_STATE.TRANSCRIBING : prev);
-        setTimeout(() => setRecState(REC_STATE.COMPLETED), 700);
+        setRecState(REC_STATE.TRANSCRIBING);
+        if (useLocalStt) {
+          runTranscription(qId, recordingId, blob, fallbackText);
+        } else {
+          setRecState(REC_STATE.COMPLETED);
+        }
         if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch (_) {} recognitionRef.current = null; }
         stream.getTracks().forEach(t => t.stop());
       };
 
-      mr.start();
+      if (mimeType && mimeType.includes('mp4')) {
+        mr.start(); // In Safari, audio/mp4 timeslices produce fragmented fMP4 chunks that fail audio decode & playback
+      } else {
+        mr.start(250);
+      }
       mediaRecorderRef.current = mr;
       setIsRecording(true);
       setRecState(REC_STATE.RECORDING);
@@ -875,10 +925,17 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               </div>
               <div style={{ display: 'flex', gap: 10 }}>
                 <button type="button" onClick={replayRecording} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>▶ Replay</button>
-                <button type="button" onClick={() => { setRecState(REC_STATE.READY_TO_SPEAK); setRecordings(prev => { const n = { ...prev }; delete n[currentKey]; return n; }); }} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
+                <button type="button" onClick={() => {
+                  if (currentRecording?.url) {
+                    try { URL.revokeObjectURL(currentRecording.url); } catch (_) {}
+                  }
+                  setActivePlaybackUrl(null);
+                  setRecState(REC_STATE.READY_TO_SPEAK);
+                  setRecordings(prev => { const n = { ...prev }; delete n[currentKey]; return n; });
+                }} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
               </div>
               {activePlaybackUrl && <audio src={activePlaybackUrl} controls style={{ width: '100%' }} />}
-              <TranscriptState rec={currentRecording} />
+              <TranscriptState rec={currentRecording} onRetry={() => runTranscription(currentKey, currentRecording.recordingId, currentRecording.blob, liveTranscriptRef.current)} />
               {currentRecording.transcript && (
                 <div>
                   <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
@@ -951,7 +1008,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             )}
             {currentRecording && !isRecording && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: '100%' }}>
-                <TranscriptState rec={currentRecording} />
+                <TranscriptState rec={currentRecording} onRetry={() => runTranscription(currentKey, currentRecording.recordingId, currentRecording.blob, liveTranscriptRef.current)} />
                 {currentRecording.transcript && (
                   <div>
                     <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
@@ -962,7 +1019,14 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 )}
                 <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
                   <button type="button" onClick={replayRecording} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>▶ Replay</button>
-                  <button type="button" disabled={recordLocked} onClick={() => startRecording()} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
+                  <button type="button" disabled={recordLocked} onClick={() => {
+                    if (currentRecording?.url) {
+                      try { URL.revokeObjectURL(currentRecording.url); } catch (_) {}
+                    }
+                    setActivePlaybackUrl(null);
+                    setRecordings(prev => { const n = { ...prev }; delete n[currentKey]; return n; });
+                    startRecording();
+                  }} style={{ padding: '9px 16px', borderRadius: 10, border: '1.5px solid #151313', background: 'var(--bg-card)', fontWeight: 700, cursor: 'pointer' }}>Re-record</button>
                 </div>
                 {activePlaybackUrl && <audio src={activePlaybackUrl} controls style={{ width: '100%' }} />}
               </div>

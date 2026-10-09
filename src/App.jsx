@@ -29,7 +29,7 @@ import {
 } from './utils/storage';
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
-import { PRODUCTION_READING } from './data/production/productionContent.js';
+import { PRODUCTION_READING, PRODUCTION_WRITING, PRODUCTION_SPEAKING } from './data/production/productionContent.js';
 import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete, syncOnboardingComplete } from './utils/api';
 import { createAttemptId } from './utils/storage';
 import { shouldShowOnboarding, markOnboardingComplete, hasCompletedOnboardingLocally } from './utils/onboarding';
@@ -189,6 +189,28 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     } else if (skillId === 'reading') {
       const pool = PRODUCTION_READING;
       if (pool.length) setSelectedExamId(pool[Math.floor(Math.random() * pool.length)].testId);
+    } else if (skillId === 'writing') {
+      const pool = PRODUCTION_WRITING;
+      if (pool.length) {
+        let recent = [];
+        try { recent = JSON.parse(localStorage.getItem('cognition_recent_writing_v1') || '[]'); } catch (_) {}
+        const available = pool.filter(p => !recent.includes(p.testId));
+        const pickPool = available.length ? available : pool;
+        const pick = pickPool[Math.floor(Math.random() * pickPool.length)].testId;
+        try { localStorage.setItem('cognition_recent_writing_v1', JSON.stringify([pick, ...recent.filter(id => id !== pick)].slice(0, 8))); } catch (_) {}
+        setSelectedExamId(pick);
+      }
+    } else if (skillId === 'speaking') {
+      const pool = PRODUCTION_SPEAKING;
+      if (pool.length) {
+        let recent = [];
+        try { recent = JSON.parse(localStorage.getItem('cognition_recent_speaking_v1') || '[]'); } catch (_) {}
+        const available = pool.filter(p => !recent.includes(p.id));
+        const pickPool = available.length ? available : pool;
+        const pick = pickPool[Math.floor(Math.random() * pickPool.length)].id;
+        try { localStorage.setItem('cognition_recent_speaking_v1', JSON.stringify([pick, ...recent.filter(id => id !== pick)].slice(0, 8))); } catch (_) {}
+        setSelectedExamId(pick);
+      }
     }
     setView(skillId);
   };
