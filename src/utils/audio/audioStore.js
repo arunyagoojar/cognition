@@ -98,3 +98,30 @@ export async function getAudioRecording(recordingId) {
 export function createAudioBlob(chunks, mimeType) {
   return new Blob(chunks, { type: mimeType });
 }
+
+/**
+ * Eradicates all audio recordings from IndexedDB, preventing cache accumulation.
+ */
+export async function clearAudioRecordings() {
+  if (typeof indexedDB === 'undefined') return true;
+  try {
+    const db = await getDB();
+    return new Promise((resolve) => {
+      const tx = db.transaction([STORE_NAME], 'readwrite');
+      const store = tx.objectStore(STORE_NAME);
+      const request = store.clear();
+      request.onsuccess = () => resolve(true);
+      request.onerror = () => resolve(false);
+    });
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Eradicates all stored audio blobs from IndexedDB.
+ */
+export async function eradicateAllAudioRecordings() {
+  return clearAudioRecordings();
+}
+

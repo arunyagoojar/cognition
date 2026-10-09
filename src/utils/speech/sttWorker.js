@@ -93,6 +93,17 @@ async function fetchBinaryWithCache(url, engine = STT_ENGINES.WHISTLE, expectedB
   return full;
 }
 
+function getAssetUrl(path) {
+  try {
+    if (typeof self !== 'undefined' && self.location?.origin) {
+      return new URL(path, self.location.origin).href;
+    }
+  } catch {
+    /* fallback to relative */
+  }
+  return path;
+}
+
 async function loadWhistle() {
   if (whistleLoaded && needleModule) return needleModule;
   if (whistlePromise) return whistlePromise;
@@ -101,7 +112,7 @@ async function loadWhistle() {
     // 1. Fetch needle.wasm binary
     let wasmBytes = null;
     try {
-      wasmBytes = await fetchBinaryWithCache('/stt/needle.wasm', STT_ENGINES.WHISTLE, 923000);
+      wasmBytes = await fetchBinaryWithCache(getAssetUrl('/stt/needle.wasm'), STT_ENGINES.WHISTLE, 923000);
     } catch {
       wasmBytes = await fetchBinaryWithCache(
         'https://huggingface.co/Cactus-Compute/needle3/resolve/main/wasm/needle.wasm',
@@ -113,7 +124,7 @@ async function loadWhistle() {
     // 2. Fetch whistle.cact model (16.9 MB)
     let cactBytes = null;
     try {
-      cactBytes = await fetchBinaryWithCache('/stt/whistle.cact', STT_ENGINES.WHISTLE, 17734512);
+      cactBytes = await fetchBinaryWithCache(getAssetUrl('/stt/whistle.cact'), STT_ENGINES.WHISTLE, 17734512);
     } catch {
       cactBytes = await fetchBinaryWithCache(
         'https://huggingface.co/Cactus-Compute/whistle/resolve/main/whistle.cact',
@@ -156,10 +167,12 @@ async function transcribeWithWhistle(segments) {
   const textParts = [];
 
   for (const seg of segments) {
-    const pcm = seg?.pcm || (seg instanceof Float32Array ? seg : null);
+    const rawPcm = seg?.pcm || (seg instanceof Float32Array ? seg : null);
     const offsetSec = Number(seg?.offsetSec || 0);
 
-    if (!pcm || pcm.length < 1600) continue; // < 0.1 s audio carries no speech
+    if (!rawPcm) continue;
+    const pcm = rawPcm instanceof Float32Array ? rawPcm : new Float32Array(rawPcm);
+    if (pcm.length < 1600) continue; // < 0.1 s audio carries no speech
 
     const samples = pcm.length;
     const pcmPtr = mod._malloc(samples * 4);
@@ -168,12 +181,18 @@ async function transcribeWithWhistle(segments) {
     const outCap = 65536;
     const outPtr = mod._malloc(outCap);
     // lang=0 (auto/en), keywords=0, word_timestamps=1
+    // needle_transcribe returns the token count (>= 0 on success, < 0 on failure)
     const ret = mod._needle_transcribe(pcmPtr, samples, 0, 0, 1, outPtr, outCap);
     mod._free(pcmPtr);
 
-    if (ret !== 0) {
+    if (ret < 0) {
+      let errDesc = `needle_transcribe failed with code ${ret}`;
+      if (typeof mod._needle_last_error === 'function') {
+        const errPtr = mod._needle_last_error();
+        if (errPtr) errDesc += `: ${mod.UTF8ToString(errPtr)}`;
+      }
       mod._free(outPtr);
-      throw new Error(`needle_transcribe returned error ${ret}`);
+      throw new Error(errDesc);
     }
 
     const jsonStr = mod.UTF8ToString(outPtr);

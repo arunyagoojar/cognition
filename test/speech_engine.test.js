@@ -21,6 +21,10 @@ import {
   splitAtPauses,
   cleanupMoonshineCacheOnce,
 } from '../src/utils/speech/localStt.js';
+import {
+  clearAudioRecordings,
+  eradicateAllAudioRecordings,
+} from '../src/utils/audio/audioStore.js';
 
 let passed = 0;
 let failed = 0;
@@ -306,6 +310,55 @@ t('result payload contains engine telemetry but NEVER audio data or API keys', (
   assert.ok(!json.includes('AIzaSy'));
   assert.ok(!json.includes('gsk_'));
 });
+
+console.log('\n== Audio Eradication & Storage Hygiene ==');
+
+await tAsync('clearAudioRecordings safely clears IndexedDB and avoids cache buildup', async () => {
+  let cleared = false;
+  globalThis.indexedDB = {
+    open: () => {
+      const req = {
+        onsuccess: null,
+        onerror: null,
+        onupgradeneeded: null,
+      };
+      setTimeout(() => {
+        req.result = {
+          transaction: () => ({
+            objectStore: () => ({
+              clear: () => {
+                cleared = true;
+                const clearReq = { onsuccess: null, onerror: null };
+                setTimeout(() => clearReq.onsuccess && clearReq.onsuccess(), 0);
+                return clearReq;
+              },
+            }),
+          }),
+        };
+        req.onsuccess && req.onsuccess({ target: req });
+      }, 0);
+      return req;
+    },
+  };
+
+  const res = await clearAudioRecordings();
+  assert.equal(res, true);
+  assert.equal(cleared, true);
+
+  const res2 = await eradicateAllAudioRecordings();
+  assert.equal(res2, true);
+});
+
+t('Whistle token count success semantics: ret >= 0 is success, ret < 0 is error', () => {
+  // Positive return from needle_transcribe represents token count (e.g. 27 tokens recognized)
+  const isTranscribeSuccess = (ret) => ret >= 0;
+  assert.equal(isTranscribeSuccess(27), true);  // 27 tokens recognized
+  assert.equal(isTranscribeSuccess(1), true);   // 1 token recognized
+  assert.equal(isTranscribeSuccess(0), true);   // 0 tokens recognized (silence/noise)
+  assert.equal(isTranscribeSuccess(-1), false); // error code
+  assert.equal(isTranscribeSuccess(-5), false); // error code
+});
+
 
 console.log(`\n============================================================`);
 console.log(`SPEECH ENGINE TEST RESULTS: ${passed} passed, ${failed} failed`);

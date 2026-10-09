@@ -14,6 +14,7 @@ import ListeningModule from './ListeningModule';
 import ReadingModule from './ReadingModule';
 import WritingModule from './WritingModule';
 import SpeakingModule from './SpeakingModule';
+import { eradicateAllAudioRecordings } from '../../utils/audio/audioStore';
 
 const STEPS = ['listening', 'reading', 'writing', 'speaking'];
 
@@ -146,8 +147,9 @@ export default function MockExamFlow({ onComplete, onBack }) {
       });
       setStep(step + 1);
     } else {
-      // Completed all 4 modules: clear active session, run evaluation pipeline
+      // Completed all 4 modules: clear active session, eradicate audio caches, run evaluation pipeline
       clearActiveMockSession();
+      eradicateAllAudioRecordings();
       runFullEvaluation(updated);
     }
   };
@@ -173,6 +175,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
         onBack={() => {
           if (window.confirm(`Exit the full mock exam? Your progress will be discarded and the test will not be completed.`)) {
             clearActiveMockSession();
+            eradicateAllAudioRecordings();
             onBack();
           }
         }}

@@ -9,7 +9,7 @@ import ExamStartScreen from './ExamStartScreen';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
-import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob } from '../../utils/audio/audioStore';
+import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob, eradicateAllAudioRecordings } from '../../utils/audio/audioStore';
 import { createAttemptId, getTargetBand } from '../../utils/storage';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
@@ -321,6 +321,15 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     // Full mock: the combined report evaluates all four skills together, so the
     // Speaking module hands over its answers instead of showing its own results
     if (isMockMode) {
+      // Eradicate audio from IndexedDB and release object URLs to eliminate cache/storage footprint
+      eradicateAllAudioRecordings();
+      Object.values(recordings).forEach(rec => {
+        if (rec?.url) URL.revokeObjectURL(rec.url);
+      });
+      if (activePlaybackUrl) {
+        URL.revokeObjectURL(activePlaybackUrl);
+        setActivePlaybackUrl(null);
+      }
       if (onComplete) onComplete({
         transcripts,
         recordings,
@@ -341,11 +350,28 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       expectedQuestions,
     });
 
+    // Eradicate audio from IndexedDB and release object URLs to eliminate cache/storage footprint
+    eradicateAllAudioRecordings();
+    Object.values(recordings).forEach(rec => {
+      if (rec?.url) URL.revokeObjectURL(rec.url);
+    });
+    if (activePlaybackUrl) {
+      URL.revokeObjectURL(activePlaybackUrl);
+      setActivePlaybackUrl(null);
+    }
+
+    // Strip heavy binary blobs from memory state
+    const strippedRecordings = {};
+    Object.entries(recordings).forEach(([k, rec]) => {
+      strippedRecordings[k] = { ...rec, blob: null, url: null };
+    });
+    setRecordings(strippedRecordings);
+
     setTimeout(() => {
       setEvalStages(s => ({ ...s, fluency: 'done', lexical: 'done', grammar: 'done' }));
       setResult({
         band: evalResult.overallSpeakingBand,
-        recordings,
+        recordings: strippedRecordings,
         transcripts,
         sttEngine: activeEngine,
         sttModelVersion: activeVersion,
