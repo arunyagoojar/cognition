@@ -55,7 +55,9 @@ export function roundIeltsBand(x) {
 }
 
 const wholeBand = (b) => {
-  const n = Number(b);
+  // tolerate "Band 6", "6.0", and an echoed "<integer 0-9>" placeholder
+  const m = typeof b === 'number' ? [String(b)] : String(b ?? '').replace(/<[^>]*>/g, '').match(/\d+(?:\.\d+)?/);
+  const n = m ? Number(m[0]) : NaN;
   if (!Number.isFinite(n)) return null;
   return Math.max(0, Math.min(9, Math.round(n)));
 };

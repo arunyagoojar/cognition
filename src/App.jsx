@@ -7,6 +7,7 @@ import ScoreSummary from './components/dashboard/ScoreSummary';
 import PerformanceOverview from './components/dashboard/PerformanceOverview';
 import PracticeSection from './components/dashboard/PracticeSection';
 import MockHeroCard from './components/dashboard/MockHeroCard';
+import LastTestRecheck from './components/dashboard/LastTestRecheck';
 import Loader from './components/common/Loader';
 import PerformancePage from './components/views/PerformancePage';
 import LearningHubPage from './components/views/LearningHubPage';
@@ -325,6 +326,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               scores={scores}
               targetBand={targetBand}
             />
+
+            {/* Re-grade the most recent Writing/Speaking test (latest only) */}
+            <LastTestRecheck onRechecked={refreshScores} onOpenSettings={() => setSettingsOpen(true)} />
 
             {/* 2. Performance Overview (Learning Hub Card & Skill Graph) */}
             <PerformanceOverview

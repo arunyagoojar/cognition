@@ -633,7 +633,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
               className="audio-skip-btn"
               title="Replay from beginning"
             >
-              <Icon name="refreshCw" size={12} />
+              <Icon name="refresh" size={12} />
               <span>Restart</span>
             </button>
           )}

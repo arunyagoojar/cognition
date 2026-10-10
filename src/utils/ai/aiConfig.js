@@ -16,7 +16,7 @@ export const AI_CONFIG = {
   groq: {
     primaryModel: 'openai/gpt-oss-120b',
     fallbackModel1: 'openai/gpt-oss-20b',
-    fallbackModel2: 'qwen/qwen3.8-27b',
+    fallbackModel2: 'qwen/qwen3.6-27b',
     whisperModel: 'whisper-large-v3',
     temperature: 0.2,
     maxOutputTokens: 2048,

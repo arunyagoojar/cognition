@@ -9,6 +9,7 @@ import {
   ANSWER_VERIFIER_SYSTEM_PROMPT, buildAnswerVerifierUserPrompt,
 } from './ieltsRubric.js';
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
+import { resolveModelChain } from './ai/modelCatalog.js';
 
 export const AI_CONFIG = {
   // Current Gemini Flash line (gemini-2.x is retired/retiring)
@@ -27,10 +28,20 @@ const DIRECT_TIMEOUT_MS = 60000;
  * A key saved on this device is used directly (fastest path); the Worker is
  * only the fallback when there is no device key or the direct call fails.
  */
-async function directFirst(systemPrompt, userPrompt, serverCall) {
+/** Plain-language reason for a failed provider call. */
+function failureMessage(name, status) {
+  if (status === 401 || status === 403) return `${name} rejected the API key. Replace it in Settings, then press Recheck.`;
+  if (status === 429) return `${name} rate limit reached. Wait a minute, then press Recheck.`;
+  if (status === 503 || status === 500 || status === 502) return `${name} is overloaded right now. Press Recheck in a moment, or switch provider in Settings.`;
+  if (status === 'timeout') return `${name} took too long to respond. Press Recheck, or switch provider in Settings.`;
+  if (status === 'network') return `Could not reach ${name}. Check your connection, then press Recheck.`;
+  return `${name} did not return a usable evaluation. Press Recheck, or switch provider in Settings.`;
+}
+
+async function directFirst(systemPrompt, userPrompt, serverCall, validate = null) {
   const { getLocalGroqKey, getLocalGeminiKey } = await import('./storage.js');
   if (getLocalGroqKey() || getLocalGeminiKey()) {
-    const direct = await directAiCall(systemPrompt, userPrompt);
+    const direct = await directAiCall(systemPrompt, userPrompt, validate);
     if (direct.status === 'completed') return { ...direct, tier: 'client_local_key' };
     const server = await serverCall();
     return server?.status === 'completed' ? server : { ...(server || {}), status: 'failed', message: direct.message || server?.message, triedDirect: true };
@@ -87,8 +98,9 @@ function extractJsonFromText(text) {
  * Direct browser→Gemini call — ONLY used in local-key privacy mode, where the
  * key lives on this device and never reaches any server.
  */
-async function directGeminiCall(systemPrompt, userPrompt, localKey) {
-  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-3.5-flash', 'gemini-3.5-flash-lite'].filter(Boolean);
+async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = null) {
+  // Live list of models this key can use — never a stale hardcoded name.
+  const models = await resolveModelChain('gemini', localKey);
   let lastStatus = null;
   for (const mdl of models) {
     try {
@@ -118,24 +130,25 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey) {
         const data = await r.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
         const parsed = extractJsonFromText(text);
-        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'gemini' };
+        // a reply that fails the rubric check moves on to the next model
+        if (parsed && (!validate || validate(parsed))) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'gemini' };
       }
-    } catch { /* try fallback model */ }
+    } catch (e) { lastStatus = e?.name === 'TimeoutError' || e?.name === 'AbortError' ? 'timeout' : 'network'; /* try next model */ }
   }
-  const msg = lastStatus === 503
-    ? 'Google Gemini servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
-    : 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.';
+  const msg = failureMessage('Gemini', lastStatus);
   return { status: 'failed', message: msg };
 }
 
-async function directGroqCall(systemPrompt, userPrompt, localKey) {
-  const models = ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'];
+async function directGroqCall(systemPrompt, userPrompt, localKey, validate = null) {
+  // Live list of models this key can use — never a stale hardcoded name.
+  const models = await resolveModelChain('groq', localKey);
   let lastStatus = null;
   for (const mdl of models) {
     try {
       let attempts = 0;
+      let strictJson = true;
       let r;
-      while (attempts < 2) {
+      while (attempts < 3) {
         attempts++;
         r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
@@ -151,11 +164,19 @@ async function directGroqCall(systemPrompt, userPrompt, localKey) {
               { role: 'user', content: userPrompt },
             ],
             temperature: 0.2,
-            response_format: { type: 'json_object' },
+            max_completion_tokens: 16384,
+            ...(mdl.startsWith('openai/gpt-oss') ? { reasoning_effort: 'medium' } : {}),
+            ...(strictJson ? { response_format: { type: 'json_object' } } : {}),
           }),
         });
-        if (r.status === 503 && attempts < 2) {
+        if (r.status === 503 && attempts < 3) {
           await new Promise(res => setTimeout(res, 1500));
+          continue;
+        }
+        // Strict JSON mode rejects the whole reply over one bad character —
+        // ask again without it and extract the JSON ourselves.
+        if (r.status === 400 && strictJson) {
+          strictJson = false;
           continue;
         }
         break;
@@ -166,28 +187,30 @@ async function directGroqCall(systemPrompt, userPrompt, localKey) {
         const data = await r.json();
         const text = data.choices?.[0]?.message?.content;
         const parsed = extractJsonFromText(text);
-        if (parsed) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'groq' };
+        // a reply that fails the rubric check moves on to the next model
+        if (parsed && (!validate || validate(parsed))) return { status: 'completed', evaluation: parsed, model: mdl, provider: 'groq' };
       }
-    } catch { /* try fallback model */ }
+    } catch (e) { lastStatus = e?.name === 'TimeoutError' || e?.name === 'AbortError' ? 'timeout' : 'network'; /* try next model */ }
   }
-  const msg = lastStatus === 503
-    ? 'Groq servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.'
-    : 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.';
+  const msg = failureMessage('Groq', lastStatus);
   return { status: 'failed', message: msg };
 }
 
-async function directAiCall(systemPrompt, userPrompt) {
+async function directAiCall(systemPrompt, userPrompt, validate = null) {
   const { getActiveAiProvider, getLocalGroqKey, getLocalGeminiKey } = await import('./storage.js');
-  const provider = getActiveAiProvider();
-  if (provider === 'groq') {
-    const groqKey = getLocalGroqKey();
-    if (groqKey) return directGroqCall(systemPrompt, userPrompt, groqKey);
+  const keys = { groq: getLocalGroqKey(), gemini: getLocalGeminiKey() };
+  const active = getActiveAiProvider();
+  // Active provider first; if it fails and the other provider has a key, use that.
+  const order = [active, active === 'groq' ? 'gemini' : 'groq'].filter(p => keys[p]);
+  if (!order.length) return { status: 'failed', message: 'No API key saved on this device. Add one in Settings.' };
+  let last = null;
+  for (const p of order) {
+    last = p === 'groq'
+      ? await directGroqCall(systemPrompt, userPrompt, keys.groq, validate)
+      : await directGeminiCall(systemPrompt, userPrompt, keys.gemini, validate);
+    if (last.status === 'completed') return last;
   }
-  const geminiKey = getLocalGeminiKey();
-  if (geminiKey) return directGeminiCall(systemPrompt, userPrompt, geminiKey);
-  const groqKeyFallback = getLocalGroqKey();
-  if (groqKeyFallback) return directGroqCall(systemPrompt, userPrompt, groqKeyFallback);
-  return { status: 'failed', message: 'No local API key configured.' };
+  return last;
 }
 
 export async function directVerifyAnswers(items) {
@@ -273,6 +296,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     WRITING_SYSTEM_PROMPT_V2,
     buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words }),
     () => evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words }),
+    (json) => validateWritingEvaluationJson(json, { task1Words: t1Words, task2Words: t2Words }),
   );
 
   if (res?.message && res.message.includes('rate limit')) {
@@ -421,6 +445,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     SPEAKING_SYSTEM_PROMPT_V2,
     buildSpeakingUserPrompt({ transcripts, testMeta, durations }),
     () => evaluateSpeakingServer({ transcripts, testMeta, durations }),
+    (json) => validateSpeakingEvaluationJson(json),
   );
 
   if (res?.message && res.message.includes('rate limit')) {

@@ -19,7 +19,7 @@ const GROQ_BASE = 'https://api.groq.com/openai/v1';
 export const GROQ_MODELS = {
   primary: 'openai/gpt-oss-120b',
   fallback: 'openai/gpt-oss-20b',
-  chain: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'],
+  chain: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.6-27b'],
 };
 
 // Writing/Speaking rubric v2 lives in one module shared with the browser so
@@ -31,6 +31,7 @@ export {
   buildWritingUserPrompt, buildSpeakingUserPrompt, buildAnswerVerifierUserPrompt,
   normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
 } from '../../src/utils/ieltsRubric.js';
+import { resolveModelChain } from '../../src/utils/ai/modelCatalog.js';
 import {
   ANSWER_VERIFIER_SYSTEM_PROMPT,
   buildAnswerVerifierUserPrompt,
@@ -92,7 +93,8 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
 
 async function callGroq(model, apiKey, systemPrompt, userPrompt) {
   let attempts = 0;
-  while (attempts < 2) {
+  let strictJson = true;
+  while (attempts < 3) {
     attempts++;
     const res = await fetch(`${GROQ_BASE}/chat/completions`, {
       method: 'POST',
@@ -107,13 +109,20 @@ async function callGroq(model, apiKey, systemPrompt, userPrompt) {
           { role: 'user', content: userPrompt },
         ],
         temperature: 0.2,
-        response_format: { type: 'json_object' },
+        max_completion_tokens: 16384,
+        ...(model.startsWith('openai/gpt-oss') ? { reasoning_effort: 'medium' } : {}),
+        ...(strictJson ? { response_format: { type: 'json_object' } } : {}),
       }),
-      signal: AbortSignal.timeout(45000),
+      signal: AbortSignal.timeout(55000),
     });
 
-    if (res.status === 503 && attempts < 2) {
+    if (res.status === 503 && attempts < 3) {
       await new Promise(r => setTimeout(r, 1500));
+      continue;
+    }
+    // Strict JSON mode rejects the whole reply over one bad character — retry without it.
+    if (res.status === 400 && strictJson) {
+      strictJson = false;
       continue;
     }
 
@@ -135,7 +144,8 @@ async function callGroq(model, apiKey, systemPrompt, userPrompt) {
 export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, validator, provider = 'gemini' }) {
   let lastError = null;
   const isGroq = provider === 'groq';
-  const models = isGroq ? GROQ_MODELS.chain : (AI_MODELS.chain || [AI_MODELS.primary, AI_MODELS.fallback]);
+  // Live list of models this key can use — never a stale hardcoded name.
+  const models = await resolveModelChain(isGroq ? 'groq' : 'gemini', apiKey);
 
   for (const model of models) {
     try {
@@ -234,9 +244,10 @@ export async function runAnswerVerification(items, apiKey, provider = 'gemini') 
   const userPrompt = buildAnswerVerifierUserPrompt(items);
 
   try {
+    const [model] = await resolveModelChain(provider === 'groq' ? 'groq' : 'gemini', apiKey);
     const text = provider === 'groq'
-      ? await callGroq(GROQ_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt)
-      : await callGemini(AI_MODELS.primary, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
+      ? await callGroq(model, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt)
+      : await callGemini(model, apiKey, ANSWER_VERIFIER_SYSTEM_PROMPT, userPrompt);
     const parsed = extractJsonFromText(text);
     if (parsed && Array.isArray(parsed.results)) {
       const valid = parsed.results.filter(r => r && r.id && ['CORRECT', 'INCORRECT', 'UNCERTAIN'].includes(r.decision));
