@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
 import { Icon } from '../common/Icon';
 import { getRandomizedWritingTest, getWritingTest } from '../../data/writing/index';
