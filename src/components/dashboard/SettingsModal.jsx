@@ -10,7 +10,7 @@ import {
   removeLocalGeminiKey,
   removeLocalGroqKey
 } from '../../utils/storage';
-import { saveCredential, fetchCredentialStatus, deleteCredential, hasApiAuth } from '../../utils/api';
+import { saveCredential, fetchCredentialStatus, deleteCredential } from '../../utils/api';
 
 export default function SettingsModal({
   isOpen,
@@ -85,9 +85,7 @@ export default function SettingsModal({
       setCredentialStatus({ configured: true, maskedSuffix: res.maskedSuffix, local: res.local });
       setValidationStatus({
         success: true,
-        message: res.local
-          ? `✓ ${res.message}`
-          : `✓ ${selectedProvider === 'groq' ? 'Groq' : 'Gemini'} key saved — encrypted on the server`,
+        message: res.message || 'Key saved on this device.',
       });
       setLegacyKeys((prev) => {
         if (prev?.gemini || prev?.groq) {
@@ -156,8 +154,6 @@ export default function SettingsModal({
       setResetMessage(false);
     }, 3000);
   };
-
-  const signedIn = hasApiAuth();
 
   return (
     <AnimatePresence>
@@ -253,129 +249,77 @@ export default function SettingsModal({
               </select>
             </div>
 
-            {/* 3. AI Configuration (Provider Choice: Gemini vs Groq) */}
-            <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 6 }}>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)' }}>AI Provider &amp; Model</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-                    Select your preferred AI engine for Writing &amp; Speaking evaluation and hybrid answer verification.
-                  </div>
-                </div>
+            {/* 3. AI examiner: provider + key (saved on this device) */}
+            <div style={{ padding: '16px 0', borderBottom: '1px solid var(--border-subtle)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--text-primary)' }}>AI examiner</div>
                 {credentialStatus?.configured && (
-                  <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
-                    <Icon name="check" size={12} /> {credentialStatus.local ? 'Configured (device)' : 'Configured'}
+                  <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--success-icon)', display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Icon name="check" size={13} /> Key saved
                   </span>
                 )}
               </div>
 
-              {/* Provider Selection Tabs */}
-              <div style={{ display: 'flex', gap: 8, marginTop: 8, marginBottom: 10 }}>
-                <button
-                  type="button"
-                  onClick={() => handleSelectProvider('gemini')}
-                  style={{
-                    flex: 1,
-                    padding: '8px 10px',
-                    fontSize: 12,
-                    fontWeight: 600,
-                    borderRadius: 'var(--r-btn)',
-                    cursor: 'pointer',
-                    border: selectedProvider === 'gemini' ? '2px solid var(--c-coral, #D97757)' : '1px solid var(--border)',
-                    background: selectedProvider === 'gemini' ? 'var(--surface-sunken)' : 'var(--surface-alt)',
-                    color: selectedProvider === 'gemini' ? 'var(--text-primary)' : 'var(--text-secondary)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 6,
-                    transition: 'all 0.15s ease'
-                  }}
-                >
-                  <span>Google Gemini</span>
-                  {selectedProvider === 'gemini' && (
-                    <span style={{ fontSize: 9, padding: '1px 5px', background: 'var(--c-coral, #D97757)', color: '#fff', borderRadius: 3, fontWeight: 700 }}>
-                      ACTIVE
-                    </span>
-                  )}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSelectProvider('groq')}
-                  style={{
-                    flex: 1,
-                    padding: '8px 10px',
-                    fontSize: 12,
-                    fontWeight: 600,
-                    borderRadius: 'var(--r-btn)',
-                    cursor: 'pointer',
-                    border: selectedProvider === 'groq' ? '2px solid var(--c-coral, #D97757)' : '1px solid var(--border)',
-                    background: selectedProvider === 'groq' ? 'var(--surface-sunken)' : 'var(--surface-alt)',
-                    color: selectedProvider === 'groq' ? 'var(--text-primary)' : 'var(--text-secondary)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 6,
-                    transition: 'all 0.15s ease'
-                  }}
-                >
-                  <span>Groq (GPT-OSS 120B)</span>
-                  {selectedProvider === 'groq' && (
-                    <span style={{ fontSize: 9, padding: '1px 5px', background: 'var(--c-coral, #D97757)', color: '#fff', borderRadius: 3, fontWeight: 700 }}>
-                      ACTIVE
-                    </span>
-                  )}
-                </button>
+              {/* Provider choice — Groq is the recommended default */}
+              <div role="radiogroup" aria-label="AI provider" style={{ display: 'flex', gap: 6, marginTop: 10, padding: 4, background: 'var(--surface-sunken)', borderRadius: 12 }}>
+                {[
+                  { id: 'groq', label: 'Groq', tag: 'Recommended' },
+                  { id: 'gemini', label: 'Gemini', tag: 'Backup' },
+                ].map(p => {
+                  const active = selectedProvider === p.id;
+                  return (
+                    <button
+                      key={p.id}
+                      type="button"
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => handleSelectProvider(p.id)}
+                      style={{
+                        flex: 1, padding: '9px 10px', fontSize: 13.5, fontWeight: 700, cursor: 'pointer',
+                        borderRadius: 9, border: active ? '1.5px solid #151313' : '1.5px solid transparent',
+                        background: active ? 'var(--bg-card)' : 'transparent',
+                        color: active ? 'var(--text-primary)' : 'var(--text-secondary)',
+                        boxShadow: active ? '0 2px 0 #151313' : 'none',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                        transition: 'all 0.15s ease'
+                      }}
+                    >
+                      {p.label}
+                      <span style={{ fontSize: 10.5, fontWeight: 700, padding: '2px 7px', borderRadius: 99,
+                        background: p.id === 'groq' ? 'var(--c-coral, #FF5734)' : 'var(--surface-alt)',
+                        color: p.id === 'groq' ? '#fff' : 'var(--text-secondary)' }}>{p.tag}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Provider details & free key link */}
-              <div style={{ marginBottom: 8 }}>
-                <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                  {selectedProvider === 'groq'
-                    ? 'Groq AI with GPT-OSS 120B / Qwen 27B provides ultra-fast evaluation with a generous free tier (30 requests/min, 14,400 requests/day). No credit card required.'
-                    : 'Google Gemini 2.5 Flash / 2.0 Flash provides high reasoning fidelity. Keys are encrypted (AES-256-GCM) on the server or stored securely on this device.'}
-                </div>
+              <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)' }}>
+                {selectedProvider === 'groq' ? 'Fast, with a free tier.' : 'Gemini 3.8 Flash. Slower; use if Groq is unavailable.'}{' '}
                 <a
                   href={selectedProvider === 'groq' ? 'https://console.groq.com/keys' : 'https://aistudio.google.com/app/apikey'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    color: 'var(--c-coral, #D97757)',
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 4,
-                    marginTop: 4
-                  }}
+                  style={{ fontWeight: 700, color: 'var(--c-coral, #FF5734)', textDecoration: 'none' }}
                 >
-                  {selectedProvider === 'groq' ? 'Get free Groq API key (14,400 free reqs/day) ↗' : 'Get free Gemini API key ↗'}
+                  Get a free key ↗
                 </a>
               </div>
 
-              {!signedIn ? (
-                <div style={{
-                  marginTop: 8, padding: '10px 12px', fontSize: 12, fontWeight: 600,
-                  color: 'var(--text-secondary)', background: 'var(--surface-alt)',
-                  border: '1px solid var(--border-subtle)', borderRadius: 'var(--r-btn)'
-                }}>
-                  Sign in to configure your personal AI evaluation key.
-                </div>
-              ) : credentialStatus?.configured && !isReplacing ? (
+              {credentialStatus?.configured && !isReplacing ? (
                 /* Stored state — never reveals the key itself */
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10, flexWrap: 'wrap' }}>
                   <span style={{
-                    flex: 1, minWidth: 180, padding: '9px 12px', fontSize: 13, fontWeight: 600,
+                    flex: 1, minWidth: 160, padding: '10px 12px', fontSize: 13.5, fontWeight: 600,
                     color: 'var(--text-primary)', background: 'var(--surface-sunken)',
-                    border: '1px solid var(--border)', borderRadius: 'var(--r-btn)'
+                    border: '1px solid var(--border)', borderRadius: 'var(--r-btn)', fontFamily: 'ui-monospace, monospace'
                   }}>
-                    {selectedProvider === 'groq' ? 'Groq GPT-OSS 120B' : 'Gemini 2.5 Flash'} · {credentialStatus.maskedSuffix || '••••'}{credentialStatus.local ? ' (on this device)' : ''}
+                    {credentialStatus.maskedSuffix || '••••'}
                   </span>
                   <button
                     type="button"
                     onClick={() => { setIsReplacing(true); setValidationStatus(null); }}
                     style={{
-                      padding: '8px 14px', fontSize: 12, fontWeight: 600,
+                      padding: '9px 14px', fontSize: 13, fontWeight: 600,
                       color: 'var(--text-primary)', background: 'var(--surface-alt)',
                       borderRadius: 'var(--r-btn)', border: '1px solid var(--border)', cursor: 'pointer'
                     }}
@@ -387,7 +331,7 @@ export default function SettingsModal({
                     onClick={handleDeleteKey}
                     disabled={isValidating}
                     style={{
-                      padding: '8px 14px', fontSize: 12, fontWeight: 600,
+                      padding: '9px 14px', fontSize: 13, fontWeight: 600,
                       color: '#EF4444', background: 'rgba(239, 68, 68, 0.08)',
                       borderRadius: 'var(--r-btn)', border: '1px solid rgba(239, 68, 68, 0.25)', cursor: 'pointer'
                     }}
@@ -397,24 +341,19 @@ export default function SettingsModal({
                 </div>
               ) : (
                 /* Entry state (new key or replacement) */
-                <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+                <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
                   <input
                     type="password"
                     value={keyInput}
                     onChange={(e) => setKeyInput(e.target.value)}
-                    placeholder={selectedProvider === 'groq' ? 'Paste Groq API key (starts with gsk_)…' : 'Paste Google Gemini API key…'}
+                    placeholder={selectedProvider === 'groq' ? 'Paste Groq key (gsk_…)' : 'Paste Gemini key'}
                     autoComplete="off"
                     spellCheck="false"
                     onKeyDown={(e) => { if (e.key === 'Enter') handleSaveKey(); }}
                     style={{
-                      flex: 1,
-                      minWidth: 0,
-                      padding: '9px 12px',
-                      fontSize: 13,
-                      background: 'var(--surface-sunken)',
-                      border: '1px solid var(--border)',
-                      borderRadius: 'var(--r-btn)',
-                      color: 'var(--text-primary)'
+                      flex: 1, minWidth: 0, padding: '10px 12px', fontSize: 14,
+                      background: 'var(--surface-sunken)', border: '1px solid var(--border)',
+                      borderRadius: 'var(--r-btn)', color: 'var(--text-primary)'
                     }}
                   />
                   <button
@@ -422,16 +361,16 @@ export default function SettingsModal({
                     onClick={handleSaveKey}
                     disabled={isValidating}
                     className="btn-coral-pill-physical"
-                    style={{ padding: '8px 16px', fontSize: 12, minWidth: 90 }}
+                    style={{ padding: '9px 18px', fontSize: 13, minWidth: 80 }}
                   >
-                    {isValidating ? 'Saving…' : 'Save Key'}
+                    {isValidating ? 'Saving…' : 'Save'}
                   </button>
                   {isReplacing && (
                     <button
                       type="button"
                       onClick={() => { setIsReplacing(false); setKeyInput(''); }}
                       style={{
-                        padding: '8px 12px', fontSize: 12, fontWeight: 600,
+                        padding: '9px 12px', fontSize: 13, fontWeight: 600,
                         color: 'var(--text-secondary)', background: 'var(--surface-alt)',
                         borderRadius: 'var(--r-btn)', border: '1px solid var(--border)', cursor: 'pointer'
                       }}
@@ -442,27 +381,11 @@ export default function SettingsModal({
                 </div>
               )}
 
-              {credentialStatus?.configured && credentialStatus.local && !isReplacing && (
-                <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-secondary)' }}>
-                  Stored on this device only and removed when you sign out. It is never saved on Cognition&apos;s servers; it is sent securely with each evaluation request and used only for that request.
-                </div>
-              )}
-
-              {isReplacing && credentialStatus?.configured && (
-                <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-secondary)' }}>
-                  The stored key stays active until a replacement is saved.
-                </div>
-              )}
-
               {validationStatus && (
                 <div style={{
-                  marginTop: 8,
-                  fontSize: 12,
-                  fontWeight: 600,
+                  marginTop: 8, fontSize: 13, fontWeight: 600,
                   color: validationStatus.success ? 'var(--success-icon)' : 'var(--coral)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6
+                  display: 'flex', alignItems: 'center', gap: 6
                 }}>
                   <Icon name={validationStatus.success ? 'check' : 'alertCircle'} size={14} />
                   {validationStatus.message}

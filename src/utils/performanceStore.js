@@ -307,6 +307,10 @@ export function resetPerformanceData() {
       'omniprep_user_profile',
       'omniprep_test_rotation_queue_v1',
       'omniprep_last_watched_lesson',
+      // API keys are settings, not scores (they are scoped to the signed-in account)
+      'omniprep_local_gemini_key',
+      'omniprep_local_groq_key',
+      'omniprep_active_ai_provider',
     ]);
 
     const toRemove = [];

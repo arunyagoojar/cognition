@@ -11,14 +11,32 @@ import {
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 
 export const AI_CONFIG = {
-  primaryModel: 'gemini-2.5-flash',
-  fallbackModel: 'gemini-2.0-flash',
+  // Current Gemini Flash line (gemini-2.x is retired/retiring)
+  primaryModel: 'gemini-3.8-flash',
+  fallbackModel: 'gemini-3.7-flash',
   temperature: 0.2,
   maxOutputTokens: 8192,
   rateLimitCooldownMs: 30000,
 };
 
 let lastRateLimitTime = 0;
+// One model attempt may take this long before we move on (essays need time to grade).
+const DIRECT_TIMEOUT_MS = 60000;
+
+/**
+ * A key saved on this device is used directly (fastest path); the Worker is
+ * only the fallback when there is no device key or the direct call fails.
+ */
+async function directFirst(systemPrompt, userPrompt, serverCall) {
+  const { getLocalGroqKey, getLocalGeminiKey } = await import('./storage.js');
+  if (getLocalGroqKey() || getLocalGeminiKey()) {
+    const direct = await directAiCall(systemPrompt, userPrompt);
+    if (direct.status === 'completed') return { ...direct, tier: 'client_local_key' };
+    const server = await serverCall();
+    return server?.status === 'completed' ? server : { ...(server || {}), status: 'failed', message: direct.message || server?.message, triedDirect: true };
+  }
+  return serverCall();
+}
 
 // Rubric v2 (prompts, validation, band arithmetic) is shared with the Worker.
 export {
@@ -70,7 +88,7 @@ function extractJsonFromText(text) {
  * key lives on this device and never reaches any server.
  */
 async function directGeminiCall(systemPrompt, userPrompt, localKey) {
-  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-1.5-flash', 'gemini-1.5-flash-8b', 'gemini-flash-latest'].filter(Boolean);
+  const models = [AI_CONFIG.primaryModel, AI_CONFIG.fallbackModel, 'gemini-3.5-flash', 'gemini-3.5-flash-lite'].filter(Boolean);
   let lastStatus = null;
   for (const mdl of models) {
     try {
@@ -80,6 +98,7 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey) {
         attempts++;
         r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent`, {
           method: 'POST',
+          signal: AbortSignal.timeout(DIRECT_TIMEOUT_MS),
           headers: { 'Content-Type': 'application/json', 'x-goog-api-key': localKey },
           body: JSON.stringify({
             system_instruction: { parts: [{ text: systemPrompt }] },
@@ -120,6 +139,7 @@ async function directGroqCall(systemPrompt, userPrompt, localKey) {
         attempts++;
         r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
+          signal: AbortSignal.timeout(DIRECT_TIMEOUT_MS),
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${localKey}`,
@@ -249,7 +269,11 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   const t1Words = countWords(t1Clean);
   const t2Words = countWords(t2Clean);
 
-  let res = await evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words });
+  let res = await directFirst(
+    WRITING_SYSTEM_PROMPT_V2,
+    buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words }),
+    () => evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words }),
+  );
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();
@@ -257,11 +281,11 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
 
   let model = res?.model || 'gemini';
   let provider = res?.provider || 'gemini';
-  let tier = res?.status === 'completed' ? 'server' : 'unknown';
+  let tier = res?.status === 'completed' ? (res.tier || 'server') : 'unknown';
 
   // Local-key privacy mode or server fallback: if the server couldn't evaluate
   // and a local key exists on this device, run evaluation directly from the browser.
-  if (res?.status === 'failed') {
+  if (res?.status === 'failed' && !res.triedDirect) {
     const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words });
     const direct = await directAiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt);
     if (direct.status === 'completed') {
@@ -393,7 +417,11 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     };
   }
 
-  let res = await evaluateSpeakingServer({ transcripts, testMeta, durations });
+  let res = await directFirst(
+    SPEAKING_SYSTEM_PROMPT_V2,
+    buildSpeakingUserPrompt({ transcripts, testMeta, durations }),
+    () => evaluateSpeakingServer({ transcripts, testMeta, durations }),
+  );
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();
@@ -401,9 +429,9 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
 
   let model = res?.model || 'gemini';
   let provider = res?.provider || 'gemini';
-  let tier = res?.status === 'completed' ? 'server' : 'unknown';
+  let tier = res?.status === 'completed' ? (res.tier || 'server') : 'unknown';
 
-  if (res?.status === 'failed') {
+  if (res?.status === 'failed' && !res.triedDirect) {
     const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
     const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt);
     if (direct.status === 'completed') {

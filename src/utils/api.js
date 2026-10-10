@@ -172,12 +172,6 @@ export async function fetchCompletedLessons() {
 // Raw keys travel once to the Worker and are encrypted (AES-256-GCM) before
 // D1 storage. No endpoint ever returns the stored credential.
 
-// Server codes meaning "Cognition's cloud storage can't be used right now, but
-// the key itself may be fine" — these (and network/5xx failures) allow the
-// on-device fallback. Anything else (bad key, expired session) is surfaced as-is.
-const CLOUD_UNUSABLE_CODES = new Set([
-  'storage_unavailable', 'storage_failed', 'provider_region', 'key_restricted', 'provider_unreachable',
-]);
 
 /**
  * Validates a Gemini key directly from the browser (models-list ping). The key
@@ -190,7 +184,7 @@ export async function validateGeminiKeyDirect(key) {
     });
     if (res.ok || res.status === 429) return { valid: true };
     if (res.status === 400 || res.status === 403) {
-      return { valid: false, message: 'Gemini rejected this API key. Check that you copied the whole key and try again.' };
+      return { valid: false, rejected: true, message: 'Gemini rejected this API key. Check that you copied the whole key and try again.' };
     }
     return { valid: false, message: 'Could not verify the key with Google right now. Please try again shortly.' };
   } catch {
@@ -208,7 +202,7 @@ export async function validateGroqKeyDirect(key) {
     });
     if (res.ok || res.status === 429) return { valid: true };
     if (res.status === 401 || res.status === 403) {
-      return { valid: false, message: 'Groq rejected this API key. Check that you copied the complete key from console.groq.com and try again.' };
+      return { valid: false, rejected: true, message: 'Groq rejected this API key. Check that you copied the complete key from console.groq.com and try again.' };
     }
     return { valid: false, message: 'Could not verify the key with Groq right now. Please try again shortly.' };
   } catch {
@@ -217,58 +211,39 @@ export async function validateGroqKeyDirect(key) {
 }
 
 export async function saveCredential(provider, key) {
-  const res = await apiFetchDetail(`/api/credentials/${provider}`, {
-    method: 'PUT',
-    body: JSON.stringify({ key }),
-  });
-
-  if (res.ok) {
-    // A successful cloud save supersedes any stale local copy.
-    if (provider === 'gemini') removeLocalGeminiKey();
-    if (provider === 'groq') removeLocalGroqKey();
-    return { ok: true, ...res.data };
-  }
-
-  const serverMessage = res.data?.error;
   if (provider !== 'gemini' && provider !== 'groq') {
-    return { ok: false, message: serverMessage || 'Could not save the key. Please try again.' };
+    return { ok: false, message: 'Unknown AI provider.' };
   }
-  if (res.unauthenticated || res.status === 401) {
-    return { ok: false, message: 'Your session has expired. Please sign in again, then retry.' };
+  // 1. Check the key with the provider itself. Only a definite rejection
+  //    blocks saving; if the provider can't be reached we keep the key anyway.
+  const check = provider === 'groq' ? await validateGroqKeyDirect(key) : await validateGeminiKeyDirect(key);
+  if (!check.valid && check.rejected) return { ok: false, message: check.message };
+
+  // 2. Always keep it on this device — evaluations use it directly from here.
+  const stored = provider === 'groq' ? saveLocalGroqKey(key) : saveLocalGeminiKey(key);
+  if (!stored) {
+    return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
   }
 
-  const cloudUnusable = Boolean(res.networkError)
-    || res.status >= 500
-    || CLOUD_UNUSABLE_CODES.has(res.data?.code);
-  if (!cloudUnusable) {
-    return { ok: false, message: serverMessage || 'Could not save the key. Please try again.' };
-  }
-
-  // Privacy fallback: Cognition's secure storage can't take the key right now.
-  // Verify it directly with provider first, then keep it on THIS DEVICE only.
-  if (provider === 'gemini') {
-    const direct = await validateGeminiKeyDirect(key);
-    if (!direct.valid) return { ok: false, message: direct.message };
-    if (!saveLocalGeminiKey(key)) {
-      return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
-    }
-  } else if (provider === 'groq') {
-    const direct = await validateGroqKeyDirect(key);
-    if (!direct.valid) return { ok: false, message: direct.message };
-    if (!saveLocalGroqKey(key)) {
-      return { ok: false, message: 'Could not store the key on this device \u2014 browser storage is blocked or full.' };
-    }
-  }
+  // 3. Best-effort encrypted backup on the server (never required).
+  apiFetchDetail(`/api/credentials/${provider}`, { method: 'PUT', body: JSON.stringify({ key }) }).catch(() => {});
 
   return {
     ok: true,
     local: true,
     maskedSuffix: `\u2022\u2022\u2022\u2022${key.slice(-4)}`,
-    message: 'Secure cloud storage is unavailable right now, so your key was saved on this device only. It is never stored on Cognition’s servers.',
+    message: check.valid ? 'Key saved on this device.' : 'Key saved on this device (could not verify it right now).',
   };
 }
 
 export async function fetchCredentialStatus(provider) {
+  // A key on this device is what evaluations use — report it first.
+  if (provider === 'groq' && hasLocalGroqKey()) {
+    return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGroqKey().slice(-4)}` };
+  }
+  if (provider === 'gemini' && hasLocalGeminiKey()) {
+    return { configured: true, provider, local: true, maskedSuffix: `\u2022\u2022\u2022\u2022${getLocalGeminiKey().slice(-4)}` };
+  }
   const res = await apiFetchDetail(`/api/credentials/${provider}/status`, { method: 'GET' });
   // A failed check (no session token yet, expired token, network) is UNKNOWN,
   // never "not configured" — callers must not tell a user with a stored key to add one.
