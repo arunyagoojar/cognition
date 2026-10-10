@@ -11,9 +11,10 @@ const SKILL_LABEL = { writing: 'Writing', speaking: 'Speaking' };
  * Dashboard card to re-run the AI evaluation of the most recent test only
  * (Writing or Speaking) — e.g. after a provider outage, or with the other AI.
  */
-export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
+export default function LastTestRecheck({ onRechecked, onOpenSettings, onViewResults }) {
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState(null); // { ok, message }
+  const [rechecked, setRechecked] = useState(null); // attempt id graded in this visit
 
   const target = getRecheckableLastTest();
   if (!target) return null;
@@ -21,6 +22,9 @@ export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
   const { attempt, skill, record } = target;
   const band = typeof record.band === 'number' ? record.band : null;
   const graded = attempt.status === 'completed' && band !== null;
+  // Only shown when the last test could not be graded — or right after a
+  // successful recheck, to offer the results. Graded tests need no recheck.
+  if (graded && rechecked !== attempt.id) return null;
   const provider = getActiveAiProvider() === 'gemini' ? 'Gemini' : 'Groq';
   const when = attempt.completedAt ? new Date(attempt.completedAt).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '';
 
@@ -30,7 +34,8 @@ export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
     try {
       const res = await recheckLastTest();
       if (res.ok) {
-        setStatus({ ok: true, message: `Rechecked — ${SKILL_LABEL[skill]} band ${Number(res.band).toFixed(1)}.` });
+        setStatus({ ok: true, message: `Graded — ${SKILL_LABEL[skill]} band ${Number(res.band).toFixed(1)}.` });
+        setRechecked(attempt.id);
         const updated = (getPerformanceStore().attempts || [])[0];
         if (updated) {
           Promise.resolve(syncAttempt({ ...(updated[skill] || {}), id: updated.id, type: skill, testId: updated.testId, testLabel: updated.testLabel, status: updated.status, band: res.band })).catch(() => {});
@@ -68,10 +73,10 @@ export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
           {SKILL_LABEL[skill]} · {graded ? `Band ${band.toFixed(1)}` : 'Not graded yet'}
         </div>
         <div style={{ fontSize: 14, color: 'var(--text-secondary)', marginTop: 4 }}>
-          {graded ? 'Want a second opinion? Re-grade it' : 'The AI examiner could not grade it. Retry'} with {provider}
-          {onOpenSettings && (
+          {graded ? 'Your feedback is ready.' : <>The AI examiner could not grade it. Retry with {provider}</>}
+          {!graded && onOpenSettings && (
             <> (<button type="button" onClick={onOpenSettings} style={{ background: 'none', border: 'none', padding: 0, color: 'var(--c-coral, #FF5734)', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>switch AI</button>)</>
-          )}.
+          )}{graded ? '' : '.'}
           {when && <span style={{ display: 'block', fontSize: 13, marginTop: 2 }}>{when}</span>}
         </div>
         {status && (
@@ -80,6 +85,19 @@ export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
           </div>
         )}
       </div>
+      {graded ? (
+        <button
+          type="button"
+          onClick={() => onViewResults?.(skill, { ...record, attemptId: attempt.id, testId: attempt.testId })}
+          style={{
+            padding: '12px 22px', borderRadius: 14, fontSize: 15, fontWeight: 800, cursor: 'pointer',
+            background: '#FF5734', color: '#151313', border: '1.5px solid #151313', boxShadow: '0 3px 0 #151313',
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+          }}
+        >
+          View results <Icon name="arrowRight" size={16} />
+        </button>
+      ) : (
       <button
         type="button"
         onClick={handleRecheck}
@@ -94,6 +112,7 @@ export default function LastTestRecheck({ onRechecked, onOpenSettings }) {
           ? <><span className="eval-spinner" style={{ width: 15, height: 15, border: '2.5px solid #151313', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} /> Rechecking…</>
           : <><Icon name="refresh" size={16} /> Recheck with AI</>}
       </button>
+      )}
     </section>
   );
 }

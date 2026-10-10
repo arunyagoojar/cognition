@@ -69,9 +69,9 @@ function TranscriptState({ rec, onRetry }) {
   return null;
 }
 
-export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
+export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
   const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
-  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
+  const [phase, setPhase] = useState(() => (initialResult ? 'results' : initialPhase)); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
   const [questionIdx, setQuestionIdx] = useState(0);
   const [recState, setRecState] = useState(REC_STATE.IDLE);
@@ -90,7 +90,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
   // Processing / evaluation
   const [evalStages, setEvalStages] = useState({});
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(() => initialResult);
 
   // Practice results are saved the moment they exist, so leaving via Back,
   // refreshing or closing never loses them.

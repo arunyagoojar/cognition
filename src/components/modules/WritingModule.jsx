@@ -27,7 +27,7 @@ function readSavedWritingSession() {
   }
 }
 
-export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
+export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
   const [test] = useState(() => initialTest || (testId ? getWritingTest(testId) : getRandomizedWritingTest()));
   // Restore only the same test in the same mode — never carry a practice
   // essay into a mock (or into a different practice test).
@@ -38,6 +38,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   });
 
   const [phase, setPhase] = useState(() => {
+    if (initialResult) return 'results'; // opened from the dashboard to view a saved result
     if (initialSession?.phase && ['exam', 'processing', 'results'].includes(initialSession.phase)) {
       // a reload mid-evaluation has no result yet — reopen the essays instead
       if (initialSession.phase !== 'exam' && !initialSession.result) return 'exam';
@@ -46,10 +47,10 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     return initialPhase;
   });
   const [task, setTask] = useState(() => initialSession?.task || 1);
-  const [t1, setT1] = useState(() => initialSession?.t1 || '');
-  const [t2, setT2] = useState(() => initialSession?.t2 || '');
+  const [t1, setT1] = useState(() => initialResult?.t1 ?? initialSession?.t1 ?? '');
+  const [t2, setT2] = useState(() => initialResult?.t2 ?? initialSession?.t2 ?? '');
   const [timeLeft, setTimeLeft] = useState(() => (typeof initialSession?.timeLeft === 'number' ? initialSession.timeLeft : 60 * 60));
-  const [result, setResult] = useState(() => initialSession?.result || null);
+  const [result, setResult] = useState(() => initialResult || initialSession?.result || null);
   const [processingStep, setProcessingStep] = useState(0);
   const [isRechecking, setIsRechecking] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

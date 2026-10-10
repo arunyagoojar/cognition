@@ -7,6 +7,7 @@ import {
   RUBRIC_VERSION, WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2, buildWritingUserPrompt,
   buildSpeakingUserPrompt, normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
   ANSWER_VERIFIER_SYSTEM_PROMPT, buildAnswerVerifierUserPrompt,
+  WRITING_SYSTEM_PROMPT_COMPACT, SPEAKING_SYSTEM_PROMPT_COMPACT,
 } from './ieltsRubric.js';
 import { evaluateWritingServer, evaluateSpeakingServer } from './api.js';
 import { resolveModelChain } from './ai/modelCatalog.js';
@@ -17,12 +18,25 @@ export const AI_CONFIG = {
   fallbackModel: 'gemini-3.7-flash',
   temperature: 0.2,
   maxOutputTokens: 8192,
-  rateLimitCooldownMs: 30000,
 };
 
-let lastRateLimitTime = 0;
 // One model attempt may take this long before we move on (essays need time to grade).
 const DIRECT_TIMEOUT_MS = 60000;
+// Hard cap on one whole evaluation (all models/providers) so it never "keeps loading".
+const TOTAL_BUDGET_MS = 110000;
+let deadline = 0;
+const timeLeft = () => (deadline ? deadline - Date.now() : DIRECT_TIMEOUT_MS);
+const attemptTimeout = () => Math.max(1000, Math.min(DIRECT_TIMEOUT_MS, timeLeft()));
+
+// Groq's free tier allows ~8,000 tokens per minute (prompt + requested reply),
+// so Groq gets the compact prompts and a reply budget that fits the limit.
+const GROQ_TPM_BUDGET = 7600;
+function groqPrompt(systemPrompt) {
+  if (systemPrompt === WRITING_SYSTEM_PROMPT_V2) return WRITING_SYSTEM_PROMPT_COMPACT;
+  if (systemPrompt === SPEAKING_SYSTEM_PROMPT_V2) return SPEAKING_SYSTEM_PROMPT_COMPACT;
+  return systemPrompt;
+}
+const estimateTokens = (text) => Math.ceil(String(text || '').length / 3.5);
 
 /**
  * A key saved on this device is used directly (fastest path); the Worker is
@@ -43,8 +57,9 @@ async function directFirst(systemPrompt, userPrompt, serverCall, validate = null
   if (getLocalGroqKey() || getLocalGeminiKey()) {
     const direct = await directAiCall(systemPrompt, userPrompt, validate);
     if (direct.status === 'completed') return { ...direct, tier: 'client_local_key' };
-    const server = await serverCall();
-    return server?.status === 'completed' ? server : { ...(server || {}), status: 'failed', message: direct.message || server?.message, triedDirect: true };
+    // The server would call the same provider with the same key — don't make
+    // the candidate wait twice; report the real reason instead.
+    return { status: 'failed', message: direct.message, triedDirect: true };
   }
   return serverCall();
 }
@@ -103,6 +118,7 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
   const models = await resolveModelChain('gemini', localKey);
   let lastStatus = null;
   for (const mdl of models) {
+    if (timeLeft() < 5000) { lastStatus = lastStatus || 'timeout'; break; }
     try {
       let attempts = 0;
       let r;
@@ -110,12 +126,12 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
         attempts++;
         r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${mdl}:generateContent`, {
           method: 'POST',
-          signal: AbortSignal.timeout(DIRECT_TIMEOUT_MS),
+          signal: AbortSignal.timeout(attemptTimeout()),
           headers: { 'Content-Type': 'application/json', 'x-goog-api-key': localKey },
           body: JSON.stringify({
             system_instruction: { parts: [{ text: systemPrompt }] },
             contents: [{ parts: [{ text: userPrompt }] }],
-            generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
+            generationConfig: { temperature: 0.2, maxOutputTokens: 16384 },
           }),
         });
         if (r.status === 503 && attempts < 2) {
@@ -125,7 +141,7 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
         break;
       }
       lastStatus = r.status;
-      if (r.status === 429) { lastRateLimitTime = Date.now(); break; }
+      if (r.status === 429) break;
       if (r.ok) {
         const data = await r.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -142,17 +158,21 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
 async function directGroqCall(systemPrompt, userPrompt, localKey, validate = null) {
   // Live list of models this key can use — never a stale hardcoded name.
   const models = await resolveModelChain('groq', localKey);
+  const groqSystem = groqPrompt(systemPrompt);
+  const replyBudget = Math.max(2000, Math.min(6000, GROQ_TPM_BUDGET - estimateTokens(groqSystem) - estimateTokens(userPrompt)));
   let lastStatus = null;
   for (const mdl of models) {
+    if (timeLeft() < 5000) { lastStatus = lastStatus || 'timeout'; break; }
     try {
       let attempts = 0;
       let strictJson = true;
+      let waitedForLimit = false;
       let r;
-      while (attempts < 3) {
+      while (attempts < 4) {
         attempts++;
         r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
-          signal: AbortSignal.timeout(DIRECT_TIMEOUT_MS),
+          signal: AbortSignal.timeout(attemptTimeout()),
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${localKey}`,
@@ -160,12 +180,12 @@ async function directGroqCall(systemPrompt, userPrompt, localKey, validate = nul
           body: JSON.stringify({
             model: mdl,
             messages: [
-              { role: 'system', content: systemPrompt },
+              { role: 'system', content: groqSystem },
               { role: 'user', content: userPrompt },
             ],
             temperature: 0.2,
-            max_completion_tokens: 16384,
-            ...(mdl.startsWith('openai/gpt-oss') ? { reasoning_effort: 'medium' } : {}),
+            max_completion_tokens: replyBudget,
+            ...(mdl.startsWith('openai/gpt-oss') ? { reasoning_effort: 'low' } : {}),
             ...(strictJson ? { response_format: { type: 'json_object' } } : {}),
           }),
         });
@@ -179,10 +199,19 @@ async function directGroqCall(systemPrompt, userPrompt, localKey, validate = nul
           strictJson = false;
           continue;
         }
+        // Per-minute limit: wait out a short retry-after once instead of failing.
+        if (r.status === 429 && !waitedForLimit) {
+          const wait = Number(r.headers.get('retry-after')) || 0;
+          if (wait > 0 && wait <= 30 && timeLeft() > wait * 1000 + 20000) {
+            waitedForLimit = true;
+            await new Promise(res => setTimeout(res, wait * 1000));
+            continue;
+          }
+        }
         break;
       }
       lastStatus = r.status;
-      if (r.status === 429) { lastRateLimitTime = Date.now(); break; }
+      if (r.status === 429 || r.status === 413) break; // limits are per account — another model won't help
       if (r.ok) {
         const data = await r.json();
         const text = data.choices?.[0]?.message?.content;
@@ -203,13 +232,16 @@ async function directAiCall(systemPrompt, userPrompt, validate = null) {
   // Active provider first; if it fails and the other provider has a key, use that.
   const order = [active, active === 'groq' ? 'gemini' : 'groq'].filter(p => keys[p]);
   if (!order.length) return { status: 'failed', message: 'No API key saved on this device. Add one in Settings.' };
+  deadline = Date.now() + TOTAL_BUDGET_MS;
   let last = null;
   for (const p of order) {
     last = p === 'groq'
       ? await directGroqCall(systemPrompt, userPrompt, keys.groq, validate)
       : await directGeminiCall(systemPrompt, userPrompt, keys.gemini, validate);
-    if (last.status === 'completed') return last;
+    if (last.status === 'completed') { deadline = 0; return last; }
+    if (timeLeft() < 5000) break;
   }
+  deadline = 0;
   return last;
 }
 
@@ -276,18 +308,6 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     return { ...cached, isCached: true };
   }
 
-  const now = Date.now();
-  if (now - lastRateLimitTime < AI_CONFIG.rateLimitCooldownMs) {
-    return {
-      evaluationStatus: 'failed',
-      band: null,
-      overallBand: null,
-      task1Band: null,
-      task2Band: null,
-      criteria: null,
-      message: 'AI rate limit cooldown active (429). Please wait 60 seconds.',
-    };
-  }
 
   const t1Words = countWords(t1Clean);
   const t2Words = countWords(t2Clean);
@@ -299,9 +319,6 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     (json) => validateWritingEvaluationJson(json, { task1Words: t1Words, task2Words: t2Words }),
   );
 
-  if (res?.message && res.message.includes('rate limit')) {
-    lastRateLimitTime = Date.now();
-  }
 
   let model = res?.model || 'gemini';
   let provider = res?.provider || 'gemini';
@@ -430,16 +447,6 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     return { ...cached, isCached: true };
   }
 
-  const now = Date.now();
-  if (now - lastRateLimitTime < AI_CONFIG.rateLimitCooldownMs) {
-    return {
-      evaluationStatus: 'failed',
-      band: null,
-      overallBand: null,
-      criteria: null,
-      message: 'AI rate limit cooldown active (429). Please wait 60 seconds.',
-    };
-  }
 
   let res = await directFirst(
     SPEAKING_SYSTEM_PROMPT_V2,
@@ -448,9 +455,6 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     (json) => validateSpeakingEvaluationJson(json),
   );
 
-  if (res?.message && res.message.includes('rate limit')) {
-    lastRateLimitTime = Date.now();
-  }
 
   let model = res?.model || 'gemini';
   let provider = res?.provider || 'gemini';

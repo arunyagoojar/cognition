@@ -35,6 +35,8 @@ import { resolveModelChain } from '../../src/utils/ai/modelCatalog.js';
 import {
   ANSWER_VERIFIER_SYSTEM_PROMPT,
   buildAnswerVerifierUserPrompt,
+  WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2,
+  WRITING_SYSTEM_PROMPT_COMPACT, SPEAKING_SYSTEM_PROMPT_COMPACT,
 } from '../../src/utils/ieltsRubric.js';
 
 function extractJsonFromText(text) {
@@ -91,7 +93,12 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
   }
 }
 
-async function callGroq(model, apiKey, systemPrompt, userPrompt) {
+async function callGroq(model, apiKey, systemPromptFull, userPrompt) {
+  // Groq free tier: ~8,000 tokens/minute for prompt + requested reply.
+  const systemPrompt = systemPromptFull === WRITING_SYSTEM_PROMPT_V2 ? WRITING_SYSTEM_PROMPT_COMPACT
+    : systemPromptFull === SPEAKING_SYSTEM_PROMPT_V2 ? SPEAKING_SYSTEM_PROMPT_COMPACT : systemPromptFull;
+  const est = (t) => Math.ceil(String(t || '').length / 3.5);
+  const replyBudget = Math.max(2000, Math.min(6000, 7600 - est(systemPrompt) - est(userPrompt)));
   let attempts = 0;
   let strictJson = true;
   while (attempts < 3) {
@@ -109,8 +116,8 @@ async function callGroq(model, apiKey, systemPrompt, userPrompt) {
           { role: 'user', content: userPrompt },
         ],
         temperature: 0.2,
-        max_completion_tokens: 16384,
-        ...(model.startsWith('openai/gpt-oss') ? { reasoning_effort: 'medium' } : {}),
+        max_completion_tokens: replyBudget,
+        ...(model.startsWith('openai/gpt-oss') ? { reasoning_effort: 'low' } : {}),
         ...(strictJson ? { response_format: { type: 'json_object' } } : {}),
       }),
       signal: AbortSignal.timeout(55000),

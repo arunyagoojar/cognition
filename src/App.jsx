@@ -190,7 +190,21 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   }, [isSignedIn, userId]);
 
   // Every practice start serves a fresh random test (avoiding recent repeats)
+  // A saved result opened from the dashboard ("View results")
+  const [reviewResult, setReviewResult] = useState(null);
+  const viewSavedResult = (skill, result) => {
+    setSelectedExamId(result?.testId || selectedExamId);
+    setReviewResult({
+      skill,
+      result: skill === 'speaking'
+        ? { ...result, overallSpeakingBand: result.overallSpeakingBand ?? result.band, evaluationState: result.evaluationState || 'COMPLETED' }
+        : { ...result, evaluationStatus: result.evaluationStatus || 'completed' },
+    });
+    setView(skill);
+  };
+
   const startSkill = (skillId) => {
+    setReviewResult(null);
     delete sessionAttemptIds.current[skillId];
     if (skillId === 'listening') {
       setSelectedExamId(getRandomTestId());
@@ -328,7 +342,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             />
 
             {/* Re-grade the most recent Writing/Speaking test (latest only) */}
-            <LastTestRecheck onRechecked={refreshScores} onOpenSettings={() => setSettingsOpen(true)} />
+            <LastTestRecheck onRechecked={refreshScores} onOpenSettings={() => setSettingsOpen(true)} onViewResults={viewSavedResult} />
 
             {/* 2. Performance Overview (Learning Hub Card & Skill Graph) */}
             <PerformanceOverview
@@ -463,6 +477,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           >
             <ErrorBoundary onReset={() => setView('home')}>
               <WritingModule
+                key={reviewResult?.skill === 'writing' ? `review-${reviewResult.result.attemptId}` : 'writing-practice'}
+                initialResult={reviewResult?.skill === 'writing' ? reviewResult.result : null}
                 testId={selectedExamId}
                 onComplete={(d) => {
                   handleCompleteSkill('writing', d);
@@ -486,6 +502,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <SpeakingModule
+              key={reviewResult?.skill === 'speaking' ? `review-${reviewResult.result.attemptId}` : 'speaking-practice'}
+              initialResult={reviewResult?.skill === 'speaking' ? reviewResult.result : null}
               testId={selectedExamId}
               onComplete={(d) => {
                 handleCompleteSkill('speaking', d);
