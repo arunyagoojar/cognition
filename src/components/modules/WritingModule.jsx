@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
-import { motion } from 'motion/react';
 import { Icon } from '../common/Icon';
 import { getRandomizedWritingTest, getWritingTest } from '../../data/writing/index';
 import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
-import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import { evaluateWritingWithAI } from '../../utils/geminiEvaluator';
 import { createAttemptId, getTargetBand } from '../../utils/storage';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
+import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
+import ScrollToTop from '../common/ScrollToTop.jsx';
+import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
 import ErrorBoundary from '../common/ErrorBoundary.jsx';
 import TextSizeControl, { useExamTextScale } from '../common/TextSizeControl';
 
@@ -26,12 +27,20 @@ function readSavedWritingSession() {
   }
 }
 
-export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
+export default function WritingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
   const [test] = useState(() => initialTest || (testId ? getWritingTest(testId) : getRandomizedWritingTest()));
-  const [initialSession] = useState(() => readSavedWritingSession());
+  // Restore only the same test in the same mode — never carry a practice
+  // essay into a mock (or into a different practice test).
+  const [initialSession] = useState(() => {
+    const saved = readSavedWritingSession();
+    const sameTest = saved && saved.testId === (test?.testId || testId) && Boolean(saved.isMockMode) === Boolean(isMockMode);
+    return sameTest ? saved : null;
+  });
 
   const [phase, setPhase] = useState(() => {
     if (initialSession?.phase && ['exam', 'processing', 'results'].includes(initialSession.phase)) {
+      // a reload mid-evaluation has no result yet — reopen the essays instead
+      if (initialSession.phase !== 'exam' && !initialSession.result) return 'exam';
       return initialSession.phase === 'processing' ? 'results' : initialSession.phase;
     }
     return initialPhase;
@@ -42,13 +51,64 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   const [timeLeft, setTimeLeft] = useState(() => (typeof initialSession?.timeLeft === 'number' ? initialSession.timeLeft : 60 * 60));
   const [result, setResult] = useState(() => initialSession?.result || null);
   const [processingStep, setProcessingStep] = useState(0);
-  const [showModelAnswer, setShowModelAnswer] = useState(false);
   const [isRechecking, setIsRechecking] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [textScale, setTextScale] = useExamTextScale();
   const [mobilePane, setMobilePane] = useState('task');
 
+  // Practice mode timer controls
+  const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [isOvertime, setIsOvertime] = useState(false);
+
   const timerRef = useRef(null);
+
+  // Guards against stale closure bugs
+  const t1Ref = useRef(t1);
+  useEffect(() => {
+    t1Ref.current = t1;
+  }, [t1]);
+
+  const t2Ref = useRef(t2);
+  useEffect(() => {
+    t2Ref.current = t2;
+  }, [t2]);
+
+  const handleSubmitRef = useRef();
+
+  // Practice results are saved the moment they exist (and again after a
+  // re-check), so leaving via Back, refreshing or closing never loses them.
+  // The attempt id lives in the result so a restored session updates the
+  // same record instead of creating a duplicate.
+  useEffect(() => {
+    if (phase !== 'results' || !result || isMockMode) return;
+    if (!result.attemptId) {
+      setResult(r => (r && !r.attemptId ? { ...r, attemptId: createAttemptId('writing') } : r));
+      return;
+    }
+    const completed = typeof result.band === 'number' && Number.isFinite(result.band);
+    onSave?.({
+      attemptId: result.attemptId,
+      testId: test?.testId || testId,
+      testLabel: test?.title || 'IELTS Writing Practice',
+      status: completed ? 'completed' : 'partial',
+      band: completed ? result.band : null,
+      task1Band: result.task1Band ?? null,
+      task2Band: result.task2Band ?? null,
+      evaluationStatus: result.evaluationStatus || result.status || (completed ? 'completed' : 'failed'),
+      criteria: result.criteria || null,
+      taskCriteria: result.taskCriteria || null,
+      overallSummary: result.overallSummary || '',
+      task1Feedback: result.task1Feedback || '',
+      task2Feedback: result.task2Feedback || '',
+      strengths: result.strengths || '',
+      areasForImprovement: result.areasForImprovement || '',
+      task1Words: result.task1Words || 0,
+      task2Words: result.task2Words || 0,
+      t1: result.t1 ?? t1,
+      t2: result.t2 ?? t2,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, result, isMockMode]);
 
   const clearSession = () => {
     try {
@@ -56,30 +116,38 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     } catch {}
   };
 
-  const startTimer = () => {
+  const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
-          handleSubmit();
-          return 0;
+          if (isMockMode) {
+            clearInterval(timerRef.current);
+            handleSubmitRef.current?.();
+            return 0;
+          } else {
+            // In Practice Mode: do not force-exit!
+            setIsOvertime(true);
+            return 0;
+          }
         }
         return t - 1;
       });
     }, 1000);
-  };
+  }, [isMockMode]);
 
   useEffect(() => {
     if (phase === 'exam' && !timerRef.current) {
       startTimer();
     }
-  }, [phase]);
+  }, [phase, startTimer]);
 
   useEffect(() => {
     if (phase === 'intro') return;
     try {
       sessionStorage.setItem(WRITING_SESSION_PREFIX, JSON.stringify({
+        testId: test?.testId || testId,
+        isMockMode,
         phase,
         task,
         t1,
@@ -100,12 +168,32 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     startTimer();
   };
 
+  const toggleTimerPause = () => {
+    if (isMockMode) return;
+    if (isTimerPaused) {
+      setIsTimerPaused(false);
+      startTimer();
+    } else {
+      setIsTimerPaused(true);
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+  };
+
   const handleSubmit = async () => {
     if (isSubmitting) return;
     setIsSubmitting(true);
     clearInterval(timerRef.current);
-    const wc1 = wordCount(t1);
-    const wc2 = wordCount(t2);
+    const currentT1 = t1Ref.current ?? t1;
+    const currentT2 = t2Ref.current ?? t2;
+    const wc1 = wordCount(currentT1);
+    const wc2 = wordCount(currentT2);
+
+    // Full mock: the essays are evaluated once with the whole exam at the end.
+    if (isMockMode) {
+      clearSession();
+      onComplete?.({ t1: currentT1, t2: currentT2, task1Words: wc1, task2Words: wc2, status: 'submitted' });
+      return;
+    }
 
     // Immediately show processing screen to prevent UI freeze and multiple clicks
     setPhase('processing');
@@ -118,8 +206,8 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
     try {
       const evalResult = await evaluateWritingWithAI({
-        task1Text: t1,
-        task2Text: t2,
+        task1Text: currentT1,
+        task2Text: currentT2,
         prompts: {
           task1: test?.task1?.prompt || '',
           task2: test?.task2?.prompt || '',
@@ -137,8 +225,8 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         task2Band: evalResult.task2Band,
         task1Words: wc1,
         task2Words: wc2,
-        t1,
-        t2,
+        t1: currentT1,
+        t2: currentT2,
         ...evalResult
       };
 
@@ -160,6 +248,8 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
       setPhase('exam');
     }
   };
+
+  handleSubmitRef.current = handleSubmit;
 
   const handleRecheck = async () => {
     if (isRechecking) return;
@@ -250,6 +340,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   if (phase === 'processing') {
     return (
       <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <ScrollToTop />
         <div style={{
           background: 'var(--surface-elevated)',
           border: '1px solid var(--border-subtle)',
@@ -390,108 +481,54 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     ];
 
     return (
-      <div className="exam-results-screen" style={{ maxWidth: 1080, margin: '40px auto', padding: '0 24px 80px' }}>
+      <ResultPage skill="writing" className="exam-results-screen">
         {/* Navigation Breadcrumb */}
-        <button
+        <ResultItem
+          as="button"
+          type="button"
+          className="result-back-btn"
           onClick={() => {
             clearSession();
             onBack();
           }}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            fontSize: 14,
-            fontWeight: 700,
-            color: 'var(--text-secondary)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            marginBottom: 24
-          }}
         >
           <Icon name="arrowLeft" size={16} /> Back to Dashboard
-        </button>
+        </ResultItem>
 
-        {/* ── 1. {isMockMode ? "WRITING TEST COMPLETE" : "WRITING PRACTICE COMPLETE"} HERO CARD ── */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1.5px solid #151313',
-          borderRadius: 24,
-          padding: '40px',
-          marginBottom: 32,
-          boxShadow: '0 4px 0 #151313',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 28
-        }}>
+        {/* ── 1. HERO CARD ── */}
+        <ResultItem className="result-hero">
           <div>
-            <div style={{
-              display: 'inline-block',
-              fontSize: 12,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              fontWeight: 800,
-              padding: '4px 12px',
-              borderRadius: 8,
-              background: '#151313',
-              color: '#FFFFFF',
-              marginBottom: 12
-            }}>
+            <span className="result-eyebrow">
               {isMockMode ? "WRITING TEST COMPLETE" : "WRITING PRACTICE COMPLETE"}
-            </div>
-            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
-              Writing Assessment
-            </h1>
-            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
-              Task 1: <strong style={{ color: 'var(--text-primary)' }}>{result?.task1Words || 0} words</strong> (min 150) · Task 2: <strong style={{ color: 'var(--text-primary)' }}>{result?.task2Words || 0} words</strong> (min 250)
+            </span>
+            <h1 className="result-title">Writing Assessment</h1>
+            <p className="result-lead">
+              Task 1: <strong>{result?.task1Words || 0} words</strong> (min 150) · Task 2: <strong>{result?.task2Words || 0} words</strong> (min 250)
             </p>
             {result?.modelUsed && (
-              <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
-                  Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
-                  {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
-                </span>
-              </div>
+              <span className="result-meta-pill">
+                Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
+                {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
+              </span>
             )}
           </div>
 
-          <div style={{
-            background: 'var(--bg-canvas)',
-            padding: '24px 36px',
-            borderRadius: 20,
-            textAlign: 'center',
-            border: '1.5px solid #151313',
-            boxShadow: '0 2px 0 #151313',
-            minWidth: 180
-          }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {isCompleted ? 'OVERALL BAND' : 'AI EVALUATION'}
+          <div className="result-band-box">
+            <div className="result-band-label">
+              {isCompleted ? 'Overall band' : 'AI evaluation'}
             </div>
-            <div style={{
-              fontSize: isCompleted ? 54 : 20,
-              fontWeight: 800,
-              color: isCompleted ? 'var(--c-coral)' : 'var(--text-secondary)',
-              lineHeight: 1.1,
-              marginTop: 6,
-              fontFamily: 'Kodchasan, sans-serif'
-            }}>
+            <div className={`result-band-value${isCompleted ? '' : ' is-text'}`}>
               {isCompleted ? result.band.toFixed(1) : (isPartial ? 'Partial' : (isFailed ? 'Unavailable' : 'Pending'))}
             </div>
             {isPartial && result?.coverage?.statement && (
-              <div style={{ fontSize: 12.5, color: 'var(--text-primary)', marginTop: 8, fontWeight: 700, maxWidth: 360 }}>
-                {result.coverage.statement}
-              </div>
+              <div className="result-band-note">{result.coverage.statement}</div>
             )}
             {isPartial && (
-              <div style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 4, fontWeight: 600, maxWidth: 360 }}>
+              <div className="result-band-note" style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>
                 Feedback below covers only what you wrote — no overall band.
               </div>
             )}
-            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
+            <div className="result-band-sub" style={{ marginTop: 6 }}>
               Target: {getTargetBand() || '8.0'}
             </div>
             {isFailed && (
@@ -499,56 +536,24 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
                 type="button"
                 onClick={handleRecheck}
                 disabled={isRechecking}
-                className="btn-coral-pill-physical"
-                style={{
-                  marginTop: 10,
-                  padding: '6px 14px',
-                  fontSize: 12,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  cursor: isRechecking ? 'wait' : 'pointer'
-                }}
+                className="result-btn is-yellow is-small"
+                style={{ marginTop: 12 }}
               >
-                <Icon name="refresh" size={13} />
+                <Icon name="refresh" size={14} />
                 <span>{isRechecking ? 'Rechecking…' : 'Recheck'}</span>
               </button>
             )}
           </div>
-        </div>
-
-                {!isMockMode && result?.criteria && (
-          <ErrorBoundary fallback={null}>
-            <div style={{ marginBottom: 36 }}>
-              <ResultAnalysis skill="writing" resultRecord={{ writing: { ...result, criteria: result.criteria } }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-            </div>
-          </ErrorBoundary>
-        )}
+        </ResultItem>
 
         {/* ── 2. AI NOTICE IF KEY MISSING OR FAILED ── */}
         {!isPartial && isFailed && (
-          <div style={{
-            background: 'rgba(255, 87, 52, 0.08)',
-            border: '1.5px solid #151313',
-            borderRadius: 18,
-            padding: '20px 24px',
-            marginBottom: 32,
-            boxShadow: '0 3px 0 #151313',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 16
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16, flex: 1, minWidth: 260 }}>
-              <Icon name="alertCircle" size={24} style={{ color: 'var(--c-coral)', flexShrink: 0 }} />
-              <div>
-                <div style={{ fontWeight: 800, fontSize: 15, color: '#151313' }}>
-                  AI Evaluation Unavailable
-                </div>
-                <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 4 }}>
-                  {result?.message || 'To receive official IELTS criteria scoring and detailed band feedback, configure your Google Gemini API key in Settings.'}
-                </div>
+          <ResultItem className="result-callout is-error has-action" role="alert">
+            <span className="result-callout-icon"><Icon name="alertCircle" size={24} /></span>
+            <div className="result-callout-body">
+              <div className="result-callout-title">AI Evaluation Unavailable</div>
+              <div className="result-callout-text">
+                {result?.message || 'To receive official IELTS criteria scoring and detailed band feedback, configure your Google Gemini API key in Settings.'}
               </div>
             </div>
             <button
@@ -556,261 +561,179 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
               type="button"
               onClick={handleRecheck}
               disabled={isRechecking}
-              style={{
-                padding: '10px 20px',
-                borderRadius: 12,
-                background: 'var(--c-yellow, #F5A623)',
-                color: '#151313',
-                fontSize: 14,
-                fontWeight: 800,
-                border: '1.5px solid #151313',
-                boxShadow: '0 3px 0 #151313',
-                cursor: isRechecking ? 'wait' : 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                flexShrink: 0,
-                fontFamily: 'Kodchasan, sans-serif'
-              }}
+              className="result-btn is-yellow is-small"
             >
               <Icon name="refresh" size={16} />
               <span>{isRechecking ? 'Rechecking…' : 'Recheck with AI'}</span>
             </button>
-          </div>
+          </ResultItem>
+        )}
+
+        {!isMockMode && result?.criteria && (
+          <ErrorBoundary fallback={null}>
+            <ResultItem>
+              <ResultAnalysis skill="writing" resultRecord={{ writing: { ...result, criteria: result.criteria } }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+            </ResultItem>
+          </ErrorBoundary>
         )}
 
         {/* ── 3. FOUR ASSESSMENT CRITERIA CARDS ── */}
-        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
-          Official Assessment Criteria
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginBottom: 36 }}>
-          {criteriaList.map((c) => {
-            const hasBand = typeof c.data?.band === 'number';
-
-            return (
-              <div
-                key={c.id}
-                style={{
-                  background: 'var(--bg-card)',
-                  border: '1.5px solid #151313',
-                  borderRadius: 20,
-                  padding: 24,
-                  boxShadow: '0 3px 0 #151313',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 10
-                }}
-              >
-                <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>
-                  {c.title}
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-                  <span style={{ fontSize: 36, fontWeight: 800, color: hasBand ? 'var(--c-coral)' : 'var(--text-primary)', fontFamily: 'Kodchasan, sans-serif' }}>
-                    {hasBand ? c.data.band.toFixed(1) : (isPartial ? 'Not scored' : '--')}
-                  </span>
-                  {hasBand && <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)' }}>/ 9.0</span>}
-                </div>
-                {hasBand && typeof c.t1?.band === 'number' && typeof c.t2?.band === 'number' && (
-                  <div className="writing-criterion-split" aria-label="Band per task">
-                    <span>Task 1 · <strong>{c.t1.band}</strong></span>
-                    <span>Task 2 · <strong>{c.t2.band}</strong></span>
-                  </div>
-                )}
-
-                <div style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5, marginTop: 4 }}>
-                  {c.data?.rationale || c.data?.evidence || c.defaultNote}
-                </div>
-
-                {c.data?.improvementFocus && (
-                  <div style={{ fontSize: 12, color: 'var(--text-primary)', fontWeight: 600, marginTop: 'auto', paddingTop: 8, borderTop: '1px solid rgba(21,19,19,0.1)' }}>
-                    <strong style={{ color: 'var(--c-coral)' }}>Focus: </strong>{c.data.improvementFocus}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <ResultItem as="section">
+          <div className="result-section-head">
+            <h2 className="result-section-title">Official Assessment Criteria</h2>
+            <p className="result-section-sub">How your writing measured against each IELTS band descriptor.</p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            {criteriaList.map((c) => {
+              const hasBand = typeof c.data?.band === 'number';
+              // Prefer the richer per-criterion feedback; fall back to the
+              // older evidence/rationale/improvementFocus fields.
+              const taskCorrections = [
+                ...(Array.isArray(c.t1?.corrections) ? c.t1.corrections.map(x => ({ task: 1, ...x })) : []),
+                ...(Array.isArray(c.t2?.corrections) ? c.t2.corrections.map(x => ({ task: 2, ...x })) : []),
+              ];
+              const corrections = Array.isArray(c.data?.corrections) && c.data.corrections.length > 0
+                ? c.data.corrections
+                : taskCorrections;
+              return (
+                <CriterionFeedbackCard
+                  key={c.id}
+                  title={c.title}
+                  subtitle={c.defaultNote}
+                  band={hasBand ? c.data.band : null}
+                  bandFallback={isPartial ? 'Not scored' : 'Unavailable'}
+                  assessment={c.data?.personalizedAssessment || c.data?.rationale || c.data?.evidence || (hasBand ? null : c.defaultNote)}
+                  corrections={corrections}
+                  advice={c.data?.nextBandAdvice || c.data?.improvementFocus}
+                >
+                  {hasBand && typeof c.t1?.band === 'number' && typeof c.t2?.band === 'number' && (
+                    <div className="result-feedback-split" aria-label="Band per task">
+                      <span className="result-badge">Task 1 · <strong>{c.t1.band}</strong></span>
+                      <span className="result-badge">Task 2 · <strong>{c.t2.band}</strong></span>
+                    </div>
+                  )}
+                </CriterionFeedbackCard>
+              );
+            })}
+          </div>
+        </ResultItem>
 
         {isCompleted && (result?.scoringMethod || result?.scoringNotes?.length > 0) && (
-          <div className="writing-scoring-method">
+          <ResultItem className="writing-scoring-method">
             {(result.scoringNotes || []).map((n, i) => <p key={i} className="writing-scoring-note">{n}</p>)}
             {result.scoringMethod && <p>{result.scoringMethod}</p>}
-          </div>
+          </ResultItem>
         )}
 
         {/* ── 4. PERFORMANCE SUMMARY & FEEDBACK ── */}
-        {(result?.overallSummary || result?.task1Feedback || result?.task2Feedback || result?.strengths || result?.areasForImprovement) && (
-          <div style={{
-            background: 'var(--bg-card)',
-            border: '1.5px solid #151313',
-            borderRadius: 20,
-            padding: '28px 32px',
-            marginBottom: 36,
-            boxShadow: '0 3px 0 #151313'
-          }}>
-            <h3 style={{ fontSize: 18, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>
-              Examiner Diagnostic Feedback
-            </h3>
+        {(result?.overallSummary || result?.priorityWeaknesses?.length > 0 || result?.task1Feedback || result?.task2Feedback || result?.strengths || result?.areasForImprovement) && (
+          <ResultItem as="section" className="result-card">
+            <div className="result-card-head">
+              <h3 className="result-card-title">Examiner Diagnostic Feedback</h3>
+            </div>
             {result?.overallSummary && (
-              <p style={{ fontSize: 15, color: 'var(--text-primary)', lineHeight: 1.6, margin: '0 0 20px' }}>
-                {result.overallSummary}
-              </p>
+              <p className="result-text" style={{ marginBottom: 20 }}>{result.overallSummary}</p>
             )}
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+            {Array.isArray(result?.priorityWeaknesses) && result.priorityWeaknesses.length > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <div className="result-label is-accent">Top priorities for your next band</div>
+                <ol className="result-list">
+                  {result.priorityWeaknesses.map((item, idx) => (
+                    <li key={idx} className="result-list-item">
+                      <span className="result-list-num">{idx + 1}.</span>
+                      <span className="result-list-body">{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            <div className="result-grid is-wide">
               {result?.task1Feedback && (
-                <div style={{ padding: 18, borderRadius: 14, background: 'rgba(252, 204, 66, 0.12)', border: '1px solid #151313' }}>
-                  <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--text-primary)', textTransform: 'uppercase', marginBottom: 6 }}>
+                <div className="result-subcard is-yellow">
+                  <div className="result-label">
                     Task 1 Feedback ({isCompleted && result.task1Band ? `Band ${result.task1Band}` : 'Report'})
                   </div>
-                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                    {result.task1Feedback}
-                  </div>
+                  <p className="result-text">{result.task1Feedback}</p>
                 </div>
               )}
-
               {result?.task2Feedback && (
-                <div style={{ padding: 18, borderRadius: 14, background: 'rgba(190, 148, 245, 0.12)', border: '1px solid #151313' }}>
-                  <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--text-primary)', textTransform: 'uppercase', marginBottom: 6 }}>
+                <div className="result-subcard is-lavender">
+                  <div className="result-label">
                     Task 2 Feedback ({isCompleted && result.task2Band ? `Band ${result.task2Band}` : 'Essay'})
                   </div>
-                  <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                    {result.task2Feedback}
-                  </div>
+                  <p className="result-text">{result.task2Feedback}</p>
                 </div>
               )}
             </div>
 
             {(result?.strengths || result?.areasForImprovement) && (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginTop: 20 }}>
+              <div className="result-grid is-wide" style={{ marginTop: 18 }}>
                 {result?.strengths && (
-                  <div style={{ padding: 16, borderRadius: 14, background: 'var(--bg-canvas)', border: '1px solid rgba(21,19,19,0.2)' }}>
-                    <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--text-primary)', textTransform: 'uppercase', marginBottom: 6 }}>
-                      Observed Strengths
-                    </div>
-                    <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                      {result.strengths}
-                    </div>
+                  <div className="result-subcard">
+                    <div className="result-label is-good">Observed Strengths</div>
+                    <p className="result-text">{result.strengths}</p>
                   </div>
                 )}
                 {result?.areasForImprovement && (
-                  <div style={{ padding: 16, borderRadius: 14, background: 'rgba(255, 87, 52, 0.08)', border: '1px solid #151313' }}>
-                    <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--text-primary)', textTransform: 'uppercase', marginBottom: 6 }}>
-                      Areas for Improvement
-                    </div>
-                    <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                      {result.areasForImprovement}
-                    </div>
+                  <div className="result-subcard is-coral">
+                    <div className="result-label is-accent">Areas for Improvement</div>
+                    <p className="result-text">{result.areasForImprovement}</p>
                   </div>
                 )}
               </div>
             )}
-          </div>
+          </ResultItem>
         )}
 
         {/* ── 5. YOUR SUBMISSIONS ── */}
-        <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 16px' }}>
-          Your Submitted Essays
-        </h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 44 }}>
-          {/* Task 1 */}
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 18, padding: '24px', boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--c-coral)', textTransform: 'uppercase' }}>Task 1 Submission</span>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', padding: '2px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid #151313' }}>
-                {wordCount(t1)} words
-              </span>
-            </div>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12, fontStyle: 'italic' }}>
-              {test.task1?.prompt}
-            </div>
-            <div style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap', padding: '16px', background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)' }}>
-              {t1 || '(No response submitted)'}
-            </div>
+        <ResultItem as="section">
+          <div className="result-section-head">
+            <h2 className="result-section-title">Your Submitted Essays</h2>
           </div>
-
-          {/* Task 2 */}
-          <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 18, padding: '24px', boxShadow: '0 3px 0 #151313' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--c-coral)', textTransform: 'uppercase' }}>Task 2 Submission</span>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', padding: '2px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid #151313' }}>
-                {wordCount(t2)} words
-              </span>
-            </div>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12, fontStyle: 'italic' }}>
-              {test.task2?.prompt}
-            </div>
-            <div style={{ fontSize: 14, color: 'var(--text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap', padding: '16px', background: 'var(--bg-canvas)', borderRadius: 12, border: '1px solid rgba(21,19,19,0.1)' }}>
-              {t2 || '(No response submitted)'}
-            </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {[
+              { key: 't1', label: 'Task 1 Submission', prompt: test.task1?.prompt, text: t1 },
+              { key: 't2', label: 'Task 2 Submission', prompt: test.task2?.prompt, text: t2 },
+            ].map(sub => (
+              <div key={sub.key} className="result-card">
+                <div className="result-card-head" style={{ alignItems: 'center' }}>
+                  <span className="result-label is-accent" style={{ margin: 0 }}>{sub.label}</span>
+                  <span className="result-badge">{wordCount(sub.text)} words</span>
+                </div>
+                {sub.prompt && <p className="result-essay-prompt">{sub.prompt}</p>}
+                <div className="result-essay">{sub.text || '(No response submitted)'}</div>
+              </div>
+            ))}
           </div>
-        </div>
+        </ResultItem>
 
         {/* ── 6. PROMINENT SAVE SCORE & RETURN BUTTON + RECHECK ── */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-          gap: 16,
-          paddingTop: 16,
-          borderTop: '1.5px solid #151313',
-          flexWrap: 'wrap'
-        }}>
+        <ResultItem className="result-actions">
           {isFailed && (
             <button
               id="recheck-writing-footer-btn"
               type="button"
               onClick={handleRecheck}
               disabled={isRechecking}
-              style={{
-                padding: '16px 28px',
-                borderRadius: 16,
-                background: 'var(--surface-alt)',
-                color: 'var(--text-primary)',
-                fontSize: 15,
-                fontWeight: 700,
-                border: '1.5px solid #151313',
-                cursor: isRechecking ? 'wait' : 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                boxShadow: '0 3px 0 #151313',
-                fontFamily: 'Kodchasan, sans-serif'
-              }}
+              className="result-btn is-secondary"
             >
               <Icon name="refresh" size={16} />
               <span>{isRechecking ? 'Rechecking…' : 'Recheck with AI'}</span>
             </button>
           )}
-          <motion.button
+          <button
             id="save-writing-result-btn"
             type="button"
             onClick={handleSaveAndReturn}
-            whileHover={{ y: -3, boxShadow: '0 6px 0 #151313' }}
-            whileTap={{ y: 2, scale: 0.98, boxShadow: '0 1px 0 #151313' }}
-            transition={{ type: 'spring', stiffness: 500, damping: 25 }}
-            style={{
-              padding: '16px 36px',
-              borderRadius: 16,
-              background: '#FF5734',
-              color: '#151313',
-              fontSize: 16,
-              fontWeight: 800,
-              border: '1.5px solid #151313',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              boxShadow: '0 4px 0 #151313',
-              fontFamily: 'Kodchasan, sans-serif'
-            }}
+            className="result-btn is-primary"
           >
             <Icon name="check" size={18} />
             <span>Save Score & Return to Dashboard</span>
-          </motion.button>
-        </div>
-      </div>
+          </button>
+        </ResultItem>
+      </ResultPage>
     );
   }
 
@@ -826,6 +749,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
   return (
     <div className="exam-focus-layout reading-split-active writing-split">
+      <ScrollToTop />
       {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
@@ -839,9 +763,25 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
         <div className="exam-focus-header-right">
           <TextSizeControl scale={textScale} onChange={setTextScale} />
-          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} title="Time remaining">
+
+          {!isMockMode && (
+            <button
+              type="button"
+              className={`exam-focus-pause-btn ${isTimerPaused ? 'paused' : ''}`}
+              onClick={toggleTimerPause}
+              title={isTimerPaused ? "Resume Exam Timer" : "Pause Exam Timer"}
+            >
+              <Icon name={isTimerPaused ? 'play' : 'pause'} size={14} />
+              <span>{isTimerPaused ? 'Resume' : 'Pause'}</span>
+            </button>
+          )}
+
+          <div
+            className={`exam-focus-timer-pill ${timeLeft < 300 && !isOvertime ? 'urgent' : ''} ${isTimerPaused ? 'paused' : ''} ${isOvertime ? 'overtime' : ''}`}
+            title={isTimerPaused ? 'Exam timer paused' : isOvertime ? 'Standard time elapsed (Practice overtime)' : 'Time remaining'}
+          >
             <Icon name="clock" size={16} />
-            <span>{FMT(timeLeft)}</span>
+            <span>{isTimerPaused ? `${FMT(timeLeft)} [PAUSED]` : isOvertime ? '00:00 (Overtime)' : FMT(timeLeft)}</span>
           </div>
 
           <button
@@ -859,6 +799,44 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
           </button>
         </div>
       </div>
+
+      {/* ── PRACTICE OVERTIME NOTIFICATION (Non-strict exit in Practice Mode) ── */}
+      {isOvertime && !isMockMode && (
+        <div className="practice-overtime-banner" style={{ margin: '16px 24px 0' }}>
+          <div className="practice-overtime-content">
+            <Icon name="clock" size={20} style={{ color: '#8A6D00', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 14.5, color: '#151313' }}>
+                Standard Practice Time Elapsed (60 Minutes)
+              </div>
+              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 2 }}>
+                In Practice Mode, the exam does not force-exit. Take all the time you need to complete both writing tasks! When finished, click &ldquo;Finish &amp; Grade Exam&rdquo; below.
+              </div>
+            </div>
+          </div>
+          <div className="practice-overtime-actions">
+            <button
+              type="button"
+              className="practice-add-time-btn"
+              onClick={() => {
+                setTimeLeft(t => t + 5 * 60);
+                setIsOvertime(false);
+              }}
+              title="Add 5 minutes of practice time"
+            >
+              +5 Mins
+            </button>
+            <button
+              type="button"
+              className="practice-submit-now-btn"
+              onClick={() => handleSubmit()}
+              title="Finish test and grade essays now"
+            >
+              Finish &amp; Grade
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Compact widths: one pane at a time */}
       <div className="rd-pane-switch" role="tablist" aria-label="Writing workspace">

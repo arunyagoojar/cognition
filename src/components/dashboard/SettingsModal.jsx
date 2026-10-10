@@ -444,7 +444,7 @@ export default function SettingsModal({
 
               {credentialStatus?.configured && credentialStatus.local && !isReplacing && (
                 <div style={{ marginTop: 6, fontSize: 11, color: 'var(--text-secondary)' }}>
-                  Stored locally on this device only — never sent to Cognition&apos;s servers. AI evaluation runs directly from this browser.
+                  Stored on this device only and removed when you sign out. It is never saved on Cognition&apos;s servers; it is sent securely with each evaluation request and used only for that request.
                 </div>
               )}
 

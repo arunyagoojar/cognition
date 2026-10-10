@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
-import { evaluateListeningResponses } from '../../utils/evaluation/evaluationEngine';
+import { evaluateListeningResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
+import { calculateListeningBand } from '../../utils/bandCalculator';
 import AnswerReviewList from '../common/AnswerReviewList';
 import { MultiChoice } from '../reading/ReadingQuestionGroup';
-import { recordAttemptedQuestionSet } from '../../utils/storage';
+import { recordAttemptedQuestionSet, getTargetBand } from '../../utils/storage';
 import ExamStartScreen from './ExamStartScreen';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
+import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
+import ScrollToTop from '../common/ScrollToTop.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
-export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
+export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
   const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
@@ -29,22 +32,55 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   const [audioDuration, setAudioDuration] = useState(0);
   const [audioCurrentTime, setAudioCurrentTime] = useState(0);
   const [volume, setVolume] = useState(1);
+  const [playbackSpeed, setPlaybackSpeed] = useState(1);
+
+  // Practice mode states (pause timer, overtime notification)
+  const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [isOvertime, setIsOvertime] = useState(false);
 
   const timerRef = useRef(null);
   const audioRef = useRef(null);
 
+  // References to prevent stale closure bugs when timer expires or async steps resolve
+  const answersRef = useRef(answers);
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+
+  const testRef = useRef(test);
+  useEffect(() => {
+    testRef.current = test;
+  }, [test]);
+
+  const handleSubmitRef = useRef();
+
+  // Practice results are saved the moment they exist, so leaving via Back,
+  // refreshing or closing the tab never loses the score.
+  useEffect(() => {
+    if (phase === 'results' && result && !isMockMode) onSave?.(result);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, result, isMockMode]);
+
   const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
-          handleSubmit();
-          return 0;
+          if (isMockMode) {
+            // In Mock Exam mode: strict auto-submission upon timeout
+            clearInterval(timerRef.current);
+            handleSubmitRef.current?.();
+            return 0;
+          } else {
+            // In Practice Mode: DO NOT force-exit! Keep student in the exam with overtime notice
+            setIsOvertime(true);
+            return 0;
+          }
         }
         return t - 1;
       });
     }, 1000);
-  }, []);
+  }, [isMockMode]);
 
   useEffect(() => {
     if (initialPhase === 'exam') {
@@ -67,6 +103,17 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     startTimer();
   };
 
+  const toggleTimerPause = () => {
+    if (isMockMode) return;
+    if (isTimerPaused) {
+      setIsTimerPaused(false);
+      startTimer();
+    } else {
+      setIsTimerPaused(true);
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+  };
+
   const togglePlayAudio = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
@@ -75,6 +122,29 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     } else {
       audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
     }
+  };
+
+  const handleSkipBackward = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 10);
+  };
+
+  const handleSkipForward = () => {
+    if (!audioRef.current || !audioDuration) return;
+    audioRef.current.currentTime = Math.min(audioDuration, audioRef.current.currentTime + 10);
+  };
+
+  const handleSpeedChange = (spd) => {
+    setPlaybackSpeed(spd);
+    if (audioRef.current) {
+      audioRef.current.playbackRate = spd;
+    }
+  };
+
+  const handleReplay = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = 0;
+    audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
   };
 
   const handleAudioTimeUpdate = () => {
@@ -99,6 +169,13 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     clearInterval(timerRef.current);
     if (audioRef.current) audioRef.current.pause();
 
+    // Full mock: the whole exam is graded once at the end — hand over the
+    // answers and move straight on to Reading.
+    if (isMockMode) {
+      onComplete?.({ answers: { ...(answersRef.current || answers) }, status: 'submitted' });
+      return;
+    }
+
     // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
     setProcessingStep(0);
@@ -108,19 +185,29 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
     const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
     const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
 
+    const currentAnswers = answersRef.current || answers;
+    const currentTest = testRef.current || test;
+
     try {
       // Fetch the test again WITH answers for grading; scoring is the shared
       // deterministic engine (official key notation, order-free "choose N").
-      const gradedTest = getListeningTest(test.testId, true);
-      recordAttemptedQuestionSet('listening', test.testId);
-      const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers });
+      const gradedTest = getListeningTest(currentTest?.testId || testId, true) || currentTest;
+      recordAttemptedQuestionSet('listening', currentTest?.testId || testId);
+      const evalResult = await evaluateListeningResponses({ sections: gradedTest.parts, answers: currentAnswers });
+      const rawScore = evalResult.raw ?? 0;
+      const totalScore = evalResult.total || 40;
+      const percentageScore = evalResult.percentage || (totalScore ? Math.round((rawScore / totalScore) * 100) : 0);
+      const computedBand = (typeof evalResult.band === 'number' && Number.isFinite(evalResult.band))
+        ? evalResult.band
+        : calculateListeningBand(rawScore);
+
       const computedResult = {
         ...evalResult,
-        band: evalResult.status === 'not_attempted' ? null : evalResult.band,
-        raw: evalResult.raw || 0,
-        total: evalResult.total || 40,
-        percentage: evalResult.percentage || 0,
-        answers
+        band: computedBand,
+        raw: rawScore,
+        total: totalScore,
+        percentage: percentageScore,
+        answers: currentAnswers
       };
 
       setTest(gradedTest);
@@ -141,10 +228,53 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       clearTimeout(stepTimer1);
       clearTimeout(stepTimer2);
       clearTimeout(stepTimer3);
-      setIsSubmitting(false);
-      setPhase('exam');
+
+      // Robust Fallback: Grade deterministically so candidate is NEVER left stranded without a score!
+      try {
+        const gradedTest = getListeningTest(currentTest?.testId || testId, true) || currentTest;
+        const allQuestions = (gradedTest?.parts || []).flatMap(p => p.questions || []);
+        let localRaw = 0;
+        const itemResults = {};
+        for (const q of allQuestions) {
+          const userAns = currentAnswers[q.id];
+          const isCorrect = isCandidateAnswerCorrect(userAns, q.acceptedAnswers || q.answer);
+          if (isCorrect) localRaw++;
+          itemResults[q.id] = {
+            deterministicCorrect: isCorrect,
+            finalResult: isCorrect ? 'CORRECT' : 'INCORRECT',
+            officialAnswer: q.answer,
+            candidateAnswer: userAns || null,
+            questionNumber: q.questionNumber ?? null,
+            questionType: q.type || q.questionType || null,
+          };
+        }
+        const localBand = calculateListeningBand(localRaw);
+        const fallbackResult = {
+          status: 'completed',
+          band: localBand,
+          raw: localRaw,
+          total: allQuestions.length || 40,
+          percentage: allQuestions.length ? Math.round((localRaw / allQuestions.length) * 100) : 0,
+          answers: currentAnswers,
+          itemResults
+        };
+
+        if (isMockMode) {
+          if (onComplete) onComplete(fallbackResult);
+          return;
+        }
+
+        setResult(fallbackResult);
+        setPhase('results');
+      } catch (fallbackErr) {
+        console.error('Critical evaluation fallback error:', fallbackErr);
+        setIsSubmitting(false);
+        setPhase('exam');
+      }
     }
   };
+
+  handleSubmitRef.current = handleSubmit;
 
   /* ──────────────────────────────────────────────────────────
      1. INTRO SCREEN
@@ -180,6 +310,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   if (phase === 'processing') {
     return (
       <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <ScrollToTop />
         <div style={{
           background: 'var(--surface-elevated)',
           border: '1px solid var(--border-subtle)',
@@ -244,168 +375,93 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
-    const isBandHigh = result?.band >= 7.0;
 
     return (
-      <div style={{ maxWidth: 960, margin: '40px auto', padding: '0 24px 80px' }}>
-        <button
-          onClick={onBack}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            fontSize: 14,
-            fontWeight: 600,
-            color: 'var(--text-secondary)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            marginBottom: 24
-          }}
-        >
+      <ResultPage skill="listening">
+        <ResultItem as="button" type="button" className="result-back-btn" onClick={onBack}>
           <Icon name="arrowLeft" size={16} /> Back to Dashboard
-        </button>
+        </ResultItem>
 
         {/* OVERALL HERO CARD */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1.5px solid #151313',
-          borderRadius: 24,
-          padding: '40px',
-          marginBottom: 32,
-          boxShadow: '0 4px 0 #151313',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 24
-        }}>
+        <ResultItem className="result-hero">
           <div>
-            <div style={{
-              display: 'inline-block',
-              fontSize: 12,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              fontWeight: 800,
-              padding: '4px 12px',
-              borderRadius: 8,
-              background: '#151313',
-              color: '#FCCC42',
-              marginBottom: 12
-            }}>
+            <span className="result-eyebrow">
               {isMockMode ? "LISTENING TEST COMPLETE" : "LISTENING PRACTICE COMPLETE"}
-            </div>
-            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
-              Listening Assessment
-            </h1>
-            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
-              Score: <strong style={{ color: 'var(--text-primary)' }}>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
+            </span>
+            <h1 className="result-title">Listening Assessment</h1>
+            <p className="result-lead">
+              Score: <strong>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
               {result?.unresolvedCount > 0 && (
-                <span style={{ display: 'block', marginTop: 4, fontSize: 13.5, color: '#8A6D00', fontWeight: 600 }}>
-                  ⚠ Provisional range: {result.rawMin}–{result.rawMax} correct ({result.unresolvedCount} answer{result.unresolvedCount > 1 ? 's' : ''} pending review)
+                <span className="result-warn-line">
+                  Provisional range: {result.rawMin}–{result.rawMax} correct ({result.unresolvedCount} answer{result.unresolvedCount > 1 ? 's' : ''} pending review)
                 </span>
               )}
             </p>
           </div>
 
-          <div style={{
-            background: 'var(--bg-canvas)',
-            padding: '24px 36px',
-            borderRadius: 20,
-            textAlign: 'center',
-            border: '1.5px solid #151313',
-            boxShadow: '0 2px 0 #151313',
-            minWidth: 180
-          }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {result?.unresolvedCount > 0 ? 'PROVISIONAL BAND' : 'ESTIMATED BAND'}
+          <div className="result-band-box">
+            <div className="result-band-label">
+              {result?.unresolvedCount > 0 ? 'Provisional band' : 'Estimated band'}
             </div>
-            <div style={{
-              fontSize: result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax ? 42 : 54,
-              fontWeight: 800,
-              color: 'var(--c-coral)',
-              lineHeight: 1.1,
-              marginTop: 6,
-              fontFamily: 'Kodchasan, sans-serif'
-            }}>
-              {result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax
-                ? `${result.bandMin.toFixed(1)}–${result.bandMax.toFixed(1)}`
-                : (result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--')}
-            </div>
-            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
-              {result?.unresolvedCount > 0 ? 'Range pending review' : 'Target: 8.0'}
+            {result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax ? (
+              <div className="result-band-value is-range">
+                {`${result.bandMin.toFixed(1)}–${result.bandMax.toFixed(1)}`}
+              </div>
+            ) : (
+              <div className={`result-band-value${result?.band !== null && result?.band !== undefined ? '' : ' is-empty'}`}>
+                {result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--'}
+              </div>
+            )}
+            <div className="result-band-sub">
+              {result?.unresolvedCount > 0 ? 'Range pending review' : `Target: ${getTargetBand() || '8.0'}`}
             </div>
           </div>
-        </div>
+        </ResultItem>
 
         {result?.unresolvedCount > 0 && (
-          <div style={{
-            background: 'rgba(252, 204, 66, 0.12)',
-            border: '1.5px solid #FCCC42',
-            borderRadius: 16,
-            padding: '16px 20px',
-            marginBottom: 28,
-            display: 'flex',
-            alignItems: 'flex-start',
-            gap: 12
-          }}>
-            <Icon name="alertCircle" size={20} style={{ color: '#8A6D00', flexShrink: 0, marginTop: 2 }} />
-            <div>
-              <div style={{ fontWeight: 800, fontSize: 14, color: '#8A6D00' }}>
-                Unresolved Answers Pending Review
-              </div>
-              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 4, lineHeight: 1.5 }}>
+          <ResultItem className="result-callout" role="note">
+            <span className="result-callout-icon"><Icon name="alertCircle" size={22} /></span>
+            <div className="result-callout-body">
+              <div className="result-callout-title">Unresolved answers pending review</div>
+              <div className="result-callout-text">
                 {result.unresolvedCount} free-text answer{result.unresolvedCount > 1 ? 's' : ''} could not be automatically confirmed against the official answer key.
                 Per official IELTS marking principles, credit is not awarded automatically without verified equivalence. Your confirmed score is {result.raw} (Band {result.bandMin.toFixed(1)}), with a potential score of up to {result.rawMax} (Band {result.bandMax.toFixed(1)}) if resolved.
               </div>
             </div>
-          </div>
+          </ResultItem>
         )}
 
-                {!isMockMode && result?.itemResults && (
-          <div style={{ marginBottom: 36 }}>
+        {/* Detailed analysis — question-type performance + recommendations */}
+        {!isMockMode && result?.itemResults && (
+          <ResultItem>
             <ResultAnalysis skill="listening" resultRecord={{ listening: result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-          </div>
+          </ResultItem>
         )}
-
-
 
         {/* Answer review — every question, from the evaluated item results */}
         {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
-          <div style={{ marginBottom: 36 }}>
-            <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>Answer Review</h3>
+          <ResultItem as="section">
+            <div className="result-section-head">
+              <h2 className="result-section-title"><Icon name="pen" size={20} /> Answer review</h2>
+              <p className="result-section-sub">Every question with your answer and the official key. Use “To review” to focus on the ones you missed.</p>
+            </div>
             <AnswerReviewList itemResults={result.itemResults} showUnanswered />
-          </div>
+          </ResultItem>
         )}
 
         {/* PROMINENT CORAL CTA SAVE BUTTON */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 16, borderTop: '1.5px solid #151313' }}>
+        <ResultItem className="result-actions">
           <button
             id="save-listening-result-btn"
             type="button"
+            className="result-btn is-primary"
             onClick={() => onComplete && onComplete(result)}
-            style={{
-              padding: '16px 36px',
-              borderRadius: 16,
-              background: '#FF5734',
-              color: '#151313',
-              fontSize: 16,
-              fontWeight: 800,
-              border: '1.5px solid #151313',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              boxShadow: '0 4px 0 #151313',
-              fontFamily: 'Kodchasan, sans-serif'
-            }}
           >
             <Icon name="check" size={18} />
             <span>Save Score & Return to Dashboard</span>
           </button>
-        </div>
-      </div>
+        </ResultItem>
+      </ResultPage>
     );
   }
 
@@ -416,6 +472,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
 
   return (
     <div className="exam-focus-layout">
+      <ScrollToTop />
       {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
@@ -428,9 +485,24 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         </div>
 
         <div className="exam-focus-header-right">
-          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} title="Time remaining">
+          {!isMockMode && (
+            <button
+              type="button"
+              className={`exam-focus-pause-btn ${isTimerPaused ? 'paused' : ''}`}
+              onClick={toggleTimerPause}
+              title={isTimerPaused ? "Resume Exam Timer" : "Pause Exam Timer"}
+            >
+              <Icon name={isTimerPaused ? 'play' : 'pause'} size={14} />
+              <span>{isTimerPaused ? 'Resume Timer' : 'Pause Timer'}</span>
+            </button>
+          )}
+
+          <div
+            className={`exam-focus-timer-pill ${timeLeft < 300 && !isOvertime ? 'urgent' : ''} ${isTimerPaused ? 'paused' : ''} ${isOvertime ? 'overtime' : ''}`}
+            title={isTimerPaused ? 'Exam timer paused' : isOvertime ? 'Standard time elapsed (Practice overtime)' : 'Time remaining'}
+          >
             <Icon name="clock" size={16} />
-            <span>{FMT(timeLeft)}</span>
+            <span>{isTimerPaused ? `${FMT(timeLeft)} [PAUSED]` : isOvertime ? '00:00 (Overtime)' : FMT(timeLeft)}</span>
           </div>
 
           <button
@@ -445,6 +517,44 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           </button>
         </div>
       </div>
+
+      {/* ── 2. PRACTICE OVERTIME NOTIFICATION (Non-strict exit in Practice Mode) ── */}
+      {isOvertime && !isMockMode && (
+        <div className="practice-overtime-banner">
+          <div className="practice-overtime-content">
+            <Icon name="clock" size={20} style={{ color: '#8A6D00', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 14.5, color: '#151313' }}>
+                Standard Practice Time Elapsed (32 Minutes)
+              </div>
+              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 2 }}>
+                In Practice Mode, the exam does not force-exit. Take all the time you need to complete remaining questions! When finished, click &ldquo;Finish &amp; Grade Exam&rdquo; below.
+              </div>
+            </div>
+          </div>
+          <div className="practice-overtime-actions">
+            <button
+              type="button"
+              className="practice-add-time-btn"
+              onClick={() => {
+                setTimeLeft(t => t + 5 * 60);
+                setIsOvertime(false);
+              }}
+              title="Add 5 minutes of practice time"
+            >
+              +5 Mins
+            </button>
+            <button
+              type="button"
+              className="practice-submit-now-btn"
+              onClick={() => handleSubmit()}
+              title="Finish test and grade answers now"
+            >
+              Finish &amp; Grade
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ── 3. COGNITION NATIVE AUDIO PLAYER ── */}
       {currentPart?.audioFile && (
@@ -465,6 +575,28 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
             <Icon name={isPlaying ? 'pause' : 'play'} size={18} />
           </button>
 
+          {!isMockMode && (
+            <button
+              type="button"
+              onClick={handleSkipBackward}
+              className="audio-skip-btn"
+              title="Rewind 10 seconds"
+            >
+              <span>-10s</span>
+            </button>
+          )}
+
+          {!isMockMode && (
+            <button
+              type="button"
+              onClick={handleSkipForward}
+              className="audio-skip-btn"
+              title="Forward 10 seconds"
+            >
+              <span>+10s</span>
+            </button>
+          )}
+
           <span style={{ fontFamily: 'Kodchasan, monospace', fontSize: 13, fontWeight: 700, color: 'var(--text-secondary)', minWidth: 44 }}>
             {FMT(Math.floor(audioCurrentTime))}
           </span>
@@ -477,6 +609,34 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           <span style={{ fontFamily: 'Kodchasan, monospace', fontSize: 13, fontWeight: 700, color: 'var(--text-secondary)', minWidth: 44 }}>
             {audioDuration ? FMT(Math.floor(audioDuration)) : '08:15'}
           </span>
+
+          {!isMockMode && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+              {[0.75, 1, 1.25, 1.5].map((spd) => (
+                <button
+                  key={spd}
+                  type="button"
+                  className={`audio-speed-btn ${playbackSpeed === spd ? 'active' : ''}`}
+                  onClick={() => handleSpeedChange(spd)}
+                  title={`Set audio speed to ${spd}x`}
+                >
+                  {spd}x
+                </button>
+              ))}
+            </div>
+          )}
+
+          {!isMockMode && (
+            <button
+              type="button"
+              onClick={handleReplay}
+              className="audio-skip-btn"
+              title="Replay from beginning"
+            >
+              <Icon name="refreshCw" size={12} />
+              <span>Restart</span>
+            </button>
+          )}
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-secondary)' }}>
             <Icon name="volume" size={16} />
@@ -491,10 +651,17 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
                 setVolume(val);
                 if (audioRef.current) audioRef.current.volume = val;
               }}
-              style={{ width: 80, accentColor: 'var(--c-yellow)', cursor: 'pointer' }}
+              style={{ width: 70, accentColor: 'var(--c-yellow)', cursor: 'pointer' }}
               aria-label="Volume slider"
             />
           </div>
+
+          {!isMockMode && (
+            <div className="practice-mode-badge" title="Full pause, rewind & variable speed enabled in practice mode">
+              <Icon name="check" size={12} />
+              <span>Practice Audio Controls</span>
+            </div>
+          )}
         </div>
       )}
 

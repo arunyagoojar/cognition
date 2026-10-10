@@ -20,19 +20,20 @@ const tone = (secs, silenceAt = []) => {
 
 console.log('== On-device speech: segmenting ==');
 t('short answers are not split', () => {
-  const segs = splitAtPauses(tone(15));
+  const segs = splitAtPauses(tone(27));
   assert.equal(segs.length, 1);
 });
-t('a 2-minute answer becomes segments of at most 20 s covering all audio', () => {
+t('a 2-minute answer becomes segments of at most 28 s (inside Whisper\'s 30 s window) covering all audio', () => {
   const pcm = tone(120);
   const segs = splitAtPauses(pcm);
-  assert.ok(segs.every(s => s.length <= 20 * RATE));
+  assert.ok(segs.every(s => s.length <= 28 * RATE));
+  assert.ok(segs.length >= 5 && segs.length <= 7, `${segs.length} segments`);
   assert.equal(segs.reduce((n, s) => n + s.length, 0), pcm.length);
 });
 t('cuts land in the pause, not mid-word', () => {
-  const segs = splitAtPauses(tone(30, [[15, 15.6]]));
+  const segs = splitAtPauses(tone(40, [[22, 22.6]]));
   const cut = segs[0].length / RATE;
-  assert.ok(cut >= 15 && cut <= 15.6, `cut at ${cut.toFixed(2)} s`);
+  assert.ok(cut >= 22 && cut <= 22.6, `cut at ${cut.toFixed(2)} s`);
 });
 
 console.log(`\n${passed} passed, ${failed} failed`);

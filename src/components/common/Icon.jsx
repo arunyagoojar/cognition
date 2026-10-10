@@ -150,6 +150,12 @@ export default function Icon({ name, size = 16, className = '' }) {
       <>
         <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z" />
       </>
+    ),
+    search: (
+      <>
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </>
     )
   };
 

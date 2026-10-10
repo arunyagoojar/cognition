@@ -50,6 +50,7 @@ export class AIProvider {
         task2Words: t2Words,
         criteria: validated.criteria,
         taskCriteria: validated.taskCriteria || null,
+        priorityWeaknesses: validated.priorityWeaknesses || [],
         scoringNotes: validated.scoringNotes || [],
         scoringMethod: validated.scoringMethod || null,
         rubricVersion: validated.rubricVersion || null,
@@ -76,7 +77,7 @@ export class AIProvider {
   /**
    * Evaluate Speaking (Part 1 + Part 2 + Part 3) in one session-level server request.
    */
-  static async evaluateSpeaking({ transcripts = {}, testMeta = {}, audioRecordings = {}, attemptId = 'anon' }) {
+  static async evaluateSpeaking({ transcripts = {}, testMeta = {}, audioRecordings = {}, durations = {}, attemptId = 'anon' }) {
     const combinedSpeech = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
     const wordCount = combinedSpeech ? combinedSpeech.split(/\s+/).length : 0;
 
@@ -90,7 +91,7 @@ export class AIProvider {
       };
     }
 
-    const res = await evaluateSpeakingServer({ transcripts, testMeta });
+    const res = await evaluateSpeakingServer({ transcripts, testMeta, durations });
     const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation) : null;
 
     if (validated) {
@@ -104,6 +105,7 @@ export class AIProvider {
         partFeedback: validated.partFeedback || {},
         rubricVersion: validated.rubricVersion || null,
         overallSummary: validated.overallSummary,
+        priorityWeaknesses: validated.priorityWeaknesses || [],
         strengths: validated.strengths,
         areasForImprovement: validated.areasForImprovement,
         provider: { name: res?.provider || 'gemini', model: res?.model, tier: 'server' }

@@ -1,23 +1,34 @@
 /**
  * On-device speech-to-text transcriber interface.
- * Default: Whistle (Cactus Compute, 16.9 MB, Apache 2.0) with word timestamps (80 ms resolution).
- * Fallback: Moonshine Base (~250 MB).
+ * Primary: Whisper small.en (OpenAI, MIT), 4-bit on WebGPU (~300 MB download).
+ * Fallback: Whisper base.en (~80 MB, WASM) when WebGPU is missing, on phones /
+ * low-memory devices, or when small.en fails to load or run on this device.
  *
- * - Free, no API keys, private: runs on the candidate's device.
- * - Handles answers of 1–2 minutes by splitting at natural pauses into ≤20 s segments,
- *   preserving exact audio and calculating continuous word timestamps.
- * - Selective cleanup: upon successful download and load of Whistle, cleans only
- *   Moonshine cache entries from 'transformers-cache' once without touching any other storage.
+ * - Free, no API keys, private: runs on the candidate's device. Weights are
+ *   fetched once from the Hugging Face hub and cached by the browser.
+ * - Silence is trimmed (energy VAD) before transcription and silent segments
+ *   are skipped, so Whisper never "hears" words in a pause.
+ * - Handles answers of 1–2 minutes by splitting at natural pauses into ≤28 s
+ *   segments (Whisper pads every pass to 30 s, so fewer, fuller windows are
+ *   faster), preserving exact audio.
+ * - Legacy cleanup, once: Moonshine entries in 'transformers-cache' and the
+ *   old Whistle 'whistle-cache' bucket. Never touches any other storage.
  */
 import {
   STT_ENGINES,
   ENGINE_METADATA,
+  PRIMARY_STT_ENGINE,
   getPreferredSttEngine,
   setPreferredSttEngine,
+  markSmallEngineFailed,
+  clearSmallEngineFailure,
   isMoonshineCleanupDone,
   markMoonshineCleanupDone,
+  isWhistleCleanupDone,
+  markWhistleCleanupDone,
   formatTranscriptResult,
 } from './transcriberTypes.js';
+import { trimSilence, speechSeconds } from './transcriptGuards.js';
 
 export {
   STT_ENGINES,
@@ -27,13 +38,13 @@ export {
   isMoonshineCleanupDone,
   formatTranscriptResult,
 };
+export { trimSilence } from './transcriptGuards.js';
 
-const WHISTLE_HINT = '/stt/whistle.cact';
 const SAMPLE_RATE = 16000;
-const MAX_SEGMENT_S = 20;
-const MIN_SEGMENT_S = 12;
+const MAX_SEGMENT_S = 28;
+const MIN_SEGMENT_S = 18;
 
-export const MODEL_DOWNLOAD_MB = ENGINE_METADATA.whistle.downloadMb;
+export const MODEL_DOWNLOAD_MB = ENGINE_METADATA[PRIMARY_STT_ENGINE].downloadMb;
 
 let worker = null;
 let loadPromise = null;
@@ -46,9 +57,9 @@ let state = {
   progress: 0,
   cached: false,
   device: null,
-  engine: STT_ENGINES.WHISTLE,
-  version: ENGINE_METADATA.whistle.version,
-  downloadMb: ENGINE_METADATA.whistle.downloadMb,
+  engine: PRIMARY_STT_ENGINE,
+  version: ENGINE_METADATA[PRIMARY_STT_ENGINE].version,
+  downloadMb: ENGINE_METADATA[PRIMARY_STT_ENGINE].downloadMb,
   error: null,
 };
 
@@ -77,25 +88,38 @@ export function needsLocalStt() {
 }
 
 /**
- * Checks whether the Whistle model is already cached locally.
+ * True when the chosen engine's encoder is already in transformers.js's cache.
  */
-async function modelIsCached() {
+async function modelIsCached(engine) {
   try {
     if (typeof caches === 'undefined') return false;
-    if (await caches.has('whistle-cache')) {
-      const cache = await caches.open('whistle-cache');
-      const keys = await cache.keys();
-      return keys.some((r) => (r.url || '').includes('whistle.cact'));
-    }
-    return false;
+    if (!(await caches.has('transformers-cache'))) return false;
+    const cache = await caches.open('transformers-cache');
+    const keys = await cache.keys();
+    const repo = `${ENGINE_METADATA[engine].model}/resolve/`;
+    return keys.some((r) => {
+      const url = r.url || '';
+      return url.includes(repo) && url.includes('/onnx/encoder_model');
+    });
   } catch {
     return false;
   }
 }
 
+/** What the worker needs to pick small.en vs base.en for this device. */
+function deviceHints() {
+  const nav = typeof navigator !== 'undefined' ? navigator : {};
+  const mem = Number(nav.deviceMemory) || 0; // Chromium only; capped at 8
+  const ua = String(nav.userAgent || '');
+  const phone = /iPhone|iPod|Android.+Mobile|Mobile.+Firefox/i.test(ua);
+  return {
+    lowMemory: phone || (mem > 0 && mem < 4),
+  };
+}
+
 /**
  * Targeted Moonshine cleanup:
- * Runs once after Whistle is successfully downloaded and loaded.
+ * Runs once after the Whisper model is successfully downloaded and loaded.
  * Deletes ONLY Moonshine entries from 'transformers-cache'.
  * Never touches user results, API keys, or other site storage.
  * Silently catches and ignores all errors.
@@ -119,31 +143,61 @@ export async function cleanupMoonshineCacheOnce() {
   }
 }
 
+/**
+ * Removes the retired Whistle model (~17 MB 'whistle-cache' bucket) once.
+ * Only that bucket; silently ignores errors.
+ */
+export async function cleanupWhistleCacheOnce() {
+  if (isWhistleCleanupDone()) return;
+  try {
+    if (typeof caches !== 'undefined' && typeof caches.delete === 'function') {
+      await caches.delete('whistle-cache');
+    }
+    markWhistleCleanupDone();
+  } catch {
+    /* Silent ignore */
+  }
+}
+
 function ensureWorker() {
   if (worker) return worker;
   worker = new Worker(new URL('./sttWorker.js', import.meta.url), { type: 'module' });
   worker.onmessage = (e) => {
     const m = e.data || {};
-    if (m.type === 'progress') {
+    if (m.type === 'engine') {
+      setState({
+        engine: m.engine,
+        device: m.device,
+        version: m.version || ENGINE_METADATA[m.engine]?.version,
+        downloadMb: m.downloadMb || ENGINE_METADATA[m.engine]?.downloadMb,
+      });
+      // The worker may pick a different engine than the one checked up front.
+      modelIsCached(m.engine).then((cached) => {
+        if (state.status === 'loading' || state.status === 'downloading') {
+          setState({ cached, status: cached ? 'loading' : 'downloading' });
+        }
+      });
+    } else if (m.type === 'progress') {
       setState({
         status: state.cached ? 'loading' : 'downloading',
         progress: m.total ? m.loaded / m.total : 0,
-        engine: STT_ENGINES.WHISTLE,
-        version: ENGINE_METADATA.whistle.version,
-        downloadMb: ENGINE_METADATA.whistle.downloadMb,
       });
+    } else if (m.type === 'fallback') {
+      if (m.from === STT_ENGINES.WHISPER_SMALL_EN) markSmallEngineFailed();
+      setState({ status: 'downloading', progress: 0, cached: false });
     } else if (m.type === 'ready') {
       setState({
         status: 'ready',
         progress: 1,
-        engine: STT_ENGINES.WHISTLE,
-        version: m.version || ENGINE_METADATA.whistle.version,
+        engine: m.engine,
+        version: m.version || ENGINE_METADATA[m.engine]?.version,
         device: m.device,
-        downloadMb: ENGINE_METADATA.whistle.downloadMb,
         error: null,
       });
-      // One-time cleanup after Whistle is ready
+      if (m.engine === STT_ENGINES.WHISPER_SMALL_EN) clearSmallEngineFailure();
+      // One-time cleanup of retired engines once the new one works
       cleanupMoonshineCacheOnce();
+      cleanupWhistleCacheOnce();
     } else if (m.type === 'result' && pending.has(m.id)) {
       const formatted = formatTranscriptResult({
         text: m.text,
@@ -175,14 +229,15 @@ export function prepareLocalStt() {
   if (loadPromise && state.status !== 'error') return loadPromise;
 
   loadPromise = (async () => {
-    const cached = await modelIsCached();
+    const engine = getPreferredSttEngine();
+    const cached = await modelIsCached(engine);
     setState({
       status: cached ? 'loading' : 'downloading',
       cached,
       progress: 0,
-      engine: STT_ENGINES.WHISTLE,
-      version: ENGINE_METADATA.whistle.version,
-      downloadMb: ENGINE_METADATA.whistle.downloadMb,
+      engine,
+      version: ENGINE_METADATA[engine].version,
+      downloadMb: ENGINE_METADATA[engine].downloadMb,
       error: null,
     });
 
@@ -205,7 +260,7 @@ export function prepareLocalStt() {
         }
       });
 
-      w.postMessage({ type: 'load' });
+      w.postMessage({ type: 'load', engine, hints: deviceHints() });
     });
   })();
 
@@ -312,33 +367,32 @@ export function transcribeRecording(blob) {
   const run = async () => {
     await prepareLocalStt();
     const pcm = await decodeTo16kMono(blob);
-    if (!pcm || pcm.length < 1600) {
-      return formatTranscriptResult({
-        text: '',
-        words: [],
-        engine: STT_ENGINES.WHISTLE,
-        version: ENGINE_METADATA.whistle.version,
-      });
+    const empty = () =>
+      formatTranscriptResult({ text: '', words: [], engine: state.engine, version: state.version });
+    if (!pcm || pcm.length < 1600) return empty();
+
+    // Voice-activity trim: drop leading/trailing silence; a recording with no
+    // speech at all is never sent to the model (Whisper invents text on silence).
+    const voiced = trimSilence(pcm, SAMPLE_RATE);
+    if (voiced.pcm.length < 1600) return empty();
+
+    let currentOffset = voiced.startSec;
+    const segments = [];
+    for (const s of splitAtPauses(voiced.pcm)) {
+      const durationSec = s.length / SAMPLE_RATE;
+      const speechSec = speechSeconds(s, voiced.threshold, SAMPLE_RATE);
+      if (speechSec >= 0.15) {
+        segments.push({ pcm: s.slice(), offsetSec: currentOffset, durationSec, speechSec });
+      }
+      currentOffset += durationSec;
     }
-
-    const rawSegments = splitAtPauses(pcm);
-
-    let currentOffset = 0;
-    const segments = rawSegments.map((s) => {
-      const segObj = {
-        pcm: s.slice(),
-        offsetSec: currentOffset,
-        durationSec: s.length / SAMPLE_RATE,
-      };
-      currentOffset += s.length / SAMPLE_RATE;
-      return segObj;
-    });
+    if (!segments.length) return empty();
 
     const id = ++seq;
     return new Promise((resolve, reject) => {
       pending.set(id, { resolve, reject });
       worker.postMessage(
-        { type: 'transcribe', id, segments, enginePreference: getPreferredSttEngine() },
+        { type: 'transcribe', id, segments, engine: state.engine, hints: deviceHints() },
         segments.map((s) => s.pcm.buffer)
       );
     });

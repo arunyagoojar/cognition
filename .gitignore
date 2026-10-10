@@ -53,3 +53,10 @@ yarn-error.log*
 # Local env overrides
 .env.local
 .env.*.local
+
+# Secrets and local Worker state (never commit)
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/

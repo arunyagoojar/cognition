@@ -10,7 +10,6 @@ export default function ScoreSummary({ scores, targetBand }) {
 
   const currentOverall = calculateOverallBand(L, R, W, S);
   const hasScores = currentOverall !== null;
-  const currentDisplay = hasScores ? currentOverall : '--';
   const targetDisplay = targetBand || '8.0';
 
   const targetNum = parseFloat(targetDisplay) || 8.0;

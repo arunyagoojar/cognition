@@ -31,15 +31,38 @@ t('slash alternatives: "11" matches "11 / eleven (am)"', () => {
   assert.equal(r.result, DETERMINISTIC.MATCH);
   assert.equal(r.matchedAnswer, '11');
 });
-t('parenthetical tail optional: "eleven (am)" variant accepts "eleven am" as UNCERTAIN for AI', () => {
+t('parenthetical tail optional: "eleven (am)" variant accepts "eleven" deterministically', () => {
   // "eleven" vs "eleven am" differs by a word — not deterministic-safe → AI
-  assert.equal(evaluateDeterministic('eleven', '11 / eleven (am)').result, DETERMINISTIC.UNCERTAIN);
+  assert.equal(evaluateDeterministic('eleven', '11 / eleven (am)').result, DETERMINISTIC.MATCH);
 });
-t('word-vs-digit number → UNCERTAIN (AI verifies with question context)', () => {
-  assert.equal(evaluateDeterministic('eleven', '11').result, DETERMINISTIC.UNCERTAIN);
+t('word-vs-digit number → MATCH (same number, different spelling)', () => {
+  assert.equal(evaluateDeterministic('eleven', '11').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('twenty-five', '25').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('one hundred and fifty', '150').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('3,000,000', 'Three million/ 3 million').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('twenty five', '35/ thirty five').result === DETERMINISTIC.MATCH, false);
+  assert.equal(evaluateDeterministic('seventeen', '70').result === DETERMINISTIC.MATCH, false);
 });
-t('digit vs word → UNCERTAIN', () => {
-  assert.equal(evaluateDeterministic('30', 'thirty').result, DETERMINISTIC.UNCERTAIN);
+t('digit vs word, ordinals, dates, currency, times → MATCH', () => {
+  assert.equal(evaluateDeterministic('30', 'thirty').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('third', 'Third/3rd').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('June 8', '8th June').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('the 8th of June', '8th June').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('9 June', '8th June').result === DETERMINISTIC.MATCH, false);
+  assert.equal(evaluateDeterministic('25', '£25/ 25 pounds').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('40 percent', '40%').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('9:30am', '9.30 am').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('11am', '11/ eleven (am)').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('6676665497431251', '6676 6654 9743 1251').result, DETERMINISTIC.MATCH);
+});
+t('a fraction key "1/3" is not split into "1" and "3"', () => {
+  assert.equal(evaluateDeterministic('3', 'One third/ 1/3').result === DETERMINISTIC.MATCH, false);
+  assert.equal(evaluateDeterministic('1/3', 'One third/ 1/3').result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('one third', 'One third/ 1/3').result, DETERMINISTIC.MATCH);
+});
+t('an added article over the word limit is not accepted', () => {
+  assert.equal(evaluateDeterministic('an egg', 'Egg', { wordLimit: 'Write ONE WORD AND/ OR A NUMBER' }).result === DETERMINISTIC.MATCH, false);
+  assert.equal(evaluateDeterministic('a bicycle', 'bicycle', { wordLimit: 'NO MORE THAN TWO WORDS' }).result, DETERMINISTIC.MATCH);
 });
 t('singular vs plural → UNCERTAIN (AI decides with context, never auto-accept)', () => {
   assert.equal(evaluateDeterministic('beginner', 'Beginners').result, DETERMINISTIC.UNCERTAIN);

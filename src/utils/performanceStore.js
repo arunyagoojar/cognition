@@ -96,13 +96,55 @@ export function getAttemptById(id) {
   return store.attempts.find(a => a.id === id) || null;
 }
 
+const ESTIMATE_WINDOW = 5;
+const RECENCY_DECAY = 0.7;
+const MOCK_WEIGHT = 2;
+
+function isLowCoverage(data) {
+  const items = data?.itemResults ? Object.values(data.itemResults) : null;
+  if (!items || items.length < 10) return false;
+  const answered = items.filter(r => r.candidateAnswer !== null && r.candidateAnswer !== undefined && String(r.candidateAnswer).trim() !== '').length;
+  return answered / items.length < 0.25;
+}
+
+function isMockAttempt(attempt) {
+  return attempt?.type === 'full_mock' || attempt?.type === 'mock';
+}
+
+/**
+ * Recency-weighted band estimate from a skill's history (newest first).
+ * Rounded to the nearest half band, like IELTS section scores.
+ */
+export function estimateSkillBand(history) {
+  const scored = (history || []).filter(h => typeof h.band === 'number' && Number.isFinite(h.band));
+  // A test abandoned after a handful of answers says little about the real
+  // level — leave it out of the estimate unless it is all there is.
+  const meaningful = scored.filter(h => !h.lowCoverage);
+  const recent = (meaningful.length ? meaningful : scored).slice(0, ESTIMATE_WINDOW);
+  if (!recent.length) return null;
+  let sum = 0, weights = 0;
+  recent.forEach((h, i) => {
+    const w = Math.pow(RECENCY_DECAY, i) * (h.isMock ? MOCK_WEIGHT : 1);
+    sum += h.band * w;
+    weights += w;
+  });
+  const band = Math.round((sum / weights) * 2) / 2;
+  return {
+    band,
+    basis: {
+      attempts: recent.length,
+      mocks: recent.filter(h => h.isMock).length,
+      practice: recent.filter(h => !h.isMock).length,
+    },
+  };
+}
+
 /**
  * Authoritative Derivation Engine:
  * All dashboard metrics, best scores, latest skill bands, and trends are derived
  * strictly from completed attempts in the canonical store.
  */
-export function derivePerformanceSummary() {
-  const store = getPerformanceStore();
+export function derivePerformanceSummary(store = getPerformanceStore()) {
   const completed = (store.attempts || []).filter(a => a.status === 'completed');
 
   if (completed.length === 0) {
@@ -127,6 +169,7 @@ export function derivePerformanceSummary() {
         writing: [],
         speaking: [],
       },
+      estimatedScores: {},
       completedCount: 0,
       recentAttempts: [],
     };
@@ -184,12 +227,30 @@ export function derivePerformanceSummary() {
           attemptId: attempt.id,
           band: data.band,
           completedAt: attempt.completedAt,
+          isMock: isMockAttempt(attempt),
+          lowCoverage: isLowCoverage(data),
         });
       }
     }
   }
 
-  // 4. Calculate Overall Band from latest skill scores
+  // 4. Estimated band per skill: practice AND mock attempts both count.
+  // The latest score alone swings with one good or bad test, so blend the
+  // most recent attempts (newer weigh more, full mocks weigh double).
+  const estimatedScores = {};
+  for (const skill of skills) {
+    const est = estimateSkillBand(skillHistory[skill]);
+    estimatedScores[skill] = est;
+    if (latestScores[skill] && est) {
+      latestScores[skill] = {
+        ...latestScores[skill],
+        latestBand: latestScores[skill].band,
+        band: est.band,
+        estimateBasis: est.basis,
+      };
+    }
+  }
+
   const L = latestScores.listening?.band ?? null;
   const R = latestScores.reading?.band ?? null;
   const W = latestScores.writing?.band ?? null;
@@ -201,6 +262,7 @@ export function derivePerformanceSummary() {
   return {
     hasScores,
     overallBand: overall,
+    estimatedScores,
     latestScores,
     bestScores,
     skillHistory,

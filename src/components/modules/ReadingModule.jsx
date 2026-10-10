@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedReadingTest, getReadingTest } from '../../data/reading/index';
-import { recordAttemptedQuestionSet, createAttemptId } from '../../utils/storage';
-import { evaluateReadingResponses } from '../../utils/evaluation/evaluationEngine';
+import { recordAttemptedQuestionSet, createAttemptId, getTargetBand } from '../../utils/storage';
+import { evaluateReadingResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
+import { calculateReadingBand } from '../../utils/bandCalculator';
 import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import ReadingPassage from '../reading/ReadingPassage';
@@ -10,11 +11,13 @@ import ReadingQuestionGroup from '../reading/ReadingQuestionGroup';
 import TextSizeControl, { useExamTextScale } from '../common/TextSizeControl';
 import AnswerReviewList from '../common/AnswerReviewList';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
+import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
+import ScrollToTop from '../common/ScrollToTop.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 
-export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
+export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
   const [test] = useState(() => initialTest || (testId ? getReadingTest(testId) : getRandomizedReadingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [answers, setAnswers] = useState({});
@@ -30,7 +33,31 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const passagePaneRef = useRef(null);
   const questionPaneRef = useRef(null);
 
+  // Practice mode timer controls
+  const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [isOvertime, setIsOvertime] = useState(false);
+
   const timerRef = useRef(null);
+
+  // Guard against stale closures when timer expires or during async grading
+  const answersRef = useRef(answers);
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+
+  const testRef = useRef(test);
+  useEffect(() => {
+    testRef.current = test;
+  }, [test]);
+
+  const handleSubmitRef = useRef();
+
+  // Practice results are saved the moment they exist, so leaving via Back,
+  // refreshing or closing the tab never loses the score.
+  useEffect(() => {
+    if (phase === 'results' && result && !isMockMode) onSave?.(result);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, result, isMockMode]);
 
   const setAnswer = (id, value) => setAnswers(prev => ({ ...prev, [id]: value }));
   const goToPassage = (idx) => {
@@ -40,24 +67,31 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
     questionPaneRef.current?.scrollTo({ top: 0 });
   };
 
-  const startTimer = () => {
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
-          handleSubmit();
-          return 0;
+          if (isMockMode) {
+            clearInterval(timerRef.current);
+            handleSubmitRef.current?.();
+            return 0;
+          } else {
+            // Practice Mode: do not force-exit!
+            setIsOvertime(true);
+            return 0;
+          }
         }
         return t - 1;
       });
     }, 1000);
-  };
+  }, [isMockMode]);
 
   useEffect(() => {
     if (initialPhase === 'exam') {
       startTimer();
     }
-  }, [initialPhase]);
+  }, [initialPhase, startTimer]);
 
   useEffect(() => {
     return () => clearInterval(timerRef.current);
@@ -69,10 +103,28 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
     startTimer();
   };
 
+  const toggleTimerPause = () => {
+    if (isMockMode) return;
+    if (isTimerPaused) {
+      setIsTimerPaused(false);
+      startTimer();
+    } else {
+      setIsTimerPaused(true);
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+  };
+
   const handleSubmit = async () => {
     if (isSubmitting) return;
     setIsSubmitting(true);
     clearInterval(timerRef.current);
+
+    // Full mock: the whole exam is graded once at the end — hand over the
+    // answers and move straight on to Writing.
+    if (isMockMode) {
+      onComplete?.({ answers: { ...(answersRef.current || answers) }, status: 'submitted' });
+      return;
+    }
 
     // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
@@ -83,22 +135,33 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
     const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
     const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
 
+    const currentAnswers = answersRef.current || answers;
+    const currentTest = testRef.current || test;
+
     try {
       // Deterministic scoring against the official answer key (zero AI).
-      const graded = getReadingTest(test?.testId || testId, true) || test;
+      const graded = getReadingTest(currentTest?.testId || testId, true) || currentTest;
+      recordAttemptedQuestionSet('reading', currentTest?.testId || testId);
       const evalResult = await evaluateReadingResponses({
         passages: graded?.passages || [],
-        answers,
+        answers: currentAnswers,
         attemptId: attemptIdRef.current
       });
 
+      const rawScore = evalResult.raw ?? 0;
+      const totalScore = evalResult.total || 40;
+      const percentageScore = evalResult.percentage || (totalScore ? Math.round((rawScore / totalScore) * 100) : 0);
+      const computedBand = (typeof evalResult.band === 'number' && Number.isFinite(evalResult.band))
+        ? evalResult.band
+        : calculateReadingBand(rawScore);
+
       const computedResult = {
         ...evalResult,
-        band: evalResult.band,
-        raw: evalResult.raw,
-        total: evalResult.total || 40,
-        percentage: evalResult.percentage || 0,
-        answers
+        band: computedBand,
+        raw: rawScore,
+        total: totalScore,
+        percentage: percentageScore,
+        answers: currentAnswers
       };
 
       // Ensure user sees the processing steps before advancing
@@ -116,10 +179,53 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       clearTimeout(stepTimer1);
       clearTimeout(stepTimer2);
       clearTimeout(stepTimer3);
-      setIsSubmitting(false);
-      setPhase('exam');
+
+      // Resilient fallback
+      try {
+        const graded = getReadingTest(currentTest?.testId || testId, true) || currentTest;
+        const allQuestions = (graded?.passages || []).flatMap(p => p.questions || []);
+        let localRaw = 0;
+        const itemResults = {};
+        for (const q of allQuestions) {
+          const userAns = currentAnswers[q.id];
+          const isCorrect = isCandidateAnswerCorrect(userAns, q.acceptedAnswers || q.answer);
+          if (isCorrect) localRaw++;
+          itemResults[q.id] = {
+            deterministicCorrect: isCorrect,
+            finalResult: isCorrect ? 'CORRECT' : 'INCORRECT',
+            officialAnswer: q.answer,
+            candidateAnswer: userAns || null,
+            questionNumber: q.questionNumber ?? null,
+            questionType: q.type || q.questionType || null,
+          };
+        }
+        const localBand = calculateReadingBand(localRaw);
+        const fallbackResult = {
+          status: 'completed',
+          band: localBand,
+          raw: localRaw,
+          total: allQuestions.length || 40,
+          percentage: allQuestions.length ? Math.round((localRaw / allQuestions.length) * 100) : 0,
+          answers: currentAnswers,
+          itemResults
+        };
+
+        if (isMockMode) {
+          if (onComplete) onComplete(fallbackResult);
+          return;
+        }
+
+        setResult(fallbackResult);
+        setPhase('results');
+      } catch (fallbackErr) {
+        console.error('Critical reading fallback error:', fallbackErr);
+        setIsSubmitting(false);
+        setPhase('exam');
+      }
     }
   };
+
+  handleSubmitRef.current = handleSubmit;
 
   /* ──────────────────────────────────────────────────────────
      1. INTRO SCREEN
@@ -155,6 +261,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   if (phase === 'processing') {
     return (
       <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <ScrollToTop />
         <div style={{
           background: 'var(--surface-elevated)',
           border: '1px solid var(--border-subtle)',
@@ -220,168 +327,91 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
     return (
-      <div style={{ maxWidth: 960, margin: '40px auto', padding: '0 24px 80px' }}>
-        <button
-          onClick={onBack}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            fontSize: 14,
-            fontWeight: 600,
-            color: 'var(--text-secondary)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            marginBottom: 24
-          }}
-        >
+      <ResultPage skill="reading">
+        <ResultItem as="button" type="button" className="result-back-btn" onClick={onBack}>
           <Icon name="arrowLeft" size={16} /> Back to Dashboard
-        </button>
+        </ResultItem>
 
         {/* OVERALL HERO CARD */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1.5px solid #151313',
-          borderRadius: 24,
-          padding: '40px',
-          marginBottom: 32,
-          boxShadow: '0 4px 0 #151313',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 24
-        }}>
+        <ResultItem className="result-hero">
           <div>
-            <div style={{
-              display: 'inline-block',
-              fontSize: 12,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              fontWeight: 800,
-              padding: '4px 12px',
-              borderRadius: 8,
-              background: '#151313',
-              color: '#BE94F5',
-              marginBottom: 12
-            }}>
+            <span className="result-eyebrow">
               {isMockMode ? "READING TEST COMPLETE" : "READING PRACTICE COMPLETE"}
-            </div>
-            <h1 style={{ fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 800, margin: '0 0 8px', color: 'var(--text-primary)' }}>
-              Reading Assessment
-            </h1>
-            <p style={{ margin: 0, fontSize: 16, color: 'var(--text-secondary)', fontWeight: 500 }}>
-              Score: <strong style={{ color: 'var(--text-primary)' }}>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
+            </span>
+            <h1 className="result-title">Reading Assessment</h1>
+            <p className="result-lead">
+              Score: <strong>{result?.raw} / {result?.total}</strong> correct ({result?.percentage}%)
               {result?.unresolvedCount > 0 && (
-                <span style={{ display: 'block', marginTop: 4, fontSize: 13.5, color: '#8A6D00', fontWeight: 600 }}>
-                  ⚠ Provisional range: {result.rawMin}–{result.rawMax} correct ({result.unresolvedCount} answer{result.unresolvedCount > 1 ? 's' : ''} pending review)
+                <span className="result-warn-line">
+                  Provisional range: {result.rawMin}–{result.rawMax} correct ({result.unresolvedCount} answer{result.unresolvedCount > 1 ? 's' : ''} pending review)
                 </span>
               )}
             </p>
           </div>
 
-          <div style={{
-            background: 'var(--bg-canvas)',
-            padding: '24px 36px',
-            borderRadius: 20,
-            textAlign: 'center',
-            border: '1.5px solid #151313',
-            boxShadow: '0 2px 0 #151313',
-            minWidth: 180
-          }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              {result?.unresolvedCount > 0 ? 'PROVISIONAL BAND' : 'ESTIMATED BAND'}
+          <div className="result-band-box">
+            <div className="result-band-label">
+              {result?.unresolvedCount > 0 ? 'Provisional band' : 'Estimated band'}
             </div>
-            <div style={{
-              fontSize: result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax ? 42 : 54,
-              fontWeight: 800,
-              color: 'var(--c-coral)',
-              lineHeight: 1.1,
-              marginTop: 6,
-              fontFamily: 'Kodchasan, sans-serif'
-            }}>
-              {result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax
-                ? `${result.bandMin.toFixed(1)}–${result.bandMax.toFixed(1)}`
-                : (result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--')}
-            </div>
-            <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 6, fontWeight: 700 }}>
-              {result?.unresolvedCount > 0 ? 'Range pending review' : 'Target: 8.0'}
+            {result?.unresolvedCount > 0 && result?.bandMin !== result?.bandMax ? (
+              <div className="result-band-value is-range">
+                {`${result.bandMin.toFixed(1)}–${result.bandMax.toFixed(1)}`}
+              </div>
+            ) : (
+              <div className={`result-band-value${result?.band !== null && result?.band !== undefined ? '' : ' is-empty'}`}>
+                {result?.band !== null && result?.band !== undefined ? Number(result.band).toFixed(1) : '--'}
+              </div>
+            )}
+            <div className="result-band-sub">
+              {result?.unresolvedCount > 0 ? 'Range pending review' : `Target: ${getTargetBand() || '8.0'}`}
             </div>
           </div>
-        </div>
+        </ResultItem>
 
         {result?.unresolvedCount > 0 && (
-          <div style={{
-            background: 'rgba(252, 204, 66, 0.12)',
-            border: '1.5px solid #FCCC42',
-            borderRadius: 16,
-            padding: '16px 20px',
-            marginBottom: 28,
-            display: 'flex',
-            alignItems: 'flex-start',
-            gap: 12
-          }}>
-            <Icon name="alertCircle" size={20} style={{ color: '#8A6D00', flexShrink: 0, marginTop: 2 }} />
-            <div>
-              <div style={{ fontWeight: 800, fontSize: 14, color: '#8A6D00' }}>
-                Unresolved Answers Pending Review
-              </div>
-              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 4, lineHeight: 1.5 }}>
+          <ResultItem className="result-callout" role="note">
+            <span className="result-callout-icon"><Icon name="alertCircle" size={22} /></span>
+            <div className="result-callout-body">
+              <div className="result-callout-title">Unresolved answers pending review</div>
+              <div className="result-callout-text">
                 {result.unresolvedCount} free-text answer{result.unresolvedCount > 1 ? 's' : ''} could not be automatically confirmed against the official answer key.
                 Per official IELTS marking principles, credit is not awarded automatically without verified equivalence. Your confirmed score is {result.raw} (Band {result.bandMin.toFixed(1)}), with a potential score of up to {result.rawMax} (Band {result.bandMax.toFixed(1)}) if resolved.
               </div>
             </div>
-          </div>
+          </ResultItem>
         )}
 
-        {/* Answer review — correct/incorrect, accepted variants tagged subtly */}
+        {/* Answer review — every question, from the evaluated item results */}
         {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
-          <div style={{ marginBottom: 36 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 12 }}>
-              <Icon name="pen" size={15} /> Answer Review
+          <ResultItem as="section">
+            <div className="result-section-head">
+              <h2 className="result-section-title"><Icon name="pen" size={20} /> Answer review</h2>
+              <p className="result-section-sub">Every question with your answer and the official key. Use “To review” to focus on the ones you missed.</p>
             </div>
             <AnswerReviewList itemResults={result.itemResults} showUnanswered />
-          </div>
+          </ResultItem>
         )}
 
         {/* Detailed analysis — question-type performance + recommendations */}
         {!isMockMode && (
-          <div style={{ marginBottom: 36 }}>
+          <ResultItem>
             <ResultAnalysis skill="reading" resultRecord={{ reading: result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-          </div>
+          </ResultItem>
         )}
 
-
-
         {/* PROMINENT CORAL CTA SAVE BUTTON */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 16, borderTop: '1.5px solid #151313' }}>
+        <ResultItem className="result-actions">
           <button
             id="save-reading-result-btn"
             type="button"
+            className="result-btn is-primary"
             onClick={() => onComplete && onComplete(result)}
-            style={{
-              padding: '16px 36px',
-              borderRadius: 16,
-              background: '#FF5734',
-              color: '#151313',
-              fontSize: 16,
-              fontWeight: 800,
-              border: '1.5px solid #151313',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              boxShadow: '0 4px 0 #151313',
-              fontFamily: 'Kodchasan, sans-serif'
-            }}
           >
             <Icon name="check" size={18} />
             <span>Save Score & Return to Dashboard</span>
           </button>
-        </div>
-      </div>
+        </ResultItem>
+      </ResultPage>
     );
   }
 
@@ -392,6 +422,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
 
   return (
     <div className="exam-focus-layout reading-split-active">
+      <ScrollToTop />
       {/* ── 1. COMPACT INTERNAL EXAM HEADER ── */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
@@ -405,9 +436,26 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
 
         <div className="exam-focus-header-right">
           <TextSizeControl scale={textScale} onChange={setTextScale} />
-          <div className={`exam-focus-timer-pill ${timeLeft < 300 ? 'urgent' : ''}`} role="timer" aria-label={`Time remaining ${FMT(timeLeft)}`}>
+
+          {!isMockMode && (
+            <button
+              type="button"
+              className={`exam-focus-pause-btn ${isTimerPaused ? 'paused' : ''}`}
+              onClick={toggleTimerPause}
+              title={isTimerPaused ? "Resume Exam Timer" : "Pause Exam Timer"}
+            >
+              <Icon name={isTimerPaused ? 'play' : 'pause'} size={14} />
+              <span>{isTimerPaused ? 'Resume' : 'Pause'}</span>
+            </button>
+          )}
+
+          <div
+            className={`exam-focus-timer-pill ${timeLeft < 300 && !isOvertime ? 'urgent' : ''} ${isTimerPaused ? 'paused' : ''} ${isOvertime ? 'overtime' : ''}`}
+            role="timer"
+            aria-label={`Time remaining ${FMT(timeLeft)}`}
+          >
             <Icon name="clock" size={16} />
-            <span>{FMT(timeLeft)}</span>
+            <span>{isTimerPaused ? `${FMT(timeLeft)} [PAUSED]` : isOvertime ? '00:00 (Overtime)' : FMT(timeLeft)}</span>
           </div>
 
           <button
@@ -421,6 +469,44 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           </button>
         </div>
       </div>
+
+      {/* ── PRACTICE OVERTIME BANNER (Non-strict exit in Practice Mode) ── */}
+      {isOvertime && !isMockMode && (
+        <div className="practice-overtime-banner" style={{ margin: '16px 24px 0' }}>
+          <div className="practice-overtime-content">
+            <Icon name="clock" size={20} style={{ color: '#8A6D00', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontWeight: 800, fontSize: 14.5, color: '#151313' }}>
+                Standard Practice Time Elapsed (60 Minutes)
+              </div>
+              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 2 }}>
+                In Practice Mode, the exam does not force-exit. Take all the time you need to answer any remaining questions! When finished, click &ldquo;Finish &amp; Grade Exam&rdquo; below.
+              </div>
+            </div>
+          </div>
+          <div className="practice-overtime-actions">
+            <button
+              type="button"
+              className="practice-add-time-btn"
+              onClick={() => {
+                setTimeLeft(t => t + 5 * 60);
+                setIsOvertime(false);
+              }}
+              title="Add 5 minutes of practice time"
+            >
+              +5 Mins
+            </button>
+            <button
+              type="button"
+              className="practice-submit-now-btn"
+              onClick={() => handleSubmit()}
+              title="Finish test and grade answers now"
+            >
+              Finish &amp; Grade
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Compact widths: one pane at a time */}
       <div className="rd-pane-switch" role="tablist" aria-label="Reading workspace">

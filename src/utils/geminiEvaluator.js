@@ -319,6 +319,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
       task2Band: t2Attempted ? validated.task2Band : null,
       criteria: validated.criteria,
       taskCriteria: validated.taskCriteria,
+      priorityWeaknesses: validated.priorityWeaknesses || [],
       overallSummary: validated.overallSummary || '',
       task1Feedback: t1Attempted ? validated.task1Feedback : '',
       task2Feedback: t2Attempted ? validated.task2Feedback : '',
@@ -392,7 +393,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     };
   }
 
-  let res = await evaluateSpeakingServer({ transcripts, testMeta });
+  let res = await evaluateSpeakingServer({ transcripts, testMeta, durations });
 
   if (res?.message && res.message.includes('rate limit')) {
     lastRateLimitTime = Date.now();

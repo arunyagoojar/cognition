@@ -264,7 +264,7 @@ export async function saveCredential(provider, key) {
     ok: true,
     local: true,
     maskedSuffix: `\u2022\u2022\u2022\u2022${key.slice(-4)}`,
-    message: 'Secure cloud storage is unavailable right now, so your key was saved on this device only. It never leaves this browser.',
+    message: 'Secure cloud storage is unavailable right now, so your key was saved on this device only. It is never stored on Cognition’s servers.',
   };
 }
 
@@ -321,12 +321,12 @@ export async function evaluateWritingServer({ task1Text, task2Text, prompts, tas
   return res.data;
 }
 
-export async function evaluateSpeakingServer({ transcripts, testMeta }) {
+export async function evaluateSpeakingServer({ transcripts, testMeta, durations }) {
   const provider = getActiveAiProvider();
   const localKey = provider === 'groq' ? getLocalGroqKey() : getLocalGeminiKey();
   const res = await apiFetchDetail('/api/ai/evaluate-speaking', {
     method: 'POST',
-    body: JSON.stringify({ transcripts, testMeta, provider, key: localKey || undefined }),
+    body: JSON.stringify({ transcripts, testMeta, durations, provider, key: localKey || undefined }),
   });
   if (!res.ok) return aiFailure(res);
   return res.data;

@@ -97,8 +97,12 @@ async function verifyClerkToken(request, env) {
     const valid = await crypto.subtle.verify({ name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, cryptoKey, signature, data);
     if (!valid) return null;
 
-    // Verify expiry
-    if (payload.exp && payload.exp < Date.now() / 1000) return null;
+    // Verify expiry / not-before (small leeway for clock skew)
+    const nowSec = Date.now() / 1000;
+    if (typeof payload.exp !== 'number' || payload.exp < nowSec - 5) return null;
+    if (typeof payload.nbf === 'number' && payload.nbf > nowSec + 5) return null;
+    // Authorized party: the token must have been minted for one of our origins
+    if (payload.azp && !isAllowedOrigin(payload.azp, request, env)) return null;
 
     if (!payload.sub) return null;
     return { userId: payload.sub, email: payload.email || null, fva: payload.fva };
@@ -111,15 +115,19 @@ async function verifyClerkToken(request, env) {
 
 // ── CORS: explicit origin allowlist (same-origin + configured dev origins) ──
 
-function resolveCorsHeaders(request, env) {
-  const headers = { 'Content-Type': 'application/json' };
-  const origin = request.headers.get('Origin');
-  if (!origin) return headers; // same-origin fetch or non-browser client
+function isAllowedOrigin(origin, request, env) {
   const url = new URL(request.url);
   const selfOrigin = `${url.protocol}//${url.host}`;
   const allowList = (env.ALLOWED_ORIGINS || '')
     .split(',').map(s => s.trim()).filter(Boolean);
-  if (origin === selfOrigin || allowList.includes(origin)) {
+  return origin === selfOrigin || allowList.includes(origin);
+}
+
+function resolveCorsHeaders(request, env) {
+  const headers = { 'Content-Type': 'application/json' };
+  const origin = request.headers.get('Origin');
+  if (!origin) return headers; // same-origin fetch or non-browser client
+  if (isAllowedOrigin(origin, request, env)) {
     headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
   }
@@ -143,6 +151,35 @@ function json(data, status = 200, extraHeaders = {}) {
 
 function error(message, status = 400, extraHeaders = {}) {
   return json({ error: message }, status, extraHeaders);
+}
+
+// ── Request body limits ─────────────────────────────────────────────────────
+// Bounds what an authenticated client can push into D1 or relay to the AI
+// provider. Two IELTS essays + prompts fit comfortably in 128 KB.
+const BODY_LIMIT_SMALL = 16 * 1024;   // preferences, lessons, credentials
+const BODY_LIMIT_ATTEMPT = 256 * 1024; // attempt records (feedback JSON)
+const BODY_LIMIT_AI = 128 * 1024;      // essays / transcripts / verify items
+
+class BodyError extends Error {
+  constructor(message, status) { super(message); this.status = status; }
+}
+
+async function readJson(request, maxBytes) {
+  const declared = Number(request.headers.get('Content-Length'));
+  if (Number.isFinite(declared) && declared > maxBytes) {
+    throw new BodyError('Request body too large', 413);
+  }
+  const text = await request.text();
+  if (new TextEncoder().encode(text).length > maxBytes) {
+    throw new BodyError('Request body too large', 413);
+  }
+  try {
+    const parsed = JSON.parse(text || 'null');
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('not an object');
+    return parsed;
+  } catch {
+    throw new BodyError('Invalid JSON body', 400);
+  }
 }
 
 // ── Credential helpers ──────────────────────────────────────────────────────
@@ -297,11 +334,11 @@ export default {
 
         // ── PUT /api/me/preferences — update preferences ──
         if (path === '/api/me/preferences' && request.method === 'PUT') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_SMALL);
           const updates = [];
           const params = [];
-          if (body.target_band !== undefined) { updates.push('target_band = ?'); params.push(String(body.target_band)); }
-          if (body.theme !== undefined) { updates.push('theme = ?'); params.push(String(body.theme)); }
+          if (body.target_band !== undefined) { updates.push('target_band = ?'); params.push(String(body.target_band).slice(0, 8)); }
+          if (body.theme !== undefined) { updates.push('theme = ?'); params.push(String(body.theme).slice(0, 16)); }
           if (updates.length) {
             updates.push('updated_at = datetime(\'now\')');
             params.push(userId);
@@ -335,7 +372,7 @@ export default {
 
         // ── POST /api/attempts — create attempt ──
         if (path === '/api/attempts' && request.method === 'POST') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_ATTEMPT);
           if (!body.id || !body.type) return error('Missing id or type', 400, corsHeaders);
           const existing = await env.DB.prepare(
             'SELECT id FROM attempts WHERE id = ?'
@@ -356,7 +393,7 @@ export default {
 
         // ── PUT /api/attempts/:id — update attempt ──
         if (attemptMatch && request.method === 'PUT') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_ATTEMPT);
           const existing = await env.DB.prepare(
             'SELECT id FROM attempts WHERE id = ? AND clerk_user_id = ?'
           ).bind(attemptMatch[1], userId).first();
@@ -387,7 +424,7 @@ export default {
 
         // ── POST /api/lessons — mark lesson complete ──
         if (path === '/api/lessons' && request.method === 'POST') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_SMALL);
           if (!body.lesson_id) return error('Missing lesson_id', 400, corsHeaders);
           await env.DB.prepare(
             'INSERT OR IGNORE INTO completed_lessons (id, clerk_user_id, lesson_id) VALUES (?, ?, ?)'
@@ -402,7 +439,10 @@ export default {
           if (!ALLOWED_PROVIDERS.has(provider)) return error('Unknown provider', 400, corsHeaders);
 
           let body;
-          try { body = await request.json(); } catch { body = null; }
+          try { body = await readJson(request, BODY_LIMIT_SMALL); } catch (e) {
+            if (e instanceof BodyError && e.status === 413) return error(e.message, 413, corsHeaders);
+            body = null;
+          }
           const key = (body?.key || '').trim();
           if (!key) return json({ error: 'Paste your API key first.', code: 'empty_key' }, 400, corsHeaders);
           if (key.length < 20 || key.length > 512 || /\s/.test(key)) {
@@ -487,7 +527,8 @@ export default {
 
         // ── Helper to load configured credential for requested or fallback provider ──
         async function resolveCredential(requestedProvider, explicitKey = null) {
-          if (explicitKey && typeof explicitKey === 'string' && explicitKey.trim()) {
+          if (explicitKey && typeof explicitKey === 'string' && explicitKey.trim()
+              && explicitKey.trim().length <= 512 && !/\s/.test(explicitKey.trim())) {
             const prov = (requestedProvider && ALLOWED_PROVIDERS.has(requestedProvider)) ? requestedProvider : 'gemini';
             return { cred: { explicit: true, plaintext: explicitKey.trim() }, provider: prov };
           }
@@ -504,7 +545,7 @@ export default {
 
         // ── POST /api/ai/evaluate-writing — session-level, server-side evaluation (Gemini / Groq) ──
         if (path === '/api/ai/evaluate-writing' && request.method === 'POST') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_AI);
           const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             return json({
@@ -545,7 +586,7 @@ export default {
 
         // ── POST /api/ai/evaluate-speaking — session-level, server-side evaluation (Gemini / Groq) ──
         if (path === '/api/ai/evaluate-speaking' && request.method === 'POST') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_AI);
           const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             return json({
@@ -583,7 +624,7 @@ export default {
 
         // ── POST /api/ai/verify-answers — batched objective-answer verification (Gemini / Groq) ──
         if (path === '/api/ai/verify-answers' && request.method === 'POST') {
-          const body = await request.json();
+          const body = await readJson(request, BODY_LIMIT_AI);
           const { cred, provider: providerToUse } = await resolveCredential(body.provider, body.key);
           if (!cred) {
             // Without a configured credential the deterministic result stands
@@ -606,6 +647,7 @@ export default {
 
       return error('Not found', 404, corsHeaders);
     } catch (e) {
+      if (e instanceof BodyError) return error(e.message, e.status, corsHeaders);
       // Log only the error type — never request bodies, keys, or stack internals.
       console.error('Worker error:', e.constructor?.name || 'Error', e.message);
       return error('Internal server error', 500, corsHeaders);

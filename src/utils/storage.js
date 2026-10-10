@@ -6,9 +6,9 @@ import {
   resetPerformanceData,
   createAttemptId,
   getPerformanceStore,
-  getAttemptById as getCanonicalAttemptById,
   subscribePerformanceStore
 } from './performanceStore.js';
+import { clearAudioRecordings } from './audio/audioStore.js';
 
 export {
   recordAttempt,
@@ -106,11 +106,50 @@ export function resetSkillScores() {
  * and sessionStorage on sign-out or account switch.
  */
 export function clearUserScoresOnSignOut() {
+  // Also removes omniprep_* in-progress state, the AI cache and any
+  // device-only API keys (everything not on resetPerformanceData's keep list).
   resetPerformanceData();
   try {
     sessionStorage.removeItem('cognition_writing_active_session');
     sessionStorage.removeItem('cognition_speaking_active_session');
   } catch (_) {}
+  // Per-person data that resetPerformanceData deliberately keeps for the
+  // "reset scores" button but must not carry over to the next account.
+  try {
+    [
+      `${STORAGE_KEY_PREFIX}user_profile`,
+      `${STORAGE_KEY_PREFIX}completed_lessons`,
+      `${STORAGE_KEY_PREFIX}last_watched_lesson`,
+      'cognition_recent_writing_v1',
+      'cognition_recent_speaking_v1',
+    ].forEach(k => localStorage.removeItem(k));
+    const videoKeys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith(`${STORAGE_KEY_PREFIX}last_video_`)) videoKeys.push(k);
+    }
+    videoKeys.forEach(k => localStorage.removeItem(k));
+  } catch (_) {}
+  clearAudioRecordings().catch(() => {});
+}
+
+// Remembers which account the locally stored data belongs to, so data left
+// behind by a sign-out in another tab (or an expired session) is still wiped
+// before a different account sees it. Uses a cognition_ key so the omniprep_
+// sweep in resetPerformanceData() does not erase it.
+const DATA_OWNER_KEY = 'cognition_data_owner';
+
+/** Returns 'same' | 'claimed' (first owner) | 'foreign' (belonged to someone else). */
+export function claimLocalDataOwner(userId) {
+  if (!userId || userId === 'anon') return 'same';
+  try {
+    const owner = localStorage.getItem(DATA_OWNER_KEY);
+    localStorage.setItem(DATA_OWNER_KEY, userId);
+    if (!owner) return 'claimed';
+    return owner === userId ? 'same' : 'foreign';
+  } catch {
+    return 'same';
+  }
 }
 
 // ── Persistent Full Mock Exam Session State ────────────────────────────────
@@ -152,25 +191,54 @@ export function getAiCache() {
   }
 }
 
+// Cached evaluations hold the candidate's own essays/transcripts, so they are
+// bounded by age as well as count.
+const AI_CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const AI_CACHE_MAX_ENTRIES = 100;
+
+function isAiCacheEntryFresh(entry, now = Date.now()) {
+  const ts = Date.parse(entry?.cachedAt);
+  return Number.isFinite(ts) && now - ts <= AI_CACHE_MAX_AGE_MS;
+}
+
+/** Drops expired AI cache entries (and the key itself when empty). */
+export function pruneAiCache() {
+  try {
+    const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}ai_cache`);
+    if (!raw) return;
+    const cache = getAiCache();
+    const kept = {};
+    Object.entries(cache).forEach(([k, v]) => { if (isAiCacheEntryFresh(v)) kept[k] = v; });
+    const keys = Object.keys(kept);
+    if (keys.length === 0) {
+      localStorage.removeItem(`${STORAGE_KEY_PREFIX}ai_cache`);
+    } else if (keys.length !== Object.keys(cache).length) {
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}ai_cache`, JSON.stringify(kept));
+    }
+  } catch { /* storage unavailable */ }
+}
+
 export function getAiCacheItem(hash) {
   if (!hash) return null;
-  const cache = getAiCache();
-  return cache[hash] || null;
+  const entry = getAiCache()[hash];
+  return entry && isAiCacheEntryFresh(entry) ? entry : null;
 }
 
 export function setAiCacheItem(hash, data) {
   if (!hash || !data) return;
   try {
-    const cache = getAiCache();
+    const now = Date.now();
+    const cache = {};
+    Object.entries(getAiCache()).forEach(([k, v]) => {
+      if (k !== hash && isAiCacheEntryFresh(v, now)) cache[k] = v;
+    });
     cache[hash] = {
       ...data,
-      cachedAt: new Date().toISOString()
+      cachedAt: new Date(now).toISOString()
     };
-    // Keep up to 100 evaluation cache entries
+    // Keep the newest AI_CACHE_MAX_ENTRIES (insertion order = oldest first)
     const keys = Object.keys(cache);
-    if (keys.length > 100) {
-      delete cache[keys[0]];
-    }
+    keys.slice(0, Math.max(0, keys.length - AI_CACHE_MAX_ENTRIES)).forEach(k => delete cache[k]);
     localStorage.setItem(`${STORAGE_KEY_PREFIX}ai_cache`, JSON.stringify(cache));
   } catch (e) {
     console.warn('Failed to set AI cache item', e);
@@ -355,9 +423,11 @@ export async function isAiConfigured(provider = null) {
 
 // ── Local Gemini key fallback (privacy mode) ───────────────────────────────
 // When Cognition's secure cloud storage cannot be used, the key can be kept
-// ONLY on this device. It is never sent to Cognition's servers, and AI
-// evaluation runs directly from the browser. It is bound to the signed-in
-// account, so another user on the same browser never sees or uses it.
+// ONLY on this device. It is never stored on Cognition's servers: it is sent
+// over HTTPS with each evaluation request (used in memory, never persisted or
+// logged by the Worker), and the browser falls back to calling the provider
+// directly. It is bound to the signed-in account, so another user on the same
+// browser never sees or uses it, and it is wiped on sign-out.
 
 const LOCAL_GEMINI_KEY = `${STORAGE_KEY_PREFIX}local_gemini_key`;
 const LOCAL_GROQ_KEY = `${STORAGE_KEY_PREFIX}local_groq_key`;

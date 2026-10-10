@@ -3,7 +3,9 @@ import { motion, useReducedMotion } from 'motion/react';
 import Icon from '../common/Icon';
 import TipCard from '../common/TipCard';
 import VocabCard from '../common/VocabCard';
+import PhraseBank from './PhraseBank';
 import { TIPS_SKILLS_ORDERED, getTipsSkill } from '../../data/tips';
+import { PHRASE_BANK, PHRASE_BANK_LINKED_CATEGORIES, countPhrases } from '../../data/tips/phraseBank';
 
 // ─── Tips & Tricks — one page you read top to bottom ────────────────────────
 // A coach walks through each skill as a conversation: every topic is a short
@@ -39,6 +41,7 @@ export default function TipsPage({ initialSkill = null, initialCategory = null }
   const topRef = useRef(null);
   const skill = getTipsSkill(skillId);
   const tipCount = skill.categories.reduce((n, c) => n + c.tips.length, 0);
+  const hasPhraseBank = skill.id === 'speaking';
 
   // deep link (e.g. "Tips for this question type" from a results page)
   useEffect(() => {
@@ -82,6 +85,9 @@ export default function TipsPage({ initialSkill = null, initialCategory = null }
             {skill.categories.map(c => (
               <button key={c.id} type="button" onClick={() => jumpTo(c.id)}>{c.title}</button>
             ))}
+            {hasPhraseBank && (
+              <button type="button" className="is-highlight" onClick={() => jumpTo(PHRASE_BANK.id)}>{PHRASE_BANK.title}</button>
+            )}
           </div>
         </CoachLine>
 
@@ -90,6 +96,12 @@ export default function TipsPage({ initialSkill = null, initialCategory = null }
             <CoachLine reduceMotion={reduceMotion}>
               <p className="coach-title">{cat.title}</p>
               {cat.blurb && <p>{cat.blurb}</p>}
+              {hasPhraseBank && PHRASE_BANK_LINKED_CATEGORIES.includes(cat.id) && (
+                <button type="button" className="coach-link" onClick={() => jumpTo(PHRASE_BANK.id)}>
+                  <span>Browse the {PHRASE_BANK.title}</span>
+                  <Icon name="arrowRight" size={14} />
+                </button>
+              )}
             </CoachLine>
             <div className={cat.kind === 'vocab' ? 'tips-vocab-grid tips-thread' : 'tips-tip-list tips-thread'}>
               {cat.tips.map(tip => (
@@ -108,6 +120,20 @@ export default function TipsPage({ initialSkill = null, initialCategory = null }
             </div>
           </section>
         ))}
+
+        {hasPhraseBank && (
+          <section id={`tips-${PHRASE_BANK.id}`} className="tips-topic" aria-label={PHRASE_BANK.title}>
+            <CoachLine reduceMotion={reduceMotion}>
+              <p className="coach-title">{PHRASE_BANK.title}</p>
+              <p>{PHRASE_BANK.intro}</p>
+              <ul className="coach-advice">
+                {PHRASE_BANK.advice.map(line => <li key={line}>{line}</li>)}
+              </ul>
+              <p className="coach-meta">{PHRASE_BANK.categories.length} groups · {countPhrases()} phrases</p>
+            </CoachLine>
+            <PhraseBank reduceMotion={reduceMotion} />
+          </section>
+        )}
 
         <CoachLine reduceMotion={reduceMotion}>
           <p className="coach-title">That's {skill.name}.</p>

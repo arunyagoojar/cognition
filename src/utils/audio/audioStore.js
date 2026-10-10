@@ -119,6 +119,44 @@ export async function clearAudioRecordings() {
 }
 
 /**
+ * Deletes recordings older than `maxAgeMs`. Recordings are only ever used
+ * in memory during a live Speaking test, so anything that survives a page
+ * load is an orphan (tab closed, crash, abandoned test). Skips opening the
+ * database at all when it was never created on this device.
+ */
+export async function pruneAudioRecordingsOlderThan(maxAgeMs) {
+  if (typeof indexedDB === 'undefined') return 0;
+  try {
+    if (typeof indexedDB.databases === 'function') {
+      const dbs = await indexedDB.databases();
+      if (!dbs.some(d => d && d.name === DB_NAME)) return 0;
+    }
+    const db = await getDB();
+    const cutoff = Date.now() - maxAgeMs;
+    return await new Promise((resolve) => {
+      let removed = 0;
+      const tx = db.transaction([STORE_NAME], 'readwrite');
+      const request = tx.objectStore(STORE_NAME).openCursor();
+      request.onsuccess = (e) => {
+        const cursor = e.target.result;
+        if (!cursor) return;
+        const created = Date.parse(cursor.value?.createdAt);
+        if (!Number.isFinite(created) || created < cutoff) {
+          cursor.delete();
+          removed++;
+        }
+        cursor.continue();
+      };
+      tx.oncomplete = () => resolve(removed);
+      tx.onerror = () => resolve(removed);
+      tx.onabort = () => resolve(removed);
+    });
+  } catch {
+    return 0;
+  }
+}
+
+/**
  * Eradicates all stored audio blobs from IndexedDB.
  */
 export async function eradicateAllAudioRecordings() {

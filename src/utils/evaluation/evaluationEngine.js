@@ -2,8 +2,8 @@
 // Executes deterministic checking + AI evaluation pipeline.
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
 
-import { AIProvider } from '../ai/aiProvider.js';
-import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, stripLeadingArticle, differByArticle, parseWordLimit } from '../bandCalculator.js';
+import { evaluateWritingWithAI, evaluateSpeakingWithAI, directVerifyAnswers } from '../geminiEvaluator.js';
+import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, differByArticle } from '../bandCalculator.js';
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
 import { recordAttempt } from '../performanceStore.js';
@@ -18,6 +18,7 @@ import { getAiConfigState } from '../storage.js';
 export function isCandidateAnswerCorrect(candidateAns, officialAns, { wordLimit = null } = {}) {
   if (candidateAns === undefined || candidateAns === null || candidateAns === '') return false;
   if (!officialAns || (Array.isArray(officialAns) && officialAns.length === 0)) return false;
+  if (evaluateDeterministic(candidateAns, officialAns, { wordLimit }).result === DETERMINISTIC.MATCH) return true;
   const normCandidate = normalizeAnswer(String(candidateAns));
   if (!normCandidate) return false;
 
@@ -28,6 +29,8 @@ export function isCandidateAnswerCorrect(candidateAns, officialAns, { wordLimit 
     return false;
   });
 }
+
+const VERIFY_TIMEOUT_MS = 25000;
 
 /** The answer a question is matched against: the structured accepted list when present. */
 function officialFor(q) {
@@ -76,7 +79,7 @@ export function alignUnorderedAnswers(questions, answers) {
  *    authoritative — AI only judges representational equivalence.
  * UNCERTAIN that AI cannot confidently accept scores as INCORRECT.
  */
-async function resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId) {
+async function resolveWithHybridVerification(allQuestions, answers, itemResults) {
   const uncertain = [];
   for (const q of allQuestions) {
     const student = answers[q.id];
@@ -131,12 +134,20 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults,
 
   if (uncertain.length === 0) return;
   try {
-    let res = await verifyAnswersViaWorker(uncertain);
-    if (!res || !res.results || res.results.length === 0) {
-      // Local fallback if worker couldn't verify (e.g. unauthenticated, offline, or local key mode)
-      const { directVerifyAnswers } = await import('../geminiEvaluator.js');
-      res = await directVerifyAnswers(uncertain);
-    }
+    // Grading must never hang on the network: past the deadline the
+    // deterministic results stand and the candidate gets their score.
+    const verify = async () => {
+      let r = await verifyAnswersViaWorker(uncertain);
+      if (!r || !r.results || r.results.length === 0) {
+        // Local fallback if worker couldn't verify (e.g. unauthenticated, offline, or local key mode)
+        r = await directVerifyAnswers(uncertain);
+      }
+      return r;
+    };
+    const res = await Promise.race([
+      verify(),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('verification timeout')), VERIFY_TIMEOUT_MS)),
+    ]);
     const byId = new Map((res.results || []).map(r => [r.id, r]));
     for (const item of uncertain) {
       const rec = itemResults[item.id];
@@ -197,8 +208,6 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
       raw: 0,
       total: allQuestions.length,
       answers: {},
-      aiVerification: {},
-      disagreements: []
     };
   }
 
@@ -216,8 +225,6 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
       percentage: 0,
       answers,
       itemResults: {},
-      aiVerification: {},
-      disagreements: []
     };
   }
 
@@ -236,7 +243,16 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
 
   // Hybrid tier: deterministic-UNCERTAIN free-text goes to one batched AI
   // verification; final tallies use the resolved results.
-  await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
+  await resolveWithHybridVerification(allQuestions, answers, itemResults);
+
+  // Guarantee that every question has a finalResult (deterministic correct answers are always credited)
+  for (const q of allQuestions) {
+    const rec = itemResults[q.id];
+    if (rec && !rec.finalResult) {
+      rec.finalResult = rec.deterministicCorrect ? 'CORRECT' : 'INCORRECT';
+    }
+  }
+
   const confirmedCorrect = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
   const unresolvedCount = Object.values(itemResults).filter(r => r.unresolved || r.finalResult === 'UNCERTAIN').length;
 
@@ -247,41 +263,6 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
   const band = bandMin; // Authoritative confirmed band: do not invent final credit
   const hasUnresolved = unresolvedCount > 0;
   const scoreRange = hasUnresolved ? { rawMin, rawMax, bandMin, bandMax, unresolvedCount } : null;
-
-  // 2. AI Evaluation & Verification (Batch per passage)
-  const aiVerification = {};
-  const disagreements = [];
-
-  for (const passage of passages) {
-    const passageQuestions = passage.questions || [];
-    try {
-      const aiBatch = await AIProvider.evaluateReadingBatch({
-        passageTitle: passage.title || 'Academic Reading Passage',
-        passageText: passage.text || passage.passageText || (passage.htmlContent ? passage.htmlContent.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : ''),
-        questions: passageQuestions,
-        answers,
-        attemptId
-      });
-
-      if (aiBatch.status === 'completed' && aiBatch.verificationMap) {
-        Object.entries(aiBatch.verificationMap).forEach(([qId, v]) => {
-          aiVerification[qId] = v;
-          const det = itemResults[qId];
-          // Check for disagreement
-          if (det && det.deterministicCorrect !== v.isCorrect) {
-            disagreements.push({
-              questionId: qId,
-              deterministic: det.deterministicCorrect,
-              ai: v.isCorrect,
-              reason: v.reason
-            });
-          }
-        });
-      }
-    } catch (e) {
-      console.warn('AI reading batch verification error', e);
-    }
-  }
 
   return {
     status: 'completed',
@@ -299,8 +280,6 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
     percentage: allQuestions.length > 0 ? Math.round((confirmedCorrect / allQuestions.length) * 100) : 0,
     answers,
     itemResults,
-    aiVerification,
-    disagreements
   };
 }
 
@@ -322,8 +301,6 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
       raw: 0,
       total: allQuestions.length,
       answers: {},
-      aiVerification: {},
-      disagreements: []
     };
   }
 
@@ -346,7 +323,16 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
 
   // Hybrid tier (Phase 5): plural/number/format variants verified in ONE
   // batched AI request; official key remains authoritative.
-  await resolveWithHybridVerification(allQuestions, answers, itemResults, attemptId);
+  await resolveWithHybridVerification(allQuestions, answers, itemResults);
+
+  // Guarantee that every question has a finalResult (deterministic correct answers are always credited)
+  for (const q of allQuestions) {
+    const rec = itemResults[q.id];
+    if (rec && !rec.finalResult) {
+      rec.finalResult = rec.deterministicCorrect ? 'CORRECT' : 'INCORRECT';
+    }
+  }
+
   const confirmedCorrect = Object.values(itemResults).filter(r => r.finalResult === 'CORRECT').length;
   const unresolvedCount = Object.values(itemResults).filter(r => r.unresolved || r.finalResult === 'UNCERTAIN').length;
 
@@ -357,41 +343,6 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
   const band = bandMin; // Authoritative confirmed band: do not invent final credit
   const hasUnresolved = unresolvedCount > 0;
   const scoreRange = hasUnresolved ? { rawMin, rawMax, bandMin, bandMax, unresolvedCount } : null;
-
-  // 2. AI Evaluation & Verification (Batch per section)
-  const aiVerification = {};
-  const disagreements = [];
-
-  for (const section of sections) {
-    const sectionQuestions = section.questions || [];
-    try {
-      const aiBatch = await AIProvider.evaluateListeningBatch({
-        sectionNumber: section.sectionNumber || 1,
-        transcript: section.transcript || '',
-        questions: sectionQuestions,
-        answers,
-        attemptId
-      });
-
-      if (aiBatch.status === 'completed' && aiBatch.verificationMap) {
-        Object.entries(aiBatch.verificationMap).forEach(([qId, v]) => {
-          aiVerification[qId] = v;
-          const det = itemResults[qId];
-          // Check for disagreement
-          if (det && det.deterministicCorrect !== v.isCorrect) {
-            disagreements.push({
-              questionId: qId,
-              deterministic: det.deterministicCorrect,
-              ai: v.isCorrect,
-              reason: v.reason
-            });
-          }
-        });
-      }
-    } catch (e) {
-      console.warn('AI listening batch verification error', e);
-    }
-  }
 
   return {
     status: 'completed',
@@ -409,8 +360,6 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
     percentage: allQuestions.length > 0 ? Math.round((confirmedCorrect / allQuestions.length) * 100) : 0,
     answers,
     itemResults,
-    aiVerification,
-    disagreements
   };
 }
 
@@ -432,14 +381,16 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
     };
   }
 
-  const res = await AIProvider.evaluateWriting({
-    task1Text: t1Clean,
-    task2Text: t2Clean,
-    prompts,
-    attemptId
-  });
-
-  return res;
+  // Same evaluator as practice Writing: server first, then the local-key
+  // fallback, with the shared result cache.
+  const res = await evaluateWritingWithAI({ task1Text: t1Clean, task2Text: t2Clean, prompts });
+  const completed = res?.evaluationStatus === 'completed' && typeof res.band === 'number';
+  return {
+    ...res,
+    status: completed ? 'completed' : (res?.evaluationStatus === 'partial' ? 'partial' : 'failed'),
+    band: completed ? res.band : null,
+    overallBand: completed ? res.band : null,
+  };
 }
 
 /**
@@ -456,7 +407,7 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
  *   explicit availableCriteria list).
  * - notes are planning material and are never sent to the evaluator.
  */
-export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, attemptId = 'anon', expectedQuestions = null }) {
+export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, durations = {}, attemptId = 'anon', expectedQuestions = null }) {
   const spokenWords = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
 
   const partsAttempted = new Set();
@@ -480,8 +431,13 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
 
   const pronunciationNotAssessed = {
     assessed: false,
+    status: 'not_assessed',
     band: null,
     reason: 'Audio pronunciation analysis is not currently available. Pronunciation is never inferred from transcription accuracy.',
+    personalizedAssessment: 'Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.',
+    improvementFocus: 'Record your answers aloud to practice word stress, rhythm, and sentence intonation.',
+    nextBandAdvice: 'Record your answers aloud to practice word stress, rhythm, and sentence intonation.',
+    corrections: [],
   };
 
   // Partial coverage never produces band scores — qualitative feedback only.
@@ -492,7 +448,11 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       out[k] = {
         assessed: true,
         band: null,
-        feedback: (v && typeof v === 'object' ? (v.notes || v.feedback || v.description || '') : String(v ?? '')),
+        feedback: (v && typeof v === 'object' ? (v.notes || v.feedback || v.personalizedAssessment || v.rationale || v.description || '') : String(v ?? '')),
+        personalizedAssessment: (v && typeof v === 'object' ? (v.personalizedAssessment || v.rationale || '') : ''),
+        corrections: Array.isArray(v?.corrections) ? v.corrections : [],
+        nextBandAdvice: (v && typeof v === 'object' ? (v.nextBandAdvice || v.improvementFocus || '') : ''),
+        improvementFocus: (v && typeof v === 'object' ? (v.nextBandAdvice || v.improvementFocus || '') : ''),
       };
     }
     out.pronunciation = pronunciationNotAssessed;
@@ -527,12 +487,11 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     };
   }
 
-  const res = await AIProvider.evaluateSpeaking({
-    transcripts,
-    testMeta,
-    audioRecordings,
-    attemptId
-  });
+  // Server first, then the local-key fallback, with the shared result cache.
+  const ai = await evaluateSpeakingWithAI({ transcripts, testMeta, durations });
+  const res = ai?.evaluationStatus === 'completed'
+    ? { ...ai, status: 'completed', provider: { name: ai.providerUsed || 'gemini', model: ai.modelUsed, tier: ai.evaluationTier } }
+    : { status: 'failed', message: ai?.message };
 
   if (!res || res.status !== 'completed' || !res.criteria) {
     return {
@@ -558,8 +517,10 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       overallSpeakingBand: null,
       criteria: stripBands(res.criteria),
       overallSummary: res.overallSummary || '',
+      priorityWeaknesses: res.priorityWeaknesses || [],
       strengths: res.strengths || '',
       areasForImprovement: res.areasForImprovement || '',
+      partFeedback: res.partFeedback || {},
       provider: res.provider,
       coverage,
       message: `${coverage.statement} Criterion band scores require the full interview; this is response-level feedback only.`,
@@ -573,10 +534,15 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     overallSpeakingBand: res.overallBand ?? null,
     provisional: res.provisional ?? true,
     scoringMethod: res.scoringMethod || 'Provisional transcript-based estimate: Mean of 3 criteria (Pronunciation unassessed).',
-    criteria: { ...res.criteria, pronunciation: pronunciationNotAssessed },
+    criteria: {
+      ...res.criteria,
+      pronunciation: res.criteria?.pronunciation?.status === 'assessed' ? res.criteria.pronunciation : pronunciationNotAssessed,
+    },
     overallSummary: res.overallSummary || '',
+    priorityWeaknesses: res.priorityWeaknesses || [],
     strengths: res.strengths || '',
     areasForImprovement: res.areasForImprovement || '',
+    partFeedback: res.partFeedback || {},
     provider: res.provider,
     coverage,
   };

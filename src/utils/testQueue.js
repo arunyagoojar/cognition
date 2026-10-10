@@ -117,11 +117,9 @@ export function getNextTestInRotation() {
   const uncompleted = allTests.filter(t => !completedInCycle.includes(t.id));
   const pool = uncompleted.length ? uncompleted : allTests;
   const testMeta = pool[Math.floor(Math.random() * pool.length)];
-  const nextId = testMeta.id;
 
   const completedCount = completedInCycle.length;
   const totalCount = allTests.length;
-  const queue = allTests.map(t => t.id);
   const positionInRotation = completedCount + 1;
 
   return {

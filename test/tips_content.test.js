@@ -12,6 +12,12 @@ import {
   getTipsCategory,
   countTipsWithExamples,
 } from '../src/data/tips/index.js';
+import {
+  PHRASE_BANK,
+  PHRASE_BANK_LINKED_CATEGORIES,
+  countPhrases,
+  filterPhraseBank,
+} from '../src/data/tips/phraseBank.js';
 import { shouldShowOnboarding, markOnboardingComplete, getCompletedOnboardingUser } from '../src/utils/onboarding.js';
 
 let passed = 0, failed = 0;
@@ -135,6 +141,60 @@ t('Writing covers Task 2, Task 1, Vocabulary and Assessment groups', () => {
     'writing-t1-process-diagrams', 'writing-t1-maps', 'writing-vocab-bank', 'writing-assessment',
   ]) {
     assert.ok(cats.includes(expected), `missing writing category ${expected}`);
+  }
+});
+
+console.log('== Speaking: Band 7–9 Phrase Bank ==');
+t('phrase bank has its own id, title, intro and advice', () => {
+  assert.equal(PHRASE_BANK.id, 'speaking-phrase-bank');
+  assert.ok(PHRASE_BANK.title && PHRASE_BANK.intro);
+  assert.ok(PHRASE_BANK.advice.length >= 3);
+  const tipCategoryIds = TIPS_SKILLS_ORDERED.flatMap(s => s.categories.map(c => c.id));
+  assert.ok(!tipCategoryIds.includes(PHRASE_BANK.id), 'section anchor must not collide with a tips category');
+});
+t('categories are complete and uniquely identified', () => {
+  assert.ok(PHRASE_BANK.categories.length >= 10, 'expected the full set of functional groups');
+  const ids = PHRASE_BANK.categories.map(c => c.id);
+  assert.equal(new Set(ids).size, ids.length, 'duplicate phrase bank category id');
+  for (const cat of PHRASE_BANK.categories) {
+    assert.match(cat.id, /^pb-[a-z0-9-]+$/);
+    assert.ok(cat.title && cat.chip && cat.intro, `${cat.id} metadata`);
+    assert.ok(cat.phrases.length >= 5, `${cat.id} has phrases`);
+  }
+});
+t('every phrase has a unique slug id and non-empty phrase, tag, note and example', () => {
+  const ids = [];
+  const phrases = [];
+  for (const cat of PHRASE_BANK.categories) {
+    for (const item of cat.phrases) {
+      ids.push(item.id);
+      phrases.push(item.phrase.toLowerCase());
+      assert.match(item.id, /^pb-[a-z0-9-]+$/);
+      for (const field of ['phrase', 'tag', 'note', 'example']) {
+        assert.ok(typeof item[field] === 'string' && item[field].trim().length > 0, `${item.id} missing ${field}`);
+      }
+      assert.ok(item.note.length >= 30 && item.note.length <= 220, `${item.id} note should be short but useful`);
+      assert.ok(item.example.length >= 30, `${item.id} example should be a full sentence`);
+    }
+  }
+  assert.equal(new Set(ids).size, ids.length, 'duplicate phrase id');
+  assert.equal(new Set(phrases).size, phrases.length, 'duplicate phrase');
+  assert.equal(countPhrases(), ids.length);
+  assert.ok(ids.length >= 100, `expected at least 100 phrases, got ${ids.length}`);
+});
+t('search is case- and apostrophe-insensitive; category filter narrows', () => {
+  const hit = filterPhraseBank('IM OF THE OPINION').flatMap(c => c.phrases);
+  assert.deepEqual(hit.map(p => p.id), ['pb-im-of-the-opinion-that']);
+  assert.equal(filterPhraseBank("I'm inclined").flatMap(c => c.phrases).length, 1);
+  assert.equal(filterPhraseBank('no-such-phrase-anywhere').length, 0);
+  const one = filterPhraseBank('', 'pb-linking');
+  assert.equal(one.length, 1);
+  assert.equal(one[0].phrases.length, PHRASE_BANK.categories.find(c => c.id === 'pb-linking').phrases.length);
+  assert.equal(filterPhraseBank('').length, PHRASE_BANK.categories.length);
+});
+t('linked speaking categories exist so the coach links render', () => {
+  for (const id of PHRASE_BANK_LINKED_CATEGORIES) {
+    assert.ok(getTipsCategory('speaking', id), `missing speaking category ${id}`);
   }
 });
 

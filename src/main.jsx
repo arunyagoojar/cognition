@@ -4,6 +4,11 @@ import { ClerkProvider } from '@clerk/react'
 import './index.css'
 import App from './App.jsx'
 import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js'
+import { pruneStaleClientData } from './utils/clientDataRetention.js'
+
+// Drop expired in-progress state, stale AI cache entries and orphaned
+// recordings before the app reads any stored state.
+pruneStaleClientData()
 
 function Root() {
   // Without a Clerk key, render without auth — the app is fully functional
@@ -65,6 +70,12 @@ function Root() {
       <App />
     </ClerkProvider>
   )
+}
+
+// The app manages its own scroll position between screens; stop the browser
+// from restoring a stale offset on reload / back-forward.
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual'
 }
 
 createRoot(document.getElementById('root')).render(

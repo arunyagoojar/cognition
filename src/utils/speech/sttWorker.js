@@ -1,274 +1,190 @@
 /**
- * On-device speech-to-text worker.
- * Uses Whistle (Cactus Compute, 16.9 MB, Apache 2.0).
+ * On-device speech-to-text worker (OpenAI Whisper via transformers.js).
  *
  * Runs off the main thread so recording and the exam UI never stutter.
- * Whistle runs via WebAssembly (Needle engine) with 80 ms word timestamps.
+ *   - whisper-small.en, 4-bit, on WebGPU
+ *   - whisper-base.en in WASM as the automatic fallback: no WebGPU, weak /
+ *     low-memory devices, or small.en failing to load or run here.
+ *     (small.en on single-threaded WASM measured ~0.75x real time on a laptop
+ *     CPU — over a minute per 2-minute answer — so it is never used there.)
+ * Weights are downloaded once from the Hugging Face hub and kept in Cache
+ * Storage ('transformers-cache'); later visits load from disk.
+ *
+ * Transcripts are verbatim: no prompt, greedy decoding, nothing rewritten
+ * except Whisper's own silence artefacts and runaway repetition loops
+ * (see transcriptGuards.js).
  *
  * Messages in:
- *   { type: 'load' }
- *   { type: 'transcribe', id, segments: Array<{ pcm: Float32Array, offsetSec?: number }> | Float32Array[] }
- *
+ *   { type: 'load', engine, hints: { lowMemory } }
+ *   { type: 'transcribe', id, segments: Array<{ pcm: Float32Array, offsetSec, durationSec, speechSec }> }
  * Messages out:
+ *   { type: 'engine', engine, device, version, downloadMb }   (choice made / changed)
  *   { type: 'progress', loaded, total, engine }
+ *   { type: 'fallback', from, to, reason }                    (small.en unusable here)
  *   { type: 'ready', engine, device, version }
  *   { type: 'result', id, text, words, engine, version }
  *   { type: 'error', id?, message }
  */
-import createNeedle from './vendor/needle.js';
+import { pipeline, env } from '@huggingface/transformers';
 import { STT_ENGINES, ENGINE_METADATA } from './transcriberTypes.js';
+import { guardSegmentText, maxNewTokensFor } from './transcriptGuards.js';
 
-/* ── Whistle configuration (Needle WASM) ── */
-let needleModule = null;
-let whistleLoaded = false;
-let whistlePromise = null;
-
-async function fetchBinaryWithCache(url, engine = STT_ENGINES.WHISTLE, expectedBytes = 17734512) {
-  const cacheName = 'whistle-cache';
-  if (typeof caches !== 'undefined') {
-    try {
-      const cache = await caches.open(cacheName);
-      const cached = await cache.match(url);
-      if (cached) {
-        const ab = await cached.arrayBuffer();
-        if (ab.byteLength >= expectedBytes * 0.7) {
-          self.postMessage({ type: 'progress', loaded: ab.byteLength, total: ab.byteLength, engine });
-          return new Uint8Array(ab);
-        } else {
-          // Corrupted or truncated cached file — remove and refetch
-          try { await cache.delete(url); } catch {}
-        }
-      }
-    } catch {
-      /* Cache API access failed, fall back to fetch */
-    }
-  }
-
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} when fetching ${url}`);
-
-  const contentLength = Number(res.headers?.get('Content-Length') || 0);
-  const total = contentLength || expectedBytes;
-  let loaded = 0;
-  const chunks = [];
-
-  if (res.body && typeof res.body.getReader === 'function') {
-    const reader = res.body.getReader();
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      if (value) {
-        chunks.push(value);
-        loaded += value.length;
-        self.postMessage({ type: 'progress', loaded, total: Math.max(total, loaded), engine });
-      }
-    }
-  } else {
-    const ab = await res.arrayBuffer();
-    chunks.push(new Uint8Array(ab));
-    loaded = ab.byteLength;
-    self.postMessage({ type: 'progress', loaded, total: loaded, engine });
-  }
-
-  const full = new Uint8Array(loaded);
-  let offset = 0;
-  for (const c of chunks) {
-    full.set(c, offset);
-    offset += c.length;
-  }
-
-  if (typeof caches !== 'undefined' && loaded >= expectedBytes * 0.7) {
-    try {
-      const cache = await caches.open(cacheName);
-      await cache.put(
-        url,
-        new Response(full.buffer.slice(0), {
-          headers: {
-            'Content-Type': 'application/octet-stream',
-            'Content-Length': String(full.byteLength),
-          },
-        })
-      );
-    } catch {
-      /* ignore cache write failure */
-    }
-  }
-
-  return full;
+env.allowLocalModels = false;
+env.useBrowserCache = true;
+try {
+  // Without cross-origin isolation the WASM backend is single-threaded anyway;
+  // saying so up front avoids ORT's SharedArrayBuffer probe and warning.
+  if (env.backends?.onnx?.wasm && !self.crossOriginIsolated) env.backends.onnx.wasm.numThreads = 1;
+} catch {
+  /* best effort */
 }
 
-function getAssetUrl(path) {
+let current = null; // { engine, device, version, asr }
+let loading = null; // Promise<current>
+let chain = Promise.resolve(); // model calls run one at a time
+
+function serial(fn) {
+  const run = chain.then(fn, fn);
+  chain = run.catch(() => {});
+  return run;
+}
+
+async function hasWebGPU() {
   try {
-    if (typeof self !== 'undefined' && self.location?.origin) {
-      return new URL(path, self.location.origin).href;
-    }
+    if (!self.navigator?.gpu) return false;
+    return Boolean(await self.navigator.gpu.requestAdapter());
   } catch {
-    /* fallback to relative */
+    return false;
   }
-  return path;
 }
 
-async function loadWhistle() {
-  if (whistleLoaded && needleModule) return needleModule;
-  if (whistlePromise) return whistlePromise;
+/** Picks engine + device for this device. */
+async function choose(preferred, hints = {}) {
+  if (preferred !== STT_ENGINES.WHISPER_BASE_EN && !hints.lowMemory) {
+    if (await hasWebGPU()) return { engine: STT_ENGINES.WHISPER_SMALL_EN, device: 'webgpu' };
+  }
+  return { engine: STT_ENGINES.WHISPER_BASE_EN, device: 'wasm' };
+}
 
-  whistlePromise = (async () => {
-    // 1. Fetch needle.wasm binary
-    let wasmBytes = null;
-    try {
-      wasmBytes = await fetchBinaryWithCache(getAssetUrl('/stt/needle.wasm'), STT_ENGINES.WHISTLE, 923000);
-    } catch {
-      wasmBytes = await fetchBinaryWithCache(
-        'https://huggingface.co/Cactus-Compute/needle3/resolve/main/wasm/needle.wasm',
-        STT_ENGINES.WHISTLE,
-        923000
-      );
-    }
+function variantOf(engine, device) {
+  const meta = ENGINE_METADATA[engine];
+  return meta.variants[device] || meta.variants.wasm;
+}
 
-    // 2. Fetch whistle.cact model (16.9 MB)
-    let cactBytes = null;
-    try {
-      cactBytes = await fetchBinaryWithCache(getAssetUrl('/stt/whistle.cact'), STT_ENGINES.WHISTLE, 17734512);
-    } catch {
-      cactBytes = await fetchBinaryWithCache(
-        'https://huggingface.co/Cactus-Compute/whistle/resolve/main/whistle.cact',
-        STT_ENGINES.WHISTLE,
-        17734512
-      );
-    }
-
-    // 3. Initialize needle WASM module
-    needleModule = await createNeedle({
-      wasmBinary: wasmBytes.buffer,
-    });
-
-    // 4. Load whistle.cact into needle engine
-    const cactPtr = needleModule._malloc(cactBytes.length);
-    needleModule.HEAPU8.set(cactBytes, cactPtr);
-    const ret = needleModule._needle_load(cactPtr, BigInt(cactBytes.length));
-    needleModule._free(cactPtr);
-
-    if (ret !== 0) {
-      throw new Error(`needle_load failed with code ${ret}`);
-    }
-
-    whistleLoaded = true;
-    return needleModule;
-  })().catch((err) => {
-    whistlePromise = null;
-    whistleLoaded = false;
-    needleModule = null;
-    throw err;
+async function create(engine, device) {
+  const meta = ENGINE_METADATA[engine];
+  const variant = variantOf(engine, device);
+  self.postMessage({
+    type: 'engine',
+    engine,
+    device,
+    version: variant.version,
+    downloadMb: Math.round(variant.bytes / 1e6),
   });
-
-  return whistlePromise;
-}
-
-/* ── Transcription routines ── */
-async function transcribeWithWhistle(segments) {
-  const mod = await loadWhistle();
-  const allWords = [];
-  const textParts = [];
-
-  for (const seg of segments) {
-    const rawPcm = seg?.pcm || (seg instanceof Float32Array ? seg : null);
-    const offsetSec = Number(seg?.offsetSec || 0);
-
-    if (!rawPcm) continue;
-    const pcm = rawPcm instanceof Float32Array ? rawPcm : new Float32Array(rawPcm);
-    if (pcm.length < 1600) continue; // < 0.1 s audio carries no speech
-
-    const samples = pcm.length;
-    const pcmPtr = mod._malloc(samples * 4);
-    mod.HEAPU8.set(new Uint8Array(pcm.buffer, pcm.byteOffset, pcm.byteLength), pcmPtr);
-
-    const outCap = 65536;
-    const outPtr = mod._malloc(outCap);
-    // lang=0 (auto/en), keywords=0, word_timestamps=1
-    // needle_transcribe returns the token count (>= 0 on success, < 0 on failure)
-    const ret = mod._needle_transcribe(pcmPtr, samples, 0, 0, 1, outPtr, outCap);
-    mod._free(pcmPtr);
-
-    if (ret < 0) {
-      let errDesc = `needle_transcribe failed with code ${ret}`;
-      if (typeof mod._needle_last_error === 'function') {
-        const errPtr = mod._needle_last_error();
-        if (errPtr) errDesc += `: ${mod.UTF8ToString(errPtr)}`;
-      }
-      mod._free(outPtr);
-      throw new Error(errDesc);
-    }
-
-    const jsonStr = mod.UTF8ToString(outPtr);
-    mod._free(outPtr);
-
-    let parsed = {};
-    try {
-      parsed = JSON.parse(jsonStr || '{}');
-    } catch {
-      parsed = { text: '' };
-    }
-
-    const segText = String(parsed.text || '').trim();
-    if (segText) textParts.push(segText);
-
-    if (Array.isArray(parsed.words)) {
-      for (const w of parsed.words) {
-        if (!w || !w.word) continue;
-        allWords.push({
-          word: String(w.word).trim(),
-          start: Math.round((offsetSec + (w.start || 0)) * 1000) / 1000,
-          end: Math.round((offsetSec + (w.end || 0)) * 1000) / 1000,
-          probability: Math.round((w.probability || 0) * 1000) / 1000,
-        });
-      }
-    }
-  }
-
-  return {
-    text: textParts.join(' ').replace(/\s+/g, ' ').trim(),
-    words: allWords,
-    engine: STT_ENGINES.WHISTLE,
-    version: ENGINE_METADATA.whistle.version,
+  const expected = variant.bytes;
+  let lastSent = 0;
+  const progress_callback = (p) => {
+    if (p?.status !== 'progress_total') return;
+    const total = Math.max(Number(p.total) || 0, expected);
+    const loaded = Math.min(Number(p.loaded) || 0, total);
+    const now = Date.now();
+    if (now - lastSent < 100 && loaded < total) return;
+    lastSent = now;
+    self.postMessage({ type: 'progress', loaded, total, engine });
   };
+  const asr = await pipeline('automatic-speech-recognition', meta.model, {
+    dtype: variant.dtype,
+    device,
+    progress_callback,
+  });
+  // One tiny pass compiles the WebGPU shaders now (not on the first answer)
+  // and proves the model actually runs on this GPU / browser.
+  await asr(new Float32Array(16000), { max_new_tokens: 4 });
+  return { engine, device, version: variant.version, asr };
 }
 
-/* ── Worker Message Dispatcher ── */
+async function dispose(entry) {
+  try {
+    await entry?.asr?.dispose?.();
+  } catch {
+    /* ignore */
+  }
+}
+
+async function fallBackToBase(reason) {
+  const from = current?.engine || STT_ENGINES.WHISPER_SMALL_EN;
+  const old = current;
+  current = null;
+  await dispose(old);
+  self.postMessage({ type: 'fallback', from, to: STT_ENGINES.WHISPER_BASE_EN, reason: String(reason || '') });
+  current = await create(STT_ENGINES.WHISPER_BASE_EN, 'wasm');
+  return current;
+}
+
+function load(preferred, hints) {
+  if (current) return Promise.resolve(current);
+  if (!loading) {
+    loading = serial(async () => {
+      const pick = await choose(preferred, hints);
+      try {
+        current = await create(pick.engine, pick.device);
+      } catch (e) {
+        if (pick.engine === STT_ENGINES.WHISPER_BASE_EN) throw e;
+        await fallBackToBase(e?.message || e);
+      }
+      self.postMessage({ type: 'ready', engine: current.engine, device: current.device, version: current.version });
+      return current;
+    }).finally(() => {
+      loading = null;
+    });
+  }
+  return loading;
+}
+
+async function transcribeSegments(entry, segments) {
+  const parts = [];
+  for (const seg of segments) {
+    const pcm = seg?.pcm instanceof Float32Array ? seg.pcm : seg instanceof Float32Array ? seg : null;
+    if (!pcm || pcm.length < 1600) continue; // < 0.1 s of audio carries no speech
+    const durationSec = Number(seg?.durationSec) || pcm.length / 16000;
+    const speechSec = seg?.speechSec ?? Infinity;
+    const out = await entry.asr(pcm, { max_new_tokens: maxNewTokensFor(durationSec) });
+    const text = guardSegmentText(out?.text, speechSec);
+    if (text) parts.push(text);
+  }
+  return parts.join(' ').replace(/\s+/g, ' ').trim();
+}
+
 self.onmessage = async (event) => {
   const msg = event.data || {};
 
   if (msg.type === 'load') {
     try {
-      await loadWhistle();
-      self.postMessage({
-        type: 'ready',
-        engine: STT_ENGINES.WHISTLE,
-        device: 'wasm',
-        version: ENGINE_METADATA.whistle.version,
-      });
-    } catch (whistleErr) {
-      self.postMessage({
-        type: 'error',
-        message: `Speech engine failed: Whistle (${whistleErr?.message || whistleErr})`,
-      });
+      await load(msg.engine, msg.hints);
+    } catch (e) {
+      self.postMessage({ type: 'error', message: `Speech model failed to load: ${e?.message || e}` });
     }
     return;
   }
 
   if (msg.type === 'transcribe') {
-    const id = msg.id;
+    const { id } = msg;
     const segments = msg.segments || [];
-
     try {
-      const result = await transcribeWithWhistle(segments);
-      self.postMessage({
-        type: 'result',
-        id,
-        text: result.text,
-        words: result.words,
-        engine: result.engine,
-        version: result.version,
+      const entry = await load(msg.engine, msg.hints);
+      const text = await serial(async () => {
+        try {
+          return await transcribeSegments(current || entry, segments);
+        } catch (e) {
+          // small.en ran out of GPU memory / lost its device mid-answer:
+          // switch to base.en and redo this answer once.
+          if ((current || entry).engine !== STT_ENGINES.WHISPER_SMALL_EN) throw e;
+          const base = await fallBackToBase(e?.message || e);
+          self.postMessage({ type: 'ready', engine: base.engine, device: base.device, version: base.version });
+          return transcribeSegments(base, segments);
+        }
       });
+      self.postMessage({ type: 'result', id, text, words: [], engine: current.engine, version: current.version });
     } catch (e) {
       self.postMessage({ type: 'error', id, message: String(e?.message || e) });
     }

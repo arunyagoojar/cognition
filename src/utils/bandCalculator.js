@@ -86,22 +86,99 @@ export function isAnswerCorrect(userAnswer, expectedAnswer) {
 }
 
 /**
- * Word↔digit equivalence table for safe numeric normalization (Phase 5).
- * Only unambiguous units 0–20 + tens are mapped; everything else stays.
+ * Canonical answer form used for deterministic equivalence. Only the
+ * representation is normalised — never the meaning:
+ *   "eleven" / "11", "twenty-five" / "25", "three million" / "3,000,000",
+ *   "third" / "3rd", "8th June" / "June 8" / "the 8th of June",
+ *   "£25" / "25", "40 per cent" / "40%" / "40", "11am" / "11 am".
  */
-const NUMBER_WORDS = {
-  zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7,
-  eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13,
-  fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18,
-  nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60,
-  seventy: 70, eighty: 80, ninety: 90, hundred: 100,
+const UNITS = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
+const TEENS = { ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19 };
+const TENS = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
+const SCALES = { thousand: 1e3, million: 1e6, billion: 1e9 };
+const ORD_UNITS = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9 };
+const ORD_TEENS = { tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14, fifteenth: 15, sixteenth: 16, seventeenth: 17, eighteenth: 18, nineteenth: 19 };
+const ORD_TENS = { twentieth: 20, thirtieth: 30, fortieth: 40, fiftieth: 50, sixtieth: 60, seventieth: 70, eightieth: 80, ninetieth: 90 };
+const MONTHS = {
+  january: 'january', jan: 'january', february: 'february', feb: 'february', march: 'march', mar: 'march',
+  april: 'april', apr: 'april', may: 'may', june: 'june', jun: 'june', july: 'july', jul: 'july',
+  august: 'august', aug: 'august', september: 'september', sep: 'september', sept: 'september',
+  october: 'october', oct: 'october', november: 'november', nov: 'november', december: 'december', dec: 'december',
+};
+const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+const ordinalSuffix = (n) => {
+  const m100 = n % 100;
+  if (m100 >= 11 && m100 <= 13) return 'th';
+  return ({ 1: 'st', 2: 'nd', 3: 'rd' })[n % 10] || 'th';
 };
 
+/** Reads one spelled-out number phrase starting at tokens[i]; null when there is none. */
+function readNumberRun(tokens, i) {
+  let total = 0, current = 0, last = null, j = i, words = 0, ordinal = false;
+  const open = () => last === null || last === 'hundred' || last === 'scale';
+  for (; j < tokens.length; j++) {
+    const t = tokens[j];
+    if (/^\d+$/.test(t) && last === null) { current = Number(t); last = 'digit'; continue; }
+    if (has(UNITS, t) && (open() || last === 'tens')) { current += UNITS[t]; last = 'unit'; words++; continue; }
+    if (has(TEENS, t) && open()) { current += TEENS[t]; last = 'teen'; words++; continue; }
+    if (has(TENS, t) && open()) { current += TENS[t]; last = 'tens'; words++; continue; }
+    if (t === 'hundred' && (last === null || last === 'unit' || last === 'digit') && current < 100) {
+      current = (current || 1) * 100; last = 'hundred'; words++; continue;
+    }
+    if (has(SCALES, t) && last !== 'scale') { total += (current || 1) * SCALES[t]; current = 0; last = 'scale'; words++; continue; }
+    if (t === 'and' && (last === 'hundred' || last === 'scale') && j + 1 < tokens.length
+      && (has(UNITS, tokens[j + 1]) || has(TEENS, tokens[j + 1]) || has(TENS, tokens[j + 1]))) continue;
+    const ord = has(ORD_UNITS, t) && (open() || last === 'tens') ? ORD_UNITS[t]
+      : has(ORD_TEENS, t) && open() ? ORD_TEENS[t]
+      : has(ORD_TENS, t) && open() ? ORD_TENS[t]
+      : null;
+    if (ord !== null) { current += ord; ordinal = true; words++; j++; break; }
+    break;
+  }
+  if (words === 0) return null; // nothing read, or a bare digit (left as written)
+  const value = total + current;
+  return { text: ordinal ? `${value}${ordinalSuffix(value)}` : String(value), next: j };
+}
+
 function canonicalizeNumbers(s) {
-  return s
-    .split(' ')
-    .map(w => (Object.prototype.hasOwnProperty.call(NUMBER_WORDS, w) ? String(NUMBER_WORDS[w]) : w))
-    .join(' ');
+  const tokens = s.split(' ').filter(Boolean);
+  const out = [];
+  for (let i = 0; i < tokens.length;) {
+    const run = readNumberRun(tokens, i);
+    if (run) { out.push(run.text); i = run.next; } else { out.push(tokens[i]); i++; }
+  }
+  return out.join(' ');
+}
+
+/** "8th june" / "june 8" / "the 8th of june" → "8 june". */
+function canonicalizeDate(s) {
+  const all = s.split(' ').filter(Boolean);
+  const monthIdx = all.findIndex(t => has(MONTHS, t));
+  if (monthIdx < 0) return s;
+  const tokens = all.filter(t => t !== 'the' && t !== 'of');
+  const mIdx = tokens.findIndex(t => has(MONTHS, t));
+  const rest = tokens.filter((_, k) => k !== mIdx);
+  const dayIdx = rest.findIndex(t => /^\d{1,2}(st|nd|rd|th)?$/.test(t) && Number(t.replace(/\D/g, '')) <= 31);
+  if (dayIdx < 0) return s;
+  const day = rest[dayIdx].replace(/(st|nd|rd|th)$/, '');
+  return [day, MONTHS[tokens[mIdx]], ...rest.filter((_, k) => k !== dayIdx)].join(' ');
+}
+
+export function canonicalAnswer(ans) {
+  if (ans === undefined || ans === null) return '';
+  let s = String(ans).normalize('NFKC').toLowerCase()
+    .replace(/[‐-―−]/g, '-')
+    .replace(/[‘’]/g, "'")
+    .replace(/\bper\s*cent\b/g, ' ')
+    .replace(/[£€$%]/g, ' ')
+    .replace(/(\d),(?=\d{3}\b)/g, '$1')        // 100,000 → 100000
+    .replace(/(\d)\s*[:.]\s*(\d)/g, '$1·$2')    // 9:30 / 9.30 → 9·30 (kept through punctuation stripping)
+    .replace(/-/g, ' ');
+  s = normalizeAnswer(s).replace(/·/g, '.');
+  s = s.replace(/(\d)\s*(am|pm)\b/g, '$1 $2');  // 11am → 11 am
+  s = canonicalizeNumbers(s);
+  s = canonicalizeDate(s);
+  return s.replace(/\s+/g, ' ').trim();
 }
 
 /**
@@ -166,7 +243,8 @@ export function officialAnswerVariants(expectedAnswer) {
     const expected = String(src ?? '').trim();
     if (!expected) continue;
     push(expected);
-    const parts = expected.includes('/') ? expected.split('/').map(x => x.trim()).filter(Boolean) : [expected];
+    // "1/3" is a fraction, not two alternatives: split only where the slash is not between digits
+    const parts = expected.split(/(?<!\d)\/|\/(?!\d)/).map(x => x.trim()).filter(Boolean);
     for (const v of parts) {
       push(v);
       const noArt = stripLeadingArticle(v);
@@ -221,10 +299,16 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
     if (differByArticle(user, norm, wordLimit)) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
-    // Safe numeric equivalence: "11" vs "11" (already equal) — word forms
-    // only create UNCERTAIN, never a silent MATCH.
-    if (canonicalizeNumbers(norm) === canonicalizeNumbers(user) && norm !== user) {
-      return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: variant };
+    // Representation-only equivalence: number words ↔ digits, ordinals,
+    // date order, currency/percent signs, "11am" ↔ "11 am". Meaning never changes.
+    const canonUser = canonicalAnswer(userAnswer);
+    const canonKey = canonicalAnswer(variant);
+    if (canonKey && (canonKey === canonUser || differByArticle(canonUser, canonKey, wordLimit))) {
+      return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
+    }
+    // Digit strings written with different grouping (phone/reference numbers)
+    if (/^[\d\s]+$/.test(canonKey) && /^[\d\s]+$/.test(canonUser) && canonKey.replace(/\s/g, '') === canonUser.replace(/\s/g, '')) {
+      return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
     if (differByPlural(user, norm)) {
       return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: variant };

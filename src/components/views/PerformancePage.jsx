@@ -4,7 +4,6 @@ import { calculateOverallBand } from '../../utils/bandCalculator';
 import { getCompletedResults } from '../../utils/storage';
 import { getPerformanceStore, derivePerformanceSummary } from '../../utils/performanceStore.js';
 import { deriveWeaknesses, deriveResultAnalysis } from '../../utils/insights.js';
-import { resolveRecommendations } from '../../data/recommendations.js';
 import ProgressTimeline from '../dashboard/ProgressTimeline.jsx';
 
 export default function PerformancePage({ scores, targetBand, onBack, onStartSkill }) {
@@ -19,12 +18,14 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
   const targetNum = parseFloat(targetBand) || 8.0;
 
   // Real historical trend check: only show if at least 2 historical results exist
+  // Previous overall = the same estimate without the most recent attempt
   const history = getCompletedResults() || [];
   const hasHistory = history.length > 1;
-  const previousOverall = hasHistory ? history[1]?.overallBand : null;
+  const previousOverall = hasHistory
+    ? derivePerformanceSummary({ attempts: (getPerformanceStore().attempts || []).slice(1) }).overallBand
+    : null;
   const bandDelta = (previousOverall && currentOverallNum) ? (currentOverallNum - parseFloat(previousOverall)).toFixed(1) : null;
 
-  // Identify Strongest and Weakest Skills for immediate 10-second scan
   const validSkills = [
     { id: 'listening', name: 'Listening', band: L, accent: 'var(--c-yellow)' },
     { id: 'reading', name: 'Reading', band: R, accent: 'var(--c-lavender)' },
@@ -32,23 +33,23 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
     { id: 'speaking', name: 'Speaking', band: S, accent: 'var(--c-near-black)' },
   ];
 
-  const attemptedSkills = validSkills.filter(s => s.band !== null);
-  const sortedByBand = [...attemptedSkills].sort((a, b) => b.band - a.band);
-  const strongestSkill = sortedByBand[0] || null;
-  const weakestSkill = sortedByBand.length > 1 ? sortedByBand[sortedByBand.length - 1] : null;
 
   // ── Real, deterministic per-skill analyses from stored attempts ──
   const store = getPerformanceStore();
   const attempts = store.attempts || [];
   const latestAttemptBySkill = {};
   for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
-    latestAttemptBySkill[skill] = attempts.find(a => a[skill] && a[skill].band !== null && a[skill].band !== undefined) || null;
+    const found = attempts.find(a => {
+      const rec = a[skill] || a.skills?.[skill];
+      return a.status === 'completed' && rec && rec.band !== null && rec.band !== undefined;
+    });
+    latestAttemptBySkill[skill] = found ? { ...found, [skill]: found[skill] || found.skills[skill] } : null;
   }
   const analyses = {};
   for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
     analyses[skill] = latestAttemptBySkill[skill] ? deriveResultAnalysis(skill, latestAttemptBySkill[skill]) : null;
   }
-  const { focusAreas, sufficientData } = deriveWeaknesses(attempts, targetBand);
+  const { focusAreas } = deriveWeaknesses(attempts, targetBand);
   const summary = derivePerformanceSummary();
 
   // Official IELTS Assessment Criteria & Concise Coaching Cards

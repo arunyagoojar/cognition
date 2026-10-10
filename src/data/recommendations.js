@@ -62,10 +62,6 @@ const MAPPING = {
   'speaking.overall': { lessons: ['sp-2'], tips: ['speaking-part1'], practice: 'speaking' },
 };
 
-const LESSON_ALIASES = {
-  'speaking.developing_answers': ['sp-3', 'sp-4'],
-};
-
 /**
  * Resolves a focus area to real, existing resources.
  * Returns null entries when no mapping exists — the UI then shows practice only.

@@ -379,6 +379,144 @@ test('SPEAKING', '10. Assessment with actual audio-derived evidence', () => {
   assert.equal(res.overallBand, 7.0);
 });
 
+test('SPEAKING', '11. Rich coaching feedback normalization (personalized assessment, corrections, next-band advice, priority weaknesses)', () => {
+  const richPayload = {
+    criteria: {
+      fluencyAndCoherence: {
+        band: 6,
+        personalizedAssessment: 'Speaks at length and sustains answers across all parts with clear progression. Occasional hesitation occurs when reformulating complex ideas, but does not cause breakdown in communication.',
+        corrections: [
+          {
+            original: 'because of I want to learn more',
+            alternative: 'because I wanted to learn more',
+            explanation: 'Use a finite clause with subject and verb after "because", rather than "because of".'
+          }
+        ],
+        nextBandAdvice: 'Practice linking complex reasons using subordinate markers like "given that" or "as a result of".'
+      },
+      lexicalResource: {
+        band: 6,
+        personalizedAssessment: 'Has a wide enough vocabulary to discuss familiar and abstract topics. Makes meaning clear despite some awkward collocations and imprecise word choices.',
+        corrections: [
+          {
+            original: 'make a big progress',
+            alternative: 'make significant progress',
+            explanation: '"Progress" is uncountable and pairs naturally with "significant" or "rapid" rather than "a big".'
+          }
+        ],
+        nextBandAdvice: 'Focus on precise verb-noun collocations rather than general adjectives like "big" or "good".'
+      },
+      grammaticalRangeAndAccuracy: {
+        band: 6,
+        personalizedAssessment: 'Uses a mix of simple and complex sentence structures with subordinate clauses. Frequent grammatical slips with past tense consistency and prepositions occur, but these rarely cause comprehension problems.',
+        corrections: [
+          {
+            original: 'I am live here since five years',
+            alternative: 'I have lived here for five years',
+            explanation: 'Use present perfect with "for" to express an action that started in the past and continues into the present.'
+          }
+        ],
+        nextBandAdvice: 'Consolidate present perfect vs past simple contrast when talking about personal history.'
+      },
+      pronunciation: {
+        status: 'not_assessed',
+        band: null,
+        personalizedAssessment: 'Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.',
+        corrections: [],
+        nextBandAdvice: 'Record answers aloud and practice sentence stress.'
+      }
+    },
+    priorityWeaknesses: [
+      'Tense consistency in past narrative accounts.',
+      'Uncountable noun collocations (e.g. progress, information).'
+    ],
+    overallSummary: 'Competent speaker who sustains long turns and communicates meaning clearly.',
+    strengths: 'Willingness to speak at length with coherent progression across Part 2 and Part 3.',
+    areasForImprovement: 'Grammatical tense precision and collocation naturalness.',
+    confidence: 'high'
+  };
+
+  const res = normalizeSpeakingEvaluation(richPayload, { audioAssessed: false });
+  assert.equal(res.overallBand, 6.0);
+  assert.equal(res.provisional, true);
+  assert.equal(res.criteria.fluencyAndCoherence.band, 6);
+  assert.ok(res.criteria.fluencyAndCoherence.personalizedAssessment.includes('Speaks at length'));
+  assert.equal(res.criteria.fluencyAndCoherence.corrections.length, 1);
+  assert.equal(res.criteria.fluencyAndCoherence.corrections[0].original, 'because of I want to learn more');
+  assert.equal(res.criteria.fluencyAndCoherence.corrections[0].alternative, 'because I wanted to learn more');
+  assert.ok(res.criteria.fluencyAndCoherence.nextBandAdvice.includes('subordinate markers'));
+  assert.equal(res.priorityWeaknesses.length, 2);
+  assert.equal(res.priorityWeaknesses[0], 'Tense consistency in past narrative accounts.');
+  assert.equal(res.criteria.pronunciation.status, 'not_assessed');
+  assert.equal(res.criteria.pronunciation.band, null);
+});
+
+test('SPEAKING', '12. Band 5 vs Band 6 boundary calibration (independent criteria without artificial deflation)', () => {
+  // A candidate who sustains speech at length with clear meaning despite errors in complex sentences
+  // firmly meets Band 6 across FC, LR, and GRA per official descriptors
+  const band6Candidate = {
+    criteria: {
+      fluencyAndCoherence: { band: 6, personalizedAssessment: 'Speaks at length willingly across all parts; occasional repetition.', corrections: [], nextBandAdvice: 'Use varied discourse markers.' },
+      lexicalResource: { band: 6, personalizedAssessment: 'Vocabulary is wide enough to make meaning clear across topics.', corrections: [], nextBandAdvice: 'Expand topic collocations.' },
+      grammaticalRangeAndAccuracy: { band: 6, personalizedAssessment: 'Mix of simple and complex sentences; mistakes occur but rarely impede meaning.', corrections: [], nextBandAdvice: 'Refine complex clause accuracy.' },
+      pronunciation: { status: 'not_assessed', band: null, rationale: 'Pronunciation requires audio.', improvementFocus: 'Practice rhythm.' }
+    }
+  };
+  const res6 = normalizeSpeakingEvaluation(band6Candidate, { audioAssessed: false });
+  assert.equal(res6.criteria.fluencyAndCoherence.band, 6);
+  assert.equal(res6.criteria.lexicalResource.band, 6);
+  assert.equal(res6.criteria.grammaticalRangeAndAccuracy.band, 6);
+  assert.equal(res6.overallBand, 6.0);
+
+  // A candidate who struggles with complex communication and has limited flexibility is Band 5
+  const band5Candidate = {
+    criteria: {
+      fluencyAndCoherence: { band: 5, personalizedAssessment: 'Maintains simple speech but complex ideas cause breakdown; overuses basic connectives.', corrections: [], nextBandAdvice: 'Practice linking beyond "and" and "because".' },
+      lexicalResource: { band: 5, personalizedAssessment: 'Vocabulary limited to familiar topics; noticeable errors cause strain.', corrections: [], nextBandAdvice: 'Build vocabulary for abstract topics.' },
+      grammaticalRangeAndAccuracy: { band: 5, personalizedAssessment: 'Produces basic structures accurately; complex structures usually contain errors.', corrections: [], nextBandAdvice: 'Master compound sentences before attempting multi-clause sentences.' },
+      pronunciation: { status: 'not_assessed', band: null, rationale: 'Pronunciation requires audio.', improvementFocus: 'Practice rhythm.' }
+    }
+  };
+  const res5 = normalizeSpeakingEvaluation(band5Candidate, { audioAssessed: false });
+  assert.equal(res5.overallBand, 5.0);
+});
+
+test('SPEAKING', '13. Score stability: repeated evaluation of identical input produces identical scores and feedback', () => {
+  const sample = sampleSpeaking(6, 6, 6);
+  const run1 = normalizeSpeakingEvaluation(sample, { audioAssessed: false });
+  const run2 = normalizeSpeakingEvaluation(sample, { audioAssessed: false });
+  assert.deepEqual(run1.overallBand, run2.overallBand);
+  assert.deepEqual(run1.criteria.fluencyAndCoherence, run2.criteria.fluencyAndCoherence);
+  assert.deepEqual(run1.criteria.lexicalResource, run2.criteria.lexicalResource);
+  assert.deepEqual(run1.criteria.grammaticalRangeAndAccuracy, run2.criteria.grammaticalRangeAndAccuracy);
+  assert.deepEqual(run1.criteria.pronunciation, run2.criteria.pronunciation);
+});
+
+test('SPEAKING', '14. Evidence-based correction validation: malformed corrections filtered out, valid preserved', () => {
+  const rawWithMixedCorrections = {
+    criteria: {
+      fluencyAndCoherence: {
+        band: 6,
+        personalizedAssessment: 'Coherent response with minor slips.',
+        corrections: [
+          { original: 'in the other hand', alternative: 'on the other hand', explanation: 'Preposition error: the fixed idiom is "on the other hand".' },
+          { original: '', alternative: 'something', explanation: 'Missing original' }, // should be filtered
+          { original: 'invalid', alternative: '', explanation: 'Missing alternative' }, // should be filtered
+          null, // should be filtered
+        ],
+        nextBandAdvice: 'Review prepositional linking expressions.'
+      },
+      lexicalResource: crit(6, 'adequate', 'clear meaning', 'collocations'),
+      grammaticalRangeAndAccuracy: crit(6, 'mix of structures', 'errors rarely impede', 'accuracy'),
+      pronunciation: { status: 'not_assessed', band: null, rationale: 'audio required', improvementFocus: 'stress' }
+    }
+  };
+  const res = normalizeSpeakingEvaluation(rawWithMixedCorrections, { audioAssessed: false });
+  assert.equal(res.criteria.fluencyAndCoherence.corrections.length, 1);
+  assert.equal(res.criteria.fluencyAndCoherence.corrections[0].original, 'in the other hand');
+  assert.equal(res.criteria.fluencyAndCoherence.corrections[0].alternative, 'on the other hand');
+});
+
 // ─────────────────────────────────────────────────────────────
 // 3. LISTENING AND READING ANSWER VERIFICATION
 // ─────────────────────────────────────────────────────────────
@@ -430,9 +568,9 @@ test('VERIFICATION', '8. Singular vs plural routes to UNCERTAIN for semantic che
   assert.equal(res.result, DETERMINISTIC.UNCERTAIN);
 });
 
-test('VERIFICATION', '9. Word-vs-digit number routes to UNCERTAIN for context check', () => {
+test('VERIFICATION', '9. Word-vs-digit number is the same answer (deterministic MATCH)', () => {
   const res = evaluateDeterministic('fifteen', '15');
-  assert.equal(res.result, DETERMINISTIC.UNCERTAIN);
+  assert.equal(res.result, DETERMINISTIC.MATCH);
 });
 
 test('VERIFICATION', '10. officialAnswerVariants handles slash alternatives and optional brackets', () => {

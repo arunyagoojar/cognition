@@ -8,6 +8,7 @@
 import { 
   isCandidateAnswerCorrect, 
   evaluateFullMockExam,
+  evaluateListeningResponses,
   deriveInsightsFromEvaluation
 } from '../src/utils/evaluation/evaluationEngine.js';
 import { 
@@ -207,6 +208,33 @@ async function runTests() {
   assert(localStorage.getItem('omniprep_groq_key') === null, 'Plaintext Groq key removed by reset');
   assert(localStorage.getItem('omniprep_target_band') === '8.5', 'Target band preserved after reset');
   assert(localStorage.getItem('omniprep_theme') === 'dark', 'Theme preserved after reset');
+
+  // ── TEST 8: 90% Answered Listening Test Evaluation (Partial with Unanswered Items) ──
+  console.log('\n--- [Test 8] 90% Answered Listening Test (36/40 Answered) ---');
+  const dummyQuestions = Array.from({ length: 40 }, (_, i) => ({
+    id: `q${i + 1}`,
+    questionNumber: i + 1,
+    answer: `answer${i + 1}`,
+    type: 'completion'
+  }));
+  // Student answered 36 questions correctly, left 4 questions blank
+  const dummyAnswers = {};
+  for (let i = 1; i <= 36; i++) {
+    dummyAnswers[`q${i}`] = `answer${i}`;
+  }
+
+  const listeningResult = await evaluateListeningResponses({
+    sections: [{ part: 1, questions: dummyQuestions }],
+    answers: dummyAnswers
+  });
+
+  assert(listeningResult.status === 'completed', '90% answered listening test has status completed');
+  assert(listeningResult.raw === 36, `36 answers scored correctly (got ${listeningResult.raw})`);
+  assert(listeningResult.total === 40, 'Total questions is 40');
+  assert(listeningResult.band === 8.0, `Band score for 36/40 is 8.0 (got ${listeningResult.band})`);
+  assert(listeningResult.percentage === 90, `Percentage is 90% (got ${listeningResult.percentage}%)`);
+  assert(listeningResult.itemResults.q37.finalResult === 'INCORRECT', 'Unanswered q37 marked INCORRECT');
+  assert(listeningResult.itemResults.q1.finalResult === 'CORRECT', 'Answered q1 marked CORRECT');
 
   console.log('\n============================================================');
   console.log(`ALL EVALUATION ARCHITECTURE TESTS PASSED (${passedTests} passed, ${failedTests} failed)`);

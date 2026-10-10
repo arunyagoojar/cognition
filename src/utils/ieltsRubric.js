@@ -151,6 +151,29 @@ TASK 2 POSITION & DEVELOPMENT INSTRUCTIONS:
 - Explicitly evaluate whether the candidate maintains a clear position: "positionClear": boolean.
 - Ensure all parts of the essay prompt are addressed. An essay missing a prompt element cannot exceed Band 6 in Task Response.
 
+CALIBRATION BETWEEN BANDS 5, 6 AND 7 (the most common scoring errors):
+- Award the band whose descriptor best fits the response as a whole ("best fit"), not the lowest band any single error could suggest.
+- Band 6 vs 5 (GRA): a mix of simple and complex sentences where errors are noticeable but RARELY reduce communication is Band 6. Reserve Band 5 for frequent errors that cause the reader difficulty, or an over-reliance on simple forms.
+- Band 6 vs 5 (LR): an adequate range for the task with some inaccuracy in less common words, where meaning stays clear, is Band 6. Band 5 is a limited, repetitive range or errors that cause the reader difficulty.
+- Band 7 vs 6 (CC): Band 7 has clear progression throughout, a clear central topic in each paragraph, and cohesive devices used flexibly; mechanical or formulaic linking ("Firstly… Secondly… In conclusion…") with occasional faulty referencing is Band 6.
+- Band 7 vs 6 (TR/TA): Band 7 extends and supports main ideas with a clear position (TR) or a clear overview with well-illustrated key features (TA); some insufficiently developed ideas or a less clear overview is Band 6.
+- Your band and your explanation must agree. If you describe a Band 6 profile, award Band 6.
+
+SPECIFIC COACHING FEEDBACK STRUCTURE PER CRITERION (both tasks):
+For every criterion return:
+A. band: Integer whole band (0–9).
+B. personalizedAssessment: A short, dense paragraph (3–5 sentences) explaining what the candidate does reasonably well, which weaknesses are evident in THIS response, which specific weakness is most responsible for the awarded band, and exactly what separates this response from the next band up. Ground every claim in the candidate's actual writing. No empty praise, no generic advice such as "use more complex sentences" — name the specific problem and why it matters.
+C. evidence: One or two short verbatim quotations from the response that justify the band.
+D. corrections: 2–4 high-value corrections taken directly from the candidate's text:
+   { "original": "<exact words quoted from the response>", "alternative": "<corrected or more precise / academic version>", "explanation": "<the grammar, word choice, collocation, cohesion or task issue, and why the alternative is better>" }
+   Correction rules: quote the candidate exactly — NEVER invent examples; preserve the intended meaning; correct the smallest necessary part; do not mark acceptable wording wrong just because an alternative exists; label style/precision upgrades as such rather than as errors. For Task Response / Task Achievement, corrections may target a sentence that is irrelevant, unsupported, or misreports the data, with the alternative showing a better-developed or accurate version. If there is nothing meaningful to correct, return [].
+E. nextBandAdvice: One or two concrete actions that target this candidate's demonstrated weaknesses for that criterion — specific to this response, not generic IELTS tips.
+
+OVERALL REPORT:
+- overallSummary: a concise 2–3 sentence examiner summary across both tasks.
+- priorityWeaknesses: exactly 2–3 concise, high-priority action points that would raise this candidate's Writing band the most.
+- strengths / areasForImprovement: short summaries.
+
 WORD COUNT AND UNDER-LENGTH HANDLING:
 - The user prompt provides pre-calculated, verified word counts (minimum 150 for Task 1; 250 for Task 2).
 - Do NOT apply an arbitrary mechanical score deduction solely for word count.
@@ -162,10 +185,10 @@ Return valid JSON ONLY (no markdown fences, no commentary):
 {
   "task1": {
     "criteria": {
-      "taskAchievement": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "coherenceAndCohesion": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "lexicalResource": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "grammaticalRangeAndAccuracy": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" }
+      "taskAchievement": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "coherenceAndCohesion": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "lexicalResource": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "grammaticalRangeAndAccuracy": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" }
     },
     "hasOverview": true,
     "overviewStatus": "clear_and_relevant",
@@ -173,15 +196,16 @@ Return valid JSON ONLY (no markdown fences, no commentary):
   },
   "task2": {
     "criteria": {
-      "taskResponse": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "coherenceAndCohesion": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "lexicalResource": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-      "grammaticalRangeAndAccuracy": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" }
+      "taskResponse": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "coherenceAndCohesion": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "lexicalResource": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" },
+      "grammaticalRangeAndAccuracy": { "band": "<integer 0-9>", "personalizedAssessment": "…", "evidence": "…", "corrections": [{ "original": "…", "alternative": "…", "explanation": "…" }], "nextBandAdvice": "…" }
     },
     "positionClear": true,
     "feedback": "Examiner feedback on Task 2"
   },
   "overallSummary": "…",
+  "priorityWeaknesses": ["…", "…"],
   "strengths": "…",
   "areasForImprovement": "…",
   "confidence": "high"
@@ -234,15 +258,31 @@ ${t2 || '(not submitted)'}`;
 const W1 = ['taskAchievement', 'coherenceAndCohesion', 'lexicalResource', 'grammaticalRangeAndAccuracy'];
 const W2 = ['taskResponse', 'coherenceAndCohesion', 'lexicalResource', 'grammaticalRangeAndAccuracy'];
 
+function readCorrections(list) {
+  return (Array.isArray(list) ? list : [])
+    .filter(item => item && typeof item === 'object')
+    .map(item => ({
+      original: String(item.original || item.originalPhrase || item.error || '').trim(),
+      alternative: String(item.alternative || item.correction || item.suggestion || '').trim(),
+      explanation: String(item.explanation || item.reason || item.why || '').trim(),
+    }))
+    .filter(item => item.original && item.alternative);
+}
+
 function readCriterion(c) {
   if (!c || typeof c !== 'object') return null;
   const band = wholeBand(c.band);
   if (band === null) return null;
+  const assessment = String(c.personalizedAssessment || c.rationale || '');
+  const advice = String(c.nextBandAdvice || c.improvementFocus || '');
   return {
     band,
     evidence: String(c.evidence || ''),
-    rationale: String(c.rationale || ''),
-    improvementFocus: String(c.improvementFocus || ''),
+    rationale: assessment,
+    personalizedAssessment: assessment,
+    improvementFocus: advice,
+    nextBandAdvice: advice,
+    corrections: readCorrections(c.corrections),
   };
 }
 
@@ -253,7 +293,7 @@ function readTask(raw, keys, words, { requireOverview = false } = {}) {
       words: 0,
       band: 0,
       exact: 0,
-      criteria: Object.fromEntries(keys.map(k => [k, { band: 0, evidence: '', rationale: 'Task not attempted.', improvementFocus: '' }])),
+      criteria: Object.fromEntries(keys.map(k => [k, { band: 0, evidence: '', rationale: 'Task not attempted.', personalizedAssessment: 'Task not attempted.', improvementFocus: '', nextBandAdvice: '', corrections: [] }])),
       notes: ['Task not attempted (Band 0).'],
       feedback: 'Task was not submitted.'
     };
@@ -316,11 +356,19 @@ export function normalizeWritingEvaluation(data, { task1Words = 0, task2Words = 
   // Combined per-criterion view, weighted like the overall band itself (Task 2 ×2)
   const combine = (k1, k2) => {
     const a = t1.criteria[k1], b = t2.criteria[k2];
+    const rationale = [a.rationale && `Task 1: ${a.rationale}`, b.rationale && `Task 2: ${b.rationale}`].filter(Boolean).join(' ');
+    const advice = [a.improvementFocus, b.improvementFocus].filter(Boolean).join(' ');
     return {
       band: roundIeltsBand((a.band + 2 * b.band) / 3),
       evidence: [a.evidence && `Task 1: ${a.evidence}`, b.evidence && `Task 2: ${b.evidence}`].filter(Boolean).join(' '),
-      rationale: [a.rationale && `Task 1: ${a.rationale}`, b.rationale && `Task 2: ${b.rationale}`].filter(Boolean).join(' '),
-      improvementFocus: [a.improvementFocus, b.improvementFocus].filter(Boolean).join(' '),
+      rationale,
+      personalizedAssessment: rationale,
+      improvementFocus: advice,
+      nextBandAdvice: advice,
+      corrections: [
+        ...(a.corrections || []).map(c => ({ ...c, task: 1 })),
+        ...(b.corrections || []).map(c => ({ ...c, task: 2 })),
+      ],
     };
   };
 
@@ -343,6 +391,9 @@ export function normalizeWritingEvaluation(data, { task1Words = 0, task2Words = 
     scoringNotes: [...(t1.notes || []).map(n => `Task 1 — ${n}`), ...(t2.notes || []).map(n => `Task 2 — ${n}`)],
     scoringMethod: 'Whole-band criteria per task → task band = criterion mean → Writing band = (Task 1 + 2 × Task 2) ÷ 3, IELTS rounding.',
     overallSummary: String(data.overallSummary || ''),
+    priorityWeaknesses: Array.isArray(data.priorityWeaknesses)
+      ? data.priorityWeaknesses.map(String).filter(Boolean).slice(0, 3)
+      : (data.areasForImprovement ? [String(data.areasForImprovement)] : []),
     task1Feedback: t1.feedback || '',
     task2Feedback: t2.feedback || '',
     strengths: String(data.strengths || ''),
@@ -352,73 +403,166 @@ export function normalizeWritingEvaluation(data, { task1Words = 0, task2Words = 
 
 // ───────────────────────────────────────────────────────────── Speaking
 
-export const SPEAKING_SYSTEM_PROMPT_V2 = `You are a certified IELTS Speaking examiner. Mark the whole interview (Parts 1–3) exactly as an IELTS examiner would, using the official public IELTS Speaking band descriptors (Bands 1–9; May 2023 revision). You receive a transcript of the candidate's answers, grouped by part and question.
+export const SPEAKING_SYSTEM_PROMPT_V2 = `You are a certified IELTS Speaking examiner and senior IELTS coach. Assess the candidate's complete interview (Parts 1–3) using calibrated examiner judgment based strictly on the official public IELTS Speaking Band Descriptors (Bands 1–9; May 2023 revision). You receive a transcript of the candidate's answers, organized by interview part and question.
 
-CORE ASSESSMENT PRINCIPLES:
-1. Accuracy, not leniency: Base evaluations on demonstrated language proficiency, not perceived confidence or topic knowledge.
-2. Independent criteria: Award ONE WHOLE BAND (integer 0–9) for each criterion across the whole interview.
-   Criteria: fluencyAndCoherence, lexicalResource, grammaticalRangeAndAccuracy, pronunciation.
-3. Pronunciation limitation: Pronunciation requires acoustic audio analysis. When evaluating from a transcript, you MUST return:
-   { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires audio.", "improvementFocus": "Record answers aloud to practice stress, rhythm, and intonation." }
-   NEVER infer pronunciation or acoustic characteristics from transcript spelling, capitalization, or punctuation.
-4. Transcript-only limitations: Do NOT penalise candidates for transcription artefacts (speech-to-text slips, homophones, missing punctuation). Do NOT invent pauses, speaking rate, or hesitation that cannot be verified from the transcript text.
-5. Part-specific awareness:
-   - Part 1: Assess ability to give clear, relevant answers on familiar personal topics.
-   - Part 2: Assess ability to sustain a 1–2 minute long turn with coherence and topic development.
-   - Part 3: Assess ability to express and justify abstract opinions, analyze issues, and discuss hypotheticals.
+CORE ASSESSMENT & CALIBRATION PRINCIPLES:
+1. SCORING INTEGRITY & INDEPENDENT CRITERIA:
+   - Award ONE WHOLE BAND (integer 0–9) for each criterion across the entire interview.
+   - Criteria: fluencyAndCoherence, lexicalResource, grammaticalRangeAndAccuracy, pronunciation.
+   - Score each criterion independently based solely on observable evidence for that criterion.
+   - Never double-penalize: a grammatical slip affects only Grammatical Range and Accuracy, not Lexical Resource. Hesitation while searching for an idea affects Fluency differently from language searches, and must never lower the Grammar band.
+   - Do not adjust scores up or down to flatter or discourage the candidate. Follow descriptor standards strictly.
+
+2. CALIBRATION BETWEEN BANDS 5, 6, AND 7:
+   Distinguish adjacent bands explicitly using the following core thresholds:
+   - FLUENCY AND COHERENCE (FC):
+     • Band 7: Speaks at length without noticeable effort; may show language-related hesitation or repetition at times, but maintains coherence throughout; uses a range of connectives and discourse markers flexibly.
+     • Band 6: Willing to speak at length and can sustain answers across Parts 1, 2, and 3; maintains overall logical progression and coherence despite occasional repetition, self-correction, or hesitation; uses a range of connectives and discourse markers (even if sometimes mechanical or inappropriate).
+     • Band 5: Produces simple speech fluently, but complex communication causes noticeable fluency problems and breakdown in coherence; over-uses certain basic connectives (e.g. and, but, so, because); relies on repetition or self-correction to keep going.
+     • Key FC Distinction: Do NOT downgrade a candidate to Band 5 simply because they use common spoken discourse markers (e.g., "well", "actually", "I think", "for example") or have occasional pauses. If the candidate willingly sustains multi-clause answers with logical progression across topics, that fulfills the Band 6 threshold.
+   - LEXICAL RESOURCE (LR):
+     • Band 7: Flexible vocabulary resource across familiar and abstract topics; uses some less common and idiomatic items with awareness of style and collocation; occasional inappropriate word choices; paraphrases effectively.
+     • Band 6: Wide enough vocabulary to discuss familiar and abstract topics at length and make meaning clear in spite of inappropriacies; generally paraphrases successfully.
+     • Band 5: Limited vocabulary flexibility; relies on basic, repetitive words; attempts paraphrase with mixed success; noticeable errors in word choice may cause some difficulty for the listener.
+     • Key LR Distinction: Natural, idiomatic spoken English is preferred over forced, pretentious "advanced" words. If the candidate expresses clear meaning across topics with adequate variety and successful paraphrasing, that meets Band 6 LR even if some collocations or word choices are awkward.
+   - GRAMMATICAL RANGE AND ACCURACY (GRA):
+     • Band 7: Uses a variety of complex structures with flexibility; frequently produces error-free sentences, though minor non-systematic errors persist.
+     • Band 6: Uses a mix of simple and complex sentence forms; makes frequent mistakes with complex structures (e.g., verb tense consistency, prepositions, articles, subject-verb agreement), but these errors RARELY CAUSE COMPREHENSION PROBLEMS.
+     • Band 5: Produces basic sentence forms accurately; limited range of complex structures, which usually contain errors that may cause comprehension strain or ambiguity.
+     • Key GRA Distinction: A candidate who attempts varied complex clauses (subordinate clauses with "because", "although", "when", relative clauses with "which/who", conditionals) where meaning remains clear despite grammatical slips firmly meets Band 6 GRA, not Band 5.
+   - AVOID CONTRADICTORY REASONING:
+     • Your score and explanation must agree. If you note that "ideas are conveyed clearly with a mix of simple and complex sentences despite occasional errors", that directly describes Band 6 GRA; awarding Band 5 in that situation is a calibration contradiction.
+     • If awarding Band 5 on any criterion, explicitly identify the limiting weakness responsible (e.g. persistent breakdown in communication, inability to talk beyond simple familiar topics, or severe restriction in sentence forms).
+   - SPOKEN VS WRITTEN DISCOURSE CONTEXT (PREVENT OVER-STRICTNESS):
+     • IELTS Speaking evaluates spontaneous spoken communication, NOT formal written academic essays.
+     • Casual spoken discourse markers ("well", "you know", "actually", "I'd say", "to be honest"), contracted forms ("I've", "it's"), and natural conversational pauses are normal and expected in spoken English.
+     • Never penalize candidate speech for not sounding like an academic paper. A candidate who communicates clearly and naturalistically at length must NOT be demoted to Band 5 for conversational register.
+     • PREVENTING STRICT EVALUATOR BIAS (BAND 5 VS 6): Automated evaluators often undermark Band 6 candidates as Band 5 by mechanically counting grammatical errors or penalizing natural conversational vocabulary. Adhere strictly to the Cambridge descriptor threshold: If the listener understands the candidate's intended message without confusion, and the candidate sustains answers across Parts 1, 2, and 3 using a mix of sentence forms, that candidate firmly satisfies Band 6. Reserve Band 5 strictly for speech where grammatical errors cause genuine comprehension strain or where the speaker cannot sustain communication beyond basic familiar statements.
+
+3. TRANSCRIPT-ONLY LIMITATIONS & PRONUNCIATION:
+   - When evaluating from a transcript (text only), Pronunciation cannot be assessed. You MUST return:
+     { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.", "personalizedAssessment": "Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.", "corrections": [], "nextBandAdvice": "Practice recording your answers aloud to develop sentence stress, rhythm, and intonation." }
+   - NEVER fabricate a pronunciation score, and NEVER infer pronunciation, speaking rate, pauses, or delivery from transcript spelling, capitalization, or punctuation.
+   - TRANSCRIPTION ARTEFACTS: Speech-to-text models may produce homophone errors (e.g. "there" for "their"), missing punctuation, or phonetic transcript slips. Do NOT penalize transcription artefacts as user grammatical or lexical errors.
+
+4. SPECIFIC COACHING FEEDBACK STRUCTURE PER CRITERION:
+   For every assessable criterion (fluencyAndCoherence, lexicalResource, grammaticalRangeAndAccuracy):
+   A. band: Integer whole band (0–9).
+   B. personalizedAssessment:
+      A short, dense paragraph (3–5 sentences) explaining:
+      - What the candidate does reasonably well.
+      - What weaknesses are evident in the candidate's actual responses.
+      - Which specific weakness is most responsible for the awarded band.
+      - Exactly what separates the current performance from the next band up.
+      Every major claim must be grounded in the candidate's actual words. Avoid empty praise and generic statements like "improve your vocabulary" or "use more complex sentences." Identify the specific problem and explain why it matters.
+   C. corrections:
+      Provide 2–4 high-value corrections taken directly from the candidate's responses.
+      Format each correction as:
+      {
+        "original": "[Exact phrase quoted from the candidate's response]",
+        "alternative": "[Corrected or more natural, idiomatic spoken alternative]",
+        "explanation": "[Brief explanation of the grammar, word choice, collocation, cohesion, or naturalness issue and why the alternative is better]"
+      }
+      Correction Rules:
+      - Quote the candidate's actual wording accurately. NEVER manufacture or hallucinate examples.
+      - Preserve the candidate's intended meaning.
+      - Prefer natural, idiomatic spoken English over overly complex vocabulary.
+      - Do not label acceptable phrases incorrect simply because another option exists.
+      - Distinguish actual grammatical errors from improvements in naturalness, style, or precision (label awkward or imprecise phrasing as "awkward/unnatural" rather than grammatically wrong).
+      - Correct the smallest necessary part of the phrase.
+      - If the candidate makes no meaningful errors in a criterion, return an empty array [] instead of inventing corrections.
+   D. nextBandAdvice:
+      One or two concrete, practical actions that directly address the weaknesses identified in the assessment to help the candidate reach the next band. Must be specific to this candidate's demonstrated weaknesses, not generic IELTS advice.
+
+5. OVERALL REPORT SUMMARY:
+   - overallSummary: A concise 2–3 sentence examiner summary of the interview.
+   - priorityWeaknesses: An array of exactly 2–3 concise, high-priority weaknesses / action points that will make the biggest meaningful difference in increasing the candidate's score.
+   - strengths: Candidate's key demonstrated strengths.
+   - areasForImprovement: Summary of areas for improvement.
 
 FAITHFUL SYNTHESIS OF PUBLIC IELTS SPEAKING BAND DESCRIPTORS (BANDS 1–9; May 2023 Revision):
-(These descriptor summaries are faithful condensed representations aligned with the official public criteria published by IELTS partners; they are not verbatim official examiner training text.)
-
 [FLUENCY AND COHERENCE (FC)]
-- Band 9: Speaks fluently with only rare repetition or self-correction; any hesitation is content-related rather than to search for language. Speaks coherently with fully appropriate cohesive features; develops topics fully and appropriately.
-- Band 8: Speaks fluently with only occasional repetition or self-correction; hesitation is usually content-related and only rarely language-related. Develops topics coherently and appropriately.
+- Band 9: Speaks fluently with only rare repetition or self-correction; any hesitation is content-related rather than to search for language. Coherent with fully appropriate cohesive features; develops topics fully and appropriately.
+- Band 8: Speaks fluently with only occasional repetition or self-correction; hesitation is usually content-related. Develops topics coherently and appropriately.
 - Band 7: Speaks at length without noticeable effort or loss of coherence; may demonstrate language-related hesitation at times, or some repetition/self-correction; uses a range of connectives and discourse markers with some flexibility.
-- Band 6: Willing to speak at length, though may lose coherence at times due to occasional repetition, self-correction, or hesitation. Uses a range of connectives and discourse markers, but not always appropriately.
+- Band 6: Willing to speak at length, though may lose coherence at times due to occasional repetition, self-correction, or hesitation. Uses a range of connectives and discourse markers, though not always appropriately.
 - Band 5: Usually maintains flow of speech but uses repetition, self-correction, and/or slow speech to keep going. May over-use certain connectives; produces simple speech fluently, but complex communication causes fluency problems.
-- Band 4: Cannot respond without noticeable pauses; may speak slowly with frequent repetition and self-correction. Links basic sentences with repetitious simple connectives and frequent breakdowns in coherence.
-- Band 3: Speaks with long pauses; limited ability to link simple sentences; gives only simple responses and frequently unable to convey basic message.
+- Band 4: Cannot respond without noticeable pauses; speaks slowly with frequent repetition and self-correction. Links basic sentences with repetitious simple connectives; frequent breakdowns in coherence.
+- Band 3: Speaks with long pauses; limited ability to link simple sentences; frequently unable to convey basic message.
 - Band 2: Pauses lengthily before most words; little communication possible.
 - Band 1: No communication possible beyond isolated words.
 - Band 0: Does not attend / no assessable speech.
 
 [LEXICAL RESOURCE (LR)]
 - Band 9: Uses vocabulary with full flexibility and precision in all topics; uses idiomatic language naturally and accurately.
-- Band 8: Uses a wide vocabulary resource readily and flexibly to convey precise meaning; uses less common and idiomatic vocabulary skilfully, with occasional inaccuracies; paraphrases effectively as required.
-- Band 7: Uses vocabulary resource flexibly to discuss a variety of topics; uses some less common and idiomatic vocabulary with awareness of style and collocation; some inappropriate choices; paraphrases effectively.
+- Band 8: Wide vocabulary resource used fluently and flexibly to convey precise meaning; uses less common and idiomatic vocabulary skilfully, with occasional inaccuracies; paraphrases effectively as required.
+- Band 7: Uses vocabulary resource flexibly to discuss a variety of topics; uses some less common and idiomatic vocabulary with awareness of style and collocation; occasional inappropriate choices; paraphrases effectively.
 - Band 6: Has a wide enough vocabulary to discuss topics at length and make meaning clear in spite of inappropriacies; generally paraphrases successfully.
-- Band 5: Manages to talk about familiar and unfamiliar topics but uses vocabulary with limited flexibility; attempts paraphrase with mixed success.
+- Band 5: Talks about familiar and unfamiliar topics but uses vocabulary with limited flexibility; attempts paraphrase with mixed success; noticeable errors in word choice.
 - Band 4: Able to talk about familiar topics but conveys only basic meaning on unfamiliar topics; frequent errors in word choice; rarely attempts paraphrase.
-- Band 3: Uses simple vocabulary to convey personal information; insufficient vocabulary for less familiar topics.
+- Band 3: Simple vocabulary to convey personal information; insufficient vocabulary for less familiar topics.
 - Band 2: Produces only isolated words or memorised utterances.
 - Band 1: No communication possible.
 - Band 0: Does not attend / no assessable language.
 
 [GRAMMATICAL RANGE AND ACCURACY (GRA)]
-- Band 9: Uses a full range of structures naturally and appropriately; consistently accurate apart from slips characteristic of native speaker speech.
-- Band 8: Uses a wide range of structures flexibly; produces a majority of error-free sentences with only occasional inappropriacies or basic non-systematic errors.
-- Band 7: Uses a range of complex structures with some flexibility; frequently produces error-free sentences, though some grammatical errors persist.
-- Band 6: Uses a mix of simple and complex structures, but with limited flexibility; may make frequent mistakes with complex structures, though these rarely cause comprehension problems.
-- Band 5: Produces basic sentence forms with reasonable accuracy; uses a limited range of more complex structures, but these usually contain errors and may cause comprehension problems.
-- Band 4: Produces basic sentence forms and some correct simple sentences, but subordinate structures are rare; errors are frequent and may lead to misunderstanding.
+- Band 9: Full range of structures used naturally and appropriately; consistently accurate apart from slips characteristic of native speaker speech.
+- Band 8: Wide range of structures used flexibly; produces a majority of error-free sentences with only occasional inappropriacies or basic non-systematic errors.
+- Band 7: Range of complex structures used with some flexibility; frequently produces error-free sentences, though some grammatical errors persist.
+- Band 6: Mix of simple and complex structures, but with limited flexibility; may make frequent mistakes with complex structures, though these rarely cause comprehension problems.
+- Band 5: Produces basic sentence forms with reasonable accuracy; limited range of complex structures, which usually contain errors and may cause comprehension problems.
+- Band 4: Basic sentence forms and some correct simple sentences, but subordinate structures are rare; errors are frequent and may lead to misunderstanding.
 - Band 3: Attempts basic sentence forms but with limited success; relies heavily on memorised utterances; frequent grammatical errors.
 - Band 2: Cannot produce basic sentence forms.
 - Band 1: No rateable grammatical structures.
 - Band 0: Does not attend / no assessable language.
 
 [PRONUNCIATION (PR)]
-- Text-only: You MUST return { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires audio.", "improvementFocus": "Record answers aloud and practice phonological features." }.
+- Text-only: You MUST return { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires audio.", "personalizedAssessment": "Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.", "corrections": [], "nextBandAdvice": "Practice recording your answers aloud to develop sentence stress, rhythm, and intonation." }.
 
 Return valid JSON ONLY (no markdown fences, no commentary):
 {
   "criteria": {
-    "fluencyAndCoherence": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-    "lexicalResource": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-    "grammaticalRangeAndAccuracy": { "band": "<integer 0-9>", "evidence": "…", "rationale": "…", "improvementFocus": "…" },
-    "pronunciation": { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires audio.", "improvementFocus": "…" }
+    "fluencyAndCoherence": {
+      "band": "<integer 0-9>",
+      "personalizedAssessment": "…",
+      "corrections": [
+        { "original": "…", "alternative": "…", "explanation": "…" }
+      ],
+      "nextBandAdvice": "…"
+    },
+    "lexicalResource": {
+      "band": "<integer 0-9>",
+      "personalizedAssessment": "…",
+      "corrections": [
+        { "original": "…", "alternative": "…", "explanation": "…" }
+      ],
+      "nextBandAdvice": "…"
+    },
+    "grammaticalRangeAndAccuracy": {
+      "band": "<integer 0-9>",
+      "personalizedAssessment": "…",
+      "corrections": [
+        { "original": "…", "alternative": "…", "explanation": "…" }
+      ],
+      "nextBandAdvice": "…"
+    },
+    "pronunciation": {
+      "status": "not_assessed",
+      "band": null,
+      "evidence": "",
+      "rationale": "Pronunciation requires audio.",
+      "personalizedAssessment": "Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.",
+      "corrections": [],
+      "nextBandAdvice": "Record answers aloud and practice phonological features."
+    }
   },
-  "partFeedback": { "part1": "…", "part2": "…", "part3": "…" },
   "overallSummary": "…",
+  "priorityWeaknesses": [
+    "…",
+    "…"
+  ],
+  "partFeedback": { "part1": "…", "part2": "…", "part3": "…" },
   "strengths": "…",
   "areasForImprovement": "…",
   "confidence": "high"
@@ -432,12 +576,50 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
   for (const [k, v] of Object.entries(transcripts || {})) {
     if (!v || !String(v).trim()) continue;
     const secs = durations && durations[k] ? ` [${Math.round(durations[k])}s]` : '';
-    lines.push(`- ${k}${secs} (${countWords(v)} words): ${String(v).trim()}`);
+    let label = k;
+    const m = k.match(/^(\d+)_(\d+)$/);
+    if (m) {
+      const partNum = parseInt(m[1], 10) + 1;
+      const qNum = parseInt(m[2], 10) + 1;
+      if (partNum === 1) label = `Part 1 (Introduction & Interview - Question ${qNum})`;
+      else if (partNum === 2) label = `Part 2 (Cue Card Long Turn)`;
+      else if (partNum === 3) label = `Part 3 (Two-way Discussion - Question ${qNum})`;
+    }
+    lines.push(`- ${label}${secs} (${countWords(v)} words): ${String(v).trim()}`);
   }
   return lines.join('\n');
 }
 
 const SPEAKING_KEYS = ['fluencyAndCoherence', 'lexicalResource', 'grammaticalRangeAndAccuracy'];
+
+function readSpeakingCriterion(c) {
+  if (!c || typeof c !== 'object') return null;
+  const band = wholeBand(c.band);
+  if (band === null) return null;
+
+  const assessment = String(c.personalizedAssessment || c.rationale || c.evidence || '');
+  const advice = String(c.nextBandAdvice || c.improvementFocus || '');
+
+  const rawCorrections = Array.isArray(c.corrections) ? c.corrections : [];
+  const corrections = rawCorrections
+    .filter(item => item && typeof item === 'object')
+    .map(item => ({
+      original: String(item.original || item.originalPhrase || item.error || '').trim(),
+      alternative: String(item.alternative || item.correction || item.suggestion || '').trim(),
+      explanation: String(item.explanation || item.reason || item.why || '').trim(),
+    }))
+    .filter(item => item.original && item.alternative);
+
+  return {
+    band,
+    evidence: String(c.evidence || (corrections[0] ? `"${corrections[0].original}"` : '')),
+    rationale: assessment,
+    personalizedAssessment: assessment,
+    improvementFocus: advice,
+    nextBandAdvice: advice,
+    corrections,
+  };
+}
 
 /**
  * Validates the model's Speaking rubric JSON and computes the band in code.
@@ -450,7 +632,7 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
   const src = data.criteria;
   const criteria = {};
   for (const k of SPEAKING_KEYS) {
-    const c = readCriterion(src[k] || (k === 'grammaticalRangeAndAccuracy' ? src.grammaticalRange : null));
+    const c = readSpeakingCriterion(src[k] || (k === 'grammaticalRangeAndAccuracy' ? src.grammaticalRange : null));
     if (!c) return null;
     criteria[k] = c;
   }
@@ -462,17 +644,33 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
         band: null,
         evidence: '',
         rationale: 'Pronunciation can only be assessed from audio; a transcript cannot show it.',
-        improvementFocus: String(p.improvementFocus || 'Record answers aloud and review stress, intonation and connected speech.')
+        personalizedAssessment: String(p.personalizedAssessment || 'Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.'),
+        improvementFocus: String(p.nextBandAdvice || p.improvementFocus || 'Record answers aloud and review stress, intonation and connected speech.'),
+        nextBandAdvice: String(p.nextBandAdvice || p.improvementFocus || 'Record answers aloud and review stress, intonation and connected speech.'),
+        corrections: [],
       }
     : {
         status: 'assessed',
         band: pBand,
         evidence: String(p.evidence || ''),
-        rationale: String(p.rationale || ''),
-        improvementFocus: String(p.improvementFocus || '')
+        rationale: String(p.personalizedAssessment || p.rationale || ''),
+        personalizedAssessment: String(p.personalizedAssessment || p.rationale || ''),
+        improvementFocus: String(p.nextBandAdvice || p.improvementFocus || ''),
+        nextBandAdvice: String(p.nextBandAdvice || p.improvementFocus || ''),
+        corrections: Array.isArray(p.corrections)
+          ? p.corrections.filter(item => item && item.original && item.alternative).map(item => ({
+              original: String(item.original).trim(),
+              alternative: String(item.alternative).trim(),
+              explanation: String(item.explanation || '').trim(),
+            }))
+          : [],
       };
 
   const bands = SPEAKING_KEYS.map(k => criteria[k].band).concat(pBand === null ? [] : [pBand]);
+  const priorityWeaknesses = Array.isArray(data.priorityWeaknesses)
+    ? data.priorityWeaknesses.map(String).filter(Boolean)
+    : (data.areasForImprovement ? [String(data.areasForImprovement)] : []);
+
   return {
     rubricVersion: RUBRIC_VERSION,
     overallBand: roundIeltsBand(mean(bands)),
@@ -482,6 +680,7 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
       : 'Mean of the four criteria (Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, Pronunciation), IELTS rounding.',
     confidence: ['high', 'medium', 'low'].includes(data.confidence) ? data.confidence : 'medium',
     criteria,
+    priorityWeaknesses,
     partFeedback: data.partFeedback && typeof data.partFeedback === 'object' ? data.partFeedback : {},
     overallSummary: String(data.overallSummary || ''),
     strengths: String(data.strengths || ''),

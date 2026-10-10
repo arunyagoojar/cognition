@@ -57,10 +57,9 @@ export function aggregateQuestionTypeAccuracy(attempts, skill) {
 
   for (const attempt of attempts) {
     const rec = attempt[skill];
-    const items = rec?.itemResults || rec?.aiVerification ? rec?.itemResults : rec?.itemResults;
     if (!rec?.itemResults) continue;
     let countedThisAttempt = 0;
-    for (const [qId, r] of Object.entries(rec.itemResults)) {
+    for (const r of Object.values(rec.itemResults)) {
       const type = r.questionType || null;
       if (!type) continue;
       const answered = r.candidateAnswer !== undefined && r.candidateAnswer !== null && String(r.candidateAnswer).trim() !== '';
@@ -107,7 +106,16 @@ function speakingCriteriaFrom(record) {
     .map(({ key, alt, label }) => {
       const c = criteria[key] || (alt ? criteria[alt] : null);
       const band = typeof c?.band === 'number' ? c.band : parseFloat(c?.band);
-      return Number.isFinite(band) ? { key, label, band, evidence: c.evidence || '', improvementFocus: c.improvementFocus || '' } : null;
+      return Number.isFinite(band) ? {
+        key,
+        label,
+        band,
+        evidence: c.evidence || '',
+        improvementFocus: c.improvementFocus || c.nextBandAdvice || '',
+        personalizedAssessment: c.personalizedAssessment || c.rationale || '',
+        nextBandAdvice: c.nextBandAdvice || c.improvementFocus || '',
+        corrections: Array.isArray(c.corrections) ? c.corrections : [],
+      } : null;
     })
     .filter(Boolean);
 }
@@ -119,7 +127,11 @@ function speakingCriteriaFrom(record) {
  */
 export function deriveWeaknesses(attempts, targetBand) {
   const target = parseFloat(targetBand) || null;
-  const completed = (attempts || []).filter(a => a.status === 'completed');
+  // Full mocks keep their four skills under `skills`; lift them up so mock
+  // evidence counts alongside practice attempts.
+  const completed = (attempts || [])
+    .filter(a => a.status === 'completed')
+    .map(a => (a.skills ? { ...a, ...Object.fromEntries(Object.entries(a.skills).filter(([, v]) => v)) } : a));
   const candidates = [];
 
   // 1. Question-type accuracy (reading / listening) — repeated evidence only
@@ -247,6 +259,8 @@ export function deriveResultAnalysis(skill, attemptRecord) {
   if (skill === 'speaking') {
     analysis.criteria = speakingCriteriaFrom(rec);
     analysis.pronunciation = rec.criteria?.pronunciation || null;
+    analysis.priorityWeaknesses = Array.isArray(rec.priorityWeaknesses) ? rec.priorityWeaknesses : [];
+    analysis.overallSummary = rec.overallSummary || '';
   }
 
   return analysis;

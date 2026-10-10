@@ -1,9 +1,9 @@
 import React from 'react';
-import { subscribeLocalStt, needsLocalStt, ENGINE_METADATA } from '../../utils/speech/localStt';
+import { subscribeLocalStt, needsLocalStt, ENGINE_METADATA, STT_ENGINES } from '../../utils/speech/localStt';
 
 /**
  * Status of the on-device speech model.
- * Dynamic for Whistle (17 MB) and Moonshine (250 MB).
+ * Whisper small.en (~300 MB, primary) or base.en (~80 MB, fallback).
  * `variant="card"` explains the one-time download before the first session;
  * `variant="pill"` is the compact in-exam indicator.
  */
@@ -13,9 +13,9 @@ export default function SpeechModelStatus({ variant = 'pill' }) {
   if (!s || !needsLocalStt()) return null;
 
   const pct = Math.round((s.progress || 0) * 100);
-  const meta = ENGINE_METADATA[s.engine] || ENGINE_METADATA.whistle;
-  const engineName = meta.name || 'Whistle';
-  const downloadMb = s.downloadMb || meta.downloadMb || 17;
+  const meta = ENGINE_METADATA[s.engine] || ENGINE_METADATA[STT_ENGINES.WHISPER_SMALL_EN];
+  const engineName = meta.name || 'Whisper';
+  const downloadMb = s.downloadMb || meta.downloadMb || 300;
 
   if (variant === 'card') {
     if (s.status === 'ready') {
@@ -44,7 +44,7 @@ export default function SpeechModelStatus({ variant = 'pill' }) {
           <p>
             {s.cached
               ? `Loading the ${engineName} speech model from this browser.`
-              : `Downloading a compact ${downloadMb} MB speech model once. It stays in this browser, so next time it loads in seconds. Your voice never leaves your device for transcription.`}
+              : `Downloading a ${downloadMb} MB speech model once. It stays in this browser, so next time it loads in seconds. Your voice never leaves your device for transcription.`}
           </p>
           <div className="stt-bar" aria-hidden="true"><span style={{ width: `${pct}%` }} /></div>
           <span className="stt-pct">{pct}%</span>

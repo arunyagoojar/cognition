@@ -7,6 +7,9 @@ import { Icon } from '../common/Icon';
 import { getRandomizedSpeakingTest, getSpeakingTest } from '../../data/speaking/index';
 import ExamStartScreen from './ExamStartScreen';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
+import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
+import ScrollToTop from '../common/ScrollToTop.jsx';
+import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
 import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob, eradicateAllAudioRecordings } from '../../utils/audio/audioStore';
@@ -42,7 +45,9 @@ function TranscriptState({ rec, onRetry }) {
     return (
       <div className="speaking-transcribing" role="status">
         <span className="stt-dot" aria-hidden="true" />
-        Transcribing on this device…
+        {rec.transcript
+          ? 'Quick preview shown — Whisper is refining it into the final transcript…'
+          : 'Transcribing on this device…'}
       </div>
     );
   }
@@ -64,7 +69,7 @@ function TranscriptState({ rec, onRetry }) {
   return null;
 }
 
-export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips }) {
+export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
   const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
   const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
@@ -86,6 +91,36 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   // Processing / evaluation
   const [evalStages, setEvalStages] = useState({});
   const [result, setResult] = useState(null);
+
+  // Practice results are saved the moment they exist, so leaving via Back,
+  // refreshing or closing never loses them.
+  useEffect(() => {
+    if (phase !== 'results' || !result || isMockMode) return;
+    const completed = result.evaluationState === 'COMPLETED' && typeof result.overallSpeakingBand === 'number';
+    onSave?.({
+      attemptId: result.attemptId,
+      testId: test?.testId || testId,
+      testLabel: test?.title || 'IELTS Speaking Practice',
+      status: completed ? 'completed' : 'partial',
+      band: completed ? result.overallSpeakingBand : null,
+      overallBand: completed ? result.overallSpeakingBand : null,
+      evaluationState: result.evaluationState,
+      evaluationStatus: result.status || 'failed',
+      provisional: Boolean(result.provisional),
+      scoringMethod: result.scoringMethod || '',
+      criteria: result.criteria || null,
+      overallSummary: result.overallSummary || '',
+      priorityWeaknesses: result.priorityWeaknesses || [],
+      strengths: result.strengths || '',
+      areasForImprovement: result.areasForImprovement || '',
+      partFeedback: result.partFeedback || {},
+      recordedCount: result.recordedCount || 0,
+      transcripts: result.transcripts || {},
+      sttEngine: result.sttEngine || '',
+      sttModelVersion: result.sttModelVersion || '',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, result, isMockMode]);
 
   const recognitionRef = useRef(null);
   const liveTranscriptRef = useRef('');
@@ -124,8 +159,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
       const text = typeof res === 'string' ? res : (res?.text || '');
       const words = res?.words || [];
-      const engine = res?.engine || 'whistle';
-      const version = res?.version || '16.9mb';
+      const engine = res?.engine || 'whisper-small.en';
+      const version = res?.version || 'small.en';
       const finalText = text.trim() || (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
       transcriptsRef.current[qId] = { recordingId, text: finalText, words, engine, version };
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
@@ -189,6 +224,9 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       Object.values(recordingsRef.current).forEach(rec => {
         if (rec?.url) URL.revokeObjectURL(rec.url);
       });
+      // Leaving the test (exit, back, navigation) must not leave the
+      // candidate's voice recordings behind in IndexedDB.
+      eradicateAllAudioRecordings();
     };
   }, []);
 
@@ -365,8 +403,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       audioRecordings[k] = rec.blob || null;
     });
 
-    const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'whistle';
-    const activeVersion = Object.values(transcriptsRef.current)[0]?.version || '16.9mb';
+    const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'whisper-small.en';
+    const activeVersion = Object.values(transcriptsRef.current)[0]?.version || 'small.en';
 
     // Full mock: the combined report evaluates all four skills together, so the
     // Speaking module hands over its answers instead of showing its own results
@@ -392,10 +430,19 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     }
 
     const expectedQuestions = (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0);
+    const cueCardTopic = test?.parts?.[1]?.cueCard?.topic;
+    const cueCardBullets = (test?.parts?.[1]?.cueCard?.bulletPrompts || []).join(', ');
+    const cueCardStr = cueCardTopic ? `${cueCardTopic}${cueCardBullets ? ` (Prompts: ${cueCardBullets})` : ''}` : undefined;
+
+
     const evalResult = await evaluateSpeakingResponses({
       transcripts,
-      testMeta: { title: test?.title || 'IELTS Speaking Practice' },
+      testMeta: {
+        title: test?.title || 'IELTS Speaking Practice',
+        cueCard: cueCardStr,
+      },
       audioRecordings,
+      durations,
       attemptId: createAttemptId('speaking'),
       expectedQuestions,
     });
@@ -478,6 +525,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     };
     return (
       <div style={{ maxWidth: 640, margin: '100px auto', padding: '0 24px', textAlign: 'center' }}>
+        <ScrollToTop />
         <motion.div
           animate={{ scale: [1, 1.06, 1], opacity: [0.85, 1, 0.85] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
@@ -546,10 +594,10 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     const isFull = state === 'COMPLETED';
     const isPartial = state === 'PARTIAL';
     const criteriaList = [
-      { id: 'fluency', title: 'Fluency & Coherence', data: result?.criteria?.fluencyAndCoherence, defaultNote: 'Speech continuity, hesitation, linking phrases, and idea development.' },
-      { id: 'lexical', title: 'Lexical Resource', data: result?.criteria?.lexicalResource, defaultNote: 'Topic vocabulary range, academic phrasing, precision, and collocation.' },
-      { id: 'grammar', title: 'Grammatical Range & Accuracy', data: result?.criteria?.grammaticalRangeAndAccuracy, defaultNote: 'Syntactic complexity, tense control, clause variety, and grammatical precision.' },
-      { id: 'pronunciation', title: 'Pronunciation', data: result?.criteria?.pronunciation, defaultNote: '' },
+      { id: 'fluency', key: 'fluencyAndCoherence', title: 'Fluency & Coherence', data: result?.criteria?.fluencyAndCoherence, defaultNote: 'Speech continuity, idea development, pacing, and linking phrases.' },
+      { id: 'lexical', key: 'lexicalResource', title: 'Lexical Resource', data: result?.criteria?.lexicalResource, defaultNote: 'Topic vocabulary range, natural phrasing, precision, and collocation.' },
+      { id: 'grammar', key: 'grammaticalRangeAndAccuracy', title: 'Grammatical Range & Accuracy', data: result?.criteria?.grammaticalRangeAndAccuracy, defaultNote: 'Syntactic variety, complex sentence control, clause structures, and grammatical precision.' },
+      { id: 'pronunciation', key: 'pronunciation', title: 'Pronunciation', data: result?.criteria?.pronunciation, defaultNote: 'Phonological control: intelligibility, word stress, rhythm, and intonational variation.' },
     ];
 
     const handleSaveAndReturn = () => {
@@ -565,160 +613,192 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         overallBand: isFull ? result.overallSpeakingBand : null,
         speaking: {
           band: isFull ? result.overallSpeakingBand : null,
+          overallBand: isFull ? result.overallSpeakingBand : null,
           evaluationState: state,
           evaluationStatus: result?.status || 'failed',
+          provisional: Boolean(result?.provisional),
+          scoringMethod: result?.scoringMethod || '',
           criteria: result?.criteria || null,
           overallSummary: result?.overallSummary || '',
+          priorityWeaknesses: result?.priorityWeaknesses || [],
           strengths: result?.strengths || '',
           areasForImprovement: result?.areasForImprovement || '',
+          partFeedback: result?.partFeedback || {},
           recordedCount: Object.keys(recordings).length,
           recordings,
           transcripts: result?.transcripts || {},
-          sttEngine: result?.sttEngine || 'whistle',
-          sttModelVersion: result?.sttModelVersion || '16.9mb',
+          sttEngine: result?.sttEngine || 'whisper-small.en',
+          sttModelVersion: result?.sttModelVersion || 'small.en',
         }
       };
       if (onComplete) onComplete(canonicalAttempt.speaking);
     };
 
-    return (
-      <div className="exam-results-screen" style={{ maxWidth: 1080, margin: '40px auto', padding: '0 24px 80px' }}>
-        <button onClick={onBack} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: 24 }}>
-          <Icon name="arrowLeft" size={16} /> Back to Dashboard
-        </button>
+    const priorityItems = Array.isArray(result?.priorityWeaknesses) && result.priorityWeaknesses.length > 0
+      ? result.priorityWeaknesses
+      : (result?.areasForImprovement ? [result.areasForImprovement] : []);
 
-        {/* header card: PARTIAL vs FULL, never both */}
-        <div style={{ background: 'var(--bg-card)', border: '1.5px solid #151313', borderRadius: 24, padding: '34px 40px', marginBottom: 28, boxShadow: '0 4px 0 #151313' }}>
-          {isFull ? (
-            (() => {
-              const isProvisional = Boolean(result.provisional || result.criteria?.pronunciation?.band === null);
-              return (
-                <>
-                  <div style={{
-                    fontSize: 12,
-                    fontWeight: 800,
-                    letterSpacing: '0.1em',
-                    color: isProvisional ? 'var(--c-yellow-dark, #D97706)' : 'var(--text-secondary)'
-                  }}>
-                    {isProvisional ? 'PROVISIONAL SPEAKING ESTIMATE (TRANSCRIPT-ONLY)' : 'FULL SPEAKING ASSESSMENT (4 CRITERIA)'}
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 10 }}>
-                    <span style={{ fontSize: 52, fontWeight: 800 }}>{typeof result.overallSpeakingBand === 'number' ? result.overallSpeakingBand.toFixed(1) : '—'}</span>
-                    <span style={{ color: 'var(--text-secondary)', fontWeight: 700 }}>
-                      {isProvisional ? 'Provisional Speaking Band (3 of 4 Criteria)' : 'Overall Speaking Band'}
-                    </span>
-                  </div>
-                  <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)', fontWeight: 600, maxWidth: 640 }}>
-                    {isProvisional
-                      ? 'Official IELTS Speaking requires all four criteria including Pronunciation assessed from live audio. Because pronunciation cannot be assessed from transcripts, this score is a provisional 3-criterion estimate, not an official 4-criterion IELTS Speaking band.'
-                      : 'Assessed across all four criteria: Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.'}
-                  </div>
-                  {result?.modelUsed && (
-                    <div style={{ marginTop: 10, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
-                        Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
-                        {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
-                      </span>
-                    </div>
-                  )}
-                </>
-              );
-            })()
-          ) : (
-            <>
-              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', color: 'var(--text-secondary)' }}>PARTIAL SPEAKING ASSESSMENT</div>
-              <div style={{ fontSize: 21, fontWeight: 800, marginTop: 10 }}>
+    const isProvisional = isFull && Boolean(result.provisional || result.criteria?.pronunciation?.band === null);
+    const evaluatorPill = result?.modelUsed ? (
+      <span className="result-meta-pill">
+        Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
+        {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
+      </span>
+    ) : null;
+
+    return (
+      <ResultPage skill="speaking" className="exam-results-screen">
+        <ResultItem as="button" type="button" className="result-back-btn" onClick={onBack}>
+          <Icon name="arrowLeft" size={16} /> Back to Dashboard
+        </ResultItem>
+
+        {/* 1. OVERALL ESTIMATE & LIMITATIONS HERO CARD */}
+        {isFull ? (
+          <ResultItem className="result-hero">
+            <div>
+              <span className={`result-eyebrow${isProvisional ? ' is-warning' : ''}`}>
+                {isProvisional ? 'PROVISIONAL SPEAKING ESTIMATE (TRANSCRIPT-ONLY)' : 'FULL SPEAKING ASSESSMENT (4 CRITERIA)'}
+              </span>
+              <h1 className="result-title">Speaking Assessment</h1>
+              <p className="result-lead">
+                {isProvisional
+                  ? 'Official IELTS Speaking requires all four criteria including Pronunciation assessed from live audio. Because pronunciation cannot be assessed from transcripts alone, this score is a provisional 3-criterion estimate (FC, LR, GRA), not an official 4-criterion IELTS Speaking band.'
+                  : 'Assessed across all four criteria: Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.'}
+              </p>
+              {evaluatorPill}
+            </div>
+            <div className="result-band-box">
+              <div className="result-band-label">
+                {isProvisional ? 'Provisional band' : 'Overall band'}
+              </div>
+              <div className={`result-band-value${typeof result.overallSpeakingBand === 'number' ? '' : ' is-empty'}`}>
+                {typeof result.overallSpeakingBand === 'number' ? result.overallSpeakingBand.toFixed(1) : '—'}
+              </div>
+              <div className="result-band-sub">
+                {isProvisional ? '3 of 4 criteria' : 'Overall Speaking Band'}
+              </div>
+            </div>
+          </ResultItem>
+        ) : (
+          <ResultItem className="result-hero is-stacked">
+            <div>
+              <span className="result-eyebrow is-warning">PARTIAL SPEAKING ASSESSMENT</span>
+              <h1 className="result-title">
                 {state === 'NOT_CONFIGURED' && 'AI evaluation is unavailable'}
                 {state === 'NOT_ASSESSED' && 'Not enough speech was recorded'}
                 {state === 'FAILED' && 'Evaluation could not be completed'}
                 {isPartial && 'Response-level feedback — not a band score'}
-              </div>
-              <div style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--text-primary)', marginTop: 10, fontFamily: 'var(--font-family)' }}>
-                {result?.coverage?.statement || ''}
-              </div>
-              <div style={{ fontSize: 13.5, color: 'var(--text-secondary)', marginTop: 8, maxWidth: 640 }}>
+              </h1>
+              {result?.coverage?.statement && (
+                <p className="result-text" style={{ fontWeight: 700, marginBottom: 8 }}>{result.coverage.statement}</p>
+              )}
+              <p className="result-lead">
                 {state === 'NOT_CONFIGURED' && (result?.message || 'Add an API key in Settings to receive criterion-level feedback.')}
                 {state === 'NOT_ASSESSED' && (result?.message || 'Record at least one full answer to receive feedback.')}
                 {state === 'FAILED' && (result?.message || 'You can retry the evaluation.')}
                 {isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
-              </div>
-              {result?.modelUsed && (
-                <div style={{ marginTop: 10, fontSize: 13, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ padding: '3px 8px', borderRadius: 6, background: 'var(--bg-canvas)', border: '1px solid var(--border-subtle)', fontWeight: 600 }}>
-                    Evaluator: {result.providerUsed === 'groq' ? 'Groq' : 'Gemini'} ({result.modelUsed})
-                    {result.evaluationTier === 'client_local_key' ? ' · Local API Key' : ''}
-                  </span>
-                </div>
-              )}
+              </p>
+              {evaluatorPill}
               {state === 'NOT_CONFIGURED' && (
-                <p style={{ marginTop: 12, fontSize: 13.5, color: 'var(--text-secondary)' }}>
+                <p className="result-text is-muted" style={{ marginTop: 12 }}>
                   Your recordings are kept on this page. Add your Gemini or Groq key in Settings (profile menu), then press Retry evaluation.
                 </p>
               )}
               {(state === 'FAILED' || state === 'NOT_CONFIGURED') && (
-                <button onClick={handleFinish} style={{ marginTop: 16, padding: '10px 18px', borderRadius: 12, fontWeight: 800, border: '1.5px solid #151313', background: 'var(--c-yellow)', cursor: 'pointer' }}>
-                  Retry evaluation
+                <button type="button" onClick={handleFinish} className="result-btn is-yellow is-small" style={{ marginTop: 16 }}>
+                  <Icon name="refresh" size={15} />
+                  <span>Retry evaluation</span>
                 </button>
               )}
-            </>
-          )}
-        </div>
-
-                {!isMockMode && (
-          <div style={{ marginBottom: 36 }}>
-            <ResultAnalysis skill="speaking" resultRecord={{ speaking: result?.canonical || result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-          </div>
+            </div>
+          </ResultItem>
         )}
 
-{/* criteria: scores exist ONLY when evaluation produced them */}
-        <h2 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 14px' }}>Assessment Criteria</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14, marginBottom: 32 }}>
-          {criteriaList.map(c => {
-            const hasBand = typeof c.data?.band === 'number';
-            const isPron = c.id === 'pronunciation';
-            const hasEval = state === 'COMPLETED' || state === 'PARTIAL';
-            return (
-              <div key={c.id} style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: 16, padding: '18px 20px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <div style={{ fontWeight: 800, fontSize: 14.5 }}>{c.title}</div>
-                  {hasBand ? (
-                    <span style={{ fontSize: 18, fontWeight: 800 }}>{c.data.band.toFixed(1)}</span>
-                  ) : (
-                    <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)' }}>
-                      {isPron ? 'Not assessed' : hasEval ? 'Not scored' : 'Unavailable'}
-                    </span>
-                  )}
-                </div>
-                <div style={{ fontSize: 12.5, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                  {isPron
-                    ? (c.data?.reason || 'Audio pronunciation analysis is not currently available.')
-                    : hasBand
-                      ? (c.data?.notes || c.defaultNote)
-                      : hasEval
-                        ? (c.data?.feedback || c.data?.notes || `${c.title} band scores are issued only for a full interview. Your answers were reviewed qualitatively.`)
-                        : c.defaultNote}
-                </div>
+        {/* 2. HIGHEST-PRIORITY WEAKNESSES & EXAMINER COACHING SUMMARY */}
+        {(state === 'COMPLETED' || state === 'PARTIAL') && (result.overallSummary || priorityItems.length > 0 || result.strengths) && (
+          <ResultItem as="section" className="result-card">
+            <div className="result-card-head">
+              <h3 className="result-card-title"><span aria-hidden="true">📋</span> Coaching Overview & Key Priorities</h3>
+            </div>
+
+            {result.overallSummary && (
+              <p className="result-text" style={{ marginBottom: 18 }}>{result.overallSummary}</p>
+            )}
+
+            {/* Concise summary of candidate's 2-3 highest-priority weaknesses */}
+            {priorityItems.length > 0 && (
+              <div style={{ marginBottom: 16 }}>
+                <div className="result-label is-accent">Top Priority Improvements for Next Band</div>
+                <ol className="result-list">
+                  {priorityItems.map((item, idx) => (
+                    <li key={idx} className="result-list-item">
+                      <span className="result-list-num">{idx + 1}.</span>
+                      <span className="result-list-body">{item}</span>
+                    </li>
+                  ))}
+                </ol>
               </div>
-            );
-          })}
-        </div>
+            )}
 
-        {(state === 'COMPLETED' || state === 'PARTIAL') && (result.overallSummary || result.strengths || result.areasForImprovement) && (
-          <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: 16, padding: '20px 24px', marginBottom: 28 }}>
-            <h3 style={{ marginTop: 0, fontSize: 16, fontWeight: 800 }}>Examiner Summary</h3>
-            {result.overallSummary && <p style={{ fontSize: 14, lineHeight: 1.6 }}>{result.overallSummary}</p>}
-            {result.strengths && <p style={{ fontSize: 14, lineHeight: 1.6 }}><strong>Strengths:</strong> {result.strengths}</p>}
-            {result.areasForImprovement && <p style={{ fontSize: 14, lineHeight: 1.6 }}><strong>Focus areas:</strong> {result.areasForImprovement}</p>}
-          </div>
+            {result.strengths && (
+              <p className="result-text is-muted">
+                <strong style={{ color: 'var(--success-icon)' }}>Demonstrated Strengths:</strong> {result.strengths}
+              </p>
+            )}
+          </ResultItem>
         )}
 
-        <div style={{ display: 'flex', justifyContent: 'flex-end', borderTop: '1.5px solid #151313', paddingTop: 16 }}>
-          <button onClick={handleSaveAndReturn} style={{ padding: '14px 30px', borderRadius: 16, background: '#FF5734', color: '#151313', fontSize: 15, fontWeight: 800, border: '1.5px solid #151313', cursor: 'pointer', boxShadow: '0 4px 0 #151313', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <Icon name="check" size={17} />
+        {!isMockMode && (
+          <ResultItem>
+            <ResultAnalysis skill="speaking" resultRecord={{ speaking: result?.canonical || result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+          </ResultItem>
+        )}
+
+        {/* 3. SEPARATE SECTION FOR EVERY ASSESSABLE CRITERION */}
+        <ResultItem as="section">
+          <div className="result-section-head">
+            <h2 className="result-section-title">Assessment Criteria & Coaching Feedback</h2>
+            <p className="result-section-sub">
+              Detailed evaluation grounded in your actual responses against official IELTS Band Descriptors.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            {criteriaList.map(c => {
+              const isPron = c.id === 'pronunciation';
+              const hasEval = state === 'COMPLETED' || state === 'PARTIAL';
+              const assessmentText = c.data?.personalizedAssessment || c.data?.rationale || c.data?.feedback || c.data?.notes;
+              const adviceText = c.data?.nextBandAdvice || c.data?.improvementFocus;
+              const corrections = Array.isArray(c.data?.corrections) ? c.data.corrections : [];
+              return (
+                <CriterionFeedbackCard
+                  key={c.id}
+                  title={c.title}
+                  subtitle={c.defaultNote}
+                  band={c.data?.band}
+                  bandFallback={isPron ? 'Not Assessed (Audio Required)' : hasEval ? 'Not Scored' : 'Unavailable'}
+                  assessment={isPron
+                    ? (c.data?.reason || c.data?.personalizedAssessment || 'Pronunciation requires acoustic audio recordings (evaluating intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts. To preserve scoring integrity, no synthetic score is awarded.')
+                    : assessmentText
+                      ? assessmentText
+                      : hasEval
+                        ? `${c.title} band scores are issued for a full interview. Your answers were reviewed qualitatively against the descriptors.`
+                        : c.defaultNote}
+                  corrections={corrections}
+                  advice={adviceText}
+                />
+              );
+            })}
+          </div>
+        </ResultItem>
+
+        <ResultItem className="result-actions">
+          <button type="button" onClick={handleSaveAndReturn} className="result-btn is-primary">
+            <Icon name="check" size={18} />
             <span>Save & Return to Dashboard</span>
           </button>
-        </div>
-      </div>
+        </ResultItem>
+      </ResultPage>
     );
   }
 
@@ -779,6 +859,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
   return (
     <div className="exam-focus-layout" style={{ maxWidth: 1080 }}>
+      <ScrollToTop />
       {/* header */}
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
@@ -938,8 +1019,10 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               <TranscriptState rec={currentRecording} onRetry={() => runTranscription(currentKey, currentRecording.recordingId, currentRecording.blob, liveTranscriptRef.current)} />
               {currentRecording.transcript && (
                 <div>
-                  <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
-                  <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)' }}>
+                  <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                    {currentRecording.transcriptStatus === 'pending' ? 'QUICK PREVIEW (BEING REFINED)' : 'YOUR TRANSCRIPT'}
+                  </div>
+                  <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
                     {currentRecording.transcript}
                   </div>
                 </div>
@@ -1011,8 +1094,10 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 <TranscriptState rec={currentRecording} onRetry={() => runTranscription(currentKey, currentRecording.recordingId, currentRecording.blob, liveTranscriptRef.current)} />
                 {currentRecording.transcript && (
                   <div>
-                    <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>RECEIVED TEXT</div>
-                    <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)' }}>
+                    <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                      {currentRecording.transcriptStatus === 'pending' ? 'QUICK PREVIEW (BEING REFINED)' : 'YOUR TRANSCRIPT'}
+                    </div>
+                    <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
                       {currentRecording.transcript || '(no speech detected)'}
                     </div>
                   </div>
@@ -1049,7 +1134,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         onSelectSection={(i) => { stopRecording(); setPartIdx(i); setQuestionIdx(0); setRecState(REC_STATE.IDLE); }}
         onNext={handleNext}
         isNextDisabled={false}
-        nextLabel={isLastInteraction ? 'Submit Test' : 'Next →'}
+        nextLabel={isLastInteraction ? 'Submit Test' : 'Next'}
         isSubmit={isLastInteraction}
       />
     </div>

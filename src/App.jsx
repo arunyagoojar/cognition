@@ -22,6 +22,7 @@ import {
   saveSkillScore,
   resetSkillScores,
   clearUserScoresOnSignOut,
+  claimLocalDataOwner,
   getTargetBand,
   saveTargetBand,
   getCompletedLessons,
@@ -30,12 +31,13 @@ import {
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING, PRODUCTION_WRITING, PRODUCTION_SPEAKING } from './data/production/productionContent.js';
-import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncLessonComplete, syncOnboardingComplete } from './utils/api';
+import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncOnboardingComplete } from './utils/api';
 import { createAttemptId } from './utils/storage';
 import { shouldShowOnboarding, markOnboardingComplete, hasCompletedOnboardingLocally } from './utils/onboarding';
 
 import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js';
 import ErrorBoundary from './components/common/ErrorBoundary.jsx';
+import { resetWindowScroll } from './components/common/resetWindowScroll.js';
 
 export default function App() {
   const hasClerk = Boolean(PUBLISHABLE_KEY);
@@ -175,7 +177,11 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const prevUserRef = useRef({ isSignedIn, userId });
   useEffect(() => {
     const prev = prevUserRef.current;
-    if (prev.isSignedIn && (!isSignedIn || (userId !== 'anon' && prev.userId !== userId))) {
+    const switchedHere = prev.isSignedIn && (!isSignedIn || (userId !== 'anon' && prev.userId !== userId));
+    // Data left by another account (signed out in another tab / expired session)
+    const leftByOtherAccount = isSignedIn && claimLocalDataOwner(userId) === 'foreign';
+    if (switchedHere || leftByOtherAccount) {
+      if (leftByOtherAccount) setView(v => (v === 'mock' ? 'home' : v));
       clearUserScoresOnSignOut();
       refreshScores();
     }
@@ -184,6 +190,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   // Every practice start serves a fresh random test (avoiding recent repeats)
   const startSkill = (skillId) => {
+    delete sessionAttemptIds.current[skillId];
     if (skillId === 'listening') {
       setSelectedExamId(getRandomTestId());
     } else if (skillId === 'reading') {
@@ -215,18 +222,29 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     setView(skillId);
   };
 
-  const handleCompleteSkill = (skill, scoreData) => {
-    saveSkillScore(skill, scoreData);
+  // One attempt id per practice session: the automatic save when results
+  // appear and the later "Save & Return" click update the same record.
+  const sessionAttemptIds = useRef({});
+
+  const persistSkillResult = (skill, scoreData) => {
+    const id = scoreData?.attemptId || sessionAttemptIds.current[skill] || createAttemptId(skill);
+    sessionAttemptIds.current[skill] = id;
+    const testIdForAttempt = scoreData?.testId || selectedExamId;
+    saveSkillScore(skill, { ...scoreData, attemptId: id, testId: testIdForAttempt });
     // Modules pass their inner result object (no id/type) — envelope it here so
     // the cloud attempt record is always complete and persistent.
-    syncAttempt({
+    Promise.resolve(syncAttempt({
       ...scoreData,
-      id: scoreData?.id || createAttemptId(skill),
+      id,
       type: skill,
-      testId: scoreData?.testId || selectedExamId,
+      testId: testIdForAttempt,
       testLabel: scoreData?.testLabel || '',
-    });
+    })).catch(() => {});
     refreshScores();
+  };
+
+  const handleCompleteSkill = (skill, scoreData) => {
+    persistSkillResult(skill, scoreData);
     setView('home');
   };
 
@@ -235,21 +253,6 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     refreshScores();
   };
 
-  // Helper for diagnostic weakness/strength pill on Performance
-  const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
-  const R = scores?.reading?.band ? parseFloat(scores.reading.band) : null;
-  const W = scores?.writing?.band ? parseFloat(scores.writing.band) : null;
-  const S = scores?.speaking?.band ? parseFloat(scores.speaking.band) : null;
-
-  const validSkills = [
-    { name: 'Listening', band: L },
-    { name: 'Reading', band: R },
-    { name: 'Writing', band: W },
-    { name: 'Speaking', band: S },
-  ].filter(s => s.band !== null).sort((a, b) => b.band - a.band);
-
-  const strongestSkill = validSkills[0] || null;
-  const weakestSkill = validSkills.length > 1 ? validSkills[validSkills.length - 1] : null;
 
 
   // Shared fluid spatial continuity for all page transitions (280ms)
@@ -304,7 +307,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       )}
 
       {/* ── UNIFIED SPATIAL CONTINUITY PAGE CONTAINER ─────────────── */}
-      <AnimatePresence mode="wait">
+      {/* Reset scroll once the outgoing page has left: the incoming page then
+          mounts at the top even if the window moved during the exit fade. */}
+      <AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
         {view === 'home' && (
           <motion.main
             key="home"
@@ -413,6 +418,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onComplete={(d) => {
                 handleCompleteSkill('listening', d);
               }}
+              onSave={(d) => persistSkillResult('listening', d)}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
               onBack={() => setView('home')}
             />
           </motion.div>
@@ -432,6 +440,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onComplete={(d) => {
                 handleCompleteSkill('reading', d);
               }}
+              onSave={(d) => persistSkillResult('reading', d)}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
               onBack={() => setView('home')}
             />
           </motion.div>
@@ -452,6 +463,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
                 onComplete={(d) => {
                   handleCompleteSkill('writing', d);
                 }}
+                onSave={(d) => persistSkillResult('writing', d)}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
                 onBack={() => setView('home')}
               />
             </ErrorBoundary>
@@ -472,6 +486,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onComplete={(d) => {
                 handleCompleteSkill('speaking', d);
               }}
+              onSave={(d) => persistSkillResult('speaking', d)}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
               onBack={() => setView('home')}
             />
           </motion.div>
@@ -489,12 +506,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             <MockExamFlow
               initialExamId={selectedExamId}
               onComplete={(record) => {
-                if (record?.skills) {
-                  Object.entries(record.skills).forEach(([k, v]) => {
-                    if (v && v.status === 'completed') saveSkillScore(k, v);
-                  });
-                }
-                syncAttempt({
+                // evaluateFullMockExam already recorded this mock (all four
+                // skills) in the performance store — saving each skill again
+                // would double-count it in the band estimate.
+                Promise.resolve(syncAttempt({
                   id: createAttemptId('mock'),
                   type: 'mock',
                   testId: record?.testId || '',
@@ -505,7 +520,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
                     skills: record?.skills || null,
                     overallSummary: record?.overallSummary ?? null,
                   },
-                });
+                })).catch(() => {});
                 refreshScores();
                 setView('home');
               }}
