@@ -1,41 +1,37 @@
 /**
  * On-device speech-to-text transcriber interface.
- * Primary: Whisper small.en (OpenAI, MIT), 4-bit on WebGPU (~300 MB download).
- * Fallback: Whisper base.en (~80 MB, WASM) when WebGPU is missing, on phones /
- * low-memory devices, or when small.en fails to load or run on this device.
+ * Moonshine Base (Useful Sensors, MIT), ~250 MB, WebGPU or WASM.
  *
  * - Free, no API keys, private: runs on the candidate's device. Weights are
  *   fetched once from the Hugging Face hub and cached by the browser.
- * - Silence is trimmed (energy VAD) before transcription and silent segments
- *   are skipped, so Whisper never "hears" words in a pause.
- * - Handles answers of 1–2 minutes by splitting at natural pauses into ≤28 s
- *   segments (Whisper pads every pass to 30 s, so fewer, fuller windows are
- *   faster), preserving exact audio.
- * - Legacy cleanup, once: Moonshine entries in 'transformers-cache' and the
- *   old Whistle 'whistle-cache' bucket. Never touches any other storage.
+ * - Verbatim: fillers, repeated words and restarts are kept (IELTS Fluency and
+ *   Grammar are judged on them).
+ * - Silence is trimmed (energy VAD) and the answer is split at its pauses into
+ *   utterances; each becomes one line of the transcript, with its timing, so
+ *   pauses and speaking rate can be measured.
+ * - Retired engines are cleaned up once the current one works: Whisper weights
+ *   in 'transformers-cache' and the old Whistle 'whistle-cache' bucket. Never
+ *   touches any other storage.
  */
 import {
   STT_ENGINES,
   ENGINE_METADATA,
   PRIMARY_STT_ENGINE,
+  RETIRED_MODEL_REPOS,
+  RETIRED_STORAGE_KEYS,
   getPreferredSttEngine,
-  setPreferredSttEngine,
-  markSmallEngineFailed,
-  clearSmallEngineFailure,
-  isMoonshineCleanupDone,
-  markMoonshineCleanupDone,
+  isWhisperCleanupDone,
+  markWhisperCleanupDone,
   isWhistleCleanupDone,
   markWhistleCleanupDone,
   formatTranscriptResult,
 } from './transcriberTypes.js';
-import { trimSilence, speechSeconds } from './transcriptGuards.js';
+import { trimSilence, speechSeconds, splitIntoUtterances } from './transcriptGuards.js';
 
 export {
   STT_ENGINES,
   ENGINE_METADATA,
   getPreferredSttEngine,
-  setPreferredSttEngine,
-  isMoonshineCleanupDone,
   formatTranscriptResult,
 };
 export { trimSilence } from './transcriptGuards.js';
@@ -106,40 +102,31 @@ async function modelIsCached(engine) {
   }
 }
 
-/** What the worker needs to pick small.en vs base.en for this device. */
-function deviceHints() {
-  const nav = typeof navigator !== 'undefined' ? navigator : {};
-  const mem = Number(nav.deviceMemory) || 0; // Chromium only; capped at 8
-  const ua = String(nav.userAgent || '');
-  const phone = /iPhone|iPod|Android.+Mobile|Mobile.+Firefox/i.test(ua);
-  return {
-    lowMemory: phone || (mem > 0 && mem < 4),
-  };
-}
 
 /**
- * Targeted Moonshine cleanup:
- * Runs once after the Whisper model is successfully downloaded and loaded.
- * Deletes ONLY Moonshine entries from 'transformers-cache'.
- * Never touches user results, API keys, or other site storage.
- * Silently catches and ignores all errors.
+ * Removes the retired Whisper weights (~80–300 MB) from 'transformers-cache'
+ * once Moonshine works, plus the old engine-choice keys. Only those entries;
+ * silently ignores errors.
  */
-export async function cleanupMoonshineCacheOnce() {
-  if (isMoonshineCleanupDone()) return;
+export async function cleanupWhisperCacheOnce() {
+  if (isWhisperCleanupDone()) return;
   try {
     if (typeof caches !== 'undefined') {
       const cache = await caches.open('transformers-cache');
       const requests = await cache.keys();
       for (const req of requests) {
         const url = req.url || '';
-        if (url.includes('moonshine-base-ONNX') || url.includes('moonshine')) {
-          await cache.delete(req);
-        }
+        if (RETIRED_MODEL_REPOS.some((repo) => url.includes(repo))) await cache.delete(req);
       }
     }
-    markMoonshineCleanupDone();
+    try {
+      RETIRED_STORAGE_KEYS.forEach((k) => window.localStorage.removeItem(k));
+    } catch {
+      /* storage blocked */
+    }
+    markWhisperCleanupDone();
   } catch {
-    /* Silent ignore per specification */
+    /* Silent ignore */
   }
 }
 
@@ -182,9 +169,6 @@ function ensureWorker() {
         status: state.cached ? 'loading' : 'downloading',
         progress: m.total ? m.loaded / m.total : 0,
       });
-    } else if (m.type === 'fallback') {
-      if (m.from === STT_ENGINES.WHISPER_SMALL_EN) markSmallEngineFailed();
-      setState({ status: 'downloading', progress: 0, cached: false });
     } else if (m.type === 'ready') {
       setState({
         status: 'ready',
@@ -194,14 +178,13 @@ function ensureWorker() {
         device: m.device,
         error: null,
       });
-      if (m.engine === STT_ENGINES.WHISPER_SMALL_EN) clearSmallEngineFailure();
-      // One-time cleanup of retired engines once the new one works
-      cleanupMoonshineCacheOnce();
+      // One-time cleanup of retired engines once the current one works
+      cleanupWhisperCacheOnce();
       cleanupWhistleCacheOnce();
     } else if (m.type === 'result' && pending.has(m.id)) {
       const formatted = formatTranscriptResult({
         text: m.text,
-        words: m.words,
+        segments: m.segments,
         engine: m.engine,
         version: m.version,
       });
@@ -260,7 +243,7 @@ export function prepareLocalStt() {
         }
       });
 
-      w.postMessage({ type: 'load', engine, hints: deviceHints() });
+      w.postMessage({ type: 'load' });
     });
   })();
 
@@ -376,15 +359,15 @@ export function transcribeRecording(blob) {
     const voiced = trimSilence(pcm, SAMPLE_RATE);
     if (voiced.pcm.length < 1600) return empty();
 
-    let currentOffset = voiced.startSec;
+    // One utterance per stretch of speech between pauses → one transcript line
     const segments = [];
-    for (const s of splitAtPauses(voiced.pcm)) {
-      const durationSec = s.length / SAMPLE_RATE;
-      const speechSec = speechSeconds(s, voiced.threshold, SAMPLE_RATE);
+    for (const u of splitIntoUtterances(voiced.pcm, voiced.threshold, SAMPLE_RATE)) {
+      const piece = voiced.pcm.subarray(u.start, u.end);
+      const durationSec = piece.length / SAMPLE_RATE;
+      const speechSec = speechSeconds(piece, voiced.threshold, SAMPLE_RATE);
       if (speechSec >= 0.15) {
-        segments.push({ pcm: s.slice(), offsetSec: currentOffset, durationSec, speechSec });
+        segments.push({ pcm: piece.slice(), offsetSec: voiced.startSec + u.start / SAMPLE_RATE, durationSec, speechSec });
       }
-      currentOffset += durationSec;
     }
     if (!segments.length) return empty();
 
@@ -392,7 +375,7 @@ export function transcribeRecording(blob) {
     return new Promise((resolve, reject) => {
       pending.set(id, { resolve, reject });
       worker.postMessage(
-        { type: 'transcribe', id, segments, engine: state.engine, hints: deviceHints() },
+        { type: 'transcribe', id, segments },
         segments.map((s) => s.pcm.buffer)
       );
     });

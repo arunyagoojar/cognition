@@ -151,7 +151,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
         { name: 'Fluency & Coherence', score: String(scores?.speaking?.criteria?.fluencyAndCoherence?.band ?? scores?.speaking?.criteria?.fluency ?? (S ? S.toFixed(1) : '--')), status: 'Speech continuity and discourse' },
         { name: 'Lexical Resource', score: String(scores?.speaking?.criteria?.lexicalResource?.band ?? scores?.speaking?.criteria?.lexical ?? (S ? S.toFixed(1) : '--')), status: 'Range of idiomatic phrasing' },
         { name: 'Grammatical Range & Accuracy', score: String(scores?.speaking?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.speaking?.criteria?.grammar ?? (S ? S.toFixed(1) : '--')), status: 'Syntactic control of tenses' },
-        { name: 'Pronunciation', score: scores?.speaking?.criteria?.pronunciation?.band ? String(scores.speaking.criteria.pronunciation.band) : (scores?.speaking?.criteria?.pronunciation?.status === 'insufficient_audio_evidence' ? 'Audio req.' : (S ? S.toFixed(1) : '--')), status: 'Rhythm and natural phonology' },
+        { name: 'Pronunciation', score: scores?.speaking?.criteria?.pronunciation?.band ? String(scores.speaking.criteria.pronunciation.band) : 'Not scored', status: 'Rhythm and natural phonology' },
       ] : [
         { name: 'Fluency & Coherence', score: '--', status: 'Awaiting first test attempt' },
         { name: 'Lexical Resource', score: '--', status: 'Awaiting first test attempt' },

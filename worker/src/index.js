@@ -606,6 +606,7 @@ export default {
 
           const userPrompt = buildSpeakingUserPrompt({
             transcripts, testMeta: body.testMeta || {}, durations: body.durations || {},
+            speechMeta: body.speechMeta && typeof body.speechMeta === 'object' ? body.speechMeta : {},
           });
 
           const plaintextKey = cred.explicit

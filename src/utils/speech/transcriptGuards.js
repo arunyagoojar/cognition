@@ -1,8 +1,8 @@
 /**
- * Guards against Whisper's known failure modes on recorded answers, without
+ * Guards against speech models' known failure modes on recorded answers, without
  * "cleaning up" what the candidate actually said:
  *
- *  - Silence / room noise makes Whisper invent text ("Thank you.", "you").
+ *  - Silence / room noise makes a model invent text ("Thank you.", "you").
  *    An energy-based voice-activity check trims leading and trailing silence
  *    and skips segments that hold no speech at all, so the model never sees them.
  *  - Long decoding loops repeat one phrase over and over. Runs of a multi-word
@@ -92,7 +92,7 @@ export function trimSilence(pcm, rate = 16000, { padBeforeS = 0.3, padAfterS = 0
   return { pcm: pcm.subarray(start, end), startSec: start / rate, threshold, speechSec };
 }
 
-/** Phrases Whisper is known to emit on (near-)silent audio. */
+/** Phrases speech models are known to emit on (near-)silent audio. */
 const SILENCE_PHANTOMS = new Set([
   'you',
   'thank you',
@@ -159,7 +159,7 @@ export function collapseRepetitionLoops(text) {
  */
 export function guardSegmentText(text, speechSec = Infinity) {
   let t = String(text || '').replace(/\s+/g, ' ').trim();
-  // Whisper's non-speech annotations ("[BLANK_AUDIO]", "(music)") are not words.
+  // Non-speech annotations ("[BLANK_AUDIO]", "(music)") are not words.
   t = t.replace(/\[[^\]]*\]|\((?:music|applause|laughs?|laughter|silence|inaudible|noise)\)/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -172,4 +172,64 @@ export function guardSegmentText(text, speechSec = Infinity) {
 /** Generation cap per segment: generous for fast speech, short enough to stop runaway loops. */
 export function maxNewTokensFor(durationSec) {
   return Math.max(24, Math.min(440, Math.ceil(durationSec * 7) + 16));
+}
+
+/**
+ * Splits voiced audio into utterances — the stretches of speech between
+ * pauses — so the transcript can read like a script (one line per stretch)
+ * and each pause can be timed. A gap of at least `pauseS` of silence ends an
+ * utterance; an utterance longer than `maxS` is cut at its quietest point.
+ * Returns [{ start, end }] in samples, each padded slightly so words stay whole.
+ */
+export function splitIntoUtterances(pcm, threshold, rate = 16000, { pauseS = 0.7, maxS = 20, padS = 0.15, minSpeechS = 0.2 } = {}) {
+  const rms = frameRms(pcm, rate);
+  const thr = threshold ?? speechThreshold(rms);
+  const frameLen = Math.max(1, Math.round(rate * FRAME_S));
+  const pauseFrames = Math.max(1, Math.round(pauseS / FRAME_S));
+  const voiced = Array.from(rms, (v) => v >= thr);
+
+  // 1. Runs of speech separated by pauses of at least `pauseS`
+  const runs = [];
+  let start = -1;
+  let lastVoiced = -1;
+  for (let f = 0; f < voiced.length; f++) {
+    if (!voiced[f]) continue;
+    if (start < 0) start = f;
+    else if (f - lastVoiced > pauseFrames) {
+      runs.push([start, lastVoiced + 1]);
+      start = f;
+    }
+    lastVoiced = f;
+  }
+  if (start >= 0) runs.push([start, lastVoiced + 1]);
+
+  // 2. Cut over-long runs at their quietest 300 ms window
+  const maxFrames = Math.round(maxS / FRAME_S);
+  const minFrames = Math.round((maxS * 0.6) / FRAME_S);
+  const win = Math.max(1, Math.round(0.3 / FRAME_S));
+  const pieces = [];
+  for (let [a, b] of runs) {
+    while (b - a > maxFrames) {
+      let best = a + maxFrames;
+      let bestE = Infinity;
+      for (let i = a + minFrames; i + win <= a + maxFrames; i++) {
+        let e = 0;
+        for (let k = i; k < i + win; k++) e += rms[k];
+        if (e < bestE) { bestE = e; best = i + Math.floor(win / 2); }
+      }
+      pieces.push([a, best]);
+      a = best;
+    }
+    pieces.push([a, b]);
+  }
+
+  // 3. Drop blips, pad, convert to samples
+  const pad = Math.round(padS * rate);
+  const minFramesSpeech = Math.round(minSpeechS / FRAME_S);
+  return pieces
+    .filter(([a, b]) => b - a >= minFramesSpeech)
+    .map(([a, b]) => ({
+      start: Math.max(0, a * frameLen - pad),
+      end: Math.min(pcm.length, b * frameLen + pad),
+    }));
 }

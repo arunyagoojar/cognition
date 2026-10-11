@@ -296,12 +296,12 @@ export async function evaluateWritingServer({ task1Text, task2Text, prompts, tas
   return res.data;
 }
 
-export async function evaluateSpeakingServer({ transcripts, testMeta, durations }) {
+export async function evaluateSpeakingServer({ transcripts, testMeta, durations, speechMeta }) {
   const provider = getActiveAiProvider();
   const localKey = provider === 'groq' ? getLocalGroqKey() : getLocalGeminiKey();
   const res = await apiFetchDetail('/api/ai/evaluate-speaking', {
     method: 'POST',
-    body: JSON.stringify({ transcripts, testMeta, durations, provider, key: localKey || undefined }),
+    body: JSON.stringify({ transcripts, testMeta, durations, speechMeta, provider, key: localKey || undefined }),
   });
   if (!res.ok) return aiFailure(res);
   return res.data;

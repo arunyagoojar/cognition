@@ -75,6 +75,8 @@ export async function recheckLastTest() {
   const res = await evaluateSpeakingResponses({
     transcripts: record.transcripts || {},
     testMeta: { title: attempt.testLabel || test?.title || 'IELTS Speaking Practice', cueCard },
+    durations: record.durations || {},
+    speechMeta: record.speechMeta || {},
     expectedQuestions: (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0) || null,
   });
   const completed = res?.evaluationState === 'COMPLETED' && typeof res.overallSpeakingBand === 'number';

@@ -426,7 +426,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
  * When not completed, band remains strictly null.
  * Runs server-side via the Cloudflare Worker (encrypted credential).
  */
-export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, durations = {} }) {
+export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, durations = {}, speechMeta = {} }) {
   const combinedSpeech = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
   const wordCount = combinedSpeech ? combinedSpeech.split(/\s+/).length : 0;
 
@@ -450,8 +450,8 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
 
   let res = await directFirst(
     SPEAKING_SYSTEM_PROMPT_V2,
-    buildSpeakingUserPrompt({ transcripts, testMeta, durations }),
-    () => evaluateSpeakingServer({ transcripts, testMeta, durations }),
+    buildSpeakingUserPrompt({ transcripts, testMeta, durations, speechMeta }),
+    () => evaluateSpeakingServer({ transcripts, testMeta, durations, speechMeta }),
     (json) => validateSpeakingEvaluationJson(json),
   );
 
@@ -461,7 +461,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
   let tier = res?.status === 'completed' ? (res.tier || 'server') : 'unknown';
 
   if (res?.status === 'failed' && !res.triedDirect) {
-    const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations });
+    const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations, speechMeta });
     const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt);
     if (direct.status === 'completed') {
       res = { status: 'completed', evaluation: direct.evaluation, model: direct.model, provider: direct.provider };

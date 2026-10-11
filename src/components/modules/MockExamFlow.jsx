@@ -40,7 +40,7 @@ function skillEvidence(key, r) {
   }
   if (key === 'speaking') {
     if (r.status === 'not_attempted') return 'No spoken answers recorded';
-    return r.provisional ? 'Provisional: Pronunciation unassessed (needs audio)' : '';
+    return r.provisional ? 'Average of 3 criteria · Pronunciation not scored' : '';
   }
   return '';
 }

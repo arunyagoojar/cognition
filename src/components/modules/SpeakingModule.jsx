@@ -13,7 +13,8 @@ import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
 import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob, eradicateAllAudioRecordings } from '../../utils/audio/audioStore';
-import { createAttemptId, getTargetBand } from '../../utils/storage';
+import { createAttemptId } from '../../utils/storage';
+import { PRONUNCIATION_NOTE } from '../../utils/ieltsRubric';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -46,7 +47,7 @@ function TranscriptState({ rec, onRetry }) {
       <div className="speaking-transcribing" role="status">
         <span className="stt-dot" aria-hidden="true" />
         {rec.transcript
-          ? 'Quick preview shown — Whisper is refining it into the final transcript…'
+          ? 'Quick preview shown — the on-device model is writing the final transcript…'
           : 'Transcribing on this device…'}
       </div>
     );
@@ -116,6 +117,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       partFeedback: result.partFeedback || {},
       recordedCount: result.recordedCount || 0,
       transcripts: result.transcripts || {},
+      speechMeta: result.speechMeta || {},
+      durations: result.durations || {},
       sttEngine: result.sttEngine || '',
       sttModelVersion: result.sttModelVersion || '',
     });
@@ -159,10 +162,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
       const text = typeof res === 'string' ? res : (res?.text || '');
       const words = res?.words || [];
-      const engine = res?.engine || 'whisper-small.en';
-      const version = res?.version || 'small.en';
+      const segments = res?.segments || [];
+      const engine = res?.engine || 'moonshine-base';
+      const version = res?.version || 'base-fp32';
       const finalText = text.trim() || (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
-      transcriptsRef.current[qId] = { recordingId, text: finalText, words, engine, version };
+      transcriptsRef.current[qId] = { recordingId, text: finalText, words, segments: text.trim() ? segments : [], engine, version };
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
         ? {
             ...prev,
@@ -170,6 +174,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               ...prev[qId],
               transcript: finalText,
               words,
+              segments: text.trim() ? segments : [],
               sttEngine: text.trim() ? engine : (finalText ? 'native_fallback' : engine),
               sttModelVersion: version,
               transcriptStatus: 'done'
@@ -360,6 +365,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const hasNextQuestion = () => questionIdx < totalQuestionsInPart - 1;
   const hasNextPart = () => partIdx < test.parts.length - 1;
   const isLastInteraction = !hasNextQuestion() && !hasNextPart();
+  const transcribingCount = Object.values(recordings).filter(r => r?.transcriptStatus === 'pending').length;
 
   const handleNext = () => {
     stopRecording();
@@ -395,16 +401,17 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     if (useLocalStt) unloadLocalStt(); // free memory; the model stays cached for next time
     const transcripts = {};
     const durations = {};
-    const audioRecordings = {};
+    const speechMeta = {}; // timed lines per answer → pauses, pace, fillers for the examiner
     Object.entries(recordings).forEach(([k, rec]) => {
       const t = transcriptsRef.current[k];
-      transcripts[k] = (t && t.recordingId === rec.recordingId ? t.text : rec.transcript) || '';
+      const fresh = t && t.recordingId === rec.recordingId;
+      transcripts[k] = (fresh ? t.text : rec.transcript) || '';
       durations[k] = rec.duration || 30;
-      audioRecordings[k] = rec.blob || null;
+      speechMeta[k] = { segments: (fresh ? t.segments : rec.segments) || [], durationSec: rec.duration || 0 };
     });
 
-    const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'whisper-small.en';
-    const activeVersion = Object.values(transcriptsRef.current)[0]?.version || 'small.en';
+    const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'moonshine-base';
+    const activeVersion = Object.values(transcriptsRef.current)[0]?.version || 'base-fp32';
 
     // Full mock: the combined report evaluates all four skills together, so the
     // Speaking module hands over its answers instead of showing its own results
@@ -422,6 +429,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         transcripts,
         recordings,
         durations,
+        speechMeta,
         sttEngine: activeEngine,
         sttModelVersion: activeVersion,
         recordedCount: Object.keys(recordings).length
@@ -441,9 +449,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         title: test?.title || 'IELTS Speaking Practice',
         cueCard: cueCardStr,
       },
-      audioRecordings,
       durations,
-      attemptId: createAttemptId('speaking'),
+      speechMeta,
       expectedQuestions,
     });
 
@@ -470,6 +477,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         band: evalResult.overallSpeakingBand,
         recordings: strippedRecordings,
         transcripts,
+        speechMeta,
+        durations,
         sttEngine: activeEngine,
         sttModelVersion: activeVersion,
         recordedCount: Object.keys(recordings).length,
@@ -502,7 +511,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           'Part 2: 1 minute of note preparation followed by a 2-minute sustained monologue.',
           'Part 3: extended discussion connected to your Part 2 topic.',
         ]}
-        scoringInfo="Assessed across Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy from your transcript. Pronunciation requires audio analysis and is reported as Not assessed."
+        scoringInfo={`Scored on Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy from your transcript and delivery (pace, pauses, fillers). ${PRONUNCIATION_NOTE}`}
         ctaText="START SPEAKING TEST"
         onStart={() => { setPhase('exam'); setPartIdx(0); setQuestionIdx(0); }}
         notice={<SpeechModelStatus variant="card" />}
@@ -627,8 +636,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
           recordedCount: Object.keys(recordings).length,
           recordings,
           transcripts: result?.transcripts || {},
-          sttEngine: result?.sttEngine || 'whisper-small.en',
-          sttModelVersion: result?.sttModelVersion || 'small.en',
+          sttEngine: result?.sttEngine || 'moonshine-base',
+          sttModelVersion: result?.sttModelVersion || 'base-fp32',
         }
       };
       if (onComplete) onComplete(canonicalAttempt.speaking);
@@ -662,7 +671,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               <h1 className="result-title">Speaking Assessment</h1>
               <p className="result-lead">
                 {isProvisional
-                  ? 'Official IELTS Speaking requires all four criteria including Pronunciation assessed from live audio. Because pronunciation cannot be assessed from transcripts alone, this score is a provisional 3-criterion estimate (FC, LR, GRA), not an official 4-criterion IELTS Speaking band.'
+                  ? `Your band is the average of Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy. ${PRONUNCIATION_NOTE}`
                   : 'Assessed across all four criteria: Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation.'}
               </p>
               {evaluatorPill}
@@ -776,9 +785,9 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                   title={c.title}
                   subtitle={c.defaultNote}
                   band={c.data?.band}
-                  bandFallback={isPron ? 'Not Assessed (Audio Required)' : hasEval ? 'Not Scored' : 'Unavailable'}
+                  bandFallback={isPron ? 'Not scored' : hasEval ? 'Not Scored' : 'Unavailable'}
                   assessment={isPron
-                    ? (c.data?.reason || c.data?.personalizedAssessment || 'Pronunciation requires acoustic audio recordings (evaluating intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts. To preserve scoring integrity, no synthetic score is awarded.')
+                    ? PRONUNCIATION_NOTE
                     : assessmentText
                       ? assessmentText
                       : hasEval
@@ -842,7 +851,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 </p>
               )}
               {i.rec?.transcriptStatus === 'done' && (
-                <p className="speaking-review-text">{i.rec.transcript || 'No speech was detected in this answer.'}</p>
+                <p className="speaking-review-text" style={{ whiteSpace: 'pre-line' }}>{i.rec.transcript || 'No speech was detected in this answer.'}</p>
               )}
             </li>
           ))}
@@ -1022,7 +1031,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                   <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>
                     {currentRecording.transcriptStatus === 'pending' ? 'QUICK PREVIEW (BEING REFINED)' : 'YOUR TRANSCRIPT'}
                   </div>
-                  <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
+                  <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', whiteSpace: 'pre-line', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
                     {currentRecording.transcript}
                   </div>
                 </div>
@@ -1097,7 +1106,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                     <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', color: 'var(--text-secondary)', marginBottom: 4 }}>
                       {currentRecording.transcriptStatus === 'pending' ? 'QUICK PREVIEW (BEING REFINED)' : 'YOUR TRANSCRIPT'}
                     </div>
-                    <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
+                    <div style={{ background: 'var(--surface-sunken)', border: '1px solid var(--border-subtle)', borderRadius: 10, padding: '10px 14px', fontSize: 14, lineHeight: 1.55, fontFamily: 'var(--font-exam)', whiteSpace: 'pre-line', ...(currentRecording.transcriptStatus === 'pending' ? { opacity: 0.6, fontStyle: 'italic' } : {}) }}>
                       {currentRecording.transcript || '(no speech detected)'}
                     </div>
                   </div>
@@ -1120,6 +1129,18 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         </>
       )}
 
+      {/* Submit waits for the final answers' transcripts — the examiner scores the text */}
+      {isLastInteraction && transcribingCount > 0 && (
+        <div role="status" className="speaking-submit-wait" style={{
+          display: 'flex', alignItems: 'center', gap: 10, padding: '14px 18px', borderRadius: 14,
+          background: 'rgba(252, 204, 66, 0.18)', border: '1.5px solid #FCCC42', fontSize: 15, fontWeight: 600,
+          color: 'var(--text-primary)',
+        }}>
+          <span className="stt-dot" aria-hidden="true" />
+          Finishing the transcript of your last {transcribingCount > 1 ? `${transcribingCount} answers` : 'answer'} on this device. Submit unlocks automatically in a moment.
+        </div>
+      )}
+
       {/* bottom nav: Next advances question → part, Submit Test on the final question */}
       <ExamBottomNav
         onPrevious={partIdx > 0 || questionIdx > 0 ? () => { stopRecording(); if (questionIdx > 0) { setQuestionIdx(q => q - 1); } else { setPartIdx(p => p - 1); setQuestionIdx(0); } setRecState(REC_STATE.IDLE); } : undefined}
@@ -1133,8 +1154,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         activeSectionIndex={partIdx}
         onSelectSection={(i) => { stopRecording(); setPartIdx(i); setQuestionIdx(0); setRecState(REC_STATE.IDLE); }}
         onNext={handleNext}
-        isNextDisabled={false}
-        nextLabel={isLastInteraction ? 'Submit Test' : 'Next'}
+        isNextDisabled={isLastInteraction && transcribingCount > 0}
+        nextLabel={isLastInteraction ? (transcribingCount > 0 ? 'Transcribing…' : 'Submit Test') : 'Next'}
         isSubmit={isLastInteraction}
       />
     </div>

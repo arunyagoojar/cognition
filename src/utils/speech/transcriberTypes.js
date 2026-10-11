@@ -1,75 +1,48 @@
 /**
  * Transcriber Interface Types & Configuration
  *
- * On-device English speech recognition with OpenAI Whisper (MIT) via
- * transformers.js / ONNX Runtime Web:
- *   - primary:  whisper-small.en (244M params) — WebGPU, 4-bit weights
- *   - fallback: whisper-base.en  (74M params)  — WASM, when WebGPU is missing,
- *     on phones / low-memory devices, or when small.en fails on this device.
- * Weights come from the Hugging Face hub once and stay in the browser's
- * Cache Storage ('transformers-cache').
+ * On-device English speech recognition with Moonshine Base (Useful Sensors,
+ * MIT) via transformers.js / ONNX Runtime Web. Moonshine keeps what the
+ * candidate actually said — fillers ("um", "uh"), repeated words and restarts —
+ * which IELTS Fluency and Grammar are judged on. (Whisper, used briefly, tidies
+ * these away.) Runs on WebGPU when available, otherwise WASM; the weights come
+ * from the Hugging Face hub once and stay in Cache Storage ('transformers-cache').
  */
 
 export const STT_ENGINES = {
-  WHISPER_SMALL_EN: 'whisper-small.en',
-  WHISPER_BASE_EN: 'whisper-base.en',
+  MOONSHINE_BASE: 'moonshine-base',
 };
 
 const MB = 1e6;
 
 export const ENGINE_METADATA = {
-  [STT_ENGINES.WHISPER_SMALL_EN]: {
-    id: STT_ENGINES.WHISPER_SMALL_EN,
-    name: 'Whisper Small',
-    model: 'onnx-community/whisper-small.en',
-    vendor: 'OpenAI',
+  [STT_ENGINES.MOONSHINE_BASE]: {
+    id: STT_ENGINES.MOONSHINE_BASE,
+    name: 'Moonshine Base',
+    model: 'onnx-community/moonshine-base-ONNX',
+    vendor: 'Useful Sensors',
     license: 'MIT',
-    // q4 (MatMulNBits) runs natively on ONNX Runtime WebGPU. Sizes are the
-    // hub file sizes. small.en is not used on WASM: single-threaded it runs
-    // at ~0.75x real time (over a minute for a 2-minute answer).
+    // Full precision on both backends (the quantized builds lose accuracy on
+    // accented speech). ~250 MB, downloaded once.
     variants: {
-      webgpu: {
-        version: 'small.en-q4',
-        dtype: { encoder_model: 'q4', decoder_model_merged: 'q4' },
-        bytes: (66.2 + 233.1 + 2.5) * MB,
-      },
+      webgpu: { version: 'base-fp32', dtype: 'fp32', bytes: 250 * MB },
+      wasm: { version: 'base-fp32', dtype: 'fp32', bytes: 250 * MB },
     },
-    version: 'small.en-q4',
-    downloadMb: 300,
-    maxSinglePassSeconds: 30,
-    supportsWordTimestamps: false,
-  },
-  [STT_ENGINES.WHISPER_BASE_EN]: {
-    id: STT_ENGINES.WHISPER_BASE_EN,
-    name: 'Whisper Base',
-    model: 'onnx-community/whisper-base.en',
-    vendor: 'OpenAI',
-    license: 'MIT',
-    variants: {
-      // 8-bit encoder: ~1.5x faster than fp32 in single-threaded WASM
-      // (6.1 s vs 9.2 s per 30 s window measured in Chrome on Apple M-series).
-      wasm: {
-        version: 'base.en-q8',
-        dtype: { encoder_model: 'q8', decoder_model_merged: 'q8' },
-        bytes: (23.2 + 53.7 + 2.5) * MB,
-      },
-    },
-    version: 'base.en-q8',
-    downloadMb: 80,
-    maxSinglePassSeconds: 30,
+    version: 'base-fp32',
+    downloadMb: 250,
     supportsWordTimestamps: false,
   },
 };
 
-export const PRIMARY_STT_ENGINE = STT_ENGINES.WHISPER_SMALL_EN;
-export const FALLBACK_STT_ENGINE = STT_ENGINES.WHISPER_BASE_EN;
+export const PRIMARY_STT_ENGINE = STT_ENGINES.MOONSHINE_BASE;
 
-const ENGINE_STORAGE_KEY = 'cognition_stt_engine';
-const SMALL_FAILED_KEY = 'cognition_stt_small_failed_at';
-const CLEANUP_STORAGE_KEY = 'cognition_moonshine_cleaned';
+/** Retired engines whose cached weights are removed once the current one works. */
+export const RETIRED_MODEL_REPOS = ['whisper-small.en', 'whisper-base.en'];
+/** localStorage keys the retired engines used. */
+export const RETIRED_STORAGE_KEYS = ['cognition_stt_engine', 'cognition_stt_small_failed_at', 'cognition_moonshine_cleaned'];
+
+const WHISPER_CLEANUP_KEY = 'cognition_whisper_cleaned';
 const WHISTLE_CLEANUP_KEY = 'cognition_whistle_cleaned';
-/** After small.en fails to load on a device, use base.en for this long before retrying. */
-export const SMALL_RETRY_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
 
 function storage() {
   if (typeof window === 'undefined') return null;
@@ -80,57 +53,9 @@ function storage() {
   }
 }
 
-function isKnownEngine(engine) {
-  return engine === STT_ENGINES.WHISPER_SMALL_EN || engine === STT_ENGINES.WHISPER_BASE_EN;
-}
-
-/**
- * The engine to try first on this device: small.en, unless it failed to load
- * here recently (then base.en), or the user explicitly chose base.en.
- */
-export function getPreferredSttEngine(now = Date.now()) {
-  const s = storage();
-  if (!s) return PRIMARY_STT_ENGINE;
-  try {
-    const failedAt = Number(s.getItem(SMALL_FAILED_KEY) || 0);
-    if (failedAt && now - failedAt < SMALL_RETRY_AFTER_MS) return FALLBACK_STT_ENGINE;
-    const chosen = s.getItem(ENGINE_STORAGE_KEY);
-    if (isKnownEngine(chosen)) return chosen;
-  } catch {
-    /* ignore storage errors */
-  }
+/** One engine now; kept so existing callers keep working. */
+export function getPreferredSttEngine() {
   return PRIMARY_STT_ENGINE;
-}
-
-export function setPreferredSttEngine(engine) {
-  const s = storage();
-  if (!s || !isKnownEngine(engine)) return;
-  try {
-    s.setItem(ENGINE_STORAGE_KEY, engine);
-  } catch {
-    /* ignore storage errors */
-  }
-}
-
-/** Remembers that small.en could not load on this device (falls back to base.en for a while). */
-export function markSmallEngineFailed(now = Date.now()) {
-  const s = storage();
-  if (!s) return;
-  try {
-    s.setItem(SMALL_FAILED_KEY, String(now));
-  } catch {
-    /* ignore storage errors */
-  }
-}
-
-export function clearSmallEngineFailure() {
-  const s = storage();
-  if (!s) return;
-  try {
-    s.removeItem(SMALL_FAILED_KEY);
-  } catch {
-    /* ignore storage errors */
-  }
 }
 
 function flagDone(key) {
@@ -153,12 +78,12 @@ function setFlag(key) {
   }
 }
 
-export function isMoonshineCleanupDone() {
-  return flagDone(CLEANUP_STORAGE_KEY);
+export function isWhisperCleanupDone() {
+  return flagDone(WHISPER_CLEANUP_KEY);
 }
 
-export function markMoonshineCleanupDone() {
-  setFlag(CLEANUP_STORAGE_KEY);
+export function markWhisperCleanupDone() {
+  setFlag(WHISPER_CLEANUP_KEY);
 }
 
 export function isWhistleCleanupDone() {
@@ -170,29 +95,34 @@ export function markWhistleCleanupDone() {
 }
 
 /**
- * Standardized transcript result structure.
+ * Standardized transcript result.
+ * `text` keeps one line per stretch of speech (a new line at each pause);
+ * `segments` carry the timing of each line for fluency measures.
  * Converts to plain text via toString() for drop-in backward compatibility.
  */
 export function formatTranscriptResult({
   text = '',
   words = [],
+  segments = [],
   engine = PRIMARY_STT_ENGINE,
   version,
 } = {}) {
-  const cleanText = String(text || '').replace(/\s+/g, ' ').trim();
-  const cleanWords = Array.isArray(words)
-    ? words.map((w) => ({
-        word: String(w.word || '').trim(),
-        start: Number(w.start || 0),
-        end: Number(w.end || 0),
-        probability: Number(w.probability || 0),
-      }))
+  const cleanText = String(text || '')
+    .split('\n')
+    .map((l) => l.replace(/[ \t]+/g, ' ').trim())
+    .filter(Boolean)
+    .join('\n');
+  const cleanSegments = Array.isArray(segments)
+    ? segments
+        .map((s) => ({ text: String(s.text || '').trim(), start: Number(s.start || 0), end: Number(s.end || 0) }))
+        .filter((s) => s.text)
     : [];
-  const eng = isKnownEngine(engine) ? engine : PRIMARY_STT_ENGINE;
+  const eng = ENGINE_METADATA[engine] ? engine : PRIMARY_STT_ENGINE;
 
   return {
     text: cleanText,
-    words: cleanWords,
+    words: Array.isArray(words) ? words : [],
+    segments: cleanSegments,
     engine: eng,
     version: version || ENGINE_METADATA[eng].version,
     toString() {

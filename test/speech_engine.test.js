@@ -1,30 +1,25 @@
 /**
- * Test suite for browser STT engine:
- * - Engine configuration (Whisper small.en primary, base.en fallback, ≤ ~300 MB)
- * - Pause chunking & timestamp offsets for long Part 2 monologues
- * - Silence trimming (VAD) and Whisper hallucination guards (verbatim otherwise)
- * - Targeted legacy cache cleanup (Moonshine entries, Whistle bucket)
- * - Mocked worker protocol (engine, ready, and transcribe)
- * - Privacy & security check (no audio or keys logged or stored in result)
+ * Test suite for the browser STT engine:
+ * - Engine configuration (Moonshine Base, verbatim, ≤ ~300 MB)
+ * - Pause chunking, utterance splitting (one transcript line per stretch of speech)
+ * - Silence trimming (VAD) and hallucination guards (verbatim otherwise)
+ * - Delivery measures (pace, pauses, fillers, repetitions, self-corrections)
+ * - Targeted legacy cache cleanup (Whisper entries, Whistle bucket)
+ * - Privacy & security check (no audio or keys in the result)
  */
 import assert from 'node:assert/strict';
 import {
   STT_ENGINES,
   ENGINE_METADATA,
   PRIMARY_STT_ENGINE,
-  FALLBACK_STT_ENGINE,
-  SMALL_RETRY_AFTER_MS,
   getPreferredSttEngine,
-  setPreferredSttEngine,
-  markSmallEngineFailed,
-  clearSmallEngineFailure,
-  isMoonshineCleanupDone,
+  isWhisperCleanupDone,
   isWhistleCleanupDone,
   formatTranscriptResult,
 } from '../src/utils/speech/transcriberTypes.js';
 import {
   splitAtPauses,
-  cleanupMoonshineCacheOnce,
+  cleanupWhisperCacheOnce,
   cleanupWhistleCacheOnce,
   MODEL_DOWNLOAD_MB,
   trimSilence,
@@ -34,7 +29,9 @@ import {
   collapseRepetitionLoops,
   guardSegmentText,
   maxNewTokensFor,
+  splitIntoUtterances,
 } from '../src/utils/speech/transcriptGuards.js';
+import { computeSpeechMetrics, formatSpeechScript } from '../src/utils/speech/speechMetrics.js';
 import {
   clearAudioRecordings,
   eradicateAllAudioRecordings,
@@ -65,7 +62,7 @@ async function tAsync(label, fn) {
   }
 }
 
-console.log('== Speech Engine: Configuration & Preferences ==');
+console.log('== Speech Engine: Configuration ==');
 
 // Setup mock window & localStorage
 const mockStorage = new Map();
@@ -78,68 +75,28 @@ globalThis.window = {
   },
 };
 
-t('defaults to Whisper small.en, with base.en as the fallback', () => {
-  mockStorage.clear();
-  assert.equal(PRIMARY_STT_ENGINE, 'whisper-small.en');
-  assert.equal(FALLBACK_STT_ENGINE, 'whisper-base.en');
-  assert.equal(getPreferredSttEngine(), STT_ENGINES.WHISPER_SMALL_EN);
-});
-
-t('every model variant stays within the ~300 MB download budget', () => {
-  for (const meta of Object.values(ENGINE_METADATA)) {
-    assert.ok(meta.model.startsWith('onnx-community/whisper-'), meta.model);
-    assert.ok(meta.model.endsWith('.en'), 'English-only checkpoints (no language detection)');
-    for (const v of Object.values(meta.variants)) {
-      assert.ok(v.bytes <= 305e6, `${meta.id} ${v.version} is ${Math.round(v.bytes / 1e6)} MB`);
-      assert.ok(v.dtype.encoder_model && v.dtype.decoder_model_merged);
-    }
-  }
+t('uses Moonshine Base, within the ~300 MB download budget', () => {
+  assert.equal(PRIMARY_STT_ENGINE, STT_ENGINES.MOONSHINE_BASE);
+  assert.equal(getPreferredSttEngine(), STT_ENGINES.MOONSHINE_BASE);
+  const meta = ENGINE_METADATA[PRIMARY_STT_ENGINE];
+  assert.equal(meta.model, 'onnx-community/moonshine-base-ONNX');
+  for (const v of Object.values(meta.variants)) assert.ok(v.bytes <= 300e6);
   assert.ok(MODEL_DOWNLOAD_MB <= 300);
-  // WebGPU uses 4-bit MatMulNBits weights, which ONNX Runtime WebGPU runs natively
-  assert.equal(ENGINE_METADATA[STT_ENGINES.WHISPER_SMALL_EN].variants.webgpu.dtype.decoder_model_merged, 'q4');
 });
 
-t('a small.en load failure switches the device to base.en, then retries small.en later', () => {
-  mockStorage.clear();
-  const t0 = 1_000_000;
-  markSmallEngineFailed(t0);
-  assert.equal(getPreferredSttEngine(t0 + 1000), STT_ENGINES.WHISPER_BASE_EN);
-  assert.equal(getPreferredSttEngine(t0 + SMALL_RETRY_AFTER_MS + 1), STT_ENGINES.WHISPER_SMALL_EN);
-  clearSmallEngineFailure();
-  assert.equal(getPreferredSttEngine(t0 + 1000), STT_ENGINES.WHISPER_SMALL_EN);
-});
-
-t('setPreferredSttEngine accepts base.en; invalid engine values are ignored', () => {
-  mockStorage.clear();
-  setPreferredSttEngine(STT_ENGINES.WHISPER_BASE_EN);
-  assert.equal(getPreferredSttEngine(), STT_ENGINES.WHISPER_BASE_EN);
-  mockStorage.clear();
-  setPreferredSttEngine('whisper_v3');
-  setPreferredSttEngine('whistle');
-  assert.equal(getPreferredSttEngine(), STT_ENGINES.WHISPER_SMALL_EN);
-});
-
-console.log('\n== Speech Engine: Formatting ==');
-
-t('formats a Whisper transcript verbatim, keeping fillers and repetitions', () => {
+t('keeps the transcript verbatim and one line per stretch of speech', () => {
   const res = formatTranscriptResult({
-    text: ' Well, um, I I think   the the city is, uh, convenient. ',
-    words: [],
-    engine: STT_ENGINES.WHISPER_SMALL_EN,
-    version: 'small.en-q4',
+    text: 'Um, I I think   the main reason is\nuh, you know, the price',
+    segments: [{ text: 'Um, I I think the main reason is', start: 0, end: 3 }, { text: 'uh, you know, the price', start: 4.2, end: 6 }],
   });
-  assert.equal(res.text, 'Well, um, I I think the the city is, uh, convenient.');
-  assert.equal(res.engine, 'whisper-small.en');
-  assert.equal(res.version, 'small.en-q4');
-  assert.deepEqual(res.words, []);
-  // toString compatibility
+  assert.equal(res.text, 'Um, I I think the main reason is\nuh, you know, the price');
+  assert.equal(res.segments.length, 2);
   assert.equal(String(res), res.text);
 });
 
-t('unknown engine labels resolve to the primary engine', () => {
-  const res = formatTranscriptResult({ text: 'Hello', engine: 'whistle' });
-  assert.equal(res.engine, 'whisper-small.en');
-  assert.equal(res.version, ENGINE_METADATA['whisper-small.en'].version);
+t('unknown engine labels resolve to the current engine', () => {
+  const res = formatTranscriptResult({ text: 'Hello', engine: 'whisper-small.en' });
+  assert.equal(res.engine, STT_ENGINES.MOONSHINE_BASE);
 });
 
 console.log('\n== Speech Engine: Pause Chunking & Timestamp Offsets ==');
@@ -268,131 +225,92 @@ t('generation is capped by segment length', () => {
   assert.ok(maxNewTokensFor(60) <= 440);
 });
 
-console.log('\n== Speech Engine: Targeted Legacy Cleanup ==');
+t('an answer splits into utterances at its pauses', () => {
+  // speech 0–4 s, pause 1.5 s, speech 5.5–9 s, short 0.3 s gap, speech to 11 s
+  const pcm = concat(tone(4), noise(1.5), tone(3.5), noise(0.3), tone(1.7));
+  const v = trimSilence(pcm, RATE);
+  const u = splitIntoUtterances(v.pcm, v.threshold, RATE);
+  assert.equal(u.length, 2, `got ${u.length} utterances`);
+  assert.ok(u[1].start / RATE > 4 && u[1].start / RATE < 5.6);
+});
 
-await tAsync('cleans ONLY Moonshine entries from transformers-cache, preserves others', async () => {
+t('a very long stretch without pauses is still cut into pieces of at most ~20 s', () => {
+  const pcm = tone(50);
+  const u = splitIntoUtterances(pcm, undefined, RATE);
+  assert.ok(u.length >= 3);
+  for (const x of u) assert.ok((x.end - x.start) / RATE <= 20.5);
+});
+
+console.log('\n== Speech Engine: Delivery Measures ==');
+
+t('measures pace, pauses, fillers, repetitions and self-corrections', () => {
+  const text = 'Um I live in a house\nwith a garden I I think it is uh nice\nI was going I mean I went there you know';
+  const segments = [
+    { text: 'a', start: 0, end: 3 },
+    { text: 'b', start: 3.9, end: 7 },
+    { text: 'c', start: 9.5, end: 12 },
+  ];
+  const m = computeSpeechMetrics({ text, segments });
+  assert.equal(m.words, 26);
+  assert.equal(m.pauses, 2);
+  assert.equal(m.longPauses, 1);
+  assert.equal(m.longestPauseSec, 2.5);
+  assert.equal(m.hesitations, 2);
+  assert.ok(m.discourseFillers >= 2);
+  assert.ok(m.repetitions >= 1);
+  assert.ok(m.selfCorrections >= 1);
+  assert.equal(m.wordsPerMinute, 130);
+});
+
+t('the script marks long pauses and falls back to plain lines after edits', () => {
+  const segments = [{ text: 'a', start: 0, end: 2 }, { text: 'b', start: 4.5, end: 6 }];
+  assert.equal(formatSpeechScript({ text: 'first\nsecond', segments }), 'first\n[pause 2.5s]\nsecond');
+  assert.equal(formatSpeechScript({ text: 'edited into one line', segments }), 'edited into one line');
+  assert.equal(computeSpeechMetrics({ text: '' }), null);
+});
+
+console.log('\n== Speech Engine: Retired Model Cleanup ==');
+
+await tAsync('removes ONLY Whisper entries from transformers-cache, keeps Moonshine', async () => {
   mockStorage.clear();
-  const deletedUrls = [];
-  const keptUrls = [];
-
-  const mockCacheItems = [
-    { url: 'https://huggingface.co/onnx-community/moonshine-base-ONNX/resolve/main/onnx/model.onnx' },
-    { url: 'https://huggingface.co/onnx-community/moonshine-base-ONNX/resolve/main/tokenizer.json' },
-    { url: 'https://huggingface.co/whisper-tiny/resolve/main/model.onnx' },
+  mockStorage.set('cognition_stt_engine', 'whisper-small.en');
+  const deleted = [];
+  const items = [
+    { url: 'https://huggingface.co/onnx-community/whisper-small.en/resolve/main/onnx/encoder_model_q4.onnx' },
+    { url: 'https://huggingface.co/onnx-community/whisper-base.en/resolve/main/tokenizer.json' },
+    { url: 'https://huggingface.co/onnx-community/moonshine-base-ONNX/resolve/main/onnx/encoder_model.onnx' },
     { url: 'https://cdn.example.com/assets/audio/prompt.mp3' },
   ];
-
   globalThis.caches = {
     open: async (name) => {
       assert.equal(name, 'transformers-cache');
-      return {
-        keys: async () => mockCacheItems,
-        delete: async (req) => {
-          deletedUrls.push(req.url);
-        },
-      };
+      return { keys: async () => items, delete: async (req) => { deleted.push(req.url); } };
     },
   };
-
-  await cleanupMoonshineCacheOnce();
-
-  // Exactly the 2 Moonshine items should be deleted
-  assert.equal(deletedUrls.length, 2);
-  assert.ok(deletedUrls.every((u) => u.includes('moonshine')));
-
-  // The cleanup marker in localStorage must be set to '1'
-  assert.equal(isMoonshineCleanupDone(), true);
-  assert.equal(mockStorage.get('cognition_moonshine_cleaned'), '1');
+  await cleanupWhisperCacheOnce();
+  assert.equal(deleted.length, 2);
+  assert.ok(deleted.every((u) => u.includes('whisper')));
+  assert.equal(isWhisperCleanupDone(), true);
+  assert.equal(mockStorage.has('cognition_stt_engine'), false);
 });
 
-await tAsync('cleanup is idempotent and does not repeat once flag is set', async () => {
-  let openCallCount = 0;
-  globalThis.caches = {
-    open: async () => {
-      openCallCount++;
-      return { keys: async () => [], delete: async () => {} };
-    },
-  };
-
-  // Flag is already '1'
-  assert.equal(isMoonshineCleanupDone(), true);
-  await cleanupMoonshineCacheOnce();
-
-  // Cache open must not have been called again
-  assert.equal(openCallCount, 0);
-});
-
-await tAsync('cleanup handles cache access errors silently without throwing', async () => {
+await tAsync('cleanup runs once and ignores blocked storage', async () => {
+  let opened = 0;
+  globalThis.caches = { open: async () => { opened++; return { keys: async () => [], delete: async () => {} }; } };
+  await cleanupWhisperCacheOnce();
+  assert.equal(opened, 0);
   mockStorage.clear();
-  globalThis.caches = {
-    open: async () => {
-      throw new Error('SecurityError: CacheStorage blocked in private mode');
-    },
-  };
-
-  // Must not throw
-  await cleanupMoonshineCacheOnce();
+  globalThis.caches = { open: async () => { throw new Error('SecurityError'); } };
+  await cleanupWhisperCacheOnce();
 });
 
-console.log('\n== Speech Engine: Worker Message Protocol ==');
+console.log('\n== Speech Engine: Privacy ==');
 
-t('simulated engine choice and ready worker messages', () => {
-  const events = [];
-  const handleWorkerMessage = (m) => events.push(m);
-  handleWorkerMessage({ type: 'engine', engine: STT_ENGINES.WHISPER_SMALL_EN, device: 'webgpu', version: 'small.en-q4', downloadMb: 302 });
-  handleWorkerMessage({ type: 'ready', engine: STT_ENGINES.WHISPER_SMALL_EN, device: 'webgpu', version: 'small.en-q4' });
-  assert.equal(events.length, 2);
-  assert.equal(events[1].type, 'ready');
-  assert.equal(events[1].engine, 'whisper-small.en');
-});
-
-t('simulated fallback then transcribe result message', () => {
-  const events = [];
-  const handleWorkerMessage = (m) => events.push(m);
-  handleWorkerMessage({ type: 'fallback', from: STT_ENGINES.WHISPER_SMALL_EN, to: STT_ENGINES.WHISPER_BASE_EN, reason: 'no adapter' });
-  handleWorkerMessage({
-    type: 'result',
-    id: 101,
-    text: 'Speaking practice is essential for fluency.',
-    words: [],
-    engine: STT_ENGINES.WHISPER_BASE_EN,
-    version: 'base.en-q8',
-  });
-  assert.equal(events[0].to, 'whisper-base.en');
-  assert.equal(events[1].type, 'result');
-  assert.equal(events[1].text, 'Speaking practice is essential for fluency.');
-});
-
-console.log('\n== Speech Engine: Privacy & Data Hygiene Contract ==');
-
-t('result payload contains engine telemetry but NEVER audio data or API keys', () => {
-  const res = formatTranscriptResult({
-    text: 'I enjoy visiting museums on weekends.',
-    words: [{ word: 'I', start: 0.1, end: 0.2, probability: 0.99 }],
-    engine: STT_ENGINES.WHISPER_SMALL_EN,
-    version: 'small.en-q4',
-  });
-
-  // Verify required fields exist
-  assert.equal(res.engine, 'whisper-small.en');
-  assert.equal(res.version, 'small.en-q4');
-  assert.equal(typeof res.text, 'string');
-  assert.ok(Array.isArray(res.words));
-
-  // Verify prohibited fields do NOT exist
-  assert.equal(res.pcm, undefined);
-  assert.equal(res.audio, undefined);
-  assert.equal(res.blob, undefined);
-  assert.equal(res.buffer, undefined);
-  assert.equal(res.key, undefined);
-  assert.equal(res.apiKey, undefined);
-
-  // Verify serialization contains no audio buffers or secrets
+t('result payload carries telemetry but NEVER audio data or API keys', () => {
+  const res = formatTranscriptResult({ text: 'I enjoy visiting museums on weekends.', engine: STT_ENGINES.MOONSHINE_BASE });
+  for (const k of ['pcm', 'audio', 'blob', 'buffer', 'key', 'apiKey']) assert.equal(res[k], undefined);
   const json = JSON.stringify(res);
-  assert.ok(!json.includes('data:audio'));
-  assert.ok(!json.includes('Float32Array'));
-  assert.ok(!json.includes('AIzaSy'));
-  assert.ok(!json.includes('gsk_'));
+  assert.ok(!json.includes('Float32Array') && !json.includes('AIzaSy') && !json.includes('gsk_'));
 });
 
 console.log('\n== Audio Eradication & Storage Hygiene ==');

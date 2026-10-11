@@ -35,6 +35,11 @@
  * Pure module: no external dependencies or I/O.
  */
 
+import { computeSpeechMetrics, describeMetrics, formatSpeechScript } from './speech/speechMetrics.js';
+
+/** Shown wherever Pronunciation appears: it is not part of the Speaking band. */
+export const PRONUNCIATION_NOTE = 'It is not possible for an AI model to interpret how well you pronounce. For now, this is not a scoring metric in the system.';
+
 export const RUBRIC_VERSION = 'ielts-rubric-2.2';
 
 /** Words as the candidate sees them counted: whitespace-separated tokens. */
@@ -441,6 +446,12 @@ CORE ASSESSMENT & CALIBRATION PRINCIPLES:
      • Never penalize candidate speech for not sounding like an academic paper. A candidate who communicates clearly and naturalistically at length must NOT be demoted to Band 5 for conversational register.
      • PREVENTING STRICT EVALUATOR BIAS (BAND 5 VS 6): Automated evaluators often undermark Band 6 candidates as Band 5 by mechanically counting grammatical errors or penalizing natural conversational vocabulary. Adhere strictly to the Cambridge descriptor threshold: If the listener understands the candidate's intended message without confusion, and the candidate sustains answers across Parts 1, 2, and 3 using a mix of sentence forms, that candidate firmly satisfies Band 6. Reserve Band 5 strictly for speech where grammatical errors cause genuine comprehension strain or where the speaker cannot sustain communication beyond basic familiar statements.
 
+DELIVERY MEASURES (Fluency & Coherence evidence):
+Each answer comes with measures taken from the recording: words per minute, pauses (and how many were over 2 s), um/uh hesitations, filler phrases, repetitions and self-corrections, plus line breaks where the candidate paused. Use them as evidence for Fluency & Coherence the way a live examiner hears delivery:
+- Natural conversational speech is roughly 110–170 words/min; occasional pauses, fillers and self-corrections are normal even at Band 7.
+- Frequent long pauses inside answers, many hesitations per answer, or repeated restarts point to language-search hesitation (Band 5–6); answers that keep going with few long pauses and only occasional repetition point to Band 7+.
+- Weigh the pattern across the whole interview, not single moments. Do not use these measures for Lexical Resource or Grammar, and never mention a number you were not given.
+
 3. TRANSCRIPT-ONLY LIMITATIONS & PRONUNCIATION:
    - When evaluating from a transcript (text only), Pronunciation cannot be assessed. You MUST return:
      { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.", "personalizedAssessment": "Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.", "corrections": [], "nextBandAdvice": "Practice recording your answers aloud to develop sentence stress, rhythm, and intonation." }
@@ -570,14 +581,14 @@ Return valid JSON ONLY (no markdown fences, no commentary):
   "confidence": "high"
 }`;
 
-export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durations = {} }) {
+export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durations = {}, speechMeta = {} }) {
   const lines = [];
   if (testMeta.title) lines.push(`Interview: ${testMeta.title}`);
   if (testMeta.cueCard) lines.push(`Part 2 cue card: ${testMeta.cueCard}`);
-  lines.push('', 'Candidate answers (transcribed):');
+  lines.push('', 'Candidate answers — verbatim on-device transcript, one line per stretch of speech; [pause Ns] marks a pause of 2 s or more. Delivery measures are computed from the audio timing:');
   for (const [k, v] of Object.entries(transcripts || {})) {
     if (!v || !String(v).trim()) continue;
-    const secs = durations && durations[k] ? ` [${Math.round(durations[k])}s]` : '';
+    const meta = speechMeta?.[k] || {};
     let label = k;
     const m = k.match(/^(\d+)_(\d+)$/);
     if (m) {
@@ -587,7 +598,10 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
       else if (partNum === 2) label = `Part 2 (Cue Card Long Turn)`;
       else if (partNum === 3) label = `Part 3 (Two-way Discussion - Question ${qNum})`;
     }
-    lines.push(`- ${label}${secs} (${countWords(v)} words): ${String(v).trim()}`);
+    const metrics = computeSpeechMetrics({ text: v, segments: meta.segments, durationSec: durations?.[k] || meta.durationSec });
+    lines.push('', `### ${label}`);
+    if (metrics) lines.push(`Delivery: ${describeMetrics(metrics)}`);
+    lines.push(formatSpeechScript({ text: String(v).trim(), segments: meta.segments }));
   }
   return lines.join('\n');
 }
@@ -645,8 +659,8 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
         status: 'not_assessed',
         band: null,
         evidence: '',
-        rationale: 'Pronunciation can only be assessed from audio; a transcript cannot show it.',
-        personalizedAssessment: String(p.personalizedAssessment || 'Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.'),
+        rationale: PRONUNCIATION_NOTE,
+        personalizedAssessment: PRONUNCIATION_NOTE,
         improvementFocus: String(p.nextBandAdvice || p.improvementFocus || 'Record answers aloud and review stress, intonation and connected speech.'),
         nextBandAdvice: String(p.nextBandAdvice || p.improvementFocus || 'Record answers aloud and review stress, intonation and connected speech.'),
         corrections: [],
@@ -678,7 +692,7 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
     overallBand: roundIeltsBand(mean(bands)),
     provisional: pBand === null,
     scoringMethod: pBand === null
-      ? 'Provisional transcript-based estimate: Mean of Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy. Pronunciation requires acoustic audio analysis and cannot be assessed from transcripts; this is NOT an official 4-criterion IELTS Speaking band.'
+      ? `Average of Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy. ${PRONUNCIATION_NOTE}`
       : 'Mean of the four criteria (Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, Pronunciation), IELTS rounding.',
     confidence: ['high', 'medium', 'low'].includes(data.confidence) ? data.confidence : 'medium',
     criteria,
@@ -798,6 +812,7 @@ SCORING
 - GRA: 7 = range of complex structures, frequent error-free sentences; 6 = mix of simple and complex, errors rarely impede understanding; 5 = basic forms accurate, complex structures usually contain errors.
 - If the listener understands the message and the candidate sustains answers with mixed sentence forms, that is Band 6 — reserve 5 for genuine strain. Band and explanation must agree.
 - Pronunciation cannot be assessed from text: return it as not_assessed with band null.
+- Each answer has delivery measures (words/min, pauses, um/uh, fillers, repetitions, self-corrections) and [pause Ns] markers from the audio. Use them for FC only: ~110-170 words/min and occasional pauses/fillers are normal even at Band 7; frequent long pauses, many hesitations or repeated restarts point to Band 5-6.
 
 FEEDBACK (per criterion, specific to THIS candidate)
 - personalizedAssessment: 2-3 sentences: what works, the weakness that limits the band, what the next band needs.

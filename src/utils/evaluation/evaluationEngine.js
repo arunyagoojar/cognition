@@ -6,6 +6,7 @@ import { evaluateWritingWithAI, evaluateSpeakingWithAI, directVerifyAnswers } fr
 import { calculateReadingBand, calculateListeningBand, calculateOverallBand, evaluateDeterministic, DETERMINISTIC, officialAnswerVariants, differByArticle } from '../bandCalculator.js';
 import { verifyAnswersViaWorker } from '../api.js';
 import { normalizeAnswer } from '../normalizeAnswer.js';
+import { PRONUNCIATION_NOTE } from '../ieltsRubric.js';
 import { recordAttempt } from '../performanceStore.js';
 import { getAiConfigState } from '../storage.js';
 
@@ -407,7 +408,7 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
  *   explicit availableCriteria list).
  * - notes are planning material and are never sent to the evaluator.
  */
-export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, audioRecordings = {}, notes = {}, durations = {}, attemptId = 'anon', expectedQuestions = null }) {
+export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, durations = {}, speechMeta = {}, expectedQuestions = null }) {
   const spokenWords = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
 
   const partsAttempted = new Set();
@@ -434,7 +435,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     status: 'not_assessed',
     band: null,
     reason: 'Audio pronunciation analysis is not currently available. Pronunciation is never inferred from transcription accuracy.',
-    personalizedAssessment: 'Pronunciation requires acoustic audio analysis (intelligibility, individual sounds, word stress, connected speech, rhythm, and intonation) and cannot be assessed from transcripts.',
+    personalizedAssessment: PRONUNCIATION_NOTE,
     improvementFocus: 'Record your answers aloud to practice word stress, rhythm, and sentence intonation.',
     nextBandAdvice: 'Record your answers aloud to practice word stress, rhythm, and sentence intonation.',
     corrections: [],
@@ -488,7 +489,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
   }
 
   // Server first, then the local-key fallback, with the shared result cache.
-  const ai = await evaluateSpeakingWithAI({ transcripts, testMeta, durations });
+  const ai = await evaluateSpeakingWithAI({ transcripts, testMeta, durations, speechMeta });
   const res = ai?.evaluationStatus === 'completed'
     ? { ...ai, status: 'completed', provider: { name: ai.providerUsed || 'gemini', model: ai.modelUsed, tier: ai.evaluationTier } }
     : { status: 'failed', message: ai?.message };
@@ -533,7 +534,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     band: res.band ?? null,
     overallSpeakingBand: res.overallBand ?? null,
     provisional: res.provisional ?? true,
-    scoringMethod: res.scoringMethod || 'Provisional transcript-based estimate: Mean of 3 criteria (Pronunciation unassessed).',
+    scoringMethod: res.scoringMethod || `Average of 3 criteria. ${PRONUNCIATION_NOTE}`,
     criteria: {
       ...res.criteria,
       pronunciation: res.criteria?.pronunciation?.status === 'assessed' ? res.criteria.pronunciation : pronunciationNotAssessed,
@@ -698,8 +699,8 @@ export async function evaluateFullMockExam({
   const speaking = await evaluateSpeakingResponses({
     transcripts: speakingData.transcripts || {},
     testMeta: { title: testLabel || testId },
-    audioRecordings: speakingData.recordings || {},
-    attemptId
+    durations: speakingData.durations || {},
+    speechMeta: speakingData.speechMeta || {},
   });
 
   // Calculate Overall Band ONLY if all 4 skills are completed

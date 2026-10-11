@@ -1,28 +1,25 @@
 /**
- * On-device speech-to-text worker (OpenAI Whisper via transformers.js).
+ * On-device speech-to-text worker (Moonshine Base via transformers.js).
  *
  * Runs off the main thread so recording and the exam UI never stutter.
- *   - whisper-small.en, 4-bit, on WebGPU
- *   - whisper-base.en in WASM as the automatic fallback: no WebGPU, weak /
- *     low-memory devices, or small.en failing to load or run here.
- *     (small.en on single-threaded WASM measured ~0.75x real time on a laptop
- *     CPU — over a minute per 2-minute answer — so it is never used there.)
- * Weights are downloaded once from the Hugging Face hub and kept in Cache
- * Storage ('transformers-cache'); later visits load from disk.
+ * WebGPU when the browser has it, otherwise WASM (and WASM again if the GPU
+ * path fails to load or run). Weights are downloaded once from the Hugging
+ * Face hub and kept in Cache Storage ('transformers-cache').
  *
- * Transcripts are verbatim: no prompt, greedy decoding, nothing rewritten
- * except Whisper's own silence artefacts and runaway repetition loops
- * (see transcriptGuards.js).
+ * Each answer arrives already split into utterances (stretches of speech
+ * between pauses); every utterance becomes one line of the transcript, so the
+ * result reads like a script and each pause can be timed. Transcripts are
+ * verbatim — fillers, repeats and restarts are kept; only the model's own
+ * silence artefacts and runaway loops are removed (transcriptGuards.js).
  *
  * Messages in:
- *   { type: 'load', engine, hints: { lowMemory } }
+ *   { type: 'load' }
  *   { type: 'transcribe', id, segments: Array<{ pcm: Float32Array, offsetSec, durationSec, speechSec }> }
  * Messages out:
- *   { type: 'engine', engine, device, version, downloadMb }   (choice made / changed)
+ *   { type: 'engine', engine, device, version, downloadMb }
  *   { type: 'progress', loaded, total, engine }
- *   { type: 'fallback', from, to, reason }                    (small.en unusable here)
  *   { type: 'ready', engine, device, version }
- *   { type: 'result', id, text, words, engine, version }
+ *   { type: 'result', id, text, segments: [{ text, start, end }], engine, version }
  *   { type: 'error', id?, message }
  */
 import { pipeline, env } from '@huggingface/transformers';
@@ -39,7 +36,10 @@ try {
   /* best effort */
 }
 
-let current = null; // { engine, device, version, asr }
+const ENGINE = STT_ENGINES.MOONSHINE_BASE;
+const META = ENGINE_METADATA[ENGINE];
+
+let current = null; // { device, version, asr }
 let loading = null; // Promise<current>
 let chain = Promise.resolve(); // model calls run one at a time
 
@@ -58,49 +58,31 @@ async function hasWebGPU() {
   }
 }
 
-/** Picks engine + device for this device. */
-async function choose(preferred, hints = {}) {
-  if (preferred !== STT_ENGINES.WHISPER_BASE_EN && !hints.lowMemory) {
-    if (await hasWebGPU()) return { engine: STT_ENGINES.WHISPER_SMALL_EN, device: 'webgpu' };
-  }
-  return { engine: STT_ENGINES.WHISPER_BASE_EN, device: 'wasm' };
-}
-
-function variantOf(engine, device) {
-  const meta = ENGINE_METADATA[engine];
-  return meta.variants[device] || meta.variants.wasm;
-}
-
-async function create(engine, device) {
-  const meta = ENGINE_METADATA[engine];
-  const variant = variantOf(engine, device);
-  self.postMessage({
-    type: 'engine',
-    engine,
-    device,
-    version: variant.version,
-    downloadMb: Math.round(variant.bytes / 1e6),
-  });
-  const expected = variant.bytes;
+async function create(device) {
+  const variant = META.variants[device] || META.variants.wasm;
+  self.postMessage({ type: 'engine', engine: ENGINE, device, version: variant.version, downloadMb: Math.round(variant.bytes / 1e6) });
+  const fileProgress = new Map();
   let lastSent = 0;
   const progress_callback = (p) => {
-    if (p?.status !== 'progress_total') return;
-    const total = Math.max(Number(p.total) || 0, expected);
-    const loaded = Math.min(Number(p.loaded) || 0, total);
+    if (p?.status === 'progress' && p.file) fileProgress.set(p.file, { loaded: p.loaded || 0, total: p.total || 0 });
+    else if (p?.status === 'done' && p.file && fileProgress.has(p.file)) {
+      const f = fileProgress.get(p.file);
+      fileProgress.set(p.file, { loaded: f.total, total: f.total });
+    } else return;
+    let loaded = 0;
+    let total = 0;
+    for (const f of fileProgress.values()) { loaded += f.loaded; total += f.total; }
+    total = Math.max(total, variant.bytes);
     const now = Date.now();
     if (now - lastSent < 100 && loaded < total) return;
     lastSent = now;
-    self.postMessage({ type: 'progress', loaded, total, engine });
+    self.postMessage({ type: 'progress', loaded: Math.min(loaded, total), total, engine: ENGINE });
   };
-  const asr = await pipeline('automatic-speech-recognition', meta.model, {
-    dtype: variant.dtype,
-    device,
-    progress_callback,
-  });
-  // One tiny pass compiles the WebGPU shaders now (not on the first answer)
-  // and proves the model actually runs on this GPU / browser.
+  const asr = await pipeline('automatic-speech-recognition', META.model, { dtype: variant.dtype, device, progress_callback });
+  // One tiny pass compiles the GPU shaders now (not on the first answer) and
+  // proves the model actually runs on this device.
   await asr(new Float32Array(16000), { max_new_tokens: 4 });
-  return { engine, device, version: variant.version, asr };
+  return { device, version: variant.version, asr };
 }
 
 async function dispose(entry) {
@@ -111,28 +93,19 @@ async function dispose(entry) {
   }
 }
 
-async function fallBackToBase(reason) {
-  const from = current?.engine || STT_ENGINES.WHISPER_SMALL_EN;
-  const old = current;
-  current = null;
-  await dispose(old);
-  self.postMessage({ type: 'fallback', from, to: STT_ENGINES.WHISPER_BASE_EN, reason: String(reason || '') });
-  current = await create(STT_ENGINES.WHISPER_BASE_EN, 'wasm');
-  return current;
-}
-
-function load(preferred, hints) {
+function load() {
   if (current) return Promise.resolve(current);
   if (!loading) {
     loading = serial(async () => {
-      const pick = await choose(preferred, hints);
-      try {
-        current = await create(pick.engine, pick.device);
-      } catch (e) {
-        if (pick.engine === STT_ENGINES.WHISPER_BASE_EN) throw e;
-        await fallBackToBase(e?.message || e);
+      if (await hasWebGPU()) {
+        try {
+          current = await create('webgpu');
+        } catch {
+          current = null; // some GPUs/drivers reject a kernel — the CPU path always works
+        }
       }
-      self.postMessage({ type: 'ready', engine: current.engine, device: current.device, version: current.version });
+      if (!current) current = await create('wasm');
+      self.postMessage({ type: 'ready', engine: ENGINE, device: current.device, version: current.version });
       return current;
     }).finally(() => {
       loading = null;
@@ -141,18 +114,29 @@ function load(preferred, hints) {
   return loading;
 }
 
+async function switchToWasm() {
+  const old = current;
+  current = null;
+  await dispose(old);
+  current = await create('wasm');
+  self.postMessage({ type: 'ready', engine: ENGINE, device: current.device, version: current.version });
+  return current;
+}
+
 async function transcribeSegments(entry, segments) {
-  const parts = [];
+  const lines = [];
   for (const seg of segments) {
-    const pcm = seg?.pcm instanceof Float32Array ? seg.pcm : seg instanceof Float32Array ? seg : null;
+    const pcm = seg?.pcm instanceof Float32Array ? seg.pcm : null;
     if (!pcm || pcm.length < 1600) continue; // < 0.1 s of audio carries no speech
-    const durationSec = Number(seg?.durationSec) || pcm.length / 16000;
-    const speechSec = seg?.speechSec ?? Infinity;
+    const durationSec = Number(seg.durationSec) || pcm.length / 16000;
     const out = await entry.asr(pcm, { max_new_tokens: maxNewTokensFor(durationSec) });
-    const text = guardSegmentText(out?.text, speechSec);
-    if (text) parts.push(text);
+    const text = guardSegmentText(out?.text, seg.speechSec ?? Infinity);
+    if (text) {
+      const start = Number(seg.offsetSec) || 0;
+      lines.push({ text, start, end: start + durationSec });
+    }
   }
-  return parts.join(' ').replace(/\s+/g, ' ').trim();
+  return lines;
 }
 
 self.onmessage = async (event) => {
@@ -160,7 +144,7 @@ self.onmessage = async (event) => {
 
   if (msg.type === 'load') {
     try {
-      await load(msg.engine, msg.hints);
+      await load();
     } catch (e) {
       self.postMessage({ type: 'error', message: `Speech model failed to load: ${e?.message || e}` });
     }
@@ -171,20 +155,25 @@ self.onmessage = async (event) => {
     const { id } = msg;
     const segments = msg.segments || [];
     try {
-      const entry = await load(msg.engine, msg.hints);
-      const text = await serial(async () => {
+      const entry = await load();
+      const lines = await serial(async () => {
         try {
           return await transcribeSegments(current || entry, segments);
         } catch (e) {
-          // small.en ran out of GPU memory / lost its device mid-answer:
-          // switch to base.en and redo this answer once.
-          if ((current || entry).engine !== STT_ENGINES.WHISPER_SMALL_EN) throw e;
-          const base = await fallBackToBase(e?.message || e);
-          self.postMessage({ type: 'ready', engine: base.engine, device: base.device, version: base.version });
-          return transcribeSegments(base, segments);
+          // The GPU lost its device / ran out of memory mid-answer: redo this
+          // answer once on the CPU path.
+          if ((current || entry).device !== 'webgpu') throw e;
+          return transcribeSegments(await switchToWasm(), segments);
         }
       });
-      self.postMessage({ type: 'result', id, text, words: [], engine: current.engine, version: current.version });
+      self.postMessage({
+        type: 'result',
+        id,
+        text: lines.map((l) => l.text).join('\n'),
+        segments: lines,
+        engine: ENGINE,
+        version: current.version,
+      });
     } catch (e) {
       self.postMessage({ type: 'error', id, message: String(e?.message || e) });
     }

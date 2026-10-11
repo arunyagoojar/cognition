@@ -3,7 +3,7 @@ import { subscribeLocalStt, needsLocalStt, ENGINE_METADATA, STT_ENGINES } from '
 
 /**
  * Status of the on-device speech model.
- * Whisper small.en (~300 MB, primary) or base.en (~80 MB, fallback).
+ * Moonshine Base (~250 MB, downloaded once, then cached).
  * `variant="card"` explains the one-time download before the first session;
  * `variant="pill"` is the compact in-exam indicator.
  */
@@ -13,9 +13,9 @@ export default function SpeechModelStatus({ variant = 'pill' }) {
   if (!s || !needsLocalStt()) return null;
 
   const pct = Math.round((s.progress || 0) * 100);
-  const meta = ENGINE_METADATA[s.engine] || ENGINE_METADATA[STT_ENGINES.WHISPER_SMALL_EN];
-  const engineName = meta.name || 'Whisper';
-  const downloadMb = s.downloadMb || meta.downloadMb || 300;
+  const meta = ENGINE_METADATA[s.engine] || ENGINE_METADATA[STT_ENGINES.MOONSHINE_BASE];
+  const engineName = meta.name || 'Moonshine';
+  const downloadMb = s.downloadMb || meta.downloadMb || 250;
 
   if (variant === 'card') {
     if (s.status === 'ready') {
