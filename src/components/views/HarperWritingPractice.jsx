@@ -5,6 +5,7 @@ import { getRandomProductionWritingTask } from '../../data/production/adapters';
 import { lintTextWithHarper, applyHarperFix } from '../../utils/harper/harperService';
 import { analyzeRepetition, generateHabitInsights } from '../../utils/harper/repetitionService';
 import { calculateHarperPracticeScore } from '../../utils/harper/scoringService';
+import { evaluateWritingWithAI } from '../../utils/geminiEvaluator';
 
 const countWords = (text) => (text ? text.trim().split(/\s+/).filter(Boolean).length : 0);
 
@@ -39,6 +40,11 @@ export default function HarperWritingPractice({ onBack }) {
   // Summary result state
   const [summaryResult, setSummaryResult] = useState(null);
 
+  // AI evaluation states
+  const [isAiEvaluating, setIsAiEvaluating] = useState(false);
+  const [aiResult, setAiResult] = useState(null);
+  const [aiError, setAiError] = useState(null);
+
   const debounceTimerRef = useRef(null);
   const targetWords = taskKind === 1 ? 150 : 250;
   const wordCount = countWords(essayText);
@@ -56,6 +62,8 @@ export default function HarperWritingPractice({ onBack }) {
     setTaskKind(kind);
     loadRandomTask(kind);
     setEssayText('');
+    setAiResult(null);
+    setAiError(null);
     setStage('practice');
   };
 
@@ -125,6 +133,37 @@ export default function HarperWritingPractice({ onBack }) {
     runAnalysis(updated);
   };
 
+  // Request optional AI evaluation for Task Response & Coherence
+  const handleRequestAiReview = async () => {
+    if (!essayText.trim()) return;
+    setIsAiEvaluating(true);
+    setAiError(null);
+    try {
+      const activePromptText = taskKind === 1
+        ? (currentTask?.task1?.prompt || currentTask?.task1?.instructions || currentTask?.prompt || '')
+        : (currentTask?.task2?.prompt || currentTask?.task2?.instructions || currentTask?.prompt || '');
+
+      const response = await evaluateWritingWithAI({
+        task1Text: taskKind === 1 ? essayText : '',
+        task2Text: taskKind === 2 ? essayText : '',
+        prompts: {
+          [taskKind === 1 ? 'task1' : 'task2']: activePromptText,
+        },
+      });
+
+      if (response && response.evaluationStatus === 'completed') {
+        setAiResult(response);
+      } else {
+        setAiError(response?.message || 'Could not complete AI review. Check your API settings or network connection.');
+      }
+    } catch (err) {
+      console.error('AI Review Error:', err);
+      setAiError(err?.message || 'Failed to connect to AI evaluation service.');
+    } finally {
+      setIsAiEvaluating(false);
+    }
+  };
+
   // Finish practice session and show summary
   const handleFinish = () => {
     if (wordCount === 0) {
@@ -142,6 +181,8 @@ export default function HarperWritingPractice({ onBack }) {
     });
 
     setSummaryResult(scoreData);
+    setAiResult(null);
+    setAiError(null);
     setStage('summary');
   };
 
@@ -176,11 +217,20 @@ export default function HarperWritingPractice({ onBack }) {
           </div>
 
           <div className="harper-choice-title-block">
+            <div className="harper-scope-badge-row" style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 12, flexWrap: 'wrap' }}>
+              <span className="pill-badge pill-black">
+                <Icon name="sparkles" size={12} />
+                <span>ON-DEVICE PRACTICE ENGINE</span>
+              </span>
+              <span className="pill-badge pill-coral">
+                DIAGNOSTIC SCOPE: GRAMMAR &amp; VOCABULARY ONLY
+              </span>
+            </div>
             <h1 className="harper-main-heading">
               Practice Writing with Harper
             </h1>
             <p className="harper-main-sub">
-              Target your writing habits with instant on-device grammar detection and repetitive vocabulary tracking. Choose which IELTS Academic task you want to practice:
+              Target your mechanical writing habits with on-device <strong>Grammar Accuracy</strong>, <strong>Repetitive Word Tracking</strong>, and <strong>Word Count</strong>. Choose your task to begin:
             </p>
           </div>
 
@@ -243,7 +293,7 @@ export default function HarperWritingPractice({ onBack }) {
           <div className="harper-choice-footer-note">
             <Icon name="info" size={16} />
             <span>
-              <strong>Note on scoring:</strong> Writing with Harper provides diagnostic feedback and a temporary session score to identify areas of improvement. To update your official Cognition Band, take an official practice test or complete mock exam.
+              <strong>Diagnostic Scope:</strong> This practice session evaluates your grammar precision, lexical variety, and word count. It does not grade whether your response sticks to the prompt's central idea or develops cohesive arguments (an optional deep-dive AI review is available on the summary screen after submitting, or via full Mock Exams).
             </span>
           </div>
         </div>
@@ -275,7 +325,7 @@ export default function HarperWritingPractice({ onBack }) {
             <div className="harper-summary-top">
               <div>
                 <span className="pill-badge pill-black">
-                  PRACTICE DIAGNOSTIC
+                  PRACTICE DIAGNOSTIC · GRAMMAR &amp; VOCABULARY
                 </span>
                 <h1 className="harper-summary-title">
                   Task {taskKind} Writing Summary
@@ -288,7 +338,7 @@ export default function HarperWritingPractice({ onBack }) {
               <div className="harper-band-score-box">
                 <span className="harper-band-label">ESTIMATED PRACTICE BAND</span>
                 <div className="harper-band-number">{summaryResult.estimatedBand.toFixed(1)}</div>
-                <span className="harper-band-scale">Diagnostic Score</span>
+                <span className="harper-band-scale">Grammar &amp; Lexical Focus</span>
               </div>
             </div>
 
@@ -296,7 +346,7 @@ export default function HarperWritingPractice({ onBack }) {
             <div className="harper-disclaimer-pill">
               <Icon name="info" size={16} />
               <span>
-                <strong>Temporary Practice Score:</strong> This band estimate evaluates your draft's grammar precision, vocabulary range, and length. It is for diagnostic practice and does not change your official Cognition dashboard band.
+                <strong>Grammar &amp; Vocabulary Diagnostic:</strong> This band estimate evaluates your draft's grammar precision (40%), vocabulary range &amp; repetition (35%), and length (25%). It does not assess whether your response sticks to the prompt's central idea. For idea coherence and task response feedback, request a full AI review below.
               </span>
             </div>
 
@@ -398,6 +448,114 @@ export default function HarperWritingPractice({ onBack }) {
             </div>
           )}
 
+          {/* Optional AI Review for Task Response & Coherence */}
+          <div className="harper-ai-review-card">
+            <div className="harper-ai-review-header">
+              <div className="harper-ai-title-wrap">
+                <span className="pill-badge pill-black">
+                  <Icon name="sparkles" size={12} />
+                  <span>DEEP DIVE · TASK RESPONSE &amp; COHERENCE</span>
+                </span>
+                <h3 className="harper-ai-heading">Check Idea Relevance &amp; Logical Flow with AI</h3>
+                <p className="harper-ai-sub">
+                  Harper evaluates grammar mechanics and lexical repetition. To check whether your draft sticks to the prompt, develops logical paragraphs, and supports its arguments, request a full AI review below:
+                </p>
+              </div>
+
+              {!aiResult && (
+                <button
+                  type="button"
+                  className="harper-ai-request-btn"
+                  onClick={handleRequestAiReview}
+                  disabled={isAiEvaluating}
+                >
+                  <Icon name="sparkles" size={15} />
+                  <span>{isAiEvaluating ? 'Analyzing with AI…' : 'Request Full AI Review'}</span>
+                </button>
+              )}
+            </div>
+
+            {isAiEvaluating && (
+              <div className="harper-ai-loading-state">
+                <div className="account-delete-spinner" />
+                <span>Evaluating prompt response, thesis development, and paragraph transitions…</span>
+              </div>
+            )}
+
+            {aiError && (
+              <div className="harper-ai-error-box">
+                <Icon name="info" size={16} />
+                <span>{aiError}</span>
+              </div>
+            )}
+
+            {aiResult && (() => {
+              const aiCriteria = taskKind === 1 ? aiResult.task1Criteria : aiResult.task2Criteria;
+              const aiBand = taskKind === 1 ? aiResult.task1Band : aiResult.task2Band;
+              const mainTaskCriterion = taskKind === 1 ? aiCriteria?.taskAchievement : aiCriteria?.taskResponse;
+              const coherenceCriterion = aiCriteria?.coherenceCohesion;
+
+              return (
+                <div className="harper-ai-result-content">
+                  <div className="harper-ai-band-banner">
+                    <div>
+                      <span className="harper-ai-badge-label">AI COMPREHENSIVE ASSESSMENT</span>
+                      <h4 className="harper-ai-band-title">Qualitative Examiner Evaluation</h4>
+                      <p className="harper-ai-sub">Evaluates idea sticking, paragraph organization, and prompt fulfillment.</p>
+                    </div>
+                    {aiBand !== null && aiBand !== undefined && (
+                      <div className="harper-ai-overall-box">
+                        <span className="harper-ai-band-pill-label">AI OVERALL BAND</span>
+                        <div className="harper-ai-band-number">{Number(aiBand).toFixed(1)}</div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="harper-ai-criteria-grid">
+                    {/* Task Response / Task Achievement */}
+                    <div className="harper-ai-crit-box">
+                      <div className="harper-ai-crit-head">
+                        <span className="harper-ai-crit-name">
+                          {taskKind === 1 ? 'Task Achievement (Idea & Data Fulfillment)' : 'Task Response (Sticking to the Prompt)'}
+                        </span>
+                        {mainTaskCriterion?.band !== undefined && mainTaskCriterion?.band !== null && (
+                          <span className="harper-ai-crit-band">Band {Number(mainTaskCriterion.band).toFixed(1)}</span>
+                        )}
+                      </div>
+                      <p className="harper-ai-crit-feedback">
+                        {mainTaskCriterion?.feedback || 'Your ideas and prompt response were evaluated.'}
+                      </p>
+                    </div>
+
+                    {/* Coherence & Cohesion */}
+                    <div className="harper-ai-crit-box">
+                      <div className="harper-ai-crit-head">
+                        <span className="harper-ai-crit-name">Coherence &amp; Cohesion (Logical Flow &amp; Linking)</span>
+                        {coherenceCriterion?.band !== undefined && coherenceCriterion?.band !== null && (
+                          <span className="harper-ai-crit-band">Band {Number(coherenceCriterion.band).toFixed(1)}</span>
+                        )}
+                      </div>
+                      <p className="harper-ai-crit-feedback">
+                        {coherenceCriterion?.feedback || 'Paragraph structure and logical transitions were evaluated.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Examiner Advice & Next-Band Takeaway */}
+                  {aiCriteria?.nextBandAdvice && (
+                    <div className="harper-ai-advice-box">
+                      <div className="harper-ai-advice-title">
+                        <Icon name="sparkles" size={15} />
+                        <span>AI Examiner Advice for Next Band</span>
+                      </div>
+                      <p className="harper-ai-advice-text">{aiCriteria.nextBandAdvice}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+          </div>
+
           {/* Bottom Actions */}
           <div className="harper-summary-actions">
             <button
@@ -451,26 +609,7 @@ export default function HarperWritingPractice({ onBack }) {
             </h2>
           </div>
         </div>
-
         <div className="harper-nav-right">
-          {/* Switch Task 1 / 2 */}
-          <div className="harper-task-switcher" role="group" aria-label="Task selector">
-            <button
-              type="button"
-              className={`harper-switcher-btn ${taskKind === 1 ? 'is-active' : ''}`}
-              onClick={() => handleSelectTask(1)}
-            >
-              Task 1
-            </button>
-            <button
-              type="button"
-              className={`harper-switcher-btn ${taskKind === 2 ? 'is-active' : ''}`}
-              onClick={() => handleSelectTask(2)}
-            >
-              Task 2
-            </button>
-          </div>
-
           {/* Random Prompt Button */}
           <button
             type="button"
