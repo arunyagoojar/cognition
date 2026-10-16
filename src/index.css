@@ -8746,235 +8746,35 @@ p.reading-section-label {
   box-shadow: 2px 2px 0 #151313;
 }
 
-/* ─── Harper AI Comprehensive Review Card ─── */
-.harper-ai-review-card {
-  background: var(--bg-card);
-  border: var(--border-dark);
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 2px 2px 0 var(--border-color);
+/* ─── Diagnostic Scope Clarification Card ─── */
+.harper-diagnostic-notice-card {
+  background: var(--surface-sunken);
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
   margin-top: 24px;
-}
-
-.harper-ai-review-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.harper-ai-title-wrap {
-  flex: 1;
-  min-width: 260px;
-}
-
-.harper-ai-heading {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+.harper-diagnostic-notice-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-primary);
-  margin-top: 8px;
-  margin-bottom: 6px;
 }
 
-.harper-ai-sub {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text-secondary);
+.harper-diagnostic-notice-head h4 {
+  font-size: 16px;
+  font-weight: 800;
   margin: 0;
-}
-
-.harper-ai-request-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--r-pill);
-  background: var(--c-coral);
-  color: #FFFFFF;
-  border: 1.5px solid #151313;
-  font-size: 13.5px;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 2px 2px 0 #151313;
-  transition: transform 120ms ease;
-  white-space: nowrap;
-}
-
-.harper-ai-request-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-}
-
-.harper-ai-request-btn:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
-
-.harper-ai-loading-state {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
-  padding: 16px;
-  background: var(--surface-sunken);
-  border-radius: 14px;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.harper-ai-error-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 16px;
-  padding: 12px 16px;
-  background: rgba(232, 70, 36, 0.08);
-  border: 1px solid var(--c-coral);
-  border-radius: 12px;
-  font-size: 13px;
-  color: var(--c-coral);
-}
-
-.harper-ai-result-content {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(21, 19, 19, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-[data-theme="dark"] .harper-ai-result-content {
-  border-top-color: rgba(247, 247, 245, 0.12);
-}
-
-.harper-ai-band-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 22px;
-  background: var(--surface-sunken);
-  border-radius: 18px;
-  border: 1px solid var(--border-color);
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.harper-ai-badge-label {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--c-coral);
-  text-transform: uppercase;
-}
-
-.harper-ai-band-title {
-  font-size: 17px;
-  font-weight: 800;
-  margin: 3px 0 2px 0;
   color: var(--text-primary);
 }
 
-.harper-ai-overall-box {
-  background: var(--c-yellow);
-  border: 1.5px solid #151313;
-  border-radius: 14px;
-  padding: 8px 18px;
-  text-align: center;
-  box-shadow: 2px 2px 0 #151313;
-}
-
-.harper-ai-band-pill-label {
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #151313;
-  display: block;
-}
-
-.harper-ai-band-number {
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #151313;
-}
-
-.harper-ai-criteria-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 768px) {
-  .harper-ai-criteria-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.harper-ai-crit-box {
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.harper-ai-crit-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.harper-ai-crit-name {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--text-primary);
-}
-
-.harper-ai-crit-band {
-  font-size: 13.5px;
-  font-weight: 800;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  padding: 2px 8px;
-  border-radius: var(--r-pill);
-  color: var(--c-coral);
-  white-space: nowrap;
-}
-
-.harper-ai-crit-feedback {
-  font-size: 13px;
+.harper-diagnostic-notice-p {
+  font-size: 14px;
   line-height: 1.55;
   color: var(--text-secondary);
-  margin: 0;
-}
-
-.harper-ai-advice-box {
-  background: color-mix(in srgb, var(--c-yellow) 25%, var(--bg-card));
-  border: 1.5px solid #151313;
-  border-radius: 16px;
-  padding: 16px 18px;
-  box-shadow: 2px 2px 0 #151313;
-}
-
-.harper-ai-advice-title {
-  font-size: 13px;
-  font-weight: 800;
-  color: #151313;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.harper-ai-advice-text {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: #151313;
   margin: 0;
 }
