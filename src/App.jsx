@@ -12,6 +12,7 @@ import Loader from './components/common/Loader';
 import PerformancePage from './components/views/PerformancePage';
 import LearningHubPage from './components/views/LearningHubPage';
 import TipsPage from './components/views/TipsPage';
+import HarperWritingPractice from './components/views/HarperWritingPractice';
 import Onboarding from './components/onboarding/Onboarding';
 import ListeningModule from './components/modules/ListeningModule';
 import ReadingModule from './components/modules/ReadingModule';
@@ -335,24 +336,18 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             exit="exit"
             transition={pageTransition}
           >
-            {/* 1. Score Summary & Continuous Animated Spring Progress */}
-            <ScoreSummary
-              scores={scores}
-              targetBand={targetBand}
-            />
-
             {/* Re-grade the most recent Writing/Speaking test (latest only) */}
             <LastTestRecheck onRechecked={refreshScores} onOpenSettings={() => setSettingsOpen(true)} onViewResults={viewSavedResult} />
 
-            {/* 2. Performance Overview (Learning Hub Card & Skill Graph) */}
+            {/* Combined 3 Feature Cards (Left) and Unified Scorecard (Right) */}
             <PerformanceOverview
               scores={scores}
               targetBand={targetBand}
               completedLessons={completedLessons}
               onOpenLearningHub={() => setView('learning')}
               onOpenPerformance={() => setView('performance')}
-              onOpenLesson={openLesson}
               onOpenTips={openTips}
+              onOpenHarperWriting={() => setView('harper-writing')}
               onStartPractice={startSkillProtected}
             />
 
@@ -419,6 +414,19 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <TipsPage initialSkill={tipsSkill} initialCategory={tipsCategory} />
+          </motion.div>
+        )}
+
+        {view === 'harper-writing' && (
+          <motion.div
+            key="harper-writing"
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+          >
+            <HarperWritingPractice onBack={() => setView('home')} />
           </motion.div>
         )}
 

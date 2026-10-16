@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../common/Icon';
+import ScoreSummary from './ScoreSummary';
 import { LEARNING_SKILLS } from '../../data/learningCatalog';
 
 export default function PerformanceOverview({
@@ -9,8 +10,8 @@ export default function PerformanceOverview({
   onOpenLearningHub,
   onOpenPerformance,
   onOpenTips,
+  onOpenHarperWriting,
 }) {
-
   // Calculate total lessons and completed count
   const allLessons = LEARNING_SKILLS.flatMap(s => s.lessons || []);
   const totalLessonsCount = allLessons.length;
@@ -50,68 +51,118 @@ export default function PerformanceOverview({
 
   return (
     <div className="overview-two-col afu-overview">
-      {/* ── LEFT: Learning Hub Card (LAVENDER #BE94F5 with Black Border) ── */}
-      <div className="hub-card-lavender">
-        <div className="hub-card-upper">
-          <div className="hub-top-row">
-            <span className="pill-badge pill-black">
-              LEARNING HUB
-            </span>
-            <span className="hub-bookmark-icon">
-              <Icon name="book" size={17} />
-            </span>
+      {/* ── LEFT: 3 Distinct Feature Cards (Learning Hub, Tips & Tricks, Harper Writing) ── */}
+      <div className="hub-cards-stack">
+        {/* 1. Learning Hub Card (LAVENDER #BE94F5) */}
+        <div className="hub-feature-card is-lavender">
+          <div className="hub-feature-top">
+            <div className="hub-feature-badge-row">
+              <span className="pill-badge pill-black">LEARNING HUB</span>
+              <span className="hub-feature-icon">
+                <Icon name="book" size={15} />
+              </span>
+            </div>
+            <h3 className="hub-feature-heading">Learn Smarter. Improve Faster.</h3>
+            <p className="hub-feature-desc">
+              Video lessons and examiner rubric breakdowns across all 4 IELTS skills.
+            </p>
           </div>
 
-          <h2 className="hub-heading">
-            Learn smarter.<br />Improve faster.
-          </h2>
-
-          <p className="hub-description">
-            Improve your IELTS skills through short, focused lessons and examiner rubric breakdowns.
-          </p>
-        </div>
-
-        <div className="hub-card-lower">
-          <div className="hub-progress-info">
-            <span>{completedCount} of {totalLessonsCount} lessons completed</span>
-            <span className="hub-info-dot">·</span>
-            <span>{minutesWatched} mins active</span>
-          </div>
-
-          <div className="hub-card-actions">
+          <div className="hub-feature-bottom">
+            <span className="hub-feature-meta">
+              {completedCount} of {totalLessonsCount} lessons · {minutesWatched}m
+            </span>
             <button
-              className="btn-coral-pill-physical"
+              type="button"
+              className="btn-coral-pill-physical hub-feature-btn"
               onClick={onOpenLearningHub}
               id="explore-learning-hub-btn"
             >
-              <span>Explore Learning Hub</span>
+              <span>Explore Lessons</span>
               <span className="btn-arrow-icon">→</span>
             </button>
-            {onOpenTips && (
-              <button
-                type="button"
-                className="btn-tips-outline"
-                onClick={onOpenTips}
-                id="open-tips-btn"
-              >
-                <Icon name="sparkles" size={14} />
-                <span>Tips &amp; Tricks</span>
-              </button>
-            )}
+          </div>
+        </div>
+
+        {/* 2. Tips & Tricks Card (YELLOW #FCCC42) */}
+        <div className="hub-feature-card is-yellow">
+          <div className="hub-feature-top">
+            <div className="hub-feature-badge-row">
+              <span className="pill-badge pill-black">TIPS &amp; STRATEGIES</span>
+              <span className="hub-feature-icon">
+                <Icon name="sparkles" size={15} />
+              </span>
+            </div>
+            <h3 className="hub-feature-heading">Examiner Secrets &amp; Phrase Bank</h3>
+            <p className="hub-feature-desc">
+              High-band shortcuts, proven paragraph templates, and test-day tactics.
+            </p>
+          </div>
+
+          <div className="hub-feature-bottom">
+            <span className="hub-feature-meta">Band 8+ Academic Templates</span>
+            <button
+              type="button"
+              className="btn-tips-outline hub-feature-btn"
+              onClick={onOpenTips}
+              id="open-tips-btn"
+            >
+              <span>View Tips &amp; Tricks</span>
+              <span className="btn-arrow-icon">→</span>
+            </button>
+          </div>
+        </div>
+
+        {/* 3. Practice Writing with Harper Card (EDITORIAL PEACH / CORAL BORDER) */}
+        <div className="hub-feature-card is-harper">
+          <div className="hub-feature-top">
+            <div className="hub-feature-badge-row">
+              <span className="pill-badge pill-coral">PRACTICE WRITING</span>
+              <span className="pill-badge pill-black" style={{ fontSize: 10 }}>HARPER OFFLINE</span>
+            </div>
+            <h3 className="hub-feature-heading">Practice Writing with Harper</h3>
+            <p className="hub-feature-desc">
+              Active grammar correction, repetitive word detection, and vocabulary habit-building.
+            </p>
+          </div>
+
+          <div className="hub-feature-bottom">
+            <span className="hub-feature-meta">Task 1 &amp; 2 · Live Feedback</span>
+            <button
+              type="button"
+              className="btn-coral-pill-physical hub-feature-btn"
+              onClick={onOpenHarperWriting}
+              id="open-harper-writing-btn"
+            >
+              <span>Start Practice</span>
+              <span className="btn-arrow-icon">→</span>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* ── RIGHT: Skill Performance Card (EDITORIAL OFF-WHITE with Black Border) ── */}
+      {/* ── RIGHT: Unified Scorecard (Total Band at Top + Skill Breakdown Below) ── */}
       <div
-        className="performance-card-offwhite"
-        onClick={onOpenPerformance}
-        role="button"
-        tabIndex={0}
+        className="performance-card-offwhite unified-scorecard-card"
         id="performance-overview-card"
-        onKeyDown={(e) => e.key === 'Enter' && onOpenPerformance()}
       >
-        <div className="perf-card-upper">
+        {/* Upper Half: Total Score & Progress Goal */}
+        <div className="scorecard-top-section">
+          <ScoreSummary scores={scores} targetBand={targetBand} embedded={true} />
+        </div>
+
+        {/* Divider Line */}
+        <div className="scorecard-inner-divider" />
+
+        {/* Lower Half: Detailed Skill Breakdown */}
+        <div
+          className="perf-card-upper"
+          onClick={onOpenPerformance}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && onOpenPerformance()}
+          style={{ cursor: 'pointer' }}
+        >
           <div className="perf-header-row">
             <div>
               <h2 className="perf-title">Your performance</h2>

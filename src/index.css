@@ -7184,3 +7184,1564 @@ p.reading-section-label {
   .coach-link { transition: none; }
   .coach-link:hover, .coach-link:active { transform: none; }
 }
+
+/* ─── HOMEPAGE 3-CARD STACK & UNIFIED SCORECARD (HARPER INTEGRATION) ─── */
+.hub-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hub-feature-card {
+  border: var(--border-dark);
+  border-radius: var(--r-card);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 148px;
+  transition: transform 160ms var(--ease-spring), box-shadow 160ms ease;
+  position: relative;
+}
+
+.hub-feature-card:hover {
+  transform: translateY(-2px);
+}
+
+.hub-feature-card.is-lavender {
+  background: var(--c-lavender);
+  color: #151313;
+}
+
+.hub-feature-card.is-yellow {
+  background: var(--c-yellow);
+  color: #151313;
+}
+
+.hub-feature-card.is-harper {
+  background: var(--bg-card);
+  border: 1.5px solid #151313;
+  color: var(--text-primary);
+  box-shadow: 2px 2px 0 #151313;
+}
+
+[data-theme="dark"] .hub-feature-card.is-harper {
+  background: var(--surface);
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 rgba(247, 247, 245, 0.2);
+}
+
+.hub-feature-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hub-feature-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.pill-coral {
+  background: var(--c-coral);
+  color: #FFFFFF;
+}
+
+.hub-feature-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #151313;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-feature-heading {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.hub-feature-desc {
+  font-size: 13.5px;
+  line-height: 1.48;
+  opacity: 0.88;
+  margin: 0;
+}
+
+.hub-feature-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(21, 19, 19, 0.1);
+}
+
+[data-theme="dark"] .hub-feature-card.is-harper .hub-feature-bottom {
+  border-top-color: rgba(247, 247, 245, 0.1);
+}
+
+.hub-feature-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.hub-feature-card.is-lavender .hub-feature-meta,
+.hub-feature-card.is-yellow .hub-feature-meta {
+  color: #151313;
+  opacity: 0.85;
+}
+
+.hub-feature-btn {
+  font-size: 13px;
+  padding: 6px 14px;
+  min-height: 34px;
+}
+
+/* Unified Scorecard */
+.unified-scorecard-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scorecard-top-section {
+  padding-bottom: 20px;
+}
+
+.scorecard-inner-divider {
+  height: 1px;
+  background: rgba(21, 19, 19, 0.12);
+  margin-bottom: 22px;
+}
+
+[data-theme="dark"] .scorecard-inner-divider {
+  background: rgba(247, 247, 245, 0.14);
+}
+
+/* ─── Prominent Band Progression Hero (ScoreSummary) ─── */
+.score-progression-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.score-progression-hero.is-embedded {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.progression-top-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.progression-current-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progression-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.progression-current-value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.progression-score-pill {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  border: 1.5px solid #151313;
+  border-radius: 14px;
+  padding: 4px 14px;
+  box-shadow: 2px 2px 0 #151313;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+[data-theme="dark"] .progression-score-pill {
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 rgba(247, 247, 245, 0.2);
+}
+
+.progression-status-note {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.progression-target-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .progression-target-box {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.progression-target-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in srgb, var(--c-coral) 14%, var(--bg-card));
+  border: 1.5px solid var(--c-coral);
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--c-coral);
+  box-shadow: 2px 2px 0 var(--c-coral);
+}
+
+.progression-target-flag {
+  font-size: 14px;
+}
+
+/* Wide Prominent Bar */
+.progression-track-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progression-bar-prominent {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  background: var(--surface-sunken);
+  border: 2px solid #151313;
+  border-radius: var(--r-pill);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .progression-bar-prominent {
+  border-color: var(--border-color);
+}
+
+.progression-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--c-coral), #FF8059);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  min-width: 0;
+}
+
+.progression-tip-indicator {
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.progression-target-pin {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.progression-pin-line {
+  width: 3.5px;
+  height: 100%;
+  background: #151313;
+  box-shadow: 0 0 0 1.5px #FFFFFF;
+}
+
+[data-theme="dark"] .progression-pin-line {
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1.5px #151313;
+}
+
+.progression-milestones {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  padding: 0 4px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .progression-milestones span:nth-child(2),
+  .progression-milestones span:nth-child(3) {
+    display: none;
+  }
+}
+
+
+
+
+/* ─── PRACTICE WRITING WITH HARPER: WORKSPACE & SCREENS ─── */
+.harper-choice-hero {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: var(--r-card);
+  padding: 36px 32px;
+  margin-bottom: 32px;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.harper-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-interactive);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.harper-back-btn:hover {
+  transform: translateX(-2px);
+}
+
+.harper-exit-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-color);
+  background: var(--surface-interactive);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.harper-choice-title-block {
+  margin-bottom: 32px;
+}
+
+.harper-main-heading {
+  font-size: clamp(30px, 3.6vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.harper-main-sub {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+.harper-task-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .harper-task-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.harper-task-card {
+  border: var(--border-dark);
+  border-radius: 24px;
+  padding: 28px;
+  cursor: pointer;
+  transition: transform 160ms var(--ease-spring), box-shadow 160ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.harper-task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 #151313;
+}
+
+.harper-task-card.is-task1 {
+  background: color-mix(in srgb, var(--c-yellow) 22%, var(--bg-card));
+}
+
+.harper-task-card.is-task2 {
+  background: color-mix(in srgb, var(--c-lavender) 26%, var(--bg-card));
+}
+
+.harper-task-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.harper-task-tag {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: #151313;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+}
+
+.harper-task-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.harper-task-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.harper-task-card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.harper-task-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.harper-chip {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.harper-choice-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--surface-sunken);
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ── Active Workspace ── */
+.harper-workspace-layout {
+  min-height: 100vh;
+  padding: 24px 32px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .harper-workspace-layout {
+    padding: 16px;
+  }
+}
+
+.harper-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.harper-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.harper-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-color);
+  background: var(--surface-interactive);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.harper-nav-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.harper-nav-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--c-coral);
+}
+
+.harper-nav-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.harper-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.harper-task-switcher {
+  display: inline-flex;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-pill);
+  padding: 3px;
+}
+
+.harper-switcher-btn {
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  border: none;
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.harper-switcher-btn.is-active {
+  background: #151313;
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .harper-switcher-btn.is-active {
+  background: #FFFFFF;
+  color: #151313;
+}
+
+.harper-prompt-random-btn {
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-color);
+  background: var(--surface-interactive);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.harper-finish-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid #151313;
+  background: var(--c-coral);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #151313;
+  transition: transform 120ms ease;
+}
+
+.harper-finish-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Pinned Prompt Card */
+.harper-pinned-prompt-container {
+  margin-bottom: 20px;
+}
+
+.harper-pinned-prompt-card {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-prompt-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.harper-prompt-tag-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.harper-prompt-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: var(--c-yellow);
+  color: #151313;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  border: 1px solid #151313;
+}
+
+.harper-prompt-requirement {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.harper-collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.harper-prompt-body {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(21, 19, 19, 0.08);
+}
+
+[data-theme="dark"] .harper-prompt-body {
+  border-top-color: rgba(247, 247, 245, 0.1);
+}
+
+.harper-prompt-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.harper-prompt-image-wrap {
+  margin-top: 14px;
+  background: var(--surface-sunken);
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(21, 19, 19, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 200ms ease;
+}
+
+[data-theme="dark"] .harper-prompt-image-wrap {
+  border-color: rgba(247, 247, 245, 0.1);
+}
+
+.harper-image-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.harper-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: 1px 1px 0 var(--border-color);
+  transition: transform 120ms ease;
+}
+
+.harper-zoom-btn:hover {
+  transform: translateY(-1px);
+}
+
+.harper-prompt-image {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: max-height 200ms ease;
+}
+
+.harper-prompt-image-wrap.is-zoomed .harper-prompt-image {
+  max-height: 580px;
+}
+
+.harper-prompt-table-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-card);
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-table-caption {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.harper-prompt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.harper-prompt-table th {
+  background: var(--surface-sunken);
+  font-weight: 800;
+  color: var(--text-primary);
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1.5px solid var(--border-color);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.harper-prompt-table th:last-child {
+  border-right: none;
+}
+
+.harper-prompt-table td {
+  padding: 9px 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.harper-prompt-table td:last-child {
+  border-right: none;
+}
+
+.harper-prompt-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Split Panes */
+.harper-split-panes {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .harper-split-panes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.harper-pane-editor {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 2px 0 var(--border-color);
+  min-height: 520px;
+}
+
+.harper-editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--surface-sunken);
+  border-bottom: 1px solid rgba(21, 19, 19, 0.1);
+}
+
+[data-theme="dark"] .harper-editor-toolbar {
+  border-bottom-color: rgba(247, 247, 245, 0.1);
+}
+
+.harper-word-count-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.harper-chip-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.harper-chip-num {
+  font-weight: 800;
+  color: var(--c-coral);
+}
+
+.harper-chip-num.is-met {
+  color: var(--success);
+}
+
+.harper-chip-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success-icon);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+}
+
+.harper-editor-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.harper-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.harper-pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-coral);
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.harper-clear-btn {
+  background: transparent;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.harper-textarea-canvas {
+  width: 100%;
+  flex: 1;
+  min-height: 480px;
+  padding: 22px 24px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+/* Sidebar & Live Panel */
+.harper-pane-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.harper-sidebar-gauges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.harper-gauge-card {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-gauge-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.harper-gauge-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: block;
+}
+
+.harper-gauge-desc {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.harper-sidebar-tabs {
+  display: flex;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
+  border-radius: var(--r-pill);
+  padding: 3px;
+}
+
+.harper-tab-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--r-pill);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.harper-tab-btn.is-active {
+  background: #151313;
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .harper-tab-btn.is-active {
+  background: #FFFFFF;
+  color: #151313;
+}
+
+.harper-tab-content {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 380px;
+  max-height: 600px;
+  overflow-y: auto;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.harper-empty-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-sunken);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--c-coral);
+}
+
+.harper-empty-state h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.harper-empty-state p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Issues List */
+.harper-issues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.harper-issue-card {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--surface-alt);
+}
+
+.harper-issue-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.harper-issue-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.harper-issue-snippet {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-coral);
+  background: rgba(255, 87, 52, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.harper-issue-msg {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.harper-suggestions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.harper-sug-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+
+.harper-apply-fix-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  border: 1px solid #151313;
+  background: #151313;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.harper-apply-fix-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Repetition Panel */
+.harper-tab-intro {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.harper-repeat-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.harper-repeat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid #151313;
+  background: var(--c-yellow);
+  color: #151313;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.harper-repeat-chip:hover {
+  transform: translateY(-1px);
+}
+
+.harper-repeat-chip.is-selected {
+  background: #151313;
+  color: #FFFFFF;
+}
+
+.harper-chip-count {
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1px 6px;
+  border-radius: var(--r-pill);
+}
+
+.harper-repeat-chip.is-selected .harper-chip-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.harper-synonym-box {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.harper-synonym-box-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.harper-close-syn-btn {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  cursor: pointer;
+}
+
+.harper-syn-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.harper-syn-badge {
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  color: var(--text-primary);
+}
+
+/* Habit Insights List */
+.harper-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.harper-insight-card {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--surface-alt);
+}
+
+.harper-insight-card.is-good {
+  border-left: 4px solid var(--success);
+}
+
+.harper-insight-card.is-warning {
+  border-left: 4px solid var(--warning);
+}
+
+.harper-insight-card.is-urgent {
+  border-left: 4px solid var(--error);
+}
+
+.harper-insight-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.harper-insight-cat {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.harper-insight-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.harper-insight-tip {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── SUMMARY SCREEN ── */
+.harper-summary-screen {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.harper-summary-hero-card {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 28px;
+  padding: 36px 32px;
+  box-shadow: 2px 2px 0 var(--border-color);
+  margin-bottom: 24px;
+}
+
+.harper-summary-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.harper-summary-title {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.harper-summary-sub {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+.harper-band-score-box {
+  background: var(--c-yellow);
+  border: 1.5px solid #151313;
+  border-radius: 20px;
+  padding: 18px 24px;
+  text-align: center;
+  box-shadow: 2px 2px 0 #151313;
+}
+
+.harper-band-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #151313;
+  display: block;
+}
+
+.harper-band-number {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  color: #151313;
+  margin: 4px 0;
+}
+
+.harper-band-scale {
+  font-size: 11px;
+  font-weight: 700;
+  color: #151313;
+  opacity: 0.8;
+}
+
+.harper-disclaimer-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: color-mix(in srgb, var(--c-coral) 12%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--c-coral) 40%, transparent);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.harper-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .harper-metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.harper-metric-item {
+  background: var(--surface-sunken);
+  border: 1px solid rgba(21, 19, 19, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.harper-metric-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+
+.harper-metric-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.harper-metric-val.is-good {
+  color: var(--success-icon);
+}
+
+.harper-metric-val.is-warn {
+  color: var(--c-coral);
+}
+
+.harper-metric-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.harper-summary-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .harper-summary-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.harper-summary-card {
+  background: var(--bg-card);
+  border: var(--border-dark);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.harper-card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.harper-card-header-row h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.harper-bullets {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.harper-summary-card-sub {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.harper-synonym-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.harper-synonym-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface-sunken);
+  border-radius: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.harper-synonym-word-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.harper-repeat-badge {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--c-coral);
+}
+
+.harper-count-tag {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.harper-synonym-list-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.harper-syn-pill {
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  color: var(--text-primary);
+}
+
+.harper-summary-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 28px;
+  margin-bottom: 48px;
+}
+
+.harper-action-btn {
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  font-size: 14.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.harper-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.harper-action-btn.is-secondary {
+  background: var(--surface-interactive);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.harper-action-btn.is-primary {
+  background: var(--c-coral);
+  border: 1.5px solid #151313;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 0 #151313;
+}
