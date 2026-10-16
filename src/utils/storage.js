@@ -93,6 +93,15 @@ export function getSkillScores() {
   }
 }
 
+export function syncLegacySkillScoresFromStore() {
+  try {
+    const summary = derivePerformanceSummary();
+    if (summary && summary.latestScores) {
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}skill_scores`, JSON.stringify(summary.latestScores));
+    }
+  } catch (_) {}
+}
+
 export function resetAllPerformanceData() {
   return resetPerformanceData();
 }
@@ -337,6 +346,17 @@ export function saveCompletedLesson(lessonId) {
     }
   } catch (e) {
     console.warn('Failed to save completed lesson', e);
+  }
+}
+
+export function saveCompletedLessonsBulk(lessonIds = []) {
+  if (!Array.isArray(lessonIds) || lessonIds.length === 0) return;
+  try {
+    const list = getCompletedLessons();
+    const merged = Array.from(new Set([...list, ...lessonIds]));
+    localStorage.setItem(`${STORAGE_KEY_PREFIX}completed_lessons`, JSON.stringify(merged));
+  } catch (e) {
+    console.warn('Failed to save completed lessons in bulk', e);
   }
 }
 

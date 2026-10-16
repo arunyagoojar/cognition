@@ -88,6 +88,89 @@ export function recordAttempt(attempt) {
 }
 
 /**
+ * Hydrates attempt records fetched from the remote D1 database into the canonical local store.
+ * Merges gracefully so local in-progress state is not clobbered while remote attempts are fully restored.
+ */
+export function hydrateFromRemoteAttempts(remoteRows = []) {
+  if (!Array.isArray(remoteRows) || remoteRows.length === 0) return false;
+
+  const store = getPerformanceStore();
+  let updatedAny = false;
+
+  for (const row of remoteRows) {
+    if (!row || !row.id) continue;
+
+    let parsedData = {};
+    if (typeof row.data === 'string') {
+      try { parsedData = JSON.parse(row.data); } catch (_) {}
+    } else if (typeof row.data === 'object' && row.data) {
+      parsedData = row.data;
+    }
+
+    const skill = row.type;
+    const isSkill = ['listening', 'reading', 'writing', 'speaking'].includes(skill);
+    const band = typeof row.band === 'number'
+      ? row.band
+      : (row.band !== null && row.band !== undefined && !isNaN(Number(row.band)) ? Number(row.band) : null);
+
+    const normalized = {
+      id: row.id,
+      type: row.type || 'test',
+      testId: row.test_id || row.testId || 'practice',
+      testLabel: row.test_label || row.testLabel || (isSkill ? `${skill.toUpperCase()} Practice` : 'Practice Test'),
+      status: row.status || (band !== null ? 'completed' : 'partial'),
+      band: band,
+      overallBand: band,
+      startedAt: row.started_at || row.startedAt || new Date().toISOString(),
+      completedAt: row.completed_at || row.completedAt || row.updated_at || new Date().toISOString(),
+      updatedAt: row.updated_at || row.updatedAt || new Date().toISOString(),
+      ...parsedData,
+    };
+
+    if (isSkill) {
+      normalized[skill] = {
+        ...(normalized[skill] || {}),
+        ...parsedData,
+        testId: normalized.testId,
+        testLabel: normalized.testLabel,
+        status: normalized.status,
+        band: band,
+        completedAt: normalized.completedAt,
+      };
+    }
+
+    const existingIdx = store.attempts.findIndex(a => a.id === normalized.id);
+    if (existingIdx >= 0) {
+      if (store.attempts[existingIdx].band === null && normalized.band !== null) {
+        store.attempts[existingIdx] = { ...store.attempts[existingIdx], ...normalized };
+        updatedAny = true;
+      }
+    } else {
+      store.attempts.push(normalized);
+      updatedAny = true;
+    }
+  }
+
+  if (updatedAny) {
+    store.attempts.sort((a, b) => {
+      const ta = new Date(a.completedAt || a.startedAt || 0).getTime();
+      const tb = new Date(b.completedAt || b.startedAt || 0).getTime();
+      return tb - ta;
+    });
+
+    if (store.attempts.length > 100) {
+      store.attempts = store.attempts.slice(0, 100);
+    }
+
+    savePerformanceStore(store);
+    return true;
+  }
+
+  return false;
+}
+
+
+/**
  * Retrieves a single attempt by ID.
  */
 export function getAttemptById(id) {
