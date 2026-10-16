@@ -88,6 +88,99 @@ export function recordAttempt(attempt) {
 }
 
 /**
+ * Hydrates attempt records fetched from the remote D1 database into the canonical local store.
+ * Strictly scopes attempts to the authenticated user and preserves local in-progress state.
+ */
+export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null) {
+  if (!Array.isArray(remoteRows) || remoteRows.length === 0) return false;
+
+  const store = getPerformanceStore();
+  let updatedAny = false;
+
+  for (const row of remoteRows) {
+    if (!row || !row.id) continue;
+    // Strict account isolation guard: if clerk_user_id is present, must match current user
+    if (currentUserId && row.clerk_user_id && row.clerk_user_id !== currentUserId) {
+      continue;
+    }
+
+    let parsedData = {};
+    if (typeof row.data === 'string') {
+      try { parsedData = JSON.parse(row.data); } catch (_) {}
+    } else if (typeof row.data === 'object' && row.data) {
+      parsedData = row.data;
+    }
+
+    const skill = row.type;
+    const isSkill = ['listening', 'reading', 'writing', 'speaking'].includes(skill);
+    const band = typeof row.band === 'number'
+      ? row.band
+      : (row.band !== null && row.band !== undefined && !isNaN(Number(row.band)) ? Number(row.band) : null);
+
+    const completedAt = row.completed_at || row.completedAt || row.updated_at || new Date().toISOString();
+    const startedAt = row.started_at || row.startedAt || completedAt;
+    const status = row.status || (band !== null ? 'completed' : 'partial');
+    const testId = row.test_id || row.testId || 'practice';
+    const testLabel = row.test_label || row.testLabel || (isSkill ? `${skill.toUpperCase()} Practice` : 'Practice Test');
+
+    const normalized = {
+      id: row.id,
+      type: row.type || 'test',
+      testId,
+      testLabel,
+      status,
+      band,
+      overallBand: band,
+      startedAt,
+      completedAt,
+      updatedAt: row.updated_at || row.updatedAt || completedAt,
+      userId: currentUserId || row.clerk_user_id || undefined,
+      ...parsedData,
+    };
+
+    if (isSkill) {
+      normalized[skill] = {
+        ...(normalized[skill] || {}),
+        ...parsedData,
+        testId,
+        testLabel,
+        status,
+        band,
+        completedAt,
+      };
+    }
+
+    const existingIdx = store.attempts.findIndex(a => a.id === normalized.id);
+    if (existingIdx >= 0) {
+      if (store.attempts[existingIdx].band === null && normalized.band !== null) {
+        store.attempts[existingIdx] = { ...store.attempts[existingIdx], ...normalized };
+        updatedAny = true;
+      }
+    } else {
+      store.attempts.push(normalized);
+      updatedAny = true;
+    }
+  }
+
+  if (updatedAny) {
+    store.attempts.sort((a, b) => {
+      const ta = new Date(a.completedAt || a.startedAt || 0).getTime();
+      const tb = new Date(b.completedAt || b.startedAt || 0).getTime();
+      return tb - ta;
+    });
+
+    if (store.attempts.length > 100) {
+      store.attempts = store.attempts.slice(0, 100);
+    }
+
+    savePerformanceStore(store);
+    return true;
+  }
+
+  return false;
+}
+
+/**
  * Retrieves a single attempt by ID.
  */
 export function getAttemptById(id) {
@@ -245,7 +338,7 @@ export function derivePerformanceSummary(store = getPerformanceStore()) {
       latestScores[skill] = {
         ...latestScores[skill],
         latestBand: latestScores[skill].band,
-        band: est.band,
+        estimatedBand: est.band,
         estimateBasis: est.basis,
       };
     }

@@ -44,18 +44,24 @@ export function hasApiAuth() {
 
 async function apiFetch(path, options = {}) {
   if (!PUBLISHABLE_KEY || !clerkAuth) return null;
-  const token = await clerkAuth.getToken();
-  if (!token) return null;
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-      ...options.headers,
-    },
-  });
-  if (!res.ok) return null;
-  return res.json();
+  try {
+    const token = await clerkAuth.getToken();
+    if (!token) return null;
+    const res = await fetch(`${API_BASE}${path}`, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        ...options.headers,
+      },
+    });
+    if (!res.ok) return null;
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
 
 // Variant that surfaces server error messages (for credential/AI endpoints).

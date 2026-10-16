@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useUser, useClerk, useAuth } from '@clerk/react';
 import { motion, AnimatePresence } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
@@ -29,11 +29,22 @@ import {
   saveTargetBand,
   getCompletedLessons,
   getActiveMockSession,
+  hydrateFromRemoteAttempts,
+  saveCompletedLessonsBulk,
+  syncLegacySkillScoresFromStore,
 } from './utils/storage';
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
 import { PRODUCTION_READING, PRODUCTION_WRITING, PRODUCTION_SPEAKING } from './data/production/productionContent.js';
-import { setClerkAuth, syncUserProvision, syncPreferences, syncAttempt, syncOnboardingComplete } from './utils/api';
+import {
+  setClerkAuth,
+  syncUserProvision,
+  syncPreferences,
+  syncAttempt,
+  syncOnboardingComplete,
+  fetchAttempts,
+  fetchCompletedLessons,
+} from './utils/api';
 import { createAttemptId } from './utils/storage';
 import { shouldShowOnboarding, markOnboardingComplete, hasCompletedOnboardingLocally } from './utils/onboarding';
 
@@ -92,7 +103,45 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     isSignedIn && authLoaded && !onboardingDismissed && shouldShowOnboarding(onboardingUser, userId)
   );
 
-  // Sync preferences from D1 on auth change
+  const [scores, setScores] = useState(() => getSkillScores());
+  const [completedLessons, setCompletedLessons] = useState(() => getCompletedLessons());
+
+  const refreshScores = useCallback(() => {
+    setScores(getSkillScores());
+    setCompletedLessons(getCompletedLessons());
+  }, []);
+
+  const hydrateUserData = useCallback(async (uid) => {
+    if (!isSignedIn || !authLoaded || !uid || uid === 'anon') return;
+    try {
+      const [attemptsRes, lessonsRes] = await Promise.all([
+        fetchAttempts(),
+        fetchCompletedLessons()
+      ]);
+      let changed = false;
+      if (Array.isArray(attemptsRes) && attemptsRes.length > 0) {
+        const hydrated = hydrateFromRemoteAttempts(attemptsRes, uid);
+        if (hydrated) {
+          syncLegacySkillScoresFromStore();
+          changed = true;
+        }
+      }
+      if (Array.isArray(lessonsRes) && lessonsRes.length > 0) {
+        const ids = lessonsRes.map(l => l.lesson_id).filter(Boolean);
+        if (ids.length > 0) {
+          const lessonsHydrated = saveCompletedLessonsBulk(ids);
+          if (lessonsHydrated) changed = true;
+        }
+      }
+      if (changed) {
+        refreshScores();
+      }
+    } catch (err) {
+      console.warn('Failed to hydrate user data from cloud:', err);
+    }
+  }, [isSignedIn, authLoaded, refreshScores]);
+
+  // Sync preferences and hydrate attempts & completed lessons from D1 on auth change
   useEffect(() => {
     if (!isSignedIn || !authLoaded) return;
     syncUserProvision().then(user => {
@@ -111,9 +160,11 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       }
       setOnboardingUser(user || null);
     });
-  }, [isSignedIn, authLoaded, userId]);
-  const [scores, setScores] = useState(getSkillScores());
-  const [completedLessons, setCompletedLessons] = useState(getCompletedLessons());
+
+    if (userId && userId !== 'anon') {
+      hydrateUserData(userId);
+    }
+  }, [isSignedIn, authLoaded, userId, hydrateUserData]);
 
   // Learning Hub dynamic breadcrumb context
   const [learningContext, setLearningContext] = useState({
@@ -163,17 +214,12 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     syncOnboardingComplete(); // best-effort; the local mark covers a missed write
   };
 
-  const refreshScores = () => {
-    setScores(getSkillScores());
-    setCompletedLessons(getCompletedLessons());
-  };
-
   useEffect(() => {
     const unsubscribe = subscribePerformanceStore(() => {
       refreshScores();
     });
     return unsubscribe;
-  }, []);
+  }, [refreshScores]);
 
   // Wipe scores and test attempts from localStorage when a user signs out or switches accounts
   const prevUserRef = useRef({ isSignedIn, userId });
@@ -186,9 +232,12 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       if (leftByOtherAccount) setView(v => (v === 'mock' ? 'home' : v));
       clearUserScoresOnSignOut();
       refreshScores();
+      if (isSignedIn && userId && userId !== 'anon') {
+        hydrateUserData(userId);
+      }
     }
     prevUserRef.current = { isSignedIn, userId };
-  }, [isSignedIn, userId]);
+  }, [isSignedIn, userId, refreshScores, hydrateUserData]);
 
   // Every practice start serves a fresh random test (avoiding recent repeats)
   // A saved result opened from the dashboard ("View results")

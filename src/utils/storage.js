@@ -6,7 +6,8 @@ import {
   resetPerformanceData,
   createAttemptId,
   getPerformanceStore,
-  subscribePerformanceStore
+  subscribePerformanceStore,
+  hydrateFromRemoteAttempts,
 } from './performanceStore.js';
 import { clearAudioRecordings } from './audio/audioStore.js';
 
@@ -15,7 +16,8 @@ export {
   derivePerformanceSummary,
   resetPerformanceData,
   createAttemptId,
-  subscribePerformanceStore
+  subscribePerformanceStore,
+  hydrateFromRemoteAttempts,
 };
 
 const STORAGE_KEY_PREFIX = 'omniprep_';
@@ -91,6 +93,15 @@ export function getSkillScores() {
   } catch (e) {
     return { listening: null, reading: null, writing: null, speaking: null };
   }
+}
+
+export function syncLegacySkillScoresFromStore() {
+  try {
+    const summary = derivePerformanceSummary();
+    if (summary && summary.latestScores) {
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}skill_scores`, JSON.stringify(summary.latestScores));
+    }
+  } catch (_) {}
 }
 
 export function resetAllPerformanceData() {
@@ -337,6 +348,23 @@ export function saveCompletedLesson(lessonId) {
     }
   } catch (e) {
     console.warn('Failed to save completed lesson', e);
+  }
+}
+
+export function saveCompletedLessonsBulk(lessonIds = []) {
+  if (!Array.isArray(lessonIds) || lessonIds.length === 0) return false;
+  try {
+    const list = getCompletedLessons();
+    const validIds = lessonIds.filter(Boolean);
+    const set = new Set([...list, ...validIds]);
+    if (set.size !== list.length) {
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}completed_lessons`, JSON.stringify(Array.from(set)));
+      return true;
+    }
+    return false;
+  } catch (e) {
+    console.warn('Failed to save completed lessons in bulk', e);
+    return false;
   }
 }
 
