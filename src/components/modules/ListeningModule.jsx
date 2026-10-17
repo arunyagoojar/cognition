@@ -1,3 +1,4 @@
+import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
@@ -16,14 +17,16 @@ import QuestionRenderer from '../common/QuestionRenderer';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
-export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
+export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
   const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
-  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
+  const [savedSession] = useState(() => readDraft(`listening:${test?.testId || testId}:${isMockMode}`));
+  const [phase, setPhase] = useState(() => initialResult || savedSession?.result ? 'results' : savedSession?.phase === 'exam' ? 'exam' : initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(32 * 60);
-  const [result, setResult] = useState(null);
-  const [processingStep, setProcessingStep] = useState(0);
+  const [answers, setAnswers] = useState(() => savedSession?.answers || {});
+  const [timeLeft, setTimeLeft] = useState(() => savedSession?.timeLeft ?? 32 * 60);
+  const [result, setResult] = useState(() => initialResult || savedSession?.result || null);
+  useEffect(() => { if (phase === 'exam' || phase === 'results') writeDraft(`listening:${test?.testId || testId}:${isMockMode}`,{phase,answers,timeLeft,result}); }, [phase,answers,timeLeft,result,test,testId,isMockMode]);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Audio player state
@@ -83,16 +86,17 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   }, [isMockMode]);
 
   useEffect(() => {
-    if (initialPhase === 'exam') {
+    if (initialPhase === 'exam' || savedSession?.phase === 'exam') {
       startTimer();
     }
-  }, [initialPhase, startTimer]);
+  }, [initialPhase, startTimer, savedSession]);
 
   useEffect(() => {
+    const audio = audioRef.current;
     return () => {
       clearInterval(timerRef.current);
-      if (audioRef.current) {
-        audioRef.current.pause();
+      if (audio) {
+        audio.pause();
       }
     };
   }, []);
@@ -178,12 +182,11 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
 
     // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
-    setProcessingStep(0);
+
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
-    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
-    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+
 
     const currentAnswers = answersRef.current || answers;
     const currentTest = testRef.current || test;
@@ -213,7 +216,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       setTest(gradedTest);
 
       // Ensure user sees the processing steps before advancing
-      await new Promise(r => setTimeout(r, 2200));
+
 
       if (isMockMode) {
         // In Full Mock Mode, transition directly to the next section without intermediate results screen
@@ -225,9 +228,9 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       setPhase('results');
     } catch (err) {
       console.error('Listening submission evaluation error:', err);
-      clearTimeout(stepTimer1);
-      clearTimeout(stepTimer2);
-      clearTimeout(stepTimer3);
+
+
+
 
       // Robust Fallback: Grade deterministically so candidate is NEVER left stranded without a score!
       try {
@@ -331,40 +334,11 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
             The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            giving the final answers to AI to get a final report.
+            Your responses are saved while the assessment finishes.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
-            {[
-              { label: 'Note Completion & Spelling Accuracy', active: processingStep >= 0 },
-              { label: 'Distractor Rejection & Section Timing', active: processingStep >= 1 },
-              { label: 'Official Raw-to-Band Rounding Computation', active: processingStep >= 2 },
-              { label: 'Sub-skill Breakdown & Review Generation', active: processingStep >= 3 },
-            ].map((step, idx) => (
-              <div key={idx} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                fontSize: 14,
-                fontWeight: 600,
-                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)'
-              }}>
-                <div style={{
-                  width: 20,
-                  height: 20,
-                  borderRadius: '50%',
-                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
-                  color: step.active ? 'var(--success-icon)' : 'transparent',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 11
-                }}>
-                  <Icon name="check" size={12} />
-                </div>
-                {step.label}
-              </div>
-            ))}
+            <p role="status">Checking answers against the key and verifying uncertain variants.</p>
           </div>
         </div>
       </div>

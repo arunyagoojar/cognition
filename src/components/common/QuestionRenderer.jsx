@@ -1,5 +1,6 @@
 import React from 'react';
-import QuestionNumber, { stripLeadingNumber } from './QuestionNumber';
+import QuestionNumber from './QuestionNumber';
+import { stripLeadingNumber } from '../../utils/questionNumber.js';
 
 /**
  * Unified Reading/Listening question renderer (Phase 5).

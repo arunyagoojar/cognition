@@ -59,6 +59,9 @@ const MAPPING = {
   'speaking.lexicalResource': { lessons: ['sp-1'], tips: ['speaking-vocabulary'], practice: 'speaking' },
   'speaking.grammaticalRangeAndAccuracy': { lessons: ['sp-4'], tips: ['speaking-grammar'], practice: 'speaking' },
   'speaking.developing_answers': { lessons: ['sp-3', 'sp-4'], tips: ['speaking-developing-answers', 'speaking-part3'], practice: 'speaking' },
+  'speaking.part1': { lessons: ['sp-1'], tips: ['speaking-part1'], practice: 'speaking' },
+  'speaking.part2': { lessons: ['sp-2'], tips: ['speaking-fluency'], practice: 'speaking' },
+  'speaking.part3': { lessons: ['sp-4'], tips: ['speaking-part3'], practice: 'speaking' },
   'speaking.overall': { lessons: ['sp-2'], tips: ['speaking-part1'], practice: 'speaking' },
 };
 

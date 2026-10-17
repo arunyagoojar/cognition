@@ -53,7 +53,25 @@ if (process.argv.includes('--live')) {
   const liveJs = (live.match(/assets\/index-[\w-]+\.js/) || [])[0];
   const liveCss = (live.match(/assets\/index-[\w-]+\.css/) || [])[0];
   check('production index references a bundle', Boolean(liveJs && liveCss), liveJs);
-  const js = await (await fetch(`${LIVE}/${liveJs}`)).text();
+  const seen = new Set();
+  const pending = [`${LIVE}/${liveJs}`];
+  const scripts = [];
+  while (pending.length) {
+    const url = pending.shift();
+    if (seen.has(url)) continue;
+    seen.add(url);
+    const response = await fetch(url);
+    if (!response.ok) continue;
+    const chunk = await response.text();
+    if (chunk.trimStart().startsWith('<')) continue;
+    scripts.push(chunk);
+    for (const match of chunk.matchAll(/["']((?:\.\/|\/?assets\/)?[A-Za-z0-9_.-]+\.js)["']/g)) {
+      const ref = match[1];
+      const next = new URL(ref.startsWith('assets/') ? '/' + ref : ref, url);
+      if (next.origin === LIVE && !seen.has(next.href)) pending.push(next.href);
+    }
+  }
+  const js = scripts.join('\n');
   const css = await (await fetch(`${LIVE}/${liveCss}`)).text();
   check('production bundle is JavaScript (not the SPA fallback)', !js.trimStart().startsWith('<'));
   checkBundle('production', js, css);
@@ -71,6 +89,8 @@ if (process.argv.includes('--live')) {
   const cssName = (html.match(/assets\/index-[\w-]+\.css/) || [])[0];
   check('index.html references the built bundle', Boolean(jsName && cssName), jsName);
   check('no source media shipped in dist', !fs.existsSync(path.join(dist, 'wp-content')) && !fs.existsSync(path.join(dist, 'videos')));
-  checkBundle('build', fs.readFileSync(path.join(dist, jsName), 'utf8'), fs.readFileSync(path.join(dist, cssName), 'utf8'));
+  run('startup bundle budget', 'node scripts/check-bundle.mjs');
+  const allJs = fs.readdirSync(path.join(dist, 'assets')).filter(name => name.endsWith('.js')).map(name => fs.readFileSync(path.join(dist, 'assets', name), 'utf8')).join('\n');
+  checkBundle('build', allJs, fs.readFileSync(path.join(dist, cssName), 'utf8'));
 }
 console.log('\nRelease check passed.');

@@ -6,7 +6,7 @@
 // 4. Client-side decision logic prevents replay across devices / reloads.
 
 import { clerk, createTestUser, api } from './_prodtest_lib.mjs';
-import { shouldShowOnboarding, markOnboardingComplete, hasCompletedOnboardingLocally } from '../src/utils/onboarding.js';
+import { shouldShowOnboarding, markOnboardingComplete } from '../src/utils/onboarding.js';
 
 console.log('--- Step 1: Create brand new user ---');
 const u = await createTestUser();
@@ -55,7 +55,7 @@ if (showReturning) {
 
 console.log('--- Step 5: New device simulation (local storage empty) ---');
 // Even if local storage has no record of this user, server row blocks it
-const showNewDevice = shouldShowOnboarding(returningRes.data, 'new_device_' + u.id);
+const _showNewDevice = shouldShowOnboarding(returningRes.data, 'new_device_' + u.id);
 console.log('shouldShowOnboarding on new device for onboarded account:', shouldShowOnboarding(returningRes.data, u.id));
 if (shouldShowOnboarding(returningRes.data, u.id)) {
   console.error('FAIL: Server record should prevent onboarding on other devices too!');

@@ -3,10 +3,10 @@
  * insufficient-data handling, recommendation mapping to REAL content.
  */
 import assert from 'node:assert/strict';
-import fs from 'fs';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { deriveWeaknesses, aggregateQuestionTypeAccuracy, deriveResultAnalysis } from '../src/utils/insights.js';
+import { deriveWeaknesses, deriveResultAnalysis } from '../src/utils/insights.js';
 import { resolveRecommendations } from '../src/data/recommendations.js';
 import { LEARNING_SKILLS } from '../src/data/learningCatalog.js';
 import { TIPS_SKILLS_ORDERED } from '../src/data/tips/index.js';

@@ -45,7 +45,7 @@ export async function getHarperLinter() {
 /**
  * Categorize a Harper lint into user-friendly IELTS grammar/mechanics groups.
  */
-function categorizeLint(message, snippet) {
+function categorizeLint(message, _snippet) {
   const msg = (message || '').toLowerCase();
   if (/article|indefinite|definite/i.test(msg)) {
     return { type: 'article', label: 'Article Usage', color: 'var(--c-yellow)' };

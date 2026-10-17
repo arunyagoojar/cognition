@@ -12,7 +12,6 @@ import {
   deriveInsightsFromEvaluation
 } from '../src/utils/evaluation/evaluationEngine.js';
 import { 
-  getPerformanceStore, 
   recordAttempt, 
   derivePerformanceSummary, 
   resetPerformanceData 

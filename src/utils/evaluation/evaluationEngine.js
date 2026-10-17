@@ -134,6 +134,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
   }
 
   if (uncertain.length === 0) return;
+  let verificationTimer;
   try {
     // Grading must never hang on the network: past the deadline the
     // deterministic results stand and the candidate gets their score.
@@ -147,7 +148,9 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
     };
     const res = await Promise.race([
       verify(),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('verification timeout')), VERIFY_TIMEOUT_MS)),
+      new Promise((_, reject) => {
+        verificationTimer = setTimeout(() => reject(new Error('verification timeout')), VERIFY_TIMEOUT_MS);
+      }),
     ]);
     const byId = new Map((res.results || []).map(r => [r.id, r]));
     for (const item of uncertain) {
@@ -188,6 +191,8 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
         rec.aiReason = 'Verifier unavailable; answer remains unresolved.';
       }
     }
+  } finally {
+    clearTimeout(verificationTimer);
   }
 }
 
@@ -197,7 +202,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
  * 2. Independent AI evaluation & verification.
  * 3. Reconciliation with disagreement recording.
  */
-export async function evaluateReadingResponses({ passages = [], answers: rawAnswers = {}, attemptId = 'anon' }) {
+export async function evaluateReadingResponses({ passages = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = passages.flatMap(p => p.questions || []);
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
@@ -290,7 +295,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
  * 2. Independent AI evaluation & verification.
  * 3. Reconciliation with disagreement recording.
  */
-export async function evaluateListeningResponses({ sections = [], answers: rawAnswers = {}, attemptId = 'anon' }) {
+export async function evaluateListeningResponses({ sections = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = sections.flatMap(s => s.questions || []);
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
@@ -367,7 +372,7 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
 /**
  * Evaluates Writing task responses via AI examiner:
  */
-export async function evaluateWritingResponses({ task1Text = '', task2Text = '', prompts = {}, attemptId = 'anon' }) {
+export async function evaluateWritingResponses({ task1Text = '', task2Text = '', prompts = {}, attemptId: _attemptId = 'anon' }) {
   const t1Clean = (task1Text || '').trim();
   const t2Clean = (task2Text || '').trim();
 
@@ -521,7 +526,8 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       priorityWeaknesses: res.priorityWeaknesses || [],
       strengths: res.strengths || '',
       areasForImprovement: res.areasForImprovement || '',
-      partFeedback: res.partFeedback || {},
+      partDiagnostics: res.partDiagnostics || {},
+    partFeedback: res.partFeedback || {},
       provider: res.provider,
       coverage,
       message: `${coverage.statement} Criterion band scores require the full interview; this is response-level feedback only.`,
@@ -543,6 +549,7 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     priorityWeaknesses: res.priorityWeaknesses || [],
     strengths: res.strengths || '',
     areasForImprovement: res.areasForImprovement || '',
+    partDiagnostics: res.partDiagnostics || {},
     partFeedback: res.partFeedback || {},
     provider: res.provider,
     coverage,

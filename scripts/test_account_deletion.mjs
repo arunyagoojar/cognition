@@ -3,7 +3,7 @@
 // then triggers DELETE /api/me with a verified session (fva: [0, -1]).
 // Verifies D1 records purged, Clerk user deleted, and token re-use rejected.
 
-import { clerk, createTestUser, api, BASE } from './_prodtest_lib.mjs';
+import { clerk, createTestUser, api } from './_prodtest_lib.mjs';
 
 async function mintVerifiedToken(userId) {
   const sit = await clerk('POST', '/sign_in_tokens', { user_id: userId, expires_in_seconds: 300 });

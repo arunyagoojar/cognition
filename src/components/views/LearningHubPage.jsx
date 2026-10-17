@@ -1,3 +1,4 @@
+import { readDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef } from 'react';
 import Icon from '../common/Icon';
 import Loader from '../common/Loader';
@@ -12,7 +13,8 @@ import { syncLessonComplete } from '../../utils/api';
 
 const CATEGORY_ORDER = ['reading', 'listening', 'writing', 'speaking'];
 
-export default function LearningHubPage({ initialLessonId = null, onBack, onContextChange, onOpenPractice }) {
+export default function LearningHubPage({ initialLessonId = null, onBack: _onBack, onContextChange, onOpenPractice: _onOpenPractice, onResumeDrill }) {
+  const [pendingDrill] = useState(() => readDraft('active-drill'));
   const [completedLessons, setCompletedLessons] = useState(() => getCompletedLessons() || []);
 
   // Determine initial video & category based on viewing history
@@ -34,7 +36,6 @@ export default function LearningHubPage({ initialLessonId = null, onBack, onCont
   // Synchronize category with active lesson and notify global contextual navigation
   useEffect(() => {
     if (activeLesson) {
-      setOpenCategory(activeLesson.skill);
       saveLastWatchedLesson(activeLesson.id);
       if (onContextChange) {
         onContextChange({
@@ -43,7 +44,7 @@ export default function LearningHubPage({ initialLessonId = null, onBack, onCont
         });
       }
     }
-  }, [activeLesson?.id]);
+  }, [activeLesson, onContextChange]);
 
   const handleSelectLesson = (lesson) => {
     if (lesson.id === activeLesson?.id) return;
@@ -82,6 +83,7 @@ export default function LearningHubPage({ initialLessonId = null, onBack, onCont
 
   return (
     <div className="learning-hub-page">
+      {pendingDrill?.skill === activeLesson?.skill && onResumeDrill && <section className="coach-panel"><h2>Apply this lesson</h2><p>Return to the question group or interview part you were practising.</p><button type="button" className="btn-coral-pill-physical" onClick={() => onResumeDrill(pendingDrill)}>Continue focused practice</button></section>}
 
       {/* Main Two-Area Layout */}
       <div className="hub-video-full-wrapper">

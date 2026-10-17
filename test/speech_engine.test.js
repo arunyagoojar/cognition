@@ -337,7 +337,7 @@ await tAsync('clearAudioRecordings safely clears IndexedDB and avoids cache buil
             }),
           }),
         };
-        req.onsuccess && req.onsuccess({ target: req });
+        if (req.onsuccess) req.onsuccess({ target: req });
       }, 0);
       return req;
     },

@@ -1,3 +1,4 @@
+import { useDialog } from '../../hooks/useDialog.js';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useUser, useClerk, useReverification } from '@clerk/react';
@@ -17,6 +18,7 @@ export default function AccountModal({ isOpen, onClose }) {
   const [isDeleting, setIsDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState(null);
 
+  const dialogRef = useDialog(isOpen, () => { if (!isDeleting) { setConfirmDelete(false); setDeleteError(null); onClose(); } });
   if (!isOpen) return null;
 
   const email = user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress || '';
@@ -80,7 +82,7 @@ export default function AccountModal({ isOpen, onClose }) {
         style={{ zIndex: 1100 }}
       >
         <motion.div
-          className="account-modal-card"
+          className="account-modal-card" ref={dialogRef} role="dialog" aria-modal="true" aria-label="Account" tabIndex={-1}
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.94, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

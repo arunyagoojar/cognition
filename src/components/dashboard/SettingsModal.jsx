@@ -1,3 +1,4 @@
+import { useDialog } from '../../hooks/useDialog.js';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Icon from '../common/Icon';
@@ -21,25 +22,18 @@ export default function SettingsModal({
   onChangeTargetBand,
   onResetScores,
 }) {
+  const dialogRef = useDialog(isOpen, onClose);
   const [selectedProvider, setSelectedProvider] = useState(() => getActiveAiProvider());
   const [credentialStatus, setCredentialStatus] = useState(null); // { configured, maskedSuffix }
   const [keyInput, setKeyInput] = useState('');
   const [isReplacing, setIsReplacing] = useState(false); // reveal input to replace a stored key
   const [isValidating, setIsValidating] = useState(false);
   const [validationStatus, setValidationStatus] = useState(null); // { success, message }
-  const [legacyKeys, setLegacyKeys] = useState(null); // { gemini, groq } | null
+  const [legacyKeys, setLegacyKeys] = useState(() => { const legacy=getLegacyLocalKeys(); return legacy.gemini || legacy.groq ? legacy : null; }); // { gemini, groq } | null
   const [resetMessage, setResetMessage] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
-    setValidationStatus(null);
-    setKeyInput('');
-    setIsReplacing(false);
-    setResetMessage(false);
-    setLegacyKeys(() => {
-      const legacy = getLegacyLocalKeys();
-      return (legacy.gemini || legacy.groq) ? legacy : null;
-    });
     let alive = true;
     fetchCredentialStatus(selectedProvider).then((status) => {
       if (alive) setCredentialStatus(status);
@@ -167,7 +161,7 @@ export default function SettingsModal({
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="modal-content"
+            className="modal-content" ref={dialogRef} role="dialog" aria-modal="true" aria-label="Settings" tabIndex={-1}
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.94, y: 8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

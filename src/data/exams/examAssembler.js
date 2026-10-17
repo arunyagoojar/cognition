@@ -5,12 +5,13 @@
  * (content-db → src/data/production/productionContent.js). Reading and Writing
  * and Reading are served from the production content database.
  */
+import { CONTENT_CATALOG } from '../production/registry.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
   PRODUCTION_WRITING,
   PRODUCTION_READING,
-} from '../production/productionContent.js';
+} from '../production/registry.js';
 import {
   adaptProductionListening,
   adaptProductionSpeaking,
@@ -19,7 +20,7 @@ import {
 } from '../production/adapters.js';
 
 // The test rotation queue is driven by the production Listening corpus.
-export const AVAILABLE_AUTHENTIC_TESTS = PRODUCTION_LISTENING.map(rec => ({
+export const AVAILABLE_AUTHENTIC_TESTS = CONTENT_CATALOG.listening.map(rec => ({
   id: rec.testId,
   book: rec.cambridgeIdentity?.length
     ? `Cambridge ${rec.cambridgeIdentity[0].book}`

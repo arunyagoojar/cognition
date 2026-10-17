@@ -1,3 +1,4 @@
+import { loadSkillContent } from '../data/production/registry.js';
 /**
  * Re-runs the AI evaluation of the user's most recent test from the dashboard.
  * Only the latest attempt is eligible, and only AI-graded skills (Writing,
@@ -14,7 +15,7 @@ const RECHECKABLE = new Set(['writing', 'speaking']);
 
 /** The latest attempt if it can be rechecked: { attempt, skill, record } or null. */
 export function getRecheckableLastTest() {
-  const latest = (getPerformanceStore().attempts || [])[0];
+  const latest = (getPerformanceStore().attempts || []).find(a => a.type !== 'drill' && a.type !== 'writing_coach');
   if (!latest || !RECHECKABLE.has(latest.type)) return null;
   const record = latest[latest.type];
   if (!record) return null;
@@ -28,6 +29,7 @@ export async function recheckLastTest() {
   const target = getRecheckableLastTest();
   if (!target) return { ok: false, message: 'Your latest test cannot be rechecked.' };
   const { attempt, skill, record } = target;
+  await loadSkillContent(skill);
 
   if (skill === 'writing') {
     const test = getWritingTest(attempt.testId);

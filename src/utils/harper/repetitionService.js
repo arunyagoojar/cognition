@@ -218,7 +218,7 @@ export function generateHabitInsights({
   repetitiveWords = [],
   wordCount = 0,
   targetWords = 250,
-  taskKind = 2,
+  _taskKind = 2,
 }) {
   const insights = [];
 

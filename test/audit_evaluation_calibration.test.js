@@ -7,17 +7,14 @@
  */
 import assert from 'node:assert/strict';
 import {
-  roundIeltsBand, countWords, normalizeWritingEvaluation, normalizeSpeakingEvaluation,
-  buildWritingUserPrompt, buildSpeakingUserPrompt, buildAnswerVerifierUserPrompt,
-  ANSWER_VERIFIER_SYSTEM_PROMPT, WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2
+  roundIeltsBand, normalizeWritingEvaluation, normalizeSpeakingEvaluation
 } from '../src/utils/ieltsRubric.js';
 import {
   evaluateDeterministic, officialAnswerVariants, DETERMINISTIC, calculateOverallBand,
-  calculateListeningBand, calculateReadingBand, stripLeadingArticle, differByArticle, parseWordLimit
+  calculateListeningBand, calculateReadingBand, stripLeadingArticle, differByArticle
 } from '../src/utils/bandCalculator.js';
 import {
-  isCandidateAnswerCorrect, alignUnorderedAnswers, evaluateFullMockExam,
-  evaluateReadingResponses, evaluateListeningResponses
+  isCandidateAnswerCorrect, alignUnorderedAnswers, evaluateReadingResponses
 } from '../src/utils/evaluation/evaluationEngine.js';
 
 let passed = 0;

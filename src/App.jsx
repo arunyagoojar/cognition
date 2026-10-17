@@ -1,24 +1,30 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { readDraft, writeDraft } from './utils/drafts.js';
+import { CONTENT_CATALOG, loadSkillContent, loadAllContent } from './data/production/registry.js';
+import { chooseFreshTest } from './utils/practiceSelection.js';
+import { readScreenRoute, writeScreenRoute } from './utils/screenRoute.js';
+import SyncStatus from './components/common/SyncStatus.jsx';
+import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
 import { useUser, useClerk, useAuth } from '@clerk/react';
 import { motion, AnimatePresence } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
 import SettingsModal from './components/dashboard/SettingsModal';
-import ScoreSummary from './components/dashboard/ScoreSummary';
+
 import PerformanceOverview from './components/dashboard/PerformanceOverview';
 import PracticeSection from './components/dashboard/PracticeSection';
 import MockHeroCard from './components/dashboard/MockHeroCard';
 import LastTestRecheck from './components/dashboard/LastTestRecheck';
 import Loader from './components/common/Loader';
-import PerformancePage from './components/views/PerformancePage';
-import LearningHubPage from './components/views/LearningHubPage';
-import TipsPage from './components/views/TipsPage';
-import HarperWritingPractice from './components/views/HarperWritingPractice';
+const FocusedDrill = lazy(() => import('./components/views/FocusedDrill.jsx'));
+const PerformancePage = lazy(async () => { return import('./components/views/PerformancePage'); });
+const LearningHubPage = lazy(async () => { return import('./components/views/LearningHubPage'); });
+const TipsPage = lazy(async () => { return import('./components/views/TipsPage'); });
+const HarperWritingPractice = lazy(async () => { await loadSkillContent('writing'); return import('./components/views/HarperWritingPractice'); });
 import Onboarding from './components/onboarding/Onboarding';
-import ListeningModule from './components/modules/ListeningModule';
-import ReadingModule from './components/modules/ReadingModule';
-import WritingModule from './components/modules/WritingModule';
-import SpeakingModule from './components/modules/SpeakingModule';
-import MockExamFlow from './components/modules/MockExamFlow';
+const ListeningModule = lazy(async () => { await loadSkillContent('listening'); return import('./components/modules/ListeningModule'); });
+const ReadingModule = lazy(async () => { await loadSkillContent('reading'); return import('./components/modules/ReadingModule'); });
+const WritingModule = lazy(async () => { await loadSkillContent('writing'); return import('./components/modules/WritingModule'); });
+const SpeakingModule = lazy(async () => { await loadSkillContent('speaking'); return import('./components/modules/SpeakingModule'); });
+const MockExamFlow = lazy(async () => { await loadAllContent(); return import('./components/modules/MockExamFlow'); });
 import {
   getSkillScores,
   saveSkillScore,
@@ -35,7 +41,7 @@ import {
 } from './utils/storage';
 import { subscribePerformanceStore } from './utils/performanceStore';
 import { getRandomTestId } from './utils/testQueue';
-import { PRODUCTION_READING, PRODUCTION_WRITING, PRODUCTION_SPEAKING } from './data/production/productionContent.js';
+
 import {
   setClerkAuth,
   syncUserProvision,
@@ -65,20 +71,34 @@ function AppWithAuth() {
   const { isLoaded: authLoaded, isSignedIn, user } = useUser();
   const { openSignIn } = useClerk();
   const auth = useAuth();
-  setClerkAuth(auth);
+  const identity = isSignedIn ? user?.id || '' : 'anon';
+  const [readyIdentity, setReadyIdentity] = useState(null);
+  const previousIdentity = useRef(null);
+  useEffect(() => {
+    if (!authLoaded) return;
+    const foreign = isSignedIn && claimLocalDataOwner(identity) === 'foreign';
+    if (foreign || (previousIdentity.current && previousIdentity.current !== identity)) clearUserScoresOnSignOut();
+    setClerkAuth(auth);
+    previousIdentity.current = identity;
+    let active=true;
+    void Promise.resolve().then(() => { if(active) setReadyIdentity(identity); });
+    return () => { active=false; };
+  }, [authLoaded, isSignedIn, identity, auth]);
   // Prevent flash: don't render the app until Clerk session is resolved
-  if (!authLoaded) {
+  if (!authLoaded || readyIdentity !== identity) {
     return (
       <div className="app-boot-screen">
         <Loader label="Loading Cognition" size="lg" />
       </div>
     );
   }
-  return <AppContent isSignedIn={isSignedIn} openSignIn={openSignIn} userId={user?.id || 'anon'} />;
+  return <AppContent key={identity} isSignedIn={isSignedIn} openSignIn={openSignIn} userId={user?.id || 'anon'} />;
 }
 
 function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {}, userId = 'anon' }) {
   const [view, setView] = useState(() => {
+    const route = readScreenRoute();
+    if (route.view) return route.view;
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.status === 'in_progress') {
       return 'mock';
@@ -149,7 +169,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
         saveTargetBand(user.target_band);
         setTargetBand(user.target_band);
       }
-      if (user?.theme && user.theme !== theme) {
+      if (user?.theme) {
         setTheme(user.theme);
         document.documentElement.setAttribute('data-theme', user.theme);
       }
@@ -162,18 +182,16 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     });
 
     if (userId && userId !== 'anon') {
-      hydrateUserData(userId);
+      void Promise.resolve().then(() => hydrateUserData(userId));
     }
   }, [isSignedIn, authLoaded, userId, hydrateUserData]);
 
   // Learning Hub dynamic breadcrumb context
-  const [learningContext, setLearningContext] = useState({
-    skill: 'reading',
-    lessonTitle: 'Lesson 01',
-  });
 
   // Rotating randomized test queue initial next recommendation
   const [selectedExamId, setSelectedExamId] = useState(() => {
+    const route = readScreenRoute();
+    if (route.testId) return route.testId;
     const activeMock = getActiveMockSession();
     if (activeMock && activeMock.examId) {
       return activeMock.examId;
@@ -221,24 +239,6 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     return unsubscribe;
   }, [refreshScores]);
 
-  // Wipe scores and test attempts from localStorage when a user signs out or switches accounts
-  const prevUserRef = useRef({ isSignedIn, userId });
-  useEffect(() => {
-    const prev = prevUserRef.current;
-    const switchedHere = prev.isSignedIn && (!isSignedIn || (userId !== 'anon' && prev.userId !== userId));
-    // Data left by another account (signed out in another tab / expired session)
-    const leftByOtherAccount = isSignedIn && claimLocalDataOwner(userId) === 'foreign';
-    if (switchedHere || leftByOtherAccount) {
-      if (leftByOtherAccount) setView(v => (v === 'mock' ? 'home' : v));
-      clearUserScoresOnSignOut();
-      refreshScores();
-      if (isSignedIn && userId && userId !== 'anon') {
-        hydrateUserData(userId);
-      }
-    }
-    prevUserRef.current = { isSignedIn, userId };
-  }, [isSignedIn, userId, refreshScores, hydrateUserData]);
-
   // Every practice start serves a fresh random test (avoiding recent repeats)
   // A saved result opened from the dashboard ("View results")
   const [reviewResult, setReviewResult] = useState(null);
@@ -256,43 +256,48 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const startSkill = (skillId) => {
     setReviewResult(null);
     delete sessionAttemptIds.current[skillId];
-    if (skillId === 'listening') {
-      setSelectedExamId(getRandomTestId());
-    } else if (skillId === 'reading') {
-      const pool = PRODUCTION_READING;
-      if (pool.length) setSelectedExamId(pool[Math.floor(Math.random() * pool.length)].testId);
-    } else if (skillId === 'writing') {
-      const pool = PRODUCTION_WRITING;
-      if (pool.length) {
-        let recent = [];
-        try { recent = JSON.parse(localStorage.getItem('cognition_recent_writing_v1') || '[]'); } catch (_) {}
-        const available = pool.filter(p => !recent.includes(p.testId));
-        const pickPool = available.length ? available : pool;
-        const pick = pickPool[Math.floor(Math.random() * pickPool.length)].testId;
-        try { localStorage.setItem('cognition_recent_writing_v1', JSON.stringify([pick, ...recent.filter(id => id !== pick)].slice(0, 8))); } catch (_) {}
-        setSelectedExamId(pick);
-      }
-    } else if (skillId === 'speaking') {
-      const pool = PRODUCTION_SPEAKING;
-      if (pool.length) {
-        let recent = [];
-        try { recent = JSON.parse(localStorage.getItem('cognition_recent_speaking_v1') || '[]'); } catch (_) {}
-        const available = pool.filter(p => !recent.includes(p.id));
-        const pickPool = available.length ? available : pool;
-        const pick = pickPool[Math.floor(Math.random() * pickPool.length)].id;
-        try { localStorage.setItem('cognition_recent_speaking_v1', JSON.stringify([pick, ...recent.filter(id => id !== pick)].slice(0, 8))); } catch (_) {}
-        setSelectedExamId(pick);
-      }
-    }
+    const id = chooseFreshTest(skillId, CONTENT_CATALOG[skillId] || []);
+    if (id) setSelectedExamId(id);
+    const attemptId=createAttemptId(skillId);
+    sessionAttemptIds.current[skillId]=attemptId;
+    writeDraft(`attempt:${skillId}`,{id:attemptId,testId:id});
     setView(skillId);
   };
 
   // One attempt id per practice session: the automatic save when results
   // appear and the later "Save & Return" click update the same record.
   const sessionAttemptIds = useRef({});
+  const [drillRequest, setDrillRequest] = useState(() => readDraft('active-drill'));
+  const previousRoute = useRef(view);
+  const fromHistory = useRef(false);
+  useEffect(() => {
+    const navigate = () => {
+      const route = readScreenRoute();
+      if (!route.view) return;
+      fromHistory.current = true;
+      if (route.testId) setSelectedExamId(route.testId);
+      setView(route.view);
+    };
+    window.addEventListener('popstate', navigate);
+    window.addEventListener('hashchange', navigate);
+    return () => { window.removeEventListener('popstate', navigate); window.removeEventListener('hashchange', navigate); };
+  }, []);
+  useEffect(() => {
+    if (fromHistory.current) { fromHistory.current = false; previousRoute.current = view; return; }
+    writeScreenRoute(view, selectedExamId, previousRoute.current === view);
+    previousRoute.current = view;
+  }, [view, selectedExamId]);
+  const startDrill = request => {
+    if (!isSignedIn) { openSignIn(); return; }
+    setDrillRequest(request);
+    setView('drill');
+  };
 
   const persistSkillResult = (skill, scoreData) => {
-    const id = scoreData?.attemptId || sessionAttemptIds.current[skill] || createAttemptId(skill);
+    const savedAttempt=readDraft(`attempt:${skill}`);
+    const restoredId=String(savedAttempt?.testId)===String(scoreData?.testId || selectedExamId) ? savedAttempt?.id : null;
+    const id = scoreData?.attemptId || sessionAttemptIds.current[skill] || restoredId || createAttemptId(skill);
+    writeDraft(`attempt:${skill}`,{id,testId:scoreData?.testId || selectedExamId});
     sessionAttemptIds.current[skill] = id;
     const testIdForAttempt = scoreData?.testId || selectedExamId;
     saveSkillScore(skill, { ...scoreData, attemptId: id, testId: testIdForAttempt });
@@ -359,6 +364,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   return (
     <div className={`app-shell ${isExamFlow ? 'in-exam-flow' : ''}`}>
+      <SyncStatus />
       {/* ── UNIFIED NAVIGATION ARCHITECTURE (HIDDEN DURING ACTIVE EXAM FLOWS) ─────── */}
       {!isExamFlow && (
         <header className="unified-nav-header">
@@ -374,7 +380,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       {/* ── UNIFIED SPATIAL CONTINUITY PAGE CONTAINER ─────────────── */}
       {/* Reset scroll once the outgoing page has left: the incoming page then
           mounts at the top even if the window moved during the exit fade. */}
-      <AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
+      <Suspense fallback={<Loader label="Loading practice content…" size="lg" />}><AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
         {view === 'home' && (
           <motion.main
             key="home"
@@ -405,6 +411,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               scores={scores}
               targetBand={targetBand}
               onStartSkill={startSkillProtected}
+              onReviewResult={viewSavedResult}
+              onStartDrill={startDrill}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
             />
 
             {/* 4. Final Mock Test Hero with Rotating Randomized Test Queue */}
@@ -417,6 +427,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           </motion.main>
         )}
 
+        {view === 'drill' && <FocusedDrill key={`drill-${drillRequest?.key || 'saved'}`} request={drillRequest} onBack={() => { refreshScores(); setView('performance'); }} onOpenLesson={openLesson} onOpenTips={openTips} />}
         {view === 'performance' && (
           <motion.div
             key="performance"
@@ -445,9 +456,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <LearningHubPage
+              onResumeDrill={startDrill}
               initialLessonId={learningLessonId}
               onBack={() => setView('home')}
-              onContextChange={(ctx) => setLearningContext(ctx)}
               onOpenPractice={startSkillProtected}
             />
           </motion.div>
@@ -489,6 +500,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <ListeningModule
+              initialResult={reviewResult?.skill === 'listening' ? reviewResult.result : null}
               testId={selectedExamId}
               onComplete={(d) => {
                 handleCompleteSkill('listening', d);
@@ -511,6 +523,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             transition={pageTransition}
           >
             <ReadingModule
+              initialResult={reviewResult?.skill === 'reading' ? reviewResult.result : null}
               testId={selectedExamId}
               onComplete={(d) => {
                 handleCompleteSkill('reading', d);
@@ -607,10 +620,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence></Suspense>
 
       {/* ── SETTINGS MODAL (UNIVERSAL SYSTEM PANEL) ─────────────────── */}
-      <SettingsModal
+      {settingsOpen && <SettingsModal
         isOpen={settingsOpen}
         onClose={() => setSettingsOpen(false)}
         theme={theme}
@@ -622,7 +635,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           syncPreferences({ target_band: b });
         }}
         onResetScores={handleResetScores}
-      />
+      />}
 
       {/* ── FIRST-RUN ONBOARDING (skippable; overlays everything) ───── */}
       <AnimatePresence>

@@ -13,12 +13,12 @@ export function getRandomTestId(excludeCount = 5) {
   let recent = [];
   try {
     recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
-  } catch (_) { recent = []; }
+  } catch { recent = []; }
   const pool = all.filter(id => !recent.includes(id));
   const pickFrom = pool.length ? pool : all;
   const pick = pickFrom[Math.floor(Math.random() * pickFrom.length)];
   recent = [pick, ...recent.filter(id => id !== pick)].slice(0, excludeCount);
-  try { localStorage.setItem(RECENT_KEY, JSON.stringify(recent)); } catch (_) {}
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify(recent)); } catch {}
   return pick;
 }
 

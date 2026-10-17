@@ -1,3 +1,4 @@
+import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedReadingTest, getReadingTest } from '../../data/reading/index';
@@ -8,7 +9,8 @@ import ExamStartScreen from './ExamStartScreen';
 import ExamBottomNav from './ExamBottomNav';
 import ReadingPassage from '../reading/ReadingPassage';
 import ReadingQuestionGroup from '../reading/ReadingQuestionGroup';
-import TextSizeControl, { useExamTextScale } from '../common/TextSizeControl';
+import TextSizeControl from '../common/TextSizeControl';
+import { useExamTextScale } from '../../hooks/useExamTextScale.js';
 import AnswerReviewList from '../common/AnswerReviewList';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
@@ -17,14 +19,16 @@ import ScrollToTop from '../common/ScrollToTop.jsx';
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 
-export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave }) {
+export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
   const [test] = useState(() => initialTest || (testId ? getReadingTest(testId) : getRandomizedReadingTest()));
-  const [phase, setPhase] = useState(() => initialPhase); // intro | exam | processing | results
-  const [answers, setAnswers] = useState({});
+  const [savedSession] = useState(() => readDraft(`reading:${test?.testId || testId}:${isMockMode}`));
+  const [phase, setPhase] = useState(() => initialResult || savedSession?.result ? 'results' : savedSession?.phase === 'exam' ? 'exam' : initialPhase); // intro | exam | processing | results
+  const [answers, setAnswers] = useState(() => savedSession?.answers || {});
   const attemptIdRef = useRef(createAttemptId('reading'));
-  const [timeLeft, setTimeLeft] = useState(60 * 60);
-  const [result, setResult] = useState(null);
-  const [processingStep, setProcessingStep] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(() => savedSession?.timeLeft ?? 60 * 60);
+  const [result, setResult] = useState(() => initialResult || savedSession?.result || null);
+  useEffect(() => { if (phase === 'exam' || phase === 'results') writeDraft(`reading:${test?.testId || testId}:${isMockMode}`,{phase,answers,timeLeft,result}); }, [phase,answers,timeLeft,result,test,testId,isMockMode]);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
   // Compact widths show one pane at a time; regular widths show both side by side.
@@ -88,10 +92,10 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   }, [isMockMode]);
 
   useEffect(() => {
-    if (initialPhase === 'exam') {
+    if (initialPhase === 'exam' || savedSession?.phase === 'exam') {
       startTimer();
     }
-  }, [initialPhase, startTimer]);
+  }, [initialPhase, startTimer, savedSession]);
 
   useEffect(() => {
     return () => clearInterval(timerRef.current);
@@ -128,12 +132,11 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
 
     // Immediately show the processing screen to avoid UI freeze and provide immediate feedback
     setPhase('processing');
-    setProcessingStep(0);
+
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
-    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
-    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+
 
     const currentAnswers = answersRef.current || answers;
     const currentTest = testRef.current || test;
@@ -165,7 +168,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       };
 
       // Ensure user sees the processing steps before advancing
-      await new Promise(r => setTimeout(r, 2200));
+
 
       if (isMockMode) {
         if (onComplete) onComplete(computedResult);
@@ -176,9 +179,9 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       setPhase('results');
     } catch (err) {
       console.error('Reading submission evaluation error:', err);
-      clearTimeout(stepTimer1);
-      clearTimeout(stepTimer2);
-      clearTimeout(stepTimer3);
+
+
+
 
       // Resilient fallback
       try {
@@ -282,40 +285,11 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            giving the final answers to AI to get a final report.
+            Your responses are saved while the assessment finishes.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
-            {[
-              { label: 'Passage Keyword Matching & Synonyms', active: processingStep >= 0 },
-              { label: 'Sentence Completion & Capitalization Check', active: processingStep >= 1 },
-              { label: 'Academic Band Scale Rounding', active: processingStep >= 2 },
-              { label: 'Error Distribution & Priority Feedback', active: processingStep >= 3 },
-            ].map((step, idx) => (
-              <div key={idx} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                fontSize: 14,
-                fontWeight: 600,
-                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)'
-              }}>
-                <div style={{
-                  width: 20,
-                  height: 20,
-                  borderRadius: '50%',
-                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
-                  color: step.active ? 'var(--success-icon)' : 'transparent',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 11
-                }}>
-                  <Icon name="check" size={12} />
-                </div>
-                {step.label}
-              </div>
-            ))}
+            <p role="status">Checking answers against the key and verifying uncertain variants.</p>
           </div>
         </div>
       </div>

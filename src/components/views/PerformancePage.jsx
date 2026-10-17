@@ -1,3 +1,4 @@
+import FocusedRecommendations from '../dashboard/FocusedRecommendations.jsx';
 import React from 'react';
 import Icon from '../common/Icon';
 import { calculateOverallBand } from '../../utils/bandCalculator';
@@ -6,7 +7,7 @@ import { getPerformanceStore, derivePerformanceSummary } from '../../utils/perfo
 import { deriveWeaknesses, deriveResultAnalysis } from '../../utils/insights.js';
 import ProgressTimeline from '../dashboard/ProgressTimeline.jsx';
 
-export default function PerformancePage({ scores, targetBand, onBack, onStartSkill }) {
+export default function PerformancePage({ scores, targetBand, onBack: _onBack, onStartSkill, onStartDrill, onOpenLesson, onOpenTips, onReviewResult }) {
   const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
   const R = scores?.reading?.band ? parseFloat(scores.reading.band) : null;
   const W = scores?.writing?.band ? parseFloat(scores.writing.band) : null;
@@ -112,10 +113,10 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
       badgeText: W === null ? 'Unattempted' : W < 6.5 ? 'Priority focus' : 'On track',
       badgeClass: 'pill-black',
       subskills: W !== null ? [
-        { name: 'Task Achievement / Response', score: String(scores?.writing?.criteria?.taskAchievement?.band ?? scores?.writing?.criteria?.taskResponse ?? (W ? W.toFixed(1) : '--')), status: 'Task 1 needs clear overview' },
-        { name: 'Coherence & Cohesion', score: String(scores?.writing?.criteria?.coherenceAndCohesion?.band ?? scores?.writing?.criteria?.coherence ?? (W ? W.toFixed(1) : '--')), status: 'Strengthen 4-paragraph linkage' },
-        { name: 'Lexical Resource', score: String(scores?.writing?.criteria?.lexicalResource?.band ?? scores?.writing?.criteria?.lexical ?? (W ? W.toFixed(1) : '--')), status: 'Good academic vocabulary' },
-        { name: 'Grammatical Range & Accuracy', score: String(scores?.writing?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.writing?.criteria?.grammar ?? (W ? W.toFixed(1) : '--')), status: 'Vary complex sentence structures' },
+        { name: 'Task Achievement / Response', score: String(scores?.writing?.criteria?.taskAchievement?.band ?? scores?.writing?.criteria?.taskResponse ?? (W ? W.toFixed(1) : '--')), status: 'Task-specific evidence' },
+        { name: 'Coherence & Cohesion', score: String(scores?.writing?.criteria?.coherenceAndCohesion?.band ?? scores?.writing?.criteria?.coherence ?? (W ? W.toFixed(1) : '--')), status: 'Logical progression and connections' },
+        { name: 'Lexical Resource', score: String(scores?.writing?.criteria?.lexicalResource?.band ?? scores?.writing?.criteria?.lexical ?? (W ? W.toFixed(1) : '--')), status: 'Precision and appropriate range' },
+        { name: 'Grammatical Range & Accuracy', score: String(scores?.writing?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.writing?.criteria?.grammar ?? (W ? W.toFixed(1) : '--')), status: 'Range and accuracy in context' },
       ] : [
         { name: 'Task Achievement / Response', score: '--', status: 'Awaiting first test attempt' },
         { name: 'Coherence & Cohesion', score: '--', status: 'Awaiting first test attempt' },
@@ -151,7 +152,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
         { name: 'Fluency & Coherence', score: String(scores?.speaking?.criteria?.fluencyAndCoherence?.band ?? scores?.speaking?.criteria?.fluency ?? (S ? S.toFixed(1) : '--')), status: 'Speech continuity and discourse' },
         { name: 'Lexical Resource', score: String(scores?.speaking?.criteria?.lexicalResource?.band ?? scores?.speaking?.criteria?.lexical ?? (S ? S.toFixed(1) : '--')), status: 'Range of idiomatic phrasing' },
         { name: 'Grammatical Range & Accuracy', score: String(scores?.speaking?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.speaking?.criteria?.grammar ?? (S ? S.toFixed(1) : '--')), status: 'Syntactic control of tenses' },
-        { name: 'Pronunciation', score: scores?.speaking?.criteria?.pronunciation?.band ? String(scores.speaking.criteria.pronunciation.band) : 'Not scored', status: 'Rhythm and natural phonology' },
+        { name: 'Pronunciation', score: scores?.speaking?.criteria?.pronunciation?.band ? String(scores.speaking.criteria.pronunciation.band) : 'Not scored', status: 'Not assessed from transcripts' },
       ] : [
         { name: 'Fluency & Coherence', score: '--', status: 'Awaiting first test attempt' },
         { name: 'Lexical Resource', score: '--', status: 'Awaiting first test attempt' },
@@ -168,7 +169,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
         focusItems: S !== null
           ? [
               scores?.speaking?.criteria?.fluencyAndCoherence?.improvementFocus || 'Fluency',
-              scores?.speaking?.criteria?.pronunciation?.improvementFocus || 'Pronunciation'
+              scores?.speaking?.criteria?.grammaticalRangeAndAccuracy?.improvementFocus || 'Grammatical range'
             ].filter(Boolean).slice(0, 3)
           : ['Buying time with discourse phrases', 'Part 2 1-minute cue card notes', 'Natural sentence intonation'],
       }
@@ -191,16 +192,22 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
         </p>
       </div>
 
-      {/* ── OVERALL SCORE HERO CARD ──────────────────────────────────── */}
+      <section className="coach-panel"><h2>Review a saved test</h2><div className="coach-actions">{['listening','reading','writing','speaking'].map(skill => {
+        const attempt = attempts.find(a => a.type === skill && a[skill]);
+        return attempt && <button type="button" key={skill} onClick={() => onReviewResult?.(skill, {...attempt[skill],attemptId:attempt.id,testId:attempt.testId})}>Review latest {skill}</button>;
+      })}</div></section>
+      <FocusedRecommendations attempts={attempts} onStartDrill={onStartDrill} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
+      <p className="coach-score-note">Full-test estimates use complete skill tests and mock exams. Drills and coached Writing tasks are tracked separately. Writing weights Task 1 once and Task 2 twice. Speaking estimates exclude pronunciation and are provisional.</p>
+      {/* ── OVERALL PRACTICE ESTIMATE HERO CARD ──────────────────────────────────── */}
       <div className="perf-overall-card">
         <div className="perf-overall-left">
           <span className="pill-badge pill-black">
-            OVERALL SCORE
+            OVERALL PRACTICE ESTIMATE
           </span>
 
           <div className="perf-overall-numbers">
             <div className="perf-num-group">
-              <span className="perf-num-lbl">CURRENT BAND</span>
+              <span className="perf-num-lbl">FULL-TEST ESTIMATE</span>
               <span className="perf-num-val current">{currentOverallNum !== null ? currentOverallNum.toFixed(1) : '--'}</span>
             </div>
 
@@ -220,7 +227,7 @@ export default function PerformancePage({ scores, targetBand, onBack, onStartSki
             ) : hasAnyScore ? (
               <span>Baseline established across recent practice sessions</span>
             ) : (
-              <span>No completed tests recorded yet. Practice scores have been reset.</span>
+              <span>Complete a full test to establish a baseline.</span>
             )}
           </div>
         </div>

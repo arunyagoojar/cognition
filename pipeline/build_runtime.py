@@ -733,6 +733,15 @@ def main():
     )
     with open(os.path.join(RUNTIME, "productionContent.js"), "w") as fjs:
         fjs.write(js)
+    banks = {"listening": listen_runtime, "reading": read_runtime, "writing": write_runtime, "speaking": speak_runtime}
+    os.makedirs(os.path.join(RUNTIME, "banks"), exist_ok=True)
+    catalog = {}
+    for skill, records in banks.items():
+        with open(os.path.join(RUNTIME, "banks", skill + ".json"), "w") as output:
+            json.dump(records, output, ensure_ascii=False, separators=(",", ":"))
+        catalog[skill] = [{k: rec[k] for k in ("id", "testId", "slug", "title", "hubNumber", "cambridgeIdentity", "fullMockEligible") if k in rec} for rec in records]
+    with open(os.path.join(RUNTIME, "catalog.json"), "w") as output:
+        json.dump(catalog, output, ensure_ascii=False, separators=(",", ":"))
     print("runtime bundle: listening tests =", len(listen_runtime), "| speaking packages =", len(speak_runtime),
           "| excluded =", len(excluded), "| size MB =", round(len(js) / 1e6, 1))
 

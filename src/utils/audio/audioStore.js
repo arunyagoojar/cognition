@@ -163,3 +163,14 @@ export async function eradicateAllAudioRecordings() {
   return clearAudioRecordings();
 }
 
+
+/** Remove only recordings belonging to the submitted session, preserving other drafts. */
+export async function deleteSessionRecordings(recordingIds) {
+  if (typeof indexedDB === 'undefined') return;
+  const db = await getDB();
+  await new Promise((resolve, reject) => {
+    const tx = db.transaction([STORE_NAME], 'readwrite');
+    for (const id of recordingIds.filter(Boolean)) tx.objectStore(STORE_NAME).delete(id);
+    tx.oncomplete = () => resolve(); tx.onerror = () => reject(tx.error);
+  });
+}

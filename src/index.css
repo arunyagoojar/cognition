@@ -8778,3 +8778,24 @@ p.reading-section-label {
   color: var(--text-secondary);
   margin: 0;
 }
+
+/* Focused coaching uses the existing product surfaces and type scale. */
+.coach-panel { margin: 24px 0; padding: 24px; background: var(--surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--r-container, 20px); color: var(--text-primary); }
+.coach-panel h2, .coach-panel h3, .coach-panel h4 { margin: 0 0 12px; }
+.coach-panel p, .coach-panel li { line-height: 1.65; }
+.coach-panel h3:not(:first-child) { margin-top: 22px; }
+.coach-criteria, .vocabulary-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 20px; margin: 20px 0; }
+.coach-criteria > section, .coach-criteria > article { padding: 16px 0; border-top: 1px solid var(--border-subtle); }
+.vocabulary-grid details { padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+.coach-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.coach-panel button:not(.btn-coral-pill-physical), .sync-status button { padding: 8px 14px; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-alt); color: var(--text-primary); cursor: pointer; }
+.coach-draft { width: 100%; box-sizing: border-box; padding: 16px; border: 1px solid var(--border); border-radius: 12px; font: inherit; line-height: 1.65; color: var(--text-primary); background: var(--surface-alt); resize: vertical; }
+.coach-original { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
+.coach-panel blockquote { padding: 8px 16px; margin: 8px 0; border-left: 3px solid var(--coral); }
+.coach-score-note { padding: 12px 16px; line-height: 1.6; color: var(--text-secondary); }
+.sync-status { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 8px 24px; color: var(--text-secondary); font-size: 13px; }
+.drill-task-image { max-width: 100%; height: auto; }
+.coach-panel summary { cursor: pointer; padding: 8px 0; }
+button:focus-visible, summary:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+@media (max-width:600px) { .coach-panel { padding: 18px; } }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; } }

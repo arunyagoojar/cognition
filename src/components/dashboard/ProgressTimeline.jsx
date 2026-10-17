@@ -4,7 +4,7 @@ import React, { useState } from 'react';
  * Progress timeline (Phase 6) — clean SVG line chart over completed attempts.
  * Overall + per-skill toggle. Honest empty state when data is thin.
  */
-export default function ProgressTimeline({ skillHistory, completedCount }) {
+export default function ProgressTimeline({ skillHistory, completedCount: _completedCount }) {
   const skills = ['overall', 'listening', 'reading', 'writing', 'speaking'];
   const [selected, setSelected] = useState('overall');
 

@@ -10,7 +10,7 @@ import { pruneStaleClientData } from './utils/clientDataRetention.js'
 // recordings before the app reads any stored state.
 pruneStaleClientData()
 
-function Root() {
+export default function Root() {
   // Without a Clerk key, render without auth — the app is fully functional
   if (!PUBLISHABLE_KEY) {
     console.warn('[Cognition] VITE_CLERK_PUBLISHABLE_KEY is not set — authentication disabled.')

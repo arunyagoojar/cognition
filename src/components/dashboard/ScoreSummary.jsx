@@ -28,7 +28,6 @@ export default function ScoreSummary({ scores, targetBand, embedded = false }) {
 
   useEffect(() => {
     if (!hasScores) {
-      setAnimatedScore('--');
       return;
     }
     const controls = animate(0, currentNum, {
@@ -51,7 +50,7 @@ export default function ScoreSummary({ scores, targetBand, embedded = false }) {
           <span className="progression-label">YOUR CURRENT BAND</span>
           <div className="progression-current-value">
             <span className="progression-score-pill">
-              Band {animatedScore}
+              Band {hasScores ? animatedScore : '--'}
             </span>
             <span className="progression-status-note">
               {!hasScores
@@ -84,7 +83,7 @@ export default function ScoreSummary({ scores, targetBand, embedded = false }) {
           >
             {hasScores && progressRatio >= 14 && (
               <span className="progression-tip-indicator">
-                {animatedScore}
+                {hasScores ? animatedScore : '--'}
               </span>
             )}
           </motion.div>

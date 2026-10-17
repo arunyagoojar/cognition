@@ -1,3 +1,4 @@
+import { isBandEligible } from './practiceScope.js';
 // LocalStorage persistence for OmniPrep sessions, skill scores, and Mock tests
 // Routed through canonical performanceStore.js as single source of truth.
 import {
@@ -90,7 +91,7 @@ export function getSkillScores() {
       writing: null,
       speaking: null
     };
-  } catch (e) {
+  } catch {
     return { listening: null, reading: null, writing: null, speaking: null };
   }
 }
@@ -101,7 +102,7 @@ export function syncLegacySkillScoresFromStore() {
     if (summary && summary.latestScores) {
       localStorage.setItem(`${STORAGE_KEY_PREFIX}skill_scores`, JSON.stringify(summary.latestScores));
     }
-  } catch (_) {}
+  } catch {}
 }
 
 export function resetAllPerformanceData() {
@@ -123,7 +124,7 @@ export function clearUserScoresOnSignOut() {
   try {
     sessionStorage.removeItem('cognition_writing_active_session');
     sessionStorage.removeItem('cognition_speaking_active_session');
-  } catch (_) {}
+  } catch {}
   // Per-person data that resetPerformanceData deliberately keeps for the
   // "reset scores" button but must not carry over to the next account.
   try {
@@ -140,7 +141,7 @@ export function clearUserScoresOnSignOut() {
       if (k && k.startsWith(`${STORAGE_KEY_PREFIX}last_video_`)) videoKeys.push(k);
     }
     videoKeys.forEach(k => localStorage.removeItem(k));
-  } catch (_) {}
+  } catch {}
   clearAudioRecordings().catch(() => {});
 }
 
@@ -179,7 +180,7 @@ export function getActiveMockSession() {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}active_mock_session`);
     return raw ? JSON.parse(raw) : null;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -197,7 +198,7 @@ export function getAiCache() {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}ai_cache`);
     return raw ? JSON.parse(raw) : {};
-  } catch (e) {
+  } catch {
     return {};
   }
 }
@@ -305,11 +306,11 @@ export function getCompletedResults() {
   try {
     const store = getPerformanceStore();
     if (store && Array.isArray(store.attempts) && store.attempts.length > 0) {
-      return store.attempts.filter(a => a.status === 'completed');
+      return store.attempts.filter(a => a.status === 'completed' && isBandEligible(a));
     }
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}history`);
     return raw ? JSON.parse(raw) : [];
-  } catch (e) {
+  } catch {
     return [];
   }
 }
@@ -334,7 +335,7 @@ export function getCompletedLessons() {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}completed_lessons`);
     return raw ? JSON.parse(raw) : [];
-  } catch (e) {
+  } catch {
     return [];
   }
 }
@@ -591,7 +592,7 @@ export function getAppSettings() {
       theme: parsed.theme || 'light',
       fontSize: parsed.fontSize || '100%'
     };
-  } catch (e) {
+  } catch {
     return { theme: 'light', fontSize: '100%' };
   }
 }
@@ -638,7 +639,7 @@ export function getAttemptedQuestionSets(skill) {
   try {
     const raw = localStorage.getItem(`${STORAGE_KEY_PREFIX}attempted_${skill}`);
     return raw ? JSON.parse(raw) : [];
-  } catch (e) {
+  } catch {
     return [];
   }
 }
@@ -693,7 +694,7 @@ export function getUserProfile() {
       targetExams: ['IELTS'],
       onboarded: Boolean(parsed.onboarded)
     };
-  } catch (e) {
+  } catch {
     return { name: '', targetExams: ['IELTS'], onboarded: false };
   }
 }

@@ -1,3 +1,4 @@
+import { isBandEligible } from './practiceScope.js';
 // Canonical Authoritative Performance Store for Cognition
 // Single source of truth for attempts, skill bands, AI evaluations, and derived metrics.
 import { calculateOverallBand } from './bandCalculator.js';
@@ -58,6 +59,13 @@ function savePerformanceStore(store) {
   }
 }
 
+// Keep full-test evidence independently of a learner's volume of short drills.
+function retainAttempts(attempts) {
+  const full = attempts.filter(a => !['drill','writing_coach'].includes(a.type)).slice(0,100);
+  const drills = attempts.filter(a => ['drill','writing_coach'].includes(a.type)).slice(0,100);
+  return [...full,...drills].sort((a,b) => Date.parse(b.completedAt || b.updatedAt || 0) - Date.parse(a.completedAt || a.updatedAt || 0));
+}
+
 /**
  * Saves or updates a canonical test attempt.
  */
@@ -80,10 +88,11 @@ export function recordAttempt(attempt) {
 
   // Keep up to 100 historical attempts
   if (store.attempts.length > 100) {
-    store.attempts = store.attempts.slice(0, 100);
+    store.attempts = retainAttempts(store.attempts);
   }
 
   savePerformanceStore(store);
+  if (typeof window !== 'undefined' && ['full_mock', 'mock'].includes(normalized.type)) void import('./api.js').then(({ syncAttempt }) => syncAttempt(normalized)).catch(() => {});
   return normalized;
 }
 
@@ -106,7 +115,7 @@ export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null)
 
     let parsedData = {};
     if (typeof row.data === 'string') {
-      try { parsedData = JSON.parse(row.data); } catch (_) {}
+      try { parsedData = JSON.parse(row.data); } catch {}
     } else if (typeof row.data === 'object' && row.data) {
       parsedData = row.data;
     }
@@ -124,8 +133,6 @@ export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null)
     const testLabel = row.test_label || row.testLabel || (isSkill ? `${skill.toUpperCase()} Practice` : 'Practice Test');
 
     const normalized = {
-      id: row.id,
-      type: row.type || 'test',
       testId,
       testLabel,
       status,
@@ -134,8 +141,8 @@ export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null)
       startedAt,
       completedAt,
       updatedAt: row.updated_at || row.updatedAt || completedAt,
-      userId: currentUserId || row.clerk_user_id || undefined,
       ...parsedData,
+      id: row.id, type: row.type, userId: currentUserId || row.clerk_user_id,
     };
 
     if (isSkill) {
@@ -152,7 +159,7 @@ export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null)
 
     const existingIdx = store.attempts.findIndex(a => a.id === normalized.id);
     if (existingIdx >= 0) {
-      if (store.attempts[existingIdx].band === null && normalized.band !== null) {
+      if (Date.parse(normalized.clientUpdatedAt || normalized.updatedAt || '') > Date.parse(store.attempts[existingIdx].updatedAt || '') || (store.attempts[existingIdx].band === null && normalized.band !== null)) {
         store.attempts[existingIdx] = { ...store.attempts[existingIdx], ...normalized };
         updatedAny = true;
       }
@@ -170,7 +177,7 @@ export function hydrateFromRemoteAttempts(remoteRows = [], currentUserId = null)
     });
 
     if (store.attempts.length > 100) {
-      store.attempts = store.attempts.slice(0, 100);
+      store.attempts = retainAttempts(store.attempts);
     }
 
     savePerformanceStore(store);
@@ -238,7 +245,7 @@ export function estimateSkillBand(history) {
  * strictly from completed attempts in the canonical store.
  */
 export function derivePerformanceSummary(store = getPerformanceStore()) {
-  const completed = (store.attempts || []).filter(a => a.status === 'completed');
+  const completed = (store.attempts || []).filter(a => a.status === 'completed' && isBandEligible(a));
 
   if (completed.length === 0) {
     return {
@@ -298,7 +305,7 @@ export function derivePerformanceSummary(store = getPerformanceStore()) {
   for (const attempt of completed) {
     for (const skill of skills) {
       const data = attempt.skills?.[skill] || attempt[skill];
-      if (data && data.status !== 'not_attempted' && typeof data.band === 'number' && !isNaN(data.band)) {
+      if (data && !isLowCoverage(data) && data.status !== 'not_attempted' && typeof data.band === 'number' && !isNaN(data.band)) {
         // Record latest if not yet found
         if (!latestScores[skill]) {
           latestScores[skill] = {

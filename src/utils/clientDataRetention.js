@@ -6,7 +6,7 @@
 //   - abandoned in-progress test state (omniprep_<testId>)     > 24 h
 //   - an abandoned full-mock session                            > 24 h
 //   - AI evaluation cache entries                               > 7 days
-//   - orphaned speaking recordings in IndexedDB                 > 1 h
+//   - orphaned speaking recordings in IndexedDB                 > 7 days
 // The STT model download (Cache Storage) is intentionally NOT touched.
 
 import { pruneAiCache } from './storage.js';
@@ -14,7 +14,7 @@ import { pruneAudioRecordingsOlderThan } from './audio/audioStore.js';
 
 const HOUR = 60 * 60 * 1000;
 export const IN_PROGRESS_MAX_AGE_MS = 24 * HOUR;
-export const AUDIO_MAX_AGE_MS = 1 * HOUR;
+export const AUDIO_MAX_AGE_MS = 7 * 24 * HOUR;
 
 // omniprep_* keys that are long-lived by design and must never be swept,
 // even if their payload happens to carry an `updatedAt` field.

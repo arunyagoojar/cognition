@@ -44,19 +44,19 @@ function extractJsonFromText(text) {
   const cleaned = text.trim();
   try {
     return JSON.parse(cleaned);
-  } catch (_) {}
+  } catch {}
   const codeBlockMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
   if (codeBlockMatch && codeBlockMatch[1]) {
     try {
       return JSON.parse(codeBlockMatch[1].trim());
-    } catch (_) {}
+    } catch {}
   }
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
   if (start !== -1 && end !== -1 && end > start) {
     try {
       return JSON.parse(cleaned.slice(start, end + 1));
-    } catch (_) {}
+    } catch {}
   }
   return null;
 }

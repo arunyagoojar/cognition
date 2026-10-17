@@ -11,7 +11,7 @@ import {
   PRODUCTION_SPEAKING,
   PRODUCTION_WRITING,
   PRODUCTION_READING,
-} from './productionContent.js';
+} from './registry.js';
 import { resolveMediaUrl } from '../../utils/media.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
@@ -230,7 +230,7 @@ function resolvePromptHtml(html) {
   return html.replace(/src="(?:\.\.\/)*(\/?wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p.startsWith('/') ? p : `/${p}`)}"`);
 }
 
-const READING_FULL_TESTS = PRODUCTION_READING.filter(r => r.fullMockEligible && r.questionCount === 40);
+const readingFullTests = () => PRODUCTION_READING.filter(r => r.fullMockEligible && r.questionCount === 40);
 
 function adaptReadingQuestion(q, includeAnswers) {
   return {
@@ -275,18 +275,18 @@ export function adaptProductionReading(rec, includeAnswers = false) {
 }
 
 export function getAllProductionReadingTests() {
-  return READING_FULL_TESTS;
+  return readingFullTests();
 }
 
 export function getProductionReadingTest(testId, includeAnswers = false) {
-  const rec = READING_FULL_TESTS.find(r =>
+  const rec = readingFullTests().find(r =>
     String(r.testId) === String(testId) || r.id === testId || r.slug === testId);
   return rec ? adaptProductionReading(rec, includeAnswers) : null;
 }
 
 /** Full Reading tests only: complete 1–40 numbering, every question keyed. */
 export function getRandomProductionReadingTest(includeAnswers = false) {
-  if (!READING_FULL_TESTS.length) return null;
-  const rec = READING_FULL_TESTS[Math.floor(Math.random() * READING_FULL_TESTS.length)];
+  if (!readingFullTests().length) return null;
+  const rec = readingFullTests()[Math.floor(Math.random() * readingFullTests().length)];
   return adaptProductionReading(rec, includeAnswers);
 }

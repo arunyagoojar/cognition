@@ -38,22 +38,16 @@ Cognition is a Vite + React IELTS Academic preparation app deployed entirely on 
 ## Local development
 
 ```bash
-npm install
-cp .env.example .env        # fill in local values (never committed)
-npm run dev                 # Vite dev server on :5173
+npm ci
+npm run dev:local            # local D1 migrations + Worker :8787 + Vite :5173
 ```
 
-`.env` values used by the frontend:
+Open http://127.0.0.1:5173. `/api` is proxied to the local Worker.
+See [README.md](README.md) for optional environment overrides and local secrets.
+Clerk authentication, R2 media, model downloads, and AI providers still need internet.
 
-| Variable | Purpose |
-|---|---|
-| `VITE_CLERK_PUBLISHABLE_KEY` | Clerk publishable key (public by design) |
-| `VITE_API_BASE_URL` | Worker API URL (leave empty for same-origin `/api`) |
-| `VITE_MEDIA_BASE_URL` | R2 public base URL (defaults to the r2.dev domain in code) |
-
-The full media library under `public/` is a **local upload archive** (gitignored).
-Production builds use `public-static/` (icons only) — see `vite.config.js`
-(`PUBLIC_DIR_OVERRIDE`).
+The shipped assets come from `public-static/` by default in both dev and build.
+`PUBLIC_DIR_OVERRIDE` remains available for explicit alternate asset directories.
 
 ## Worker secrets
 
@@ -75,6 +69,7 @@ npx wrangler d1 migrations apply cognition-db --remote
 ```
 
 - `0001_initial_schema.sql` — users, attempts, completed_lessons
+- `0003_onboarding_state.sql` — per-account onboarding completion
 - `0002_user_ai_credentials.sql` — encrypted AI credentials
   (`user_ai_credentials`: ciphertext, IV, version, masked suffix; UNIQUE per user+provider)
 
@@ -102,7 +97,9 @@ npx wrangler deploy
 The production URL: https://cognition.eu.cc
 (SPA fallback enabled; `/api/*` routes run the Worker first.)
 
-## AI credential security model
+## Legacy cloud credential security model
+
+Current Settings saves new Gemini/Groq keys on the current device and evaluates directly with the provider. The Worker path below remains for existing cloud credentials.
 
 1. Browser sends the raw key once: `PUT /api/credentials/gemini` (authenticated).
 2. Worker validates the key against Gemini's models endpoint, then encrypts it

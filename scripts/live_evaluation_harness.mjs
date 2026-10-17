@@ -35,11 +35,11 @@ function extractJson(text) {
   if (!text) return null;
   const match = text.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
   if (match && match[1]) {
-    try { return JSON.parse(match[1].trim()); } catch (_) {}
+    try { return JSON.parse(match[1].trim()); } catch {}
   }
   const s = text.indexOf('{'), e = text.lastIndexOf('}');
   if (s !== -1 && e !== -1 && e > s) {
-    try { return JSON.parse(text.slice(s, e + 1)); } catch (_) {}
+    try { return JSON.parse(text.slice(s, e + 1)); } catch {}
   }
   return null;
 }

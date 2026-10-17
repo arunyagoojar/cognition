@@ -1,7 +1,11 @@
-import React, { useState, useRef, useCallback } from 'react';
+import { CONTENT_CATALOG } from '../../data/production/registry.js';
+import { chooseFreshTest } from '../../utils/practiceSelection.js';
+import WritingCoach from './WritingCoach.jsx';
+import { readDraft, writeDraft } from '../../utils/drafts.js';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Icon } from '../common/Icon';
 import ScrollToTop from '../common/ScrollToTop';
-import { getRandomProductionWritingTask } from '../../data/production/adapters';
+import { getProductionWritingTest } from '../../data/production/adapters';
 import { lintTextWithHarper, applyHarperFix } from '../../utils/harper/harperService';
 import { analyzeRepetition, generateHabitInsights } from '../../utils/harper/repetitionService';
 import { calculateHarperPracticeScore } from '../../utils/harper/scoringService';
@@ -10,10 +14,11 @@ const countWords = (text) => (text ? text.trim().split(/\s+/).filter(Boolean).le
 
 export default function HarperWritingPractice({ onBack }) {
   // State: 'choice' (Task 1 vs 2 picker) | 'practice' (writing workspace) | 'summary' (temporary score & habit report)
-  const [stage, setStage] = useState('choice');
-  const [taskKind, setTaskKind] = useState(2); // 1 or 2
-  const [currentTask, setCurrentTask] = useState(null);
-  const [essayText, setEssayText] = useState('');
+  const [savedDraft] = useState(() => readDraft('harper'));
+  const [stage, setStage] = useState(() => savedDraft?.essayText ? 'practice' : 'choice');
+  const [taskKind, setTaskKind] = useState(() => savedDraft?.taskKind || 2); // 1 or 2
+  const [currentTask, setCurrentTask] = useState(() => savedDraft?.currentTask || null);
+  const [essayText, setEssayText] = useState(() => savedDraft?.essayText || '');
   const [isPromptExpanded, setIsPromptExpanded] = useState(true);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
 
@@ -40,19 +45,25 @@ export default function HarperWritingPractice({ onBack }) {
   const [summaryResult, setSummaryResult] = useState(null);
 
   const debounceTimerRef = useRef(null);
+  const analysisRevision = useRef(0);
+  const mounted = useRef(true);
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false; clearTimeout(debounceTimerRef.current); }; }, []);
+  useEffect(() => { if (currentTask) writeDraft('harper', { taskKind, currentTask, essayText }); }, [taskKind, currentTask, essayText]);
   const targetWords = taskKind === 1 ? 150 : 250;
   const wordCount = countWords(essayText);
   const isTargetMet = wordCount >= targetWords;
 
   // Load a task based on taskKind
   const loadRandomTask = useCallback((kind) => {
-    const taskObj = getRandomProductionWritingTask(kind);
+    const id=chooseFreshTest(`harper-task-${kind}`, CONTENT_CATALOG.writing);
+    const taskObj = getProductionWritingTest(id);
     setCurrentTask(taskObj);
     setSelectedWordSynonyms(null);
   }, []);
 
   // Handle task selection
   const handleSelectTask = (kind) => {
+    analysisRevision.current++;
     setTaskKind(kind);
     loadRandomTask(kind);
     setEssayText('');
@@ -61,6 +72,7 @@ export default function HarperWritingPractice({ onBack }) {
 
   // Run Harper & Repetition analysis (debounced)
   const runAnalysis = useCallback(async (text) => {
+    const revision = ++analysisRevision.current;
     if (!text || !text.trim()) {
       setHarperResult({
         issues: [],
@@ -86,6 +98,7 @@ export default function HarperWritingPractice({ onBack }) {
         Promise.resolve(analyzeRepetition(text)),
       ]);
 
+      if (!mounted.current || revision !== analysisRevision.current) return;
       setHarperResult(hResult);
       setRepetitionData(rData);
 
@@ -100,13 +113,14 @@ export default function HarperWritingPractice({ onBack }) {
     } catch (err) {
       console.error('Harper live analysis error:', err);
     } finally {
-      setIsAnalyzing(false);
+      if (mounted.current && revision === analysisRevision.current) setIsAnalyzing(false);
     }
   }, [taskKind]);
 
   // Debounce text changes
   const handleTextChange = (e) => {
     const val = e.target.value;
+    analysisRevision.current++;
     setEssayText(val);
 
     if (debounceTimerRef.current) {
@@ -148,7 +162,7 @@ export default function HarperWritingPractice({ onBack }) {
   // Handle exit confirmation
   const handleExit = () => {
     if (stage === 'practice' && essayText.trim().length > 30) {
-      if (window.confirm('Exit Harper writing practice? Your current practice draft will be cleared.')) {
+      if (window.confirm('Exit writing practice? Your draft is saved on this device.')) {
         onBack();
       }
     } else {
@@ -295,9 +309,9 @@ export default function HarperWritingPractice({ onBack }) {
               </div>
 
               <div className="harper-band-score-box">
-                <span className="harper-band-label">ESTIMATED PRACTICE BAND</span>
-                <div className="harper-band-number">{summaryResult.estimatedBand.toFixed(1)}</div>
-                <span className="harper-band-scale">Grammar &amp; Lexical Focus</span>
+                <span className="harper-band-label">WORDS IN THIS DRAFT</span>
+                <div className="harper-band-number">{wordCount}</div>
+                <span className="harper-band-scale">Local writing diagnostics</span>
               </div>
             </div>
 
@@ -305,7 +319,7 @@ export default function HarperWritingPractice({ onBack }) {
             <div className="harper-disclaimer-pill">
               <Icon name="info" size={16} />
               <span>
-                <strong>Grammar &amp; Vocabulary Diagnostic:</strong> This band estimate evaluates your draft's grammar precision (40%), vocabulary range &amp; repetition (35%), and length (25%). It does not assess whether your response sticks to the prompt's central idea. For idea coherence and task response feedback, request a full AI review below.
+                <strong>Grammar &amp; Vocabulary Diagnostic:</strong> These local checks highlight writing mechanics. Use Review with AI for task response, paragraph development, cohesion, vocabulary, and grammar. Coaching does not change your overall band.
               </span>
             </div>
 
@@ -332,7 +346,7 @@ export default function HarperWritingPractice({ onBack }) {
                 <strong className={`harper-metric-val ${summaryResult.totalErrors === 0 ? 'is-good' : 'is-warn'}`}>
                   {summaryResult.totalErrors}
                 </strong>
-                <span className="harper-metric-sub">{summaryResult.totalErrors === 0 ? 'Flawless mechanics' : 'Issues flagged'}</span>
+                <span className="harper-metric-sub">{summaryResult.totalErrors === 0 ? 'No issues flagged' : 'Issues flagged'}</span>
               </div>
 
               <div className="harper-metric-item">
@@ -374,12 +388,13 @@ export default function HarperWritingPractice({ onBack }) {
             </div>
           </div>
 
+          <WritingCoach text={essayText} task={currentTask?.[taskKind === 1 ? "task1" : "task2"]} taskKind={taskKind} testId={currentTask?.testId} />
           {/* Repetitive Words Breakdown */}
           {repetitionData.repetitiveWords.length > 0 && (
             <div className="harper-summary-card" style={{ marginTop: 24 }}>
               <h3>Repetitive Words &amp; Suggested Academic Synonyms</h3>
               <p className="harper-summary-card-sub">
-                Memorize these substitutions to upgrade your Lexical Resource score to Band 7.0+:
+                Consider these alternatives only when they preserve your intended meaning:
               </p>
               <div className="harper-synonym-table">
                 {repetitionData.repetitiveWords.map((item) => (
@@ -411,13 +426,13 @@ export default function HarperWritingPractice({ onBack }) {
           <div className="harper-diagnostic-notice-card">
             <div className="harper-diagnostic-notice-head">
               <Icon name="info" size={18} />
-              <h4>Understanding Your Practice Diagnostic Score</h4>
+              <h4>Understanding your writing feedback</h4>
             </div>
             <p className="harper-diagnostic-notice-p">
-              This Harper practice session specifically coaches your on-device <strong>Grammar Accuracy</strong>, <strong>Repetitive Word Habits</strong>, and <strong>Word Count</strong>. It runs 100% offline and does not evaluate subjective idea logic or prompt adherence.
+              This Harper practice session specifically coaches your on-device <strong>Grammar Accuracy</strong>, <strong>Repetitive Word Habits</strong>, and <strong>Word Count</strong>. These immediate checks run locally. The optional AI review also considers idea development, prompt relevance, and cohesion.
             </p>
             <p className="harper-diagnostic-notice-p" style={{ marginBottom: 0 }}>
-              Qualitative IELTS criteria like <strong>Task Achievement / Response</strong> (answering all parts of the question, sticking to the topic) and <strong>Coherence &amp; Cohesion</strong> (paragraph flow and argumentation) are evaluated during official <strong>Practice Tests</strong> and full <strong>Mock Exams</strong> on the dashboard.
+              Qualitative IELTS criteria like <strong>Task Achievement / Response</strong> (answering all parts of the question, sticking to the topic) and <strong>Coherence &amp; Cohesion</strong> (paragraph flow and argumentation) are included in <strong>Review with AI</strong>. AI coaching remains separate from your full-test band.
             </p>
           </div>
 
@@ -490,7 +505,7 @@ export default function HarperWritingPractice({ onBack }) {
             type="button"
             className="harper-finish-btn"
             onClick={handleFinish}
-            title="Finish practice and view your temporary score & habit summary"
+            title="Finish practice and review your writing habits"
           >
             <span>Finish &amp; Summary</span>
             <span className="btn-arrow-icon">→</span>
@@ -628,6 +643,7 @@ export default function HarperWritingPractice({ onBack }) {
             spellCheck={false}
             autoFocus
           />
+          <WritingCoach key={`${currentTask?.testId}:${taskKind}`} text={essayText} task={activeTask} taskKind={taskKind} testId={currentTask?.testId} />
         </div>
 
         {/* RIGHT: Live Harper Grammar & Repetition Sidebar */}

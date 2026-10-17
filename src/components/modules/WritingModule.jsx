@@ -1,3 +1,4 @@
+import { readDraft, writeDraft, removeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
 import { Icon } from '../common/Icon';
@@ -11,7 +12,8 @@ import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
 import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
 import ErrorBoundary from '../common/ErrorBoundary.jsx';
-import TextSizeControl, { useExamTextScale } from '../common/TextSizeControl';
+import TextSizeControl from '../common/TextSizeControl';
+import { useExamTextScale } from '../../hooks/useExamTextScale.js';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 const wordCount = (text) => text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
@@ -19,6 +21,8 @@ const WRITING_SESSION_PREFIX = 'cognition_writing_active_session';
 
 function readSavedWritingSession() {
   try {
+    const durable = readDraft(WRITING_SESSION_PREFIX);
+    if (durable) return durable;
     const raw = sessionStorage.getItem(WRITING_SESSION_PREFIX);
     if (!raw) return null;
     return JSON.parse(raw);
@@ -51,7 +55,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   const [t2, setT2] = useState(() => initialResult?.t2 ?? initialSession?.t2 ?? '');
   const [timeLeft, setTimeLeft] = useState(() => (typeof initialSession?.timeLeft === 'number' ? initialSession.timeLeft : 60 * 60));
   const [result, setResult] = useState(() => initialResult || initialSession?.result || null);
-  const [processingStep, setProcessingStep] = useState(0);
+
   const [isRechecking, setIsRechecking] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [textScale, setTextScale] = useExamTextScale();
@@ -98,6 +102,10 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
       evaluationStatus: result.evaluationStatus || result.status || (completed ? 'completed' : 'failed'),
       criteria: result.criteria || null,
       taskCriteria: result.taskCriteria || null,
+      priorityWeaknesses: result.priorityWeaknesses || [],
+      modelUsed: result.modelUsed,
+      providerUsed: result.providerUsed,
+      rubricVersion: result.rubricVersion,
       overallSummary: result.overallSummary || '',
       task1Feedback: result.task1Feedback || '',
       task2Feedback: result.task2Feedback || '',
@@ -113,6 +121,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
   const clearSession = () => {
     try {
+      removeDraft(WRITING_SESSION_PREFIX);
       sessionStorage.removeItem(WRITING_SESSION_PREFIX);
     } catch {}
   };
@@ -146,7 +155,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
   useEffect(() => {
     if (phase === 'intro') return;
     try {
-      sessionStorage.setItem(WRITING_SESSION_PREFIX, JSON.stringify({
+      writeDraft(WRITING_SESSION_PREFIX, {
         testId: test?.testId || testId,
         isMockMode,
         phase,
@@ -155,9 +164,9 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         t2,
         timeLeft,
         result
-      }));
+      });
     } catch {}
-  }, [phase, task, t1, t2, timeLeft, result]);
+  }, [phase, task, t1, t2, timeLeft, result, test, testId, isMockMode]);
 
   useEffect(() => {
     return () => clearInterval(timerRef.current);
@@ -198,12 +207,11 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
 
     // Immediately show processing screen to prevent UI freeze and multiple clicks
     setPhase('processing');
-    setProcessingStep(0);
+
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    const stepTimer1 = setTimeout(() => setProcessingStep(1), 600);
-    const stepTimer2 = setTimeout(() => setProcessingStep(2), 1200);
-    const stepTimer3 = setTimeout(() => setProcessingStep(3), 1800);
+
+
 
     try {
       const evalResult = await evaluateWritingWithAI({
@@ -231,7 +239,6 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         ...evalResult
       };
 
-      await new Promise(r => setTimeout(r, 2200));
 
       if (isMockMode) {
         if (onComplete) onComplete(computedResult);
@@ -242,9 +249,9 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
       setPhase('results');
     } catch (err) {
       console.error('Writing evaluation error:', err);
-      clearTimeout(stepTimer1);
-      clearTimeout(stepTimer2);
-      clearTimeout(stepTimer3);
+
+
+
       setIsSubmitting(false);
       setPhase('exam');
     }
@@ -256,10 +263,10 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
     if (isRechecking) return;
     setIsRechecking(true);
     setPhase('processing');
-    setProcessingStep(0);
-    const s1 = setTimeout(() => setProcessingStep(1), 500);
-    const s2 = setTimeout(() => setProcessingStep(2), 1000);
-    const s3 = setTimeout(() => setProcessingStep(3), 1500);
+
+
+
+
 
     const essayT1 = result?.t1 ?? t1 ?? '';
     const essayT2 = result?.t2 ?? t2 ?? '';
@@ -299,9 +306,9 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         message: err?.message || 'AI evaluation failed. Please check your connection and retry.'
       }));
     } finally {
-      clearTimeout(s1);
-      clearTimeout(s2);
-      clearTimeout(s3);
+
+
+
       setIsRechecking(false);
       setPhase('results');
     }
@@ -362,40 +369,11 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
             The exam is being processed...
           </h2>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', marginBottom: 32 }}>
-            giving the final answers to AI to get a final report.
+            Your responses are saved while the assessment finishes.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, textAlign: 'left', maxWidth: 360, margin: '0 auto' }}>
-            {[
-              { label: 'Task Response & Overview Presence', active: processingStep >= 0 },
-              { label: 'Coherence & Cohesion Paragraphing', active: processingStep >= 1 },
-              { label: 'Lexical Variety & Academic Collocations', active: processingStep >= 2 },
-              { label: 'Grammatical Complexity & Punctuation', active: processingStep >= 3 },
-            ].map((step, idx) => (
-              <div key={idx} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                fontSize: 14,
-                fontWeight: 600,
-                color: step.active ? 'var(--text-primary)' : 'var(--text-muted)'
-              }}>
-                <div style={{
-                  width: 20,
-                  height: 20,
-                  borderRadius: '50%',
-                  background: step.active ? 'rgba(16,185,129,0.15)' : 'var(--surface-sunken)',
-                  color: step.active ? 'var(--success-icon)' : 'transparent',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 11
-                }}>
-                  <Icon name="check" size={12} />
-                </div>
-                {step.label}
-              </div>
-            ))}
+            <p role="status">Waiting for the AI rubric assessment. Your draft is saved.</p>
           </div>
           <AiWaitNote what="your essays" />
         </div>

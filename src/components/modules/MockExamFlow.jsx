@@ -58,7 +58,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
     if (hasActiveSession) {
       // Reassemble all four sections from production by the saved exam id
       const testId = existingSession.examMeta.testId;
-      return getRandomizedFullExam(testId);
+      return existingSession.examData || getRandomizedFullExam(testId);
     }
     return getRandomizedFullExam();
   });
@@ -85,6 +85,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
 
   const handleStartExam = () => {
     saveActiveMockSession({
+      examData,
       examId: examData.testId,
       examMeta: {
         testId: examData.testId,
@@ -136,7 +137,8 @@ export default function MockExamFlow({ onComplete, onBack }) {
       // Transition to next module in official sequence: Listening -> Reading -> Writing -> Speaking
       const nextSkill = STEPS[step + 1];
       saveActiveMockSession({
-        examId: examData.testId,
+        examData,
+      examId: examData.testId,
         examMeta: {
           testId: examData.testId,
           title: examData.title,

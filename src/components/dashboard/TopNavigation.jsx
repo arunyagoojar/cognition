@@ -4,7 +4,7 @@ import Icon from '../common/Icon';
 import AccountModal from './AccountModal';
 import { clearUserScoresOnSignOut } from '../../utils/storage';
 
-export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view }) {
+export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view: _view }) {
   const { isSignedIn, isLoaded, user } = useUser();
   const { openSignIn, signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);

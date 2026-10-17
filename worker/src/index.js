@@ -1,3 +1,4 @@
+import { mergeAttemptData } from '../../src/utils/attemptPayload.js';
 /**
  * Cognition Cloudflare Worker API + frontend host.
  * Verifies Clerk session tokens and provides user-scoped D1 access,
@@ -335,6 +336,9 @@ export default {
         // ── PUT /api/me/preferences — update preferences ──
         if (path === '/api/me/preferences' && request.method === 'PUT') {
           const body = await readJson(request, BODY_LIMIT_SMALL);
+          let oldData = {};
+          try { oldData = JSON.parse(existing.data || '{}'); } catch { /* legacy */ }
+          if (oldData.clientUpdatedAt && body.data?.clientUpdatedAt && oldData.clientUpdatedAt > body.data.clientUpdatedAt) return json({ id: attemptMatch[1], updated: false, newer: true }, 200, corsHeaders);
           const updates = [];
           const params = [];
           if (body.target_band !== undefined) { updates.push('target_band = ?'); params.push(String(body.target_band).slice(0, 8)); }
@@ -355,7 +359,7 @@ export default {
         // ── GET /api/attempts — list user's attempts ──
         if (path === '/api/attempts' && request.method === 'GET') {
           const { results } = await env.DB.prepare(
-            'SELECT * FROM attempts WHERE clerk_user_id = ? ORDER BY updated_at DESC LIMIT 100'
+            "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY CASE WHEN type IN ('drill', 'writing_coach') THEN 1 ELSE 0 END ORDER BY updated_at DESC) AS retention_rank FROM attempts WHERE clerk_user_id = ?) WHERE retention_rank <= 100 ORDER BY updated_at DESC"
           ).bind(userId).all();
           return json(results || [], 200, corsHeaders);
         }
@@ -383,7 +387,7 @@ export default {
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
           ).bind(
             body.id, userId, body.type, body.test_id || '', body.test_label || '',
-            body.status || 'completed', body.band || null,
+            body.status || 'completed', body.band ?? null,
             body.data ? JSON.stringify(body.data) : null,
             body.started_at || new Date().toISOString(),
             body.completed_at || new Date().toISOString()
@@ -395,21 +399,25 @@ export default {
         if (attemptMatch && request.method === 'PUT') {
           const body = await readJson(request, BODY_LIMIT_ATTEMPT);
           const existing = await env.DB.prepare(
-            'SELECT id FROM attempts WHERE id = ? AND clerk_user_id = ?'
+            'SELECT id, data FROM attempts WHERE id = ? AND clerk_user_id = ?'
           ).bind(attemptMatch[1], userId).first();
           if (!existing) return error('Attempt not found', 404, corsHeaders);
+          let oldData = {};
+          try { oldData = JSON.parse(existing.data || '{}'); } catch { /* legacy */ }
+          if (oldData.clientUpdatedAt && body.data?.clientUpdatedAt && oldData.clientUpdatedAt > body.data.clientUpdatedAt) return json({ id: attemptMatch[1], updated: false, newer: true }, 200, corsHeaders);
           const updates = [];
           const params = [];
           if (body.status !== undefined) { updates.push('status = ?'); params.push(body.status); }
           if (body.band !== undefined) { updates.push('band = ?'); params.push(body.band); }
-          if (body.data !== undefined) { updates.push('data = ?'); params.push(JSON.stringify(body.data)); }
+          if (body.data !== undefined) { updates.push('data = ?'); params.push(JSON.stringify(mergeAttemptData(oldData, body.data))); }
           if (body.completed_at !== undefined) { updates.push('completed_at = ?'); params.push(body.completed_at); }
           if (updates.length) {
             updates.push('updated_at = datetime(\'now\')');
-            params.push(attemptMatch[1], userId);
-            await env.DB.prepare(
-              `UPDATE attempts SET ${updates.join(', ')} WHERE id = ? AND clerk_user_id = ?`
+            params.push(attemptMatch[1], userId, existing.data ?? null);
+            const updated = await env.DB.prepare(
+              `UPDATE attempts SET ${updates.join(', ')} WHERE id = ? AND clerk_user_id = ? AND data IS ?`
             ).bind(...params).run();
+            if (Number(updated.meta?.changes ?? updated.changes ?? 1) === 0) return error('Attempt changed during sync; retry the update.', 409, corsHeaders);
           }
           return json({ id: attemptMatch[1], updated: true }, 200, corsHeaders);
         }

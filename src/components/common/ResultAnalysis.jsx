@@ -24,6 +24,8 @@ export default function ResultAnalysis({ skill, resultRecord, onOpenLesson, onOp
     ? resolveRecommendations({ key: focusKeyFromCriteria(analysis), skill })
     : (focusKeys[0] ? resolveRecommendations({ key: `${skill}.${focusKeys[0].type}`, skill }) : null);
 
+  const record = resultRecord?.[skill] || resultRecord?.skills?.[skill] || resultRecord || {};
+  const actions = (record.priorityWeaknesses?.length ? record.priorityWeaknesses : (analysis.criteria || []).map(c => c.improvementFocus).filter(Boolean)).slice(0,3);
   const skillLabel = skill.charAt(0).toUpperCase() + skill.slice(1);
   // Only offer links whose destination is wired up — a button that does
   // nothing is worse than no button.
@@ -51,6 +53,7 @@ export default function ResultAnalysis({ skill, resultRecord, onOpenLesson, onOp
 
   return (
     <div className="result-analysis">
+      {actions.length > 0 && <section className="result-card"><h3>Your next actions</h3><ol>{actions.map((action,i) => <li key={i}>{String(action)}</li>)}</ol></section>}
       {/* Reading / Listening — question-type breakdown */}
       {hasTypeData && (
         <section className="result-card">
