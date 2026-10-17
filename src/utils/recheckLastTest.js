@@ -20,6 +20,12 @@ export function getRecheckableLastTest() {
   if (!latest || !RECHECKABLE.has(latest.type)) return null;
   const record = latest[latest.type];
   if (!record) return null;
+  // Coverage is independent of provider status: a failed request must never
+  // turn missing answers into an actionable grading failure.
+  if (record.coverage?.complete === false || record.coverage?.isComplete === false || record.bandEligible === false ||
+      ['partial', 'not_attempted', 'not_assessed', 'not_started'].includes(record.evaluationStatus) ||
+      ['PARTIAL', 'NOT_ASSESSED'].includes(record.evaluationState)) return null;
+  if (latest.type === 'writing' && !(String(record.t1 || '').trim() && String(record.t2 || '').trim())) return null;
   if (latest.type === 'writing' && !(String(record.t1 || '').trim() || String(record.t2 || '').trim())) return null;
   if (latest.type === 'speaking' && !Object.values(record.transcripts || {}).some(t => String(t || '').trim())) return null;
   if (latest.type === 'speaking' && record.evaluationState !== 'COMPLETED') {

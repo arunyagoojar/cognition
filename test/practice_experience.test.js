@@ -55,6 +55,21 @@ await check('incomplete speaking responses do not offer an AI failure retry',()=
  recordAttempt({id:'complete-speaking',type:'speaking',status:'partial',completedAt:new Date(Date.now()+1000).toISOString(),speaking:{evaluationState:'FAILED',coverage:{isComplete:true},transcripts:{'0_0':'This is my answer to part one.','1_0':'This is my answer to part two.','2_0':'This is my answer to part three.'}}});
  assert.equal(getRecheckableLastTest()?.attempt.id,'complete-speaking');storage.clear();
 });
+await check('incomplete writing and other test types never offer a grading failure card',()=>{
+ const cases=[
+  ['writing',{evaluationStatus:'failed',t1:'A submitted report.',t2:''},false],
+  ['writing',{evaluationStatus:'failed',t1:'',t2:'A submitted essay.'},false],
+  ['writing',{evaluationStatus:'failed',t1:'',t2:''},false],
+  ['writing',{evaluationStatus:'partial',t1:'A report.',t2:'An essay.'},false],
+  ['writing',{evaluationStatus:'failed',coverage:{complete:false},t1:'A report.',t2:'An essay.'},false],
+  ['writing',{evaluationStatus:'failed',t1:'A report.',t2:'An essay.'},true],
+  ['reading',{evaluationStatus:'failed',band:null},false],
+  ['listening',{evaluationStatus:'failed',band:null},false],
+  ['full_mock',{evaluationStatus:'failed',band:null},false],
+ ];
+ for(const [type,record,eligible] of cases){storage.clear();recordAttempt({id:'case',type,status:'partial',completedAt:new Date().toISOString(),[type]:record});assert.equal(Boolean(getRecheckableLastTest()),eligible,JSON.stringify({type,record}));}
+ storage.clear();
+});
 await check('Harper flags repeated grammar findings, agreement errors, and Unicode spans',async()=>{
  const text='😀 This is a a test. This is a a test. This is a a test. He are happy.';
  const result=await lintTextWithHarper(text);assert(result.issues.filter(i=>i.snippet==='a a').length>=2);const issue=result.issues.find(i=>/agree/.test(i.message));assert(issue);assert.notEqual(applyHarperFix(text,issue,'is'),text);assert(result.issues.every(i=>text.slice(i.start,i.end)===i.snippet));
