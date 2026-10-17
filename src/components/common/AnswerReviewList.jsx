@@ -16,6 +16,11 @@ const display = (v) => {
   return CHOICE_LABEL[s.toUpperCase()] || s;
 };
 const norm = (v) => display(v).toLowerCase().replace(/\s+/g, ' ');
+const displayAnswer = (value, labels) => {
+  const answer = display(value);
+  const label = labels?.[answer];
+  return label ? `${answer} · ${label}` : answer;
+};
 
 const STATE_META = {
   correct: { label: 'Correct', icon: <Icon name="check" size={15} /> },
@@ -31,7 +36,7 @@ const FILTERS = [
 ];
 
 function stateOf(r) {
-  const correct = r.finalResult === 'CORRECT';
+  const correct = r.finalResult === 'CORRECT' || (!r.finalResult && r.deterministicCorrect === true);
   const unresolved = Boolean(r.unresolved || r.finalResult === 'UNCERTAIN' || r.aiDecision === 'UNCERTAIN');
   const skipped = !String(r.candidateAnswer ?? '').trim();
   return unresolved ? 'unresolved' : correct ? 'correct' : skipped ? 'unanswered' : 'incorrect';
@@ -85,28 +90,30 @@ export default function AnswerReviewList({ itemResults, showUnanswered = false }
         <ol className="answer-review-list">
           {visible.map(({ qId, r, state }) => {
             const meta = STATE_META[state];
-            const qNum = qId.replace(/^q/i, '');
-            const official = display(r.officialAnswer);
-            const matched = display(r.matchedAnswer);
+            const qNum = r.questionNumber ?? qId.replace(/^q/i, '');
+            const official = displayAnswer(r.officialAnswer, r.answerLabels);
+            const matched = displayAnswer(r.matchedAnswer, r.answerLabels);
             const isVariant = state === 'correct' && (r.acceptedVariant || r.evaluationMethod === 'AI_VERIFIED');
             const showMatched = state === 'correct' && matched && (isVariant || norm(r.matchedAnswer) !== norm(r.officialAnswer));
             return (
               <li key={qId} className={`answer-review-item is-${state}`}>
                 <div className="ar-head">
                   <span className="ar-qnum">Q{qNum}</span>
+                  {r.part && <span className="ar-part">{r.partLabel || 'Part'} {r.part}</span>}
                   <span className="ar-status">
                     <span className="ar-status-icon">{meta.icon}</span>
                     {meta.label}
                   </span>
                   {isVariant && <span className="accepted-variant-tag">Accepted variant</span>}
                 </div>
+                {r.questionText && <p className="ar-question">{r.questionText}</p>}
                 <dl className="ar-answers">
                   <div className="ar-row">
                     <dt>Your answer</dt>
                     <dd>
                       {state === 'unanswered'
                         ? <span className="ar-empty">No answer given</span>
-                        : <span className={`ar-chip is-${state}`}>{display(r.candidateAnswer)}</span>}
+                        : <span className={`ar-chip is-${state}`}>{displayAnswer(r.candidateAnswer, r.answerLabels)}</span>}
                     </dd>
                   </div>
                   <div className="ar-row">

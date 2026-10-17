@@ -11,7 +11,8 @@ import ReadingPassage from '../reading/ReadingPassage';
 import ReadingQuestionGroup from '../reading/ReadingQuestionGroup';
 import TextSizeControl from '../common/TextSizeControl';
 import { useExamTextScale } from '../../hooks/useExamTextScale.js';
-import AnswerReviewList from '../common/AnswerReviewList';
+import AnswerReviewPage from '../common/AnswerReviewPage';
+import { buildAnswerReviewItems } from '../../utils/answerReview.js';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
@@ -27,6 +28,16 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const attemptIdRef = useRef(createAttemptId('reading'));
   const [timeLeft, setTimeLeft] = useState(() => savedSession?.timeLeft ?? 60 * 60);
   const [result, setResult] = useState(() => initialResult || savedSession?.result || null);
+  const [answerReview, setAnswerReview] = useState(null);
+  const reviewButtonRef = useRef(null);
+  const openAnswerReview = () => {
+    const gradedTest = getReadingTest(result?.testId || test?.testId || testId, true) || test;
+    setAnswerReview(buildAnswerReviewItems(result, gradedTest, 'reading'));
+  };
+  const closeAnswerReview = () => {
+    setAnswerReview(null);
+    requestAnimationFrame(() => reviewButtonRef.current?.focus({ preventScroll: true }));
+  };
   useEffect(() => { if (phase === 'exam' || phase === 'results') writeDraft(`reading:${test?.testId || testId}:${isMockMode}`,{phase,answers,timeLeft,result}); }, [phase,answers,timeLeft,result,test,testId,isMockMode]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -303,6 +314,8 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
+    if (answerReview) return <AnswerReviewPage skill="reading" itemResults={answerReview} onBack={closeAnswerReview} />;
+    const canReview = Object.keys(result?.itemResults || {}).length > 0 || Boolean(result?.answers && typeof result.answers === 'object');
     return (
       <ResultPage skill="reading">
         <ResultItem as="button" type="button" className="result-back-btn" onClick={onBack}>
@@ -345,6 +358,16 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           </div>
         </ResultItem>
 
+        <ResultItem className="result-review-action">
+          {canReview ? (
+            <button ref={reviewButtonRef} type="button" className="result-btn is-secondary" onClick={openAnswerReview}>
+              <Icon name="eye" size={18} /> Review answers
+            </button>
+          ) : (
+            <p className="result-section-sub">Answer details were not saved for this older test.</p>
+          )}
+        </ResultItem>
+
         {result?.unresolvedCount > 0 && (
           <ResultItem className="result-callout" role="note">
             <span className="result-callout-icon"><Icon name="alertCircle" size={22} /></span>
@@ -355,17 +378,6 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
                 Per official IELTS marking principles, credit is not awarded automatically without verified equivalence. Your confirmed score is {result.raw} (Band {result.bandMin.toFixed(1)}), with a potential score of up to {result.rawMax} (Band {result.bandMax.toFixed(1)}) if resolved.
               </div>
             </div>
-          </ResultItem>
-        )}
-
-        {/* Answer review — every question, from the evaluated item results */}
-        {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
-          <ResultItem as="section">
-            <div className="result-section-head">
-              <h2 className="result-section-title"><Icon name="pen" size={20} /> Answer review</h2>
-              <p className="result-section-sub">Every question with your answer and the official key. Use “To review” to focus on the ones you missed.</p>
-            </div>
-            <AnswerReviewList itemResults={result.itemResults} showUnanswered />
           </ResultItem>
         )}
 

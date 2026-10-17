@@ -9001,3 +9001,10 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .recommendation-card .recommendation-tags > span { background: #ffffff80; color: #151313; }
 .recommendation-card .insight-links button { color: #151313; }
 .recommendation-card .priority-label { background: #ffffffa0; color: #151313; }
+
+/* A direct summary → answer review → summary route for objective tests. */
+.result-review-action { display: flex; justify-content: flex-start; }
+.answer-review-page .result-title { font-size: clamp(26px, 4vw, 38px); }
+.answer-review-page .result-title:focus { outline: none; }
+.ar-part { color: var(--text-secondary); font-size: 12px; font-weight: 600; }
+.ar-question { margin: 0; line-height: 1.55; overflow-wrap: anywhere; }

@@ -10,7 +10,7 @@ import { editorSegments, repeatColor } from '../src/utils/harper/editorHighlight
 import { lintTextWithHarper, applyHarperFix } from '../src/utils/harper/harperService.js';
 import { analyzeRepetition } from '../src/utils/harper/repetitionService.js';
 import { getRecheckableLastTest } from '../src/utils/recheckLastTest.js';
-import { recordAttempt } from '../src/utils/performanceStore.js';
+import { recordAttempt, hydrateFromRemoteAttempts, getPerformanceStore } from '../src/utils/performanceStore.js';
 import { derivePerformanceSummary } from '../src/utils/performanceStore.js';
 import { buildSpeakingUserPrompt } from '../src/utils/ieltsRubric.js';
 import { reviewWritingPractice } from '../src/utils/geminiEvaluator.js';
@@ -30,6 +30,16 @@ await check('uncertain answers cannot manufacture a weak area',()=>{
  assert.equal(buildPracticeInsights([attempt]).recommendations.length,0);
 });
 await check('aggregate-only legacy results never invent section weaknesses',()=>{const recommendations=buildPracticeInsights([{type:'reading',reading:{band:4}}],index).recommendations;assert.equal(recommendations.length,1);assert.equal(recommendations[0].kind,'skill');assert.equal(recommendations[0].band,4);});
+await check('old cloud score rows immediately produce four ranked recommendations',()=>{
+ storage.clear();
+ const scores={reading:5,listening:7.5,writing:5.5,speaking:5};
+ hydrateFromRemoteAttempts(Object.entries(scores).map(([type,band],i)=>({id:`legacy-${type}`,clerk_user_id:'existing-user',type,band:String(band),status:'completed',test_id:100,completed_at:new Date(Date.UTC(2026,9,17,10,i)).toISOString(),data:JSON.stringify({criteria:{},overallSummary:'Legacy result'})})),'existing-user');
+ const items=buildPracticeInsights(getPerformanceStore().attempts).recommendations;
+ assert.equal(items.length,4);assert(items.every(item=>item.kind==='skill'));
+ assert.deepEqual(items.map(item=>item.band),[5,5,5.5,7.5]);
+ assert.deepEqual(new Set(items.map(item=>item.skill)),new Set(Object.keys(scores)));
+ storage.clear();
+});
 await check('focused source selection opens the requested passage and listening part',()=>{
  const reading=selectFocusedContent(getProductionReadingTest(100,true),{skill:'reading',part:3});assert.deepEqual(reading.passages.map(p=>p.passageNumber),[3]);
  const listening=selectFocusedContent(getProductionListeningTest(185,true),{skill:'listening',part:2});assert.equal(listening.sections[0].part,2);assert(listening.sections[0].audioFile.startsWith('https:'));assert(listening.sections[0].questionGroups.length);

@@ -9,3 +9,13 @@ let raw=0,gzip=0;
 for(const file of files){const bytes=fs.readFileSync(path.join(root,'dist',file));raw+=bytes.length;gzip+=gzipSync(bytes).length;assert(!/\/(?:reading|listening|writing|speaking)-/.test(file)||bytes.length<50000,'Question bank entered the startup graph');assert(!file.includes('binaryInlined'),'Harper engine entered startup');}
 assert(raw<1500000,`Startup JavaScript budget exceeded: ${raw} bytes`);
 console.log(`Startup JavaScript: ${(raw/1000).toFixed(1)} KB raw, ${(gzip/1000).toFixed(1)} KB gzip across ${files.length} entry/preload files; budget passed.`);
+
+function inspectAssets(directory) {
+ for(const entry of fs.readdirSync(directory,{withFileTypes:true})) {
+  const file=path.join(directory,entry.name);
+  if(entry.isDirectory()) inspectAssets(file);
+  else assert(fs.statSync(file).size<=25*1024*1024,`Cloudflare asset exceeds 25 MiB: ${path.relative(root,file)}`);
+ }
+}
+inspectAssets(path.join(root,'dist'));
+console.log('All deployable assets fit Cloudflare’s 25 MiB limit.');

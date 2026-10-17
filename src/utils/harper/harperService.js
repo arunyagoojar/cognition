@@ -22,11 +22,13 @@ export async function getHarperLinter() {
   initPromise = (async () => {
     try {
       const { LocalLinter, WorkerLinter, Dialect } = await import('harper.js');
-      const { binaryInlined } = await import('harper.js/binaryInlined');
+      // Keep the engine as a separate WASM asset. Inlining base64 makes it
+      // exceed Cloudflare's 25 MiB per-file limit.
+      const { binary } = await import('harper.js/binary');
 
       const Linter = typeof Worker !== 'undefined' && typeof window !== 'undefined' ? WorkerLinter : LocalLinter;
       const linter = new Linter({
-        binary: binaryInlined,
+        binary,
         dialect: Dialect.British,
       });
 

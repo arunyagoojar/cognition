@@ -4,7 +4,8 @@ import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
 import { evaluateListeningResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
 import { calculateListeningBand } from '../../utils/bandCalculator';
-import AnswerReviewList from '../common/AnswerReviewList';
+import AnswerReviewPage from '../common/AnswerReviewPage';
+import { buildAnswerReviewItems } from '../../utils/answerReview.js';
 import { MultiChoice } from '../reading/ReadingQuestionGroup';
 import { recordAttemptedQuestionSet, getTargetBand } from '../../utils/storage';
 import ExamStartScreen from './ExamStartScreen';
@@ -25,6 +26,16 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   const [answers, setAnswers] = useState(() => savedSession?.answers || {});
   const [timeLeft, setTimeLeft] = useState(() => savedSession?.timeLeft ?? 32 * 60);
   const [result, setResult] = useState(() => initialResult || savedSession?.result || null);
+  const [answerReview, setAnswerReview] = useState(null);
+  const reviewButtonRef = useRef(null);
+  const openAnswerReview = () => {
+    const gradedTest = getListeningTest(result?.testId || test?.testId || testId, true) || test;
+    setAnswerReview(buildAnswerReviewItems(result, gradedTest, 'listening'));
+  };
+  const closeAnswerReview = () => {
+    setAnswerReview(null);
+    requestAnimationFrame(() => reviewButtonRef.current?.focus({ preventScroll: true }));
+  };
   useEffect(() => { if (phase === 'exam' || phase === 'results') writeDraft(`listening:${test?.testId || testId}:${isMockMode}`,{phase,answers,timeLeft,result}); }, [phase,answers,timeLeft,result,test,testId,isMockMode]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -352,6 +363,8 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
+    if (answerReview) return <AnswerReviewPage skill="listening" itemResults={answerReview} onBack={closeAnswerReview} />;
+    const canReview = Object.keys(result?.itemResults || {}).length > 0 || Boolean(result?.answers && typeof result.answers === 'object');
 
     return (
       <ResultPage skill="listening">
@@ -395,6 +408,16 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           </div>
         </ResultItem>
 
+        <ResultItem className="result-review-action">
+          {canReview ? (
+            <button ref={reviewButtonRef} type="button" className="result-btn is-secondary" onClick={openAnswerReview}>
+              <Icon name="eye" size={18} /> Review answers
+            </button>
+          ) : (
+            <p className="result-section-sub">Answer details were not saved for this older test.</p>
+          )}
+        </ResultItem>
+
         {result?.unresolvedCount > 0 && (
           <ResultItem className="result-callout" role="note">
             <span className="result-callout-icon"><Icon name="alertCircle" size={22} /></span>
@@ -412,17 +435,6 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         {!isMockMode && result?.itemResults && (
           <ResultItem>
             <ResultAnalysis skill="listening" resultRecord={{ listening: result }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-          </ResultItem>
-        )}
-
-        {/* Answer review — every question, from the evaluated item results */}
-        {result?.itemResults && Object.keys(result.itemResults).length > 0 && (
-          <ResultItem as="section">
-            <div className="result-section-head">
-              <h2 className="result-section-title"><Icon name="pen" size={20} /> Answer review</h2>
-              <p className="result-section-sub">Every question with your answer and the official key. Use “To review” to focus on the ones you missed.</p>
-            </div>
-            <AnswerReviewList itemResults={result.itemResults} showUnanswered />
           </ResultItem>
         )}
 
