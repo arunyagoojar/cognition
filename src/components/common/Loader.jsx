@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 
 // ─── Branded loader ──────────────────────────────────────────────────────────
 // Used for the initial app load and any long-running phase transition.
@@ -30,4 +31,10 @@ export default function Loader({ label = 'Loading', size = 'medium', delay = 0 }
       </span>
     </div>
   );
+}
+
+// Keep viewport loading independent of page transition transforms.
+export function PageLoader({ label = 'Loading' }) {
+ const content=<div className="page-loading"><Loader label={label} size="lg" /></div>;
+ return typeof document === 'undefined' ? content : createPortal(content, document.body);
 }

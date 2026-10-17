@@ -8821,7 +8821,7 @@ button:focus-visible, summary:focus-visible, textarea:focus-visible, select:focu
 .performance-studio button:focus-visible, .next-practice button:focus-visible, .harper-workspace-layout button:focus-visible, .progress-chart g[role="button"]:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 4px; }
 .performance-hero { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 38px; }
 .overall-visual { display: grid; justify-items: center; gap: 18px; }
-.score-orbit { width: 236px; aspect-ratio: 1; border-radius: 50%; padding: 12px; background: conic-gradient(var(--c-coral) var(--score-angle), var(--surface-sunken) 0); }
+.score-orbit { --orbit-size: 236px; box-sizing: border-box; width: var(--orbit-size); height: var(--orbit-size); min-width: var(--orbit-size); min-height: var(--orbit-size); aspect-ratio: 1 / 1; flex: none; border-radius: 50%; padding: 12px; background: conic-gradient(var(--c-coral) var(--score-angle), var(--surface-sunken) 0); }
 .score-orbit > div { height: 100%; background: var(--bg-card); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
 .score-orbit strong { font-size: 74px; line-height: 1.1; letter-spacing: -.05em; }
 .score-orbit > div > span:last-child { color: var(--text-secondary); font-size: 14px; }
@@ -8969,7 +8969,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
  .performance-studio { padding: 24px 16px 48px; gap: 22px; }
  .insight-panel { padding: 20px; }
  .performance-hero { grid-template-columns: 1fr; gap: 26px; }
- .score-orbit { width: 190px; }
+ .score-orbit { --orbit-size: 190px; }
  .score-orbit strong { font-size: 62px; }
  .hero-skill-row { grid-template-columns: 30px 74px 1fr 32px 14px; gap: 9px; }
  .hero-skill-breakdown h2 { font-size: 20px; }
@@ -8995,3 +8995,9 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .review-question-focus p { margin-bottom: 0; }
 
 .page-loading { position: fixed; inset: 0; display: grid; place-items: center; background: var(--bg-primary, #f8f8f6); z-index: 50; }
+
+.recommendation-card { flex-basis: 340px; background: color-mix(in srgb, var(--skill-accent) 60%, white); color: #151313; border: 1.5px solid #151313; border-radius: 18px; }
+.recommendation-card .insight-eyebrow, .recommendation-card .insight-baseline, .recommendation-card .recommendation-evidence > span { color: #38332f; }
+.recommendation-card .recommendation-tags > span { background: #ffffff80; color: #151313; }
+.recommendation-card .insight-links button { color: #151313; }
+.recommendation-card .priority-label { background: #ffffffa0; color: #151313; }

@@ -1,4 +1,4 @@
-import { readDraft, writeDraft } from './utils/drafts.js';
+import { readDraft, writeDraft, transitionPracticeSession } from './utils/drafts.js';
 import { CONTENT_CATALOG, loadSkillContent, loadAllContent } from './data/production/registry.js';
 import { chooseFreshTest } from './utils/practiceSelection.js';
 import { readScreenRoute, writeScreenRoute } from './utils/screenRoute.js';
@@ -14,7 +14,7 @@ import PracticeSection from './components/dashboard/PracticeSection';
 import FocusedRecommendations from './components/dashboard/FocusedRecommendations.jsx';
 import MockHeroCard from './components/dashboard/MockHeroCard';
 import LastTestRecheck from './components/dashboard/LastTestRecheck';
-import Loader from './components/common/Loader';
+import Loader, { PageLoader } from './components/common/Loader';
 const FocusedDrill = lazy(() => import('./components/views/FocusedDrill.jsx'));
 const PerformancePage = lazy(async () => { return import('./components/views/PerformancePage'); });
 const LearningHubPage = lazy(async () => { return import('./components/views/LearningHubPage'); });
@@ -36,6 +36,7 @@ import {
   saveTargetBand,
   getCompletedLessons,
   getActiveMockSession,
+  clearActiveMockSession,
   hydrateFromRemoteAttempts,
   saveCompletedLessonsBulk,
   syncLegacySkillScoresFromStore,
@@ -97,7 +98,7 @@ function AppWithAuth() {
 }
 
 function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {}, userId = 'anon' }) {
-  const [view, setView] = useState(() => {
+  const [view, commitView] = useState(() => {
     const route = readScreenRoute();
     if (route.view) return route.view;
     const activeMock = getActiveMockSession();
@@ -106,6 +107,22 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     }
     return 'home';
   }); // home | performance | learning | tips | listening | reading | writing | speaking | mock
+  const [reviewResult, setReviewResult] = useState(null);
+  const navigationRef = useRef(null);
+  const completedSession = useRef(false);
+  const setView = (next, { completed = false } = {}) => {
+    if (next === view) return true;
+    const finished = completed || completedSession.current || reviewResult ||
+      (view === 'harper-writing' && readDraft('harper')?.stage === 'summary') ||
+      (view === 'drill' && readDraft('drill-session')?.result);
+    if (!transitionPracticeSession(view, next, { finished, confirm: message => window.confirm(message) })) return false;
+    if (view === 'mock' || next === 'mock') clearActiveMockSession();
+    completedSession.current = false;
+    setReviewResult(null);
+    commitView(next);
+    return true;
+  };
+  useEffect(() => { navigationRef.current = setView; });
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('omniprep_theme') || 'light');
   const [targetBand, setTargetBand] = useState(() => getTargetBand() || '8.0');
@@ -242,8 +259,9 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   // Every practice start serves a fresh random test (avoiding recent repeats)
   // A saved result opened from the dashboard ("View results")
-  const [reviewResult, setReviewResult] = useState(null);
+
   const viewSavedResult = (skill, result) => {
+    if (!setView(skill)) return;
     setSelectedExamId(result?.testId || selectedExamId);
     setReviewResult({
       skill,
@@ -251,10 +269,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
         ? { ...result, overallSpeakingBand: result.overallSpeakingBand ?? result.band, evaluationState: result.evaluationState || 'COMPLETED' }
         : { ...result, evaluationStatus: result.evaluationStatus || 'completed' },
     });
-    setView(skill);
   };
 
   const startSkill = (skillId) => {
+    if (!setView(skillId)) return;
     setReviewResult(null);
     delete sessionAttemptIds.current[skillId];
     const id = chooseFreshTest(skillId, CONTENT_CATALOG[skillId] || []);
@@ -262,7 +280,6 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     const attemptId=createAttemptId(skillId);
     sessionAttemptIds.current[skillId]=attemptId;
     writeDraft(`attempt:${skillId}`,{id:attemptId,testId:id});
-    setView(skillId);
   };
 
   // One attempt id per practice session: the automatic save when results
@@ -270,14 +287,19 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const sessionAttemptIds = useRef({});
   const [drillRequest, setDrillRequest] = useState(() => readDraft('active-drill'));
   const previousRoute = useRef(view);
+  const selectedRouteId = useRef(selectedExamId);
+  useEffect(() => { selectedRouteId.current = selectedExamId; }, [selectedExamId]);
   const fromHistory = useRef(false);
   useEffect(() => {
     const navigate = () => {
       const route = readScreenRoute();
       if (!route.view) return;
+      if (!navigationRef.current(route.view)) {
+        writeScreenRoute(previousRoute.current, selectedRouteId.current, true);
+        return;
+      }
       fromHistory.current = true;
       if (route.testId) setSelectedExamId(route.testId);
-      setView(route.view);
     };
     window.addEventListener('popstate', navigate);
     window.addEventListener('hashchange', navigate);
@@ -290,11 +312,12 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   }, [view, selectedExamId]);
   const startDrill = request => {
     if (!isSignedIn) { openSignIn(); return; }
+    if (!setView('drill')) return;
     setDrillRequest(request);
-    setView('drill');
   };
 
   const persistSkillResult = (skill, scoreData) => {
+    completedSession.current = true;
     const savedAttempt=readDraft(`attempt:${skill}`);
     const restoredId=String(savedAttempt?.testId)===String(scoreData?.testId || selectedExamId) ? savedAttempt?.id : null;
     const id = scoreData?.attemptId || sessionAttemptIds.current[skill] || restoredId || createAttemptId(skill);
@@ -360,8 +383,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       openSignIn();
       return;
     }
+    if (!setView('mock')) return;
     if (examId) setSelectedExamId(examId);
-    setView('mock');
   };
 
   return (
@@ -382,7 +405,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       {/* ── UNIFIED SPATIAL CONTINUITY PAGE CONTAINER ─────────────── */}
       {/* Reset scroll once the outgoing page has left: the incoming page then
           mounts at the top even if the window moved during the exit fade. */}
-      <Suspense fallback={<div className="page-loading"><Loader label="Loading practice content…" size="lg" /></div>}><AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
+      <Suspense fallback={<PageLoader label="Loading practice content…" />}><AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
         {view === 'home' && (
           <motion.main
             key="home"
@@ -622,7 +645,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
                   },
                 })).catch(() => {});
                 refreshScores();
-                setView('home');
+                setView('home', { completed: true });
               }}
               onBack={() => setView('home')}
             />

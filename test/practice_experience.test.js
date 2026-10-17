@@ -1,3 +1,4 @@
+import { readDraft, writeDraft, setDraftScope, transitionPracticeSession } from '../src/utils/drafts.js';
 import assert from 'node:assert/strict';
 import { buildPracticeInsights, objectiveBreakdown } from '../src/utils/focusedPractice.js';
 import { buildProgressSeries } from '../src/utils/progressTimeline.js';
@@ -17,7 +18,7 @@ import { saveLocalGroqKey, saveLocalGeminiKey, setActiveAiProvider } from '../sr
 import index from '../src/data/production/analyticsIndex.json' with {type:'json'};
 import { loadWritingVisual } from '../src/utils/harper/writingVisual.js';
 import {getProductionReadingTest,getProductionListeningTest} from '../src/data/production/adapters.js';
-const storage=new Map();globalThis.localStorage={getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)};
+const storage=new Map();globalThis.localStorage={get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)};
 let passed=0;async function check(name,run){await run();console.log(`✓ ${name}`);passed++;}
 const test={id:'r',testId:100,type:'reading',status:'completed',reading:{itemResults:Object.fromEntries(Array.from({length:40},(_,i)=>[`q${i+1}`,{candidateAnswer:'x',finalResult:i<13?'CORRECT':'INCORRECT'}]))}};
 await check('old question records recover exact passage and type labels without answer keys',()=>{
@@ -69,6 +70,27 @@ await check('incomplete writing and other test types never offer a grading failu
  ];
  for(const [type,record,eligible] of cases){storage.clear();recordAttempt({id:'case',type,status:'partial',completedAt:new Date().toISOString(),[type]:record});assert.equal(Boolean(getRecheckableLastTest()),eligible,JSON.stringify({type,record}));}
  storage.clear();
+});
+await check('refresh retains drafts; confirmed exit discards only the current session',()=>{
+ storage.clear();setDraftScope('alice');
+ const examples=[['reading','reading:100:false'],['listening','listening:100:false'],['writing','cognition_writing_active_session'],['speaking','speaking:practice:100'],['harper-writing','harper'],['drill','drill-session'],['mock','reading:100:true']];
+ for(const [view,key] of examples){
+  transitionPracticeSession('home',view);
+  writeDraft(key,{text:'Keep until I leave'});
+  storage.set('omniprep_performance_store_v1','saved history');
+  assert.equal(readDraft(key).text,'Keep until I leave');
+  assert.equal(transitionPracticeSession(view,'home',{confirm:()=>false}),false);
+  assert.equal(readDraft(key).text,'Keep until I leave');
+  assert.equal(transitionPracticeSession(view,'home',{confirm:()=>true}),true);
+  assert.equal(readDraft(key),null);
+  assert.equal(writeDraft(key,{text:'late outgoing effect'}),false);
+  assert.equal(storage.get('omniprep_performance_store_v1'),'saved history');
+  transitionPracticeSession('home',view);assert.equal(readDraft(key),null);
+  assert(writeDraft(key,{text:'New session'}));
+  transitionPracticeSession(view,'home',{finished:true,confirm:()=>{throw Error('Completed work should not prompt');}});
+ }
+ setDraftScope('bob');writeDraft('harper',{text:'Bob draft'});setDraftScope('alice');transitionPracticeSession('harper-writing','home',{finished:true});setDraftScope('bob');assert.equal(readDraft('harper').text,'Bob draft');
+ storage.clear();setDraftScope('');
 });
 await check('Harper flags repeated grammar findings, agreement errors, and Unicode spans',async()=>{
  const text='😀 This is a a test. This is a a test. This is a a test. He are happy.';

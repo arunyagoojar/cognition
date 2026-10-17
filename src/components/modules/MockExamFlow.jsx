@@ -177,13 +177,7 @@ export default function MockExamFlow({ onComplete, onBack }) {
         initialPhase="exam"
         isMockMode={true}
         onComplete={(data) => handleStepComplete(skill, data)}
-        onBack={() => {
-          if (window.confirm(`Exit the full mock exam? Your progress will be discarded and the test will not be completed.`)) {
-            clearActiveMockSession();
-            eradicateAllAudioRecordings();
-            onBack();
-          }
-        }}
+        onBack={onBack}
       />
     );
   }

@@ -15,6 +15,7 @@ import ReadingQuestionGroup from '../reading/ReadingQuestionGroup.jsx';
 import QuestionRenderer from '../common/QuestionRenderer.jsx';
 import SpeakingModule from '../modules/SpeakingModule.jsx';
 import WritingCoach from './WritingCoach.jsx';
+import { PageLoader } from '../common/Loader.jsx';
 const STRATEGIES={
  matching_headings:'Read the paragraph for its central purpose, then summarise it in a few words before checking the headings. Match the whole idea, not a repeated keyword. Cross out choices only after checking their meaning.',
  matching_information:'Look for the specific detail requested. Scan for names or paraphrases, then verify the statement against the paragraph; a matching word alone is not enough.',
@@ -22,13 +23,15 @@ const STRATEGIES={
 };
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
  const [focus] = useState(()=>request || readDraft('active-drill'));
- const [test,setTest]=useState(null), [error,setError]=useState(''), [answers,setAnswers]=useState({}), [result,setResult]=useState(null), [text,setText]=useState('');
- const attemptId=useRef(createAttemptId('drill'));
+ const [saved]=useState(()=>{const data=readDraft('drill-session');return data?.focusKey===focus?.key?data:null;});
+ const [test,setTest]=useState(null), [error,setError]=useState(''), [answers,setAnswers]=useState(()=>saved?.answers || {}), [result,setResult]=useState(()=>saved?.result || null), [text,setText]=useState(()=>saved?.text || '');
+ const attemptId=useRef(saved?.attemptId || createAttemptId('drill'));
+ useEffect(()=>{if(test)writeDraft('drill-session',{focusKey:focus?.key,testId:test.testId,answers,result,text,attemptId:attemptId.current});},[test,focus,answers,result,text]);
  useEffect(()=>{
   if(!focus) return;
   let alive=true;writeDraft('active-drill',focus);
   loadSkillContent(focus.skill).then(()=>{
-   const id=focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
+   const id=saved?.testId || focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
    const get={reading:getProductionReadingTest,listening:getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
    const source=get?.(id,true);
    if(!source) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
@@ -36,14 +39,14 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
    if(alive) setTest(selected);
   }).catch(e=>{if(alive)setError(e.message);});
   return ()=>{alive=false;};
- },[focus]);
+ },[focus,saved]);
  const save = data => {
    const attempt={id:attemptId.current,type:'drill',skill:focus.skill,focusKey:focus.key,testId:test?.testId,practiceMode:'drill',bandEligible:false,status:data.speaking && !['COMPLETED','PARTIAL'].includes(data.speaking.evaluationState) ? 'partial' : 'completed',sourceAttemptId:focus.sourceAttemptId,completedAt:new Date().toISOString(),...data};
    recordAttempt(attempt);void syncAttempt(attempt);setResult(data);
  };
  if(!focus) return <div className="content-container"><p>Choose a recommendation from Performance to start focused practice.</p><button onClick={onBack}>Back to Performance</button></div>;
  if(error) return <div className="content-container"><p role="alert">{error}</p><button onClick={onBack}>Back to Performance</button></div>;
- if(!test) return <div className="content-container" role="status">Loading the source questions…</div>;
+ if(!test) return <PageLoader label="Loading source questions" />;
  const groups=focus.skill==='reading' ? test.passages.flatMap(p=>p.questionGroups) : [];
  const questions=focus.skill==='reading' ? groups.flatMap(g=>g.questions) : (test.sections || []).flatMap(p=>p.questions);
  const submit=()=>{
