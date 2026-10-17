@@ -1,5 +1,5 @@
 /**
- * IELTS Writing, Speaking & Answer Verification Rubric (v2.2)
+ * IELTS Writing, Speaking & Answer Verification Rubric (v2.5)
  * Shared by the Cloudflare Worker and the browser (local-key mode) so both
  * paths score identically with zero divergence.
  *
@@ -35,12 +35,12 @@
  * Pure module: no external dependencies or I/O.
  */
 
-import { computeSpeechMetrics, describeMetrics, formatSpeechScript } from './speech/speechMetrics.js';
+import { computeSpeechMetrics, formatSpeechScript } from './speech/speechMetrics.js';
 
 /** Shown wherever Pronunciation appears: it is not part of the Speaking band. */
 export const PRONUNCIATION_NOTE = 'It is not possible for an AI model to interpret how well you pronounce. For now, this is not a scoring metric in the system.';
 
-export const RUBRIC_VERSION = 'ielts-rubric-2.4';
+export const RUBRIC_VERSION = 'ielts-rubric-2.5';
 
 /** Words as the candidate sees them counted: whitespace-separated tokens. */
 export function countWords(text) {
@@ -593,7 +593,11 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
   const lines = [];
   if (testMeta.title) lines.push(`Interview: ${testMeta.title}`);
   if (testMeta.cueCard) lines.push(`Part 2 cue card: ${testMeta.cueCard}`);
-  lines.push('', 'Candidate answers — verbatim on-device transcript, one line per stretch of speech; [pause Ns] marks a pause of 2 s or more. Delivery measures are computed from the audio timing:');
+  // State the delivery column names once, rather than repeating the same prose
+  // for every question. All measured values and the complete speech stay intact.
+  lines.push('',
+    'Candidate answers: verbatim on-device transcripts; [pause Ns] marks a pause of at least 2 seconds.',
+    'Delivery columns: words | seconds | words/min (n/a if unavailable) | pauses | pauses >=2s | longest pause(s) | um/uh | filler phrases | repetitions | self-corrections. Timing values come from recorded segments or duration.');
   for (const [k, v] of Object.entries(transcripts || {})) {
     if (!v || !String(v).trim()) continue;
     const meta = speechMeta?.[k] || {};
@@ -602,15 +606,19 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
     if (m) {
       const partNum = parseInt(m[1], 10) + 1;
       const qNum = parseInt(m[2], 10) + 1;
-      if (partNum === 1) label = `Part 1 (Introduction & Interview - Question ${qNum})`;
-      else if (partNum === 2) label = `Part 2 (Cue Card Long Turn)`;
-      else if (partNum === 3) label = `Part 3 (Two-way Discussion - Question ${qNum})`;
+      if (partNum === 1) label = `Part 1 · Q${qNum}`;
+      else if (partNum === 2) label = 'Part 2 · Long turn';
+      else if (partNum === 3) label = `Part 3 · Q${qNum}`;
     }
     const metrics = computeSpeechMetrics({ text: meta.originalText || v, segments: meta.segments, durationSec: durations?.[k] || meta.durationSec });
     lines.push('', `### ${label}`);
-    if(testMeta.questions?.[k]) lines.push(`Question (context only): ${testMeta.questions[k]}`);
-    if (meta.originalText && meta.originalText !== v) lines.push('Candidate marked recognition corrections. Delivery metrics use the original transcript, not the corrected wording.');
-    if (metrics) lines.push(`Delivery: ${describeMetrics(metrics)}`);
+    if(testMeta.questions?.[k]) lines.push(`Question: ${testMeta.questions[k]}`);
+    if (meta.originalText && meta.originalText !== v) lines.push('Recognition corrections marked; delivery uses the original transcript.');
+    if (metrics) lines.push(`Delivery: ${[
+      metrics.words, metrics.durationSec, metrics.wordsPerMinute ?? 'n/a',
+      metrics.pauses, metrics.longPauses, metrics.longestPauseSec,
+      metrics.hesitations, metrics.discourseFillers, metrics.repetitions, metrics.selfCorrections,
+    ].join(' | ')}`);
     lines.push(formatSpeechScript({ text: String(v).trim(), segments: meta.segments }));
   }
   return lines.join('\n');

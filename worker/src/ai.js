@@ -1,4 +1,7 @@
-import { planRequestBudget } from '../../src/utils/ai/requestBudget.js';
+import { planRequestBudget, prepareRequestBudget } from '../../src/utils/ai/requestBudget.js';
+// Build the vocabulary during Worker startup, outside the per-request CPU
+// allowance. The browser loads its separate vocabulary chunk only on review.
+import { countTokens as countHarmonyTokens } from 'gpt-tokenizer/encoding/o200k_harmony';
 import { isCoachingPrompt } from '../../src/utils/harper/writingCoachContract.js';
 /**
  * Server-side AI evaluation for Cognition (Phase 4).
@@ -101,7 +104,7 @@ async function callGroq(model, apiKey, systemPromptFull, userPrompt) {
   // Groq free tier: ~8,000 tokens/minute for prompt + requested reply.
   const systemPrompt = systemPromptFull === WRITING_SYSTEM_PROMPT_V2 ? WRITING_SYSTEM_PROMPT_COMPACT
     : systemPromptFull === SPEAKING_SYSTEM_PROMPT_V2 ? SPEAKING_SYSTEM_PROMPT_COMPACT : systemPromptFull;
-  const budget=planRequestBudget('groq',systemPrompt,userPrompt,{coaching:isCoachingPrompt(systemPrompt)});
+  const budget=await prepareRequestBudget('groq',systemPrompt,userPrompt,{coaching:isCoachingPrompt(systemPrompt),model,countTextTokens:countHarmonyTokens});
   if(!budget.ok)throw Object.assign(new Error(budget.message),{code:'input_budget'});
   const replyBudget=budget.outputTokens;
   let attempts = 0;
@@ -171,9 +174,15 @@ export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, val
       }
     } catch (e) {
       lastError = e;
-      if(e.code==='input_budget')return {status:'failed',message:e.message};
+      if(e.code==='input_budget')return {status:'failed',provider,reason:'request_budget',message:e.message};
       if (e.status === 429) {
-        return { status: 'failed', message: `AI rate limit reached (429) on ${isGroq ? 'Groq' : 'Gemini'}. Please wait a minute and retry.` };
+        return { status: 'failed', provider, reason: 'rate_limit', httpStatus: 429, message: `AI rate limit reached (429) on ${isGroq ? 'Groq' : 'Gemini'}. Please wait a minute and retry.` };
+      }
+      if(e.status===413) {
+        return {status:'failed',provider,reason:'request_too_large',httpStatus:413,message:`${isGroq ? 'Groq' : 'Gemini'} rejected this request as too large. Select a provider with a larger request budget in Settings.`};
+      }
+      if(e.status===401 || e.status===403) {
+        return {status:'failed',provider,reason:'authentication',httpStatus:e.status,message:`${isGroq ? 'Groq' : 'Gemini'} rejected the API key. Check its permissions in Settings, then press Recheck.`};
       }
       console.error(`Model ${model} evaluation attempt failed:`, e.constructor?.name, e.message);
     }

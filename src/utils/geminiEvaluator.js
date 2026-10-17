@@ -1,5 +1,5 @@
 import { loadWritingVisual } from './harper/writingVisual.js';
-import { planRequestBudget } from './ai/requestBudget.js';
+import { planRequestBudget, prepareRequestBudget } from './ai/requestBudget.js';
 import { prepareWritingCoaching, validateWritingCoaching, isCoachingPrompt } from './harper/writingCoachContract.js';
 // Central Gemini AI Evaluation Architecture for IELTS Writing & Speaking
 // Adheres strictly to Official IELTS Band Descriptors, explicit lifecycle states, and JSON validation.
@@ -48,10 +48,37 @@ const promptText = value => typeof value === 'string' ? value : value?.text || '
 function failureMessage(name, status) {
   if (status === 401 || status === 403) return `${name} rejected the API key. Replace it in Settings, then press Recheck.`;
   if (status === 429) return `${name} rate limit reached. Wait a minute, then press Recheck.`;
+  if (status === 413) return `${name} rejected this request as too large. Select a provider with a larger request budget in Settings.`;
   if (status === 503 || status === 500 || status === 502) return `${name} is overloaded right now. Press Recheck in a moment, or switch provider in Settings.`;
   if (status === 'timeout') return `${name} took too long to respond. Press Recheck, or switch provider in Settings.`;
   if (status === 'network') return `Could not reach ${name}. Check your connection, then press Recheck.`;
   return `${name} did not return a usable evaluation. Press Recheck, or switch provider in Settings.`;
+}
+
+function providerFailure(provider, status, budgetMessage = null) {
+  const name = provider === 'groq' ? 'Groq' : 'Gemini';
+  const reason = budgetMessage ? 'request_budget'
+    : status === 401 || status === 403 ? 'authentication'
+    : status === 429 ? 'rate_limit'
+    : status === 413 ? 'request_too_large'
+    : status === 500 || status === 502 || status === 503 ? 'provider_unavailable'
+    : status === 'timeout' || status === 'network' ? status
+    : typeof status === 'number' && status >= 400 ? 'http_error'
+    : 'invalid_response';
+  return {
+    status: 'failed', provider, reason,
+    ...(typeof status === 'number' ? { httpStatus: status } : {}),
+    message: budgetMessage ? `${name}: ${budgetMessage}` : failureMessage(name, status),
+  };
+}
+
+function failureDetails(result) {
+  return {
+    ...(result?.provider ? { provider: result.provider } : {}),
+    ...(result?.reason ? { reason: result.reason } : {}),
+    ...(result?.httpStatus ? { httpStatus: result.httpStatus } : {}),
+    ...(result?.providerFailures ? { providerFailures: result.providerFailures } : {}),
+  };
 }
 
 async function directFirst(systemPrompt, userPrompt, serverCall, validate = null) {
@@ -61,7 +88,7 @@ async function directFirst(systemPrompt, userPrompt, serverCall, validate = null
     if (direct.status === 'completed') return { ...direct, tier: 'client_local_key' };
     // The server would call the same provider with the same key — don't make
     // the candidate wait twice; report the real reason instead.
-    return { status: 'failed', message: direct.message, triedDirect: true };
+    return { ...direct, triedDirect: true };
   }
   return serverCall();
 }
@@ -117,7 +144,7 @@ function extractJsonFromText(text) {
  */
 async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = null) {
   const budget=planRequestBudget('gemini',systemPrompt,promptText(userPrompt),{coaching:isCoachingPrompt(systemPrompt),mediaTokens:userPrompt?.parts?.some(p=>p.inlineData)?2048:0});
-  if(!budget.ok)return {status:'failed',message:budget.message};
+  if(!budget.ok)return providerFailure('gemini', null, budget.message);
   // Live list of models this key can use — never a stale hardcoded name.
   const models = await resolveModelChain('gemini', localKey);
   let lastStatus = null;
@@ -155,19 +182,18 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
       }
     } catch (e) { lastStatus = e?.name === 'TimeoutError' || e?.name === 'AbortError' ? 'timeout' : 'network'; /* try next model */ }
   }
-  const msg = failureMessage('Gemini', lastStatus);
-  return { status: 'failed', message: msg };
+  return providerFailure('gemini', lastStatus);
 }
 
 async function directGroqCall(systemPrompt, userPrompt, localKey, validate = null) {
   // Live list of models this key can use — never a stale hardcoded name.
   const models = await resolveModelChain('groq', localKey);
   const groqSystem = groqPrompt(systemPrompt);
-  const budget=planRequestBudget('groq',groqSystem,promptText(userPrompt),{coaching:isCoachingPrompt(systemPrompt)});
-  if(!budget.ok)return {status:'failed',message:budget.message};
-  const replyBudget=budget.outputTokens;
   let lastStatus = null;
   for (const mdl of models) {
+    const budget = await prepareRequestBudget('groq', groqSystem, promptText(userPrompt), { coaching: isCoachingPrompt(systemPrompt), model: mdl });
+    if (!budget.ok) return providerFailure('groq', null, budget.message);
+    const replyBudget = budget.outputTokens;
     if (timeLeft() < 5000) { lastStatus = lastStatus || 'timeout'; break; }
     try {
       let attempts = 0;
@@ -227,8 +253,7 @@ async function directGroqCall(systemPrompt, userPrompt, localKey, validate = nul
       }
     } catch (e) { lastStatus = e?.name === 'TimeoutError' || e?.name === 'AbortError' ? 'timeout' : 'network'; /* try next model */ }
   }
-  const msg = failureMessage('Groq', lastStatus);
-  return { status: 'failed', message: msg };
+  return providerFailure('groq', lastStatus);
 }
 
 async function directAiCall(systemPrompt, userPrompt, validate = null) {
@@ -237,18 +262,31 @@ async function directAiCall(systemPrompt, userPrompt, validate = null) {
   const active = getActiveAiProvider();
   // Active provider first; if it fails and the other provider has a key, use that.
   const order = [active, active === 'groq' ? 'gemini' : 'groq'].filter(p => keys[p]);
-  if (!order.length) return { status: 'failed', message: 'No API key saved on this device. Add one in Settings.' };
+  if (!order.length) return { status: 'failed', reason: 'no_local_key', message: 'No API key saved on this device. Add one in Settings.' };
   deadline = Date.now() + TOTAL_BUDGET_MS;
-  let last = null;
-  for (const p of order) {
-    last = p === 'groq'
-      ? await directGroqCall(systemPrompt, userPrompt, keys.groq, validate)
-      : await directGeminiCall(systemPrompt, userPrompt, keys.gemini, validate);
-    if (last.status === 'completed') { deadline = 0; return last; }
-    if (timeLeft() < 5000) break;
+  const failures = [];
+  try {
+    for (const p of order) {
+      const result = p === 'groq'
+        ? await directGroqCall(systemPrompt, userPrompt, keys.groq, validate)
+        : await directGeminiCall(systemPrompt, userPrompt, keys.gemini, validate);
+      if (result.status === 'completed') return result;
+      failures.push(result);
+      if (timeLeft() < 5000) break;
+    }
+  } finally {
+    deadline = 0;
   }
-  deadline = 0;
-  return last;
+  // Preserve the selected provider's actual error. A fallback's smaller budget
+  // or later failure must not replace a Gemini authentication/rate/network error.
+  const [primary, ...fallbacks] = failures;
+  return {
+    ...primary,
+    message: [primary.message, ...fallbacks.map(failure => `${failure.provider === 'groq' ? 'Groq' : 'Gemini'} fallback: ${failure.message}`)].join(' '),
+    providerFailures: failures.map(({ provider, reason, httpStatus, message }) => ({
+      provider, reason, ...(httpStatus ? { httpStatus } : {}), message,
+    })),
+  };
 }
 
 export async function directVerifyAnswers(items) {
@@ -423,6 +461,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     task2Band: null,
     criteria: null,
     message: res?.message || 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.',
+    ...failureDetails(res),
   };
 }
 
@@ -504,6 +543,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     overallBand: null,
     criteria: null,
     message: res?.message || 'AI evaluation failed to produce a valid IELTS rubric response. Please try again.',
+    ...failureDetails(res),
   };
 }
 
