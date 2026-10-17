@@ -30,10 +30,19 @@ For separate terminals: `npm run db:local`, then `npm run dev:api` and `npm run 
 npm test
 npm run lint
 npm run build
+npm run check:bundle
 npm run validate:production:reading
 ```
 
 `npm run validate:production:writing` re-derives content from the original source mirror. Set `COGNITION_SRC_ROOT` to that directory; it is not included in this checkout. It also needs BeautifulSoup4 and Pillow. `npm run release:check` intentionally requires this source validation and fails if the mirror is missing.
+
+## Practice feedback
+
+The dashboard's **Practise this next** row sits between the overview and Practice cards. The same prioritized recommendations appear on Performance. Reading passages, listening parts, writing tasks, and evidence-backed speaking parts launch their original source questions. Criterion advice lives separately in expandable coaching notes. Old aggregate-only results cannot recover a missing question breakdown; new results preserve that detail.
+
+Performance uses the latest complete result in each of the four skills. The overall timeline begins only once all four skills have results and uses the same rounding as the score card. Focused drills and Harper coaching never raise that overall estimate.
+
+Harper shows live vocabulary alternatives beside the editor, grammar underlines, and distinct repeated-word tints. **Finish & Summary** runs local checks plus AI assessment against the exact question. Question/draft quotations are validated; missing visual evidence is disclosed. Single-task coaching has bounded context and a maximum 2,000-token output, with a conservative shared input/output budget. Long drafts are rejected explicitly rather than silently truncated. Current model choices remain unchanged.
 
 ## Project map
 

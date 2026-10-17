@@ -1,44 +1,114 @@
 import { typeLabel } from './insights.js';
 import { resolveRecommendations } from '../data/recommendations.js';
-export function deriveFocusedRecommendations(attempts = []) {
- const suggestions = new Map();
- for (const attempt of attempts.slice(0,30)) {
-  if (attempt.type === 'drill' || attempt.type === 'writing_coach') continue;
-  for (const skill of ['reading','listening','writing','speaking']) {
-   const result=attempt[skill] || attempt.skills?.[skill] || (attempt.type===skill ? attempt : null);
-   if (!result) continue;
-   const add=(key,item)=>{if(!suggestions.has(key)) suggestions.set(key,{key,skill,testId:result.testId || attempt.testId,sourceAttemptId:attempt.id,...item,resources:resolveRecommendations({key,skill})});};
-   if (skill==='reading' || skill==='listening') {
-    const groups={};
-    for (const item of Object.values(result.itemResults || {})) {
-     if (!item.questionType || item.finalResult==='UNCERTAIN') continue;
-     const group=groups[item.questionType] ||= {total:0,correct:0};
-     group.total++;if(item.finalResult==='CORRECT' || item.deterministicCorrect===true) group.correct++;
-    }
-    for(const [questionType,g] of Object.entries(groups)) if(g.total>=3 && g.correct/g.total<0.65) add(`${skill}.${questionType}`,{questionType,title:`Practise ${typeLabel(questionType)}`,reason:`${g.correct}/${g.total} correct in your recent ${skill} attempt. Start with the relevant strategy, then retry that question type.`,evidenceCount:g.total});
-   }
-   if(skill==='speaking') {
-    for(const [part,d] of Object.entries(result.partDiagnostics || {})) {
-     if(!/^part[123]$/.test(part) || d?.needsPractice!==true || typeof d.evidence!=='string' || !d.evidence.trim()) continue;
-     const text=Object.values(result.transcripts || {}).join(' ');
-     if(!text.includes(d.evidence)) continue;
-     add(`speaking.${part}`,{part:Number(part.slice(-1)),title:`Speaking Part ${part.slice(-1)} practice`,reason:`${d.reason || 'Develop this answer further.'} Evidence: “${d.evidence}”`,nextAction:d.nextAction});
-    }
-   }
-   if(skill==='writing') {
-    const taskEntries=Object.entries(result.taskCriteria || {});
-    for(const [taskKey,criteria] of taskEntries) {
-     const weak=Object.entries(criteria || {}).filter(([,v])=>typeof v?.band==='number').sort((a,b)=>a[1].band-b[1].band)[0];
-     if(weak && weak[1].band<7) add(`writing.${weak[0]}`,{taskKind:taskKey.includes('1')?1:2,title:`Writing Task ${taskKey.includes('1')?1:2}: ${weak[0].replace(/([A-Z])/g,' $1').toLowerCase()}`,reason:weak[1].improvementFocus || weak[1].nextBandAdvice || 'Revise this criterion using a focused single-task review.'});
-    }
-   }
-  }
- }
- return [...suggestions.values()].slice(0,6);
+
+export const SKILL_NAMES = { reading:'Reading', listening:'Listening', writing:'Writing', speaking:'Speaking' };
+export const sectionLabel = (skill, part) => `${skill === 'reading' ? 'Passage' : skill === 'writing' ? 'Task' : 'Part'} ${part}`;
+const finite = value => typeof value === 'number' && Number.isFinite(value);
+const average = values => values.length ? values.reduce((sum,v)=>sum+v,0)/values.length : null;
+const resultFor = (a, skill) => a[skill] || a.skills?.[skill] || (a.type === skill ? a : null);
+const fullAttempts = attempts => attempts.filter(a => !['drill','writing_coach'].includes(a.type) && (!a.status || a.status === 'completed'));
+
+function sourceMetadata(index, skill, testId) {
+  const pool = index?.[skill] || {};
+  return pool[String(testId)] || Object.values(pool).find(r => r.aliases?.includes(testId));
 }
+
+// Never infer a section from an overall band. Old question-level records can use
+// the answer-free source index, but old aggregate-only records stay unclassified.
+export function objectiveBreakdown(attempt, skill, index) {
+  const result = resultFor(attempt, skill);
+  if (!result?.itemResults) return null;
+  const testId = result.testId || attempt.testId;
+  const metadata = sourceMetadata(index, skill, testId);
+  const sections = new Map(), types = new Map();
+  for (const [id,item] of Object.entries(result.itemResults)) {
+    if (!item || (!item.finalResult && typeof item.deterministicCorrect !== 'boolean')) continue;
+    const source = metadata?.questions?.[id];
+    const part = Number(item.part ?? item.passageNumber ?? item.sectionNumber ?? source?.[0]);
+    const questionType = source?.[1] || item.questionType;
+    const uncertain = item.finalResult === 'UNCERTAIN' || item.unresolved === true;
+    const correct = !uncertain && (item.finalResult === 'CORRECT' || (!item.finalResult && item.deterministicCorrect === true));
+    const add = (map,key,label) => {
+      if (!map.has(key)) map.set(key,{key,label,correct:0,total:0,uncertain:0,types:new Set(),questionIds:[]});
+      const group=map.get(key);group.total++;group.correct+=Number(correct);group.uncertain+=Number(uncertain);group.questionIds.push(id);
+      if (questionType) group.types.add(questionType);
+    };
+    if (Number.isInteger(part) && part>0 && part<=4) add(sections,part,sectionLabel(skill,part));
+    if (questionType) add(types,questionType,typeLabel(questionType));
+  }
+  const finish = map => [...map.values()].map(g=>({...g,types:[...g.types],accuracy:g.total>g.uncertain ? g.correct/g.total:null,maxAccuracy:(g.correct+g.uncertain)/g.total}));
+  return {testId,attemptId:attempt.id,sections:finish(sections),types:finish(types),result};
+}
+
+export function buildPracticeInsights(attempts = [], index) {
+  const full=fullAttempts(attempts).slice(0,40);
+  const bySkill={}, recommendations=[];
+  for (const skill of Object.keys(SKILL_NAMES)) {
+    const history=full.filter(a=>resultFor(a,skill));
+    const latest=history[0], result=latest && resultFor(latest,skill);
+    const model={skill,latest,result,sections:[],types:[],notes:[]};
+    bySkill[skill]=model;
+    const add=(key,details)=>recommendations.push({key,skill,testId:result?.testId || latest?.testId,sourceAttemptId:latest?.id,resources:resolveRecommendations({key,skill}),...details});
+    if (skill==='reading' || skill==='listening') {
+      const breakdowns=history.slice(0,5).map(a=>objectiveBreakdown(a,skill,index)).filter(Boolean);
+      model.sections=breakdowns[0]?.sections || [];model.types=breakdowns[0]?.types || [];model.diagnosticTestId=breakdowns[0]?.testId;model.diagnosticAttemptId=breakdowns[0]?.attemptId;
+      for(const group of model.sections) group.history=breakdowns.map(b=>b.sections.find(g=>g.key===group.key)?.accuracy).filter(finite).reverse();
+      const best=Math.max(0,...model.sections.map(s=>s.accuracy || 0));
+      for(const group of model.sections) {
+        if(!finite(group.accuracy) || group.total-group.uncertain<3) continue;
+        const gap=best-group.maxAccuracy;
+        if(group.maxAccuracy>=0.7 && gap<0.15) continue;
+        const older=group.history.slice(0,-1), dip=older.length?Math.max(0,average(older)-group.accuracy):0;
+        add(`${skill}.part${group.key}`,{testId:model.diagnosticTestId,sourceAttemptId:model.diagnosticAttemptId,part:group.key,kind:'section',title:`${SKILL_NAMES[skill]} · ${group.label}`,accuracy:Math.round(group.accuracy*100),correct:group.correct,total:group.total,history:group.history,questionTypes:group.types.map(typeLabel),reason:`${group.correct}/${group.total} correct in your latest test`,priority:(1-group.accuracy)*70+gap*20+dip*10,evidenceCount:group.total,trend:dip>=0.1?'Recent dip':older.length?'Tracked across tests':'First result'});
+      }
+      // A question type is a separate focus, never a generic "Practice this" link.
+      for(const group of model.types) {
+        if(!finite(group.accuracy) || group.maxAccuracy>=0.65 || group.total-group.uncertain<3) continue;
+        add(`${skill}.${group.key}`,{testId:model.diagnosticTestId,sourceAttemptId:model.diagnosticAttemptId,questionType:group.key,kind:'question-type',title:typeLabel(group.key),accuracy:Math.round(group.accuracy*100),correct:group.correct,total:group.total,questionTypes:[typeLabel(group.key)],reason:`${group.correct}/${group.total} correct · ${SKILL_NAMES[skill]}`,priority:(1-group.accuracy)*65, evidenceCount:group.total});
+      }
+    } else if(skill==='writing') {
+      for(const part of [1,2]) {
+        const observations=history.map(a=>{
+          const r=resultFor(a,skill), criteria=r.taskCriteria?.[`task${part}`];
+          const values=Object.values(criteria || {}).map(c=>c?.band).filter(finite);
+          const band=finite(r[`task${part}Band`]) ? r[`task${part}Band`] : values.length===4 ? average(values):null;
+          return {band,criteria,a};
+        }).filter(x=>finite(x.band)).slice(0,5);
+        const current=observations[0];
+        model.sections.push({key:part,label:sectionLabel(skill,part),band:current?.band ?? null,history:observations.map(x=>x.band).reverse(),samples:observations.length,testId:current && (resultFor(current.a,skill).testId || current.a.testId),sourceAttemptId:current?.a.id,criteria:current?.criteria});
+      }
+      const best=Math.max(0,...model.sections.map(s=>s.band || 0));
+      for(const group of model.sections) {
+        if(!finite(group.band)) continue;
+        const older=group.history.slice(0,-1), dip=older.length?Math.max(0,average(older)-group.band):0;
+        if(group.band>=7 && best-group.band<0.5 && dip<0.5) continue;
+        const source=history.find(a=>finite(resultFor(a,skill)[`task${group.key}Band`]) || resultFor(a,skill).taskCriteria?.[`task${group.key}`]);
+        add(`writing.task${group.key}`,{testId:resultFor(source,skill).testId || source.testId,sourceAttemptId:source.id,taskKind:group.key,kind:'section',title:`Writing · Task ${group.key}`,band:group.band,history:group.history,reason:`Task estimate ${group.band.toFixed(1)} · ${group.samples} full-test result${group.samples!==1?'s':''}`,priority:(9-group.band)/9*65+(best-group.band)*5+dip*5,trend:dip>=0.5?'Recent dip':group.samples>1?'Tracked across tests':'First result'});
+      }
+    } else {
+      for(const part of [1,2,3]) {
+        const observations=[];
+        for(const a of history.slice(0,5)) {
+          const r=resultFor(a,skill), d=r.partDiagnostics?.[`part${part}`];
+          const partText=Object.entries(r.transcripts || {}).filter(([key])=>key.startsWith(`${part-1}_`) || key===`part${part}`).map(([,text])=>text).join(' ');
+          const fallbackText=Object.values(r.transcripts || {}).join(' ');
+          if(!d?.evidence?.trim() || !(partText || fallbackText).includes(d.evidence)) continue;
+          observations.push({d,a});
+        }
+        const current=observations[0], flagged=observations.filter(o=>o.d.needsPractice).length;
+        model.sections.push({key:part,label:sectionLabel(skill,part),needsPractice:current?.d.needsPractice,flagged,samples:observations.length,history:observations.map(o=>o.d.needsPractice?0:1).reverse(),testId:current && (resultFor(current.a,skill).testId || current.a.testId),sourceAttemptId:current?.a.id,observation:current?.d});
+        if(!current?.d.needsPractice) continue;
+        const r=resultFor(current.a,skill);
+        add(`speaking.part${part}`,{testId:r.testId || current.a.testId,sourceAttemptId:current.a.id,part,kind:'section',title:`Speaking · Part ${part}`,reason:current.d.reason || 'Develop this part further',nextAction:current.d.nextAction,evidence:current.d.evidence,flagged,samples:observations.length,priority:45+flagged/observations.length*20,trend:observations.length>1?`${flagged}/${observations.length} reviews flagged`:'First observation'});
+      }
+    }
+  }
+  return {bySkill,recommendations:recommendations.sort((a,b)=>b.priority-a.priority || a.key.localeCompare(b.key)).slice(0,8)};
+}
+
+export function deriveFocusedRecommendations(attempts = [], index) { return buildPracticeInsights(attempts,index).recommendations; }
 export function drillProgress(attempts = []) {
- const drills=attempts.filter(a=>a.status==='completed' && (a.type==='drill' || a.type==='writing_coach'));
  const groups={};
- for(const item of drills) {const key=item.focusKey || `${item.skill || 'writing'}.${item.taskKind || 'coach'}`; (groups[key] ||= []).push(item);}
+ for(const item of attempts.filter(a=>a.status==='completed' && ['drill','writing_coach'].includes(a.type))) {const key=item.focusKey || `${item.skill || 'writing'}.${item.taskKind || 'coach'}`;(groups[key] ||= []).push(item);}
  return Object.entries(groups).map(([key,items])=>({key,count:items.length,latest:items[0],previous:items[1] || null}));
 }

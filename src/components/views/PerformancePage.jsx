@@ -1,394 +1,68 @@
-import FocusedRecommendations from '../dashboard/FocusedRecommendations.jsx';
-import React from 'react';
-import Icon from '../common/Icon';
-import { calculateOverallBand } from '../../utils/bandCalculator';
-import { getCompletedResults } from '../../utils/storage';
-import { getPerformanceStore, derivePerformanceSummary } from '../../utils/performanceStore.js';
-import { deriveWeaknesses, deriveResultAnalysis } from '../../utils/insights.js';
+import { useState } from 'react';
+import Icon from '../common/Icon.jsx';
+import FocusedRecommendations, { MiniTrend } from '../dashboard/FocusedRecommendations.jsx';
 import ProgressTimeline from '../dashboard/ProgressTimeline.jsx';
+import usePracticeInsights from '../../hooks/usePracticeInsights.js';
+import { derivePerformanceSummary } from '../../utils/performanceStore.js';
+import { calculateOverallBand } from '../../utils/bandCalculator.js';
+import { SKILL_NAMES, drillProgress } from '../../utils/focusedPractice.js';
+const SKILLS=['listening','reading','writing','speaking'];
+const ICONS={listening:'headphones',reading:'book',writing:'pen',speaking:'mic'};
+const CRITERIA={taskAchievement:'Task fulfilment',taskResponse:'Task response',coherenceAndCohesion:'Organisation & cohesion',lexicalResource:'Vocabulary',grammaticalRangeAndAccuracy:'Grammar',fluencyAndCoherence:'Fluency & coherence'};
+const numericBand=v=>typeof v==='number' && Number.isFinite(v)?v:null;
 
-export default function PerformancePage({ scores, targetBand, onBack: _onBack, onStartSkill, onStartDrill, onOpenLesson, onOpenTips, onReviewResult }) {
-  const L = scores?.listening?.band ? parseFloat(scores.listening.band) : null;
-  const R = scores?.reading?.band ? parseFloat(scores.reading.band) : null;
-  const W = scores?.writing?.band ? parseFloat(scores.writing.band) : null;
-  const S = scores?.speaking?.band ? parseFloat(scores.speaking.band) : null;
+function AccuracyBar({group}) {
+  return <div className="accuracy-track" role="img" aria-label={`${group.correct} correct, ${group.total-group.correct-group.uncertain} incorrect, ${group.uncertain} uncertain, out of ${group.total}`}><span className="accuracy-correct" style={{width:`${group.correct/group.total*100}%`}}/><span className="accuracy-uncertain" style={{width:`${group.uncertain/group.total*100}%`}}/></div>;
+}
 
-  const hasAnyScore = L !== null || R !== null || W !== null || S !== null;
-  const currentOverall = calculateOverallBand(L, R, W, S);
-  const currentOverallNum = currentOverall !== null ? parseFloat(currentOverall) : null;
-  const targetNum = parseFloat(targetBand) || 8.0;
-
-  // Real historical trend check: only show if at least 2 historical results exist
-  // Previous overall = the same estimate without the most recent attempt
-  const history = getCompletedResults() || [];
-  const hasHistory = history.length > 1;
-  const previousOverall = hasHistory
-    ? derivePerformanceSummary({ attempts: (getPerformanceStore().attempts || []).slice(1) }).overallBand
-    : null;
-  const bandDelta = (previousOverall && currentOverallNum) ? (currentOverallNum - parseFloat(previousOverall)).toFixed(1) : null;
-
-  const validSkills = [
-    { id: 'listening', name: 'Listening', band: L, accent: 'var(--c-yellow)' },
-    { id: 'reading', name: 'Reading', band: R, accent: 'var(--c-lavender)' },
-    { id: 'writing', name: 'Writing', band: W, accent: 'var(--c-coral)' },
-    { id: 'speaking', name: 'Speaking', band: S, accent: 'var(--c-near-black)' },
-  ];
-
-
-  // ── Real, deterministic per-skill analyses from stored attempts ──
-  const store = getPerformanceStore();
-  const attempts = store.attempts || [];
-  const latestAttemptBySkill = {};
-  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
-    const found = attempts.find(a => {
-      const rec = a[skill] || a.skills?.[skill];
-      return a.status === 'completed' && rec && rec.band !== null && rec.band !== undefined;
-    });
-    latestAttemptBySkill[skill] = found ? { ...found, [skill]: found[skill] || found.skills[skill] } : null;
-  }
-  const analyses = {};
-  for (const skill of ['reading', 'listening', 'writing', 'speaking']) {
-    analyses[skill] = latestAttemptBySkill[skill] ? deriveResultAnalysis(skill, latestAttemptBySkill[skill]) : null;
-  }
-  const { focusAreas } = deriveWeaknesses(attempts, targetBand);
-  const summary = derivePerformanceSummary();
-
-  // Official IELTS Assessment Criteria & Concise Coaching Cards
-  const skillSections = [
-    {
-      id: 'reading',
-      name: 'Reading',
-      icon: 'book',
-      band: R,
-      hasAttempt: R !== null,
-      accent: 'var(--c-lavender)',
-      badgeText: R === null ? 'Unattempted' : R >= 7.5 ? 'Your strongest area' : 'On track',
-      badgeClass: 'pill-lavender',
-      subskills: (analyses.reading?.perType || []).slice(0, 4).map(t => ({
-        name: t.label, score: `${t.correct}/${t.total}`, status: `${Math.round(t.accuracy * 100)}% accuracy`,
-      })),
-      aiInsight: {
-        title: R !== null ? 'QUESTION-TYPE PERFORMANCE' : 'DIAGNOSTIC INSIGHT PENDING',
-        score: R !== null ? R.toFixed(1) : '--',
-        status: R !== null ? (R >= 7.5 ? 'Strong proficiency' : 'Needs attention') : 'Awaiting attempt',
-        issue: R !== null
-          ? (analyses.reading?.focus?.length
-              ? `Recent attempts suggest lower accuracy on: ${analyses.reading.focus.join(', ')}.`
-              : 'Recent attempts show balanced accuracy across reading question types.')
-          : 'Complete an authentic Reading passage to receive a data-driven breakdown.',
-        focusItems: analyses.reading?.focus?.map(f => f.replace(/ \(.*\)$/, '')) || ['Complete a reading test for analysis'],
-      }
-    },
-    {
-      id: 'listening',
-      name: 'Listening',
-      icon: 'headphones',
-      band: L,
-      hasAttempt: L !== null,
-      accent: 'var(--c-yellow)',
-      badgeText: L === null ? 'Unattempted' : L >= 7.5 ? 'Your strongest area' : 'On track',
-      badgeClass: 'pill-yellow',
-      subskills: (analyses.listening?.perType || []).slice(0, 4).map(t => ({
-        name: t.label, score: `${t.correct}/${t.total}`, status: `${Math.round(t.accuracy * 100)}% accuracy`,
-      })),
-      aiInsight: {
-        title: L !== null ? 'QUESTION-TYPE PERFORMANCE' : 'DIAGNOSTIC INSIGHT PENDING',
-        score: L !== null ? L.toFixed(1) : '--',
-        status: L !== null ? (L >= 7.5 ? 'Good consistency' : 'Needs attention') : 'Awaiting attempt',
-        issue: L !== null
-          ? (analyses.listening?.focus?.length
-              ? `Recent attempts suggest lower accuracy on: ${analyses.listening.focus.join(', ')}.`
-              : 'Recent attempts show balanced accuracy across listening question types.')
-          : 'Complete an authentic 4-part Listening test to receive a data-driven breakdown.',
-        focusItems: analyses.listening?.focus?.map(f => f.replace(/ \(.*\)$/, '')) || ['Complete a listening test for analysis'],
-      }
-    },
-    {
-      id: 'writing',
-      name: 'Writing',
-      icon: 'pen',
-      band: W,
-      hasAttempt: W !== null,
-      accent: 'var(--c-coral)',
-      badgeText: W === null ? 'Unattempted' : W < 6.5 ? 'Priority focus' : 'On track',
-      badgeClass: 'pill-black',
-      subskills: W !== null ? [
-        { name: 'Task Achievement / Response', score: String(scores?.writing?.criteria?.taskAchievement?.band ?? scores?.writing?.criteria?.taskResponse ?? (W ? W.toFixed(1) : '--')), status: 'Task-specific evidence' },
-        { name: 'Coherence & Cohesion', score: String(scores?.writing?.criteria?.coherenceAndCohesion?.band ?? scores?.writing?.criteria?.coherence ?? (W ? W.toFixed(1) : '--')), status: 'Logical progression and connections' },
-        { name: 'Lexical Resource', score: String(scores?.writing?.criteria?.lexicalResource?.band ?? scores?.writing?.criteria?.lexical ?? (W ? W.toFixed(1) : '--')), status: 'Precision and appropriate range' },
-        { name: 'Grammatical Range & Accuracy', score: String(scores?.writing?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.writing?.criteria?.grammar ?? (W ? W.toFixed(1) : '--')), status: 'Range and accuracy in context' },
-      ] : [
-        { name: 'Task Achievement / Response', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Coherence & Cohesion', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Lexical Resource', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Grammatical Range & Accuracy', score: '--', status: 'Awaiting first test attempt' },
-      ],
-      aiInsight: {
-        title: W !== null ? (analyses.writing?.criteria?.length ? 'CRITERION PERFORMANCE' : 'WRITING INSIGHT') : 'DIAGNOSTIC INSIGHT PENDING',
-        score: W !== null ? W.toFixed(1) : '--',
-        status: W !== null ? (W >= 7.0 ? 'Strong proficiency' : 'Needs attention') : 'Awaiting attempt',
-        issue: W !== null
-          ? (scores?.writing?.areasForImprovement || 'Complete writing tasks carefully following rubric guidelines.')
-          : 'Complete an authentic Writing test to receive AI examiner diagnostic analysis.',
-        focusItems: W !== null
-          ? (analyses.writing?.criteria || [])
-              .slice()
-              .sort((a, b) => a.band - b.band)
-              .slice(0, 2)
-              .map(c => `${c.label}: ${c.band.toFixed(1)}`)
-          : ['Complete a writing test for analysis'],
-      }
-    },
-    {
-      id: 'speaking',
-      name: 'Speaking',
-      icon: 'mic',
-      band: S,
-      hasAttempt: S !== null,
-      accent: 'var(--c-near-black)',
-      badgeText: S === null ? 'Unattempted' : S < 7.0 ? 'Needs attention' : 'Strong proficiency',
-      badgeClass: 'pill-black',
-      subskills: S !== null ? [
-        { name: 'Fluency & Coherence', score: String(scores?.speaking?.criteria?.fluencyAndCoherence?.band ?? scores?.speaking?.criteria?.fluency ?? (S ? S.toFixed(1) : '--')), status: 'Speech continuity and discourse' },
-        { name: 'Lexical Resource', score: String(scores?.speaking?.criteria?.lexicalResource?.band ?? scores?.speaking?.criteria?.lexical ?? (S ? S.toFixed(1) : '--')), status: 'Range of idiomatic phrasing' },
-        { name: 'Grammatical Range & Accuracy', score: String(scores?.speaking?.criteria?.grammaticalRangeAndAccuracy?.band ?? scores?.speaking?.criteria?.grammar ?? (S ? S.toFixed(1) : '--')), status: 'Syntactic control of tenses' },
-        { name: 'Pronunciation', score: scores?.speaking?.criteria?.pronunciation?.band ? String(scores.speaking.criteria.pronunciation.band) : 'Not scored', status: 'Not assessed from transcripts' },
-      ] : [
-        { name: 'Fluency & Coherence', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Lexical Resource', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Grammatical Range & Accuracy', score: '--', status: 'Awaiting first test attempt' },
-        { name: 'Pronunciation', score: '--', status: 'Awaiting first test attempt' },
-      ],
-      aiInsight: {
-        title: S !== null ? (scores?.speaking?.criteria?.fluencyAndCoherence?.improvementFocus ? 'FLUENCY FOCUS' : 'SPEAKING INSIGHT') : 'DIAGNOSTIC INSIGHT PENDING',
-        score: S !== null ? S.toFixed(1) : '--',
-        status: S !== null ? (S >= 7.0 ? 'Strong proficiency' : 'Needs attention') : 'Awaiting attempt',
-        issue: S !== null
-          ? (scores?.speaking?.areasForImprovement || 'Continue to practice speaking clearly and cohesively.')
-          : 'Complete an authentic Speaking interview to receive AI examiner diagnostic analysis.',
-        focusItems: S !== null
-          ? [
-              scores?.speaking?.criteria?.fluencyAndCoherence?.improvementFocus || 'Fluency',
-              scores?.speaking?.criteria?.grammaticalRangeAndAccuracy?.improvementFocus || 'Grammatical range'
-            ].filter(Boolean).slice(0, 3)
-          : ['Buying time with discourse phrases', 'Part 2 1-minute cue card notes', 'Natural sentence intonation'],
-      }
-    },
-  ];
-
-  const overallProgressPct = currentOverallNum !== null
-    ? Math.min(100, Math.max(10, ((currentOverallNum - 4.0) / (targetNum - 4.0)) * 100))
-    : 0;
-
-
-
-  return (
-    <div className="performance-page-container">
-      {/* ── PAGE TITLE BLOCK ─────────────────────────────────────────── */}
-      <div className="perf-title-block">
-        <h1 className="perf-main-heading">Your Performance</h1>
-        <p className="perf-main-sub">
-          Track how your IELTS skills are developing.
-        </p>
+export default function PerformancePage({scores = {},targetBand,onStartSkill,onStartDrill,onOpenLesson,onOpenTips,onReviewResult}) {
+  const insights=usePracticeInsights(), {attempts,bySkill,recommendations}=insights;
+  const summary=derivePerformanceSummary({attempts});
+  const bands=Object.fromEntries(SKILLS.map(skill=>[skill,numericBand(summary.latestScores[skill]?.band ?? scores[skill]?.band)]));
+  const overall=calculateOverallBand(...SKILLS.map(skill=>bands[skill]));
+  const target=Number(targetBand)||7;
+  const [selected,setSelected]=useState('reading');
+  const model=bySkill[selected], result=model.result || scores[selected];
+  const previous=derivePerformanceSummary({attempts:attempts.filter(a=>a.id!==summary.recentAttempts[0]?.id)}).overallBand;
+  const delta=overall!==null && previous!==null?overall-previous:null;
+  const select=skill=>{setSelected(skill);document.getElementById('skill-detail')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});};
+  const startSection=section=>{
+    const match=recommendations.find(r=>r.skill===selected && r.kind==='section' && (r.part || r.taskKind)===section.key);
+    onStartDrill?.(match || {key:`${selected}.${selected==='writing'?'task':'part'}${section.key}`,skill:selected,part:section.key,taskKind:section.key,testId:section.testId || model.diagnosticTestId || model.result?.testId || model.latest?.testId,sourceAttemptId:section.sourceAttemptId || model.diagnosticAttemptId,title:`${SKILL_NAMES[selected]} · ${section.label}`});
+  };
+  const progress=drillProgress(attempts);
+  const criteria=Object.entries(result?.criteria || {}).filter(([key])=>CRITERIA[key]);
+  return <main className="performance-studio">
+    <div className="insight-page-title"><div><span className="insight-eyebrow">YOUR LEARNING PICTURE</span><h1>Your performance</h1></div><span className="insight-count">{summary.completedCount} full tests</span></div>
+    <section className="performance-hero insight-panel" aria-label="Overall score and skill breakdown">
+      <div className="overall-visual"><div className="score-orbit" style={{'--score-angle':`${(overall || 0)/9*360}deg`}}><div><span className="insight-eyebrow">OVERALL ESTIMATE</span><strong>{overall!==null?overall.toFixed(1):'—'}</strong><span>Target {target.toFixed(1)}</span></div></div><span className="score-trend">{delta===null?'Latest complete skill profile':delta===0?'Unchanged since your last result':`${delta>0?'↑ +':'↓ '}${delta.toFixed(1)} since your last result`}</span></div>
+      <div className="hero-skill-breakdown"><h2>Four skills. One picture.</h2>{SKILLS.map(skill=><button type="button" key={skill} className={`hero-skill-row skill-${skill}`} onClick={()=>select(skill)}><span className="skill-icon"><Icon name={ICONS[skill]}/></span><span>{SKILL_NAMES[skill]}</span><span className="skill-band-track"><span style={{width:`${(bands[skill] || 0)/9*100}%`}}/></span><strong>{bands[skill]!==null?bands[skill].toFixed(1):'—'}</strong><span aria-hidden="true">↗</span></button>)}
+        <details className="score-method"><summary>How this score works</summary><p>Latest complete test in each skill → average of all four → nearest half band. Drills and Harper coaching stay separate. Writing Task 2 carries twice the weight of Task 1. Speaking is provisional without pronunciation assessment.</p>{overall!==null && <p className="score-formula">({SKILLS.map(s=>bands[s].toFixed(1)).join(' + ')}) ÷ 4 → <strong>{overall.toFixed(1)}</strong></p>}</details>
       </div>
-
-      <section className="coach-panel"><h2>Review a saved test</h2><div className="coach-actions">{['listening','reading','writing','speaking'].map(skill => {
-        const attempt = attempts.find(a => a.type === skill && a[skill]);
-        return attempt && <button type="button" key={skill} onClick={() => onReviewResult?.(skill, {...attempt[skill],attemptId:attempt.id,testId:attempt.testId})}>Review latest {skill}</button>;
-      })}</div></section>
-      <FocusedRecommendations attempts={attempts} onStartDrill={onStartDrill} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
-      <p className="coach-score-note">Full-test estimates use complete skill tests and mock exams. Drills and coached Writing tasks are tracked separately. Writing weights Task 1 once and Task 2 twice. Speaking estimates exclude pronunciation and are provisional.</p>
-      {/* ── OVERALL PRACTICE ESTIMATE HERO CARD ──────────────────────────────────── */}
-      <div className="perf-overall-card">
-        <div className="perf-overall-left">
-          <span className="pill-badge pill-black">
-            OVERALL PRACTICE ESTIMATE
-          </span>
-
-          <div className="perf-overall-numbers">
-            <div className="perf-num-group">
-              <span className="perf-num-lbl">FULL-TEST ESTIMATE</span>
-              <span className="perf-num-val current">{currentOverallNum !== null ? currentOverallNum.toFixed(1) : '--'}</span>
-            </div>
-
-            <div className="perf-num-divider">/</div>
-
-            <div className="perf-num-group">
-              <span className="perf-num-lbl">TARGET SCORE</span>
-              <span className="perf-num-val target">{targetNum.toFixed(1)}</span>
-            </div>
-          </div>
-
-          <div className="perf-trend-text">
-            {hasHistory ? (
-              <span style={{ color: Number(bandDelta) >= 0 ? 'var(--success-icon)' : 'var(--c-coral)', fontWeight: 700 }}>
-                {Number(bandDelta) >= 0 ? `▲ +${bandDelta}` : `▼ ${bandDelta}`} Band from previous simulation
-              </span>
-            ) : hasAnyScore ? (
-              <span>Baseline established across recent practice sessions</span>
-            ) : (
-              <span>Complete a full test to establish a baseline.</span>
-            )}
-          </div>
-        </div>
-
-        <div className="perf-overall-right">
-          <div className="perf-progress-header">
-            <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>
-              {!hasAnyScore ? 'Take a test to begin tracking' : currentOverallNum >= targetNum ? 'Target Reached!' : `${(targetNum - currentOverallNum).toFixed(1)} Band to Target ${targetBand}`}
-            </span>
-            <span style={{ fontWeight: 700, color: 'var(--c-coral)' }}>
-              {Math.round(overallProgressPct)}% Toward Target
-            </span>
-          </div>
-
-          <div className="perf-continuous-track">
-            <div
-              className="perf-continuous-fill"
-              style={{ width: `${overallProgressPct}%` }}
-            />
-          </div>
-
-          {/* Quick 4-Skill Mini Matrix */}
-          <div className="perf-mini-matrix">
-            {validSkills.map(s => (
-              <div key={s.id} className="perf-matrix-col">
-                <span className="perf-matrix-lbl">{s.name}</span>
-                <span
-                  className="perf-matrix-val"
-                  style={{ color: s.id === 'writing' ? 'var(--c-coral)' : 'var(--text-primary)' }}
-                >
-                  {s.band !== null ? s.band : '--'}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+    </section>
+    <FocusedRecommendations insights={insights} onStartDrill={onStartDrill} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} onStartSkill={onStartSkill}/>
+    <section className="insight-panel skill-explorer" id="skill-detail" aria-labelledby="skill-detail-title">
+      <div className="insight-section-heading"><div><span className="insight-eyebrow">LOOK CLOSER</span><h2 id="skill-detail-title">Where you stand</h2></div>{model.latest && <button type="button" className="insight-secondary" onClick={()=>onReviewResult?.(selected,{...model.result,attemptId:model.latest.id,testId:model.result?.testId || model.latest.testId})}>Review test <span aria-hidden="true">↗</span></button>}</div>
+      <div className="skill-explorer-tabs" aria-label="Explore a skill">{SKILLS.map(skill=><button type="button" className={`skill-${skill}`} key={skill} aria-pressed={selected===skill} onClick={()=>setSelected(skill)}><Icon name={ICONS[skill]}/>{SKILL_NAMES[skill]} <strong>{bands[skill]!==null?bands[skill].toFixed(1):'—'}</strong></button>)}</div>
+      <div className={`skill-explorer-body skill-${selected}`} key={selected}>
+        <div className="insight-section-heading"><h3>{selected==='reading'?'Passage performance':selected==='listening'?'Part performance':selected==='writing'?'Task performance':'Part observations'}</h3><span className="insight-muted">{selected==='speaking'?'Coaching evidence · no part bands':'Latest detailed result'}</span></div>
+        <div className="section-performance-grid">{(model.sections.length?model.sections:Array.from({length:selected==='writing'?2:selected==='listening'?4:3},(_,i)=>({key:i+1,label:`${selected==='reading'?'Passage':selected==='writing'?'Task':'Part'} ${i+1}`}))).map(section=>{
+          const known=selected==='reading'||selected==='listening'?section.total>0:selected==='writing'?section.band!==null && section.band!==undefined:section.samples>0;
+          const weak=selected==='speaking'?section.needsPractice:section.accuracy!==undefined?section.accuracy<0.7:section.band<7;
+          return <article className={`section-performance ${known&&weak?'needs-focus':''}`} key={section.key}><div className="section-performance-label"><h4>{section.label}</h4><span className="section-status">{!known?'No detail':weak?'Focus here':'Building well'}</span></div>
+            <div className="section-performance-value"><strong>{!known?'—':section.total?`${Math.round((section.accuracy || 0)*100)}%`:selected==='writing'?section.band.toFixed(1):section.needsPractice?'Develop':'Secure'}</strong><MiniTrend values={section.history} max={selected==='writing'?9:1}/></div>
+            {section.total>0 && <><AccuracyBar group={section}/><span className="insight-muted">{section.correct}/{section.total} correct{section.uncertain?` · ${section.uncertain} uncertain`:''}</span></>}
+            {selected==='speaking' && known && <span className="insight-muted">{section.flagged}/{section.samples} reviews flagged</span>}
+            {selected==='writing' && known && <span className="insight-muted">Task estimate · {section.samples} results</span>}
+            {known && <button type="button" className="insight-text-button" onClick={()=>startSection(section)}>Practise {section.label.toLowerCase()} <span aria-hidden="true">→</span></button>}
+          </article>;
+        })}</div>
+        {(selected==='reading'||selected==='listening') && <><div className="insight-section-heading"><h3>Question types</h3><span className="accuracy-legend"><i/>Correct <i/>Uncertain</span></div>{model.types.length?<div className="question-type-results">{model.types.slice().sort((a,b)=>(a.accuracy ?? 1)-(b.accuracy ?? 1)).map(group=><div className="question-type-row" key={group.key}><span>{group.label}</span><AccuracyBar group={group}/><strong>{group.correct}/{group.total}</strong><button type="button" className="insight-text-button" onClick={()=>onStartDrill?.({key:`${selected}.${group.key}`,skill:selected,questionType:group.key,testId:model.diagnosticTestId || model.result?.testId || model.latest?.testId,sourceAttemptId:model.diagnosticAttemptId,title:group.label})} aria-label={`Practise ${group.label}`}>Practise <span aria-hidden="true">→</span></button></div>)}</div>:<div className="detail-empty"><Icon name="book" size={22}/><p>These saved results contain a band, but no question breakdown.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}</>}
+        {(selected==='writing'||selected==='speaking') && model.sections.every(s=>!s.samples) && <div className="detail-empty"><p>A new full test adds {selected==='writing'?'task comparisons':'part observations'}.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}
+        {(selected==='writing'||selected==='speaking') && <details className="coaching-notes"><summary>Coaching notes <span>{criteria.length} criteria</span></summary><div className="criteria-feedback-grid">{criteria.map(([key,value])=><article key={key}><h4>{CRITERIA[key]} <strong>{numericBand(value?.band)!==null?value.band.toFixed(1):'—'}</strong></h4><p>{value.improvementFocus || value.nextBandAdvice || value.personalizedAssessment || value.evidence || 'Detailed feedback is available in the test review.'}</p></article>)}</div>{!criteria.length && <p>Complete a new {selected} assessment to receive criterion feedback.</p>}{result?.areasForImprovement && <p>{result.areasForImprovement}</p>}</details>}
       </div>
-
-      {/* ── PROGRESS TIMELINE + FOCUS AREAS ─────────────────────────── */}
-      <ProgressTimeline skillHistory={summary.skillHistory} completedCount={summary.completedCount} />
-      {focusAreas.length > 0 && (
-        <div className="perf-overall-card" style={{ padding: '18px 22px' }}>
-          <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 10 }}>
-            Focus areas <span style={{ color: 'var(--text-secondary)', fontWeight: 700, fontSize: 11.5 }}>(from your recent attempts)</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {focusAreas.map(a => (
-              <div key={a.key} style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-                <strong style={{ color: 'var(--text-primary)' }}>{a.skill.charAt(0).toUpperCase() + a.skill.slice(1)} — {a.label}.</strong>{' '}
-                {a.detail}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* ── FOUR LARGE SKILL SECTIONS ─────────────────────────────────── */}
-      <div className="perf-skills-column">
-        {skillSections.map(section => {
-          const progressPct = section.hasAttempt ? Math.min(100, Math.max(15, (section.band / 9.0) * 100)) : 0;
-
-          return (
-            <div key={section.id} className="perf-skill-section-card" id={`section-${section.id}`}>
-              {/* Skill Top Bar: Name & Score */}
-              <div className="perf-skill-header-row">
-                <div className="perf-skill-title-group">
-                  <div
-                    className="perf-skill-icon-box"
-                    style={{
-                      background: section.accent,
-                      color: section.id === 'speaking' ? '#FFFFFF' : '#151313',
-                    }}
-                  >
-                    <Icon name={section.icon} size={18} />
-                  </div>
-                  <div>
-                    <h2 className="perf-skill-name">{section.name.toUpperCase()}</h2>
-                  </div>
-                </div>
-
-                <div className="perf-skill-score-box">
-                  <span className="perf-skill-band-large">{section.hasAttempt ? section.band.toFixed(1) : '--'}</span>
-                  <span className="perf-skill-band-total">/ 9.0</span>
-                </div>
-              </div>
-
-              {/* Continuous Progress Bar with Skill Accent */}
-              <div className="perf-skill-bar-wrap">
-                <div className="perf-skill-bar-track">
-                  <div
-                    className="perf-skill-bar-fill"
-                    style={{ width: `${progressPct}%`, background: section.accent }}
-                  />
-                </div>
-              </div>
-
-              {/* Status Indicator / Area Highlight */}
-              <div className="perf-skill-status-row">
-                <span className={`pill-badge ${section.badgeClass}`}>
-                  {section.badgeText}
-                </span>
-                <span className="perf-skill-target-note">
-                  {section.band >= targetNum
-                    ? 'Target achieved'
-                    : section.band !== null
-                      ? `${(targetNum - section.band).toFixed(1)} band away from target (${targetBand})`
-                      : `Target: Band ${targetBand}`}
-                </span>
-              </div>
-
-              {/* Subskills Grid (IELTS Criteria / Supported Data) */}
-              <div className="perf-subskills-grid">
-                {section.subskills.map(sub => (
-                  <div key={sub.name} className="perf-subskill-box">
-                    <span className="perf-subskill-title">{sub.name}</span>
-                    <div className="perf-subskill-score">{sub.score}</div>
-                    <span className="perf-subskill-note">{sub.status}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* AI Coaching Feedback Card (Concise, Not Paragraphs) */}
-              <div className="perf-ai-insight-card">
-                <div className="perf-ai-card-left">
-                  <div className="perf-ai-top-line">
-                    <span className="perf-ai-card-tag">{section.aiInsight.title}</span>
-                    <span className="perf-ai-score-indicator">{section.aiInsight.score}</span>
-                    <span className={`perf-ai-status-pill ${section.id === 'writing' || section.aiInsight.status === 'Needs attention' ? 'alert' : ''}`}>
-                      {section.aiInsight.status}
-                    </span>
-                  </div>
-
-                  <p className="perf-ai-issue-text">
-                    {section.aiInsight.issue}
-                  </p>
-
-                  <div className="perf-ai-focus-list">
-                    <span className="perf-ai-focus-title">Focus on:</span>
-                    {section.aiInsight.focusItems.map((item, idx) => (
-                      <span key={idx} className="perf-ai-focus-pill">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="perf-ai-card-right">
-                  <button
-                    className="btn-coral-pill-sm"
-                    onClick={() => onStartSkill(section.id)}
-                    id={`practice-skill-${section.id}`}
-                  >
-                    <span>Practice this</span>
-                    <span className="btn-arrow-icon">→</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+    </section>
+    <ProgressTimeline skillHistory={summary.skillHistory}/>
+    {progress.length>0 && <details className="insight-panel focused-history"><summary>Focused practice history <span>{progress.reduce((n,p)=>n+p.count,0)} sessions · separate from overall</span></summary><div className="focused-history-grid">{progress.map(p=><div key={p.key}><strong>{p.key.replaceAll('.',' · ')}</strong><span>{p.count} sessions</span>{typeof p.latest.accuracy==='number' && <b>{p.latest.accuracy}% latest</b>}</div>)}</div></details>}
+  </main>;
 }

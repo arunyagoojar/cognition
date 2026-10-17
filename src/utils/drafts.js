@@ -1,4 +1,5 @@
 let owner = '';
+export const getDraftScope = () => owner;
 export function setDraftScope(userId) { owner = userId || ''; }
 function key(name) { return `cognition_draft_v2:${owner || 'guest'}:${name}`; }
 export function readDraft(name) {

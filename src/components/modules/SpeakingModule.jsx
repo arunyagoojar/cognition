@@ -1,3 +1,4 @@
+import { speakingTestContext } from '../../utils/speakingContext.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useRef, useEffect } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
@@ -460,17 +461,9 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     }
 
     const expectedQuestions = (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0);
-    const cueCardTopic = test?.parts?.find(p => p.partNumber === 2)?.cueCard?.topic;
-    const cueCardBullets = (test?.parts?.find(p => p.partNumber === 2)?.cueCard?.bulletPrompts || []).join(', ');
-    const cueCardStr = cueCardTopic ? `${cueCardTopic}${cueCardBullets ? ` (Prompts: ${cueCardBullets})` : ''}` : undefined;
-
-
     const evalResult = await evaluateSpeakingResponses({
       transcripts,
-      testMeta: {
-        title: test?.title || 'IELTS Speaking Practice',
-        cueCard: cueCardStr,
-      },
+      testMeta: speakingTestContext(test),
       durations,
       speechMeta,
       expectedQuestions,

@@ -311,7 +311,7 @@ export function derivePerformanceSummary(store = getPerformanceStore()) {
           latestScores[skill] = {
             ...data,
             attemptId: attempt.id,
-            testId: attempt.testId,
+            testId: data.testId || attempt.testId,
             testLabel: attempt.testLabel,
             completedAt: attempt.completedAt,
           };

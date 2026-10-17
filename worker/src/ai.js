@@ -1,3 +1,5 @@
+import { planRequestBudget } from '../../src/utils/ai/requestBudget.js';
+import { isCoachingPrompt } from '../../src/utils/harper/writingCoachContract.js';
 /**
  * Server-side AI evaluation for Cognition (Phase 4).
  * The Worker decrypts the user's credential in memory, calls Gemini,
@@ -62,6 +64,8 @@ function extractJsonFromText(text) {
 }
 
 async function callGemini(model, apiKey, systemPrompt, userPrompt) {
+  const budget=planRequestBudget('gemini',systemPrompt,typeof userPrompt==='string'?userPrompt:userPrompt.text,{coaching:isCoachingPrompt(systemPrompt),mediaTokens:userPrompt?.parts?.some(p=>p.inlineData)?2048:0});
+  if(!budget.ok)throw Object.assign(new Error(budget.message),{code:'input_budget'});
   let attempts = 0;
   while (attempts < 2) {
     attempts++;
@@ -70,8 +74,8 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
       body: JSON.stringify({
         system_instruction: { parts: [{ text: systemPrompt }] },
-        contents: [{ parts: [{ text: userPrompt }] }],
-        generationConfig: { temperature: 0.2, maxOutputTokens: 8192 },
+        contents: [{ parts: userPrompt?.parts || [{ text: userPrompt }] }],
+        generationConfig: { temperature: 0.2, maxOutputTokens: budget.outputTokens, ...(userPrompt?.parts?{mediaResolution:'MEDIA_RESOLUTION_HIGH'}:{}) },
       }),
       signal: AbortSignal.timeout(45000),
     });
@@ -89,7 +93,7 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
       throw err;
     }
     const data = await res.json();
-    return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
+    return data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text || '').join('') || null;
   }
 }
 
@@ -97,8 +101,9 @@ async function callGroq(model, apiKey, systemPromptFull, userPrompt) {
   // Groq free tier: ~8,000 tokens/minute for prompt + requested reply.
   const systemPrompt = systemPromptFull === WRITING_SYSTEM_PROMPT_V2 ? WRITING_SYSTEM_PROMPT_COMPACT
     : systemPromptFull === SPEAKING_SYSTEM_PROMPT_V2 ? SPEAKING_SYSTEM_PROMPT_COMPACT : systemPromptFull;
-  const est = (t) => Math.ceil(String(t || '').length / 3.5);
-  const replyBudget = Math.max(2000, Math.min(6000, 7600 - est(systemPrompt) - est(userPrompt)));
+  const budget=planRequestBudget('groq',systemPrompt,userPrompt,{coaching:isCoachingPrompt(systemPrompt)});
+  if(!budget.ok)throw Object.assign(new Error(budget.message),{code:'input_budget'});
+  const replyBudget=budget.outputTokens;
   let attempts = 0;
   let strictJson = true;
   while (attempts < 3) {
@@ -166,6 +171,7 @@ export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, val
       }
     } catch (e) {
       lastError = e;
+      if(e.code==='input_budget')return {status:'failed',message:e.message};
       if (e.status === 429) {
         return { status: 'failed', message: `AI rate limit reached (429) on ${isGroq ? 'Groq' : 'Gemini'}. Please wait a minute and retry.` };
       }

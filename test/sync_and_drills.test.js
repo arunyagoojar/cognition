@@ -81,5 +81,15 @@ passed++;
 for(let i=0;i<130;i++)db.prepare("INSERT INTO attempts(id,clerk_user_id,type) VALUES(?,'alice','drill')").run(`drill-${i}`);
 const history=await (await call('alice','GET','/api/attempts')).json();
 assert(history.some(a=>a.id==='retained'));assert.equal(history.filter(a=>a.type==='drill').length,100);passed++;
+const question='Should cities invest in public transport?', draft='Buses help residents reach work.';
+const coaching={questionFocus:'public transport',criteria:Object.fromEntries(['taskResponse','coherenceAndCohesion','lexicalResource','grammaticalRangeAndAccuracy'].map(key=>[key,{band:6,feedback:'Explain the link to employment.',evidence:'reach work',nextAction:'Add a specific commuter example.'}])),summary:'Relevant but brief.',nextActions:['Add an example.'],conciseness:{feedback:'Direct wording.',evidence:'Buses help residents'},limitations:'Short draft'};
+let aiPayload;
+globalThis.fetch=async(url,options)=>{
+ if(String(url).includes('/jwks'))return new Response(JSON.stringify({keys:[jwk]}));
+ if(String(url).endsWith('/models'))return new Response(JSON.stringify({data:[{id:'openai/gpt-oss-120b'}]}));
+ aiPayload=JSON.parse(options.body);return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(coaching)}}]}));
+};
+const coached=await (await call('alice','POST','/api/ai/evaluate-writing',{mode:'single_task',text:draft,taskKind:2,task:{prompt:question},provider:'groq',key:'fixture-server-key'})).json();
+assert.equal(coached.status,'completed');assert(aiPayload.messages[1].content.includes(question));assert(aiPayload.messages[1].content.includes(draft));assert(aiPayload.max_completion_tokens<=2000);passed++;
 globalThis.fetch=originalFetch;db.close();
 console.log(`${passed} sync, drill, draft, and real Worker/database integration checks passed.`);

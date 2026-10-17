@@ -1,3 +1,6 @@
+import { selectFocusedContent } from '../../utils/focusedContent.js';
+import HtmlContentRenderer from '../common/HtmlContentRenderer.jsx';
+import { MultiChoice } from '../reading/ReadingQuestionGroup.jsx';
 import { alignUnorderedAnswers } from '../../utils/evaluation/evaluationEngine.js';
 import { useEffect, useRef, useState } from 'react';
 import { CONTENT_CATALOG, loadSkillContent } from '../../data/production/registry.js';
@@ -29,18 +32,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
    const get={reading:getProductionReadingTest,listening:getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
    const source=get?.(id,true);
    if(!source) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
-   let selected=source;
-   if(focus.skill==='reading') {
-    const passages=source.passages.map(p=>({...p,questionGroups:p.questionGroups.filter(g=>!focus.questionType || g.questions.some(q=>q.questionType===focus.questionType))})).filter(p=>p.questionGroups.length);
-    selected={...source,passages:passages.slice(0,1)};
-    if(!selected.passages.length) throw new Error('This test has no group matching the recommendation.');
-   }
-   if(focus.skill==='listening') {
-    const sections=source.sections || source.parts || [];
-    selected={...source,sections:sections.filter(p=>(!focus.part || p.partNumber===focus.part) && p.questions.some(q=>!focus.questionType || q.questionType===focus.questionType)).slice(0,1).map(p=>({...p,questions:p.questions.filter(q=>!focus.questionType || q.questionType===focus.questionType)}))};
-    if(!selected.sections.length) throw new Error('This test has no questions matching the recommendation.');
-   }
-   if(focus.skill==='speaking') selected={...source,parts:source.parts.filter(p=>p.partNumber===(focus.part || 2)),title:`Speaking Part ${focus.part || 2} focused practice`};
+   const selected=selectFocusedContent(source,focus);
    if(alive) setTest(selected);
   }).catch(e=>{if(alive)setError(e.message);});
   return ()=>{alive=false;};
@@ -56,7 +48,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
  const questions=focus.skill==='reading' ? groups.flatMap(g=>g.questions) : (test.sections || []).flatMap(p=>p.questions);
  const submit=()=>{
    const aligned=alignUnorderedAnswers(questions,answers);
-   const itemResults=Object.fromEntries(questions.map(q=>{const d=evaluateDeterministic(aligned[q.id],q.acceptedAnswers?.length?q.acceptedAnswers:q.answer,{wordLimit:q.wordLimit});return[q.id,{questionType:q.questionType,candidateAnswer:answers[q.id] || '',finalResult:d.result==='MATCH'?'CORRECT':d.result==='UNCERTAIN'?'UNCERTAIN':'INCORRECT'}];}));
+   const itemResults=Object.fromEntries(questions.map(q=>{const d=evaluateDeterministic(aligned[q.id],q.acceptedAnswers?.length?q.acceptedAnswers:q.answer,{wordLimit:q.wordLimit});return[q.id,{questionType:q.questionType,part:focus.part || null,candidateAnswer:answers[q.id] || '',finalResult:d.result==='MATCH'?'CORRECT':d.result==='UNCERTAIN'?'UNCERTAIN':'INCORRECT'}];}));
    const correct=Object.values(itemResults).filter(r=>r.finalResult==='CORRECT').length;
    save({itemResults,answers,accuracy:questions.length?Math.round(correct/questions.length*100):0,total:questions.length,correct});
  };
@@ -77,7 +69,10 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
    {focus.skill==='reading' && test.passages.map(p=><ReadingPassage key={p.passageNumber} passage={p}/>)}
    {focus.skill==='listening' && test.sections.map((s,i)=><audio key={i} controls src={s.audioFile || test.audio?.appPath}>Audio playback is unavailable.</audio>)}
    {groups.map(g=><ReadingQuestionGroup key={g.groupId} group={g} answers={answers} onAnswer={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}
-   {focus.skill==='listening' && questions.map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}
+   {focus.skill==='listening' && test.sections.map(part=><div key={part.id}>{part.questionGroups?.length?part.questionGroups.map(g=>{
+     const inlineIds=new Set([...(g.htmlContent || '').matchAll(/data-qid="(q\d+)"/g)].map(m=>m[1]));
+     return <section key={g.groupId} className="coach-panel"><h3>Questions {g.questions[0]?.questionNumber}–{g.questions.at(-1)?.questionNumber}</h3><p>{g.instructions}</p>{g.visualHtml && <div className="exam-visual" dangerouslySetInnerHTML={{__html:g.visualHtml}}/>}<HtmlContentRenderer htmlContent={g.htmlContent} answers={answers} setAnswers={setAnswers}/>{g.selection?<MultiChoice group={{questions:g.questions,startQ:g.questions[0]?.questionNumber,endQ:g.questions.at(-1)?.questionNumber,selectCount:g.selection.selectCount,optionPool:{options:g.selection.options}}} prompt={g.selection.prompt} answers={answers} onAnswer={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>:g.questions.filter(q=>!inlineIds.has(q.id)).map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}</section>;
+   }):part.questions.map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}</div>)}
    {!result && <button type="button" className="btn-coral-pill-physical" onClick={submit}>Check this drill</button>}
    {result && <section className="coach-panel" aria-live="polite"><h2>{result.correct}/{result.total} confirmed correct</h2><p>{result.accuracy}% on this question group. This is not a full-test band; uncertain variants need review.</p><ol>{questions.map(q=><li key={q.id}>{q.questionText || `Question ${q.questionNumber}`} — {result.itemResults[q.id].finalResult}. Key: {String(q.answer ?? q.acceptedAnswers?.join(' / ') ?? '')}</li>)}</ol><button onClick={onBack}>Return to your recommendations</button></section>}
   </>}

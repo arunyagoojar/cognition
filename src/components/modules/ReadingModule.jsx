@@ -160,6 +160,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
 
       const computedResult = {
         ...evalResult,
+        testId: currentTest?.testId || testId,
         band: computedBand,
         raw: rawScore,
         total: totalScore,
@@ -186,7 +187,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       // Resilient fallback
       try {
         const graded = getReadingTest(currentTest?.testId || testId, true) || currentTest;
-        const allQuestions = (graded?.passages || []).flatMap(p => p.questions || []);
+        const allQuestions = (graded?.passages || []).flatMap((p,i) => (p.questions || []).map(q=>({...q,part:p.passageNumber || i+1})));
         let localRaw = 0;
         const itemResults = {};
         for (const q of allQuestions) {
@@ -199,7 +200,8 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             officialAnswer: q.answer,
             candidateAnswer: userAns || null,
             questionNumber: q.questionNumber ?? null,
-            questionType: q.type || q.questionType || null,
+            questionType: q.questionType || q.type || null,
+            part: q.part,
           };
         }
         const localBand = calculateReadingBand(localRaw);
@@ -210,7 +212,8 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           total: allQuestions.length || 40,
           percentage: allQuestions.length ? Math.round((localRaw / allQuestions.length) * 100) : 0,
           answers: currentAnswers,
-          itemResults
+          itemResults,
+          testId: currentTest?.testId || testId
         };
 
         if (isMockMode) {

@@ -1,45 +1,30 @@
 import { useRef, useState } from 'react';
-import { reviewWritingPractice } from '../../utils/geminiEvaluator.js';
-import { recordAttempt, createAttemptId } from '../../utils/performanceStore.js';
-import { syncAttempt } from '../../utils/api.js';
+import { submitWritingCoaching } from '../../utils/harper/writingSubmission.js';
 import { suggestVocabulary } from '../../utils/harper/vocabularyCoach.js';
-const labels = {taskAchievement:'Task achievement', taskResponse:'Task response', coherenceAndCohesion:'Coherence & cohesion', lexicalResource:'Vocabulary', grammaticalRangeAndAccuracy:'Grammar range & accuracy'};
-export default function WritingCoach({ text, task, taskKind = 2, testId, focusKey, sourceAttemptId }) {
- const [review, setReview] = useState(null), [busy,setBusy] = useState(false), [error,setError] = useState('');
- const locked = useRef(false);
- const suggestions = suggestVocabulary(text);
- const run = async () => {
-   if (locked.current || !text.trim()) return;
-   locked.current = true; setBusy(true); setError('');
-   const snapshot = text;
-   try {
-     const result = await reviewWritingPractice({text:snapshot, task, taskKind});
-     if (result.status !== 'completed') { setError(result.message || 'Review unavailable. Your draft is saved; try again.'); return; }
-     const item={...result.evaluation, text:snapshot}; setReview(item);
-     const id=createAttemptId('writing_coach');
-     const attempt={id,type:'writing_coach',status:'completed',practiceMode:'drill',bandEligible:false,testId,taskKind,task,focusKey,sourceAttemptId,originalText:snapshot,review:item,completedAt:new Date().toISOString()};
-     recordAttempt(attempt); void syncAttempt(attempt);
-   } catch { setError('Could not complete the review. Keep writing or try again.'); }
-   finally { locked.current=false; setBusy(false); }
- };
- return <section className="coach-panel" aria-label="Writing coach">
-  <h3>Words to consider as you write</h3>
-  <p>Suggestions update with your draft. Choose words that preserve your meaning; no text changes automatically.</p>
-  {suggestions.length ? <div className="vocabulary-grid">{suggestions.map(item=><details key={item.word}>
-    <summary>“{item.word}” → {item.suggestion}{item.count>1 ? ` · used ${item.count} times` : ''}</summary>
-    <p>{item.meaning}</p><p><em>{item.example}</em></p>
-  </details>)}</div> : <p>Keep writing. Relevant vocabulary suggestions will appear here.</p>}
-  <h3>Review the whole response with AI</h3>
-  <p>Reviews task fulfilment, organisation, cohesion, vocabulary, and grammar. Sends this draft, the question, and any supported Task 1 visual to your configured AI provider when you request a review. Local Harper checks continue independently.</p>
-  <button type="button" className="btn-coral-pill-physical" disabled={busy || !text.trim()} onClick={run}>{busy?'Reviewing your response…':'Review with AI'}</button>
-  {error && <p role="alert">{error}</p>}
-  {review && <div aria-live="polite">
-    {review.text!==text && <p role="status">This review is for an earlier draft. Review again after your edits.</p>}
-    <p><strong>Single-task coaching · excluded from your overall band</strong></p>
-    {review.limitations && <p>{review.limitations}</p>}
-    <h4>Your next three actions</h4><ol>{review.nextActions.map((action,i)=><li key={i}>{action}</li>)}</ol>
-    <div className="coach-criteria">{Object.entries(review.criteria).map(([key,item])=><section key={key}><h4>{labels[key] || key}{typeof item.band==='number' ? ` · estimate ${item.band}` : ' · limited evidence'}</h4><p>{item.feedback}</p>{item.evidence && <blockquote>{item.evidence}</blockquote>}<p><strong>Try:</strong> {item.nextAction}</p></section>)}</div>
-    <details><summary>Review summary & original draft</summary><p>{review.summary}</p><pre className="coach-original">{review.text}</pre></details>
-  </div>}
+import { repeatColor } from '../../utils/harper/editorHighlights.js';
+const labels={taskAchievement:'Task fulfilment',taskResponse:'Task response',coherenceAndCohesion:'Organisation & cohesion',lexicalResource:'Vocabulary',grammaticalRangeAndAccuracy:'Grammar'};
+
+
+export function VocabularySuggestions({text}) {
+ const suggestions=suggestVocabulary(text,6);
+ return <section className="live-vocabulary" aria-labelledby="live-vocabulary-title"><div className="insight-section-heading"><h3 id="live-vocabulary-title">Words to try</h3><span className="live-caption">Updates as you write</span></div>
+ {suggestions.length ? <div className="live-vocabulary-list">{suggestions.map(item=><article key={item.word} style={{'--word-tint':repeatColor(item.word)}}><div><span>{item.word}</span><span aria-hidden="true">→</span><strong>{item.suggestion}</strong></div><details><summary>Meaning & use</summary><p>{item.meaning}</p>{item.example && <p><em>{item.example}</em></p>}{item.alternatives && <p>{item.alternatives.join(' · ')}</p>}</details></article>)}</div>:<p className="insight-muted">Vocabulary ideas appear here as your draft develops.</p>}
  </section>;
+}
+
+export function WritingReview({review,busy,error,localDiagnostics,onRetry}) {
+ return <section className="writing-review" aria-label="Writing assessment" aria-busy={busy}>
+ {busy && <div className="review-loading" role="status"><span className="review-spinner"/><div><h3>Reviewing your response</h3><p>Checking task fulfilment, organisation, cohesion, vocabulary, grammar, and conciseness.</p></div></div>}
+ {error && <div className="review-error" role="alert"><h3>AI assessment unavailable</h3><p>{error}</p><p>Your draft and local checks are saved.</p>{onRetry && <button type="button" className="insight-secondary" onClick={onRetry}>Retry assessment</button>}</div>}
+ {review && <><div className="review-question-focus"><span className="insight-eyebrow">ASSESSED QUESTION</span><p>“{review.questionFocus}”</p></div><div className="insight-section-heading"><h2>Your writing profile</h2><span className="insight-muted">Task estimate · separate from overall</span></div><div className="writing-review-criteria">{Object.entries(review.criteria).map(([key,item])=><article key={key}><div className="review-criterion-heading"><h3>{labels[key] || key}</h3><strong>{typeof item.band==='number'?item.band:'—'}</strong></div><div className="criterion-band-track"><span style={{width:`${(item.band || 0)/9*100}%`}}/></div><p>{item.feedback}</p><details><summary>Evidence & next step</summary>{item.evidence && <blockquote>“{item.evidence}”</blockquote>}<p>{item.nextAction}</p></details></article>)}</div>
+ <section className="review-next-actions"><h3>Your next revision</h3><ol>{review.nextActions.map((action,i)=><li key={i}><span aria-hidden="true">{i+1}</span>{action}</li>)}</ol></section>
+ {review.conciseness && <details className="coaching-notes"><summary>Conciseness</summary><p>{review.conciseness.feedback}</p>{review.conciseness.evidence && <blockquote>“{review.conciseness.evidence}”</blockquote>}</details>}
+ <details className="coaching-notes"><summary>Assessment summary & limitations</summary><p>{review.summary}</p>{review.limitations && <p>{review.limitations}</p>}<p>AI practice feedback can contain mistakes. Local checks flag patterns; they do not establish complete grammatical accuracy.</p>{localDiagnostics && <p>Harper found {localDiagnostics.issueCount} issues across {localDiagnostics.totalSentences} sentences.</p>}</details></>}
+ </section>;
+}
+
+export default function WritingCoach(props) {
+ const [review,setReview]=useState(null),[busy,setBusy]=useState(false),[error,setError]=useState('');const lock=useRef(false);
+ const run=async()=>{if(lock.current || !props.text.trim())return;lock.current=true;setBusy(true);setError('');try {const result=await submitWritingCoaching(props);if(result.status==='completed')setReview(result.evaluation);else setError(result.message || 'Connect your AI provider in Settings and retry.');}catch {setError('Could not complete the assessment. Please retry.');}finally{lock.current=false;setBusy(false);}};
+ return <section className="coach-panel">{!review && !busy && <><p className="insight-muted">Submit for task, cohesion, vocabulary, and grammar feedback.</p><button type="button" className="btn-coral-pill-physical" onClick={run} disabled={!props.text.trim()}>Finish & Summary <span aria-hidden="true">→</span></button></>}{review?.text!==props.text && review && <p>Draft changed. <button onClick={run} disabled={busy}>Update summary</button></p>}<WritingReview review={review} busy={busy} error={error} onRetry={run}/></section>;
 }

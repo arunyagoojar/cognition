@@ -1,3 +1,5 @@
+import { loadWritingVisual } from '../../src/utils/harper/writingVisual.js';
+import { prepareWritingCoaching, validateWritingCoaching } from '../../src/utils/harper/writingCoachContract.js';
 import { mergeAttemptData } from '../../src/utils/attemptPayload.js';
 /**
  * Cognition Cloudflare Worker API + frontend host.
@@ -560,6 +562,16 @@ export default {
               status: 'failed',
               message: 'AI evaluation is not configured. Add your Gemini or Groq API key in Settings.',
             }, 200, corsHeaders);
+          }
+          if(body.mode==='single_task') {
+            const text=typeof body.text==='string'?body.text:'';
+            const taskKind=body.taskKind===1?1:2;
+            const imagePart=taskKind===1?await loadWritingVisual(body.task,providerToUse):null;
+            const contract=prepareWritingCoaching({text,task:body.task || {},taskKind,localDiagnostics:body.localDiagnostics,visualSupplied:Boolean(imagePart)});
+            if(contract.error)return json({status:'failed',message:contract.error},200,corsHeaders);
+            const plaintextKey=cred.explicit?cred.plaintext:await decryptCredential(cred.encrypted_value,cred.iv,base64KeyOrThrow(env));
+            const result=await runEvaluationChain({apiKey:plaintextKey,systemPrompt:contract.system,userPrompt:imagePart?{text:contract.prompt,parts:[{text:contract.prompt},imagePart]}:contract.prompt,provider:providerToUse,validator:data=>validateWritingCoaching(data,{text,task:body.task || {},taskKind,limited:contract.limited})});
+            return json({...result,visualAssessed:Boolean(imagePart)},200,corsHeaders);
           }
           const t1Clean = (body.task1Text || '').trim();
           const t2Clean = (body.task2Text || '').trim();

@@ -1,3 +1,4 @@
+import { speakingTestContext } from '../speakingContext.js';
 // Canonical Evaluation Engine for Cognition IELTS
 // Executes deterministic checking + AI evaluation pipeline.
 // Strictly prevents fabricated, default, stale, or synthetic IELTS scores.
@@ -204,7 +205,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
  */
 export async function evaluateReadingResponses({ passages = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
-  const allQuestions = passages.flatMap(p => p.questions || []);
+  const allQuestions = passages.flatMap((p,i) => (p.questions || []).map(q => ({...q, part:p.passageNumber || i+1})));
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
 
   if (answeredCount === 0) {
@@ -244,6 +245,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
       candidateAnswer: candidate || null,
       questionType: q.questionType || null,
       questionNumber: q.questionNumber ?? null,
+      part: q.part ?? null,
     };
   }
 
@@ -297,7 +299,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
  */
 export async function evaluateListeningResponses({ sections = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
-  const allQuestions = sections.flatMap(s => s.questions || []);
+  const allQuestions = sections.flatMap((s,i) => (s.questions || []).map(q => ({...q, part:s.part || s.partNumber || i+1})));
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
 
   if (answeredCount === 0) {
@@ -322,8 +324,9 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
       deterministicCorrect: isCorrect,
       officialAnswer: q.answer,
       candidateAnswer: candidate || null,
-      questionType: q.type || q.questionType || null,
+      questionType: q.questionType || q.type || null,
       questionNumber: q.questionNumber ?? null,
+      part: q.part ?? null,
     };
   }
 
@@ -705,7 +708,7 @@ export async function evaluateFullMockExam({
   const speakingData = sectionAnswers.speaking || {};
   const speaking = await evaluateSpeakingResponses({
     transcripts: speakingData.transcripts || {},
-    testMeta: { title: testLabel || testId },
+    testMeta: speakingTestContext(rawExamPackage?.speaking),
     durations: speakingData.durations || {},
     speechMeta: speakingData.speechMeta || {},
   });
@@ -721,6 +724,7 @@ export async function evaluateFullMockExam({
   // Determine overall attempt status:
   // - If all skills failed or unattempted: 'failed' or 'not_attempted'
   // - If at least one skill was evaluated: 'completed' (with overallBand null if partial)
+  for(const [skill,result] of Object.entries({listening,reading,writing,speaking})) result.testId=rawExamPackage?.[skill]?.testId || testId;
   const skills = { listening, reading, writing, speaking };
   const hasCompletedAny = Object.values(skills).some(s => s.status === 'completed');
   const hasFailedAny = Object.values(skills).some(s => s.status === 'failed');

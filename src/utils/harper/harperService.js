@@ -21,15 +21,17 @@ export async function getHarperLinter() {
 
   initPromise = (async () => {
     try {
-      const { LocalLinter, Dialect } = await import('harper.js');
+      const { LocalLinter, WorkerLinter, Dialect } = await import('harper.js');
       const { binaryInlined } = await import('harper.js/binaryInlined');
 
-      const linter = new LocalLinter({
+      const Linter = typeof Worker !== 'undefined' && typeof window !== 'undefined' ? WorkerLinter : LocalLinter;
+      const linter = new Linter({
         binary: binaryInlined,
         dialect: Dialect.British,
       });
 
       await linter.setup();
+      await linter.setLintConfig(await linter.getDefaultLintConfig());
       linterInstance = linter;
       return linter;
     } catch (err) {
@@ -47,10 +49,11 @@ export async function getHarperLinter() {
  */
 function categorizeLint(message, _snippet) {
   const msg = (message || '').toLowerCase();
+  if (/repeat this word/i.test(msg)) return {type:'repeated',label:'Repeated word',color:'var(--c-coral)'};
   if (/article|indefinite|definite/i.test(msg)) {
     return { type: 'article', label: 'Article Usage', color: 'var(--c-yellow)' };
   }
-  if (/spelling|mean|typo|misspelled/i.test(msg)) {
+  if (/spelling|typo|misspelled/i.test(msg)) {
     return { type: 'spelling', label: 'Spelling / Typo', color: 'var(--c-lavender)' };
   }
   if (/comma|period|punctuation|hyphen|semicolon|colon|quote/i.test(msg)) {
@@ -79,7 +82,8 @@ export async function lintTextWithHarper(text) {
   }
 
   const linter = await getHarperLinter();
-  const rawLints = await linter.lint(text);
+  const rawLints = await linter.lint(text, {language:'plaintext', dedup:false, isolateEnglish:false});
+  // harper.js 2.10 already converts spans to JavaScript UTF-16 offsets.
 
   const issues = [];
   for (let i = 0; i < rawLints.length; i++) {
@@ -119,6 +123,14 @@ export async function lintTextWithHarper(text) {
     });
   }
 
+  // Narrow local check for an article directly before an object pronoun.
+  // Harper 2.10 does not yet flag "for a me"; avoid treating this as full grammar coverage.
+  for (const match of text.matchAll(/\b(?:a|an)\s+(?:me|him|us|them|myself|yourself|ourselves|themselves)\b/g)) {
+    const start=match.index, end=start+match[0].length;
+    if(issues.some(i=>i.start<=start && i.end>=end)) continue;
+    issues.push({id:`local-article-${start}`,start,end,snippet:match[0],message:'Remove the article before this object pronoun.',category:'Article usage',type:'article',color:'var(--c-coral)',source:'local',suggestions:[{replace:match[0].replace(/^(?:a|an)\s+/,''),kind:0}]});
+  }
+
   // Calculate sentences and error-free sentences
   const sentenceRegex = /[^.!?]+[.!?]+|\S[^.!?]*$/g;
   const sentenceMatches = [];
@@ -137,16 +149,14 @@ export async function lintTextWithHarper(text) {
   let errorFreeSentences = 0;
 
   for (const s of sentenceMatches) {
-    const hasError = issues.some(iss => iss.start >= s.start && iss.end <= s.end);
+    const hasError = issues.some(iss => iss.start < s.end && iss.end > s.start);
     if (!hasError) {
       errorFreeSentences++;
     }
   }
 
-  // Accuracy score based on error density per 100 words
   const words = text.trim().split(/\s+/).filter(Boolean).length;
-  const errorRate = words > 0 ? (issues.length / words) * 100 : 0;
-  const accuracyPercent = Math.max(20, Math.min(100, Math.round(100 - errorRate * 5)));
+  const accuracyPercent = Math.round(errorFreeSentences / totalSentences * 100);
 
   return {
     issues,

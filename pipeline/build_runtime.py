@@ -742,6 +742,18 @@ def main():
         catalog[skill] = [{k: rec[k] for k in ("id", "testId", "slug", "title", "hubNumber", "cambridgeIdentity", "fullMockEligible") if k in rec} for rec in records]
     with open(os.path.join(RUNTIME, "catalog.json"), "w") as output:
         json.dump(catalog, output, ensure_ascii=False, separators=(",", ":"))
+    # Answer-free metadata restores section/type labels in older saved results.
+    analytics_index = {}
+    for skill, sections_key in (("reading", "passages"), ("listening", "parts")):
+        analytics_index[skill] = {
+            str(rec["testId"]): {
+                "aliases": [rec.get("id"), rec.get("slug")],
+                "questions": {q["id"]: [part.get("passageNumber", part.get("part")), q.get("questionType") or q.get("type")]
+                              for part in rec[sections_key] for q in part["questions"]}
+            } for rec in banks[skill]
+        }
+    with open(os.path.join(RUNTIME, "analyticsIndex.json"), "w") as output:
+        json.dump(analytics_index, output, ensure_ascii=False, separators=(",", ":"))
     print("runtime bundle: listening tests =", len(listen_runtime), "| speaking packages =", len(speak_runtime),
           "| excluded =", len(excluded), "| size MB =", round(len(js) / 1e6, 1))
 

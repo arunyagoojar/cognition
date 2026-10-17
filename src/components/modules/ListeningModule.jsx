@@ -206,6 +206,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
 
       const computedResult = {
         ...evalResult,
+        testId: currentTest?.testId || testId,
         band: computedBand,
         raw: rawScore,
         total: totalScore,
@@ -235,7 +236,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       // Robust Fallback: Grade deterministically so candidate is NEVER left stranded without a score!
       try {
         const gradedTest = getListeningTest(currentTest?.testId || testId, true) || currentTest;
-        const allQuestions = (gradedTest?.parts || []).flatMap(p => p.questions || []);
+        const allQuestions = (gradedTest?.parts || []).flatMap((p,i) => (p.questions || []).map(q=>({...q,part:p.part || i+1})));
         let localRaw = 0;
         const itemResults = {};
         for (const q of allQuestions) {
@@ -248,7 +249,8 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
             officialAnswer: q.answer,
             candidateAnswer: userAns || null,
             questionNumber: q.questionNumber ?? null,
-            questionType: q.type || q.questionType || null,
+            questionType: q.questionType || q.type || null,
+            part: q.part,
           };
         }
         const localBand = calculateListeningBand(localRaw);
@@ -259,7 +261,8 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           total: allQuestions.length || 40,
           percentage: allQuestions.length ? Math.round((localRaw / allQuestions.length) * 100) : 0,
           answers: currentAnswers,
-          itemResults
+          itemResults,
+          testId: currentTest?.testId || testId
         };
 
         if (isMockMode) {

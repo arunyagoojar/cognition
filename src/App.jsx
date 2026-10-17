@@ -5,12 +5,13 @@ import { readScreenRoute, writeScreenRoute } from './utils/screenRoute.js';
 import SyncStatus from './components/common/SyncStatus.jsx';
 import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
 import { useUser, useClerk, useAuth } from '@clerk/react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import TopNavigation from './components/dashboard/TopNavigation';
 import SettingsModal from './components/dashboard/SettingsModal';
 
 import PerformanceOverview from './components/dashboard/PerformanceOverview';
 import PracticeSection from './components/dashboard/PracticeSection';
+import FocusedRecommendations from './components/dashboard/FocusedRecommendations.jsx';
 import MockHeroCard from './components/dashboard/MockHeroCard';
 import LastTestRecheck from './components/dashboard/LastTestRecheck';
 import Loader from './components/common/Loader';
@@ -326,14 +327,15 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
 
   // Shared fluid spatial continuity for all page transitions (280ms)
+  const reduceMotion = useReducedMotion();
   const pageVariants = {
-    initial: { opacity: 0, y: 10, scale: 0.995 },
+    initial: { opacity: 0, y: reduceMotion ? 0 : 10, scale: 1 },
     animate: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: -8, scale: 0.995 },
+    exit: { opacity: 0, y: reduceMotion ? 0 : -6, scale: 1 },
   };
 
   const pageTransition = {
-    duration: 0.28,
+    duration: reduceMotion ? 0 : 0.18,
     ease: [0.16, 1, 0.3, 1],
   };
 
@@ -406,6 +408,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onStartPractice={startSkillProtected}
             />
 
+            <FocusedRecommendations onStartDrill={startDrill} onOpenLesson={openLesson} onOpenTips={openTips} onStartSkill={startSkillProtected} />
+
             {/* 3. Practice Section (Writing, Listening, Speaking, Reading) */}
             <PracticeSection
               scores={scores}
@@ -427,7 +431,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           </motion.main>
         )}
 
-        {view === 'drill' && <FocusedDrill key={`drill-${drillRequest?.key || 'saved'}`} request={drillRequest} onBack={() => { refreshScores(); setView('performance'); }} onOpenLesson={openLesson} onOpenTips={openTips} />}
+        {view === 'drill' && <motion.div key="drill" variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={pageTransition}><FocusedDrill key={`drill-${drillRequest?.key || 'saved'}`} request={drillRequest} onBack={() => { refreshScores(); setView('performance'); }} onOpenLesson={openLesson} onOpenTips={openTips} /></motion.div>}
         {view === 'performance' && (
           <motion.div
             key="performance"
@@ -442,6 +446,10 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               targetBand={targetBand}
               onBack={() => setView('home')}
               onStartSkill={startSkillProtected}
+              onStartDrill={startDrill}
+              onOpenLesson={openLesson}
+              onOpenTips={openTips}
+              onReviewResult={viewSavedResult}
             />
           </motion.div>
         )}

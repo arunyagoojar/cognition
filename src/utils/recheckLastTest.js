@@ -1,3 +1,4 @@
+import { speakingTestContext } from './speakingContext.js';
 import { loadSkillContent } from '../data/production/registry.js';
 /**
  * Re-runs the AI evaluation of the user's most recent test from the dashboard.
@@ -72,11 +73,9 @@ export async function recheckLastTest() {
 
   // speaking
   const test = getSpeakingTest(attempt.testId);
-  const cue = test?.parts?.[1]?.cueCard;
-  const cueCard = cue?.topic ? `${cue.topic}${cue.bulletPrompts?.length ? ` (Prompts: ${cue.bulletPrompts.join(', ')})` : ''}` : undefined;
   const res = await evaluateSpeakingResponses({
     transcripts: record.transcripts || {},
-    testMeta: { title: attempt.testLabel || test?.title || 'IELTS Speaking Practice', cueCard },
+    testMeta: speakingTestContext(test),
     durations: record.durations || {},
     speechMeta: record.speechMeta || {},
     expectedQuestions: (test?.parts || []).reduce((n, p) => n + (p.questions?.length || 0), 0) || null,

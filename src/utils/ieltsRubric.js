@@ -40,7 +40,7 @@ import { computeSpeechMetrics, describeMetrics, formatSpeechScript } from './spe
 /** Shown wherever Pronunciation appears: it is not part of the Speaking band. */
 export const PRONUNCIATION_NOTE = 'It is not possible for an AI model to interpret how well you pronounce. For now, this is not a scoring metric in the system.';
 
-export const RUBRIC_VERSION = 'ielts-rubric-2.3';
+export const RUBRIC_VERSION = 'ielts-rubric-2.4';
 
 /** Words as the candidate sees them counted: whitespace-separated tokens. */
 export function countWords(text) {
@@ -608,6 +608,7 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
     }
     const metrics = computeSpeechMetrics({ text: meta.originalText || v, segments: meta.segments, durationSec: durations?.[k] || meta.durationSec });
     lines.push('', `### ${label}`);
+    if(testMeta.questions?.[k]) lines.push(`Question (context only): ${testMeta.questions[k]}`);
     if (meta.originalText && meta.originalText !== v) lines.push('Candidate marked recognition corrections. Delivery metrics use the original transcript, not the corrected wording.');
     if (metrics) lines.push(`Delivery: ${describeMetrics(metrics)}`);
     lines.push(formatSpeechScript({ text: String(v).trim(), segments: meta.segments }));
