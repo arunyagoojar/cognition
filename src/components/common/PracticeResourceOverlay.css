@@ -1,0 +1,86 @@
+.practice-resource-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  background: rgb(15 13 13 / 45%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: resource-backdrop-in 160ms ease-out;
+}
+.practice-resource-dialog {
+  width: min(720px, 100%);
+  max-height: min(90dvh, 900px);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border: var(--border-dark);
+  border-radius: 24px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: 0 20px 64px rgb(0 0 0 / 22%);
+  animation: resource-dialog-in 180ms ease-out;
+}
+.practice-resource-dialog.is-lesson { width: min(560px, 100%); }
+.practice-resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 24px 18px;
+  border-bottom: var(--border-subtle);
+}
+.practice-resource-kicker { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: capitalize; }
+.practice-resource-header h2 { font-size: clamp(20px, 3vw, 25px); line-height: 1.3; overflow-wrap: anywhere; }
+.practice-resource-close {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin: -6px -6px 0 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-interactive);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.practice-resource-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 22px 24px; line-height: 1.6; }
+.practice-resource-body > p { font-size: 14px; color: var(--text-secondary); }
+.practice-resource-intro { margin-bottom: 18px; }
+.practice-resource-tips { display: grid; gap: 16px; }
+.practice-resource-tips .tip-card, .practice-resource-tips .vocab-card { border: var(--border-subtle); background: var(--surface); border-radius: 18px; padding: 20px; }
+.practice-resource-tips .tip-demo { background: var(--bg-card); }
+.practice-resource-tips .tip-card-title { font-size: 17px; }
+.practice-resource-tips .tip-card-explanation, .practice-resource-tips .tip-card-short, .practice-resource-tips .tip-demo-text { font-size: 14px; }
+.practice-resource-tips .tip-demo-text { min-width: min(160px, 100%); overflow-wrap: anywhere; }
+.practice-resource-tips .tip-lines-row { flex-wrap: wrap; gap: 6px 14px; }
+.practice-resource-lesson-meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; }
+.practice-resource-play-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; color: #151313; background: var(--c-lavender); }
+.practice-resource-lesson-title { font-size: 20px; line-height: 1.4; margin-bottom: 10px; }
+.practice-resource-takeaways { display: grid; gap: 8px; padding-left: 20px; margin-top: 18px; color: var(--text-secondary); font-size: 13px; }
+.practice-resource-footer { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; padding: 16px 24px; border-top: var(--border-subtle); }
+.practice-resource-secondary, .practice-resource-primary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; border-radius: 13px; padding: 10px 18px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.practice-resource-secondary { color: var(--text-primary); background: var(--surface-interactive); border: var(--border-subtle); }
+.practice-resource-primary { color: #151313; background: var(--c-yellow); border: 1.5px solid #151313; }
+.practice-resource-close:hover, .practice-resource-secondary:hover { background: var(--surface-hover); }
+.practice-resource-primary:hover { filter: brightness(.96); }
+.practice-resource-dialog button:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 3px; }
+@keyframes resource-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes resource-dialog-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .practice-resource-backdrop { padding: 12px; }
+  .practice-resource-dialog { border-radius: 20px; max-height: calc(100dvh - 24px); }
+  .practice-resource-header, .practice-resource-body { padding: 18px; }
+  .practice-resource-footer { padding: 14px 18px; }
+  .practice-resource-tips .tip-card, .practice-resource-tips .vocab-card { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .practice-resource-backdrop, .practice-resource-dialog { animation: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .practice-resource-backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgb(15 13 13 / 70%); }
+}

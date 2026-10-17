@@ -1,6 +1,7 @@
-import { speakingTestContext } from '../../utils/speakingContext.js';
+import { speakingPartComplete, speakingQuestionKey, speakingTestContext } from '../../utils/speakingContext.js';
+import { SPEAKING_REC_STATE as REC_STATE, nextSpeakingPreparationSecond, speakingInteractionState, speakingPart2Controls, updateSpeakingInteraction } from '../../utils/speakingInteraction.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
 import SpeechModelStatus from '../speaking/SpeechModelStatus';
 import { needsLocalStt, prepareLocalStt, transcribeRecording, subscribeLocalStt, unloadLocalStt } from '../../utils/speech/localStt';
@@ -22,19 +23,6 @@ const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 
 /* ── Recording state machine (mutually exclusive states) ──
    IDLE → PREPARING → READY_TO_SPEAK → RECORDING → (TIME_REACHED|SAVED)
    → TRANSCRIBING → EVALUATING → COMPLETED | FAILED                            */
-const REC_STATE = {
-  IDLE: 'idle',
-  PREPARING: 'preparing',
-  READY_TO_SPEAK: 'ready_to_speak',
-  RECORDING: 'recording',
-  TIME_REACHED: 'time_reached',
-  SAVED: 'saved',
-  TRANSCRIBING: 'transcribing',
-  EVALUATING: 'evaluating',
-  COMPLETED: 'completed',
-  FAILED: 'failed',
-};
-
 const PART2_PREP_SECONDS = 60; // official: 1 minute preparation
 const PART2_SPEAK_SECONDS = 120; // official: up to 2 minutes
 
@@ -71,12 +59,13 @@ function TranscriptState({ rec, onRetry }) {
 
 export default function SpeakingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null, practiceMode = 'full' }) {
   const [test] = useState(() => initialTest || (testId ? getSpeakingTest(testId) : getRandomizedSpeakingTest()));
-  const [savedSession] = useState(() => readDraft(`speaking:${practiceMode}:${test?.testId || testId}`));
+  const sessionKey = `speaking:${practiceMode}:${test?.testId || testId}${practiceMode === 'drill' ? `:part-${(test?.parts || []).map(p => p.partNumber).join('-')}` : ''}`;
+  const [savedSession] = useState(() => readDraft(sessionKey));
   const [nativeAllowed, setNativeAllowed] = useState(false);
   const [phase, setPhase] = useState(() => (initialResult ? 'results' : savedSession?.phase === 'results' && savedSession?.result ? 'results' : savedSession?.phase === 'review' ? 'review' : savedSession ? 'exam' : initialPhase)); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(() => savedSession?.partIdx || 0);
   const [questionIdx, setQuestionIdx] = useState(() => savedSession?.questionIdx || 0);
-  const [recState, setRecState] = useState(REC_STATE.IDLE);
+  const [recStates, setRecStates] = useState({});
 
   // Part 2 flow state
   const [prepSecondsLeft, setPrepSecondsLeft] = useState(null);
@@ -142,8 +131,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   useEffect(() => {
     if (phase === 'intro') return;
     const records=Object.fromEntries(Object.entries(recordings).map(([key,{blob: _blob,url: _url,...rec}])=>[key,rec]));
-    writeDraft(`speaking:${practiceMode}:${test?.testId || testId}`,{phase,partIdx,questionIdx,recordings:records,result});
-  }, [phase,partIdx,questionIdx,recordings,result,practiceMode,test,testId]);
+    writeDraft(sessionKey,{phase,partIdx,questionIdx,recordings:records,result});
+  }, [phase,partIdx,questionIdx,recordings,result,sessionKey]);
 
   const recognitionRef = useRef(null);
   const liveTranscriptRef = useRef('');
@@ -159,6 +148,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const useLocalStt = React.useMemo(() => needsLocalStt(), []);
   const transcriptJobsRef = useRef({});   // qKey → { recordingId, promise }
   const transcriptsRef = useRef({});      // qKey → { recordingId, text }
+  const latestRecordingIdsRef = useRef(Object.fromEntries(Object.entries(savedSession?.recordings || {}).map(([key, rec]) => [key, rec.recordingId])));
 
   const [sttStatus, setSttStatus] = useState(useLocalStt ? 'idle' : 'ready');
   useEffect(() => {
@@ -175,17 +165,19 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
   /** Transcribes one saved answer on the device (also used to retry). */
   const runTranscription = (qId, recordingId, blob, fallbackText = '') => {
-    setRecState(REC_STATE.TRANSCRIBING);
+    if (latestRecordingIdsRef.current[qId] && latestRecordingIdsRef.current[qId] !== recordingId) return Promise.resolve();
+    latestRecordingIdsRef.current[qId] = recordingId;
+    setRecState(REC_STATE.TRANSCRIBING, qId);
     setRecordings(prev => (prev[qId]?.recordingId === recordingId
       ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'pending' } } : prev));
     const promise = transcribeRecording(blob).then((res) => {
-      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return; // superseded
+      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId || latestRecordingIdsRef.current[qId] !== recordingId) return; // superseded
       const text = typeof res === 'string' ? res : (res?.text || '');
       const words = res?.words || [];
       const segments = res?.segments || [];
       const engine = res?.engine || 'moonshine-base';
       const version = res?.version || 'base-fp32';
-      const finalText = text.trim() || (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
+      const finalText = text.trim() || (typeof fallbackText === 'string' ? fallbackText.trim() : '');
       transcriptsRef.current[qId] = { recordingId, text: finalText, words, segments: text.trim() ? segments : [], engine, version };
       setRecordings(prev => (prev[qId]?.recordingId === recordingId
         ? {
@@ -202,11 +194,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             }
           }
         : prev));
-      setRecState(REC_STATE.COMPLETED);
+      setRecState(REC_STATE.COMPLETED, qId);
     }).catch((err) => {
       console.error('Transcription error on device:', err);
-      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId) return;
-      const finalText = (typeof fallbackText === 'string' ? fallbackText.trim() : '') || (liveTranscriptRef.current || '').trim();
+      if (transcriptJobsRef.current[qId]?.recordingId !== recordingId || latestRecordingIdsRef.current[qId] !== recordingId) return;
+      const finalText = typeof fallbackText === 'string' ? fallbackText.trim() : '';
       if (finalText) {
         transcriptsRef.current[qId] = { recordingId, text: finalText, words: [], engine: 'native_fallback', version: 'browser' };
         setRecordings(prev => (prev[qId]?.recordingId === recordingId
@@ -223,11 +215,11 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               }
             }
           : prev));
-        setRecState(REC_STATE.COMPLETED);
+        setRecState(REC_STATE.COMPLETED, qId);
       } else {
         setRecordings(prev => (prev[qId]?.recordingId === recordingId
           ? { ...prev, [qId]: { ...prev[qId], transcriptStatus: 'failed' } } : prev));
-        setRecState(REC_STATE.COMPLETED);
+        setRecState(REC_STATE.COMPLETED, qId);
       }
     });
     transcriptJobsRef.current[qId] = { recordingId, promise };
@@ -239,9 +231,23 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   const questions = currentPart?.questions || [];
   const totalQuestionsInPart = questions.length || 1;
   const currentQuestion = questions[questionIdx];
-  const sourcePartIndex = (currentPart?.partNumber || partIdx + 1) - 1;
-  const currentKey = `${sourcePartIndex}_${questionIdx}`;
+  const currentKey = speakingQuestionKey(currentPart, questionIdx, partIdx);
   const currentRecording = recordings[currentKey];
+  const activeQuestionRef = useRef(currentKey);
+  useLayoutEffect(() => { activeQuestionRef.current = currentKey; }, [currentKey]);
+  const recState = speakingInteractionState(recStates, currentKey, currentRecording);
+  const part2Controls = speakingPart2Controls(recState);
+  const setRecState = (nextState, questionKey = currentKey) => {
+    setRecStates(previous => updateSpeakingInteraction(previous, questionKey, nextState));
+  };
+
+  // Preparation belongs to the displayed cue card. Navigation cancels it;
+  // recording and transcription retain their original question identities.
+  useEffect(() => {
+    setPrepSecondsLeft(null);
+    setRecStates(previous => previous[currentKey] === REC_STATE.PREPARING ? updateSpeakingInteraction(previous, currentKey, REC_STATE.IDLE) : previous);
+    return () => { clearInterval(prepIntervalRef.current); };
+  }, [currentKey]);
 
   useEffect(() => {
     const recorder = mediaRecorderRef;
@@ -263,16 +269,18 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   /* ── Part 2: preparation → speaking, official timings ── */
   const startPreparation = () => {
     if (recordLocked) return;
+    clearInterval(prepIntervalRef.current);
     setRecState(REC_STATE.PREPARING);
     setPrepSecondsLeft(PART2_PREP_SECONDS);
     prepIntervalRef.current = setInterval(() => {
       setPrepSecondsLeft(prev => {
-        if (prev <= 1) {
+        const next = nextSpeakingPreparationSecond(prev);
+        if (next === 0) {
           clearInterval(prepIntervalRef.current);
           setRecState(REC_STATE.READY_TO_SPEAK);
           return 0;
         }
-        return prev - 1;
+        return next;
       });
     }, 1000);
   };
@@ -287,9 +295,18 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
     if (recordLocked) return;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (activeQuestionRef.current !== currentKey) {
+        stream.getTracks().forEach(track => track.stop());
+        return;
+      }
       const chunks = [];
       const mimeType = detectSupportedAudioMimeType();
       const mr = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+      const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+      latestRecordingIdsRef.current[currentKey] = recordingId;
+      let sessionRecognition = null;
+      let sessionTranscript = '';
+      let sessionSeconds = 0;
 
       // native recognition runs simultaneously for live display and instant fallback
       const SpeechRecognition = typeof window !== 'undefined'
@@ -305,23 +322,34 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             let full = '';
             for (let i = 0; i < e.results.length; i++) full += e.results[i][0].transcript + ' ';
             const clean = full.trim();
-            setLiveTranscript(clean);
-            liveTranscriptRef.current = clean;
+            sessionTranscript = clean;
+            if (activeQuestionRef.current === currentKey && mediaRecorderRef.current === mr) {
+              setLiveTranscript(clean);
+              liveTranscriptRef.current = clean;
+            }
           };
           rec.onerror = () => {};
           rec.start();
+          sessionRecognition = rec;
           recognitionRef.current = rec;
         } catch { /* transcription optional */ }
       }
 
       mr.ondataavailable = (e) => { if (e.data && e.data.size > 0) chunks.push(e.data); };
       mr.onstop = () => {
+        if (sessionRecognition) {
+          try { sessionRecognition.stop(); } catch {}
+          if (recognitionRef.current === sessionRecognition) recognitionRef.current = null;
+        }
+        const isCurrentRecorder = mediaRecorderRef.current === mr;
+        if (isCurrentRecorder) mediaRecorderRef.current = null;
+        stream.getTracks().forEach(t => t.stop());
+        if (latestRecordingIdsRef.current[currentKey] !== recordingId) return;
         const blob = createAudioBlob(chunks, mimeType);
         const url = URL.createObjectURL(blob);
-        const fallbackText = liveTranscriptRef.current || '';
-        const dur = recordSecondsRef.current || 0;
+        const fallbackText = sessionTranscript;
+        const dur = sessionSeconds;
         const qId = currentKey;
-        const recordingId = `rec_${Date.now()}_${Math.random().toString(36).substring(7)}`;
         saveAudioRecording({ recordingId, attemptId: 'temp_attempt', questionId: qId, blob, mimeType, duration: dur })
           .catch(() => {});
         if (!useLocalStt) transcriptsRef.current[qId] = { recordingId, text: fallbackText };
@@ -335,15 +363,13 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             notes: isPart2 ? notesRef.current : undefined,
           }
         }));
-        setActivePlaybackUrl(url);
-        setRecState(REC_STATE.TRANSCRIBING);
+        if (activeQuestionRef.current === qId && isCurrentRecorder) setActivePlaybackUrl(url);
+        setRecState(REC_STATE.TRANSCRIBING, qId);
         if (useLocalStt) {
           runTranscription(qId, recordingId, blob, fallbackText);
         } else {
-          setRecState(REC_STATE.COMPLETED);
+          setRecState(REC_STATE.COMPLETED, qId);
         }
-        if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
-        stream.getTracks().forEach(t => t.stop());
       };
 
       if (mimeType && mimeType.includes('mp4')) {
@@ -359,15 +385,15 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       setActivePlaybackUrl(null);
 
       recordIntervalRef.current = setInterval(() => {
-        setRecordSeconds(s => {
-          const next = s + 1;
-          recordSecondsRef.current = next;
-          if (isPart2 && next >= PART2_SPEAK_SECONDS) {
+        sessionSeconds++;
+        if (mediaRecorderRef.current === mr) {
+          setRecordSeconds(sessionSeconds);
+          recordSecondsRef.current = sessionSeconds;
+          if (isPart2 && sessionSeconds >= PART2_SPEAK_SECONDS) {
             setRecState(REC_STATE.TIME_REACHED);
-            setTimeout(() => stopRecording(), 60);
+            setTimeout(() => { if (mediaRecorderRef.current === mr) stopRecording(); }, 60);
           }
-          return next;
-        });
+        }
       }, 1000);
     } catch {
       setRecState(REC_STATE.FAILED);
@@ -511,6 +537,12 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
      ────────────────────────────────────────────────────────── */
   if (phase === 'intro') {
     const fullCoverage = (test.parts || []).length >= 3;
+    const partDescriptions = {
+      1: 'Short conversational responses on familiar topics.',
+      2: '1 minute of note preparation followed by a 2-minute sustained monologue.',
+      3: 'Extended discussion connected to the cue-card topic.',
+    };
+    const selectedPart = test.parts[0]?.partNumber;
     return (
       <ExamStartScreen
         section="Speaking"
@@ -518,18 +550,16 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         testTitle={test?.title || 'IELTS Speaking Practice'}
         subtitle={practiceMode === 'drill' ? 'Practise the selected interview part with recorded answers and qualitative feedback. This does not change your overall band.' : 'A three-part IELTS interview: introduction, cue-card long turn, and abstract discussion with recording and response-level evaluation.'}
         metaItems={[
-          { label: fullCoverage ? '3 Parts' : 'Part 2 Cue Cards', sub: fullCoverage ? 'Interview · Long Turn · Discussion' : 'Source coverage: cue cards (Part 1/3 practice content)' },
+          { label: fullCoverage ? '3 Parts' : `Part ${selectedPart}`, sub: fullCoverage ? 'Interview · Long Turn · Discussion' : partDescriptions[selectedPart] },
           { label: practiceMode === 'drill' ? 'One focused part' : '11–14 Minutes', sub: practiceMode === 'drill' ? 'Targeted practice' : 'Official interview timing' },
           { label: practiceMode === 'drill' ? 'Focused feedback' : 'Practice estimate', sub: 'Pronunciation not assessed' },
         ]}
         rules={[
           'Ensure your microphone is connected and authorized in your browser before starting.',
-          'Part 1: short conversational responses on familiar topics.',
-          'Part 2: 1 minute of note preparation followed by a 2-minute sustained monologue.',
-          'Part 3: extended discussion connected to your Part 2 topic.',
+          ...(test.parts || []).map(p => `Part ${p.partNumber}: ${partDescriptions[p.partNumber]}`),
         ]}
         scoringInfo={`Scored on Fluency & Coherence, Lexical Resource, and Grammatical Range & Accuracy from your transcript and delivery (pace, pauses, fillers). ${PRONUNCIATION_NOTE}`}
-        ctaText="START SPEAKING TEST"
+        ctaText={practiceMode === 'drill' ? `PRACTISE PART ${selectedPart}` : 'START SPEAKING TEST'}
         onStart={() => { setPhase('exam'); setPartIdx(0); setQuestionIdx(0); }}
         notice={<div><SpeechModelStatus variant="card" /><p>Local mode: Moonshine processes audio on this device.</p><label><input type="checkbox" checked={nativeAllowed} onChange={e => setNativeAllowed(e.target.checked)} /> Allow browser recognition as a preview/fallback (your browser may send audio to its recognition service)</label></div>}
         onBack={onBack}
@@ -806,14 +836,14 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
      ────────────────────────────────────────────────────────── */
   const _partDone = isPart2
     ? Boolean(currentRecording)
-    : questions.length > 0 && questions.every((_, qI) => Boolean(recordings[`${sourcePartIndex}_${qI}`]));
+    : speakingPartComplete(currentPart, recordings, partIdx);
 
   /* ──────────────────────────────────────────────────────────
      REVIEW — every recorded answer transcribed before submitting
      ────────────────────────────────────────────────────────── */
   if (phase === 'review') {
     const items = test.parts.flatMap((p, pi) => (p.questions || []).map((q, qi) => {
-      const key = `${(p.partNumber || pi + 1) - 1}_${qi}`;
+      const key = speakingQuestionKey(p, qi, pi);
       return { key, part: p.partNumber, label: p.partNumber === 2 ? (p.cueCard?.topic || q) : q, rec: recordings[key] };
     }));
     const recorded = items.filter(i => i.rec);
@@ -871,7 +901,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       <div className="exam-focus-header">
         <div className="exam-focus-header-left">
           <span className="exam-focus-tag" style={{ background: '#151313', color: '#fff' }}>{isMockMode ? 'IELTS ACADEMIC SPEAKING' : 'IELTS SPEAKING PRACTICE'}</span>
-          <h2 className="exam-focus-title">Part {currentPart?.partNumber} of {test.parts.length} · {currentPart?.title}</h2>
+          <h2 className="exam-focus-title">{currentPart?.title || `Part ${currentPart?.partNumber}`}{practiceMode === 'drill' ? ' · Focused practice' : ''}</h2>
         </div>
         <div className="exam-focus-header-right speaking-header-bar">
           <div className="exam-focus-timer-pill" title="Recording status">
@@ -894,9 +924,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       {/* Part selector chips */}
       <div style={{ display: 'flex', gap: 8 }}>
         {test.parts.map((p, i) => {
-          const done = p.partNumber === 2
-            ? Boolean(recordings[`${i}_0`])
-            : (p.questions || []).every((_, qI) => Boolean(recordings[`${i}_${qI}`]));
+          const done = speakingPartComplete(p, recordings, i);
           const active = i === partIdx;
           return (
             <button key={i} type="button" onClick={() => { stopRecording(); setPartIdx(i); setQuestionIdx(0); setRecState(REC_STATE.IDLE); }}
@@ -939,7 +967,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             </div>
 
             {/* NOTES — visible during preparation AND while speaking */}
-            {(recState === REC_STATE.IDLE || recState === REC_STATE.PREPARING || recState === REC_STATE.READY_TO_SPEAK || recState === REC_STATE.RECORDING || recState === REC_STATE.TIME_REACHED) && (
+            {part2Controls.notes && (
               <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '20px 24px', boxShadow: '0 3px 0 #151313', flex: '1 1 300px', maxWidth: 420, display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.1em', color: 'var(--text-secondary)', fontFamily: 'var(--font-family)' }}>
@@ -969,15 +997,16 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             )}
           </div>
 
-          {recState === REC_STATE.IDLE && (
+          {part2Controls.preparation && (
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
+              {recState === REC_STATE.FAILED && <p role="alert">The microphone could not start. Check microphone permission and try again.</p>}
               <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startPreparation} style={{ opacity: recordLocked ? 0.5 : 1,  padding: '14px 28px', borderRadius: 14, background: 'var(--c-yellow)', border: '1.5px solid #151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313', fontFamily: 'var(--font-family)' }}>
                 Begin 1-minute preparation
               </button>
             </div>
           )}
 
-          {(recState === REC_STATE.READY_TO_SPEAK || recState === REC_STATE.RECORDING || recState === REC_STATE.TIME_REACHED) && (
+          {part2Controls.recorder && (
             <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '26px 30px', boxShadow: '0 3px 0 #151313', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
               <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.12em', color: isRecording ? '#FF5734' : 'var(--text-secondary)' }}>
                 {recState === REC_STATE.RECORDING ? '● SPEAK NOW — RECORDING' : recState === REC_STATE.TIME_REACHED ? 'TIME REACHED' : 'READY TO SPEAK'}
@@ -1006,7 +1035,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             </div>
           )}
 
-          {(recState === REC_STATE.SAVED || recState === REC_STATE.TRANSCRIBING || recState === REC_STATE.COMPLETED) && currentRecording && (
+          {part2Controls.saved && currentRecording && (
             <div style={{ background: 'var(--bg-card)', border: 'var(--border-dark)', borderRadius: 'var(--r-card)', padding: '20px 26px', boxShadow: '0 3px 0 #151313', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13.5, fontWeight: 700, color: 'var(--success-icon)' }}>
                 <Icon name="check" size={16} /> Response saved · {FMT(currentRecording.duration)} recorded
@@ -1048,7 +1077,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {questions.map((q, idx) => {
                   const isSelected = idx === questionIdx;
-                  const hasRec = Boolean(recordings[`${sourcePartIndex}_${idx}`]);
+                  const hasRec = Boolean(recordings[speakingQuestionKey(currentPart, idx, partIdx)]);
                   return (
                     <button key={idx} type="button" onClick={() => { stopRecording(); setQuestionIdx(idx); setActivePlaybackUrl(null); setRecState(REC_STATE.IDLE); }}
                       style={{
@@ -1145,9 +1174,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         isPreviousDisabled={partIdx === 0 && questionIdx === 0}
         sections={test.parts.map((p, i) => ({
           label: `Part ${p.partNumber}`,
-          isCompleted: p.partNumber === 2
-            ? Boolean(recordings[`${i}_0`])
-            : (p.questions || []).length > 0 && (p.questions || []).every((_, qI) => Boolean(recordings[`${i}_${qI}`])),
+          isCompleted: speakingPartComplete(p, recordings, i),
         }))}
         activeSectionIndex={partIdx}
         onSelectSection={(i) => { stopRecording(); setPartIdx(i); setQuestionIdx(0); setRecState(REC_STATE.IDLE); }}

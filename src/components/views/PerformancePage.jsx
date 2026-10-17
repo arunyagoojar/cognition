@@ -1,3 +1,4 @@
+import { resolveRecommendations } from '../../data/recommendations.js';
 import { useState } from 'react';
 import Icon from '../common/Icon.jsx';
 import FocusedRecommendations, { MiniTrend } from '../dashboard/FocusedRecommendations.jsx';
@@ -30,6 +31,12 @@ export default function PerformancePage({scores = {},targetBand,onStartSkill,onS
     const match=recommendations.find(r=>r.skill===selected && r.kind==='section' && (r.part || r.taskKind)===section.key);
     onStartDrill?.(match || {key:`${selected}.${selected==='writing'?'task':'part'}${section.key}`,skill:selected,part:section.key,taskKind:section.key,testId:section.testId || model.diagnosticTestId || model.result?.testId || model.latest?.testId,sourceAttemptId:section.sourceAttemptId || model.diagnosticAttemptId,title:`${SKILL_NAMES[selected]} · ${section.label}`});
   };
+  const startQuestionType=group=>{
+    const section=(group.sections || []).filter(s=>typeof s.accuracy==='number').sort((a,b)=>a.accuracy-b.accuracy)[0];
+    if(!section)return;
+    const key=`${selected}.${group.key}`;
+    onStartDrill?.({key,skill:selected,part:section.part,questionType:group.key,testId:model.diagnosticTestId,sourceAttemptId:model.diagnosticAttemptId,title:`${SKILL_NAMES[selected]} · ${section.label} · ${group.label}`,resources:resolveRecommendations({key,skill:selected})});
+  };
   const progress=drillProgress(attempts);
   const criteria=Object.entries(result?.criteria || {}).filter(([key])=>CRITERIA[key]);
   return <main className="performance-studio">
@@ -57,7 +64,7 @@ export default function PerformancePage({scores = {},targetBand,onStartSkill,onS
             {known && <button type="button" className="insight-text-button" onClick={()=>startSection(section)}>Practise {section.label.toLowerCase()} <span aria-hidden="true">→</span></button>}
           </article>;
         })}</div>
-        {(selected==='reading'||selected==='listening') && <><div className="insight-section-heading"><h3>Question types</h3><span className="accuracy-legend"><i/>Correct <i/>Uncertain</span></div>{model.types.length?<div className="question-type-results">{model.types.slice().sort((a,b)=>(a.accuracy ?? 1)-(b.accuracy ?? 1)).map(group=><div className="question-type-row" key={group.key}><span>{group.label}</span><AccuracyBar group={group}/><strong>{group.correct}/{group.total}</strong><button type="button" className="insight-text-button" onClick={()=>onStartDrill?.({key:`${selected}.${group.key}`,skill:selected,questionType:group.key,testId:model.diagnosticTestId || model.result?.testId || model.latest?.testId,sourceAttemptId:model.diagnosticAttemptId,title:group.label})} aria-label={`Practise ${group.label}`}>Practise <span aria-hidden="true">→</span></button></div>)}</div>:<div className="detail-empty"><Icon name="book" size={22}/><p>These saved results contain a band, but no question breakdown.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}</>}
+        {(selected==='reading'||selected==='listening') && <><div className="insight-section-heading"><h3>Question types</h3><span className="accuracy-legend"><i/>Correct <i/>Uncertain</span></div>{model.types.length?<div className="question-type-results">{model.types.slice().sort((a,b)=>(a.accuracy ?? 1)-(b.accuracy ?? 1)).map(group=><div className="question-type-row" key={group.key}><span>{group.label}</span><AccuracyBar group={group}/><strong>{group.correct}/{group.total}</strong><button type="button" className="insight-text-button" onClick={()=>startQuestionType(group)} disabled={!group.sections?.some(s=>typeof s.accuracy==='number')} aria-label={`Practise ${group.label}`}>Practise <span aria-hidden="true">→</span></button></div>)}</div>:<div className="detail-empty"><Icon name="book" size={22}/><p>These saved results contain a band, but no question breakdown.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}</>}
         {(selected==='writing'||selected==='speaking') && model.sections.every(s=>!s.samples) && <div className="detail-empty"><p>A new full test adds {selected==='writing'?'task comparisons':'part observations'}.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}
         {(selected==='writing'||selected==='speaking') && <details className="coaching-notes"><summary>Coaching notes <span>{criteria.length} criteria</span></summary><div className="criteria-feedback-grid">{criteria.map(([key,value])=><article key={key}><h4>{CRITERIA[key]} <strong>{numericBand(value?.band)!==null?value.band.toFixed(1):'—'}</strong></h4><p>{value.improvementFocus || value.nextBandAdvice || value.personalizedAssessment || value.evidence || 'Detailed feedback is available in the test review.'}</p></article>)}</div>{!criteria.length && <p>Complete a new {selected} assessment to receive criterion feedback.</p>}{result?.areasForImprovement && <p>{result.areasForImprovement}</p>}</details>}
       </div>

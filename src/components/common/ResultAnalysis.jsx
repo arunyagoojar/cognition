@@ -38,7 +38,7 @@ export default function ResultAnalysis({ skill, resultRecord, onOpenLesson, onOp
     ),
     onOpenTips && (
       <button key="tip" type="button" className="result-link-btn"
-        onClick={() => onOpenTips(criteriaRecs.tip.skill ?? skill, criteriaRecs.tip.categoryId)}>
+        onClick={() => onOpenTips(criteriaRecs.tip.skill ?? skill, criteriaRecs.tip.categoryId, criteriaRecs.tip.tipId)}>
         <Icon name="book" size={14} /> Read tip
       </button>
     ),

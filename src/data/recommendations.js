@@ -2,7 +2,7 @@
  * Weakness → resource mapping layer (Phase 6).
  * Every recommendation points at EXISTING Cognition content:
  *   lesson:  learningCatalog lesson id (Learning Hub)
- *   tip:     tips category id (Tips & Tricks page, pre-opened)
+ *   tip:     tips category id (shown in a contextual preview)
  *   practice: a skill view the dashboard can route to
  * Extend by adding rows — the UI never hardcodes routes.
  */
@@ -35,6 +35,11 @@ const MAPPING = {
   'reading.completion': { lessons: ['rd-2'], tips: ['reading-sentence-completion'], practice: 'reading' },
   'reading.short_answer': { lessons: ['rd-2'], tips: ['reading-scanning'], practice: 'reading' },
   'reading.overall': { lessons: ['rd-2', 'rd-5'], tips: ['reading-time-management'], practice: 'reading' },
+  // Reading passages share the same question types. Use broadly applicable
+  // reading strategies rather than pretending each passage has a fixed type.
+  'reading.part1': { lessons: ['rd-2'], tips: ['reading-scanning'], practice: 'reading' },
+  'reading.part2': { lessons: ['rd-3'], tips: ['reading-paraphrasing'], practice: 'reading' },
+  'reading.part3': { lessons: ['rd-3'], tips: ['reading-time-management'], practice: 'reading' },
 
   // ── Listening ──
   'listening.fill_in_blank': { lessons: ['ls-2'], tips: ['listening-predict', 'listening-word-limits'], practice: 'listening' },
@@ -46,23 +51,30 @@ const MAPPING = {
   'listening.mcq_multi': { lessons: ['ls-3'], tips: ['listening-multiple-choice'], practice: 'listening' },
   'listening.matching_box': { lessons: ['ls-3'], tips: ['listening-distractors'], practice: 'listening' },
   'listening.overall': { lessons: ['ls-1', 'ls-3'], tips: ['listening-common-traps'], practice: 'listening' },
+  'listening.part1': { lessons: ['ls-2'], tips: ['listening-predict'], practice: 'listening' },
+  'listening.part2': { lessons: ['ls-3'], tips: ['listening-before-audio'], practice: 'listening' },
+  'listening.part3': { lessons: ['ls-3'], tips: ['listening-distractors'], practice: 'listening' },
+  'listening.part4': { lessons: ['ls-2'], tips: ['listening-predict'], practice: 'listening' },
 
   // ── Writing ──
-  'writing.taskAchievement': { lessons: ['wr-6', 'wr-7'], tips: ['writing-t2-understand', 'writing-t1-overview'], practice: 'writing' },
+  'writing.task1': { lessons: ['wr-6', 'wr-4'], tips: ['writing-t1-overview'], practice: 'writing' },
+  'writing.task2': { lessons: ['wr-7', 'wr-5'], tips: ['writing-t2-understand'], practice: 'writing' },
+  'writing.overall': { lessons: ['wr-5'], tips: ['writing-assessment'], practice: 'writing' },
+  'writing.taskAchievement': { lessons: ['wr-6'], tips: ['writing-t1-overview'], practice: 'writing' },
   'writing.taskResponse': { lessons: ['wr-7'], tips: ['writing-t2-understand'], practice: 'writing' },
   'writing.coherenceAndCohesion': { lessons: ['wr-5', 'wr-2', 'wr-3'], tips: ['writing-t2-body'], practice: 'writing' },
   'writing.lexicalResource': { lessons: ['wr-8', 'wr-4'], tips: ['writing-vocab-bank'], practice: 'writing' },
-  'writing.grammaticalRangeAndAccuracy': { lessons: ['wr-1', 'wr-4'], tips: ['writing-t2-structures'], practice: 'writing' },
+  'writing.grammaticalRangeAndAccuracy': { lessons: ['wr-1'], tips: ['writing-assessment'], tipId: 'w-assess-grammar', practice: 'writing' },
 
   // ── Speaking ──
   'speaking.fluencyAndCoherence': { lessons: ['sp-1', 'sp-2'], tips: ['speaking-fluency', 'speaking-natural'], practice: 'speaking' },
   'speaking.lexicalResource': { lessons: ['sp-1'], tips: ['speaking-vocabulary'], practice: 'speaking' },
-  'speaking.grammaticalRangeAndAccuracy': { lessons: ['sp-4'], tips: ['speaking-grammar'], practice: 'speaking' },
+  'speaking.grammaticalRangeAndAccuracy': { lessons: [], tips: ['speaking-grammar'], practice: 'speaking' },
   'speaking.developing_answers': { lessons: ['sp-3', 'sp-4'], tips: ['speaking-developing-answers', 'speaking-part3'], practice: 'speaking' },
-  'speaking.part1': { lessons: ['sp-1'], tips: ['speaking-part1'], practice: 'speaking' },
-  'speaking.part2': { lessons: ['sp-2'], tips: ['speaking-fluency'], practice: 'speaking' },
+  'speaking.part1': { lessons: ['sp-2'], tips: ['speaking-part1'], practice: 'speaking' },
+  'speaking.part2': { lessons: ['sp-3'], tips: ['speaking-part2'], practice: 'speaking' },
   'speaking.part3': { lessons: ['sp-4'], tips: ['speaking-part3'], practice: 'speaking' },
-  'speaking.overall': { lessons: ['sp-2'], tips: ['speaking-part1'], practice: 'speaking' },
+  'speaking.overall': { lessons: ['sp-1'], tips: ['speaking-developing-answers'], practice: 'speaking' },
 };
 
 /**
@@ -71,7 +83,7 @@ const MAPPING = {
  */
 export function resolveRecommendations(focusArea) {
   if (!focusArea?.key) return null;
-  const base = MAPPING[focusArea.key] || MAPPING[`${focusArea.skill}.${focusArea.skill === 'speaking' ? 'developing_answers' : 'overall'}`] || null;
+  const base = MAPPING[focusArea.key] || null;
   if (!base) {
     return {
       practice: { label: PRACTICE_VIEWS[focusArea.skill] || 'Practice', view: focusArea.skill },
@@ -90,6 +102,10 @@ export function resolveRecommendations(focusArea) {
   const tip = tipCategory
     ? { skill: tipCategory.skill, categoryId: tipCategory.category.id, title: tipCategory.category.title }
     : null;
+  if (tip && base.tipId) {
+    const exact = tipCategory.category.tips.find(item => item.id === base.tipId);
+    if (exact) { tip.tipId = exact.id; tip.title = exact.title; }
+  }
 
   return {
     practice: { label: PRACTICE_VIEWS[focusArea.skill] || 'Practice', view: focusArea.skill },

@@ -15,6 +15,7 @@ import FocusedRecommendations from './components/dashboard/FocusedRecommendation
 import MockHeroCard from './components/dashboard/MockHeroCard';
 import LastTestRecheck from './components/dashboard/LastTestRecheck';
 import Loader, { PageLoader } from './components/common/Loader';
+const PracticeResourceOverlay = lazy(() => import('./components/common/PracticeResourceOverlay.jsx'));
 const FocusedDrill = lazy(() => import('./components/views/FocusedDrill.jsx'));
 const PerformancePage = lazy(async () => { return import('./components/views/PerformancePage'); });
 const LearningHubPage = lazy(async () => { return import('./components/views/LearningHubPage'); });
@@ -123,6 +124,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     return true;
   };
   useEffect(() => { navigationRef.current = setView; });
+  const [practiceResource, setPracticeResource] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('omniprep_theme') || 'light');
   const [targetBand, setTargetBand] = useState(() => getTargetBand() || '8.0');
@@ -234,12 +236,14 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     syncPreferences({ theme: newTheme });
   };
 
-  const openTips = (skillId = null, categoryId = null) => {
+  const openTips = (skillId = null, categoryId = null, tipId = null) => {
+    if (categoryId) { setPracticeResource({kind:'strategy',tip:{skill:skillId,categoryId,tipId}}); return; }
     setTipsSkill(skillId || null);
     setTipsCategory(categoryId || null);
     setView('tips');
   };
   const openLesson = (lessonId = null) => {
+    if (lessonId) { setPracticeResource({kind:'lesson',lesson:{id:lessonId}}); return; }
     setLearningLessonId(lessonId);
     setView('learning');
   };
@@ -652,6 +656,16 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
           </motion.div>
         )}
       </AnimatePresence></Suspense>
+
+      {practiceResource && <Suspense fallback={null}><PracticeResourceOverlay
+        resource={practiceResource}
+        onClose={() => setPracticeResource(null)}
+        onPlayLesson={id => {
+          if (!setView('learning')) return;
+          setLearningLessonId(id);
+          setPracticeResource(null);
+        }}
+      /></Suspense>}
 
       {/* ── SETTINGS MODAL (UNIVERSAL SYSTEM PANEL) ─────────────────── */}
       {settingsOpen && <SettingsModal

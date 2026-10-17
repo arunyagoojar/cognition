@@ -23,21 +23,25 @@ let passed=0;async function check(name,run){await run();console.log(`✓ ${name}
 const test={id:'r',testId:100,type:'reading',status:'completed',reading:{itemResults:Object.fromEntries(Array.from({length:40},(_,i)=>[`q${i+1}`,{candidateAnswer:'x',finalResult:i<13?'CORRECT':'INCORRECT'}]))}};
 await check('old question records recover exact passage and type labels without answer keys',()=>{
  const b=objectiveBreakdown(test,'reading',index);assert.equal(b.sections.length,3);assert(b.types.some(t=>t.key==='matching_headings'));assert(!JSON.stringify(index).includes('"answer":'));assert(!JSON.stringify(index).includes('"acceptedAnswers":'));
- const all=buildPracticeInsights([test],index),parts=all.recommendations.filter(r=>r.kind==='section');assert(parts.some(p=>p.part===2));assert(parts.some(p=>p.part===3));assert(!parts.some(p=>p.part===1));const older=buildPracticeInsights([{id:'new-aggregate',testId:200,type:'reading',reading:{band:4}},test],index);assert(older.recommendations.every(r=>r.testId===100 && r.sourceAttemptId==='r'));assert(all.recommendations[0].priority>=all.recommendations.at(-1).priority);
+ const all=buildPracticeInsights([test],index),parts=all.recommendations.filter(r=>r.kind==='section');assert(parts.some(p=>p.part===2));assert(parts.some(p=>p.part===3));assert(!parts.some(p=>p.part===1));const older=buildPracticeInsights([{id:'new-aggregate',testId:200,type:'reading',status:'completed',reading:{band:4}},test],index);assert(older.recommendations.every(r=>r.testId===100 && r.sourceAttemptId==='r'));assert(all.recommendations[0].priority>=all.recommendations.at(-1).priority);assert(all.bySkill.reading.hasDetailedResults);assert(!all.missingDetailedSkills.includes('reading'));
 });
 await check('uncertain answers cannot manufacture a weak area',()=>{
- const attempt={type:'reading',reading:{itemResults:Object.fromEntries([1,2,3,4,5].map(i=>[i,{part:2,questionType:'tfng',finalResult:i<3?'CORRECT':'UNCERTAIN'}]))}};
+ const attempt={type:'reading',status:'completed',reading:{itemResults:Object.fromEntries([1,2,3,4,5].map(i=>[i,{part:2,questionType:'tfng',finalResult:i<3?'CORRECT':'UNCERTAIN'}]))}};
  assert.equal(buildPracticeInsights([attempt]).recommendations.length,0);
 });
-await check('aggregate-only legacy results never invent section weaknesses',()=>{const recommendations=buildPracticeInsights([{type:'reading',reading:{band:4}}],index).recommendations;assert.equal(recommendations.length,1);assert.equal(recommendations[0].kind,'skill');assert.equal(recommendations[0].band,4);});
-await check('old cloud score rows immediately produce four ranked recommendations',()=>{
+await check('aggregate-only legacy results request diagnostics instead of inventing recommendations',()=>{
+ const model=buildPracticeInsights([{type:'reading',status:'completed',reading:{band:4}}],index);
+ assert.equal(model.recommendations.length,0);assert.equal(model.bySkill.reading.result.band,4);assert.deepEqual(model.legacySkills,['reading']);assert.deepEqual(new Set(model.missingDetailedSkills),new Set(Object.keys(model.bySkill)));
+});
+await check('old cloud score rows preserve scores and identify the skills needing detailed tests',()=>{
  storage.clear();
  const scores={reading:5,listening:7.5,writing:5.5,speaking:5};
  hydrateFromRemoteAttempts(Object.entries(scores).map(([type,band],i)=>({id:`legacy-${type}`,clerk_user_id:'existing-user',type,band:String(band),status:'completed',test_id:100,completed_at:new Date(Date.UTC(2026,9,17,10,i)).toISOString(),data:JSON.stringify({criteria:{},overallSummary:'Legacy result'})})),'existing-user');
- const items=buildPracticeInsights(getPerformanceStore().attempts).recommendations;
- assert.equal(items.length,4);assert(items.every(item=>item.kind==='skill'));
- assert.deepEqual(items.map(item=>item.band),[5,5,5.5,7.5]);
- assert.deepEqual(new Set(items.map(item=>item.skill)),new Set(Object.keys(scores)));
+ const before=JSON.stringify(getPerformanceStore());const model=buildPracticeInsights(getPerformanceStore().attempts);
+ assert.equal(model.recommendations.length,0);
+ assert.deepEqual(new Set(model.legacySkills),new Set(Object.keys(scores)));assert.deepEqual(new Set(model.missingDetailedSkills),new Set(Object.keys(scores)));
+ assert(Object.values(model.bySkill).every(skill=>skill.hasCompletedTest && !skill.hasDetailedResults));
+ assert.equal(derivePerformanceSummary().overallBand,6);assert.equal(JSON.stringify(getPerformanceStore()),before);
  storage.clear();
 });
 await check('focused source selection opens the requested passage and listening part',()=>{
@@ -47,6 +51,42 @@ await check('focused source selection opens the requested passage and listening 
 await check('writing uses task-specific history, not generic criterion advice',()=>{
  const a=(id,one,two)=>({id,type:'writing',testId:1,status:'completed',writing:{task1Band:one,task2Band:two}});
  const model=buildPracticeInsights([a('new',7.5,5),a('old',7,6)]);assert(model.recommendations.some(r=>r.taskKind===2 && r.trend==='Recent dip'));assert(!model.recommendations.some(r=>r.taskKind===1));
+ const example=buildPracticeInsights([a('example',7.5,6)]);assert.deepEqual(example.recommendations.map(r=>r.taskKind),[2]);assert.equal(example.recommendations[0].band,6);assert(example.bySkill.writing.hasDetailedResults);assert(!example.missingDetailedSkills.includes('writing'));
+ const strongDip=buildPracticeInsights([a('latest',7.5,6),a('previous',9,6)]);assert.deepEqual(strongDip.recommendations.map(r=>r.taskKind),[2]);
+ const malformed={...a('malformed',null,null),testId:99,writing:{taskCriteria:{task2:{taskResponse:{band:null}}}}};
+ const sourced=buildPracticeInsights([malformed,a('valid',7.5,6)]).recommendations[0];assert.equal(sourced.testId,1);assert.equal(sourced.sourceAttemptId,'valid');
+});
+await check('only weak reading passages and listening parts become specific practice recommendations',()=>{
+ for(const skill of ['reading','listening']) {
+  const itemResults=Object.fromEntries([20,8,17].flatMap((correct,index)=>Array.from({length:20},(_,i)=>[`${index}-${i}`,{part:index+1,questionType:'multiple_choice',finalResult:i<correct?'CORRECT':'INCORRECT'}])));
+  const model=buildPracticeInsights([{id:skill,type:skill,testId:100,status:'completed',[skill]:{itemResults}}]);
+  assert.deepEqual(model.recommendations.map(r=>r.part),[2]);assert.equal(model.recommendations[0].accuracy,40);assert.equal(model.recommendations[0].testId,100);
+ }
+});
+await check('question-type practice opens the weakest evidenced part instead of the first matching part',()=>{
+ for(const skill of ['reading','listening']) {
+  const type='matching_headings';
+  const itemResults=Object.fromEntries([4,0].flatMap((correct,idx)=>Array.from({length:4},(_,i)=>[`${idx}-${i}`,{part:idx+1,questionType:type,finalResult:i<correct?'CORRECT':'INCORRECT'}])));
+  const recommendations=buildPracticeInsights([{id:skill,type:skill,testId:100,status:'completed',[skill]:{itemResults}}]).recommendations;
+  const focus=recommendations.find(rec=>rec.kind==='question-type');assert(focus);assert.equal(focus.part,2);assert.equal(focus.accuracy,0);assert.equal(focus.total,4);
+  const groups=[{questions:[{id:'matching',questionType:type}]}];
+  const source=skill==='reading'?{passages:[{passageNumber:1,questionGroups:groups},{passageNumber:2,questionGroups:groups}]}:{sections:[{part:1,questionGroups:groups},{part:2,questionGroups:groups}]};
+  const selected=selectFocusedContent(source,focus);assert.deepEqual((selected.passages || selected.sections).map(part=>part.passageNumber || part.part),[2]);
+  const withoutParts=Object.fromEntries(Object.entries(itemResults).map(([id,{questionType,finalResult}])=>[id,{questionType,finalResult}]));
+  const unlocated=buildPracticeInsights([{type:skill,status:'completed',[skill]:{itemResults:withoutParts}}]);assert.equal(unlocated.recommendations.length,0);assert(unlocated.missingDetailedSkills.includes(skill));
+ }
+});
+await check('incomplete work and focused drills cannot create full-test recommendations',()=>{
+ const itemResults=Object.fromEntries([1,2,3,4].map(i=>[i,{part:2,questionType:'matching_headings',finalResult:'INCORRECT'}]));
+ const base={id:'partial',type:'reading',status:'completed',reading:{itemResults}};
+ const cases=[{...base,status:'partial'},{...base,status:'in_progress'},{...base,status:undefined},{...base,type:'drill'}, {...base,practiceMode:'drill'},{...base,reading:{itemResults,coverage:{complete:false}}},{...base,reading:{itemResults,bandEligible:false}}];
+ for(const attempt of cases){const model=buildPracticeInsights([attempt]);assert.equal(model.recommendations.length,0);assert(!model.bySkill.reading.hasDetailedResults);}
+ const partialWriting={type:'writing',status:'completed',writing:{task1Band:5,task2Band:4,coverage:{complete:false}}};assert.equal(buildPracticeInsights([partialWriting]).recommendations.length,0);
+});
+await check('speaking recommendations require evidence from the correct part and never invent bands',()=>{
+ const speaking={transcripts:{'0_0':'My family lives nearby.','1_0':'I struggled to explain the journey.'},partDiagnostics:{part1:{needsPractice:false,evidence:'My family lives nearby.'},part2:{needsPractice:true,evidence:'I struggled to explain the journey.'},part3:{needsPractice:true,evidence:'My family lives nearby.'}}};
+ const model=buildPracticeInsights([{id:'speaking',testId:10,type:'speaking',status:'completed',speaking}]);
+ assert.deepEqual(model.recommendations.map(r=>r.part),[2]);assert(!Object.hasOwn(model.recommendations[0],'band'));assert(model.bySkill.speaking.hasDetailedResults);
 });
 await check('overall timeline waits for all four skills and agrees with the score card',()=>{
  const attempts=['listening','reading','writing','speaking'].map((s,i)=>({id:s,type:s,status:'completed',completedAt:`2026-10-0${i+1}`, [s]:{band:[7.5,5,5.5,5][i]}})).reverse();

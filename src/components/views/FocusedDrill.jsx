@@ -14,13 +14,8 @@ import ReadingPassage from '../reading/ReadingPassage.jsx';
 import ReadingQuestionGroup from '../reading/ReadingQuestionGroup.jsx';
 import QuestionRenderer from '../common/QuestionRenderer.jsx';
 import SpeakingModule from '../modules/SpeakingModule.jsx';
-import WritingCoach from './WritingCoach.jsx';
+import WritingCoach, { WritingReview } from './WritingCoach.jsx';
 import { PageLoader } from '../common/Loader.jsx';
-const STRATEGIES={
- matching_headings:'Read the paragraph for its central purpose, then summarise it in a few words before checking the headings. Match the whole idea, not a repeated keyword. Cross out choices only after checking their meaning.',
- matching_information:'Look for the specific detail requested. Scan for names or paraphrases, then verify the statement against the paragraph; a matching word alone is not enough.',
- tfng:'Separate contradiction from missing evidence. Use FALSE only when the passage contradicts the statement; use NOT GIVEN when it does not establish the claim.',
-};
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
  const [focus] = useState(()=>request || readDraft('active-drill'));
  const [saved]=useState(()=>{const data=readDraft('drill-session');return data?.focusKey===focus?.key?data:null;});
@@ -59,15 +54,18 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
  const task=test[taskKind===1?'task1':'task2'];
  return <div className="content-container">
   <button type="button" onClick={onBack}>Back to Performance</button>
-  <h1>{focus.title || 'Focused practice'}</h1><p><strong>Focused practice · excluded from overall band</strong></p>
-  <section className="coach-panel"><h2>Use this strategy</h2><p>{STRATEGIES[focus.questionType] || focus.nextAction || focus.reason}</p>
-   {focus.resources?.lesson && <button onClick={()=>onOpenLesson?.(focus.resources.lesson.id)}>Related lesson</button>}
-   {focus.resources?.tip && <button onClick={()=>onOpenTips?.(focus.resources.tip.skill,focus.resources.tip.categoryId)}>More tips</button>}
-  </section>
+  <header className="focused-practice-heading"><div><span className="insight-eyebrow">FOCUSED PRACTICE</span><h1>{focus.title || 'Focused practice'}</h1><p>Only this {focus.skill==='writing'?'task':'part'} · tracked separately from your full-test band</p></div><div className="insight-links">
+   {focus.resources?.tip && <button type="button" onClick={()=>onOpenTips?.(focus.resources.tip.skill,focus.resources.tip.categoryId,focus.resources.tip.tipId)}>Strategy</button>}
+   {focus.resources?.lesson && <button type="button" onClick={()=>onOpenLesson?.(focus.resources.lesson.id)}>Lesson</button>}
+  </div></header>
   {focus.skill==='speaking' ? <SpeakingModule initialTest={test} practiceMode="drill" onBack={onBack} onSave={data=>save({speaking:data})} onComplete={onBack} /> : focus.skill==='writing' ? <>
-   <h2>Task {taskKind}</h2><p>{task?.prompt || task?.instructions}</p>{task?.image?.file && <img className="drill-task-image" src={task.image.file} alt="Writing task visual" />}
-   <textarea className="coach-draft" aria-label="Writing response" rows={12} value={text} onChange={e=>setText(e.target.value)} />
-   <WritingCoach focusKey={focus.key} sourceAttemptId={focus.sourceAttemptId} text={text} task={task} taskKind={taskKind} testId={test.testId} />
+   {result?.writingReview ? <section className="focused-writing-summary"><WritingReview review={result.writingReview}/><div className="insight-links"><button type="button" className="insight-secondary" onClick={()=>setResult(null)}>Revise this task</button><button type="button" className="practice-thumbnail-start" onClick={onBack}>Finish practice</button></div></section> : <>
+    <section className="harper-pinned-prompt-card"><h2>Task {taskKind}</h2>{task?.promptHtml?<div dangerouslySetInnerHTML={{__html:task.promptHtml}}/>:<p>{task?.prompt || task?.instructions}</p>}{task?.image?.file && <img className="drill-task-image" src={task.image.file} alt="Writing task visual"/>}
+      {task?.table?.rows && <div className="harper-prompt-table-wrap"><table className="harper-prompt-table"><tbody>{task.table.rows.map((row,i)=><tr key={i}>{row.map((cell,j)=>i===0?<th key={j}>{cell}</th>:<td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>}
+    </section>
+    <div className="focused-writing-editor"><label htmlFor="focused-writing-response">Your Task {taskKind} response</label><span>{text.trim()?text.trim().split(/\s+/).length:0} / {taskKind===1?150:250} words</span><textarea id="focused-writing-response" className="coach-draft" rows={12} value={text} onChange={e=>setText(e.target.value)}/></div>
+    <WritingCoach focusKey={focus.key} sourceAttemptId={focus.sourceAttemptId} text={text} task={task} taskKind={taskKind} testId={test.testId} onReviewComplete={writingReview=>setResult({writingReview})}/>
+   </>}
   </> : <>
    {focus.skill==='reading' && test.passages.map(p=><ReadingPassage key={p.passageNumber} passage={p}/>)}
    {focus.skill==='listening' && test.sections.map((s,i)=><audio key={i} controls src={s.audioFile || test.audio?.appPath}>Audio playback is unavailable.</audio>)}

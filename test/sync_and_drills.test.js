@@ -47,9 +47,9 @@ check('vocabulary suggestions change with the actual draft',()=>{
  assert(!suggestVocabulary('A significant outcome.').some(v=>v.word==='important'));
 });
 check('recommendations need question evidence and preserve source tests',()=>{
- const itemResults=Object.fromEntries([1,2,3,4].map(i=>[i,{questionType:'matching_headings',finalResult:i===1?'CORRECT':'INCORRECT'}]));
- const suggestions=deriveFocusedRecommendations([{id:'r',type:'reading',testId:'123',reading:{itemResults}}]);assert.equal(suggestions[0].questionType,'matching_headings');assert.equal(suggestions[0].testId,'123');
- assert.equal(deriveFocusedRecommendations([{type:'speaking',speaking:{partDiagnostics:{part2:{needsPractice:true,evidence:'invented'}},transcripts:{x:'actual'}}}]).length,0);
+ const itemResults=Object.fromEntries([1,2,3,4].map(i=>[i,{part:2,questionType:'matching_headings',finalResult:i===1?'CORRECT':'INCORRECT'}]));
+ const suggestions=deriveFocusedRecommendations([{id:'r',type:'reading',status:'completed',testId:'123',reading:{itemResults}}]);const typed=suggestions.find(item=>item.questionType==='matching_headings');assert(typed);assert.equal(typed.testId,'123');assert.equal(typed.part,2);
+ assert.equal(deriveFocusedRecommendations([{type:'speaking',status:'completed',speaking:{partDiagnostics:{part2:{needsPractice:true,evidence:'invented'}},transcripts:{x:'actual'}}}]).length,0);
 });
 // Controlled sender tests use no network.
 let sends=0;

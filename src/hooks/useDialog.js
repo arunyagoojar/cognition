@@ -1,4 +1,21 @@
 import { useEffect, useRef } from 'react';
+
+export function makeDialogBackgroundInert(dialog) {
+  const hidden = [];
+  let branch = dialog;
+  while (branch.parentElement) {
+    for (const sibling of branch.parentElement.children) {
+      if (sibling !== branch && sibling instanceof HTMLElement) {
+        hidden.push([sibling, sibling.inert]);
+        sibling.inert = true;
+      }
+    }
+    if (branch.parentElement === document.body) break;
+    branch = branch.parentElement;
+  }
+  return () => { for (const [element, inert] of hidden) element.inert = inert; };
+}
+
 export function useDialog(open, onClose) {
   const ref = useRef(null);
   const close = useRef(onClose);
@@ -7,14 +24,7 @@ export function useDialog(open, onClose) {
     if (!open || !ref.current) return;
     const dialog = ref.current;
     const previous = document.activeElement;
-    const hidden = [];
-    let branch = dialog;
-    while (branch.parentElement && branch.parentElement !== document.body) {
-      for (const sibling of branch.parentElement.children) {
-        if (sibling !== branch && sibling instanceof HTMLElement) { hidden.push([sibling, sibling.inert]); sibling.inert = true; }
-      }
-      branch = branch.parentElement;
-    }
+    const restoreBackground = makeDialogBackgroundInert(dialog);
     const focusables = () => [...dialog.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')].filter(el => !el.disabled && !el.hidden && el.getClientRects().length);
     (focusables()[0] || dialog).focus();
     const onKey = event => {
@@ -28,7 +38,7 @@ export function useDialog(open, onClose) {
     };
     dialog.addEventListener('keydown', onKey);
     const overflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    return () => { dialog.removeEventListener('keydown', onKey); for (const [el, inert] of hidden) el.inert = inert; document.body.style.overflow = overflow; if (previous?.isConnected) previous.focus(); };
+    return () => { dialog.removeEventListener('keydown', onKey); restoreBackground(); document.body.style.overflow = overflow; if (previous?.isConnected) previous.focus(); };
   }, [open]);
   return ref;
 }
