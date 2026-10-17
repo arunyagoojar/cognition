@@ -8,7 +8,7 @@ const labels={taskAchievement:'Task fulfilment',taskResponse:'Task response',coh
 export function VocabularySuggestions({text}) {
  const suggestions=suggestVocabulary(text,6);
  return <section className="live-vocabulary" aria-labelledby="live-vocabulary-title"><div className="insight-section-heading"><h3 id="live-vocabulary-title">Words to try</h3><span className="live-caption">Updates as you write</span></div>
- {suggestions.length ? <div className="live-vocabulary-list">{suggestions.map(item=><article key={item.word} style={{'--word-tint':repeatColor(item.word)}}><div><span>{item.word}</span><span aria-hidden="true">→</span><strong>{item.suggestion}</strong></div><details><summary>Meaning & use</summary><p>{item.meaning}</p>{item.example && <p><em>{item.example}</em></p>}{item.alternatives && <p>{item.alternatives.join(' · ')}</p>}</details></article>)}</div>:<p className="insight-muted">Vocabulary ideas appear here as your draft develops.</p>}
+ {suggestions.length ? <div className="live-vocabulary-list">{suggestions.map(item=><article key={item.word} style={{'--word-tint':repeatColor(item.word,suggestions)}}><div><span>{item.word}</span><span aria-hidden="true">→</span><strong>{item.suggestion}</strong></div><details><summary>Meaning & use</summary><p>{item.meaning}</p>{item.example && <p><em>{item.example}</em></p>}{item.alternatives && <p>{item.alternatives.join(' · ')}</p>}</details></article>)}</div>:<p className="insight-muted">Vocabulary ideas appear here as your draft develops.</p>}
  </section>;
 }
 

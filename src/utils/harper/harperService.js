@@ -83,7 +83,7 @@ export async function lintTextWithHarper(text) {
 
   const linter = await getHarperLinter();
   const rawLints = await linter.lint(text, {language:'plaintext', dedup:false, isolateEnglish:false});
-  // harper.js 2.10 already converts spans to JavaScript UTF-16 offsets.
+  // harper.js already converts spans to JavaScript UTF-16 offsets.
 
   const issues = [];
   for (let i = 0; i < rawLints.length; i++) {
@@ -121,14 +121,6 @@ export async function lintTextWithHarper(text) {
       type: category.type,
       color: category.color,
     });
-  }
-
-  // Narrow local check for an article directly before an object pronoun.
-  // Harper 2.10 does not yet flag "for a me"; avoid treating this as full grammar coverage.
-  for (const match of text.matchAll(/\b(?:a|an)\s+(?:me|him|us|them|myself|yourself|ourselves|themselves)\b/g)) {
-    const start=match.index, end=start+match[0].length;
-    if(issues.some(i=>i.start<=start && i.end>=end)) continue;
-    issues.push({id:`local-article-${start}`,start,end,snippet:match[0],message:'Remove the article before this object pronoun.',category:'Article usage',type:'article',color:'var(--c-coral)',source:'local',suggestions:[{replace:match[0].replace(/^(?:a|an)\s+/,''),kind:0}]});
   }
 
   // Calculate sentences and error-free sentences

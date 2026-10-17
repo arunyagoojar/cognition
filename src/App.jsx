@@ -382,7 +382,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
       {/* ── UNIFIED SPATIAL CONTINUITY PAGE CONTAINER ─────────────── */}
       {/* Reset scroll once the outgoing page has left: the incoming page then
           mounts at the top even if the window moved during the exit fade. */}
-      <Suspense fallback={<Loader label="Loading practice content…" size="lg" />}><AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
+      <Suspense fallback={<div className="page-loading"><Loader label="Loading practice content…" size="lg" /></div>}><AnimatePresence mode="wait" onExitComplete={resetWindowScroll}>
         {view === 'home' && (
           <motion.main
             key="home"

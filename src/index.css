@@ -8993,3 +8993,5 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .next-practice .btn-coral-pill-physical, .harper-workspace-layout .harper-finish-btn { color: #151313; }
 .review-question-focus { margin-bottom: 22px; padding: 16px 20px; border-left: 4px solid var(--c-lavender); background: var(--bg-card); border-radius: 0 12px 12px 0; }
 .review-question-focus p { margin-bottom: 0; }
+
+.page-loading { position: fixed; inset: 0; display: grid; place-items: center; background: var(--bg-primary, #f8f8f6); z-index: 50; }

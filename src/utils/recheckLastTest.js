@@ -22,6 +22,12 @@ export function getRecheckableLastTest() {
   if (!record) return null;
   if (latest.type === 'writing' && !(String(record.t1 || '').trim() || String(record.t2 || '').trim())) return null;
   if (latest.type === 'speaking' && !Object.values(record.transcripts || {}).some(t => String(t || '').trim())) return null;
+  if (latest.type === 'speaking' && record.evaluationState !== 'COMPLETED') {
+    // Missing answers are not provider failures. Older records lack coverage;
+    // require evidence from all three parts before offering a retry.
+    const parts=new Set(Object.entries(record.transcripts || {}).filter(([,t])=>String(t).trim().split(/\s+/).length>=5).map(([k])=>k.match(/^(\d+)_/)?.[1]).filter(Boolean));
+    if (record.coverage?.isComplete === false || record.bandEligible === false || ['PARTIAL','NOT_ASSESSED'].includes(record.evaluationState) || (!record.coverage?.isComplete && parts.size<3)) return null;
+  }
   return { attempt: latest, skill: latest.type, record };
 }
 

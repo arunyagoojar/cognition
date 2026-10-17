@@ -103,6 +103,20 @@ export function buildPracticeInsights(attempts = [], index) {
       }
     }
   }
+  // Older attempts retain useful skill bands even without question-level diagnostics.
+  for (const skill of Object.keys(SKILL_NAMES)) {
+    if (recommendations.some(r => r.skill === skill)) continue;
+    const observations=full.filter(a=>finite(resultFor(a,skill)?.band)).slice(0,5);
+    if (!observations.length) continue;
+    const latest=observations[0], band=resultFor(latest,skill).band;
+    const values=observations.map(a=>resultFor(a,skill).band);
+    const dip=values.length>1?Math.max(0,average(values.slice(1))-band):0;
+    recommendations.push({key:`${skill}.overall`,skill,kind:'skill',title:`Build your ${SKILL_NAMES[skill].toLowerCase()}`,
+      band,history:values.reverse(),sourceAttemptId:latest.id,priority:(9-band)/9*65+dip*5,
+      trend:dip>=0.5?'Recent dip':'Based on previous tests',
+      reason:`Your latest ${SKILL_NAMES[skill].toLowerCase()} estimate is ${band.toFixed(1)}. Earlier results support a skill-level recommendation; they do not identify a weak section.`,
+      resources:resolveRecommendations({key:`${skill}.overall`,skill})});
+  }
   return {bySkill,recommendations:recommendations.sort((a,b)=>b.priority-a.priority || a.key.localeCompare(b.key)).slice(0,8)};
 }
 

@@ -5,9 +5,11 @@ import { selectFocusedContent } from '../src/utils/focusedContent.js';
 import { speakingTestContext } from '../src/utils/speakingContext.js';
 import { prepareWritingCoaching, validateWritingCoaching } from '../src/utils/harper/writingCoachContract.js';
 import { planRequestBudget } from '../src/utils/ai/requestBudget.js';
-import { editorSegments } from '../src/utils/harper/editorHighlights.js';
+import { editorSegments, repeatColor } from '../src/utils/harper/editorHighlights.js';
 import { lintTextWithHarper, applyHarperFix } from '../src/utils/harper/harperService.js';
 import { analyzeRepetition } from '../src/utils/harper/repetitionService.js';
+import { getRecheckableLastTest } from '../src/utils/recheckLastTest.js';
+import { recordAttempt } from '../src/utils/performanceStore.js';
 import { derivePerformanceSummary } from '../src/utils/performanceStore.js';
 import { buildSpeakingUserPrompt } from '../src/utils/ieltsRubric.js';
 import { reviewWritingPractice } from '../src/utils/geminiEvaluator.js';
@@ -26,7 +28,7 @@ await check('uncertain answers cannot manufacture a weak area',()=>{
  const attempt={type:'reading',reading:{itemResults:Object.fromEntries([1,2,3,4,5].map(i=>[i,{part:2,questionType:'tfng',finalResult:i<3?'CORRECT':'UNCERTAIN'}]))}};
  assert.equal(buildPracticeInsights([attempt]).recommendations.length,0);
 });
-await check('aggregate-only legacy results never invent section weaknesses',()=>{assert.equal(buildPracticeInsights([{type:'reading',reading:{band:4}}],index).recommendations.length,0);});
+await check('aggregate-only legacy results never invent section weaknesses',()=>{const recommendations=buildPracticeInsights([{type:'reading',reading:{band:4}}],index).recommendations;assert.equal(recommendations.length,1);assert.equal(recommendations[0].kind,'skill');assert.equal(recommendations[0].band,4);});
 await check('focused source selection opens the requested passage and listening part',()=>{
  const reading=selectFocusedContent(getProductionReadingTest(100,true),{skill:'reading',part:3});assert.deepEqual(reading.passages.map(p=>p.passageNumber),[3]);
  const listening=selectFocusedContent(getProductionListeningTest(185,true),{skill:'listening',part:2});assert.equal(listening.sections[0].part,2);assert(listening.sections[0].audioFile.startsWith('https:'));assert(listening.sections[0].questionGroups.length);
@@ -42,9 +44,20 @@ await check('overall timeline waits for all four skills and agrees with the scor
 await check('speaking sends each actual question alongside the corresponding answer',()=>{
  const meta=speakingTestContext({parts:[{partNumber:3,questions:['How does transport affect cities?']}]});const prompt=buildSpeakingUserPrompt({transcripts:{'2_0':'Transport can connect people to jobs.'},testMeta:meta});assert(prompt.includes('How does transport affect cities?'));assert(prompt.includes('Part 3'));
 });
-await check('Harper flags repeated grammar findings, article/pronoun errors, and Unicode spans',async()=>{
- const text='😀 This is a a test. This is a a test. This is a a test. But for a me, it is difficult.';
- const result=await lintTextWithHarper(text);assert(result.issues.filter(i=>i.snippet==='a a').length>=2);const issue=result.issues.find(i=>i.snippet==='a me');assert(issue);assert(applyHarperFix(text,issue,'me').includes('for me,'));assert(result.issues.every(i=>text.slice(i.start,i.end)===i.snippet));
+await check('visible word groups use distinct colours and preserve text',()=>{
+ const words=['start','writing','grammar','mechanics','focus','difficult'];
+ assert.equal(new Set(words.map(word=>repeatColor(word,words))).size,6);
+});
+await check('incomplete speaking responses do not offer an AI failure retry',()=>{
+ storage.clear();
+ recordAttempt({id:'partial-speaking',type:'speaking',status:'partial',completedAt:new Date().toISOString(),speaking:{evaluationState:'FAILED',bandEligible:false,transcripts:{'0_0':'This is my only answer today.'}}});
+ assert.equal(getRecheckableLastTest(),null);
+ recordAttempt({id:'complete-speaking',type:'speaking',status:'partial',completedAt:new Date(Date.now()+1000).toISOString(),speaking:{evaluationState:'FAILED',coverage:{isComplete:true},transcripts:{'0_0':'This is my answer to part one.','1_0':'This is my answer to part two.','2_0':'This is my answer to part three.'}}});
+ assert.equal(getRecheckableLastTest()?.attempt.id,'complete-speaking');storage.clear();
+});
+await check('Harper flags repeated grammar findings, agreement errors, and Unicode spans',async()=>{
+ const text='😀 This is a a test. This is a a test. This is a a test. He are happy.';
+ const result=await lintTextWithHarper(text);assert(result.issues.filter(i=>i.snippet==='a a').length>=2);const issue=result.issues.find(i=>/agree/.test(i.message));assert(issue);assert.notEqual(applyHarperFix(text,issue,'is'),text);assert(result.issues.every(i=>text.slice(i.start,i.end)===i.snippet));
  const segments=editorSegments(text,result.issues,analyzeRepetition(text).repetitiveWords);assert.equal(segments.map(s=>s.text).join(''),text);assert(segments.some(s=>s.issue));assert(segments.some(s=>s.repeat));
 });
 const task={prompt:'Should cities invest more in public transport? Give reasons.'},text='Cities should invest in buses because reliable transport connects residents to work.';

@@ -106,6 +106,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       band: completed ? result.overallSpeakingBand : null,
       overallBand: completed ? result.overallSpeakingBand : null,
       evaluationState: result.evaluationState,
+      coverage: result.coverage,
       evaluationStatus: result.status || 'failed',
       provisional: Boolean(result.provisional),
       scoringMethod: result.scoringMethod || '',
