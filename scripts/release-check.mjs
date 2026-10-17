@@ -37,9 +37,9 @@ function checkBundle(where, js, css) {
   check(`${where}: API calls are same-origin`, !/VITE_API_BASE_URL:`https?:/.test(js) && !/localhost:8787/.test(js));
   for (const [label, needle] of [
     ['Reading workspace', 'rd-segmented'], ['Tips coach feed', 'Your IELTS coach'], ['text size control', 'text-size-control'],
-    ['mock report', 'FULL MOCK EXAM'], ['AI wait note', 'AI examiner is still assessing'],
+    ['mock report', 'FULL MOCK EXAM'], ['AI wait note', 'ai-wait-note'],
     ['session-aware AI errors', 'could not confirm your sign-in session'],
-    ['on-device speech model notice', 'Preparing speech recognition'],
+    ['on-device speech model notice', 'recognition (one-time)'],
     ['speaking review before submit', 'Check your answers'],
     ['recording waits for the model', 'Recording unlocks as soon as speech recognition is ready'],
   ]) check(`${where}: feature ${label}`, js.includes(needle));
