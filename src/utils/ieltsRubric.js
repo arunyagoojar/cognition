@@ -1,5 +1,5 @@
 /**
- * IELTS Writing, Speaking & Answer Verification Rubric (v2.5)
+ * IELTS Writing, Speaking & Answer Verification Rubric (v2.6)
  * Shared by the Cloudflare Worker and the browser (local-key mode) so both
  * paths score identically with zero divergence.
  *
@@ -40,7 +40,7 @@ import { computeSpeechMetrics, formatSpeechScript } from './speech/speechMetrics
 /** Shown wherever Pronunciation appears: it is not part of the Speaking band. */
 export const PRONUNCIATION_NOTE = 'It is not possible for an AI model to interpret how well you pronounce. For now, this is not a scoring metric in the system.';
 
-export const RUBRIC_VERSION = 'ielts-rubric-2.5';
+export const RUBRIC_VERSION = 'ielts-rubric-2.6';
 
 /** Words as the candidate sees them counted: whitespace-separated tokens. */
 export function countWords(text) {
@@ -417,6 +417,17 @@ export function normalizeWritingEvaluation(data, { task1Words = 0, task2Words = 
 
 // ───────────────────────────────────────────────────────────── Speaking
 
+const SPEAKING_PART_DIAGNOSTICS = `PART DIAGNOSTICS (required alongside the interview criteria):
+Return one partDiagnostics entry for EVERY attempted part; omit unanswered parts. Judge each part independently: needsPractice is a boolean, true for an evidenced weakness worth practising, false when no meaningful part-specific weakness is observed. Equal weaknesses can make all attempted parts true; do not require one part to be worse than another. Never copy the whole-interview band into a part or invent part bands.
+Each entry requires evidence: one short, exact, contiguous quote from a candidate ANSWER in THAT part, never from the question, another part, or an invented example. reason names the observed weakness or strength in at most 20 words; nextAction gives one exercise in at most 20 words. Preserve actual fillers and recognition corrections. A short Part 1 answer alone is not a weakness.`;
+
+const SPEAKING_PART_DIAGNOSTICS_SCHEMA = JSON.stringify(Object.fromEntries([1, 2, 3].map(part => [`part${part}`, {
+  needsPractice: true,
+  evidence: `exact answer quote from Part ${part}`,
+  reason: 'specific observed weakness or strength',
+  nextAction: 'one targeted exercise',
+}])));
+
 export const SPEAKING_SYSTEM_PROMPT_V2 = `${CALIBRATED_FEEDBACK}
 
 You are a certified IELTS Speaking examiner and senior IELTS coach. Assess the candidate's complete interview (Parts 1–3) using calibrated examiner judgment based strictly on the official public IELTS Speaking Band Descriptors (Bands 1–9; May 2023 revision). You receive a transcript of the candidate's answers, organized by interview part and question.
@@ -541,7 +552,9 @@ FAITHFUL SYNTHESIS OF PUBLIC IELTS SPEAKING BAND DESCRIPTORS (BANDS 1–9; May 2
 [PRONUNCIATION (PR)]
 - Text-only: You MUST return { "status": "not_assessed", "band": null, "evidence": "", "rationale": "Pronunciation requires audio.", "personalizedAssessment": "Pronunciation requires acoustic audio analysis and cannot be assessed from a transcript.", "corrections": [], "nextBandAdvice": "Practice recording your answers aloud to develop sentence stress, rhythm, and intonation." }.
 
-Return valid JSON ONLY (no markdown fences, no commentary):
+${SPEAKING_PART_DIAGNOSTICS}
+
+Return valid JSON ONLY (no markdown fences, no commentary). The partDiagnostics example shows all three parts; include only attempted parts and set each boolean from its own evidence:
 {
   "criteria": {
     "fluencyAndCoherence": {
@@ -583,6 +596,7 @@ Return valid JSON ONLY (no markdown fences, no commentary):
     "…",
     "…"
   ],
+  "partDiagnostics": ${SPEAKING_PART_DIAGNOSTICS_SCHEMA},
   "partFeedback": { "part1": "…", "part2": "…", "part3": "…" },
   "strengths": "…",
   "areasForImprovement": "…",
@@ -626,6 +640,36 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
 
 const SPEAKING_KEYS = ['fluencyAndCoherence', 'lexicalResource', 'grammaticalRangeAndAccuracy'];
 
+function normalizeSpeakingPartDiagnostics(value, transcripts = null) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const entries = [];
+  for (const [part, diagnostic] of Object.entries(value)) {
+    if (!/^part[123]$/.test(part) || !diagnostic || typeof diagnostic !== 'object' || Array.isArray(diagnostic)) continue;
+    // Missing/invalid booleans must remain missing evidence, not turn into a
+    // reassuring false. Do not turn free-form feedback into a numeric part band.
+    if (typeof diagnostic.needsPractice !== 'boolean') continue;
+    const fields = ['evidence', 'reason', 'nextAction'];
+    if (!fields.every(field => typeof diagnostic[field] === 'string' && diagnostic[field].trim())) continue;
+    const evidence = diagnostic.evidence.trim();
+    if (transcripts && typeof transcripts === 'object') {
+      const partIndex = Number(part.slice(-1)) - 1;
+      const answers = Object.entries(transcripts)
+        .filter(([key]) => key.startsWith(`${partIndex}_`) || key === part)
+        .map(([, answer]) => String(answer || ''));
+      // A quote must be contained in one actual answer from this part. Joining
+      // answers could accidentally manufacture a quote across question boundaries.
+      if (!answers.some(answer => answer.trim() && answer.includes(evidence))) continue;
+    }
+    entries.push([part, {
+      needsPractice: diagnostic.needsPractice,
+      evidence,
+      reason: diagnostic.reason.trim(),
+      nextAction: diagnostic.nextAction.trim(),
+    }]);
+  }
+  return Object.fromEntries(entries);
+}
+
 function readSpeakingCriterion(c) {
   if (!c || typeof c !== 'object') return null;
   const band = wholeBand(c.band);
@@ -661,7 +705,7 @@ function readSpeakingCriterion(c) {
  * otherwise the band is the mean of the three language criteria and is
  * flagged provisional.
  */
-export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}) {
+export function normalizeSpeakingEvaluation(data, { audioAssessed = false, transcripts = null } = {}) {
   if (!data || typeof data !== 'object' || !data.criteria) return null;
   const src = data.criteria;
   const criteria = {};
@@ -715,7 +759,7 @@ export function normalizeSpeakingEvaluation(data, { audioAssessed = false } = {}
     confidence: ['high', 'medium', 'low'].includes(data.confidence) ? data.confidence : 'medium',
     criteria,
     priorityWeaknesses,
-    partDiagnostics: data.partDiagnostics && typeof data.partDiagnostics === 'object' ? Object.fromEntries(Object.entries(data.partDiagnostics).filter(([part,d]) => /^part[123]$/.test(part) && d && typeof d.evidence === 'string').map(([part,d]) => [part,{needsPractice:d.needsPractice === true,reason:String(d.reason || ''),evidence:d.evidence,nextAction:String(d.nextAction || '')}])) : {},
+    partDiagnostics: normalizeSpeakingPartDiagnostics(data.partDiagnostics, transcripts),
     partFeedback: data.partFeedback && typeof data.partFeedback === 'object' ? data.partFeedback : {},
     overallSummary: String(data.overallSummary || ''),
     strengths: String(data.strengths || ''),
@@ -841,7 +885,9 @@ FEEDBACK (per criterion, specific to THIS candidate)
 - corrections: up to 2 { "original": exact words spoken, "alternative": more natural version, "explanation": short reason }. Never invent quotes; [] if none.
 - nextBandAdvice: one concrete action.
 
+${SPEAKING_PART_DIAGNOSTICS}
+
 Return valid JSON only, no markdown:
 {"criteria":{"fluencyAndCoherence":{"band":6,"personalizedAssessment":"","corrections":[],"nextBandAdvice":""},"lexicalResource":{...},"grammaticalRangeAndAccuracy":{...},"pronunciation":{"status":"not_assessed","band":null,"personalizedAssessment":"Pronunciation needs audio and cannot be assessed from a transcript.","corrections":[],"nextBandAdvice":"Record yourself and review stress and intonation."}},
-"overallSummary":"2 sentences","priorityWeaknesses":["",""],"partFeedback":{"part1":"","part2":"","part3":""},"strengths":"","areasForImprovement":"","confidence":"high|medium|low"}
+"overallSummary":"2 sentences","priorityWeaknesses":["",""],"partDiagnostics":${SPEAKING_PART_DIAGNOSTICS_SCHEMA},"partFeedback":{"part1":"","part2":"","part3":""},"strengths":"","areasForImprovement":"","confidence":"high|medium|low"}
 Every {...} has the same fields as fluencyAndCoherence. "band" is a plain integer.`;

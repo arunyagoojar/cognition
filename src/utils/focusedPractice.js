@@ -1,6 +1,7 @@
 import { typeLabel } from './insights.js';
 import { resolveRecommendations } from '../data/recommendations.js';
 import { isBandEligible } from './practiceScope.js';
+import { recoverSpeakingDiagnostics } from './speakingDiagnostics.js';
 
 export const SKILL_NAMES = { reading:'Reading', listening:'Listening', writing:'Writing', speaking:'Speaking' };
 export const sectionLabel = (skill, part) => `${skill === 'reading' ? 'Passage' : skill === 'writing' ? 'Task' : 'Part'} ${part}`;
@@ -101,14 +102,12 @@ export function buildPracticeInsights(attempts = [], index) {
         add(`writing.task${group.key}`,{testId:group.testId,sourceAttemptId:group.sourceAttemptId,taskKind:group.key,kind:'section',title:`Writing · Task ${group.key}`,band:group.band,history:group.history,reason:`Task estimate ${group.band.toFixed(1)} · ${group.samples} full-test result${group.samples!==1?'s':''}`,priority:(9-group.band)/9*65+(best-group.band)*5+dip*5,trend:dip>=0.5?'Recent dip':group.samples>1?'Tracked across tests':'First result'});
       }
     } else {
+      const diagnostics = new Map(history.map(a => [a, recoverSpeakingDiagnostics(resultFor(a,skill))]));
       for(const part of [1,2,3]) {
         const observations=[];
         for(const a of history) {
-          const r=resultFor(a,skill), d=r.partDiagnostics?.[`part${part}`];
-          const partText=Object.entries(r.transcripts || {}).filter(([key])=>key.startsWith(`${part-1}_`) || key===`part${part}`).map(([,text])=>text).join(' ');
-          const hasPartKeys=Object.keys(r.transcripts || {}).some(key=>/^[0-2]_\d+$|^part[1-3]$/.test(key));
-          const fallbackText=hasPartKeys?'':Object.values(r.transcripts || {}).join(' ');
-          if(typeof d?.evidence!=='string' || !d.evidence.trim() || !(partText || fallbackText).includes(d.evidence)) continue;
+          const d=diagnostics.get(a)?.[`part${part}`];
+          if(!d) continue;
           observations.push({d,a});
           if(observations.length===5) break;
         }
@@ -116,7 +115,7 @@ export function buildPracticeInsights(attempts = [], index) {
         model.sections.push({key:part,label:sectionLabel(skill,part),needsPractice:current?.d.needsPractice,flagged,samples:observations.length,history:observations.map(o=>o.d.needsPractice?0:1).reverse(),testId:current && (resultFor(current.a,skill).testId || current.a.testId),sourceAttemptId:current?.a.id,observation:current?.d});
         if(!current?.d.needsPractice) continue;
         const r=resultFor(current.a,skill);
-        add(`speaking.part${part}`,{testId:r.testId || current.a.testId,sourceAttemptId:current.a.id,part,kind:'section',title:`Speaking · Part ${part}`,reason:current.d.reason || 'Develop this part further',nextAction:current.d.nextAction,evidence:current.d.evidence,flagged,samples:observations.length,priority:45+flagged/observations.length*20,trend:observations.length>1?`${flagged}/${observations.length} reviews flagged`:'First observation'});
+        add(`speaking.part${part}`,{testId:r.testId || current.a.testId,sourceAttemptId:current.a.id,part,kind:'section',title:`Speaking · Part ${part}`,reason:current.d.reason || 'Develop this part further',nextAction:current.d.nextAction,evidence:current.d.evidence,evidenceSource:current.d.source,flagged,samples:observations.length,priority:45+flagged/observations.length*20+(current.d.criterionKeys?.length || 0),trend:observations.length>1?`${flagged}/${observations.length} reviews flagged`:'First observation'});
       }
       model.hasDetailedResults=model.sections.some(s=>s.samples>0);
     }

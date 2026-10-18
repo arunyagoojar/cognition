@@ -303,12 +303,12 @@ export async function directVerifyAnswers(items) {
  * Speaking evaluation: accepts a server result already normalized by the
  * shared rubric, or raw model JSON (local-key mode) which is normalized here.
  */
-export function validateSpeakingEvaluationJson(data) {
-  if (data && data.rubricVersion === RUBRIC_VERSION) {
+export function validateSpeakingEvaluationJson(data, { transcripts = null } = {}) {
+  if (data && data.rubricVersion === RUBRIC_VERSION && !transcripts) {
     const b = Number(data.overallBand);
     return Number.isFinite(b) && b >= 0 && b <= 9 && data.criteria ? data : null;
   }
-  return normalizeSpeakingEvaluation(data, { audioAssessed: false });
+  return normalizeSpeakingEvaluation(data, { audioAssessed: false, transcripts });
 }
 
 /**
@@ -497,7 +497,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     SPEAKING_SYSTEM_PROMPT_V2,
     buildSpeakingUserPrompt({ transcripts, testMeta, durations, speechMeta }),
     () => evaluateSpeakingServer({ transcripts, testMeta, durations, speechMeta }),
-    (json) => validateSpeakingEvaluationJson(json),
+    (json) => validateSpeakingEvaluationJson(json, { transcripts }),
   );
 
 
@@ -507,7 +507,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
 
   if (res?.status === 'failed' && !res.triedDirect) {
     const userPrompt = buildSpeakingUserPrompt({ transcripts, testMeta, durations, speechMeta });
-    const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt);
+    const direct = await directAiCall(SPEAKING_SYSTEM_PROMPT_V2, userPrompt, (json) => validateSpeakingEvaluationJson(json, { transcripts }));
     if (direct.status === 'completed') {
       res = { status: 'completed', evaluation: direct.evaluation, model: direct.model, provider: direct.provider };
       model = direct.model || 'ai';
@@ -520,7 +520,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
     console.info(`[AI Evaluation] Speaking evaluated via ${provider} (${model}) [mode: ${tier}]`);
   }
 
-  const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation) : null;
+  const validated = res?.status === 'completed' ? validateSpeakingEvaluationJson(res.evaluation, { transcripts }) : null;
 
   if (validated) {
     const finalResult = {

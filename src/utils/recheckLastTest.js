@@ -111,6 +111,7 @@ export async function recheckLastTest() {
     priorityWeaknesses: res.priorityWeaknesses || [],
     strengths: res.strengths || '',
     areasForImprovement: res.areasForImprovement || '',
+    partDiagnostics: res.partDiagnostics || {},
     partFeedback: res.partFeedback || {},
   });
   return { ok: true, band: res.overallSpeakingBand, skill };

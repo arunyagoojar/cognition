@@ -12,7 +12,7 @@ export function MiniTrend({ values = [], max = 9, label = 'Recent results' }) {
 const ICONS = { reading:'book', listening:'headphones', writing:'pen', speaking:'mic' };
 const partName = item => item.questionType ? `${SKILL_NAMES[item.skill]} ${item.skill==='reading'?'Passage':'Part'} ${item.part} · ${item.title}` : `${SKILL_NAMES[item.skill]} ${item.skill==='writing'?'Task':item.skill==='reading'?'Passage':'Part'} ${item.taskKind || item.part}`;
 const shortReason = item => item.skill==='speaking'
-  ? 'This part needs more development in your latest feedback.'
+  ? item.reason || 'This part needs more development in your latest feedback.'
   : 'You scored relatively low here in your last test.';
 
 export default function FocusedRecommendations({ insights: supplied, onStartDrill, onOpenLesson, onOpenTips, onStartSkill }) {

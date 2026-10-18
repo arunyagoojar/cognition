@@ -638,7 +638,7 @@ export default {
             userPrompt,
             provider: providerToUse,
             // transcript only: pronunciation is never inferred
-            validator: (data) => normalizeSpeakingEvaluation(data, { audioAssessed: false }),
+            validator: (data) => normalizeSpeakingEvaluation(data, { audioAssessed: false, transcripts }),
           });
           return json(result, 200, corsHeaders);
         }
