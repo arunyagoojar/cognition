@@ -35,3 +35,7 @@ export function speakingPart2Controls(state) {
 export function nextSpeakingPreparationSecond(secondsLeft) {
   return Math.max(0, (secondsLeft ?? 0) - 1);
 }
+
+export function measuredSpeakingDuration(recording) {
+  return Number.isFinite(recording?.duration) && recording.duration > 0 ? recording.duration : 0;
+}

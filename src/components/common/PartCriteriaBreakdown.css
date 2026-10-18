@@ -1,0 +1,39 @@
+.part-criteria-breakdown { min-width: 0; color: var(--text-primary); }
+.part-criteria-breakdown > h3, .part-criteria-heading h3 { margin: 0; font-size: 19px; line-height: 1.35; }
+.part-criteria-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 16px; }
+.part-criteria-heading p, .part-criteria-note { font-size: 13px; line-height: 1.6; color: var(--text-secondary); margin: 0; max-width: 62ch; }
+.part-criteria-note { margin-top: 8px; }
+.part-criteria-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 14px; }
+.part-criteria-grid.is-single-part { grid-template-columns: minmax(0, 1fr); max-width: 560px; }
+.part-criteria-card { min-width: 0; border: var(--border-subtle); border-radius: 18px; background: var(--bg-card); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.part-criteria-card.is-focus { border-top: 3px solid var(--part-accent); padding-top: 18px; }
+.part-criteria-card-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.part-criteria-card-heading h4 { font-size: 17px; line-height: 1.3; margin: 0 0 4px; }
+.part-criteria-card-heading > div > span { color: var(--text-secondary); font-size: 12px; line-height: 1.4; }
+.part-criteria-estimate { display: flex; flex-direction: column; text-align: right; gap: 2px; max-width: 12ch; }
+.part-criteria-estimate strong { font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.part-criteria-rows { display: grid; gap: 12px; }
+.part-criteria-row { display: grid; grid-template-columns: 80px minmax(20px, 1fr) 27px; align-items: center; gap: 10px; font-size: 12px; }
+.part-criteria-row > strong { font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.part-criteria-track { display: block; height: 7px; border-radius: 999px; background: var(--surface-interactive); overflow: hidden; }
+.part-criteria-track > span { display: block; height: 100%; background: var(--part-accent); border-radius: inherit; }
+.part-criteria-reason, .part-criteria-qualitative { margin: 0; font-size: 13px; line-height: 1.6; color: var(--text-secondary); overflow-wrap: anywhere; }
+.part-criteria-evidence { border-top: var(--border-subtle); padding-top: 4px; font-size: 12px; line-height: 1.6; }
+.part-criteria-evidence summary { min-height: 44px; cursor: pointer; align-content: center; color: var(--text-primary); font-weight: 600; }
+.part-criteria-evidence > div { display: grid; gap: 14px; }
+.part-criteria-evidence h5 { font-size: 12px; margin: 0 0 4px; }
+.part-criteria-evidence p { margin: 0; color: var(--text-secondary); }
+.part-criteria-evidence blockquote { margin: 6px 0 0; padding: 0 0 0 10px; border-left: 2px solid var(--part-accent); color: var(--text-secondary); overflow-wrap: anywhere; }
+.part-criteria-evidence .part-criteria-next { padding-top: 8px; border-top: var(--border-subtle); }
+.part-criteria-practice { min-height: 44px; border: var(--border-subtle); border-radius: 12px; background: var(--surface-interactive); color: var(--text-primary); padding: 10px 13px; display: flex; justify-content: space-between; gap: 12px; align-items: center; font: 600 12px var(--font-family); cursor: pointer; }
+.part-criteria-practice:hover { background: var(--surface-hover); }
+.part-criteria-breakdown summary:focus-visible, .part-criteria-practice:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 3px; border-radius: 8px; }
+@media (max-width: 860px) { .part-criteria-grid { grid-template-columns: 1fr; } .part-criteria-card { padding: 18px; } .part-criteria-card.is-focus { padding-top: 16px; } .part-criteria-row { grid-template-columns: 85px minmax(20px, 1fr) 30px; } }
+@media (prefers-contrast: more) { .part-criteria-track { border: 1px solid var(--text-primary); } .part-criteria-track > span { background: var(--text-primary); } }
+
+.part-criteria-breakdown { --part-accent: var(--c-speaker); }
+.part-criteria-breakdown.is-writing { --part-accent: var(--c-coral); }
+.part-criteria-breakdown.is-writing .part-criteria-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.part-criteria-breakdown.is-writing .part-criteria-row { grid-template-columns: 100px minmax(20px, 1fr) 27px; }
+.part-criteria-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 700px) { .part-criteria-breakdown.is-writing .part-criteria-grid { grid-template-columns: 1fr; } }

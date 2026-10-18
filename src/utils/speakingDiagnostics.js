@@ -1,5 +1,7 @@
 // Recover useful part coaching from feedback already saved with an interview.
 // Whole-interview criterion bands never become invented scores for Parts 1–3.
+import { roundIeltsBand } from './ieltsRubric.js';
+
 const CRITERIA = {
   fluencyAndCoherence: 'fluency',
   lexicalResource: 'vocabulary',
@@ -42,6 +44,28 @@ export function recoverSpeakingDiagnostics(result = {}) {
   const diagnostics = {};
   for (const part of [1, 2, 3]) {
     const diagnostic = result.partDiagnostics?.[`part${part}`];
+    const criteria = {};
+    for (const key of Object.keys(CRITERIA)) {
+      const criterion = diagnostic?.criteria?.[key];
+      const evidence = findQuote(answers[part], criterion?.evidence);
+      if (!Number.isInteger(criterion?.band) || criterion.band < 0 || criterion.band > 9 || !evidence || typeof criterion.feedback !== 'string' || !criterion.feedback.trim()) continue;
+      criteria[key] = { band: criterion.band, evidence, feedback: criterion.feedback.trim() };
+    }
+    if (Object.keys(criteria).length === 3) {
+      // Persisted JSON is validated again: never trust a model-supplied average,
+      // a whole-interview grade, or evidence from another part.
+      const practiceBand = roundIeltsBand(Object.values(criteria).reduce((sum, c) => sum + c.band, 0) / 3);
+      diagnostics[`part${part}`] = {
+        criteria, practiceBand,
+        needsPractice: practiceBand < 7,
+        reason: typeof diagnostic.reason === 'string' ? diagnostic.reason : '',
+        evidence: findQuote(answers[part], diagnostic.evidence) || criteria.fluencyAndCoherence.evidence,
+        nextAction: typeof diagnostic.nextAction === 'string' ? diagnostic.nextAction : '',
+        source: 'part_score',
+        criterionKeys: Object.keys(criteria).filter(key => criteria[key].band < 7),
+      };
+      continue;
+    }
     if (typeof diagnostic?.needsPractice !== 'boolean') continue;
     const evidence = findQuote(answers[part], diagnostic.evidence);
     if (evidence) diagnostics[`part${part}`] = {

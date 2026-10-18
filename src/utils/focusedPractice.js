@@ -113,10 +113,25 @@ export function buildPracticeInsights(attempts = [], index) {
           if(observations.length===5) break;
         }
         const current=observations[0], flagged=observations.filter(o=>o.d.needsPractice).length;
-        model.sections.push({key:part,label:sectionLabel(skill,part),needsPractice:current?.d.needsPractice,flagged,samples:observations.length,history:observations.map(o=>o.d.needsPractice?0:1).reverse(),testId:current && (resultFor(current.a,skill).testId || current.a.testId),sourceAttemptId:current?.a.id,observation:current?.d});
-        if(!current?.d.needsPractice) continue;
-        const r=resultFor(current.a,skill);
-        add(`speaking.part${part}`,{testId:r.testId || current.a.testId,sourceAttemptId:current.a.id,part,kind:'section',title:`Speaking · Part ${part}`,reason:current.d.reason || 'Develop this part further',nextAction:current.d.nextAction,evidence:current.d.evidence,evidenceSource:current.d.source,flagged,samples:observations.length,priority:45+flagged/observations.length*20+(current.d.criterionKeys?.length || 0),trend:observations.length>1?`${flagged}/${observations.length} reviews flagged`:'First observation'});
+        const scored = observations.filter(o=>finite(o.d.practiceBand));
+        const numeric = finite(current?.d.practiceBand);
+        model.sections.push({key:part,label:sectionLabel(skill,part),needsPractice:current?.d.needsPractice,flagged,samples:observations.length,scoredSamples:scored.length,
+          ...(numeric ? {band:current.d.practiceBand,practiceBand:current.d.practiceBand,criteria:current.d.criteria,scoreKind:'part_practice_estimate'} : {}),
+          history:(numeric ? scored.map(o=>o.d.practiceBand) : observations.map(o=>o.d.needsPractice?0:1)).reverse(),
+          testId:current && (resultFor(current.a,skill).testId || current.a.testId),sourceAttemptId:current?.a.id,observation:current?.d});
+      }
+      const best=Math.max(0,...model.sections.map(s=>s.band || 0));
+      for(const group of model.sections) {
+        const d=group.observation;
+        if(!d) continue;
+        const numeric=finite(group.band), older=numeric?group.history.slice(0,-1):[];
+        const dip=older.length?Math.max(0,average(older)-group.band):0;
+        if(numeric ? group.band>=7.5 || (group.band>=7 && best-group.band<0.5 && dip<0.5) : !d.needsPractice) continue;
+        add(`speaking.part${group.key}`,{testId:group.testId,sourceAttemptId:group.sourceAttemptId,part:group.key,kind:'section',title:`Speaking · Part ${group.key}`,
+          ...(numeric ? {band:group.band,practiceBand:group.band,criteria:group.criteria,scoreKind:'part_practice_estimate',history:group.history} : {}),
+          reason:d.reason || 'Develop this part further',nextAction:d.nextAction,evidence:d.evidence,evidenceSource:d.source,flagged:group.flagged,samples:group.samples,
+          priority:numeric ? (9-group.band)/9*65+(best-group.band)*5+dip*5 : 45+group.flagged/group.samples*20+(d.criterionKeys?.length || 0),
+          trend:numeric ? dip>=0.5?'Recent dip':group.scoredSamples>1?'Tracked across tests':'First result' : group.samples>1?`${group.flagged}/${group.samples} reviews flagged`:'First observation'});
       }
       model.hasDetailedResults=model.sections.some(s=>s.samples>0);
     }

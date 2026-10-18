@@ -11,6 +11,7 @@ import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
 import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
+import PartCriteriaBreakdown from '../common/PartCriteriaBreakdown.jsx';
 import ErrorBoundary from '../common/ErrorBoundary.jsx';
 import TextSizeControl from '../common/TextSizeControl';
 import { useExamTextScale } from '../../hooks/useExamTextScale.js';
@@ -107,6 +108,8 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
       modelUsed: result.modelUsed,
       providerUsed: result.providerUsed,
       rubricVersion: result.rubricVersion,
+      scoringMethod: result.scoringMethod || '',
+      scoringNotes: result.scoringNotes || [],
       overallSummary: result.overallSummary || '',
       task1Feedback: result.task1Feedback || '',
       task2Feedback: result.task2Feedback || '',
@@ -289,7 +292,7 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         }
       });
 
-      setResult({
+      setResult(prev => ({
         band: evalResult.overallBand,
         task1Band: evalResult.task1Band,
         task2Band: evalResult.task2Band,
@@ -297,8 +300,9 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
         task2Words: wcT2,
         t1: essayT1,
         t2: essayT2,
-        ...evalResult
-      });
+        ...evalResult,
+        attemptId: prev?.attemptId,
+      }));
     } catch (err) {
       console.error('Recheck failed:', err);
       setResult(prev => ({
@@ -555,6 +559,15 @@ export default function WritingModule({ onComplete, onBack, initialTest, testId,
               <ResultAnalysis skill="writing" resultRecord={{ writing: { ...result, criteria: result.criteria } }} onOpenLesson={onOpenLesson} onOpenTips={onOpenTips} />
             </ResultItem>
           </ErrorBoundary>
+        )}
+
+        {(isCompleted || isPartial) && (
+          <ResultItem as="section">
+            <PartCriteriaBreakdown skill="writing" sections={[
+              { key: 1, band: result.task1Band, criteria: result.taskCriteria?.task1, reason: result.task1Feedback },
+              { key: 2, band: result.task2Band, criteria: result.taskCriteria?.task2, reason: result.task2Feedback },
+            ]} />
+          </ResultItem>
         )}
 
         {/* ── 3. FOUR ASSESSMENT CRITERIA CARDS ── */}

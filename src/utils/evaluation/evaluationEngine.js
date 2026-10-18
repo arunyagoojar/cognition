@@ -416,7 +416,7 @@ export async function evaluateWritingResponses({ task1Text = '', task2Text = '',
  *   explicit availableCriteria list).
  * - notes are planning material and are never sent to the evaluator.
  */
-export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, durations = {}, speechMeta = {}, expectedQuestions = null }) {
+export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {}, durations = {}, speechMeta = {}, expectedQuestions = null, practiceMode = 'full', expectedParts = [] }) {
   const spokenWords = Object.values(transcripts || {}).filter(Boolean).join(' ').trim();
 
   const partsAttempted = new Set();
@@ -434,6 +434,9 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     : Math.max(questionsAnswered, 14);
   // Full interview = every part attempted AND at least 3/4 of the questions answered
   const isCoverageComplete = partsAttempted.size >= 3 && questionsAnswered >= Math.ceil(expected * 0.75);
+  const selectedParts = [...new Set(expectedParts.map(Number).filter(part => Number.isInteger(part) && part >= 1 && part <= 3))];
+  const focusedPracticeComplete = practiceMode === 'drill' && selectedParts.length === 1
+    && partsAttempted.size === 1 && partsAttempted.has(String(selectedParts[0])) && questionsAnswered >= expected;
   const coverage = { partsAttempted: Array.from(partsAttempted), questionsAnswered,
                       questionsExpected: expected, partsExpected: 3, isComplete: isCoverageComplete,
                       statement: `You answered ${questionsAnswered} of ${expected} questions across ${partsAttempted.size} of 3 parts.` };
@@ -516,12 +519,13 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
   }
 
   // Hard honesty rule: strip any model-returned pronunciation score.
-  if (!isCoverageComplete) {
-    // Partial coverage: response-level QUALITATIVE feedback only — no band numbers,
-    // no overall band. A score from a fraction of the interview is not an assessment.
+  if (!isCoverageComplete || practiceMode === 'drill') {
+    // Incomplete interviews stay qualitative. A deliberately completed one-part
+    // drill can have part practice estimates, but never a full Speaking band.
     return {
       evaluationState: 'PARTIAL',
-      status: 'partial',
+      status: focusedPracticeComplete ? 'completed' : 'partial',
+      focusedPracticeComplete,
       band: null,
       overallSpeakingBand: null,
       criteria: stripBands(res.criteria),
@@ -529,11 +533,20 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
       priorityWeaknesses: res.priorityWeaknesses || [],
       strengths: res.strengths || '',
       areasForImprovement: res.areasForImprovement || '',
-      partDiagnostics: res.partDiagnostics || {},
-    partFeedback: res.partFeedback || {},
+      partDiagnostics: focusedPracticeComplete ? res.partDiagnostics || {} : Object.fromEntries(Object.entries(res.partDiagnostics || {}).map(([part, diagnostic]) => {
+        const { practiceBand: _practiceBand, criteria, ...qualitative } = diagnostic;
+        return [part, { ...qualitative, criteria: Object.fromEntries(Object.entries(criteria || {}).map(([key, criterion]) => {
+          const { band: _band, ...feedback } = criterion;
+          return [key, feedback];
+        })) }];
+      })),
+      partFeedback: res.partFeedback || {},
       provider: res.provider,
+      rubricVersion: res.rubricVersion,
+      modelUsed: res.modelUsed,
+      providerUsed: res.providerUsed,
       coverage,
-      message: `${coverage.statement} Criterion band scores require the full interview; this is response-level feedback only.`,
+      message: focusedPracticeComplete ? 'Part practice estimates are separate from your full Speaking band.' : `${coverage.statement} Criterion band scores require the full interview; this is response-level feedback only.`,
     };
   }
 
@@ -555,6 +568,9 @@ export async function evaluateSpeakingResponses({ transcripts = {}, testMeta = {
     partDiagnostics: res.partDiagnostics || {},
     partFeedback: res.partFeedback || {},
     provider: res.provider,
+    rubricVersion: res.rubricVersion,
+    modelUsed: res.modelUsed,
+    providerUsed: res.providerUsed,
     coverage,
   };
 }

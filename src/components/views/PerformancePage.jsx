@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Icon from '../common/Icon.jsx';
 import FocusedRecommendations, { MiniTrend } from '../dashboard/FocusedRecommendations.jsx';
 import ProgressTimeline from '../dashboard/ProgressTimeline.jsx';
+import PartCriteriaBreakdown from '../common/PartCriteriaBreakdown.jsx';
 import usePracticeInsights from '../../hooks/usePracticeInsights.js';
 import { derivePerformanceSummary } from '../../utils/performanceStore.js';
 import { calculateOverallBand } from '../../utils/bandCalculator.js';
@@ -52,7 +53,8 @@ export default function PerformancePage({scores = {},targetBand,onStartSkill,onS
       <div className="insight-section-heading"><div><span className="insight-eyebrow">LOOK CLOSER</span><h2 id="skill-detail-title">Where you stand</h2></div>{model.latest && <button type="button" className="insight-secondary" onClick={()=>onReviewResult?.(selected,{...model.result,attemptId:model.latest.id,testId:model.result?.testId || model.latest.testId})}>Review test <span aria-hidden="true">↗</span></button>}</div>
       <div className="skill-explorer-tabs" aria-label="Explore a skill">{SKILLS.map(skill=><button type="button" className={`skill-${skill}`} key={skill} aria-pressed={selected===skill} onClick={()=>setSelected(skill)}><Icon name={ICONS[skill]}/>{SKILL_NAMES[skill]} <strong>{bands[skill]!==null?bands[skill].toFixed(1):'—'}</strong></button>)}</div>
       <div className={`skill-explorer-body skill-${selected}`} key={selected}>
-        <div className="insight-section-heading"><h3>{selected==='reading'?'Passage performance':selected==='listening'?'Part performance':selected==='writing'?'Task performance':'Part observations'}</h3><span className="insight-muted">{selected==='speaking'?'Coaching evidence · no part bands':'Latest detailed result'}</span></div>
+        {selected==='speaking' || selected==='writing' ? <PartCriteriaBreakdown skill={selected} sections={model.sections} partDiagnostics={result?.partDiagnostics} partFeedback={result?.partFeedback} onPractice={startSection} /> : <>
+        <div className="insight-section-heading"><h3>{selected==='reading'?'Passage performance':selected==='listening'?'Part performance':'Task performance'}</h3><span className="insight-muted">Latest detailed result</span></div>
         <div className="section-performance-grid">{(model.sections.length?model.sections:Array.from({length:selected==='writing'?2:selected==='listening'?4:3},(_,i)=>({key:i+1,label:`${selected==='reading'?'Passage':selected==='writing'?'Task':'Part'} ${i+1}`}))).map(section=>{
           const known=selected==='reading'||selected==='listening'?section.total>0:selected==='writing'?section.band!==null && section.band!==undefined:section.samples>0;
           const weak=selected==='speaking'?section.needsPractice:section.accuracy!==undefined?section.accuracy<0.7:section.band<7;
@@ -63,9 +65,8 @@ export default function PerformancePage({scores = {},targetBand,onStartSkill,onS
             {selected==='writing' && known && <span className="insight-muted">Task estimate · {section.samples} results</span>}
             {known && <button type="button" className="insight-text-button" onClick={()=>startSection(section)}>Practise {section.label.toLowerCase()} <span aria-hidden="true">→</span></button>}
           </article>;
-        })}</div>
+        })}</div></>}
         {(selected==='reading'||selected==='listening') && <><div className="insight-section-heading"><h3>Question types</h3><span className="accuracy-legend"><i/>Correct <i/>Uncertain</span></div>{model.types.length?<div className="question-type-results">{model.types.slice().sort((a,b)=>(a.accuracy ?? 1)-(b.accuracy ?? 1)).map(group=><div className="question-type-row" key={group.key}><span>{group.label}</span><AccuracyBar group={group}/><strong>{group.correct}/{group.total}</strong><button type="button" className="insight-text-button" onClick={()=>startQuestionType(group)} disabled={!group.sections?.some(s=>typeof s.accuracy==='number')} aria-label={`Practise ${group.label}`}>Practise <span aria-hidden="true">→</span></button></div>)}</div>:<div className="detail-empty"><Icon name="book" size={22}/><p>These saved results contain a band, but no question breakdown.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}</>}
-        {(selected==='writing'||selected==='speaking') && model.sections.every(s=>!s.samples) && <div className="detail-empty"><p>A new full test adds {selected==='writing'?'task comparisons':'part observations'}.</p><button type="button" className="insight-secondary" onClick={()=>onStartSkill?.(selected)}>Take a {selected} test</button></div>}
         {(selected==='writing'||selected==='speaking') && <details className="coaching-notes"><summary>Coaching notes <span>{criteria.length} criteria</span></summary><div className="criteria-feedback-grid">{criteria.map(([key,value])=><article key={key}><h4>{CRITERIA[key]} <strong>{numericBand(value?.band)!==null?value.band.toFixed(1):'—'}</strong></h4><p>{value.improvementFocus || value.nextBandAdvice || value.personalizedAssessment || value.evidence || 'Detailed feedback is available in the test review.'}</p></article>)}</div>{!criteria.length && <p>Complete a new {selected} assessment to receive criterion feedback.</p>}{result?.areasForImprovement && <p>{result.areasForImprovement}</p>}</details>}
       </div>
     </section>

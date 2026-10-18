@@ -4,6 +4,9 @@ import { getPerformanceStore, recordAttempt } from '../src/utils/performanceStor
 import { saveLocalGroqKey, setActiveAiProvider } from '../src/utils/storage.js';
 import { CONTENT_CATALOG, loadSkillContent } from '../src/data/production/registry.js';
 import { getProductionSpeakingPackage } from '../src/data/production/adapters.js';
+import { evaluateSpeakingResponses } from '../src/utils/evaluation/evaluationEngine.js';
+import { speakingTestContext } from '../src/utils/speakingContext.js';
+import { RUBRIC_VERSION } from '../src/utils/ieltsRubric.js';
 
 const memory = new Map();
 const previousStorage = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
@@ -30,6 +33,9 @@ try {
     evidence: `In part ${part}, answer 1, I repeat this same basic description`,
     reason: 'Repetition limits the development of this answer.',
     nextAction: 'Answer this part with one claim, one reason, and one specific example.',
+    criteria: Object.fromEntries(['fluencyAndCoherence', 'lexicalResource', 'grammaticalRangeAndAccuracy'].map(key => [key, {
+      band: 5, evidence: `In part ${part}, answer 1`, feedback: 'Develop the idea with a specific example.',
+    }])),
   }]));
   const criterion = { band: 5, evidence: 'I repeat this same basic description', rationale: 'Ideas repeat instead of developing.', improvementFocus: 'Develop the answer with a specific example.' };
   const graded = {
@@ -84,7 +90,10 @@ try {
   assert.equal(after.attempts.filter(attempt => attempt.id === attemptId).length, 1);
   assert.deepEqual(after.attempts.filter(attempt => attempt.id !== attemptId), unrelatedBefore, 'other skill records must remain unchanged');
   const saved = after.attempts.find(attempt => attempt.id === attemptId).speaking;
-  assert.deepEqual(saved.partDiagnostics, diagnostics, 'new part-specific evidence must survive the save');
+  assert.deepEqual(saved.partDiagnostics, Object.fromEntries(Object.entries(diagnostics).map(([key, value]) => [key, { ...value, practiceBand: 5 }])), 'new part-specific criterion scores and evidence must survive the save');
+  assert.equal(saved.rubricVersion, RUBRIC_VERSION);
+  assert.equal(saved.providerUsed, 'groq');
+  assert.equal(saved.modelUsed, 'openai/gpt-oss-120b');
   assert.deepEqual(saved.partFeedback, graded.partFeedback);
   assert.deepEqual(saved.transcripts, transcripts);
   assert.deepEqual(saved.originalTranscripts, originalTranscripts);
@@ -93,6 +102,13 @@ try {
   assert.equal(saved.sttEngine, 'moonshine-base');
   for (const key of ['fluencyAndCoherence', 'lexicalResource', 'grammaticalRangeAndAccuracy']) assert.equal(saved.criteria[key].band, 5);
   assert.equal(saved.criteria.pronunciation.band, null, 'transcript-only rechecks must not invent pronunciation grades');
+  const partial = await evaluateSpeakingResponses({ transcripts, durations, speechMeta, testMeta: speakingTestContext(source), expectedQuestions: 30 });
+  assert.equal(partial.evaluationState, 'PARTIAL');
+  assert.equal(partial.overallSpeakingBand, null);
+  for (const diagnostic of Object.values(partial.partDiagnostics)) {
+    assert.equal(diagnostic.practiceBand, undefined, 'Incomplete interviews retain qualitative part feedback without numeric practice scores.');
+    for (const criterion of Object.values(diagnostic.criteria || {})) assert.equal(criterion.band, undefined);
+  }
   console.log('✓ Speaking recheck saves part diagnostics and criteria on the same complete attempt while preserving original answers and other scores');
 } finally {
   globalThis.fetch = previousFetch;

@@ -36,7 +36,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
   return ()=>{alive=false;};
  },[focus,saved]);
  const save = data => {
-   const attempt={id:attemptId.current,type:'drill',skill:focus.skill,focusKey:focus.key,testId:test?.testId,practiceMode:'drill',bandEligible:false,status:data.speaking && !['COMPLETED','PARTIAL'].includes(data.speaking.evaluationState) ? 'partial' : 'completed',sourceAttemptId:focus.sourceAttemptId,completedAt:new Date().toISOString(),...data};
+   const attempt={id:attemptId.current,type:'drill',skill:focus.skill,focusKey:focus.key,testId:test?.testId,practiceMode:'drill',bandEligible:false,status:data.speaking && !data.speaking.focusedPracticeComplete ? 'partial' : 'completed',sourceAttemptId:focus.sourceAttemptId,completedAt:new Date().toISOString(),...data};
    recordAttempt(attempt);void syncAttempt(attempt);setResult(data);
  };
  if(!focus) return <div className="content-container"><p>Choose a recommendation from Performance to start focused practice.</p><button onClick={onBack}>Back to Performance</button></div>;

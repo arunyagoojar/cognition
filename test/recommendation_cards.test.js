@@ -11,6 +11,7 @@ const render=insights=>renderToStaticMarkup(React.createElement(Cards,{insights}
 const legacy=render({attempts:[{type:'writing',writing:{band:5.5}}],recommendations:[],missingDetailedSkills:['reading','listening','writing','speaking']});
 assert(legacy.includes('Complete one full practice test in each skill'));
 assert(!legacy.includes('practice-thumbnail skill-'));
+assert(legacy.includes('<li class="practice-thumbnail practice-thumbnail-unlock"'));
 assert(!legacy.includes('skill estimate'));
 const precise=render({attempts:[],missingDetailedSkills:[],recommendations:[{key:'writing.task2',skill:'writing',kind:'section',taskKind:2,band:6,resources:{tip:{skill:'writing',categoryId:'writing-t2-understand'},lesson:{id:'wr-7'}}}]});
 assert(precise.includes('Writing Task 2'));assert(!precise.includes('Writing Task 1'));
@@ -18,7 +19,18 @@ assert(precise.includes('6.0'));assert(precise.includes('Practise Writing Task 2
 assert(precise.includes('Strategy')&&precise.includes('Lesson'));
 assert(!precise.includes('Why this focus')&&!precise.includes('<svg class="mini-trend"'));
 assert(!precise.includes('<details'));
+const mixed=render({recommendations:[{key:'speaking.part2',skill:'speaking',kind:'section',part:2,band:5.5,reason:'Develop the example.'}],missingDetailedSkills:['reading','listening','writing']});
+const cards=[...mixed.matchAll(/<li class="([^"]+)"[\s\S]*?<\/li>/g)];
+assert.equal(cards.length,2);
+assert(cards[0][1].includes('skill-speaking'));
+assert.equal(cards[1][1],'practice-thumbnail practice-thumbnail-unlock');
+assert(mixed.includes('Speaking Part 2') && mixed.includes('5.5') && mixed.includes('part estimate'));
+assert(cards[1][0].includes('Add recommendations for your other skills'));
+for(const skill of ['Reading','Listening','Writing']) assert(cards[1][0].includes(skill));
+assert(!cards[1][0].includes('practice-thumbnail-score') && !cards[1][0].includes('practice-priority'));
+assert(!mixed.includes('class="practice-unlock"'));
+assert(mixed.includes('Next recommendations'), 'The final unlock card counts toward carousel controls.');
 const balanced=render({attempts:[],recommendations:[],missingDetailedSkills:[]});
 assert(balanced.includes('No weak part identified'));
 assert(!balanced.includes('Complete one full practice test'));
-console.log('✓ recommendation cards: legacy unlock message, exact task and score, compact actions, balanced completed state');
+console.log('✓ recommendation cards: exact task/part score, final unlock thumbnail in the same rail, compact actions, balanced completed state');

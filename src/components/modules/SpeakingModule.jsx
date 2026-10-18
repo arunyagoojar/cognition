@@ -1,5 +1,5 @@
 import { speakingPartComplete, speakingQuestionKey, speakingTestContext } from '../../utils/speakingContext.js';
-import { SPEAKING_REC_STATE as REC_STATE, nextSpeakingPreparationSecond, speakingInteractionState, speakingPart2Controls, updateSpeakingInteraction } from '../../utils/speakingInteraction.js';
+import { SPEAKING_REC_STATE as REC_STATE, measuredSpeakingDuration, nextSpeakingPreparationSecond, speakingInteractionState, speakingPart2Controls, updateSpeakingInteraction } from '../../utils/speakingInteraction.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import AiWaitNote from '../common/AiWaitNote';
@@ -13,6 +13,7 @@ import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
 import CriterionFeedbackCard from '../common/CriterionFeedbackCard.jsx';
+import PartCriteriaBreakdown from '../common/PartCriteriaBreakdown.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import { evaluateSpeakingResponses } from '../../utils/evaluation/evaluationEngine';
 import { detectSupportedAudioMimeType, saveAudioRecording, getAudioRecording, createAudioBlob, deleteSessionRecordings } from '../../utils/audio/audioStore';
@@ -86,19 +87,25 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   // refreshing or closing never loses them.
   useEffect(() => {
     if (phase !== 'results' || !result || isMockMode) return;
-    const completed = result.evaluationState === 'COMPLETED' && typeof result.overallSpeakingBand === 'number';
+    const fullGraded = practiceMode !== 'drill' && result.evaluationState === 'COMPLETED' && typeof result.overallSpeakingBand === 'number';
+    const focusedComplete = practiceMode === 'drill' && result.focusedPracticeComplete === true;
+    const completed = fullGraded || focusedComplete;
     onSave?.({
       attemptId: result.attemptId,
       testId: test?.testId || testId,
       testLabel: test?.title || 'IELTS Speaking Practice',
       status: completed ? 'completed' : 'partial',
-      band: completed ? result.overallSpeakingBand : null,
-      overallBand: completed ? result.overallSpeakingBand : null,
+      band: fullGraded ? result.overallSpeakingBand : null,
+      overallBand: fullGraded ? result.overallSpeakingBand : null,
+      focusedPracticeComplete: focusedComplete,
       evaluationState: result.evaluationState,
       coverage: result.coverage,
       evaluationStatus: result.status || 'failed',
       provisional: Boolean(result.provisional),
       scoringMethod: result.scoringMethod || '',
+      rubricVersion: result.rubricVersion,
+      modelUsed: result.modelUsed,
+      providerUsed: result.providerUsed,
       criteria: result.criteria || null,
       overallSummary: result.overallSummary || '',
       priorityWeaknesses: result.priorityWeaknesses || [],
@@ -456,8 +463,9 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       const t = transcriptsRef.current[k];
       const fresh = t && t.recordingId === rec.recordingId;
       transcripts[k] = rec.correctedTranscript ?? (fresh ? t.text : rec.transcript) ?? '';
-      durations[k] = rec.duration || 30;
-      speechMeta[k] = { originalText: rec.originalTranscript || (fresh ? t.text : rec.transcript) || '', segments: (fresh ? t.segments : rec.segments) || [], durationSec: rec.duration || 0 };
+      const duration = measuredSpeakingDuration(rec);
+      durations[k] = duration;
+      speechMeta[k] = { originalText: rec.originalTranscript || (fresh ? t.text : rec.transcript) || '', segments: (fresh ? t.segments : rec.segments) || [], durationSec: duration };
     });
 
     const activeEngine = Object.values(transcriptsRef.current)[0]?.engine || 'moonshine-base';
@@ -494,6 +502,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
       durations,
       speechMeta,
       expectedQuestions,
+      practiceMode,
+      expectedParts: (test?.parts || []).map(part => part.partNumber),
     });
 
     // Eradicate audio from IndexedDB and release object URLs to eliminate cache/storage footprint
@@ -548,7 +558,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         section="Speaking"
         sectionKey="speaking"
         testTitle={test?.title || 'IELTS Speaking Practice'}
-        subtitle={practiceMode === 'drill' ? 'Practise the selected interview part with recorded answers and qualitative feedback. This does not change your overall band.' : 'A three-part IELTS interview: introduction, cue-card long turn, and abstract discussion with recording and response-level evaluation.'}
+        subtitle={practiceMode === 'drill' ? 'Practise the selected interview part with recorded answers and part practice estimates. This does not change your overall band.' : 'A three-part IELTS interview: introduction, cue-card long turn, and abstract discussion with recording and response-level evaluation.'}
         metaItems={[
           { label: fullCoverage ? '3 Parts' : `Part ${selectedPart}`, sub: fullCoverage ? 'Interview · Long Turn · Discussion' : partDescriptions[selectedPart] },
           { label: practiceMode === 'drill' ? 'One focused part' : '11–14 Minutes', sub: practiceMode === 'drill' ? 'Targeted practice' : 'Official interview timing' },
@@ -647,7 +657,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
     const state = result?.evaluationState;
-    const isFull = state === 'COMPLETED';
+    const isFocusedResult = practiceMode === 'drill' && result.focusedPracticeComplete === true;
+    const isFull = state === 'COMPLETED' && !isFocusedResult;
     const isPartial = state === 'PARTIAL';
     const criteriaList = [
       { id: 'fluency', key: 'fluencyAndCoherence', title: 'Fluency & Coherence', data: result?.criteria?.fluencyAndCoherence, defaultNote: 'Speech continuity, idea development, pacing, and linking phrases.' },
@@ -658,7 +669,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
 
     const handleSaveAndReturn = () => {
       onComplete?.({ ...result, attemptId: result?.attemptId, testId: test?.testId || testId,
-        testLabel: test?.title || 'Speaking practice', status: isFull ? 'completed' : 'partial',
+        testLabel: test?.title || 'Speaking practice', status: isFull || isFocusedResult ? 'completed' : 'partial',
         band: isFull ? result.overallSpeakingBand : null, practiceMode,
         bandEligible: practiceMode !== 'drill' && result.coverage?.isComplete !== false });
     };
@@ -716,7 +727,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {state === 'NOT_CONFIGURED' && 'AI evaluation is unavailable'}
                 {state === 'NOT_ASSESSED' && 'Not enough speech was recorded'}
                 {state === 'FAILED' && 'Evaluation could not be completed'}
-                {isPartial && 'Response-level feedback — not a band score'}
+                {isFocusedResult ? 'Your part practice result' : isPartial && 'Response-level feedback — not a band score'}
               </h1>
               {result?.coverage?.statement && (
                 <p className="result-text" style={{ fontWeight: 700, marginBottom: 8 }}>{practiceMode === 'drill' ? 'Only the selected interview part was practised. This session does not change your full-test estimate.' : result.coverage.statement}</p>
@@ -725,7 +736,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {state === 'NOT_CONFIGURED' && (result?.message || 'Add an API key in Settings to receive criterion-level feedback.')}
                 {state === 'NOT_ASSESSED' && (result?.message || 'Record at least one full answer to receive feedback.')}
                 {state === 'FAILED' && (result?.message || 'You can retry the evaluation.')}
-                {isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
+                {isFocusedResult ? 'Your selected part was assessed for fluency, vocabulary and grammar. Its practice estimate is shown below; your overall Speaking grade stays the same.' : isPartial && 'A full IELTS Speaking band requires all three parts of the interview. Band scores are withheld; the feedback below covers only what you said.'}
               </p>
               {evaluatorPill}
               {state === 'NOT_CONFIGURED' && (
@@ -742,6 +753,8 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
             </div>
           </ResultItem>
         )}
+
+        {(state === 'COMPLETED' || state === 'PARTIAL') && <ResultItem as="section"><PartCriteriaBreakdown partDiagnostics={result.partDiagnostics} partFeedback={result.partFeedback} partNumbers={practiceMode === 'drill' ? test.parts.map(part => part.partNumber) : undefined} /></ResultItem>}
 
         {/* 2. HIGHEST-PRIORITY WEAKNESSES & EXAMINER COACHING SUMMARY */}
         {(state === 'COMPLETED' || state === 'PARTIAL') && (result.overallSummary || priorityItems.length > 0 || result.strengths) && (
@@ -784,7 +797,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
         )}
 
         {/* 3. SEPARATE SECTION FOR EVERY ASSESSABLE CRITERION */}
-        <ResultItem as="section">
+        {!isFocusedResult && <ResultItem as="section">
           <div className="result-section-head">
             <h2 className="result-section-title">Assessment Criteria & Coaching Feedback</h2>
             <p className="result-section-sub">
@@ -819,7 +832,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               );
             })}
           </div>
-        </ResultItem>
+        </ResultItem>}
 
         <ResultItem className="result-actions">
           <button type="button" onClick={handleSaveAndReturn} className="result-btn is-primary">

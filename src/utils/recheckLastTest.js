@@ -26,7 +26,6 @@ export function getRecheckableLastTest() {
       ['partial', 'not_attempted', 'not_assessed', 'not_started'].includes(record.evaluationStatus) ||
       ['PARTIAL', 'NOT_ASSESSED'].includes(record.evaluationState)) return null;
   if (latest.type === 'writing' && !(String(record.t1 || '').trim() && String(record.t2 || '').trim())) return null;
-  if (latest.type === 'writing' && !(String(record.t1 || '').trim() || String(record.t2 || '').trim())) return null;
   if (latest.type === 'speaking' && !Object.values(record.transcripts || {}).some(t => String(t || '').trim())) return null;
   if (latest.type === 'speaking' && record.evaluationState !== 'COMPLETED') {
     // Missing answers are not provider failures. Older records lack coverage;
@@ -71,6 +70,11 @@ export async function recheckLastTest() {
       evaluationStatus: 'completed',
       criteria: res.criteria || null,
       taskCriteria: res.taskCriteria || null,
+      rubricVersion: res.rubricVersion,
+      modelUsed: res.modelUsed,
+      providerUsed: res.providerUsed,
+      scoringMethod: res.scoringMethod || '',
+      scoringNotes: res.scoringNotes || [],
       priorityWeaknesses: res.priorityWeaknesses || [],
       overallSummary: res.overallSummary || '',
       task1Feedback: res.task1Feedback || '',
@@ -106,6 +110,9 @@ export async function recheckLastTest() {
     evaluationStatus: 'completed',
     provisional: Boolean(res.provisional),
     scoringMethod: res.scoringMethod || '',
+    rubricVersion: res.rubricVersion,
+    modelUsed: res.modelUsed,
+    providerUsed: res.providerUsed,
     criteria: res.criteria || null,
     overallSummary: res.overallSummary || '',
     priorityWeaknesses: res.priorityWeaknesses || [],
