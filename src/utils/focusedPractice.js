@@ -2,6 +2,7 @@ import { typeLabel } from './insights.js';
 import { resolveRecommendations } from '../data/recommendations.js';
 import { isBandEligible } from './practiceScope.js';
 import { recoverSpeakingDiagnostics } from './speakingDiagnostics.js';
+import { roundIeltsBand } from './ieltsRubric.js';
 
 export const SKILL_NAMES = { reading:'Reading', listening:'Listening', writing:'Writing', speaking:'Speaking' };
 export const sectionLabel = (skill, part) => `${skill === 'reading' ? 'Passage' : skill === 'writing' ? 'Task' : 'Part'} ${part}`;
@@ -54,10 +55,10 @@ export function objectiveBreakdown(attempt, skill, index) {
 }
 
 export function buildPracticeInsights(attempts = [], index) {
-  const full=fullAttempts(attempts).slice(0,40);
+  const full=fullAttempts(attempts);
   const bySkill={}, recommendations=[];
   for (const skill of Object.keys(SKILL_NAMES)) {
-    const history=full.filter(a=>completeResult(resultFor(a,skill)));
+    const history=full.filter(a=>completeResult(resultFor(a,skill))).slice(0,40);
     const latest=history[0], result=latest && resultFor(latest,skill);
     const model={skill,latest,result,sections:[],types:[],notes:[],hasCompletedTest:history.length>0,hasDetailedResults:false};
     bySkill[skill]=model;
@@ -87,7 +88,7 @@ export function buildPracticeInsights(attempts = [], index) {
         const observations=history.map(a=>{
           const r=resultFor(a,skill), criteria=r.taskCriteria?.[`task${part}`];
           const values=Object.values(criteria || {}).map(c=>c?.band).filter(finite);
-          const band=finite(r[`task${part}Band`]) ? r[`task${part}Band`] : values.length===4 ? average(values):null;
+          const band=finite(r[`task${part}Band`]) ? r[`task${part}Band`] : values.length===4 ? roundIeltsBand(average(values)):null;
           return {band,criteria,a};
         }).filter(x=>finite(x.band)).slice(0,5);
         const current=observations[0];
