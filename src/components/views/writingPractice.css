@@ -250,3 +250,9 @@
  .writing-feedback-frame > .harper-sidebar-tabs { flex-direction:column; gap:0; }
  .writing-feedback-summary { padding-block:8px; }
 }
+
+/* Keep the Writing Help choice card clear of the global navigation. */
+.harper-choice-hero.content-container { width:min(1400px,calc(100% - 48px)); margin:24px auto 32px; }
+@media (max-width:760px) {
+ .harper-choice-hero.content-container { width:calc(100% - 32px); margin-top:16px; }
+}

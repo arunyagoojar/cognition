@@ -64,7 +64,7 @@ export default function FocusedRecommendations({ insights: supplied, onStartDril
         {missing.length>0 && <li className="practice-thumbnail practice-thumbnail-unlock">
           <div className="practice-thumbnail-heading"><span className="practice-thumbnail-icon" aria-hidden="true"><Icon name="sparkles" size={18}/></span><h3>{items.length?'Add recommendations for your other skills':'Unlock recommendations'}</h3></div>
           <p>Complete one full practice test in each skill.</p>
-          <div className="practice-unlock-skills">{missing.map(skill=><button key={skill} type="button" onClick={()=>onStartSkill?.(skill)}>{SKILL_NAMES[skill]}</button>)}</div>
+          <div className="practice-unlock-skills">{missing.map(skill=><button key={skill} type="button" onClick={()=>onStartSkill?.(skill)}><span>{SKILL_NAMES[skill]}</span><Icon name="arrowRight" size={15}/></button>)}</div>
         </li>}
       </ol>
     </div>}
