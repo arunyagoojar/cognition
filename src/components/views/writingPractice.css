@@ -6,7 +6,7 @@
 .harper-workspace-layout .harper-nav-left { min-width:0; }
 .harper-workspace-layout .harper-nav-right { justify-self:end; align-items:center; }
 .writing-layout-controls { display:flex; align-items:center; justify-content:center; gap:4px; margin:0; padding:4px; background:var(--surface-sunken); border-radius:var(--r-pill); }
-.writing-layout-controls button { padding:10px 12px; min-height:40px; border-radius:var(--r-pill); font:inherit; font-size:12px; white-space:nowrap; color:var(--text-secondary); transition:background 150ms ease,color 150ms ease; }
+.writing-layout-controls button { border-radius:var(--r-pill); white-space:nowrap; color:var(--text-secondary); transition:background 150ms ease,color 150ms ease; }
 .writing-layout-controls button[aria-pressed="true"] { background:var(--text-primary); color:var(--bg-card); }
 .writing-layout-controls button:hover:not([aria-pressed="true"]) { background:var(--surface-hover); }
 .harper-split-panes.writing-panels { display:grid; grid-template-columns:minmax(0,25fr) minmax(0,45fr) minmax(0,30fr); gap:0; align-items:stretch; height:clamp(420px,calc(100dvh - 165px - var(--writing-shell-offset,0px)),1100px); transition:grid-template-columns 240ms ease; }
@@ -24,7 +24,7 @@
 .writing-panels .harper-editor-toolbar { min-height:68px; flex-shrink:0; gap:12px; flex-wrap:wrap; }
 .writing-editor-actions { display:flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; gap:12px; margin-left:auto; }
 .writing-editor-actions > span { font-size:11px; }
-.writing-resource-trigger { font:inherit; font-size:12px; font-weight:600; min-height:40px; border:var(--border-dark); border-radius:var(--r-pill); padding:8px 14px; background:var(--surface-sunken); color:var(--text-primary); }
+.writing-resource-trigger { border:var(--border-dark); border-radius:var(--r-pill); background:var(--surface-sunken); color:var(--text-primary); }
 .writing-resource-trigger:hover { background:var(--surface-hover); }
 .writing-panels .harper-highlight-editor { flex:1; min-height:0; }
 .writing-panels .harper-highlight-editor .harper-textarea-canvas { height:100%; min-height:0; resize:none; }
@@ -41,7 +41,7 @@
 .writing-feedback-frame .harper-live-stats span { font-size:11px; }
 .writing-severity-counts { font-size:12px; color:var(--text-secondary); margin:14px 0 0; }
 .writing-feedback-frame > .harper-sidebar-tabs { flex-shrink:0; background:transparent; border:0; border-bottom:var(--border-subtle); border-radius:0; padding:0 18px; gap:20px; }
-.writing-feedback-frame > .harper-sidebar-tabs .harper-tab-btn { background:none; color:var(--text-secondary); border-radius:0; padding:12px 0; min-height:44px; border-bottom:2px solid transparent; font-size:13px; }
+.writing-feedback-frame > .harper-sidebar-tabs .harper-tab-btn { background:none; color:var(--text-secondary); border-radius:0; border-bottom:2px solid transparent; }
 .writing-feedback-frame > .harper-sidebar-tabs .harper-tab-btn.is-active { color:var(--text-primary); border-bottom-color:var(--text-primary); }
 .writing-feedback-frame .harper-tab-content { flex:1; min-height:0; max-height:none; overflow:auto; overscroll-behavior:contain; margin:0 6px 8px; padding:20px 12px; border:0; border-radius:0; box-shadow:none; scrollbar-gutter:stable; }
 .writing-feedback-frame .harper-empty-state { padding:36px 8px; }
@@ -51,17 +51,17 @@
 .writing-feedback-frame .harper-issue-card + .harper-issue-card { border-top:var(--border-subtle); }
 .writing-feedback-frame .harper-issue-top { gap:12px; align-items:center; flex-wrap:wrap; }
 .writing-feedback-frame .harper-issue-top > strong { font-size:14px; padding:2px 4px; }
-.writing-feedback-frame .harper-issue-top > button, .harper-repetition-panel details > button { font-size:12px; padding:8px 0; color:var(--text-secondary); text-decoration:underline; text-underline-offset:4px; }
+.writing-feedback-frame .harper-issue-top > button, .harper-repetition-panel details > button { color:var(--text-secondary); text-decoration:underline; text-underline-offset:4px; }
 .writing-repeat-context { font-size:13px; line-height:1.75; color:var(--text-secondary); margin:16px 0 12px; overflow-wrap:anywhere; }
 .writing-synonyms { display:flex; flex-wrap:wrap; column-gap:18px; row-gap:4px; margin:10px 0; }
-.writing-synonyms button { min-height:36px; padding:4px 0; font-size:14px; font-weight:600; text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--text-muted); }
+.writing-synonyms button { text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--text-muted); }
 .writing-synonyms button:hover { text-decoration-thickness:2px; }
 .writing-feedback-frame .insight-muted { font-size:12px; line-height:1.75; }
 .writing-synonym-notes { margin-top:12px; color:var(--text-secondary); }
 .writing-synonym-notes summary { font-size:12px; cursor:pointer; min-height:32px; }
 .writing-synonym-notes p { margin:8px 0; }
 .writing-synonym-undo { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:16px; margin-bottom:12px; border-bottom:var(--border-subtle); font-size:12px; }
-.writing-synonym-undo button { font-weight:600; text-decoration:underline; min-height:36px; }
+.writing-synonym-undo button { text-decoration:underline; }
 .writing-panels .writing-question-panel, .writing-panels .harper-pane-sidebar { transition:opacity 180ms ease,visibility 240ms; }
 .writing-panels.layout-help .writing-question-panel, .writing-panels.layout-question .harper-pane-sidebar { visibility:hidden; opacity:0; padding:0; overflow:hidden; }
 .writing-panels .harper-editor-mirror mark { font:inherit; letter-spacing:inherit; }
@@ -77,15 +77,15 @@
 .writing-resource-eyebrow { font-size:10px; letter-spacing:.08em; font-weight:600; color:var(--text-secondary); }
 .writing-resource-header h2 { font-size:26px; line-height:1.4; margin:5px 0 8px; }
 .writing-resource-header p { font-size:13px; color:var(--text-secondary); }
-.writing-resource-close { display:flex; align-items:center; gap:12px; min-height:44px; font:inherit; font-size:13px; padding:8px 0 8px 12px; }
+
 .writing-resource-close span { font:400 26px/1 sans-serif; }
 .writing-resource-dialog > .harper-sidebar-tabs { margin:0 24px 18px; flex-shrink:0; }
-.writing-resource-dialog .harper-tab-btn { min-height:44px; font-size:14px; }
+
 .writing-resource-scroll { overflow:auto; overscroll-behavior:contain; min-height:0; margin-bottom:20px; padding:0 24px 4px; scrollbar-gutter:stable; }
 .writing-help [hidden] { display:none; }
 .writing-resource-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:4px 0 12px; }
 .writing-resource-heading .live-caption { font-size:12px; text-transform:capitalize; }
-.writing-resource-heading button, .writing-phrase button { min-height:40px; padding:8px 0; font:inherit; font-size:13px; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
+.writing-resource-heading button, .writing-phrase button { text-decoration:underline; text-underline-offset:4px; }
 .writing-phrase-filters { display:grid; grid-template-columns:1fr 1.5fr; gap:24px; margin-bottom:16px; }
 .writing-resource-field { display:grid; gap:8px; font-size:12px; font-weight:600; }
 .writing-select-wrap { position:relative; display:block; min-width:0; }
@@ -130,9 +130,9 @@
  .harper-workspace-layout .harper-nav-left { justify-content:space-between; gap:12px; }
  .harper-nav-title { font-size:18px; }
  .harper-workspace-layout .harper-nav-right { order:1; width:100%; justify-content:space-between; gap:8px; }
- .harper-workspace-layout .harper-nav-right > button { font-size:11px; min-height:44px; padding:8px 10px; }
+
  .harper-nav-header .writing-layout-controls { order:2; width:100%; }
- .writing-layout-controls button { flex:1; min-height:44px; padding:8px 6px; font-size:11px; }
+ .writing-layout-controls button { flex:1; min-width:0; white-space:normal; }
  .harper-split-panes.writing-panels { height:auto; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:minmax(360px,48dvh) minmax(360px,48dvh); gap:14px 0; }
  .writing-panels .harper-pane-editor { grid-column:1 / -1; grid-row:1; }
  .writing-panels .writing-question-panel { grid-column:1; grid-row:2; padding-right:6px; }
@@ -151,10 +151,10 @@
  .writing-feedback-frame .writing-severity-counts { font-size:11px; }
 
  .writing-feedback-frame > .harper-sidebar-tabs { padding:0 10px; gap:8px; }
- .writing-feedback-frame > .harper-sidebar-tabs .harper-tab-btn { font-size:11px; }
+
  .writing-feedback-frame .harper-tab-content { padding:16px 6px; }
  .writing-feedback-frame .harper-issue-top { gap:4px; }
- .writing-synonyms button { min-height:44px; }
+
  .writing-resource-dialog { width:calc(100vw - 24px); height:calc(100dvh - 32px); border-radius:22px; }
  .writing-resource-header { padding:20px 18px; gap:12px; }
  .writing-resource-header h2 { font-size:23px; }
@@ -174,4 +174,79 @@
  .writing-word summary { flex-wrap:wrap; padding:14px 12px; font-size:14px; }
  .writing-word > p { padding:0 12px; font-size:13px; }
  .writing-used { font-size:10px; }
+}
+
+/* Shared button sizes: regular toolbar actions, compact inline actions, large task CTAs.
+   Visual variants (filled, outlined, text, segmented) never change size geometry. */
+:is(.harper-workspace-layout, .writing-help, .harper-choice-hero, .harper-summary-screen) {
+ --writing-button-height:44px;
+ --writing-button-padding:14px;
+ --writing-button-block-padding:8px;
+ --writing-button-font:.8125rem;
+ --writing-button-line:1.25rem;
+ --writing-button-compact-height:36px;
+ --writing-button-compact-padding:10px;
+ --writing-button-large-height:48px;
+ --writing-button-large-padding:20px;
+}
+.harper-workspace-layout .harper-nav-header button,
+.harper-workspace-layout .writing-feedback-frame button,
+.harper-workspace-layout .harper-sidebar-tabs button,
+.writing-resource-dialog.writing-help button,
+.harper-choice-hero button,
+.harper-summary-screen button {
+ box-sizing:border-box;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:8px;
+ min-height:var(--writing-button-height);
+ padding:var(--writing-button-block-padding) var(--writing-button-padding);
+ font-family:inherit;
+ font-size:var(--writing-button-font);
+ font-weight:600;
+ line-height:var(--writing-button-line);
+ text-align:center;
+ vertical-align:middle;
+}
+.harper-workspace-layout .harper-nav-header button {
+ border-width:1px;
+ border-style:solid;
+ border-radius:var(--r-pill);
+ white-space:nowrap;
+ box-shadow:none;
+}
+.harper-nav-header .writing-layout-controls button { border-color:transparent; }
+.harper-workspace-layout .harper-nav-header button:hover { transform:none; }
+.harper-workspace-layout .harper-nav-header button svg { width:16px; height:16px; flex-shrink:0; }
+.harper-workspace-layout .harper-tab-content,
+.writing-resource-heading,
+.writing-phrase,
+.harper-summary-screen .writing-mistakes {
+ --writing-button-height:var(--writing-button-compact-height);
+ --writing-button-padding:var(--writing-button-compact-padding);
+ --writing-button-block-padding:6px;
+}
+.harper-choice-hero .harper-task-grid {
+ --writing-button-height:var(--writing-button-large-height);
+ --writing-button-padding:var(--writing-button-large-padding);
+}
+/* Text actions use the same hit area and type scale without a visible container. */
+.writing-feedback-frame .harper-issue-top > button,
+.writing-feedback-frame .writing-synonyms button,
+.writing-feedback-frame .writing-synonym-undo button,
+.writing-resource-heading button,
+.writing-phrase button { border:1px solid transparent; border-radius:8px; }
+@media (max-width:760px), (pointer:coarse) {
+ :is(.harper-workspace-layout, .writing-help, .harper-choice-hero, .harper-summary-screen) {
+  --writing-button-compact-height:44px;
+ }
+}
+@media (max-width:760px) {
+ .harper-workspace-layout .harper-nav-right { flex-wrap:wrap; justify-content:flex-start; }
+ .harper-workspace-layout .harper-nav-right > button { flex:1 1 auto; }
+ .harper-workspace-layout .writing-layout-controls { align-items:stretch; }
+ .harper-workspace-layout .writing-layout-controls button { white-space:normal; }
+ .writing-feedback-frame > .harper-sidebar-tabs { flex-direction:column; gap:0; }
+ .writing-feedback-summary { padding-block:8px; }
 }

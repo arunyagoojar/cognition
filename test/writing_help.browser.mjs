@@ -22,8 +22,13 @@ try {
  await page.goto(url);
  await page.getByRole('button',{name:'Practise Task 2'}).click();
  const editor=page.getByRole('textbox',{name:'Writing Task 2 response'});
+ const toolbarButtons=()=>page.locator('.harper-nav-header button').evaluateAll(nodes=>nodes.map(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return {height:r.height,font:s.fontSize,line:s.lineHeight,padding:s.padding,weight:s.fontWeight}}));
+ const disabledToolbar=await toolbarButtons();
+ assert(disabledToolbar.every(b=>b.height===44),'all toolbar buttons use the same 44px size, including disabled actions');
+ assert.equal(new Set(disabledToolbar.map(b=>JSON.stringify(b))).size,1,'toolbar type and padding are consistent across variants');
  await editor.fill('he go to university everyday');
  await page.getByRole('button',{name:'Use “goes”'}).waitFor({timeout:30000});
+ assert.deepEqual(await toolbarButtons(),disabledToolbar,'enabling Finish & Summary does not change button sizing');
  assert.equal(await page.locator('.harper-editor-mirror .has-grammar-issue').first().textContent(),'go');
  const widths=()=>page.locator('.writing-panels').evaluate(el=>[...el.children].map(c=>c.getBoundingClientRect().width/el.getBoundingClientRect().width));
  let w=await widths(); w.forEach((x,i)=>assert(Math.abs(x-[.25,.45,.3][i])<.01));
@@ -116,6 +121,10 @@ try {
  await page.waitForTimeout(200);
  if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-mobile-overlay.png`,fullPage:true});
  await page.getByRole('button',{name:'Close Words to Try',exact:true}).click();
+ await page.setViewportSize({width:320,height:844});await page.waitForTimeout(300);
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'buttons wrap without horizontal overflow at 320px');
+ assert((await toolbarButtons()).every(b=>b.height>=44),'compact toolbar retains 44px touch targets');
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(300);
 
  if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-mobile.png`,fullPage:true});
  await page.getByRole('button',{name:'Expand question',exact:true}).click();assert(await editor.isVisible());

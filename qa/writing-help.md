@@ -35,3 +35,7 @@ Vocabulary uses a two-column grid of ten expandable cards inside the reference o
 Inspected all 128 production writing records and the writing adapter: no difficulty or level metadata exists, so no easy/medium/hard labels are added.
 
 Validation: full npm test suite, lint, production build, and Chromium desktop/mobile browser checks pass. Reviewed generated vocabulary, phrase, and mobile overlay screenshots.
+
+## Button sizing
+
+Practice buttons share sizing tokens across outlined, filled, text, and segmented variants: 44px regular, 36px compact inline actions, and 48px task-start actions. Compact targets increase to 44px on mobile/coarse pointers. Type, line height, padding, icon alignment, and toolbar border widths are consistent; disabled states keep the same geometry. Narrow layouts wrap actions, stretch multiline layout segments equally, and stack feedback tabs to avoid clipped labels. Browser checks compare toolbar geometry before/after enabling Finish & Summary and verify touch targets and overflow at 320px.
