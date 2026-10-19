@@ -1,0 +1,152 @@
+// Builds an isolated production QA entry. PLAYWRIGHT_MODULE may point to an existing install.
+import assert from 'node:assert/strict';
+import {mkdir,mkdtemp,rm,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {build,preview} from 'vite';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const browser = await chromium.launch({...(process.env.BROWSER_EXECUTABLE?{executablePath:process.env.BROWSER_EXECUTABLE}:{channel:'chrome'}),headless:true});
+const context = await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+const page=await context.newPage();
+const errors=[]; page.on('pageerror',e=>errors.push(e.message));
+let server,buildDir;
+let url=process.env.WRITING_HELP_URL;
+try {
+ if(!url) {
+  await mkdir('work',{recursive:true});buildDir=await mkdtemp(resolve('work/writing-help-'));
+  await writeFile(resolve(buildDir,'.gitignore'),'*\n');
+  await build({logLevel:'error',build:{outDir:buildDir,emptyOutDir:false,rollupOptions:{input:'qa/writing-help.html'}}});
+  server=await preview({build:{outDir:buildDir},preview:{host:'127.0.0.1',port:0}});
+  url=`http://127.0.0.1:${server.httpServer.address().port}/qa/writing-help.html`;
+ }
+
+ await page.goto(url);
+ await page.getByRole('button',{name:'Practise Task 2'}).click();
+ const editor=page.getByRole('textbox',{name:'Writing Task 2 response'});
+ await editor.fill('he go to university everyday');
+ await page.getByRole('button',{name:'Use “goes”'}).waitFor({timeout:30000});
+ assert.equal(await page.locator('.harper-editor-mirror .has-grammar-issue').first().textContent(),'go');
+ const widths=()=>page.locator('.writing-panels').evaluate(el=>[...el.children].map(c=>c.getBoundingClientRect().width/el.getBoundingClientRect().width));
+ let w=await widths(); w.forEach((x,i)=>assert(Math.abs(x-[.25,.45,.3][i])<.01));
+ assert.equal(await page.locator('.writing-word:visible').count(),0);
+ const frameBoxes=()=>page.locator('.harper-pinned-prompt-card, .harper-pane-editor, .writing-feedback-frame').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {top:r.top,bottom:r.bottom,height:r.height}}));
+ const boxes=await frameBoxes();for(const box of boxes){assert(Math.abs(box.top-boxes[0].top)<1);assert(Math.abs(box.bottom-boxes[0].bottom)<1);}
+ const centres=await page.locator('.harper-nav-back, .writing-layout-controls, .harper-nav-right').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return r.top+r.height/2}));
+ assert(Math.max(...centres)-Math.min(...centres)<1,'navigation controls share a vertical centre');
+ const horizontalCentre=await page.locator('.writing-layout-controls').evaluate(el=>{const r=el.getBoundingClientRect(),h=el.closest('header').getBoundingClientRect();return Math.abs(r.left+r.width/2-h.left-h.width/2)});assert(horizontalCentre<1);
+
+ await page.getByRole('button',{name:'Expand question',exact:true}).click();
+ await page.waitForTimeout(300); w=await widths(); assert(Math.abs(w[0]-.5)<.01 && Math.abs(w[1]-.5)<.01 && w[2]<.01);
+ assert.equal(await page.locator('.harper-pane-sidebar').getAttribute('inert'),'');
+ await page.getByRole('button',{name:'Hide question',exact:true}).click();
+ await page.waitForTimeout(300); w=await widths();assert(Math.abs(w[1]-.65)<.01 && Math.abs(w[2]-.35)<.01);
+ await page.reload();await editor.waitFor();assert.equal(await page.getByRole('button',{name:'Hide question',exact:true}).getAttribute('aria-pressed'),'true');
+ await page.getByRole('button',{name:'All panels',exact:true}).click();
+ await page.getByRole('button',{name:'Suggestions',exact:true}).click();
+ await page.getByRole('tab',{name:'Phrase Bank',exact:true}).click();
+ assert.equal(await page.getByLabel('Category',{exact:true}).inputValue(),'Introduction');
+ assert.equal(await page.locator('.writing-phrase').count(),6);
+ await page.locator('.writing-phrase summary').first().click();
+ await page.getByRole('button',{name:'Copy phrase',exact:true}).first().click();
+ await page.waitForFunction(()=>document.querySelector('.writing-copy-status')?.textContent.includes('Copied:'));
+ assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'It is often argued that …');
+ assert.equal(await editor.inputValue(),'he go to university everyday');
+ await page.waitForTimeout(200);
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-phrase-overlay.png`,fullPage:true});
+
+ await page.getByLabel('Writing task',{exact:true}).selectOption('1');
+ assert.equal(await page.locator('select option').filter({hasText:'Expressing an opinion'}).count(),0);
+ await page.getByLabel('Writing task',{exact:true}).selectOption('2');
+ await page.getByLabel('Category',{exact:true}).selectOption('Expressing an opinion');
+ assert.equal(await page.locator('.writing-phrase').count(),6);
+ await page.getByRole('tab',{name:'Vocabulary',exact:true}).click();
+ const before=await page.locator('.writing-word summary').allTextContents();
+ await page.getByRole('button',{name:'Refresh words'}).click();
+ assert.notDeepEqual(await page.locator('.writing-word summary').allTextContents(),before);
+ const word=(await page.locator('.writing-word summary').first().textContent()).trim();
+ await page.waitForTimeout(200);
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-overlay.png`,fullPage:true});
+ await page.getByRole('button',{name:'Close Words to Try',exact:true}).click();
+ assert.equal(await page.getByRole('dialog').count(),0);
+ assert.equal(await page.evaluate(()=>document.activeElement.className),'writing-resource-trigger');
+
+ await editor.fill(`${word}. 😀 He are happi. People need good schools. People need good transport. People need good parks. Caribbean Caribbean Caribbean.`);
+ await page.locator('.writing-resource-trigger').click();
+ await page.locator('.writing-used').first().waitFor();
+ await page.keyboard.press('Escape');
+ assert.equal(await page.getByRole('dialog').count(),0);
+
+ await page.locator('.has-spelling-issue').first().waitFor();
+ await page.getByRole('button',{name:/Repetition ·/}).click();
+ assert(await page.getByRole('group',{name:'Synonyms for people',exact:true}).getByRole('button').count()>=3);
+ assert.equal(await page.locator('.writing-occurrences').count(),0);
+ assert.equal(await page.locator('.writing-repeat-context').count(),0);
+ const draftBefore=await editor.inputValue();
+ await editor.focus();await editor.evaluate(el=>{const index=el.value.indexOf('People',el.value.indexOf('People')+1);el.setSelectionRange(index,index+6);});
+ await editor.press('ArrowLeft');
+ await page.getByRole('button',{name:'Replace people with individuals',exact:true}).click();
+ assert((await editor.inputValue()).includes('People need good schools. Individuals need good transport. People need good parks.'));
+ await page.getByRole('button',{name:'Undo',exact:true}).click();assert.equal(await editor.inputValue(),draftBefore);
+ await page.locator('.harper-repetition-panel .harper-issue-card').filter({hasText:'people ·'}).getByRole('button',{name:'Ignore word'}).click();
+ assert.equal(await page.getByRole('group',{name:'Synonyms for people',exact:true}).count(),0);
+ await page.locator('.harper-tab-content').evaluate(el=>{el.scrollTop=0});
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-synonyms.png`,fullPage:true});
+ const prior=await frameBoxes();
+ await page.locator('.harper-tab-content').evaluate(el=>{el.scrollTop=el.scrollHeight});
+ assert.deepEqual(await frameBoxes(),prior,'outer borders stay fixed when feedback scrolls');
+ await editor.fill('😀 He are happi. '+ 'This is a clear sentence with enough words to wrap across the editor. '.repeat(50));
+ await page.getByRole('button',{name:/Grammar ·/}).click();
+ await page.getByRole('button',{name:'Use “is”',exact:true}).waitFor();
+ assert.equal(await page.locator('.has-grammar-issue').first().textContent(),'are');
+ await editor.fill('An opening sentence. '+await editor.inputValue());
+ await page.getByRole('button',{name:'Use “is”',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Use “is”',exact:true}).click();
+ assert((await editor.inputValue()).startsWith('An opening sentence. 😀 He is happi.'));
+ await editor.evaluate(el=>{el.scrollTop=500;el.dispatchEvent(new Event('scroll'));});
+ assert.equal(await editor.evaluate(el=>el.scrollTop),await page.locator('.harper-editor-mirror').evaluate(el=>el.scrollTop));
+ const geometry=await editor.evaluate(el=>{const m=document.querySelector('.harper-editor-mirror'),a=getComputedStyle(el),b=getComputedStyle(m);return {width:el.clientWidth,mirrorWidth:m.clientWidth,font:a.font,mirrorFont:b.font,padding:a.padding,mirrorPadding:b.padding}});
+ assert.equal(geometry.width,geometry.mirrorWidth);assert.equal(geometry.font,geometry.mirrorFont);assert.equal(geometry.padding,geometry.mirrorPadding);
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-desktop.png`,fullPage:true});
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(300);
+ assert(await editor.isVisible());assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ assert(await page.locator('.harper-tab-content').evaluate(el=>el.clientHeight)>100,'mobile feedback has usable scroll space');
+ await page.locator('.writing-resource-trigger').click();
+ assert(await page.getByRole('dialog').isVisible());
+ const modal=await page.getByRole('dialog').boundingBox();assert(modal.x>=0 && modal.x+modal.width<=390);
+ await page.getByRole('tab',{name:'Phrase Bank',exact:true}).click();
+ await page.waitForTimeout(200);
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-mobile-overlay.png`,fullPage:true});
+ await page.getByRole('button',{name:'Close Words to Try',exact:true}).click();
+
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-mobile.png`,fullPage:true});
+ await page.getByRole('button',{name:'Expand question',exact:true}).click();assert(await editor.isVisible());
+ await page.getByRole('button',{name:'Hide question',exact:true}).click();assert(await editor.isVisible());
+ // Submission uses the existing provider path. Block network in this isolated QA
+ // session to check local explanations and the graceful unavailable-provider state.
+ await page.route('**/api/**',route=>route.fulfill({status:503,contentType:'application/json',body:'{"error":"QA: provider unavailable"}'}));
+ await editor.fill('he go to university everyday');
+ await page.getByRole('button',{name:/Finish & Summary/}).click();
+ await page.getByRole('button',{name:'Explain My Mistake',exact:true}).first().click();
+ await page.waitForFunction(()=>document.querySelector('.writing-rule-explanation')?.textContent.includes('Ensures pronouns agree'));
+ const workers=page.workers();assert(workers.length>0,'Harper uses a real browser worker');
+ const closed=Promise.all(workers.map(worker=>new Promise(resolve=>worker.on('close',resolve))));
+ await page.getByRole('button',{name:'Dashboard',exact:true}).click();
+ await Promise.race([closed,new Promise((_,reject)=>setTimeout(()=>reject(Error('Worker did not close')),5000))]);
+ assert.equal(page.workers().length,0);
+ await page.evaluate(()=>localStorage.clear());await page.goto(url+'?theme=dark');
+ await page.getByRole('button',{name:'Practise Task 1'}).click();
+ await page.getByRole('button',{name:'All panels',exact:true}).click();
+ await page.getByRole('button',{name:'Suggestions',exact:true}).click();
+ await page.getByRole('tab',{name:'Phrase Bank',exact:true}).click();
+ assert.equal(await page.getByLabel('Writing task',{exact:true}).inputValue(),'auto');
+ assert.equal(await page.locator('#phrase-task option:checked').textContent(),'Auto · Task 1');
+ assert.equal(await page.locator('.writing-phrase summary').first().textContent(),'The chart shows …');
+ await page.getByRole('tab',{name:'Phrase Bank',exact:true}).press('ArrowLeft');
+ assert.equal(await page.getByRole('tab',{name:'Vocabulary',exact:true}).getAttribute('aria-selected'),'true');
+ await page.getByRole('button',{name:'Close Words to Try',exact:true}).click();
+ await page.setViewportSize({width:1440,height:1000});
+ await page.getByRole('textbox',{name:'Writing Task 1 response'}).fill('The chart shows good results. Good results are good for residents.');
+ await page.waitForTimeout(800);
+ if(process.env.QA_SCREENSHOTS)await page.screenshot({path:`${process.env.QA_SCREENSHOTS}/writing-dark.png`,fullPage:true});
+ assert.equal(errors.length,0,errors.join('\n'));
+ console.log('Writing Help browser checks passed: overlay dismissal/focus, aligned toolbar, fixed equal-height frames, one-occurrence synonyms with undo, actual worker detections, layouts, persistence, vocabulary, phrases, clipboard, repetition, Unicode edits, scrolling, mobile and local explanations.');
+} catch(error) { console.log(errors); console.log(await page.locator('body').innerText());  throw error; } finally {await browser.close();if(server)await new Promise(resolve=>server.httpServer.close(resolve));if(buildDir)await rm(buildDir,{recursive:true,force:true});}

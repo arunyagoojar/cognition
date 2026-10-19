@@ -113,14 +113,14 @@ export default function PerformanceOverview({
           </div>
         </div>
 
-        {/* 3. Practice Writing with Harper Card (EDITORIAL PEACH / CORAL BORDER) */}
+        {/* 3. Practice Writing with Help Card (EDITORIAL PEACH / CORAL BORDER) */}
         <div className="hub-feature-card is-harper">
           <div className="hub-feature-top">
             <div className="hub-feature-badge-row">
               <span className="pill-badge pill-coral">PRACTICE WRITING</span>
-              <span className="pill-badge pill-black" style={{ fontSize: 10 }}>HARPER OFFLINE</span>
+              <span className="pill-badge pill-black" style={{ fontSize: 10 }}>LOCAL HELP</span>
             </div>
-            <h3 className="hub-feature-heading">Practice Writing with Harper</h3>
+            <h3 className="hub-feature-heading">Practice Writing with Help</h3>
             <p className="hub-feature-desc">
               Active grammar correction, repetitive word detection, and vocabulary habit-building.
             </p>

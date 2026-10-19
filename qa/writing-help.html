@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>QA · Writing Help</title></head><body><div id="root"></div><script type="module">
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import '/src/index.css';
+import {loadSkillContent} from '/src/data/production/registry.js';
+await loadSkillContent('writing');
+import HarperWritingPractice from '/src/components/views/HarperWritingPractice.jsx';
+document.documentElement.dataset.theme = new URLSearchParams(location.search).get('theme') || 'light';
+const root=createRoot(document.getElementById('root'));
+root.render(React.createElement(React.StrictMode,null,React.createElement(HarperWritingPractice,{onBack:()=>root.render(React.createElement('p',null,'Practice closed'))})));
+</script></body></html>

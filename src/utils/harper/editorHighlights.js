@@ -2,7 +2,7 @@ export const REPEAT_COLORS=['#fff0bd','#e6dcff','#d3f1ea','#ffdfe8','#dceaff','#
 export function repeatColor(word, group) {if(group) {const index=group.findIndex(w=>(w.word || w)===word);if(index>=0)return REPEAT_COLORS[index%REPEAT_COLORS.length];}let hash=0;for(const c of word) hash=(hash*31+c.charCodeAt(0))>>>0;return REPEAT_COLORS[hash%REPEAT_COLORS.length];}
 export function editorSegments(text, issues = [], repetitiveWords = []) {
  const marks=[];
- for(const word of repetitiveWords.slice(0,REPEAT_COLORS.length)) for(const occurrence of word.occurrences) marks.push({...occurrence,color:repeatColor(word.word,repetitiveWords),word:word.word});
+ for(const word of repetitiveWords) for(const occurrence of word.occurrences) marks.push({...occurrence,color:repeatColor(word.word,repetitiveWords),word:word.word});
  const boundaries=new Set([0,text.length]);
  for(const range of [...issues,...marks]) {if(range.start>=0 && range.end<=text.length) {boundaries.add(range.start);boundaries.add(range.end);}}
  const points=[...boundaries].sort((a,b)=>a-b);

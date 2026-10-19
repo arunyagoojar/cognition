@@ -9,7 +9,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test:evaluation": "node test/evaluation.test.js",
-    "test": "node test/evaluation.test.js && node test/production_content.test.js && node test/writing_content.test.js && node test/reading_content.test.js && node test/hybrid_evaluation.test.js && node test/reading_render.test.js && node test/tips_content.test.js && node test/insights.test.js && node test/ielts_rubric.test.js && node test/audit_evaluation_calibration.test.js && node test/listening_content.test.js && node test/speaking_content.test.js && node test/api_client.test.js && node test/speech_split.test.js && node test/speech_engine.test.js && node test/sync_and_drills.test.js && node test/loading_contract.test.js && node test/practice_experience.test.js && node test/answer_review.test.js && node test/practice_resources.test.js && node test/focused_part_flow.test.js && node test/recommendation_cards.test.js && node test/speaking_part2_transition.test.js && node test/speaking_prompt_payload.test.js && node test/ai_request_budget.test.js && node test/direct_provider_failures.test.js && node test/speaking_recommendations.test.js && node test/speaking_part_diagnostics.test.js && node test/speaking_recheck.test.js && node test/objective_recommendation_roundtrip.test.js && node test/writing_recommendations.test.js && node test/recommendation_history.test.js && node test/speaking_part_criteria_contract.test.js && node test/speaking_part_scoring_flow.test.js && node test/part_criteria_breakdown.test.js && node test/writing_part_scoring_flow.test.js && node test/focused_speaking_scoring.test.js",
+    "test": "node test/evaluation.test.js && node test/production_content.test.js && node test/writing_content.test.js && node test/reading_content.test.js && node test/hybrid_evaluation.test.js && node test/reading_render.test.js && node test/tips_content.test.js && node test/insights.test.js && node test/ielts_rubric.test.js && node test/audit_evaluation_calibration.test.js && node test/listening_content.test.js && node test/speaking_content.test.js && node test/api_client.test.js && node test/speech_split.test.js && node test/speech_engine.test.js && node test/sync_and_drills.test.js && node test/loading_contract.test.js && node test/practice_experience.test.js && node test/answer_review.test.js && node test/practice_resources.test.js && node test/focused_part_flow.test.js && node test/recommendation_cards.test.js && node test/speaking_part2_transition.test.js && node test/speaking_prompt_payload.test.js && node test/ai_request_budget.test.js && node test/direct_provider_failures.test.js && node test/speaking_recommendations.test.js && node test/speaking_part_diagnostics.test.js && node test/speaking_recheck.test.js && node test/objective_recommendation_roundtrip.test.js && node test/writing_recommendations.test.js && node test/recommendation_history.test.js && node test/speaking_part_criteria_contract.test.js && node test/speaking_part_scoring_flow.test.js && node test/part_criteria_breakdown.test.js && node test/writing_part_scoring_flow.test.js && node test/focused_speaking_scoring.test.js && node test/writing_help.test.js",
     "test:speech": "node test/speech_split.test.js && node test/speech_engine.test.js",
     "test:live": "node scripts/live_evaluation_harness.mjs",
     "test:tips": "node test/tips_content.test.js",
@@ -22,7 +22,9 @@
     "dev:api": "wrangler dev --local --ip 127.0.0.1 --port 8787 --assets public-static",
     "db:local": "wrangler d1 migrations apply cognition-db --local",
     "dev:local": "node scripts/dev-local.mjs",
-    "check:bundle": "node scripts/check-bundle.mjs"
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "test:writing-help": "node test/writing_help.test.js",
+    "test:writing-help:browser": "node test/writing_help.browser.mjs"
   },
   "dependencies": {
     "@clerk/react": "^6.17.5",

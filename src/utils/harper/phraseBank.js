@@ -1,0 +1,147 @@
+// Adapted from the user's IELTS Writing Phrase Cheat Sheet, with natural additions.
+// Bundled content only: examples are illustrative, never automatically inserted.
+export const PHRASE_CATEGORIES = ['Introduction','Expressing an opinion','Adding another point','Giving examples','Comparing ideas','Showing contrast','Explaining causes','Describing consequences','Suggesting solutions','Starting a conclusion'];
+const rows = (task, category, data) => data.map(([phrase,meaning,example],i)=>({id:`${task}-${category}-${i}`,task,category,phrase,meaning,example}));
+const task2 = {
+'Introduction': [
+ ['It is often argued that …','Introduce a commonly debated position.','It is often argued that university education should be free.'],
+ ['Some people believe that …','Introduce one side of a debate.','Some people believe that cities should restrict private cars.'],
+ ['There is growing debate about …','Introduce an issue attracting discussion; use only if justified.','There is growing debate about the role of technology in schools.'],
+ ['One important issue is …','Identify the central concern.','One important issue is access to affordable housing.'],
+ ['In recent years, …','Set a recent time frame when relevant.','In recent years, remote work has become more common.'],
+ ['The question of whether …','Introduce a specific choice or disagreement.','The question of whether homework improves learning remains open to debate.'],
+],
+'Expressing an opinion': [
+ ['In my opinion, …','State your position directly.','In my opinion, prevention deserves more public funding.'],
+ ['I believe that …','Give a clear personal view.','I believe that public libraries remain essential.'],
+ ['I would argue that …','Present a position you will support with reasons.','I would argue that reliable buses benefit the whole community.'],
+ ['I largely agree because …','Show agreement with some room for qualification.','I largely agree because practical experience improves employability.'],
+ ['From my perspective, …','Introduce your interpretation.','From my perspective, the benefits outweigh the costs.'],
+ ['I support the view that …','Express explicit support for a position.','I support the view that schools should teach financial literacy.'],
+],
+'Adding another point': [
+ ['Furthermore, …','Add a related supporting point.','Furthermore, public transport reduces congestion.'],
+ ['Moreover, …','Add a point that strengthens the argument.','Moreover, the scheme would benefit low-income families.'],
+ ['In addition, …','Introduce another relevant point.','In addition, parks provide space for exercise.'],
+ ['Additionally, …','Add supporting information.','Additionally, flexible hours can reduce commuting costs.'],
+ ['Another consideration is …','Introduce another factor to weigh.','Another consideration is the cost of maintaining the service.'],
+ ['A further advantage is …','Add a distinct benefit.','A further advantage is greater access for rural residents.'],
+],
+'Giving examples': [
+ ['For example, …','Introduce a concrete illustration.','For example, schools can offer free breakfast programmes.'],
+ ['For instance, …','Give one case supporting your point.','For instance, a regular bus service can connect villages to hospitals.'],
+ ['To illustrate, …','Make an abstract point concrete.','To illustrate, a shared workspace can reduce business costs.'],
+ ['One example of this is …','Name a specific instance.','One example of this is the use of solar panels on public buildings.'],
+ ['… such as …','Introduce examples within a sentence.','Basic skills such as budgeting should be taught at school.'],
+ ['This can be seen in …','Connect your claim to an observable example.','This can be seen in workplaces that offer flexible schedules.'],
+],
+'Comparing ideas': [
+ ['Similarly, …','Show that two ideas share a feature.','Similarly, libraries give people access to online learning.'],
+ ['Likewise, …','Introduce a parallel point.','Likewise, employers benefit from a healthier workforce.'],
+ ['Compared with …, …','Compare two named alternatives.','Compared with private cars, buses use road space more efficiently.'],
+ ['Both … and …','Identify a shared property.','Both schools and families influence children’s reading habits.'],
+ ['In the same way, …','Explain a similar mechanism.','In the same way, regular feedback can improve workplace performance.'],
+ ['… have … in common.','State a specific similarity.','The two approaches have an emphasis on prevention in common.'],
+],
+'Showing contrast': [
+ ['However, …','Introduce a contrasting point.','However, the initial cost may be high.'],
+ ['Nevertheless, …','Show that a point remains true despite a difficulty.','Nevertheless, the long-term benefits justify the investment.'],
+ ['In contrast, …','Highlight a clear difference.','In contrast, rural areas often have fewer services.'],
+ ['On the other hand, …','Present an alternative side of an argument.','On the other hand, strict rules can limit flexibility.'],
+ ['…, whereas …','Contrast two clauses in one sentence.','Buses serve many passengers, whereas cars usually carry only a few.'],
+ ['Although …, …','Acknowledge a limitation before your main point.','Although online learning is convenient, some students need face-to-face support.'],
+],
+'Explaining causes': [
+ ['This is because …','Explain the preceding claim.','This is because many households cannot afford private transport.'],
+ ['The main reason is that …','Identify the principal cause.','The main reason is that housing demand exceeds supply.'],
+ ['This is partly due to …','Give one cause; follow with a noun or -ing form.','This is partly due to rising energy prices.'],
+ ['One contributing factor is …','Identify a cause without claiming it is the only one.','One contributing factor is the lack of affordable childcare.'],
+ ['… stems from …','Trace an issue to its source.','The problem stems from inadequate planning.'],
+ ['Since …, …','Introduce a reason; ensure it cannot be confused with time.','Since demand is high, the service needs more capacity.'],
+],
+'Describing consequences': [
+ ['As a result, …','Describe a consequence of the previous point.','As a result, more people can travel to work affordably.'],
+ ['Consequently, …','Connect a cause to its result.','Consequently, households have less money for other needs.'],
+ ['Therefore, …','Draw a logical inference or conclusion.','Therefore, investment in prevention is justified.'],
+ ['This may lead to …','Describe a possible outcome; follow with a noun or -ing form.','This may lead to greater social isolation.'],
+ ['This could result in …','Express a possible consequence without certainty.','This could result in lower energy consumption.'],
+ ['This can contribute to …','Describe an effect with several possible causes.','This can contribute to better public health.'],
+],
+'Suggesting solutions': [
+ ['One solution is to …','Propose a practical action.','One solution is to improve the frequency of bus services.'],
+ ['One way to address this is to …','Connect an action directly to the problem.','One way to address this is to provide subsidised childcare.'],
+ ['This could be improved by …','Suggest an improvement; follow with an -ing form.','This could be improved by training more teachers.'],
+ ['Governments could …','Propose an action for public authorities.','Governments could fund insulation for older homes.'],
+ ['An effective approach is to …','Introduce an approach and explain why it works.','An effective approach is to combine education with financial incentives.'],
+ ['A practical first step would be to …','Offer a feasible starting action.','A practical first step would be to identify the areas with the greatest need.'],
+],
+'Starting a conclusion': [
+ ['In conclusion, …','Signal a final synthesis of your argument.','In conclusion, accessible public transport benefits society as a whole.'],
+ ['To conclude, …','Introduce your final judgement.','To conclude, prevention should be a public priority.'],
+ ['To summarise, …','Briefly bring together your main points.','To summarise, the policy offers social and environmental benefits.'],
+ ['Overall, I believe that …','State your final position after weighing the argument.','Overall, I believe that the benefits outweigh the drawbacks.'],
+ ['For these reasons, …','Connect your conclusion to reasons already discussed.','For these reasons, schools should provide more practical learning.'],
+ ['On balance, …','Give a considered judgement after discussing both sides.','On balance, a flexible approach is more effective than a blanket ban.'],
+],
+};
+const task1 = {
+'Introduction': [
+ ['The chart shows …','Introduce what a chart measures.','The chart shows household spending in three countries.'],
+ ['The graph illustrates …','Introduce a pattern or change in a graph.','The graph illustrates changes in electricity demand between 2000 and 2020.'],
+ ['The table compares …','Introduce the groups or values in a table.','The table compares rail fares in five cities.'],
+ ['The figures show changes in …','Introduce changes across several visuals.','The figures show changes in land use over twenty years.'],
+ ['The charts provide data on …','State the subject of more than one chart.','The charts provide data on water consumption in two regions.'],
+ ['The diagram shows how …','Introduce a process.','The diagram shows how paper is recycled.'],
+],
+'Adding another point': [
+ ['Turning to …, …','Move to another group of details.','Turning to rail travel, passenger numbers rose steadily.'],
+ ['Regarding …, …','Introduce a particular category.','Regarding electricity, consumption remained stable.'],
+ ['In terms of …, …','Specify the measure being discussed.','In terms of revenue, rail travel ranked first.'],
+ ['As for …, …','Shift attention to another item.','As for the northern area, it remained unchanged.'],
+ ['In addition, …','Add a related feature visible in the data.','In addition, a new road was built to the east.'],
+ ['At the next stage, …','Describe the next step in a process.','At the next stage, the mixture is heated.'],
+],
+'Giving examples': [
+ ['For example, …','Illustrate a general pattern with a supplied figure.','For example, rail use rose from 20% to 30%.'],
+ ['For instance, …','Give a specific detail from the visual.','For instance, the eastern district gained a new park.'],
+ ['This is illustrated by …','Link an overview to supporting data.','This is illustrated by the rise in bus passengers.'],
+ ['… including …','Name items within a displayed group.','Several services, including rail and bus travel, expanded.'],
+ ['In particular, …','Highlight a notable detail.','In particular, the figure for solar power doubled.'],
+ ['A clear example is …','Identify a visible example of the pattern.','A clear example is the increase in spending on housing.'],
+],
+'Comparing ideas': [
+ ['… higher than …','Compare values on the same measure.','The figure for rail was higher than that for buses.'],
+ ['Compared with …, …','Introduce a direct comparison.','Compared with 2000, household spending was higher in 2020.'],
+ ['…, while …','Compare two facts in one sentence.','Rail use rose, while bus use remained stable.'],
+ ['twice as many … as …','Compare countable quantities.','There were twice as many cars as buses.'],
+ ['twice as much … as …','Compare uncountable quantities.','Industry used twice as much water as agriculture.'],
+ ['… accounted for the largest share.','Identify the largest proportion.','Housing accounted for the largest share.'],
+],
+'Showing contrast': [
+ ['In contrast, …','Introduce an opposite pattern.','In contrast, coal consumption fell steadily.'],
+ ['By comparison, …','Set one figure against another.','By comparison, the figure for rail was only 15%.'],
+ ['…, whereas …','Contrast two observed facts.','The western area expanded, whereas the east remained unchanged.'],
+ ['However, …','Introduce an exception to a trend.','However, demand fell in the final year.'],
+ ['Unlike …, …','State how one category differs.','Unlike coal, solar power increased throughout the period.'],
+ ['While …, …','Contrast two categories or changes.','While the town gained a library, the old cinema was demolished.'],
+],
+'Describing consequences': [
+ ['At the next stage, …','Report the next stage shown in a process.','At the next stage, the pulp is pressed into sheets.'],
+ ['Once this is complete, …','Describe what follows a completed step.','Once this is complete, the sheets are dried.'],
+ ['The resulting …','Describe the product of a shown step.','The resulting mixture is poured into moulds.'],
+ ['This produces …','Report an output explicitly shown in the diagram.','This produces a fine powder.'],
+ ['After …, …','Describe a visible sequence; use a noun or -ing form after “after”.','After cooling, the material is cut into blocks.'],
+ ['Finally, …','Introduce the last stage of a process.','Finally, the finished products are packaged.'],
+],
+'Starting a conclusion': [
+ ['Overall, …','Introduce the overview; Task 1 needs no personal opinion.','Overall, rail use increased while bus use declined.'],
+ ['In general, …','Summarise the dominant pattern.','In general, spending rose in all three countries.'],
+ ['On the whole, …','Give the broad picture.','On the whole, the town became more residential.'],
+ ['The main feature is that …','Identify the most important visible feature.','The main feature is that housing remained the largest expense.'],
+ ['The clearest difference is …','Highlight the principal comparison.','The clearest difference is the much higher water use in agriculture.'],
+ ['Overall, the process involves …','Summarise a process and its principal stages.','Overall, the process involves collecting, cleaning and reforming used paper.'],
+],
+};
+export const PHRASES = [...Object.entries(task1).flatMap(([c,d])=>rows(1,c,d)),...Object.entries(task2).flatMap(([c,d])=>rows(2,c,d))];
+export const phraseCategories = task => PHRASE_CATEGORIES.filter(c=>PHRASES.some(p=>p.task===Number(task) && p.category===c));
+export const phrasesFor = (task,category) => PHRASES.filter(p=>p.task===Number(task) && p.category===category);

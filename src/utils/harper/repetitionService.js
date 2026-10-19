@@ -28,6 +28,33 @@ export const STOP_WORDS = new Set([
  * Mapped to standard lemmas/roots for instant lookup
  */
 export const IELTS_SYNONYMS = {
+  word: ['term', 'expression', 'phrase', 'wording'],
+  words: ['terms', 'expressions', 'phrases', 'vocabulary'],
+  thing: ['aspect', 'matter', 'item', 'issue', 'factor'],
+  things: ['aspects', 'matters', 'items', 'issues', 'factors'],
+  view: ['perspective', 'opinion', 'outlook', 'standpoint', 'interpretation'],
+  // Everyday content words, with alternatives that depend on sentence context.
+  need: ['require', 'depend on', 'call for'],
+  needs: ['requires', 'depends on', 'calls for'],
+  use: ['employ', 'apply', 'make use of'],
+  used: ['employed', 'applied', 'made use of'],
+  benefit: ['advantage', 'gain', 'positive effect'],
+  benefits: ['advantages', 'gains', 'positive effects'],
+  students: ['learners', 'pupils', 'undergraduates'],
+  schools: ['educational institutions', 'learning centres', 'colleges'],
+  work: ['employment', 'labour', 'professional activity'],
+  technology: ['digital tools', 'technical systems', 'technological developments'],
+  development: ['growth', 'progress', 'advancement'],
+  society: ['the community', 'the public', 'the population'],
+  public: ['communal', 'civic', 'state-funded'],
+  environment: ['surroundings', 'natural world', 'ecosystem'],
+  health: ['wellbeing', 'physical condition', 'fitness'],
+  improve: ['enhance', 'strengthen', 'refine', 'develop'],
+  better: ['more effective', 'more suitable', 'improved'],
+  large: ['substantial', 'considerable', 'extensive', 'sizeable'],
+  significant: ['notable', 'substantial', 'meaningful', 'considerable'],
+  provide: ['offer', 'supply', 'make available'],
+  provides: ['offers', 'supplies', 'makes available'],
   // Task 1: Trends, Changes & Visual Data
   increase: ['surge', 'escalate', 'climb', 'rise', 'soar', 'expand', 'show an upward trend'],
   increases: ['surges', 'escalates', 'climbs', 'rises', 'soars', 'shows an upward trend'],
@@ -94,6 +121,24 @@ export const IELTS_SYNONYMS = {
   'result in': ['culminate in', 'precipitate', 'give rise to', 'engender'],
 };
 
+export const SYNONYM_NOTES = {
+  terms:'words used for particular ideas', expressions:'words or phrases that convey an idea', phrases:'groups of words; not always individual words', vocabulary:'words considered collectively',
+  aspect:'one part of a subject', matter:'a subject being considered', item:'an individual object or entry', factor:'something contributing to a result',
+  perspective:'a way of considering something', outlook:'a general attitude or expectation',
+  surge:'increase suddenly', soar:'increase rapidly', plummet:'fall sharply',
+  escalate:'become greater or more serious', dilemma:'a difficult choice between alternatives',
+  citizens:'members of a country', residents:'people living in a place',
+  society:'people considered collectively', 'the public':'people as a group',
+  pupils:'children at school', undergraduates:'students taking a first university degree',
+  colleges:'institutions offering further or higher education',
+  'state-funded':'paid for by the government', communal:'shared by a community', civic:'related to a town or its citizens',
+  fitness:'physical ability; narrower than general health', ecosystem:'living things and their environment; narrower than environment',
+  exemplary:'serving as a very good example', salutary:'having a useful or beneficial effect',
+  pernicious:'causing serious, often gradual harm', deleterious:'harmful',
+  panacea:'a supposed cure for every problem; usually unsuitable for a practical proposal',
+  pedagogy:'the methods and practice of teaching',
+};
+
 /**
  * Tokenize text into words with accurate character offsets
  */
@@ -115,7 +160,7 @@ export function extractWordsWithPositions(text) {
 /**
  * Analyze text for repetitive non-stop words and lexical diversity
  */
-export function analyzeRepetition(text) {
+export function analyzeRepetition(text, ignoredWords = []) {
   if (!text || !text.trim()) {
     return {
       repetitiveWords: [],
@@ -128,6 +173,10 @@ export function analyzeRepetition(text) {
 
   const tokens = extractWordsWithPositions(text);
   const totalWords = tokens.length;
+  const ignored = new Set(ignoredWords.map(w=>w.toLowerCase()));
+  ignored.add('caribbean');
+  const lowerCaseWords = new Set(tokens.filter(t=>/^[a-z]/.test(t.text)).map(t=>t.lower));
+  const properNames = new Set(tokens.filter(t=>/^[A-Z]/.test(t.text) && !IELTS_SYNONYMS[t.lower] && !lowerCaseWords.has(t.lower)).map(t=>t.lower));
   if (totalWords === 0) {
     return {
       repetitiveWords: [],
@@ -144,7 +193,7 @@ export function analyzeRepetition(text) {
   for (const token of tokens) {
     const word = token.lower;
     // Skip stop words, single letters, and numbers
-    if (STOP_WORDS.has(word) || word.length < 3) {
+    if (STOP_WORDS.has(word) || ignored.has(word) || properNames.has(word) || word.length < 3) {
       continue;
     }
 
@@ -176,7 +225,7 @@ export function analyzeRepetition(text) {
   for (const [word, data] of frequencyMap.entries()) {
     if (data.count >= repetitionThreshold) {
       // Lookup synonyms
-      const synonyms = IELTS_SYNONYMS[word] || [];
+      const synonyms = (IELTS_SYNONYMS[word] || []).slice(0,5);
       
       let severity = 'low';
       if (data.count >= 6) severity = 'high';
@@ -290,4 +339,13 @@ export function generateHabitInsights({
   }
 
   return insights;
+}
+
+// Apply to one verified occurrence, preserving simple sentence/title casing.
+export function replaceRepeatedWord(text, word, occurrence, replacement) {
+  if(!occurrence || occurrence.start<0 || occurrence.end>text.length || occurrence.end<=occurrence.start)return null;
+  const original=text.slice(occurrence.start,occurrence.end);
+  if(original.toLowerCase()!==word.toLowerCase())return null;
+  const value=original===original.toUpperCase()?replacement.toUpperCase():/^[A-Z]/.test(original)?replacement[0].toUpperCase()+replacement.slice(1):replacement;
+  return {text:text.slice(0,occurrence.start)+value+text.slice(occurrence.end),start:occurrence.start,end:occurrence.start+value.length};
 }
