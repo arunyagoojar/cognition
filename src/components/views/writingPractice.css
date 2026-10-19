@@ -256,3 +256,14 @@
 @media (max-width:760px) {
  .harper-choice-hero.content-container { width:calc(100% - 32px); margin-top:16px; }
 }
+
+/* Use one spacing rhythm instead of adding section margins to the container gap. */
+.harper-choice-hero.content-container { gap:28px; }
+.harper-choice-hero .harper-header-nav,
+.harper-choice-hero .harper-choice-title-block,
+.harper-choice-hero .harper-task-grid { margin-bottom:0; }
+.harper-choice-hero .harper-task-card { min-width:0; }
+@media (max-width:760px) {
+ .harper-choice-hero.content-container { gap:24px; }
+ .harper-choice-hero .harper-task-card-header { gap:12px; flex-wrap:wrap; }
+}

@@ -1,12 +1,12 @@
-/* The unlock card is a quiet invitation; the skill links form a deliberate grid. */
-.practice-thumbnail.practice-thumbnail-unlock { background:var(--bg-card); color:var(--text-primary); border:var(--border-dark); box-shadow:0 3px 0 var(--border-color); }
-.practice-rail-viewport > .practice-thumbnail-rail { align-items:stretch; }
-.practice-thumbnail-unlock .practice-thumbnail-heading { grid-template-columns:32px minmax(0,1fr); }
-.practice-thumbnail-unlock .practice-thumbnail-icon { background:var(--surface-sunken); }
-.practice-thumbnail-unlock > p { max-width:none; color:var(--text-secondary); }
-.practice-thumbnail-unlock .practice-unlock-skills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 20px; margin-top:auto; }
-.practice-thumbnail-unlock .practice-unlock-skills button { min-height:44px; min-width:0; justify-content:space-between; gap:8px; padding:10px 0; border:0; border-top:var(--border-subtle); border-radius:0; background:transparent; color:var(--text-primary); font-size:13px; line-height:20px; }
-.practice-thumbnail-unlock .practice-unlock-skills button svg { flex-shrink:0; }
-.practice-thumbnail-unlock .practice-unlock-skills button:hover span { text-decoration:underline; text-underline-offset:4px; }
-.practice-thumbnail-unlock button:focus-visible { outline:2px solid var(--text-primary); outline-offset:3px; border-radius:4px; }
-@media (prefers-contrast:more) { .practice-thumbnail-unlock .practice-unlock-skills button { border-color:var(--text-primary); } }
+.practice-thumbnail.practice-thumbnail-unlock { background: #dbe8fa; aspect-ratio:auto; height:auto; min-height:0; align-self:start; }
+.practice-rail-viewport > .practice-thumbnail-rail { align-items: stretch; }
+.practice-thumbnail-unlock .practice-thumbnail-heading { grid-template-columns: 32px minmax(0, 1fr); }
+.practice-thumbnail-unlock > p { max-width: none; }
+.practice-thumbnail-unlock .practice-unlock-skills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:4px; }
+.practice-thumbnail-unlock .practice-unlock-skills button { min-height: 44px; min-width: 0; justify-content: center; padding: 8px 10px; border: 1px solid rgb(21 19 19 / 24%); background: rgb(255 255 255 / 55%); color: #151313; }
+.practice-thumbnail-unlock .practice-unlock-skills button:hover { background: rgb(255 255 255 / 85%); }
+.practice-thumbnail-unlock button:focus-visible { outline: 3px solid #151313; outline-offset: 3px; }
+@media (prefers-contrast: more) { .practice-thumbnail-unlock .practice-unlock-skills button { border-color: #151313; background: #fff; } }
+
+/* A taller unlock card must not stretch neighbouring recommendation cards. */
+.practice-thumbnail-rail > .practice-thumbnail:not(.practice-thumbnail-unlock) { align-self:start; }
