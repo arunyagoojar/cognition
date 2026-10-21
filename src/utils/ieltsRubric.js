@@ -40,7 +40,7 @@ import { computeSpeechMetrics, formatSpeechScript } from './speech/speechMetrics
 /** Shown wherever Pronunciation appears: it is not part of the Speaking band. */
 export const PRONUNCIATION_NOTE = 'It is not possible for an AI model to interpret how well you pronounce. For now, this is not a scoring metric in the system.';
 
-export const RUBRIC_VERSION = 'ielts-rubric-2.7';
+export const RUBRIC_VERSION = 'ielts-rubric-2.8';
 
 /** Words as the candidate sees them counted: whitespace-separated tokens. */
 export function countWords(text) {
@@ -434,7 +434,15 @@ const SPEAKING_PART_DIAGNOSTICS_SCHEMA = JSON.stringify(Object.fromEntries([1, 2
   }])),
 }])));
 
+const SPEAKING_TRANSCRIPT_EVIDENCE = `TRANSCRIPT EVIDENCE:
+- Recognition can mishear names, places and regional words. Treat a contextually suspicious name as uncertain, not a proven vocabulary/grammar error; do not guess or silently rewrite it. Marked recognition corrections are authoritative for wording.
+- Reusing names, topic words, pronouns or question vocabulary is normal. Lexical weakness requires limited flexibility across answers or unsuccessful paraphrase, not a repetition count. Natural emphasis, fillers and occasional repairs can coexist with Bands 6-7.
+- Text counts are heuristic markers, not heard disfluencies. Require contextual evidence of disrupted development before lowering fluency; missing timing is unknown, not zero pauses. Never infer pronunciation, hesitation causes or sentence boundaries from ASR punctuation.
+- Apply this to interview and part grades. Separate uncertain recognition from genuine persistent language errors. Explain descriptor-based limitations without correction quotas or an automatic score floor.`;
+
 export const SPEAKING_SYSTEM_PROMPT_V2 = `${CALIBRATED_FEEDBACK}
+
+${SPEAKING_TRANSCRIPT_EVIDENCE}
 
 You are a certified IELTS Speaking examiner and senior IELTS coach. Assess the candidate's complete interview (Parts 1–3) using calibrated examiner judgment based strictly on the official public IELTS Speaking Band Descriptors (Bands 1–9; May 2023 revision). You receive a transcript of the candidate's answers, organized by interview part and question.
 
@@ -472,7 +480,7 @@ CORE ASSESSMENT & CALIBRATION PRINCIPLES:
      • Never penalize candidate speech for not sounding like an academic paper. A candidate who communicates clearly and naturalistically at length must NOT be demoted to Band 5 for conversational register.
 
 DELIVERY MEASURES (Fluency & Coherence evidence):
-Each answer comes with measures taken from the recording: words per minute, pauses (and how many were over 2 s), um/uh hesitations, filler phrases, repetitions and self-corrections, plus line breaks where the candidate paused. Use them as evidence for Fluency & Coherence the way a live examiner hears delivery:
+Each answer may include timing from the recording and heuristic text markers. Text counts cannot establish what a live examiner would hear. Use available evidence for Fluency & Coherence cautiously:
 - Occasional pauses, fillers and self-corrections are compatible with competent spontaneous speech; interpret their effect on continuity in context.
 - Measured pauses or restarts do not establish their cause or a band. Identify how the observed speech sustains or loses coherence, and disclose uncertainty.
 - Weigh the pattern across the whole interview, not single moments. Do not use these measures for Lexical Resource or Grammar, and never mention a number you were not given.
@@ -487,14 +495,14 @@ Each answer comes with measures taken from the recording: words per minute, paus
    For every assessable criterion (fluencyAndCoherence, lexicalResource, grammaticalRangeAndAccuracy):
    A. band: Integer whole band (0–9).
    B. personalizedAssessment:
-      A short, dense paragraph (3–5 sentences) explaining:
+      A short paragraph (2–3 sentences) explaining:
       - What the candidate does reasonably well.
       - What weaknesses are evident in the candidate's actual responses.
       - Which specific weakness is most responsible for the awarded band.
       - Exactly what separates the current performance from the next band up.
       Every major claim must be grounded in the candidate's actual words. Avoid empty praise and generic statements like "improve your vocabulary" or "use more complex sentences." Identify the specific problem and explain why it matters.
    C. corrections:
-      Provide 2–4 high-value corrections taken directly from the candidate's responses.
+      Provide up to 2 high-value corrections taken directly from the candidate's responses; return [] when none is justified.
       Format each correction as:
       {
         "original": "[Exact phrase quoted from the candidate's response]",
@@ -513,8 +521,8 @@ Each answer comes with measures taken from the recording: words per minute, paus
       One or two concrete, practical actions that directly address the weaknesses identified in the assessment to help the candidate reach the next band. Must be specific to this candidate's demonstrated weaknesses, not generic IELTS advice.
 
 5. OVERALL REPORT SUMMARY:
-   - overallSummary: A concise 2–3 sentence examiner summary of the interview.
-   - priorityWeaknesses: An array of exactly 2–3 concise, high-priority weaknesses / action points that will make the biggest meaningful difference in increasing the candidate's score.
+   - overallSummary: At most two short sentences about the interview.
+   - priorityWeaknesses: Up to three evidenced, high-priority action points; return [] if none is justified.
    - strengths: Candidate's key demonstrated strengths.
    - areasForImprovement: Summary of areas for improvement.
 
@@ -617,7 +625,7 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
   // for every question. All measured values and the complete speech stay intact.
   lines.push('',
     'Candidate answers: verbatim on-device transcripts; [pause Ns] marks a pause of at least 2 seconds.',
-    'Delivery columns: words | seconds | words/min (n/a if unavailable) | pauses | pauses >=2s | longest pause(s) | um/uh | filler phrases | repetitions | self-corrections. Timing values come from recorded segments or duration.');
+    'Delivery columns: words | seconds | words/min | pauses | pauses >=2s | longest pause(s) | um/uh | possible discourse markers | possible repeated spans | possible repair markers. n/a = unavailable. Timing is measured; text counts are heuristics.');
   for (const [k, v] of Object.entries(transcripts || {})) {
     if (!v || !String(v).trim()) continue;
     const meta = speechMeta?.[k] || {};
@@ -636,7 +644,7 @@ export function buildSpeakingUserPrompt({ transcripts = {}, testMeta = {}, durat
     if (meta.originalText && meta.originalText !== v) lines.push('Recognition corrections marked; delivery uses the original transcript.');
     if (metrics) lines.push(`Delivery: ${[
       metrics.words, metrics.durationSec > 0 ? metrics.durationSec : 'n/a', metrics.wordsPerMinute ?? 'n/a',
-      metrics.pauses, metrics.longPauses, metrics.longestPauseSec,
+      ...(metrics.pauseTimingAvailable ? [metrics.pauses, metrics.longPauses, metrics.longestPauseSec] : ['n/a', 'n/a', 'n/a']),
       metrics.hesitations, metrics.discourseFillers, metrics.repetitions, metrics.selfCorrections,
     ].join(' | ')}`);
     lines.push(formatSpeechScript({ text: String(v).trim(), segments: meta.segments }));
@@ -906,6 +914,8 @@ Every {...} has the same fields as taskAchievement. "band" is a plain integer.`;
 
 export const SPEAKING_SYSTEM_PROMPT_COMPACT = `${CALIBRATED_FEEDBACK}
 
+${SPEAKING_TRANSCRIPT_EVIDENCE}
+
 You are a certified IELTS Speaking examiner. Mark the whole interview (Parts 1-3, given as a transcript) by the public IELTS Speaking Band Descriptors (May 2023). Be accurate: neither lenient nor punitive.
 
 SCORING
@@ -915,7 +925,7 @@ SCORING
 - LR: 7 = flexible across topics, some less common/idiomatic items, paraphrases well; 6 = wide enough to discuss topics at length with meaning clear despite inappropriacies; 5 = limited flexibility, noticeable word-choice errors.
 - GRA: 7 = range of complex structures, frequent error-free sentences; 6 = mix of simple and complex, errors rarely impede understanding; 5 = basic forms accurate, complex structures usually contain errors.
 - Pronunciation cannot be assessed from text: return it as not_assessed with band null.
-- Each answer has delivery measures (words/min, pauses, um/uh, fillers, repetitions, self-corrections) and [pause Ns] markers from the audio. Use them for FC only: do not apply words-per-minute cutoffs, count fillers as automatic errors, or infer the cause of pauses from duration alone.
+- Use available timing for FC only, without words-per-minute cutoffs. Text markers are not audio measurements or automatic errors.
 
 FEEDBACK (per criterion, specific to THIS candidate)
 - personalizedAssessment: 2-3 sentences: what works, the weakness that limits the band, what the next band needs.

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { buildSpeakingUserPrompt } from '../src/utils/ieltsRubric.js';
+import { buildSpeakingUserPrompt, SPEAKING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_COMPACT, normalizeSpeakingEvaluation } from '../src/utils/ieltsRubric.js';
 
 let checks = 0;
 function test(name, run) {
@@ -39,7 +39,8 @@ test('delivery compaction keeps duration, pace, pause, filler, repeat and correc
     durations: { '0_0': 10 },
     speechMeta: { '0_0': { segments: [{ start: 0, end: 3 }, { start: 5.5, end: 10 }] } },
   });
-  assert(prompt.includes('Delivery columns: words | seconds | words/min (n/a if unavailable) | pauses | pauses >=2s | longest pause(s) | um/uh | filler phrases | repetitions | self-corrections.'));
+  assert(prompt.includes('possible discourse markers | possible repeated spans | possible repair markers. n/a = unavailable.'));
+  assert(prompt.includes('Timing is measured; text counts are heuristics.'));
   assert(prompt.includes('Delivery: 13 | 10 | 78 | 1 | 1 | 2.5 | 1 | 2 | 1 | 1'));
   assert(prompt.includes('Um, I I prefer local buses.\n[pause 2.5s]\nYou know, I mean, they save time.'));
 });
@@ -52,7 +53,7 @@ test('marked recognition corrections preserve corrected wording and original del
   });
   assert(prompt.includes('I think local buses save time.'));
   assert(prompt.includes('Recognition corrections marked; delivery uses the original transcript.'));
-  assert(prompt.includes('Delivery: 8 | 10 | 48 | 0 | 0 | 0 | 1 | 0 | 1 | 0'));
+  assert(prompt.includes('Delivery: 8 | 10 | 48 | n/a | n/a | n/a | 1 | 0 | 1 | 0'));
 });
 
 test('unavailable pace is explicit and raw recognition transport data never enters the prompt', () => {
@@ -71,6 +72,39 @@ test('unavailable pace is explicit and raw recognition transport data never ente
   assert(!prompt.includes('RAW_WORD_METADATA_SENTINEL'));
   assert(!prompt.includes('DUPLICATED_SEGMENT_TEXT_SENTINEL'));
   assert.equal(prompt, buildSpeakingUserPrompt({ ...payload, speechMeta: { '0_0': { ...payload.speechMeta['0_0'], words: [] } } }));
+});
+
+test('both provider prompts protect proper nouns and natural repetition without granting a score floor', () => {
+  for (const prompt of [SPEAKING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_COMPACT]) {
+    assert(prompt.includes('Recognition can mishear names, places and regional words'));
+    assert(prompt.includes('not a proven vocabulary/grammar error'));
+    assert(prompt.includes('do not guess or silently rewrite it'));
+    assert(prompt.includes('Reusing names, topic words, pronouns or question vocabulary is normal'));
+    assert(prompt.includes('not a repetition count'));
+    assert(prompt.includes('Text counts are heuristic markers, not heard disfluencies'));
+    assert(prompt.includes('missing timing is unknown, not zero pauses'));
+    assert(prompt.includes('Apply this to interview and part grades'));
+  }
+  for (const band of [4, 5, 6, 7, 8]) {
+    const criteria=Object.fromEntries(['fluencyAndCoherence','lexicalResource','grammaticalRangeAndAccuracy'].map(key=>[key,{band,personalizedAssessment:'An assessment grounded in this answer.',corrections:[]}]));
+    assert.equal(normalizeSpeakingEvaluation({criteria}).overallBand,band,'Prompt calibration must not introduce score inflation or a minimum band.');
+  }
+});
+
+test('recognition mistakes and marked proper-name corrections remain explicit and never rewrite candidate text', () => {
+  for (const [mistake, corrected] of [['jeopardy','Jaipur'],['nice','Nîmes'],['wellington','Wellington']]) {
+    const originalText=`I like ${mistake} because I grew up there.`;
+    const text=`I like ${corrected} because I grew up there.`;
+    const payload={transcripts:{'0_0':text},speechMeta:{'0_0':{originalText}}};
+    const before=structuredClone(payload);
+    const prompt=buildSpeakingUserPrompt(payload);
+    assert(prompt.includes(text));
+    assert(prompt.includes('Recognition corrections marked'));
+    assert(prompt.includes('Delivery: 8 | n/a | n/a | n/a | n/a | n/a | 0 | 0 | 0 | 0'));
+    assert.deepEqual(payload,before);
+    const unchanged=buildSpeakingUserPrompt({transcripts:{'0_0':originalText}});
+    assert(unchanged.includes(originalText),'The grader must not silently substitute a suspected name.');
+  }
 });
 
 console.log(`\n${checks} speaking prompt payload checks passed.`);

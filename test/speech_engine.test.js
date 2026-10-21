@@ -269,6 +269,25 @@ t('the script marks long pauses and falls back to plain lines after edits', () =
   assert.equal(computeSpeechMetrics({ text: '' }), null);
 });
 
+t('ordinary pronouns, lexical like and adverb rather are not false delivery faults', () => {
+  for (const text of [
+    'I like Jaipur because I grew up there.',
+    'It is rather quiet in the evening.',
+    'I think I would enjoy living there.',
+    'I know that I can take the train.',
+    'She explained that she preferred the older building.',
+  ]) {
+    const metrics = computeSpeechMetrics({ text });
+    assert.equal(metrics.selfCorrections, 0, text);
+    assert.equal(metrics.discourseFillers, 0, text);
+    assert.equal(metrics.repetitions, 0, text);
+    assert.equal(metrics.pauseTimingAvailable, false);
+  }
+  assert.equal(computeSpeechMetrics({ text: 'I think I think I think it is useful.' }).repetitions, 2);
+  assert.equal(computeSpeechMetrics({ text: 'I I I think it is useful.' }).repetitions, 2);
+  assert.equal(computeSpeechMetrics({ text: 'I went on Tuesday, or rather, Wednesday.' }).selfCorrections, 1);
+});
+
 console.log('\n== Speech Engine: Retired Model Cleanup ==');
 
 await tAsync('removes ONLY Whisper entries from transformers-cache, keeps Moonshine', async () => {

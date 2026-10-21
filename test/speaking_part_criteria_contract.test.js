@@ -34,7 +34,7 @@ async function test(name, run) {
 }
 
 await test('both prompts require three independent criteria per attempted part and identify practice estimates', () => {
-  assert.equal(RUBRIC_VERSION, 'ielts-rubric-2.7');
+  assert.equal(RUBRIC_VERSION, 'ielts-rubric-2.8');
   for (const prompt of [SPEAKING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_COMPACT]) {
     assert(prompt.includes('PART PRACTICE estimates, not official IELTS part scores'));
     assert(prompt.includes('Never copy whole-interview grades into parts'));

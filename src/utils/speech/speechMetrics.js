@@ -1,14 +1,13 @@
 /**
  * Delivery measures for one spoken answer, computed from the verbatim
  * transcript and the timing of its lines (one line per stretch of speech).
- * These are facts handed to the AI examiner so Fluency & Coherence is judged
- * on evidence — the way a live examiner hears pace, pauses and hesitation —
- * not on how tidy the text looks. Pure functions (no DOM).
+ * Timing is measured; text counts are possible markers, not acoustic facts or
+ * confirmed errors. Pure functions (no DOM).
  */
 
 const HESITATIONS = new Set(['um', 'umm', 'uh', 'uhh', 'er', 'erm', 'ah', 'eh', 'hmm', 'mm', 'mhm']);
-const DISCOURSE_FILLERS = ['you know', 'i mean', 'kind of', 'sort of', 'like'];
-const CORRECTION_MARKERS = /\b(i mean|sorry|no wait|rather|or rather|let me rephrase|what i mean is|actually no)\b/g;
+const DISCOURSE_FILLERS = ['you know', 'i mean', 'kind of', 'sort of'];
+const CORRECTION_MARKERS = /\b(i mean|no wait|or rather|let me rephrase|what i mean is|actually no)\b/g;
 
 /** Long-pause threshold: a gap this long between lines is a noticeable pause. */
 export const LONG_PAUSE_S = 2;
@@ -22,25 +21,23 @@ function tokens(text) {
 /** Word-level and phrase-level repetitions: "I I think", "the the", "I think I think". */
 function countRepetitions(toks) {
   let reps = 0;
-  for (let i = 1; i < toks.length; i++) {
-    if (toks[i] === toks[i - 1] && !HESITATIONS.has(toks[i])) reps++;
-    else if (i >= 3 && toks[i] === toks[i - 2] && toks[i - 1] === toks[i - 3]) reps++;
+  for (let i = 0; i < toks.length;) {
+    // Consume repeated pairs once instead of counting overlapping pairs again.
+    if (i + 3 < toks.length && toks[i] !== toks[i + 1] && toks[i] === toks[i + 2] && toks[i + 1] === toks[i + 3]) {
+      const first = toks[i], second = toks[i + 1];
+      i += 2;
+      while (toks[i] === first && toks[i + 1] === second) { reps++; i += 2; }
+    } else {
+      if (i > 0 && toks[i] === toks[i - 1] && !HESITATIONS.has(toks[i])) reps++;
+      i++;
+    }
   }
   return reps;
 }
 
-/** Restarts: an explicit correction marker, or a sentence start repeated within a few words ("I was going… I went"). */
-function countSelfCorrections(text, toks) {
-  const markers = (String(text || '').toLowerCase().match(CORRECTION_MARKERS) || []).length;
-  let restarts = 0;
-  for (let i = 0; i + 3 < toks.length; i++) {
-    if (['i', 'it', 'we', 'they', 'he', 'she', 'there', 'that'].includes(toks[i])
-      && toks.slice(i + 2, i + 5).includes(toks[i]) && toks[i + 1] !== toks[i]) {
-      const j = toks.indexOf(toks[i], i + 2);
-      if (j > 0 && j - i <= 4 && toks[j + 1] !== toks[i + 1]) { restarts++; i = j; }
-    }
-  }
-  return markers + restarts;
+/** Explicit possible repair markers only; repeated pronouns are normal grammar. */
+function countSelfCorrections(text) {
+  return (String(text || '').toLowerCase().match(CORRECTION_MARKERS) || []).length;
 }
 
 /**
@@ -76,10 +73,11 @@ export function computeSpeechMetrics({ text = '', segments = [], durationSec = 0
     pauses: pauses.length,
     longPauses: longPauses.length,
     longestPauseSec: gaps.length ? Math.round(Math.max(...gaps) * 10) / 10 : 0,
+    pauseTimingAvailable: segs.length >= 2,
     hesitations,
     discourseFillers,
     repetitions: countRepetitions(toks),
-    selfCorrections: countSelfCorrections(text, toks),
+    selfCorrections: countSelfCorrections(text),
     speakingSec: Math.round(speakingSec * 10) / 10,
   };
 }
@@ -110,11 +108,11 @@ export function describeMetrics(m) {
   const parts = [
     `${m.words} words in ${m.durationSec}s`,
     m.wordsPerMinute ? `${m.wordsPerMinute} words/min` : null,
-    `${m.pauses} pauses (${m.longPauses} over ${LONG_PAUSE_S}s, longest ${m.longestPauseSec}s)`,
+    m.pauseTimingAvailable ? `${m.pauses} timed gaps (${m.longPauses} over ${LONG_PAUSE_S}s, longest ${m.longestPauseSec}s)` : 'Pause timing unavailable',
     `${m.hesitations} um/uh`,
-    `${m.discourseFillers} filler phrases`,
-    `${m.repetitions} repetitions`,
-    `${m.selfCorrections} self-corrections`,
+    `${m.discourseFillers} possible discourse markers`,
+    `${m.repetitions} possible repeated spans`,
+    `${m.selfCorrections} possible repair markers`,
   ].filter(Boolean);
   return parts.join(' · ');
 }
