@@ -17,3 +17,79 @@
 
 /* A taller unlock card must not stretch neighbouring recommendation cards. */
 .practice-thumbnail-rail > .practice-thumbnail:not(.practice-thumbnail-unlock) { align-self:start; }
+
+/* Card action buttons: Practise CTA and Strategy / Lesson resource pills */
+.practice-thumbnail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.practice-thumbnail-start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 8px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+.practice-thumbnail-resources {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.practice-thumbnail-resources button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--control-rim);
+  background: var(--control-fill);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.practice-thumbnail-resources button:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .practice-thumbnail-resources button {
+  background: #ffffff14;
+  border-color: #ffffff30;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .practice-thumbnail-resources button:hover {
+  background: #ffffff26;
+  color: var(--text-primary);
+}
+
+@container (max-width: 450px) {
+  .practice-thumbnail-start {
+    padding: 8px 16px;
+    gap: 8px;
+    font-size: 12.5px;
+  }
+  .practice-thumbnail-resources button {
+    padding: 7px 14px;
+    font-size: 12px;
+    min-height: 34px;
+  }
+}

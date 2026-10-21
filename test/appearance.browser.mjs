@@ -36,13 +36,11 @@ try {
   const canvas=document.createElement('canvas');canvas.width=canvas.height=1;const ctx=canvas.getContext('2d');ctx.fillStyle=getComputedStyle(button).backgroundColor;ctx.fillRect(0,0,1,1);const rect=button.getBoundingClientRect();return {color:[...ctx.getImageData(0,0,1,1).data],width:rect.width,height:rect.height};
  }));
  for(const [i,expected] of [[0,[190,148,245]],[1,[252,204,66]],[2,[255,234,228]],[3,[255,255,255]]]) { assert(unlock[i].color.slice(0,3).every((value,j)=>Math.abs(value-expected[j])<=3),'unlock button uses its practice-card colour');assert(unlock[i].width<150 && unlock[i].height<=40,'unlock controls are compact chips'); }
- const halos=await page.locator('.hub-feature-card').evaluateAll(cards=>cards.map(el=>{
-  const colors=getComputedStyle(el).boxShadow.match(/rgba?\([^)]*\)|color\([^)]*\)/g);
-  const canvas=document.createElement('canvas');canvas.width=canvas.height=1;const context=canvas.getContext('2d');context.fillStyle=colors.at(-1);context.fillRect(0,0,1,1);return [...context.getImageData(0,0,1,1).data];
- }));
- for(const [index,expected] of [[0,[190,148,245]],[1,[252,204,66]],[2,[255,255,255]]])assert(halos[index].slice(0,3).every((value,j)=>Math.abs(value-expected[j])<=4),'painted haze matches each card colour');
- const haloRoom=await page.locator('.practice-thumbnail-rail').evaluate(rail=>{const card=rail.firstElementChild.getBoundingClientRect(),bounds=rail.getBoundingClientRect();return {top:card.top-bounds.top,bottom:bounds.bottom-card.bottom};});
- assert(haloRoom.top>=28 && haloRoom.bottom>=28,'rail leaves paint room around the card halo');
+ const cardShadows=await page.locator('.hub-feature-card').evaluateAll(cards=>cards.map(el=>getComputedStyle(el).boxShadow));
+ for(const shadow of cardShadows) {
+  assert(shadow.includes('inset'),'card retains inset edge light');
+  assert(!shadow.includes('34px'),'background haze halo removed from cards');
+ }
  assert.equal(await page.locator('header').getByRole('switch').count(),0,'sound control belongs in Settings');
  await page.getByRole('button',{name:/^Lessons/}).click();
  assert.equal(await page.evaluate(()=>window.__tones.length),1);
@@ -77,7 +75,7 @@ try {
  assert(await mock.evaluate(el=>getComputedStyle(el).borderTopStyle!=='none' && parseFloat(getComputedStyle(el).borderTopWidth)>=1),'mock CTA retains its outline on hover');
  assert((await mock.evaluate(el=>getComputedStyle(el).boxShadow)).includes('inset'),'hover retains glass rim');
  await page.getByRole('button',{name:'Settings',exact:true}).click();
- assert((await page.getByRole('dialog',{name:'Settings'}).evaluate(el=>getComputedStyle(el).backdropFilter)).includes('32px'));
+ assert((await page.getByRole('dialog',{name:'Settings'}).evaluate(el=>getComputedStyle(el).backdropFilter)).includes('24px'));
  if(shots)await page.screenshot({path:`${shots}/settings-light-glass.png`,animations:'disabled'});
  await page.getByRole('button',{name:'Close',exact:true}).click();
  if(shots)await page.screenshot({path:`${shots}/appearance-light-desktop.png`,fullPage:true,animations:'disabled'});
