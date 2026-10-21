@@ -57,7 +57,7 @@ export default function FocusedRecommendations({ insights: supplied, onStartDril
           </div>
           <p>{shortReason(item)}</p>
           <div className="practice-thumbnail-actions"><button type="button" className="practice-thumbnail-start" aria-label={`Practise ${partName(item)}`} onClick={()=>onStartDrill?.(item)}>Practise <Icon name="arrowRight" size={16}/></button>
-            <div className="practice-thumbnail-resources">{item.resources?.tip && <button type="button" onClick={()=>onOpenTips?.(item.resources.tip.skill,item.resources.tip.categoryId,item.resources.tip.tipId)}>Strategy</button>}{item.resources?.lesson && <button type="button" onClick={()=>onOpenLesson?.(item.resources.lesson.id)}>Lesson</button>}</div>
+            <div className="practice-thumbnail-resources">{item.resources?.tip && <button type="button" className="practice-resource-pill" onClick={()=>onOpenTips?.(item.resources.tip.skill,item.resources.tip.categoryId,item.resources.tip.tipId)}>Strategy</button>}{item.resources?.lesson && <button type="button" className="practice-resource-pill" onClick={()=>onOpenLesson?.(item.resources.lesson.id)}>Lesson</button>}</div>
           </div>
           <span className="practice-priority" aria-label={`Priority ${index+1}`}>{String(index+1).padStart(2,'0')}</span>
         </li>)}

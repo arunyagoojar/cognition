@@ -58,7 +58,7 @@
  background-color:#292629;color:#fff;border-color:#ffffff66;--control-sheen:linear-gradient(145deg,#ffffff1f,transparent 75%);
 }
 :root[data-theme="dark"] :is(.btn-tips-outline,.hub-combined-actions .btn-tips-outline):hover { background-color:#ffffff1f;color:var(--text-primary); }
-:root[data-theme] :is(.sound-toggle,.nav-settings-btn,.insight-secondary,.rail-controls button,.practice-thumbnail-start,.practice-unlock-skills button) { background-color:var(--control-fill);color:var(--text-primary); }
+:root[data-theme] :is(.sound-toggle,.nav-settings-btn,.insight-secondary,.rail-controls button,.practice-thumbnail-start,.practice-resource-pill,.practice-thumbnail-resources button,.practice-unlock-skills button) { background-color:var(--control-fill);color:var(--text-primary); }
 :root[data-theme] .practice-thumbnail-unlock .practice-unlock-skills button { --button-haze:transparent;background:color-mix(in srgb,var(--unlock-accent,#fff) 72%,transparent);color:var(--text-primary);border-color:var(--control-rim); }
 :root[data-theme] .practice-thumbnail-unlock .practice-unlock-skills button:hover { background-color:color-mix(in srgb,var(--unlock-accent,#fff) 84%,transparent);color:var(--text-primary); }
 :root[data-theme="dark"] .practice-thumbnail-unlock .practice-unlock-skills button { background-color:color-mix(in srgb,var(--unlock-accent,#fff) 20%,transparent); }

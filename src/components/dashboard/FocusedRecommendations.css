@@ -18,13 +18,24 @@
 /* A taller unlock card must not stretch neighbouring recommendation cards. */
 .practice-thumbnail-rail > .practice-thumbnail:not(.practice-thumbnail-unlock) { align-self:start; }
 
+/* Hide bottom slider / scrollbar while retaining smooth snap and scroll navigation */
+.practice-thumbnail-rail {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.practice-thumbnail-rail::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 /* Card action buttons: Practise CTA and Strategy / Lesson resource pills */
 .practice-thumbnail-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   margin-top: auto;
 }
 
@@ -33,12 +44,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 40px;
-  padding: 8px 22px;
-  font-size: 13.5px;
+  min-height: 38px;
+  padding: 8px 20px;
+  font-size: 13px;
   font-weight: 600;
   border-radius: 999px;
-  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .practice-thumbnail-resources {
@@ -47,49 +58,53 @@
   gap: 8px;
 }
 
-.practice-thumbnail-resources button {
+.practice-thumbnail-resources :is(button, .practice-resource-pill) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid var(--control-rim);
-  background: var(--control-fill);
-  color: var(--text-primary);
+  min-height: 34px !important;
+  height: 34px !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  border: 1px solid rgb(21 19 19 / 24%);
+  background: rgb(255 255 255 / 65%);
+  color: #151313 !important;
   cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  transition: all 160ms ease;
 }
 
-.practice-thumbnail-resources button:hover {
-  background: var(--surface-hover);
-  color: var(--text-primary);
-  text-decoration: none;
+.practice-thumbnail-resources :is(button, .practice-resource-pill):hover {
+  background: rgb(255 255 255 / 90%);
+  color: #151313 !important;
+  text-decoration: none !important;
 }
 
-[data-theme="dark"] .practice-thumbnail-resources button {
-  background: #ffffff14;
-  border-color: #ffffff30;
-  color: var(--text-primary);
+:root[data-theme="dark"] .practice-thumbnail-resources :is(button, .practice-resource-pill) {
+  background: #ffffff14 !important;
+  border: 1px solid #ffffff30 !important;
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .practice-thumbnail-resources button:hover {
-  background: #ffffff26;
-  color: var(--text-primary);
+:root[data-theme="dark"] .practice-thumbnail-resources :is(button, .practice-resource-pill):hover {
+  background: #ffffff26 !important;
+  color: var(--text-primary) !important;
 }
 
 @container (max-width: 450px) {
   .practice-thumbnail-start {
-    padding: 8px 16px;
+    padding: 7px 16px;
     gap: 8px;
-    font-size: 12.5px;
-  }
-  .practice-thumbnail-resources button {
-    padding: 7px 14px;
     font-size: 12px;
     min-height: 34px;
+  }
+  .practice-thumbnail-resources :is(button, .practice-resource-pill) {
+    padding: 6px 13px !important;
+    font-size: 11.5px !important;
+    min-height: 32px !important;
+    height: 32px !important;
   }
 }
