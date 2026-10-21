@@ -1,5 +1,5 @@
 import { setDraftScope } from './drafts.js';
-import { readSpellingActivity, mergeSpellingActivity } from './spelling/store.js';
+import { mergeSpellingActivity } from './spelling/store.js';
 import { serializeAttempt } from './attemptPayload.js';
 import { configureSync, queueAttempt } from './syncQueue.js';
 /**
@@ -34,14 +34,19 @@ const PUBLISHABLE_KEY = CLERK_PUBLISHABLE_KEY;
 
 
 let clerkAuth = null;
+let lastHydratedOwner = '';
 
 export function setClerkAuth(auth) {
   clerkAuth = auth;
+  const currentUserId = auth?.isSignedIn ? auth.userId : '';
   // Bind any on-device Gemini key to the signed-in account.
-  setLocalKeyScope(auth?.isSignedIn ? auth.userId : '');
-  setDraftScope(auth?.isSignedIn ? auth.userId : '');
-  configureSync(auth?.isSignedIn ? auth.userId : '', sendAttemptPayload);
-  if (auth?.isSignedIn) void hydrateSpellingActivity(auth.userId).catch(() => {});
+  setLocalKeyScope(currentUserId);
+  setDraftScope(currentUserId);
+  configureSync(currentUserId, sendAttemptPayload);
+  if (currentUserId && lastHydratedOwner !== currentUserId) {
+    lastHydratedOwner = currentUserId;
+    void hydrateSpellingActivity(currentUserId).catch(() => {});
+  }
 }
 
 // True when a Clerk session can issue tokens for API calls.
@@ -161,18 +166,13 @@ export function syncSpellingActivity(record) {
 }
 export async function hydrateSpellingActivity(owner) {
   if (!owner || owner !== clerkAuth?.userId) return;
-  // Heal any local write that preceded a tab close before it reached the outbox.
-  for(const record of readSpellingActivity(owner)) {
-    if(owner!==clerkAuth?.userId)return;
-    await syncSpellingActivity(record);
-  }
   let cursor='',records=[];
   do {
     const response=await apiFetch(`/api/spelling/activity?after=${encodeURIComponent(cursor)}`);
     if(owner!==clerkAuth?.userId || !response || !Array.isArray(response.records))return;
     records.push(...response.records);cursor=response.nextCursor || '';
   } while(cursor);
-  if(owner===clerkAuth?.userId) mergeSpellingActivity(records,owner);
+  if(owner===clerkAuth?.userId && records.length > 0) mergeSpellingActivity(records,owner);
 }
 
 // ── Lessons ──

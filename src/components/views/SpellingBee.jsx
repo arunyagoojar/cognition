@@ -4,7 +4,7 @@ import {readDraft,writeDraft,getDraftScope} from '../../utils/drafts.js';
 import {createSessionWords,gradeWord,sessionSummary,summarizeActivity,spellingScoreOutOf9,WORD_TIME_MS} from '../../utils/spelling/engine.js';
 import {readSpellingActivity,saveSpellingActivity,SPELLING_EVENT} from '../../utils/spelling/store.js';
 import {dictionaryEntry} from '../../utils/spelling/dictionary.js';
-import {pronounceWord} from '../../utils/spelling/speech.js';
+import {pronounceWord,resolveVoice,getEnglishVoices} from '../../utils/spelling/speech.js';
 import './spellingBee.css';
 import SpellingComparison from './SpellingComparison.jsx';
 
@@ -46,9 +46,19 @@ export default function SpellingBee({onBack}) {
  const [answer,setAnswer]=useState(''),[remaining,setRemaining]=useState(10),[entry,setEntry]=useState(null),[audioError,setAudioError]=useState(''),[saveError,setSaveError]=useState('');
  const [notesLoading,setNotesLoading]=useState(false),[notesRetry,setNotesRetry]=useState(0);
  const [voices,setVoices]=useState([]);
+ const [selectedVoiceId,setSelectedVoiceId]=useState(()=>{
+  try{return localStorage.getItem('cognition_spelling_voice')||'system-default';}
+  catch{return 'system-default';}
+ });
  const sessionRef=useRef(session),input=useRef(null),cancelSpeech=useRef(null),locked=useRef(false);
  sessionRef.current=session;
- const voice=voices.find(v=>v.localService && /^en[-_]GB/i.test(v.lang)) || voices.find(v=>v.localService && /^en/i.test(v.lang));
+ const voice=resolveVoice(voices,selectedVoiceId);
+ const englishVoices=getEnglishVoices(voices);
+ const hasSpeechEngine=typeof window!=='undefined' && 'speechSynthesis' in window;
+ const handleVoiceChange=newId=>{
+  setSelectedVoiceId(newId);
+  try{localStorage.setItem('cognition_spelling_voice',newId);}catch{/* ignore */}
+ };
  const current=session?.words?.[session.results.length];
  const phase=session?.stage;
  const reviewTarget=phase==='review'?session.words[session.results.length-1]?.word:null;
@@ -133,8 +143,8 @@ export default function SpellingBee({onBack}) {
  const active=Object.values(bank).filter(word=>word.status==='learning');
  const checking=Object.values(bank).filter(word=>word.status==='checking');
  const header=<><div className="bee-nav"><button className="harper-back-btn" onClick={onBack}><Icon name="arrowLeft"/>Dashboard</button><span className="pill-badge pill-black">SPELLING BEE</span></div>{!getDraftScope() && <p className="insight-muted bee-guest-note" role="status">Guest mode · Your spelling scores and word bank are saved on this device.</p>}</>;
- if(!session)return <main className="content-container bee-page">{header}<div className="bee-hero"><span className="insight-eyebrow">LISTEN. SPELL. REMEMBER.</span><h1>Small words.<br/>Lasting confidence.</h1><p>A little spelling practice goes a long way. Listen to 30 words, try each spelling, and learn from the ones that catch you out.</p><button className="btn-coral-pill-physical" disabled={!voice} onClick={start}>{sessions.length?'Start a practice session':'Take your first spelling test'} <span aria-hidden="true">→</span></button>{!voice && <p role="status">An installed English voice is needed. Enable an English system voice in your device’s speech settings, then reload.</p>}</div>
- {saveError && <p role="alert">{saveError}</p>}<div className="bee-facts"><div><strong>30 words</strong><span>{sessions.length?'Your word bank + fresh words':'10 easy · 10 medium · 10 difficult'}</span></div><div><strong>10 seconds</strong><span>Per answer, after two pronunciations</span></div><div><strong>Take your time</strong><span>No timer when reviewing a mistake</span></div></div>
+ if(!session)return <main className="content-container bee-page">{header}<div className="bee-hero"><div className="bee-hero-left"><span className="insight-eyebrow">LISTEN. SPELL. REMEMBER.</span><h1>Small words.<br/>Lasting confidence.</h1><p>A little spelling practice goes a long way. Listen to 30 words, try each spelling, and learn from the ones that catch you out.</p><div className="bee-hero-actions"><button className="btn-coral-pill-physical" disabled={!hasSpeechEngine} onClick={start}>{sessions.length?'Start a practice session':'Take your first spelling test'} <span aria-hidden="true">→</span></button>{hasSpeechEngine && englishVoices.length>0 && <div className="bee-voice-config"><label htmlFor="bee-voice-select" className="bee-voice-config-label">Voice:</label><select id="bee-voice-select" className="bee-voice-select" value={selectedVoiceId} onChange={e=>handleVoiceChange(e.target.value)} aria-label="Text-to-speech voice"><option value="system-default">System / Browser default</option>{englishVoices.map(v=><option key={v.voiceURI || v.name} value={v.voiceURI || v.name}>{v.name.replace(/\s*\([^)]*\)/g,'')} ({v.lang})</option>)}</select></div>}</div>{!hasSpeechEngine && <p role="status">Speech synthesis is not supported on this browser. Try a modern browser with text-to-speech support.</p>}</div><div className="bee-facts"><div><strong>30 words</strong><span>{sessions.length?'Word bank + fresh words':'10 easy · 10 medium · 10 difficult'}</span></div><div><strong>10 seconds</strong><span>Per answer, after two pronunciations</span></div><div><strong>Take your time</strong><span>No timer when reviewing a mistake</span></div></div></div>
+ {saveError && <p role="alert">{saveError}</p>}
  <div className="bee-progress-grid"><section className="insight-panel bee-score-card"><span className="insight-eyebrow">YOUR SPELLING SCORE</span><h2 className="bee-large-score">{sessions.length?`${spellingScoreOutOf9(sessions.at(-1)).toFixed(1)}/9`:'—'}</h2><p className="insight-muted">{sessions.length?`${sessions.at(-1).results.filter(r=>r.correct).length}/30 correct · ${sessions.length} ${sessions.length===1?'session':'sessions'} completed`:'Your first test sets your starting point.'} · Separate from your IELTS band.</p>{sessions.length>0 && <button className="insight-secondary" onClick={()=>commit({...sessions.at(-1),words:[],stage:'summary'})}>View last summary →</button>}</section><section className="insight-panel"><span className="insight-eyebrow">YOUR PERSONAL WORD BANK</span>
  <h2>{active.length} to practise · {checking.length} known</h2>
  <p className="insight-muted">A correct answer within 5 seconds moves a word out of regular practice. We recheck it after five other completed sessions. Three quick, correct rechecks remove it from this word bank. A mistake or a slower correct answer brings it back to practice.</p>
@@ -145,14 +155,32 @@ export default function SpellingBee({onBack}) {
  if(phase==='summary') {
   const record=records.find(r=>r.id===session.id) || session;
   const summary=sessionSummary(record,records.filter(r=>r.id!==session.id && r.completedAt<=(record.completedAt || '9999')));
-  return <main className="content-container bee-page">{header}<div className="bee-summary-hero"><span className="pill-badge pill-black">SESSION COMPLETE</span><h1>Your spelling snapshot.</h1><div className="bee-summary-score"><strong>{spellingScoreOutOf9(record).toFixed(1)}<small>/9</small></strong><p>{summary.correct}/30 correct · {30-summary.correct} spelling {30-summary.correct===1?'mistake':'mistakes'} · {Math.round(summary.correct/30*100)}% accuracy<br/><span>Accuracy × 9 · Spelling score only · your IELTS band stays the same.</span></p></div><p className="bee-footnote">{summary.known.length} words moved to occasional checks · {summary.retired.length} learned words removed from the bank.</p><button className="btn-coral-pill-physical" onClick={start}>Practise another 30 →</button></div>{saveError && <p role="alert">{saveError} <button className="insight-secondary" onClick={()=>{try{saveSpellingActivity({...session,kind:'session',source:'spelling-bee',completedAt:new Date().toISOString()});setSaveError('');}catch{/* keep retry available */}}}>Retry save</button></p>}<div className="bee-summary-grid"><ResultList title="Needs a little practice" results={summary.missed} empty="No mistakes this time. Great consistency."/><ResultList title="Quick & correct" results={summary.quick} empty="Quick, correct answers will appear here."/><ResultList title="Correct · keep practising" results={summary.steady} empty="All correct answers were within 5 seconds."/><ResultList title="Getting stronger" results={summary.improving} empty="As you correct earlier mistakes, those words will appear here."/><ResultList title="Removed from your word bank" results={summary.retired} empty="Three quick, correct checks, each after five other sessions, removes a learned word."/></div><button className="insight-secondary" onClick={()=>commit(null)}>Back to Spelling Bee</button></main>;
+  return <main className="content-container bee-page">{header}<div className="bee-summary-hero"><span className="pill-badge pill-black">SESSION COMPLETE</span><h1>Your spelling snapshot.</h1><div className="bee-summary-score"><strong>{spellingScoreOutOf9(record).toFixed(1)}<small>/9</small></strong><p>{summary.correct}/30 correct · {30-summary.correct} spelling {30-summary.correct===1?'mistake':'mistakes'} · {Math.round(summary.correct/30*100)}% accuracy<br/><span>Accuracy × 9 · Spelling score only · your IELTS band stays the same.</span></p></div><p className="bee-footnote">{summary.known.length} words moved to occasional checks · {summary.retired.length} learned words removed from the bank.</p><button className="btn-coral-pill-physical" onClick={start}>Practise another 30 →</button></div>{saveError && <p role="alert">{saveError} <button className="insight-secondary" onClick={()=>{try{saveSpellingActivity({...session,kind:'session',source:'spelling-bee',completedAt:new Date().toISOString()});setSaveError('');}catch{/* keep retry available */}}}>Retry save</button></p>}<div className="bee-summary-grid"><ResultList title="Needs a little practice" results={summary.missed} empty="No mistakes this time. Great consistency."/><ResultList title="Quick & correct" results={summary.quick} empty="Quick, correct answers will appear here."/><ResultList title="Correct · keep practising" results={summary.steady} empty="All correct answers were within 5 seconds."/><ResultList title="Getting stronger" results={summary.improving} empty="As you correct earlier mistakes, those words will appear here."/><ResultList title="Removed from your word bank" results={summary.retired} empty="Three quick, correct checks, each after five other sessions, removes a learned word."/></div><div className="bee-summary-footer"><button type="button" className="insight-secondary bee-summary-exit-btn" onClick={()=>commit(null)}>Back to Spelling Bee</button></div></main>;
  }
  const reviewing=phase==='review',result=session.results.at(-1);
  const reviewWord=(reviewing || phase==='correct')?session.words[session.results.length-1]:current;
  return <main className={`bee-practice-screen ${reviewing?'is-reviewing':''}`}>
   <div className="bee-session-topbar">
    <button type="button" className="harper-back-btn bee-topbar-back" onClick={onBack}><Icon name="arrowLeft"/>Dashboard</button>
-   <span className="pill-badge pill-black bee-topbar-badge">SPELLING BEE</span>
+   <div className="bee-topbar-center">
+    <span className="pill-badge pill-black bee-topbar-badge">SPELLING BEE</span>
+    {englishVoices.length>0 && (
+     <select
+      className="bee-topbar-voice-select"
+      value={selectedVoiceId}
+      onChange={e=>handleVoiceChange(e.target.value)}
+      aria-label="Text-to-speech voice"
+      title="Select text-to-speech voice"
+     >
+      <option value="system-default">System / Browser default</option>
+      {englishVoices.map(v=>(
+       <option key={v.voiceURI || v.name} value={v.voiceURI || v.name}>
+        {v.name.replace(/\s*\([^)]*\)/g,'')} ({v.lang.slice(0,5)})
+       </option>
+      ))}
+     </select>
+    )}
+   </div>
    <span className="bee-counter">Word {Math.min(30,session.results.length+(reviewing || phase==='correct'?0:1))} / 30</span>
   </div>
   <div className={`bee-stage-container ${reviewing?'is-reviewing-stage':''}`}>
