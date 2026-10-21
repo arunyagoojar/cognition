@@ -1,3 +1,4 @@
+import {captureSpellingMistakes} from '../../utils/spelling/capture.js';
 import { useState, useRef, useEffect, useMemo, useDeferredValue, memo, useCallback } from 'react';
 import { CONTENT_CATALOG } from '../../data/production/registry.js';
 import { chooseFreshTest } from '../../utils/practiceSelection.js';
@@ -112,6 +113,7 @@ export default function HarperWritingPractice({onBack}) {
    catch {local={wordCount:countWords(text),targetWords:target,unavailable:true,repeatedWords:finalRepetition.repetitiveWords.map(w=>({word:w.word,count:w.count}))};}
    if(!mounted.current)return;
    setSummary(local);
+   void captureSpellingMistakes([text],'writing-help',local.issues);
    const result=await submitWritingCoaching({text,task,taskKind:kind,testId:currentTask?.testId,localDiagnostics:local,id:submission.current.id});
    if(!mounted.current)return;
    if(result.status==='completed')setReview(result.evaluation);

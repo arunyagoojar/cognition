@@ -15,6 +15,7 @@ export function removeDraft(name) { try { localStorage.removeItem(key(name)); } 
 const SESSION_PREFIXES = {
  reading:['reading:','attempt:reading'], listening:['listening:','attempt:listening'],
  writing:['cognition_writing_active_session','attempt:writing'], speaking:['speaking:','attempt:speaking'],
+ 'spelling-bee':['spelling-bee'],
  'harper-writing':['harper'], drill:['active-drill','drill-session','speaking:drill:'],
  mock:['reading:','listening:','speaking:','cognition_writing_active_session'],
 };

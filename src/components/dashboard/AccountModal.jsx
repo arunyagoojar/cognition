@@ -25,6 +25,9 @@ export default function AccountModal({ isOpen, onClose }) {
 
   const clearLocalData = () => {
     try {
+      localStorage.removeItem(`cognition_spelling_v1:${user.id}`);
+      localStorage.removeItem(`cognition_draft_v2:${user.id}:spelling-bee`);
+      localStorage.removeItem(`cognition_sync_outbox_v2:${user.id}`);
       Object.keys(localStorage)
         .filter(k => k.startsWith('omniprep_'))
         .forEach(k => localStorage.removeItem(k));

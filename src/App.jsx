@@ -19,6 +19,7 @@ const PracticeResourceOverlay = lazy(() => import('./components/common/PracticeR
 const FocusedDrill = lazy(() => import('./components/views/FocusedDrill.jsx'));
 const PerformancePage = lazy(async () => { return import('./components/views/PerformancePage'); });
 const LearningHubPage = lazy(async () => { return import('./components/views/LearningHubPage'); });
+const SpellingBee = lazy(() => import('./components/views/SpellingBee.jsx'));
 const TipsPage = lazy(async () => { return import('./components/views/TipsPage'); });
 const HarperWritingPractice = lazy(async () => { await loadSkillContent('writing'); return import('./components/views/HarperWritingPractice'); });
 import Onboarding from './components/onboarding/Onboarding';
@@ -114,6 +115,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const setView = (next, { completed = false } = {}) => {
     if (next === view) return true;
     const finished = completed || completedSession.current || reviewResult ||
+      (view === 'spelling-bee' && readDraft('spelling-bee')?.stage === 'summary') ||
       (view === 'harper-writing' && readDraft('harper')?.stage === 'summary') ||
       (view === 'drill' && readDraft('drill-session')?.result);
     if (!transitionPracticeSession(view, next, { finished, confirm: message => window.confirm(message) })) return false;
@@ -431,6 +433,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
               onOpenLearningHub={() => setView('learning')}
               onOpenPerformance={() => setView('performance')}
               onOpenTips={openTips}
+              onOpenSpellingBee={() => setView('spelling-bee')}
               onOpenHarperWriting={() => setView('harper-writing')}
               onStartPractice={startSkillProtected}
             />
@@ -457,6 +460,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
             />
           </motion.main>
         )}
+
+        {view === 'spelling-bee' && <motion.div key="spelling-bee" variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={pageTransition}><SpellingBee onBack={() => setView('home')} /></motion.div>}
 
         {view === 'drill' && <motion.div key="drill" variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={pageTransition}><FocusedDrill key={`drill-${drillRequest?.key || 'saved'}`} request={drillRequest} onBack={() => { refreshScores(); setView('performance'); }} onOpenLesson={openLesson} onOpenTips={openTips} /></motion.div>}
         {view === 'performance' && (

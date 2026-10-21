@@ -1,4 +1,5 @@
 import { setDraftScope } from './drafts.js';
+import { readSpellingActivity, mergeSpellingActivity } from './spelling/store.js';
 import { serializeAttempt } from './attemptPayload.js';
 import { configureSync, queueAttempt } from './syncQueue.js';
 /**
@@ -40,6 +41,7 @@ export function setClerkAuth(auth) {
   setLocalKeyScope(auth?.isSignedIn ? auth.userId : '');
   setDraftScope(auth?.isSignedIn ? auth.userId : '');
   configureSync(auth?.isSignedIn ? auth.userId : '', sendAttemptPayload);
+  if (auth?.isSignedIn) void hydrateSpellingActivity(auth.userId).catch(() => {});
 }
 
 // True when a Clerk session can issue tokens for API calls.
@@ -140,6 +142,7 @@ export async function syncAttempt(attempt) {
 }
 
 async function sendAttemptPayload(body) {
+  if(body.type==='spelling_activity') return apiFetchDetail('/api/spelling/activity', {method:'POST',body:JSON.stringify(body.data)});
   let result = await apiFetchDetail(`/api/attempts/${encodeURIComponent(body.id)}`, { method: 'PUT', body: JSON.stringify(body) });
   if (result.status === 404) {
     result = await apiFetchDetail('/api/attempts', { method: 'POST', body: JSON.stringify(body) });
@@ -150,6 +153,26 @@ async function sendAttemptPayload(body) {
 
 export async function fetchAttempts() {
   return apiFetch('/api/attempts', { method: 'GET' });
+}
+
+// Spelling uses the same durable account-scoped outbox as scores.
+export function syncSpellingActivity(record) {
+  return queueAttempt({id:record.id,type:'spelling_activity',data:record});
+}
+export async function hydrateSpellingActivity(owner) {
+  if (!owner || owner !== clerkAuth?.userId) return;
+  // Heal any local write that preceded a tab close before it reached the outbox.
+  for(const record of readSpellingActivity(owner)) {
+    if(owner!==clerkAuth?.userId)return;
+    await syncSpellingActivity(record);
+  }
+  let cursor='',records=[];
+  do {
+    const response=await apiFetch(`/api/spelling/activity?after=${encodeURIComponent(cursor)}`);
+    if(owner!==clerkAuth?.userId || !response || !Array.isArray(response.records))return;
+    records.push(...response.records);cursor=response.nextCursor || '';
+  } while(cursor);
+  if(owner===clerkAuth?.userId) mergeSpellingActivity(records,owner);
 }
 
 // ── Lessons ──

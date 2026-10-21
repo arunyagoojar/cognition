@@ -9036,3 +9036,8 @@ button:disabled { cursor: not-allowed; opacity: .55; }
  .practice-thumbnail-start { padding-inline: 12px; gap: 8px; font-size: 12px; }
  .practice-thumbnail-resources { gap: 10px; }
 }
+
+/* Shared hero entry points: lessons and strategies keep separate routes. */
+.hub-combined-actions { display:flex;gap:10px;flex-wrap:wrap; }
+.hub-combined-actions .btn-tips-outline { color:#151313;border-color:#151313; }
+.hub-combined-footer { flex-wrap:wrap;gap:12px; }

@@ -1,4 +1,4 @@
-const VIEWS = new Set(['home','performance','learning','tips','harper-writing','listening','reading','writing','speaking','mock','drill']);
+const VIEWS = new Set(['home','performance','learning','tips','harper-writing','spelling-bee','listening','reading','writing','speaking','mock','drill']);
 export function readScreenRoute() {
   if (typeof window === 'undefined') return {};
   const [path, query] = window.location.hash.replace(/^#\/?/, '').split('?');

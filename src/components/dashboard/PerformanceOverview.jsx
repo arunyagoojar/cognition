@@ -11,6 +11,7 @@ export default function PerformanceOverview({
   onOpenPerformance,
   onOpenTips,
   onOpenHarperWriting,
+  onOpenSpellingBee,
 }) {
   // Calculate total lessons and completed count
   const allLessons = LEARNING_SKILLS.flatMap(s => s.lessons || []);
@@ -51,63 +52,63 @@ export default function PerformanceOverview({
 
   return (
     <div className="overview-two-col afu-overview">
-      {/* ── LEFT: 3 Distinct Feature Cards (Learning Hub, Tips & Tricks, Harper Writing) ── */}
+      {/* Learning resources share an entry card and keep their own pages. */}
       <div className="hub-cards-stack">
         {/* 1. Learning Hub Card (LAVENDER #BE94F5) */}
         <div className="hub-feature-card is-lavender">
           <div className="hub-feature-top">
             <div className="hub-feature-badge-row">
-              <span className="pill-badge pill-black">LEARNING HUB</span>
+              <span className="pill-badge pill-black">LEARNING HUB + STRATEGIES</span>
               <span className="hub-feature-icon">
                 <Icon name="book" size={15} />
               </span>
             </div>
             <h3 className="hub-feature-heading">Learn Smarter. Improve Faster.</h3>
             <p className="hub-feature-desc">
-              Video lessons and examiner rubric breakdowns across all 4 IELTS skills.
+              Video lessons, examiner secrets, phrase banks, and strategies across all 4 IELTS skills.
             </p>
           </div>
 
-          <div className="hub-feature-bottom">
+          <div className="hub-feature-bottom hub-combined-footer">
             <span className="hub-feature-meta">
               {completedCount} of {totalLessonsCount} lessons · {minutesWatched}m
             </span>
-            <button
+            <div className="hub-combined-actions"><button
               type="button"
               className="btn-coral-pill-physical hub-feature-btn"
               onClick={onOpenLearningHub}
               id="explore-learning-hub-btn"
             >
-              <span>Explore Lessons</span>
+              <span>Lessons</span>
               <span className="btn-arrow-icon">→</span>
-            </button>
+            </button><button type="button" className="btn-tips-outline hub-feature-btn" onClick={() => onOpenTips()} id="open-tips-btn">Tips &amp; Strategies <span aria-hidden="true">→</span></button></div>
           </div>
         </div>
 
-        {/* 2. Tips & Tricks Card (YELLOW #FCCC42) */}
+        {/* 2. Spelling Bee */}
         <div className="hub-feature-card is-yellow">
           <div className="hub-feature-top">
             <div className="hub-feature-badge-row">
-              <span className="pill-badge pill-black">TIPS &amp; STRATEGIES</span>
+              <span className="pill-badge pill-black">SPELLING BEE</span>
               <span className="hub-feature-icon">
                 <Icon name="sparkles" size={15} />
               </span>
             </div>
-            <h3 className="hub-feature-heading">Examiner Secrets &amp; Phrase Bank</h3>
+            <h3 className="hub-feature-heading">Listen. Spell. Build Confidence.</h3>
             <p className="hub-feature-desc">
-              High-band shortcuts, proven paragraph templates, and test-day tactics.
+              A personal spelling workout. Learn from mistakes and turn tricky words into familiar ones.
             </p>
           </div>
 
           <div className="hub-feature-bottom">
-            <span className="hub-feature-meta">Band 8+ Academic Templates</span>
+            <span className="hub-feature-meta">30 words · Your own spelling score</span>
             <button
               type="button"
               className="btn-tips-outline hub-feature-btn"
-              onClick={onOpenTips}
-              id="open-tips-btn"
+              onClick={onOpenSpellingBee}
+              id="open-spelling-bee-btn"
             >
-              <span>View Tips &amp; Tricks</span>
+              <span>Start Spelling Bee</span>
               <span className="btn-arrow-icon">→</span>
             </button>
           </div>

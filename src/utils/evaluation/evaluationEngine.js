@@ -1,3 +1,4 @@
+import {captureSpellingMistakes} from '../spelling/capture.js';
 import { speakingTestContext } from '../speakingContext.js';
 // Canonical Evaluation Engine for Cognition IELTS
 // Executes deterministic checking + AI evaluation pipeline.
@@ -204,6 +205,7 @@ async function resolveWithHybridVerification(allQuestions, answers, itemResults)
  * 3. Reconciliation with disagreement recording.
  */
 export async function evaluateReadingResponses({ passages = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
+  if (typeof window !== 'undefined') void captureSpellingMistakes(Object.values(rawAnswers || {}).filter(value => typeof value === 'string' && value.trim().length > 2), 'reading');
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = passages.flatMap((p,i) => (p.questions || []).map(q => ({...q, part:p.passageNumber || i+1})));
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});
@@ -298,6 +300,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
  * 3. Reconciliation with disagreement recording.
  */
 export async function evaluateListeningResponses({ sections = [], answers: rawAnswers = {}, attemptId: _attemptId = 'anon' }) {
+  if (typeof window !== 'undefined') void captureSpellingMistakes(Object.values(rawAnswers || {}).filter(value => typeof value === 'string' && value.trim().length > 2), 'listening');
   const answeredCount = Object.values(rawAnswers || {}).filter(a => a !== undefined && a !== null && String(a).trim() !== '').length;
   const allQuestions = sections.flatMap((s,i) => (s.questions || []).map(q => ({...q, part:s.part || s.partNumber || i+1})));
   const answers = alignUnorderedAnswers(allQuestions, rawAnswers || {});

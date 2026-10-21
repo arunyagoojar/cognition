@@ -1,3 +1,4 @@
+import { validateSpellingActivity } from '../../src/utils/spelling/activity.js';
 import { loadWritingVisual } from '../../src/utils/harper/writingVisual.js';
 import { prepareWritingCoaching, validateWritingCoaching } from '../../src/utils/harper/writingCoachContract.js';
 import { mergeAttemptData } from '../../src/utils/attemptPayload.js';
@@ -292,6 +293,7 @@ export default {
 
           try {
             await env.DB.batch([
+              env.DB.prepare('DELETE FROM spelling_activity WHERE clerk_user_id = ?').bind(userId),
               env.DB.prepare('DELETE FROM attempts WHERE clerk_user_id = ?').bind(userId),
               env.DB.prepare('DELETE FROM completed_lessons WHERE clerk_user_id = ?').bind(userId),
               env.DB.prepare('DELETE FROM user_ai_credentials WHERE clerk_user_id = ?').bind(userId),
@@ -356,6 +358,21 @@ export default {
             'SELECT target_band, theme FROM users WHERE clerk_user_id = ?'
           ).bind(userId).first();
           return json(user, 200, corsHeaders);
+        }
+
+        // All spelling activity is owned by the verified session, never a body user ID.
+        if (path === '/api/spelling/activity' && request.method === 'GET') {
+          const after = url.searchParams.get('after') || '';
+          const {results} = await env.DB.prepare('SELECT id, data FROM spelling_activity WHERE clerk_user_id = ? AND id > ? ORDER BY id LIMIT 201').bind(userId,after).all();
+          const page=results.slice(0,200);
+          return json({records:page.map(row=>JSON.parse(row.data)),nextCursor:results.length>200?page.at(-1).id:null},200,corsHeaders);
+        }
+        if (path === '/api/spelling/activity' && request.method === 'POST') {
+          const body=await readJson(request,64*1024);
+          const record=validateSpellingActivity(body);
+          if(!record)return error('Invalid spelling activity',400,corsHeaders);
+          await env.DB.prepare('INSERT OR IGNORE INTO spelling_activity (clerk_user_id,id,data,completed_at) VALUES (?,?,?,?)').bind(userId,record.id,JSON.stringify(record),record.completedAt).run();
+          return json({id:record.id,saved:true},200,corsHeaders);
         }
 
         // ── GET /api/attempts — list user's attempts ──

@@ -1,3 +1,4 @@
+import {captureSpellingMistakes} from './spelling/capture.js';
 import { loadWritingVisual } from './harper/writingVisual.js';
 import { planRequestBudget, prepareRequestBudget } from './ai/requestBudget.js';
 import { prepareWritingCoaching, validateWritingCoaching, isCoachingPrompt } from './harper/writingCoachContract.js';
@@ -330,6 +331,7 @@ export function validateWritingEvaluationJson(data, { task1Words = 0, task2Words
  * Runs server-side via the Cloudflare Worker (encrypted credential).
  */
 export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', prompts = {} }) {
+  if (typeof window !== 'undefined') void captureSpellingMistakes([task1Text,task2Text], 'writing');
   const t1Clean = (task1Text || '').trim();
   const t2Clean = (task2Text || '').trim();
 

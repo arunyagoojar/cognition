@@ -1,0 +1,64 @@
+.bee-page { padding-bottom: 60px; }
+.bee-nav,.bee-session-heading,.bee-test-top,.bee-answer-actions,.bee-review-actions { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.bee-nav { margin-bottom:36px; }
+.bee-hero { background:var(--c-yellow);color:#151313;border:1.5px solid #151313;border-radius:var(--r-card);padding:clamp(28px,5vw,64px); }
+.bee-hero h1,.bee-summary-hero h1 { font-size:clamp(32px,4vw,54px);line-height:1.16;letter-spacing:-.04em;margin:14px 0 22px; }
+.bee-hero p { max-width:620px;line-height:1.8;margin:0 0 24px; }
+.bee-hero .insight-eyebrow { color:#151313; }
+.bee-facts { display:grid; grid-template-columns:repeat(3,1fr);margin:24px 0;gap:16px; }
+.bee-facts>div { padding:22px;border:var(--border-subtle);border-radius:20px;display:grid;gap:8px; }
+.bee-facts span,.bee-result-list li span,.bee-bank span { color:var(--text-secondary);font-size:12px;line-height:1.6; }
+.bee-progress-grid,.bee-summary-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0; }
+.bee-progress-grid h2 { margin:18px 0; }
+.bee-large-score { font-size:48px; }
+.bee-page details { padding:14px 0;border-top:var(--border-subtle); }
+.bee-page summary { cursor:pointer;font-weight:600; }
+.bee-bank,.bee-result-list ul { list-style:none;padding:0;margin:16px 0 0; }
+.bee-bank li,.bee-result-list li { padding:12px 0;border-bottom:var(--border-subtle);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;overflow-wrap:anywhere; }
+.bee-footnote { font-size:11px;line-height:1.8;color:var(--text-secondary);margin-top:20px; }
+.bee-footnote a { text-decoration:underline;color:inherit; }
+.bee-session-heading h1 { font-size:clamp(26px,3vw,38px);margin:12px 0;letter-spacing:-.03em; }
+.bee-counter { font-weight:600;white-space:nowrap; }
+.bee-progress { width:100%;height:7px;accent-color:var(--c-lavender);margin:18px 0 26px; }
+.bee-test { max-width:860px;margin:auto;padding:clamp(22px,4vw,44px); }
+.bee-timer { display:flex;gap:8px;align-items:center;font-size:13px; }
+.bee-timer-low { color:var(--error);font-weight:700; }
+.bee-listen { display:flex;flex-direction:column;align-items:center;gap:12px;margin:28px 0; }
+.bee-listen>span { font-size:12px;color:var(--text-secondary); }
+.bee-speaker { width:76px;height:76px;display:grid;place-items:center;border:1.5px solid #151313;border-radius:50%;color:#151313;background:var(--c-lavender);box-shadow:0 4px 0 #151313;cursor:pointer; }
+.bee-speaker:active { transform:translateY(3px);box-shadow:none; }
+.bee-page button:disabled { opacity:.5;cursor:not-allowed; }
+.bee-input-label { display:block;text-align:center;color:var(--text-secondary);font-size:13px; }
+.bee-answer { display:block;width:100%;height:130px;text-align:center;font:600 clamp(25px,4vw,40px) var(--font-family);color:var(--text-primary);caret-color:var(--text-primary);border:0;border-radius:16px;background:transparent;box-shadow:none;margin:8px 0 28px;padding:12px;box-sizing:border-box; }
+.bee-answer:focus { outline:none; }
+.bee-answer:focus-visible { outline:2px dashed var(--c-lavender);outline-offset:-4px; }
+.bee-answer-actions fieldset { border:0;padding:0;margin:0;display:flex;gap:8px; }
+.bee-answer-actions legend { font-size:11px;color:var(--text-secondary);margin-bottom:10px; }
+.bee-answer-actions fieldset button { border:var(--border-subtle);border-radius:999px;padding:10px 16px;background:var(--surface-interactive);color:var(--text-primary);font:600 12px var(--font-family);cursor:pointer;min-height:44px; }
+.bee-answer-actions button[aria-pressed="true"] { background:var(--text-primary);color:var(--bg-card); }
+.bee-page button:focus-visible,.bee-page summary:focus-visible { outline:3px solid var(--c-lavender);outline-offset:4px; }
+.bee-is-correct { background:color-mix(in srgb,var(--success) 12%,var(--bg-card));border-color:var(--success-icon); }
+.bee-correct { min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--success-icon);gap:16px; }
+.bee-correct h2 { font-size:32px;overflow-wrap:anywhere;max-width:100%; }
+.bee-correct p { color:var(--text-primary); }
+.bee-word-title h2 { font-size:clamp(28px,4vw,40px);margin:12px 0;overflow-wrap:anywhere; }
+.bee-word-title p { color:var(--text-secondary);font-size:13px;overflow-wrap:anywhere; }
+.bee-chunks { display:flex;gap:8px;flex-wrap:wrap;margin:22px 0; }
+.bee-chunks span { padding:10px 16px;background:var(--c-yellow);color:#151313;border:1px solid #151313;border-radius:12px;font-size:20px;font-weight:600; }
+.bee-note-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
+.bee-note-grid h3 { font-size:12px;margin-bottom:8px; }
+.bee-note-grid p { font-size:13px;color:var(--text-secondary);line-height:1.8; }
+.bee-review-actions { border-top:var(--border-subtle);margin-top:22px;padding-top:22px; }
+.bee-review-actions button { flex-shrink:0; }
+.bee-summary-hero { background:var(--bg-card);border:var(--border-dark);border-radius:var(--r-card);padding:clamp(24px,4vw,44px); }
+.bee-summary-score { display:flex;align-items:center;gap:28px;margin-bottom:24px; }
+.bee-summary-score>strong { font-size:72px;line-height:1.2; }
+.bee-summary-score small { font-size:24px;color:var(--text-secondary); }
+.bee-summary-score p { font-size:14px;line-height:1.9; }
+.bee-summary-score p span { font-size:12px;color:var(--text-secondary); }
+.bee-result-list h2 { font-size:17px;display:flex;gap:12px;align-items:center; }
+.bee-result-list h2>span { background:var(--surface-sunken);border-radius:999px;padding:5px 10px;font-size:12px; }
+.bee-result-list>p { margin-top:18px; }
+@media(max-width:640px) { .bee-nav{margin-bottom:24px;} .bee-facts,.bee-progress-grid,.bee-summary-grid,.bee-note-grid { grid-template-columns:1fr; } .bee-facts>div{padding:18px;} .bee-answer-actions,.bee-review-actions,.bee-summary-score { align-items:flex-start;flex-direction:column; } .bee-answer-actions>button,.bee-review-actions>button{width:100%;justify-content:center;} .bee-answer{height:110px;} .bee-summary-score{gap:12px;} .bee-counter{font-size:12px;} .bee-session-heading{gap:12px;} .bee-answer-actions fieldset{width:100%;} .bee-answer-actions fieldset button{flex:1;} }
+
+.bee-guest-note { margin: -16px 0 28px; }

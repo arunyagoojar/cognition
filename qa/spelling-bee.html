@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Cognition · Spelling Bee local review</title></head><body><div id="root"></div><script type="module">
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import '/src/index.css';
+import '/src/components/views/spellingBee.css';
+import SpellingBee from '/src/components/views/SpellingBee.jsx';
+import PerformanceOverview from '/src/components/dashboard/PerformanceOverview.jsx';
+import {setDraftScope} from '/src/utils/drafts.js';
+setDraftScope('local-spelling-review');
+document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme') || 'light';
+function Review(){const [view,setView]=React.useState('home');return view==='bee'?React.createElement(SpellingBee,{onBack:()=>setView('home')}):React.createElement('main',{className:'content-container'},React.createElement('div',{className:'bee-nav'},React.createElement('strong',null,'Cognition · local review')),React.createElement(PerformanceOverview,{scores:{},completedLessons:[],targetBand:'8.0',onOpenSpellingBee:()=>setView('bee'),onOpenLearningHub:()=>location.href='/#/learning',onOpenTips:()=>location.href='/#/tips',onOpenHarperWriting:()=>location.href='/#/harper-writing',onOpenPerformance:()=>location.href='/#/performance'}));}
+createRoot(document.getElementById('root')).render(React.createElement(React.StrictMode,null,React.createElement(Review)));
+</script></body></html>
