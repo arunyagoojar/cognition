@@ -18,7 +18,7 @@ try {
  await page.getByRole('button',{name:'Take your first spelling test'}).click();
  await page.waitForFunction(()=>!document.querySelector('#bee-answer')?.disabled);
  await page.getByLabel('Your spelling').fill('becaus');
- await page.getByRole('button',{name:'Check spelling'}).click();
+ await page.getByRole('button',{name:'Submit spelling'}).click();
  await page.getByRole('heading',{name:'because',exact:true}).waitFor();
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('cognition_draft_v2:guest:spelling-bee')).data.results[0].correct),false);
  // A direct visit also works without a session or sign-in dialog.

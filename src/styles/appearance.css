@@ -1,0 +1,121 @@
+/* Light glass: softer versions of the existing palette, with visible rim light. */
+:root:not([data-theme="dark"]) {
+ --light-glass-sheen:linear-gradient(135deg,#ffffff99 0%,#ffffff28 32%,transparent 56%,#ffffff45 100%);
+ --light-glass-shadow:inset 0 1px 0 #ffffffed,inset 1px 0 0 #ffffff70,inset 0 -1px 0 #ffffff70,0 12px 32px #1513130d,0 2px 6px #15131306;
+}
+:root:not([data-theme="dark"]) .app-shell {
+ background-image:radial-gradient(ellipse at 50% 0,#ffffff80,transparent 70%);
+}
+:root:not([data-theme="dark"]) :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card) {
+ background-image:var(--light-glass-sheen);
+ border-color:rgb(21 19 19 / 20%);
+ box-shadow:var(--light-glass-shadow);
+ -webkit-backdrop-filter:blur(24px) saturate(115%);
+ backdrop-filter:blur(24px) saturate(115%);
+}
+:root:not([data-theme="dark"]) :is(.performance-card-offwhite,.insight-panel,.bee-summary-hero,.hub-feature-card.is-harper,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card,.practice-card-white) {
+ background-color:rgb(255 255 255 / 58%);
+}
+:root:not([data-theme="dark"]) :is(.hub-feature-card.is-lavender,.practice-card-lavender) { background-color:color-mix(in srgb,var(--c-lavender) 62%,transparent); }
+:root:not([data-theme="dark"]) :is(.hub-feature-card.is-yellow,.practice-card-yellow,.bee-hero) { background-color:color-mix(in srgb,var(--c-yellow) 62%,transparent); }
+:root:not([data-theme="dark"]) .practice-card-peach { background-color:color-mix(in srgb,var(--c-peach) 72%,transparent); }
+:root:not([data-theme="dark"]) :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card):hover { border-color:rgb(21 19 19 / 32%);box-shadow:var(--light-glass-shadow); }
+
+/* Near-black canvas, quiet glass panels, and the existing brand accents. */
+:root[data-theme="dark"] {
+ color-scheme:dark;
+ --bg-canvas:#0c0d0f;
+ --bg-card:#17181c;
+ --surface:#131417;
+ --surface-elevated:#23252b;
+ --surface-sunken:#101114;
+ --surface-interactive:#24262c;
+ --surface-hover:#303239;
+ --surface-alt:#24262c;
+ --c-pure-white:#17181c;
+ --c-peach:#30201c;
+ --text-primary:#f4f3f0;
+ --text-secondary:#c6c6cd;
+ --text-tertiary:#aaaab5;
+ --text-muted:#aaaab5;
+ --border-color:#44464f;
+ --border-dark:1.5px solid #44464f;
+ --border-subtle:1px solid #ffffff24;
+ --border:1px solid #ffffff24;
+ --border-light:#ffffff14;
+ --glass-panel:rgb(25 26 30 / 84%);
+ --glass-shadow:inset 0 1px 0 #ffffff09,0 10px 30px #00000020;
+ --glass-highlight:linear-gradient(145deg,#ffffff06,transparent 65%);
+}
+:root[data-theme="dark"] .app-shell {
+ background-image:none;
+}
+:root[data-theme="dark"] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-summary-hero,.mock-card-dark-hero,.perf-skill-section-card,.perf-ai-insight-card,.perf-overall-card,.hub-playlist-card,.practice-unlock,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.writing-feedback-frame) {
+ background:var(--glass-highlight),var(--glass-panel);
+ border-color:#ffffff26;
+ box-shadow:var(--glass-shadow);
+ color:var(--text-primary);
+ -webkit-backdrop-filter:blur(16px);
+ backdrop-filter:blur(16px);
+}
+:root[data-theme="dark"] :is(.hub-feature-card.is-lavender,.practice-card-lavender) { background:var(--glass-highlight),rgb(190 148 245 / 12%); }
+:root[data-theme="dark"] :is(.hub-feature-card.is-yellow,.practice-card-yellow,.bee-hero) { background:var(--glass-highlight),rgb(252 204 66 / 10%); }
+:root[data-theme="dark"] .practice-card-peach { background:var(--glass-highlight),rgb(255 87 52 / 10%); }
+:root[data-theme="dark"] .practice-card-white { background:var(--glass-highlight),rgb(94 200 184 / 8%); }
+:root[data-theme="dark"] .bee-hero { color:var(--text-primary);border-color:#fccc4238;box-shadow:var(--glass-shadow); }
+:root[data-theme="dark"] .bee-hero .insight-eyebrow { color:var(--c-yellow); }
+:root[data-theme="dark"] :is(.hub-feature-card:hover,.performance-card-offwhite:hover,.practice-playful-card:hover) { border-color:#ffffff4d; }
+:root[data-theme="dark"] .hub-feature-bottom { border-top-color:#ffffff20; }
+:root[data-theme="dark"] .hub-feature-card :is(.hub-feature-meta,.hub-feature-desc) { color:var(--text-secondary);opacity:1; }
+:root[data-theme="dark"] :is(.btn-tips-outline,.hub-combined-actions .btn-tips-outline) { color:var(--text-primary);border-color:#ffffff40;background:#ffffff08; }
+:root[data-theme="dark"] .btn-tips-outline:hover { background:#ffffff14; }
+:root[data-theme="dark"] .pill-black { background:#ffffff0d;color:var(--text-primary);border-color:#ffffff33; }
+:root[data-theme="dark"] .hub-feature-icon { background:#ffffff12;color:var(--c-lavender); }
+:root[data-theme="dark"] .hub-spelling-score { background:#fccc4212;color:var(--c-yellow);border-color:#fccc4240; }
+:root[data-theme="dark"] :is(.btn-coral-pill-physical,.btn-coral-pill-sm,.btn-coral-large) { background:#ff795b;color:#161312;border-color:#ffac9633;box-shadow:0 3px 0 #00000060; }
+:root[data-theme="dark"] :is(.btn-coral-pill-physical,.btn-coral-pill-sm,.btn-coral-large):hover { background:#ff947c; }
+:root[data-theme="dark"] .pill-coral { background:#ff795b;color:#161312; }
+:root[data-theme="dark"] .skill-row-icon { color:#151313; }
+:root[data-theme="dark"] :is(.unified-nav-header,.top-nav,.contextual-nav-bar) { background:rgb(12 13 15 / 90%);border-color:#ffffff20; }
+:root[data-theme="dark"] .unified-nav-header { -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px); }
+:root[data-theme="dark"] :is(.modal-content,.account-modal-card,.account-menu-dropdown) { background:rgb(26 27 32 / 97%);border-color:#ffffff30;box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px); }
+:root[data-theme="dark"] .bee-chunks span { background:#fccc4217;color:var(--c-yellow);border-color:#fccc4245; }
+:root[data-theme="dark"] .bee-speaker { background:#be94f521;color:var(--c-lavender);border-color:#be94f55c;box-shadow:0 3px 0 #00000050; }
+:root[data-theme="dark"] .practice-thumbnail { background:var(--glass-highlight),color-mix(in srgb,var(--skill-accent) 12%,#111215);border-color:#ffffff30;box-shadow:var(--glass-shadow);color:var(--text-primary); }
+:root[data-theme="dark"] .practice-thumbnail :is(p,.practice-thumbnail-score span,.practice-thumbnail-resources button) { color:var(--text-secondary); }
+:root[data-theme="dark"] .practice-thumbnail-icon { background:#ffffff12; }
+:root[data-theme="dark"] .practice-thumbnail-start { background:#ffffff12;border:1px solid #ffffff30; }
+:root[data-theme="dark"] .practice-thumbnail-start:hover { background:#ffffff24; }
+
+.sound-toggle,.nav-settings-btn { display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:40px;min-height:40px;border:1px solid var(--border-light);border-radius:999px;color:var(--text-secondary);background:var(--surface-interactive); }
+.sound-toggle:hover,.nav-settings-btn:hover { background:var(--surface-hover);color:var(--text-primary); }
+.sound-toggle:focus-visible,.nav-settings-btn:focus-visible { outline:3px solid var(--c-lavender);outline-offset:3px; }
+.sound-toggle.with-label { padding:8px 16px;min-width:82px;font-weight:600;font-size:13px; }
+.sound-setting-row { display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:var(--border-subtle); }
+.sound-setting-title { font-size:14px;font-weight:600; }
+.sound-setting-row p { font-size:12px;color:var(--text-secondary);margin-top:4px; }
+
+/* Remove translucent treatments when the user requests a solid interface. */
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more) {
+ :root:not([data-theme="dark"]) :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.unified-nav-header,.top-nav,.contextual-nav-bar,.modal-content,.account-modal-card,.account-menu-dropdown,.mock-card-dark-hero,.perf-skill-section-card,.perf-ai-insight-card,.perf-overall-card,.hub-playlist-card,.practice-unlock,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.writing-feedback-frame),
+ :root[data-theme="dark"] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.unified-nav-header,.top-nav,.contextual-nav-bar,.modal-content,.account-modal-card,.account-menu-dropdown,.mock-card-dark-hero,.perf-skill-section-card,.perf-ai-insight-card,.perf-overall-card,.hub-playlist-card,.practice-unlock,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.writing-feedback-frame) { -webkit-backdrop-filter:none;backdrop-filter:none;background-image:none; }
+ :root:not([data-theme="dark"]) :is(.performance-card-offwhite,.insight-panel,.bee-summary-hero,.hub-feature-card.is-harper) { background-color:#fff; }
+ :root:not([data-theme="dark"]) { --light-glass-shadow:none; }
+ :root:not([data-theme="dark"]) .app-shell { background-image:none; }
+ :root:not([data-theme="dark"]) :is(.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card,.practice-card-white,.hub-feature-card.is-harper) { background-color:#fff; }
+ :root:not([data-theme="dark"]) :is(.hub-feature-card.is-lavender,.practice-card-lavender) { background-color:var(--c-lavender); }
+ :root:not([data-theme="dark"]) :is(.hub-feature-card.is-yellow,.practice-card-yellow,.bee-hero) { background-color:var(--c-yellow); }
+ :root:not([data-theme="dark"]) .practice-card-peach { background-color:var(--c-peach); }
+ :root:not([data-theme="dark"]) :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card) { border-color:var(--border-color); }
+ :root[data-theme="dark"] { --glass-panel:#191a1e;--glass-highlight:linear-gradient(transparent,transparent); }
+ :root[data-theme="dark"] :is(.hub-feature-card.is-lavender,.practice-card-lavender) { background:#25202f; }
+ :root[data-theme="dark"] :is(.hub-feature-card.is-yellow,.practice-card-yellow,.bee-hero) { background:#262317; }
+ :root[data-theme="dark"] .practice-card-peach { background:#2b1d1a; }
+ :root[data-theme="dark"] .practice-card-white { background:#172420; }
+ :root[data-theme="dark"] :is(.unified-nav-header,.top-nav,.contextual-nav-bar) { background:#0c0d0f; }
+ :root[data-theme="dark"] :is(.modal-content,.account-modal-card,.account-menu-dropdown) { background:#1a1b20; }
+}
+@media (prefers-contrast:more) {
+ :root[data-theme="dark"] { --text-secondary:#eeeef0;--text-muted:#d6d6de;--border-color:#92949c;--border-dark:1.5px solid #92949c; }
+ :root[data-theme="dark"] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card) { border-color:#92949c; }
+}

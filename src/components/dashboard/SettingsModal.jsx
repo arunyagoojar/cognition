@@ -2,6 +2,7 @@ import { useDialog } from '../../hooks/useDialog.js';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Icon from '../common/Icon';
+import SoundToggle from '../common/SoundToggle.jsx';
 import {
   getLegacyLocalKeys,
   removeLegacyLocalKeys,
@@ -212,6 +213,11 @@ export default function SettingsModal({
                 <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={15} />
                 <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
+            </div>
+
+            <div className="sound-setting-row">
+              <div><div className="sound-setting-title">Button sounds</div><p>Quiet feedback when you press a button.</p></div>
+              <SoundToggle showLabel />
             </div>
 
             {/* 2. Target Band Setting */}

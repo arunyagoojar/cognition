@@ -29,7 +29,7 @@ export async function captureSpellingMistakes(texts,source,issues) {
    const ranked=[...new Set(candidates)].sort((a,b)=>editDistance(answer,a)-editDistance(answer,b));
    // Ambiguous corrections are left out instead of guessing the learner's intent.
    if(!ranked.length || ranked[1] && editDistance(answer,ranked[0])===editDistance(answer,ranked[1]))continue;
-   if(!results.some(r=>r.word===ranked[0]))results.push({word:ranked[0],answer,correct:false,confidence:'unsure'});
+   if(!results.some(r=>r.word===ranked[0]))results.push({word:ranked[0],answer,correct:false,responseTimeMs:null});
   }
   if(owner===getDraftScope() && results.length)saveSpellingActivity({id,kind:'capture',source,completedAt:new Date().toISOString(),results},owner);
  }catch(error){console.warn('Spelling capture unavailable; your practice result is saved.',error.message);}

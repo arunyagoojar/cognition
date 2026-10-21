@@ -51,6 +51,7 @@ export default function TopNavigation({ onOpenSettings, onGoHome, onGoBack, view
       </div>
 
       <div className="nav-actions">
+        {!isSignedIn && <button type="button" className="nav-settings-btn" onClick={onOpenSettings} aria-label="Settings" title="Settings"><Icon name="gear" size={18}/></button>}
         {!isLoaded ? null : isSignedIn ? (
           <div className="account-menu-wrap" ref={menuRef}>
             <button

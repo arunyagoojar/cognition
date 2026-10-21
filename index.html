@@ -4,8 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#F5F5F7" />
+  <meta name="theme-color" content="#F7F7F5" />
   <meta name="color-scheme" content="light dark" />
+  <!-- Apply appearance before modules and authentication can show a loader. -->
+  <script>
+    try {
+      const theme = localStorage.getItem('omniprep_theme') === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0c0d0f' : '#F7F7F5';
+    } catch { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <style>
+    html { background: #F7F7F5; }
+    html[data-theme="dark"] { background: #0c0d0f; color-scheme: dark; }
+    body { margin: 0; background: inherit; }
+  </style>
   <meta name="description"
     content="Cognition: High-performance exam preparation for IELTS Academic. Timed mock exams, AI scoring, and comprehensive analytics." />
   <title>Cognition</title>

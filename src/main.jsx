@@ -5,6 +5,10 @@ import './index.css'
 import App from './App.jsx'
 import { CLERK_PUBLISHABLE_KEY as PUBLISHABLE_KEY } from './config.js'
 import { pruneStaleClientData } from './utils/clientDataRetention.js'
+import { installButtonSounds } from './utils/buttonSounds.js'
+
+const removeButtonSounds = installButtonSounds()
+if (import.meta.hot) import.meta.hot.dispose(removeButtonSounds)
 
 // Drop expired in-progress state, stale AI cache entries and orphaned
 // recordings before the app reads any stored state.

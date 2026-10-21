@@ -2,8 +2,15 @@
 .practice-rail-viewport > .practice-thumbnail-rail { align-items: stretch; }
 .practice-thumbnail-unlock .practice-thumbnail-heading { grid-template-columns: 32px minmax(0, 1fr); }
 .practice-thumbnail-unlock > p { max-width: none; }
-.practice-thumbnail-unlock .practice-unlock-skills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:4px; }
-.practice-thumbnail-unlock .practice-unlock-skills button { min-height: 44px; min-width: 0; justify-content: center; padding: 8px 10px; border: 1px solid rgb(21 19 19 / 24%); background: rgb(255 255 255 / 55%); color: #151313; }
+.practice-thumbnail-unlock .practice-unlock-skills { display:flex;flex-wrap:wrap;gap:8px;margin-top:6px; }
+.practice-thumbnail-unlock .practice-unlock-skills button { flex:0 0 auto;min-height:36px;min-width:0;width:auto;justify-content:center;padding:7px 14px;font-size:12px;line-height:1.3;border:1px solid rgb(21 19 19 / 24%);background:rgb(255 255 255 / 55%);color:#151313; }
+.practice-unlock-skills .skill-reading { --unlock-accent:var(--c-lavender); }
+.practice-unlock-skills .skill-listening { --unlock-accent:var(--c-yellow); }
+.practice-unlock-skills .skill-writing { --unlock-accent:var(--c-peach); }
+.practice-unlock-skills .skill-speaking { --unlock-accent:#fff; }
+[data-theme="dark"] .practice-unlock-skills .skill-writing { --unlock-accent:var(--c-coral); }
+[data-theme="dark"] .practice-unlock-skills .skill-speaking { --unlock-accent:var(--c-speaker); }
+@media(pointer:coarse) { .practice-thumbnail-unlock .practice-unlock-skills button { min-height:44px; } }
 .practice-thumbnail-unlock .practice-unlock-skills button:hover { background: rgb(255 255 255 / 85%); }
 .practice-thumbnail-unlock button:focus-visible { outline: 3px solid #151313; outline-offset: 3px; }
 @media (prefers-contrast: more) { .practice-thumbnail-unlock .practice-unlock-skills button { border-color: #151313; background: #fff; } }

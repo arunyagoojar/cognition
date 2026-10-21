@@ -223,6 +223,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0c0d0f' : '#F7F7F5');
     localStorage.setItem('omniprep_theme', theme);
   }, [theme]);
 

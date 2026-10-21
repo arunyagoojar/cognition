@@ -1,0 +1,141 @@
+/* One restrained material for controls, including inline-styled settings buttons. */
+/* Release entrance-animation compositing layers once the entrance finishes. */
+:root[data-theme] :is(.afu-overview,.afu-practice,.afu-mock) { animation-fill-mode:backwards; }
+:root {
+ --haze-strength:70%;
+ --control-sheen:linear-gradient(145deg,#ffffff66, #ffffff12 46%,transparent 80%);
+ --control-rim:rgb(21 19 19 / 23%);
+ --control-shadow:inset 0 1px 0 #ffffffb8,inset 0 -1px 0 #ffffff40,0 2px 6px #1513130a;
+ --control-hover-shadow:inset 0 1px 0 #ffffffdc,inset 0 -1px 0 #ffffff55,0 4px 12px #15131314;
+ --control-fill:rgb(255 255 255 / 35%);
+ --card-haze:#ffffff8c;
+ --button-haze:#ffffff70;
+ --control-top-edge:#ffffffb8;
+ --control-bottom-edge:#ffffff40;
+ --control-depth:#1513130a;
+}
+:root[data-theme="dark"] {
+ --control-sheen:linear-gradient(145deg,#ffffff1f,#ffffff06 48%,transparent 80%);
+ --control-rim:#ffffff40;
+ --control-shadow:inset 0 1px 0 #ffffff29,inset 0 -1px 0 #ffffff0a,0 2px 8px #00000024;
+ --control-hover-shadow:inset 0 1px 0 #ffffff40,inset 0 -1px 0 #ffffff12,0 4px 14px #00000035;
+ --control-fill:#ffffff0d;
+ --card-haze:#ffffff29;
+ --button-haze:#ffffff33;
+ --control-top-edge:#ffffff29;
+ --control-bottom-edge:#ffffff0a;
+ --control-depth:#00000024;
+ --glass-shadow:inset 0 1px 0 #ffffff12,0 10px 30px #00000020,0 0 34px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent);
+}
+:root:not([data-theme="dark"]) {
+ --light-glass-shadow:inset 0 1px 0 #ffffffed,inset 1px 0 0 #ffffff70,inset 0 -1px 0 #ffffff70,0 10px 28px #1513130a,0 0 34px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent);
+}
+:where(button):not(:where([class*="cl-"])) { border-radius:var(--r-btn);background-color:var(--control-fill); }
+:root[data-theme] button:not([class*="cl-"]) {
+ --control-shadow:inset 0 1px 0 var(--control-top-edge),inset 0 -1px 0 var(--control-bottom-edge),0 2px 6px var(--control-depth),0 0 14px color-mix(in srgb,var(--button-haze) var(--haze-strength),transparent);
+ --control-hover-shadow:inset 0 1px 0 var(--control-top-edge),inset 0 -1px 0 var(--control-bottom-edge),0 4px 12px var(--control-depth),0 0 18px color-mix(in srgb,var(--button-haze) var(--haze-strength),transparent);
+ background-image:var(--control-sheen)!important;
+ border-color:var(--control-rim);
+ box-shadow:var(--control-shadow)!important;
+ transition:background-color 160ms ease,color 160ms ease,box-shadow 160ms ease,border-color 160ms ease,translate 160ms ease!important;
+}
+:root[data-theme] button:not([class*="cl-"]):focus-visible { outline:2px solid var(--c-lavender);outline-offset:3px; }
+@media(hover:hover) and (pointer:fine) {
+ :root[data-theme] button:not([class*="cl-"]):not(:disabled):not([aria-disabled="true"]):hover {
+  translate:0 -1px;transform:none!important;box-shadow:var(--control-hover-shadow)!important;
+ }
+}
+:root[data-theme] button:not([class*="cl-"]):not(:disabled):active { translate:0 0;transform:none!important; }
+:root[data-theme] :is(.nav-signin-btn,.btn-coral-pill-physical,.btn-coral-pill-sm,.btn-coral-large,.insight-primary,.exam-nav-btn-next) {
+ --button-haze:color-mix(in srgb,var(--c-coral) 30%,transparent);
+ background-color:color-mix(in srgb,var(--c-coral) 86%,transparent);color:#211713;border-color:rgb(255 255 255 / 44%);
+}
+:root[data-theme] :is(.nav-signin-btn,.btn-coral-pill-physical,.btn-coral-pill-sm,.btn-coral-large,.insight-primary,.exam-nav-btn-next):hover {
+ --button-haze:color-mix(in srgb,var(--c-coral) 40%,transparent);
+ background-color:color-mix(in srgb,var(--c-coral) 94%,transparent);color:#211713;border-color:rgb(255 255 255 / 56%);
+}
+:root:not([data-theme="dark"]) :is(.btn-tips-outline,.hub-combined-actions .btn-tips-outline):hover {
+ background-color:#292629;color:#fff;border-color:#ffffff66;--control-sheen:linear-gradient(145deg,#ffffff1f,transparent 75%);
+}
+:root[data-theme="dark"] :is(.btn-tips-outline,.hub-combined-actions .btn-tips-outline):hover { background-color:#ffffff1f;color:var(--text-primary); }
+:root[data-theme] :is(.sound-toggle,.nav-settings-btn,.insight-secondary,.rail-controls button,.practice-thumbnail-start,.practice-unlock-skills button) { background-color:var(--control-fill);color:var(--text-primary); }
+:root[data-theme] .practice-thumbnail-unlock .practice-unlock-skills button { --button-haze:color-mix(in srgb,var(--unlock-accent,#fff) 30%,transparent);background:color-mix(in srgb,var(--unlock-accent,#fff) 72%,transparent);color:var(--text-primary);border-color:var(--control-rim); }
+:root[data-theme] .practice-thumbnail-unlock .practice-unlock-skills button:hover { background-color:color-mix(in srgb,var(--unlock-accent,#fff) 84%,transparent);color:var(--text-primary); }
+:root[data-theme="dark"] .practice-thumbnail-unlock .practice-unlock-skills button { background-color:color-mix(in srgb,var(--unlock-accent,#fff) 20%,transparent); }
+:root[data-theme="dark"] .practice-thumbnail-unlock .practice-unlock-skills button:hover { background-color:color-mix(in srgb,var(--unlock-accent,#fff) 30%,transparent); }
+
+/* All recommendations share the surrounding cards' glass and soft haze. */
+:root:not([data-theme="dark"]) .practice-thumbnail {
+ background:var(--light-glass-sheen),color-mix(in srgb,var(--skill-accent,var(--c-lavender)) 26%,transparent);
+ border-color:#15131333;box-shadow:var(--light-glass-shadow);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+}
+:root:not([data-theme="dark"]) .practice-thumbnail.practice-thumbnail-unlock { background:var(--light-glass-sheen),rgb(180 200 236 / 32%); }
+:root[data-theme="dark"] .practice-thumbnail { box-shadow:var(--glass-shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px); }
+:root[data-theme="dark"] .practice-thumbnail.practice-thumbnail-unlock { background:var(--glass-highlight),rgb(148 176 232 / 10%);border-color:#ffffff26; }
+:root[data-theme] .practice-thumbnail { --card-haze:color-mix(in srgb,var(--skill-accent,#94b0e8) 16%,transparent); }
+:root[data-theme] .practice-thumbnail-unlock { --card-haze:#94b0e829; }
+:root[data-theme] :is(.hub-feature-card.is-lavender,.practice-card-lavender) { --card-haze:color-mix(in srgb,var(--c-lavender) 36%,transparent); }
+:root[data-theme] :is(.hub-feature-card.is-yellow,.practice-card-yellow,.bee-hero) { --card-haze:color-mix(in srgb,var(--c-yellow) 38%,transparent); }
+:root[data-theme] .practice-card-peach { --card-haze:color-mix(in srgb,var(--c-peach) 45%,transparent); }
+:root[data-theme="dark"] .practice-card-peach { --card-haze:color-mix(in srgb,var(--c-coral) 24%,transparent); }
+:root[data-theme] :is(.hub-feature-card.is-harper,.performance-card-offwhite,.insight-panel,.practice-card-white,.bee-summary-hero,.modal-content,.account-modal-card) { --card-haze:#ffffff8c; }
+:root[data-theme="dark"] :is(.hub-feature-card.is-harper,.performance-card-offwhite,.insight-panel,.practice-card-white,.bee-summary-hero,.modal-content,.account-modal-card) { --card-haze:#ffffff38; }
+/* Resolve shadow variables on each card, after its own haze colour is known. */
+:root:not([data-theme="dark"]) :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card,.practice-thumbnail,.modal-content,.account-modal-card) {
+ --material-halo:0 0 18px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent),0 0 32px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent);
+ --light-glass-shadow:inset 0 1px 0 #ffffffed,inset 1px 0 0 #ffffff70,inset 0 -1px 0 #ffffff70,0 10px 28px #15131312,var(--material-halo);
+}
+:root[data-theme="dark"] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.mock-card-dark-hero,.perf-skill-section-card,.perf-ai-insight-card,.perf-overall-card,.hub-playlist-card,.practice-unlock,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.writing-feedback-frame,.practice-thumbnail,.modal-content,.account-modal-card) {
+ --material-halo:0 0 18px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent),0 0 32px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent);
+ --glass-shadow:inset 0 1px 0 #ffffff12,0 10px 30px #00000020,var(--material-halo);
+}
+:root[data-theme] .practice-thumbnail-unlock { --material-halo:0 0 28px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent); }
+/* The horizontal rail needs paint room above/below and beside each halo. */
+:root[data-theme] .practice-rail-viewport { margin:-16px; }
+:root[data-theme] .practice-thumbnail-rail { padding:32px;scroll-padding-inline:32px; }
+:root[data-theme] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.mock-card-dark-hero):hover { transform:none; }
+/* Keep the mock CTA on its card's paint layer. Translating a hovered child of
+   a backdrop-filtered tile can leave stale rectangular bands in WebKit. */
+:root[data-theme] .mock-card-dark-hero { isolation:isolate; }
+:root[data-theme] #start-mock-exam { translate:none!important;transform:none!important; }
+
+/* Keep the contrasting mock card, with a translucent charcoal material. */
+:root:not([data-theme="dark"]) .mock-card-dark-hero {
+ --card-haze:rgb(21 19 19 / 34%);
+ background:radial-gradient(ellipse at 0 0,#be94f51c,transparent 65%),linear-gradient(140deg,#ffffff16,transparent 65%),rgb(21 19 19 / 89%);
+ border-color:#ffffff60;box-shadow:inset 0 1px 0 #ffffff30,0 10px 30px #15131314,0 0 18px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent),0 0 36px color-mix(in srgb,var(--card-haze) var(--haze-strength),transparent);
+ backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+}
+:root[data-theme="dark"] .mock-card-dark-hero { --card-haze:rgb(190 190 196 / 20%); }
+
+/* Brand mark and modal surfaces use the same material rather than opaque tiles. */
+:root[data-theme] .nav-logo-mark { background:var(--control-sheen),var(--control-fill);border-color:var(--control-rim);box-shadow:var(--control-shadow);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px); }
+:root[data-theme] .nav-brand:hover .nav-logo-mark { transform:none; }
+:root[data-theme] .nav-settings-btn { width:36px;height:36px;min-width:36px;min-height:36px;padding:0;border-radius:50%; }
+:root[data-theme] .nav-signin-btn { height:36px;min-height:36px;line-height:1;padding:0 18px; }
+@media(pointer:coarse) { :root[data-theme] .nav-settings-btn { width:44px;min-width:44px;height:44px;min-height:44px; } :root[data-theme] .nav-signin-btn { height:44px;min-height:44px; } }
+:root:not([data-theme="dark"]) :is(.modal-content,.account-modal-card) {
+ background:var(--light-glass-sheen),rgb(255 255 255 / 78%);border-color:#ffffffb3;box-shadow:var(--light-glass-shadow),0 24px 80px #15131326;
+ backdrop-filter:blur(32px) saturate(115%);-webkit-backdrop-filter:blur(32px) saturate(115%);
+}
+:root[data-theme="dark"] :is(.modal-content,.account-modal-card) {
+ background:linear-gradient(145deg,#ffffff0f,transparent 65%),rgb(26 27 32 / 80%);border-color:#ffffff38;box-shadow:var(--glass-shadow),0 24px 80px #00000040;
+ backdrop-filter:blur(32px) saturate(115%);-webkit-backdrop-filter:blur(32px) saturate(115%);
+}
+
+@media(prefers-reduced-motion:reduce) {
+ :root[data-theme] button:not([class*="cl-"]) { transition:none!important;translate:none!important;transform:none!important; }
+}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more) {
+ :root { --control-sheen:none;--control-fill:var(--surface-interactive);--card-haze:transparent; }
+ :root[data-theme="dark"] { --control-sheen:none;--control-fill:var(--surface-interactive);--card-haze:transparent; }
+ :root[data-theme] :is(.practice-thumbnail,.mock-card-dark-hero,.nav-logo-mark,.modal-content,.account-modal-card) { backdrop-filter:none;-webkit-backdrop-filter:none; }
+ :root[data-theme] button:not([class*="cl-"]) { --button-haze:transparent!important;background-image:none!important; }
+ :root[data-theme] :is(.hub-feature-card,.performance-card-offwhite,.practice-playful-card,.insight-panel,.bee-hero,.bee-summary-hero,.tips-skill-card,.tips-category-card,.tip-card,.coach-bubble,.hub-playlist-card,.writing-feedback-frame,.perf-skill-section-card,.practice-thumbnail,.mock-card-dark-hero,.modal-content,.account-modal-card) { --card-haze:transparent!important; }
+ :root:not([data-theme="dark"]) .practice-thumbnail.practice-thumbnail-unlock { background:#e3eaf5; }
+ :root:not([data-theme="dark"]) .practice-thumbnail:not(.practice-thumbnail-unlock) { background:var(--bg-card); }
+ :root[data-theme="dark"] .practice-thumbnail.practice-thumbnail-unlock { background:#1b202b; }
+ :root:not([data-theme="dark"]) .mock-card-dark-hero { background:#151313; }
+ :root:not([data-theme="dark"]) :is(.modal-content,.account-modal-card) { background:#fff; }
+ :root[data-theme="dark"] :is(.modal-content,.account-modal-card) { background:#1a1b20; }
+}

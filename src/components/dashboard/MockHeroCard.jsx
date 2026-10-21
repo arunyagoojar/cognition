@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 export default function MockHeroCard({ onStartMock }) {
 
   return (
@@ -31,17 +30,15 @@ export default function MockHeroCard({ onStartMock }) {
       </div>
 
       <div className="mock-dark-action-side">
-        <motion.button
-          className="btn-coral-large"
+        <button
+          className="btn-coral-pill-sm"
+          type="button"
           id="start-mock-exam"
           onClick={() => onStartMock()}
-          whileHover={{ y: -3, boxShadow: '0 8px 0 #151313' }}
-          whileTap={{ y: 2, scale: 0.98, boxShadow: '0 2px 0 #151313' }}
-          transition={{ type: 'spring', stiffness: 450, damping: 24 }}
         >
           <span>Start Test</span>
-          <span className="btn-arrow-slide">→</span>
-        </motion.button>
+          <span className="btn-arrow-icon">→</span>
+        </button>
       </div>
     </div>
   );

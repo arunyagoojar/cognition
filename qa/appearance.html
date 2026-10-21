@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Cognition · Appearance review</title></head><body><div id="root"></div><script type="module">
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import '/src/index.css';
+import '/src/components/views/spellingBee.css';
+import PerformanceOverview from '/src/components/dashboard/PerformanceOverview.jsx';
+import PracticeSection from '/src/components/dashboard/PracticeSection.jsx';
+import MockHeroCard from '/src/components/dashboard/MockHeroCard.jsx';
+import FocusedRecommendations from '/src/components/dashboard/FocusedRecommendations.jsx';
+import SpellingComparison from '/src/components/views/SpellingComparison.jsx';
+import SettingsModal from '/src/components/dashboard/SettingsModal.jsx';
+import {installButtonSounds} from '/src/utils/buttonSounds.js';
+import {setDraftScope} from '/src/utils/drafts.js';
+import {PageLoader} from '/src/components/common/Loader.jsx';
+setDraftScope('appearance-review');
+installButtonSounds();
+document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme') || 'light';
+const noop=()=>{};
+function Review(){const [settings,setSettings]=React.useState(false);const [theme,setTheme]=React.useState(document.documentElement.dataset.theme);if(new URLSearchParams(location.search).has('loading'))return React.createElement(PageLoader,{label:'Loading practice content…'});return React.createElement('div',{className:'app-shell'},
+ React.createElement('header',{className:'top-nav'},React.createElement('div',{className:'nav-brand'},React.createElement('div',{className:'nav-logo-mark'},React.createElement('img',{className:'nav-logo-img',src:'/favicon.svg',alt:''})),React.createElement('strong',null,'Cognition')),React.createElement('div',{className:'nav-actions'},React.createElement('button',{className:'nav-settings-btn',onClick:()=>setSettings(true),'aria-label':'Settings'},'⚙'),React.createElement('button',{className:'nav-signin-btn'},'Sign in'))),
+ React.createElement('main',{className:'content-container'},
+ React.createElement(PerformanceOverview,{scores:{},completedLessons:[],targetBand:'8.0',onOpenSpellingBee:noop,onOpenLearningHub:noop,onOpenTips:noop,onOpenHarperWriting:noop,onOpenPerformance:noop}),
+ React.createElement(FocusedRecommendations,{insights:{recommendations:[],missingDetailedSkills:['reading','listening','writing','speaking']},onStartSkill:noop}),
+ React.createElement('section',{className:'insight-panel bee-word-title',id:'comparison'},React.createElement('span',{className:'insight-eyebrow'},'LET’S REMEMBER THIS ONE'),React.createElement(SpellingComparison,{word:'questionnaire',answer:'questionare'})),
+ React.createElement(PracticeSection,{scores:{},targetBand:'8.0',onStartSkill:noop}),
+ React.createElement(MockHeroCard,{onStartMock:noop})),
+ React.createElement(SettingsModal,{isOpen:settings,onClose:()=>setSettings(false),theme,onToggleTheme:()=>{const next=theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;setTheme(next);},targetBand:'8.0',onChangeTargetBand:noop,onResetScores:noop}));}
+createRoot(document.getElementById('root')).render(React.createElement(Review));
+</script></body></html>

@@ -906,7 +906,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
   }
 
   return (
-    <div className="exam-focus-layout" style={{ maxWidth: 1080 }}>
+    <div className="exam-focus-layout" style={{ maxWidth: 1080 }} data-recording={isRecording || undefined}>
       <ScrollToTop />
       <p className="coach-score-note">{nativeAllowed ? 'Browser recognition enabled · browser service may process audio externally' : 'Local speech recognition · audio stays on this device'}</p>
       {!useLocalStt && !nativeAllowed && <label><input type="checkbox" checked={nativeAllowed} onChange={e => setNativeAllowed(e.target.checked)} /> Enable browser recognition to continue; this device cannot run the local model.</label>}
@@ -1028,7 +1028,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
                 {isRecording ? `${FMT(Math.max(PART2_SPEAK_SECONDS - recordSeconds, 0))}` : '02:00'}
               </div>
               {recState === REC_STATE.READY_TO_SPEAK && (
-                <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
+                <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} data-ui-sound="off" style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 15, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
                   <Icon name="mic" size={17} /> Start speaking
                 </button>
               )}
@@ -1123,7 +1123,7 @@ export default function SpeakingModule({ onComplete, onBack, initialTest, testId
               {isRecording ? '● RECORDING' : recState === REC_STATE.COMPLETED && currentRecording ? 'RESPONSE SAVED' : 'READY'}
             </div>
             {!isRecording && !currentRecording && (
-              <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 14.5, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
+              <button type="button" disabled={recordLocked} aria-disabled={recordLocked} onClick={startRecording} data-ui-sound="off" style={{ opacity: recordLocked ? 0.5 : 1,  display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 999, background: '#FF5734', border: '1.5px solid #151313', color: '#151313', fontWeight: 800, fontSize: 14.5, cursor: 'pointer', boxShadow: '0 3px 0 #151313' }}>
                 <Icon name="mic" size={16} /> Record answer
               </button>
             )}
