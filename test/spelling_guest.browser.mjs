@@ -16,7 +16,6 @@ try {
  await page.getByText('Guest mode · Your spelling scores and word bank are saved on this device.').waitFor();
  assert(!await page.getByRole('button',{name:'Sign in to start'}).count());
  await page.getByRole('button',{name:'Take your first spelling test'}).click();
- await page.getByRole('button',{name:'Listen to word',exact:true}).click();
  await page.waitForFunction(()=>!document.querySelector('#bee-answer')?.disabled);
  await page.getByLabel('Your spelling').fill('becaus');
  await page.getByRole('button',{name:'Check spelling'}).click();
@@ -26,7 +25,7 @@ try {
  await page.goto(`${origin}/#/spelling-bee`);
  await page.getByRole('heading',{name:'because',exact:true}).waitFor();
  await page.getByRole('button',{name:'Next word'}).click();
- assert.equal(await page.getByLabel('Your spelling').isDisabled(),true);
+ await page.waitForFunction(()=>!document.querySelector('#bee-answer')?.disabled);
  assert.deepEqual(spellingRequests,[],'guest practice never accesses authenticated spelling endpoints');
  assert.deepEqual(errors,[]);
  console.log('Real app guest checks passed: dashboard entry, no sign-in, audio/answer/review, guest draft persistence, direct route, and no authenticated spelling requests.');

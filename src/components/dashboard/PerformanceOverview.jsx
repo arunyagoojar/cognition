@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
+import {readSpellingActivity,SPELLING_EVENT} from '../../utils/spelling/store.js';
+import {summarizeActivity,spellingScoreOutOf9} from '../../utils/spelling/engine.js';
 import Icon from '../common/Icon';
 import ScoreSummary from './ScoreSummary';
 import { LEARNING_SKILLS } from '../../data/learningCatalog';
@@ -13,6 +15,16 @@ export default function PerformanceOverview({
   onOpenHarperWriting,
   onOpenSpellingBee,
 }) {
+  const [spellingActivity,setSpellingActivity]=useState(readSpellingActivity);
+  useEffect(()=>{
+    const update=()=>setSpellingActivity(readSpellingActivity());
+    window.addEventListener(SPELLING_EVENT,update);window.addEventListener('storage',update);
+    return()=>{window.removeEventListener(SPELLING_EVENT,update);window.removeEventListener('storage',update);};
+  },[]);
+  const latestSpellingSession=summarizeActivity(spellingActivity).sessions.at(-1);
+  const spellingScore=spellingScoreOutOf9(latestSpellingSession);
+  const spellingCorrect=latestSpellingSession?.results.filter(result=>result.correct).length;
+
   // Calculate total lessons and completed count
   const allLessons = LEARNING_SKILLS.flatMap(s => s.lessons || []);
   const totalLessonsCount = allLessons.length;
@@ -90,9 +102,10 @@ export default function PerformanceOverview({
           <div className="hub-feature-top">
             <div className="hub-feature-badge-row">
               <span className="pill-badge pill-black">SPELLING BEE</span>
-              <span className="hub-feature-icon">
-                <Icon name="sparkles" size={15} />
-              </span>
+              <div className="hub-spelling-score" aria-label={spellingScore===null?'Spelling score: not attempted':`Spelling score: ${spellingScore.toFixed(1)} out of 9`}>
+                <strong>{spellingScore===null?'—':spellingScore.toFixed(1)}<small>/9</small></strong>
+                <span>Spelling score</span>
+              </div>
             </div>
             <h3 className="hub-feature-heading">Listen. Spell. Build Confidence.</h3>
             <p className="hub-feature-desc">
@@ -101,7 +114,7 @@ export default function PerformanceOverview({
           </div>
 
           <div className="hub-feature-bottom">
-            <span className="hub-feature-meta">30 words · Your own spelling score</span>
+            <span className="hub-feature-meta">{spellingScore===null?'30 words · Separate from IELTS bands':`${spellingCorrect}/30 correct · Latest session`}</span>
             <button
               type="button"
               className="btn-tips-outline hub-feature-btn"

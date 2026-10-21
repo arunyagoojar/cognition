@@ -9041,3 +9041,9 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .hub-combined-actions { display:flex;gap:10px;flex-wrap:wrap; }
 .hub-combined-actions .btn-tips-outline { color:#151313;border-color:#151313; }
 .hub-combined-footer { flex-wrap:wrap;gap:12px; }
+
+/* Independent spelling accuracy, kept inside the yellow feature card. */
+.hub-spelling-score { display:flex; flex-direction:column; align-items:center; gap:3px; min-width:82px; padding:8px 10px; color:#151313; background:#ffffff55; border:1px solid #151313; border-radius:14px; }
+.hub-spelling-score strong { font-size:25px; line-height:1; font-weight:700; }
+.hub-spelling-score small { font-size:13px; font-weight:500; margin-left:3px; }
+.hub-spelling-score>span { font-size:9px; font-weight:600; }

@@ -1,12 +1,25 @@
 import { WORD_NOTES } from '../../data/spelling/words.js';
 const shards=new Map();
+async function loadShard(directory,letter) {
+ const key=`${directory}:${letter}`;
+ if(!shards.has(key))shards.set(key,fetch(`/spelling/${directory}${letter}.json`).then(r=>{if(!r.ok)throw new Error('Dictionary unavailable');return r.json();}).catch(error=>{shards.delete(key);throw error;}));
+ return shards.get(key);
+}
 export async function dictionaryEntry(word) {
  const letter=word[0]?.toLowerCase();
  if(!/^[a-z]$/.test(letter))return null;
- if(WORD_NOTES[word])return WORD_NOTES[word];
- if(!shards.has(letter))shards.set(letter,fetch(`/spelling/${letter}.json`).then(r=>{if(!r.ok)throw new Error('Dictionary unavailable');return r.json();}).catch(error=>{shards.delete(letter);throw error;}));
- const row=(await shards.get(letter))[word];
- return row?{word,meaning:row[0],example:row[1] || `Write “${word}” once, then cover it and spell it from memory.`,chunks:word.match(/.{1,3}/g),hint:`Build the word in small groups: ${word.match(/.{1,3}/g).join(' · ')}. Cover it and try again.`,origin:'WordNet does not include etymology. No verified Greek root is available for this entry.',source:'WordNet 3.0'}:null;
+ const [definitions,structure]=await Promise.all([loadShard('',letter),loadShard('structure/',letter)]);
+ const row=definitions[word],seed=WORD_NOTES[word],notes=structure[word];
+ if(!row && !seed)return null;
+ return {
+  word,meaning:row?.[0] || seed.meaning,example:seed?.example || row?.[1] || '',
+  meaningSource:row?'Princeton WordNet 3.0':'Cognition teaching notes',
+  syllables:notes?.syllables || [],etymology:notes?.etymology || '',roots:notes?.roots || [],
+  divisionSource:notes?.divisionSource || notes?.source,
+  divisionSourceUrl:notes?.divisionSourceUrl || notes?.sourceUrl,
+  etymologySource:notes?.etymologySource || notes?.source,
+  etymologySourceUrl:notes?.etymologySourceUrl || notes?.sourceUrl,
+ };
 }
 export function editDistance(a,b) {
  if(Math.abs(a.length-b.length)>2)return 3;

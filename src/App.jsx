@@ -115,7 +115,7 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   const setView = (next, { completed = false } = {}) => {
     if (next === view) return true;
     const finished = completed || completedSession.current || reviewResult ||
-      (view === 'spelling-bee' && readDraft('spelling-bee')?.stage === 'summary') ||
+      (view === 'spelling-bee' && (!readDraft('spelling-bee') || readDraft('spelling-bee')?.stage === 'summary')) ||
       (view === 'harper-writing' && readDraft('harper')?.stage === 'summary') ||
       (view === 'drill' && readDraft('drill-session')?.result);
     if (!transitionPracticeSession(view, next, { finished, confirm: message => window.confirm(message) })) return false;

@@ -7,8 +7,8 @@ const url=process.env.SPELLING_BEE_URL || 'http://127.0.0.1:5173/qa/spelling-bee
 const shots=process.env.QA_SCREENSHOTS;
 try {
  await page.addInitScript(()=>{
-  const listeners=new Map();
-  Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[{name:'Test English',lang:'en-GB',localService:true}],addEventListener:(n,f)=>listeners.set(n,f),removeEventListener:n=>listeners.delete(n),cancel(){},speak(speech){setTimeout(()=>speech.onend?.(),40);}}});
+  const listeners=new Map();window.__spokenWords=[];
+  Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[{name:'Test English',lang:'en-GB',localService:true}],addEventListener:(n,f)=>listeners.set(n,f),removeEventListener:n=>listeners.delete(n),cancel(){},speak(speech){window.__spokenWords.push(speech.text);setTimeout(()=>speech.onend?.(),40);}}});
   window.SpeechSynthesisUtterance=class{constructor(text){this.text=text;}};
  });
  await page.goto(url);
@@ -17,38 +17,39 @@ try {
  assert.equal(await page.locator('.hub-feature-card').first().getByRole('button').count(),2);
  if(shots)await page.screenshot({path:`${shots}/bee-dashboard.png`,fullPage:true});
  await page.getByRole('button',{name:'Start Spelling Bee'}).click();
+ await page.clock.install();
  await page.getByRole('button',{name:'Take your first spelling test'}).click();
  const draft=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('cognition_draft_v2:local-spelling-review:spelling-bee')).data);
- let saved=await draft();assert.equal(saved.words.length,30);assert.equal(saved.stage,'ready');
+ let saved=await draft();assert.equal(saved.words.length,30);assert(['ready','speaking'].includes(saved.stage));
  assert.equal(await page.getByLabel('Your spelling').isDisabled(),true);
  assert.equal(await page.getByText('because',{exact:true}).count(),0,'answer stays hidden before submission');
- await page.clock.install();
- await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);
+ await page.clock.runFor(100);assert.equal(await page.getByLabel('Your spelling').isDisabled(),true);assert.equal((await draft()).deadline,null);
+ await page.clock.runFor(400);assert.equal(await page.evaluate(()=>window.__spokenWords.length),2);
  assert.equal(await page.getByLabel('Your spelling').isEnabled(),true);
- assert.equal(await page.getByLabel('Your spelling').evaluate(el=>getComputedStyle(el).borderBottomWidth),'0px');
+ assert(await page.getByLabel('Your spelling').evaluate(el=>parseFloat(getComputedStyle(el).borderBottomWidth)>0),'the typing area has a visible boundary');
  if(shots)await page.screenshot({path:`${shots}/bee-test.png`,fullPage:true});
  await page.getByLabel('Your spelling').fill('becaus');await page.getByRole('button',{name:'Check spelling'}).click();
  assert.equal(await page.getByRole('heading',{name:'because',exact:true}).count(),1);
- assert.equal(await page.getByRole('heading',{name:'Meaning',exact:true}).count(),1);
- assert.equal(await page.getByRole('heading',{name:'Origin / Greek roots',exact:true}).count(),1);
- assert.equal(await page.locator('.bee-chunks').innerText(),'be\ncause');
+ await page.getByRole('heading',{name:'Meaning',exact:true}).waitFor();
+ assert.equal(await page.getByRole('heading',{name:'Roots & origin',exact:true}).count(),1);
+ assert.equal(await page.locator('.bee-chunks').innerText(),'be\ncause');assert(await page.getByRole('link',{name:'English Wiktionary',exact:true}).count()>0);
  await page.clock.fastForward(30000);assert.equal((await draft()).results.length,1,'review stays untimed');
  if(shots)await page.screenshot({path:`${shots}/bee-review.png`,fullPage:true});
  await page.getByRole('button',{name:'Next word'}).click();
  // Timeout is an incorrect answer, even if the typed spelling would have matched.
- await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);
+ await page.clock.runFor(500);
  await page.getByLabel('Your spelling').fill('friend');await page.clock.fastForward(10100);
  assert.equal(await page.getByText('TIME’S UP',{exact:true}).count(),1);assert.equal((await draft()).results.at(-1).correct,false);
  await page.getByRole('button',{name:'Next word'}).click();
  // Replaying does not buy another ten seconds.
- await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);
+ await page.clock.runFor(500);
  const deadline=(await draft()).deadline;await page.clock.fastForward(4000);
  await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);assert.equal((await draft()).deadline,deadline);
- await page.getByLabel('Your spelling').fill('people');await page.getByRole('button',{name:'Confident',exact:true}).click();await page.getByRole('button',{name:'Check spelling'}).click();assert.equal(await page.locator('.bee-is-correct').count(),1);await page.clock.runFor(900);
+ await page.getByLabel('Your spelling').fill('people');await page.getByLabel('Your spelling').press('Enter');assert.equal((await draft()).results.at(-1).confidence,'confident');assert.equal(await page.locator('.bee-is-correct').count(),1);await page.clock.runFor(900);
  // Finish all 30, including an incorrect final answer (which must still show notes).
  for(let index=3;index<30;index++) {
   saved=await draft();assert.equal(saved.results.length,index);
-  await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);
+  await page.clock.runFor(500);
   await page.getByLabel('Your spelling').fill(index===29?'wrong':saved.words[index].word);
   if(index%2)await page.getByRole('button',{name:'Confident',exact:true}).click();
   await page.getByRole('button',{name:'Check spelling'}).click();
@@ -57,7 +58,7 @@ try {
  }
  await page.getByRole('heading',{name:'Your spelling snapshot.'}).waitFor();
  assert.equal((await draft()).results.length,30);
- assert.equal(await page.locator('.bee-summary-score>strong').innerText(),'27/30');
+ assert.equal(await page.locator('.bee-summary-score>strong').innerText(),'8.1/9');
  assert.equal(await page.locator('.bee-result-list').count(),5);
  if(shots)await page.screenshot({path:`${shots}/bee-summary.png`,fullPage:true});
  const activities=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('cognition_spelling_v1:local-spelling-review') || '[]'));
@@ -70,10 +71,12 @@ try {
  if(shots)await page.screenshot({path:`${shots}/bee-dark.png`,fullPage:true});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  // Restore active answer timer on refresh, including an expired deadline.
- await page.getByRole('button',{name:'Listen to word',exact:true}).click();await page.clock.runFor(60);
+ await page.clock.runFor(500);
  await page.evaluate(()=>{const key='cognition_draft_v2:local-spelling-review:spelling-bee';const d=JSON.parse(localStorage.getItem(key));d.data.deadline=Date.now()-1;localStorage.setItem(key,JSON.stringify(d));});
  await page.reload();await page.getByRole('button',{name:'Start Spelling Bee'}).click();await page.getByText('TIME’S UP',{exact:true}).waitFor();
  assert.equal((await draft()).results.length,1);
+ await page.getByRole('button',{name:'Dashboard',exact:true}).click();await page.getByRole('button',{name:'Start Spelling Bee'}).waitFor();assert.equal(await page.locator('.hub-spelling-score strong').innerText(),'8.1/9');
+ if(shots)await page.screenshot({path:`${shots}/bee-dashboard-score.png`,fullPage:true,animations:'disabled'});
  assert.deepEqual(errors,[]);
  console.log('Browser checks passed: combined cards, 30-word test, hidden answers, speech timing, confidence, correct/incorrect feedback, timeout, untimed reviews, final-word notes, score persistence, fresh rotation, expired refresh, mobile and dark mode. Audio mocked for deterministic timing.');
 }catch(error){console.log(errors);console.log(await page.locator('body').innerText());throw error;}finally{await browser.close();}
