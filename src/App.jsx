@@ -397,8 +397,8 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
   return (
     <div className={`app-shell ${isExamFlow ? 'in-exam-flow' : ''}`}>
       <SyncStatus />
-      {/* ── UNIFIED NAVIGATION ARCHITECTURE (HIDDEN DURING ACTIVE EXAM FLOWS) ─────── */}
-      {!isExamFlow && (
+      {/* ── UNIFIED NAVIGATION ARCHITECTURE (HIDDEN DURING ACTIVE EXAM FLOWS & SPELLING BEE) ─────── */}
+      {!isExamFlow && view !== 'spelling-bee' && (
         <header className="unified-nav-header">
           <TopNavigation
             onOpenSettings={() => setSettingsOpen(true)}

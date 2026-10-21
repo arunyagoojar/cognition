@@ -16,9 +16,13 @@ function WordReview({entry,result,loading,onRetry}) {
  return <div className="bee-explanation">
   <div className="bee-word-title"><span className="insight-eyebrow">{result.timedOut?'TIME’S UP':'LET’S REMEMBER THIS ONE'}</span><SpellingComparison word={result.word} answer={result.answer}/></div>
   {entry?<>
-   <h3 className="bee-division-title">Dictionary word division</h3>
-   {entry.syllables.length?<div className="bee-chunks" aria-label="Dictionary word division">{entry.syllables.map((part,i)=><span key={i}>{part}</span>)}</div>:<p className="insight-muted">No word division is supplied by the bundled dictionaries for this word.</p>}
-   <DictionarySource label="Division source" name={entry.divisionSource} url={entry.divisionSourceUrl}/>
+   <div className="bee-division-row">
+    <div className="bee-division-left">
+     <h3 className="bee-division-title">Dictionary word division</h3>
+     {entry.syllables.length?<div className="bee-chunks" aria-label="Dictionary word division">{entry.syllables.map((part,i)=><span key={i}>{part}</span>)}</div>:<p className="insight-muted">No word division is supplied by the bundled dictionaries for this word.</p>}
+    </div>
+    <DictionarySource label="Division source" name={entry.divisionSource} url={entry.divisionSourceUrl}/>
+   </div>
    <div className="bee-note-grid">
     <div><h3>Meaning</h3><p>{entry.meaning}</p><p className="bee-footnote">{entry.meaningSource}</p></div>
     <div><h3>Example</h3><p>{entry.example || 'No example sentence is supplied for this entry.'}</p></div>
@@ -145,9 +149,18 @@ export default function SpellingBee({onBack}) {
  }
  const reviewing=phase==='review',result=session.results.at(-1);
  const reviewWord=(reviewing || phase==='correct')?session.words[session.results.length-1]:current;
- return <main className="content-container bee-page">{header}<div className="bee-session-heading"><div><span className="insight-eyebrow">{sessions.length?'PERSONAL PRACTICE':'YOUR FIRST SPELLING TEST'}</span><h1>One word at a time.</h1></div><span className="bee-counter">Word {Math.min(30,session.results.length+(reviewing || phase==='correct'?0:1))} / 30</span></div><progress className="bee-progress" value={session.results.length} max="30" aria-label="Session progress"/>
- <section className={`insight-panel bee-test ${phase==='correct'?'bee-is-correct':''}`}><div className="bee-test-top"><span className="pill-badge pill-black">{reviewWord?.difficulty || 'PERSONAL WORD'}</span><span className={`bee-timer ${remaining<=3 && phase==='answering'?'bee-timer-low':''}`} role="timer" aria-label={phase==='answering'?`${remaining} seconds remaining`:'Timer paused'}><Icon name="clock"/>{phase==='answering'?`${remaining}s`:reviewing?'No time limit':'10s per word'}</span></div>
- {phase==='correct'?<div className="bee-correct" role="status"><Icon name="check" size={40}/><h2>{result.word}</h2><p>Correct. On to the next word…</p></div>:<><div className="bee-listen"><button className="bee-speaker" data-ui-sound="off" disabled={!voice || phase==='speaking'} onClick={play} aria-label={reviewing?'Replay word':'Listen to word'}><SpeakerIcon/></button><span>{phase==='speaking'?'Listen to the word twice…':phase==='ready'?'Your word will play twice':reviewing?'Hear it again':'Listen again'}</span></div>{audioError && <p className="bee-audio-error" role="alert">{audioError}</p>}
- {reviewing?<><WordReview entry={entry} result={result} loading={notesLoading} onRetry={()=>setNotesRetry(value=>value+1)}/><div className="bee-review-actions"><p className="insight-muted">Take your time. The next word starts when you’re ready.</p><button autoFocus className="btn-coral-pill-physical" onClick={advance}>{session.results.length===30?'See my summary':'Next word'} →</button></div></>:<form onSubmit={e=>{e.preventDefault();submit();}}><label className="bee-input-label" htmlFor="bee-answer">{phase==='ready'?'Listen twice. Then type what you hear.':'Type your spelling here.'}</label><input ref={input} id="bee-answer" className="bee-answer" aria-label="Your spelling" aria-describedby="bee-input-help" placeholder={phase==='answering'?'Type the word here…':'Listen to your word…'} value={answer} onChange={e=>setAnswer(e.target.value)} disabled={phase!=='answering'} autoComplete="off" enterKeyHint="done" autoCorrect="off" autoCapitalize="none" spellCheck={false} maxLength={60}/><div className="bee-answer-actions"><p className="insight-muted" id="bee-input-help">Press Enter or Submit spelling. Correct answers within 5 seconds move to occasional checks.</p><button type="submit" className="btn-coral-pill-physical" disabled={phase!=='answering' || !answer.trim()}>Submit spelling →</button></div></form>}</>}
- </section>{saveError && <p role="alert">{saveError}</p>}</main>;
+ return <main className={`bee-practice-screen ${reviewing?'is-reviewing':''}`}>
+  <div className="bee-session-topbar">
+   <button type="button" className="harper-back-btn bee-topbar-back" onClick={onBack}><Icon name="arrowLeft"/>Dashboard</button>
+   <span className="pill-badge pill-black bee-topbar-badge">SPELLING BEE</span>
+   <span className="bee-counter">Word {Math.min(30,session.results.length+(reviewing || phase==='correct'?0:1))} / 30</span>
+  </div>
+  <div className={`bee-stage-container ${reviewing?'is-reviewing-stage':''}`}>
+   <section className={`insight-panel bee-test ${phase==='correct'?'bee-is-correct':''} ${reviewing?'is-reviewing-card':''}`}><div className="bee-test-top"><span className="pill-badge pill-black">{reviewWord?.difficulty || 'PERSONAL WORD'}</span><span className={`bee-timer ${remaining<=3 && phase==='answering'?'bee-timer-low':''}`} role="timer" aria-label={phase==='answering'?`${remaining} seconds remaining`:'Timer paused'}><Icon name="clock"/>{phase==='answering'?`${remaining}s`:reviewing?'No time limit':'10s per word'}</span></div>
+   {phase==='correct'?<div className="bee-correct" role="status"><Icon name="check" size={40}/><h2>{result.word}</h2><p>Correct. On to the next word…</p></div>:<><div className="bee-listen"><button className="bee-speaker" data-ui-sound="off" disabled={!voice || phase==='speaking'} onClick={play} aria-label={reviewing?'Replay word':'Listen to word'}><SpeakerIcon/></button><span>{phase==='speaking'?'Listen to the word twice…':phase==='ready'?'Your word will play twice':reviewing?'Hear it again':'Listen again'}</span></div>{audioError && <p className="bee-audio-error" role="alert">{audioError}</p>}
+   {reviewing?<><WordReview entry={entry} result={result} loading={notesLoading} onRetry={()=>setNotesRetry(value=>value+1)}/><div className="bee-review-actions"><p className="insight-muted">Take your time. The next word starts when you’re ready.</p><button autoFocus className="btn-coral-pill-physical" onClick={advance}>{session.results.length===30?'See my summary':'Next word'} →</button></div></>:<form onSubmit={e=>{e.preventDefault();submit();}}><label className="bee-input-label" htmlFor="bee-answer">{phase==='ready'?'Listen twice. Then type what you hear.':'Type your spelling here.'}</label><input ref={input} id="bee-answer" className="bee-answer" aria-label="Your spelling" aria-describedby="bee-input-help" placeholder={phase==='answering'?'Type the word here…':'Listen to your word…'} value={answer} onChange={e=>setAnswer(e.target.value)} disabled={phase!=='answering'} autoComplete="off" enterKeyHint="done" autoCorrect="off" autoCapitalize="none" spellCheck={false} maxLength={60}/><div className="bee-answer-actions"><p className="insight-muted" id="bee-input-help">Press Enter or Submit spelling. Correct answers within 5 seconds move to occasional checks.</p><button type="submit" className="btn-coral-pill-physical" disabled={phase!=='answering' || !answer.trim()}>Submit spelling →</button></div></form>}</>}
+   </section>{saveError && <p role="alert">{saveError}</p>}
+  </div>
+  <progress className="bee-progress-edge" value={session.results.length} max="30" aria-label="Session progress"/>
+ </main>;
 }
