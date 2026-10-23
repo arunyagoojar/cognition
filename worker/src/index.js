@@ -237,6 +237,13 @@ async function clerkUserState(env, userId) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const isLocal = url.hostname === 'localhost' || url.hostname.endsWith('.localhost') ||
+      url.hostname === '[::1]' || url.hostname.startsWith('127.');
+    if (url.protocol === 'http:' && !isLocal) {
+      url.protocol = 'https:';
+      // Preserve paths, query strings, and methods (including API POSTs).
+      return Response.redirect(url.href, 308);
+    }
     const path = url.pathname;
     const corsHeaders = resolveCorsHeaders(request, env);
 
@@ -683,6 +690,7 @@ export default {
         return error('Not found', 404, corsHeaders);
       }
 
+      if (env.ASSETS) return env.ASSETS.fetch(request);
       return error('Not found', 404, corsHeaders);
     } catch (e) {
       if (e instanceof BodyError) return error(e.message, e.status, corsHeaders);

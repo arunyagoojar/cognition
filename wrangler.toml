@@ -7,13 +7,19 @@ routes = [
   { pattern = "cognition.eu.cc", custom_domain = true }
 ]
 
+# Keep local requests local instead of adopting the production route hostname.
+[dev]
+host = "localhost"
+upstream_protocol = "http"
+
 # Cognition deploys as a single Worker: static frontend (dist/) + /api routes.
 # Build first with the slim public dir: PUBLIC_DIR_OVERRIDE=public-static VITE_API_BASE_URL= npm run build
 [assets]
 directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "single-page-application"
-run_worker_first = ["/api/*"]
+# Enforce HTTPS before serving either frontend assets or API routes.
+run_worker_first = true
 
 [[d1_databases]]
 binding = "DB"
