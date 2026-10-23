@@ -22,14 +22,16 @@ Cognition is a Vite + React IELTS Academic preparation app deployed entirely on 
 - **Frontend + API**: a single Worker named `cognition` — production URL
   **https://cognition.eu.cc** (custom domain declared in `wrangler.toml` routes).
   `cognition.arunyagoojar.workers.dev` serves the same Worker. Static assets are
-  served from the `[assets]` binding (`dist/`). The Worker runs first for every
-  request to permanently redirect public HTTP URLs to the same HTTPS URL (308),
-  preserving paths, query strings, and request methods. HTTPS assets are then
-  passed through to `ASSETS`; `/api/*` retains its authentication and API routing.
-  HTTP loopback development (`localhost`, `*.localhost`, `127.*`, and `::1`) is
-  exempt; `[dev]` explicitly keeps Wrangler's upstream on HTTP localhost so it
-  does not inherit the production route hostname. This uses a Worker invocation
-  for each asset request as well as APIs.
+  served directly from the `[assets]` binding (`dist/`), without invoking the
+  Worker. Only `/api/*` runs the Worker first. Static asset requests remain free
+  and unlimited; API requests use the normal Workers Free allowance.
+- **HTTPS**: enable **SSL/TLS → Edge Certificates → Always Use HTTPS** for the
+  `cognition.eu.cc` zone in Cloudflare. This free edge setting redirects HTTP to
+  HTTPS before reaching either static assets or the Worker. Do not set
+  `run_worker_first = true` just to implement HTTPS: that would consume Worker
+  requests for every page, script, stylesheet, and image. The API retains a 308
+  redirect as a fallback when directly invoked over public HTTP. Loopback HTTP
+  remains available for development; `[dev]` keeps Wrangler's upstream local.
 - **Auth**: Clerk session tokens are verified in the Worker (RSASSA-PKCS1-v1_5 via
   WebCrypto against the instance JWKS on the Frontend API domain).
 - **User data**: D1 `cognition-db` (id `edd1e971-91b6-4f37-bd9d-b49b763e7b7c`).
@@ -101,12 +103,12 @@ npx wrangler deploy
 ```
 
 The production URL: https://cognition.eu.cc
-(SPA fallback enabled; the Worker checks HTTPS before serving assets or APIs.)
+(SPA fallback enabled; static assets bypass the Worker and only `/api/*` runs it.)
 
 Verify the HTTPS redirect after deployment:
 
 ```bash
-curl -I 'http://cognition.eu.cc/?source=https-check'  # 308 to the same HTTPS URL
+curl -I 'http://cognition.eu.cc/?source=https-check'  # edge redirect to HTTPS
 curl -I 'https://cognition.eu.cc/'                   # 200, no redirect loop
 node test/https_redirect.test.js                    # routing regression checks
 ```

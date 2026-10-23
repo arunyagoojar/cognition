@@ -690,7 +690,6 @@ export default {
         return error('Not found', 404, corsHeaders);
       }
 
-      if (env.ASSETS) return env.ASSETS.fetch(request);
       return error('Not found', 404, corsHeaders);
     } catch (e) {
       if (e instanceof BodyError) return error(e.message, e.status, corsHeaders);

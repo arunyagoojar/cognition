@@ -18,8 +18,9 @@ upstream_protocol = "http"
 directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "single-page-application"
-# Enforce HTTPS before serving either frontend assets or API routes.
-run_worker_first = true
+# Keep static requests free: HTTPS redirects belong at the Cloudflare edge.
+# Only API requests should invoke the Worker before asset serving.
+run_worker_first = ["/api/*"]
 
 [[d1_databases]]
 binding = "DB"
