@@ -1,0 +1,24 @@
+.exam-highlight-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 8px 16px;
+  padding: 6px 24px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+.exam-highlight-tools button {
+  min-height: 36px;
+  padding: 4px 10px;
+  border: var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+}
+.exam-highlight-tools button:disabled { opacity: .45; cursor: default; }
+.exam-highlight-tools button:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
+[data-text-highlighter] { -webkit-user-select: text; user-select: text; }

@@ -15,6 +15,7 @@ import ScrollToTop from '../common/ScrollToTop.jsx';
 import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
+import TextHighlighter from '../common/TextHighlighter.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -655,7 +656,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       )}
 
       {/* ── 4. UNIFIED EXAM FORM (single full-width column) ── */}
-      <div style={{
+      <TextHighlighter key={partIdx} storageKey={`listening:${test?.testId}:${isMockMode}:part-${partIdx}`} style={{
         display: 'flex',
         flexDirection: 'column',
         gap: 20,
@@ -751,7 +752,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
             </div>
           );
         })}
-      </div>
+      </TextHighlighter>
 
       {/* ── 5. UNIVERSAL 3-ZONE EXAM BOTTOM NAVIGATION ── */}
       <ExamBottomNav

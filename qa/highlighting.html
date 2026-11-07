@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>QA · Highlighting</title></head>
+<body><div id="root"></div><script type="module">
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import '/src/index.css';
+  import { loadSkillContent } from '/src/data/production/registry.js';
+  import ReadingModule from '/src/components/modules/ReadingModule.jsx';
+  import ListeningModule from '/src/components/modules/ListeningModule.jsx';
+  import FocusedDrill from '/src/components/views/FocusedDrill.jsx';
+  import { beginPracticeSession } from '/src/utils/drafts.js';
+  const qs = new URLSearchParams(location.search);
+  const skill = qs.get('skill') || 'reading', mode = qs.get('mode') || 'practice';
+  window.__beginPracticeSession = () => beginPracticeSession(mode === 'drill' ? 'drill' : mode === 'mock' ? 'mock' : skill);
+  document.documentElement.dataset.theme = qs.get('theme') || 'light';
+  await loadSkillContent(skill);
+  const testId = skill === 'reading' ? 100 : 185;
+  const props = mode === 'drill'
+    ? { request: { key: `${skill}.part1`, skill, part: 1, testId } }
+    : { testId, initialPhase: 'exam', isMockMode: mode === 'mock' };
+  createRoot(document.getElementById('root')).render(React.createElement(
+    mode === 'drill' ? FocusedDrill : skill === 'reading' ? ReadingModule : ListeningModule,
+    { ...props, onBack: () => {}, onComplete: result => { window.__result = result; } },
+  ));
+</script></body></html>

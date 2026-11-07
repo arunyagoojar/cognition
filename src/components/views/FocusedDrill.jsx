@@ -16,6 +16,7 @@ import QuestionRenderer from '../common/QuestionRenderer.jsx';
 import SpeakingModule from '../modules/SpeakingModule.jsx';
 import WritingCoach, { WritingReview } from './WritingCoach.jsx';
 import { PageLoader } from '../common/Loader.jsx';
+import TextHighlighter from '../common/TextHighlighter.jsx';
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
  const [focus] = useState(()=>request || readDraft('active-drill'));
  const [saved]=useState(()=>{const data=readDraft('drill-session');return data?.focusKey===focus?.key?data:null;});
@@ -66,7 +67,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
     <div className="focused-writing-editor"><label htmlFor="focused-writing-response">Your Task {taskKind} response</label><span>{text.trim()?text.trim().split(/\s+/).length:0} / {taskKind===1?150:250} words</span><textarea id="focused-writing-response" className="coach-draft" rows={12} value={text} onChange={e=>setText(e.target.value)}/></div>
     <WritingCoach focusKey={focus.key} sourceAttemptId={focus.sourceAttemptId} text={text} task={task} taskKind={taskKind} testId={test.testId} onReviewComplete={writingReview=>setResult({writingReview})}/>
    </>}
-  </> : <>
+  </> : <TextHighlighter storageKey={`drill-session:${focus.key}:${test.testId}`}>
    {focus.skill==='reading' && test.passages.map(p=><ReadingPassage key={p.passageNumber} passage={p}/>)}
    {focus.skill==='listening' && test.sections.map((s,i)=><audio key={i} controls src={s.audioFile || test.audio?.appPath}>Audio playback is unavailable.</audio>)}
    {groups.map(g=><ReadingQuestionGroup key={g.groupId} group={g} answers={answers} onAnswer={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}
@@ -76,6 +77,6 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
    }):part.questions.map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}</div>)}
    {!result && <button type="button" className="btn-coral-pill-physical" onClick={submit}>Check this drill</button>}
    {result && <section className="coach-panel" aria-live="polite"><h2>{result.correct}/{result.total} confirmed correct</h2><p>{result.accuracy}% on this question group. This is not a full-test band; uncertain variants need review.</p><ol>{questions.map(q=><li key={q.id}>{q.questionText || `Question ${q.questionNumber}`} — {result.itemResults[q.id].finalResult}. Key: {String(q.answer ?? q.acceptedAnswers?.join(' / ') ?? '')}</li>)}</ol><button onClick={onBack}>Return to your recommendations</button></section>}
-  </>}
+  </TextHighlighter>}
  </div>;
 }

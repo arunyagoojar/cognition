@@ -16,6 +16,7 @@ import { buildAnswerReviewItems } from '../../utils/answerReview.js';
 import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
+import TextHighlighter from '../common/TextHighlighter.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -510,7 +511,8 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       </div>
 
       {/* ── 2. READING WORKSPACE — passage | questions ── */}
-      <div className={`reading-split-panes rd-show-${mobilePane}`} style={{ '--exam-text-scale': textScale }}>
+      <TextHighlighter key={activeSectionIndex} storageKey={`reading:${test?.testId}:${isMockMode}:passage-${activeSectionIndex}`}
+        className={`reading-split-panes rd-show-${mobilePane}`} style={{ '--exam-text-scale': textScale }}>
         <div className="reading-pane rd-pane-passage" ref={passagePaneRef}>
           <div className="rd-sheet">
             <ReadingPassage passage={passage} />
@@ -522,7 +524,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
             <ReadingQuestionGroup key={g.groupId} group={g} answers={answers} onAnswer={setAnswer} />
           ))}
         </div>
-      </div>
+      </TextHighlighter>
 
       {/* ── 3. UNIVERSAL EXAM BOTTOM NAVIGATION ── */}
       <ExamBottomNav
