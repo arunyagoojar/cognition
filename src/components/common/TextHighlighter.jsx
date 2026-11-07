@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Icon } from './Icon.jsx';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import './textHighlighter.css';
 
@@ -14,7 +16,7 @@ function textNodes(root) {
 }
 
 // Paint browser ranges rather than inserting marks into React's question/input DOM.
-export default function TextHighlighter({ storageKey, children, ...props }) {
+export default function TextHighlighter({ storageKey, controlsTarget, children, ...props }) {
   const root = useRef(null);
   const name = `exam-highlight-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
   const draftKey = `${storageKey}:highlights`;
@@ -101,13 +103,13 @@ export default function TextHighlighter({ storageKey, children, ...props }) {
   }, [data, draftKey, supported, update]);
 
   return <>
-    {supported && <div className="exam-highlight-tools">
-      <span>Select text to highlight</span>
-      <button type="button" disabled={!data?.ranges?.length} onClick={() => {
+    {supported && controlsTarget && createPortal(
+      <button type="button" className="exam-highlight-clear" aria-label="Clear highlights"
+        title="Clear highlights. Select text to highlight automatically."
+        disabled={!data?.ranges?.length} onClick={() => {
         window.getSelection()?.removeAllRanges();
         update(null);
-      }}>Clear highlights</button>
-    </div>}
+      }}><Icon name="eraser" size={18} /></button>, controlsTarget)}
     {supported && <style>{`::highlight(${name}) { background-color: #ffe066; color: #151313; }`}</style>}
     <div {...props} ref={root} data-text-highlighter="">{children}</div>
   </>;

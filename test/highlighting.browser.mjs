@@ -23,6 +23,33 @@ try {
     const clear = page.getByRole('button', { name: 'Clear highlights', exact: true });
     await clear.waitFor();
     assert(await clear.isDisabled(), `${skill}/${mode}: highlighting is available by default`);
+    assert.equal(await page.locator('.exam-highlight-tools').count(), 0, 'no separate highlighting row uses content height');
+    assert(await clear.evaluate(el => Boolean(el.closest('header, .exam-focus-header'))), 'clear action lives in the existing header');
+    assert.match(await clear.getAttribute('title'), /Select text to highlight/);
+    const checkHeaderLayout = async () => {
+      const bounds = await clear.evaluate(el => {
+        const b = el.getBoundingClientRect(), h = el.closest('header, .exam-focus-header').getBoundingClientRect();
+        const size = el.closest('.exam-header-reading-tools')?.querySelector('.text-size-control')?.getBoundingClientRect();
+        return { left: b.left, right: b.right, top: b.top, bottom: b.bottom, height: b.height,
+          headerTop: h.top, headerBottom: h.bottom, viewport: innerWidth, gap: size ? b.left - size.right : null };
+      });
+      assert(bounds.left >= 0 && bounds.right <= bounds.viewport, 'header action fits the viewport');
+      assert(bounds.top >= bounds.headerTop && bounds.bottom <= bounds.headerBottom, 'header contains the action');
+      assert(bounds.height >= 40, 'eraser has a usable hit target');
+      if (bounds.gap !== null) assert(bounds.gap >= 15.5, 'text size and eraser have 16px spacing');
+    };
+    await checkHeaderLayout();
+    if (mode !== 'drill') {
+      const heights = await clear.evaluate(el => {
+        const header = el.closest('.exam-focus-header'), slot = el.parentElement;
+        const withButton = header.getBoundingClientRect().height;
+        slot.style.display = 'none';
+        const withoutButton = header.getBoundingClientRect().height;
+        slot.style.removeProperty('display');
+        return { withButton, withoutButton };
+      });
+      assert.equal(heights.withButton, heights.withoutButton, 'desktop header height stays unchanged');
+    }
     const painted = () => page.evaluate(() => [...CSS.highlights.values()].flatMap(highlight => [...highlight].map(range => range.toString())).join(''));
     if (skill === 'reading' && mode === 'practice') {
       const bounds = await page.locator('.rd-para').first().evaluate(el => {
@@ -94,6 +121,7 @@ try {
     assert.equal(await painted(), highlight, 'refresh restores saved highlights');
     // Compact layout and dark theme use the same feature.
     await page.setViewportSize({ width: 390, height: 844 });
+    await checkHeaderLayout();
     await page.evaluate(() => { document.documentElement.dataset.theme = 'dark'; });
     await page.waitForTimeout(250); // Let the existing theme transition finish before visual QA.
     assert.equal(await painted(), highlight);
@@ -110,6 +138,10 @@ try {
     await page.evaluate(() => window.__beginPracticeSession());
     await page.reload({ waitUntil: 'domcontentloaded' }); await clear.waitFor();
     assert.equal(await painted(), '', 'starting a fresh session discards old highlights');
+    for (const width of [1100, 768, 320]) {
+      await page.setViewportSize({ width, height: 844 });
+      await checkHeaderLayout();
+    }
     await context.close();
     console.log(`PASS ${skill}/${mode}: default selection, overlap, answers, navigation, refresh, compact/dark, clear`);
   }

@@ -43,6 +43,12 @@ export default function Icon({ name, size = 16, className = '' }) {
       </>
     ),
     check: <polyline points="20 6 9 17 4 12" />,
+    eraser: (
+      <>
+        <path d="m16 3 5 5a2 2 0 0 1 0 3L11 21H7l-4-4a2 2 0 0 1 0-3L13 3a2 2 0 0 1 3 0Z" />
+        <path d="m7 10 8 8M11 21h10" />
+      </>
+    ),
     x: (
       <>
         <line x1="18" y1="6" x2="6" y2="18" />

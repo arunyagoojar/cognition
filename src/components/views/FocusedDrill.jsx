@@ -18,6 +18,7 @@ import WritingCoach, { WritingReview } from './WritingCoach.jsx';
 import { PageLoader } from '../common/Loader.jsx';
 import TextHighlighter from '../common/TextHighlighter.jsx';
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
+ const [highlightControls, setHighlightControls] = useState(null);
  const [focus] = useState(()=>request || readDraft('active-drill'));
  const [saved]=useState(()=>{const data=readDraft('drill-session');return data?.focusKey===focus?.key?data:null;});
  const [test,setTest]=useState(null), [error,setError]=useState(''), [answers,setAnswers]=useState(()=>saved?.answers || {}), [result,setResult]=useState(()=>saved?.result || null), [text,setText]=useState(()=>saved?.text || '');
@@ -56,6 +57,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
  return <div className="content-container">
   <button type="button" onClick={onBack}>Back to Performance</button>
   <header className="focused-practice-heading"><div><span className="insight-eyebrow">FOCUSED PRACTICE</span><h1>{focus.title || 'Focused practice'}</h1><p>Only this {focus.skill==='writing'?'task':'part'} · tracked separately from your full-test band</p></div><div className="insight-links">
+   {['reading','listening'].includes(focus.skill) && <div className="exam-highlight-slot" ref={setHighlightControls} />}
    {focus.resources?.tip && <button type="button" onClick={()=>onOpenTips?.(focus.resources.tip.skill,focus.resources.tip.categoryId,focus.resources.tip.tipId)}>Strategy</button>}
    {focus.resources?.lesson && <button type="button" onClick={()=>onOpenLesson?.(focus.resources.lesson.id)}>Lesson</button>}
   </div></header>
@@ -67,7 +69,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
     <div className="focused-writing-editor"><label htmlFor="focused-writing-response">Your Task {taskKind} response</label><span>{text.trim()?text.trim().split(/\s+/).length:0} / {taskKind===1?150:250} words</span><textarea id="focused-writing-response" className="coach-draft" rows={12} value={text} onChange={e=>setText(e.target.value)}/></div>
     <WritingCoach focusKey={focus.key} sourceAttemptId={focus.sourceAttemptId} text={text} task={task} taskKind={taskKind} testId={test.testId} onReviewComplete={writingReview=>setResult({writingReview})}/>
    </>}
-  </> : <TextHighlighter storageKey={`drill-session:${focus.key}:${test.testId}`}>
+  </> : <TextHighlighter controlsTarget={highlightControls} storageKey={`drill-session:${focus.key}:${test.testId}`}>
    {focus.skill==='reading' && test.passages.map(p=><ReadingPassage key={p.passageNumber} passage={p}/>)}
    {focus.skill==='listening' && test.sections.map((s,i)=><audio key={i} controls src={s.audioFile || test.audio?.appPath}>Audio playback is unavailable.</audio>)}
    {groups.map(g=><ReadingQuestionGroup key={g.groupId} group={g} answers={answers} onAnswer={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}

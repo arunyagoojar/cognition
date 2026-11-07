@@ -46,6 +46,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   // Compact widths show one pane at a time; regular widths show both side by side.
   const [mobilePane, setMobilePane] = useState('passage');
   const [textScale, setTextScale] = useExamTextScale();
+  const [highlightControls, setHighlightControls] = useState(null);
   const passagePaneRef = useRef(null);
   const questionPaneRef = useRef(null);
 
@@ -425,7 +426,10 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
         </div>
 
         <div className="exam-focus-header-right">
-          <TextSizeControl scale={textScale} onChange={setTextScale} />
+          <div className="exam-header-reading-tools">
+            <TextSizeControl scale={textScale} onChange={setTextScale} />
+            <div className="exam-highlight-slot" ref={setHighlightControls} />
+          </div>
 
           {!isMockMode && (
             <button
@@ -511,7 +515,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
       </div>
 
       {/* ── 2. READING WORKSPACE — passage | questions ── */}
-      <TextHighlighter key={activeSectionIndex} storageKey={`reading:${test?.testId}:${isMockMode}:passage-${activeSectionIndex}`}
+      <TextHighlighter key={activeSectionIndex} controlsTarget={highlightControls} storageKey={`reading:${test?.testId}:${isMockMode}:passage-${activeSectionIndex}`}
         className={`reading-split-panes rd-show-${mobilePane}`} style={{ '--exam-text-scale': textScale }}>
         <div className="reading-pane rd-pane-passage" ref={passagePaneRef}>
           <div className="rd-sheet">

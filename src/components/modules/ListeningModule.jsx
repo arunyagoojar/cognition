@@ -20,6 +20,7 @@ import TextHighlighter from '../common/TextHighlighter.jsx';
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
+  const [highlightControls, setHighlightControls] = useState(null);
   const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
   const [savedSession] = useState(() => readDraft(`listening:${test?.testId || testId}:${isMockMode}`));
   const [phase, setPhase] = useState(() => initialResult || savedSession?.result ? 'results' : savedSession?.phase === 'exam' ? 'exam' : initialPhase); // intro | exam | processing | results
@@ -475,6 +476,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
         </div>
 
         <div className="exam-focus-header-right">
+          <div className="exam-highlight-slot" ref={setHighlightControls} />
           {!isMockMode && (
             <button
               type="button"
@@ -656,7 +658,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
       )}
 
       {/* ── 4. UNIFIED EXAM FORM (single full-width column) ── */}
-      <TextHighlighter key={partIdx} storageKey={`listening:${test?.testId}:${isMockMode}:part-${partIdx}`} style={{
+      <TextHighlighter key={partIdx} controlsTarget={highlightControls} storageKey={`listening:${test?.testId}:${isMockMode}:part-${partIdx}`} style={{
         display: 'flex',
         flexDirection: 'column',
         gap: 20,
