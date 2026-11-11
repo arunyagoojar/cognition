@@ -560,9 +560,9 @@ test('VERIFICATION', '7. Meaning-changing time unit is MISMATCH', () => {
   assert.equal(res.result, DETERMINISTIC.MISMATCH);
 });
 
-test('VERIFICATION', '8. Singular vs plural routes to UNCERTAIN for semantic check', () => {
+test('VERIFICATION', '8. Regular singular/plural forms match without semantic verification', () => {
   const res = evaluateDeterministic('beginner', 'Beginners');
-  assert.equal(res.result, DETERMINISTIC.UNCERTAIN);
+  assert.equal(res.result, DETERMINISTIC.MATCH);
 });
 
 test('VERIFICATION', '9. Word-vs-digit number is the same answer (deterministic MATCH)', () => {
@@ -737,12 +737,12 @@ await asyncTest('PIPELINE', '12. Reading & Listening evaluation returns explicit
     title: 'Test Passage',
     questions: [
       { id: 'q1', answer: 'library', questionType: 'sentence_completion' },
-      { id: 'q2', answer: 'Beginners', questionType: 'sentence_completion' }
+      { id: 'q2', answer: 'city', questionType: 'sentence_completion' }
     ]
   }];
   const answers = {
     q1: 'library',
-    q2: 'beginner'
+    q2: 'citys'
   };
   const res = await evaluateReadingResponses({ passages, answers, attemptId: 'test-run' });
   assert.equal(res.raw, 1);

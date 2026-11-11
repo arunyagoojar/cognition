@@ -22,6 +22,11 @@
   const reviewResult = { testId, status: 'completed', band: 6, raw: 24, total: 40, percentage: 60,
     answers: Object.fromEntries(questions.map((q, i) => [q.id, i % 2 ? '' : q.answer])),
     itemResults: Object.fromEntries(questions.map((q, i) => [q.id, { officialAnswer: q.answer, candidateAnswer: i % 2 ? '' : q.answer, finalResult: i % 2 ? 'INCORRECT' : 'CORRECT' }])) };
+  if (qs.get('manual') === '1') {
+    const id = questions[0].id;
+    reviewResult.answers[id] = 'compass needle';
+    reviewResult.itemResults[id] = { ...reviewResult.itemResults[id], candidateAnswer: 'compass needle', finalResult: 'INCORRECT' };
+  }
   const props = mode === 'drill'
     ? { request: { key: `${skill}.part1`, skill, part: 1, testId } }
     : { testId, initialPhase: 'exam', isMockMode: mode === 'mock' };

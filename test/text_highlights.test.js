@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { addTextHighlights, changeTextHighlights, highlightAnchors, removeTextHighlight, resolveTextHighlights, undoTextHighlights } from '../src/utils/textHighlights.js';
+import { addTextHighlights, changeTextHighlights, highlightAnchors, removeTextHighlight, resolveTextHighlights, undoTextHighlights, redoTextHighlights } from '../src/utils/textHighlights.js';
 
 const text = '0 of 2 selected. Alpha passage phrase. Question wording. Beta passage phrase.';
 const first = text.indexOf('Alpha'), second = text.indexOf('Beta');
@@ -38,3 +38,10 @@ history = undoTextHighlights(history);
 assert.equal(highlightAnchors(history).length, originalCount);
 assert.equal(changeTextHighlights(history, { anchors: highlightAnchors(history) }), history, 'no-op selections do not consume Undo history');
 console.log('Individual removal, Undo, clear recovery, persisted history and no-op changes passed.');
+
+const cleared = changeTextHighlights(history, null);
+const undone = undoTextHighlights(cleared);
+const redone = redoTextHighlights(JSON.parse(JSON.stringify(undone)));
+assert.equal(highlightAnchors(redone).length, 0, 'Redo restores erasure after serialization');
+assert.equal(highlightAnchors(undoTextHighlights(redone)).length, originalCount);
+assert.equal(redoTextHighlights(changeTextHighlights(undone, removeTextHighlight(undone,0))).redo.length,0,'new changes discard the redo branch');

@@ -67,6 +67,20 @@ try {
   assert(await row(6).evaluate(el => el.classList.contains('is-correct')));
   assert.match(await row(7).locator('.ar-row').first().textContent(), /C · goats/);
   assert.match(await row(8).locator('.ar-row').first().textContent(), /A · fish/);
+  const mark = row(7).getByRole('button',{name:/Mark as correct/});
+  const beforeScore=await page.getByRole('status').filter({hasText:/correct.*Manual corrections/}).textContent();
+  await mark.click();
+  assert.match(await row(7).textContent(),/Manually corrected/);
+  const afterScore=await page.getByRole('status').filter({hasText:/correct.*Manual corrections/}).textContent();
+  assert.equal(parseInt(afterScore),parseInt(beforeScore)+1,'manual credit increases this attempt by exactly one');
+  assert.equal(await row(1).getByRole('button',{name:/Mark as correct/}).count(),0,'blank answers cannot be credited');
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.getByRole('button',{name:'Review answers',exact:true}).click();
+  assert.match(await row(7).textContent(),/Manually corrected/,'correction survives refresh');
+  await row(7).getByRole('button',{name:/Undo correction for/}).click();
+  assert(!/Manually corrected/.test(await row(7).textContent()));
+  const undoScore=await page.getByRole('status').filter({hasText:/correct.*Manual corrections/}).textContent();
+  assert.equal(parseInt(undoScore),parseInt(beforeScore),'Undo restores the recorded score');
   console.log('PASS Reading 235: skipped slots, Q6/B, independent choices, Q11/FALSE, contextual variants, complete questions and summary blocks.');
 
   await page.evaluate(() => localStorage.clear());
@@ -92,13 +106,20 @@ try {
   console.log('PASS Highlight stress: 500 marks, legacy draft migration, changed answer counter, and refresh.');
 
   await page.evaluate(() => localStorage.clear());
-  await page.goto(`${base}?skill=listening&mode=review`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`${base}?skill=listening&mode=review&manual=1`, { waitUntil: 'domcontentloaded' });
   await page.getByRole('button', { name: 'Review answers', exact: true }).click();
   for (const n of [1, 2, 3, 4]) {
     await page.getByRole('button', { name: `Part ${n}`, exact: true }).click();
     assert(await page.locator('.review-source-questions input, .review-source-questions select').count() > 0);
   }
   assert.equal(await page.locator('.answer-review-item').count(), 40);
+  const listeningRow=page.locator('.answer-review-item').first();
+  await listeningRow.getByRole('button',{name:/Mark as correct/}).click();
+  assert.match(await listeningRow.textContent(),/Manually corrected/);
+  assert.match(await page.getByRole('status').filter({hasText:/correct.*Manual corrections/}).textContent(),/^25\/40/);
+  await listeningRow.getByRole('button',{name:/Undo correction for/}).click();
+  assert.match(await page.getByRole('status').filter({hasText:/correct.*Manual corrections/}).textContent(),/^24\/40/);
+
   await page.getByRole('button', { name: 'Back to summary', exact: false }).first().click();
   await page.getByRole('button', { name: 'Review answers', exact: true }).waitFor();
   assert.deepEqual(errors, [], 'no browser runtime errors');

@@ -1,7 +1,7 @@
 /**
  * Phase 5 — Hybrid objective-answer evaluation tests.
  * The official answer key stays authoritative; the deterministic tier handles
- * exact + variant matches, plural/number-format differences route to AI.
+ * exact, formatting, regular inflections and number variants match directly.
  */
 import assert from 'node:assert/strict';
 import { evaluateDeterministic, officialAnswerVariants, DETERMINISTIC } from '../src/utils/bandCalculator.js';
@@ -73,11 +73,30 @@ t('written-word variants accept optional articles and presentation without chang
   assert.equal(evaluateDeterministic('you know need', 'need', { wordLimit: 'NO MORE THAN THREE WORDS' }).result, DETERMINISTIC.MISMATCH);
   assert.equal(evaluateDeterministic('needs', ['need','needs']).result, DETERMINISTIC.MATCH);
 });
-t('singular vs plural → UNCERTAIN (AI decides with context, never auto-accept)', () => {
-  assert.equal(evaluateDeterministic('beginner', 'Beginners').result, DETERMINISTIC.UNCERTAIN);
+t('regular singular/plural endings match deterministically', () => {
+  assert.equal(evaluateDeterministic('beginner', 'Beginners').result, DETERMINISTIC.MATCH);
 });
-t('plural mismatch direction: "Beginners" vs "beginner" → UNCERTAIN', () => {
-  assert.equal(evaluateDeterministic('Beginners', 'beginner').result, DETERMINISTIC.UNCERTAIN);
+t('regular plural equivalence works in both directions', () => {
+  assert.equal(evaluateDeterministic('Beginners', 'beginner').result, DETERMINISTIC.MATCH);
+});
+t('shared matching rules handle compound spelling, identifiers and inflections beyond individual keys', () => {
+  const pairs = [
+    ['subsoil','sub soil'], ['greenhouse','green house'], ['north-west','north west'],
+    ['bookcase','book-case'], ['PE97QT','pe9 7qt'], ['AB12CD','AB1 2CD'],
+    ['ice cream cone','icecream cone'], ['bedroom furniture','bed room furniture'],
+    ['eight','8'], ['forty-two','42'], ['need','needs'], ['box','boxes'],
+    ['city','cities'], ['plant root','plant roots'],
+  ];
+  for (const [a,b] of pairs) {
+    assert.equal(evaluateDeterministic(a,b).result, DETERMINISTIC.MATCH, `${a} / ${b}`);
+    assert.equal(evaluateDeterministic(b,a).result, DETERMINISTIC.MATCH, `${b} / ${a}`);
+  }
+  for (const [a,b] of [['PE97QT','PE98QT'], ['eight','80'], ['subsoil','topsoil'], ['car','carpet'], ['city','cities centre'], ['plant root','tree roots'], ['no where','now here']]) {
+    assert.notEqual(evaluateDeterministic(a,b).result, DETERMINISTIC.MATCH, `${a} must not match ${b}`);
+  }
+  assert.notEqual(evaluateDeterministic('sub soil','subsoil',{wordLimit:'ONE WORD ONLY'}).result, DETERMINISTIC.MATCH);
+  assert.notEqual(evaluateDeterministic('plant roots','plant root',{wordLimit:'ONE WORD ONLY'}).result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('needs',['need','needs']).matchedAnswer, 'needs', 'explicit exact key entry takes priority');
 });
 t('am/pm swap is MISMATCH — never accepted', () => {
   assert.equal(evaluateDeterministic('11 pm', '11 am').result, DETERMINISTIC.MISMATCH);

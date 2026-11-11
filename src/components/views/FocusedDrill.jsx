@@ -1,3 +1,6 @@
+import { correctReviewedAnswer } from '../../utils/manualAnswerCorrection.js';
+import { buildAnswerReviewItems } from '../../utils/answerReview.js';
+import AnswerReviewList from '../common/AnswerReviewList.jsx';
 import { selectFocusedContent } from '../../utils/focusedContent.js';
 import HtmlContentRenderer from '../common/HtmlContentRenderer.jsx';
 import { MultiChoice } from '../reading/ReadingQuestionGroup.jsx';
@@ -79,7 +82,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
      return <section key={g.groupId} className="coach-panel"><h3>Questions {g.questions[0]?.questionNumber}–{g.questions.at(-1)?.questionNumber}</h3><p>{g.instructions}</p>{g.visualHtml && <div className="exam-visual" dangerouslySetInnerHTML={{__html:g.visualHtml}}/>}<HtmlContentRenderer htmlContent={g.htmlContent} answers={answers} setAnswers={setAnswers}/>{g.selection?<MultiChoice group={{questions:g.questions,startQ:g.questions[0]?.questionNumber,endQ:g.questions.at(-1)?.questionNumber,selectCount:g.selection.selectCount,optionPool:{options:g.selection.options}}} prompt={g.selection.prompt} answers={answers} onAnswer={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>:g.questions.filter(q=>!inlineIds.has(q.id)).map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}</section>;
    }):part.questions.map(q=><QuestionRenderer key={q.id} question={q} value={answers[q.id]} onChange={(id,value)=>setAnswers(a=>({...a,[id]:value}))}/>)}</div>)}
    {!result && <button type="button" className="btn-coral-pill-physical" onClick={submit}>Check this drill</button>}
-   {result && <section className="coach-panel" aria-live="polite"><h2>{result.correct}/{result.total} confirmed correct</h2><p>{result.accuracy}% on this question group. This is not a full-test band; uncertain variants need review.</p><ol>{questions.map(q=><li key={q.id}>{q.questionText || `Question ${q.questionNumber}`} — {result.itemResults[q.id].finalResult}. Key: {String(q.answer ?? q.acceptedAnswers?.join(' / ') ?? '')}</li>)}</ol><button onClick={onBack}>Return to your recommendations</button></section>}
+   {result && <section className="coach-panel" aria-live="polite"><h2>{result.correct}/{result.total} confirmed correct</h2><p>{result.accuracy}% on this question group. This is not a full-test band; uncertain variants need review.</p><AnswerReviewList showUnanswered itemResults={buildAnswerReviewItems(result, test, focus.skill)} onCorrectAnswer={(id, undo) => save(correctReviewedAnswer(result, focus.skill, id, buildAnswerReviewItems(result, test, focus.skill), undo))} /><button onClick={onBack}>Return to your recommendations</button></section>}
   </TextHighlighter>}
  </div>;
 }

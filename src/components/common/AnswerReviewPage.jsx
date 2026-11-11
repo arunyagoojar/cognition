@@ -4,7 +4,7 @@ import AnswerReviewList from './AnswerReviewList';
 import { ResultPage, ResultItem } from './ResultReveal';
 import ReviewSourceContext from './ReviewSourceContext.jsx';
 
-export default function AnswerReviewPage({ skill, itemResults, test, onBack }) {
+export default function AnswerReviewPage({ skill, itemResults, test, onBack, onCorrectAnswer, result }) {
   const headingRef = useRef(null);
   useEffect(() => { headingRef.current?.focus({ preventScroll: true }); }, []);
   const name = skill === 'reading' ? 'Reading' : 'Listening';
@@ -21,7 +21,8 @@ export default function AnswerReviewPage({ skill, itemResults, test, onBack }) {
           <p className="result-section-sub">Compare your answers with the correct answers. Choose “To review” to see mistakes and skipped questions.</p>
         </div>
         <ReviewSourceContext skill={skill} test={test} answers={answers} />
-        <AnswerReviewList itemResults={itemResults} showUnanswered />
+        {onCorrectAnswer && <p role="status" aria-live="polite">{result?.raw ?? result?.correct ?? 0}/{result?.total ?? Object.keys(itemResults || {}).length} correct{typeof result?.band === 'number' ? ` · Band ${result.band}` : ''}. Manual corrections apply only to this attempt and can be undone.</p>}
+        <AnswerReviewList itemResults={itemResults} showUnanswered onCorrectAnswer={onCorrectAnswer} />
       </ResultItem>
       <ResultItem className="result-actions">
         <button type="button" className="result-btn is-secondary" onClick={onBack}>

@@ -1,3 +1,5 @@
+import { correctReviewedAnswer, updateCorrectedAttempt } from '../../utils/manualAnswerCorrection.js';
+import { recordAttempt } from '../../utils/performanceStore.js';
 import React, { useState } from 'react';
 import { prepareLocalStt } from '../../utils/speech/localStt';
 import { Icon } from '../common/Icon';
@@ -332,7 +334,14 @@ export default function MockExamFlow({ onComplete, onBack }) {
     // 3. Completed Evaluation Phase (Authoritative Canonical Display)
     const skills = canonicalEvaluation?.skills || {};
     if (reviewSkill) return <AnswerReviewPage skill={reviewSkill} test={examData[reviewSkill]}
-      itemResults={buildAnswerReviewItems(skills[reviewSkill], examData[reviewSkill], reviewSkill)} onBack={() => setReviewSkill(null)} />;
+      result={skills[reviewSkill]} itemResults={buildAnswerReviewItems(skills[reviewSkill], examData[reviewSkill], reviewSkill)} onBack={() => setReviewSkill(null)}
+      onCorrectAnswer={(id, undo) => {
+        const items = buildAnswerReviewItems(skills[reviewSkill], examData[reviewSkill], reviewSkill);
+        const corrected = correctReviewedAnswer(skills[reviewSkill], reviewSkill, id, items, undo);
+        const next = updateCorrectedAttempt(canonicalEvaluation, reviewSkill, corrected);
+        recordAttempt(next);
+        setCanonicalEvaluation(next);
+      }} />;
     const L = skills.listening?.status === 'completed' && typeof skills.listening.band === 'number' ? skills.listening.band : null;
     const R = skills.reading?.status === 'completed' && typeof skills.reading.band === 'number' ? skills.reading.band : null;
     const W = skills.writing?.status === 'completed' && typeof skills.writing.band === 'number' ? skills.writing.band : null;

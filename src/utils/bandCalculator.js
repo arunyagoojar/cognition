@@ -263,9 +263,8 @@ export function officialAnswerVariants(expectedAnswer) {
 }
 
 /**
- * Singular/plural morphology distance: true when two normalized words differ
- * only by a trailing plural marker. Used only to route to AI verification —
- * never to auto-accept.
+ * Near suffix differences not recognised as regular inflections remain
+ * uncertain (for example a misspelled plural); never auto-accept those.
  */
 function differByPlural(a, b) {
   if (a === b) return false;
@@ -273,6 +272,35 @@ function differByPlural(a, b) {
   if (/\s/.test(short)) return false; // multi-word handled by AI
   return long === short + 's' || long === short + 'es' ||
     (short.endsWith('y') && long === short.slice(0, -1) + 'ies');
+}
+
+// Regular inflections are accepted as a practice matching policy. Compare the
+// final word only; do not stem unrelated words or guess irregular plurals.
+function regularInflectionMatches(a, b) {
+  const left = a.split(' '), right = b.split(' ');
+  if (left.length !== right.length || left.slice(0, -1).join(' ') !== right.slice(0, -1).join(' ')) return false;
+  const plural = word => {
+    if (!/^[a-z]{3,}$/.test(word)) return null;
+    if (/[^aeiou]y$/.test(word)) return word.slice(0, -1) + 'ies';
+    return word + (/(?:s|x|z|ch|sh)$/.test(word) ? 'es' : 's');
+  };
+  return plural(left.at(-1)) === right.at(-1) || plural(right.at(-1)) === left.at(-1);
+}
+
+function formattingMatches(a, b) {
+  const compact = value => value.replace(/\s/g, '');
+  // Identifiers keep every letter and digit; only their grouping differs.
+  const identifier = value => /^[a-z\d\s]+$/.test(value) && /[a-z]/.test(value) && /\d/.test(value);
+  if (identifier(a) && identifier(b)) return compact(a) === compact(b);
+  if (!/^[a-z\s]+$/.test(a) || !/^[a-z\s]+$/.test(b) || compact(a) !== compact(b)) return false;
+  // Joining a compound may remove boundaries, never move a boundary into a
+  // different word: "ice cream cone" / "icecream cone", not "no where" / "now here".
+  const boundaries = value => {
+    let offset = 0;
+    return value.split(' ').slice(0, -1).map(word => (offset += word.length));
+  };
+  const left = boundaries(a), right = boundaries(b);
+  return left.every(index => right.includes(index)) || right.every(index => left.includes(index));
 }
 
 export const DETERMINISTIC = { MATCH: 'MATCH', MISMATCH: 'MISMATCH', UNCERTAIN: 'UNCERTAIN' };
@@ -288,9 +316,13 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
   }
   const user = normalizeAnswer(userAnswer);
   let uncertainVariant = null;
+  let equivalentVariant = null;
   if (!user) return { result: DETERMINISTIC.MISMATCH };
   const variants = officialAnswerVariants(expectedAnswer);
   if (!variants.length) return { result: DETERMINISTIC.MISMATCH };
+  const canonUser = canonicalAnswer(userAnswer);
+  const maxWords = parseWordLimit(wordLimit);
+  const withinLimit = maxWords === null || String(userAnswer).trim().split(/\s+/).length <= maxWords;
 
   for (const variant of variants) {
     const norm = normalizeAnswer(variant);
@@ -304,7 +336,6 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
     }
     // Representation-only equivalence: number words ↔ digits, ordinals,
     // date order, currency/percent signs, "11am" ↔ "11 am". Meaning never changes.
-    const canonUser = canonicalAnswer(userAnswer);
     const canonKey = canonicalAnswer(variant);
     if (canonKey && (canonKey === canonUser || differByArticle(canonUser, canonKey, wordLimit))) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
@@ -313,10 +344,15 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
     if (/^[\d\s]+$/.test(canonKey) && /^[\d\s]+$/.test(canonUser) && canonKey.replace(/\s/g, '') === canonUser.replace(/\s/g, '')) {
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
+    if (withinLimit && (formattingMatches(canonUser, canonKey) || regularInflectionMatches(canonUser, canonKey)
+      || regularInflectionMatches(stripLeadingArticle(canonUser), stripLeadingArticle(canonKey)))) {
+      equivalentVariant ??= variant;
+    }
     if (differByPlural(user, norm)) {
       uncertainVariant ??= variant;
     }
   }
+  if (equivalentVariant !== null) return { result: DETERMINISTIC.MATCH, matchedAnswer: equivalentVariant };
   // An early near-match must not outrank an explicitly accepted later form.
   if (uncertainVariant !== null) return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: uncertainVariant };
   return { result: DETERMINISTIC.MISMATCH };

@@ -1,3 +1,5 @@
+import { updateCorrectedAttempt } from './utils/manualAnswerCorrection.js';
+import { getAttemptById, recordAttempt } from './utils/performanceStore.js';
 import { readDraft, writeDraft, transitionPracticeSession } from './utils/drafts.js';
 import { CONTENT_CATALOG, loadSkillContent, loadAllContent } from './data/production/registry.js';
 import { chooseFreshTest } from './utils/practiceSelection.js';
@@ -328,6 +330,15 @@ function AppContent({ authLoaded = true, isSignedIn = true, openSignIn = () => {
     const savedAttempt=readDraft(`attempt:${skill}`);
     const restoredId=String(savedAttempt?.testId)===String(scoreData?.testId || selectedExamId) ? savedAttempt?.id : null;
     const id = scoreData?.attemptId || sessionAttemptIds.current[skill] || restoredId || createAttemptId(skill);
+    const existing = scoreData?.manualReviewUpdatedAt ? getAttemptById(id) : null;
+    if (existing) {
+      const corrected = recordAttempt(updateCorrectedAttempt(existing, skill, scoreData));
+      void syncAttempt(corrected);
+      setReviewResult(current => current?.skill === skill && current.result?.attemptId === id
+        ? { ...current, result: scoreData } : current);
+      refreshScores();
+      return;
+    }
     writeDraft(`attempt:${skill}`,{id,testId:scoreData?.testId || selectedExamId});
     sessionAttemptIds.current[skill] = id;
     const testIdForAttempt = scoreData?.testId || selectedExamId;

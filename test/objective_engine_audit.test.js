@@ -8,9 +8,19 @@ assert.equal(evaluateDeterministic('needs', ['need', 'needs']).result, DETERMINI
 assert.equal(evaluateDeterministic('needs', ['needs', 'need']).result, DETERMINISTIC.MATCH);
 for (const [evaluate, field] of [[evaluateReadingResponses, 'passages'], [evaluateListeningResponses, 'sections']]) {
   for (const answer of ['need', 'the need', '“need”', ' THE NEED. ', 'needs']) {
-    const result = await evaluate({ [field]: [{ id: 'part1', questions: [{ id: 'q1', questionNumber: 1, questionType: 'summary_completion', answer: 'need', acceptedAnswers: ['need','needs'], wordLimit: 'NO MORE THAN TWO WORDS' }] }], answers: { q1: answer } });
+    const result = await evaluate({ [field]: [{ id: 'part1', questions: [{ id: 'q1', questionNumber: 1, questionType: 'summary_completion', answer: 'need', acceptedAnswers: ['need'], wordLimit: 'NO MORE THAN TWO WORDS' }] }], answers: { q1: answer } });
     assert.equal(result.itemResults.q1.finalResult, 'CORRECT', `${field}: valid written form ${answer} needs no AI verification`);
     assert.equal(result.itemResults.q1.evaluationMethod, 'DETERMINISTIC');
+  }
+}
+for (const [evaluate, field] of [[evaluateReadingResponses, 'passages'], [evaluateListeningResponses, 'sections']]) {
+  const cases = [['sub soil','subsoil'], ['book-case','bookcase'], ['pe9 7qt','PE97QT'], ['AB1 2CD','AB12CD'], ['eight','8'], ['boxes','box'], ['cities','city'], ['plant roots','plant root']];
+  const questions = cases.map(([,answer],i) => ({ id: `q${i+1}`, questionNumber: i+1, questionType: 'summary_completion', answer, wordLimit: 'NO MORE THAN THREE WORDS' }));
+  const answers = Object.fromEntries(cases.map(([answer],i) => [`q${i+1}`,answer]));
+  const result = await evaluate({ [field]: [{ id:'part1', questions }], answers });
+  for (const question of questions) {
+    assert.equal(result.itemResults[question.id].finalResult, 'CORRECT', `${field}: ${question.id} accepts the representation directly`);
+    assert.equal(result.itemResults[question.id].evaluationMethod, 'DETERMINISTIC');
   }
 }
 let total = 0;

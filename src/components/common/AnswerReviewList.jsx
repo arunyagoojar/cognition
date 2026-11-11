@@ -42,7 +42,7 @@ function stateOf(r) {
   return unresolved ? 'unresolved' : correct ? 'correct' : skipped ? 'unanswered' : 'incorrect';
 }
 
-export default function AnswerReviewList({ itemResults, showUnanswered = false }) {
+export default function AnswerReviewList({ itemResults, showUnanswered = false, onCorrectAnswer }) {
   const [filter, setFilter] = useState('all');
   if (!itemResults) return null;
   const entries = Object.entries(itemResults);
@@ -94,7 +94,7 @@ export default function AnswerReviewList({ itemResults, showUnanswered = false }
             const official = displayAnswer(r.officialAnswer, r.answerLabels);
             const matched = displayAnswer(r.matchedAnswer, r.answerLabels);
             const isVariant = state === 'correct' && (r.acceptedVariant || r.evaluationMethod === 'AI_VERIFIED');
-            const showMatched = state === 'correct' && matched && (isVariant || norm(r.matchedAnswer) !== norm(r.officialAnswer));
+            const showMatched = !r.manualCorrection && state === 'correct' && matched && (isVariant || norm(r.matchedAnswer) !== norm(r.officialAnswer));
             return (
               <li key={qId} className={`answer-review-item is-${state}`}>
                 <div className="ar-head">
@@ -105,6 +105,7 @@ export default function AnswerReviewList({ itemResults, showUnanswered = false }
                     {meta.label}
                   </span>
                   {isVariant && <span className="accepted-variant-tag">Accepted variant</span>}
+                  {r.manualCorrection && <span className="accepted-variant-tag">Manually corrected</span>}
                 </div>
                 {r.questionText && <p className="ar-question">{r.questionText}</p>}
                 {r.keyCorrection && <p className="ar-reason">{r.keyCorrection}</p>}
@@ -134,6 +135,11 @@ export default function AnswerReviewList({ itemResults, showUnanswered = false }
                     {r.aiReason}
                   </p>
                 )}
+                {onCorrectAnswer && String(r.candidateAnswer ?? '').trim() && (r.manualCorrection || state !== 'correct') && <button
+                  type="button" className="ar-manual-correction" aria-label={`${r.manualCorrection ? 'Undo correction for' : 'Mark as correct:'} question ${qNum}`}
+                  onClick={() => onCorrectAnswer(qId, Boolean(r.manualCorrection))}>
+                  {r.manualCorrection ? 'Undo correction' : 'Mark my answer as correct'}
+                </button>}
               </li>
             );
           })}

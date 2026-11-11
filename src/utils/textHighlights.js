@@ -52,16 +52,27 @@ export function removeTextHighlight(data, index) {
   return { version: 3, anchors: highlightAnchors(data).filter((_, i) => i !== index) };
 }
 
+function appendHistory(history, snapshot) {
+  const next = [...(Array.isArray(history) ? history : []), snapshot].slice(-20);
+  while (next.length > 1 && JSON.stringify(next).length > 512000) next.shift();
+  return next;
+}
+
 export function changeTextHighlights(data, next) {
   const before = highlightAnchors(data), after = highlightAnchors(next);
   if (JSON.stringify(before) === JSON.stringify(after)) return data;
-  const undo = [...(Array.isArray(data?.undo) ? data.undo : []), { anchors: before }].slice(-20);
-  while (undo.length > 1 && JSON.stringify(undo).length > 512000) undo.shift();
-  return { version: 3, anchors: after, undo };
+  const undo = appendHistory(data?.undo, { anchors: before });
+  return { version: 3, anchors: after, undo, redo: [] };
 }
 
 export function undoTextHighlights(data) {
   const history = Array.isArray(data?.undo) ? data.undo : [];
   if (!history.length) return data;
-  return { version: 3, anchors: highlightAnchors(history.at(-1)), undo: history.slice(0, -1) };
+  return { version: 3, anchors: highlightAnchors(history.at(-1)), undo: history.slice(0, -1), redo: appendHistory(data?.redo, { anchors: highlightAnchors(data) }) };
+}
+
+export function redoTextHighlights(data) {
+  const history = Array.isArray(data?.redo) ? data.redo : [];
+  if (!history.length) return data;
+  return { version: 3, anchors: highlightAnchors(history.at(-1)), redo: history.slice(0, -1), undo: appendHistory(data?.undo, { anchors: highlightAnchors(data) }) };
 }

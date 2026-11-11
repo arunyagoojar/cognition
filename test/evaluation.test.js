@@ -43,7 +43,7 @@ async function runTests() {
   assert(isCandidateAnswerCorrect('  london bridge  ', 'London Bridge'), 'Whitespace trimmed match matches');
   assert(isCandidateAnswerCorrect('centre', 'center / centre'), 'Slash alternative matches');
   assert(isCandidateAnswerCorrect('15', '50') === false, 'Different numbers ("15" vs "50") never match');
-  assert(isCandidateAnswerCorrect('student', 'students') === false, 'Morphological variations ("student" vs "students") never automatically match');
+  assert(isCandidateAnswerCorrect('student', 'students'), 'Regular inflections match under the practice matching policy');
   assert(isCandidateAnswerCorrect('', 'validAnswer') === false, 'Empty answer fails');
   assert(isCandidateAnswerCorrect(null, 'validAnswer') === false, 'Null answer fails');
 

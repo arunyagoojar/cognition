@@ -9052,3 +9052,17 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .hub-spelling-score strong { font-size:25px; line-height:1; font-weight:700; }
 .hub-spelling-score small { font-size:13px; font-weight:500; margin-left:3px; }
 .hub-spelling-score>span { font-size:9px; font-weight:600; }
+
+.ar-manual-correction {
+  min-height: 44px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+.ar-manual-correction:hover { border-color: var(--c-coral); }
+.ar-manual-correction:focus-visible { outline: 2px solid var(--c-coral); outline-offset: 3px; }

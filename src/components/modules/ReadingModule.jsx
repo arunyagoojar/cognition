@@ -1,3 +1,4 @@
+import { correctReviewedAnswer } from '../../utils/manualAnswerCorrection.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
@@ -319,7 +320,12 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
-    if (answerReview) return <AnswerReviewPage skill="reading" itemResults={answerReview.items} test={answerReview.test} onBack={closeAnswerReview} />;
+    if (answerReview) return <AnswerReviewPage skill="reading" result={result} itemResults={answerReview.items} test={answerReview.test} onBack={closeAnswerReview}
+      onCorrectAnswer={(id, undo) => {
+        const next = correctReviewedAnswer(result, 'reading', id, answerReview.items, undo);
+        setResult(next);
+        setAnswerReview({ ...answerReview, items: buildAnswerReviewItems(next, answerReview.test, 'reading') });
+      }} />;
     const canReview = Object.keys(result?.itemResults || {}).length > 0 || Boolean(result?.answers && typeof result.answers === 'object');
     return (
       <ResultPage skill="reading">

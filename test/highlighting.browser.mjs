@@ -32,7 +32,7 @@ try {
         const b = el.getBoundingClientRect(), h = el.closest('header, .exam-focus-header').getBoundingClientRect();
         const size = el.closest('.exam-header-reading-tools')?.querySelector('.text-size-control')?.getBoundingClientRect();
         return { left: b.left, right: b.right, top: b.top, bottom: b.bottom, height: b.height,
-          headerTop: h.top, headerBottom: h.bottom, viewport: innerWidth, gap: size ? b.left - size.right : null };
+          headerTop: h.top, headerBottom: h.bottom, viewport: innerWidth, gap: size && Math.abs(size.top - b.top) < 2 ? b.left - size.right : null };
       });
       assert(bounds.left >= 0 && bounds.right <= bounds.viewport, 'header action fits the viewport');
       assert(bounds.top >= bounds.headerTop && bounds.bottom <= bounds.headerBottom, 'header contains the action');
@@ -40,6 +40,10 @@ try {
       if (bounds.gap !== null) assert(bounds.gap >= 15.5, 'text size and eraser have 16px spacing');
     };
     await checkHeaderLayout();
+    const toolbarBoxes=await page.getByRole('group',{name:'Highlight tools',exact:true}).evaluate(el=>[...el.children].filter(n=>n.tagName==='BUTTON').map(n=>{const r=n.getBoundingClientRect();return{x:r.x,right:r.right,width:r.width,height:r.height}}));
+    assert.equal(toolbarBoxes.length,3);
+    for(let i=0;i<toolbarBoxes.length;i++) {assert(toolbarBoxes[i].height>=40&&toolbarBoxes[i].width>=40);if(i)assert(toolbarBoxes[i].x-toolbarBoxes[i-1].right>=5.5,'toolbar buttons have clear spacing');}
+
     if (mode !== 'drill') {
       const heights = await clear.evaluate(el => {
         const header = el.closest('.exam-focus-header'), slot = el.parentElement;
@@ -99,13 +103,29 @@ try {
     const overlap = await select(6, 20);
     assert.equal(await painted(), first.slice(0, 6) + overlap, 'overlapping highlights merge');
     const highlight = await painted();
-    await clear.click();
     const originalCount = Number(await clear.getAttribute('data-highlight-count'));
-    await page.getByRole('button', { name: 'Remove highlight 1', exact: true }).click();
-    assert.equal(Number(await clear.getAttribute('data-highlight-count')), originalCount - 1, 'remove affects only one highlight');
-    await clear.click();
-    await page.getByRole('button', { name: 'Undo last change', exact: true }).click();
-    assert.equal(await painted(), highlight, 'Undo restores individual removal');
+    const erasePoint = await page.locator('[data-text-highlighter]').evaluate(root => {
+      const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:node=>node.data.trim().length>40&&!node.parentElement.closest('input,textarea,select,button,audio,[aria-hidden="true"]')?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});
+      const node=walker.nextNode();const range=document.createRange();range.setStart(node,2);range.setEnd(node,3);const r=range.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2};
+    });
+    await page.mouse.click(erasePoint.x,erasePoint.y);
+    await page.getByRole('button',{name:'Remove selected highlight',exact:true}).click();
+    assert.equal(Number(await clear.getAttribute('data-highlight-count')),originalCount-1);
+    await page.keyboard.press('Control+z');
+    assert.equal(await painted(),highlight,'Ctrl+Z restores erased highlight');
+    await page.keyboard.press('Control+Shift+z');
+    assert.equal(await painted(),'','Ctrl+Shift+Z redoes erasure');
+    await page.keyboard.press('Meta+z');
+    assert.equal(await painted(),highlight,'Cmd+Z restores erased highlight');
+    await page.keyboard.press('Meta+Shift+z');
+    assert.equal(await painted(),'','Cmd+Shift+Z redoes erasure');
+    await page.keyboard.press('Control+z');
+    assert.equal(await page.locator('.exam-highlight-list').count(),0,'no highlight list is rendered');
+    const undoArrow = page.getByRole('button',{name:'Undo highlight change',exact:true});
+    const redoArrow = page.getByRole('button',{name:'Redo highlight change',exact:true});
+    await undoArrow.click(); assert.notEqual(await painted(),highlight,'toolbar back arrow undoes the last operation');
+    await redoArrow.click(); assert.equal(await painted(),highlight,'toolbar forward arrow redoes the operation');
+
     if (skill === 'reading' && mode === 'practice') {
       const point = await page.locator('.rd-para').first().evaluate(el => {
         const node = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.length > 20);
@@ -127,6 +147,10 @@ try {
     if (await input.count()) {
       await input.fill('test answer');
       assert.equal(await input.inputValue(), 'test answer');
+      await input.fill('');await input.pressSequentially('draft');await input.press('Control+z');
+      assert.equal(await painted(),highlight,'native answer-field Undo never changes passage highlights');
+      await input.fill('test answer');
+
       await input.evaluate(el => { el.focus(); el.select(); });
       await page.waitForTimeout(400);
       assert.equal(await painted(), highlight, 'answer text is not highlighted');
