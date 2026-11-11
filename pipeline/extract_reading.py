@@ -39,6 +39,7 @@ import os
 import re
 import shutil
 import sys
+from reading_corrections import apply_reading_corrections
 from collections import Counter
 
 from bs4 import BeautifulSoup, Comment, NavigableString, Tag
@@ -1540,7 +1541,7 @@ def main():
     records = []
     for slug in slugs:
         try:
-            records.append(process(slug))
+            records.append(apply_reading_corrections(process(slug)))
         except Exception as e:  # a crash quarantines the page, never the run
             records.append({"slug": slug, "id": None, "status": "quarantined", "passages": [],
                             "testReasonCodes": ["EXTRACTION_CRASH"], "error": repr(e)[:300],

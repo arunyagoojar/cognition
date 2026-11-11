@@ -1,4 +1,5 @@
 import { planRequestBudget, prepareRequestBudget } from '../../src/utils/ai/requestBudget.js';
+import { isTruncatedResponse } from '../../src/utils/ai/generationConfig.js';
 // Build the vocabulary during Worker startup, outside the per-request CPU
 // allowance. The browser loads its separate vocabulary chunk only on review.
 import { countTokens as countHarmonyTokens } from 'gpt-tokenizer/encoding/o200k_harmony';
@@ -24,7 +25,7 @@ const GROQ_BASE = 'https://api.groq.com/openai/v1';
 export const GROQ_MODELS = {
   primary: 'openai/gpt-oss-120b',
   fallback: 'openai/gpt-oss-20b',
-  chain: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.6-27b'],
+  chain: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b'],
 };
 
 // Writing/Speaking rubric v2 lives in one module shared with the browser so
@@ -96,6 +97,7 @@ async function callGemini(model, apiKey, systemPrompt, userPrompt) {
       throw err;
     }
     const data = await res.json();
+    if (isTruncatedResponse('gemini', data)) throw Object.assign(new Error('Gemini exhausted the reply allowance.'), { code: 'output_budget' });
     return data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text || '').join('') || null;
   }
 }
@@ -147,6 +149,7 @@ async function callGroq(model, apiKey, systemPromptFull, userPrompt) {
       throw err;
     }
     const data = await res.json();
+    if (isTruncatedResponse('groq', data)) throw Object.assign(new Error('Groq exhausted the reply allowance.'), { code: 'output_budget' });
     return data.choices?.[0]?.message?.content || null;
   }
 }
@@ -175,6 +178,7 @@ export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, val
     } catch (e) {
       lastError = e;
       if(e.code==='input_budget')return {status:'failed',provider,reason:'request_budget',message:e.message};
+      if(e.code==='output_budget')return {status:'failed',provider,reason:'response_budget',message:`${isGroq ? 'Groq' : 'Gemini'} reached its reply limit before finishing the assessment. No score was accepted. Retry or select another provider in Settings.`};
       if (e.status === 429) {
         return { status: 'failed', provider, reason: 'rate_limit', httpStatus: 429, message: `AI rate limit reached (429) on ${isGroq ? 'Groq' : 'Gemini'}. Please wait a minute and retry.` };
       }
@@ -187,13 +191,18 @@ export async function runEvaluationChain({ apiKey, systemPrompt, userPrompt, val
       console.error(`Model ${model} evaluation attempt failed:`, e.constructor?.name, e.message);
     }
   }
-  const detail = lastError?.status === 400 || lastError?.status === 403
+  const timedOut = ['TimeoutError', 'AbortError'].includes(lastError?.name);
+  const detail = timedOut
+    ? `${isGroq ? 'Groq' : 'Gemini'} took too long to respond. No score was accepted. Retry or select another provider in Settings.`
+    : lastError?.status === 400 || lastError?.status === 403
     ? `${isGroq ? 'Groq' : 'Gemini'} rejected the evaluation request. Check your API key permissions and quota.`
     : lastError?.status === 503
     ? `${isGroq ? 'Groq' : 'Gemini'} servers are temporarily overloaded (503 Service Unavailable). Please retry in a moment.`
-    : 'AI evaluation failed to produce a valid IELTS rubric response. Check your API key configuration and try again.';
+    : 'The AI returned an incomplete or invalid IELTS assessment. No score was accepted. Retry or select another provider in Settings.';
   return {
     status: 'failed',
+    provider,
+    reason: timedOut ? 'timeout' : lastError?.status === 503 ? 'provider_unavailable' : lastError?.status === 400 ? 'http_error' : 'invalid_response',
     message: detail,
   };
 }

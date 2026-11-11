@@ -78,7 +78,7 @@ export default function QuestionRenderer({ question, value, onChange }) {
                   <label key={o.id} className={`q-option-card${selected ? ' selected' : ''}${long ? '' : ' compact'}`}>
                     <input
                       type="radio"
-                      name={question.id}
+                      name={`question-${question.id}`}
                       value={o.id}
                       checked={selected}
                       onChange={handleChange}
@@ -158,7 +158,7 @@ export default function QuestionRenderer({ question, value, onChange }) {
                   <label key={val} className={`q-option-card compact${selected ? ' selected' : ''}`}>
                     <input
                       type="radio"
-                      name={question.id}
+                      name={`question-${question.id}`}
                       value={val}
                       checked={selected}
                       onChange={handleChange}

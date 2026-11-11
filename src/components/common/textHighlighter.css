@@ -29,3 +29,18 @@
   .exam-highlight-slot .exam-highlight-clear { width: 44px; height: 44px; min-height: 44px; }
 }
 [data-text-highlighter] { -webkit-user-select: text; user-select: text; }
+[data-text-highlighter]::selection,
+[data-text-highlighter] ::selection { background: #ffe066; color: #151313; }
+[data-text-highlighter] input::selection,
+[data-text-highlighter] textarea::selection { background: Highlight; color: HighlightText; }
+.exam-highlight-menu { position: fixed; z-index: 220; width: min(304px, calc(100vw - 24px)); max-height: min(440px, calc(100dvh - 100px)); overflow-y: auto; padding: 16px; border: var(--border-dark); border-radius: 16px; background: var(--bg-card); color: var(--text-primary); box-shadow: 0 12px 40px #0003; font-size: 13px; }
+.exam-highlight-menu-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.exam-highlight-menu p { margin: 8px 0 12px; line-height: 1.5; color: var(--text-secondary); }
+.exam-highlight-slot .exam-highlight-menu button { min-width: 44px; min-height: 44px; padding: 8px 10px; border: var(--border-subtle); border-radius: 10px; color: var(--text-primary); text-decoration: none; font: inherit; }
+.exam-highlight-menu button:disabled { opacity: .45; cursor: default; }
+.exam-highlight-menu button:focus-visible { outline: 2px solid var(--c-coral); outline-offset: 2px; }
+.exam-highlight-menu-actions { display: flex; gap: 8px; }
+.exam-highlight-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.exam-highlight-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: var(--border-subtle); }
+.exam-highlight-list li > span { min-width: 0; overflow-wrap: anywhere; }
+.exam-highlight-list li.is-selected > span { background: #ffe066; color: #151313; }

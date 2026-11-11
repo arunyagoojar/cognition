@@ -14,7 +14,38 @@
    "manifestHashMatch": false,
    "url": "https://practicepteonline.com/ielts-reading-test-235/"
   },
-  "extractionMethod": "deterministic_wordpress_lines_v2"
+  "extractionMethod": "deterministic_wordpress_lines_v2",
+  "reviewedCorrections": [
+   {
+    "question": 11,
+    "sourceKey": "TRUE",
+    "correctedKey": "FALSE",
+    "evidence": "Paragraph I says these animals are not a regular part of most peoples' diet."
+   },
+   {
+    "question": 19,
+    "sourceKey": "TRUE",
+    "correctedKey": "FALSE",
+    "evidence": "Paragraphs B and E reject the claim that product advantages and companies' expectations guarantee successful adoption."
+   },
+   {
+    "question": 1,
+    "acceptedVariant": "needs",
+    "reason": "Context-specific grammatical equivalent of 'according to need', within the word limit."
+   },
+   {
+    "question": 36,
+    "acceptedVariant": "classical education",
+    "reason": "Verbatim passage extract and grammatical fit, within the THREE-word limit."
+   },
+   {
+    "groups": [
+     "p1.q01-04",
+     "p3.q32-36"
+    ],
+    "reason": "Restore sentence boundaries and block spacing while preserving numbered blanks and source wording."
+   }
+  ]
  },
  "hubEnumerated": true,
  "duplicateOf": null,
@@ -285,18 +316,37 @@
          {
           "blank": 1
          },
+         "."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
          "The citemene system provides the land with ",
          {
           "blank": 2
          },
-         "where crops are planted. During the second season, the last planted crop is ",
+         " where crops are planted."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "During the second season, the last planted crop is ",
          {
           "blank": 3
          },
+         "."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
          "Under suitable conditions, fruit trees are planted near ",
          {
           "blank": 4
-         }
+         },
+         "."
         ]
        }
       ]
@@ -313,7 +363,8 @@
         "raw": "Need",
         "value": "Need",
         "accepted": [
-         "Need"
+         "Need",
+         "needs"
         ]
        }
       },
@@ -593,9 +644,9 @@
        ],
        "answer": {
         "raw": "True",
-        "value": "TRUE",
+        "value": "FALSE",
         "accepted": [
-         "TRUE"
+         "FALSE"
         ]
        }
       },
@@ -1039,9 +1090,9 @@
        ],
        "answer": {
         "raw": "True",
-        "value": "TRUE",
+        "value": "FALSE",
         "accepted": [
-         "TRUE"
+         "FALSE"
         ]
        }
       },
@@ -1670,22 +1721,35 @@
          {
           "blank": 32
          },
-         "and the card deck to memory are set to be one time of an order of ",
+         " and the card deck to memory are set to be one time of an order of ",
          {
           "blank": 33
          },
-         "; When it comes time to recall, Cooke took a ",
+         ";"
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "When it comes time to recall, Cooke took a ",
          {
           "blank": 34
          },
-         "along his way and interpreted the imaginary scene into cards. This superior memory skill can be traced back to Ancient Greece, the strategy was called ",
+         " along his way and interpreted the imaginary scene into cards."
+        ]
+       },
+       {
+        "type": "text",
+        "segments": [
+         "This superior memory skill can be traced back to Ancient Greece, the strategy was called ",
          {
           "blank": 35
          },
-         "which had been a major subject was in ancient ",
+         " which had been a major subject was in ancient ",
          {
           "blank": 36
-         }
+         },
+         "."
         ]
        }
       ]
@@ -1758,7 +1822,8 @@
         "raw": "Education",
         "value": "Education",
         "accepted": [
-         "Education"
+         "Education",
+         "classical education"
         ]
        }
       }

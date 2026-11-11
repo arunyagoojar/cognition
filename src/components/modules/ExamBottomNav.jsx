@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import Icon from '../common/Icon';
+import './examBottomNav.css';
 
 /**
  * Universal Cognition Exam Bottom Navigation
@@ -22,8 +23,29 @@ export default function ExamBottomNav({
   isSubmit = false,
   nextActionId,
 }) {
+  const navRef = useRef(null);
+
+  // The compact toolbar has two rows, and action labels can wrap. Reserve its
+  // actual height in both the scrolling and split-pane exam layouts.
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const shell = nav?.closest('.exam-focus-layout');
+    if (!nav || !shell) return undefined;
+    const property = '--exam-bottom-nav-height';
+    const previousHeight = shell.style.getPropertyValue(property);
+    const updateHeight = () => shell.style.setProperty(property, `${Math.ceil(nav.getBoundingClientRect().height)}px`);
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(nav);
+    return () => {
+      observer.disconnect();
+      if (previousHeight) shell.style.setProperty(property, previousHeight);
+      else shell.style.removeProperty(property);
+    };
+  }, []);
+
   return (
-    <div className="exam-bottom-nav">
+    <nav ref={navRef} className="exam-bottom-nav" aria-label="Exam navigation">
       <div className="exam-bottom-nav-inner">
         {/* LEFT ZONE: PREVIOUS */}
         <div className="exam-bottom-nav-left">
@@ -59,6 +81,8 @@ export default function ExamBottomNav({
                     }
                   }}
                   disabled={isDisabled}
+                  aria-label={label}
+                  aria-current={isActive ? 'step' : undefined}
                   title={`Go to ${label}`}
                 >
                   {isCompleted && !isActive && (
@@ -94,6 +118,6 @@ export default function ExamBottomNav({
           </motion.button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

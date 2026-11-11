@@ -20,9 +20,10 @@ try {
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(`${base}?skill=${skill}&mode=${mode}`, { waitUntil: 'domcontentloaded' });
-    const clear = page.getByRole('button', { name: 'Clear highlights', exact: true });
+    const clear = page.getByRole('button', { name: 'Highlights', exact: true });
     await clear.waitFor();
-    assert(await clear.isDisabled(), `${skill}/${mode}: highlighting is available by default`);
+    assert.equal(await clear.getAttribute('data-highlight-count'), '0', `${skill}/${mode}: highlighting is available by default`);
+    const clearAll = async () => { await clear.click(); await page.getByRole('button', { name: 'Clear all highlights', exact: true }).click(); };
     assert.equal(await page.locator('.exam-highlight-tools').count(), 0, 'no separate highlighting row uses content height');
     assert(await clear.evaluate(el => Boolean(el.closest('header, .exam-focus-header'))), 'clear action lives in the existing header');
     assert.match(await clear.getAttribute('title'), /Select text to highlight/);
@@ -64,7 +65,8 @@ try {
       await page.mouse.up();
       await page.waitForTimeout(400);
       assert((await painted()).length > 0, 'real mouse dragging highlights text');
-      await clear.click();
+      assert(await page.evaluate(() => window.getSelection().isCollapsed), 'mouse selection clears automatically without a click away');
+      await clearAll();
       await page.locator('.rd-para').first().evaluate(el => {
         const node = [...el.childNodes].find(node => node.nodeType === Node.TEXT_NODE && node.length > 20);
         document.activeElement.blur();
@@ -76,7 +78,7 @@ try {
       await page.keyboard.up('Shift');
       await page.waitForTimeout(400);
       assert.equal((await painted()).length, 5, 'keyboard selection highlights text');
-      await clear.click();
+      await clearAll();
     }
     const select = async (start, end) => {
       const selected = await page.locator('[data-text-highlighter]').evaluate((root, { start, end }) => {
@@ -97,6 +99,25 @@ try {
     const overlap = await select(6, 20);
     assert.equal(await painted(), first.slice(0, 6) + overlap, 'overlapping highlights merge');
     const highlight = await painted();
+    await clear.click();
+    const originalCount = Number(await clear.getAttribute('data-highlight-count'));
+    await page.getByRole('button', { name: 'Remove highlight 1', exact: true }).click();
+    assert.equal(Number(await clear.getAttribute('data-highlight-count')), originalCount - 1, 'remove affects only one highlight');
+    await clear.click();
+    await page.getByRole('button', { name: 'Undo last change', exact: true }).click();
+    assert.equal(await painted(), highlight, 'Undo restores individual removal');
+    if (skill === 'reading' && mode === 'practice') {
+      const point = await page.locator('.rd-para').first().evaluate(el => {
+        const node = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.length > 20);
+        const range = document.createRange(); range.setStart(node, 7); range.setEnd(node, 8);
+        const rect = range.getBoundingClientRect(); return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+      });
+      await page.mouse.click(point.x, point.y);
+      await page.getByRole('button', { name: 'Remove selected highlight', exact: true }).click();
+      assert.equal(await painted(), '', 'clicking painted text targets that individual highlight');
+      await clear.click(); await page.getByRole('button', { name: 'Undo last change', exact: true }).click();
+      assert.equal(await painted(), highlight);
+    }
     if (process.env.QA_SCREENSHOTS && mode === 'practice') {
       await mkdir(process.env.QA_SCREENSHOTS, { recursive: true });
       await page.screenshot({ path: resolve(process.env.QA_SCREENSHOTS, `${skill}-desktop-light.png`) });
@@ -129,9 +150,14 @@ try {
       await mkdir(process.env.QA_SCREENSHOTS, { recursive: true });
       await page.screenshot({ path: resolve(process.env.QA_SCREENSHOTS, `${skill}-${mode}-compact-dark.png`) });
     }
-    await clear.click();
+    await clearAll();
     assert.equal(await painted(), '', 'clear removes painted ranges');
-    assert(await clear.isDisabled());
+    assert.equal(await clear.getAttribute('data-highlight-count'), '0');
+    await page.reload({ waitUntil: 'domcontentloaded' }); await clear.waitFor();
+    await clear.click();
+    await page.getByRole('button', { name: 'Undo last change', exact: true }).click();
+    assert.equal(await painted(), highlight, 'Undo history survives reload and restores Clear all');
+    await clearAll();
     await page.reload({ waitUntil: 'domcontentloaded' }); await clear.waitFor();
     assert.equal(await painted(), '', 'cleared highlights stay cleared');
     await select(0, 12);

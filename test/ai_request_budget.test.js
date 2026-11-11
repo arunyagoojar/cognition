@@ -176,6 +176,30 @@ await check('Worker sends all 19 answers and questions through each provider wit
   }
 });
 
+await check('Worker rejects provider-truncated output before validating even complete-looking JSON', async () => {
+  const originalFetch = globalThis.fetch;
+  try {
+    for (const provider of ['gemini','groq']) {
+      let validations = 0, gradingCalls = 0;
+      globalThis.fetch = async (url, options) => {
+        if (!options?.method) return Response.json(provider === 'groq'
+          ? { data: [{ id: 'openai/gpt-oss-120b' }] }
+          : { models: [{ name: 'models/gemini-3.8-flash', supportedGenerationMethods: ['generateContent'] }] });
+        gradingCalls++;
+        return Response.json(provider === 'groq'
+          ? { choices: [{ finish_reason: 'length', message: { content: '{"valid":true}' } }] }
+          : { candidates: [{ finishReason: 'MAX_TOKENS', content: { parts: [{ text: '{"valid":true}' }] } }] });
+      };
+      const result = await runEvaluationChain({ apiKey: `fixture-output-${provider}`, provider, systemPrompt: 'Return JSON.', userPrompt: 'A submission.', validator: parsed => { validations++; return parsed; } });
+      assert.equal(result.status, 'failed');
+      assert.equal(result.reason, 'response_budget');
+      assert.equal(result.evaluation, undefined);
+      assert.equal(validations, 0);
+      assert.equal(gradingCalls, 1, 'do not spend the same reply allowance retrying every model');
+    }
+  } finally { globalThis.fetch = originalFetch; }
+});
+
 await check('direct browser evaluation validates a complete interview with either selected provider', async () => {
   const originalFetch = globalThis.fetch;
   const originalStorage = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');

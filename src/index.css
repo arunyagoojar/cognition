@@ -6093,7 +6093,8 @@ p.reading-section-label {
 }
 .rd-stim-title { font-family: var(--font-family); font-weight: 800; font-size: 15.5px; margin: 0 0 6px; line-height: 1.4; }
 .rd-stim-heading { font-family: var(--font-family); font-weight: 700; font-size: 14.5px; margin: 10px 0 2px; line-height: 1.4; }
-.rd-stim-line { margin: 0 0 6px; }
+.rd-stim-line { margin: 0 0 12px; white-space: pre-line; }
+.rd-prompt, .rd-choice-text, .ar-question { overflow-wrap: anywhere; white-space: normal; }
 .rd-stimulus .rd-table { font-size: 14.5px; line-height: 2; }
 
 /* number badge — rendered once per question, attached to its control */

@@ -10,14 +10,25 @@ import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
   PRODUCTION_WRITING,
-  PRODUCTION_READING,
 } from '../production/registry.js';
 import {
   adaptProductionListening,
   adaptProductionSpeaking,
   adaptProductionWriting,
   adaptProductionReading,
+  getAllProductionReadingTests,
 } from '../production/adapters.js';
+
+function pickReadingCluster(testId) {
+  const pool = getAllProductionReadingTests();
+  const match = pool.find(rec => String(rec.testId) === String(testId) || rec.id === String(testId));
+  if (match || !pool.length) return match || null;
+  // Pin an intact cluster to exam IDs with no corresponding Reading test.
+  // Restoring that exam must not select a different Reading source package.
+  let hash = 0;
+  for (const char of String(testId)) hash = (Math.imul(hash, 31) + char.charCodeAt(0)) >>> 0;
+  return pool[hash % pool.length];
+}
 
 // The test rotation queue is driven by the production Listening corpus.
 export const AVAILABLE_AUTHENTIC_TESTS = CONTENT_CATALOG.listening.map(rec => ({
@@ -54,8 +65,7 @@ export function getAuthenticExam(testId) {
   const writingRec = PRODUCTION_WRITING.find(w => String(w.testId) === String(testId))
     || PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
   const writing = writingRec ? adaptProductionWriting(writingRec) : null;
-  const readingRec = PRODUCTION_READING.find(r => String(r.testId) === String(testId))
-    || PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
+  const readingRec = pickReadingCluster(testId);
 
   const manifest = { seed: testId, testType: 'UNKNOWN', source: 'production-database' };
 
@@ -93,8 +103,7 @@ export function getRandomizedFullExam(seed = null) {
   const listeningTestId = listening?.testId;
   const writingRec = PRODUCTION_WRITING.find(w => String(w.testId) === String(listeningTestId))
     || PRODUCTION_WRITING[Math.floor(Math.random() * PRODUCTION_WRITING.length)];
-  const readingRec = PRODUCTION_READING.find(r => String(r.testId) === String(listeningTestId))
-    || PRODUCTION_READING[Math.floor(Math.random() * PRODUCTION_READING.length)];
+  const readingRec = pickReadingCluster(listeningTestId);
 
   return {
     testId: listeningTestId ? String(listeningTestId) : `mock-random-${activeSeed}`,

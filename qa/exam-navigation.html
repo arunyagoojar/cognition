@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>QA · Exam navigation</title></head>
+<body><div id="root"></div><script type="module">
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import '/src/index.css';
+  import { loadSkillContent } from '/src/data/production/registry.js';
+  const qs = new URLSearchParams(location.search);
+  const skill = qs.get('skill') || 'reading';
+  document.documentElement.dataset.theme = qs.get('theme') || 'light';
+  const modules = {
+    reading: () => import('/src/components/modules/ReadingModule.jsx'),
+    listening: () => import('/src/components/modules/ListeningModule.jsx'),
+    writing: () => import('/src/components/modules/WritingModule.jsx'),
+    speaking: () => import('/src/components/modules/SpeakingModule.jsx'),
+  };
+  const props = { initialPhase: 'exam', isMockMode: qs.get('mode') === 'mock', onBack: () => {}, onComplete: () => {} };
+  if (skill === 'reading' || skill === 'listening') {
+    await loadSkillContent(skill);
+    props.testId = skill === 'reading' ? 235 : 185;
+  } else if (skill === 'writing') {
+    props.initialTest = { testId: 'navigation-writing', title: 'Navigation fixture',
+      task1: { prompt: 'Describe the changes in this example chart.' },
+      task2: { prompt: 'Discuss the advantages and disadvantages of studying in a group.' } };
+  } else {
+    // Exercise all three navigation targets, including Part 2's different content.
+    props.initialTest = { testId: 'navigation-speaking', title: 'Navigation fixture', parts: [
+      { partNumber: 1, title: 'Interview', questions: ['What do you enjoy studying?'] },
+      { partNumber: 2, title: 'Long turn', cueCard: { topic: 'Describe something you learned.', bulletPrompts: ['What it was', 'How you learned it'], finalInstruction: 'Explain why it was useful.' } },
+      { partNumber: 3, title: 'Discussion', questions: ['How can people continue learning?'] },
+    ] };
+  }
+  const { default: Module } = await modules[skill]();
+  createRoot(document.getElementById('root')).render(React.createElement(Module, props));
+</script></body></html>

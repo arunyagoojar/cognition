@@ -2,6 +2,7 @@ import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
+import { getProductionListeningTest } from '../../data/production/adapters.js';
 import { evaluateListeningResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
 import { calculateListeningBand } from '../../utils/bandCalculator';
 import AnswerReviewPage from '../common/AnswerReviewPage';
@@ -16,6 +17,7 @@ import ExamBottomNav from './ExamBottomNav';
 import HtmlContentRenderer from '../common/HtmlContentRenderer';
 import QuestionRenderer from '../common/QuestionRenderer';
 import TextHighlighter from '../common/TextHighlighter.jsx';
+import SourceIdentity from '../common/SourceIdentity.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -31,8 +33,9 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   const [answerReview, setAnswerReview] = useState(null);
   const reviewButtonRef = useRef(null);
   const openAnswerReview = () => {
-    const gradedTest = getListeningTest(result?.testId || test?.testId || testId, true) || test;
-    setAnswerReview(buildAnswerReviewItems(result, gradedTest, 'listening'));
+    const id = result?.testId || test?.testId || testId;
+    const gradedTest = (id ? getProductionListeningTest(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
+    setAnswerReview({ test: gradedTest, items: buildAnswerReviewItems(result, gradedTest, 'listening') });
   };
   const closeAnswerReview = () => {
     setAnswerReview(null);
@@ -365,7 +368,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
-    if (answerReview) return <AnswerReviewPage skill="listening" itemResults={answerReview} onBack={closeAnswerReview} />;
+    if (answerReview) return <AnswerReviewPage skill="listening" itemResults={answerReview.items} test={answerReview.test} onBack={closeAnswerReview} />;
     const canReview = Object.keys(result?.itemResults || {}).length > 0 || Boolean(result?.answers && typeof result.answers === 'object');
 
     return (
@@ -470,9 +473,10 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
           <span className="exam-focus-tag" style={{ background: 'var(--c-yellow)', color: '#151313' }}>
             {isMockMode ? 'IELTS ACADEMIC LISTENING' : 'IELTS LISTENING PRACTICE'}
           </span>
-          <h2 className="exam-focus-title">
+          <div className="exam-heading-copy"><h2 className="exam-focus-title">
             Part {partIdx + 1} of {test.parts.length} · {currentPart?.title}
           </h2>
+          <SourceIdentity test={test} skill="listening" /></div>
         </div>
 
         <div className="exam-focus-header-right">

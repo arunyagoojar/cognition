@@ -9,7 +9,7 @@
  */
 
 export const PREFERRED_MODELS = {
-  groq: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'qwen/qwen3.6-27b'],
+  groq: ['openai/gpt-oss-120b', 'openai/gpt-oss-20b'],
   gemini: ['gemini-3.8-flash', 'gemini-3.7-flash', 'gemini-3.5-flash', 'gemini-3.5-flash-lite'],
 };
 
@@ -35,13 +35,15 @@ export function pickModels(provider, availableIds) {
       .filter(x => x.ver)
       .sort((a, b) => (a.ver.lite - b.ver.lite) || (b.ver.v - a.ver.v))
       .map(x => x.id);
-    return (family.length ? family : preferred).slice(0, MAX_CHAIN);
+    const chain = preferred.filter(id => available.has(id));
+    for (const id of family) if (!chain.includes(id)) chain.push(id);
+    return (chain.length ? chain : preferred).slice(0, MAX_CHAIN);
   }
 
   const chain = preferred.filter(id => available.has(id));
   let family = [];
   if (provider === 'groq') {
-    family = availableIds.filter(id => /gpt-oss-(120b|20b)$/.test(id) || /^qwen\/qwen[\d.]+-\d+b$/.test(id))
+    family = availableIds.filter(id => /gpt-oss-(120b|20b)$/.test(id))
       .sort((a, b) => Number(/120b/.test(b)) - Number(/120b/.test(a)));
   }
   for (const id of family) if (!chain.includes(id)) chain.push(id);

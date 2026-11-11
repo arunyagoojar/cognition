@@ -9,7 +9,8 @@ import {
 
 export function getReadingTest(testId, includeAnswers = false) {
   if (!testId) return getRandomizedReadingTest(includeAnswers);
-  return getProductionReadingTest(testId, includeAnswers) || getRandomProductionReadingTest(includeAnswers);
+  // An explicit source identity must never resolve to a different random test.
+  return getProductionReadingTest(testId, includeAnswers);
 }
 
 export function getRandomizedReadingTest(includeAnswers = false) {

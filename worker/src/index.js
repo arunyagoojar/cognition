@@ -10,6 +10,7 @@ import { mergeAttemptData } from '../../src/utils/attemptPayload.js';
  */
 
 import { encryptCredential, decryptCredential, maskedSuffix } from './crypto.js';
+import { withProviderFallback } from '../../src/utils/ai/providerFallback.js';
 import {
   IELTS_WRITING_SYSTEM_PROMPT,
   IELTS_SPEAKING_SYSTEM_PROMPT,
@@ -577,6 +578,20 @@ export default {
           return { cred: null, provider: null };
         }
 
+        async function evaluateWithFallback(primary, buildOptions) {
+          const credentials = new Map([[primary.provider, primary.cred]]);
+          return withProviderFallback(primary.provider, async provider => {
+            const credential = credentials.get(provider);
+            const apiKey = credential.explicit ? credential.plaintext
+              : await decryptCredential(credential.encrypted_value, credential.iv, base64KeyOrThrow(env));
+            return runEvaluationChain({ ...await buildOptions(provider), apiKey, provider });
+          }, async provider => {
+            const credential = await loadCredential(env, userId, provider);
+            if (credential) credentials.set(provider, credential);
+            return Boolean(credential);
+          });
+        }
+
         // ── POST /api/ai/evaluate-writing — session-level, server-side evaluation (Gemini / Groq) ──
         if (path === '/api/ai/evaluate-writing' && request.method === 'POST') {
           const body = await readJson(request, BODY_LIMIT_AI);
@@ -590,12 +605,17 @@ export default {
           if(body.mode==='single_task') {
             const text=typeof body.text==='string'?body.text:'';
             const taskKind=body.taskKind===1?1:2;
-            const imagePart=taskKind===1?await loadWritingVisual(body.task,providerToUse):null;
-            const contract=prepareWritingCoaching({text,task:body.task || {},taskKind,localDiagnostics:body.localDiagnostics,visualSupplied:Boolean(imagePart)});
-            if(contract.error)return json({status:'failed',message:contract.error},200,corsHeaders);
-            const plaintextKey=cred.explicit?cred.plaintext:await decryptCredential(cred.encrypted_value,cred.iv,base64KeyOrThrow(env));
-            const result=await runEvaluationChain({apiKey:plaintextKey,systemPrompt:contract.system,userPrompt:imagePart?{text:contract.prompt,parts:[{text:contract.prompt},imagePart]}:contract.prompt,provider:providerToUse,validator:data=>validateWritingCoaching(data,{text,task:body.task || {},taskKind,limited:contract.limited})});
-            return json({...result,visualAssessed:Boolean(imagePart)},200,corsHeaders);
+            const firstContract=prepareWritingCoaching({text,task:body.task || {},taskKind,localDiagnostics:body.localDiagnostics});
+            if(firstContract.error)return json({status:'failed',message:firstContract.error},200,corsHeaders);
+            let visualAssessed=false;
+            const result=await evaluateWithFallback({cred,provider:providerToUse},async provider=>{
+              const imagePart=taskKind===1?await loadWritingVisual(body.task,provider):null;
+              visualAssessed=Boolean(imagePart);
+              const contract=prepareWritingCoaching({text,task:body.task || {},taskKind,localDiagnostics:body.localDiagnostics,visualSupplied:visualAssessed});
+              return {systemPrompt:contract.system,userPrompt:imagePart?{text:contract.prompt,parts:[{text:contract.prompt},imagePart]}:contract.prompt,
+                validator:data=>validateWritingCoaching(data,{text,task:body.task || {},taskKind,limited:contract.limited})};
+            });
+            return json({...result,visualAssessed},200,corsHeaders);
           }
           const t1Clean = (body.task1Text || '').trim();
           const t2Clean = (body.task2Text || '').trim();
@@ -613,17 +633,12 @@ export default {
             task2Words: t2Words,
           });
 
-          const plaintextKey = cred.explicit
-            ? cred.plaintext
-            : await decryptCredential(cred.encrypted_value, cred.iv, base64KeyOrThrow(env));
-          const result = await runEvaluationChain({
-            apiKey: plaintextKey,
+          const result = await evaluateWithFallback({ cred, provider: providerToUse }, async () => ({
             systemPrompt: IELTS_WRITING_SYSTEM_PROMPT,
             userPrompt,
-            provider: providerToUse,
             // bands are computed in code from the whole-band criteria
-            validator: (data) => normalizeWritingEvaluation(data, { task1Words: t1Words, task2Words: t2Words }),
-          });
+            validator: (data) => normalizeWritingEvaluation(data, { task1Words: t1Words, task2Words: t2Words, task1Text: t1Clean, task2Text: t2Clean }),
+          }));
           // plaintextKey goes out of scope here — never stored or returned.
           return json(result, 200, corsHeaders);
         }
@@ -653,17 +668,12 @@ export default {
             speechMeta: body.speechMeta && typeof body.speechMeta === 'object' ? body.speechMeta : {},
           });
 
-          const plaintextKey = cred.explicit
-            ? cred.plaintext
-            : await decryptCredential(cred.encrypted_value, cred.iv, base64KeyOrThrow(env));
-          const result = await runEvaluationChain({
-            apiKey: plaintextKey,
+          const result = await evaluateWithFallback({ cred, provider: providerToUse }, async () => ({
             systemPrompt: IELTS_SPEAKING_SYSTEM_PROMPT,
             userPrompt,
-            provider: providerToUse,
             // transcript only: pronunciation is never inferred
             validator: (data) => normalizeSpeakingEvaluation(data, { audioAssessed: false, transcripts }),
-          });
+          }));
           return json(result, 200, corsHeaders);
         }
 

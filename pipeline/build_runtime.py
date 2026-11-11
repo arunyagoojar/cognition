@@ -10,6 +10,7 @@ Cognition — Phase 3: production runtime bundle + DB manifests.
                                         browser_bundle.js; V2 itself is untouched).
 """
 import json, os, re, hashlib, glob, html
+from reading_corrections import apply_reading_corrections
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC_ROOT = os.path.join(REPO, "public-static")
@@ -485,6 +486,7 @@ def reading_asset_src(assets_by_id, asset_id):
 
 
 def build_reading_runtime(rec):
+    rec = apply_reading_corrections(rec)
     assets_by_id = {}
     for p in rec["passages"]:
         for a in p.get("assets") or []:

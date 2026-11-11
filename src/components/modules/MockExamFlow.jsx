@@ -17,6 +17,8 @@ import ListeningModule from './ListeningModule';
 import ReadingModule from './ReadingModule';
 import WritingModule from './WritingModule';
 import SpeakingModule from './SpeakingModule';
+import AnswerReviewPage from '../common/AnswerReviewPage.jsx';
+import { buildAnswerReviewItems } from '../../utils/answerReview.js';
 import { eradicateAllAudioRecordings } from '../../utils/audio/audioStore';
 
 const STEPS = ['listening', 'reading', 'writing', 'speaking'];
@@ -46,6 +48,7 @@ function skillEvidence(key, r) {
 }
 
 export default function MockExamFlow({ onComplete, onBack }) {
+  const [reviewSkill, setReviewSkill] = useState(null);
   // Restore existing in-progress session if user refreshed or navigated back.
   // Sessions carrying legacy V2 manifests (generationId) are discarded — the
   // production database replaced that content layer in Phases 3–6.
@@ -328,6 +331,8 @@ export default function MockExamFlow({ onComplete, onBack }) {
 
     // 3. Completed Evaluation Phase (Authoritative Canonical Display)
     const skills = canonicalEvaluation?.skills || {};
+    if (reviewSkill) return <AnswerReviewPage skill={reviewSkill} test={examData[reviewSkill]}
+      itemResults={buildAnswerReviewItems(skills[reviewSkill], examData[reviewSkill], reviewSkill)} onBack={() => setReviewSkill(null)} />;
     const L = skills.listening?.status === 'completed' && typeof skills.listening.band === 'number' ? skills.listening.band : null;
     const R = skills.reading?.status === 'completed' && typeof skills.reading.band === 'number' ? skills.reading.band : null;
     const W = skills.writing?.status === 'completed' && typeof skills.writing.band === 'number' ? skills.writing.band : null;
@@ -415,6 +420,8 @@ export default function MockExamFlow({ onComplete, onBack }) {
                       <span className="result-status is-bad">Evaluation Failed</span>
                     )}
                     <div className="mock-skill-evidence">{skillEvidence(item.skillKey, sk)}</div>
+                    {['reading', 'listening'].includes(item.skillKey) && (sk.itemResults || sk.answers) &&
+                      <button type="button" className="result-btn is-secondary" onClick={() => setReviewSkill(item.skillKey)}>Review {item.label.toLowerCase()} answers</button>}
                   </div>
                 </div>
               );

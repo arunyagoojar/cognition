@@ -55,7 +55,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
             <input
               key={index}
               type={type}
-              name={node.getAttribute('name')}
+              name={`question-${qId}`}
               value={node.getAttribute('value')}
               checked={val === node.getAttribute('value')}
               onChange={(e) => setAnswers(prev => ({ ...prev, [qId]: e.target.value }))}
@@ -81,7 +81,7 @@ export default function HtmlContentRenderer({ htmlContent, answers, setAnswers }
 
       // Handle selects
       if (tagName === 'select') {
-        const qId = `q${inputIndex++}`;
+        const qId = node.getAttribute('data-qid') || `q${inputIndex++}`;
         const val = answers[qId] || '';
 
         return (

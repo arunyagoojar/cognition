@@ -17,6 +17,7 @@ import ResultAnalysis from '../common/ResultAnalysis.jsx';
 import { ResultPage, ResultItem } from '../common/ResultReveal.jsx';
 import ScrollToTop from '../common/ScrollToTop.jsx';
 import TextHighlighter from '../common/TextHighlighter.jsx';
+import SourceIdentity from '../common/SourceIdentity.jsx';
 
 const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
@@ -32,8 +33,9 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const [answerReview, setAnswerReview] = useState(null);
   const reviewButtonRef = useRef(null);
   const openAnswerReview = () => {
-    const gradedTest = getReadingTest(result?.testId || test?.testId || testId, true) || test;
-    setAnswerReview(buildAnswerReviewItems(result, gradedTest, 'reading'));
+    const id = result?.testId || test?.testId || testId;
+    const gradedTest = (id ? getReadingTest(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
+    setAnswerReview({ test: gradedTest, items: buildAnswerReviewItems(result, gradedTest, 'reading') });
   };
   const closeAnswerReview = () => {
     setAnswerReview(null);
@@ -249,6 +251,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   /* ──────────────────────────────────────────────────────────
      1. INTRO SCREEN
      ────────────────────────────────────────────────────────── */
+  if (!test && !result) return <div className="content-container"><p role="alert">This Reading test is unavailable. Return and choose another complete test.</p><button type="button" onClick={onBack}>Back to practice</button></div>;
   if (phase === 'intro') {
     return (
       <ExamStartScreen
@@ -316,7 +319,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
      3. RESULTS SCREEN (Section 23: Deterministic Practice Result)
      ────────────────────────────────────────────────────────── */
   if (phase === 'results') {
-    if (answerReview) return <AnswerReviewPage skill="reading" itemResults={answerReview} onBack={closeAnswerReview} />;
+    if (answerReview) return <AnswerReviewPage skill="reading" itemResults={answerReview.items} test={answerReview.test} onBack={closeAnswerReview} />;
     const canReview = Object.keys(result?.itemResults || {}).length > 0 || Boolean(result?.answers && typeof result.answers === 'object');
     return (
       <ResultPage skill="reading">
@@ -420,9 +423,10 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
           <span className="exam-focus-tag" style={{ background: 'var(--c-lavender)', color: '#151313' }}>
             {isMockMode ? 'IELTS ACADEMIC READING' : 'IELTS READING PRACTICE'}
           </span>
-          <h2 className="exam-focus-title">
+          <div className="exam-heading-copy"><h2 className="exam-focus-title">
             Reading Assessment
           </h2>
+          <SourceIdentity test={test} skill="reading" /></div>
         </div>
 
         <div className="exam-focus-header-right">

@@ -64,6 +64,15 @@ t('an added article over the word limit is not accepted', () => {
   assert.equal(evaluateDeterministic('an egg', 'Egg', { wordLimit: 'Write ONE WORD AND/ OR A NUMBER' }).result === DETERMINISTIC.MATCH, false);
   assert.equal(evaluateDeterministic('a bicycle', 'bicycle', { wordLimit: 'NO MORE THAN TWO WORDS' }).result, DETERMINISTIC.MATCH);
 });
+t('written-word variants accept optional articles and presentation without changing the answer', () => {
+  for (const answer of ['need', 'the need', ' THE NEED. ', '“need”', '"need"']) {
+    assert.equal(evaluateDeterministic(answer, ['need', 'needs'], { wordLimit: 'NO MORE THAN TWO WORDS' }).result, DETERMINISTIC.MATCH);
+  }
+  assert.equal(evaluateDeterministic('the need', 'need', { wordLimit: 'ONE WORD ONLY' }).result, DETERMINISTIC.MISMATCH);
+  assert.equal(evaluateDeterministic('you know', 'you know', { wordLimit: 'NO MORE THAN TWO WORDS' }).result, DETERMINISTIC.MATCH);
+  assert.equal(evaluateDeterministic('you know need', 'need', { wordLimit: 'NO MORE THAN THREE WORDS' }).result, DETERMINISTIC.MISMATCH);
+  assert.equal(evaluateDeterministic('needs', ['need','needs']).result, DETERMINISTIC.MATCH);
+});
 t('singular vs plural → UNCERTAIN (AI decides with context, never auto-accept)', () => {
   assert.equal(evaluateDeterministic('beginner', 'Beginners').result, DETERMINISTIC.UNCERTAIN);
 });

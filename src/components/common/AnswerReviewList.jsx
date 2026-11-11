@@ -107,6 +107,7 @@ export default function AnswerReviewList({ itemResults, showUnanswered = false }
                   {isVariant && <span className="accepted-variant-tag">Accepted variant</span>}
                 </div>
                 {r.questionText && <p className="ar-question">{r.questionText}</p>}
+                {r.keyCorrection && <p className="ar-reason">{r.keyCorrection}</p>}
                 <dl className="ar-answers">
                   <div className="ar-row">
                     <dt>Your answer</dt>

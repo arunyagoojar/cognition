@@ -2,11 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import Icon from './Icon';
 import AnswerReviewList from './AnswerReviewList';
 import { ResultPage, ResultItem } from './ResultReveal';
+import ReviewSourceContext from './ReviewSourceContext.jsx';
 
-export default function AnswerReviewPage({ skill, itemResults, onBack }) {
+export default function AnswerReviewPage({ skill, itemResults, test, onBack }) {
   const headingRef = useRef(null);
   useEffect(() => { headingRef.current?.focus({ preventScroll: true }); }, []);
   const name = skill === 'reading' ? 'Reading' : 'Listening';
+  const answers = Object.fromEntries(Object.entries(itemResults || {}).map(([id, item]) => [id, item.candidateAnswer ?? '']));
   return (
     <ResultPage skill={skill} className="answer-review-page">
       <ResultItem as="button" type="button" className="result-back-btn" onClick={onBack}>
@@ -18,6 +20,7 @@ export default function AnswerReviewPage({ skill, itemResults, onBack }) {
           <h1 ref={headingRef} tabIndex={-1} className="result-title">Your answers, question by question</h1>
           <p className="result-section-sub">Compare your answers with the correct answers. Choose “To review” to see mistakes and skipped questions.</p>
         </div>
+        <ReviewSourceContext skill={skill} test={test} answers={answers} />
         <AnswerReviewList itemResults={itemResults} showUnanswered />
       </ResultItem>
       <ResultItem className="result-actions">

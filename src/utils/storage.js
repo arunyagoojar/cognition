@@ -407,9 +407,9 @@ const ACTIVE_PROVIDER_KEY = `${STORAGE_KEY_PREFIX}active_ai_provider`;
 export function getActiveAiProvider() {
   try {
     const val = localStorage.getItem(ACTIVE_PROVIDER_KEY);
-    return val === 'gemini' ? 'gemini' : 'groq';
+    return val === 'groq' ? 'groq' : 'gemini';
   } catch {
-    return 'groq';
+    return 'gemini';
   }
 }
 

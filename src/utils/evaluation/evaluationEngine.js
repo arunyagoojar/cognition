@@ -247,6 +247,7 @@ export async function evaluateReadingResponses({ passages = [], answers: rawAnsw
       candidateAnswer: candidate || null,
       questionType: q.questionType || null,
       questionNumber: q.questionNumber ?? null,
+      questionText: q.questionText || q.context || q.question || '',
       part: q.part ?? null,
     };
   }
@@ -329,6 +330,7 @@ export async function evaluateListeningResponses({ sections = [], answers: rawAn
       candidateAnswer: candidate || null,
       questionType: q.questionType || q.type || null,
       questionNumber: q.questionNumber ?? null,
+      questionText: q.questionText || q.context || q.question || '',
       part: q.part ?? null,
     };
   }

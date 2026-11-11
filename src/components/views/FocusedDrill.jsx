@@ -17,6 +17,7 @@ import SpeakingModule from '../modules/SpeakingModule.jsx';
 import WritingCoach, { WritingReview } from './WritingCoach.jsx';
 import { PageLoader } from '../common/Loader.jsx';
 import TextHighlighter from '../common/TextHighlighter.jsx';
+import SourceIdentity from '../common/SourceIdentity.jsx';
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
  const [highlightControls, setHighlightControls] = useState(null);
  const [focus] = useState(()=>request || readDraft('active-drill'));
@@ -56,7 +57,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
  const task=test[taskKind===1?'task1':'task2'];
  return <div className="content-container">
   <button type="button" onClick={onBack}>Back to Performance</button>
-  <header className="focused-practice-heading"><div><span className="insight-eyebrow">FOCUSED PRACTICE</span><h1>{focus.title || 'Focused practice'}</h1><p>Only this {focus.skill==='writing'?'task':'part'} · tracked separately from your full-test band</p></div><div className="insight-links">
+  <header className="focused-practice-heading"><div><span className="insight-eyebrow">FOCUSED PRACTICE</span><h1>{focus.title || 'Focused practice'}</h1>{['reading','listening'].includes(focus.skill) && <SourceIdentity test={test} skill={focus.skill}/>}<p>Only this {focus.skill==='writing'?'task':'part'} · tracked separately from your full-test band</p></div><div className="insight-links">
    {['reading','listening'].includes(focus.skill) && <div className="exam-highlight-slot" ref={setHighlightControls} />}
    {focus.resources?.tip && <button type="button" onClick={()=>onOpenTips?.(focus.resources.tip.skill,focus.resources.tip.categoryId,focus.resources.tip.tipId)}>Strategy</button>}
    {focus.resources?.lesson && <button type="button" onClick={()=>onOpenLesson?.(focus.resources.lesson.id)}>Lesson</button>}

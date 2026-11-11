@@ -82,6 +82,21 @@ await t('controls match the answer type', () => {
   assert.equal(bad.length, 0, bad.slice(0, 6).join(' | '));
 });
 
+await t('every radio stays bound to its question ID when neighbouring answers are skipped', () => {
+  for (const { g } of groups) {
+    if (!['tfng', 'ynng', 'single_choice', 'pool_select'].includes(g.answerControl)) continue;
+    const answers = Object.fromEntries(g.questions.filter((_, i) => i % 2 === 0).map(q =>
+      [q.id, q.options?.[0]?.id || g.optionPool?.options?.[0]?.id || (g.answerControl === 'ynng' ? 'YES' : 'TRUE')]));
+    const html = render(g, answers);
+    for (const tag of html.match(/<input[^>]*type="radio"[^>]*>/g) || []) {
+      const id = tag.match(/name="question-(q\d+)"/)?.[1];
+      assert(g.questions.some(q => q.id === id), `stable name in ${g.groupId}`);
+      const value = tag.match(/value="([^"]*)"/)?.[1];
+      assert.equal(tag.includes('checked=""'), answers[id] === value, `${id}: skipped neighbours cannot move a checked answer`);
+    }
+  }
+});
+
 await t('no source artifacts or raw blank tokens reach the DOM', () => {
   const bad = [];
   for (const { slug, g } of groups) {
@@ -95,6 +110,17 @@ await t('answers are never shipped to the candidate view', () => {
   for (const t2 of tests) for (const p of t2.passages) for (const q of p.questions) {
     assert.equal(q.answer, null); assert.equal(q.acceptedAnswers, null);
   }
+});
+
+await t('summary paragraphs preserve explicit blank lines and question identities', () => {
+  const source = groups.find(({ g }) => g.answerControl === 'text' && g.questions.length >= 2).g;
+  const questions = source.questions.slice(0, 2).map(q => ({ ...q, blankInStimulus: true }));
+  const g = { ...source, questions, startQ: questions[0].questionNumber, endQ: questions[1].questionNumber,
+    stimulus: { blocks: [{ type: 'text', segments: ['First sentence ', { blank: questions[0].questionNumber }, '.\n\nSecond sentence ', { blank: questions[1].questionNumber }, '.'] }] } };
+  const html = render(g);
+  assert.equal(count(html, /class="rd-stim-line"/g), 2);
+  assert.equal(count(html, /type="text"/g), 2);
+  for (const q of questions) assert(html.includes(`aria-label="Question ${q.questionNumber}"`));
 });
 
 await t('multi-select renders as checkboxes limited to the select count', () => {

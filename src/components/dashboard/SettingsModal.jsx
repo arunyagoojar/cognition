@@ -260,11 +260,11 @@ export default function SettingsModal({
                 )}
               </div>
 
-              {/* Provider choice — Groq is the recommended default */}
+              {/* Gemini is primary; Groq GPT-OSS is the secondary provider. */}
               <div role="radiogroup" aria-label="AI provider" style={{ display: 'flex', gap: 6, marginTop: 10, padding: 4, background: 'var(--surface-sunken)', borderRadius: 12 }}>
                 {[
-                  { id: 'groq', label: 'Groq', tag: 'Recommended' },
-                  { id: 'gemini', label: 'Gemini', tag: 'Backup' },
+                  { id: 'gemini', label: 'Gemini', tag: 'Primary' },
+                  { id: 'groq', label: 'Groq', tag: 'Secondary' },
                 ].map(p => {
                   const active = selectedProvider === p.id;
                   return (
@@ -286,15 +286,15 @@ export default function SettingsModal({
                     >
                       {p.label}
                       <span style={{ fontSize: 10.5, fontWeight: 700, padding: '2px 7px', borderRadius: 99,
-                        background: p.id === 'groq' ? 'var(--c-coral, #FF5734)' : 'var(--surface-alt)',
-                        color: p.id === 'groq' ? '#fff' : 'var(--text-secondary)' }}>{p.tag}</span>
+                        background: p.id === 'gemini' ? 'var(--c-coral, #FF5734)' : 'var(--surface-alt)',
+                        color: p.id === 'gemini' ? '#fff' : 'var(--text-secondary)' }}>{p.tag}</span>
                     </button>
                   );
                 })}
               </div>
 
               <div style={{ marginTop: 8, fontSize: 13, color: 'var(--text-secondary)' }}>
-                {selectedProvider === 'groq' ? 'Fast, with a free tier.' : 'Gemini 3.8 Flash. Slower; use if Groq is unavailable.'}{' '}
+                {selectedProvider === 'groq' ? 'GPT-OSS, used as the fallback when Gemini cannot complete grading.' : 'Gemini 3.8 Flash is the default examiner. Grading runs when you submit.'}{' '}
                 <a
                   href={selectedProvider === 'groq' ? 'https://console.groq.com/keys' : 'https://aistudio.google.com/app/apikey'}
                   target="_blank"

@@ -39,6 +39,10 @@ t('Writing: no overview caps Task Achievement at 5', () => {
   assert.equal(r.taskCriteria.task1.taskAchievement.band, 5);
   assert.equal(r.task1Band, 6.5);
 });
+t('Writing: an imperfect attempted overview is not automatically treated as absent', () => {
+  const r = normalizeWritingEvaluation(writing([6, 7, 7, 7], [7, 7, 7, 7], { t1: { overviewStatus: 'inadequate', hasOverview: false } }), { task1Words: 170, task2Words: 280 });
+  assert.equal(r.taskCriteria.task1.taskAchievement.band, 6);
+});
 t('Writing: ≤20 words is Band 1 per official descriptors; a missing task is Band 0', () => {
   const r = normalizeWritingEvaluation(writing([6, 6, 6, 6], [7, 7, 7, 7]), { task1Words: 18, task2Words: 0 });
   assert.equal(r.task1Band, 1); assert.equal(r.task2Band, 0); assert.equal(r.overallBand, 0.5);
@@ -54,6 +58,17 @@ t('Writing: malformed JSON is rejected (no invented score)', () => {
 t('Writing: client validator accepts a server-normalized result unchanged', () => {
   const r = normalizeWritingEvaluation(writing([6, 6, 6, 6], [7, 7, 7, 7]), { task1Words: 170, task2Words: 280 });
   assert.equal(validateWritingEvaluationJson(r), r);
+});
+t('Writing: evidence from the other task is rejected before scoring or accepting normalized results', () => {
+  const context = { task1Words: 170, task2Words: 280, task1Text: 'The television audience rises in the evening.', task2Text: 'Children develop a sense of respect for money.' };
+  const raw = writing([6, 6, 6, 6], [7, 7, 7, 7]);
+  raw.task1.criteria.lexicalResource.evidence = '“a sense of respect for money”';
+  assert.equal(normalizeWritingEvaluation(raw, context), null);
+  raw.task1.criteria.lexicalResource.evidence = 'The television audience rises';
+  const valid = normalizeWritingEvaluation(raw, context);
+  assert.equal(valid.task1Band, 6);
+  valid.taskCriteria.task1.lexicalResource.corrections = [{ original: 'a sense of respect for money', alternative: 'respect money' }];
+  assert.equal(validateWritingEvaluationJson(valid, context), null);
 });
 t('Speaking: pronunciation is never taken from a transcript; band is provisional', () => {
   const raw = { criteria: { fluencyAndCoherence: crit(7), lexicalResource: crit(6), grammaticalRangeAndAccuracy: crit(6), pronunciation: { band: 8 } } };

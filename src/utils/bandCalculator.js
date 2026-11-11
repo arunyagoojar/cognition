@@ -68,8 +68,10 @@ export function calculateOverallBand(listening, reading, writing, speaking) {
 export function normalizeAnswer(ans) {
   if (ans === undefined || ans === null) return '';
   return String(ans)
+    .normalize('NFKC')
     .trim()
     .toLowerCase()
+    .replace(/^["“”]+|["“”]+$/g, '')
     .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
     .replace(/\s+/g, " ");
 }
@@ -285,6 +287,7 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
     return { result: DETERMINISTIC.MISMATCH };
   }
   const user = normalizeAnswer(userAnswer);
+  let uncertainVariant = null;
   if (!user) return { result: DETERMINISTIC.MISMATCH };
   const variants = officialAnswerVariants(expectedAnswer);
   if (!variants.length) return { result: DETERMINISTIC.MISMATCH };
@@ -311,8 +314,10 @@ export function evaluateDeterministic(userAnswer, expectedAnswer, { wordLimit = 
       return { result: DETERMINISTIC.MATCH, matchedAnswer: variant };
     }
     if (differByPlural(user, norm)) {
-      return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: variant };
+      uncertainVariant ??= variant;
     }
   }
+  // An early near-match must not outrank an explicitly accepted later form.
+  if (uncertainVariant !== null) return { result: DETERMINISTIC.UNCERTAIN, matchedAnswer: uncertainVariant };
   return { result: DETERMINISTIC.MISMATCH };
 }

@@ -69,7 +69,7 @@ function LetterButtons({ q, options, value, onAnswer }) {
     <div className="rd-letters" role="radiogroup" aria-label={`Question ${q.questionNumber}`}>
       {options.map(o => (
         <label key={o.id} className={`rd-letter${value === o.id ? ' is-selected' : ''}`} title={o.label}>
-          <input type="radio" name={q.id} value={o.id} checked={value === o.id}
+          <input type="radio" name={`question-${q.id}`} value={o.id} checked={value === o.id}
             onChange={() => onAnswer(q.id, o.id)} />
           <span>{o.id}</span>
         </label>
@@ -82,6 +82,18 @@ function Segments({ segments, renderBlank }) {
   return (segments || []).map((s, i) => (typeof s === 'string'
     ? <React.Fragment key={i}>{s}</React.Fragment>
     : <React.Fragment key={i}>{' '}{renderBlank(s.blank)}{' '}</React.Fragment>));
+}
+
+function paragraphSegments(segments) {
+  const paragraphs = [[]];
+  for (const segment of segments || []) {
+    if (typeof segment !== 'string') { paragraphs.at(-1).push(segment); continue; }
+    for (const part of segment.split(/(\n\s*\n)/)) {
+      if (/^\n\s*\n$/.test(part)) paragraphs.push([]);
+      else if (part) paragraphs.at(-1).push(part);
+    }
+  }
+  return paragraphs.filter(p => p.length);
 }
 
 function Stimulus({ group, byNumber, answers, onAnswer }) {
@@ -123,7 +135,9 @@ function Stimulus({ group, byNumber, answers, onAnswer }) {
             </div>
           );
         }
-        return <p key={i} className="rd-stim-line"><Segments segments={b.segments} renderBlank={renderBlank} /></p>;
+        return <React.Fragment key={i}>{paragraphSegments(b.segments).map((segments, j) =>
+          <p key={j} className="rd-stim-line"><Segments segments={segments} renderBlank={renderBlank} /></p>
+        )}</React.Fragment>;
       })}
     </div>
   );
@@ -150,7 +164,7 @@ function QuestionRow({ group, q, answers, onAnswer }) {
         <div className="rd-segmented" role="radiogroup" aria-label={`Question ${q.questionNumber}`}>
           {JUDGEMENTS[control].map(([val, label]) => (
             <label key={val} className={`rd-segment${value === val ? ' is-selected' : ''}`}>
-              <input type="radio" name={q.id} value={val} checked={value === val} onChange={() => onAnswer(q.id, val)} />
+              <input type="radio" name={`question-${q.id}`} value={val} checked={value === val} onChange={() => onAnswer(q.id, val)} />
               <span>{label}</span>
             </label>
           ))}
@@ -166,7 +180,7 @@ function QuestionRow({ group, q, answers, onAnswer }) {
         <div className="rd-choices" role="radiogroup" aria-label={`Question ${q.questionNumber}`}>
           {(q.options || []).map(o => (
             <label key={o.id} className={`rd-choice${value === o.id ? ' is-selected' : ''}`}>
-              <input type="radio" name={q.id} value={o.id} checked={value === o.id} onChange={() => onAnswer(q.id, o.id)} />
+              <input type="radio" name={`question-${q.id}`} value={o.id} checked={value === o.id} onChange={() => onAnswer(q.id, o.id)} />
               <span className="rd-choice-key">{o.id}</span>
               <span className="rd-choice-text">{o.label}</span>
             </label>

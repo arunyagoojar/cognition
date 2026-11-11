@@ -1,0 +1,100 @@
+/* Keep the shared exam toolbar's sizing independent of legacy mobile rules. */
+.exam-bottom-nav.exam-bottom-nav {
+  padding: 14px max(24px, env(safe-area-inset-right)) calc(14px + env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+}
+
+.exam-bottom-nav .exam-bottom-nav-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  padding: 0;
+}
+
+.exam-bottom-nav .exam-bottom-nav-center {
+  min-width: 0;
+  justify-content: flex-start;
+  padding: 3px;
+  scroll-padding-inline: 3px;
+}
+
+.exam-bottom-nav .exam-nav-sections-list {
+  flex: 0 0 auto;
+  margin-inline: auto;
+}
+
+.exam-bottom-nav .exam-nav-section-pill {
+  flex: 0 0 auto;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.exam-bottom-nav .exam-nav-btn {
+  justify-content: center;
+  min-height: 44px;
+}
+
+.exam-bottom-nav button:focus-visible {
+  outline: 3px solid var(--c-coral);
+  outline-offset: 2px;
+}
+
+.exam-focus-layout:has(> .exam-bottom-nav) {
+  padding-bottom: calc(var(--exam-bottom-nav-height, 92px) + 24px);
+}
+
+@media (max-width: 899px) {
+  .exam-bottom-nav.exam-bottom-nav {
+    padding: 8px max(12px, env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  }
+
+  .exam-bottom-nav .exam-bottom-nav-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px 12px;
+  }
+
+  .exam-bottom-nav .exam-bottom-nav-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .exam-bottom-nav .exam-bottom-nav-left,
+  .exam-bottom-nav .exam-bottom-nav-right {
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .exam-bottom-nav .exam-bottom-nav-right {
+    justify-content: flex-end;
+  }
+
+  .exam-bottom-nav .exam-nav-btn {
+    max-width: 100%;
+    height: 100%;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    text-align: center;
+  }
+
+  .exam-bottom-nav .exam-nav-btn span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .exam-bottom-nav .exam-nav-btn svg {
+    flex-shrink: 0;
+  }
+
+  .exam-bottom-nav .exam-nav-sections-list {
+    gap: 6px;
+  }
+
+  .exam-bottom-nav .exam-nav-section-pill {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .exam-focus-layout:has(> .exam-bottom-nav) {
+    padding-bottom: calc(var(--exam-bottom-nav-height, 150px) + 24px);
+  }
+}

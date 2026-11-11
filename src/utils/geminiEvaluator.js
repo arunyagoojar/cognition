@@ -1,15 +1,16 @@
 import {captureSpellingMistakes} from './spelling/capture.js';
 import { loadWritingVisual } from './harper/writingVisual.js';
 import { planRequestBudget, prepareRequestBudget } from './ai/requestBudget.js';
+import { isTruncatedResponse } from './ai/generationConfig.js';
 import { prepareWritingCoaching, validateWritingCoaching, isCoachingPrompt } from './harper/writingCoachContract.js';
 // Central Gemini AI Evaluation Architecture for IELTS Writing & Speaking
 // Adheres strictly to Official IELTS Band Descriptors, explicit lifecycle states, and JSON validation.
 // Phase 4: Gemini requests run SERVER-SIDE (Cloudflare Worker) with the user's
 // encrypted credential — the browser never holds a raw API key.
-import { getAiCacheItem, setAiCacheItem } from './storage.js';
+import { getActiveAiProvider, getAiCacheItem, setAiCacheItem } from './storage.js';
 import {
   RUBRIC_VERSION, WRITING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_V2, buildWritingUserPrompt,
-  buildSpeakingUserPrompt, normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords,
+  buildSpeakingUserPrompt, normalizeWritingEvaluation, normalizeSpeakingEvaluation, countWords, writingEvidenceIsTaskScoped,
   ANSWER_VERIFIER_SYSTEM_PROMPT, buildAnswerVerifierUserPrompt,
   WRITING_SYSTEM_PROMPT_COMPACT, SPEAKING_SYSTEM_PROMPT_COMPACT,
 } from './ieltsRubric.js';
@@ -50,6 +51,7 @@ function failureMessage(name, status) {
   if (status === 401 || status === 403) return `${name} rejected the API key. Replace it in Settings, then press Recheck.`;
   if (status === 429) return `${name} rate limit reached. Wait a minute, then press Recheck.`;
   if (status === 413) return `${name} rejected this request as too large. Select a provider with a larger request budget in Settings.`;
+  if (status === 'output_budget') return `${name} reached its reply limit before finishing the assessment. No score was accepted. Retry or select another provider in Settings.`;
   if (status === 503 || status === 500 || status === 502) return `${name} is overloaded right now. Press Recheck in a moment, or switch provider in Settings.`;
   if (status === 'timeout') return `${name} took too long to respond. Press Recheck, or switch provider in Settings.`;
   if (status === 'network') return `Could not reach ${name}. Check your connection, then press Recheck.`;
@@ -62,6 +64,7 @@ function providerFailure(provider, status, budgetMessage = null) {
     : status === 401 || status === 403 ? 'authentication'
     : status === 429 ? 'rate_limit'
     : status === 413 ? 'request_too_large'
+    : status === 'output_budget' ? 'response_budget'
     : status === 500 || status === 502 || status === 503 ? 'provider_unavailable'
     : status === 'timeout' || status === 'network' ? status
     : typeof status === 'number' && status >= 400 ? 'http_error'
@@ -176,6 +179,7 @@ async function directGeminiCall(systemPrompt, userPrompt, localKey, validate = n
       if (r.status === 429) break;
       if (r.ok) {
         const data = await r.json();
+        if (isTruncatedResponse('gemini', data)) return providerFailure('gemini', 'output_budget');
         const text = data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text || '').join('');
         const parsed = extractJsonFromText(text);
         // a reply that fails the rubric check moves on to the next model
@@ -247,6 +251,7 @@ async function directGroqCall(systemPrompt, userPrompt, localKey, validate = nul
       if (r.status === 429 || r.status === 413) break; // limits are per account — another model won't help
       if (r.ok) {
         const data = await r.json();
+        if (isTruncatedResponse('groq', data)) return providerFailure('groq', 'output_budget');
         const text = data.choices?.[0]?.message?.content;
         const parsed = extractJsonFromText(text);
         // a reply that fails the rubric check moves on to the next model
@@ -316,12 +321,13 @@ export function validateSpeakingEvaluationJson(data, { transcripts = null } = {}
  * Writing evaluation: same contract as Speaking. Raw JSON needs the word
  * counts (≤20 words → Band 1; absent task → Band 0).
  */
-export function validateWritingEvaluationJson(data, { task1Words = 0, task2Words = 0 } = {}) {
+export function validateWritingEvaluationJson(data, { task1Words = 0, task2Words = 0, task1Text = '', task2Text = '' } = {}) {
+  if (!writingEvidenceIsTaskScoped(data, { task1Text, task2Text })) return null;
   if (data && data.rubricVersion === RUBRIC_VERSION) {
     const b = Number(data.overallBand);
     return Number.isFinite(b) && b >= 0 && b <= 9 && data.criteria ? data : null;
   }
-  return normalizeWritingEvaluation(data, { task1Words, task2Words });
+  return normalizeWritingEvaluation(data, { task1Words, task2Words, task1Text, task2Text });
 }
 
 /**
@@ -348,7 +354,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   }
 
   // Deduplication cache check
-  const contentHash = `writing_${RUBRIC_VERSION}_${hashContent(JSON.stringify({t1Clean,t2Clean,prompts}))}`;
+  const contentHash = `writing_${RUBRIC_VERSION}_${hashContent(JSON.stringify({t1Clean,t2Clean,prompts,systemPrompt:WRITING_SYSTEM_PROMPT_V2,compactPrompt:WRITING_SYSTEM_PROMPT_COMPACT,provider:getActiveAiProvider()}))}`;
   const cached = getAiCacheItem(contentHash);
   if (cached && cached.evaluationStatus === 'completed') {
     return { ...cached, isCached: true };
@@ -362,7 +368,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
     WRITING_SYSTEM_PROMPT_V2,
     buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words }),
     () => evaluateWritingServer({ task1Text: t1Clean, task2Text: t2Clean, prompts, task1Words: t1Words, task2Words: t2Words }),
-    (json) => validateWritingEvaluationJson(json, { task1Words: t1Words, task2Words: t2Words }),
+    (json) => validateWritingEvaluationJson(json, { task1Words: t1Words, task2Words: t2Words, task1Text: t1Clean, task2Text: t2Clean }),
   );
 
 
@@ -374,7 +380,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   // and a local key exists on this device, run evaluation directly from the browser.
   if (res?.status === 'failed' && !res.triedDirect) {
     const userPrompt = buildWritingUserPrompt({ prompts, task1Text: t1Clean, task2Text: t2Clean, task1Words: t1Words, task2Words: t2Words });
-    const direct = await directAiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt);
+    const direct = await directAiCall(WRITING_SYSTEM_PROMPT_V2, userPrompt, json => validateWritingEvaluationJson(json, { task1Words: t1Words, task2Words: t2Words, task1Text: t1Clean, task2Text: t2Clean }));
     if (direct.status === 'completed') {
       res = { status: 'completed', evaluation: direct.evaluation, model: direct.model, provider: direct.provider };
       model = direct.model || 'ai';
@@ -388,7 +394,7 @@ export async function evaluateWritingWithAI({ task1Text = '', task2Text = '', pr
   }
 
   const validated = res?.status === 'completed'
-    ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words }) : null;
+    ? validateWritingEvaluationJson(res.evaluation, { task1Words: t1Words, task2Words: t2Words, task1Text: t1Clean, task2Text: t2Clean }) : null;
 
   if (validated) {
     // Official IELTS attempt rules:
@@ -488,7 +494,7 @@ export async function evaluateSpeakingWithAI({ transcripts = {}, testMeta = {}, 
   }
 
   // Deduplication cache check
-  const contentHash = `speaking_${RUBRIC_VERSION}_${hashContent(JSON.stringify({transcripts,testMeta,durations,speechMeta}))}`;
+  const contentHash = `speaking_${RUBRIC_VERSION}_${hashContent(JSON.stringify({transcripts,testMeta,durations,speechMeta,systemPrompt:SPEAKING_SYSTEM_PROMPT_V2,compactPrompt:SPEAKING_SYSTEM_PROMPT_COMPACT,provider:getActiveAiProvider()}))}`;
   const cached = getAiCacheItem(contentHash);
   if (cached && cached.evaluationStatus === 'completed') {
     return { ...cached, isCached: true };

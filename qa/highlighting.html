@@ -10,17 +10,23 @@
   import ListeningModule from '/src/components/modules/ListeningModule.jsx';
   import FocusedDrill from '/src/components/views/FocusedDrill.jsx';
   import { beginPracticeSession } from '/src/utils/drafts.js';
+  import { getProductionReadingTest, getProductionListeningTest } from '/src/data/production/adapters.js';
   const qs = new URLSearchParams(location.search);
   const skill = qs.get('skill') || 'reading', mode = qs.get('mode') || 'practice';
   window.__beginPracticeSession = () => beginPracticeSession(mode === 'drill' ? 'drill' : mode === 'mock' ? 'mock' : skill);
   document.documentElement.dataset.theme = qs.get('theme') || 'light';
   await loadSkillContent(skill);
-  const testId = skill === 'reading' ? 100 : 185;
+  const testId = Number(qs.get('test')) || (skill === 'reading' ? 100 : 185);
+  const source = (skill === 'reading' ? getProductionReadingTest : getProductionListeningTest)(testId, true);
+  const questions = (source.passages || source.parts).flatMap(p => p.questions);
+  const reviewResult = { testId, status: 'completed', band: 6, raw: 24, total: 40, percentage: 60,
+    answers: Object.fromEntries(questions.map((q, i) => [q.id, i % 2 ? '' : q.answer])),
+    itemResults: Object.fromEntries(questions.map((q, i) => [q.id, { officialAnswer: q.answer, candidateAnswer: i % 2 ? '' : q.answer, finalResult: i % 2 ? 'INCORRECT' : 'CORRECT' }])) };
   const props = mode === 'drill'
     ? { request: { key: `${skill}.part1`, skill, part: 1, testId } }
     : { testId, initialPhase: 'exam', isMockMode: mode === 'mock' };
   createRoot(document.getElementById('root')).render(React.createElement(
     mode === 'drill' ? FocusedDrill : skill === 'reading' ? ReadingModule : ListeningModule,
-    { ...props, onBack: () => {}, onComplete: result => { window.__result = result; } },
+    { ...props, ...(mode === 'review' ? { initialResult: reviewResult } : {}), onBack: () => {}, onComplete: result => { window.__result = result; } },
   ));
 </script></body></html>

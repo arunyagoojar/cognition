@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { evaluateSpeakingWithAI } from '../src/utils/geminiEvaluator.js';
+import { evaluateSpeakingWithAI, evaluateWritingWithAI } from '../src/utils/geminiEvaluator.js';
 import { saveLocalGeminiKey, saveLocalGroqKey, setActiveAiProvider } from '../src/utils/storage.js';
 import { prepareRequestBudget, planRequestBudget } from '../src/utils/ai/requestBudget.js';
 import { buildSpeakingUserPrompt, SPEAKING_SYSTEM_PROMPT_V2, SPEAKING_SYSTEM_PROMPT_COMPACT } from '../src/utils/ieltsRubric.js';
@@ -27,7 +27,7 @@ const validEvaluation = {
   priorityWeaknesses: ['Develop an example.'], strengths: 'Clear explanation.', areasForImprovement: 'More detail.',
 };
 
-function setup({ active = 'gemini', gemini = 429, groq = 429 } = {}) {
+function setup({ active = 'gemini', gemini = 429, groq = 429, evaluation = validEvaluation } = {}) {
   storage.clear();
   saveLocalGeminiKey(`gemini-${secret}`);
   saveLocalGroqKey(`groq-${secret}`);
@@ -43,8 +43,11 @@ function setup({ active = 'gemini', gemini = 429, groq = 429 } = {}) {
     if (outcome === 'network') throw new Error(secret);
     if (outcome === 'timeout') throw new DOMException(secret, 'TimeoutError');
     if (outcome === 'success') return Response.json(provider === 'gemini'
-      ? { candidates: [{ content: { parts: [{ text: JSON.stringify(validEvaluation) }] } }] }
-      : { choices: [{ message: { content: JSON.stringify(validEvaluation) } }] });
+      ? { candidates: [{ content: { parts: [{ text: JSON.stringify(evaluation) }] } }] }
+      : { choices: [{ message: { content: JSON.stringify(evaluation) } }] });
+    if (outcome === 'truncated') return Response.json(provider === 'gemini'
+      ? { candidates: [{ finishReason: 'MAX_TOKENS', content: { parts: [{ text: JSON.stringify(evaluation) }] } }] }
+      : { choices: [{ finish_reason: 'length', message: { content: JSON.stringify(evaluation) } }] });
     if (outcome === 'invalid') return Response.json(provider === 'gemini'
       ? { candidates: [{ content: { parts: [{ text: 'not a valid rubric' }] } }] }
       : { choices: [{ message: { content: 'not a valid rubric' } }] });
@@ -129,6 +132,37 @@ await test('a successful fallback still returns its validated evaluation', async
   assert.equal(result.reason, undefined);
   assert.equal(result.providerFailures, undefined);
   assert.deepEqual(calls.map(call => call.provider), ['gemini', 'groq']);
+});
+
+await test('truncated replies never become scores even when their JSON parses', async () => {
+  for (const provider of ['gemini', 'groq']) {
+    setup({ active: provider, gemini: provider === 'gemini' ? 'truncated' : 429, groq: provider === 'groq' ? 'truncated' : 429 });
+    const result = await evaluateSpeakingWithAI(shortPayload);
+    assert.equal(result.evaluationStatus, 'failed');
+    assert.equal(result.reason, 'response_budget');
+    assert.equal(result.band, null);
+    assert(result.message.includes('No score was accepted'));
+  }
+});
+
+await test('switching providers evaluates Writing and Speaking with the selected provider instead of returning the other provider cache', async () => {
+  const criterion = { band: 6, evidence: 'A relevant example', personalizedAssessment: 'The response communicates its meaning.', corrections: [], nextBandAdvice: 'Develop the example.' };
+  const writing = {
+    task1: { criteria: Object.fromEntries(['taskAchievement','coherenceAndCohesion','lexicalResource','grammaticalRangeAndAccuracy'].map(key => [key, criterion])), overviewStatus: 'clear_and_relevant' },
+    task2: { criteria: Object.fromEntries(['taskResponse','coherenceAndCohesion','lexicalResource','grammaticalRangeAndAccuracy'].map(key => [key, criterion])) },
+  };
+  for (const [evaluate, payload, evaluation] of [
+    [evaluateSpeakingWithAI, shortPayload, validEvaluation],
+    [evaluateWritingWithAI, { task1Text: 'A relevant example of a change in transport. '.repeat(22), task2Text: 'A relevant example helps explain why transport matters to people. '.repeat(28), prompts: { task1: 'Describe the chart.', task2: 'Discuss transport.' } }, writing],
+  ]) {
+    const calls = setup({ gemini: 'success', groq: 'success', evaluation });
+    assert.equal((await evaluate(payload)).providerUsed, 'gemini');
+    setActiveAiProvider('groq');
+    assert.equal((await evaluate(payload)).providerUsed, 'groq');
+    setActiveAiProvider('gemini');
+    assert.equal((await evaluate(payload)).isCached, true);
+    assert.deepEqual(calls.map(call => call.provider), ['gemini','groq']);
+  }
 });
 
 console.log(`\n${checks} direct provider failure checks passed.`);
