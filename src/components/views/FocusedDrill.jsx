@@ -7,7 +7,7 @@ import { MultiChoice } from '../reading/ReadingQuestionGroup.jsx';
 import { alignUnorderedAnswers } from '../../utils/evaluation/evaluationEngine.js';
 import { useEffect, useRef, useState } from 'react';
 import { CONTENT_CATALOG, loadSkillContent } from '../../data/production/registry.js';
-import { getProductionReadingTest, getProductionListeningTest, getProductionSpeakingPackage, getProductionWritingTest } from '../../data/production/adapters.js';
+import { getProductionReadingTest, getProductionReadingTestForReview, getProductionListeningTest, getProductionSpeakingPackage, getProductionWritingTest } from '../../data/production/adapters.js';
 import { chooseFreshTest } from '../../utils/practiceSelection.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import { evaluateDeterministic } from '../../utils/bandCalculator.js';
@@ -33,7 +33,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
   let alive=true;writeDraft('active-drill',focus);
   loadSkillContent(focus.skill).then(()=>{
    const id=saved?.testId || focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
-   const get={reading:getProductionReadingTest,listening:getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
+   const get={reading:saved?.result ? getProductionReadingTestForReview : getProductionReadingTest,listening:getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
    const source=get?.(id,true);
    if(!source) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
    const selected=selectFocusedContent(source,focus);

@@ -4,8 +4,11 @@
  */
 import {
   getProductionReadingTest,
+  getProductionReadingTestForReview,
   getRandomProductionReadingTest,
 } from '../production/adapters.js';
+
+export const getReadingTestForReview = getProductionReadingTestForReview;
 
 export function getReadingTest(testId, includeAnswers = false) {
   if (!testId) return getRandomizedReadingTest(includeAnswers);

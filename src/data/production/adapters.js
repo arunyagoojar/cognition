@@ -13,6 +13,7 @@ import {
   PRODUCTION_READING,
 } from './registry.js';
 import { resolveMediaUrl } from '../../utils/media.js';
+import { isReadingTestEnabled } from './readingAvailability.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
   const rec = PRODUCTION_LISTENING.find(t =>
@@ -230,7 +231,7 @@ function resolvePromptHtml(html) {
   return html.replace(/src="(?:\.\.\/)*(\/?wp-content\/[^"]+)"/g, (m, p) => `src="${resolveMediaUrl(p.startsWith('/') ? p : `/${p}`)}"`);
 }
 
-const readingFullTests = () => PRODUCTION_READING.filter(r => r.fullMockEligible && r.questionCount === 40);
+const readingFullTests = () => PRODUCTION_READING.filter(r => r.fullMockEligible && r.questionCount === 40 && isReadingTestEnabled(r));
 
 function adaptReadingQuestion(q, includeAnswers) {
   return {
@@ -282,6 +283,13 @@ export function getAllProductionReadingTests() {
 
 export function getProductionReadingTest(testId, includeAnswers = false) {
   const rec = readingFullTests().find(r =>
+    String(r.testId) === String(testId) || r.id === testId || r.slug === testId);
+  return rec ? adaptProductionReading(rec, includeAnswers) : null;
+}
+
+// Historical review can still resolve excluded records and their answer keys.
+export function getProductionReadingTestForReview(testId, includeAnswers = false) {
+  const rec = PRODUCTION_READING.find(r =>
     String(r.testId) === String(testId) || r.id === testId || r.slug === testId);
   return rec ? adaptProductionReading(rec, includeAnswers) : null;
 }

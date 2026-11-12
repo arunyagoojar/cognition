@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { sourceIdentity } from '../src/utils/sourceIdentity.js';
-import { getReadingTest } from '../src/data/reading/index.js';
+import { getReadingTest, getReadingTestForReview } from '../src/data/reading/index.js';
 import { getProductionListeningTest } from '../src/data/production/adapters.js';
 import { selectFocusedContent } from '../src/utils/focusedContent.js';
 for (const [id, number] of [[106, 2], [107, 3]]) {
@@ -13,7 +13,7 @@ for (const [id, number] of [[106, 2], [107, 3]]) {
   assert.equal(sourceIdentity({ ...test, passages: [...test.passages].reverse() }, 'reading').code, 'imported');
   assert.equal(sourceIdentity({ ...test, passages: [test.passages[0], test.passages[0]] }, 'reading').code, 'imported');
 }
-assert.equal(sourceIdentity(getReadingTest(235), 'reading').code, 'imported');
+assert.equal(sourceIdentity(getReadingTestForReview(235), 'reading').code, 'imported');
 const listening = sourceIdentity(getProductionListeningTest(185), 'listening');
 assert.equal(listening.code, 'imported');
 assert.match(listening.status, /Source-reported/);

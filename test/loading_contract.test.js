@@ -2,10 +2,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import * as source from '../src/data/production/productionContent.js';
 import { CONTENT_CATALOG, loadSkillContent } from '../src/data/production/registry.js';
+import { isReadingTestEnabled } from '../src/data/production/readingAvailability.js';
 for (const skill of ['listening','reading','writing','speaking']) {
  const bank=await loadSkillContent(skill);
  assert.deepEqual(bank,source[`PRODUCTION_${skill.toUpperCase()}`],`${skill} content and answer keys must not change during chunking`);
- assert.equal(CONTENT_CATALOG[skill].length,bank.length);
+ assert.equal(CONTENT_CATALOG[skill].length,skill === 'reading' ? bank.filter(isReadingTestEnabled).length : bank.length);
  assert(!JSON.stringify(CONTENT_CATALOG[skill]).includes('acceptedAnswers'));
  console.log(`✓ ${skill}: ${bank.length} source records preserved; catalog carries no answer payload`);
 }

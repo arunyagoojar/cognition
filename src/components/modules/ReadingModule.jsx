@@ -2,7 +2,8 @@ import { correctReviewedAnswer } from '../../utils/manualAnswerCorrection.js';
 import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
-import { getRandomizedReadingTest, getReadingTest } from '../../data/reading/index';
+import { getRandomizedReadingTest, getReadingTest, getReadingTestForReview } from '../../data/reading/index';
+import { isReadingTestEnabled } from '../../data/production/readingAvailability.js';
 import { recordAttemptedQuestionSet, createAttemptId, getTargetBand } from '../../utils/storage';
 import { evaluateReadingResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
 import { calculateReadingBand } from '../../utils/bandCalculator';
@@ -24,7 +25,11 @@ const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 
 
 
 export default function ReadingModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
-  const [test] = useState(() => initialTest || (testId ? getReadingTest(testId) : getRandomizedReadingTest()));
+  const [test] = useState(() => {
+    const candidate = initialTest || (testId ? getReadingTestForReview(testId) : getRandomizedReadingTest());
+    const completed = initialResult || readDraft(`reading:${candidate?.testId || testId}:${isMockMode}`)?.result;
+    return completed || isReadingTestEnabled(candidate) ? candidate : null;
+  });
   const [savedSession] = useState(() => readDraft(`reading:${test?.testId || testId}:${isMockMode}`));
   const [phase, setPhase] = useState(() => initialResult || savedSession?.result ? 'results' : savedSession?.phase === 'exam' ? 'exam' : initialPhase); // intro | exam | processing | results
   const [answers, setAnswers] = useState(() => savedSession?.answers || {});
@@ -35,7 +40,7 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   const reviewButtonRef = useRef(null);
   const openAnswerReview = () => {
     const id = result?.testId || test?.testId || testId;
-    const gradedTest = (id ? getReadingTest(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
+    const gradedTest = (id ? getReadingTestForReview(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
     setAnswerReview({ test: gradedTest, items: buildAnswerReviewItems(result, gradedTest, 'reading') });
   };
   const closeAnswerReview = () => {
@@ -108,10 +113,10 @@ export default function ReadingModule({ onComplete, onBack, initialTest, testId,
   }, [isMockMode]);
 
   useEffect(() => {
-    if (initialPhase === 'exam' || savedSession?.phase === 'exam') {
+    if (test && (initialPhase === 'exam' || savedSession?.phase === 'exam')) {
       startTimer();
     }
-  }, [initialPhase, startTimer, savedSession]);
+  }, [initialPhase, startTimer, savedSession, test]);
 
   useEffect(() => {
     return () => clearInterval(timerRef.current);

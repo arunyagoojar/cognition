@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { PRODUCTION_READING, PRODUCTION_LISTENING } from '../src/data/production/registry.js';
 import { evaluateDeterministic, DETERMINISTIC } from '../src/utils/bandCalculator.js';
-import { getReadingTest } from '../src/data/reading/index.js';
+import { getReadingTestForReview } from '../src/data/reading/index.js';
 import { evaluateReadingResponses, evaluateListeningResponses } from '../src/utils/evaluation/evaluationEngine.js';
 import { buildAnswerReviewItems } from '../src/utils/answerReview.js';
 assert.equal(evaluateDeterministic('needs', ['need', 'needs']).result, DETERMINISTIC.MATCH);
@@ -36,7 +36,7 @@ for (const test of [...PRODUCTION_READING, ...PRODUCTION_LISTENING]) {
     total++;
   }
 }
-const test = getReadingTest(235, true);
+const test = getReadingTestForReview(235, true);
 const answers = { q1: 'needs', q5: 'C', q7: 'A', q8: 'B', q11: 'FALSE', q19: 'FALSE', q36: 'classical education' };
 const result = await evaluateReadingResponses({ passages: test.passages, answers });
 for (const id of ['q1', 'q5', 'q7', 'q11', 'q19', 'q36']) assert.equal(result.itemResults[id].finalResult, 'CORRECT');
