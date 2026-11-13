@@ -1,3 +1,25 @@
+import { getPreferredPracticePool } from '../data/production/practicePriority.js';
+import { chooseFreshTest } from './practiceSelection.js';
+
+// New objective drills prefer Cambridge sources that actually contain the
+// requested part/type. Resumed drills bypass this and retain their saved source.
+export function chooseFocusedPracticeTest(focus, pool, getTest, storage = globalThis.localStorage, random = Math.random) {
+ const matches=[];
+ for(const record of pool) {
+  const source=getTest(record.testId ?? record.id,true);
+  if(!source) continue;
+  try {
+   matches.push({record:source,selected:selectFocusedContent(source,focus)});
+  } catch(error) {
+   if(!['No source passage matches this focus.','No source listening part matches this focus.'].includes(error.message)) throw error;
+  }
+ }
+ const candidates=getPreferredPracticePool(focus.skill,matches.map(match=>match.record));
+ const requested=candidates.find(record=>[record.testId,record.id,record.slug].some(id=>id!=null && String(id)===String(focus.testId)));
+ const id=requested ? String(requested.testId ?? requested.id) : chooseFreshTest(`${focus.skill}-drill`,candidates,storage,random);
+ return matches.find(({record})=>String(record.testId ?? record.id)===id)?.selected ?? null;
+}
+
 // Preserve the source passage/audio/group context while selecting one focus.
 export function selectFocusedContent(source,focus) {
  if(focus.skill==='reading') {

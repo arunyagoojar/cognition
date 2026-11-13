@@ -7,6 +7,7 @@
  */
 import { CONTENT_CATALOG } from '../production/registry.js';
 import { getAuditedListeningIdentity } from '../production/listeningAvailability.js';
+import { getPreferredPracticePool } from '../production/practicePriority.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
@@ -22,7 +23,7 @@ import {
 } from '../production/adapters.js';
 
 function pickReadingCluster(testId) {
-  const pool = getAllProductionReadingTests();
+  const pool = getPreferredPracticePool('reading', getAllProductionReadingTests());
   const match = pool.find(rec => String(rec.testId) === String(testId) || rec.id === String(testId));
   if (match || !pool.length) return match || null;
   // Pin an intact cluster to exam IDs with no corresponding Reading test.
@@ -45,7 +46,7 @@ export const AVAILABLE_AUTHENTIC_TESTS = CONTENT_CATALOG.listening.map(rec => ({
 }));
 
 function pickProductionListening(testId) {
-  const pool = getAllProductionListeningTests();
+  const pool = getPreferredPracticePool('listening', getAllProductionListeningTests());
   const match = pool.find(
     t => String(t.testId) === String(testId) || t.id === String(testId));
   let index = Math.floor(Math.random() * pool.length);

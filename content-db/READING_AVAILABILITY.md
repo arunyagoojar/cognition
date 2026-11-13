@@ -6,4 +6,6 @@ As of the 12 November 2026 source audit, 36 Reading sets with unresolved origina
 
 All 109 records remain in the runtime banks and content archive. Completed results can still resolve the original passages, questions, answer keys, and manual correction controls through the review-specific lookup. No question data or completed history is deleted. Regenerating the content banks does not overwrite this separate policy.
 
+New automatic selection now prioritizes the 33 Cambridge book/Guide/Trainer matches within this retained pool. Other enabled sources remain explicitly accessible and serve as a focused-drill fallback when no Cambridge source matches the requested focus. See [practice source priority](PRACTICE_SOURCE_PRIORITY.md).
+
 `test/reading_availability.test.js` checks the 73-set selection pool, all 109 original records, explicit aliases, random standalone/focused selection, both mock assemblers, and archived answer review.

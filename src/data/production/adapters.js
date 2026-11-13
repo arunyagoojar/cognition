@@ -15,6 +15,7 @@ import {
 import { resolveMediaUrl } from '../../utils/media.js';
 import { isReadingTestEnabled } from './readingAvailability.js';
 import { isListeningTestEnabled } from './listeningAvailability.js';
+import { chooseFreshTest } from '../../utils/practiceSelection.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
   const test = getProductionListeningTestForReview(testId, includeAnswers);
@@ -302,7 +303,6 @@ export function getProductionReadingTestForReview(testId, includeAnswers = false
 
 /** Full Reading tests only: complete 1–40 numbering, every question keyed. */
 export function getRandomProductionReadingTest(includeAnswers = false) {
-  if (!readingFullTests().length) return null;
-  const rec = readingFullTests()[Math.floor(Math.random() * readingFullTests().length)];
-  return adaptProductionReading(rec, includeAnswers);
+  const id = chooseFreshTest('reading', readingFullTests());
+  return id ? getProductionReadingTest(id, includeAnswers) : null;
 }

@@ -35,7 +35,7 @@ try {
     assert(isReadingTestEnabled(getReadingTest(chooseFreshTest('reading', CONTENT_CATALOG.reading, null))));
     assert(isReadingTestEnabled(getReadingTest(chooseFreshTest('reading-drill', CONTENT_CATALOG.reading, null))));
   }
-  assert.equal(randomIds.size, 73, 'every retained record remains reachable through random practice');
+  assert.equal(randomIds.size, 33, 'random practice prioritizes the 33 Cambridge matches; all 73 remain explicitly selectable');
   for (const test of PRODUCTION_LISTENING) {
     assert(isReadingTestEnabled(getAuthenticExam(test.testId).reading));
     assert(isReadingTestEnabled(getRandomizedFullExam(test.testId).reading));

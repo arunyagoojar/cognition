@@ -6,6 +6,7 @@
  * randomized generators are no longer the runtime source for Listening.
  */
 import { getProductionListeningTest, getAllProductionListeningTests } from '../production/adapters.js';
+import { chooseFreshTest } from '../../utils/practiceSelection.js';
 
 export function getListeningTest(testId, includeAnswers = false) {
   if (!testId) return getRandomizedListeningTest(null, includeAnswers);
@@ -16,14 +17,9 @@ export function getListeningTest(testId, includeAnswers = false) {
 export function getRandomizedListeningTest(seed = null, includeAnswers = false) {
   const all = getAllProductionListeningTests();
   if (!all.length) return null;
-  let pick;
-  if (seed) {
-    const match = all.find(t => String(t.testId) === String(seed) || t.id === seed);
-    pick = match || all[Math.floor(Math.random() * all.length)];
-  } else {
-    pick = all[Math.floor(Math.random() * all.length)];
-  }
-  return getProductionListeningTest(pick.testId, includeAnswers);
+  const match = seed && all.find(t => String(t.testId) === String(seed) || t.id === seed);
+  const id = match?.testId ?? chooseFreshTest('listening', all);
+  return getProductionListeningTest(id, includeAnswers);
 }
 
 export { getAllProductionListeningTests };

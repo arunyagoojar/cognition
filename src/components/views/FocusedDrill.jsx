@@ -1,7 +1,7 @@
 import { correctReviewedAnswer } from '../../utils/manualAnswerCorrection.js';
 import { buildAnswerReviewItems } from '../../utils/answerReview.js';
 import AnswerReviewList from '../common/AnswerReviewList.jsx';
-import { selectFocusedContent } from '../../utils/focusedContent.js';
+import { selectFocusedContent, chooseFocusedPracticeTest } from '../../utils/focusedContent.js';
 import HtmlContentRenderer from '../common/HtmlContentRenderer.jsx';
 import { MultiChoice } from '../reading/ReadingQuestionGroup.jsx';
 import { alignUnorderedAnswers } from '../../utils/evaluation/evaluationEngine.js';
@@ -33,11 +33,16 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
   if(!focus) return;
   let alive=true;writeDraft('active-drill',focus);
   loadSkillContent(focus.skill).then(()=>{
-   const id=saved?.testId || focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
    const get={reading:saved?.result ? getProductionReadingTestForReview : getProductionReadingTest,listening:saved?.result ? getProductionListeningTestForReview : getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
-   const source=get?.(id,true);
-   if(!source) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
-   const selected=selectFocusedContent(source,focus);
+   let selected;
+   if(!saved?.testId && ['reading','listening'].includes(focus.skill)) {
+    selected=chooseFocusedPracticeTest(focus,CONTENT_CATALOG[focus.skill],get);
+   } else {
+    const id=saved?.testId || focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
+    const source=get?.(id,true);
+    if(source) selected=selectFocusedContent(source,focus);
+   }
+   if(!selected) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
    if(alive) setTest(selected);
   }).catch(e=>{if(alive)setError(e.message);});
   return ()=>{alive=false;};
