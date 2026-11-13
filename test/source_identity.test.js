@@ -15,7 +15,7 @@ for (const [id, number] of [[106, 2], [107, 3]]) {
 }
 assert.equal(sourceIdentity(getReadingTestForReview(235), 'reading').code, 'imported');
 const listening = sourceIdentity(getProductionListeningTest(185), 'listening');
-assert.equal(listening.code, 'imported');
-assert.match(listening.status, /Source-reported/);
+assert.equal(listening.code, 'corroborated');
+assert.match(listening.status, /Content-matched/);
 assert.equal(sourceIdentity(null, 'reading'), null);
 console.log('Source labels: independent evidence, exact content guards, focused practice, honest unverified identities passed.');

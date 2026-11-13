@@ -1,7 +1,8 @@
 // Lightweight catalog is available at startup; question banks load at skill entry.
 import catalog from './catalog.json' with { type: 'json' };
 import { isReadingTestEnabled } from './readingAvailability.js';
-export const CONTENT_CATALOG = { ...catalog, reading: catalog.reading.filter(isReadingTestEnabled) };
+import { isListeningTestEnabled } from './listeningAvailability.js';
+export const CONTENT_CATALOG = { ...catalog, reading: catalog.reading.filter(isReadingTestEnabled), listening: catalog.listening.filter(isListeningTestEnabled) };
 export let PRODUCTION_LISTENING = [];
 export let PRODUCTION_READING = [];
 export let PRODUCTION_WRITING = [];

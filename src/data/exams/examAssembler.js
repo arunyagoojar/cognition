@@ -6,6 +6,7 @@
  * and Reading are served from the production content database.
  */
 import { CONTENT_CATALOG } from '../production/registry.js';
+import { getAuditedListeningIdentity } from '../production/listeningAvailability.js';
 import {
   PRODUCTION_LISTENING,
   PRODUCTION_SPEAKING,
@@ -17,6 +18,7 @@ import {
   adaptProductionWriting,
   adaptProductionReading,
   getAllProductionReadingTests,
+  getAllProductionListeningTests,
 } from '../production/adapters.js';
 
 function pickReadingCluster(testId) {
@@ -33,19 +35,26 @@ function pickReadingCluster(testId) {
 // The test rotation queue is driven by the production Listening corpus.
 export const AVAILABLE_AUTHENTIC_TESTS = CONTENT_CATALOG.listening.map(rec => ({
   id: rec.testId,
-  book: rec.cambridgeIdentity?.length
+  book: getAuditedListeningIdentity(rec)?.label.split(' · ')[0] || (rec.cambridgeIdentity?.length
     ? `Cambridge ${rec.cambridgeIdentity[0].book}`
-    : 'Cognition IELTS',
+    : 'Cognition IELTS'),
   testNumber: rec.testId,
-  label: rec.cambridgeIdentity?.length
+  label: getAuditedListeningIdentity(rec)?.label || (rec.cambridgeIdentity?.length
     ? `${rec.title} (Cambridge ${rec.cambridgeIdentity[0].book} Test ${rec.cambridgeIdentity[0].test})`
-    : rec.title,
+    : rec.title),
 }));
 
 function pickProductionListening(testId) {
-  const match = PRODUCTION_LISTENING.find(
+  const pool = getAllProductionListeningTests();
+  const match = pool.find(
     t => String(t.testId) === String(testId) || t.id === String(testId));
-  const rec = match || PRODUCTION_LISTENING[Math.floor(Math.random() * PRODUCTION_LISTENING.length)];
+  let index = Math.floor(Math.random() * pool.length);
+  if (testId !== null && testId !== undefined) {
+    let hash = 0;
+    for (const char of String(testId)) hash = (Math.imul(hash, 31) + char.charCodeAt(0)) >>> 0;
+    index = hash % pool.length;
+  }
+  const rec = match || pool[index];
   return rec ? adaptProductionListening(rec, true) : null;
 }
 

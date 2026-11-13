@@ -21,6 +21,7 @@ import WritingCoach, { WritingReview } from './WritingCoach.jsx';
 import { PageLoader } from '../common/Loader.jsx';
 import TextHighlighter from '../common/TextHighlighter.jsx';
 import SourceIdentity from '../common/SourceIdentity.jsx';
+import { getProductionListeningTestForReview } from '../../data/production/adapters.js';
 export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips }) {
  const [highlightControls, setHighlightControls] = useState(null);
  const [focus] = useState(()=>request || readDraft('active-drill'));
@@ -33,7 +34,7 @@ export default function FocusedDrill({ request, onBack, onOpenLesson, onOpenTips
   let alive=true;writeDraft('active-drill',focus);
   loadSkillContent(focus.skill).then(()=>{
    const id=saved?.testId || focus.testId || chooseFreshTest(`${focus.skill}-drill`,CONTENT_CATALOG[focus.skill]);
-   const get={reading:saved?.result ? getProductionReadingTestForReview : getProductionReadingTest,listening:getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
+   const get={reading:saved?.result ? getProductionReadingTestForReview : getProductionReadingTest,listening:saved?.result ? getProductionListeningTestForReview : getProductionListeningTest,speaking:getProductionSpeakingPackage,writing:getProductionWritingTest}[focus.skill];
    const source=get?.(id,true);
    if(!source) throw new Error('This source test is unavailable. Return to Performance and choose another recommendation.');
    const selected=selectFocusedContent(source,focus);

@@ -14,8 +14,14 @@ import {
 } from './registry.js';
 import { resolveMediaUrl } from '../../utils/media.js';
 import { isReadingTestEnabled } from './readingAvailability.js';
+import { isListeningTestEnabled } from './listeningAvailability.js';
 
 export function getProductionListeningTest(testId, includeAnswers = false) {
+  const test = getProductionListeningTestForReview(testId, includeAnswers);
+  return isListeningTestEnabled(test) ? test : null;
+}
+
+export function getProductionListeningTestForReview(testId, includeAnswers = false) {
   const rec = PRODUCTION_LISTENING.find(t =>
     String(t.testId) === String(testId) || t.id === testId || t.slug === testId);
   if (!rec) return null;
@@ -23,7 +29,7 @@ export function getProductionListeningTest(testId, includeAnswers = false) {
 }
 
 export function getAllProductionListeningTests() {
-  return PRODUCTION_LISTENING;
+  return PRODUCTION_LISTENING.filter(isListeningTestEnabled);
 }
 
 export function adaptProductionListening(rec, includeAnswers = false) {

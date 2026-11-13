@@ -5,10 +5,17 @@ const verifiedReading = {
   'ielts-reading-test-106': { hash: '69025b4d51c80403', book: 13, test: 2, titles: ['Bringing Cinnamon to Europe', 'Oxytocin', 'Making the most of trends'] },
   'ielts-reading-test-107': { hash: 'e5f649fb201f4c13', book: 13, test: 3, titles: ['The Coconut Palm', 'How Baby Talk Gives Infant Brains a Boost', 'Whatever Happened to the Harappan Civilisation?'] },
 };
+import { getAuditedListeningIdentity } from '../data/production/listeningAvailability.js';
+
 export function sourceIdentity(test, skill) {
   if (!test) return null;
   const source = test.source || {}, known = verifiedReading[source.slug];
   const primary = `${skill === 'listening' ? 'Listening' : 'Reading'} test ${test.testId ?? '—'}`;
+  const listeningIdentity = skill === 'listening' && source.sha256 && getAuditedListeningIdentity(test);
+  if (listeningIdentity) return {
+    primary: listeningIdentity.label, status: 'Content-matched identity', code: 'corroborated', href: listeningIdentity.evidence,
+    detail: `${primary}. All four sections matched a reference for this book/test. Secondary-source corroboration; this does not verify every answer key or recording.`,
+  };
   if (skill === 'reading' && known && source.sha256 === known.hash && test.passages?.length
     && test.passages.length <= 3 && new Set(test.passages.map(p => p.passageNumber)).size === test.passages.length
     && test.passages.every((p, i) => known.titles[p.passageNumber - 1] === p.title && (!i || test.passages[i - 1].passageNumber < p.passageNumber))) {

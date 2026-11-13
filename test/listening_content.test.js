@@ -103,11 +103,11 @@ await t('audio and images resolve to objects in the R2 media manifest', () => {
   }
 });
 
-await t('answers are gated; unknown ids fall back through the adapter', () => {
+await t('answers are gated; unknown ids cannot silently substitute another test', () => {
   const t1 = getProductionListeningTest(PRODUCTION_LISTENING[0].testId, false);
   assert.ok(t1.parts.every(p => p.questions.every(q => q.answer === null)));
   const fb = getListeningTest('no-such-test');
-  assert.ok(fb.parts.every(p => p.questions.every(q => q.answer === null)), 'fallback hides answers');
+  assert.equal(fb, null);
 });
 
 await t('a perfect answer sheet scores 40/40 on every test', async () => {

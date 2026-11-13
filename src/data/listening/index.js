@@ -9,12 +9,8 @@ import { getProductionListeningTest, getAllProductionListeningTests } from '../p
 
 export function getListeningTest(testId, includeAnswers = false) {
   if (!testId) return getRandomizedListeningTest(null, includeAnswers);
-  const test = getProductionListeningTest(testId, includeAnswers);
-  if (test) return test;
-  // Unknown id → deterministic fallback to the first production test, through
-  // the adapter so answers stay gated and media resolves to R2
-  const all = getAllProductionListeningTests();
-  return all.length ? getProductionListeningTest(all[0].testId, includeAnswers) : null;
+  // Excluded/missing explicit sources must not silently become another test.
+  return getProductionListeningTest(testId, includeAnswers);
 }
 
 export function getRandomizedListeningTest(seed = null, includeAnswers = false) {

@@ -3,7 +3,8 @@ import { readDraft, writeDraft } from '../../utils/drafts.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '../common/Icon';
 import { getRandomizedListeningTest, getListeningTest } from '../../data/listening/index';
-import { getProductionListeningTest } from '../../data/production/adapters.js';
+import { getProductionListeningTestForReview } from '../../data/production/adapters.js';
+import { isListeningTestEnabled } from '../../data/production/listeningAvailability.js';
 import { evaluateListeningResponses, isCandidateAnswerCorrect } from '../../utils/evaluation/evaluationEngine';
 import { calculateListeningBand } from '../../utils/bandCalculator';
 import AnswerReviewPage from '../common/AnswerReviewPage';
@@ -24,7 +25,11 @@ const FMT = (s) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 
 
 export default function ListeningModule({ onComplete, onBack, initialTest, testId, initialPhase = 'intro', isMockMode = false, onOpenLesson, onOpenTips, onSave, initialResult = null }) {
   const [highlightControls, setHighlightControls] = useState(null);
-  const [test, setTest] = useState(() => initialTest || (testId ? getListeningTest(testId) : getRandomizedListeningTest()));
+  const [test, setTest] = useState(() => {
+    const candidate = initialTest || (testId ? getProductionListeningTestForReview(testId) : getRandomizedListeningTest());
+    const completed = initialResult || readDraft(`listening:${candidate?.testId || testId}:${isMockMode}`)?.result;
+    return completed || isListeningTestEnabled(candidate) ? candidate : null;
+  });
   const [savedSession] = useState(() => readDraft(`listening:${test?.testId || testId}:${isMockMode}`));
   const [phase, setPhase] = useState(() => initialResult || savedSession?.result ? 'results' : savedSession?.phase === 'exam' ? 'exam' : initialPhase); // intro | exam | processing | results
   const [partIdx, setPartIdx] = useState(0);
@@ -35,7 +40,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   const reviewButtonRef = useRef(null);
   const openAnswerReview = () => {
     const id = result?.testId || test?.testId || testId;
-    const gradedTest = (id ? getProductionListeningTest(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
+    const gradedTest = (id ? getProductionListeningTestForReview(id, true) : null) || (String(test?.testId) === String(id) ? test : null);
     setAnswerReview({ test: gradedTest, items: buildAnswerReviewItems(result, gradedTest, 'listening') });
   };
   const closeAnswerReview = () => {
@@ -103,10 +108,10 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   }, [isMockMode]);
 
   useEffect(() => {
-    if (initialPhase === 'exam' || savedSession?.phase === 'exam') {
+    if (test && (initialPhase === 'exam' || savedSession?.phase === 'exam')) {
       startTimer();
     }
-  }, [initialPhase, startTimer, savedSession]);
+  }, [initialPhase, startTimer, savedSession, test]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -302,6 +307,7 @@ export default function ListeningModule({ onComplete, onBack, initialTest, testI
   /* ──────────────────────────────────────────────────────────
      1. INTRO SCREEN
      ────────────────────────────────────────────────────────── */
+  if (!test && !result) return <div className="content-container"><p role="alert">This Listening test is no longer available for practice. Choose another test from the current selection.</p><button type="button" onClick={onBack}>Back to practice</button></div>;
   if (phase === 'intro') {
     return (
       <ExamStartScreen

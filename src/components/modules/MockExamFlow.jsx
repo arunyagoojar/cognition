@@ -6,6 +6,7 @@ import { Icon } from '../common/Icon';
 import { getRandomizedFullExam } from '../../data/exams/examAssembler';
 import { getProductionWritingTest } from '../../data/production/adapters';
 import { isReadingTestEnabled } from '../../data/production/readingAvailability.js';
+import { isListeningTestEnabled } from '../../data/production/listeningAvailability.js';
 import {
   saveActiveMockSession,
   getActiveMockSession,
@@ -168,8 +169,8 @@ export default function MockExamFlow({ onComplete, onBack }) {
   /* ──────────────────────────────────────────────────────────
      ACTIVE SKILL MODULE (Listening, Reading, Writing, Speaking)
      ────────────────────────────────────────────────────────── */
-  if (step < STEPS.length && !isReadingTestEnabled(examData.reading)) {
-    return <div className="content-container"><p role="alert">This saved mock contains a Reading set that is no longer available for practice. Start a new mock to use the current selection.</p><button type="button" onClick={() => { clearActiveMockSession(); onBack?.(); }}>Back to practice</button></div>;
+  if (step < STEPS.length && (!isReadingTestEnabled(examData.reading) || !isListeningTestEnabled(examData.listening))) {
+    return <div className="content-container"><p role="alert">This saved mock contains a set that is no longer available for practice. Start a new mock to use the current selection.</p><button type="button" onClick={() => { clearActiveMockSession(); onBack?.(); }}>Back to practice</button></div>;
   }
   if (step >= 0 && step < STEPS.length) {
     const skill = STEPS[step];
